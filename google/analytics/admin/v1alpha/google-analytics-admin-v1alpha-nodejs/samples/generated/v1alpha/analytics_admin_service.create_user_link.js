@@ -32,7 +32,7 @@ function main(parent, userLink) {
   /**
    *  Required. The user link to create.
    */
-  // const userLink = ''
+  // const userLink = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -40,7 +40,7 @@ function main(parent, userLink) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createUserLink() {
+  async function callCreateUserLink() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, userLink) {
     console.log(response);
   }
 
-  createUserLink();
+  callCreateUserLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateUserLink_async]
 }
 

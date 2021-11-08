@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function listDeployments() {
+  async function callListDeployments() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listDeployments();
+  callListDeployments();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_ListDeployments_async]
 }
 

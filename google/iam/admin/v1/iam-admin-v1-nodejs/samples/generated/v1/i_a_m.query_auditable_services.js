@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function queryAuditableServices() {
+  async function callQueryAuditableServices() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  queryAuditableServices();
+  callQueryAuditableServices();
   // [END iam_v1_generated_IAM_QueryAuditableServices_async]
 }
 

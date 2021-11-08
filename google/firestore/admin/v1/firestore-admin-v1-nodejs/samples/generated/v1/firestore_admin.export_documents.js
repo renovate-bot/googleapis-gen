@@ -31,7 +31,7 @@ function main(name) {
   // const collectionIds = 'abc123'
   /**
    *  The output URI. Currently only supports Google Cloud Storage URIs of the
-   *  form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the name
+   *  form: `gs://BUCKET_NAME/NAMESPACE_PATH`, where `BUCKET_NAME` is the name
    *  of the Google Cloud Storage bucket and `NAMESPACE_PATH` is an optional
    *  Google Cloud Storage namespace path. When
    *  choosing a name, be sure to consider Google Cloud Storage naming
@@ -47,7 +47,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function exportDocuments() {
+  async function callExportDocuments() {
     // Construct request
     const request = {
       name,
@@ -59,7 +59,7 @@ function main(name) {
     console.log(response);
   }
 
-  exportDocuments();
+  callExportDocuments();
   // [END firestore_v1_generated_FirestoreAdmin_ExportDocuments_async]
 }
 

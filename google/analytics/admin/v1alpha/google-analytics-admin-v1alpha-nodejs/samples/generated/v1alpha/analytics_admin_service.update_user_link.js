@@ -23,7 +23,7 @@ function main(userLink) {
   /**
    *  Required. The user link to update.
    */
-  // const userLink = ''
+  // const userLink = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -31,7 +31,7 @@ function main(userLink) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateUserLink() {
+  async function callUpdateUserLink() {
     // Construct request
     const request = {
       userLink,
@@ -42,7 +42,7 @@ function main(userLink) {
     console.log(response);
   }
 
-  updateUserLink();
+  callUpdateUserLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateUserLink_async]
 }
 

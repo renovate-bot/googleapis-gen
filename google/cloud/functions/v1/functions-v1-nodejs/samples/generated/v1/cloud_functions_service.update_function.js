@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main(function) {
+function main(function1) {
   // [START cloudfunctions_v1_generated_CloudFunctionsService_UpdateFunction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -23,11 +23,11 @@ function main(function) {
   /**
    *  Required. New version of the function.
    */
-  // const function = ''
+  // const function = {}
   /**
    *  Required list of fields to be updated in this request.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Functions library
   const {CloudFunctionsServiceClient} = require('@google-cloud/functions').v1;
@@ -35,10 +35,10 @@ function main(function) {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function updateFunction() {
+  async function callUpdateFunction() {
     // Construct request
     const request = {
-      function,
+      function1,
     };
 
     // Run request
@@ -47,7 +47,7 @@ function main(function) {
     console.log(response);
   }
 
-  updateFunction();
+  callUpdateFunction();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_UpdateFunction_async]
 }
 

@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const talentClient = new CompanyServiceClient();
 
-  async function deleteCompany() {
+  async function callDeleteCompany() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteCompany();
+  callDeleteCompany();
   // [END jobs_v4beta1_generated_CompanyService_DeleteCompany_async]
 }
 

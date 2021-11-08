@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function getTopicPartitions() {
+  async function callGetTopicPartitions() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTopicPartitions();
+  callGetTopicPartitions();
   // [END pubsublite_v1_generated_AdminService_GetTopicPartitions_async]
 }
 

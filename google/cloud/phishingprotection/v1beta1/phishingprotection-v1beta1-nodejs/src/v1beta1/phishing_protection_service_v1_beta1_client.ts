@@ -283,26 +283,6 @@ export class PhishingProtectionServiceV1Beta1Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  reportPhishing(
-      request?: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
-        protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|undefined, {}|undefined
-      ]>;
-  reportPhishing(
-      request: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
-          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|null|undefined,
-          {}|null|undefined>): void;
-  reportPhishing(
-      request: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
-      callback: Callback<
-          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
-          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reports a URI suspected of containing phishing content to be reviewed. Once
  * the report review is complete, its result can be found in the Cloud
@@ -326,9 +306,29 @@ export class PhishingProtectionServiceV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.reportPhishing(request);
+ * @example <caption>include:samples/generated/v1beta1/phishing_protection_service_v1_beta1.report_phishing.js</caption>
+ * region_tag:phishingprotection_v1beta1_generated_PhishingProtectionServiceV1Beta1_ReportPhishing_async
  */
+  reportPhishing(
+      request?: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
+        protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|undefined, {}|undefined
+      ]>;
+  reportPhishing(
+      request: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
+          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|null|undefined,
+          {}|null|undefined>): void;
+  reportPhishing(
+      request: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
+      callback: Callback<
+          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingResponse,
+          protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest|null|undefined,
+          {}|null|undefined>): void;
   reportPhishing(
       request?: protos.google.cloud.phishingprotection.v1beta1.IReportPhishingRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function getIndex() {
+  async function callGetIndex() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getIndex();
+  callGetIndex();
   // [END firestore_v1_generated_FirestoreAdmin_GetIndex_async]
 }
 

@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const tpuClient = new TpuClient();
 
-  async function listTensorFlowVersions() {
+  async function callListTensorFlowVersions() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listTensorFlowVersions();
+  callListTensorFlowVersions();
   // [END tpu_v1_generated_Tpu_ListTensorFlowVersions_async]
 }
 

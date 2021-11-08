@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ExpandedLandingPageViewServiceClient();
 
-  async function getExpandedLandingPageView() {
+  async function callGetExpandedLandingPageView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getExpandedLandingPageView();
+  callGetExpandedLandingPageView();
   // [END googleads_v9_generated_ExpandedLandingPageViewService_GetExpandedLandingPageView_async]
 }
 

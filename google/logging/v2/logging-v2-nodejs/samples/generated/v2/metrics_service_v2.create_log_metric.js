@@ -30,7 +30,7 @@ function main(parent, metric) {
    *  Required. The new logs-based metric, which must not have an identifier that
    *  already exists.
    */
-  // const metric = ''
+  // const metric = {}
 
   // Imports the Logging library
   const {MetricsServiceV2Client} = require('@google-cloud/logging').v2;
@@ -38,7 +38,7 @@ function main(parent, metric) {
   // Instantiates a client
   const loggingClient = new MetricsServiceV2Client();
 
-  async function createLogMetric() {
+  async function callCreateLogMetric() {
     // Construct request
     const request = {
       parent,
@@ -50,7 +50,7 @@ function main(parent, metric) {
     console.log(response);
   }
 
-  createLogMetric();
+  callCreateLogMetric();
   // [END logging_v2_generated_MetricsServiceV2_CreateLogMetric_async]
 }
 

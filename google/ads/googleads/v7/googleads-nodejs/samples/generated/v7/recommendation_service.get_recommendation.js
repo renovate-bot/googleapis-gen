@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new RecommendationServiceClient();
 
-  async function getRecommendation() {
+  async function callGetRecommendation() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getRecommendation();
+  callGetRecommendation();
   // [END googleads_v7_generated_RecommendationService_GetRecommendation_async]
 }
 

@@ -38,7 +38,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {ConversionGoalCampaignConfigServiceClient} = require('google-ads').v9;
@@ -46,7 +46,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new ConversionGoalCampaignConfigServiceClient();
 
-  async function mutateConversionGoalCampaignConfigs() {
+  async function callMutateConversionGoalCampaignConfigs() {
     // Construct request
     const request = {
       customerId,
@@ -58,7 +58,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateConversionGoalCampaignConfigs();
+  callMutateConversionGoalCampaignConfigs();
   // [END googleads_v9_generated_ConversionGoalCampaignConfigService_MutateConversionGoalCampaignConfigs_async]
 }
 

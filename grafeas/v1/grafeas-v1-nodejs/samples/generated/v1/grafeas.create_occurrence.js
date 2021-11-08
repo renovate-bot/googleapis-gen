@@ -28,7 +28,7 @@ function main(parent, occurrence) {
   /**
    *  The occurrence to create.
    */
-  // const occurrence = ''
+  // const occurrence = {}
 
   // Imports the Grafeas library
   const {GrafeasClient} = require('@google-cloud/grafeas').v1;
@@ -36,7 +36,7 @@ function main(parent, occurrence) {
   // Instantiates a client
   const grafeasClient = new GrafeasClient();
 
-  async function createOccurrence() {
+  async function callCreateOccurrence() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, occurrence) {
     console.log(response);
   }
 
-  createOccurrence();
+  callCreateOccurrence();
   // [END containeranalysis_v1_generated_Grafeas_CreateOccurrence_async]
 }
 

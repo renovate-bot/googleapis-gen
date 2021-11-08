@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ConversionValueRuleServiceClient();
 
-  async function getConversionValueRule() {
+  async function callGetConversionValueRule() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getConversionValueRule();
+  callGetConversionValueRule();
   // [END googleads_v9_generated_ConversionValueRuleService_GetConversionValueRule_async]
 }
 

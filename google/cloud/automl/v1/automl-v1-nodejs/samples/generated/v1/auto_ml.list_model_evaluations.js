@@ -44,8 +44,8 @@ function main(parent, filter) {
   /**
    *  A token identifying a page of results for the server to return.
    *  Typically obtained via
-   *  [ListModelEvaluationsResponse.next_page_token][google.cloud.automl.v1.ListModelEvaluationsResponse.next_page_token] of the previous
-   *  [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations] call.
+   *  ListModelEvaluationsResponse.next_page_token google.cloud.automl.v1.ListModelEvaluationsResponse.next_page_token  of the previous
+   *  AutoMl.ListModelEvaluations google.cloud.automl.v1.AutoMl.ListModelEvaluations  call.
    */
   // const pageToken = 'abc123'
 
@@ -55,7 +55,7 @@ function main(parent, filter) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function listModelEvaluations() {
+  async function callListModelEvaluations() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent, filter) {
     }
   }
 
-  listModelEvaluations();
+  callListModelEvaluations();
   // [END automl_v1_generated_AutoMl_ListModelEvaluations_async]
 }
 

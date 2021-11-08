@@ -51,7 +51,7 @@ function main(parent, collectionId) {
    *  If a document has a field that is not present in this mask, that field
    *  will not be returned in the response.
    */
-  // const mask = ''
+  // const mask = {}
   /**
    *  Reads documents in a transaction.
    */
@@ -60,12 +60,12 @@ function main(parent, collectionId) {
    *  Reads documents as they were at the given time.
    *  This may not be older than 270 seconds.
    */
-  // const readTime = ''
+  // const readTime = {}
   /**
    *  If the list should show missing documents. A missing document is a
    *  document that does not exist but has sub-documents. These documents will
-   *  be returned with a key but will not have fields, [Document.create_time][google.firestore.v1beta1.Document.create_time],
-   *  or [Document.update_time][google.firestore.v1beta1.Document.update_time] set.
+   *  be returned with a key but will not have fields, Document.create_time google.firestore.v1beta1.Document.create_time,
+   *  or Document.update_time google.firestore.v1beta1.Document.update_time  set.
    *  Requests with `show_missing` may not specify `where` or
    *  `order_by`.
    */
@@ -77,7 +77,7 @@ function main(parent, collectionId) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function listDocuments() {
+  async function callListDocuments() {
     // Construct request
     const request = {
       parent,
@@ -91,7 +91,7 @@ function main(parent, collectionId) {
     }
   }
 
-  listDocuments();
+  callListDocuments();
   // [END firestore_v1beta1_generated_Firestore_ListDocuments_async]
 }
 

@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const dataprocClient = new BatchControllerClient();
 
-  async function getBatch() {
+  async function callGetBatch() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getBatch();
+  callGetBatch();
   // [END dataproc_v1_generated_BatchController_GetBatch_async]
 }
 

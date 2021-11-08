@@ -27,11 +27,11 @@ function main() {
   /**
    *  HttpResponse.
    */
-  // const httpResponse = ''
+  // const httpResponse = {}
   /**
    *  Errors from application when handling the http request.
    */
-  // const status = ''
+  // const status = {}
   /**
    *  GCP Project.
    *  Format: `projects/{project_number}`.
@@ -45,7 +45,7 @@ function main() {
   /**
    *  Tether Endpoint.
    */
-  // const endpoint = ''
+  // const endpoint = {}
   /**
    *  Name is the full resource path of endpoint.
    *  Format: `projects/{project_number or project_id}/endpoints/{endpoint}`
@@ -58,7 +58,7 @@ function main() {
   // Instantiates a client
   const apigeeconnectClient = new TetherClient();
 
-  async function egress() {
+  async function callEgress() {
     // Construct request
     const request = {
     };
@@ -72,7 +72,7 @@ function main() {
     stream.end(); 
   }
 
-  egress();
+  callEgress();
   // [END apigeeconnect_v1_generated_Tether_Egress_async]
 }
 

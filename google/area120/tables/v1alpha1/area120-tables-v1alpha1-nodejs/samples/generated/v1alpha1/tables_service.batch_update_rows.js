@@ -37,7 +37,7 @@ function main(parent, requests) {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function batchUpdateRows() {
+  async function callBatchUpdateRows() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, requests) {
     console.log(response);
   }
 
-  batchUpdateRows();
+  callBatchUpdateRows();
   // [END area120tables_v1alpha1_generated_TablesService_BatchUpdateRows_async]
 }
 

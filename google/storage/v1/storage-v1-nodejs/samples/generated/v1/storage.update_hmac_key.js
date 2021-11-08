@@ -31,11 +31,11 @@ function main(accessId, projectId, metadata) {
   /**
    *  Required. The service account owner of the HMAC key.
    */
-  // const metadata = ''
+  // const metadata = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -43,7 +43,7 @@ function main(accessId, projectId, metadata) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function updateHmacKey() {
+  async function callUpdateHmacKey() {
     // Construct request
     const request = {
       accessId,
@@ -56,7 +56,7 @@ function main(accessId, projectId, metadata) {
     console.log(response);
   }
 
-  updateHmacKey();
+  callUpdateHmacKey();
   // [END storage_v1_generated_Storage_UpdateHmacKey_async]
 }
 

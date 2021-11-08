@@ -43,7 +43,7 @@ function main(database) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function batchWrite() {
+  async function callBatchWrite() {
     // Construct request
     const request = {
       database,
@@ -54,7 +54,7 @@ function main(database) {
     console.log(response);
   }
 
-  batchWrite();
+  callBatchWrite();
   // [END firestore_v1_generated_Firestore_BatchWrite_async]
 }
 

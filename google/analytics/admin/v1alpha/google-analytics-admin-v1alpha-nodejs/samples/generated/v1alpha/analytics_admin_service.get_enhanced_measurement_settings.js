@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function getEnhancedMeasurementSettings() {
+  async function callGetEnhancedMeasurementSettings() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEnhancedMeasurementSettings();
+  callGetEnhancedMeasurementSettings();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetEnhancedMeasurementSettings_async]
 }
 

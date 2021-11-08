@@ -63,7 +63,7 @@ function main(parent) {
   // Instantiates a client
   const networkmanagementClient = new ReachabilityServiceClient();
 
-  async function listConnectivityTests() {
+  async function callListConnectivityTests() {
     // Construct request
     const request = {
       parent,
@@ -76,7 +76,7 @@ function main(parent) {
     }
   }
 
-  listConnectivityTests();
+  callListConnectivityTests();
   // [END networkmanagement_v1beta1_generated_ReachabilityService_ListConnectivityTests_async]
 }
 

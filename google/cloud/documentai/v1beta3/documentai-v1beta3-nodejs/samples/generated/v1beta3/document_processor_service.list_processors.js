@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function listProcessors() {
+  async function callListProcessors() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listProcessors();
+  callListProcessors();
   // [END documentai_v1beta3_generated_DocumentProcessorService_ListProcessors_async]
 }
 

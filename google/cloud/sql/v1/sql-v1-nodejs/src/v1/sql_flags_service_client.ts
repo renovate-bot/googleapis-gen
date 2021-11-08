@@ -274,6 +274,24 @@ export class SqlFlagsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Lists all available database flags for Cloud SQL instances.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.databaseVersion
+ *   Database type and version you want to retrieve flags for. By default, this
+ *   method returns flags for all database types and versions.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [FlagsListResponse]{@link google.cloud.sql.v1.FlagsListResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_flags_service.list.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlFlagsService_List_async
+ */
   list(
       request?: protos.google.cloud.sql.v1.ISqlFlagsListRequest,
       options?: CallOptions):
@@ -294,24 +312,6 @@ export class SqlFlagsServiceClient {
           protos.google.cloud.sql.v1.IFlagsListResponse,
           protos.google.cloud.sql.v1.ISqlFlagsListRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists all available database flags for Cloud SQL instances.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.databaseVersion
- *   Database type and version you want to retrieve flags for. By default, this
- *   method returns flags for all database types and versions.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [FlagsListResponse]{@link google.cloud.sql.v1.FlagsListResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
- */
   list(
       request?: protos.google.cloud.sql.v1.ISqlFlagsListRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -336,6 +336,8 @@ export class SqlFlagsServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.list(request, options, callback);
   }

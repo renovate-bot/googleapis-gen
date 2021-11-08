@@ -38,7 +38,7 @@ function main(name, importConfigs) {
   // Instantiates a client
   const aiplatformClient = new DatasetServiceClient();
 
-  async function importData() {
+  async function callImportData() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name, importConfigs) {
     console.log(response);
   }
 
-  importData();
+  callImportData();
   // [END aiplatform_v1_generated_DatasetService_ImportData_async]
 }
 

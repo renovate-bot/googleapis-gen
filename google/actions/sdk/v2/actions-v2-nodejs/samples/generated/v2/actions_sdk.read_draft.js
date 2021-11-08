@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function readDraft() {
+  async function callReadDraft() {
     // Construct request
     const request = {
       name,
@@ -52,7 +52,7 @@ function main(name) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  readDraft();
+  callReadDraft();
   // [END actions_v2_generated_ActionsSdk_ReadDraft_async]
 }
 

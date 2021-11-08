@@ -28,7 +28,7 @@ function main() {
   /**
    *  Application deployment configuration.
    */
-  // const version = ''
+  // const version = {}
 
   // Imports the Appengine library
   const {VersionsClient} = require('@google-cloud/appengine-admin').v1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new VersionsClient();
 
-  async function createVersion() {
+  async function callCreateVersion() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  createVersion();
+  callCreateVersion();
   // [END appengine_v1_generated_Versions_CreateVersion_async]
 }
 

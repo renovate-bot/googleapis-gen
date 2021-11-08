@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlOperationsServiceClient();
 
-  async function list() {
+  async function callList() {
     // Construct request
     const request = {
     };
@@ -54,7 +54,7 @@ function main() {
     console.log(response);
   }
 
-  list();
+  callList();
   // [END sqladmin_v1_generated_SqlOperationsService_List_async]
 }
 

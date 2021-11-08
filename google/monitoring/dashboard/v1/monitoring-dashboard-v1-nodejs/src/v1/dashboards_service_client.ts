@@ -304,26 +304,6 @@ export class DashboardsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createDashboard(
-      request?: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.dashboard.v1.IDashboard,
-        protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|undefined, {}|undefined
-      ]>;
-  createDashboard(
-      request: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.dashboard.v1.IDashboard,
-          protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
-  createDashboard(
-      request: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
-      callback: Callback<
-          protos.google.monitoring.dashboard.v1.IDashboard,
-          protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new custom dashboard. For examples on how you can use this API to create dashboards, see [Managing dashboards by API](https://cloud.google.com/monitoring/dashboards/api-dashboard).
  * This method requires the `monitoring.dashboards.create` permission on the specified project. For more information about permissions, see [Cloud Identity and Access Management](https://cloud.google.com/iam).
@@ -348,9 +328,29 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createDashboard(request);
+ * @example <caption>include:samples/generated/v1/dashboards_service.create_dashboard.js</caption>
+ * region_tag:monitoring_v1_generated_DashboardsService_CreateDashboard_async
  */
+  createDashboard(
+      request?: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.dashboard.v1.IDashboard,
+        protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|undefined, {}|undefined
+      ]>;
+  createDashboard(
+      request: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.dashboard.v1.IDashboard,
+          protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
+  createDashboard(
+      request: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
+      callback: Callback<
+          protos.google.monitoring.dashboard.v1.IDashboard,
+          protos.google.monitoring.dashboard.v1.ICreateDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
   createDashboard(
       request?: protos.google.monitoring.dashboard.v1.ICreateDashboardRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -385,26 +385,6 @@ export class DashboardsServiceClient {
     this.initialize();
     return this.innerApiCalls.createDashboard(request, options, callback);
   }
-  getDashboard(
-      request?: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.dashboard.v1.IDashboard,
-        protos.google.monitoring.dashboard.v1.IGetDashboardRequest|undefined, {}|undefined
-      ]>;
-  getDashboard(
-      request: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.dashboard.v1.IDashboard,
-          protos.google.monitoring.dashboard.v1.IGetDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDashboard(
-      request: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
-      callback: Callback<
-          protos.google.monitoring.dashboard.v1.IDashboard,
-          protos.google.monitoring.dashboard.v1.IGetDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Fetches a specific dashboard.
  *
@@ -427,9 +407,29 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDashboard(request);
+ * @example <caption>include:samples/generated/v1/dashboards_service.get_dashboard.js</caption>
+ * region_tag:monitoring_v1_generated_DashboardsService_GetDashboard_async
  */
+  getDashboard(
+      request?: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.dashboard.v1.IDashboard,
+        protos.google.monitoring.dashboard.v1.IGetDashboardRequest|undefined, {}|undefined
+      ]>;
+  getDashboard(
+      request: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.dashboard.v1.IDashboard,
+          protos.google.monitoring.dashboard.v1.IGetDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDashboard(
+      request: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
+      callback: Callback<
+          protos.google.monitoring.dashboard.v1.IDashboard,
+          protos.google.monitoring.dashboard.v1.IGetDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
   getDashboard(
       request?: protos.google.monitoring.dashboard.v1.IGetDashboardRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -464,26 +464,6 @@ export class DashboardsServiceClient {
     this.initialize();
     return this.innerApiCalls.getDashboard(request, options, callback);
   }
-  deleteDashboard(
-      request?: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest|undefined, {}|undefined
-      ]>;
-  deleteDashboard(
-      request: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteDashboard(
-      request: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes an existing custom dashboard.
  *
@@ -504,9 +484,29 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteDashboard(request);
+ * @example <caption>include:samples/generated/v1/dashboards_service.delete_dashboard.js</caption>
+ * region_tag:monitoring_v1_generated_DashboardsService_DeleteDashboard_async
  */
+  deleteDashboard(
+      request?: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest|undefined, {}|undefined
+      ]>;
+  deleteDashboard(
+      request: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteDashboard(
+      request: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteDashboard(
       request?: protos.google.monitoring.dashboard.v1.IDeleteDashboardRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -541,26 +541,6 @@ export class DashboardsServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteDashboard(request, options, callback);
   }
-  updateDashboard(
-      request?: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.dashboard.v1.IDashboard,
-        protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest|undefined, {}|undefined
-      ]>;
-  updateDashboard(
-      request: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.dashboard.v1.IDashboard,
-          protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateDashboard(
-      request: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
-      callback: Callback<
-          protos.google.monitoring.dashboard.v1.IDashboard,
-          protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Replaces an existing custom dashboard with a new definition.
  *
@@ -582,9 +562,29 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateDashboard(request);
+ * @example <caption>include:samples/generated/v1/dashboards_service.update_dashboard.js</caption>
+ * region_tag:monitoring_v1_generated_DashboardsService_UpdateDashboard_async
  */
+  updateDashboard(
+      request?: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.dashboard.v1.IDashboard,
+        protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest|undefined, {}|undefined
+      ]>;
+  updateDashboard(
+      request: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.dashboard.v1.IDashboard,
+          protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateDashboard(
+      request: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
+      callback: Callback<
+          protos.google.monitoring.dashboard.v1.IDashboard,
+          protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest|null|undefined,
+          {}|null|undefined>): void;
   updateDashboard(
       request?: protos.google.monitoring.dashboard.v1.IUpdateDashboardRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -620,28 +620,7 @@ export class DashboardsServiceClient {
     return this.innerApiCalls.updateDashboard(request, options, callback);
   }
 
-  listDashboards(
-      request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.dashboard.v1.IDashboard[],
-        protos.google.monitoring.dashboard.v1.IListDashboardsRequest|null,
-        protos.google.monitoring.dashboard.v1.IListDashboardsResponse
-      ]>;
-  listDashboards(
-      request: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
-          protos.google.monitoring.dashboard.v1.IListDashboardsResponse|null|undefined,
-          protos.google.monitoring.dashboard.v1.IDashboard>): void;
-  listDashboards(
-      request: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
-          protos.google.monitoring.dashboard.v1.IListDashboardsResponse|null|undefined,
-          protos.google.monitoring.dashboard.v1.IDashboard>): void;
-/**
+ /**
  * Lists the existing dashboards.
  *
  * This method requires the `monitoring.dashboards.list` permission
@@ -674,6 +653,27 @@ export class DashboardsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDashboards(
+      request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.dashboard.v1.IDashboard[],
+        protos.google.monitoring.dashboard.v1.IListDashboardsRequest|null,
+        protos.google.monitoring.dashboard.v1.IListDashboardsResponse
+      ]>;
+  listDashboards(
+      request: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
+          protos.google.monitoring.dashboard.v1.IListDashboardsResponse|null|undefined,
+          protos.google.monitoring.dashboard.v1.IDashboard>): void;
+  listDashboards(
+      request: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
+          protos.google.monitoring.dashboard.v1.IListDashboardsResponse|null|undefined,
+          protos.google.monitoring.dashboard.v1.IDashboard>): void;
   listDashboards(
       request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -787,11 +787,8 @@ export class DashboardsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDashboardsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/dashboards_service.list_dashboards.js</caption>
+ * region_tag:monitoring_v1_generated_DashboardsService_ListDashboards_async
  */
   listDashboardsAsync(
       request?: protos.google.monitoring.dashboard.v1.IListDashboardsRequest,
@@ -806,7 +803,6 @@ export class DashboardsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDashboards'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

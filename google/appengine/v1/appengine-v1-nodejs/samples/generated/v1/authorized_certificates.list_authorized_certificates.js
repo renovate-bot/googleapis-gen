@@ -27,7 +27,7 @@ function main() {
   /**
    *  Controls the set of fields returned in the `LIST` response.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Maximum results to return per page.
    */
@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new AuthorizedCertificatesClient();
 
-  async function listAuthorizedCertificates() {
+  async function callListAuthorizedCertificates() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     }
   }
 
-  listAuthorizedCertificates();
+  callListAuthorizedCertificates();
   // [END appengine_v1_generated_AuthorizedCertificates_ListAuthorizedCertificates_async]
 }
 

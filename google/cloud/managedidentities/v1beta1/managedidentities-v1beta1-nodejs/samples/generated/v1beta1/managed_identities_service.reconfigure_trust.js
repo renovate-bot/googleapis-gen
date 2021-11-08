@@ -42,7 +42,7 @@ function main() {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function reconfigureTrust() {
+  async function callReconfigureTrust() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  reconfigureTrust();
+  callReconfigureTrust();
   // [END managedidentities_v1beta1_generated_ManagedIdentitiesService_ReconfigureTrust_async]
 }
 

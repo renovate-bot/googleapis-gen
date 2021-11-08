@@ -31,7 +31,7 @@ function main(parent, streamId, stream) {
   /**
    *  Required. The stream to create.
    */
-  // const stream = ''
+  // const stream = {}
   /**
    *  Optional. An optional request ID to identify requests. Specify a unique
    *  request ID so that if you must retry your request, the server will know to
@@ -53,7 +53,7 @@ function main(parent, streamId, stream) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function createStream() {
+  async function callCreateStream() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent, streamId, stream) {
     console.log(response);
   }
 
-  createStream();
+  callCreateStream();
   // [END aistreams_v1alpha1_generated_AIStreams_CreateStream_async]
 }
 

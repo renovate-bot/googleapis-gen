@@ -366,6 +366,23 @@ export class AIStreamsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single Cluster.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Cluster resource to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Cluster]{@link google.partner.aistreams.v1alpha1.Cluster}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.get_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_GetCluster_async
+ */
   getCluster(
       request?: protos.google.partner.aistreams.v1alpha1.IGetClusterRequest,
       options?: CallOptions):
@@ -386,23 +403,6 @@ export class AIStreamsClient {
           protos.google.partner.aistreams.v1alpha1.ICluster,
           protos.google.partner.aistreams.v1alpha1.IGetClusterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Cluster.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Cluster resource to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Cluster]{@link google.partner.aistreams.v1alpha1.Cluster}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getCluster(request);
- */
   getCluster(
       request?: protos.google.partner.aistreams.v1alpha1.IGetClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -437,6 +437,23 @@ export class AIStreamsClient {
     this.initialize();
     return this.innerApiCalls.getCluster(request, options, callback);
   }
+/**
+ * Gets details of a single Stream.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the stream.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Stream]{@link google.partner.aistreams.v1alpha1.Stream}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.get_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_GetStream_async
+ */
   getStream(
       request?: protos.google.partner.aistreams.v1alpha1.IGetStreamRequest,
       options?: CallOptions):
@@ -457,23 +474,6 @@ export class AIStreamsClient {
           protos.google.partner.aistreams.v1alpha1.IStream,
           protos.google.partner.aistreams.v1alpha1.IGetStreamRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Stream.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the stream.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Stream]{@link google.partner.aistreams.v1alpha1.Stream}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getStream(request);
- */
   getStream(
       request?: protos.google.partner.aistreams.v1alpha1.IGetStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -509,26 +509,6 @@ export class AIStreamsClient {
     return this.innerApiCalls.getStream(request, options, callback);
   }
 
-  createCluster(
-      request?: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createCluster(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createCluster(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Cluster in a given project and location.
  *
@@ -563,10 +543,29 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.create_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_CreateCluster_async
  */
+  createCluster(
+      request?: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createCluster(
+      request: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createCluster(
+      request: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createCluster(
       request?: protos.google.partner.aistreams.v1alpha1.ICreateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -610,11 +609,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.create_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_CreateCluster_async
  */
   async checkCreateClusterProgress(name: string): Promise<LROperation<protos.google.partner.aistreams.v1alpha1.Cluster, protos.google.partner.aistreams.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -622,26 +618,6 @@ export class AIStreamsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Cluster, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
-  updateCluster(
-      request?: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single Cluster.
  *
@@ -678,10 +654,29 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.update_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_UpdateCluster_async
  */
+  updateCluster(
+      request?: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateCluster(
+      request: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateCluster(
+      request: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.ICluster, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateCluster(
       request?: protos.google.partner.aistreams.v1alpha1.IUpdateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,11 +720,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.update_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_UpdateCluster_async
  */
   async checkUpdateClusterProgress(name: string): Promise<LROperation<protos.google.partner.aistreams.v1alpha1.Cluster, protos.google.partner.aistreams.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -737,26 +729,6 @@ export class AIStreamsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Cluster, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
-  deleteCluster(
-      request?: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteCluster(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single Cluster.
  *
@@ -787,10 +759,29 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.delete_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_DeleteCluster_async
  */
+  deleteCluster(
+      request?: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteCluster(
+      request: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteCluster(
+      request: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteCluster(
       request?: protos.google.partner.aistreams.v1alpha1.IDeleteClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -834,11 +825,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.delete_cluster.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_DeleteCluster_async
  */
   async checkDeleteClusterProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.partner.aistreams.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -846,26 +834,6 @@ export class AIStreamsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
-  createStream(
-      request?: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createStream(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createStream(
-      request: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Stream in a given project and location.
  *
@@ -900,10 +868,29 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createStream(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.create_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_CreateStream_async
  */
+  createStream(
+      request?: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createStream(
+      request: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createStream(
+      request: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createStream(
       request?: protos.google.partner.aistreams.v1alpha1.ICreateStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -947,11 +934,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateStreamProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.create_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_CreateStream_async
  */
   async checkCreateStreamProgress(name: string): Promise<LROperation<protos.google.partner.aistreams.v1alpha1.Stream, protos.google.partner.aistreams.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -959,26 +943,6 @@ export class AIStreamsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createStream, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Stream, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
-  updateStream(
-      request?: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateStream(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateStream(
-      request: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
-      callback: Callback<
-          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single Stream.
  *
@@ -1015,10 +979,29 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateStream(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.update_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_UpdateStream_async
  */
+  updateStream(
+      request?: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateStream(
+      request: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateStream(
+      request: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
+      callback: Callback<
+          LROperation<protos.google.partner.aistreams.v1alpha1.IStream, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateStream(
       request?: protos.google.partner.aistreams.v1alpha1.IUpdateStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1062,11 +1045,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateStreamProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.update_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_UpdateStream_async
  */
   async checkUpdateStreamProgress(name: string): Promise<LROperation<protos.google.partner.aistreams.v1alpha1.Stream, protos.google.partner.aistreams.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1074,26 +1054,6 @@ export class AIStreamsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateStream, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.partner.aistreams.v1alpha1.Stream, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
-  deleteStream(
-      request?: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteStream(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteStream(
-      request: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single Stream.
  *
@@ -1124,10 +1084,29 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteStream(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.delete_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_DeleteStream_async
  */
+  deleteStream(
+      request?: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteStream(
+      request: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteStream(
+      request: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.partner.aistreams.v1alpha1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteStream(
       request?: protos.google.partner.aistreams.v1alpha1.IDeleteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1171,11 +1150,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteStreamProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.delete_stream.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_DeleteStream_async
  */
   async checkDeleteStreamProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.partner.aistreams.v1alpha1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1183,28 +1159,7 @@ export class AIStreamsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteStream, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.partner.aistreams.v1alpha1.OperationMetadata>;
   }
-  listClusters(
-      request?: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.partner.aistreams.v1alpha1.ICluster[],
-        protos.google.partner.aistreams.v1alpha1.IListClustersRequest|null,
-        protos.google.partner.aistreams.v1alpha1.IListClustersResponse
-      ]>;
-  listClusters(
-      request: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
-          protos.google.partner.aistreams.v1alpha1.IListClustersResponse|null|undefined,
-          protos.google.partner.aistreams.v1alpha1.ICluster>): void;
-  listClusters(
-      request: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
-      callback: PaginationCallback<
-          protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
-          protos.google.partner.aistreams.v1alpha1.IListClustersResponse|null|undefined,
-          protos.google.partner.aistreams.v1alpha1.ICluster>): void;
-/**
+ /**
  * Lists Clusters in a given project and location.
  *
  * @param {Object} request
@@ -1235,6 +1190,27 @@ export class AIStreamsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listClusters(
+      request?: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.partner.aistreams.v1alpha1.ICluster[],
+        protos.google.partner.aistreams.v1alpha1.IListClustersRequest|null,
+        protos.google.partner.aistreams.v1alpha1.IListClustersResponse
+      ]>;
+  listClusters(
+      request: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+          protos.google.partner.aistreams.v1alpha1.IListClustersResponse|null|undefined,
+          protos.google.partner.aistreams.v1alpha1.ICluster>): void;
+  listClusters(
+      request: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+      callback: PaginationCallback<
+          protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
+          protos.google.partner.aistreams.v1alpha1.IListClustersResponse|null|undefined,
+          protos.google.partner.aistreams.v1alpha1.ICluster>): void;
   listClusters(
       request?: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1352,11 +1328,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listClustersAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.list_clusters.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_ListClusters_async
  */
   listClustersAsync(
       request?: protos.google.partner.aistreams.v1alpha1.IListClustersRequest,
@@ -1371,7 +1344,6 @@ export class AIStreamsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listClusters'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1381,28 +1353,7 @@ export class AIStreamsClient {
       callSettings
     ) as AsyncIterable<protos.google.partner.aistreams.v1alpha1.ICluster>;
   }
-  listStreams(
-      request?: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.partner.aistreams.v1alpha1.IStream[],
-        protos.google.partner.aistreams.v1alpha1.IListStreamsRequest|null,
-        protos.google.partner.aistreams.v1alpha1.IListStreamsResponse
-      ]>;
-  listStreams(
-      request: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
-          protos.google.partner.aistreams.v1alpha1.IListStreamsResponse|null|undefined,
-          protos.google.partner.aistreams.v1alpha1.IStream>): void;
-  listStreams(
-      request: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
-      callback: PaginationCallback<
-          protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
-          protos.google.partner.aistreams.v1alpha1.IListStreamsResponse|null|undefined,
-          protos.google.partner.aistreams.v1alpha1.IStream>): void;
-/**
+ /**
  * Lists Streams in a given project, location and cluster.
  *
  * @param {Object} request
@@ -1433,6 +1384,27 @@ export class AIStreamsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listStreams(
+      request?: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.partner.aistreams.v1alpha1.IStream[],
+        protos.google.partner.aistreams.v1alpha1.IListStreamsRequest|null,
+        protos.google.partner.aistreams.v1alpha1.IListStreamsResponse
+      ]>;
+  listStreams(
+      request: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+          protos.google.partner.aistreams.v1alpha1.IListStreamsResponse|null|undefined,
+          protos.google.partner.aistreams.v1alpha1.IStream>): void;
+  listStreams(
+      request: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+      callback: PaginationCallback<
+          protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
+          protos.google.partner.aistreams.v1alpha1.IListStreamsResponse|null|undefined,
+          protos.google.partner.aistreams.v1alpha1.IStream>): void;
   listStreams(
       request?: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1550,11 +1522,8 @@ export class AIStreamsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listStreamsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha1/a_i_streams.list_streams.js</caption>
+ * region_tag:aistreams_v1alpha1_generated_AIStreams_ListStreams_async
  */
   listStreamsAsync(
       request?: protos.google.partner.aistreams.v1alpha1.IListStreamsRequest,
@@ -1569,7 +1538,6 @@ export class AIStreamsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listStreams'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

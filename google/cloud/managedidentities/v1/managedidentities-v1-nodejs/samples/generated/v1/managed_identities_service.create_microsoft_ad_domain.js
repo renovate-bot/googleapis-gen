@@ -42,7 +42,7 @@ function main(parent, domainName, domain) {
   /**
    *  Required. A Managed Identity domain resource.
    */
-  // const domain = ''
+  // const domain = {}
 
   // Imports the Managedidentities library
   const {ManagedIdentitiesServiceClient} = require('@google-cloud/managed-identities').v1;
@@ -50,7 +50,7 @@ function main(parent, domainName, domain) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function createMicrosoftAdDomain() {
+  async function callCreateMicrosoftAdDomain() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent, domainName, domain) {
     console.log(response);
   }
 
-  createMicrosoftAdDomain();
+  callCreateMicrosoftAdDomain();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_CreateMicrosoftAdDomain_async]
 }
 

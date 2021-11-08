@@ -38,7 +38,7 @@ function main(parent) {
    *  filter="reservation.slot_capacity > 200"
    *  filter="reservation.name = \"*dev/*\""
    *  Advanced filtering syntax can be
-   *  [here](https://cloud.google.com/logging/docs/view/advanced-filters).
+   *  here (https://cloud.google.com/logging/docs/view/advanced-filters).
    */
   // const filter = 'abc123'
 
@@ -48,7 +48,7 @@ function main(parent) {
   // Instantiates a client
   const reservationClient = new ReservationServiceClient();
 
-  async function listReservations() {
+  async function callListReservations() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent) {
     }
   }
 
-  listReservations();
+  callListReservations();
   // [END bigqueryreservation_v1beta1_generated_ReservationService_ListReservations_async]
 }
 

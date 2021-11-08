@@ -39,7 +39,7 @@ function main() {
   /**
    *  Defines the behavior for checking service usage when disabling a service.
    */
-  // const checkIfServiceHasUsage = ''
+  // const checkIfServiceHasUsage = {}
 
   // Imports the Serviceusage library
   const {ServiceUsageClient} = require('@google-cloud/service-usage').v1;
@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const serviceusageClient = new ServiceUsageClient();
 
-  async function disableService() {
+  async function callDisableService() {
     // Construct request
     const request = {
     };
@@ -58,7 +58,7 @@ function main() {
     console.log(response);
   }
 
-  disableService();
+  callDisableService();
   // [END serviceusage_v1_generated_ServiceUsage_DisableService_async]
 }
 

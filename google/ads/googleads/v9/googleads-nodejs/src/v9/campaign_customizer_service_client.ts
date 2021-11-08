@@ -727,26 +727,6 @@ export class CampaignCustomizerServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateCampaignCustomizers(
-      request?: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersResponse,
-        protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignCustomizers(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignCustomizers(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes campaign customizers. Operation statuses are
  * returned.
@@ -775,9 +755,29 @@ export class CampaignCustomizerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignCustomizers(request);
+ * @example <caption>include:samples/generated/v9/campaign_customizer_service.mutate_campaign_customizers.js</caption>
+ * region_tag:googleads_v9_generated_CampaignCustomizerService_MutateCampaignCustomizers_async
  */
+  mutateCampaignCustomizers(
+      request?: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersResponse,
+        protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignCustomizers(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignCustomizers(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignCustomizers(
       request?: protos.google.ads.googleads.v9.services.IMutateCampaignCustomizersRequest,
       optionsOrCallback?: CallOptions|Callback<

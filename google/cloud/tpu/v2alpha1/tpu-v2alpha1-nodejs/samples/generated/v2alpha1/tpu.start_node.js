@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const tpuClient = new TpuClient();
 
-  async function startNode() {
+  async function callStartNode() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  startNode();
+  callStartNode();
   // [END tpu_v2alpha1_generated_Tpu_StartNode_async]
 }
 

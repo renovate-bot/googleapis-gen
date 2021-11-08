@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on an individual batch job.
    */
-  // const operation = ''
+  // const operation = {}
 
   // Imports the Googleads library
   const {BatchJobServiceClient} = require('google-ads').v8;
@@ -35,7 +35,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new BatchJobServiceClient();
 
-  async function mutateBatchJob() {
+  async function callMutateBatchJob() {
     // Construct request
     const request = {
       customerId,
@@ -47,7 +47,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateBatchJob();
+  callMutateBatchJob();
   // [END googleads_v8_generated_BatchJobService_MutateBatchJob_async]
 }
 

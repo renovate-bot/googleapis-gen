@@ -29,7 +29,7 @@ function main(fullResourceName) {
   // const fullResourceName = 'abc123'
   /**
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Optional limit on the number of roles to include in the response.
    *  The default is 300, and the maximum is 1,000.
@@ -47,7 +47,7 @@ function main(fullResourceName) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function queryGrantableRoles() {
+  async function callQueryGrantableRoles() {
     // Construct request
     const request = {
       fullResourceName,
@@ -60,7 +60,7 @@ function main(fullResourceName) {
     }
   }
 
-  queryGrantableRoles();
+  callQueryGrantableRoles();
   // [END iam_v1_generated_IAM_QueryGrantableRoles_async]
 }
 

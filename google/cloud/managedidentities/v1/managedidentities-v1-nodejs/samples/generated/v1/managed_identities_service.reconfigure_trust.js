@@ -42,7 +42,7 @@ function main(name, targetDomainName, targetDnsIpAddresses) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function reconfigureTrust() {
+  async function callReconfigureTrust() {
     // Construct request
     const request = {
       name,
@@ -56,7 +56,7 @@ function main(name, targetDomainName, targetDnsIpAddresses) {
     console.log(response);
   }
 
-  reconfigureTrust();
+  callReconfigureTrust();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_ReconfigureTrust_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new HotelGroupViewServiceClient();
 
-  async function getHotelGroupView() {
+  async function callGetHotelGroupView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getHotelGroupView();
+  callGetHotelGroupView();
   // [END googleads_v9_generated_HotelGroupViewService_GetHotelGroupView_async]
 }
 

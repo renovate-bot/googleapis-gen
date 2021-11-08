@@ -27,7 +27,7 @@ function main(customerId, campaignExperiment) {
   /**
    *  Required. The campaign experiment to be created.
    */
-  // const campaignExperiment = ''
+  // const campaignExperiment = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -40,7 +40,7 @@ function main(customerId, campaignExperiment) {
   // Instantiates a client
   const googleadsClient = new CampaignExperimentServiceClient();
 
-  async function createCampaignExperiment() {
+  async function callCreateCampaignExperiment() {
     // Construct request
     const request = {
       customerId,
@@ -53,7 +53,7 @@ function main(customerId, campaignExperiment) {
     console.log(response);
   }
 
-  createCampaignExperiment();
+  callCreateCampaignExperiment();
   // [END googleads_v9_generated_CampaignExperimentService_CreateCampaignExperiment_async]
 }
 

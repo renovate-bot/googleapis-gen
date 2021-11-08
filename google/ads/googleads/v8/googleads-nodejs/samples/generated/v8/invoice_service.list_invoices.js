@@ -37,7 +37,7 @@ function main(customerId, billingSetup, issueYear, issueMonth) {
   /**
    *  Required. The issue month to retrieve invoices.
    */
-  // const issueMonth = ''
+  // const issueMonth = {}
 
   // Imports the Googleads library
   const {InvoiceServiceClient} = require('google-ads').v8;
@@ -45,7 +45,7 @@ function main(customerId, billingSetup, issueYear, issueMonth) {
   // Instantiates a client
   const googleadsClient = new InvoiceServiceClient();
 
-  async function listInvoices() {
+  async function callListInvoices() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, billingSetup, issueYear, issueMonth) {
     console.log(response);
   }
 
-  listInvoices();
+  callListInvoices();
   // [END googleads_v8_generated_InvoiceService_ListInvoices_async]
 }
 

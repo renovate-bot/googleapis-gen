@@ -273,26 +273,6 @@ export class AccountManagementServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  finalizeMfaEnrollment(
-      request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentResponse,
-        protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest|undefined, {}|undefined
-      ]>;
-  finalizeMfaEnrollment(
-      request: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentResponse,
-          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest|null|undefined,
-          {}|null|undefined>): void;
-  finalizeMfaEnrollment(
-      request: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentResponse,
-          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Finishes enrolling a second factor for the user.
  *
@@ -315,9 +295,29 @@ export class AccountManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.finalizeMfaEnrollment(request);
+ * @example <caption>include:samples/generated/v2/account_management_service.finalize_mfa_enrollment.js</caption>
+ * region_tag:identitytoolkit_v2_generated_AccountManagementService_FinalizeMfaEnrollment_async
  */
+  finalizeMfaEnrollment(
+      request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentResponse,
+        protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest|undefined, {}|undefined
+      ]>;
+  finalizeMfaEnrollment(
+      request: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentResponse,
+          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest|null|undefined,
+          {}|null|undefined>): void;
+  finalizeMfaEnrollment(
+      request: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentResponse,
+          protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest|null|undefined,
+          {}|null|undefined>): void;
   finalizeMfaEnrollment(
       request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaEnrollmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -342,29 +342,11 @@ export class AccountManagementServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.finalizeMfaEnrollment(request, options, callback);
   }
-  startMfaEnrollment(
-      request?: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentResponse,
-        protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest|undefined, {}|undefined
-      ]>;
-  startMfaEnrollment(
-      request: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentResponse,
-          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest|null|undefined,
-          {}|null|undefined>): void;
-  startMfaEnrollment(
-      request: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentResponse,
-          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Step one of the MFA enrollment process. In SMS case, this sends an
  * SMS verification code to the user.
@@ -385,9 +367,29 @@ export class AccountManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.startMfaEnrollment(request);
+ * @example <caption>include:samples/generated/v2/account_management_service.start_mfa_enrollment.js</caption>
+ * region_tag:identitytoolkit_v2_generated_AccountManagementService_StartMfaEnrollment_async
  */
+  startMfaEnrollment(
+      request?: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentResponse,
+        protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest|undefined, {}|undefined
+      ]>;
+  startMfaEnrollment(
+      request: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentResponse,
+          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest|null|undefined,
+          {}|null|undefined>): void;
+  startMfaEnrollment(
+      request: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentResponse,
+          protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest|null|undefined,
+          {}|null|undefined>): void;
   startMfaEnrollment(
       request?: protos.google.cloud.identitytoolkit.v2.IStartMfaEnrollmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -412,29 +414,11 @@ export class AccountManagementServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.startMfaEnrollment(request, options, callback);
   }
-  withdrawMfa(
-      request?: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.identitytoolkit.v2.IWithdrawMfaResponse,
-        protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest|undefined, {}|undefined
-      ]>;
-  withdrawMfa(
-      request: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaResponse,
-          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest|null|undefined,
-          {}|null|undefined>): void;
-  withdrawMfa(
-      request: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaResponse,
-          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Revokes one second factor from the enrolled second factors for an account.
  *
@@ -455,9 +439,29 @@ export class AccountManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.withdrawMfa(request);
+ * @example <caption>include:samples/generated/v2/account_management_service.withdraw_mfa.js</caption>
+ * region_tag:identitytoolkit_v2_generated_AccountManagementService_WithdrawMfa_async
  */
+  withdrawMfa(
+      request?: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.identitytoolkit.v2.IWithdrawMfaResponse,
+        protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest|undefined, {}|undefined
+      ]>;
+  withdrawMfa(
+      request: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaResponse,
+          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest|null|undefined,
+          {}|null|undefined>): void;
+  withdrawMfa(
+      request: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaResponse,
+          protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest|null|undefined,
+          {}|null|undefined>): void;
   withdrawMfa(
       request?: protos.google.cloud.identitytoolkit.v2.IWithdrawMfaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -482,6 +486,8 @@ export class AccountManagementServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.withdrawMfa(request, options, callback);
   }

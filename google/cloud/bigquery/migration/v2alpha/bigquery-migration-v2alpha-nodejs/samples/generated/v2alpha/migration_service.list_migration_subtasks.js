@@ -28,7 +28,7 @@ function main(parent) {
   /**
    *  Optional. The list of fields to be retrieved.
    */
-  // const readMask = ''
+  // const readMask = {}
   /**
    *  Optional. The maximum number of migration tasks to return. The service may return
    *  fewer than this number.
@@ -54,7 +54,7 @@ function main(parent) {
   // Instantiates a client
   const migrationClient = new MigrationServiceClient();
 
-  async function listMigrationSubtasks() {
+  async function callListMigrationSubtasks() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent) {
     }
   }
 
-  listMigrationSubtasks();
+  callListMigrationSubtasks();
   // [END bigquerymigration_v2alpha_generated_MigrationService_ListMigrationSubtasks_async]
 }
 

@@ -56,32 +56,32 @@ function main() {
    *  matches the given value. Setting to 0 makes the operation succeed only if
    *  there are no live versions of the object.
    */
-  // const ifGenerationMatch = ''
+  // const ifGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current generation
    *  does not match the given value. If no live object exists, the precondition
    *  fails. Setting to 0 makes the operation succeed only if there is a live
    *  version of the object.
    */
-  // const ifGenerationNotMatch = ''
+  // const ifGenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current
    *  metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current
    *  metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -89,7 +89,7 @@ function main() {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function getObjectMedia() {
+  async function callGetObjectMedia() {
     // Construct request
     const request = {
     };
@@ -101,7 +101,7 @@ function main() {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  getObjectMedia();
+  callGetObjectMedia();
   // [END storage_v1_generated_Storage_GetObjectMedia_async]
 }
 

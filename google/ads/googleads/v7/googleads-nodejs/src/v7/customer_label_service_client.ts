@@ -646,26 +646,6 @@ export class CustomerLabelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerLabel(
-      request?: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICustomerLabel,
-        protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest|undefined, {}|undefined
-      ]>;
-  getCustomerLabel(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerLabel,
-          protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerLabel(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerLabel,
-          protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested customer-label relationship in full detail.
  *
@@ -688,9 +668,29 @@ export class CustomerLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerLabel(request);
+ * @example <caption>include:samples/generated/v7/customer_label_service.get_customer_label.js</caption>
+ * region_tag:googleads_v7_generated_CustomerLabelService_GetCustomerLabel_async
  */
+  getCustomerLabel(
+      request?: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICustomerLabel,
+        protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest|undefined, {}|undefined
+      ]>;
+  getCustomerLabel(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerLabel,
+          protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerLabel(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerLabel,
+          protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerLabel(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class CustomerLabelServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerLabel(request, options, callback);
   }
-  mutateCustomerLabels(
-      request?: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateCustomerLabelsResponse,
-        protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and removes customer-label relationships.
  * Operation statuses are returned.
@@ -781,9 +761,29 @@ export class CustomerLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerLabels(request);
+ * @example <caption>include:samples/generated/v7/customer_label_service.mutate_customer_labels.js</caption>
+ * region_tag:googleads_v7_generated_CustomerLabelService_MutateCustomerLabels_async
  */
+  mutateCustomerLabels(
+      request?: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateCustomerLabelsResponse,
+        protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerLabels(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<

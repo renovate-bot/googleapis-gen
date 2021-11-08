@@ -24,7 +24,7 @@ function main(projectName) {
    *  Required. The resource name of the Google Cloud Platform project. Written
    *  as `projects/{projectID}` or `projects/{projectNumber}`, where `{projectID}`
    *  and `{projectNumber}` can be found in the
-   *  [Google Cloud Console](https://support.google.com/cloud/answer/6158840).
+   *  Google Cloud Console (https://support.google.com/cloud/answer/6158840).
    *  Examples: `projects/my-project-123`, `projects/5551234`.
    */
   // const projectName = 'abc123'
@@ -37,7 +37,7 @@ function main(projectName) {
    *  context that matches the filter.
    *  Data for all service contexts is returned if this field is not specified.
    */
-  // const serviceFilter = ''
+  // const serviceFilter = {}
   /**
    *  Optional. List data for the given time range.
    *  If not set, a default time range is used. The field
@@ -48,27 +48,27 @@ function main(projectName) {
    *  <code>group_id</code> list. If a <code>group_id</code> list is given, also
    *  <code>ErrorGroupStats</code> with zero occurrences are returned.
    */
-  // const timeRange = ''
+  // const timeRange = {}
   /**
    *  Optional. The preferred duration for a single returned `TimedCount`.
    *  If not set, no timed counts are returned.
    */
-  // const timedCountDuration = ''
+  // const timedCountDuration = {}
   /**
    *  Optional. The alignment of the timed counts to be returned.
    *  Default is `ALIGNMENT_EQUAL_AT_END`.
    */
-  // const alignment = ''
+  // const alignment = {}
   /**
    *  Optional. Time where the timed counts shall be aligned if rounded
    *  alignment is chosen. Default is 00:00 UTC.
    */
-  // const alignmentTime = ''
+  // const alignmentTime = {}
   /**
    *  Optional. The sort order in which the results are returned.
    *  Default is `COUNT_DESC`.
    */
-  // const order = ''
+  // const order = {}
   /**
    *  Optional. The maximum number of results to return per response.
    *  Default is 20.
@@ -87,7 +87,7 @@ function main(projectName) {
   // Instantiates a client
   const clouderrorreportingClient = new ErrorStatsServiceClient();
 
-  async function listGroupStats() {
+  async function callListGroupStats() {
     // Construct request
     const request = {
       projectName,
@@ -100,7 +100,7 @@ function main(projectName) {
     }
   }
 
-  listGroupStats();
+  callListGroupStats();
   // [END clouderrorreporting_v1beta1_generated_ErrorStatsService_ListGroupStats_async]
 }
 

@@ -37,7 +37,7 @@ function main(name, approved) {
   // Instantiates a client
   const deployClient = new CloudDeployClient();
 
-  async function approveRollout() {
+  async function callApproveRollout() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name, approved) {
     console.log(response);
   }
 
-  approveRollout();
+  callApproveRollout();
   // [END clouddeploy_v1_generated_CloudDeploy_ApproveRollout_async]
 }
 

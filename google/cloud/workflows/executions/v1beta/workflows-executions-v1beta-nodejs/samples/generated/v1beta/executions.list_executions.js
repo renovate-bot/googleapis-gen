@@ -44,7 +44,7 @@ function main(parent) {
    *  Optional. A view defining which fields should be filled in the returned executions.
    *  The API will default to the BASIC view.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Executions library
   const {ExecutionsClient} = require('@google-cloud/workflows-executions').v1beta;
@@ -52,7 +52,7 @@ function main(parent) {
   // Instantiates a client
   const executionsClient = new ExecutionsClient();
 
-  async function listExecutions() {
+  async function callListExecutions() {
     // Construct request
     const request = {
       parent,
@@ -65,7 +65,7 @@ function main(parent) {
     }
   }
 
-  listExecutions();
+  callListExecutions();
   // [END workflowexecutions_v1beta_generated_Executions_ListExecutions_async]
 }
 

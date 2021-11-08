@@ -40,7 +40,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CustomerConversionGoalServiceClient();
 
-  async function mutateCustomerConversionGoals() {
+  async function callMutateCustomerConversionGoals() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCustomerConversionGoals();
+  callMutateCustomerConversionGoals();
   // [END googleads_v9_generated_CustomerConversionGoalService_MutateCustomerConversionGoals_async]
 }
 

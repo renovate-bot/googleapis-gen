@@ -27,7 +27,7 @@ function main(customerId, job) {
   /**
    *  Required. The offline user data job to be created.
    */
-  // const job = ''
+  // const job = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -45,7 +45,7 @@ function main(customerId, job) {
   // Instantiates a client
   const googleadsClient = new OfflineUserDataJobServiceClient();
 
-  async function createOfflineUserDataJob() {
+  async function callCreateOfflineUserDataJob() {
     // Construct request
     const request = {
       customerId,
@@ -57,7 +57,7 @@ function main(customerId, job) {
     console.log(response);
   }
 
-  createOfflineUserDataJob();
+  callCreateOfflineUserDataJob();
   // [END googleads_v9_generated_OfflineUserDataJobService_CreateOfflineUserDataJob_async]
 }
 

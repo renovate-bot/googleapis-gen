@@ -21,17 +21,17 @@ function main(name, metricDescriptor) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on
    *  which to execute the request. The format is:
    *  4
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
   // const name = 'abc123'
   /**
-   *  Required. The new [custom metric](https://cloud.google.com/monitoring/custom-metrics)
+   *  Required. The new custom metric (https://cloud.google.com/monitoring/custom-metrics)
    *  descriptor.
    */
-  // const metricDescriptor = ''
+  // const metricDescriptor = {}
 
   // Imports the Monitoring library
   const {MetricServiceClient} = require('@google-cloud/monitoring').v3;
@@ -39,7 +39,7 @@ function main(name, metricDescriptor) {
   // Instantiates a client
   const monitoringClient = new MetricServiceClient();
 
-  async function createMetricDescriptor() {
+  async function callCreateMetricDescriptor() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name, metricDescriptor) {
     console.log(response);
   }
 
-  createMetricDescriptor();
+  callCreateMetricDescriptor();
   // [END monitoring_v3_generated_MetricService_CreateMetricDescriptor_async]
 }
 

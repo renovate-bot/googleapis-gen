@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function resetAdminPassword() {
+  async function callResetAdminPassword() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  resetAdminPassword();
+  callResetAdminPassword();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_ResetAdminPassword_async]
 }
 

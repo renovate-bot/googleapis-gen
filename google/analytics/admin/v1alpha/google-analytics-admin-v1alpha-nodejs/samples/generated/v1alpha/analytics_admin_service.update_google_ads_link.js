@@ -23,13 +23,13 @@ function main(updateMask) {
   /**
    *  The GoogleAdsLink to update
    */
-  // const googleAdsLink = ''
+  // const googleAdsLink = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -37,7 +37,7 @@ function main(updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateGoogleAdsLink() {
+  async function callUpdateGoogleAdsLink() {
     // Construct request
     const request = {
       updateMask,
@@ -48,7 +48,7 @@ function main(updateMask) {
     console.log(response);
   }
 
-  updateGoogleAdsLink();
+  callUpdateGoogleAdsLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateGoogleAdsLink_async]
 }
 

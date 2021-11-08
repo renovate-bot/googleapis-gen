@@ -302,6 +302,26 @@ export class MigrationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a migration workflow.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The name of the project to which this migration workflow belongs.
+ *   Example: `projects/foo/locations/bar`
+ * @param {google.cloud.bigquery.migration.v2alpha.MigrationWorkflow} request.migrationWorkflow
+ *   Required. The migration workflow to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MigrationWorkflow]{@link google.cloud.bigquery.migration.v2alpha.MigrationWorkflow}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2alpha/migration_service.create_migration_workflow.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_CreateMigrationWorkflow_async
+ */
   createMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
       options?: CallOptions):
@@ -322,26 +342,6 @@ export class MigrationServiceClient {
           protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow,
           protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a migration workflow.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The name of the project to which this migration workflow belongs.
- *   Example: `projects/foo/locations/bar`
- * @param {google.cloud.bigquery.migration.v2alpha.MigrationWorkflow} request.migrationWorkflow
- *   Required. The migration workflow to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MigrationWorkflow]{@link google.cloud.bigquery.migration.v2alpha.MigrationWorkflow}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createMigrationWorkflow(request);
- */
   createMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.ICreateMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -376,6 +376,26 @@ export class MigrationServiceClient {
     this.initialize();
     return this.innerApiCalls.createMigrationWorkflow(request, options, callback);
   }
+/**
+ * Gets a previously created migration workflow.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the migration workflow.
+ *   Example: `projects/123/locations/us/workflows/1234`
+ * @param {google.protobuf.FieldMask} request.readMask
+ *   The list of fields to be retrieved.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MigrationWorkflow]{@link google.cloud.bigquery.migration.v2alpha.MigrationWorkflow}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2alpha/migration_service.get_migration_workflow.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async
+ */
   getMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
       options?: CallOptions):
@@ -396,26 +416,6 @@ export class MigrationServiceClient {
           protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow,
           protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a previously created migration workflow.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the migration workflow.
- *   Example: `projects/123/locations/us/workflows/1234`
- * @param {google.protobuf.FieldMask} request.readMask
- *   The list of fields to be retrieved.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MigrationWorkflow]{@link google.cloud.bigquery.migration.v2alpha.MigrationWorkflow}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMigrationWorkflow(request);
- */
   getMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -450,6 +450,24 @@ export class MigrationServiceClient {
     this.initialize();
     return this.innerApiCalls.getMigrationWorkflow(request, options, callback);
   }
+/**
+ * Deletes a migration workflow by name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the migration workflow.
+ *   Example: `projects/123/locations/us/workflows/1234`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2alpha/migration_service.delete_migration_workflow.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_DeleteMigrationWorkflow_async
+ */
   deleteMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
       options?: CallOptions):
@@ -470,24 +488,6 @@ export class MigrationServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a migration workflow by name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the migration workflow.
- *   Example: `projects/123/locations/us/workflows/1234`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteMigrationWorkflow(request);
- */
   deleteMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IDeleteMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -522,6 +522,27 @@ export class MigrationServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteMigrationWorkflow(request, options, callback);
   }
+/**
+ * Starts a previously created migration workflow. I.e., the state transitions
+ * from DRAFT to RUNNING. This is a no-op if the state is already RUNNING.
+ * An error will be signaled if the state is anything other than DRAFT or
+ * RUNNING.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the migration workflow.
+ *   Example: `projects/123/locations/us/workflows/1234`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2alpha/migration_service.start_migration_workflow.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_StartMigrationWorkflow_async
+ */
   startMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
       options?: CallOptions):
@@ -542,27 +563,6 @@ export class MigrationServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Starts a previously created migration workflow. I.e., the state transitions
- * from DRAFT to RUNNING. This is a no-op if the state is already RUNNING.
- * An error will be signaled if the state is anything other than DRAFT or
- * RUNNING.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the migration workflow.
- *   Example: `projects/123/locations/us/workflows/1234`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.startMigrationWorkflow(request);
- */
   startMigrationWorkflow(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IStartMigrationWorkflowRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -597,6 +597,26 @@ export class MigrationServiceClient {
     this.initialize();
     return this.innerApiCalls.startMigrationWorkflow(request, options, callback);
   }
+/**
+ * Gets a previously created migration subtask.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the migration subtask.
+ *   Example: `projects/123/locations/us/workflows/1234/subtasks/543`
+ * @param {google.protobuf.FieldMask} [request.readMask]
+ *   Optional. The list of fields to be retrieved.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MigrationSubtask]{@link google.cloud.bigquery.migration.v2alpha.MigrationSubtask}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2alpha/migration_service.get_migration_subtask.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_GetMigrationSubtask_async
+ */
   getMigrationSubtask(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
       options?: CallOptions):
@@ -617,26 +637,6 @@ export class MigrationServiceClient {
           protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask,
           protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a previously created migration subtask.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the migration subtask.
- *   Example: `projects/123/locations/us/workflows/1234/subtasks/543`
- * @param {google.protobuf.FieldMask} [request.readMask]
- *   Optional. The list of fields to be retrieved.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MigrationSubtask]{@link google.cloud.bigquery.migration.v2alpha.MigrationSubtask}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMigrationSubtask(request);
- */
   getMigrationSubtask(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IGetMigrationSubtaskRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -672,28 +672,7 @@ export class MigrationServiceClient {
     return this.innerApiCalls.getMigrationSubtask(request, options, callback);
   }
 
-  listMigrationWorkflows(
-      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow[],
-        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest|null,
-        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse
-      ]>;
-  listMigrationWorkflows(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse|null|undefined,
-          protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow>): void;
-  listMigrationWorkflows(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse|null|undefined,
-          protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow>): void;
-/**
+ /**
  * Lists previously created migration workflow.
  *
  * @param {Object} request
@@ -725,6 +704,27 @@ export class MigrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMigrationWorkflows(
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow[],
+        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest|null,
+        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse
+      ]>;
+  listMigrationWorkflows(
+      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse|null|undefined,
+          protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow>): void;
+  listMigrationWorkflows(
+      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsResponse|null|undefined,
+          protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow>): void;
   listMigrationWorkflows(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -844,11 +844,8 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMigrationWorkflowsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_workflows.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_ListMigrationWorkflows_async
  */
   listMigrationWorkflowsAsync(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationWorkflowsRequest,
@@ -863,7 +860,6 @@ export class MigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMigrationWorkflows'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -873,28 +869,7 @@ export class MigrationServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.bigquery.migration.v2alpha.IMigrationWorkflow>;
   }
-  listMigrationSubtasks(
-      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask[],
-        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest|null,
-        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse
-      ]>;
-  listMigrationSubtasks(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse|null|undefined,
-          protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask>): void;
-  listMigrationSubtasks(
-      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
-          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse|null|undefined,
-          protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask>): void;
-/**
+ /**
  * Lists previously created migration subtasks.
  *
  * @param {Object} request
@@ -930,6 +905,27 @@ export class MigrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMigrationSubtasks(
+      request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask[],
+        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest|null,
+        protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse
+      ]>;
+  listMigrationSubtasks(
+      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse|null|undefined,
+          protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask>): void;
+  listMigrationSubtasks(
+      request: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
+          protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksResponse|null|undefined,
+          protos.google.cloud.bigquery.migration.v2alpha.IMigrationSubtask>): void;
   listMigrationSubtasks(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1057,11 +1053,8 @@ export class MigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMigrationSubtasksAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2alpha/migration_service.list_migration_subtasks.js</caption>
+ * region_tag:bigquerymigration_v2alpha_generated_MigrationService_ListMigrationSubtasks_async
  */
   listMigrationSubtasksAsync(
       request?: protos.google.cloud.bigquery.migration.v2alpha.IListMigrationSubtasksRequest,
@@ -1076,7 +1069,6 @@ export class MigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMigrationSubtasks'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

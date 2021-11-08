@@ -27,7 +27,7 @@ function main(projectId) {
   /**
    *  Options for a new transaction.
    */
-  // const transactionOptions = ''
+  // const transactionOptions = {}
 
   // Imports the Datastore library
   const {DatastoreClient} = require('@google-cloud/datastore').v1;
@@ -35,7 +35,7 @@ function main(projectId) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function beginTransaction() {
+  async function callBeginTransaction() {
     // Construct request
     const request = {
       projectId,
@@ -46,7 +46,7 @@ function main(projectId) {
     console.log(response);
   }
 
-  beginTransaction();
+  callBeginTransaction();
   // [END datastore_v1_generated_Datastore_BeginTransaction_async]
 }
 

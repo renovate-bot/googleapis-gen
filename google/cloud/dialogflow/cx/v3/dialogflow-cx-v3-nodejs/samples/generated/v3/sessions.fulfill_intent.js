@@ -24,15 +24,15 @@ function main() {
    *  Must be same as the corresponding MatchIntent request, otherwise the
    *  behavior is undefined.
    */
-  // const matchIntentRequest = ''
+  // const matchIntentRequest = {}
   /**
    *  The matched intent/event to fulfill.
    */
-  // const match = ''
+  // const match = {}
   /**
    *  Instructs the speech synthesizer how to generate output audio.
    */
-  // const outputAudioConfig = ''
+  // const outputAudioConfig = {}
 
   // Imports the Cx library
   const {SessionsClient} = require('@google-cloud/dialogflow-cx').v3;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const cxClient = new SessionsClient();
 
-  async function fulfillIntent() {
+  async function callFulfillIntent() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  fulfillIntent();
+  callFulfillIntent();
   // [END dialogflow_v3_generated_Sessions_FulfillIntent_async]
 }
 

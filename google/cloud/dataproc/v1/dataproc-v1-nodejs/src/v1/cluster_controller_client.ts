@@ -374,6 +374,28 @@ export class ClusterControllerClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the resource representation for a cluster in a project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   Required. The ID of the Google Cloud Platform project that the cluster
+ *   belongs to.
+ * @param {string} request.region
+ *   Required. The Dataproc region in which to handle the request.
+ * @param {string} request.clusterName
+ *   Required. The cluster name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Cluster]{@link google.cloud.dataproc.v1.Cluster}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cluster_controller.get_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_GetCluster_async
+ */
   getCluster(
       request?: protos.google.cloud.dataproc.v1.IGetClusterRequest,
       options?: CallOptions):
@@ -394,28 +416,6 @@ export class ClusterControllerClient {
           protos.google.cloud.dataproc.v1.ICluster,
           protos.google.cloud.dataproc.v1.IGetClusterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the resource representation for a cluster in a project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   Required. The ID of the Google Cloud Platform project that the cluster
- *   belongs to.
- * @param {string} request.region
- *   Required. The Dataproc region in which to handle the request.
- * @param {string} request.clusterName
- *   Required. The cluster name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Cluster]{@link google.cloud.dataproc.v1.Cluster}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getCluster(request);
- */
   getCluster(
       request?: protos.google.cloud.dataproc.v1.IGetClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -451,26 +451,6 @@ export class ClusterControllerClient {
     return this.innerApiCalls.getCluster(request, options, callback);
   }
 
-  createCluster(
-      request?: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createCluster(
-      request: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createCluster(
-      request: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a cluster in a project. The returned
  * {@link google.longrunning.Operation.metadata|Operation.metadata} will be
@@ -508,10 +488,29 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/cluster_controller.create_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_CreateCluster_async
  */
+  createCluster(
+      request?: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createCluster(
+      request: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createCluster(
+      request: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createCluster(
       request?: protos.google.cloud.dataproc.v1.ICreateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -555,11 +554,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/cluster_controller.create_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_CreateCluster_async
  */
   async checkCreateClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -567,26 +563,6 @@ export class ClusterControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>;
   }
-  updateCluster(
-      request?: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateCluster(
-      request: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateCluster(
-      request: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a cluster in a project. The returned
  * {@link google.longrunning.Operation.metadata|Operation.metadata} will be
@@ -689,10 +665,29 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/cluster_controller.update_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_UpdateCluster_async
  */
+  updateCluster(
+      request?: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateCluster(
+      request: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateCluster(
+      request: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateCluster(
       request?: protos.google.cloud.dataproc.v1.IUpdateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -736,11 +731,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/cluster_controller.update_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_UpdateCluster_async
  */
   async checkUpdateClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -748,26 +740,6 @@ export class ClusterControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>;
   }
-  stopCluster(
-      request?: protos.google.cloud.dataproc.v1.IStopClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  stopCluster(
-      request: protos.google.cloud.dataproc.v1.IStopClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  stopCluster(
-      request: protos.google.cloud.dataproc.v1.IStopClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Stops a cluster in a project.
  *
@@ -805,10 +777,29 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.stopCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/cluster_controller.stop_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_StopCluster_async
  */
+  stopCluster(
+      request?: protos.google.cloud.dataproc.v1.IStopClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  stopCluster(
+      request: protos.google.cloud.dataproc.v1.IStopClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  stopCluster(
+      request: protos.google.cloud.dataproc.v1.IStopClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   stopCluster(
       request?: protos.google.cloud.dataproc.v1.IStopClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -852,11 +843,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStopClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/cluster_controller.stop_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_StopCluster_async
  */
   async checkStopClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -864,26 +852,6 @@ export class ClusterControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.stopCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>;
   }
-  startCluster(
-      request?: protos.google.cloud.dataproc.v1.IStartClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  startCluster(
-      request: protos.google.cloud.dataproc.v1.IStartClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  startCluster(
-      request: protos.google.cloud.dataproc.v1.IStartClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Starts a cluster in a project.
  *
@@ -921,10 +889,29 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.startCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/cluster_controller.start_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_StartCluster_async
  */
+  startCluster(
+      request?: protos.google.cloud.dataproc.v1.IStartClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  startCluster(
+      request: protos.google.cloud.dataproc.v1.IStartClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  startCluster(
+      request: protos.google.cloud.dataproc.v1.IStartClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.ICluster, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   startCluster(
       request?: protos.google.cloud.dataproc.v1.IStartClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -968,11 +955,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStartClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/cluster_controller.start_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_StartCluster_async
  */
   async checkStartClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -980,26 +964,6 @@ export class ClusterControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.startCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.Cluster, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>;
   }
-  deleteCluster(
-      request?: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteCluster(
-      request: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteCluster(
-      request: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a cluster in a project. The returned
  * {@link google.longrunning.Operation.metadata|Operation.metadata} will be
@@ -1039,10 +1003,29 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/cluster_controller.delete_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_DeleteCluster_async
  */
+  deleteCluster(
+      request?: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteCluster(
+      request: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteCluster(
+      request: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteCluster(
       request?: protos.google.cloud.dataproc.v1.IDeleteClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1086,11 +1069,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/cluster_controller.delete_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_DeleteCluster_async
  */
   async checkDeleteClusterProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1098,26 +1078,6 @@ export class ClusterControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>;
   }
-  diagnoseCluster(
-      request?: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dataproc.v1.IDiagnoseClusterResults, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  diagnoseCluster(
-      request: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.IDiagnoseClusterResults, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  diagnoseCluster(
-      request: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.IDiagnoseClusterResults, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets cluster diagnostic information. The returned
  * {@link google.longrunning.Operation.metadata|Operation.metadata} will be
@@ -1145,10 +1105,29 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.diagnoseCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/cluster_controller.diagnose_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_DiagnoseCluster_async
  */
+  diagnoseCluster(
+      request?: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dataproc.v1.IDiagnoseClusterResults, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  diagnoseCluster(
+      request: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.IDiagnoseClusterResults, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  diagnoseCluster(
+      request: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.IDiagnoseClusterResults, protos.google.cloud.dataproc.v1.IClusterOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   diagnoseCluster(
       request?: protos.google.cloud.dataproc.v1.IDiagnoseClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1192,11 +1171,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDiagnoseClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/cluster_controller.diagnose_cluster.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_DiagnoseCluster_async
  */
   async checkDiagnoseClusterProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.DiagnoseClusterResults, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1204,28 +1180,7 @@ export class ClusterControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.diagnoseCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.DiagnoseClusterResults, protos.google.cloud.dataproc.v1.ClusterOperationMetadata>;
   }
-  listClusters(
-      request?: protos.google.cloud.dataproc.v1.IListClustersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dataproc.v1.ICluster[],
-        protos.google.cloud.dataproc.v1.IListClustersRequest|null,
-        protos.google.cloud.dataproc.v1.IListClustersResponse
-      ]>;
-  listClusters(
-      request: protos.google.cloud.dataproc.v1.IListClustersRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dataproc.v1.IListClustersRequest,
-          protos.google.cloud.dataproc.v1.IListClustersResponse|null|undefined,
-          protos.google.cloud.dataproc.v1.ICluster>): void;
-  listClusters(
-      request: protos.google.cloud.dataproc.v1.IListClustersRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dataproc.v1.IListClustersRequest,
-          protos.google.cloud.dataproc.v1.IListClustersResponse|null|undefined,
-          protos.google.cloud.dataproc.v1.ICluster>): void;
-/**
+ /**
  * Lists all regions/{region}/clusters in a project alphabetically.
  *
  * @param {Object} request
@@ -1272,6 +1227,27 @@ export class ClusterControllerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listClusters(
+      request?: protos.google.cloud.dataproc.v1.IListClustersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dataproc.v1.ICluster[],
+        protos.google.cloud.dataproc.v1.IListClustersRequest|null,
+        protos.google.cloud.dataproc.v1.IListClustersResponse
+      ]>;
+  listClusters(
+      request: protos.google.cloud.dataproc.v1.IListClustersRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dataproc.v1.IListClustersRequest,
+          protos.google.cloud.dataproc.v1.IListClustersResponse|null|undefined,
+          protos.google.cloud.dataproc.v1.ICluster>): void;
+  listClusters(
+      request: protos.google.cloud.dataproc.v1.IListClustersRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dataproc.v1.IListClustersRequest,
+          protos.google.cloud.dataproc.v1.IListClustersResponse|null|undefined,
+          protos.google.cloud.dataproc.v1.ICluster>): void;
   listClusters(
       request?: protos.google.cloud.dataproc.v1.IListClustersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1421,11 +1397,8 @@ export class ClusterControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listClustersAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/cluster_controller.list_clusters.js</caption>
+ * region_tag:dataproc_v1_generated_ClusterController_ListClusters_async
  */
   listClustersAsync(
       request?: protos.google.cloud.dataproc.v1.IListClustersRequest,
@@ -1440,7 +1413,6 @@ export class ClusterControllerClient {
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listClusters'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

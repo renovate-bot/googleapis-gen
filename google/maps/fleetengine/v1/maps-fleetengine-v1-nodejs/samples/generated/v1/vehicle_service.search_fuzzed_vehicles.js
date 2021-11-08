@@ -23,7 +23,7 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format "providers/{provider}".
    *  The provider must be the Project ID (for example, sample-cloud-project)
@@ -34,12 +34,12 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
   /**
    *  Required. The pickup point to search near.
    */
-  // const pickupPoint = ''
+  // const pickupPoint = {}
   /**
    *  The customer's intended dropoff location. The field is required if
    *  trip_types contains TripType.SHARED.
    */
-  // const dropoffPoint = ''
+  // const dropoffPoint = {}
   /**
    *  Required. Defines the vehicle search radius around the pickup point. Only
    *  vehicles within the search radius will be returned. Value must be between
@@ -68,7 +68,7 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
    *  locations within the specified duration back from now. If this field is not
    *  set, the server uses five minutes as the default value.
    */
-  // const maximumStaleness = ''
+  // const maximumStaleness = {}
   /**
    *  Required. Restricts the search to those vehicles with the specified types.
    *  At least one vehicle type must be specified.
@@ -81,11 +81,11 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
    *  allows a list of lists. In combination, the two fields allow the
    *  composition of this expression:
    *  ```
-   *  (required_attribute[0] AND required_attribute[1] AND ...)
+   *  (required_attribute0  AND required_attribute1  AND ...)
    *  AND
-   *  (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+   *  (required_one_of_attribute0 0  OR required_one_of_attribute0 1  OR ...)
    *  AND
-   *  (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+   *  (required_one_of_attribute1 0  OR required_one_of_attribute1 1  OR ...)
    *  ```
    *  Restricts the search to only those vehicles with the specified attributes.
    *  This field is a conjunction/AND operation. Your app can specify up to 100
@@ -112,7 +112,7 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
   /**
    *  Required. Specifies ordering criterion for results.
    */
-  // const orderBy = ''
+  // const orderBy = {}
   /**
    *  Indicates if a vehicle with an active trip is eligible for
    *  another match. If `false`, a vehicle is excluded from search results.
@@ -134,7 +134,7 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function searchFuzzedVehicles() {
+  async function callSearchFuzzedVehicles() {
     // Construct request
     const request = {
       parent,
@@ -152,7 +152,7 @@ function main(parent, pickupPoint, pickupRadiusMeters, count, minimumCapacity, t
     console.log(response);
   }
 
-  searchFuzzedVehicles();
+  callSearchFuzzedVehicles();
   // [END fleetengine_v1_generated_VehicleService_SearchFuzzedVehicles_async]
 }
 

@@ -26,11 +26,11 @@ function main(phraseSet) {
    *  updated. Format:
    *  {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
    */
-  // const phraseSet = ''
+  // const phraseSet = {}
   /**
    *  The list of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Speech library
   const {AdaptationClient} = require('@google-cloud/speech').v1p1beta1;
@@ -38,7 +38,7 @@ function main(phraseSet) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function updatePhraseSet() {
+  async function callUpdatePhraseSet() {
     // Construct request
     const request = {
       phraseSet,
@@ -49,7 +49,7 @@ function main(phraseSet) {
     console.log(response);
   }
 
-  updatePhraseSet();
+  callUpdatePhraseSet();
   // [END speech_v1p1beta1_generated_Adaptation_UpdatePhraseSet_async]
 }
 

@@ -727,26 +727,6 @@ export class ProductGroupViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getProductGroupView(
-      request?: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IProductGroupView,
-        protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest|undefined, {}|undefined
-      ]>;
-  getProductGroupView(
-      request: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IProductGroupView,
-          protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getProductGroupView(
-      request: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IProductGroupView,
-          protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested product group view in full detail.
  *
@@ -769,9 +749,29 @@ export class ProductGroupViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getProductGroupView(request);
+ * @example <caption>include:samples/generated/v9/product_group_view_service.get_product_group_view.js</caption>
+ * region_tag:googleads_v9_generated_ProductGroupViewService_GetProductGroupView_async
  */
+  getProductGroupView(
+      request?: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IProductGroupView,
+        protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest|undefined, {}|undefined
+      ]>;
+  getProductGroupView(
+      request: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IProductGroupView,
+          protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getProductGroupView(
+      request: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IProductGroupView,
+          protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getProductGroupView(
       request?: protos.google.ads.googleads.v9.services.IGetProductGroupViewRequest,
       optionsOrCallback?: CallOptions|Callback<

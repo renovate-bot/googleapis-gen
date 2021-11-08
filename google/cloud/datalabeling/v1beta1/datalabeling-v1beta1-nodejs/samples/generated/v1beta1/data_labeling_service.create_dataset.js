@@ -28,7 +28,7 @@ function main(parent, dataset) {
   /**
    *  Required. The dataset to be created.
    */
-  // const dataset = ''
+  // const dataset = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, dataset) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function createDataset() {
+  async function callCreateDataset() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, dataset) {
     console.log(response);
   }
 
-  createDataset();
+  callCreateDataset();
   // [END datalabeling_v1beta1_generated_DataLabelingService_CreateDataset_async]
 }
 

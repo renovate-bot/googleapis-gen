@@ -23,7 +23,7 @@ function main(transferJob) {
   /**
    *  Required. The job to create.
    */
-  // const transferJob = ''
+  // const transferJob = {}
 
   // Imports the Storagetransfer library
   const {StorageTransferServiceClient} = require('@google-cloud/storage-transfer').v1;
@@ -31,7 +31,7 @@ function main(transferJob) {
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function createTransferJob() {
+  async function callCreateTransferJob() {
     // Construct request
     const request = {
       transferJob,
@@ -42,7 +42,7 @@ function main(transferJob) {
     console.log(response);
   }
 
-  createTransferJob();
+  callCreateTransferJob();
   // [END storagetransfer_v1_generated_StorageTransferService_CreateTransferJob_async]
 }
 

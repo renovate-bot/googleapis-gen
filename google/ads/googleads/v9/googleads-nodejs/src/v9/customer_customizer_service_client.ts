@@ -727,26 +727,6 @@ export class CustomerCustomizerServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateCustomerCustomizers(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerCustomizers(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerCustomizers(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes customer customizers. Operation statuses are
  * returned.
@@ -775,9 +755,29 @@ export class CustomerCustomizerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerCustomizers(request);
+ * @example <caption>include:samples/generated/v9/customer_customizer_service.mutate_customer_customizers.js</caption>
+ * region_tag:googleads_v9_generated_CustomerCustomizerService_MutateCustomerCustomizers_async
  */
+  mutateCustomerCustomizers(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerCustomizers(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerCustomizers(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerCustomizers(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomerCustomizersRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new GenderViewServiceClient();
 
-  async function getGenderView() {
+  async function callGetGenderView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getGenderView();
+  callGetGenderView();
   // [END googleads_v9_generated_GenderViewService_GetGenderView_async]
 }
 

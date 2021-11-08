@@ -36,7 +36,7 @@ function main() {
   /**
    *  The view that should be returned in the response.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Artifactregistry library
   const {ArtifactRegistryClient} = require('@google-cloud/artifact-registry').v1beta2;
@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const artifactregistryClient = new ArtifactRegistryClient();
 
-  async function listVersions() {
+  async function callListVersions() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     }
   }
 
-  listVersions();
+  callListVersions();
   // [END artifactregistry_v1beta2_generated_ArtifactRegistry_ListVersions_async]
 }
 

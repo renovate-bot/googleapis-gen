@@ -27,7 +27,7 @@ function main(parent, book) {
   /**
    *  The book to create.
    */
-  // const book = ''
+  // const book = {}
 
   // Imports the Library library
   const {LibraryServiceClient} = require('@google-cloud/library').v1;
@@ -35,7 +35,7 @@ function main(parent, book) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function createBook() {
+  async function callCreateBook() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent, book) {
     console.log(response);
   }
 
-  createBook();
+  callCreateBook();
   // [END library-example_v1_generated_LibraryService_CreateBook_async]
 }
 

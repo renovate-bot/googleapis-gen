@@ -32,7 +32,7 @@ function main(parent) {
   /**
    *  A token identifying a page of results the server should return.
    *  Typically, this is the value of
-   *  [ListBooksResponse.next_page_token][google.example.library.v1.ListBooksResponse.next_page_token].
+   *  ListBooksResponse.next_page_token google.example.library.v1.ListBooksResponse.next_page_token.
    *  returned from the previous call to `ListBooks` method.
    */
   // const pageToken = 'abc123'
@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function listBooks() {
+  async function callListBooks() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listBooks();
+  callListBooks();
   // [END library-example_v1_generated_LibraryService_ListBooks_async]
 }
 

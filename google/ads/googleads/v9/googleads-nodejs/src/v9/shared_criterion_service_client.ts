@@ -727,26 +727,6 @@ export class SharedCriterionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getSharedCriterion(
-      request?: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ISharedCriterion,
-        protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest|undefined, {}|undefined
-      ]>;
-  getSharedCriterion(
-      request: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ISharedCriterion,
-          protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSharedCriterion(
-      request: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ISharedCriterion,
-          protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested shared criterion in full detail.
  *
@@ -769,9 +749,29 @@ export class SharedCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSharedCriterion(request);
+ * @example <caption>include:samples/generated/v9/shared_criterion_service.get_shared_criterion.js</caption>
+ * region_tag:googleads_v9_generated_SharedCriterionService_GetSharedCriterion_async
  */
+  getSharedCriterion(
+      request?: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ISharedCriterion,
+        protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest|undefined, {}|undefined
+      ]>;
+  getSharedCriterion(
+      request: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ISharedCriterion,
+          protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSharedCriterion(
+      request: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ISharedCriterion,
+          protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
   getSharedCriterion(
       request?: protos.google.ads.googleads.v9.services.IGetSharedCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class SharedCriterionServiceClient {
     this.initialize();
     return this.innerApiCalls.getSharedCriterion(request, options, callback);
   }
-  mutateSharedCriteria(
-      request?: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateSharedCriteriaResponse,
-        protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest|undefined, {}|undefined
-      ]>;
-  mutateSharedCriteria(
-      request: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaResponse,
-          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateSharedCriteria(
-      request: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaResponse,
-          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or removes shared criteria. Operation statuses are returned.
  *
@@ -875,9 +855,29 @@ export class SharedCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateSharedCriteria(request);
+ * @example <caption>include:samples/generated/v9/shared_criterion_service.mutate_shared_criteria.js</caption>
+ * region_tag:googleads_v9_generated_SharedCriterionService_MutateSharedCriteria_async
  */
+  mutateSharedCriteria(
+      request?: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateSharedCriteriaResponse,
+        protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest|undefined, {}|undefined
+      ]>;
+  mutateSharedCriteria(
+      request: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaResponse,
+          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateSharedCriteria(
+      request: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaResponse,
+          protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateSharedCriteria(
       request?: protos.google.ads.googleads.v9.services.IMutateSharedCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<

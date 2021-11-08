@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function deleteConversionEvent() {
+  async function callDeleteConversionEvent() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteConversionEvent();
+  callDeleteConversionEvent();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_DeleteConversionEvent_async]
 }
 

@@ -31,7 +31,7 @@ function main(requests) {
   // Instantiates a client
   const visionClient = new ImageAnnotatorClient();
 
-  async function asyncBatchAnnotateFiles() {
+  async function callAsyncBatchAnnotateFiles() {
     // Construct request
     const request = {
       requests,
@@ -43,7 +43,7 @@ function main(requests) {
     console.log(response);
   }
 
-  asyncBatchAnnotateFiles();
+  callAsyncBatchAnnotateFiles();
   // [END vision_v1p4beta1_generated_ImageAnnotator_AsyncBatchAnnotateFiles_async]
 }
 

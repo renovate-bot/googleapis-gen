@@ -21,23 +21,10 @@ function main(projectId, zone, cluster) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the parent field.
+   *  Required. A cluster
+   *  resource (https://cloud.google.com/container-engine/reference/rest/v1beta1/projects.locations.clusters)
    */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the parent
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Required. A [cluster
-   *  resource](https://cloud.google.com/container-engine/reference/rest/v1beta1/projects.locations.clusters)
-   */
-  // const cluster = ''
+  // const cluster = {}
   /**
    *  The parent (project and location) where the cluster will be created.
    *  Specified in the format `projects/* /locations/*`.
@@ -50,7 +37,7 @@ function main(projectId, zone, cluster) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function createCluster() {
+  async function callCreateCluster() {
     // Construct request
     const request = {
       projectId,
@@ -63,7 +50,7 @@ function main(projectId, zone, cluster) {
     console.log(response);
   }
 
-  createCluster();
+  callCreateCluster();
   // [END container_v1beta1_generated_ClusterManager_CreateCluster_async]
 }
 

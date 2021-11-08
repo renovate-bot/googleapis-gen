@@ -23,14 +23,14 @@ function main() {
   /**
    *  Profile to update
    */
-  // const profile = ''
+  // const profile = {}
   /**
    *  Field mask used to specify the fields to be overwritten. Currently only
    *  profile_bytes and labels fields are supported by UpdateProfile, so only
    *  those fields can be specified in the mask. When no mask is provided, all
    *  fields are overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Cloudprofiler library
   const {ProfilerServiceClient} = require('@google-cloud/cloudprofiler').v2;
@@ -38,7 +38,7 @@ function main() {
   // Instantiates a client
   const cloudprofilerClient = new ProfilerServiceClient();
 
-  async function updateProfile() {
+  async function callUpdateProfile() {
     // Construct request
     const request = {
     };
@@ -48,7 +48,7 @@ function main() {
     console.log(response);
   }
 
-  updateProfile();
+  callUpdateProfile();
   // [END cloudprofiler_v2_generated_ProfilerService_UpdateProfile_async]
 }
 

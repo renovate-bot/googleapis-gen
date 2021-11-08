@@ -676,26 +676,6 @@ export class DetailPlacementViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getDetailPlacementView(
-      request?: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IDetailPlacementView,
-        protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest|undefined, {}|undefined
-      ]>;
-  getDetailPlacementView(
-      request: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IDetailPlacementView,
-          protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDetailPlacementView(
-      request: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IDetailPlacementView,
-          protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Detail Placement view in full detail.
  *
@@ -718,9 +698,29 @@ export class DetailPlacementViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDetailPlacementView(request);
+ * @example <caption>include:samples/generated/v8/detail_placement_view_service.get_detail_placement_view.js</caption>
+ * region_tag:googleads_v8_generated_DetailPlacementViewService_GetDetailPlacementView_async
  */
+  getDetailPlacementView(
+      request?: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IDetailPlacementView,
+        protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest|undefined, {}|undefined
+      ]>;
+  getDetailPlacementView(
+      request: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IDetailPlacementView,
+          protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDetailPlacementView(
+      request: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IDetailPlacementView,
+          protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getDetailPlacementView(
       request?: protos.google.ads.googleads.v8.services.IGetDetailPlacementViewRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -727,26 +727,6 @@ export class UserInterestServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getUserInterest(
-      request?: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IUserInterest,
-        protos.google.ads.googleads.v9.services.IGetUserInterestRequest|undefined, {}|undefined
-      ]>;
-  getUserInterest(
-      request: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IUserInterest,
-          protos.google.ads.googleads.v9.services.IGetUserInterestRequest|null|undefined,
-          {}|null|undefined>): void;
-  getUserInterest(
-      request: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IUserInterest,
-          protos.google.ads.googleads.v9.services.IGetUserInterestRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested user interest in full detail
  *
@@ -769,9 +749,29 @@ export class UserInterestServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getUserInterest(request);
+ * @example <caption>include:samples/generated/v9/user_interest_service.get_user_interest.js</caption>
+ * region_tag:googleads_v9_generated_UserInterestService_GetUserInterest_async
  */
+  getUserInterest(
+      request?: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IUserInterest,
+        protos.google.ads.googleads.v9.services.IGetUserInterestRequest|undefined, {}|undefined
+      ]>;
+  getUserInterest(
+      request: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IUserInterest,
+          protos.google.ads.googleads.v9.services.IGetUserInterestRequest|null|undefined,
+          {}|null|undefined>): void;
+  getUserInterest(
+      request: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IUserInterest,
+          protos.google.ads.googleads.v9.services.IGetUserInterestRequest|null|undefined,
+          {}|null|undefined>): void;
   getUserInterest(
       request?: protos.google.ads.googleads.v9.services.IGetUserInterestRequest,
       optionsOrCallback?: CallOptions|Callback<

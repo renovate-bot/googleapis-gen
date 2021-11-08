@@ -295,28 +295,7 @@ export class ConnectionServiceClient {
   // -- Service calls --
   // -------------------
 
-  listConnections(
-      request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.apigeeconnect.v1.IConnection[],
-        protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest|null,
-        protos.google.cloud.apigeeconnect.v1.IListConnectionsResponse
-      ]>;
-  listConnections(
-      request: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
-          protos.google.cloud.apigeeconnect.v1.IListConnectionsResponse|null|undefined,
-          protos.google.cloud.apigeeconnect.v1.IConnection>): void;
-  listConnections(
-      request: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
-          protos.google.cloud.apigeeconnect.v1.IListConnectionsResponse|null|undefined,
-          protos.google.cloud.apigeeconnect.v1.IConnection>): void;
-/**
+ /**
  * Lists connections that are currently active for the given Apigee Connect
  * endpoint.
  *
@@ -348,6 +327,27 @@ export class ConnectionServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listConnections(
+      request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.apigeeconnect.v1.IConnection[],
+        protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest|null,
+        protos.google.cloud.apigeeconnect.v1.IListConnectionsResponse
+      ]>;
+  listConnections(
+      request: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
+          protos.google.cloud.apigeeconnect.v1.IListConnectionsResponse|null|undefined,
+          protos.google.cloud.apigeeconnect.v1.IConnection>): void;
+  listConnections(
+      request: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
+          protos.google.cloud.apigeeconnect.v1.IListConnectionsResponse|null|undefined,
+          protos.google.cloud.apigeeconnect.v1.IConnection>): void;
   listConnections(
       request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -465,11 +465,8 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listConnectionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/connection_service.list_connections.js</caption>
+ * region_tag:apigeeconnect_v1_generated_ConnectionService_ListConnections_async
  */
   listConnectionsAsync(
       request?: protos.google.cloud.apigeeconnect.v1.IListConnectionsRequest,
@@ -484,7 +481,6 @@ export class ConnectionServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listConnections'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

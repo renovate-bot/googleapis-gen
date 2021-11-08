@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function addServerCa() {
+  async function callAddServerCa() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  addServerCa();
+  callAddServerCa();
   // [END sqladmin_v1_generated_SqlInstancesService_AddServerCa_async]
 }
 

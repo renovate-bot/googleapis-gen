@@ -27,7 +27,7 @@ function main(name) {
   /**
    *  Mask specifying which fields to read.
    */
-  // const readMask = ''
+  // const readMask = {}
 
   // Imports the Aiplatform library
   const {DatasetServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -35,7 +35,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new DatasetServiceClient();
 
-  async function getDataset() {
+  async function callGetDataset() {
     // Construct request
     const request = {
       name,
@@ -46,7 +46,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDataset();
+  callGetDataset();
   // [END aiplatform_v1beta1_generated_DatasetService_GetDataset_async]
 }
 

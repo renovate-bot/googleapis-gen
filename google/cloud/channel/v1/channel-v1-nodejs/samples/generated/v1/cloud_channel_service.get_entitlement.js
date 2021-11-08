@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function getEntitlement() {
+  async function callGetEntitlement() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEntitlement();
+  callGetEntitlement();
   // [END cloudchannel_v1_generated_CloudChannelService_GetEntitlement_async]
 }
 

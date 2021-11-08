@@ -272,6 +272,26 @@ export class CustomerLicenseServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Get the status of a license for a customer to determine if they have access
+ * for a given app.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.applicationId
+ *   Application Id
+ * @param {string} request.customerId
+ *   Customer Id
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CustomerLicense]{@link ccc.hosted.marketplace.v2.CustomerLicense}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/customer_license_service.get.js</caption>
+ * region_tag:appsmarket_v2_generated_CustomerLicenseService_Get_async
+ */
   get(
       request?: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,
       options?: CallOptions):
@@ -292,26 +312,6 @@ export class CustomerLicenseServiceClient {
           protos.ccc.hosted.marketplace.v2.ICustomerLicense,
           protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get the status of a license for a customer to determine if they have access
- * for a given app.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.applicationId
- *   Application Id
- * @param {string} request.customerId
- *   Customer Id
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CustomerLicense]{@link ccc.hosted.marketplace.v2.CustomerLicense}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
- */
   get(
       request?: protos.ccc.hosted.marketplace.v2.ICustomerLicenseGetRequest,
       optionsOrCallback?: CallOptions|Callback<

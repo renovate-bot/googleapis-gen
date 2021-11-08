@@ -32,7 +32,7 @@ function main(customerId, campaignDuration, plannedProducts) {
   /**
    *  Required. Campaign duration.
    */
-  // const campaignDuration = ''
+  // const campaignDuration = {}
   /**
    *  Desired cookie frequency cap that will be applied to each planned product.
    *  This is equivalent to the frequency cap exposed in Google Ads when creating
@@ -51,10 +51,10 @@ function main(customerId, campaignDuration, plannedProducts) {
    *  If not specified, no cap is applied.
    *  This field replaces the deprecated cookie_frequency_cap field.
    */
-  // const cookieFrequencyCapSetting = ''
+  // const cookieFrequencyCapSetting = {}
   /**
    *  Desired minimum effective frequency (the number of times a person was
-   *  exposed to the ad) for the reported reach metrics [1-10].
+   *  exposed to the ad) for the reported reach metrics 1-10.
    *  This won't affect the targeting, but just the reporting.
    *  If not specified, a default of 1 is applied.
    */
@@ -67,7 +67,7 @@ function main(customerId, campaignDuration, plannedProducts) {
    *  In some cases, targeting may be overridden using the
    *  PlannedProduct.advanced_product_targeting field.
    */
-  // const targeting = ''
+  // const targeting = {}
   /**
    *  Required. The products to be forecast.
    *  The max number of allowed planned products is 15.
@@ -80,7 +80,7 @@ function main(customerId, campaignDuration, plannedProducts) {
   // Instantiates a client
   const googleadsClient = new ReachPlanServiceClient();
 
-  async function generateReachForecast() {
+  async function callGenerateReachForecast() {
     // Construct request
     const request = {
       customerId,
@@ -93,7 +93,7 @@ function main(customerId, campaignDuration, plannedProducts) {
     console.log(response);
   }
 
-  generateReachForecast();
+  callGenerateReachForecast();
   // [END googleads_v7_generated_ReachPlanService_GenerateReachForecast_async]
 }
 

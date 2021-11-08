@@ -26,10 +26,6 @@ function main(name) {
    *  `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    */
   // const name = 'abc123'
-  /**
-   *  Deprecated: Field is no longer supported.
-   */
-  // const force = true
 
   // Imports the Aiplatform library
   const {MetadataServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -37,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function deleteMetadataStore() {
+  async function callDeleteMetadataStore() {
     // Construct request
     const request = {
       name,
@@ -49,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteMetadataStore();
+  callDeleteMetadataStore();
   // [END aiplatform_v1beta1_generated_MetadataService_DeleteMetadataStore_async]
 }
 

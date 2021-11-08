@@ -29,7 +29,7 @@ function main(parent, execution) {
   /**
    *  Required. Execution to be created.
    */
-  // const execution = ''
+  // const execution = {}
 
   // Imports the Executions library
   const {ExecutionsClient} = require('@google-cloud/workflow-executions').v1;
@@ -37,7 +37,7 @@ function main(parent, execution) {
   // Instantiates a client
   const executionsClient = new ExecutionsClient();
 
-  async function createExecution() {
+  async function callCreateExecution() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, execution) {
     console.log(response);
   }
 
-  createExecution();
+  callCreateExecution();
   // [END workflowexecutions_v1_generated_Executions_CreateExecution_async]
 }
 

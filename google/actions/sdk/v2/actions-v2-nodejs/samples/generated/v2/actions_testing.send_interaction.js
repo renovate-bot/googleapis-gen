@@ -28,11 +28,11 @@ function main(project, input, deviceProperties) {
   /**
    *  Required. Input provided by the user.
    */
-  // const input = ''
+  // const input = {}
   /**
    *  Required. Properties of the device used for interacting with the Action.
    */
-  // const deviceProperties = ''
+  // const deviceProperties = {}
   /**
    *  Opaque token that must be passed as received from SendInteractionResponse
    *  on the previous interaction. This can be left unset in order to start a new
@@ -47,7 +47,7 @@ function main(project, input, deviceProperties) {
   // Instantiates a client
   const sdkClient = new ActionsTestingClient();
 
-  async function sendInteraction() {
+  async function callSendInteraction() {
     // Construct request
     const request = {
       project,
@@ -60,7 +60,7 @@ function main(project, input, deviceProperties) {
     console.log(response);
   }
 
-  sendInteraction();
+  callSendInteraction();
   // [END actions_v2_generated_ActionsTesting_SendInteraction_async]
 }
 

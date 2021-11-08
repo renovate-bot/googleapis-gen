@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const sdmClient = new SmartDeviceManagementServiceClient();
 
-  async function listStructures() {
+  async function callListStructures() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     }
   }
 
-  listStructures();
+  callListStructures();
   // [END smartdevicemanagement_v1_generated_SmartDeviceManagementService_ListStructures_async]
 }
 

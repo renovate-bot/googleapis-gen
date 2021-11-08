@@ -24,14 +24,14 @@ function main() {
    *  The service name as specified in its service configuration. For example,
    *  `"pubsub.googleapis.com"`.
    *  See
-   *  [google.api.Service](https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
+   *  google.api.Service (https://cloud.google.com/service-management/reference/rpc/google.api#google.api.Service)
    *  for the definition of a service name.
    */
   // const serviceName = 'abc123'
   /**
    *  The operation to be checked.
    */
-  // const operation = ''
+  // const operation = {}
   /**
    *  Specifies which version of service configuration should be used to process
    *  the request.
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const servicecontrolClient = new ServiceControllerClient();
 
-  async function check() {
+  async function callCheck() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  check();
+  callCheck();
   // [END servicecontrol_v1_generated_ServiceController_Check_async]
 }
 

@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function getReferenceImage() {
+  async function callGetReferenceImage() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getReferenceImage();
+  callGetReferenceImage();
   // [END vision_v1p4beta1_generated_ProductSearch_GetReferenceImage_async]
 }
 

@@ -273,26 +273,6 @@ export class SqlUsersServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  delete(
-      request?: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1beta4.IOperation,
-        protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest|undefined, {}|undefined
-      ]>;
-  delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IOperation,
-          protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest|null|undefined,
-          {}|null|undefined>): void;
-  delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IOperation,
-          protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a user from a Cloud SQL instance.
  *
@@ -313,9 +293,29 @@ export class SqlUsersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.delete(request);
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.delete.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlUsersService_Delete_async
  */
+  delete(
+      request?: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1beta4.IOperation,
+        protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest|undefined, {}|undefined
+      ]>;
+  delete(
+      request: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IOperation,
+          protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest|null|undefined,
+          {}|null|undefined>): void;
+  delete(
+      request: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IOperation,
+          protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest|null|undefined,
+          {}|null|undefined>): void;
   delete(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -350,6 +350,26 @@ export class SqlUsersServiceClient {
     this.initialize();
     return this.innerApiCalls.delete(request, options, callback);
   }
+/**
+ * Creates a new user in a Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Database instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1beta4.User} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1beta4.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.insert.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlUsersService_Insert_async
+ */
   insert(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersInsertRequest,
       options?: CallOptions):
@@ -370,26 +390,6 @@ export class SqlUsersServiceClient {
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlUsersInsertRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new user in a Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Database instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1beta4.User} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1beta4.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.insert(request);
- */
   insert(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -424,6 +424,25 @@ export class SqlUsersServiceClient {
     this.initialize();
     return this.innerApiCalls.insert(request, options, callback);
   }
+/**
+ * Lists users in the specified Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Database instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [UsersListResponse]{@link google.cloud.sql.v1beta4.UsersListResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.list.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlUsersService_List_async
+ */
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersListRequest,
       options?: CallOptions):
@@ -444,25 +463,6 @@ export class SqlUsersServiceClient {
           protos.google.cloud.sql.v1beta4.IUsersListResponse,
           protos.google.cloud.sql.v1beta4.ISqlUsersListRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists users in the specified Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Database instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [UsersListResponse]{@link google.cloud.sql.v1beta4.UsersListResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
- */
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersListRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -497,26 +497,6 @@ export class SqlUsersServiceClient {
     this.initialize();
     return this.innerApiCalls.list(request, options, callback);
   }
-  update(
-      request?: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1beta4.IOperation,
-        protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest|undefined, {}|undefined
-      ]>;
-  update(
-      request: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IOperation,
-          protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest|null|undefined,
-          {}|null|undefined>): void;
-  update(
-      request: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IOperation,
-          protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an existing user in a Cloud SQL instance.
  *
@@ -538,9 +518,29 @@ export class SqlUsersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.update(request);
+ * @example <caption>include:samples/generated/v1beta4/sql_users_service.update.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlUsersService_Update_async
  */
+  update(
+      request?: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1beta4.IOperation,
+        protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest|undefined, {}|undefined
+      ]>;
+  update(
+      request: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IOperation,
+          protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest|null|undefined,
+          {}|null|undefined>): void;
+  update(
+      request: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IOperation,
+          protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest|null|undefined,
+          {}|null|undefined>): void;
   update(
       request?: protos.google.cloud.sql.v1beta4.ISqlUsersUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<

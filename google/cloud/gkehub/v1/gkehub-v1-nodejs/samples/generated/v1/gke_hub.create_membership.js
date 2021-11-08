@@ -38,7 +38,7 @@ function main(parent, membershipId, resource) {
   /**
    *  Required. The membership to create.
    */
-  // const resource = ''
+  // const resource = {}
   /**
    *  Optional. A request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -60,7 +60,7 @@ function main(parent, membershipId, resource) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function createMembership() {
+  async function callCreateMembership() {
     // Construct request
     const request = {
       parent,
@@ -74,7 +74,7 @@ function main(parent, membershipId, resource) {
     console.log(response);
   }
 
-  createMembership();
+  callCreateMembership();
   // [END gkehub_v1_generated_GkeHub_CreateMembership_async]
 }
 

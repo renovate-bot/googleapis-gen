@@ -31,7 +31,7 @@ function main(customerId, campaign, suggestionInfo) {
   /**
    *  Required. Information needed to get budget options
    */
-  // const suggestionInfo = ''
+  // const suggestionInfo = {}
 
   // Imports the Googleads library
   const {SmartCampaignSuggestServiceClient} = require('google-ads').v9;
@@ -39,7 +39,7 @@ function main(customerId, campaign, suggestionInfo) {
   // Instantiates a client
   const googleadsClient = new SmartCampaignSuggestServiceClient();
 
-  async function suggestSmartCampaignBudgetOptions() {
+  async function callSuggestSmartCampaignBudgetOptions() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, campaign, suggestionInfo) {
     console.log(response);
   }
 
-  suggestSmartCampaignBudgetOptions();
+  callSuggestSmartCampaignBudgetOptions();
   // [END googleads_v9_generated_SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_async]
 }
 

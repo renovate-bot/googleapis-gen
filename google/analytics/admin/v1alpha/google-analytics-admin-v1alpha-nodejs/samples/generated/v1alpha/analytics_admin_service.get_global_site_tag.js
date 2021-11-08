@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function getGlobalSiteTag() {
+  async function callGetGlobalSiteTag() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getGlobalSiteTag();
+  callGetGlobalSiteTag();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetGlobalSiteTag_async]
 }
 

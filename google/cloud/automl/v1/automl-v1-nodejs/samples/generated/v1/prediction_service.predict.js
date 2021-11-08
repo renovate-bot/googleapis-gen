@@ -28,7 +28,7 @@ function main(name, payload) {
    *  Required. Payload to perform a prediction on. The payload must match the
    *  problem type that the model was trained to solve.
    */
-  // const payload = ''
+  // const payload = {}
   /**
    *  Additional domain-specific parameters, any string must be up to 25000
    *  characters long.
@@ -49,9 +49,9 @@ function main(name, payload) {
    *  AutoML Tables
    *  `feature_importance`
    *  : (boolean) Whether
-   *  [feature_importance][google.cloud.automl.v1.TablesModelColumnInfo.feature_importance]
+   *  feature_importance google.cloud.automl.v1.TablesModelColumnInfo.feature_importance 
    *    is populated in the returned list of
-   *    [TablesAnnotation][google.cloud.automl.v1.TablesAnnotation]
+   *    TablesAnnotation google.cloud.automl.v1.TablesAnnotation 
    *    objects. The default is false.
    */
   // const params = 1234
@@ -62,7 +62,7 @@ function main(name, payload) {
   // Instantiates a client
   const automlClient = new PredictionServiceClient();
 
-  async function predict() {
+  async function callPredict() {
     // Construct request
     const request = {
       name,
@@ -74,7 +74,7 @@ function main(name, payload) {
     console.log(response);
   }
 
-  predict();
+  callPredict();
   // [END automl_v1_generated_PredictionService_Predict_async]
 }
 

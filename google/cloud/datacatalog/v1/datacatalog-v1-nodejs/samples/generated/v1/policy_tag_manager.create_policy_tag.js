@@ -27,7 +27,7 @@ function main(parent) {
   /**
    *  The policy tag to create.
    */
-  // const policyTag = ''
+  // const policyTag = {}
 
   // Imports the Datacatalog library
   const {PolicyTagManagerClient} = require('@google-cloud/datacatalog').v1;
@@ -35,7 +35,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function createPolicyTag() {
+  async function callCreatePolicyTag() {
     // Construct request
     const request = {
       parent,
@@ -46,7 +46,7 @@ function main(parent) {
     console.log(response);
   }
 
-  createPolicyTag();
+  callCreatePolicyTag();
   // [END datacatalog_v1_generated_PolicyTagManager_CreatePolicyTag_async]
 }
 

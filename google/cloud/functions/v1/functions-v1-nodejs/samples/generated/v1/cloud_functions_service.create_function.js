@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main(location, function) {
+function main(location, function1) {
   // [START cloudfunctions_v1_generated_CloudFunctionsService_CreateFunction_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -28,7 +28,7 @@ function main(location, function) {
   /**
    *  Required. Function to be created.
    */
-  // const function = ''
+  // const function = {}
 
   // Imports the Functions library
   const {CloudFunctionsServiceClient} = require('@google-cloud/functions').v1;
@@ -36,11 +36,11 @@ function main(location, function) {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function createFunction() {
+  async function callCreateFunction() {
     // Construct request
     const request = {
       location,
-      function,
+      function1,
     };
 
     // Run request
@@ -49,7 +49,7 @@ function main(location, function) {
     console.log(response);
   }
 
-  createFunction();
+  callCreateFunction();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_CreateFunction_async]
 }
 

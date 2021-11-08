@@ -21,14 +21,14 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the setting to get. See [Setting][google.cloud.resourcesettings.v1.Setting] for naming
+   *  Required. The name of the setting to get. See Setting google.cloud.resourcesettings.v1.Setting  for naming
    *  requirements.
    */
   // const name = 'abc123'
   /**
    *  The SettingView for this request.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Resourcesettings library
   const {ResourceSettingsServiceClient} = require('@google-cloud/resource-settings').v1;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const resourcesettingsClient = new ResourceSettingsServiceClient();
 
-  async function getSetting() {
+  async function callGetSetting() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSetting();
+  callGetSetting();
   // [END resourcesettings_v1_generated_ResourceSettingsService_GetSetting_async]
 }
 

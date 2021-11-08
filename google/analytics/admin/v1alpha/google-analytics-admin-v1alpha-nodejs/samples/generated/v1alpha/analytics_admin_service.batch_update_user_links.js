@@ -39,7 +39,7 @@ function main(parent, requests) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function batchUpdateUserLinks() {
+  async function callBatchUpdateUserLinks() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, requests) {
     console.log(response);
   }
 
-  batchUpdateUserLinks();
+  callBatchUpdateUserLinks();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_BatchUpdateUserLinks_async]
 }
 

@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const testingClient = new TestExecutionServiceClient();
 
-  async function getTestMatrix() {
+  async function callGetTestMatrix() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  getTestMatrix();
+  callGetTestMatrix();
   // [END testing_v1_generated_TestExecutionService_GetTestMatrix_async]
 }
 

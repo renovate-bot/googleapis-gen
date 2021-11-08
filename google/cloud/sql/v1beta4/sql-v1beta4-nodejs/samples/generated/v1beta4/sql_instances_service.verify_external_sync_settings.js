@@ -35,7 +35,7 @@ function main() {
   /**
    *  External sync mode
    */
-  // const syncMode = ''
+  // const syncMode = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1beta4;
@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function verifyExternalSyncSettings() {
+  async function callVerifyExternalSyncSettings() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  verifyExternalSyncSettings();
+  callVerifyExternalSyncSettings();
   // [END sqladmin_v1beta4_generated_SqlInstancesService_VerifyExternalSyncSettings_async]
 }
 

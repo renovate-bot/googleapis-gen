@@ -443,6 +443,25 @@ export class DatasetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a Dataset.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Dataset resource.
+ * @param {google.protobuf.FieldMask} request.readMask
+ *   Mask specifying which fields to read.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Dataset]{@link google.cloud.aiplatform.v1beta1.Dataset}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.get_dataset.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_GetDataset_async
+ */
   getDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetDatasetRequest,
       options?: CallOptions):
@@ -463,25 +482,6 @@ export class DatasetServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IDataset,
           protos.google.cloud.aiplatform.v1beta1.IGetDatasetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a Dataset.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Dataset resource.
- * @param {google.protobuf.FieldMask} request.readMask
- *   Mask specifying which fields to read.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Dataset]{@link google.cloud.aiplatform.v1beta1.Dataset}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDataset(request);
- */
   getDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -516,26 +516,6 @@ export class DatasetServiceClient {
     this.initialize();
     return this.innerApiCalls.getDataset(request, options, callback);
   }
-  updateDataset(
-      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IDataset,
-        protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest|undefined, {}|undefined
-      ]>;
-  updateDataset(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.IDataset,
-          protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateDataset(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.IDataset,
-          protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a Dataset.
  *
@@ -558,9 +538,29 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateDataset(request);
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.update_dataset.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_UpdateDataset_async
  */
+  updateDataset(
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IDataset,
+        protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest|undefined, {}|undefined
+      ]>;
+  updateDataset(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.IDataset,
+          protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateDataset(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.IDataset,
+          protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest|null|undefined,
+          {}|null|undefined>): void;
   updateDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -595,6 +595,27 @@ export class DatasetServiceClient {
     this.initialize();
     return this.innerApiCalls.updateDataset(request, options, callback);
   }
+/**
+ * Gets an AnnotationSpec.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the AnnotationSpec resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
+ * @param {google.protobuf.FieldMask} request.readMask
+ *   Mask specifying which fields to read.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AnnotationSpec]{@link google.cloud.aiplatform.v1beta1.AnnotationSpec}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.get_annotation_spec.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_GetAnnotationSpec_async
+ */
   getAnnotationSpec(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetAnnotationSpecRequest,
       options?: CallOptions):
@@ -615,27 +636,6 @@ export class DatasetServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IAnnotationSpec,
           protos.google.cloud.aiplatform.v1beta1.IGetAnnotationSpecRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an AnnotationSpec.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the AnnotationSpec resource.
- *   Format:
- *   `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
- * @param {google.protobuf.FieldMask} request.readMask
- *   Mask specifying which fields to read.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AnnotationSpec]{@link google.cloud.aiplatform.v1beta1.AnnotationSpec}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAnnotationSpec(request);
- */
   getAnnotationSpec(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetAnnotationSpecRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -671,6 +671,28 @@ export class DatasetServiceClient {
     return this.innerApiCalls.getAnnotationSpec(request, options, callback);
   }
 
+/**
+ * Creates a Dataset.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource name of the Location to create the Dataset in.
+ *   Format: `projects/{project}/locations/{location}`
+ * @param {google.cloud.aiplatform.v1beta1.Dataset} request.dataset
+ *   Required. The Dataset to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.create_dataset.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_CreateDataset_async
+ */
   createDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateDatasetRequest,
       options?: CallOptions):
@@ -691,29 +713,6 @@ export class DatasetServiceClient {
           LROperation<protos.google.cloud.aiplatform.v1beta1.IDataset, protos.google.cloud.aiplatform.v1beta1.ICreateDatasetOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a Dataset.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource name of the Location to create the Dataset in.
- *   Format: `projects/{project}/locations/{location}`
- * @param {google.cloud.aiplatform.v1beta1.Dataset} request.dataset
- *   Required. The Dataset to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.createDataset(request);
- * const [response] = await operation.promise();
- */
   createDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -757,11 +756,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateDatasetProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.create_dataset.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_CreateDataset_async
  */
   async checkCreateDatasetProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.Dataset, protos.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -769,6 +765,27 @@ export class DatasetServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createDataset, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Dataset, protos.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata>;
   }
+/**
+ * Deletes a Dataset.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the Dataset to delete.
+ *   Format:
+ *   `projects/{project}/locations/{location}/datasets/{dataset}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.delete_dataset.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_DeleteDataset_async
+ */
   deleteDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteDatasetRequest,
       options?: CallOptions):
@@ -789,28 +806,6 @@ export class DatasetServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a Dataset.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the Dataset to delete.
- *   Format:
- *   `projects/{project}/locations/{location}/datasets/{dataset}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteDataset(request);
- * const [response] = await operation.promise();
- */
   deleteDataset(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteDatasetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -854,11 +849,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteDatasetProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.delete_dataset.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_DeleteDataset_async
  */
   async checkDeleteDatasetProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -866,26 +858,6 @@ export class DatasetServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteDataset, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
-  importData(
-      request?: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IImportDataResponse, protos.google.cloud.aiplatform.v1beta1.IImportDataOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importData(
-      request: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportDataResponse, protos.google.cloud.aiplatform.v1beta1.IImportDataOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importData(
-      request: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportDataResponse, protos.google.cloud.aiplatform.v1beta1.IImportDataOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Imports data into a Dataset.
  *
@@ -907,10 +879,29 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importData(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.import_data.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ImportData_async
  */
+  importData(
+      request?: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IImportDataResponse, protos.google.cloud.aiplatform.v1beta1.IImportDataOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importData(
+      request: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportDataResponse, protos.google.cloud.aiplatform.v1beta1.IImportDataOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importData(
+      request: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportDataResponse, protos.google.cloud.aiplatform.v1beta1.IImportDataOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importData(
       request?: protos.google.cloud.aiplatform.v1beta1.IImportDataRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -954,11 +945,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportDataProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.import_data.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ImportData_async
  */
   async checkImportDataProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ImportDataResponse, protos.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -966,26 +954,6 @@ export class DatasetServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importData, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.ImportDataResponse, protos.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata>;
   }
-  exportData(
-      request?: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IExportDataResponse, protos.google.cloud.aiplatform.v1beta1.IExportDataOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  exportData(
-      request: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportDataResponse, protos.google.cloud.aiplatform.v1beta1.IExportDataOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  exportData(
-      request: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportDataResponse, protos.google.cloud.aiplatform.v1beta1.IExportDataOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Exports data from a Dataset.
  *
@@ -1006,10 +974,29 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.exportData(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.export_data.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ExportData_async
  */
+  exportData(
+      request?: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IExportDataResponse, protos.google.cloud.aiplatform.v1beta1.IExportDataOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  exportData(
+      request: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportDataResponse, protos.google.cloud.aiplatform.v1beta1.IExportDataOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  exportData(
+      request: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportDataResponse, protos.google.cloud.aiplatform.v1beta1.IExportDataOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   exportData(
       request?: protos.google.cloud.aiplatform.v1beta1.IExportDataRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1053,11 +1040,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkExportDataProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.export_data.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ExportData_async
  */
   async checkExportDataProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ExportDataResponse, protos.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1065,28 +1049,7 @@ export class DatasetServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.exportData, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.ExportDataResponse, protos.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata>;
   }
-  listDatasets(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IDataset[],
-        protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListDatasetsResponse
-      ]>;
-  listDatasets(
-      request: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListDatasetsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IDataset>): void;
-  listDatasets(
-      request: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListDatasetsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IDataset>): void;
-/**
+ /**
  * Lists Datasets in a Location.
  *
  * @param {Object} request
@@ -1134,6 +1097,27 @@ export class DatasetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDatasets(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IDataset[],
+        protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListDatasetsResponse
+      ]>;
+  listDatasets(
+      request: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListDatasetsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IDataset>): void;
+  listDatasets(
+      request: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListDatasetsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IDataset>): void;
   listDatasets(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1285,11 +1269,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDatasetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_datasets.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ListDatasets_async
  */
   listDatasetsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDatasetsRequest,
@@ -1304,7 +1285,6 @@ export class DatasetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDatasets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1314,28 +1294,7 @@ export class DatasetServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IDataset>;
   }
-  listDataItems(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IDataItem[],
-        protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListDataItemsResponse
-      ]>;
-  listDataItems(
-      request: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListDataItemsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IDataItem>): void;
-  listDataItems(
-      request: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListDataItemsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IDataItem>): void;
-/**
+ /**
  * Lists DataItems in a Dataset.
  *
  * @param {Object} request
@@ -1368,6 +1327,27 @@ export class DatasetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDataItems(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IDataItem[],
+        protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListDataItemsResponse
+      ]>;
+  listDataItems(
+      request: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListDataItemsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IDataItem>): void;
+  listDataItems(
+      request: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListDataItemsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IDataItem>): void;
   listDataItems(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1489,11 +1469,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDataItemsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_data_items.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ListDataItems_async
  */
   listDataItemsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListDataItemsRequest,
@@ -1508,7 +1485,6 @@ export class DatasetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDataItems'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1518,28 +1494,7 @@ export class DatasetServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IDataItem>;
   }
-  listAnnotations(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IAnnotation[],
-        protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListAnnotationsResponse
-      ]>;
-  listAnnotations(
-      request: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IAnnotation>): void;
-  listAnnotations(
-      request: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IAnnotation>): void;
-/**
+ /**
  * Lists Annotations belongs to a dataitem
  *
  * @param {Object} request
@@ -1572,6 +1527,27 @@ export class DatasetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAnnotations(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IAnnotation[],
+        protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListAnnotationsResponse
+      ]>;
+  listAnnotations(
+      request: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IAnnotation>): void;
+  listAnnotations(
+      request: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListAnnotationsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IAnnotation>): void;
   listAnnotations(
       request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1693,11 +1669,8 @@ export class DatasetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAnnotationsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/dataset_service.list_annotations.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_DatasetService_ListAnnotations_async
  */
   listAnnotationsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListAnnotationsRequest,
@@ -1712,7 +1685,6 @@ export class DatasetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAnnotations'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

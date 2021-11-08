@@ -30,19 +30,19 @@ function main(projectId) {
    *  This partition ID is normalized with the standard default context
    *  partition ID.
    */
-  // const partitionId = ''
+  // const partitionId = {}
   /**
    *  The options for this query.
    */
-  // const readOptions = ''
+  // const readOptions = {}
   /**
    *  The query to run.
    */
-  // const query = ''
+  // const query = {}
   /**
    *  The GQL query to run.
    */
-  // const gqlQuery = ''
+  // const gqlQuery = {}
 
   // Imports the Datastore library
   const {DatastoreClient} = require('@google-cloud/datastore').v1;
@@ -50,7 +50,7 @@ function main(projectId) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function runQuery() {
+  async function callRunQuery() {
     // Construct request
     const request = {
       projectId,
@@ -61,7 +61,7 @@ function main(projectId) {
     console.log(response);
   }
 
-  runQuery();
+  callRunQuery();
   // [END datastore_v1_generated_Datastore_RunQuery_async]
 }
 

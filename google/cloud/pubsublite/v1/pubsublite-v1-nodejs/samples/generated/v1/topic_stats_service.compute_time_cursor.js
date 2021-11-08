@@ -32,7 +32,7 @@ function main(topic, partition, target) {
    *  Required. The target publish or event time. Specifying a future time will return an
    *  unset cursor.
    */
-  // const target = ''
+  // const target = {}
 
   // Imports the Pubsublite library
   const {TopicStatsServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -40,7 +40,7 @@ function main(topic, partition, target) {
   // Instantiates a client
   const pubsubliteClient = new TopicStatsServiceClient();
 
-  async function computeTimeCursor() {
+  async function callComputeTimeCursor() {
     // Construct request
     const request = {
       topic,
@@ -53,7 +53,7 @@ function main(topic, partition, target) {
     console.log(response);
   }
 
-  computeTimeCursor();
+  callComputeTimeCursor();
   // [END pubsublite_v1_generated_TopicStatsService_ComputeTimeCursor_async]
 }
 

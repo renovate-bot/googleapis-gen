@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const shellClient = new CloudShellServiceClient();
 
-  async function getEnvironment() {
+  async function callGetEnvironment() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEnvironment();
+  callGetEnvironment();
   // [END cloudshell_v1_generated_CloudShellService_GetEnvironment_async]
 }
 

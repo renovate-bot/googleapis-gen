@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function getField() {
+  async function callGetField() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getField();
+  callGetField();
   // [END firestore_v1_generated_FirestoreAdmin_GetField_async]
 }
 

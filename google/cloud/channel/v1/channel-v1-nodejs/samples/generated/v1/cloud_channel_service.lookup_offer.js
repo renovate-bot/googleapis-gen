@@ -33,7 +33,7 @@ function main(entitlement) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function lookupOffer() {
+  async function callLookupOffer() {
     // Construct request
     const request = {
       entitlement,
@@ -44,7 +44,7 @@ function main(entitlement) {
     console.log(response);
   }
 
-  lookupOffer();
+  callLookupOffer();
   // [END cloudchannel_v1_generated_CloudChannelService_LookupOffer_async]
 }
 

@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function deleteProcessor() {
+  async function callDeleteProcessor() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteProcessor();
+  callDeleteProcessor();
   // [END documentai_v1beta3_generated_DocumentProcessorService_DeleteProcessor_async]
 }
 

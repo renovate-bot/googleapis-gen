@@ -29,7 +29,7 @@ function main(parent) {
    *  Optional. The maximum number of items to return.  If unspecified, server
    *  will pick an appropriate default. Server may return fewer items than
    *  requested. A caller should only rely on response's
-   *  [next_page_token][google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token]
+   *  next_page_token google.cloud.gaming.v1beta.ListRealmsResponse.next_page_token 
    *  to determine if there are more realms left to be queried.
    */
   // const pageSize = 1234
@@ -54,7 +54,7 @@ function main(parent) {
   // Instantiates a client
   const gamingClient = new RealmsServiceClient();
 
-  async function listRealms() {
+  async function callListRealms() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent) {
     }
   }
 
-  listRealms();
+  callListRealms();
   // [END gameservices_v1beta_generated_RealmsService_ListRealms_async]
 }
 

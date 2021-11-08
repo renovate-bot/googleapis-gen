@@ -23,11 +23,11 @@ function main(topic, updateMask) {
   /**
    *  Required. The topic to update. Its `name` field must be populated.
    */
-  // const topic = ''
+  // const topic = {}
   /**
    *  Required. A mask specifying the topic fields to change.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Pubsublite library
   const {AdminServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -35,7 +35,7 @@ function main(topic, updateMask) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function updateTopic() {
+  async function callUpdateTopic() {
     // Construct request
     const request = {
       topic,
@@ -47,7 +47,7 @@ function main(topic, updateMask) {
     console.log(response);
   }
 
-  updateTopic();
+  callUpdateTopic();
   // [END pubsublite_v1_generated_AdminService_UpdateTopic_async]
 }
 

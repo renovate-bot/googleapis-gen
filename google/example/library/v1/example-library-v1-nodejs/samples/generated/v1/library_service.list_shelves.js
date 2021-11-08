@@ -28,7 +28,7 @@ function main() {
   /**
    *  A token identifying a page of results the server should return.
    *  Typically, this is the value of
-   *  [ListShelvesResponse.next_page_token][google.example.library.v1.ListShelvesResponse.next_page_token]
+   *  ListShelvesResponse.next_page_token google.example.library.v1.ListShelvesResponse.next_page_token 
    *  returned from the previous call to `ListShelves` method.
    */
   // const pageToken = 'abc123'
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function listShelves() {
+  async function callListShelves() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     }
   }
 
-  listShelves();
+  callListShelves();
   // [END library-example_v1_generated_LibraryService_ListShelves_async]
 }
 

@@ -46,7 +46,7 @@ function main(customerId, mutateOperations) {
    *  resource will only be returned if the resource has the appropriate response
    *  field. E.g. MutateCampaignResult.campaign.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {GoogleAdsServiceClient} = require('google-ads').v9;
@@ -54,7 +54,7 @@ function main(customerId, mutateOperations) {
   // Instantiates a client
   const googleadsClient = new GoogleAdsServiceClient();
 
-  async function mutate() {
+  async function callMutate() {
     // Construct request
     const request = {
       customerId,
@@ -66,7 +66,7 @@ function main(customerId, mutateOperations) {
     console.log(response);
   }
 
-  mutate();
+  callMutate();
   // [END googleads_v9_generated_GoogleAdsService_Mutate_async]
 }
 

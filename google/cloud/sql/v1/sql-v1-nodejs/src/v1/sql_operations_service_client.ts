@@ -274,6 +274,25 @@ export class SqlOperationsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves an instance operation that has been performed on an instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.operation
+ *   Instance operation ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_operations_service.get.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlOperationsService_Get_async
+ */
   get(
       request?: protos.google.cloud.sql.v1.ISqlOperationsGetRequest,
       options?: CallOptions):
@@ -294,25 +313,6 @@ export class SqlOperationsServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlOperationsGetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves an instance operation that has been performed on an instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.operation
- *   Instance operation ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
- */
   get(
       request?: protos.google.cloud.sql.v1.ISqlOperationsGetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -347,26 +347,6 @@ export class SqlOperationsServiceClient {
     this.initialize();
     return this.innerApiCalls.get(request, options, callback);
   }
-  list(
-      request?: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IOperationsListResponse,
-        protos.google.cloud.sql.v1.ISqlOperationsListRequest|undefined, {}|undefined
-      ]>;
-  list(
-      request: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperationsListResponse,
-          protos.google.cloud.sql.v1.ISqlOperationsListRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperationsListResponse,
-          protos.google.cloud.sql.v1.ISqlOperationsListRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all instance operations that have been performed on the given Cloud
  * SQL instance in the reverse chronological order of the start time.
@@ -389,9 +369,29 @@ export class SqlOperationsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
+ * @example <caption>include:samples/generated/v1/sql_operations_service.list.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlOperationsService_List_async
  */
+  list(
+      request?: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IOperationsListResponse,
+        protos.google.cloud.sql.v1.ISqlOperationsListRequest|undefined, {}|undefined
+      ]>;
+  list(
+      request: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperationsListResponse,
+          protos.google.cloud.sql.v1.ISqlOperationsListRequest|null|undefined,
+          {}|null|undefined>): void;
+  list(
+      request: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperationsListResponse,
+          protos.google.cloud.sql.v1.ISqlOperationsListRequest|null|undefined,
+          {}|null|undefined>): void;
   list(
       request?: protos.google.cloud.sql.v1.ISqlOperationsListRequest,
       optionsOrCallback?: CallOptions|Callback<

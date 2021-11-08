@@ -25,25 +25,25 @@ function main(parent, basicConfig, feature) {
    *  One of image_classification_config, bounding_poly_config,
    *  polyline_config and segmentation_config are required.
    */
-  // const imageClassificationConfig = ''
+  // const imageClassificationConfig = {}
   /**
    *  Configuration for bounding box and bounding poly task.
    *  One of image_classification_config, bounding_poly_config,
    *  polyline_config and segmentation_config are required.
    */
-  // const boundingPolyConfig = ''
+  // const boundingPolyConfig = {}
   /**
    *  Configuration for polyline task.
    *  One of image_classification_config, bounding_poly_config,
    *  polyline_config and segmentation_config are required.
    */
-  // const polylineConfig = ''
+  // const polylineConfig = {}
   /**
    *  Configuration for segmentation task.
    *  One of image_classification_config, bounding_poly_config,
    *  polyline_config and segmentation_config are required.
    */
-  // const segmentationConfig = ''
+  // const segmentationConfig = {}
   /**
    *  Required. Name of the dataset to request labeling task, format:
    *  projects/{project_id}/datasets/{dataset_id}
@@ -52,11 +52,11 @@ function main(parent, basicConfig, feature) {
   /**
    *  Required. Basic human annotation config.
    */
-  // const basicConfig = ''
+  // const basicConfig = {}
   /**
    *  Required. The type of image labeling task.
    */
-  // const feature = ''
+  // const feature = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -64,7 +64,7 @@ function main(parent, basicConfig, feature) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function labelImage() {
+  async function callLabelImage() {
     // Construct request
     const request = {
       parent,
@@ -78,7 +78,7 @@ function main(parent, basicConfig, feature) {
     console.log(response);
   }
 
-  labelImage();
+  callLabelImage();
   // [END datalabeling_v1beta1_generated_DataLabelingService_LabelImage_async]
 }
 

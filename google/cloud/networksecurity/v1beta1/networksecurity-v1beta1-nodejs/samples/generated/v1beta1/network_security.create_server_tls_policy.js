@@ -34,7 +34,7 @@ function main(parent, serverTlsPolicyId, serverTlsPolicy) {
   /**
    *  Required. ServerTlsPolicy resource to be created.
    */
-  // const serverTlsPolicy = ''
+  // const serverTlsPolicy = {}
 
   // Imports the Networksecurity library
   const {NetworkSecurityClient} = require('@google-cloud/network-security').v1beta1;
@@ -42,7 +42,7 @@ function main(parent, serverTlsPolicyId, serverTlsPolicy) {
   // Instantiates a client
   const networksecurityClient = new NetworkSecurityClient();
 
-  async function createServerTlsPolicy() {
+  async function callCreateServerTlsPolicy() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, serverTlsPolicyId, serverTlsPolicy) {
     console.log(response);
   }
 
-  createServerTlsPolicy();
+  callCreateServerTlsPolicy();
   // [END networksecurity_v1beta1_generated_NetworkSecurity_CreateServerTlsPolicy_async]
 }
 

@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function getAnnotatedDataset() {
+  async function callGetAnnotatedDataset() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getAnnotatedDataset();
+  callGetAnnotatedDataset();
   // [END datalabeling_v1beta1_generated_DataLabelingService_GetAnnotatedDataset_async]
 }
 

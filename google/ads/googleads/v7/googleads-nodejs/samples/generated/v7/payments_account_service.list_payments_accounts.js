@@ -31,7 +31,7 @@ function main(customerId) {
   // Instantiates a client
   const googleadsClient = new PaymentsAccountServiceClient();
 
-  async function listPaymentsAccounts() {
+  async function callListPaymentsAccounts() {
     // Construct request
     const request = {
       customerId,
@@ -42,7 +42,7 @@ function main(customerId) {
     console.log(response);
   }
 
-  listPaymentsAccounts();
+  callListPaymentsAccounts();
   // [END googleads_v7_generated_PaymentsAccountService_ListPaymentsAccounts_async]
 }
 

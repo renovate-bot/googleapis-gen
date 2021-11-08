@@ -226,7 +226,7 @@ describe('v1.MetricsScopesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse());
             client.innerApiCalls.listMetricsScopesByMonitoredProject = stubSimpleCall(expectedResponse);
             const [response] = await client.listMetricsScopesByMonitoredProject(request);
@@ -242,7 +242,7 @@ describe('v1.MetricsScopesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse());
             client.innerApiCalls.listMetricsScopesByMonitoredProject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -269,7 +269,7 @@ describe('v1.MetricsScopesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listMetricsScopesByMonitoredProject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listMetricsScopesByMonitoredProject(request), expectedError);

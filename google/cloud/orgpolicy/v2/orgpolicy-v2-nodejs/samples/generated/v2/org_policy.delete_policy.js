@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const orgpolicyClient = new OrgPolicyClient();
 
-  async function deletePolicy() {
+  async function callDeletePolicy() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deletePolicy();
+  callDeletePolicy();
   // [END orgpolicy_v2_generated_OrgPolicy_DeletePolicy_async]
 }
 

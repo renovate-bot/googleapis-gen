@@ -344,6 +344,24 @@ export class RecommenderClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the requested insight. Requires the recommender.*.get IAM permission
+ * for the specified insight type.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the insight.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Insight]{@link google.cloud.recommender.v1.Insight}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/recommender.get_insight.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_GetInsight_async
+ */
   getInsight(
       request?: protos.google.cloud.recommender.v1.IGetInsightRequest,
       options?: CallOptions):
@@ -364,24 +382,6 @@ export class RecommenderClient {
           protos.google.cloud.recommender.v1.IInsight,
           protos.google.cloud.recommender.v1.IGetInsightRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the requested insight. Requires the recommender.*.get IAM permission
- * for the specified insight type.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the insight.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Insight]{@link google.cloud.recommender.v1.Insight}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getInsight(request);
- */
   getInsight(
       request?: protos.google.cloud.recommender.v1.IGetInsightRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -416,26 +416,6 @@ export class RecommenderClient {
     this.initialize();
     return this.innerApiCalls.getInsight(request, options, callback);
   }
-  markInsightAccepted(
-      request?: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommender.v1.IInsight,
-        protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest|undefined, {}|undefined
-      ]>;
-  markInsightAccepted(
-      request: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IInsight,
-          protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest|null|undefined,
-          {}|null|undefined>): void;
-  markInsightAccepted(
-      request: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IInsight,
-          protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks the Insight State as Accepted. Users can use this method to
  * indicate to the Recommender API that they have applied some action based
@@ -460,9 +440,29 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.markInsightAccepted(request);
+ * @example <caption>include:samples/generated/v1/recommender.mark_insight_accepted.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_MarkInsightAccepted_async
  */
+  markInsightAccepted(
+      request?: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommender.v1.IInsight,
+        protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest|undefined, {}|undefined
+      ]>;
+  markInsightAccepted(
+      request: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IInsight,
+          protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest|null|undefined,
+          {}|null|undefined>): void;
+  markInsightAccepted(
+      request: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IInsight,
+          protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest|null|undefined,
+          {}|null|undefined>): void;
   markInsightAccepted(
       request?: protos.google.cloud.recommender.v1.IMarkInsightAcceptedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -497,6 +497,24 @@ export class RecommenderClient {
     this.initialize();
     return this.innerApiCalls.markInsightAccepted(request, options, callback);
   }
+/**
+ * Gets the requested recommendation. Requires the recommender.*.get
+ * IAM permission for the specified recommender.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the recommendation.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Recommendation]{@link google.cloud.recommender.v1.Recommendation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/recommender.get_recommendation.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_GetRecommendation_async
+ */
   getRecommendation(
       request?: protos.google.cloud.recommender.v1.IGetRecommendationRequest,
       options?: CallOptions):
@@ -517,24 +535,6 @@ export class RecommenderClient {
           protos.google.cloud.recommender.v1.IRecommendation,
           protos.google.cloud.recommender.v1.IGetRecommendationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the requested recommendation. Requires the recommender.*.get
- * IAM permission for the specified recommender.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the recommendation.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Recommendation]{@link google.cloud.recommender.v1.Recommendation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getRecommendation(request);
- */
   getRecommendation(
       request?: protos.google.cloud.recommender.v1.IGetRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -569,26 +569,6 @@ export class RecommenderClient {
     this.initialize();
     return this.innerApiCalls.getRecommendation(request, options, callback);
   }
-  markRecommendationClaimed(
-      request?: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommender.v1.IRecommendation,
-        protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest|undefined, {}|undefined
-      ]>;
-  markRecommendationClaimed(
-      request: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IRecommendation,
-          protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest|null|undefined,
-          {}|null|undefined>): void;
-  markRecommendationClaimed(
-      request: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IRecommendation,
-          protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks the Recommendation State as Claimed. Users can use this method to
  * indicate to the Recommender API that they are starting to apply the
@@ -619,9 +599,29 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.markRecommendationClaimed(request);
+ * @example <caption>include:samples/generated/v1/recommender.mark_recommendation_claimed.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_MarkRecommendationClaimed_async
  */
+  markRecommendationClaimed(
+      request?: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommender.v1.IRecommendation,
+        protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest|undefined, {}|undefined
+      ]>;
+  markRecommendationClaimed(
+      request: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IRecommendation,
+          protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest|null|undefined,
+          {}|null|undefined>): void;
+  markRecommendationClaimed(
+      request: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IRecommendation,
+          protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest|null|undefined,
+          {}|null|undefined>): void;
   markRecommendationClaimed(
       request?: protos.google.cloud.recommender.v1.IMarkRecommendationClaimedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -656,26 +656,6 @@ export class RecommenderClient {
     this.initialize();
     return this.innerApiCalls.markRecommendationClaimed(request, options, callback);
   }
-  markRecommendationSucceeded(
-      request?: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommender.v1.IRecommendation,
-        protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest|undefined, {}|undefined
-      ]>;
-  markRecommendationSucceeded(
-      request: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IRecommendation,
-          protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest|null|undefined,
-          {}|null|undefined>): void;
-  markRecommendationSucceeded(
-      request: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IRecommendation,
-          protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks the Recommendation State as Succeeded. Users can use this method to
  * indicate to the Recommender API that they have applied the recommendation
@@ -707,9 +687,29 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.markRecommendationSucceeded(request);
+ * @example <caption>include:samples/generated/v1/recommender.mark_recommendation_succeeded.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_MarkRecommendationSucceeded_async
  */
+  markRecommendationSucceeded(
+      request?: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommender.v1.IRecommendation,
+        protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest|undefined, {}|undefined
+      ]>;
+  markRecommendationSucceeded(
+      request: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IRecommendation,
+          protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest|null|undefined,
+          {}|null|undefined>): void;
+  markRecommendationSucceeded(
+      request: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IRecommendation,
+          protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest|null|undefined,
+          {}|null|undefined>): void;
   markRecommendationSucceeded(
       request?: protos.google.cloud.recommender.v1.IMarkRecommendationSucceededRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -744,26 +744,6 @@ export class RecommenderClient {
     this.initialize();
     return this.innerApiCalls.markRecommendationSucceeded(request, options, callback);
   }
-  markRecommendationFailed(
-      request?: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommender.v1.IRecommendation,
-        protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest|undefined, {}|undefined
-      ]>;
-  markRecommendationFailed(
-      request: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IRecommendation,
-          protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest|null|undefined,
-          {}|null|undefined>): void;
-  markRecommendationFailed(
-      request: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
-      callback: Callback<
-          protos.google.cloud.recommender.v1.IRecommendation,
-          protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks the Recommendation State as Failed. Users can use this method to
  * indicate to the Recommender API that they have applied the recommendation
@@ -795,9 +775,29 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.markRecommendationFailed(request);
+ * @example <caption>include:samples/generated/v1/recommender.mark_recommendation_failed.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_MarkRecommendationFailed_async
  */
+  markRecommendationFailed(
+      request?: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommender.v1.IRecommendation,
+        protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest|undefined, {}|undefined
+      ]>;
+  markRecommendationFailed(
+      request: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IRecommendation,
+          protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest|null|undefined,
+          {}|null|undefined>): void;
+  markRecommendationFailed(
+      request: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
+      callback: Callback<
+          protos.google.cloud.recommender.v1.IRecommendation,
+          protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest|null|undefined,
+          {}|null|undefined>): void;
   markRecommendationFailed(
       request?: protos.google.cloud.recommender.v1.IMarkRecommendationFailedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -833,28 +833,7 @@ export class RecommenderClient {
     return this.innerApiCalls.markRecommendationFailed(request, options, callback);
   }
 
-  listInsights(
-      request?: protos.google.cloud.recommender.v1.IListInsightsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommender.v1.IInsight[],
-        protos.google.cloud.recommender.v1.IListInsightsRequest|null,
-        protos.google.cloud.recommender.v1.IListInsightsResponse
-      ]>;
-  listInsights(
-      request: protos.google.cloud.recommender.v1.IListInsightsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.recommender.v1.IListInsightsRequest,
-          protos.google.cloud.recommender.v1.IListInsightsResponse|null|undefined,
-          protos.google.cloud.recommender.v1.IInsight>): void;
-  listInsights(
-      request: protos.google.cloud.recommender.v1.IListInsightsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.recommender.v1.IListInsightsRequest,
-          protos.google.cloud.recommender.v1.IListInsightsResponse|null|undefined,
-          protos.google.cloud.recommender.v1.IInsight>): void;
-/**
+ /**
  * Lists insights for a Cloud project. Requires the recommender.*.list IAM
  * permission for the specified insight type.
  *
@@ -897,6 +876,27 @@ export class RecommenderClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listInsights(
+      request?: protos.google.cloud.recommender.v1.IListInsightsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommender.v1.IInsight[],
+        protos.google.cloud.recommender.v1.IListInsightsRequest|null,
+        protos.google.cloud.recommender.v1.IListInsightsResponse
+      ]>;
+  listInsights(
+      request: protos.google.cloud.recommender.v1.IListInsightsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.recommender.v1.IListInsightsRequest,
+          protos.google.cloud.recommender.v1.IListInsightsResponse|null|undefined,
+          protos.google.cloud.recommender.v1.IInsight>): void;
+  listInsights(
+      request: protos.google.cloud.recommender.v1.IListInsightsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.recommender.v1.IListInsightsRequest,
+          protos.google.cloud.recommender.v1.IListInsightsResponse|null|undefined,
+          protos.google.cloud.recommender.v1.IInsight>): void;
   listInsights(
       request?: protos.google.cloud.recommender.v1.IListInsightsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1036,11 +1036,8 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listInsightsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/recommender.list_insights.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_ListInsights_async
  */
   listInsightsAsync(
       request?: protos.google.cloud.recommender.v1.IListInsightsRequest,
@@ -1055,7 +1052,6 @@ export class RecommenderClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listInsights'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1065,28 +1061,7 @@ export class RecommenderClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.recommender.v1.IInsight>;
   }
-  listRecommendations(
-      request?: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommender.v1.IRecommendation[],
-        protos.google.cloud.recommender.v1.IListRecommendationsRequest|null,
-        protos.google.cloud.recommender.v1.IListRecommendationsResponse
-      ]>;
-  listRecommendations(
-      request: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.recommender.v1.IListRecommendationsRequest,
-          protos.google.cloud.recommender.v1.IListRecommendationsResponse|null|undefined,
-          protos.google.cloud.recommender.v1.IRecommendation>): void;
-  listRecommendations(
-      request: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.recommender.v1.IListRecommendationsRequest,
-          protos.google.cloud.recommender.v1.IListRecommendationsResponse|null|undefined,
-          protos.google.cloud.recommender.v1.IRecommendation>): void;
-/**
+ /**
  * Lists recommendations for a Cloud project. Requires the recommender.*.list
  * IAM permission for the specified recommender.
  *
@@ -1129,6 +1104,27 @@ export class RecommenderClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listRecommendations(
+      request?: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommender.v1.IRecommendation[],
+        protos.google.cloud.recommender.v1.IListRecommendationsRequest|null,
+        protos.google.cloud.recommender.v1.IListRecommendationsResponse
+      ]>;
+  listRecommendations(
+      request: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.recommender.v1.IListRecommendationsRequest,
+          protos.google.cloud.recommender.v1.IListRecommendationsResponse|null|undefined,
+          protos.google.cloud.recommender.v1.IRecommendation>): void;
+  listRecommendations(
+      request: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.recommender.v1.IListRecommendationsRequest,
+          protos.google.cloud.recommender.v1.IListRecommendationsResponse|null|undefined,
+          protos.google.cloud.recommender.v1.IRecommendation>): void;
   listRecommendations(
       request?: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1268,11 +1264,8 @@ export class RecommenderClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listRecommendationsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/recommender.list_recommendations.js</caption>
+ * region_tag:recommender_v1_generated_Recommender_ListRecommendations_async
  */
   listRecommendationsAsync(
       request?: protos.google.cloud.recommender.v1.IListRecommendationsRequest,
@@ -1287,7 +1280,6 @@ export class RecommenderClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listRecommendations'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

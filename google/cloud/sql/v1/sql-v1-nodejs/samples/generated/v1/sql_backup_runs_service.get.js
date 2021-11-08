@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlBackupRunsServiceClient();
 
-  async function get() {
+  async function callGet() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  get();
+  callGet();
   // [END sqladmin_v1_generated_SqlBackupRunsService_Get_async]
 }
 

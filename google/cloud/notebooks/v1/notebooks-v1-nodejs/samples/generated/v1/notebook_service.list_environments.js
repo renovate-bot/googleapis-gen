@@ -40,7 +40,7 @@ function main(parent) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function listEnvironments() {
+  async function callListEnvironments() {
     // Construct request
     const request = {
       parent,
@@ -53,7 +53,7 @@ function main(parent) {
     }
   }
 
-  listEnvironments();
+  callListEnvironments();
   // [END notebooks_v1_generated_NotebookService_ListEnvironments_async]
 }
 

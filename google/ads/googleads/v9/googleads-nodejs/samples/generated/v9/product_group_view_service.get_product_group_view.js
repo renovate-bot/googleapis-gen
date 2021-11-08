@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ProductGroupViewServiceClient();
 
-  async function getProductGroupView() {
+  async function callGetProductGroupView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getProductGroupView();
+  callGetProductGroupView();
   // [END googleads_v9_generated_ProductGroupViewService_GetProductGroupView_async]
 }
 

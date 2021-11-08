@@ -44,7 +44,7 @@ function main(parent) {
   // Instantiates a client
   const resourcemanagerClient = new TagBindingsClient();
 
-  async function listTagBindings() {
+  async function callListTagBindings() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     }
   }
 
-  listTagBindings();
+  callListTagBindings();
   // [END cloudresourcemanager_v3_generated_TagBindings_ListTagBindings_async]
 }
 

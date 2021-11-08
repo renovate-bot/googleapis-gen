@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new VizierServiceClient();
 
-  async function deleteStudy() {
+  async function callDeleteStudy() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteStudy();
+  callDeleteStudy();
   // [END aiplatform_v1_generated_VizierService_DeleteStudy_async]
 }
 

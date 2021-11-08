@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function getGuestPolicy() {
+  async function callGetGuestPolicy() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getGuestPolicy();
+  callGetGuestPolicy();
   // [END osconfig_v1beta_generated_OsConfigService_GetGuestPolicy_async]
 }
 

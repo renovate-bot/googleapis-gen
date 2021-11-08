@@ -46,7 +46,7 @@ function main(name, validateOnly) {
   // Instantiates a client
   const eventarcClient = new EventarcClient();
 
-  async function deleteTrigger() {
+  async function callDeleteTrigger() {
     // Construct request
     const request = {
       name,
@@ -59,7 +59,7 @@ function main(name, validateOnly) {
     console.log(response);
   }
 
-  deleteTrigger();
+  callDeleteTrigger();
   // [END eventarc_v1_generated_Eventarc_DeleteTrigger_async]
 }
 

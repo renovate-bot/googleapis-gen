@@ -273,26 +273,6 @@ export class TextToSpeechClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  listVoices(
-      request?: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.texttospeech.v1.IListVoicesResponse,
-        protos.google.cloud.texttospeech.v1.IListVoicesRequest|undefined, {}|undefined
-      ]>;
-  listVoices(
-      request: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.texttospeech.v1.IListVoicesResponse,
-          protos.google.cloud.texttospeech.v1.IListVoicesRequest|null|undefined,
-          {}|null|undefined>): void;
-  listVoices(
-      request: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
-      callback: Callback<
-          protos.google.cloud.texttospeech.v1.IListVoicesResponse,
-          protos.google.cloud.texttospeech.v1.IListVoicesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns a list of Voice supported for synthesis.
  *
@@ -314,9 +294,29 @@ export class TextToSpeechClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listVoices(request);
+ * @example <caption>include:samples/generated/v1/text_to_speech.list_voices.js</caption>
+ * region_tag:texttospeech_v1_generated_TextToSpeech_ListVoices_async
  */
+  listVoices(
+      request?: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.texttospeech.v1.IListVoicesResponse,
+        protos.google.cloud.texttospeech.v1.IListVoicesRequest|undefined, {}|undefined
+      ]>;
+  listVoices(
+      request: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.texttospeech.v1.IListVoicesResponse,
+          protos.google.cloud.texttospeech.v1.IListVoicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  listVoices(
+      request: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
+      callback: Callback<
+          protos.google.cloud.texttospeech.v1.IListVoicesResponse,
+          protos.google.cloud.texttospeech.v1.IListVoicesRequest|null|undefined,
+          {}|null|undefined>): void;
   listVoices(
       request?: protos.google.cloud.texttospeech.v1.IListVoicesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -341,9 +341,33 @@ export class TextToSpeechClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listVoices(request, options, callback);
   }
+/**
+ * Synthesizes speech synchronously: receive results after all text input
+ * has been processed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.texttospeech.v1.SynthesisInput} request.input
+ *   Required. The Synthesizer requires either plain text or SSML as input.
+ * @param {google.cloud.texttospeech.v1.VoiceSelectionParams} request.voice
+ *   Required. The desired voice of the synthesized audio.
+ * @param {google.cloud.texttospeech.v1.AudioConfig} request.audioConfig
+ *   Required. The configuration of the synthesized audio.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [SynthesizeSpeechResponse]{@link google.cloud.texttospeech.v1.SynthesizeSpeechResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/text_to_speech.synthesize_speech.js</caption>
+ * region_tag:texttospeech_v1_generated_TextToSpeech_SynthesizeSpeech_async
+ */
   synthesizeSpeech(
       request?: protos.google.cloud.texttospeech.v1.ISynthesizeSpeechRequest,
       options?: CallOptions):
@@ -364,28 +388,6 @@ export class TextToSpeechClient {
           protos.google.cloud.texttospeech.v1.ISynthesizeSpeechResponse,
           protos.google.cloud.texttospeech.v1.ISynthesizeSpeechRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Synthesizes speech synchronously: receive results after all text input
- * has been processed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.texttospeech.v1.SynthesisInput} request.input
- *   Required. The Synthesizer requires either plain text or SSML as input.
- * @param {google.cloud.texttospeech.v1.VoiceSelectionParams} request.voice
- *   Required. The desired voice of the synthesized audio.
- * @param {google.cloud.texttospeech.v1.AudioConfig} request.audioConfig
- *   Required. The configuration of the synthesized audio.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [SynthesizeSpeechResponse]{@link google.cloud.texttospeech.v1.SynthesizeSpeechResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.synthesizeSpeech(request);
- */
   synthesizeSpeech(
       request?: protos.google.cloud.texttospeech.v1.ISynthesizeSpeechRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -410,6 +412,8 @@ export class TextToSpeechClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.synthesizeSpeech(request, options, callback);
   }

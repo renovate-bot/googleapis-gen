@@ -28,7 +28,7 @@ function main(parent, instruction) {
   /**
    *  Required. Instruction of how to perform the labeling task.
    */
-  // const instruction = ''
+  // const instruction = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, instruction) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function createInstruction() {
+  async function callCreateInstruction() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, instruction) {
     console.log(response);
   }
 
-  createInstruction();
+  callCreateInstruction();
   // [END datalabeling_v1beta1_generated_DataLabelingService_CreateInstruction_async]
 }
 

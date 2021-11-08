@@ -727,26 +727,6 @@ export class CustomerNegativeCriterionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerNegativeCriterion(
-      request?: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICustomerNegativeCriterion,
-        protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest|undefined, {}|undefined
-      ]>;
-  getCustomerNegativeCriterion(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerNegativeCriterion,
-          protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerNegativeCriterion(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerNegativeCriterion,
-          protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested criterion in full detail.
  *
@@ -769,9 +749,29 @@ export class CustomerNegativeCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerNegativeCriterion(request);
+ * @example <caption>include:samples/generated/v9/customer_negative_criterion_service.get_customer_negative_criterion.js</caption>
+ * region_tag:googleads_v9_generated_CustomerNegativeCriterionService_GetCustomerNegativeCriterion_async
  */
+  getCustomerNegativeCriterion(
+      request?: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICustomerNegativeCriterion,
+        protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest|undefined, {}|undefined
+      ]>;
+  getCustomerNegativeCriterion(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerNegativeCriterion,
+          protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerNegativeCriterion(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerNegativeCriterion,
+          protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerNegativeCriterion(
       request?: protos.google.ads.googleads.v9.services.IGetCustomerNegativeCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class CustomerNegativeCriterionServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerNegativeCriterion(request, options, callback);
   }
-  mutateCustomerNegativeCriteria(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerNegativeCriteria(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerNegativeCriteria(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or removes criteria. Operation statuses are returned.
  *
@@ -865,9 +845,29 @@ export class CustomerNegativeCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerNegativeCriteria(request);
+ * @example <caption>include:samples/generated/v9/customer_negative_criterion_service.mutate_customer_negative_criteria.js</caption>
+ * region_tag:googleads_v9_generated_CustomerNegativeCriterionService_MutateCustomerNegativeCriteria_async
  */
+  mutateCustomerNegativeCriteria(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerNegativeCriteria(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerNegativeCriteria(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerNegativeCriteria(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomerNegativeCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<

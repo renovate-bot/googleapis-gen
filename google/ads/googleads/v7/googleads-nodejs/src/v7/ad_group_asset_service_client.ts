@@ -646,26 +646,6 @@ export class AdGroupAssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupAsset(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroupAsset,
-        protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupAsset(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupAsset,
-          protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupAsset(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupAsset,
-          protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group asset in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupAsset(request);
+ * @example <caption>include:samples/generated/v7/ad_group_asset_service.get_ad_group_asset.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupAssetService_GetAdGroupAsset_async
  */
+  getAdGroupAsset(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroupAsset,
+        protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupAsset(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupAsset,
+          protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupAsset(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupAsset,
+          protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupAsset(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class AdGroupAssetServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroupAsset(request, options, callback);
   }
-  mutateAdGroupAssets(
-      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsResponse,
-        protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupAssets(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupAssets(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes ad group assets. Operation statuses are
  * returned.
@@ -783,9 +763,29 @@ export class AdGroupAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupAssets(request);
+ * @example <caption>include:samples/generated/v7/ad_group_asset_service.mutate_ad_group_assets.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupAssetService_MutateAdGroupAssets_async
  */
+  mutateAdGroupAssets(
+      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsResponse,
+        protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupAssets(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupAssets(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupAssets(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<

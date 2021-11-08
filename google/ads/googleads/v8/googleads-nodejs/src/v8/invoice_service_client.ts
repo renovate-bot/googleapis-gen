@@ -676,26 +676,6 @@ export class InvoiceServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  listInvoices(
-      request?: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IListInvoicesResponse,
-        protos.google.ads.googleads.v8.services.IListInvoicesRequest|undefined, {}|undefined
-      ]>;
-  listInvoices(
-      request: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IListInvoicesResponse,
-          protos.google.ads.googleads.v8.services.IListInvoicesRequest|null|undefined,
-          {}|null|undefined>): void;
-  listInvoices(
-      request: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IListInvoicesResponse,
-          protos.google.ads.googleads.v8.services.IListInvoicesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns all invoices associated with a billing setup, for a given month.
  *
@@ -729,9 +709,29 @@ export class InvoiceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listInvoices(request);
+ * @example <caption>include:samples/generated/v8/invoice_service.list_invoices.js</caption>
+ * region_tag:googleads_v8_generated_InvoiceService_ListInvoices_async
  */
+  listInvoices(
+      request?: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IListInvoicesResponse,
+        protos.google.ads.googleads.v8.services.IListInvoicesRequest|undefined, {}|undefined
+      ]>;
+  listInvoices(
+      request: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IListInvoicesResponse,
+          protos.google.ads.googleads.v8.services.IListInvoicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  listInvoices(
+      request: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IListInvoicesResponse,
+          protos.google.ads.googleads.v8.services.IListInvoicesRequest|null|undefined,
+          {}|null|undefined>): void;
   listInvoices(
       request?: protos.google.ads.googleads.v8.services.IListInvoicesRequest,
       optionsOrCallback?: CallOptions|Callback<

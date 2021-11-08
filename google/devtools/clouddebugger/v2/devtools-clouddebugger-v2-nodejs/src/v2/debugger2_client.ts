@@ -285,26 +285,6 @@ export class Debugger2Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  setBreakpoint(
-      request?: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
-        protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|undefined, {}|undefined
-      ]>;
-  setBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
-          protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|null|undefined,
-          {}|null|undefined>): void;
-  setBreakpoint(
-      request: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
-      callback: Callback<
-          protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
-          protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the breakpoint to the debuggee.
  *
@@ -325,9 +305,29 @@ export class Debugger2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setBreakpoint(request);
+ * @example <caption>include:samples/generated/v2/debugger2.set_breakpoint.js</caption>
+ * region_tag:clouddebugger_v2_generated_Debugger2_SetBreakpoint_async
  */
+  setBreakpoint(
+      request?: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
+        protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|undefined, {}|undefined
+      ]>;
+  setBreakpoint(
+      request: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
+          protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|null|undefined,
+          {}|null|undefined>): void;
+  setBreakpoint(
+      request: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
+      callback: Callback<
+          protos.google.devtools.clouddebugger.v2.ISetBreakpointResponse,
+          protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest|null|undefined,
+          {}|null|undefined>): void;
   setBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.ISetBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -362,6 +362,28 @@ export class Debugger2Client {
     this.initialize();
     return this.innerApiCalls.setBreakpoint(request, options, callback);
   }
+/**
+ * Gets breakpoint information.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.debuggeeId
+ *   Required. ID of the debuggee whose breakpoint to get.
+ * @param {string} request.breakpointId
+ *   Required. ID of the breakpoint to get.
+ * @param {string} request.clientVersion
+ *   Required. The client version making the call.
+ *   Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [GetBreakpointResponse]{@link google.devtools.clouddebugger.v2.GetBreakpointResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/debugger2.get_breakpoint.js</caption>
+ * region_tag:clouddebugger_v2_generated_Debugger2_GetBreakpoint_async
+ */
   getBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
       options?: CallOptions):
@@ -382,28 +404,6 @@ export class Debugger2Client {
           protos.google.devtools.clouddebugger.v2.IGetBreakpointResponse,
           protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets breakpoint information.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.debuggeeId
- *   Required. ID of the debuggee whose breakpoint to get.
- * @param {string} request.breakpointId
- *   Required. ID of the breakpoint to get.
- * @param {string} request.clientVersion
- *   Required. The client version making the call.
- *   Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [GetBreakpointResponse]{@link google.devtools.clouddebugger.v2.GetBreakpointResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBreakpoint(request);
- */
   getBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IGetBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -438,6 +438,28 @@ export class Debugger2Client {
     this.initialize();
     return this.innerApiCalls.getBreakpoint(request, options, callback);
   }
+/**
+ * Deletes the breakpoint from the debuggee.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.debuggeeId
+ *   Required. ID of the debuggee whose breakpoint to delete.
+ * @param {string} request.breakpointId
+ *   Required. ID of the breakpoint to delete.
+ * @param {string} request.clientVersion
+ *   Required. The client version making the call.
+ *   Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/debugger2.delete_breakpoint.js</caption>
+ * region_tag:clouddebugger_v2_generated_Debugger2_DeleteBreakpoint_async
+ */
   deleteBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
       options?: CallOptions):
@@ -458,28 +480,6 @@ export class Debugger2Client {
           protos.google.protobuf.IEmpty,
           protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the breakpoint from the debuggee.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.debuggeeId
- *   Required. ID of the debuggee whose breakpoint to delete.
- * @param {string} request.breakpointId
- *   Required. ID of the breakpoint to delete.
- * @param {string} request.clientVersion
- *   Required. The client version making the call.
- *   Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteBreakpoint(request);
- */
   deleteBreakpoint(
       request?: protos.google.devtools.clouddebugger.v2.IDeleteBreakpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -514,26 +514,6 @@ export class Debugger2Client {
     this.initialize();
     return this.innerApiCalls.deleteBreakpoint(request, options, callback);
   }
-  listBreakpoints(
-      request?: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
-        protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|undefined, {}|undefined
-      ]>;
-  listBreakpoints(
-      request: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
-          protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listBreakpoints(
-      request: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
-      callback: Callback<
-          protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
-          protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all breakpoints for the debuggee.
  *
@@ -568,9 +548,29 @@ export class Debugger2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listBreakpoints(request);
+ * @example <caption>include:samples/generated/v2/debugger2.list_breakpoints.js</caption>
+ * region_tag:clouddebugger_v2_generated_Debugger2_ListBreakpoints_async
  */
+  listBreakpoints(
+      request?: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
+        protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|undefined, {}|undefined
+      ]>;
+  listBreakpoints(
+      request: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
+          protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listBreakpoints(
+      request: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
+      callback: Callback<
+          protos.google.devtools.clouddebugger.v2.IListBreakpointsResponse,
+          protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest|null|undefined,
+          {}|null|undefined>): void;
   listBreakpoints(
       request?: protos.google.devtools.clouddebugger.v2.IListBreakpointsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -605,26 +605,6 @@ export class Debugger2Client {
     this.initialize();
     return this.innerApiCalls.listBreakpoints(request, options, callback);
   }
-  listDebuggees(
-      request?: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
-        protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|undefined, {}|undefined
-      ]>;
-  listDebuggees(
-      request: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
-          protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|null|undefined,
-          {}|null|undefined>): void;
-  listDebuggees(
-      request: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
-      callback: Callback<
-          protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
-          protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all the debuggees that the user has access to.
  *
@@ -645,9 +625,29 @@ export class Debugger2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listDebuggees(request);
+ * @example <caption>include:samples/generated/v2/debugger2.list_debuggees.js</caption>
+ * region_tag:clouddebugger_v2_generated_Debugger2_ListDebuggees_async
  */
+  listDebuggees(
+      request?: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
+        protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|undefined, {}|undefined
+      ]>;
+  listDebuggees(
+      request: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
+          protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|null|undefined,
+          {}|null|undefined>): void;
+  listDebuggees(
+      request: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
+      callback: Callback<
+          protos.google.devtools.clouddebugger.v2.IListDebuggeesResponse,
+          protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest|null|undefined,
+          {}|null|undefined>): void;
   listDebuggees(
       request?: protos.google.devtools.clouddebugger.v2.IListDebuggeesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -672,6 +672,8 @@ export class Debugger2Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listDebuggees(request, options, callback);
   }

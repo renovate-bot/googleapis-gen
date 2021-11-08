@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function getSpoke() {
+  async function callGetSpoke() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSpoke();
+  callGetSpoke();
   // [END networkconnectivity_v1_generated_HubService_GetSpoke_async]
 }
 

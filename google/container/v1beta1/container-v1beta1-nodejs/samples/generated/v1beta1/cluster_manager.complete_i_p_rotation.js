@@ -21,24 +21,6 @@ function main(projectId, zone, clusterId) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://developers.google.com/console/help/new/#projectnumber).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the cluster.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const clusterId = 'abc123'
-  /**
    *  The name (project, location, cluster id) of the cluster to complete IP
    *  rotation. Specified in the format `projects/* /locations/* /clusters/*`.
    */
@@ -50,7 +32,7 @@ function main(projectId, zone, clusterId) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function completeIPRotation() {
+  async function callCompleteIPRotation() {
     // Construct request
     const request = {
       projectId,
@@ -63,7 +45,7 @@ function main(projectId, zone, clusterId) {
     console.log(response);
   }
 
-  completeIPRotation();
+  callCompleteIPRotation();
   // [END container_v1beta1_generated_ClusterManager_CompleteIPRotation_async]
 }
 

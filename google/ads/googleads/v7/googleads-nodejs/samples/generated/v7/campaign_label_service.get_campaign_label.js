@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignLabelServiceClient();
 
-  async function getCampaignLabel() {
+  async function callGetCampaignLabel() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCampaignLabel();
+  callGetCampaignLabel();
   // [END googleads_v7_generated_CampaignLabelService_GetCampaignLabel_async]
 }
 

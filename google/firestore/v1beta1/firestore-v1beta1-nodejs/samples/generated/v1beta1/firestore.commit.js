@@ -41,7 +41,7 @@ function main(database) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function commit() {
+  async function callCommit() {
     // Construct request
     const request = {
       database,
@@ -52,7 +52,7 @@ function main(database) {
     console.log(response);
   }
 
-  commit();
+  callCommit();
   // [END firestore_v1beta1_generated_Firestore_Commit_async]
 }
 

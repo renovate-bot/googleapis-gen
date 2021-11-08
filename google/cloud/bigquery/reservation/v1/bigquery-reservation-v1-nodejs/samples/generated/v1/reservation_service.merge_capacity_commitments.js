@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const reservationClient = new ReservationServiceClient();
 
-  async function mergeCapacityCommitments() {
+  async function callMergeCapacityCommitments() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  mergeCapacityCommitments();
+  callMergeCapacityCommitments();
   // [END bigqueryreservation_v1_generated_ReservationService_MergeCapacityCommitments_async]
 }
 

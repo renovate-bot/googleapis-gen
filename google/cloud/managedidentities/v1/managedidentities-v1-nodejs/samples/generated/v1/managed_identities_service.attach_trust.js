@@ -28,7 +28,7 @@ function main(name, trust) {
   /**
    *  Required. The domain trust resource.
    */
-  // const trust = ''
+  // const trust = {}
 
   // Imports the Managedidentities library
   const {ManagedIdentitiesServiceClient} = require('@google-cloud/managed-identities').v1;
@@ -36,7 +36,7 @@ function main(name, trust) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function attachTrust() {
+  async function callAttachTrust() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name, trust) {
     console.log(response);
   }
 
-  attachTrust();
+  callAttachTrust();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_AttachTrust_async]
 }
 

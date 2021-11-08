@@ -727,26 +727,6 @@ export class ConversionGoalCampaignConfigServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateConversionGoalCampaignConfigs(
-      request?: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsResponse,
-        protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest|undefined, {}|undefined
-      ]>;
-  mutateConversionGoalCampaignConfigs(
-      request: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsResponse,
-          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateConversionGoalCampaignConfigs(
-      request: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsResponse,
-          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes conversion goal campaign config. Operation
  * statuses are returned.
@@ -771,9 +751,29 @@ export class ConversionGoalCampaignConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateConversionGoalCampaignConfigs(request);
+ * @example <caption>include:samples/generated/v9/conversion_goal_campaign_config_service.mutate_conversion_goal_campaign_configs.js</caption>
+ * region_tag:googleads_v9_generated_ConversionGoalCampaignConfigService_MutateConversionGoalCampaignConfigs_async
  */
+  mutateConversionGoalCampaignConfigs(
+      request?: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsResponse,
+        protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest|undefined, {}|undefined
+      ]>;
+  mutateConversionGoalCampaignConfigs(
+      request: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsResponse,
+          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateConversionGoalCampaignConfigs(
+      request: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsResponse,
+          protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateConversionGoalCampaignConfigs(
       request?: protos.google.ads.googleads.v9.services.IMutateConversionGoalCampaignConfigsRequest,
       optionsOrCallback?: CallOptions|Callback<

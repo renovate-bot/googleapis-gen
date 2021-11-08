@@ -295,26 +295,6 @@ export class TripServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createTrip(
-      request?: protos.maps.fleetengine.v1.ICreateTripRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.ITrip,
-        protos.maps.fleetengine.v1.ICreateTripRequest|undefined, {}|undefined
-      ]>;
-  createTrip(
-      request: protos.maps.fleetengine.v1.ICreateTripRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ITrip,
-          protos.maps.fleetengine.v1.ICreateTripRequest|null|undefined,
-          {}|null|undefined>): void;
-  createTrip(
-      request: protos.maps.fleetengine.v1.ICreateTripRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ITrip,
-          protos.maps.fleetengine.v1.ICreateTripRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a trip in the Fleet Engine and returns the new trip.
  *
@@ -371,9 +351,29 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createTrip(request);
+ * @example <caption>include:samples/generated/v1/trip_service.create_trip.js</caption>
+ * region_tag:fleetengine_v1_generated_TripService_CreateTrip_async
  */
+  createTrip(
+      request?: protos.maps.fleetengine.v1.ICreateTripRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.ITrip,
+        protos.maps.fleetengine.v1.ICreateTripRequest|undefined, {}|undefined
+      ]>;
+  createTrip(
+      request: protos.maps.fleetengine.v1.ICreateTripRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ITrip,
+          protos.maps.fleetengine.v1.ICreateTripRequest|null|undefined,
+          {}|null|undefined>): void;
+  createTrip(
+      request: protos.maps.fleetengine.v1.ICreateTripRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ITrip,
+          protos.maps.fleetengine.v1.ICreateTripRequest|null|undefined,
+          {}|null|undefined>): void;
   createTrip(
       request?: protos.maps.fleetengine.v1.ICreateTripRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -408,26 +408,6 @@ export class TripServiceClient {
     this.initialize();
     return this.innerApiCalls.createTrip(request, options, callback);
   }
-  getTrip(
-      request?: protos.maps.fleetengine.v1.IGetTripRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.ITrip,
-        protos.maps.fleetengine.v1.IGetTripRequest|undefined, {}|undefined
-      ]>;
-  getTrip(
-      request: protos.maps.fleetengine.v1.IGetTripRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ITrip,
-          protos.maps.fleetengine.v1.IGetTripRequest|null|undefined,
-          {}|null|undefined>): void;
-  getTrip(
-      request: protos.maps.fleetengine.v1.IGetTripRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ITrip,
-          protos.maps.fleetengine.v1.IGetTripRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Get information about a single trip.
  *
@@ -463,9 +443,29 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getTrip(request);
+ * @example <caption>include:samples/generated/v1/trip_service.get_trip.js</caption>
+ * region_tag:fleetengine_v1_generated_TripService_GetTrip_async
  */
+  getTrip(
+      request?: protos.maps.fleetengine.v1.IGetTripRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.ITrip,
+        protos.maps.fleetengine.v1.IGetTripRequest|undefined, {}|undefined
+      ]>;
+  getTrip(
+      request: protos.maps.fleetengine.v1.IGetTripRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ITrip,
+          protos.maps.fleetengine.v1.IGetTripRequest|null|undefined,
+          {}|null|undefined>): void;
+  getTrip(
+      request: protos.maps.fleetengine.v1.IGetTripRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ITrip,
+          protos.maps.fleetengine.v1.IGetTripRequest|null|undefined,
+          {}|null|undefined>): void;
   getTrip(
       request?: protos.maps.fleetengine.v1.IGetTripRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,26 +500,6 @@ export class TripServiceClient {
     this.initialize();
     return this.innerApiCalls.getTrip(request, options, callback);
   }
-  reportBillableTrip(
-      request?: protos.maps.fleetengine.v1.IReportBillableTripRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.maps.fleetengine.v1.IReportBillableTripRequest|undefined, {}|undefined
-      ]>;
-  reportBillableTrip(
-      request: protos.maps.fleetengine.v1.IReportBillableTripRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.maps.fleetengine.v1.IReportBillableTripRequest|null|undefined,
-          {}|null|undefined>): void;
-  reportBillableTrip(
-      request: protos.maps.fleetengine.v1.IReportBillableTripRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.maps.fleetengine.v1.IReportBillableTripRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Report billable trip usage.
  *
@@ -551,9 +531,29 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.reportBillableTrip(request);
+ * @example <caption>include:samples/generated/v1/trip_service.report_billable_trip.js</caption>
+ * region_tag:fleetengine_v1_generated_TripService_ReportBillableTrip_async
  */
+  reportBillableTrip(
+      request?: protos.maps.fleetengine.v1.IReportBillableTripRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.maps.fleetengine.v1.IReportBillableTripRequest|undefined, {}|undefined
+      ]>;
+  reportBillableTrip(
+      request: protos.maps.fleetengine.v1.IReportBillableTripRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.maps.fleetengine.v1.IReportBillableTripRequest|null|undefined,
+          {}|null|undefined>): void;
+  reportBillableTrip(
+      request: protos.maps.fleetengine.v1.IReportBillableTripRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.maps.fleetengine.v1.IReportBillableTripRequest|null|undefined,
+          {}|null|undefined>): void;
   reportBillableTrip(
       request?: protos.maps.fleetengine.v1.IReportBillableTripRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -588,26 +588,6 @@ export class TripServiceClient {
     this.initialize();
     return this.innerApiCalls.reportBillableTrip(request, options, callback);
   }
-  updateTrip(
-      request?: protos.maps.fleetengine.v1.IUpdateTripRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.ITrip,
-        protos.maps.fleetengine.v1.IUpdateTripRequest|undefined, {}|undefined
-      ]>;
-  updateTrip(
-      request: protos.maps.fleetengine.v1.IUpdateTripRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ITrip,
-          protos.maps.fleetengine.v1.IUpdateTripRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateTrip(
-      request: protos.maps.fleetengine.v1.IUpdateTripRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ITrip,
-          protos.maps.fleetengine.v1.IUpdateTripRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates trip data.
  *
@@ -666,9 +646,29 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateTrip(request);
+ * @example <caption>include:samples/generated/v1/trip_service.update_trip.js</caption>
+ * region_tag:fleetengine_v1_generated_TripService_UpdateTrip_async
  */
+  updateTrip(
+      request?: protos.maps.fleetengine.v1.IUpdateTripRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.ITrip,
+        protos.maps.fleetengine.v1.IUpdateTripRequest|undefined, {}|undefined
+      ]>;
+  updateTrip(
+      request: protos.maps.fleetengine.v1.IUpdateTripRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ITrip,
+          protos.maps.fleetengine.v1.IUpdateTripRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateTrip(
+      request: protos.maps.fleetengine.v1.IUpdateTripRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ITrip,
+          protos.maps.fleetengine.v1.IUpdateTripRequest|null|undefined,
+          {}|null|undefined>): void;
   updateTrip(
       request?: protos.maps.fleetengine.v1.IUpdateTripRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -704,28 +704,7 @@ export class TripServiceClient {
     return this.innerApiCalls.updateTrip(request, options, callback);
   }
 
-  searchTrips(
-      request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.ITrip[],
-        protos.maps.fleetengine.v1.ISearchTripsRequest|null,
-        protos.maps.fleetengine.v1.ISearchTripsResponse
-      ]>;
-  searchTrips(
-      request: protos.maps.fleetengine.v1.ISearchTripsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.maps.fleetengine.v1.ISearchTripsRequest,
-          protos.maps.fleetengine.v1.ISearchTripsResponse|null|undefined,
-          protos.maps.fleetengine.v1.ITrip>): void;
-  searchTrips(
-      request: protos.maps.fleetengine.v1.ISearchTripsRequest,
-      callback: PaginationCallback<
-          protos.maps.fleetengine.v1.ISearchTripsRequest,
-          protos.maps.fleetengine.v1.ISearchTripsResponse|null|undefined,
-          protos.maps.fleetengine.v1.ITrip>): void;
-/**
+ /**
  * Get all the trips for a specific vehicle.
  *
  * @param {Object} request
@@ -770,6 +749,27 @@ export class TripServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchTrips(
+      request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.ITrip[],
+        protos.maps.fleetengine.v1.ISearchTripsRequest|null,
+        protos.maps.fleetengine.v1.ISearchTripsResponse
+      ]>;
+  searchTrips(
+      request: protos.maps.fleetengine.v1.ISearchTripsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.maps.fleetengine.v1.ISearchTripsRequest,
+          protos.maps.fleetengine.v1.ISearchTripsResponse|null|undefined,
+          protos.maps.fleetengine.v1.ITrip>): void;
+  searchTrips(
+      request: protos.maps.fleetengine.v1.ISearchTripsRequest,
+      callback: PaginationCallback<
+          protos.maps.fleetengine.v1.ISearchTripsRequest,
+          protos.maps.fleetengine.v1.ISearchTripsResponse|null|undefined,
+          protos.maps.fleetengine.v1.ITrip>): void;
   searchTrips(
       request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -915,11 +915,8 @@ export class TripServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchTripsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/trip_service.search_trips.js</caption>
+ * region_tag:fleetengine_v1_generated_TripService_SearchTrips_async
  */
   searchTripsAsync(
       request?: protos.maps.fleetengine.v1.ISearchTripsRequest,
@@ -934,7 +931,6 @@ export class TripServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchTrips'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

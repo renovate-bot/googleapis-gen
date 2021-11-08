@@ -23,11 +23,11 @@ function main(measurementProtocolSecret) {
   /**
    *  Required. The measurement protocol secret to update.
    */
-  // const measurementProtocolSecret = ''
+  // const measurementProtocolSecret = {}
   /**
    *  The list of fields to be updated. Omitted fields will not be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -35,7 +35,7 @@ function main(measurementProtocolSecret) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateMeasurementProtocolSecret() {
+  async function callUpdateMeasurementProtocolSecret() {
     // Construct request
     const request = {
       measurementProtocolSecret,
@@ -46,7 +46,7 @@ function main(measurementProtocolSecret) {
     console.log(response);
   }
 
-  updateMeasurementProtocolSecret();
+  callUpdateMeasurementProtocolSecret();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateMeasurementProtocolSecret_async]
 }
 

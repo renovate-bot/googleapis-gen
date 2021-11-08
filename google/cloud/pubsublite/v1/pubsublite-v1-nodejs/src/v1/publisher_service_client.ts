@@ -318,12 +318,8 @@ export class PublisherServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.publish();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/publisher_service.publish.js</caption>
+ * region_tag:pubsublite_v1_generated_PublisherService_Publish_async
  */
   publish(
       options?: CallOptions):

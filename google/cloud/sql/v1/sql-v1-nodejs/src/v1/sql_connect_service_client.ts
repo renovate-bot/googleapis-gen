@@ -274,6 +274,27 @@ export class SqlConnectServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves connect settings about a Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.protobuf.Timestamp} [request.readTime]
+ *   Optional. Optional snapshot read timestamp to trade freshness for performance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ConnectSettings]{@link google.cloud.sql.v1.ConnectSettings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_connect_service.get_connect_settings.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlConnectService_GetConnectSettings_async
+ */
   getConnectSettings(
       request?: protos.google.cloud.sql.v1.IGetConnectSettingsRequest,
       options?: CallOptions):
@@ -294,27 +315,6 @@ export class SqlConnectServiceClient {
           protos.google.cloud.sql.v1.IConnectSettings,
           protos.google.cloud.sql.v1.IGetConnectSettingsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves connect settings about a Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.protobuf.Timestamp} [request.readTime]
- *   Optional. Optional snapshot read timestamp to trade freshness for performance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ConnectSettings]{@link google.cloud.sql.v1.ConnectSettings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getConnectSettings(request);
- */
   getConnectSettings(
       request?: protos.google.cloud.sql.v1.IGetConnectSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -349,26 +349,6 @@ export class SqlConnectServiceClient {
     this.initialize();
     return this.innerApiCalls.getConnectSettings(request, options, callback);
   }
-  generateEphemeralCert(
-      request?: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IGenerateEphemeralCertResponse,
-        protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest|undefined, {}|undefined
-      ]>;
-  generateEphemeralCert(
-      request: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IGenerateEphemeralCertResponse,
-          protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateEphemeralCert(
-      request: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IGenerateEphemeralCertResponse,
-          protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates a short-lived X509 certificate containing the provided public key
  * and signed by a private key specific to the target instance. Users may use
@@ -394,9 +374,29 @@ export class SqlConnectServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateEphemeralCert(request);
+ * @example <caption>include:samples/generated/v1/sql_connect_service.generate_ephemeral_cert.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlConnectService_GenerateEphemeralCert_async
  */
+  generateEphemeralCert(
+      request?: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IGenerateEphemeralCertResponse,
+        protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest|undefined, {}|undefined
+      ]>;
+  generateEphemeralCert(
+      request: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IGenerateEphemeralCertResponse,
+          protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateEphemeralCert(
+      request: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IGenerateEphemeralCertResponse,
+          protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest|null|undefined,
+          {}|null|undefined>): void;
   generateEphemeralCert(
       request?: protos.google.cloud.sql.v1.IGenerateEphemeralCertRequest,
       optionsOrCallback?: CallOptions|Callback<

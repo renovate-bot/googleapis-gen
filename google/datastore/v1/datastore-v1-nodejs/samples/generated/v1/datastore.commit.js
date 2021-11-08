@@ -27,11 +27,11 @@ function main(projectId) {
   /**
    *  The type of commit to perform. Defaults to `TRANSACTIONAL`.
    */
-  // const mode = ''
+  // const mode = {}
   /**
    *  The identifier of the transaction associated with the commit. A
    *  transaction identifier is returned by a call to
-   *  [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   *  Datastore.BeginTransaction google.datastore.v1.Datastore.BeginTransaction.
    */
   // const transaction = 'Buffer.from('string')'
   /**
@@ -54,7 +54,7 @@ function main(projectId) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function commit() {
+  async function callCommit() {
     // Construct request
     const request = {
       projectId,
@@ -65,7 +65,7 @@ function main(projectId) {
     console.log(response);
   }
 
-  commit();
+  callCommit();
   // [END datastore_v1_generated_Datastore_Commit_async]
 }
 

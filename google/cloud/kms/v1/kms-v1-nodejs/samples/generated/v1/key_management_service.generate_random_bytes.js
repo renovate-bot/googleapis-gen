@@ -31,10 +31,10 @@ function main() {
    */
   // const lengthBytes = 1234
   /**
-   *  The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
-   *  [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   *  The ProtectionLevel google.cloud.kms.v1.ProtectionLevel  to use when generating the random data. Defaults to
+   *  SOFTWARE google.cloud.kms.v1.ProtectionLevel.SOFTWARE.
    */
-  // const protectionLevel = ''
+  // const protectionLevel = {}
 
   // Imports the Kms library
   const {KeyManagementServiceClient} = require('@google-cloud/kms').v1;
@@ -42,7 +42,7 @@ function main() {
   // Instantiates a client
   const kmsClient = new KeyManagementServiceClient();
 
-  async function generateRandomBytes() {
+  async function callGenerateRandomBytes() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  generateRandomBytes();
+  callGenerateRandomBytes();
   // [END cloudkms_v1_generated_KeyManagementService_GenerateRandomBytes_async]
 }
 

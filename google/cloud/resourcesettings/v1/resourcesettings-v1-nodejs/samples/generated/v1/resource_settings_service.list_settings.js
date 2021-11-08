@@ -40,7 +40,7 @@ function main(parent) {
   /**
    *  The SettingView for this request.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Resourcesettings library
   const {ResourceSettingsServiceClient} = require('@google-cloud/resource-settings').v1;
@@ -48,7 +48,7 @@ function main(parent) {
   // Instantiates a client
   const resourcesettingsClient = new ResourceSettingsServiceClient();
 
-  async function listSettings() {
+  async function callListSettings() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent) {
     }
   }
 
-  listSettings();
+  callListSettings();
   // [END resourcesettings_v1_generated_ResourceSettingsService_ListSettings_async]
 }
 

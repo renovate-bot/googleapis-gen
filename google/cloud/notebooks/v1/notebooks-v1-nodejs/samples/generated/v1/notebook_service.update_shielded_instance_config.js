@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  ShieldedInstance configuration to be updated.
    */
-  // const shieldedInstanceConfig = ''
+  // const shieldedInstanceConfig = {}
 
   // Imports the Notebooks library
   const {NotebookServiceClient} = require('@google-cloud/notebooks').v1;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function updateShieldedInstanceConfig() {
+  async function callUpdateShieldedInstanceConfig() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  updateShieldedInstanceConfig();
+  callUpdateShieldedInstanceConfig();
   // [END notebooks_v1_generated_NotebookService_UpdateShieldedInstanceConfig_async]
 }
 

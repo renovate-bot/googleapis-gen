@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function getRecommendation() {
+  async function callGetRecommendation() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getRecommendation();
+  callGetRecommendation();
   // [END recommender_v1_generated_Recommender_GetRecommendation_async]
 }
 

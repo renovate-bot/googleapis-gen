@@ -44,7 +44,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignDraftServiceClient();
 
-  async function listCampaignDraftAsyncErrors() {
+  async function callListCampaignDraftAsyncErrors() {
     // Construct request
     const request = {
       resourceName,
@@ -57,7 +57,7 @@ function main(resourceName) {
     }
   }
 
-  listCampaignDraftAsyncErrors();
+  callListCampaignDraftAsyncErrors();
   // [END googleads_v8_generated_CampaignDraftService_ListCampaignDraftAsyncErrors_async]
 }
 

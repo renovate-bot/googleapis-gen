@@ -646,6 +646,23 @@ export class BiddingStrategySimulationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested bidding strategy simulation in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the bidding strategy simulation to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BiddingStrategySimulation]{@link google.ads.googleads.v7.resources.BiddingStrategySimulation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v7/bidding_strategy_simulation_service.get_bidding_strategy_simulation.js</caption>
+ * region_tag:googleads_v7_generated_BiddingStrategySimulationService_GetBiddingStrategySimulation_async
+ */
   getBiddingStrategySimulation(
       request?: protos.google.ads.googleads.v7.services.IGetBiddingStrategySimulationRequest,
       options?: CallOptions):
@@ -666,23 +683,6 @@ export class BiddingStrategySimulationServiceClient {
           protos.google.ads.googleads.v7.resources.IBiddingStrategySimulation,
           protos.google.ads.googleads.v7.services.IGetBiddingStrategySimulationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested bidding strategy simulation in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the bidding strategy simulation to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BiddingStrategySimulation]{@link google.ads.googleads.v7.resources.BiddingStrategySimulation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBiddingStrategySimulation(request);
- */
   getBiddingStrategySimulation(
       request?: protos.google.ads.googleads.v7.services.IGetBiddingStrategySimulationRequest,
       optionsOrCallback?: CallOptions|Callback<

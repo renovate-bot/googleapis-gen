@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function listSampleProjects() {
+  async function callListSampleProjects() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     }
   }
 
-  listSampleProjects();
+  callListSampleProjects();
   // [END actions_v2_generated_ActionsSdk_ListSampleProjects_async]
 }
 

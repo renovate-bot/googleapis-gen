@@ -29,7 +29,7 @@ function main(name) {
    *  Specifies which fields of the API Config are returned in the response.
    *  Defaults to `BASIC` view.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Apigateway library
   const {ApiGatewayServiceClient} = require('@google-cloud/api-gateway').v1;
@@ -37,7 +37,7 @@ function main(name) {
   // Instantiates a client
   const apigatewayClient = new ApiGatewayServiceClient();
 
-  async function getApiConfig() {
+  async function callGetApiConfig() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  getApiConfig();
+  callGetApiConfig();
   // [END apigateway_v1_generated_ApiGatewayService_GetApiConfig_async]
 }
 

@@ -21,14 +21,14 @@ function main(parent, cryptoKeyVersion) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with
-   *  the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
+   *  Required. The name google.cloud.kms.v1.CryptoKey.name  of the CryptoKey google.cloud.kms.v1.CryptoKey  associated with
+   *  the CryptoKeyVersions google.cloud.kms.v1.CryptoKeyVersion.
    */
   // const parent = 'abc123'
   /**
-   *  Required. A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
+   *  Required. A CryptoKeyVersion google.cloud.kms.v1.CryptoKeyVersion  with initial field values.
    */
-  // const cryptoKeyVersion = ''
+  // const cryptoKeyVersion = {}
 
   // Imports the Kms library
   const {KeyManagementServiceClient} = require('@google-cloud/kms').v1;
@@ -36,7 +36,7 @@ function main(parent, cryptoKeyVersion) {
   // Instantiates a client
   const kmsClient = new KeyManagementServiceClient();
 
-  async function createCryptoKeyVersion() {
+  async function callCreateCryptoKeyVersion() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, cryptoKeyVersion) {
     console.log(response);
   }
 
-  createCryptoKeyVersion();
+  callCreateCryptoKeyVersion();
   // [END cloudkms_v1_generated_KeyManagementService_CreateCryptoKeyVersion_async]
 }
 

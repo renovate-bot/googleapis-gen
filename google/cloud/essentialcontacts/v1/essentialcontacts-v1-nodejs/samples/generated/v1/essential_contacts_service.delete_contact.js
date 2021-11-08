@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function deleteContact() {
+  async function callDeleteContact() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteContact();
+  callDeleteContact();
   // [END essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async]
 }
 

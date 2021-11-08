@@ -676,26 +676,6 @@ export class FeedMappingServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getFeedMapping(
-      request?: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IFeedMapping,
-        protos.google.ads.googleads.v8.services.IGetFeedMappingRequest|undefined, {}|undefined
-      ]>;
-  getFeedMapping(
-      request: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IFeedMapping,
-          protos.google.ads.googleads.v8.services.IGetFeedMappingRequest|null|undefined,
-          {}|null|undefined>): void;
-  getFeedMapping(
-      request: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IFeedMapping,
-          protos.google.ads.googleads.v8.services.IGetFeedMappingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested feed mapping in full detail.
  *
@@ -718,9 +698,29 @@ export class FeedMappingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getFeedMapping(request);
+ * @example <caption>include:samples/generated/v8/feed_mapping_service.get_feed_mapping.js</caption>
+ * region_tag:googleads_v8_generated_FeedMappingService_GetFeedMapping_async
  */
+  getFeedMapping(
+      request?: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IFeedMapping,
+        protos.google.ads.googleads.v8.services.IGetFeedMappingRequest|undefined, {}|undefined
+      ]>;
+  getFeedMapping(
+      request: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IFeedMapping,
+          protos.google.ads.googleads.v8.services.IGetFeedMappingRequest|null|undefined,
+          {}|null|undefined>): void;
+  getFeedMapping(
+      request: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IFeedMapping,
+          protos.google.ads.googleads.v8.services.IGetFeedMappingRequest|null|undefined,
+          {}|null|undefined>): void;
   getFeedMapping(
       request?: protos.google.ads.googleads.v8.services.IGetFeedMappingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class FeedMappingServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeedMapping(request, options, callback);
   }
-  mutateFeedMappings(
-      request?: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateFeedMappingsResponse,
-        protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest|undefined, {}|undefined
-      ]>;
-  mutateFeedMappings(
-      request: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateFeedMappingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateFeedMappings(
-      request: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateFeedMappingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or removes feed mappings. Operation statuses are
  * returned.
@@ -824,9 +804,29 @@ export class FeedMappingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateFeedMappings(request);
+ * @example <caption>include:samples/generated/v8/feed_mapping_service.mutate_feed_mappings.js</caption>
+ * region_tag:googleads_v8_generated_FeedMappingService_MutateFeedMappings_async
  */
+  mutateFeedMappings(
+      request?: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateFeedMappingsResponse,
+        protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest|undefined, {}|undefined
+      ]>;
+  mutateFeedMappings(
+      request: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateFeedMappingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateFeedMappings(
+      request: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateFeedMappingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateFeedMappings(
       request?: protos.google.ads.googleads.v8.services.IMutateFeedMappingsRequest,
       optionsOrCallback?: CallOptions|Callback<

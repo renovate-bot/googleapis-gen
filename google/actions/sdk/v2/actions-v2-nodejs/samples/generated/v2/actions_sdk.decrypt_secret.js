@@ -31,7 +31,7 @@ function main(encryptedClientSecret) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function decryptSecret() {
+  async function callDecryptSecret() {
     // Construct request
     const request = {
       encryptedClientSecret,
@@ -42,7 +42,7 @@ function main(encryptedClientSecret) {
     console.log(response);
   }
 
-  decryptSecret();
+  callDecryptSecret();
   // [END actions_v2_generated_ActionsSdk_DecryptSecret_async]
 }
 

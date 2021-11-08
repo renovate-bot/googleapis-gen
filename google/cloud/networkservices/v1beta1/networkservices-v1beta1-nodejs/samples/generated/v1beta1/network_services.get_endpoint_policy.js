@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const networkservicesClient = new NetworkServicesClient();
 
-  async function getEndpointPolicy() {
+  async function callGetEndpointPolicy() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEndpointPolicy();
+  callGetEndpointPolicy();
   // [END networkservices_v1beta1_generated_NetworkServices_GetEndpointPolicy_async]
 }
 

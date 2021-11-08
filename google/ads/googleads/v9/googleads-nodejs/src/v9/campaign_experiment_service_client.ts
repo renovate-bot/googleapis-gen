@@ -779,26 +779,6 @@ export class CampaignExperimentServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignExperiment(
-      request?: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICampaignExperiment,
-        protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest|undefined, {}|undefined
-      ]>;
-  getCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignExperiment,
-          protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignExperiment,
-          protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign experiment in full detail.
  *
@@ -821,9 +801,29 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignExperiment(request);
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.get_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_GetCampaignExperiment_async
  */
+  getCampaignExperiment(
+      request?: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICampaignExperiment,
+        protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest|undefined, {}|undefined
+      ]>;
+  getCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignExperiment,
+          protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignExperiment,
+          protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignExperiment(
       request?: protos.google.ads.googleads.v9.services.IGetCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -858,26 +858,6 @@ export class CampaignExperimentServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignExperiment(request, options, callback);
   }
-  mutateCampaignExperiments(
-      request?: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignExperiments(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignExperiments(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates campaign experiments. Operation statuses are returned.
  *
@@ -914,9 +894,29 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignExperiments(request);
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.mutate_campaign_experiments.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_MutateCampaignExperiments_async
  */
+  mutateCampaignExperiments(
+      request?: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignExperiments(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignExperiments(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignExperiments(
       request?: protos.google.ads.googleads.v9.services.IMutateCampaignExperimentsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -951,26 +951,6 @@ export class CampaignExperimentServiceClient {
     this.initialize();
     return this.innerApiCalls.mutateCampaignExperiments(request, options, callback);
   }
-  graduateCampaignExperiment(
-      request?: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentResponse,
-        protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest|undefined, {}|undefined
-      ]>;
-  graduateCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentResponse,
-          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest|null|undefined,
-          {}|null|undefined>): void;
-  graduateCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentResponse,
-          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Graduates a campaign experiment to a full campaign. The base and experiment
  * campaigns will start running independently with their own budgets.
@@ -1002,9 +982,29 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.graduateCampaignExperiment(request);
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.graduate_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_GraduateCampaignExperiment_async
  */
+  graduateCampaignExperiment(
+      request?: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentResponse,
+        protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest|undefined, {}|undefined
+      ]>;
+  graduateCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentResponse,
+          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest|null|undefined,
+          {}|null|undefined>): void;
+  graduateCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentResponse,
+          protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest|null|undefined,
+          {}|null|undefined>): void;
   graduateCampaignExperiment(
       request?: protos.google.ads.googleads.v9.services.IGraduateCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1039,26 +1039,6 @@ export class CampaignExperimentServiceClient {
     this.initialize();
     return this.innerApiCalls.graduateCampaignExperiment(request, options, callback);
   }
-  endCampaignExperiment(
-      request?: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest|undefined, {}|undefined
-      ]>;
-  endCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest|null|undefined,
-          {}|null|undefined>): void;
-  endCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Immediately ends a campaign experiment, changing the experiment's scheduled
  * end date and without waiting for end of day. End date is updated to be the
@@ -1087,9 +1067,29 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.endCampaignExperiment(request);
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.end_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_EndCampaignExperiment_async
  */
+  endCampaignExperiment(
+      request?: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest|undefined, {}|undefined
+      ]>;
+  endCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest|null|undefined,
+          {}|null|undefined>): void;
+  endCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest|null|undefined,
+          {}|null|undefined>): void;
   endCampaignExperiment(
       request?: protos.google.ads.googleads.v9.services.IEndCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1125,26 +1125,6 @@ export class CampaignExperimentServiceClient {
     return this.innerApiCalls.endCampaignExperiment(request, options, callback);
   }
 
-  createCampaignExperiment(
-      request?: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v9.services.ICreateCampaignExperimentMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v9.services.ICreateCampaignExperimentMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v9.services.ICreateCampaignExperimentMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a campaign experiment based on a campaign draft. The draft campaign
  * will be forked into a real campaign (called the experiment campaign) that
@@ -1189,10 +1169,29 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createCampaignExperiment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.create_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_CreateCampaignExperiment_async
  */
+  createCampaignExperiment(
+      request?: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v9.services.ICreateCampaignExperimentMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v9.services.ICreateCampaignExperimentMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.ads.googleads.v9.services.ICreateCampaignExperimentMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createCampaignExperiment(
       request?: protos.google.ads.googleads.v9.services.ICreateCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1236,11 +1235,8 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateCampaignExperimentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.create_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_CreateCampaignExperiment_async
  */
   async checkCreateCampaignExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v9.services.CreateCampaignExperimentMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1248,26 +1244,6 @@ export class CampaignExperimentServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createCampaignExperiment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.ads.googleads.v9.services.CreateCampaignExperimentMetadata>;
   }
-  promoteCampaignExperiment(
-      request?: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  promoteCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  promoteCampaignExperiment(
-      request: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Promotes the changes in a experiment campaign back to the base campaign.
  *
@@ -1300,10 +1276,29 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.promoteCampaignExperiment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.promote_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_PromoteCampaignExperiment_async
  */
+  promoteCampaignExperiment(
+      request?: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  promoteCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  promoteCampaignExperiment(
+      request: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   promoteCampaignExperiment(
       request?: protos.google.ads.googleads.v9.services.IPromoteCampaignExperimentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1347,11 +1342,8 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPromoteCampaignExperimentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.promote_campaign_experiment.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_PromoteCampaignExperiment_async
  */
   async checkPromoteCampaignExperimentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1359,28 +1351,7 @@ export class CampaignExperimentServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.promoteCampaignExperiment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>;
   }
-  listCampaignExperimentAsyncErrors(
-      request?: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.rpc.IStatus[],
-        protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest|null,
-        protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsResponse
-      ]>;
-  listCampaignExperimentAsyncErrors(
-      request: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
-          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsResponse|null|undefined,
-          protos.google.rpc.IStatus>): void;
-  listCampaignExperimentAsyncErrors(
-      request: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
-          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsResponse|null|undefined,
-          protos.google.rpc.IStatus>): void;
-/**
+ /**
  * Returns all errors that occurred during CampaignExperiment create or
  * promote (whichever occurred last).
  * Supports standard list paging.
@@ -1420,6 +1391,27 @@ export class CampaignExperimentServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listCampaignExperimentAsyncErrors(
+      request?: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.rpc.IStatus[],
+        protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest|null,
+        protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsResponse
+      ]>;
+  listCampaignExperimentAsyncErrors(
+      request: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
+          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsResponse|null|undefined,
+          protos.google.rpc.IStatus>): void;
+  listCampaignExperimentAsyncErrors(
+      request: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
+          protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsResponse|null|undefined,
+          protos.google.rpc.IStatus>): void;
   listCampaignExperimentAsyncErrors(
       request?: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1535,11 +1527,8 @@ export class CampaignExperimentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listCampaignExperimentAsyncErrorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v9/campaign_experiment_service.list_campaign_experiment_async_errors.js</caption>
+ * region_tag:googleads_v9_generated_CampaignExperimentService_ListCampaignExperimentAsyncErrors_async
  */
   listCampaignExperimentAsyncErrorsAsync(
       request?: protos.google.ads.googleads.v9.services.IListCampaignExperimentAsyncErrorsRequest,
@@ -1554,7 +1543,6 @@ export class CampaignExperimentServiceClient {
     ] = gax.routingHeader.fromParams({
       'resource_name': request.resourceName || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listCampaignExperimentAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

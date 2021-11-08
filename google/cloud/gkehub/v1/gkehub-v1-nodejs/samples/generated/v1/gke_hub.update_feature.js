@@ -28,7 +28,7 @@ function main() {
   /**
    *  Mask of fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Only fields specified in update_mask are updated.
    *  If you specify a field in the update_mask but don't specify its value here
@@ -39,7 +39,7 @@ function main() {
    *  If you specify the update_mask to be a special path "*", fully replaces all
    *  user-modifiable fields to match `resource`.
    */
-  // const resource = ''
+  // const resource = {}
   /**
    *  Optional. A request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -61,7 +61,7 @@ function main() {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function updateFeature() {
+  async function callUpdateFeature() {
     // Construct request
     const request = {
     };
@@ -72,7 +72,7 @@ function main() {
     console.log(response);
   }
 
-  updateFeature();
+  callUpdateFeature();
   // [END gkehub_v1_generated_GkeHub_UpdateFeature_async]
 }
 

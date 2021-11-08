@@ -23,11 +23,11 @@ function main(issueModel) {
   /**
    *  Required. The new values for the issue model.
    */
-  // const issueModel = ''
+  // const issueModel = {}
   /**
    *  The list of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Contactcenterinsights library
   const {ContactCenterInsightsClient} = require('@google-cloud/contact-center-insights').v1;
@@ -35,7 +35,7 @@ function main(issueModel) {
   // Instantiates a client
   const contactcenterinsightsClient = new ContactCenterInsightsClient();
 
-  async function updateIssueModel() {
+  async function callUpdateIssueModel() {
     // Construct request
     const request = {
       issueModel,
@@ -46,7 +46,7 @@ function main(issueModel) {
     console.log(response);
   }
 
-  updateIssueModel();
+  callUpdateIssueModel();
   // [END contactcenterinsights_v1_generated_ContactCenterInsights_UpdateIssueModel_async]
 }
 

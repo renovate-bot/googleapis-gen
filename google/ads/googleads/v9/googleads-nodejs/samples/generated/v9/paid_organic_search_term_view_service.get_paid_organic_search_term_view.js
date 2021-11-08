@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new PaidOrganicSearchTermViewServiceClient();
 
-  async function getPaidOrganicSearchTermView() {
+  async function callGetPaidOrganicSearchTermView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getPaidOrganicSearchTermView();
+  callGetPaidOrganicSearchTermView();
   // [END googleads_v9_generated_PaidOrganicSearchTermViewService_GetPaidOrganicSearchTermView_async]
 }
 

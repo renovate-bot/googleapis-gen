@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new ManagedNotebookServiceClient();
 
-  async function stopRuntime() {
+  async function callStopRuntime() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  stopRuntime();
+  callStopRuntime();
   // [END notebooks_v1_generated_ManagedNotebookService_StopRuntime_async]
 }
 

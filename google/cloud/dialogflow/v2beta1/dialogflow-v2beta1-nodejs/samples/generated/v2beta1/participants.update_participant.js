@@ -23,11 +23,11 @@ function main(participant, updateMask) {
   /**
    *  Required. The participant to update.
    */
-  // const participant = ''
+  // const participant = {}
   /**
    *  Required. The mask to specify which fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Dialogflow library
   const {ParticipantsClient} = require('@google-cloud/dialogflow').v2beta1;
@@ -35,7 +35,7 @@ function main(participant, updateMask) {
   // Instantiates a client
   const dialogflowClient = new ParticipantsClient();
 
-  async function updateParticipant() {
+  async function callUpdateParticipant() {
     // Construct request
     const request = {
       participant,
@@ -47,7 +47,7 @@ function main(participant, updateMask) {
     console.log(response);
   }
 
-  updateParticipant();
+  callUpdateParticipant();
   // [END dialogflow_v2beta1_generated_Participants_UpdateParticipant_async]
 }
 

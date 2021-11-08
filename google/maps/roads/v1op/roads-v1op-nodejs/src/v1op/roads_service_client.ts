@@ -270,26 +270,6 @@ export class RoadsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  snapToRoads(
-      request?: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.maps.roads.v1op.ISnapToRoadsResponse,
-        protos.google.maps.roads.v1op.ISnapToRoadsRequest|undefined, {}|undefined
-      ]>;
-  snapToRoads(
-      request: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.maps.roads.v1op.ISnapToRoadsResponse,
-          protos.google.maps.roads.v1op.ISnapToRoadsRequest|null|undefined,
-          {}|null|undefined>): void;
-  snapToRoads(
-      request: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
-      callback: Callback<
-          protos.google.maps.roads.v1op.ISnapToRoadsResponse,
-          protos.google.maps.roads.v1op.ISnapToRoadsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * This method takes a sequence of latitude,longitude points and snaps them to
  * the most likely road segments. Optionally returns additional points giving
@@ -314,9 +294,29 @@ export class RoadsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.snapToRoads(request);
+ * @example <caption>include:samples/generated/v1op/roads_service.snap_to_roads.js</caption>
+ * region_tag:roads_v1op_generated_RoadsService_SnapToRoads_async
  */
+  snapToRoads(
+      request?: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.maps.roads.v1op.ISnapToRoadsResponse,
+        protos.google.maps.roads.v1op.ISnapToRoadsRequest|undefined, {}|undefined
+      ]>;
+  snapToRoads(
+      request: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.maps.roads.v1op.ISnapToRoadsResponse,
+          protos.google.maps.roads.v1op.ISnapToRoadsRequest|null|undefined,
+          {}|null|undefined>): void;
+  snapToRoads(
+      request: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
+      callback: Callback<
+          protos.google.maps.roads.v1op.ISnapToRoadsResponse,
+          protos.google.maps.roads.v1op.ISnapToRoadsRequest|null|undefined,
+          {}|null|undefined>): void;
   snapToRoads(
       request?: protos.google.maps.roads.v1op.ISnapToRoadsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -341,9 +341,32 @@ export class RoadsServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.snapToRoads(request, options, callback);
   }
+/**
+ * This method takes a list of latitude,longitude points and snaps them each
+ * to their nearest road. Also returns a place ID for each snapped point.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.points
+ *   The points to be snapped as a series of lat, lng points. Specified as
+ *   a string of the format: lat,lng|lat,lng|...
+ * @param {google.maps.roads.v1op.TravelMode} request.travelMode
+ *   The type of travel being tracked. This will constrain the roads we snap to.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListNearestRoadsResponse]{@link google.maps.roads.v1op.ListNearestRoadsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1op/roads_service.list_nearest_roads.js</caption>
+ * region_tag:roads_v1op_generated_RoadsService_ListNearestRoads_async
+ */
   listNearestRoads(
       request?: protos.google.maps.roads.v1op.IListNearestRoadsRequest,
       options?: CallOptions):
@@ -364,27 +387,6 @@ export class RoadsServiceClient {
           protos.google.maps.roads.v1op.IListNearestRoadsResponse,
           protos.google.maps.roads.v1op.IListNearestRoadsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * This method takes a list of latitude,longitude points and snaps them each
- * to their nearest road. Also returns a place ID for each snapped point.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.points
- *   The points to be snapped as a series of lat, lng points. Specified as
- *   a string of the format: lat,lng|lat,lng|...
- * @param {google.maps.roads.v1op.TravelMode} request.travelMode
- *   The type of travel being tracked. This will constrain the roads we snap to.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListNearestRoadsResponse]{@link google.maps.roads.v1op.ListNearestRoadsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listNearestRoads(request);
- */
   listNearestRoads(
       request?: protos.google.maps.roads.v1op.IListNearestRoadsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -409,6 +411,8 @@ export class RoadsServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listNearestRoads(request, options, callback);
   }

@@ -210,7 +210,7 @@ describe('v9.GeoTargetConstantServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.SuggestGeoTargetConstantsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v9.services.SuggestGeoTargetConstantsResponse());
             client.innerApiCalls.suggestGeoTargetConstants = stubSimpleCall(expectedResponse);
             const [response] = await client.suggestGeoTargetConstants(request);
@@ -226,7 +226,7 @@ describe('v9.GeoTargetConstantServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.SuggestGeoTargetConstantsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v9.services.SuggestGeoTargetConstantsResponse());
             client.innerApiCalls.suggestGeoTargetConstants = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -253,7 +253,7 @@ describe('v9.GeoTargetConstantServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.SuggestGeoTargetConstantsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.suggestGeoTargetConstants = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.suggestGeoTargetConstants(request), expectedError);

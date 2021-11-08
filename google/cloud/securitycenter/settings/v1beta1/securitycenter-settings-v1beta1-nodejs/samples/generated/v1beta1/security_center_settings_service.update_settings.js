@@ -31,11 +31,11 @@ function main(settings) {
    *   * `projects/{project}/regions/{region}/clusters/{cluster}/settings`
    *   * `projects/{project}/zones/{zone}/clusters/{cluster}/settings`
    */
-  // const settings = ''
+  // const settings = {}
   /**
    *  The list of fields to be updated on the settings.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Settings library
   const {SecurityCenterSettingsServiceClient} = require('settings').v1beta1;
@@ -43,7 +43,7 @@ function main(settings) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function updateSettings() {
+  async function callUpdateSettings() {
     // Construct request
     const request = {
       settings,
@@ -54,7 +54,7 @@ function main(settings) {
     console.log(response);
   }
 
-  updateSettings();
+  callUpdateSettings();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_UpdateSettings_async]
 }
 

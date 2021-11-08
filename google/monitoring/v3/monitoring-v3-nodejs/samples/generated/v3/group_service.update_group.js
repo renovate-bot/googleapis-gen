@@ -24,7 +24,7 @@ function main(group) {
    *  Required. The new definition of the group.  All fields of the existing group,
    *  excepting `name`, are replaced with the corresponding fields of this group.
    */
-  // const group = ''
+  // const group = {}
   /**
    *  If true, validate this request but do not update the existing group.
    */
@@ -36,7 +36,7 @@ function main(group) {
   // Instantiates a client
   const monitoringClient = new GroupServiceClient();
 
-  async function updateGroup() {
+  async function callUpdateGroup() {
     // Construct request
     const request = {
       group,
@@ -47,7 +47,7 @@ function main(group) {
     console.log(response);
   }
 
-  updateGroup();
+  callUpdateGroup();
   // [END monitoring_v3_generated_GroupService_UpdateGroup_async]
 }
 

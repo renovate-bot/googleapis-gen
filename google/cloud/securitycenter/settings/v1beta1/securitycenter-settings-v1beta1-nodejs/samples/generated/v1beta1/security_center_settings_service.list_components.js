@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function listComponents() {
+  async function callListComponents() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listComponents();
+  callListComponents();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_ListComponents_async]
 }
 

@@ -33,7 +33,7 @@ function main(instanceIdToken) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function startNextTask() {
+  async function callStartNextTask() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -44,7 +44,7 @@ function main(instanceIdToken) {
     console.log(response);
   }
 
-  startNextTask();
+  callStartNextTask();
   // [END osconfig_v1_generated_AgentEndpointService_StartNextTask_async]
 }
 

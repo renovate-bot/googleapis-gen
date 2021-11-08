@@ -33,16 +33,16 @@ function main(name, exclusion, updateMask) {
    *  Required. New values for the existing exclusion. Only the fields specified in
    *  `update_mask` are relevant.
    */
-  // const exclusion = ''
+  // const exclusion = {}
   /**
    *  Required. A non-empty list of fields to change in the existing exclusion. New values
    *  for the fields are taken from the corresponding fields in the
-   *  [LogExclusion][google.logging.v2.LogExclusion] included in this request. Fields not mentioned in
+   *  LogExclusion google.logging.v2.LogExclusion  included in this request. Fields not mentioned in
    *  `update_mask` are not changed and are ignored in the request.
    *  For example, to change the filter and description of an exclusion,
    *  specify an `update_mask` of `"filter,description"`.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -50,7 +50,7 @@ function main(name, exclusion, updateMask) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function updateExclusion() {
+  async function callUpdateExclusion() {
     // Construct request
     const request = {
       name,
@@ -63,7 +63,7 @@ function main(name, exclusion, updateMask) {
     console.log(response);
   }
 
-  updateExclusion();
+  callUpdateExclusion();
   // [END logging_v2_generated_ConfigServiceV2_UpdateExclusion_async]
 }
 

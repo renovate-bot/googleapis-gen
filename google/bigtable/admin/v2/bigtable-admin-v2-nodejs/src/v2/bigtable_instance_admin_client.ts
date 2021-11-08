@@ -376,6 +376,24 @@ export class BigtableInstanceAdminClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets information about an instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique name of the requested instance. Values are of the form
+ *   `projects/{project}/instances/{instance}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Instance]{@link google.bigtable.admin.v2.Instance}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_GetInstance_async
+ */
   getInstance(
       request?: protos.google.bigtable.admin.v2.IGetInstanceRequest,
       options?: CallOptions):
@@ -396,24 +414,6 @@ export class BigtableInstanceAdminClient {
           protos.google.bigtable.admin.v2.IInstance,
           protos.google.bigtable.admin.v2.IGetInstanceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets information about an instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique name of the requested instance. Values are of the form
- *   `projects/{project}/instances/{instance}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Instance]{@link google.bigtable.admin.v2.Instance}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getInstance(request);
- */
   getInstance(
       request?: protos.google.bigtable.admin.v2.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -448,6 +448,26 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.getInstance(request, options, callback);
   }
+/**
+ * Lists information about instances in a project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The unique name of the project for which a list of instances is requested.
+ *   Values are of the form `projects/{project}`.
+ * @param {string} request.pageToken
+ *   DEPRECATED: This field is unused and ignored.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListInstancesResponse]{@link google.bigtable.admin.v2.ListInstancesResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_instances.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_ListInstances_async
+ */
   listInstances(
       request?: protos.google.bigtable.admin.v2.IListInstancesRequest,
       options?: CallOptions):
@@ -468,26 +488,6 @@ export class BigtableInstanceAdminClient {
           protos.google.bigtable.admin.v2.IListInstancesResponse,
           protos.google.bigtable.admin.v2.IListInstancesRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists information about instances in a project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The unique name of the project for which a list of instances is requested.
- *   Values are of the form `projects/{project}`.
- * @param {string} request.pageToken
- *   DEPRECATED: This field is unused and ignored.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListInstancesResponse]{@link google.bigtable.admin.v2.ListInstancesResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listInstances(request);
- */
   listInstances(
       request?: protos.google.bigtable.admin.v2.IListInstancesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -522,26 +522,6 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.listInstances(request, options, callback);
   }
-  updateInstance(
-      request?: protos.google.bigtable.admin.v2.IInstance,
-      options?: CallOptions):
-      Promise<[
-        protos.google.bigtable.admin.v2.IInstance,
-        protos.google.bigtable.admin.v2.IInstance|undefined, {}|undefined
-      ]>;
-  updateInstance(
-      request: protos.google.bigtable.admin.v2.IInstance,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.bigtable.admin.v2.IInstance,
-          protos.google.bigtable.admin.v2.IInstance|null|undefined,
-          {}|null|undefined>): void;
-  updateInstance(
-      request: protos.google.bigtable.admin.v2.IInstance,
-      callback: Callback<
-          protos.google.bigtable.admin.v2.IInstance,
-          protos.google.bigtable.admin.v2.IInstance|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an instance within a project. This method updates only the display
  * name and type for an Instance. To update other Instance properties, such as
@@ -584,9 +564,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateInstance(request);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateInstance_async
  */
+  updateInstance(
+      request?: protos.google.bigtable.admin.v2.IInstance,
+      options?: CallOptions):
+      Promise<[
+        protos.google.bigtable.admin.v2.IInstance,
+        protos.google.bigtable.admin.v2.IInstance|undefined, {}|undefined
+      ]>;
+  updateInstance(
+      request: protos.google.bigtable.admin.v2.IInstance,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.bigtable.admin.v2.IInstance,
+          protos.google.bigtable.admin.v2.IInstance|null|undefined,
+          {}|null|undefined>): void;
+  updateInstance(
+      request: protos.google.bigtable.admin.v2.IInstance,
+      callback: Callback<
+          protos.google.bigtable.admin.v2.IInstance,
+          protos.google.bigtable.admin.v2.IInstance|null|undefined,
+          {}|null|undefined>): void;
   updateInstance(
       request?: protos.google.bigtable.admin.v2.IInstance,
       optionsOrCallback?: CallOptions|Callback<
@@ -621,6 +621,24 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.updateInstance(request, options, callback);
   }
+/**
+ * Delete an instance from a project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique name of the instance to be deleted.
+ *   Values are of the form `projects/{project}/instances/{instance}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.delete_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_DeleteInstance_async
+ */
   deleteInstance(
       request?: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
       options?: CallOptions):
@@ -641,24 +659,6 @@ export class BigtableInstanceAdminClient {
           protos.google.protobuf.IEmpty,
           protos.google.bigtable.admin.v2.IDeleteInstanceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Delete an instance from a project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique name of the instance to be deleted.
- *   Values are of the form `projects/{project}/instances/{instance}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteInstance(request);
- */
   deleteInstance(
       request?: protos.google.bigtable.admin.v2.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -693,6 +693,24 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.deleteInstance(request, options, callback);
   }
+/**
+ * Gets information about a cluster.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique name of the requested cluster. Values are of the form
+ *   `projects/{project}/instances/{instance}/clusters/{cluster}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Cluster]{@link google.bigtable.admin.v2.Cluster}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_GetCluster_async
+ */
   getCluster(
       request?: protos.google.bigtable.admin.v2.IGetClusterRequest,
       options?: CallOptions):
@@ -713,24 +731,6 @@ export class BigtableInstanceAdminClient {
           protos.google.bigtable.admin.v2.ICluster,
           protos.google.bigtable.admin.v2.IGetClusterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets information about a cluster.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique name of the requested cluster. Values are of the form
- *   `projects/{project}/instances/{instance}/clusters/{cluster}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Cluster]{@link google.bigtable.admin.v2.Cluster}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getCluster(request);
- */
   getCluster(
       request?: protos.google.bigtable.admin.v2.IGetClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -765,6 +765,28 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.getCluster(request, options, callback);
   }
+/**
+ * Lists information about clusters in an instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The unique name of the instance for which a list of clusters is requested.
+ *   Values are of the form `projects/{project}/instances/{instance}`.
+ *   Use `{instance} = '-'` to list Clusters for all Instances in a project,
+ *   e.g., `projects/myproject/instances/-`.
+ * @param {string} request.pageToken
+ *   DEPRECATED: This field is unused and ignored.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListClustersResponse]{@link google.bigtable.admin.v2.ListClustersResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_clusters.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_ListClusters_async
+ */
   listClusters(
       request?: protos.google.bigtable.admin.v2.IListClustersRequest,
       options?: CallOptions):
@@ -785,28 +807,6 @@ export class BigtableInstanceAdminClient {
           protos.google.bigtable.admin.v2.IListClustersResponse,
           protos.google.bigtable.admin.v2.IListClustersRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists information about clusters in an instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The unique name of the instance for which a list of clusters is requested.
- *   Values are of the form `projects/{project}/instances/{instance}`.
- *   Use `{instance} = '-'` to list Clusters for all Instances in a project,
- *   e.g., `projects/myproject/instances/-`.
- * @param {string} request.pageToken
- *   DEPRECATED: This field is unused and ignored.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListClustersResponse]{@link google.bigtable.admin.v2.ListClustersResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listClusters(request);
- */
   listClusters(
       request?: protos.google.bigtable.admin.v2.IListClustersRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -841,6 +841,24 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.listClusters(request, options, callback);
   }
+/**
+ * Deletes a cluster from an instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique name of the cluster to be deleted. Values are of the form
+ *   `projects/{project}/instances/{instance}/clusters/{cluster}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.delete_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_DeleteCluster_async
+ */
   deleteCluster(
       request?: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
       options?: CallOptions):
@@ -861,24 +879,6 @@ export class BigtableInstanceAdminClient {
           protos.google.protobuf.IEmpty,
           protos.google.bigtable.admin.v2.IDeleteClusterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a cluster from an instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique name of the cluster to be deleted. Values are of the form
- *   `projects/{project}/instances/{instance}/clusters/{cluster}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteCluster(request);
- */
   deleteCluster(
       request?: protos.google.bigtable.admin.v2.IDeleteClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -913,26 +913,6 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.deleteCluster(request, options, callback);
   }
-  createAppProfile(
-      request?: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.bigtable.admin.v2.IAppProfile,
-        protos.google.bigtable.admin.v2.ICreateAppProfileRequest|undefined, {}|undefined
-      ]>;
-  createAppProfile(
-      request: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.bigtable.admin.v2.IAppProfile,
-          protos.google.bigtable.admin.v2.ICreateAppProfileRequest|null|undefined,
-          {}|null|undefined>): void;
-  createAppProfile(
-      request: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
-      callback: Callback<
-          protos.google.bigtable.admin.v2.IAppProfile,
-          protos.google.bigtable.admin.v2.ICreateAppProfileRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an app profile within an instance.
  *
@@ -958,9 +938,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createAppProfile(request);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_app_profile.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateAppProfile_async
  */
+  createAppProfile(
+      request?: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.bigtable.admin.v2.IAppProfile,
+        protos.google.bigtable.admin.v2.ICreateAppProfileRequest|undefined, {}|undefined
+      ]>;
+  createAppProfile(
+      request: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.bigtable.admin.v2.IAppProfile,
+          protos.google.bigtable.admin.v2.ICreateAppProfileRequest|null|undefined,
+          {}|null|undefined>): void;
+  createAppProfile(
+      request: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
+      callback: Callback<
+          protos.google.bigtable.admin.v2.IAppProfile,
+          protos.google.bigtable.admin.v2.ICreateAppProfileRequest|null|undefined,
+          {}|null|undefined>): void;
   createAppProfile(
       request?: protos.google.bigtable.admin.v2.ICreateAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -995,6 +995,24 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.createAppProfile(request, options, callback);
   }
+/**
+ * Gets information about an app profile.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique name of the requested app profile. Values are of the form
+ *   `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AppProfile]{@link google.bigtable.admin.v2.AppProfile}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_app_profile.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_GetAppProfile_async
+ */
   getAppProfile(
       request?: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
       options?: CallOptions):
@@ -1015,24 +1033,6 @@ export class BigtableInstanceAdminClient {
           protos.google.bigtable.admin.v2.IAppProfile,
           protos.google.bigtable.admin.v2.IGetAppProfileRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets information about an app profile.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique name of the requested app profile. Values are of the form
- *   `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AppProfile]{@link google.bigtable.admin.v2.AppProfile}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAppProfile(request);
- */
   getAppProfile(
       request?: protos.google.bigtable.admin.v2.IGetAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1067,6 +1067,26 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.getAppProfile(request, options, callback);
   }
+/**
+ * Deletes an app profile from an instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique name of the app profile to be deleted. Values are of the form
+ *   `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+ * @param {boolean} request.ignoreWarnings
+ *   Required. If true, ignore safety checks when deleting the app profile.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.delete_app_profile.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_DeleteAppProfile_async
+ */
   deleteAppProfile(
       request?: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
       options?: CallOptions):
@@ -1087,26 +1107,6 @@ export class BigtableInstanceAdminClient {
           protos.google.protobuf.IEmpty,
           protos.google.bigtable.admin.v2.IDeleteAppProfileRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an app profile from an instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique name of the app profile to be deleted. Values are of the form
- *   `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
- * @param {boolean} request.ignoreWarnings
- *   Required. If true, ignore safety checks when deleting the app profile.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteAppProfile(request);
- */
   deleteAppProfile(
       request?: protos.google.bigtable.admin.v2.IDeleteAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1141,6 +1141,28 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.deleteAppProfile(request, options, callback);
   }
+/**
+ * Gets the access control policy for an instance resource. Returns an empty
+ * policy if an instance exists but does not have a policy set.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resource
+ *   REQUIRED: The resource for which the policy is being requested.
+ *   See the operation documentation for the appropriate value for this field.
+ * @param {google.iam.v1.GetPolicyOptions} request.options
+ *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
+ *   `GetIamPolicy`. This field is only used by Cloud IAM.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.get_iam_policy.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_GetIamPolicy_async
+ */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
@@ -1161,28 +1183,6 @@ export class BigtableInstanceAdminClient {
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the access control policy for an instance resource. Returns an empty
- * policy if an instance exists but does not have a policy set.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {google.iam.v1.GetPolicyOptions} request.options
- *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
- *   `GetIamPolicy`. This field is only used by Cloud IAM.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
- */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1217,26 +1217,6 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the access control policy on an instance resource. Replaces any
  * existing policy.
@@ -1258,9 +1238,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.set_iam_policy.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1295,26 +1295,6 @@ export class BigtableInstanceAdminClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns permissions that the caller has on the specified instance resource.
  *
@@ -1335,9 +1315,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.test_iam_permissions.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1373,26 +1373,6 @@ export class BigtableInstanceAdminClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
-  createInstance(
-      request?: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createInstance(
-      request: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createInstance(
-      request: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Create an instance within a project.
  *
@@ -1423,10 +1403,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createInstance(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateInstance_async
  */
+  createInstance(
+      request?: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createInstance(
+      request: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createInstance(
+      request: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.ICreateInstanceMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createInstance(
       request?: protos.google.bigtable.admin.v2.ICreateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1470,11 +1469,8 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateInstanceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateInstance_async
  */
   async checkCreateInstanceProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.CreateInstanceMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1482,26 +1478,6 @@ export class BigtableInstanceAdminClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createInstance, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.CreateInstanceMetadata>;
   }
-  partialUpdateInstance(
-      request?: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  partialUpdateInstance(
-      request: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  partialUpdateInstance(
-      request: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Partially updates an instance within a project. This method can modify all
  * fields of an Instance and is the preferred way to update an Instance.
@@ -1522,10 +1498,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.partialUpdateInstance(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.partial_update_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_PartialUpdateInstance_async
  */
+  partialUpdateInstance(
+      request?: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  partialUpdateInstance(
+      request: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  partialUpdateInstance(
+      request: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.IInstance, protos.google.bigtable.admin.v2.IUpdateInstanceMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   partialUpdateInstance(
       request?: protos.google.bigtable.admin.v2.IPartialUpdateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1569,11 +1564,8 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPartialUpdateInstanceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.partial_update_instance.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_PartialUpdateInstance_async
  */
   async checkPartialUpdateInstanceProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.UpdateInstanceMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1581,26 +1573,6 @@ export class BigtableInstanceAdminClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.partialUpdateInstance, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Instance, protos.google.bigtable.admin.v2.UpdateInstanceMetadata>;
   }
-  createCluster(
-      request?: protos.google.bigtable.admin.v2.ICreateClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createCluster(
-      request: protos.google.bigtable.admin.v2.ICreateClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createCluster(
-      request: protos.google.bigtable.admin.v2.ICreateClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a cluster within an instance.
  *
@@ -1626,10 +1598,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateCluster_async
  */
+  createCluster(
+      request?: protos.google.bigtable.admin.v2.ICreateClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createCluster(
+      request: protos.google.bigtable.admin.v2.ICreateClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createCluster(
+      request: protos.google.bigtable.admin.v2.ICreateClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.ICreateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createCluster(
       request?: protos.google.bigtable.admin.v2.ICreateClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1673,11 +1664,8 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.create_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateCluster_async
  */
   async checkCreateClusterProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.CreateClusterMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1685,26 +1673,6 @@ export class BigtableInstanceAdminClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.CreateClusterMetadata>;
   }
-  updateCluster(
-      request?: protos.google.bigtable.admin.v2.ICluster,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateCluster(
-      request: protos.google.bigtable.admin.v2.ICluster,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateCluster(
-      request: protos.google.bigtable.admin.v2.ICluster,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a cluster within an instance.
  *
@@ -1739,10 +1707,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async
  */
+  updateCluster(
+      request?: protos.google.bigtable.admin.v2.ICluster,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateCluster(
+      request: protos.google.bigtable.admin.v2.ICluster,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateCluster(
+      request: protos.google.bigtable.admin.v2.ICluster,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IUpdateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateCluster(
       request?: protos.google.bigtable.admin.v2.ICluster,
       optionsOrCallback?: CallOptions|Callback<
@@ -1786,11 +1773,8 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async
  */
   async checkUpdateClusterProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.UpdateClusterMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1798,26 +1782,6 @@ export class BigtableInstanceAdminClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.UpdateClusterMetadata>;
   }
-  updateAppProfile(
-      request?: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateAppProfile(
-      request: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateAppProfile(
-      request: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
-      callback: Callback<
-          LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an app profile within an instance.
  *
@@ -1839,10 +1803,29 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateAppProfile(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_app_profile.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateAppProfile_async
  */
+  updateAppProfile(
+      request?: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateAppProfile(
+      request: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateAppProfile(
+      request: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.IAppProfile, protos.google.bigtable.admin.v2.IUpdateAppProfileMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateAppProfile(
       request?: protos.google.bigtable.admin.v2.IUpdateAppProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1886,11 +1869,8 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateAppProfileProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.update_app_profile.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateAppProfile_async
  */
   async checkUpdateAppProfileProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.AppProfile, protos.google.bigtable.admin.v2.UpdateAppProfileMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1898,28 +1878,7 @@ export class BigtableInstanceAdminClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateAppProfile, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.AppProfile, protos.google.bigtable.admin.v2.UpdateAppProfileMetadata>;
   }
-  listAppProfiles(
-      request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.bigtable.admin.v2.IAppProfile[],
-        protos.google.bigtable.admin.v2.IListAppProfilesRequest|null,
-        protos.google.bigtable.admin.v2.IListAppProfilesResponse
-      ]>;
-  listAppProfiles(
-      request: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.bigtable.admin.v2.IListAppProfilesRequest,
-          protos.google.bigtable.admin.v2.IListAppProfilesResponse|null|undefined,
-          protos.google.bigtable.admin.v2.IAppProfile>): void;
-  listAppProfiles(
-      request: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
-      callback: PaginationCallback<
-          protos.google.bigtable.admin.v2.IListAppProfilesRequest,
-          protos.google.bigtable.admin.v2.IListAppProfilesResponse|null|undefined,
-          protos.google.bigtable.admin.v2.IAppProfile>): void;
-/**
+ /**
  * Lists information about app profiles in an instance.
  *
  * @param {Object} request
@@ -1955,6 +1914,27 @@ export class BigtableInstanceAdminClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAppProfiles(
+      request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.bigtable.admin.v2.IAppProfile[],
+        protos.google.bigtable.admin.v2.IListAppProfilesRequest|null,
+        protos.google.bigtable.admin.v2.IListAppProfilesResponse
+      ]>;
+  listAppProfiles(
+      request: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+          protos.google.bigtable.admin.v2.IListAppProfilesResponse|null|undefined,
+          protos.google.bigtable.admin.v2.IAppProfile>): void;
+  listAppProfiles(
+      request: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+      callback: PaginationCallback<
+          protos.google.bigtable.admin.v2.IListAppProfilesRequest,
+          protos.google.bigtable.admin.v2.IListAppProfilesResponse|null|undefined,
+          protos.google.bigtable.admin.v2.IAppProfile>): void;
   listAppProfiles(
       request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2082,11 +2062,8 @@ export class BigtableInstanceAdminClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAppProfilesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.list_app_profiles.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_ListAppProfiles_async
  */
   listAppProfilesAsync(
       request?: protos.google.bigtable.admin.v2.IListAppProfilesRequest,
@@ -2101,7 +2078,6 @@ export class BigtableInstanceAdminClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAppProfiles'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -26,11 +26,11 @@ function main(userFeedback) {
    *  The feedback's name field is used to identify the user feedback (and the
    *  corresponding question) to update.
    */
-  // const userFeedback = ''
+  // const userFeedback = {}
   /**
    *  The list of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Dataqna library
   const {QuestionServiceClient} = require('@google-cloud/data-qna').v1alpha;
@@ -38,7 +38,7 @@ function main(userFeedback) {
   // Instantiates a client
   const dataqnaClient = new QuestionServiceClient();
 
-  async function updateUserFeedback() {
+  async function callUpdateUserFeedback() {
     // Construct request
     const request = {
       userFeedback,
@@ -49,7 +49,7 @@ function main(userFeedback) {
     console.log(response);
   }
 
-  updateUserFeedback();
+  callUpdateUserFeedback();
   // [END dataqna_v1alpha_generated_QuestionService_UpdateUserFeedback_async]
 }
 

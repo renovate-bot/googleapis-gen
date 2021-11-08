@@ -37,7 +37,7 @@ function main(name, vmId) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function upgradeInstanceInternal() {
+  async function callUpgradeInstanceInternal() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name, vmId) {
     console.log(response);
   }
 
-  upgradeInstanceInternal();
+  callUpgradeInstanceInternal();
   // [END notebooks_v1_generated_NotebookService_UpgradeInstanceInternal_async]
 }
 

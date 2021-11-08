@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const tpuClient = new TpuClient();
 
-  async function getRuntimeVersion() {
+  async function callGetRuntimeVersion() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getRuntimeVersion();
+  callGetRuntimeVersion();
   // [END tpu_v2alpha1_generated_Tpu_GetRuntimeVersion_async]
 }
 

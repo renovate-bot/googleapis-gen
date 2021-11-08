@@ -23,23 +23,23 @@ function main() {
   /**
    *  The `parent` parameter's value depends on the target resource for the
    *  request, namely
-   *  [`roles`](/iam/reference/rest/v1/roles),
-   *  [`projects`](/iam/reference/rest/v1/projects.roles), or
-   *  [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+   *  `roles` (/iam/reference/rest/v1/roles),
+   *  `projects` (/iam/reference/rest/v1/projects.roles), or
+   *  `organizations` (/iam/reference/rest/v1/organizations.roles). Each
    *  resource type's `parent` value format is described below:
-   *  * [`roles.list()`](/iam/reference/rest/v1/roles/list): An empty string.
+   *  * `roles.list()` (/iam/reference/rest/v1/roles/list): An empty string.
    *    This method doesn't require a resource; it simply returns all
-   *    [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
+   *    predefined roles (/iam/docs/understanding-roles#predefined_roles) in
    *    Cloud IAM. Example request URL:
    *    `https://iam.googleapis.com/v1/roles`
-   *  * [`projects.roles.list()`](/iam/reference/rest/v1/projects.roles/list):
+   *  * `projects.roles.list()` (/iam/reference/rest/v1/projects.roles/list):
    *    `projects/{PROJECT_ID}`. This method lists all project-level
-   *    [custom roles](/iam/docs/understanding-custom-roles).
+   *    custom roles (/iam/docs/understanding-custom-roles).
    *    Example request URL:
    *    `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
-   *  * [`organizations.roles.list()`](/iam/reference/rest/v1/organizations.roles/list):
+   *  * `organizations.roles.list()` (/iam/reference/rest/v1/organizations.roles/list):
    *    `organizations/{ORGANIZATION_ID}`. This method lists all
-   *    organization-level [custom roles](/iam/docs/understanding-custom-roles).
+   *    organization-level custom roles (/iam/docs/understanding-custom-roles).
    *    Example request URL:
    *    `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
    *  Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -61,7 +61,7 @@ function main() {
    *  permissions in the role. The default value is `BASIC`, which does not
    *  return the `includedPermissions` field.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Include Roles that have been deleted.
    */
@@ -73,7 +73,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function listRoles() {
+  async function callListRoles() {
     // Construct request
     const request = {
     };
@@ -85,7 +85,7 @@ function main() {
     }
   }
 
-  listRoles();
+  callListRoles();
   // [END iam_v1_generated_IAM_ListRoles_async]
 }
 

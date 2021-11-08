@@ -31,7 +31,7 @@ function main(parent, spoke) {
   /**
    *  Required. The initial values for a new spoke.
    */
-  // const spoke = ''
+  // const spoke = {}
   /**
    *  Optional. A unique request ID (optional). If you specify this ID, you can use it
    *  in cases when you need to retry your request. When you need to retry, this
@@ -54,7 +54,7 @@ function main(parent, spoke) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function createSpoke() {
+  async function callCreateSpoke() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent, spoke) {
     console.log(response);
   }
 
-  createSpoke();
+  callCreateSpoke();
   // [END networkconnectivity_v1_generated_HubService_CreateSpoke_async]
 }
 

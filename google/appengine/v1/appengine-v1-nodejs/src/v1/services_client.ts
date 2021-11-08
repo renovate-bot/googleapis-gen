@@ -328,6 +328,23 @@ export class ServicesClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the current configuration of the specified service.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the resource requested. Example: `apps/myapp/services/default`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Service]{@link google.appengine.v1.Service}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/services.get_service.js</caption>
+ * region_tag:appengine_v1_generated_Services_GetService_async
+ */
   getService(
       request?: protos.google.appengine.v1.IGetServiceRequest,
       options?: CallOptions):
@@ -348,23 +365,6 @@ export class ServicesClient {
           protos.google.appengine.v1.IService,
           protos.google.appengine.v1.IGetServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the current configuration of the specified service.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the resource requested. Example: `apps/myapp/services/default`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Service]{@link google.appengine.v1.Service}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getService(request);
- */
   getService(
       request?: protos.google.appengine.v1.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -400,26 +400,6 @@ export class ServicesClient {
     return this.innerApiCalls.getService(request, options, callback);
   }
 
-  updateService(
-      request?: protos.google.appengine.v1.IUpdateServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateService(
-      request: protos.google.appengine.v1.IUpdateServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateService(
-      request: protos.google.appengine.v1.IUpdateServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the configuration of the specified service.
  *
@@ -454,10 +434,29 @@ export class ServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/services.update_service.js</caption>
+ * region_tag:appengine_v1_generated_Services_UpdateService_async
  */
+  updateService(
+      request?: protos.google.appengine.v1.IUpdateServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateService(
+      request: protos.google.appengine.v1.IUpdateServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateService(
+      request: protos.google.appengine.v1.IUpdateServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.appengine.v1.IService, protos.google.appengine.v1.IOperationMetadataV1>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateService(
       request?: protos.google.appengine.v1.IUpdateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -501,11 +500,8 @@ export class ServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/services.update_service.js</caption>
+ * region_tag:appengine_v1_generated_Services_UpdateService_async
  */
   async checkUpdateServiceProgress(name: string): Promise<LROperation<protos.google.appengine.v1.Service, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -513,6 +509,25 @@ export class ServicesClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.appengine.v1.Service, protos.google.appengine.v1.OperationMetadataV1>;
   }
+/**
+ * Deletes the specified service and all enclosed versions.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the resource requested. Example: `apps/myapp/services/default`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/services.delete_service.js</caption>
+ * region_tag:appengine_v1_generated_Services_DeleteService_async
+ */
   deleteService(
       request?: protos.google.appengine.v1.IDeleteServiceRequest,
       options?: CallOptions):
@@ -533,26 +548,6 @@ export class ServicesClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified service and all enclosed versions.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the resource requested. Example: `apps/myapp/services/default`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteService(request);
- * const [response] = await operation.promise();
- */
   deleteService(
       request?: protos.google.appengine.v1.IDeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -596,11 +591,8 @@ export class ServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/services.delete_service.js</caption>
+ * region_tag:appengine_v1_generated_Services_DeleteService_async
  */
   async checkDeleteServiceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -608,28 +600,7 @@ export class ServicesClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>;
   }
-  listServices(
-      request?: protos.google.appengine.v1.IListServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.appengine.v1.IService[],
-        protos.google.appengine.v1.IListServicesRequest|null,
-        protos.google.appengine.v1.IListServicesResponse
-      ]>;
-  listServices(
-      request: protos.google.appengine.v1.IListServicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListServicesRequest,
-          protos.google.appengine.v1.IListServicesResponse|null|undefined,
-          protos.google.appengine.v1.IService>): void;
-  listServices(
-      request: protos.google.appengine.v1.IListServicesRequest,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListServicesRequest,
-          protos.google.appengine.v1.IListServicesResponse|null|undefined,
-          protos.google.appengine.v1.IService>): void;
-/**
+ /**
  * Lists all the services in the application.
  *
  * @param {Object} request
@@ -653,6 +624,27 @@ export class ServicesClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServices(
+      request?: protos.google.appengine.v1.IListServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.appengine.v1.IService[],
+        protos.google.appengine.v1.IListServicesRequest|null,
+        protos.google.appengine.v1.IListServicesResponse
+      ]>;
+  listServices(
+      request: protos.google.appengine.v1.IListServicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListServicesRequest,
+          protos.google.appengine.v1.IListServicesResponse|null|undefined,
+          protos.google.appengine.v1.IService>): void;
+  listServices(
+      request: protos.google.appengine.v1.IListServicesRequest,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListServicesRequest,
+          protos.google.appengine.v1.IListServicesResponse|null|undefined,
+          protos.google.appengine.v1.IService>): void;
   listServices(
       request?: protos.google.appengine.v1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -756,11 +748,8 @@ export class ServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/services.list_services.js</caption>
+ * region_tag:appengine_v1_generated_Services_ListServices_async
  */
   listServicesAsync(
       request?: protos.google.appengine.v1.IListServicesRequest,
@@ -775,7 +764,6 @@ export class ServicesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

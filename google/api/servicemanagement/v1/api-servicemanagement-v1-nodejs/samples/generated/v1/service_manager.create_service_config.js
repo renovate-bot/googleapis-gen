@@ -21,14 +21,14 @@ function main(serviceName, serviceConfig) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   *  Required. The name of the service.  See the overview (https://cloud.google.com/service-management/overview)
    *  for naming requirements.  For example: `example.googleapis.com`.
    */
   // const serviceName = 'abc123'
   /**
    *  Required. The service configuration resource.
    */
-  // const serviceConfig = ''
+  // const serviceConfig = {}
 
   // Imports the Servicemanagement library
   const {ServiceManagerClient} = require('@google-cloud/service-management').v1;
@@ -36,7 +36,7 @@ function main(serviceName, serviceConfig) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function createServiceConfig() {
+  async function callCreateServiceConfig() {
     // Construct request
     const request = {
       serviceName,
@@ -48,7 +48,7 @@ function main(serviceName, serviceConfig) {
     console.log(response);
   }
 
-  createServiceConfig();
+  callCreateServiceConfig();
   // [END servicemanagement_v1_generated_ServiceManager_CreateServiceConfig_async]
 }
 

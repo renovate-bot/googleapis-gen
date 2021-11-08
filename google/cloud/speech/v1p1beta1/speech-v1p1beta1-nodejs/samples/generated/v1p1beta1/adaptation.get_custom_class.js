@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function getCustomClass() {
+  async function callGetCustomClass() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getCustomClass();
+  callGetCustomClass();
   // [END speech_v1p1beta1_generated_Adaptation_GetCustomClass_async]
 }
 

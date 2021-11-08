@@ -52,7 +52,7 @@ function main(name, scope) {
    *  not specified, the token's lifetime will be set to a default value of one
    *  hour.
    */
-  // const lifetime = ''
+  // const lifetime = {}
 
   // Imports the Credentials library
   const {IAMCredentialsClient} = require('@google-cloud/iam-credentials').v1;
@@ -60,7 +60,7 @@ function main(name, scope) {
   // Instantiates a client
   const credentialsClient = new IAMCredentialsClient();
 
-  async function generateAccessToken() {
+  async function callGenerateAccessToken() {
     // Construct request
     const request = {
       name,
@@ -72,7 +72,7 @@ function main(name, scope) {
     console.log(response);
   }
 
-  generateAccessToken();
+  callGenerateAccessToken();
   // [END iamcredentials_v1_generated_IAMCredentials_GenerateAccessToken_async]
 }
 

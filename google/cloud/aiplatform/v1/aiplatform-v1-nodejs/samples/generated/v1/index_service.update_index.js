@@ -23,12 +23,12 @@ function main(index) {
   /**
    *  Required. The Index which updates the resource on the server.
    */
-  // const index = ''
+  // const index = {}
   /**
    *  The update mask applies to the resource.
-   *  For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   *  For the `FieldMask` definition, see google.protobuf.FieldMask google.protobuf.FieldMask.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Aiplatform library
   const {IndexServiceClient} = require('@google-cloud/aiplatform').v1;
@@ -36,7 +36,7 @@ function main(index) {
   // Instantiates a client
   const aiplatformClient = new IndexServiceClient();
 
-  async function updateIndex() {
+  async function callUpdateIndex() {
     // Construct request
     const request = {
       index,
@@ -48,7 +48,7 @@ function main(index) {
     console.log(response);
   }
 
-  updateIndex();
+  callUpdateIndex();
   // [END aiplatform_v1_generated_IndexService_UpdateIndex_async]
 }
 

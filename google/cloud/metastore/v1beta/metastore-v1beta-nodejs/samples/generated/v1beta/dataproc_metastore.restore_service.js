@@ -35,7 +35,7 @@ function main(service, backup) {
   /**
    *  Optional. The type of restore. If unspecified, defaults to `METADATA_ONLY`.
    */
-  // const restoreType = ''
+  // const restoreType = {}
   /**
    *  Optional. A request ID. Specify a unique request ID to allow the server to
    *  ignore the request if it has completed. The server will ignore subsequent
@@ -45,7 +45,7 @@ function main(service, backup) {
    *  with the same request ID, the server ignores the second request to prevent
    *  the creation of duplicate commitments.
    *  The request ID must be a valid
-   *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
+   *  UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    *  A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
    */
   // const requestId = 'abc123'
@@ -56,7 +56,7 @@ function main(service, backup) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function restoreService() {
+  async function callRestoreService() {
     // Construct request
     const request = {
       service,
@@ -69,7 +69,7 @@ function main(service, backup) {
     console.log(response);
   }
 
-  restoreService();
+  callRestoreService();
   // [END metastore_v1beta_generated_DataprocMetastore_RestoreService_async]
 }
 

@@ -30,7 +30,7 @@ function main(name) {
    *  Optional. Available data protection modes that the user can choose. If it's
    *  unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
    */
-  // const dataProtectionMode = ''
+  // const dataProtectionMode = {}
 
   // Imports the Redis library
   const {CloudRedisClient} = require('@google-cloud/redis').v1beta1;
@@ -38,7 +38,7 @@ function main(name) {
   // Instantiates a client
   const redisClient = new CloudRedisClient();
 
-  async function failoverInstance() {
+  async function callFailoverInstance() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name) {
     console.log(response);
   }
 
-  failoverInstance();
+  callFailoverInstance();
   // [END redis_v1beta1_generated_CloudRedis_FailoverInstance_async]
 }
 

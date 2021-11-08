@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const grafeasClient = new GrafeasClient();
 
-  async function getNote() {
+  async function callGetNote() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getNote();
+  callGetNote();
   // [END containeranalysis_v1_generated_Grafeas_GetNote_async]
 }
 

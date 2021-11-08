@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new AuthorizedCertificatesClient();
 
-  async function deleteAuthorizedCertificate() {
+  async function callDeleteAuthorizedCertificate() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  deleteAuthorizedCertificate();
+  callDeleteAuthorizedCertificate();
   // [END appengine_v1_generated_AuthorizedCertificates_DeleteAuthorizedCertificate_async]
 }
 

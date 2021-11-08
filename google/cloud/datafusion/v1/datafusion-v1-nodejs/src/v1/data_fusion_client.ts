@@ -346,6 +346,24 @@ export class DataFusionClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single Data Fusion instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The instance resource name in the format
+ *   projects/{project}/locations/{location}/instances/{instance}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Instance]{@link google.cloud.datafusion.v1.Instance}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_fusion.get_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_GetInstance_async
+ */
   getInstance(
       request?: protos.google.cloud.datafusion.v1.IGetInstanceRequest,
       options?: CallOptions):
@@ -366,24 +384,6 @@ export class DataFusionClient {
           protos.google.cloud.datafusion.v1.IInstance,
           protos.google.cloud.datafusion.v1.IGetInstanceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Data Fusion instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The instance resource name in the format
- *   projects/{project}/locations/{location}/instances/{instance}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Instance]{@link google.cloud.datafusion.v1.Instance}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getInstance(request);
- */
   getInstance(
       request?: protos.google.cloud.datafusion.v1.IGetInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -419,26 +419,6 @@ export class DataFusionClient {
     return this.innerApiCalls.getInstance(request, options, callback);
   }
 
-  createInstance(
-      request?: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createInstance(
-      request: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createInstance(
-      request: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Data Fusion instance in the specified project and location.
  *
@@ -460,10 +440,29 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createInstance(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_fusion.create_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_CreateInstance_async
  */
+  createInstance(
+      request?: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createInstance(
+      request: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createInstance(
+      request: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createInstance(
       request?: protos.google.cloud.datafusion.v1.ICreateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -507,11 +506,8 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateInstanceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_fusion.create_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_CreateInstance_async
  */
   async checkCreateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -519,6 +515,26 @@ export class DataFusionClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createInstance, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>;
   }
+/**
+ * Deletes a single Date Fusion instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The instance resource name in the format
+ *   projects/{project}/locations/{location}/instances/{instance}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_fusion.delete_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_DeleteInstance_async
+ */
   deleteInstance(
       request?: protos.google.cloud.datafusion.v1.IDeleteInstanceRequest,
       options?: CallOptions):
@@ -539,27 +555,6 @@ export class DataFusionClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.datafusion.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single Date Fusion instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The instance resource name in the format
- *   projects/{project}/locations/{location}/instances/{instance}
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteInstance(request);
- * const [response] = await operation.promise();
- */
   deleteInstance(
       request?: protos.google.cloud.datafusion.v1.IDeleteInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -603,11 +598,8 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteInstanceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_fusion.delete_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_DeleteInstance_async
  */
   async checkDeleteInstanceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -615,26 +607,6 @@ export class DataFusionClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteInstance, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.datafusion.v1.OperationMetadata>;
   }
-  updateInstance(
-      request?: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateInstance(
-      request: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateInstance(
-      request: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a single Data Fusion instance.
  *
@@ -660,10 +632,29 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateInstance(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_fusion.update_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_UpdateInstance_async
  */
+  updateInstance(
+      request?: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateInstance(
+      request: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateInstance(
+      request: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateInstance(
       request?: protos.google.cloud.datafusion.v1.IUpdateInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -707,11 +698,8 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateInstanceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_fusion.update_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_UpdateInstance_async
  */
   async checkUpdateInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -719,6 +707,27 @@ export class DataFusionClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateInstance, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>;
   }
+/**
+ * Restart a single Data Fusion instance.
+ * At the end of an operation instance is fully restarted.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the Data Fusion instance which need to be restarted in the form of
+ *   projects/{project}/locations/{location}/instances/{instance}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_fusion.restart_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_RestartInstance_async
+ */
   restartInstance(
       request?: protos.google.cloud.datafusion.v1.IRestartInstanceRequest,
       options?: CallOptions):
@@ -739,28 +748,6 @@ export class DataFusionClient {
           LROperation<protos.google.cloud.datafusion.v1.IInstance, protos.google.cloud.datafusion.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Restart a single Data Fusion instance.
- * At the end of an operation instance is fully restarted.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the Data Fusion instance which need to be restarted in the form of
- *   projects/{project}/locations/{location}/instances/{instance}
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.restartInstance(request);
- * const [response] = await operation.promise();
- */
   restartInstance(
       request?: protos.google.cloud.datafusion.v1.IRestartInstanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -804,11 +791,8 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRestartInstanceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_fusion.restart_instance.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_RestartInstance_async
  */
   async checkRestartInstanceProgress(name: string): Promise<LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -816,28 +800,7 @@ export class DataFusionClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.restartInstance, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.datafusion.v1.Instance, protos.google.cloud.datafusion.v1.OperationMetadata>;
   }
-  listAvailableVersions(
-      request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datafusion.v1.IVersion[],
-        protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest|null,
-        protos.google.cloud.datafusion.v1.IListAvailableVersionsResponse
-      ]>;
-  listAvailableVersions(
-      request: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
-          protos.google.cloud.datafusion.v1.IListAvailableVersionsResponse|null|undefined,
-          protos.google.cloud.datafusion.v1.IVersion>): void;
-  listAvailableVersions(
-      request: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
-          protos.google.cloud.datafusion.v1.IListAvailableVersionsResponse|null|undefined,
-          protos.google.cloud.datafusion.v1.IVersion>): void;
-/**
+ /**
  * Lists possible versions for Data Fusion instances in the specified project
  * and location.
  *
@@ -868,6 +831,27 @@ export class DataFusionClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAvailableVersions(
+      request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datafusion.v1.IVersion[],
+        protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest|null,
+        protos.google.cloud.datafusion.v1.IListAvailableVersionsResponse
+      ]>;
+  listAvailableVersions(
+      request: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
+          protos.google.cloud.datafusion.v1.IListAvailableVersionsResponse|null|undefined,
+          protos.google.cloud.datafusion.v1.IVersion>): void;
+  listAvailableVersions(
+      request: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
+          protos.google.cloud.datafusion.v1.IListAvailableVersionsResponse|null|undefined,
+          protos.google.cloud.datafusion.v1.IVersion>): void;
   listAvailableVersions(
       request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -983,11 +967,8 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAvailableVersionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/data_fusion.list_available_versions.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_ListAvailableVersions_async
  */
   listAvailableVersionsAsync(
       request?: protos.google.cloud.datafusion.v1.IListAvailableVersionsRequest,
@@ -1002,7 +983,6 @@ export class DataFusionClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAvailableVersions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1012,28 +992,7 @@ export class DataFusionClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.datafusion.v1.IVersion>;
   }
-  listInstances(
-      request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datafusion.v1.IInstance[],
-        protos.google.cloud.datafusion.v1.IListInstancesRequest|null,
-        protos.google.cloud.datafusion.v1.IListInstancesResponse
-      ]>;
-  listInstances(
-      request: protos.google.cloud.datafusion.v1.IListInstancesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.datafusion.v1.IListInstancesRequest,
-          protos.google.cloud.datafusion.v1.IListInstancesResponse|null|undefined,
-          protos.google.cloud.datafusion.v1.IInstance>): void;
-  listInstances(
-      request: protos.google.cloud.datafusion.v1.IListInstancesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.datafusion.v1.IListInstancesRequest,
-          protos.google.cloud.datafusion.v1.IListInstancesResponse|null|undefined,
-          protos.google.cloud.datafusion.v1.IInstance>): void;
-/**
+ /**
  * Lists Data Fusion instances in the specified project and location.
  *
  * @param {Object} request
@@ -1065,6 +1024,27 @@ export class DataFusionClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listInstances(
+      request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datafusion.v1.IInstance[],
+        protos.google.cloud.datafusion.v1.IListInstancesRequest|null,
+        protos.google.cloud.datafusion.v1.IListInstancesResponse
+      ]>;
+  listInstances(
+      request: protos.google.cloud.datafusion.v1.IListInstancesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.datafusion.v1.IListInstancesRequest,
+          protos.google.cloud.datafusion.v1.IListInstancesResponse|null|undefined,
+          protos.google.cloud.datafusion.v1.IInstance>): void;
+  listInstances(
+      request: protos.google.cloud.datafusion.v1.IListInstancesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.datafusion.v1.IListInstancesRequest,
+          protos.google.cloud.datafusion.v1.IListInstancesResponse|null|undefined,
+          protos.google.cloud.datafusion.v1.IInstance>): void;
   listInstances(
       request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1184,11 +1164,8 @@ export class DataFusionClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listInstancesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/data_fusion.list_instances.js</caption>
+ * region_tag:datafusion_v1_generated_DataFusion_ListInstances_async
  */
   listInstancesAsync(
       request?: protos.google.cloud.datafusion.v1.IListInstancesRequest,
@@ -1203,7 +1180,6 @@ export class DataFusionClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listInstances'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

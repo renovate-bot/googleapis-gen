@@ -23,12 +23,12 @@ function main(agent) {
   /**
    *  Required. The agent to update.
    */
-  // const agent = ''
+  // const agent = {}
   /**
    *  The mask to control which fields get updated. If the mask is not present,
    *  all fields will be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Cx library
   const {AgentsClient} = require('@google-cloud/dialogflow-cx').v3beta1;
@@ -36,7 +36,7 @@ function main(agent) {
   // Instantiates a client
   const cxClient = new AgentsClient();
 
-  async function updateAgent() {
+  async function callUpdateAgent() {
     // Construct request
     const request = {
       agent,
@@ -47,7 +47,7 @@ function main(agent) {
     console.log(response);
   }
 
-  updateAgent();
+  callUpdateAgent();
   // [END dialogflow_v3beta1_generated_Agents_UpdateAgent_async]
 }
 

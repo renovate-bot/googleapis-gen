@@ -305,6 +305,23 @@ export class LibraryServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a shelf, and returns the new Shelf.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.example.library.v1.Shelf} request.shelf
+ *   The shelf to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Shelf]{@link google.example.library.v1.Shelf}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.create_shelf.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_CreateShelf_async
+ */
   createShelf(
       request?: protos.google.example.library.v1.ICreateShelfRequest,
       options?: CallOptions):
@@ -325,23 +342,6 @@ export class LibraryServiceClient {
           protos.google.example.library.v1.IShelf,
           protos.google.example.library.v1.ICreateShelfRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a shelf, and returns the new Shelf.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.example.library.v1.Shelf} request.shelf
- *   The shelf to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Shelf]{@link google.example.library.v1.Shelf}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createShelf(request);
- */
   createShelf(
       request?: protos.google.example.library.v1.ICreateShelfRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -366,9 +366,28 @@ export class LibraryServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createShelf(request, options, callback);
   }
+/**
+ * Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the shelf to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Shelf]{@link google.example.library.v1.Shelf}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.get_shelf.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_GetShelf_async
+ */
   getShelf(
       request?: protos.google.example.library.v1.IGetShelfRequest,
       options?: CallOptions):
@@ -389,23 +408,6 @@ export class LibraryServiceClient {
           protos.google.example.library.v1.IShelf,
           protos.google.example.library.v1.IGetShelfRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the shelf to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Shelf]{@link google.example.library.v1.Shelf}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getShelf(request);
- */
   getShelf(
       request?: protos.google.example.library.v1.IGetShelfRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -440,6 +442,23 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.getShelf(request, options, callback);
   }
+/**
+ * Deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the shelf to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.delete_shelf.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_DeleteShelf_async
+ */
   deleteShelf(
       request?: protos.google.example.library.v1.IDeleteShelfRequest,
       options?: CallOptions):
@@ -460,23 +479,6 @@ export class LibraryServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.example.library.v1.IDeleteShelfRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the shelf to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteShelf(request);
- */
   deleteShelf(
       request?: protos.google.example.library.v1.IDeleteShelfRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -511,26 +513,6 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteShelf(request, options, callback);
   }
-  mergeShelves(
-      request?: protos.google.example.library.v1.IMergeShelvesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.example.library.v1.IShelf,
-        protos.google.example.library.v1.IMergeShelvesRequest|undefined, {}|undefined
-      ]>;
-  mergeShelves(
-      request: protos.google.example.library.v1.IMergeShelvesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.example.library.v1.IShelf,
-          protos.google.example.library.v1.IMergeShelvesRequest|null|undefined,
-          {}|null|undefined>): void;
-  mergeShelves(
-      request: protos.google.example.library.v1.IMergeShelvesRequest,
-      callback: Callback<
-          protos.google.example.library.v1.IShelf,
-          protos.google.example.library.v1.IMergeShelvesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Merges two shelves by adding all books from the shelf named
  * `other_shelf_name` to shelf `name`, and deletes
@@ -553,9 +535,29 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mergeShelves(request);
+ * @example <caption>include:samples/generated/v1/library_service.merge_shelves.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_MergeShelves_async
  */
+  mergeShelves(
+      request?: protos.google.example.library.v1.IMergeShelvesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.example.library.v1.IShelf,
+        protos.google.example.library.v1.IMergeShelvesRequest|undefined, {}|undefined
+      ]>;
+  mergeShelves(
+      request: protos.google.example.library.v1.IMergeShelvesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.example.library.v1.IShelf,
+          protos.google.example.library.v1.IMergeShelvesRequest|null|undefined,
+          {}|null|undefined>): void;
+  mergeShelves(
+      request: protos.google.example.library.v1.IMergeShelvesRequest,
+      callback: Callback<
+          protos.google.example.library.v1.IShelf,
+          protos.google.example.library.v1.IMergeShelvesRequest|null|undefined,
+          {}|null|undefined>): void;
   mergeShelves(
       request?: protos.google.example.library.v1.IMergeShelvesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -590,6 +592,25 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.mergeShelves(request, options, callback);
   }
+/**
+ * Creates a book, and returns the new Book.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   The name of the shelf in which the book is created.
+ * @param {google.example.library.v1.Book} request.book
+ *   The book to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.create_book.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_CreateBook_async
+ */
   createBook(
       request?: protos.google.example.library.v1.ICreateBookRequest,
       options?: CallOptions):
@@ -610,25 +631,6 @@ export class LibraryServiceClient {
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.ICreateBookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a book, and returns the new Book.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   The name of the shelf in which the book is created.
- * @param {google.example.library.v1.Book} request.book
- *   The book to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createBook(request);
- */
   createBook(
       request?: protos.google.example.library.v1.ICreateBookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -663,6 +665,23 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.createBook(request, options, callback);
   }
+/**
+ * Gets a book. Returns NOT_FOUND if the book does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the book to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.get_book.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_GetBook_async
+ */
   getBook(
       request?: protos.google.example.library.v1.IGetBookRequest,
       options?: CallOptions):
@@ -683,23 +702,6 @@ export class LibraryServiceClient {
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.IGetBookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a book. Returns NOT_FOUND if the book does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the book to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBook(request);
- */
   getBook(
       request?: protos.google.example.library.v1.IGetBookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -734,6 +736,23 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.getBook(request, options, callback);
   }
+/**
+ * Deletes a book. Returns NOT_FOUND if the book does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the book to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.delete_book.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_DeleteBook_async
+ */
   deleteBook(
       request?: protos.google.example.library.v1.IDeleteBookRequest,
       options?: CallOptions):
@@ -754,23 +773,6 @@ export class LibraryServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.example.library.v1.IDeleteBookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a book. Returns NOT_FOUND if the book does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the book to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteBook(request);
- */
   deleteBook(
       request?: protos.google.example.library.v1.IDeleteBookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -805,6 +807,26 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteBook(request, options, callback);
   }
+/**
+ * Updates a book. Returns INVALID_ARGUMENT if the name of the book
+ * is non-empty and does not equal the existing name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.example.library.v1.Book} request.book
+ *   The name of the book to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. Mask of fields to update.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.update_book.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_UpdateBook_async
+ */
   updateBook(
       request?: protos.google.example.library.v1.IUpdateBookRequest,
       options?: CallOptions):
@@ -825,26 +847,6 @@ export class LibraryServiceClient {
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.IUpdateBookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a book. Returns INVALID_ARGUMENT if the name of the book
- * is non-empty and does not equal the existing name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.example.library.v1.Book} request.book
- *   The name of the book to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. Mask of fields to update.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateBook(request);
- */
   updateBook(
       request?: protos.google.example.library.v1.IUpdateBookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -879,6 +881,26 @@ export class LibraryServiceClient {
     this.initialize();
     return this.innerApiCalls.updateBook(request, options, callback);
   }
+/**
+ * Moves a book to another shelf, and returns the new book. The book
+ * id of the new book may not be the same as the original book.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the book to move.
+ * @param {string} request.otherShelfName
+ *   The name of the destination shelf.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/library_service.move_book.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_MoveBook_async
+ */
   moveBook(
       request?: protos.google.example.library.v1.IMoveBookRequest,
       options?: CallOptions):
@@ -899,26 +921,6 @@ export class LibraryServiceClient {
           protos.google.example.library.v1.IBook,
           protos.google.example.library.v1.IMoveBookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Moves a book to another shelf, and returns the new book. The book
- * id of the new book may not be the same as the original book.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the book to move.
- * @param {string} request.otherShelfName
- *   The name of the destination shelf.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Book]{@link google.example.library.v1.Book}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.moveBook(request);
- */
   moveBook(
       request?: protos.google.example.library.v1.IMoveBookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -954,28 +956,7 @@ export class LibraryServiceClient {
     return this.innerApiCalls.moveBook(request, options, callback);
   }
 
-  listShelves(
-      request?: protos.google.example.library.v1.IListShelvesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.example.library.v1.IShelf[],
-        protos.google.example.library.v1.IListShelvesRequest|null,
-        protos.google.example.library.v1.IListShelvesResponse
-      ]>;
-  listShelves(
-      request: protos.google.example.library.v1.IListShelvesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.example.library.v1.IListShelvesRequest,
-          protos.google.example.library.v1.IListShelvesResponse|null|undefined,
-          protos.google.example.library.v1.IShelf>): void;
-  listShelves(
-      request: protos.google.example.library.v1.IListShelvesRequest,
-      callback: PaginationCallback<
-          protos.google.example.library.v1.IListShelvesRequest,
-          protos.google.example.library.v1.IListShelvesResponse|null|undefined,
-          protos.google.example.library.v1.IShelf>): void;
-/**
+ /**
  * Lists shelves. The order is unspecified but deterministic. Newly created
  * shelves will not necessarily be added to the end of this list.
  *
@@ -1004,6 +985,27 @@ export class LibraryServiceClient {
  */
   listShelves(
       request?: protos.google.example.library.v1.IListShelvesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.example.library.v1.IShelf[],
+        protos.google.example.library.v1.IListShelvesRequest|null,
+        protos.google.example.library.v1.IListShelvesResponse
+      ]>;
+  listShelves(
+      request: protos.google.example.library.v1.IListShelvesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.example.library.v1.IListShelvesRequest,
+          protos.google.example.library.v1.IListShelvesResponse|null|undefined,
+          protos.google.example.library.v1.IShelf>): void;
+  listShelves(
+      request: protos.google.example.library.v1.IListShelvesRequest,
+      callback: PaginationCallback<
+          protos.google.example.library.v1.IListShelvesRequest,
+          protos.google.example.library.v1.IListShelvesResponse|null|undefined,
+          protos.google.example.library.v1.IShelf>): void;
+  listShelves(
+      request?: protos.google.example.library.v1.IListShelvesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.example.library.v1.IListShelvesRequest,
           protos.google.example.library.v1.IListShelvesResponse|null|undefined,
@@ -1027,6 +1029,8 @@ export class LibraryServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listShelves(request, options, callback);
   }
@@ -1061,6 +1065,8 @@ export class LibraryServiceClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listShelves'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1095,11 +1101,8 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listShelvesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/library_service.list_shelves.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_ListShelves_async
  */
   listShelvesAsync(
       request?: protos.google.example.library.v1.IListShelvesRequest,
@@ -1107,7 +1110,8 @@ export class LibraryServiceClient {
     AsyncIterable<protos.google.example.library.v1.IShelf>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listShelves'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1117,28 +1121,7 @@ export class LibraryServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.example.library.v1.IShelf>;
   }
-  listBooks(
-      request?: protos.google.example.library.v1.IListBooksRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.example.library.v1.IBook[],
-        protos.google.example.library.v1.IListBooksRequest|null,
-        protos.google.example.library.v1.IListBooksResponse
-      ]>;
-  listBooks(
-      request: protos.google.example.library.v1.IListBooksRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.example.library.v1.IListBooksRequest,
-          protos.google.example.library.v1.IListBooksResponse|null|undefined,
-          protos.google.example.library.v1.IBook>): void;
-  listBooks(
-      request: protos.google.example.library.v1.IListBooksRequest,
-      callback: PaginationCallback<
-          protos.google.example.library.v1.IListBooksRequest,
-          protos.google.example.library.v1.IListBooksResponse|null|undefined,
-          protos.google.example.library.v1.IBook>): void;
-/**
+ /**
  * Lists books in a shelf. The order is unspecified but deterministic. Newly
  * created books will not necessarily be added to the end of this list.
  * Returns NOT_FOUND if the shelf does not exist.
@@ -1168,6 +1151,27 @@ export class LibraryServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listBooks(
+      request?: protos.google.example.library.v1.IListBooksRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.example.library.v1.IBook[],
+        protos.google.example.library.v1.IListBooksRequest|null,
+        protos.google.example.library.v1.IListBooksResponse
+      ]>;
+  listBooks(
+      request: protos.google.example.library.v1.IListBooksRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.example.library.v1.IListBooksRequest,
+          protos.google.example.library.v1.IListBooksResponse|null|undefined,
+          protos.google.example.library.v1.IBook>): void;
+  listBooks(
+      request: protos.google.example.library.v1.IListBooksRequest,
+      callback: PaginationCallback<
+          protos.google.example.library.v1.IListBooksRequest,
+          protos.google.example.library.v1.IListBooksResponse|null|undefined,
+          protos.google.example.library.v1.IBook>): void;
   listBooks(
       request?: protos.google.example.library.v1.IListBooksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1279,11 +1283,8 @@ export class LibraryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listBooksAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/library_service.list_books.js</caption>
+ * region_tag:library-example_v1_generated_LibraryService_ListBooks_async
  */
   listBooksAsync(
       request?: protos.google.example.library.v1.IListBooksRequest,
@@ -1298,7 +1299,6 @@ export class LibraryServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listBooks'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

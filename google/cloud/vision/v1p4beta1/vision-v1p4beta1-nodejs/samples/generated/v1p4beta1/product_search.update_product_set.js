@@ -23,14 +23,14 @@ function main(productSet) {
   /**
    *  Required. The ProductSet resource which replaces the one on the server.
    */
-  // const productSet = ''
+  // const productSet = {}
   /**
-   *  The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
+   *  The FieldMask google.protobuf.FieldMask  that specifies which fields to
    *  update.
    *  If update_mask isn't specified, all mutable fields are to be updated.
    *  Valid mask path is `display_name`.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Vision library
   const {ProductSearchClient} = require('@google-cloud/vision').v1p4beta1;
@@ -38,7 +38,7 @@ function main(productSet) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function updateProductSet() {
+  async function callUpdateProductSet() {
     // Construct request
     const request = {
       productSet,
@@ -49,7 +49,7 @@ function main(productSet) {
     console.log(response);
   }
 
-  updateProductSet();
+  callUpdateProductSet();
   // [END vision_v1p4beta1_generated_ProductSearch_UpdateProductSet_async]
 }
 

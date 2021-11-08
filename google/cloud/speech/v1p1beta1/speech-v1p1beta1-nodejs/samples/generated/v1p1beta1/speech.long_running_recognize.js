@@ -24,15 +24,15 @@ function main(config, audio) {
    *  Required. Provides information to the recognizer that specifies how to
    *  process the request.
    */
-  // const config = ''
+  // const config = {}
   /**
    *  Required. The audio data to be recognized.
    */
-  // const audio = ''
+  // const audio = {}
   /**
    *  Optional. Specifies an optional destination for the recognition results.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
 
   // Imports the Speech library
   const {SpeechClient} = require('@google-cloud/speech').v1p1beta1;
@@ -40,7 +40,7 @@ function main(config, audio) {
   // Instantiates a client
   const speechClient = new SpeechClient();
 
-  async function longRunningRecognize() {
+  async function callLongRunningRecognize() {
     // Construct request
     const request = {
       config,
@@ -53,7 +53,7 @@ function main(config, audio) {
     console.log(response);
   }
 
-  longRunningRecognize();
+  callLongRunningRecognize();
   // [END speech_v1p1beta1_generated_Speech_LongRunningRecognize_async]
 }
 

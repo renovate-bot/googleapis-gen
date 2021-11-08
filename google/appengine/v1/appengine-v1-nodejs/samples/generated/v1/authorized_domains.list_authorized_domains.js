@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new AuthorizedDomainsClient();
 
-  async function listAuthorizedDomains() {
+  async function callListAuthorizedDomains() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     }
   }
 
-  listAuthorizedDomains();
+  callListAuthorizedDomains();
   // [END appengine_v1_generated_AuthorizedDomains_ListAuthorizedDomains_async]
 }
 

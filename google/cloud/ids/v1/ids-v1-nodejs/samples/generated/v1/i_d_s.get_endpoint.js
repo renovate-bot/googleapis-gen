@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const idsClient = new IDSClient();
 
-  async function getEndpoint() {
+  async function callGetEndpoint() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEndpoint();
+  callGetEndpoint();
   // [END ids_v1_generated_IDS_GetEndpoint_async]
 }
 

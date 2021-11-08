@@ -32,7 +32,7 @@ function main(serviceName) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function getService() {
+  async function callGetService() {
     // Construct request
     const request = {
       serviceName,
@@ -43,7 +43,7 @@ function main(serviceName) {
     console.log(response);
   }
 
-  getService();
+  callGetService();
   // [END servicemanagement_v1_generated_ServiceManager_GetService_async]
 }
 

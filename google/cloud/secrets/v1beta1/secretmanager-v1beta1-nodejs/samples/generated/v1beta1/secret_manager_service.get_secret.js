@@ -21,7 +21,7 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/* /secrets/*`.
+   *  Required. The resource name of the Secret google.cloud.secrets.v1beta1.Secret, in the format `projects/* /secrets/*`.
    */
   // const name = 'abc123'
 
@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const secretsClient = new SecretManagerServiceClient();
 
-  async function getSecret() {
+  async function callGetSecret() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSecret();
+  callGetSecret();
   // [END secretmanager_v1beta1_generated_SecretManagerService_GetSecret_async]
 }
 

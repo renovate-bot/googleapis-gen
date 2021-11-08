@@ -39,7 +39,7 @@ function main(parent, intents) {
   // Instantiates a client
   const dialogflowClient = new IntentsClient();
 
-  async function batchDeleteIntents() {
+  async function callBatchDeleteIntents() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, intents) {
     console.log(response);
   }
 
-  batchDeleteIntents();
+  callBatchDeleteIntents();
   // [END dialogflow_v2beta1_generated_Intents_BatchDeleteIntents_async]
 }
 

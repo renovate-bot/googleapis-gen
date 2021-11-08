@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const apigeeconnectClient = new ConnectionServiceClient();
 
-  async function listConnections() {
+  async function callListConnections() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listConnections();
+  callListConnections();
   // [END apigeeconnect_v1_generated_ConnectionService_ListConnections_async]
 }
 

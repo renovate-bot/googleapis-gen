@@ -23,11 +23,11 @@ function main() {
   /**
    *  Initial request on the stream.
    */
-  // const initialRequest = ''
+  // const initialRequest = {}
   /**
    *  Request to publish messages.
    */
-  // const messagePublishRequest = ''
+  // const messagePublishRequest = {}
 
   // Imports the Pubsublite library
   const {PublisherServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const pubsubliteClient = new PublisherServiceClient();
 
-  async function publish() {
+  async function callPublish() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     stream.end(); 
   }
 
-  publish();
+  callPublish();
   // [END pubsublite_v1_generated_PublisherService_Publish_async]
 }
 

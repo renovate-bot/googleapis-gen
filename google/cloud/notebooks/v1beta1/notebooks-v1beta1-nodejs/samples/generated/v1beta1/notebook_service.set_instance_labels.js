@@ -37,7 +37,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function setInstanceLabels() {
+  async function callSetInstanceLabels() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name) {
     console.log(response);
   }
 
-  setInstanceLabels();
+  callSetInstanceLabels();
   // [END notebooks_v1beta1_generated_NotebookService_SetInstanceLabels_async]
 }
 

@@ -28,28 +28,28 @@ function main(bucket) {
    *  Makes the return of the bucket metadata conditional on whether the bucket's
    *  current metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the return of the bucket metadata conditional on whether the bucket's
    *  current metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  Apply a predefined set of access controls to this bucket.
    */
-  // const predefinedAcl = ''
+  // const predefinedAcl = {}
   /**
    *  Apply a predefined set of default object access controls to this bucket.
    */
-  // const predefinedDefaultObjectAcl = ''
+  // const predefinedDefaultObjectAcl = {}
   /**
    *  Set of properties to return. Defaults to `FULL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  The Bucket metadata for updating.
    */
-  // const metadata = ''
+  // const metadata = {}
   /**
    *  List of fields to be updated.
    *  To specify ALL fields, equivalent to the JSON API's "update" function,
@@ -60,11 +60,11 @@ function main(bucket) {
    *  Not specifying a field while setting that field to a non-default value is
    *  an error.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -72,7 +72,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function patchBucket() {
+  async function callPatchBucket() {
     // Construct request
     const request = {
       bucket,
@@ -83,7 +83,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  patchBucket();
+  callPatchBucket();
   // [END storage_v1_generated_Storage_PatchBucket_async]
 }
 

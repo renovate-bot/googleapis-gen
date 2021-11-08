@@ -126,7 +126,7 @@ describe('v1.IamCheckerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse());
             client.innerApiCalls.troubleshootIamPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.troubleshootIamPolicy(request);
@@ -142,7 +142,7 @@ describe('v1.IamCheckerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse());
             client.innerApiCalls.troubleshootIamPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1.IamCheckerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.troubleshootIamPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.troubleshootIamPolicy(request), expectedError);

@@ -58,18 +58,18 @@ function main(bucket) {
   /**
    *  Set of properties to return. Defaults to `NO_ACL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  If `true`, lists all versions of an object as distinct results.
    *  The default is `false`. For more information, see
-   *  [Object
-   *  Versioning](https://cloud.google.com/storage/docs/object-versioning).
+   *  Object
+   *  Versioning (https://cloud.google.com/storage/docs/object-versioning).
    */
   // const versions = true
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -77,7 +77,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function listObjects() {
+  async function callListObjects() {
     // Construct request
     const request = {
       bucket,
@@ -88,7 +88,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  listObjects();
+  callListObjects();
   // [END storage_v1_generated_Storage_ListObjects_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new FeedPlaceholderViewServiceClient();
 
-  async function getFeedPlaceholderView() {
+  async function callGetFeedPlaceholderView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getFeedPlaceholderView();
+  callGetFeedPlaceholderView();
   // [END googleads_v7_generated_FeedPlaceholderViewService_GetFeedPlaceholderView_async]
 }
 

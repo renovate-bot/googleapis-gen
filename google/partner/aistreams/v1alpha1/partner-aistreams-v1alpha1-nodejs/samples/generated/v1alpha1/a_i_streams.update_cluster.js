@@ -27,11 +27,11 @@ function main(updateMask, cluster) {
    *  the full request. A field will be overwritten if it is in the mask. If the
    *  user does not provide a mask then all fields will be overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. The Cluster resource to update.
    */
-  // const cluster = ''
+  // const cluster = {}
   /**
    *  Optional. An optional request ID to identify requests. Specify a unique
    *  request ID so that if you must retry your request, the server will know to
@@ -53,7 +53,7 @@ function main(updateMask, cluster) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function updateCluster() {
+  async function callUpdateCluster() {
     // Construct request
     const request = {
       updateMask,
@@ -66,7 +66,7 @@ function main(updateMask, cluster) {
     console.log(response);
   }
 
-  updateCluster();
+  callUpdateCluster();
   // [END aistreams_v1alpha1_generated_AIStreams_UpdateCluster_async]
 }
 

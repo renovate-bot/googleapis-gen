@@ -23,11 +23,11 @@ function main(tableSpec) {
   /**
    *  Required. The table spec which replaces the resource on the server.
    */
-  // const tableSpec = ''
+  // const tableSpec = {}
   /**
    *  The update mask applies to the resource.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
@@ -35,7 +35,7 @@ function main(tableSpec) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function updateTableSpec() {
+  async function callUpdateTableSpec() {
     // Construct request
     const request = {
       tableSpec,
@@ -46,7 +46,7 @@ function main(tableSpec) {
     console.log(response);
   }
 
-  updateTableSpec();
+  callUpdateTableSpec();
   // [END automl_v1beta1_generated_AutoMl_UpdateTableSpec_async]
 }
 

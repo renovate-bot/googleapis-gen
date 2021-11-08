@@ -727,26 +727,6 @@ export class BiddingStrategyServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getBiddingStrategy(
-      request?: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IBiddingStrategy,
-        protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest|undefined, {}|undefined
-      ]>;
-  getBiddingStrategy(
-      request: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IBiddingStrategy,
-          protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getBiddingStrategy(
-      request: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IBiddingStrategy,
-          protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested bidding strategy in full detail.
  *
@@ -769,9 +749,29 @@ export class BiddingStrategyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getBiddingStrategy(request);
+ * @example <caption>include:samples/generated/v9/bidding_strategy_service.get_bidding_strategy.js</caption>
+ * region_tag:googleads_v9_generated_BiddingStrategyService_GetBiddingStrategy_async
  */
+  getBiddingStrategy(
+      request?: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IBiddingStrategy,
+        protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest|undefined, {}|undefined
+      ]>;
+  getBiddingStrategy(
+      request: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IBiddingStrategy,
+          protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getBiddingStrategy(
+      request: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IBiddingStrategy,
+          protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest|null|undefined,
+          {}|null|undefined>): void;
   getBiddingStrategy(
       request?: protos.google.ads.googleads.v9.services.IGetBiddingStrategyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class BiddingStrategyServiceClient {
     this.initialize();
     return this.innerApiCalls.getBiddingStrategy(request, options, callback);
   }
-  mutateBiddingStrategies(
-      request?: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesResponse,
-        protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest|undefined, {}|undefined
-      ]>;
-  mutateBiddingStrategies(
-      request: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesResponse,
-          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateBiddingStrategies(
-      request: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesResponse,
-          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes bidding strategies. Operation statuses are
  * returned.
@@ -882,9 +862,29 @@ export class BiddingStrategyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateBiddingStrategies(request);
+ * @example <caption>include:samples/generated/v9/bidding_strategy_service.mutate_bidding_strategies.js</caption>
+ * region_tag:googleads_v9_generated_BiddingStrategyService_MutateBiddingStrategies_async
  */
+  mutateBiddingStrategies(
+      request?: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesResponse,
+        protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest|undefined, {}|undefined
+      ]>;
+  mutateBiddingStrategies(
+      request: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesResponse,
+          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateBiddingStrategies(
+      request: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesResponse,
+          protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateBiddingStrategies(
       request?: protos.google.ads.googleads.v9.services.IMutateBiddingStrategiesRequest,
       optionsOrCallback?: CallOptions|Callback<

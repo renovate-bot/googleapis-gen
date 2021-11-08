@@ -21,7 +21,7 @@ function main(parent, uptimeCheckConfig) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in
    *  which to create the Uptime check. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
@@ -29,7 +29,7 @@ function main(parent, uptimeCheckConfig) {
   /**
    *  Required. The new Uptime check configuration.
    */
-  // const uptimeCheckConfig = ''
+  // const uptimeCheckConfig = {}
 
   // Imports the Monitoring library
   const {UptimeCheckServiceClient} = require('@google-cloud/monitoring').v3;
@@ -37,7 +37,7 @@ function main(parent, uptimeCheckConfig) {
   // Instantiates a client
   const monitoringClient = new UptimeCheckServiceClient();
 
-  async function createUptimeCheckConfig() {
+  async function callCreateUptimeCheckConfig() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, uptimeCheckConfig) {
     console.log(response);
   }
 
-  createUptimeCheckConfig();
+  callCreateUptimeCheckConfig();
   // [END monitoring_v3_generated_UptimeCheckService_CreateUptimeCheckConfig_async]
 }
 

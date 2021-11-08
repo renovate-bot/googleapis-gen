@@ -34,7 +34,7 @@ function main(parent, viewId, view) {
   /**
    *  Required. The new view.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -42,7 +42,7 @@ function main(parent, viewId, view) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function createView() {
+  async function callCreateView() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, viewId, view) {
     console.log(response);
   }
 
-  createView();
+  callCreateView();
   // [END logging_v2_generated_ConfigServiceV2_CreateView_async]
 }
 

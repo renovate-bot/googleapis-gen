@@ -26,7 +26,7 @@ function main(feature) {
    *  Format:
    *  `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
    */
-  // const feature = ''
+  // const feature = {}
   /**
    *  Field mask is used to specify the fields to be overwritten in the
    *  Features resource by the update.
@@ -41,7 +41,7 @@ function main(feature) {
    *    * `monitoring_config.snapshot_analysis.disabled`
    *    * `monitoring_config.snapshot_analysis.monitoring_interval`
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Aiplatform library
   const {FeaturestoreServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -49,7 +49,7 @@ function main(feature) {
   // Instantiates a client
   const aiplatformClient = new FeaturestoreServiceClient();
 
-  async function updateFeature() {
+  async function callUpdateFeature() {
     // Construct request
     const request = {
       feature,
@@ -60,7 +60,7 @@ function main(feature) {
     console.log(response);
   }
 
-  updateFeature();
+  callUpdateFeature();
   // [END aiplatform_v1beta1_generated_FeaturestoreService_UpdateFeature_async]
 }
 

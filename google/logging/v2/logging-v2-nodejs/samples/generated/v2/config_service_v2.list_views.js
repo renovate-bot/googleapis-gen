@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function listViews() {
+  async function callListViews() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listViews();
+  callListViews();
   // [END logging_v2_generated_ConfigServiceV2_ListViews_async]
 }
 

@@ -34,12 +34,12 @@ function main(parent) {
    *  and indexing, there is a volatile window during which running the same
    *  query may get different results.
    */
-  // const readTime = ''
+  // const readTime = {}
   /**
    *  A list of asset types of which to take a snapshot for. For  example:
    *  "compute.googleapis.com/Disk". If specified, only matching assets will be
-   *  returned. See [Introduction to Cloud Asset
-   *  Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   *  returned. See Introduction to Cloud Asset
+   *  Inventory (https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
    *  for all supported asset types.
    */
   // const assetTypes = 'abc123'
@@ -47,7 +47,7 @@ function main(parent) {
    *  Asset content type. If not specified, no content but the asset name will
    *  be returned.
    */
-  // const contentType = ''
+  // const contentType = {}
   /**
    *  The maximum number of assets to be returned in a single response. Default
    *  is 100, minimum is 1, and maximum is 1000.
@@ -66,7 +66,7 @@ function main(parent) {
   // Instantiates a client
   const assetClient = new AssetServiceClient();
 
-  async function listAssets() {
+  async function callListAssets() {
     // Construct request
     const request = {
       parent,
@@ -79,7 +79,7 @@ function main(parent) {
     }
   }
 
-  listAssets();
+  callListAssets();
   // [END cloudasset_v1p5beta1_generated_AssetService_ListAssets_async]
 }
 

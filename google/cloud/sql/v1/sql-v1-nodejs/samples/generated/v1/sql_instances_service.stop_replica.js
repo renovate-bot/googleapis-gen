@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function stopReplica() {
+  async function callStopReplica() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  stopReplica();
+  callStopReplica();
   // [END sqladmin_v1_generated_SqlInstancesService_StopReplica_async]
 }
 

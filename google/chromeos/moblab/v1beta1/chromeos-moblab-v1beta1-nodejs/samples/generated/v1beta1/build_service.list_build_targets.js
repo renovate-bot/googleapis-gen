@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const moblabClient = new BuildServiceClient();
 
-  async function listBuildTargets() {
+  async function callListBuildTargets() {
     // Construct request
     const request = {
     };
@@ -48,7 +48,7 @@ function main() {
     }
   }
 
-  listBuildTargets();
+  callListBuildTargets();
   // [END chromeosmoblab_v1beta1_generated_BuildService_ListBuildTargets_async]
 }
 

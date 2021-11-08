@@ -274,6 +274,23 @@ export class ApplicationDetailServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the details of an Android application APK.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.devtools.testing.v1.FileReference} request.location
+ *   The APK to be parsed for details.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [GetApkDetailsResponse]{@link google.devtools.testing.v1.GetApkDetailsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/application_detail_service.get_apk_details.js</caption>
+ * region_tag:testing_v1_generated_ApplicationDetailService_GetApkDetails_async
+ */
   getApkDetails(
       request?: protos.google.devtools.testing.v1.IGetApkDetailsRequest,
       options?: CallOptions):
@@ -294,23 +311,6 @@ export class ApplicationDetailServiceClient {
           protos.google.devtools.testing.v1.IGetApkDetailsResponse,
           protos.google.devtools.testing.v1.IGetApkDetailsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the details of an Android application APK.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.devtools.testing.v1.FileReference} request.location
- *   The APK to be parsed for details.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [GetApkDetailsResponse]{@link google.devtools.testing.v1.GetApkDetailsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getApkDetails(request);
- */
   getApkDetails(
       request?: protos.google.devtools.testing.v1.IGetApkDetailsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -335,6 +335,8 @@ export class ApplicationDetailServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getApkDetails(request, options, callback);
   }

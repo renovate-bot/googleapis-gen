@@ -273,7 +273,7 @@ describe('v1.StorageTransferServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storagetransfer.v1.CreateTransferJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storagetransfer.v1.TransferJob());
             client.innerApiCalls.createTransferJob = stubSimpleCall(expectedResponse);
             const [response] = await client.createTransferJob(request);
@@ -289,7 +289,7 @@ describe('v1.StorageTransferServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storagetransfer.v1.CreateTransferJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storagetransfer.v1.TransferJob());
             client.innerApiCalls.createTransferJob = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -316,7 +316,7 @@ describe('v1.StorageTransferServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storagetransfer.v1.CreateTransferJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createTransferJob = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createTransferJob(request), expectedError);
@@ -813,7 +813,7 @@ describe('v1.StorageTransferServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storagetransfer.v1.ListTransferJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.storagetransfer.v1.TransferJob()),
               generateSampleMessage(new protos.google.storagetransfer.v1.TransferJob()),
@@ -833,7 +833,7 @@ describe('v1.StorageTransferServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storagetransfer.v1.ListTransferJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.storagetransfer.v1.TransferJob()),
               generateSampleMessage(new protos.google.storagetransfer.v1.TransferJob()),
@@ -864,7 +864,7 @@ describe('v1.StorageTransferServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storagetransfer.v1.ListTransferJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listTransferJobs = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listTransferJobs(request), expectedError);

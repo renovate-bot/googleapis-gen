@@ -35,14 +35,14 @@ function main(parent) {
   /**
    *  Optional. A token for a page of results other than the first page.
    *  Obtained using
-   *  [ListChannelPartnerLinksResponse.next_page_token][google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token] of the previous
-   *  [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks] call.
+   *  ListChannelPartnerLinksResponse.next_page_token google.cloud.channel.v1.ListChannelPartnerLinksResponse.next_page_token  of the previous
+   *  CloudChannelService.ListChannelPartnerLinks google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks  call.
    */
   // const pageToken = 'abc123'
   /**
    *  Optional. The level of granularity the ChannelPartnerLink will display.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Channel library
   const {CloudChannelServiceClient} = require('@google-cloud/channel').v1;
@@ -50,7 +50,7 @@ function main(parent) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function listChannelPartnerLinks() {
+  async function callListChannelPartnerLinks() {
     // Construct request
     const request = {
       parent,
@@ -63,7 +63,7 @@ function main(parent) {
     }
   }
 
-  listChannelPartnerLinks();
+  callListChannelPartnerLinks();
   // [END cloudchannel_v1_generated_CloudChannelService_ListChannelPartnerLinks_async]
 }
 

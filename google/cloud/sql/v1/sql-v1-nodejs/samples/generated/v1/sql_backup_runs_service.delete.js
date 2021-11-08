@@ -22,7 +22,7 @@ function main() {
    */
   /**
    *  The ID of the backup run to delete. To find a backup run ID, use the
-   *  [list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/list)
+   *  list (https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/backupRuns/list)
    *  method.
    */
   // const id = 1234
@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlBackupRunsServiceClient();
 
-  async function delete() {
+  async function callDelete() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  delete();
+  callDelete();
   // [END sqladmin_v1_generated_SqlBackupRunsService_Delete_async]
 }
 

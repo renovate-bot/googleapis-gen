@@ -382,6 +382,24 @@ export class GkeHubClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the details of a Membership.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The Membership resource name in the format
+ *   `projects/* /locations/* /memberships/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Membership]{@link google.cloud.gkehub.v1.Membership}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/gke_hub.get_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_GetMembership_async
+ */
   getMembership(
       request?: protos.google.cloud.gkehub.v1.IGetMembershipRequest,
       options?: CallOptions):
@@ -402,24 +420,6 @@ export class GkeHubClient {
           protos.google.cloud.gkehub.v1.IMembership,
           protos.google.cloud.gkehub.v1.IGetMembershipRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the details of a Membership.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The Membership resource name in the format
- *   `projects/* /locations/* /memberships/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Membership]{@link google.cloud.gkehub.v1.Membership}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMembership(request);
- */
   getMembership(
       request?: protos.google.cloud.gkehub.v1.IGetMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -454,6 +454,24 @@ export class GkeHubClient {
     this.initialize();
     return this.innerApiCalls.getMembership(request, options, callback);
   }
+/**
+ * Gets details of a single Feature.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The Feature resource name in the format
+ *   `projects/* /locations/* /features/*`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Feature]{@link google.cloud.gkehub.v1.Feature}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/gke_hub.get_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_GetFeature_async
+ */
   getFeature(
       request?: protos.google.cloud.gkehub.v1.IGetFeatureRequest,
       options?: CallOptions):
@@ -474,24 +492,6 @@ export class GkeHubClient {
           protos.google.cloud.gkehub.v1.IFeature,
           protos.google.cloud.gkehub.v1.IGetFeatureRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Feature.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The Feature resource name in the format
- *   `projects/* /locations/* /features/*`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Feature]{@link google.cloud.gkehub.v1.Feature}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getFeature(request);
- */
   getFeature(
       request?: protos.google.cloud.gkehub.v1.IGetFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -526,26 +526,6 @@ export class GkeHubClient {
     this.initialize();
     return this.innerApiCalls.getFeature(request, options, callback);
   }
-  generateConnectManifest(
-      request?: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1.IGenerateConnectManifestResponse,
-        protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest|undefined, {}|undefined
-      ]>;
-  generateConnectManifest(
-      request: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1.IGenerateConnectManifestResponse,
-          protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateConnectManifest(
-      request: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1.IGenerateConnectManifestResponse,
-          protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates the manifest for deployment of the GKE connect agent.
  *
@@ -586,9 +566,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateConnectManifest(request);
+ * @example <caption>include:samples/generated/v1/gke_hub.generate_connect_manifest.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_GenerateConnectManifest_async
  */
+  generateConnectManifest(
+      request?: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1.IGenerateConnectManifestResponse,
+        protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest|undefined, {}|undefined
+      ]>;
+  generateConnectManifest(
+      request: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1.IGenerateConnectManifestResponse,
+          protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConnectManifest(
+      request: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1.IGenerateConnectManifestResponse,
+          protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest|null|undefined,
+          {}|null|undefined>): void;
   generateConnectManifest(
       request?: protos.google.cloud.gkehub.v1.IGenerateConnectManifestRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -624,26 +624,6 @@ export class GkeHubClient {
     return this.innerApiCalls.generateConnectManifest(request, options, callback);
   }
 
-  createMembership(
-      request?: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createMembership(
-      request: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createMembership(
-      request: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Membership.
  *
@@ -691,10 +671,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createMembership(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/gke_hub.create_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_CreateMembership_async
  */
+  createMembership(
+      request?: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createMembership(
+      request: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createMembership(
+      request: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createMembership(
       request?: protos.google.cloud.gkehub.v1.ICreateMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -738,11 +737,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateMembershipProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/gke_hub.create_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_CreateMembership_async
  */
   async checkCreateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Membership, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -750,26 +746,6 @@ export class GkeHubClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createMembership, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gkehub.v1.Membership, protos.google.cloud.gkehub.v1.OperationMetadata>;
   }
-  createFeature(
-      request?: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createFeature(
-      request: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createFeature(
-      request: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a new Feature.
  *
@@ -805,10 +781,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createFeature(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/gke_hub.create_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_CreateFeature_async
  */
+  createFeature(
+      request?: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createFeature(
+      request: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createFeature(
+      request: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createFeature(
       request?: protos.google.cloud.gkehub.v1.ICreateFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -852,11 +847,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateFeatureProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/gke_hub.create_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_CreateFeature_async
  */
   async checkCreateFeatureProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Feature, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -864,26 +856,6 @@ export class GkeHubClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createFeature, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gkehub.v1.Feature, protos.google.cloud.gkehub.v1.OperationMetadata>;
   }
-  deleteMembership(
-      request?: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteMembership(
-      request: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteMembership(
-      request: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Removes a Membership.
  *
@@ -919,10 +891,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteMembership(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_DeleteMembership_async
  */
+  deleteMembership(
+      request?: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteMembership(
+      request: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteMembership(
+      request: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteMembership(
       request?: protos.google.cloud.gkehub.v1.IDeleteMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -966,11 +957,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteMembershipProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_DeleteMembership_async
  */
   async checkDeleteMembershipProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -978,26 +966,6 @@ export class GkeHubClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteMembership, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1.OperationMetadata>;
   }
-  deleteFeature(
-      request?: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteFeature(
-      request: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteFeature(
-      request: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Removes a Feature.
  *
@@ -1033,10 +1001,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteFeature(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_DeleteFeature_async
  */
+  deleteFeature(
+      request?: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteFeature(
+      request: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteFeature(
+      request: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteFeature(
       request?: protos.google.cloud.gkehub.v1.IDeleteFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1080,11 +1067,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteFeatureProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/gke_hub.delete_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_DeleteFeature_async
  */
   async checkDeleteFeatureProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1092,26 +1076,6 @@ export class GkeHubClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteFeature, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1.OperationMetadata>;
   }
-  updateMembership(
-      request?: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateMembership(
-      request: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateMembership(
-      request: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an existing Membership.
  *
@@ -1154,10 +1118,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateMembership(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/gke_hub.update_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_UpdateMembership_async
  */
+  updateMembership(
+      request?: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateMembership(
+      request: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateMembership(
+      request: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IMembership, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateMembership(
       request?: protos.google.cloud.gkehub.v1.IUpdateMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1201,11 +1184,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateMembershipProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/gke_hub.update_membership.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_UpdateMembership_async
  */
   async checkUpdateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Membership, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1213,26 +1193,6 @@ export class GkeHubClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateMembership, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gkehub.v1.Membership, protos.google.cloud.gkehub.v1.OperationMetadata>;
   }
-  updateFeature(
-      request?: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateFeature(
-      request: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateFeature(
-      request: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an existing Feature.
  *
@@ -1275,10 +1235,29 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateFeature(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/gke_hub.update_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_UpdateFeature_async
  */
+  updateFeature(
+      request?: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateFeature(
+      request: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateFeature(
+      request: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1.IFeature, protos.google.cloud.gkehub.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateFeature(
       request?: protos.google.cloud.gkehub.v1.IUpdateFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1322,11 +1301,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateFeatureProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/gke_hub.update_feature.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_UpdateFeature_async
  */
   async checkUpdateFeatureProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1.Feature, protos.google.cloud.gkehub.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1334,28 +1310,7 @@ export class GkeHubClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateFeature, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gkehub.v1.Feature, protos.google.cloud.gkehub.v1.OperationMetadata>;
   }
-  listMemberships(
-      request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1.IMembership[],
-        protos.google.cloud.gkehub.v1.IListMembershipsRequest|null,
-        protos.google.cloud.gkehub.v1.IListMembershipsResponse
-      ]>;
-  listMemberships(
-      request: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.gkehub.v1.IListMembershipsRequest,
-          protos.google.cloud.gkehub.v1.IListMembershipsResponse|null|undefined,
-          protos.google.cloud.gkehub.v1.IMembership>): void;
-  listMemberships(
-      request: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.gkehub.v1.IListMembershipsRequest,
-          protos.google.cloud.gkehub.v1.IListMembershipsResponse|null|undefined,
-          protos.google.cloud.gkehub.v1.IMembership>): void;
-/**
+ /**
  * Lists Memberships in a given project and location.
  *
  * @param {Object} request
@@ -1408,6 +1363,27 @@ export class GkeHubClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMemberships(
+      request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1.IMembership[],
+        protos.google.cloud.gkehub.v1.IListMembershipsRequest|null,
+        protos.google.cloud.gkehub.v1.IListMembershipsResponse
+      ]>;
+  listMemberships(
+      request: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.gkehub.v1.IListMembershipsRequest,
+          protos.google.cloud.gkehub.v1.IListMembershipsResponse|null|undefined,
+          protos.google.cloud.gkehub.v1.IMembership>): void;
+  listMemberships(
+      request: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.gkehub.v1.IListMembershipsRequest,
+          protos.google.cloud.gkehub.v1.IListMembershipsResponse|null|undefined,
+          protos.google.cloud.gkehub.v1.IMembership>): void;
   listMemberships(
       request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1569,11 +1545,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMembershipsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/gke_hub.list_memberships.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_ListMemberships_async
  */
   listMembershipsAsync(
       request?: protos.google.cloud.gkehub.v1.IListMembershipsRequest,
@@ -1588,7 +1561,6 @@ export class GkeHubClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMemberships'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1598,28 +1570,7 @@ export class GkeHubClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.gkehub.v1.IMembership>;
   }
-  listFeatures(
-      request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1.IFeature[],
-        protos.google.cloud.gkehub.v1.IListFeaturesRequest|null,
-        protos.google.cloud.gkehub.v1.IListFeaturesResponse
-      ]>;
-  listFeatures(
-      request: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.gkehub.v1.IListFeaturesRequest,
-          protos.google.cloud.gkehub.v1.IListFeaturesResponse|null|undefined,
-          protos.google.cloud.gkehub.v1.IFeature>): void;
-  listFeatures(
-      request: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.gkehub.v1.IListFeaturesRequest,
-          protos.google.cloud.gkehub.v1.IListFeaturesResponse|null|undefined,
-          protos.google.cloud.gkehub.v1.IFeature>): void;
-/**
+ /**
  * Lists Features in a given project and location.
  *
  * @param {Object} request
@@ -1668,6 +1619,27 @@ export class GkeHubClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listFeatures(
+      request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1.IFeature[],
+        protos.google.cloud.gkehub.v1.IListFeaturesRequest|null,
+        protos.google.cloud.gkehub.v1.IListFeaturesResponse
+      ]>;
+  listFeatures(
+      request: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.gkehub.v1.IListFeaturesRequest,
+          protos.google.cloud.gkehub.v1.IListFeaturesResponse|null|undefined,
+          protos.google.cloud.gkehub.v1.IFeature>): void;
+  listFeatures(
+      request: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.gkehub.v1.IListFeaturesRequest,
+          protos.google.cloud.gkehub.v1.IListFeaturesResponse|null|undefined,
+          protos.google.cloud.gkehub.v1.IFeature>): void;
   listFeatures(
       request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1821,11 +1793,8 @@ export class GkeHubClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listFeaturesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/gke_hub.list_features.js</caption>
+ * region_tag:gkehub_v1_generated_GkeHub_ListFeatures_async
  */
   listFeaturesAsync(
       request?: protos.google.cloud.gkehub.v1.IListFeaturesRequest,
@@ -1840,7 +1809,6 @@ export class GkeHubClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listFeatures'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

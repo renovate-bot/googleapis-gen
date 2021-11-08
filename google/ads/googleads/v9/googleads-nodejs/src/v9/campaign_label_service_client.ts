@@ -727,26 +727,6 @@ export class CampaignLabelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignLabel(
-      request?: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICampaignLabel,
-        protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest|undefined, {}|undefined
-      ]>;
-  getCampaignLabel(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignLabel,
-          protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignLabel(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignLabel,
-          protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign-label relationship in full detail.
  *
@@ -769,9 +749,29 @@ export class CampaignLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignLabel(request);
+ * @example <caption>include:samples/generated/v9/campaign_label_service.get_campaign_label.js</caption>
+ * region_tag:googleads_v9_generated_CampaignLabelService_GetCampaignLabel_async
  */
+  getCampaignLabel(
+      request?: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICampaignLabel,
+        protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest|undefined, {}|undefined
+      ]>;
+  getCampaignLabel(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignLabel,
+          protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignLabel(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignLabel,
+          protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignLabel(
       request?: protos.google.ads.googleads.v9.services.IGetCampaignLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class CampaignLabelServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignLabel(request, options, callback);
   }
-  mutateCampaignLabels(
-      request?: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCampaignLabelsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignLabels(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignLabels(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and removes campaign-label relationships.
  * Operation statuses are returned.
@@ -864,9 +844,29 @@ export class CampaignLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignLabels(request);
+ * @example <caption>include:samples/generated/v9/campaign_label_service.mutate_campaign_labels.js</caption>
+ * region_tag:googleads_v9_generated_CampaignLabelService_MutateCampaignLabels_async
  */
+  mutateCampaignLabels(
+      request?: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCampaignLabelsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignLabels(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignLabels(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignLabels(
       request?: protos.google.ads.googleads.v9.services.IMutateCampaignLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<

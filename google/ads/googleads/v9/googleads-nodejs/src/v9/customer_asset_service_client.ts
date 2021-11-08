@@ -727,26 +727,6 @@ export class CustomerAssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerAsset(
-      request?: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICustomerAsset,
-        protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest|undefined, {}|undefined
-      ]>;
-  getCustomerAsset(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerAsset,
-          protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerAsset(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerAsset,
-          protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested customer asset in full detail.
  *
@@ -769,9 +749,29 @@ export class CustomerAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerAsset(request);
+ * @example <caption>include:samples/generated/v9/customer_asset_service.get_customer_asset.js</caption>
+ * region_tag:googleads_v9_generated_CustomerAssetService_GetCustomerAsset_async
  */
+  getCustomerAsset(
+      request?: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICustomerAsset,
+        protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest|undefined, {}|undefined
+      ]>;
+  getCustomerAsset(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerAsset,
+          protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerAsset(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerAsset,
+          protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerAsset(
       request?: protos.google.ads.googleads.v9.services.IGetCustomerAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class CustomerAssetServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerAsset(request, options, callback);
   }
-  mutateCustomerAssets(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomerAssetsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerAssets(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerAssets(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes customer assets. Operation statuses are
  * returned.
@@ -865,9 +845,29 @@ export class CustomerAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerAssets(request);
+ * @example <caption>include:samples/generated/v9/customer_asset_service.mutate_customer_assets.js</caption>
+ * region_tag:googleads_v9_generated_CustomerAssetService_MutateCustomerAssets_async
  */
+  mutateCustomerAssets(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomerAssetsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerAssets(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerAssets(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerAssets(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomerAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<

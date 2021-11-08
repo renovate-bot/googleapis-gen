@@ -53,7 +53,7 @@ function main(parent) {
   // Instantiates a client
   const idsClient = new IDSClient();
 
-  async function listEndpoints() {
+  async function callListEndpoints() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent) {
     }
   }
 
-  listEndpoints();
+  callListEndpoints();
   // [END ids_v1_generated_IDS_ListEndpoints_async]
 }
 

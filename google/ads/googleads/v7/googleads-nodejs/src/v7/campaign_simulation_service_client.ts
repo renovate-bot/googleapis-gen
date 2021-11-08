@@ -646,6 +646,23 @@ export class CampaignSimulationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested campaign simulation in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the campaign simulation to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CampaignSimulation]{@link google.ads.googleads.v7.resources.CampaignSimulation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v7/campaign_simulation_service.get_campaign_simulation.js</caption>
+ * region_tag:googleads_v7_generated_CampaignSimulationService_GetCampaignSimulation_async
+ */
   getCampaignSimulation(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest,
       options?: CallOptions):
@@ -666,23 +683,6 @@ export class CampaignSimulationServiceClient {
           protos.google.ads.googleads.v7.resources.ICampaignSimulation,
           protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested campaign simulation in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the campaign simulation to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CampaignSimulation]{@link google.ads.googleads.v7.resources.CampaignSimulation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignSimulation(request);
- */
   getCampaignSimulation(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -676,26 +676,6 @@ export class CustomerExtensionSettingServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerExtensionSetting(
-      request?: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ICustomerExtensionSetting,
-        protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest|undefined, {}|undefined
-      ]>;
-  getCustomerExtensionSetting(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICustomerExtensionSetting,
-          protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerExtensionSetting(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICustomerExtensionSetting,
-          protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested customer extension setting in full detail.
  *
@@ -718,9 +698,29 @@ export class CustomerExtensionSettingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerExtensionSetting(request);
+ * @example <caption>include:samples/generated/v8/customer_extension_setting_service.get_customer_extension_setting.js</caption>
+ * region_tag:googleads_v8_generated_CustomerExtensionSettingService_GetCustomerExtensionSetting_async
  */
+  getCustomerExtensionSetting(
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ICustomerExtensionSetting,
+        protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest|undefined, {}|undefined
+      ]>;
+  getCustomerExtensionSetting(
+      request: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICustomerExtensionSetting,
+          protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerExtensionSetting(
+      request: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICustomerExtensionSetting,
+          protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerExtensionSetting(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerExtensionSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class CustomerExtensionSettingServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerExtensionSetting(request, options, callback);
   }
-  mutateCustomerExtensionSettings(
-      request?: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsResponse,
-        protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerExtensionSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerExtensionSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes customer extension settings. Operation
  * statuses are returned.
@@ -832,9 +812,29 @@ export class CustomerExtensionSettingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerExtensionSettings(request);
+ * @example <caption>include:samples/generated/v8/customer_extension_setting_service.mutate_customer_extension_settings.js</caption>
+ * region_tag:googleads_v8_generated_CustomerExtensionSettingService_MutateCustomerExtensionSettings_async
  */
+  mutateCustomerExtensionSettings(
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsResponse,
+        protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerExtensionSettings(
+      request: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerExtensionSettings(
+      request: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerExtensionSettings(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerExtensionSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<

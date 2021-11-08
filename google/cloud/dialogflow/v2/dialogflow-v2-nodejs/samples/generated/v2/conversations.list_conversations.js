@@ -49,7 +49,7 @@ function main(parent) {
    *  the following expression only returns `COMPLETED` conversations:
    *  `lifecycle_state = "COMPLETED"`
    *  For more information about filtering, see
-   *  [API Filtering](https://aip.dev/160).
+   *  API Filtering (https://aip.dev/160).
    */
   // const filter = 'abc123'
 
@@ -59,7 +59,7 @@ function main(parent) {
   // Instantiates a client
   const dialogflowClient = new ConversationsClient();
 
-  async function listConversations() {
+  async function callListConversations() {
     // Construct request
     const request = {
       parent,
@@ -72,7 +72,7 @@ function main(parent) {
     }
   }
 
-  listConversations();
+  callListConversations();
   // [END dialogflow_v2_generated_Conversations_ListConversations_async]
 }
 

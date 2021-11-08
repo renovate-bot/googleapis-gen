@@ -23,11 +23,11 @@ function main(name) {
   /**
    *  An inline document proto.
    */
-  // const inlineDocument = ''
+  // const inlineDocument = {}
   /**
    *  A raw document content (bytes).
    */
-  // const rawDocument = ''
+  // const rawDocument = {}
   /**
    *  Required. The processor resource name.
    */
@@ -44,7 +44,7 @@ function main(name) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function processDocument() {
+  async function callProcessDocument() {
     // Construct request
     const request = {
       name,
@@ -55,7 +55,7 @@ function main(name) {
     console.log(response);
   }
 
-  processDocument();
+  callProcessDocument();
   // [END documentai_v1_generated_DocumentProcessorService_ProcessDocument_async]
 }
 

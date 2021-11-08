@@ -368,6 +368,23 @@ export class TpuClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the details of a node.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Node]{@link google.cloud.tpu.v1.Node}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.get_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_GetNode_async
+ */
   getNode(
       request?: protos.google.cloud.tpu.v1.IGetNodeRequest,
       options?: CallOptions):
@@ -388,23 +405,6 @@ export class TpuClient {
           protos.google.cloud.tpu.v1.INode,
           protos.google.cloud.tpu.v1.IGetNodeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the details of a node.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Node]{@link google.cloud.tpu.v1.Node}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getNode(request);
- */
   getNode(
       request?: protos.google.cloud.tpu.v1.IGetNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -439,6 +439,23 @@ export class TpuClient {
     this.initialize();
     return this.innerApiCalls.getNode(request, options, callback);
   }
+/**
+ * Gets TensorFlow Version.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [TensorFlowVersion]{@link google.cloud.tpu.v1.TensorFlowVersion}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.get_tensor_flow_version.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_GetTensorFlowVersion_async
+ */
   getTensorFlowVersion(
       request?: protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest,
       options?: CallOptions):
@@ -459,23 +476,6 @@ export class TpuClient {
           protos.google.cloud.tpu.v1.ITensorFlowVersion,
           protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets TensorFlow Version.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TensorFlowVersion]{@link google.cloud.tpu.v1.TensorFlowVersion}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTensorFlowVersion(request);
- */
   getTensorFlowVersion(
       request?: protos.google.cloud.tpu.v1.IGetTensorFlowVersionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -510,6 +510,23 @@ export class TpuClient {
     this.initialize();
     return this.innerApiCalls.getTensorFlowVersion(request, options, callback);
   }
+/**
+ * Gets AcceleratorType.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AcceleratorType]{@link google.cloud.tpu.v1.AcceleratorType}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.get_accelerator_type.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_GetAcceleratorType_async
+ */
   getAcceleratorType(
       request?: protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest,
       options?: CallOptions):
@@ -530,23 +547,6 @@ export class TpuClient {
           protos.google.cloud.tpu.v1.IAcceleratorType,
           protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets AcceleratorType.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AcceleratorType]{@link google.cloud.tpu.v1.AcceleratorType}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAcceleratorType(request);
- */
   getAcceleratorType(
       request?: protos.google.cloud.tpu.v1.IGetAcceleratorTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -582,26 +582,6 @@ export class TpuClient {
     return this.innerApiCalls.getAcceleratorType(request, options, callback);
   }
 
-  createNode(
-      request?: protos.google.cloud.tpu.v1.ICreateNodeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createNode(
-      request: protos.google.cloud.tpu.v1.ICreateNodeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createNode(
-      request: protos.google.cloud.tpu.v1.ICreateNodeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a node.
  *
@@ -622,10 +602,29 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createNode(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/tpu.create_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_CreateNode_async
  */
+  createNode(
+      request?: protos.google.cloud.tpu.v1.ICreateNodeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createNode(
+      request: protos.google.cloud.tpu.v1.ICreateNodeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createNode(
+      request: protos.google.cloud.tpu.v1.ICreateNodeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createNode(
       request?: protos.google.cloud.tpu.v1.ICreateNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -669,11 +668,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateNodeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/tpu.create_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_CreateNode_async
  */
   async checkCreateNodeProgress(name: string): Promise<LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -681,6 +677,25 @@ export class TpuClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createNode, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
+/**
+ * Deletes a node.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.delete_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_DeleteNode_async
+ */
   deleteNode(
       request?: protos.google.cloud.tpu.v1.IDeleteNodeRequest,
       options?: CallOptions):
@@ -701,26 +716,6 @@ export class TpuClient {
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a node.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteNode(request);
- * const [response] = await operation.promise();
- */
   deleteNode(
       request?: protos.google.cloud.tpu.v1.IDeleteNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -764,11 +759,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteNodeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/tpu.delete_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_DeleteNode_async
  */
   async checkDeleteNodeProgress(name: string): Promise<LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -776,6 +768,27 @@ export class TpuClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteNode, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
+/**
+ * Reimages a node's OS.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name.
+ * @param {string} request.tensorflowVersion
+ *   The version for reimage to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.reimage_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_ReimageNode_async
+ */
   reimageNode(
       request?: protos.google.cloud.tpu.v1.IReimageNodeRequest,
       options?: CallOptions):
@@ -796,28 +809,6 @@ export class TpuClient {
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Reimages a node's OS.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The resource name.
- * @param {string} request.tensorflowVersion
- *   The version for reimage to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.reimageNode(request);
- * const [response] = await operation.promise();
- */
   reimageNode(
       request?: protos.google.cloud.tpu.v1.IReimageNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -861,11 +852,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkReimageNodeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/tpu.reimage_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_ReimageNode_async
  */
   async checkReimageNodeProgress(name: string): Promise<LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -873,6 +861,25 @@ export class TpuClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.reimageNode, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
+/**
+ * Stops a node.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.stop_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_StopNode_async
+ */
   stopNode(
       request?: protos.google.cloud.tpu.v1.IStopNodeRequest,
       options?: CallOptions):
@@ -893,26 +900,6 @@ export class TpuClient {
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Stops a node.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The resource name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.stopNode(request);
- * const [response] = await operation.promise();
- */
   stopNode(
       request?: protos.google.cloud.tpu.v1.IStopNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -956,11 +943,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStopNodeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/tpu.stop_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_StopNode_async
  */
   async checkStopNodeProgress(name: string): Promise<LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -968,6 +952,25 @@ export class TpuClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.stopNode, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
+/**
+ * Starts a node.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/tpu.start_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_StartNode_async
+ */
   startNode(
       request?: protos.google.cloud.tpu.v1.IStartNodeRequest,
       options?: CallOptions):
@@ -988,26 +991,6 @@ export class TpuClient {
           LROperation<protos.google.cloud.tpu.v1.INode, protos.google.cloud.tpu.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Starts a node.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The resource name.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.startNode(request);
- * const [response] = await operation.promise();
- */
   startNode(
       request?: protos.google.cloud.tpu.v1.IStartNodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1051,11 +1034,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStartNodeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/tpu.start_node.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_StartNode_async
  */
   async checkStartNodeProgress(name: string): Promise<LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1063,28 +1043,7 @@ export class TpuClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.startNode, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.tpu.v1.Node, protos.google.cloud.tpu.v1.OperationMetadata>;
   }
-  listNodes(
-      request?: protos.google.cloud.tpu.v1.IListNodesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.tpu.v1.INode[],
-        protos.google.cloud.tpu.v1.IListNodesRequest|null,
-        protos.google.cloud.tpu.v1.IListNodesResponse
-      ]>;
-  listNodes(
-      request: protos.google.cloud.tpu.v1.IListNodesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.tpu.v1.IListNodesRequest,
-          protos.google.cloud.tpu.v1.IListNodesResponse|null|undefined,
-          protos.google.cloud.tpu.v1.INode>): void;
-  listNodes(
-      request: protos.google.cloud.tpu.v1.IListNodesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.tpu.v1.IListNodesRequest,
-          protos.google.cloud.tpu.v1.IListNodesResponse|null|undefined,
-          protos.google.cloud.tpu.v1.INode>): void;
-/**
+ /**
  * Lists nodes.
  *
  * @param {Object} request
@@ -1108,6 +1067,27 @@ export class TpuClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listNodes(
+      request?: protos.google.cloud.tpu.v1.IListNodesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.tpu.v1.INode[],
+        protos.google.cloud.tpu.v1.IListNodesRequest|null,
+        protos.google.cloud.tpu.v1.IListNodesResponse
+      ]>;
+  listNodes(
+      request: protos.google.cloud.tpu.v1.IListNodesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.tpu.v1.IListNodesRequest,
+          protos.google.cloud.tpu.v1.IListNodesResponse|null|undefined,
+          protos.google.cloud.tpu.v1.INode>): void;
+  listNodes(
+      request: protos.google.cloud.tpu.v1.IListNodesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.tpu.v1.IListNodesRequest,
+          protos.google.cloud.tpu.v1.IListNodesResponse|null|undefined,
+          protos.google.cloud.tpu.v1.INode>): void;
   listNodes(
       request?: protos.google.cloud.tpu.v1.IListNodesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1211,11 +1191,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listNodesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/tpu.list_nodes.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_ListNodes_async
  */
   listNodesAsync(
       request?: protos.google.cloud.tpu.v1.IListNodesRequest,
@@ -1230,7 +1207,6 @@ export class TpuClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listNodes'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1240,28 +1216,7 @@ export class TpuClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.tpu.v1.INode>;
   }
-  listTensorFlowVersions(
-      request?: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.tpu.v1.ITensorFlowVersion[],
-        protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest|null,
-        protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse
-      ]>;
-  listTensorFlowVersions(
-      request: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
-          protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse|null|undefined,
-          protos.google.cloud.tpu.v1.ITensorFlowVersion>): void;
-  listTensorFlowVersions(
-      request: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
-          protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse|null|undefined,
-          protos.google.cloud.tpu.v1.ITensorFlowVersion>): void;
-/**
+ /**
  * List TensorFlow versions supported by this API.
  *
  * @param {Object} request
@@ -1289,6 +1244,27 @@ export class TpuClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTensorFlowVersions(
+      request?: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.tpu.v1.ITensorFlowVersion[],
+        protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest|null,
+        protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse
+      ]>;
+  listTensorFlowVersions(
+      request: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+          protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse|null|undefined,
+          protos.google.cloud.tpu.v1.ITensorFlowVersion>): void;
+  listTensorFlowVersions(
+      request: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
+          protos.google.cloud.tpu.v1.IListTensorFlowVersionsResponse|null|undefined,
+          protos.google.cloud.tpu.v1.ITensorFlowVersion>): void;
   listTensorFlowVersions(
       request?: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1400,11 +1376,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTensorFlowVersionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/tpu.list_tensor_flow_versions.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_ListTensorFlowVersions_async
  */
   listTensorFlowVersionsAsync(
       request?: protos.google.cloud.tpu.v1.IListTensorFlowVersionsRequest,
@@ -1419,7 +1392,6 @@ export class TpuClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTensorFlowVersions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1429,28 +1401,7 @@ export class TpuClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.tpu.v1.ITensorFlowVersion>;
   }
-  listAcceleratorTypes(
-      request?: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.tpu.v1.IAcceleratorType[],
-        protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest|null,
-        protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse
-      ]>;
-  listAcceleratorTypes(
-      request: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
-          protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse|null|undefined,
-          protos.google.cloud.tpu.v1.IAcceleratorType>): void;
-  listAcceleratorTypes(
-      request: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
-          protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse|null|undefined,
-          protos.google.cloud.tpu.v1.IAcceleratorType>): void;
-/**
+ /**
  * Lists accelerator types supported by this API.
  *
  * @param {Object} request
@@ -1478,6 +1429,27 @@ export class TpuClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAcceleratorTypes(
+      request?: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.tpu.v1.IAcceleratorType[],
+        protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest|null,
+        protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse
+      ]>;
+  listAcceleratorTypes(
+      request: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+          protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse|null|undefined,
+          protos.google.cloud.tpu.v1.IAcceleratorType>): void;
+  listAcceleratorTypes(
+      request: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
+          protos.google.cloud.tpu.v1.IListAcceleratorTypesResponse|null|undefined,
+          protos.google.cloud.tpu.v1.IAcceleratorType>): void;
   listAcceleratorTypes(
       request?: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1589,11 +1561,8 @@ export class TpuClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAcceleratorTypesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/tpu.list_accelerator_types.js</caption>
+ * region_tag:tpu_v1_generated_Tpu_ListAcceleratorTypes_async
  */
   listAcceleratorTypesAsync(
       request?: protos.google.cloud.tpu.v1.IListAcceleratorTypesRequest,
@@ -1608,7 +1577,6 @@ export class TpuClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAcceleratorTypes'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

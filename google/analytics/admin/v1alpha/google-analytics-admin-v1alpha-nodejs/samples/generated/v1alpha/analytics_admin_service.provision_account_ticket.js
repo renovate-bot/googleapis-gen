@@ -23,7 +23,7 @@ function main() {
   /**
    *  The account to create.
    */
-  // const account = ''
+  // const account = {}
   /**
    *  Redirect URI where the user will be sent after accepting Terms of Service.
    *  Must be configured in Developers Console as a Redirect URI
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function provisionAccountTicket() {
+  async function callProvisionAccountTicket() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  provisionAccountTicket();
+  callProvisionAccountTicket();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ProvisionAccountTicket_async]
 }
 

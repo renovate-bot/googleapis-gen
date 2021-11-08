@@ -28,7 +28,7 @@ function main(parent, subscription, subscriptionId) {
   /**
    *  Required. Configuration of the subscription to create. Its `name` field is ignored.
    */
-  // const subscription = ''
+  // const subscription = {}
   /**
    *  Required. The ID to use for the subscription, which will become the final component
    *  of the subscription's name.
@@ -48,7 +48,7 @@ function main(parent, subscription, subscriptionId) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function createSubscription() {
+  async function callCreateSubscription() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent, subscription, subscriptionId) {
     console.log(response);
   }
 
-  createSubscription();
+  callCreateSubscription();
   // [END pubsublite_v1_generated_AdminService_CreateSubscription_async]
 }
 

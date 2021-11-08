@@ -46,7 +46,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {CustomerExtensionSettingServiceClient} = require('google-ads').v7;
@@ -54,7 +54,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CustomerExtensionSettingServiceClient();
 
-  async function mutateCustomerExtensionSettings() {
+  async function callMutateCustomerExtensionSettings() {
     // Construct request
     const request = {
       customerId,
@@ -66,7 +66,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCustomerExtensionSettings();
+  callMutateCustomerExtensionSettings();
   // [END googleads_v7_generated_CustomerExtensionSettingService_MutateCustomerExtensionSettings_async]
 }
 

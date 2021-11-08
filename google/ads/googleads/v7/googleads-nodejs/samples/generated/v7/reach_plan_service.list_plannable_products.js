@@ -32,7 +32,7 @@ function main(plannableLocationId) {
   // Instantiates a client
   const googleadsClient = new ReachPlanServiceClient();
 
-  async function listPlannableProducts() {
+  async function callListPlannableProducts() {
     // Construct request
     const request = {
       plannableLocationId,
@@ -43,7 +43,7 @@ function main(plannableLocationId) {
     console.log(response);
   }
 
-  listPlannableProducts();
+  callListPlannableProducts();
   // [END googleads_v7_generated_ReachPlanService_ListPlannableProducts_async]
 }
 

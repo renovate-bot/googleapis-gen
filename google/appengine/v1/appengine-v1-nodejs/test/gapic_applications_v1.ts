@@ -226,7 +226,7 @@ describe('v1.ApplicationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createApplication = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createApplication(request);
@@ -243,7 +243,7 @@ describe('v1.ApplicationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createApplication = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -273,7 +273,7 @@ describe('v1.ApplicationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createApplication = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createApplication(request), expectedError);
@@ -288,7 +288,7 @@ describe('v1.ApplicationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createApplication = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createApplication(request);

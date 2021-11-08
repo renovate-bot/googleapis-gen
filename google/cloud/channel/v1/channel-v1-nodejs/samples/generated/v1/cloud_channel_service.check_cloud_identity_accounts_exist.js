@@ -36,7 +36,7 @@ function main(parent, domain) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function checkCloudIdentityAccountsExist() {
+  async function callCheckCloudIdentityAccountsExist() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, domain) {
     console.log(response);
   }
 
-  checkCloudIdentityAccountsExist();
+  callCheckCloudIdentityAccountsExist();
   // [END cloudchannel_v1_generated_CloudChannelService_CheckCloudIdentityAccountsExist_async]
 }
 

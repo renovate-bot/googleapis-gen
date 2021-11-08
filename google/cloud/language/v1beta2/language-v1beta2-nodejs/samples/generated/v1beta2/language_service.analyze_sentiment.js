@@ -23,12 +23,12 @@ function main(document) {
   /**
    *  Required. Input document.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  The encoding type used by the API to calculate sentence offsets for the
    *  sentence sentiment.
    */
-  // const encodingType = ''
+  // const encodingType = {}
 
   // Imports the Language library
   const {LanguageServiceClient} = require('@google-cloud/language').v1beta2;
@@ -36,7 +36,7 @@ function main(document) {
   // Instantiates a client
   const languageClient = new LanguageServiceClient();
 
-  async function analyzeSentiment() {
+  async function callAnalyzeSentiment() {
     // Construct request
     const request = {
       document,
@@ -47,7 +47,7 @@ function main(document) {
     console.log(response);
   }
 
-  analyzeSentiment();
+  callAnalyzeSentiment();
   // [END language_v1beta2_generated_LanguageService_AnalyzeSentiment_async]
 }
 

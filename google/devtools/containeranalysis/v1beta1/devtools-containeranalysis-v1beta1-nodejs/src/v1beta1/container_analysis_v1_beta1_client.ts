@@ -309,26 +309,6 @@ export class ContainerAnalysisV1Beta1Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the access control policy on the specified note or occurrence.
  * Requires `containeranalysis.notes.setIamPolicy` or
@@ -356,9 +336,29 @@ export class ContainerAnalysisV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.set_iam_policy.js</caption>
+ * region_tag:containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -393,26 +393,6 @@ export class ContainerAnalysisV1Beta1Client {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  getIamPolicy(
-      request?: protos.google.iam.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the access control policy for a note or an occurrence resource.
  * Requires `containeranalysis.notes.setIamPolicy` or
@@ -438,9 +418,29 @@ export class ContainerAnalysisV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
+ * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.get_iam_policy.js</caption>
+ * region_tag:containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_GetIamPolicy_async
  */
+  getIamPolicy(
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -475,26 +475,6 @@ export class ContainerAnalysisV1Beta1Client {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the permissions that a caller has on the specified note or
  * occurrence. Requires list permission on the project (for example,
@@ -521,9 +501,29 @@ export class ContainerAnalysisV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.test_iam_permissions.js</caption>
+ * region_tag:containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -558,6 +558,24 @@ export class ContainerAnalysisV1Beta1Client {
     this.initialize();
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
+/**
+ * Gets the specified scan configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the scan configuration in the form of
+ *   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ScanConfig]{@link google.devtools.containeranalysis.v1beta1.ScanConfig}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.get_scan_config.js</caption>
+ * region_tag:containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_GetScanConfig_async
+ */
   getScanConfig(
       request?: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
       options?: CallOptions):
@@ -578,24 +596,6 @@ export class ContainerAnalysisV1Beta1Client {
           protos.google.devtools.containeranalysis.v1beta1.IScanConfig,
           protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the specified scan configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the scan configuration in the form of
- *   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ScanConfig]{@link google.devtools.containeranalysis.v1beta1.ScanConfig}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getScanConfig(request);
- */
   getScanConfig(
       request?: protos.google.devtools.containeranalysis.v1beta1.IGetScanConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -630,6 +630,26 @@ export class ContainerAnalysisV1Beta1Client {
     this.initialize();
     return this.innerApiCalls.getScanConfig(request, options, callback);
   }
+/**
+ * Updates the specified scan configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the scan configuration in the form of
+ *   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
+ * @param {google.devtools.containeranalysis.v1beta1.ScanConfig} request.scanConfig
+ *   Required. The updated scan configuration.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ScanConfig]{@link google.devtools.containeranalysis.v1beta1.ScanConfig}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.update_scan_config.js</caption>
+ * region_tag:containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_UpdateScanConfig_async
+ */
   updateScanConfig(
       request?: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
       options?: CallOptions):
@@ -650,26 +670,6 @@ export class ContainerAnalysisV1Beta1Client {
           protos.google.devtools.containeranalysis.v1beta1.IScanConfig,
           protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates the specified scan configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the scan configuration in the form of
- *   `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
- * @param {google.devtools.containeranalysis.v1beta1.ScanConfig} request.scanConfig
- *   Required. The updated scan configuration.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ScanConfig]{@link google.devtools.containeranalysis.v1beta1.ScanConfig}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateScanConfig(request);
- */
   updateScanConfig(
       request?: protos.google.devtools.containeranalysis.v1beta1.IUpdateScanConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -705,28 +705,7 @@ export class ContainerAnalysisV1Beta1Client {
     return this.innerApiCalls.updateScanConfig(request, options, callback);
   }
 
-  listScanConfigs(
-      request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.containeranalysis.v1beta1.IScanConfig[],
-        protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest|null,
-        protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse
-      ]>;
-  listScanConfigs(
-      request: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
-          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse|null|undefined,
-          protos.google.devtools.containeranalysis.v1beta1.IScanConfig>): void;
-  listScanConfigs(
-      request: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
-      callback: PaginationCallback<
-          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
-          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse|null|undefined,
-          protos.google.devtools.containeranalysis.v1beta1.IScanConfig>): void;
-/**
+ /**
  * Lists scan configurations for the specified project.
  *
  * @param {Object} request
@@ -753,6 +732,27 @@ export class ContainerAnalysisV1Beta1Client {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listScanConfigs(
+      request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.containeranalysis.v1beta1.IScanConfig[],
+        protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest|null,
+        protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse
+      ]>;
+  listScanConfigs(
+      request: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse|null|undefined,
+          protos.google.devtools.containeranalysis.v1beta1.IScanConfig>): void;
+  listScanConfigs(
+      request: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+      callback: PaginationCallback<
+          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
+          protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsResponse|null|undefined,
+          protos.google.devtools.containeranalysis.v1beta1.IScanConfig>): void;
   listScanConfigs(
       request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -862,11 +862,8 @@ export class ContainerAnalysisV1Beta1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listScanConfigsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/container_analysis_v1_beta1.list_scan_configs.js</caption>
+ * region_tag:containeranalysis_v1beta1_generated_ContainerAnalysisV1Beta1_ListScanConfigs_async
  */
   listScanConfigsAsync(
       request?: protos.google.devtools.containeranalysis.v1beta1.IListScanConfigsRequest,
@@ -881,7 +878,6 @@ export class ContainerAnalysisV1Beta1Client {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listScanConfigs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

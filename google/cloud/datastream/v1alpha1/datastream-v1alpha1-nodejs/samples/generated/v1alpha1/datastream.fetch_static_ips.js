@@ -41,7 +41,7 @@ function main(name) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function fetchStaticIps() {
+  async function callFetchStaticIps() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     }
   }
 
-  fetchStaticIps();
+  callFetchStaticIps();
   // [END datastream_v1alpha1_generated_Datastream_FetchStaticIps_async]
 }
 

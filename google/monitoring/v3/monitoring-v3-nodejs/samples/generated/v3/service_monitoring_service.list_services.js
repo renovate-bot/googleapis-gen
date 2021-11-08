@@ -22,7 +22,7 @@ function main(parent) {
    */
   /**
    *  Required. Resource name of the parent containing the listed services, either a
-   *  [project](https://cloud.google.com/monitoring/api/v3#project_name) or a
+   *  project (https://cloud.google.com/monitoring/api/v3#project_name) or a
    *  Monitoring Workspace. The formats are:
    *      projects/[PROJECT_ID_OR_NUMBER]
    *      workspaces/[HOST_PROJECT_ID_OR_NUMBER]
@@ -66,7 +66,7 @@ function main(parent) {
   // Instantiates a client
   const monitoringClient = new ServiceMonitoringServiceClient();
 
-  async function listServices() {
+  async function callListServices() {
     // Construct request
     const request = {
       parent,
@@ -79,7 +79,7 @@ function main(parent) {
     }
   }
 
-  listServices();
+  callListServices();
   // [END monitoring_v3_generated_ServiceMonitoringService_ListServices_async]
 }
 

@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function deleteAlert() {
+  async function callDeleteAlert() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  deleteAlert();
+  callDeleteAlert();
   // [END alertcenter_v1beta1_generated_AlertCenterService_DeleteAlert_async]
 }
 

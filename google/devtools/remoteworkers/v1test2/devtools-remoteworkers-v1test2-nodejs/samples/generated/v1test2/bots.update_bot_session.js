@@ -27,12 +27,12 @@ function main(name, botSession, updateMask) {
   /**
    *  Required. The bot session resource to update.
    */
-  // const botSession = ''
+  // const botSession = {}
   /**
    *  Required. The fields on the bot that should be updated. See the BotSession resource
    *  for which fields are updatable by which caller.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Remoteworkers library
   const {BotsClient} = require('remoteworkers').v1test2;
@@ -40,7 +40,7 @@ function main(name, botSession, updateMask) {
   // Instantiates a client
   const remoteworkersClient = new BotsClient();
 
-  async function updateBotSession() {
+  async function callUpdateBotSession() {
     // Construct request
     const request = {
       name,
@@ -53,7 +53,7 @@ function main(name, botSession, updateMask) {
     console.log(response);
   }
 
-  updateBotSession();
+  callUpdateBotSession();
   // [END remoteworkers_v1test2_generated_Bots_UpdateBotSession_async]
 }
 

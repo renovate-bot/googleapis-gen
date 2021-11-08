@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ShoppingPerformanceViewServiceClient();
 
-  async function getShoppingPerformanceView() {
+  async function callGetShoppingPerformanceView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getShoppingPerformanceView();
+  callGetShoppingPerformanceView();
   // [END googleads_v7_generated_ShoppingPerformanceViewService_GetShoppingPerformanceView_async]
 }
 

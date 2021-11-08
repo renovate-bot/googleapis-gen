@@ -727,26 +727,6 @@ export class CarrierConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCarrierConstant(
-      request?: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICarrierConstant,
-        protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest|undefined, {}|undefined
-      ]>;
-  getCarrierConstant(
-      request: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICarrierConstant,
-          protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCarrierConstant(
-      request: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICarrierConstant,
-          protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested carrier constant in full detail.
  *
@@ -769,9 +749,29 @@ export class CarrierConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCarrierConstant(request);
+ * @example <caption>include:samples/generated/v9/carrier_constant_service.get_carrier_constant.js</caption>
+ * region_tag:googleads_v9_generated_CarrierConstantService_GetCarrierConstant_async
  */
+  getCarrierConstant(
+      request?: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICarrierConstant,
+        protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest|undefined, {}|undefined
+      ]>;
+  getCarrierConstant(
+      request: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICarrierConstant,
+          protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCarrierConstant(
+      request: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICarrierConstant,
+          protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getCarrierConstant(
       request?: protos.google.ads.googleads.v9.services.IGetCarrierConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

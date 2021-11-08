@@ -37,7 +37,7 @@ function main(parent) {
   /**
    *  The filter expression used to filter knowledge bases returned by the list
    *  method. The expression has the following syntax:
-   *    <field> <operator> <value> [AND <field> <operator> <value>] ...
+   *    <field> <operator> <value> AND <field> <operator> <value>  ...
    *  The following fields and operators are supported:
    *  * display_name with has(:) operator
    *  * language_code with equals(=) operator
@@ -53,7 +53,7 @@ function main(parent) {
    *  Note: An empty filter string (i.e. "") is a no-op and will result in no
    *  filtering.
    *  For more information about filtering, see
-   *  [API Filtering](https://aip.dev/160).
+   *  API Filtering (https://aip.dev/160).
    */
   // const filter = 'abc123'
 
@@ -63,7 +63,7 @@ function main(parent) {
   // Instantiates a client
   const dialogflowClient = new KnowledgeBasesClient();
 
-  async function listKnowledgeBases() {
+  async function callListKnowledgeBases() {
     // Construct request
     const request = {
       parent,
@@ -76,7 +76,7 @@ function main(parent) {
     }
   }
 
-  listKnowledgeBases();
+  callListKnowledgeBases();
   // [END dialogflow_v2beta1_generated_KnowledgeBases_ListKnowledgeBases_async]
 }
 

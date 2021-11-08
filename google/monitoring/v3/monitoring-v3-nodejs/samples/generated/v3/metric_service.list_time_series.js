@@ -21,7 +21,7 @@ function main(name, filter, interval, view) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name),
    *  organization or folder on which to execute the request. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    *      organizations/[ORGANIZATION_ID]
@@ -29,7 +29,7 @@ function main(name, filter, interval, view) {
    */
   // const name = 'abc123'
   /**
-   *  Required. A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
+   *  Required. A monitoring filter (https://cloud.google.com/monitoring/api/v3/filters)
    *  that specifies which time series should be returned.  The filter must
    *  specify a single metric type, and can additionally specify metric labels
    *  and other information. For example:
@@ -42,19 +42,19 @@ function main(name, filter, interval, view) {
    *  that contain data points in the specified interval are included
    *  in the response.
    */
-  // const interval = ''
+  // const interval = {}
   /**
    *  Specifies the alignment of data points in individual time series as
    *  well as how to combine the retrieved time series across specified labels.
    *  By default (if no `aggregation` is explicitly specified), the raw time
    *  series data is returned.
    */
-  // const aggregation = ''
+  // const aggregation = {}
   /**
    *  Apply a second aggregation after `aggregation` is applied. May only be
    *  specified if `aggregation` is specified.
    */
-  // const secondaryAggregation = ''
+  // const secondaryAggregation = {}
   /**
    *  Unsupported: must be left blank. The points in each time series are
    *  currently returned in reverse time order (most recent to oldest).
@@ -63,7 +63,7 @@ function main(name, filter, interval, view) {
   /**
    *  Required. Specifies which information is returned about the time series.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  A positive number that is the maximum number of results to return. If
    *  `page_size` is empty or more than 100,000 results, the effective
@@ -85,7 +85,7 @@ function main(name, filter, interval, view) {
   // Instantiates a client
   const monitoringClient = new MetricServiceClient();
 
-  async function listTimeSeries() {
+  async function callListTimeSeries() {
     // Construct request
     const request = {
       name,
@@ -101,7 +101,7 @@ function main(name, filter, interval, view) {
     }
   }
 
-  listTimeSeries();
+  callListTimeSeries();
   // [END monitoring_v3_generated_MetricService_ListTimeSeries_async]
 }
 

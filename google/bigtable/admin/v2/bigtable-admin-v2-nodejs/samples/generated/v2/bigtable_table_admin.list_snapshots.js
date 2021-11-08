@@ -44,7 +44,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new BigtableTableAdminClient();
 
-  async function listSnapshots() {
+  async function callListSnapshots() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     }
   }
 
-  listSnapshots();
+  callListSnapshots();
   // [END bigtableadmin_v2_generated_BigtableTableAdmin_ListSnapshots_async]
 }
 

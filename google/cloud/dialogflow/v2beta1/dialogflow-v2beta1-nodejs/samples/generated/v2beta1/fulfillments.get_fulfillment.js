@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new FulfillmentsClient();
 
-  async function getFulfillment() {
+  async function callGetFulfillment() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getFulfillment();
+  callGetFulfillment();
   // [END dialogflow_v2beta1_generated_Fulfillments_GetFulfillment_async]
 }
 

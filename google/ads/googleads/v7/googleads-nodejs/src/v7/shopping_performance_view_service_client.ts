@@ -646,26 +646,6 @@ export class ShoppingPerformanceViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getShoppingPerformanceView(
-      request?: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IShoppingPerformanceView,
-        protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest|undefined, {}|undefined
-      ]>;
-  getShoppingPerformanceView(
-      request: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IShoppingPerformanceView,
-          protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getShoppingPerformanceView(
-      request: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IShoppingPerformanceView,
-          protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Shopping performance view in full detail.
  *
@@ -688,9 +668,29 @@ export class ShoppingPerformanceViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getShoppingPerformanceView(request);
+ * @example <caption>include:samples/generated/v7/shopping_performance_view_service.get_shopping_performance_view.js</caption>
+ * region_tag:googleads_v7_generated_ShoppingPerformanceViewService_GetShoppingPerformanceView_async
  */
+  getShoppingPerformanceView(
+      request?: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IShoppingPerformanceView,
+        protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest|undefined, {}|undefined
+      ]>;
+  getShoppingPerformanceView(
+      request: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IShoppingPerformanceView,
+          protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getShoppingPerformanceView(
+      request: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IShoppingPerformanceView,
+          protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getShoppingPerformanceView(
       request?: protos.google.ads.googleads.v7.services.IGetShoppingPerformanceViewRequest,
       optionsOrCallback?: CallOptions|Callback<

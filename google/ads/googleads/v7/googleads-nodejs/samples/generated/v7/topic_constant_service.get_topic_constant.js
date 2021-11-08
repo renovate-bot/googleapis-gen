@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new TopicConstantServiceClient();
 
-  async function getTopicConstant() {
+  async function callGetTopicConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getTopicConstant();
+  callGetTopicConstant();
   // [END googleads_v7_generated_TopicConstantService_GetTopicConstant_async]
 }
 

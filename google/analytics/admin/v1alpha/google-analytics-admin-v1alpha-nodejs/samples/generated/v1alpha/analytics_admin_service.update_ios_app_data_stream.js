@@ -24,13 +24,13 @@ function main(iosAppDataStream, updateMask) {
    *  Required. The iOS app stream to update.
    *  The `name` field is used to identify the iOS app stream to be updated.
    */
-  // const iosAppDataStream = ''
+  // const iosAppDataStream = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(iosAppDataStream, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateIosAppDataStream() {
+  async function callUpdateIosAppDataStream() {
     // Construct request
     const request = {
       iosAppDataStream,
@@ -50,7 +50,7 @@ function main(iosAppDataStream, updateMask) {
     console.log(response);
   }
 
-  updateIosAppDataStream();
+  callUpdateIosAppDataStream();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateIosAppDataStream_async]
 }
 

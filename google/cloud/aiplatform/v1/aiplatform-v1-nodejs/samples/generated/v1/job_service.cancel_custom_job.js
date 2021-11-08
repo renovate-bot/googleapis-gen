@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new JobServiceClient();
 
-  async function cancelCustomJob() {
+  async function callCancelCustomJob() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  cancelCustomJob();
+  callCancelCustomJob();
   // [END aiplatform_v1_generated_JobService_CancelCustomJob_async]
 }
 

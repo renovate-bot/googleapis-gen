@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdParameterServiceClient();
 
-  async function getAdParameter() {
+  async function callGetAdParameter() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdParameter();
+  callGetAdParameter();
   // [END googleads_v8_generated_AdParameterService_GetAdParameter_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new FeedServiceClient();
 
-  async function getFeed() {
+  async function callGetFeed() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getFeed();
+  callGetFeed();
   // [END googleads_v8_generated_FeedService_GetFeed_async]
 }
 

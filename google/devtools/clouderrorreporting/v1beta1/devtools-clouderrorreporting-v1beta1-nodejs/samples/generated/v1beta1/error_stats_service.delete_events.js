@@ -23,8 +23,8 @@ function main(projectName) {
   /**
    *  Required. The resource name of the Google Cloud Platform project. Written
    *  as `projects/{projectID}`, where `{projectID}` is the
-   *  [Google Cloud Platform project
-   *  ID](https://support.google.com/cloud/answer/6158840).
+   *  Google Cloud Platform project
+   *  ID (https://support.google.com/cloud/answer/6158840).
    *  Example: `projects/my-project-123`.
    */
   // const projectName = 'abc123'
@@ -35,7 +35,7 @@ function main(projectName) {
   // Instantiates a client
   const clouderrorreportingClient = new ErrorStatsServiceClient();
 
-  async function deleteEvents() {
+  async function callDeleteEvents() {
     // Construct request
     const request = {
       projectName,
@@ -46,7 +46,7 @@ function main(projectName) {
     console.log(response);
   }
 
-  deleteEvents();
+  callDeleteEvents();
   // [END clouderrorreporting_v1beta1_generated_ErrorStatsService_DeleteEvents_async]
 }
 

@@ -727,26 +727,6 @@ export class CurrencyConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCurrencyConstant(
-      request?: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICurrencyConstant,
-        protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest|undefined, {}|undefined
-      ]>;
-  getCurrencyConstant(
-      request: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICurrencyConstant,
-          protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCurrencyConstant(
-      request: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICurrencyConstant,
-          protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested currency constant.
  *
@@ -769,9 +749,29 @@ export class CurrencyConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCurrencyConstant(request);
+ * @example <caption>include:samples/generated/v9/currency_constant_service.get_currency_constant.js</caption>
+ * region_tag:googleads_v9_generated_CurrencyConstantService_GetCurrencyConstant_async
  */
+  getCurrencyConstant(
+      request?: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICurrencyConstant,
+        protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest|undefined, {}|undefined
+      ]>;
+  getCurrencyConstant(
+      request: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICurrencyConstant,
+          protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCurrencyConstant(
+      request: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICurrencyConstant,
+          protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getCurrencyConstant(
       request?: protos.google.ads.googleads.v9.services.IGetCurrencyConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

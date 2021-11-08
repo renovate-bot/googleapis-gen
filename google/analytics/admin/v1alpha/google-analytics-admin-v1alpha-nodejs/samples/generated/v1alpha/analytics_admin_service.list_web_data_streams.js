@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listWebDataStreams() {
+  async function callListWebDataStreams() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listWebDataStreams();
+  callListWebDataStreams();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListWebDataStreams_async]
 }
 

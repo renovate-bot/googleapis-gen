@@ -44,7 +44,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function deleteContext() {
+  async function callDeleteContext() {
     // Construct request
     const request = {
       name,
@@ -56,7 +56,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteContext();
+  callDeleteContext();
   // [END aiplatform_v1_generated_MetadataService_DeleteContext_async]
 }
 

@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new JobServiceClient();
 
-  async function cancelHyperparameterTuningJob() {
+  async function callCancelHyperparameterTuningJob() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  cancelHyperparameterTuningJob();
+  callCancelHyperparameterTuningJob();
   // [END aiplatform_v1beta1_generated_JobService_CancelHyperparameterTuningJob_async]
 }
 

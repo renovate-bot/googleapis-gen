@@ -126,7 +126,7 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateResponse());
             client.innerApiCalls.launchFlexTemplate = stubSimpleCall(expectedResponse);
             const [response] = await client.launchFlexTemplate(request);
@@ -142,7 +142,7 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateResponse());
             client.innerApiCalls.launchFlexTemplate = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.launchFlexTemplate = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.launchFlexTemplate(request), expectedError);

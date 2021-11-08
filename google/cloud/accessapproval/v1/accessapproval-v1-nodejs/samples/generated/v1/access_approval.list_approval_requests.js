@@ -28,7 +28,7 @@ function main() {
   /**
    *  A filter on the type of approval requests to retrieve. Must be one of the
    *  following values:
-   *  - [not set]: Requests that are pending or have active approvals.
+   *  - not set: Requests that are pending or have active approvals.
    *  - ALL: All requests.
    *  - PENDING: Only pending requests.
    *  - ACTIVE: Only active (i.e. currently approved) requests.
@@ -50,7 +50,7 @@ function main() {
   // Instantiates a client
   const accessapprovalClient = new AccessApprovalClient();
 
-  async function listApprovalRequests() {
+  async function callListApprovalRequests() {
     // Construct request
     const request = {
     };
@@ -62,7 +62,7 @@ function main() {
     }
   }
 
-  listApprovalRequests();
+  callListApprovalRequests();
   // [END accessapproval_v1_generated_AccessApproval_ListApprovalRequests_async]
 }
 

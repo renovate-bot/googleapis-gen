@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const osloginClient = new OsLoginServiceClient();
 
-  async function getLoginProfile() {
+  async function callGetLoginProfile() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name) {
     console.log(response);
   }
 
-  getLoginProfile();
+  callGetLoginProfile();
   // [END oslogin_v1beta_generated_OsLoginService_GetLoginProfile_async]
 }
 

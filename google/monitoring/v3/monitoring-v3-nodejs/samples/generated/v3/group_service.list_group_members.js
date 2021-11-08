@@ -36,8 +36,8 @@ function main(name) {
    */
   // const pageToken = 'abc123'
   /**
-   *  An optional [list
-   *  filter](https://cloud.google.com/monitoring/api/learn_more#filtering)
+   *  An optional list
+   *  filter (https://cloud.google.com/monitoring/api/learn_more#filtering)
    *  describing the members to be returned.  The filter may reference the type,
    *  labels, and metadata of monitored resources that comprise the group. For
    *  example, to return only resources representing Compute Engine VM instances,
@@ -51,7 +51,7 @@ function main(name) {
    *  included in the response.  If no interval is provided then the group
    *  membership over the last minute is returned.
    */
-  // const interval = ''
+  // const interval = {}
 
   // Imports the Monitoring library
   const {GroupServiceClient} = require('@google-cloud/monitoring').v3;
@@ -59,7 +59,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new GroupServiceClient();
 
-  async function listGroupMembers() {
+  async function callListGroupMembers() {
     // Construct request
     const request = {
       name,
@@ -72,7 +72,7 @@ function main(name) {
     }
   }
 
-  listGroupMembers();
+  callListGroupMembers();
   // [END monitoring_v3_generated_GroupService_ListGroupMembers_async]
 }
 

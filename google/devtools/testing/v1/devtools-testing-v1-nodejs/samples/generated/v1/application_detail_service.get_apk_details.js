@@ -23,7 +23,7 @@ function main() {
   /**
    *  The APK to be parsed for details.
    */
-  // const location = ''
+  // const location = {}
 
   // Imports the Testing library
   const {ApplicationDetailServiceClient} = require('@google-cloud/testing').v1;
@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const testingClient = new ApplicationDetailServiceClient();
 
-  async function getApkDetails() {
+  async function callGetApkDetails() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  getApkDetails();
+  callGetApkDetails();
   // [END testing_v1_generated_ApplicationDetailService_GetApkDetails_async]
 }
 

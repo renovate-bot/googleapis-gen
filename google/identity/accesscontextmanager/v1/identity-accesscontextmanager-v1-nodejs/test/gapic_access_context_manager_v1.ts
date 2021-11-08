@@ -525,7 +525,7 @@ describe('v1.AccessContextManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createAccessPolicy = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createAccessPolicy(request);
@@ -542,7 +542,7 @@ describe('v1.AccessContextManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createAccessPolicy = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -572,7 +572,7 @@ describe('v1.AccessContextManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createAccessPolicy = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createAccessPolicy(request), expectedError);
@@ -587,7 +587,7 @@ describe('v1.AccessContextManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createAccessPolicy = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createAccessPolicy(request);
@@ -2669,7 +2669,7 @@ describe('v1.AccessContextManagerClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy()),
               generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy()),
@@ -2689,7 +2689,7 @@ describe('v1.AccessContextManagerClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy()),
               generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.AccessPolicy()),
@@ -2720,7 +2720,7 @@ describe('v1.AccessContextManagerClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listAccessPolicies = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listAccessPolicies(request), expectedError);

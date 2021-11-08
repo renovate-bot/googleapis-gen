@@ -727,6 +727,23 @@ export class AccessibleBiddingStrategyServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested accessible bidding strategy in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the accessible bidding strategy to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AccessibleBiddingStrategy]{@link google.ads.googleads.v9.resources.AccessibleBiddingStrategy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v9/accessible_bidding_strategy_service.get_accessible_bidding_strategy.js</caption>
+ * region_tag:googleads_v9_generated_AccessibleBiddingStrategyService_GetAccessibleBiddingStrategy_async
+ */
   getAccessibleBiddingStrategy(
       request?: protos.google.ads.googleads.v9.services.IGetAccessibleBiddingStrategyRequest,
       options?: CallOptions):
@@ -747,23 +764,6 @@ export class AccessibleBiddingStrategyServiceClient {
           protos.google.ads.googleads.v9.resources.IAccessibleBiddingStrategy,
           protos.google.ads.googleads.v9.services.IGetAccessibleBiddingStrategyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested accessible bidding strategy in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the accessible bidding strategy to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AccessibleBiddingStrategy]{@link google.ads.googleads.v9.resources.AccessibleBiddingStrategy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAccessibleBiddingStrategy(request);
- */
   getAccessibleBiddingStrategy(
       request?: protos.google.ads.googleads.v9.services.IGetAccessibleBiddingStrategyRequest,
       optionsOrCallback?: CallOptions|Callback<

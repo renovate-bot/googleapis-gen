@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new MobileDeviceConstantServiceClient();
 
-  async function getMobileDeviceConstant() {
+  async function callGetMobileDeviceConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getMobileDeviceConstant();
+  callGetMobileDeviceConstant();
   // [END googleads_v9_generated_MobileDeviceConstantService_GetMobileDeviceConstant_async]
 }
 

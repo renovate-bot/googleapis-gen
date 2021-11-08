@@ -33,7 +33,7 @@ function main(parent) {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function listFindingTypeStats() {
+  async function callListFindingTypeStats() {
     // Construct request
     const request = {
       parent,
@@ -44,7 +44,7 @@ function main(parent) {
     console.log(response);
   }
 
-  listFindingTypeStats();
+  callListFindingTypeStats();
   // [END websecurityscanner_v1beta_generated_WebSecurityScanner_ListFindingTypeStats_async]
 }
 

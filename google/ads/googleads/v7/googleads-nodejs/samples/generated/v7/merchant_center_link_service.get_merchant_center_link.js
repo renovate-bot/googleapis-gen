@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new MerchantCenterLinkServiceClient();
 
-  async function getMerchantCenterLink() {
+  async function callGetMerchantCenterLink() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getMerchantCenterLink();
+  callGetMerchantCenterLink();
   // [END googleads_v7_generated_MerchantCenterLinkService_GetMerchantCenterLink_async]
 }
 

@@ -41,7 +41,7 @@ function main(campaignExperiment, campaignBudget) {
   // Instantiates a client
   const googleadsClient = new CampaignExperimentServiceClient();
 
-  async function graduateCampaignExperiment() {
+  async function callGraduateCampaignExperiment() {
     // Construct request
     const request = {
       campaignExperiment,
@@ -53,7 +53,7 @@ function main(campaignExperiment, campaignBudget) {
     console.log(response);
   }
 
-  graduateCampaignExperiment();
+  callGraduateCampaignExperiment();
   // [END googleads_v8_generated_CampaignExperimentService_GraduateCampaignExperiment_async]
 }
 

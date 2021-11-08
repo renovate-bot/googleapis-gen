@@ -31,7 +31,7 @@ function main() {
   /**
    *  Optional. Optional snapshot read timestamp to trade freshness for performance.
    */
-  // const readTime = ''
+  // const readTime = {}
 
   // Imports the Sql library
   const {SqlConnectServiceClient} = require('@google-cloud/sql').v1;
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlConnectServiceClient();
 
-  async function getConnectSettings() {
+  async function callGetConnectSettings() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  getConnectSettings();
+  callGetConnectSettings();
   // [END sqladmin_v1_generated_SqlConnectService_GetConnectSettings_async]
 }
 

@@ -50,7 +50,7 @@ function main(name, payload) {
   // Instantiates a client
   const credentialsClient = new IAMCredentialsClient();
 
-  async function signJwt() {
+  async function callSignJwt() {
     // Construct request
     const request = {
       name,
@@ -62,7 +62,7 @@ function main(name, payload) {
     console.log(response);
   }
 
-  signJwt();
+  callSignJwt();
   // [END iamcredentials_v1_generated_IAMCredentials_SignJwt_async]
 }
 

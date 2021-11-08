@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new AssetGroupAssetServiceClient();
 
-  async function mutateAssetGroupAssets() {
+  async function callMutateAssetGroupAssets() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateAssetGroupAssets();
+  callMutateAssetGroupAssets();
   // [END googleads_v9_generated_AssetGroupAssetService_MutateAssetGroupAssets_async]
 }
 

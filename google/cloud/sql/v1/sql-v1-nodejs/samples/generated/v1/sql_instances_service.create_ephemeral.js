@@ -30,7 +30,7 @@ function main() {
   // const project = 'my-project'
   /**
    */
-  // const body = ''
+  // const body = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1;
@@ -38,7 +38,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function createEphemeral() {
+  async function callCreateEphemeral() {
     // Construct request
     const request = {
     };
@@ -48,7 +48,7 @@ function main() {
     console.log(response);
   }
 
-  createEphemeral();
+  callCreateEphemeral();
   // [END sqladmin_v1_generated_SqlInstancesService_CreateEphemeral_async]
 }
 

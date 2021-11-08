@@ -53,7 +53,7 @@ function main(parent) {
   // Instantiates a client
   const dataqnaClient = new AutoSuggestionServiceClient();
 
-  async function suggestQueries() {
+  async function callSuggestQueries() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     console.log(response);
   }
 
-  suggestQueries();
+  callSuggestQueries();
   // [END dataqna_v1alpha_generated_AutoSuggestionService_SuggestQueries_async]
 }
 

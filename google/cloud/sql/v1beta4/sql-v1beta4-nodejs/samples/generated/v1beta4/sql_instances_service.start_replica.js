@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function startReplica() {
+  async function callStartReplica() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  startReplica();
+  callStartReplica();
   // [END sqladmin_v1beta4_generated_SqlInstancesService_StartReplica_async]
 }
 

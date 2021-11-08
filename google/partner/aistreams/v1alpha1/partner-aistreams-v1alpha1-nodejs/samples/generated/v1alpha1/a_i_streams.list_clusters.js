@@ -50,7 +50,7 @@ function main(parent) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function listClusters() {
+  async function callListClusters() {
     // Construct request
     const request = {
       parent,
@@ -63,7 +63,7 @@ function main(parent) {
     }
   }
 
-  listClusters();
+  callListClusters();
   // [END aistreams_v1alpha1_generated_AIStreams_ListClusters_async]
 }
 

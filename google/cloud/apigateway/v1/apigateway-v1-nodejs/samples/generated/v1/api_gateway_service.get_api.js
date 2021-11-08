@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const apigatewayClient = new ApiGatewayServiceClient();
 
-  async function getApi() {
+  async function callGetApi() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getApi();
+  callGetApi();
   // [END apigateway_v1_generated_ApiGatewayService_GetApi_async]
 }
 

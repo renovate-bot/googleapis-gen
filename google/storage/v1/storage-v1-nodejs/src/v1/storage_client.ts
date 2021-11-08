@@ -285,26 +285,6 @@ export class StorageClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  deleteBucketAccessControl(
-      request?: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteBucketAccessControlRequest|undefined, {}|undefined
-      ]>;
-  deleteBucketAccessControl(
-      request: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteBucketAccessControl(
-      request: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes the ACL entry for the specified entity on the specified
  * bucket.
@@ -330,9 +310,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteBucketAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_bucket_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteBucketAccessControl_async
  */
+  deleteBucketAccessControl(
+      request?: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteBucketAccessControlRequest|undefined, {}|undefined
+      ]>;
+  deleteBucketAccessControl(
+      request: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteBucketAccessControl(
+      request: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteBucketAccessControl(
       request?: protos.google.storage.v1.IDeleteBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -357,29 +357,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteBucketAccessControl(request, options, callback);
   }
-  getBucketAccessControl(
-      request?: protos.google.storage.v1.IGetBucketAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucketAccessControl,
-        protos.google.storage.v1.IGetBucketAccessControlRequest|undefined, {}|undefined
-      ]>;
-  getBucketAccessControl(
-      request: protos.google.storage.v1.IGetBucketAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IGetBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  getBucketAccessControl(
-      request: protos.google.storage.v1.IGetBucketAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IGetBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the ACL entry for the specified entity on the specified bucket.
  *
@@ -404,9 +386,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getBucketAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.get_bucket_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetBucketAccessControl_async
  */
+  getBucketAccessControl(
+      request?: protos.google.storage.v1.IGetBucketAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucketAccessControl,
+        protos.google.storage.v1.IGetBucketAccessControlRequest|undefined, {}|undefined
+      ]>;
+  getBucketAccessControl(
+      request: protos.google.storage.v1.IGetBucketAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IGetBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  getBucketAccessControl(
+      request: protos.google.storage.v1.IGetBucketAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IGetBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   getBucketAccessControl(
       request?: protos.google.storage.v1.IGetBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -431,29 +433,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getBucketAccessControl(request, options, callback);
   }
-  insertBucketAccessControl(
-      request?: protos.google.storage.v1.IInsertBucketAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucketAccessControl,
-        protos.google.storage.v1.IInsertBucketAccessControlRequest|undefined, {}|undefined
-      ]>;
-  insertBucketAccessControl(
-      request: protos.google.storage.v1.IInsertBucketAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IInsertBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  insertBucketAccessControl(
-      request: protos.google.storage.v1.IInsertBucketAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IInsertBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new ACL entry on the specified bucket.
  *
@@ -472,9 +456,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.insertBucketAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.insert_bucket_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_InsertBucketAccessControl_async
  */
+  insertBucketAccessControl(
+      request?: protos.google.storage.v1.IInsertBucketAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucketAccessControl,
+        protos.google.storage.v1.IInsertBucketAccessControlRequest|undefined, {}|undefined
+      ]>;
+  insertBucketAccessControl(
+      request: protos.google.storage.v1.IInsertBucketAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IInsertBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  insertBucketAccessControl(
+      request: protos.google.storage.v1.IInsertBucketAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IInsertBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   insertBucketAccessControl(
       request?: protos.google.storage.v1.IInsertBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -499,9 +503,30 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.insertBucketAccessControl(request, options, callback);
   }
+/**
+ * Retrieves ACL entries on the specified bucket.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.bucket
+ *   Required. Name of a bucket.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListBucketAccessControlsResponse]{@link google.storage.v1.ListBucketAccessControlsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.list_bucket_access_controls.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListBucketAccessControls_async
+ */
   listBucketAccessControls(
       request?: protos.google.storage.v1.IListBucketAccessControlsRequest,
       options?: CallOptions):
@@ -522,25 +547,6 @@ export class StorageClient {
           protos.google.storage.v1.IListBucketAccessControlsResponse,
           protos.google.storage.v1.IListBucketAccessControlsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves ACL entries on the specified bucket.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.bucket
- *   Required. Name of a bucket.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListBucketAccessControlsResponse]{@link google.storage.v1.ListBucketAccessControlsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listBucketAccessControls(request);
- */
   listBucketAccessControls(
       request?: protos.google.storage.v1.IListBucketAccessControlsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -565,29 +571,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listBucketAccessControls(request, options, callback);
   }
-  updateBucketAccessControl(
-      request?: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucketAccessControl,
-        protos.google.storage.v1.IUpdateBucketAccessControlRequest|undefined, {}|undefined
-      ]>;
-  updateBucketAccessControl(
-      request: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IUpdateBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateBucketAccessControl(
-      request: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IUpdateBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an ACL entry on the specified bucket. Equivalent to
  * PatchBucketAccessControl, but all unspecified fields will be
@@ -616,9 +604,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateBucketAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.update_bucket_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_UpdateBucketAccessControl_async
  */
+  updateBucketAccessControl(
+      request?: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucketAccessControl,
+        protos.google.storage.v1.IUpdateBucketAccessControlRequest|undefined, {}|undefined
+      ]>;
+  updateBucketAccessControl(
+      request: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IUpdateBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateBucketAccessControl(
+      request: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IUpdateBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   updateBucketAccessControl(
       request?: protos.google.storage.v1.IUpdateBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -643,29 +651,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateBucketAccessControl(request, options, callback);
   }
-  patchBucketAccessControl(
-      request?: protos.google.storage.v1.IPatchBucketAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucketAccessControl,
-        protos.google.storage.v1.IPatchBucketAccessControlRequest|undefined, {}|undefined
-      ]>;
-  patchBucketAccessControl(
-      request: protos.google.storage.v1.IPatchBucketAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IPatchBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchBucketAccessControl(
-      request: protos.google.storage.v1.IPatchBucketAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucketAccessControl,
-          protos.google.storage.v1.IPatchBucketAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an ACL entry on the specified bucket.
  *
@@ -702,9 +692,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchBucketAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.patch_bucket_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_PatchBucketAccessControl_async
  */
+  patchBucketAccessControl(
+      request?: protos.google.storage.v1.IPatchBucketAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucketAccessControl,
+        protos.google.storage.v1.IPatchBucketAccessControlRequest|undefined, {}|undefined
+      ]>;
+  patchBucketAccessControl(
+      request: protos.google.storage.v1.IPatchBucketAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IPatchBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchBucketAccessControl(
+      request: protos.google.storage.v1.IPatchBucketAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucketAccessControl,
+          protos.google.storage.v1.IPatchBucketAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   patchBucketAccessControl(
       request?: protos.google.storage.v1.IPatchBucketAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -729,29 +739,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.patchBucketAccessControl(request, options, callback);
   }
-  deleteBucket(
-      request?: protos.google.storage.v1.IDeleteBucketRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteBucketRequest|undefined, {}|undefined
-      ]>;
-  deleteBucket(
-      request: protos.google.storage.v1.IDeleteBucketRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteBucketRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteBucket(
-      request: protos.google.storage.v1.IDeleteBucketRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteBucketRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes an empty bucket.
  *
@@ -773,9 +765,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteBucket(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_bucket.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteBucket_async
  */
+  deleteBucket(
+      request?: protos.google.storage.v1.IDeleteBucketRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteBucketRequest|undefined, {}|undefined
+      ]>;
+  deleteBucket(
+      request: protos.google.storage.v1.IDeleteBucketRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteBucketRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteBucket(
+      request: protos.google.storage.v1.IDeleteBucketRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteBucketRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteBucket(
       request?: protos.google.storage.v1.IDeleteBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -800,29 +812,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteBucket(request, options, callback);
   }
-  getBucket(
-      request?: protos.google.storage.v1.IGetBucketRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucket,
-        protos.google.storage.v1.IGetBucketRequest|undefined, {}|undefined
-      ]>;
-  getBucket(
-      request: protos.google.storage.v1.IGetBucketRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IGetBucketRequest|null|undefined,
-          {}|null|undefined>): void;
-  getBucket(
-      request: protos.google.storage.v1.IGetBucketRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IGetBucketRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns metadata for the specified bucket.
  *
@@ -847,9 +841,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getBucket(request);
+ * @example <caption>include:samples/generated/v1/storage.get_bucket.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetBucket_async
  */
+  getBucket(
+      request?: protos.google.storage.v1.IGetBucketRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucket,
+        protos.google.storage.v1.IGetBucketRequest|undefined, {}|undefined
+      ]>;
+  getBucket(
+      request: protos.google.storage.v1.IGetBucketRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IGetBucketRequest|null|undefined,
+          {}|null|undefined>): void;
+  getBucket(
+      request: protos.google.storage.v1.IGetBucketRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IGetBucketRequest|null|undefined,
+          {}|null|undefined>): void;
   getBucket(
       request?: protos.google.storage.v1.IGetBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -874,29 +888,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getBucket(request, options, callback);
   }
-  insertBucket(
-      request?: protos.google.storage.v1.IInsertBucketRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucket,
-        protos.google.storage.v1.IInsertBucketRequest|undefined, {}|undefined
-      ]>;
-  insertBucket(
-      request: protos.google.storage.v1.IInsertBucketRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IInsertBucketRequest|null|undefined,
-          {}|null|undefined>): void;
-  insertBucket(
-      request: protos.google.storage.v1.IInsertBucketRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IInsertBucketRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new bucket.
  *
@@ -923,9 +919,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.insertBucket(request);
+ * @example <caption>include:samples/generated/v1/storage.insert_bucket.js</caption>
+ * region_tag:storage_v1_generated_Storage_InsertBucket_async
  */
+  insertBucket(
+      request?: protos.google.storage.v1.IInsertBucketRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucket,
+        protos.google.storage.v1.IInsertBucketRequest|undefined, {}|undefined
+      ]>;
+  insertBucket(
+      request: protos.google.storage.v1.IInsertBucketRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IInsertBucketRequest|null|undefined,
+          {}|null|undefined>): void;
+  insertBucket(
+      request: protos.google.storage.v1.IInsertBucketRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IInsertBucketRequest|null|undefined,
+          {}|null|undefined>): void;
   insertBucket(
       request?: protos.google.storage.v1.IInsertBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -950,9 +966,30 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.insertBucket(request, options, callback);
   }
+/**
+ * List active object change notification channels for this bucket.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.bucket
+ *   Required. Name of a bucket.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListChannelsResponse]{@link google.storage.v1.ListChannelsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.list_channels.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListChannels_async
+ */
   listChannels(
       request?: protos.google.storage.v1.IListChannelsRequest,
       options?: CallOptions):
@@ -973,25 +1010,6 @@ export class StorageClient {
           protos.google.storage.v1.IListChannelsResponse,
           protos.google.storage.v1.IListChannelsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * List active object change notification channels for this bucket.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.bucket
- *   Required. Name of a bucket.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListChannelsResponse]{@link google.storage.v1.ListChannelsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listChannels(request);
- */
   listChannels(
       request?: protos.google.storage.v1.IListChannelsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1016,29 +1034,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listChannels(request, options, callback);
   }
-  listBuckets(
-      request?: protos.google.storage.v1.IListBucketsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IListBucketsResponse,
-        protos.google.storage.v1.IListBucketsRequest|undefined, {}|undefined
-      ]>;
-  listBuckets(
-      request: protos.google.storage.v1.IListBucketsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IListBucketsResponse,
-          protos.google.storage.v1.IListBucketsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listBuckets(
-      request: protos.google.storage.v1.IListBucketsRequest,
-      callback: Callback<
-          protos.google.storage.v1.IListBucketsResponse,
-          protos.google.storage.v1.IListBucketsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves a list of buckets for a given project.
  *
@@ -1065,9 +1065,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listBuckets(request);
+ * @example <caption>include:samples/generated/v1/storage.list_buckets.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListBuckets_async
  */
+  listBuckets(
+      request?: protos.google.storage.v1.IListBucketsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IListBucketsResponse,
+        protos.google.storage.v1.IListBucketsRequest|undefined, {}|undefined
+      ]>;
+  listBuckets(
+      request: protos.google.storage.v1.IListBucketsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IListBucketsResponse,
+          protos.google.storage.v1.IListBucketsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listBuckets(
+      request: protos.google.storage.v1.IListBucketsRequest,
+      callback: Callback<
+          protos.google.storage.v1.IListBucketsResponse,
+          protos.google.storage.v1.IListBucketsRequest|null|undefined,
+          {}|null|undefined>): void;
   listBuckets(
       request?: protos.google.storage.v1.IListBucketsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1092,29 +1112,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listBuckets(request, options, callback);
   }
-  lockBucketRetentionPolicy(
-      request?: protos.google.storage.v1.ILockRetentionPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucket,
-        protos.google.storage.v1.ILockRetentionPolicyRequest|undefined, {}|undefined
-      ]>;
-  lockBucketRetentionPolicy(
-      request: protos.google.storage.v1.ILockRetentionPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.ILockRetentionPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  lockBucketRetentionPolicy(
-      request: protos.google.storage.v1.ILockRetentionPolicyRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.ILockRetentionPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Locks retention policy on a bucket.
  *
@@ -1134,9 +1136,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.lockBucketRetentionPolicy(request);
+ * @example <caption>include:samples/generated/v1/storage.lock_bucket_retention_policy.js</caption>
+ * region_tag:storage_v1_generated_Storage_LockBucketRetentionPolicy_async
  */
+  lockBucketRetentionPolicy(
+      request?: protos.google.storage.v1.ILockRetentionPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucket,
+        protos.google.storage.v1.ILockRetentionPolicyRequest|undefined, {}|undefined
+      ]>;
+  lockBucketRetentionPolicy(
+      request: protos.google.storage.v1.ILockRetentionPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.ILockRetentionPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  lockBucketRetentionPolicy(
+      request: protos.google.storage.v1.ILockRetentionPolicyRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.ILockRetentionPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   lockBucketRetentionPolicy(
       request?: protos.google.storage.v1.ILockRetentionPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1161,29 +1183,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.lockBucketRetentionPolicy(request, options, callback);
   }
-  getBucketIamPolicy(
-      request?: protos.google.storage.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.storage.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getBucketIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getBucketIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the IAM policy for the specified bucket.
  *
@@ -1200,9 +1204,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getBucketIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/storage.get_bucket_iam_policy.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetBucketIamPolicy_async
  */
+  getBucketIamPolicy(
+      request?: protos.google.storage.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.storage.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getBucketIamPolicy(
+      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getBucketIamPolicy(
+      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getBucketIamPolicy(
       request?: protos.google.storage.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1227,9 +1251,30 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getBucketIamPolicy(request, options, callback);
   }
+/**
+ * Updates an IAM policy for the specified bucket.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.iam.v1.SetIamPolicyRequest} request.iamRequest
+ *   The request sent to IAM.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.set_bucket_iam_policy.js</caption>
+ * region_tag:storage_v1_generated_Storage_SetBucketIamPolicy_async
+ */
   setBucketIamPolicy(
       request?: protos.google.storage.v1.ISetIamPolicyRequest,
       options?: CallOptions):
@@ -1250,25 +1295,6 @@ export class StorageClient {
           protos.google.iam.v1.IPolicy,
           protos.google.storage.v1.ISetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an IAM policy for the specified bucket.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.iam.v1.SetIamPolicyRequest} request.iamRequest
- *   The request sent to IAM.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.setBucketIamPolicy(request);
- */
   setBucketIamPolicy(
       request?: protos.google.storage.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1293,29 +1319,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.setBucketIamPolicy(request, options, callback);
   }
-  testBucketIamPermissions(
-      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.storage.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testBucketIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testBucketIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Tests a set of permissions on the given bucket to see which, if
  * any, are held by the caller.
@@ -1333,9 +1341,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testBucketIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/storage.test_bucket_iam_permissions.js</caption>
+ * region_tag:storage_v1_generated_Storage_TestBucketIamPermissions_async
  */
+  testBucketIamPermissions(
+      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.storage.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testBucketIamPermissions(
+      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testBucketIamPermissions(
+      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testBucketIamPermissions(
       request?: protos.google.storage.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1360,29 +1388,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.testBucketIamPermissions(request, options, callback);
   }
-  patchBucket(
-      request?: protos.google.storage.v1.IPatchBucketRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucket,
-        protos.google.storage.v1.IPatchBucketRequest|undefined, {}|undefined
-      ]>;
-  patchBucket(
-      request: protos.google.storage.v1.IPatchBucketRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IPatchBucketRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchBucket(
-      request: protos.google.storage.v1.IPatchBucketRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IPatchBucketRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a bucket. Changes to the bucket will be readable immediately after
  * writing, but configuration changes may take time to propagate.
@@ -1425,9 +1435,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchBucket(request);
+ * @example <caption>include:samples/generated/v1/storage.patch_bucket.js</caption>
+ * region_tag:storage_v1_generated_Storage_PatchBucket_async
  */
+  patchBucket(
+      request?: protos.google.storage.v1.IPatchBucketRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucket,
+        protos.google.storage.v1.IPatchBucketRequest|undefined, {}|undefined
+      ]>;
+  patchBucket(
+      request: protos.google.storage.v1.IPatchBucketRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IPatchBucketRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchBucket(
+      request: protos.google.storage.v1.IPatchBucketRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IPatchBucketRequest|null|undefined,
+          {}|null|undefined>): void;
   patchBucket(
       request?: protos.google.storage.v1.IPatchBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1452,29 +1482,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.patchBucket(request, options, callback);
   }
-  updateBucket(
-      request?: protos.google.storage.v1.IUpdateBucketRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IBucket,
-        protos.google.storage.v1.IUpdateBucketRequest|undefined, {}|undefined
-      ]>;
-  updateBucket(
-      request: protos.google.storage.v1.IUpdateBucketRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IUpdateBucketRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateBucket(
-      request: protos.google.storage.v1.IUpdateBucketRequest,
-      callback: Callback<
-          protos.google.storage.v1.IBucket,
-          protos.google.storage.v1.IUpdateBucketRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a bucket. Equivalent to PatchBucket, but always replaces all
  * mutatable fields of the bucket with new values, reverting all
@@ -1509,9 +1521,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateBucket(request);
+ * @example <caption>include:samples/generated/v1/storage.update_bucket.js</caption>
+ * region_tag:storage_v1_generated_Storage_UpdateBucket_async
  */
+  updateBucket(
+      request?: protos.google.storage.v1.IUpdateBucketRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IBucket,
+        protos.google.storage.v1.IUpdateBucketRequest|undefined, {}|undefined
+      ]>;
+  updateBucket(
+      request: protos.google.storage.v1.IUpdateBucketRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IUpdateBucketRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateBucket(
+      request: protos.google.storage.v1.IUpdateBucketRequest,
+      callback: Callback<
+          protos.google.storage.v1.IBucket,
+          protos.google.storage.v1.IUpdateBucketRequest|null|undefined,
+          {}|null|undefined>): void;
   updateBucket(
       request?: protos.google.storage.v1.IUpdateBucketRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1536,9 +1568,33 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateBucket(request, options, callback);
   }
+/**
+ * Halts "Object Change Notification" push messagages.
+ * See https://cloud.google.com/storage/docs/object-change-notification
+ * Note: this is not related to the newer "Notifications" resource, which
+ * are stopped using DeleteNotification.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.storage.v1.Channel} request.channel
+ *   The channel to be stopped.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.stop_channel.js</caption>
+ * region_tag:storage_v1_generated_Storage_StopChannel_async
+ */
   stopChannel(
       request?: protos.google.storage.v1.IStopChannelRequest,
       options?: CallOptions):
@@ -1559,28 +1615,6 @@ export class StorageClient {
           protos.google.protobuf.IEmpty,
           protos.google.storage.v1.IStopChannelRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Halts "Object Change Notification" push messagages.
- * See https://cloud.google.com/storage/docs/object-change-notification
- * Note: this is not related to the newer "Notifications" resource, which
- * are stopped using DeleteNotification.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.storage.v1.Channel} request.channel
- *   The channel to be stopped.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.stopChannel(request);
- */
   stopChannel(
       request?: protos.google.storage.v1.IStopChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1605,29 +1639,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.stopChannel(request, options, callback);
   }
-  deleteDefaultObjectAccessControl(
-      request?: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  deleteDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes the default object ACL entry for the specified entity
  * on the specified bucket.
@@ -1653,9 +1669,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteDefaultObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_default_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteDefaultObjectAccessControl_async
  */
+  deleteDefaultObjectAccessControl(
+      request?: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  deleteDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IDeleteDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1680,29 +1716,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteDefaultObjectAccessControl(request, options, callback);
   }
-  getDefaultObjectAccessControl(
-      request?: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  getDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the default object ACL entry for the specified entity on the
  * specified bucket.
@@ -1728,9 +1746,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDefaultObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.get_default_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetDefaultObjectAccessControl_async
  */
+  getDefaultObjectAccessControl(
+      request?: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  getDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IGetDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   getDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IGetDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1755,9 +1793,32 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getDefaultObjectAccessControl(request, options, callback);
   }
+/**
+ * Creates a new default object ACL entry on the specified bucket.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.bucket
+ *   Required. Name of a bucket.
+ * @param {google.storage.v1.ObjectAccessControl} request.objectAccessControl
+ *   Properties of the object access control being inserted.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ObjectAccessControl]{@link google.storage.v1.ObjectAccessControl}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.insert_default_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_InsertDefaultObjectAccessControl_async
+ */
   insertDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
       options?: CallOptions):
@@ -1778,27 +1839,6 @@ export class StorageClient {
           protos.google.storage.v1.IObjectAccessControl,
           protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new default object ACL entry on the specified bucket.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.bucket
- *   Required. Name of a bucket.
- * @param {google.storage.v1.ObjectAccessControl} request.objectAccessControl
- *   Properties of the object access control being inserted.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ObjectAccessControl]{@link google.storage.v1.ObjectAccessControl}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.insertDefaultObjectAccessControl(request);
- */
   insertDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IInsertDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1823,29 +1863,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.insertDefaultObjectAccessControl(request, options, callback);
   }
-  listDefaultObjectAccessControls(
-      request?: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IListObjectAccessControlsResponse,
-        protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|undefined, {}|undefined
-      ]>;
-  listDefaultObjectAccessControls(
-      request: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IListObjectAccessControlsResponse,
-          protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listDefaultObjectAccessControls(
-      request: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
-      callback: Callback<
-          protos.google.storage.v1.IListObjectAccessControlsResponse,
-          protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves default object ACL entries on the specified bucket.
  *
@@ -1868,9 +1890,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listDefaultObjectAccessControls(request);
+ * @example <caption>include:samples/generated/v1/storage.list_default_object_access_controls.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListDefaultObjectAccessControls_async
  */
+  listDefaultObjectAccessControls(
+      request?: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IListObjectAccessControlsResponse,
+        protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|undefined, {}|undefined
+      ]>;
+  listDefaultObjectAccessControls(
+      request: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IListObjectAccessControlsResponse,
+          protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listDefaultObjectAccessControls(
+      request: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
+      callback: Callback<
+          protos.google.storage.v1.IListObjectAccessControlsResponse,
+          protos.google.storage.v1.IListDefaultObjectAccessControlsRequest|null|undefined,
+          {}|null|undefined>): void;
   listDefaultObjectAccessControls(
       request?: protos.google.storage.v1.IListDefaultObjectAccessControlsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1895,29 +1937,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listDefaultObjectAccessControls(request, options, callback);
   }
-  patchDefaultObjectAccessControl(
-      request?: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  patchDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a default object ACL entry on the specified bucket.
  *
@@ -1955,9 +1979,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchDefaultObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.patch_default_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_PatchDefaultObjectAccessControl_async
  */
+  patchDefaultObjectAccessControl(
+      request?: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  patchDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   patchDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IPatchDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1982,29 +2026,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.patchDefaultObjectAccessControl(request, options, callback);
   }
-  updateDefaultObjectAccessControl(
-      request?: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  updateDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateDefaultObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a default object ACL entry on the specified bucket. Equivalent to
  * PatchDefaultObjectAccessControl, but modifies all unspecified fields to
@@ -2033,9 +2059,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateDefaultObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.update_default_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_UpdateDefaultObjectAccessControl_async
  */
+  updateDefaultObjectAccessControl(
+      request?: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  updateDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateDefaultObjectAccessControl(
+      request: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   updateDefaultObjectAccessControl(
       request?: protos.google.storage.v1.IUpdateDefaultObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2060,29 +2106,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateDefaultObjectAccessControl(request, options, callback);
   }
-  deleteNotification(
-      request?: protos.google.storage.v1.IDeleteNotificationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteNotificationRequest|undefined, {}|undefined
-      ]>;
-  deleteNotification(
-      request: protos.google.storage.v1.IDeleteNotificationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteNotificationRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteNotification(
-      request: protos.google.storage.v1.IDeleteNotificationRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteNotificationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes a notification subscription.
  * Note: Older, "Object Change Notification" push subscriptions should be
@@ -2103,9 +2131,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteNotification(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_notification.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteNotification_async
  */
+  deleteNotification(
+      request?: protos.google.storage.v1.IDeleteNotificationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteNotificationRequest|undefined, {}|undefined
+      ]>;
+  deleteNotification(
+      request: protos.google.storage.v1.IDeleteNotificationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteNotificationRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteNotification(
+      request: protos.google.storage.v1.IDeleteNotificationRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteNotificationRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteNotification(
       request?: protos.google.storage.v1.IDeleteNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2130,9 +2178,33 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteNotification(request, options, callback);
   }
+/**
+ * View a notification configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.bucket
+ *   Required. The parent bucket of the notification.
+ * @param {string} request.notification
+ *   Required. Notification ID.
+ *   Required.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Notification]{@link google.storage.v1.Notification}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.get_notification.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetNotification_async
+ */
   getNotification(
       request?: protos.google.storage.v1.IGetNotificationRequest,
       options?: CallOptions):
@@ -2153,28 +2225,6 @@ export class StorageClient {
           protos.google.storage.v1.INotification,
           protos.google.storage.v1.IGetNotificationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * View a notification configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.bucket
- *   Required. The parent bucket of the notification.
- * @param {string} request.notification
- *   Required. Notification ID.
- *   Required.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Notification]{@link google.storage.v1.Notification}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getNotification(request);
- */
   getNotification(
       request?: protos.google.storage.v1.IGetNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2199,29 +2249,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getNotification(request, options, callback);
   }
-  insertNotification(
-      request?: protos.google.storage.v1.IInsertNotificationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.INotification,
-        protos.google.storage.v1.IInsertNotificationRequest|undefined, {}|undefined
-      ]>;
-  insertNotification(
-      request: protos.google.storage.v1.IInsertNotificationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.INotification,
-          protos.google.storage.v1.IInsertNotificationRequest|null|undefined,
-          {}|null|undefined>): void;
-  insertNotification(
-      request: protos.google.storage.v1.IInsertNotificationRequest,
-      callback: Callback<
-          protos.google.storage.v1.INotification,
-          protos.google.storage.v1.IInsertNotificationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a notification subscription for a given bucket.
  * These notifications, when triggered, publish messages to the specified
@@ -2243,9 +2275,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.insertNotification(request);
+ * @example <caption>include:samples/generated/v1/storage.insert_notification.js</caption>
+ * region_tag:storage_v1_generated_Storage_InsertNotification_async
  */
+  insertNotification(
+      request?: protos.google.storage.v1.IInsertNotificationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.INotification,
+        protos.google.storage.v1.IInsertNotificationRequest|undefined, {}|undefined
+      ]>;
+  insertNotification(
+      request: protos.google.storage.v1.IInsertNotificationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.INotification,
+          protos.google.storage.v1.IInsertNotificationRequest|null|undefined,
+          {}|null|undefined>): void;
+  insertNotification(
+      request: protos.google.storage.v1.IInsertNotificationRequest,
+      callback: Callback<
+          protos.google.storage.v1.INotification,
+          protos.google.storage.v1.IInsertNotificationRequest|null|undefined,
+          {}|null|undefined>): void;
   insertNotification(
       request?: protos.google.storage.v1.IInsertNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2270,9 +2322,30 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.insertNotification(request, options, callback);
   }
+/**
+ * Retrieves a list of notification subscriptions for a given bucket.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.bucket
+ *   Required. Name of a Google Cloud Storage bucket.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListNotificationsResponse]{@link google.storage.v1.ListNotificationsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.list_notifications.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListNotifications_async
+ */
   listNotifications(
       request?: protos.google.storage.v1.IListNotificationsRequest,
       options?: CallOptions):
@@ -2293,25 +2366,6 @@ export class StorageClient {
           protos.google.storage.v1.IListNotificationsResponse,
           protos.google.storage.v1.IListNotificationsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a list of notification subscriptions for a given bucket.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.bucket
- *   Required. Name of a Google Cloud Storage bucket.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListNotificationsResponse]{@link google.storage.v1.ListNotificationsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listNotifications(request);
- */
   listNotifications(
       request?: protos.google.storage.v1.IListNotificationsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2336,29 +2390,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listNotifications(request, options, callback);
   }
-  deleteObjectAccessControl(
-      request?: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  deleteObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteObjectAccessControl(
-      request: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes the ACL entry for the specified entity on the specified
  * object.
@@ -2389,9 +2425,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteObjectAccessControl_async
  */
+  deleteObjectAccessControl(
+      request?: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  deleteObjectAccessControl(
+      request: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteObjectAccessControl(
+      request: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteObjectAccessControl(
       request?: protos.google.storage.v1.IDeleteObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2416,29 +2472,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteObjectAccessControl(request, options, callback);
   }
-  getObjectAccessControl(
-      request?: protos.google.storage.v1.IGetObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IGetObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  getObjectAccessControl(
-      request: protos.google.storage.v1.IGetObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IGetObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  getObjectAccessControl(
-      request: protos.google.storage.v1.IGetObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IGetObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the ACL entry for the specified entity on the specified object.
  *
@@ -2468,9 +2506,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.get_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetObjectAccessControl_async
  */
+  getObjectAccessControl(
+      request?: protos.google.storage.v1.IGetObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IGetObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  getObjectAccessControl(
+      request: protos.google.storage.v1.IGetObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IGetObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  getObjectAccessControl(
+      request: protos.google.storage.v1.IGetObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IGetObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   getObjectAccessControl(
       request?: protos.google.storage.v1.IGetObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2495,29 +2553,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getObjectAccessControl(request, options, callback);
   }
-  insertObjectAccessControl(
-      request?: protos.google.storage.v1.IInsertObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IInsertObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  insertObjectAccessControl(
-      request: protos.google.storage.v1.IInsertObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IInsertObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  insertObjectAccessControl(
-      request: protos.google.storage.v1.IInsertObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IInsertObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new ACL entry on the specified object.
  *
@@ -2541,9 +2581,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.insertObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.insert_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_InsertObjectAccessControl_async
  */
+  insertObjectAccessControl(
+      request?: protos.google.storage.v1.IInsertObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IInsertObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  insertObjectAccessControl(
+      request: protos.google.storage.v1.IInsertObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IInsertObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  insertObjectAccessControl(
+      request: protos.google.storage.v1.IInsertObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IInsertObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   insertObjectAccessControl(
       request?: protos.google.storage.v1.IInsertObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2568,29 +2628,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.insertObjectAccessControl(request, options, callback);
   }
-  listObjectAccessControls(
-      request?: protos.google.storage.v1.IListObjectAccessControlsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IListObjectAccessControlsResponse,
-        protos.google.storage.v1.IListObjectAccessControlsRequest|undefined, {}|undefined
-      ]>;
-  listObjectAccessControls(
-      request: protos.google.storage.v1.IListObjectAccessControlsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IListObjectAccessControlsResponse,
-          protos.google.storage.v1.IListObjectAccessControlsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listObjectAccessControls(
-      request: protos.google.storage.v1.IListObjectAccessControlsRequest,
-      callback: Callback<
-          protos.google.storage.v1.IListObjectAccessControlsResponse,
-          protos.google.storage.v1.IListObjectAccessControlsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves ACL entries on the specified object.
  *
@@ -2612,9 +2654,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listObjectAccessControls(request);
+ * @example <caption>include:samples/generated/v1/storage.list_object_access_controls.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListObjectAccessControls_async
  */
+  listObjectAccessControls(
+      request?: protos.google.storage.v1.IListObjectAccessControlsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IListObjectAccessControlsResponse,
+        protos.google.storage.v1.IListObjectAccessControlsRequest|undefined, {}|undefined
+      ]>;
+  listObjectAccessControls(
+      request: protos.google.storage.v1.IListObjectAccessControlsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IListObjectAccessControlsResponse,
+          protos.google.storage.v1.IListObjectAccessControlsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listObjectAccessControls(
+      request: protos.google.storage.v1.IListObjectAccessControlsRequest,
+      callback: Callback<
+          protos.google.storage.v1.IListObjectAccessControlsResponse,
+          protos.google.storage.v1.IListObjectAccessControlsRequest|null|undefined,
+          {}|null|undefined>): void;
   listObjectAccessControls(
       request?: protos.google.storage.v1.IListObjectAccessControlsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2639,29 +2701,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listObjectAccessControls(request, options, callback);
   }
-  patchObjectAccessControl(
-      request?: protos.google.storage.v1.IPatchObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IPatchObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  patchObjectAccessControl(
-      request: protos.google.storage.v1.IPatchObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IPatchObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchObjectAccessControl(
-      request: protos.google.storage.v1.IPatchObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IPatchObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Patches an ACL entry on the specified object.  Patch is similar to update,
  * but only applies or appends the specified fields in the
@@ -2707,9 +2751,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.patch_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_PatchObjectAccessControl_async
  */
+  patchObjectAccessControl(
+      request?: protos.google.storage.v1.IPatchObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IPatchObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  patchObjectAccessControl(
+      request: protos.google.storage.v1.IPatchObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IPatchObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchObjectAccessControl(
+      request: protos.google.storage.v1.IPatchObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IPatchObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   patchObjectAccessControl(
       request?: protos.google.storage.v1.IPatchObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2734,29 +2798,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.patchObjectAccessControl(request, options, callback);
   }
-  updateObjectAccessControl(
-      request?: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObjectAccessControl,
-        protos.google.storage.v1.IUpdateObjectAccessControlRequest|undefined, {}|undefined
-      ]>;
-  updateObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IUpdateObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateObjectAccessControl(
-      request: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObjectAccessControl,
-          protos.google.storage.v1.IUpdateObjectAccessControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an ACL entry on the specified object.
  *
@@ -2800,9 +2846,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateObjectAccessControl(request);
+ * @example <caption>include:samples/generated/v1/storage.update_object_access_control.js</caption>
+ * region_tag:storage_v1_generated_Storage_UpdateObjectAccessControl_async
  */
+  updateObjectAccessControl(
+      request?: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObjectAccessControl,
+        protos.google.storage.v1.IUpdateObjectAccessControlRequest|undefined, {}|undefined
+      ]>;
+  updateObjectAccessControl(
+      request: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IUpdateObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateObjectAccessControl(
+      request: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObjectAccessControl,
+          protos.google.storage.v1.IUpdateObjectAccessControlRequest|null|undefined,
+          {}|null|undefined>): void;
   updateObjectAccessControl(
       request?: protos.google.storage.v1.IUpdateObjectAccessControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2827,29 +2893,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateObjectAccessControl(request, options, callback);
   }
-  composeObject(
-      request?: protos.google.storage.v1.IComposeObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.IComposeObjectRequest|undefined, {}|undefined
-      ]>;
-  composeObject(
-      request: protos.google.storage.v1.IComposeObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IComposeObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  composeObject(
-      request: protos.google.storage.v1.IComposeObjectRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IComposeObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Concatenates a list of existing objects into a new object in the same
  * bucket.
@@ -2890,9 +2938,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.composeObject(request);
+ * @example <caption>include:samples/generated/v1/storage.compose_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_ComposeObject_async
  */
+  composeObject(
+      request?: protos.google.storage.v1.IComposeObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.IComposeObjectRequest|undefined, {}|undefined
+      ]>;
+  composeObject(
+      request: protos.google.storage.v1.IComposeObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IComposeObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  composeObject(
+      request: protos.google.storage.v1.IComposeObjectRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IComposeObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   composeObject(
       request?: protos.google.storage.v1.IComposeObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2917,29 +2985,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.composeObject(request, options, callback);
   }
-  copyObject(
-      request?: protos.google.storage.v1.ICopyObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.ICopyObjectRequest|undefined, {}|undefined
-      ]>;
-  copyObject(
-      request: protos.google.storage.v1.ICopyObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.ICopyObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  copyObject(
-      request: protos.google.storage.v1.ICopyObjectRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.ICopyObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Copies a source object to a destination object. Optionally overrides
  * metadata.
@@ -3013,9 +3063,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.copyObject(request);
+ * @example <caption>include:samples/generated/v1/storage.copy_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_CopyObject_async
  */
+  copyObject(
+      request?: protos.google.storage.v1.ICopyObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.ICopyObjectRequest|undefined, {}|undefined
+      ]>;
+  copyObject(
+      request: protos.google.storage.v1.ICopyObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.ICopyObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  copyObject(
+      request: protos.google.storage.v1.ICopyObjectRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.ICopyObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   copyObject(
       request?: protos.google.storage.v1.ICopyObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3040,29 +3110,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.copyObject(request, options, callback);
   }
-  deleteObject(
-      request?: protos.google.storage.v1.IDeleteObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteObjectRequest|undefined, {}|undefined
-      ]>;
-  deleteObject(
-      request: protos.google.storage.v1.IDeleteObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteObject(
-      request: protos.google.storage.v1.IDeleteObjectRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes an object and its metadata. Deletions are permanent if versioning
  * is not enabled for the bucket, or if the `generation` parameter
@@ -3107,9 +3159,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteObject(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteObject_async
  */
+  deleteObject(
+      request?: protos.google.storage.v1.IDeleteObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteObjectRequest|undefined, {}|undefined
+      ]>;
+  deleteObject(
+      request: protos.google.storage.v1.IDeleteObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteObject(
+      request: protos.google.storage.v1.IDeleteObjectRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteObject(
       request?: protos.google.storage.v1.IDeleteObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3134,29 +3206,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteObject(request, options, callback);
   }
-  getObject(
-      request?: protos.google.storage.v1.IGetObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.IGetObjectRequest|undefined, {}|undefined
-      ]>;
-  getObject(
-      request: protos.google.storage.v1.IGetObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IGetObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  getObject(
-      request: protos.google.storage.v1.IGetObjectRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IGetObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves an object's metadata.
  *
@@ -3197,9 +3251,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getObject(request);
+ * @example <caption>include:samples/generated/v1/storage.get_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetObject_async
  */
+  getObject(
+      request?: protos.google.storage.v1.IGetObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.IGetObjectRequest|undefined, {}|undefined
+      ]>;
+  getObject(
+      request: protos.google.storage.v1.IGetObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IGetObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  getObject(
+      request: protos.google.storage.v1.IGetObjectRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IGetObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   getObject(
       request?: protos.google.storage.v1.IGetObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3224,29 +3298,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getObject(request, options, callback);
   }
-  listObjects(
-      request?: protos.google.storage.v1.IListObjectsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IListObjectsResponse,
-        protos.google.storage.v1.IListObjectsRequest|undefined, {}|undefined
-      ]>;
-  listObjects(
-      request: protos.google.storage.v1.IListObjectsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IListObjectsResponse,
-          protos.google.storage.v1.IListObjectsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listObjects(
-      request: protos.google.storage.v1.IListObjectsRequest,
-      callback: Callback<
-          protos.google.storage.v1.IListObjectsResponse,
-          protos.google.storage.v1.IListObjectsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves a list of objects matching the criteria.
  *
@@ -3291,9 +3347,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listObjects(request);
+ * @example <caption>include:samples/generated/v1/storage.list_objects.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListObjects_async
  */
+  listObjects(
+      request?: protos.google.storage.v1.IListObjectsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IListObjectsResponse,
+        protos.google.storage.v1.IListObjectsRequest|undefined, {}|undefined
+      ]>;
+  listObjects(
+      request: protos.google.storage.v1.IListObjectsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IListObjectsResponse,
+          protos.google.storage.v1.IListObjectsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listObjects(
+      request: protos.google.storage.v1.IListObjectsRequest,
+      callback: Callback<
+          protos.google.storage.v1.IListObjectsResponse,
+          protos.google.storage.v1.IListObjectsRequest|null|undefined,
+          {}|null|undefined>): void;
   listObjects(
       request?: protos.google.storage.v1.IListObjectsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3318,29 +3394,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listObjects(request, options, callback);
   }
-  rewriteObject(
-      request?: protos.google.storage.v1.IRewriteObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IRewriteResponse,
-        protos.google.storage.v1.IRewriteObjectRequest|undefined, {}|undefined
-      ]>;
-  rewriteObject(
-      request: protos.google.storage.v1.IRewriteObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IRewriteResponse,
-          protos.google.storage.v1.IRewriteObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  rewriteObject(
-      request: protos.google.storage.v1.IRewriteObjectRequest,
-      callback: Callback<
-          protos.google.storage.v1.IRewriteResponse,
-          protos.google.storage.v1.IRewriteObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Rewrites a source object to a destination object. Optionally overrides
  * metadata.
@@ -3433,9 +3491,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.rewriteObject(request);
+ * @example <caption>include:samples/generated/v1/storage.rewrite_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_RewriteObject_async
  */
+  rewriteObject(
+      request?: protos.google.storage.v1.IRewriteObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IRewriteResponse,
+        protos.google.storage.v1.IRewriteObjectRequest|undefined, {}|undefined
+      ]>;
+  rewriteObject(
+      request: protos.google.storage.v1.IRewriteObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IRewriteResponse,
+          protos.google.storage.v1.IRewriteObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  rewriteObject(
+      request: protos.google.storage.v1.IRewriteObjectRequest,
+      callback: Callback<
+          protos.google.storage.v1.IRewriteResponse,
+          protos.google.storage.v1.IRewriteObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   rewriteObject(
       request?: protos.google.storage.v1.IRewriteObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3460,29 +3538,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.rewriteObject(request, options, callback);
   }
-  startResumableWrite(
-      request?: protos.google.storage.v1.IStartResumableWriteRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IStartResumableWriteResponse,
-        protos.google.storage.v1.IStartResumableWriteRequest|undefined, {}|undefined
-      ]>;
-  startResumableWrite(
-      request: protos.google.storage.v1.IStartResumableWriteRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IStartResumableWriteResponse,
-          protos.google.storage.v1.IStartResumableWriteRequest|null|undefined,
-          {}|null|undefined>): void;
-  startResumableWrite(
-      request: protos.google.storage.v1.IStartResumableWriteRequest,
-      callback: Callback<
-          protos.google.storage.v1.IStartResumableWriteResponse,
-          protos.google.storage.v1.IStartResumableWriteRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Starts a resumable write. How long the write operation remains valid, and
  * what happens when the write operation becomes invalid, are
@@ -3503,9 +3563,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.startResumableWrite(request);
+ * @example <caption>include:samples/generated/v1/storage.start_resumable_write.js</caption>
+ * region_tag:storage_v1_generated_Storage_StartResumableWrite_async
  */
+  startResumableWrite(
+      request?: protos.google.storage.v1.IStartResumableWriteRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IStartResumableWriteResponse,
+        protos.google.storage.v1.IStartResumableWriteRequest|undefined, {}|undefined
+      ]>;
+  startResumableWrite(
+      request: protos.google.storage.v1.IStartResumableWriteRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IStartResumableWriteResponse,
+          protos.google.storage.v1.IStartResumableWriteRequest|null|undefined,
+          {}|null|undefined>): void;
+  startResumableWrite(
+      request: protos.google.storage.v1.IStartResumableWriteRequest,
+      callback: Callback<
+          protos.google.storage.v1.IStartResumableWriteResponse,
+          protos.google.storage.v1.IStartResumableWriteRequest|null|undefined,
+          {}|null|undefined>): void;
   startResumableWrite(
       request?: protos.google.storage.v1.IStartResumableWriteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3530,29 +3610,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.startResumableWrite(request, options, callback);
   }
-  queryWriteStatus(
-      request?: protos.google.storage.v1.IQueryWriteStatusRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IQueryWriteStatusResponse,
-        protos.google.storage.v1.IQueryWriteStatusRequest|undefined, {}|undefined
-      ]>;
-  queryWriteStatus(
-      request: protos.google.storage.v1.IQueryWriteStatusRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IQueryWriteStatusResponse,
-          protos.google.storage.v1.IQueryWriteStatusRequest|null|undefined,
-          {}|null|undefined>): void;
-  queryWriteStatus(
-      request: protos.google.storage.v1.IQueryWriteStatusRequest,
-      callback: Callback<
-          protos.google.storage.v1.IQueryWriteStatusResponse,
-          protos.google.storage.v1.IQueryWriteStatusRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Determines the `committed_size` for an object that is being written, which
  * can then be used as the `write_offset` for the next `Write()` call.
@@ -3584,9 +3646,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.queryWriteStatus(request);
+ * @example <caption>include:samples/generated/v1/storage.query_write_status.js</caption>
+ * region_tag:storage_v1_generated_Storage_QueryWriteStatus_async
  */
+  queryWriteStatus(
+      request?: protos.google.storage.v1.IQueryWriteStatusRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IQueryWriteStatusResponse,
+        protos.google.storage.v1.IQueryWriteStatusRequest|undefined, {}|undefined
+      ]>;
+  queryWriteStatus(
+      request: protos.google.storage.v1.IQueryWriteStatusRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IQueryWriteStatusResponse,
+          protos.google.storage.v1.IQueryWriteStatusRequest|null|undefined,
+          {}|null|undefined>): void;
+  queryWriteStatus(
+      request: protos.google.storage.v1.IQueryWriteStatusRequest,
+      callback: Callback<
+          protos.google.storage.v1.IQueryWriteStatusResponse,
+          protos.google.storage.v1.IQueryWriteStatusRequest|null|undefined,
+          {}|null|undefined>): void;
   queryWriteStatus(
       request?: protos.google.storage.v1.IQueryWriteStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3611,29 +3693,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.queryWriteStatus(request, options, callback);
   }
-  patchObject(
-      request?: protos.google.storage.v1.IPatchObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.IPatchObjectRequest|undefined, {}|undefined
-      ]>;
-  patchObject(
-      request: protos.google.storage.v1.IPatchObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IPatchObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchObject(
-      request: protos.google.storage.v1.IPatchObjectRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IPatchObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an object's metadata.
  *
@@ -3689,9 +3753,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchObject(request);
+ * @example <caption>include:samples/generated/v1/storage.patch_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_PatchObject_async
  */
+  patchObject(
+      request?: protos.google.storage.v1.IPatchObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.IPatchObjectRequest|undefined, {}|undefined
+      ]>;
+  patchObject(
+      request: protos.google.storage.v1.IPatchObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IPatchObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchObject(
+      request: protos.google.storage.v1.IPatchObjectRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IPatchObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   patchObject(
       request?: protos.google.storage.v1.IPatchObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3716,29 +3800,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.patchObject(request, options, callback);
   }
-  updateObject(
-      request?: protos.google.storage.v1.IUpdateObjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.IUpdateObjectRequest|undefined, {}|undefined
-      ]>;
-  updateObject(
-      request: protos.google.storage.v1.IUpdateObjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IUpdateObjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateObject(
-      request: protos.google.storage.v1.IUpdateObjectRequest,
-      callback: Callback<
-          protos.google.storage.v1.IObject,
-          protos.google.storage.v1.IUpdateObjectRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an object's metadata. Equivalent to PatchObject, but always
  * replaces all mutatable fields of the bucket with new values, reverting all
@@ -3785,9 +3851,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateObject(request);
+ * @example <caption>include:samples/generated/v1/storage.update_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_UpdateObject_async
  */
+  updateObject(
+      request?: protos.google.storage.v1.IUpdateObjectRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.IUpdateObjectRequest|undefined, {}|undefined
+      ]>;
+  updateObject(
+      request: protos.google.storage.v1.IUpdateObjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IUpdateObjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateObject(
+      request: protos.google.storage.v1.IUpdateObjectRequest,
+      callback: Callback<
+          protos.google.storage.v1.IObject,
+          protos.google.storage.v1.IUpdateObjectRequest|null|undefined,
+          {}|null|undefined>): void;
   updateObject(
       request?: protos.google.storage.v1.IUpdateObjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3812,29 +3898,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateObject(request, options, callback);
   }
-  getObjectIamPolicy(
-      request?: protos.google.storage.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.storage.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getObjectIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getObjectIamPolicy(
-      request: protos.google.storage.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the IAM policy for the specified object.
  *
@@ -3851,9 +3919,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getObjectIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/storage.get_object_iam_policy.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetObjectIamPolicy_async
  */
+  getObjectIamPolicy(
+      request?: protos.google.storage.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.storage.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getObjectIamPolicy(
+      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getObjectIamPolicy(
+      request: protos.google.storage.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.storage.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getObjectIamPolicy(
       request?: protos.google.storage.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3878,9 +3966,30 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getObjectIamPolicy(request, options, callback);
   }
+/**
+ * Updates an IAM policy for the specified object.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.iam.v1.SetIamPolicyRequest} request.iamRequest
+ *   The request sent to IAM.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.set_object_iam_policy.js</caption>
+ * region_tag:storage_v1_generated_Storage_SetObjectIamPolicy_async
+ */
   setObjectIamPolicy(
       request?: protos.google.storage.v1.ISetIamPolicyRequest,
       options?: CallOptions):
@@ -3901,25 +4010,6 @@ export class StorageClient {
           protos.google.iam.v1.IPolicy,
           protos.google.storage.v1.ISetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an IAM policy for the specified object.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.iam.v1.SetIamPolicyRequest} request.iamRequest
- *   The request sent to IAM.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.setObjectIamPolicy(request);
- */
   setObjectIamPolicy(
       request?: protos.google.storage.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -3944,29 +4034,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.setObjectIamPolicy(request, options, callback);
   }
-  testObjectIamPermissions(
-      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.storage.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testObjectIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testObjectIamPermissions(
-      request: protos.google.storage.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Tests a set of permissions on the given object to see which, if
  * any, are held by the caller.
@@ -3984,9 +4056,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testObjectIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/storage.test_object_iam_permissions.js</caption>
+ * region_tag:storage_v1_generated_Storage_TestObjectIamPermissions_async
  */
+  testObjectIamPermissions(
+      request?: protos.google.storage.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.storage.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testObjectIamPermissions(
+      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testObjectIamPermissions(
+      request: protos.google.storage.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.storage.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testObjectIamPermissions(
       request?: protos.google.storage.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4011,29 +4103,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.testObjectIamPermissions(request, options, callback);
   }
-  watchAllObjects(
-      request?: protos.google.storage.v1.IWatchAllObjectsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IChannel,
-        protos.google.storage.v1.IWatchAllObjectsRequest|undefined, {}|undefined
-      ]>;
-  watchAllObjects(
-      request: protos.google.storage.v1.IWatchAllObjectsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IChannel,
-          protos.google.storage.v1.IWatchAllObjectsRequest|null|undefined,
-          {}|null|undefined>): void;
-  watchAllObjects(
-      request: protos.google.storage.v1.IWatchAllObjectsRequest,
-      callback: Callback<
-          protos.google.storage.v1.IChannel,
-          protos.google.storage.v1.IWatchAllObjectsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Watch for changes on all objects in a bucket.
  *
@@ -4080,9 +4154,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.watchAllObjects(request);
+ * @example <caption>include:samples/generated/v1/storage.watch_all_objects.js</caption>
+ * region_tag:storage_v1_generated_Storage_WatchAllObjects_async
  */
+  watchAllObjects(
+      request?: protos.google.storage.v1.IWatchAllObjectsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IChannel,
+        protos.google.storage.v1.IWatchAllObjectsRequest|undefined, {}|undefined
+      ]>;
+  watchAllObjects(
+      request: protos.google.storage.v1.IWatchAllObjectsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IChannel,
+          protos.google.storage.v1.IWatchAllObjectsRequest|null|undefined,
+          {}|null|undefined>): void;
+  watchAllObjects(
+      request: protos.google.storage.v1.IWatchAllObjectsRequest,
+      callback: Callback<
+          protos.google.storage.v1.IChannel,
+          protos.google.storage.v1.IWatchAllObjectsRequest|null|undefined,
+          {}|null|undefined>): void;
   watchAllObjects(
       request?: protos.google.storage.v1.IWatchAllObjectsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4107,9 +4201,30 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.watchAllObjects(request, options, callback);
   }
+/**
+ * Retrieves the name of a project's Google Cloud Storage service account.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   Required. Project ID.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServiceAccount]{@link google.storage.v1.ServiceAccount}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.get_service_account.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetServiceAccount_async
+ */
   getServiceAccount(
       request?: protos.google.storage.v1.IGetProjectServiceAccountRequest,
       options?: CallOptions):
@@ -4130,25 +4245,6 @@ export class StorageClient {
           protos.google.storage.v1.IServiceAccount,
           protos.google.storage.v1.IGetProjectServiceAccountRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the name of a project's Google Cloud Storage service account.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   Required. Project ID.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ServiceAccount]{@link google.storage.v1.ServiceAccount}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getServiceAccount(request);
- */
   getServiceAccount(
       request?: protos.google.storage.v1.IGetProjectServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4173,29 +4269,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getServiceAccount(request, options, callback);
   }
-  createHmacKey(
-      request?: protos.google.storage.v1.ICreateHmacKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.ICreateHmacKeyResponse,
-        protos.google.storage.v1.ICreateHmacKeyRequest|undefined, {}|undefined
-      ]>;
-  createHmacKey(
-      request: protos.google.storage.v1.ICreateHmacKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.ICreateHmacKeyResponse,
-          protos.google.storage.v1.ICreateHmacKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  createHmacKey(
-      request: protos.google.storage.v1.ICreateHmacKeyRequest,
-      callback: Callback<
-          protos.google.storage.v1.ICreateHmacKeyResponse,
-          protos.google.storage.v1.ICreateHmacKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new HMAC key for the given service account.
  *
@@ -4214,9 +4292,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createHmacKey(request);
+ * @example <caption>include:samples/generated/v1/storage.create_hmac_key.js</caption>
+ * region_tag:storage_v1_generated_Storage_CreateHmacKey_async
  */
+  createHmacKey(
+      request?: protos.google.storage.v1.ICreateHmacKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.ICreateHmacKeyResponse,
+        protos.google.storage.v1.ICreateHmacKeyRequest|undefined, {}|undefined
+      ]>;
+  createHmacKey(
+      request: protos.google.storage.v1.ICreateHmacKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.ICreateHmacKeyResponse,
+          protos.google.storage.v1.ICreateHmacKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  createHmacKey(
+      request: protos.google.storage.v1.ICreateHmacKeyRequest,
+      callback: Callback<
+          protos.google.storage.v1.ICreateHmacKeyResponse,
+          protos.google.storage.v1.ICreateHmacKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   createHmacKey(
       request?: protos.google.storage.v1.ICreateHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4241,29 +4339,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createHmacKey(request, options, callback);
   }
-  deleteHmacKey(
-      request?: protos.google.storage.v1.IDeleteHmacKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.storage.v1.IDeleteHmacKeyRequest|undefined, {}|undefined
-      ]>;
-  deleteHmacKey(
-      request: protos.google.storage.v1.IDeleteHmacKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteHmacKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteHmacKey(
-      request: protos.google.storage.v1.IDeleteHmacKeyRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.storage.v1.IDeleteHmacKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a given HMAC key.  Key must be in an INACTIVE state.
  *
@@ -4282,9 +4362,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteHmacKey(request);
+ * @example <caption>include:samples/generated/v1/storage.delete_hmac_key.js</caption>
+ * region_tag:storage_v1_generated_Storage_DeleteHmacKey_async
  */
+  deleteHmacKey(
+      request?: protos.google.storage.v1.IDeleteHmacKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.storage.v1.IDeleteHmacKeyRequest|undefined, {}|undefined
+      ]>;
+  deleteHmacKey(
+      request: protos.google.storage.v1.IDeleteHmacKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteHmacKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteHmacKey(
+      request: protos.google.storage.v1.IDeleteHmacKeyRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.storage.v1.IDeleteHmacKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteHmacKey(
       request?: protos.google.storage.v1.IDeleteHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4309,9 +4409,32 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.deleteHmacKey(request, options, callback);
   }
+/**
+ * Gets an existing HMAC key metadata for the given id.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.accessId
+ *   Required. The identifying key for the HMAC to delete.
+ * @param {string} request.projectId
+ *   Required. The project id the HMAC key lies in.
+ * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
+ *   A set of parameters common to all Storage API requests.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [HmacKeyMetadata]{@link google.storage.v1.HmacKeyMetadata}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/storage.get_hmac_key.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetHmacKey_async
+ */
   getHmacKey(
       request?: protos.google.storage.v1.IGetHmacKeyRequest,
       options?: CallOptions):
@@ -4332,27 +4455,6 @@ export class StorageClient {
           protos.google.storage.v1.IHmacKeyMetadata,
           protos.google.storage.v1.IGetHmacKeyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an existing HMAC key metadata for the given id.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.accessId
- *   Required. The identifying key for the HMAC to delete.
- * @param {string} request.projectId
- *   Required. The project id the HMAC key lies in.
- * @param {google.storage.v1.CommonRequestParams} request.commonRequestParams
- *   A set of parameters common to all Storage API requests.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [HmacKeyMetadata]{@link google.storage.v1.HmacKeyMetadata}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getHmacKey(request);
- */
   getHmacKey(
       request?: protos.google.storage.v1.IGetHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4377,29 +4479,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getHmacKey(request, options, callback);
   }
-  listHmacKeys(
-      request?: protos.google.storage.v1.IListHmacKeysRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IListHmacKeysResponse,
-        protos.google.storage.v1.IListHmacKeysRequest|undefined, {}|undefined
-      ]>;
-  listHmacKeys(
-      request: protos.google.storage.v1.IListHmacKeysRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IListHmacKeysResponse,
-          protos.google.storage.v1.IListHmacKeysRequest|null|undefined,
-          {}|null|undefined>): void;
-  listHmacKeys(
-      request: protos.google.storage.v1.IListHmacKeysRequest,
-      callback: Callback<
-          protos.google.storage.v1.IListHmacKeysResponse,
-          protos.google.storage.v1.IListHmacKeysRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists HMAC keys under a given project with the additional filters provided.
  *
@@ -4424,9 +4508,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listHmacKeys(request);
+ * @example <caption>include:samples/generated/v1/storage.list_hmac_keys.js</caption>
+ * region_tag:storage_v1_generated_Storage_ListHmacKeys_async
  */
+  listHmacKeys(
+      request?: protos.google.storage.v1.IListHmacKeysRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IListHmacKeysResponse,
+        protos.google.storage.v1.IListHmacKeysRequest|undefined, {}|undefined
+      ]>;
+  listHmacKeys(
+      request: protos.google.storage.v1.IListHmacKeysRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IListHmacKeysResponse,
+          protos.google.storage.v1.IListHmacKeysRequest|null|undefined,
+          {}|null|undefined>): void;
+  listHmacKeys(
+      request: protos.google.storage.v1.IListHmacKeysRequest,
+      callback: Callback<
+          protos.google.storage.v1.IListHmacKeysResponse,
+          protos.google.storage.v1.IListHmacKeysRequest|null|undefined,
+          {}|null|undefined>): void;
   listHmacKeys(
       request?: protos.google.storage.v1.IListHmacKeysRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4451,29 +4555,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listHmacKeys(request, options, callback);
   }
-  updateHmacKey(
-      request?: protos.google.storage.v1.IUpdateHmacKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v1.IHmacKeyMetadata,
-        protos.google.storage.v1.IUpdateHmacKeyRequest|undefined, {}|undefined
-      ]>;
-  updateHmacKey(
-      request: protos.google.storage.v1.IUpdateHmacKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v1.IHmacKeyMetadata,
-          protos.google.storage.v1.IUpdateHmacKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateHmacKey(
-      request: protos.google.storage.v1.IUpdateHmacKeyRequest,
-      callback: Callback<
-          protos.google.storage.v1.IHmacKeyMetadata,
-          protos.google.storage.v1.IUpdateHmacKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a given HMAC key state between ACTIVE and INACTIVE.
  *
@@ -4494,9 +4580,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateHmacKey(request);
+ * @example <caption>include:samples/generated/v1/storage.update_hmac_key.js</caption>
+ * region_tag:storage_v1_generated_Storage_UpdateHmacKey_async
  */
+  updateHmacKey(
+      request?: protos.google.storage.v1.IUpdateHmacKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v1.IHmacKeyMetadata,
+        protos.google.storage.v1.IUpdateHmacKeyRequest|undefined, {}|undefined
+      ]>;
+  updateHmacKey(
+      request: protos.google.storage.v1.IUpdateHmacKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v1.IHmacKeyMetadata,
+          protos.google.storage.v1.IUpdateHmacKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateHmacKey(
+      request: protos.google.storage.v1.IUpdateHmacKeyRequest,
+      callback: Callback<
+          protos.google.storage.v1.IHmacKeyMetadata,
+          protos.google.storage.v1.IUpdateHmacKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   updateHmacKey(
       request?: protos.google.storage.v1.IUpdateHmacKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -4521,6 +4627,8 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateHmacKey(request, options, callback);
   }
@@ -4579,10 +4687,8 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.getObjectMedia(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1/storage.get_object_media.js</caption>
+ * region_tag:storage_v1_generated_Storage_GetObjectMedia_async
  */
   getObjectMedia(
       request?: protos.google.storage.v1.IGetObjectMediaRequest,
@@ -4590,23 +4696,12 @@ export class StorageClient {
     gax.CancellableStream{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getObjectMedia(request, options);
   }
 
-  insertObject(
-      options?: CallOptions,
-      callback?: Callback<
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.IInsertObjectRequest|null|undefined,
-        {}|null|undefined>):
-    gax.CancellableStream;
-  insertObject(
-      callback?: Callback<
-        protos.google.storage.v1.IObject,
-        protos.google.storage.v1.IInsertObjectRequest|null|undefined,
-        {}|null|undefined>):
-    gax.CancellableStream;
 /**
  * Stores a new object and metadata.
  *
@@ -4640,11 +4735,22 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.insertObject(callback);
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/storage.insert_object.js</caption>
+ * region_tag:storage_v1_generated_Storage_InsertObject_async
  */
+  insertObject(
+      options?: CallOptions,
+      callback?: Callback<
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.IInsertObjectRequest|null|undefined,
+        {}|null|undefined>):
+    gax.CancellableStream;
+  insertObject(
+      callback?: Callback<
+        protos.google.storage.v1.IObject,
+        protos.google.storage.v1.IInsertObjectRequest|null|undefined,
+        {}|null|undefined>):
+    gax.CancellableStream;
   insertObject(
       optionsOrCallback?: CallOptions|Callback<
         protos.google.storage.v1.IObject,

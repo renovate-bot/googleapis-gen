@@ -28,7 +28,7 @@ function main(parent, question) {
   /**
    *  Required. The question to create.
    */
-  // const question = ''
+  // const question = {}
 
   // Imports the Dataqna library
   const {QuestionServiceClient} = require('@google-cloud/data-qna').v1alpha;
@@ -36,7 +36,7 @@ function main(parent, question) {
   // Instantiates a client
   const dataqnaClient = new QuestionServiceClient();
 
-  async function createQuestion() {
+  async function callCreateQuestion() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, question) {
     console.log(response);
   }
 
-  createQuestion();
+  callCreateQuestion();
   // [END dataqna_v1alpha_generated_QuestionService_CreateQuestion_async]
 }
 

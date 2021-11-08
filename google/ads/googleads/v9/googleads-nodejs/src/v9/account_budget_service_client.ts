@@ -729,26 +729,6 @@ export class AccountBudgetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAccountBudget(
-      request?: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IAccountBudget,
-        protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest|undefined, {}|undefined
-      ]>;
-  getAccountBudget(
-      request: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IAccountBudget,
-          protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAccountBudget(
-      request: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IAccountBudget,
-          protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns an account-level budget in full detail.
  *
@@ -771,9 +751,29 @@ export class AccountBudgetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAccountBudget(request);
+ * @example <caption>include:samples/generated/v9/account_budget_service.get_account_budget.js</caption>
+ * region_tag:googleads_v9_generated_AccountBudgetService_GetAccountBudget_async
  */
+  getAccountBudget(
+      request?: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IAccountBudget,
+        protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest|undefined, {}|undefined
+      ]>;
+  getAccountBudget(
+      request: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IAccountBudget,
+          protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAccountBudget(
+      request: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IAccountBudget,
+          protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest|null|undefined,
+          {}|null|undefined>): void;
   getAccountBudget(
       request?: protos.google.ads.googleads.v9.services.IGetAccountBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<

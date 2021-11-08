@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new LocationViewServiceClient();
 
-  async function getLocationView() {
+  async function callGetLocationView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getLocationView();
+  callGetLocationView();
   // [END googleads_v8_generated_LocationViewService_GetLocationView_async]
 }
 

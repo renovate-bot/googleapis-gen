@@ -189,7 +189,7 @@ describe('v3.TagBindingsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createTagBinding = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createTagBinding(request);
@@ -206,7 +206,7 @@ describe('v3.TagBindingsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createTagBinding = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -236,7 +236,7 @@ describe('v3.TagBindingsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createTagBinding = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createTagBinding(request), expectedError);
@@ -251,7 +251,7 @@ describe('v3.TagBindingsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createTagBinding = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createTagBinding(request);
@@ -445,7 +445,7 @@ describe('v3.TagBindingsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagBindingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),
@@ -465,7 +465,7 @@ describe('v3.TagBindingsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagBindingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),
@@ -496,7 +496,7 @@ describe('v3.TagBindingsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagBindingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listTagBindings = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listTagBindings(request), expectedError);

@@ -273,26 +273,6 @@ export class TextToSpeechClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  listVoices(
-      request?: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.texttospeech.v1beta1.IListVoicesResponse,
-        protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest|undefined, {}|undefined
-      ]>;
-  listVoices(
-      request: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.texttospeech.v1beta1.IListVoicesResponse,
-          protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest|null|undefined,
-          {}|null|undefined>): void;
-  listVoices(
-      request: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
-      callback: Callback<
-          protos.google.cloud.texttospeech.v1beta1.IListVoicesResponse,
-          protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns a list of Voice supported for synthesis.
  *
@@ -315,9 +295,29 @@ export class TextToSpeechClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listVoices(request);
+ * @example <caption>include:samples/generated/v1beta1/text_to_speech.list_voices.js</caption>
+ * region_tag:texttospeech_v1beta1_generated_TextToSpeech_ListVoices_async
  */
+  listVoices(
+      request?: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.texttospeech.v1beta1.IListVoicesResponse,
+        protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest|undefined, {}|undefined
+      ]>;
+  listVoices(
+      request: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.texttospeech.v1beta1.IListVoicesResponse,
+          protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  listVoices(
+      request: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
+      callback: Callback<
+          protos.google.cloud.texttospeech.v1beta1.IListVoicesResponse,
+          protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest|null|undefined,
+          {}|null|undefined>): void;
   listVoices(
       request?: protos.google.cloud.texttospeech.v1beta1.IListVoicesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -342,29 +342,11 @@ export class TextToSpeechClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listVoices(request, options, callback);
   }
-  synthesizeSpeech(
-      request?: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechResponse,
-        protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest|undefined, {}|undefined
-      ]>;
-  synthesizeSpeech(
-      request: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechResponse,
-          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest|null|undefined,
-          {}|null|undefined>): void;
-  synthesizeSpeech(
-      request: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
-      callback: Callback<
-          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechResponse,
-          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Synthesizes speech synchronously: receive results after all text input
  * has been processed.
@@ -386,9 +368,29 @@ export class TextToSpeechClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.synthesizeSpeech(request);
+ * @example <caption>include:samples/generated/v1beta1/text_to_speech.synthesize_speech.js</caption>
+ * region_tag:texttospeech_v1beta1_generated_TextToSpeech_SynthesizeSpeech_async
  */
+  synthesizeSpeech(
+      request?: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechResponse,
+        protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest|undefined, {}|undefined
+      ]>;
+  synthesizeSpeech(
+      request: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechResponse,
+          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest|null|undefined,
+          {}|null|undefined>): void;
+  synthesizeSpeech(
+      request: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
+      callback: Callback<
+          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechResponse,
+          protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest|null|undefined,
+          {}|null|undefined>): void;
   synthesizeSpeech(
       request?: protos.google.cloud.texttospeech.v1beta1.ISynthesizeSpeechRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -413,6 +415,8 @@ export class TextToSpeechClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.synthesizeSpeech(request, options, callback);
   }

@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new IndexServiceClient();
 
-  async function deleteIndex() {
+  async function callDeleteIndex() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteIndex();
+  callDeleteIndex();
   // [END aiplatform_v1_generated_IndexService_DeleteIndex_async]
 }
 

@@ -23,7 +23,7 @@ function main(policy) {
   /**
    *  Required. The updated autoscaling policy.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Dataproc library
   const {AutoscalingPolicyServiceClient} = require('@google-cloud/dataproc').v1;
@@ -31,7 +31,7 @@ function main(policy) {
   // Instantiates a client
   const dataprocClient = new AutoscalingPolicyServiceClient();
 
-  async function updateAutoscalingPolicy() {
+  async function callUpdateAutoscalingPolicy() {
     // Construct request
     const request = {
       policy,
@@ -42,7 +42,7 @@ function main(policy) {
     console.log(response);
   }
 
-  updateAutoscalingPolicy();
+  callUpdateAutoscalingPolicy();
   // [END dataproc_v1_generated_AutoscalingPolicyService_UpdateAutoscalingPolicy_async]
 }
 

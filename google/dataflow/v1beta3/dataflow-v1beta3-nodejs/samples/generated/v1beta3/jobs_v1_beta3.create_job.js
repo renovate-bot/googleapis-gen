@@ -27,17 +27,13 @@ function main() {
   /**
    *  The job to create.
    */
-  // const job = ''
+  // const job = {}
   /**
    *  The level of information requested in response.
    */
-  // const view = ''
+  // const view = {}
   /**
-   *  Deprecated. This field is now in the Job message.
-   */
-  // const replaceJobId = 'abc123'
-  /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains this job.
    */
@@ -49,7 +45,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new JobsV1Beta3Client();
 
-  async function createJob() {
+  async function callCreateJob() {
     // Construct request
     const request = {
     };
@@ -59,7 +55,7 @@ function main() {
     console.log(response);
   }
 
-  createJob();
+  callCreateJob();
   // [END dataflow_v1beta3_generated_JobsV1Beta3_CreateJob_async]
 }
 

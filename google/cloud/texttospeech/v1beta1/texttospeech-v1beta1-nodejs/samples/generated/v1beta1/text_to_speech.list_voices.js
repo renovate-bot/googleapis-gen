@@ -22,7 +22,7 @@ function main() {
    */
   /**
    *  Optional. Recommended.
-   *  [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
+   *  BCP-47 (https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    *  If not specified, the API will return all supported voices.
    *  If specified, the ListVoices call will only return voices that can be used
    *  to synthesize this language_code. E.g. when specifying "en-NZ", you will
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const texttospeechClient = new TextToSpeechClient();
 
-  async function listVoices() {
+  async function callListVoices() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  listVoices();
+  callListVoices();
   // [END texttospeech_v1beta1_generated_TextToSpeech_ListVoices_async]
 }
 

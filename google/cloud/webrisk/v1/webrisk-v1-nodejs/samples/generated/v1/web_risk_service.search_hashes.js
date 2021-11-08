@@ -36,7 +36,7 @@ function main(threatTypes) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function searchHashes() {
+  async function callSearchHashes() {
     // Construct request
     const request = {
       threatTypes,
@@ -47,7 +47,7 @@ function main(threatTypes) {
     console.log(response);
   }
 
-  searchHashes();
+  callSearchHashes();
   // [END webrisk_v1_generated_WebRiskService_SearchHashes_async]
 }
 

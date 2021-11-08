@@ -37,7 +37,7 @@ function main(name, spans) {
   // Instantiates a client
   const cloudtraceClient = new TraceServiceClient();
 
-  async function batchWriteSpans() {
+  async function callBatchWriteSpans() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name, spans) {
     console.log(response);
   }
 
-  batchWriteSpans();
+  callBatchWriteSpans();
   // [END cloudtrace_v2_generated_TraceService_BatchWriteSpans_async]
 }
 

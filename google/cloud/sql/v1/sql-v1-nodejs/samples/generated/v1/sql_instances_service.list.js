@@ -51,7 +51,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function list() {
+  async function callList() {
     // Construct request
     const request = {
     };
@@ -61,7 +61,7 @@ function main() {
     console.log(response);
   }
 
-  list();
+  callList();
   // [END sqladmin_v1_generated_SqlInstancesService_List_async]
 }
 

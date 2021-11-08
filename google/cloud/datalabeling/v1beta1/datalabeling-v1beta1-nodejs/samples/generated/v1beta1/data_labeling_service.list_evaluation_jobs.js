@@ -28,8 +28,8 @@ function main(parent) {
   /**
    *  Optional. You can filter the jobs to list by model_id (also known as
    *  model_name, as described in
-   *  [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version]) or by
-   *  evaluation job state (as described in [EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state]). To filter
+   *  EvaluationJob.modelVersion google.cloud.datalabeling.v1beta1.EvaluationJob.model_version) or by
+   *  evaluation job state (as described in EvaluationJob.state google.cloud.datalabeling.v1beta1.EvaluationJob.state). To filter
    *  by both criteria, use the `AND` operator or the `OR` operator. For example,
    *  you can use the following string for your filter:
    *  "evaluation<span>_</span>job.model_id = <var>{model_name}</var> AND
@@ -44,7 +44,7 @@ function main(parent) {
   /**
    *  Optional. A token identifying a page of results for the server to return.
    *  Typically obtained by the
-   *  [nextPageToken][google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse.next_page_token] in the response
+   *  nextPageToken google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse.next_page_token  in the response
    *  to the previous request. The request returns the first page if this is
    *  empty.
    */
@@ -56,7 +56,7 @@ function main(parent) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function listEvaluationJobs() {
+  async function callListEvaluationJobs() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent) {
     }
   }
 
-  listEvaluationJobs();
+  callListEvaluationJobs();
   // [END datalabeling_v1beta1_generated_DataLabelingService_ListEvaluationJobs_async]
 }
 

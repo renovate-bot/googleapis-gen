@@ -28,16 +28,16 @@ function main(bucket) {
    *  If present, only return default ACL listing if the bucket's current
    *  metageneration matches this value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  If present, only return default ACL listing if the bucket's current
    *  metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -45,7 +45,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function listDefaultObjectAccessControls() {
+  async function callListDefaultObjectAccessControls() {
     // Construct request
     const request = {
       bucket,
@@ -56,7 +56,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  listDefaultObjectAccessControls();
+  callListDefaultObjectAccessControls();
   // [END storage_v1_generated_Storage_ListDefaultObjectAccessControls_async]
 }
 

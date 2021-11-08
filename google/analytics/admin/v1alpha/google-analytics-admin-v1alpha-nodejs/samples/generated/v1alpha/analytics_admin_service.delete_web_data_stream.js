@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function deleteWebDataStream() {
+  async function callDeleteWebDataStream() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteWebDataStream();
+  callDeleteWebDataStream();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_DeleteWebDataStream_async]
 }
 

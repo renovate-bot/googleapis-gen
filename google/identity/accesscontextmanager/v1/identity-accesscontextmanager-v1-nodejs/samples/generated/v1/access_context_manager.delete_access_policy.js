@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const accesscontextmanagerClient = new AccessContextManagerClient();
 
-  async function deleteAccessPolicy() {
+  async function callDeleteAccessPolicy() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteAccessPolicy();
+  callDeleteAccessPolicy();
   // [END accesscontextmanager_v1_generated_AccessContextManager_DeleteAccessPolicy_async]
 }
 

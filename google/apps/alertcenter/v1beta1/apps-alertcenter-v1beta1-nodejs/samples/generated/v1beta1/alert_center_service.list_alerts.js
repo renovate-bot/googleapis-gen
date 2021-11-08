@@ -35,15 +35,15 @@ function main() {
    *  Optional. A token identifying a page of results the server should return.
    *  If empty, a new iteration is started. To continue an iteration, pass in
    *  the value from the previous ListAlertsResponse's
-   *  [next_page_token][google.apps.alertcenter.v1beta1.ListAlertsResponse.next_page_token] field.
+   *  next_page_token google.apps.alertcenter.v1beta1.ListAlertsResponse.next_page_token  field.
    */
   // const pageToken = 'abc123'
   /**
    *  Optional. A query string for filtering alert results.
-   *  For more details, see [Query
-   *  filters](https://developers.google.com/admin-sdk/alertcenter/guides/query-filters) and [Supported
+   *  For more details, see Query
+   *  filters (https://developers.google.com/admin-sdk/alertcenter/guides/query-filters) and Supported
    *  query filter
-   *  fields](https://developers.google.com/admin-sdk/alertcenter/reference/filter-fields#alerts.list).
+   *  fields (https://developers.google.com/admin-sdk/alertcenter/reference/filter-fields#alerts.list).
    */
   // const filter = 'abc123'
   /**
@@ -62,7 +62,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function listAlerts() {
+  async function callListAlerts() {
     // Construct request
     const request = {
     };
@@ -74,7 +74,7 @@ function main() {
     }
   }
 
-  listAlerts();
+  callListAlerts();
   // [END alertcenter_v1beta1_generated_AlertCenterService_ListAlerts_async]
 }
 

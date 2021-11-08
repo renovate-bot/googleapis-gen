@@ -38,13 +38,13 @@ function main(parent, collectionId, document) {
   /**
    *  Required. The document to create. `name` must not be set.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  The fields to return. If not set, returns all fields.
    *  If the document has a field that is not present in this mask, that field
    *  will not be returned in the response.
    */
-  // const mask = ''
+  // const mask = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('firestore').v1beta1;
@@ -52,7 +52,7 @@ function main(parent, collectionId, document) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function createDocument() {
+  async function callCreateDocument() {
     // Construct request
     const request = {
       parent,
@@ -65,7 +65,7 @@ function main(parent, collectionId, document) {
     console.log(response);
   }
 
-  createDocument();
+  callCreateDocument();
   // [END firestore_v1beta1_generated_Firestore_CreateDocument_async]
 }
 

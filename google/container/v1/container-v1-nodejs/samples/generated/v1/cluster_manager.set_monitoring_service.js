@@ -21,24 +21,6 @@ function main(monitoringService) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Deprecated. The name of the cluster to upgrade.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const clusterId = 'abc123'
-  /**
    *  Required. The monitoring service the cluster should use to write metrics.
    *  Currently available options:
    *  * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring
@@ -62,7 +44,7 @@ function main(monitoringService) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function setMonitoringService() {
+  async function callSetMonitoringService() {
     // Construct request
     const request = {
       monitoringService,
@@ -73,7 +55,7 @@ function main(monitoringService) {
     console.log(response);
   }
 
-  setMonitoringService();
+  callSetMonitoringService();
   // [END container_v1_generated_ClusterManager_SetMonitoringService_async]
 }
 

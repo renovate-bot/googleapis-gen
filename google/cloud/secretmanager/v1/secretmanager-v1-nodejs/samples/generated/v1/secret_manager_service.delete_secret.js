@@ -21,12 +21,12 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] to delete in the format
+   *  Required. The resource name of the Secret google.cloud.secretmanager.v1.Secret  to delete in the format
    *  `projects/* /secrets/*`.
    */
   // const name = 'abc123'
   /**
-   *  Optional. Etag of the [Secret][google.cloud.secretmanager.v1.Secret]. The request succeeds if it matches
+   *  Optional. Etag of the Secret google.cloud.secretmanager.v1.Secret. The request succeeds if it matches
    *  the etag of the currently stored secret object. If the etag is omitted,
    *  the request succeeds.
    */
@@ -38,7 +38,7 @@ function main(name) {
   // Instantiates a client
   const secretmanagerClient = new SecretManagerServiceClient();
 
-  async function deleteSecret() {
+  async function callDeleteSecret() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteSecret();
+  callDeleteSecret();
   // [END secretmanager_v1_generated_SecretManagerService_DeleteSecret_async]
 }
 

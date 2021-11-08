@@ -35,7 +35,7 @@ function main(topic, partition) {
   // Instantiates a client
   const pubsubliteClient = new TopicStatsServiceClient();
 
-  async function computeHeadCursor() {
+  async function callComputeHeadCursor() {
     // Construct request
     const request = {
       topic,
@@ -47,7 +47,7 @@ function main(topic, partition) {
     console.log(response);
   }
 
-  computeHeadCursor();
+  callComputeHeadCursor();
   // [END pubsublite_v1_generated_TopicStatsService_ComputeHeadCursor_async]
 }
 

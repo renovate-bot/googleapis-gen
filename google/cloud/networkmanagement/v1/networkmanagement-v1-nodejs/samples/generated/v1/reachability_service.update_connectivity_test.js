@@ -24,11 +24,11 @@ function main(updateMask, resource) {
    *  Required. Mask of fields to update. At least one path must be supplied in
    *  this field.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. Only fields specified in update_mask are updated.
    */
-  // const resource = ''
+  // const resource = {}
 
   // Imports the Networkmanagement library
   const {ReachabilityServiceClient} = require('@google-cloud/network-management').v1;
@@ -36,7 +36,7 @@ function main(updateMask, resource) {
   // Instantiates a client
   const networkmanagementClient = new ReachabilityServiceClient();
 
-  async function updateConnectivityTest() {
+  async function callUpdateConnectivityTest() {
     // Construct request
     const request = {
       updateMask,
@@ -49,7 +49,7 @@ function main(updateMask, resource) {
     console.log(response);
   }
 
-  updateConnectivityTest();
+  callUpdateConnectivityTest();
   // [END networkmanagement_v1_generated_ReachabilityService_UpdateConnectivityTest_async]
 }
 

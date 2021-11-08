@@ -321,26 +321,6 @@ export class StorageClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  startResumableWrite(
-      request?: protos.google.storage.v2.IStartResumableWriteRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v2.IStartResumableWriteResponse,
-        protos.google.storage.v2.IStartResumableWriteRequest|undefined, {}|undefined
-      ]>;
-  startResumableWrite(
-      request: protos.google.storage.v2.IStartResumableWriteRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v2.IStartResumableWriteResponse,
-          protos.google.storage.v2.IStartResumableWriteRequest|null|undefined,
-          {}|null|undefined>): void;
-  startResumableWrite(
-      request: protos.google.storage.v2.IStartResumableWriteRequest,
-      callback: Callback<
-          protos.google.storage.v2.IStartResumableWriteResponse,
-          protos.google.storage.v2.IStartResumableWriteRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Starts a resumable write. How long the write operation remains valid, and
  * what happens when the write operation becomes invalid, are
@@ -361,9 +341,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.startResumableWrite(request);
+ * @example <caption>include:samples/generated/v2/storage.start_resumable_write.js</caption>
+ * region_tag:storage_v2_generated_Storage_StartResumableWrite_async
  */
+  startResumableWrite(
+      request?: protos.google.storage.v2.IStartResumableWriteRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v2.IStartResumableWriteResponse,
+        protos.google.storage.v2.IStartResumableWriteRequest|undefined, {}|undefined
+      ]>;
+  startResumableWrite(
+      request: protos.google.storage.v2.IStartResumableWriteRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v2.IStartResumableWriteResponse,
+          protos.google.storage.v2.IStartResumableWriteRequest|null|undefined,
+          {}|null|undefined>): void;
+  startResumableWrite(
+      request: protos.google.storage.v2.IStartResumableWriteRequest,
+      callback: Callback<
+          protos.google.storage.v2.IStartResumableWriteResponse,
+          protos.google.storage.v2.IStartResumableWriteRequest|null|undefined,
+          {}|null|undefined>): void;
   startResumableWrite(
       request?: protos.google.storage.v2.IStartResumableWriteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -388,29 +388,11 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.startResumableWrite(request, options, callback);
   }
-  queryWriteStatus(
-      request?: protos.google.storage.v2.IQueryWriteStatusRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.storage.v2.IQueryWriteStatusResponse,
-        protos.google.storage.v2.IQueryWriteStatusRequest|undefined, {}|undefined
-      ]>;
-  queryWriteStatus(
-      request: protos.google.storage.v2.IQueryWriteStatusRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.storage.v2.IQueryWriteStatusResponse,
-          protos.google.storage.v2.IQueryWriteStatusRequest|null|undefined,
-          {}|null|undefined>): void;
-  queryWriteStatus(
-      request: protos.google.storage.v2.IQueryWriteStatusRequest,
-      callback: Callback<
-          protos.google.storage.v2.IQueryWriteStatusResponse,
-          protos.google.storage.v2.IQueryWriteStatusRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Determines the `persisted_size` for an object that is being written, which
  * can then be used as the `write_offset` for the next `Write()` call.
@@ -442,9 +424,29 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.queryWriteStatus(request);
+ * @example <caption>include:samples/generated/v2/storage.query_write_status.js</caption>
+ * region_tag:storage_v2_generated_Storage_QueryWriteStatus_async
  */
+  queryWriteStatus(
+      request?: protos.google.storage.v2.IQueryWriteStatusRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.storage.v2.IQueryWriteStatusResponse,
+        protos.google.storage.v2.IQueryWriteStatusRequest|undefined, {}|undefined
+      ]>;
+  queryWriteStatus(
+      request: protos.google.storage.v2.IQueryWriteStatusRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.storage.v2.IQueryWriteStatusResponse,
+          protos.google.storage.v2.IQueryWriteStatusRequest|null|undefined,
+          {}|null|undefined>): void;
+  queryWriteStatus(
+      request: protos.google.storage.v2.IQueryWriteStatusRequest,
+      callback: Callback<
+          protos.google.storage.v2.IQueryWriteStatusResponse,
+          protos.google.storage.v2.IQueryWriteStatusRequest|null|undefined,
+          {}|null|undefined>): void;
   queryWriteStatus(
       request?: protos.google.storage.v2.IQueryWriteStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -469,6 +471,8 @@ export class StorageClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.queryWriteStatus(request, options, callback);
   }
@@ -535,10 +539,8 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.readObject(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v2/storage.read_object.js</caption>
+ * region_tag:storage_v2_generated_Storage_ReadObject_async
  */
   readObject(
       request?: protos.google.storage.v2.IReadObjectRequest,
@@ -546,23 +548,12 @@ export class StorageClient {
     gax.CancellableStream{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.readObject(request, options);
   }
 
-  writeObject(
-      options?: CallOptions,
-      callback?: Callback<
-        protos.google.storage.v2.IWriteObjectResponse,
-        protos.google.storage.v2.IWriteObjectRequest|null|undefined,
-        {}|null|undefined>):
-    gax.CancellableStream;
-  writeObject(
-      callback?: Callback<
-        protos.google.storage.v2.IWriteObjectResponse,
-        protos.google.storage.v2.IWriteObjectRequest|null|undefined,
-        {}|null|undefined>):
-    gax.CancellableStream;
 /**
  * Stores a new object and metadata.
  *
@@ -596,11 +587,22 @@ export class StorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.writeObject(callback);
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v2/storage.write_object.js</caption>
+ * region_tag:storage_v2_generated_Storage_WriteObject_async
  */
+  writeObject(
+      options?: CallOptions,
+      callback?: Callback<
+        protos.google.storage.v2.IWriteObjectResponse,
+        protos.google.storage.v2.IWriteObjectRequest|null|undefined,
+        {}|null|undefined>):
+    gax.CancellableStream;
+  writeObject(
+      callback?: Callback<
+        protos.google.storage.v2.IWriteObjectResponse,
+        protos.google.storage.v2.IWriteObjectRequest|null|undefined,
+        {}|null|undefined>):
+    gax.CancellableStream;
   writeObject(
       optionsOrCallback?: CallOptions|Callback<
         protos.google.storage.v2.IWriteObjectResponse,

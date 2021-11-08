@@ -32,7 +32,7 @@ function main(parent, gameServerClusterId, gameServerCluster) {
   /**
    *  Required. The game server cluster resource to be created.
    */
-  // const gameServerCluster = ''
+  // const gameServerCluster = {}
 
   // Imports the Gaming library
   const {GameServerClustersServiceClient} = require('@google-cloud/game-servers').v1beta;
@@ -40,7 +40,7 @@ function main(parent, gameServerClusterId, gameServerCluster) {
   // Instantiates a client
   const gamingClient = new GameServerClustersServiceClient();
 
-  async function createGameServerCluster() {
+  async function callCreateGameServerCluster() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, gameServerClusterId, gameServerCluster) {
     console.log(response);
   }
 
-  createGameServerCluster();
+  callCreateGameServerCluster();
   // [END gameservices_v1beta_generated_GameServerClustersService_CreateGameServerCluster_async]
 }
 

@@ -290,6 +290,25 @@ export class TraceServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a single trace by its ID.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   Required. ID of the Cloud project where the trace data is stored.
+ * @param {string} request.traceId
+ *   Required. ID of the trace to return.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Trace]{@link google.devtools.cloudtrace.v1.Trace}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/trace_service.get_trace.js</caption>
+ * region_tag:cloudtrace_v1_generated_TraceService_GetTrace_async
+ */
   getTrace(
       request?: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
       options?: CallOptions):
@@ -310,25 +329,6 @@ export class TraceServiceClient {
           protos.google.devtools.cloudtrace.v1.ITrace,
           protos.google.devtools.cloudtrace.v1.IGetTraceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single trace by its ID.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   Required. ID of the Cloud project where the trace data is stored.
- * @param {string} request.traceId
- *   Required. ID of the trace to return.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Trace]{@link google.devtools.cloudtrace.v1.Trace}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTrace(request);
- */
   getTrace(
       request?: protos.google.devtools.cloudtrace.v1.IGetTraceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -363,26 +363,6 @@ export class TraceServiceClient {
     this.initialize();
     return this.innerApiCalls.getTrace(request, options, callback);
   }
-  patchTraces(
-      request?: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|undefined, {}|undefined
-      ]>;
-  patchTraces(
-      request: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchTraces(
-      request: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sends new traces to Stackdriver Trace or updates existing traces. If the ID
  * of a trace that you send matches that of an existing trace, any fields
@@ -403,9 +383,29 @@ export class TraceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchTraces(request);
+ * @example <caption>include:samples/generated/v1/trace_service.patch_traces.js</caption>
+ * region_tag:cloudtrace_v1_generated_TraceService_PatchTraces_async
  */
+  patchTraces(
+      request?: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|undefined, {}|undefined
+      ]>;
+  patchTraces(
+      request: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchTraces(
+      request: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.devtools.cloudtrace.v1.IPatchTracesRequest|null|undefined,
+          {}|null|undefined>): void;
   patchTraces(
       request?: protos.google.devtools.cloudtrace.v1.IPatchTracesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -441,28 +441,7 @@ export class TraceServiceClient {
     return this.innerApiCalls.patchTraces(request, options, callback);
   }
 
-  listTraces(
-      request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.cloudtrace.v1.ITrace[],
-        protos.google.devtools.cloudtrace.v1.IListTracesRequest|null,
-        protos.google.devtools.cloudtrace.v1.IListTracesResponse
-      ]>;
-  listTraces(
-      request: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.devtools.cloudtrace.v1.IListTracesRequest,
-          protos.google.devtools.cloudtrace.v1.IListTracesResponse|null|undefined,
-          protos.google.devtools.cloudtrace.v1.ITrace>): void;
-  listTraces(
-      request: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
-      callback: PaginationCallback<
-          protos.google.devtools.cloudtrace.v1.IListTracesRequest,
-          protos.google.devtools.cloudtrace.v1.IListTracesResponse|null|undefined,
-          protos.google.devtools.cloudtrace.v1.ITrace>): void;
-/**
+ /**
  * Returns of a list of traces that match the specified filter conditions.
  *
  * @param {Object} request
@@ -543,6 +522,27 @@ export class TraceServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTraces(
+      request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.cloudtrace.v1.ITrace[],
+        protos.google.devtools.cloudtrace.v1.IListTracesRequest|null,
+        protos.google.devtools.cloudtrace.v1.IListTracesResponse
+      ]>;
+  listTraces(
+      request: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+          protos.google.devtools.cloudtrace.v1.IListTracesResponse|null|undefined,
+          protos.google.devtools.cloudtrace.v1.ITrace>): void;
+  listTraces(
+      request: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+      callback: PaginationCallback<
+          protos.google.devtools.cloudtrace.v1.IListTracesRequest,
+          protos.google.devtools.cloudtrace.v1.IListTracesResponse|null|undefined,
+          protos.google.devtools.cloudtrace.v1.ITrace>): void;
   listTraces(
       request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -760,11 +760,8 @@ export class TraceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTracesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/trace_service.list_traces.js</caption>
+ * region_tag:cloudtrace_v1_generated_TraceService_ListTraces_async
  */
   listTracesAsync(
       request?: protos.google.devtools.cloudtrace.v1.IListTracesRequest,
@@ -779,7 +776,6 @@ export class TraceServiceClient {
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTraces'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

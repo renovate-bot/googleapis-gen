@@ -358,26 +358,6 @@ export class PagesClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getPage(
-      request?: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IPage,
-        protos.google.cloud.dialogflow.cx.v3.IGetPageRequest|undefined, {}|undefined
-      ]>;
-  getPage(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IPage,
-          protos.google.cloud.dialogflow.cx.v3.IGetPageRequest|null|undefined,
-          {}|null|undefined>): void;
-  getPage(
-      request: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IPage,
-          protos.google.cloud.dialogflow.cx.v3.IGetPageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves the specified page.
  *
@@ -416,9 +396,29 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getPage(request);
+ * @example <caption>include:samples/generated/v3/pages.get_page.js</caption>
+ * region_tag:dialogflow_v3_generated_Pages_GetPage_async
  */
+  getPage(
+      request?: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IPage,
+        protos.google.cloud.dialogflow.cx.v3.IGetPageRequest|undefined, {}|undefined
+      ]>;
+  getPage(
+      request: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IPage,
+          protos.google.cloud.dialogflow.cx.v3.IGetPageRequest|null|undefined,
+          {}|null|undefined>): void;
+  getPage(
+      request: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IPage,
+          protos.google.cloud.dialogflow.cx.v3.IGetPageRequest|null|undefined,
+          {}|null|undefined>): void;
   getPage(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetPageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -453,26 +453,6 @@ export class PagesClient {
     this.initialize();
     return this.innerApiCalls.getPage(request, options, callback);
   }
-  createPage(
-      request?: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IPage,
-        protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest|undefined, {}|undefined
-      ]>;
-  createPage(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IPage,
-          protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest|null|undefined,
-          {}|null|undefined>): void;
-  createPage(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IPage,
-          protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a page in the specified flow.
  *
@@ -516,9 +496,29 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createPage(request);
+ * @example <caption>include:samples/generated/v3/pages.create_page.js</caption>
+ * region_tag:dialogflow_v3_generated_Pages_CreatePage_async
  */
+  createPage(
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IPage,
+        protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest|undefined, {}|undefined
+      ]>;
+  createPage(
+      request: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IPage,
+          protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest|null|undefined,
+          {}|null|undefined>): void;
+  createPage(
+      request: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IPage,
+          protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest|null|undefined,
+          {}|null|undefined>): void;
   createPage(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreatePageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -553,26 +553,6 @@ export class PagesClient {
     this.initialize();
     return this.innerApiCalls.createPage(request, options, callback);
   }
-  updatePage(
-      request?: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IPage,
-        protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest|undefined, {}|undefined
-      ]>;
-  updatePage(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IPage,
-          protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest|null|undefined,
-          {}|null|undefined>): void;
-  updatePage(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IPage,
-          protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified page.
  *
@@ -615,9 +595,29 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updatePage(request);
+ * @example <caption>include:samples/generated/v3/pages.update_page.js</caption>
+ * region_tag:dialogflow_v3_generated_Pages_UpdatePage_async
  */
+  updatePage(
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IPage,
+        protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest|undefined, {}|undefined
+      ]>;
+  updatePage(
+      request: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IPage,
+          protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest|null|undefined,
+          {}|null|undefined>): void;
+  updatePage(
+      request: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IPage,
+          protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest|null|undefined,
+          {}|null|undefined>): void;
   updatePage(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdatePageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -652,26 +652,6 @@ export class PagesClient {
     this.initialize();
     return this.innerApiCalls.updatePage(request, options, callback);
   }
-  deletePage(
-      request?: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest|undefined, {}|undefined
-      ]>;
-  deletePage(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest|null|undefined,
-          {}|null|undefined>): void;
-  deletePage(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified page.
  *
@@ -703,9 +683,29 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deletePage(request);
+ * @example <caption>include:samples/generated/v3/pages.delete_page.js</caption>
+ * region_tag:dialogflow_v3_generated_Pages_DeletePage_async
  */
+  deletePage(
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest|undefined, {}|undefined
+      ]>;
+  deletePage(
+      request: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest|null|undefined,
+          {}|null|undefined>): void;
+  deletePage(
+      request: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest|null|undefined,
+          {}|null|undefined>): void;
   deletePage(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeletePageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -741,28 +741,7 @@ export class PagesClient {
     return this.innerApiCalls.deletePage(request, options, callback);
   }
 
-  listPages(
-      request?: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IPage[],
-        protos.google.cloud.dialogflow.cx.v3.IListPagesRequest|null,
-        protos.google.cloud.dialogflow.cx.v3.IListPagesResponse
-      ]>;
-  listPages(
-      request: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListPagesResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IPage>): void;
-  listPages(
-      request: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListPagesResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IPage>): void;
-/**
+ /**
  * Returns the list of all pages in the specified flow.
  *
  * @param {Object} request
@@ -811,6 +790,27 @@ export class PagesClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPages(
+      request?: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IPage[],
+        protos.google.cloud.dialogflow.cx.v3.IListPagesRequest|null,
+        protos.google.cloud.dialogflow.cx.v3.IListPagesResponse
+      ]>;
+  listPages(
+      request: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListPagesResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IPage>): void;
+  listPages(
+      request: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListPagesResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IPage>): void;
   listPages(
       request?: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -964,11 +964,8 @@ export class PagesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPagesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/pages.list_pages.js</caption>
+ * region_tag:dialogflow_v3_generated_Pages_ListPages_async
  */
   listPagesAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListPagesRequest,
@@ -983,7 +980,6 @@ export class PagesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPages'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

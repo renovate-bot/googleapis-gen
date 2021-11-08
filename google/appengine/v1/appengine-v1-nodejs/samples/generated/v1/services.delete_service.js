@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ServicesClient();
 
-  async function deleteService() {
+  async function callDeleteService() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  deleteService();
+  callDeleteService();
   // [END appengine_v1_generated_Services_DeleteService_async]
 }
 

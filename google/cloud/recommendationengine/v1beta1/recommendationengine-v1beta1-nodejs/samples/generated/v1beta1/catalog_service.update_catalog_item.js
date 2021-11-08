@@ -29,12 +29,12 @@ function main(name, catalogItem) {
    *  Required. The catalog item to update/create. The 'catalog_item_id' field
    *  has to match that in the 'name'.
    */
-  // const catalogItem = ''
+  // const catalogItem = {}
   /**
    *  Optional. Indicates which fields in the provided 'item' to update. If not
    *  set, will by default update all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Recommendationengine library
   const {CatalogServiceClient} = require('recommendationengine').v1beta1;
@@ -42,7 +42,7 @@ function main(name, catalogItem) {
   // Instantiates a client
   const recommendationengineClient = new CatalogServiceClient();
 
-  async function updateCatalogItem() {
+  async function callUpdateCatalogItem() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name, catalogItem) {
     console.log(response);
   }
 
-  updateCatalogItem();
+  callUpdateCatalogItem();
   // [END recommendationengine_v1beta1_generated_CatalogService_UpdateCatalogItem_async]
 }
 

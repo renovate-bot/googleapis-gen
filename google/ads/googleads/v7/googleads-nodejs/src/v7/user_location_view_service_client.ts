@@ -646,26 +646,6 @@ export class UserLocationViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getUserLocationView(
-      request?: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IUserLocationView,
-        protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest|undefined, {}|undefined
-      ]>;
-  getUserLocationView(
-      request: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IUserLocationView,
-          protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getUserLocationView(
-      request: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IUserLocationView,
-          protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested user location view in full detail.
  *
@@ -688,9 +668,29 @@ export class UserLocationViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getUserLocationView(request);
+ * @example <caption>include:samples/generated/v7/user_location_view_service.get_user_location_view.js</caption>
+ * region_tag:googleads_v7_generated_UserLocationViewService_GetUserLocationView_async
  */
+  getUserLocationView(
+      request?: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IUserLocationView,
+        protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest|undefined, {}|undefined
+      ]>;
+  getUserLocationView(
+      request: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IUserLocationView,
+          protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getUserLocationView(
+      request: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IUserLocationView,
+          protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getUserLocationView(
       request?: protos.google.ads.googleads.v7.services.IGetUserLocationViewRequest,
       optionsOrCallback?: CallOptions|Callback<

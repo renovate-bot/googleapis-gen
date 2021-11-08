@@ -33,7 +33,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function getSettings() {
+  async function callGetSettings() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  getSettings();
+  callGetSettings();
   // [END alertcenter_v1beta1_generated_AlertCenterService_GetSettings_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CombinedAudienceServiceClient();
 
-  async function getCombinedAudience() {
+  async function callGetCombinedAudience() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCombinedAudience();
+  callGetCombinedAudience();
   // [END googleads_v8_generated_CombinedAudienceService_GetCombinedAudience_async]
 }
 

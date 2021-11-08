@@ -34,11 +34,11 @@ function main(parent, inputConfig) {
   /**
    *  Required. The desired input location of the data.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
   /**
    *  Optional. The desired location of errors incurred during the Import.
    */
-  // const errorsConfig = ''
+  // const errorsConfig = {}
 
   // Imports the Recommendationengine library
   const {CatalogServiceClient} = require('recommendationengine').v1beta1;
@@ -46,7 +46,7 @@ function main(parent, inputConfig) {
   // Instantiates a client
   const recommendationengineClient = new CatalogServiceClient();
 
-  async function importCatalogItems() {
+  async function callImportCatalogItems() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent, inputConfig) {
     console.log(response);
   }
 
-  importCatalogItems();
+  callImportCatalogItems();
   // [END recommendationengine_v1beta1_generated_CatalogService_ImportCatalogItems_async]
 }
 

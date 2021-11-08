@@ -31,7 +31,7 @@ function main(resource, policy) {
    *  valid policy but certain Cloud Platform services (such as Projects)
    *  might reject them.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Tasks library
   const {CloudTasksClient} = require('@google-cloud/tasks').v2beta3;
@@ -39,7 +39,7 @@ function main(resource, policy) {
   // Instantiates a client
   const tasksClient = new CloudTasksClient();
 
-  async function setIamPolicy() {
+  async function callSetIamPolicy() {
     // Construct request
     const request = {
       resource,
@@ -51,7 +51,7 @@ function main(resource, policy) {
     console.log(response);
   }
 
-  setIamPolicy();
+  callSetIamPolicy();
   // [END cloudtasks_v2beta3_generated_CloudTasks_SetIamPolicy_async]
 }
 

@@ -173,7 +173,7 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobMessagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),
@@ -193,7 +193,7 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobMessagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),
@@ -224,7 +224,7 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobMessagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listJobMessages = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listJobMessages(request), expectedError);

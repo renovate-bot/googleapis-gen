@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function generateDownloadUrl() {
+  async function callGenerateDownloadUrl() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  generateDownloadUrl();
+  callGenerateDownloadUrl();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_GenerateDownloadUrl_async]
 }
 

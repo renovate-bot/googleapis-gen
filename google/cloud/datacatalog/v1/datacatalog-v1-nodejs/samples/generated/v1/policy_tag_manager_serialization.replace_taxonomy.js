@@ -27,7 +27,7 @@ function main(name, serializedTaxonomy) {
   /**
    *  Required. Taxonomy to update along with its child policy tags.
    */
-  // const serializedTaxonomy = ''
+  // const serializedTaxonomy = {}
 
   // Imports the Datacatalog library
   const {PolicyTagManagerSerializationClient} = require('@google-cloud/datacatalog').v1;
@@ -35,7 +35,7 @@ function main(name, serializedTaxonomy) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerSerializationClient();
 
-  async function replaceTaxonomy() {
+  async function callReplaceTaxonomy() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, serializedTaxonomy) {
     console.log(response);
   }
 
-  replaceTaxonomy();
+  callReplaceTaxonomy();
   // [END datacatalog_v1_generated_PolicyTagManagerSerialization_ReplaceTaxonomy_async]
 }
 

@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const networkmanagementClient = new ReachabilityServiceClient();
 
-  async function getConnectivityTest() {
+  async function callGetConnectivityTest() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getConnectivityTest();
+  callGetConnectivityTest();
   // [END networkmanagement_v1beta1_generated_ReachabilityService_GetConnectivityTest_async]
 }
 

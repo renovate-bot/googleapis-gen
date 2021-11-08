@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function deleteArtifact() {
+  async function callDeleteArtifact() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteArtifact();
+  callDeleteArtifact();
   // [END aiplatform_v1_generated_MetadataService_DeleteArtifact_async]
 }
 

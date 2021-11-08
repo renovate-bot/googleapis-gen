@@ -37,7 +37,7 @@ function main(name) {
   // Instantiates a client
   const cxClient = new AgentsClient();
 
-  async function getAgentValidationResult() {
+  async function callGetAgentValidationResult() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  getAgentValidationResult();
+  callGetAgentValidationResult();
   // [END dialogflow_v3beta1_generated_Agents_GetAgentValidationResult_async]
 }
 

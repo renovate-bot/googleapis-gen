@@ -23,11 +23,11 @@ function main(conversation) {
   /**
    *  Required. The new values for the conversation.
    */
-  // const conversation = ''
+  // const conversation = {}
   /**
    *  The list of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Contactcenterinsights library
   const {ContactCenterInsightsClient} = require('@google-cloud/contact-center-insights').v1;
@@ -35,7 +35,7 @@ function main(conversation) {
   // Instantiates a client
   const contactcenterinsightsClient = new ContactCenterInsightsClient();
 
-  async function updateConversation() {
+  async function callUpdateConversation() {
     // Construct request
     const request = {
       conversation,
@@ -46,7 +46,7 @@ function main(conversation) {
     console.log(response);
   }
 
-  updateConversation();
+  callUpdateConversation();
   // [END contactcenterinsights_v1_generated_ContactCenterInsights_UpdateConversation_async]
 }
 

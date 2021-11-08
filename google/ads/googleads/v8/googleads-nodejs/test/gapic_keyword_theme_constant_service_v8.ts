@@ -210,7 +210,7 @@ describe('v8.KeywordThemeConstantServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.SuggestKeywordThemeConstantsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v8.services.SuggestKeywordThemeConstantsResponse());
             client.innerApiCalls.suggestKeywordThemeConstants = stubSimpleCall(expectedResponse);
             const [response] = await client.suggestKeywordThemeConstants(request);
@@ -226,7 +226,7 @@ describe('v8.KeywordThemeConstantServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.SuggestKeywordThemeConstantsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v8.services.SuggestKeywordThemeConstantsResponse());
             client.innerApiCalls.suggestKeywordThemeConstants = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -253,7 +253,7 @@ describe('v8.KeywordThemeConstantServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.SuggestKeywordThemeConstantsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.suggestKeywordThemeConstants = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.suggestKeywordThemeConstants(request), expectedError);

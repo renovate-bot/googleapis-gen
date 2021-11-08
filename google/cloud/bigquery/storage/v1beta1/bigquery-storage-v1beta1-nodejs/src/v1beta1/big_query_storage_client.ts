@@ -300,26 +300,6 @@ export class BigQueryStorageClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createReadSession(
-      request?: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.storage.v1beta1.IReadSession,
-        protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest|undefined, {}|undefined
-      ]>;
-  createReadSession(
-      request: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1beta1.IReadSession,
-          protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest|null|undefined,
-          {}|null|undefined>): void;
-  createReadSession(
-      request: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1beta1.IReadSession,
-          protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new read session. A read session divides the contents of a
  * BigQuery table into one or more streams, which can then be used to read
@@ -366,9 +346,29 @@ export class BigQueryStorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createReadSession(request);
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.create_read_session.js</caption>
+ * region_tag:bigquerystorage_v1beta1_generated_BigQueryStorage_CreateReadSession_async
  */
+  createReadSession(
+      request?: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.storage.v1beta1.IReadSession,
+        protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest|undefined, {}|undefined
+      ]>;
+  createReadSession(
+      request: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1beta1.IReadSession,
+          protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest|null|undefined,
+          {}|null|undefined>): void;
+  createReadSession(
+      request: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1beta1.IReadSession,
+          protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest|null|undefined,
+          {}|null|undefined>): void;
   createReadSession(
       request?: protos.google.cloud.bigquery.storage.v1beta1.ICreateReadSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -404,26 +404,6 @@ export class BigQueryStorageClient {
     this.initialize();
     return this.innerApiCalls.createReadSession(request, options, callback);
   }
-  batchCreateReadSessionStreams(
-      request?: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsResponse,
-        protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest|undefined, {}|undefined
-      ]>;
-  batchCreateReadSessionStreams(
-      request: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsResponse,
-          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchCreateReadSessionStreams(
-      request: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsResponse,
-          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates additional streams for a ReadSession. This API can be used to
  * dynamically adjust the parallelism of a batch processing task upwards by
@@ -445,9 +425,29 @@ export class BigQueryStorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchCreateReadSessionStreams(request);
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.batch_create_read_session_streams.js</caption>
+ * region_tag:bigquerystorage_v1beta1_generated_BigQueryStorage_BatchCreateReadSessionStreams_async
  */
+  batchCreateReadSessionStreams(
+      request?: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsResponse,
+        protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest|undefined, {}|undefined
+      ]>;
+  batchCreateReadSessionStreams(
+      request: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsResponse,
+          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchCreateReadSessionStreams(
+      request: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsResponse,
+          protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest|null|undefined,
+          {}|null|undefined>): void;
   batchCreateReadSessionStreams(
       request?: protos.google.cloud.bigquery.storage.v1beta1.IBatchCreateReadSessionStreamsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -482,26 +482,6 @@ export class BigQueryStorageClient {
     this.initialize();
     return this.innerApiCalls.batchCreateReadSessionStreams(request, options, callback);
   }
-  finalizeStream(
-      request?: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest|undefined, {}|undefined
-      ]>;
-  finalizeStream(
-      request: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest|null|undefined,
-          {}|null|undefined>): void;
-  finalizeStream(
-      request: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Triggers the graceful termination of a single stream in a ReadSession. This
  * API can be used to dynamically adjust the parallelism of a batch processing
@@ -529,9 +509,29 @@ export class BigQueryStorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.finalizeStream(request);
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.finalize_stream.js</caption>
+ * region_tag:bigquerystorage_v1beta1_generated_BigQueryStorage_FinalizeStream_async
  */
+  finalizeStream(
+      request?: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest|undefined, {}|undefined
+      ]>;
+  finalizeStream(
+      request: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest|null|undefined,
+          {}|null|undefined>): void;
+  finalizeStream(
+      request: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest|null|undefined,
+          {}|null|undefined>): void;
   finalizeStream(
       request?: protos.google.cloud.bigquery.storage.v1beta1.IFinalizeStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -566,26 +566,6 @@ export class BigQueryStorageClient {
     this.initialize();
     return this.innerApiCalls.finalizeStream(request, options, callback);
   }
-  splitReadStream(
-      request?: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamResponse,
-        protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest|undefined, {}|undefined
-      ]>;
-  splitReadStream(
-      request: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamResponse,
-          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest|null|undefined,
-          {}|null|undefined>): void;
-  splitReadStream(
-      request: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamResponse,
-          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Splits a given read stream into two Streams. These streams are referred to
  * as the primary and the residual of the split. The original stream can still
@@ -620,9 +600,29 @@ export class BigQueryStorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.splitReadStream(request);
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.split_read_stream.js</caption>
+ * region_tag:bigquerystorage_v1beta1_generated_BigQueryStorage_SplitReadStream_async
  */
+  splitReadStream(
+      request?: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamResponse,
+        protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest|undefined, {}|undefined
+      ]>;
+  splitReadStream(
+      request: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamResponse,
+          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest|null|undefined,
+          {}|null|undefined>): void;
+  splitReadStream(
+      request: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamResponse,
+          protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest|null|undefined,
+          {}|null|undefined>): void;
   splitReadStream(
       request?: protos.google.cloud.bigquery.storage.v1beta1.ISplitReadStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -682,10 +682,8 @@ export class BigQueryStorageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.readRows(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1beta1/big_query_storage.read_rows.js</caption>
+ * region_tag:bigquerystorage_v1beta1_generated_BigQueryStorage_ReadRows_async
  */
   readRows(
       request?: protos.google.cloud.bigquery.storage.v1beta1.IReadRowsRequest,

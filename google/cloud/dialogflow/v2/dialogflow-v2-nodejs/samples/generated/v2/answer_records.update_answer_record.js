@@ -23,11 +23,11 @@ function main(answerRecord, updateMask) {
   /**
    *  Required. Answer record to update.
    */
-  // const answerRecord = ''
+  // const answerRecord = {}
   /**
    *  Required. The mask to control which fields get updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Dialogflow library
   const {AnswerRecordsClient} = require('@google-cloud/dialogflow').v2;
@@ -35,7 +35,7 @@ function main(answerRecord, updateMask) {
   // Instantiates a client
   const dialogflowClient = new AnswerRecordsClient();
 
-  async function updateAnswerRecord() {
+  async function callUpdateAnswerRecord() {
     // Construct request
     const request = {
       answerRecord,
@@ -47,7 +47,7 @@ function main(answerRecord, updateMask) {
     console.log(response);
   }
 
-  updateAnswerRecord();
+  callUpdateAnswerRecord();
   // [END dialogflow_v2_generated_AnswerRecords_UpdateAnswerRecord_async]
 }
 

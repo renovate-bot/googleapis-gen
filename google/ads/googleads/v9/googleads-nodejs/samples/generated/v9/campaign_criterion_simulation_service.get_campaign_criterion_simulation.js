@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignCriterionSimulationServiceClient();
 
-  async function getCampaignCriterionSimulation() {
+  async function callGetCampaignCriterionSimulation() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCampaignCriterionSimulation();
+  callGetCampaignCriterionSimulation();
   // [END googleads_v9_generated_CampaignCriterionSimulationService_GetCampaignCriterionSimulation_async]
 }
 

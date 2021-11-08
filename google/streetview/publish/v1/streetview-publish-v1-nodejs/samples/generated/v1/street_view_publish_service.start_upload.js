@@ -27,7 +27,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function startUpload() {
+  async function callStartUpload() {
     // Construct request
     const request = {
     };
@@ -37,7 +37,7 @@ function main() {
     console.log(response);
   }
 
-  startUpload();
+  callStartUpload();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_StartUpload_async]
 }
 

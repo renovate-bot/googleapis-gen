@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new FirewallClient();
 
-  async function deleteIngressRule() {
+  async function callDeleteIngressRule() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  deleteIngressRule();
+  callDeleteIngressRule();
   // [END appengine_v1_generated_Firewall_DeleteIngressRule_async]
 }
 

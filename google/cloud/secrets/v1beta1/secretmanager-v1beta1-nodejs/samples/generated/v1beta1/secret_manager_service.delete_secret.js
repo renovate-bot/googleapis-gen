@@ -21,7 +21,7 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to delete in the format
+   *  Required. The resource name of the Secret google.cloud.secrets.v1beta1.Secret  to delete in the format
    *  `projects/* /secrets/*`.
    */
   // const name = 'abc123'
@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const secretsClient = new SecretManagerServiceClient();
 
-  async function deleteSecret() {
+  async function callDeleteSecret() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteSecret();
+  callDeleteSecret();
   // [END secretmanager_v1beta1_generated_SecretManagerService_DeleteSecret_async]
 }
 

@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function getScanConfig() {
+  async function callGetScanConfig() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  getScanConfig();
+  callGetScanConfig();
   // [END websecurityscanner_v1_generated_WebSecurityScanner_GetScanConfig_async]
 }
 

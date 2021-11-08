@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function getPhraseSet() {
+  async function callGetPhraseSet() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getPhraseSet();
+  callGetPhraseSet();
   // [END speech_v1p1beta1_generated_Adaptation_GetPhraseSet_async]
 }
 

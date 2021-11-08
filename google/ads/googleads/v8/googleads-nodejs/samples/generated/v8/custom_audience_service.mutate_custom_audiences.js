@@ -40,7 +40,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CustomAudienceServiceClient();
 
-  async function mutateCustomAudiences() {
+  async function callMutateCustomAudiences() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCustomAudiences();
+  callMutateCustomAudiences();
   // [END googleads_v8_generated_CustomAudienceService_MutateCustomAudiences_async]
 }
 

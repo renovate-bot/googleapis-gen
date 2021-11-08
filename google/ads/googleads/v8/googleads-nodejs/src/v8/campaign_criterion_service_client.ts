@@ -676,26 +676,6 @@ export class CampaignCriterionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignCriterion(
-      request?: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ICampaignCriterion,
-        protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest|undefined, {}|undefined
-      ]>;
-  getCampaignCriterion(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICampaignCriterion,
-          protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignCriterion(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICampaignCriterion,
-          protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested criterion in full detail.
  *
@@ -718,9 +698,29 @@ export class CampaignCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignCriterion(request);
+ * @example <caption>include:samples/generated/v8/campaign_criterion_service.get_campaign_criterion.js</caption>
+ * region_tag:googleads_v8_generated_CampaignCriterionService_GetCampaignCriterion_async
  */
+  getCampaignCriterion(
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ICampaignCriterion,
+        protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest|undefined, {}|undefined
+      ]>;
+  getCampaignCriterion(
+      request: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICampaignCriterion,
+          protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignCriterion(
+      request: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICampaignCriterion,
+          protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignCriterion(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class CampaignCriterionServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignCriterion(request, options, callback);
   }
-  mutateCampaignCriteria(
-      request?: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaResponse,
-        protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignCriteria(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaResponse,
-          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignCriteria(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaResponse,
-          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes criteria. Operation statuses are returned.
  *
@@ -833,9 +813,29 @@ export class CampaignCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignCriteria(request);
+ * @example <caption>include:samples/generated/v8/campaign_criterion_service.mutate_campaign_criteria.js</caption>
+ * region_tag:googleads_v8_generated_CampaignCriterionService_MutateCampaignCriteria_async
  */
+  mutateCampaignCriteria(
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaResponse,
+        protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignCriteria(
+      request: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaResponse,
+          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignCriteria(
+      request: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaResponse,
+          protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignCriteria(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<

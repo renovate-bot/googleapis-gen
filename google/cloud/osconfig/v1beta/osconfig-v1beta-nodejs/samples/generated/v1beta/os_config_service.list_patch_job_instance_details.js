@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function listPatchJobInstanceDetails() {
+  async function callListPatchJobInstanceDetails() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listPatchJobInstanceDetails();
+  callListPatchJobInstanceDetails();
   // [END osconfig_v1beta_generated_OsConfigService_ListPatchJobInstanceDetails_async]
 }
 

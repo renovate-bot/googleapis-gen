@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function deleteEntry() {
+  async function callDeleteEntry() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteEntry();
+  callDeleteEntry();
   // [END datacatalog_v1_generated_DataCatalog_DeleteEntry_async]
 }
 

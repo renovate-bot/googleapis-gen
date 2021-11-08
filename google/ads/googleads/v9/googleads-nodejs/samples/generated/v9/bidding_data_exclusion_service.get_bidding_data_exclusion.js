@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BiddingDataExclusionServiceClient();
 
-  async function getBiddingDataExclusion() {
+  async function callGetBiddingDataExclusion() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getBiddingDataExclusion();
+  callGetBiddingDataExclusion();
   // [END googleads_v9_generated_BiddingDataExclusionService_GetBiddingDataExclusion_async]
 }
 

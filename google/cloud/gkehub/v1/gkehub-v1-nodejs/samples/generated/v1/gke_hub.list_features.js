@@ -61,7 +61,7 @@ function main() {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function listFeatures() {
+  async function callListFeatures() {
     // Construct request
     const request = {
     };
@@ -73,7 +73,7 @@ function main() {
     }
   }
 
-  listFeatures();
+  callListFeatures();
   // [END gkehub_v1_generated_GkeHub_ListFeatures_async]
 }
 

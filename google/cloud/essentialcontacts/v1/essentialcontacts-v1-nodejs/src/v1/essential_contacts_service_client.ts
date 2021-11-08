@@ -305,6 +305,28 @@ export class EssentialContactsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Adds a new contact for a resource.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource to save this contact for.
+ *   Format: organizations/{organization_id}, folders/{folder_id} or
+ *   projects/{project_id}
+ * @param {google.cloud.essentialcontacts.v1.Contact} request.contact
+ *   Required. The contact to create. Must specify an email address and language
+ *   tag.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Contact]{@link google.cloud.essentialcontacts.v1.Contact}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.create_contact.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async
+ */
   createContact(
       request?: protos.google.cloud.essentialcontacts.v1.ICreateContactRequest,
       options?: CallOptions):
@@ -325,28 +347,6 @@ export class EssentialContactsServiceClient {
           protos.google.cloud.essentialcontacts.v1.IContact,
           protos.google.cloud.essentialcontacts.v1.ICreateContactRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Adds a new contact for a resource.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource to save this contact for.
- *   Format: organizations/{organization_id}, folders/{folder_id} or
- *   projects/{project_id}
- * @param {google.cloud.essentialcontacts.v1.Contact} request.contact
- *   Required. The contact to create. Must specify an email address and language
- *   tag.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Contact]{@link google.cloud.essentialcontacts.v1.Contact}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createContact(request);
- */
   createContact(
       request?: protos.google.cloud.essentialcontacts.v1.ICreateContactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -381,26 +381,6 @@ export class EssentialContactsServiceClient {
     this.initialize();
     return this.innerApiCalls.createContact(request, options, callback);
   }
-  updateContact(
-      request?: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.essentialcontacts.v1.IContact,
-        protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest|undefined, {}|undefined
-      ]>;
-  updateContact(
-      request: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.essentialcontacts.v1.IContact,
-          protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateContact(
-      request: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
-      callback: Callback<
-          protos.google.cloud.essentialcontacts.v1.IContact,
-          protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a contact.
  * Note: A contact's email address cannot be changed.
@@ -421,9 +401,29 @@ export class EssentialContactsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateContact(request);
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.update_contact.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async
  */
+  updateContact(
+      request?: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.essentialcontacts.v1.IContact,
+        protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest|undefined, {}|undefined
+      ]>;
+  updateContact(
+      request: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.essentialcontacts.v1.IContact,
+          protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateContact(
+      request: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
+      callback: Callback<
+          protos.google.cloud.essentialcontacts.v1.IContact,
+          protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest|null|undefined,
+          {}|null|undefined>): void;
   updateContact(
       request?: protos.google.cloud.essentialcontacts.v1.IUpdateContactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -458,6 +458,26 @@ export class EssentialContactsServiceClient {
     this.initialize();
     return this.innerApiCalls.updateContact(request, options, callback);
   }
+/**
+ * Gets a single contact.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the contact to retrieve.
+ *   Format: organizations/{organization_id}/contacts/{contact_id},
+ *   folders/{folder_id}/contacts/{contact_id} or
+ *   projects/{project_id}/contacts/{contact_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Contact]{@link google.cloud.essentialcontacts.v1.Contact}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.get_contact.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_GetContact_async
+ */
   getContact(
       request?: protos.google.cloud.essentialcontacts.v1.IGetContactRequest,
       options?: CallOptions):
@@ -478,26 +498,6 @@ export class EssentialContactsServiceClient {
           protos.google.cloud.essentialcontacts.v1.IContact,
           protos.google.cloud.essentialcontacts.v1.IGetContactRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single contact.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the contact to retrieve.
- *   Format: organizations/{organization_id}/contacts/{contact_id},
- *   folders/{folder_id}/contacts/{contact_id} or
- *   projects/{project_id}/contacts/{contact_id}
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Contact]{@link google.cloud.essentialcontacts.v1.Contact}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getContact(request);
- */
   getContact(
       request?: protos.google.cloud.essentialcontacts.v1.IGetContactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -532,6 +532,26 @@ export class EssentialContactsServiceClient {
     this.initialize();
     return this.innerApiCalls.getContact(request, options, callback);
   }
+/**
+ * Deletes a contact.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the contact to delete.
+ *   Format: organizations/{organization_id}/contacts/{contact_id},
+ *   folders/{folder_id}/contacts/{contact_id} or
+ *   projects/{project_id}/contacts/{contact_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.delete_contact.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_DeleteContact_async
+ */
   deleteContact(
       request?: protos.google.cloud.essentialcontacts.v1.IDeleteContactRequest,
       options?: CallOptions):
@@ -552,26 +572,6 @@ export class EssentialContactsServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.essentialcontacts.v1.IDeleteContactRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a contact.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the contact to delete.
- *   Format: organizations/{organization_id}/contacts/{contact_id},
- *   folders/{folder_id}/contacts/{contact_id} or
- *   projects/{project_id}/contacts/{contact_id}
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteContact(request);
- */
   deleteContact(
       request?: protos.google.cloud.essentialcontacts.v1.IDeleteContactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -606,26 +606,6 @@ export class EssentialContactsServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteContact(request, options, callback);
   }
-  sendTestMessage(
-      request?: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest|undefined, {}|undefined
-      ]>;
-  sendTestMessage(
-      request: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest|null|undefined,
-          {}|null|undefined>): void;
-  sendTestMessage(
-      request: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Allows a contact admin to send a test message to contact to verify that it
  * has been configured correctly.
@@ -653,9 +633,29 @@ export class EssentialContactsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.sendTestMessage(request);
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.send_test_message.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_SendTestMessage_async
  */
+  sendTestMessage(
+      request?: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest|undefined, {}|undefined
+      ]>;
+  sendTestMessage(
+      request: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest|null|undefined,
+          {}|null|undefined>): void;
+  sendTestMessage(
+      request: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest|null|undefined,
+          {}|null|undefined>): void;
   sendTestMessage(
       request?: protos.google.cloud.essentialcontacts.v1.ISendTestMessageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -691,28 +691,7 @@ export class EssentialContactsServiceClient {
     return this.innerApiCalls.sendTestMessage(request, options, callback);
   }
 
-  listContacts(
-      request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.essentialcontacts.v1.IContact[],
-        protos.google.cloud.essentialcontacts.v1.IListContactsRequest|null,
-        protos.google.cloud.essentialcontacts.v1.IListContactsResponse
-      ]>;
-  listContacts(
-      request: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
-          protos.google.cloud.essentialcontacts.v1.IListContactsResponse|null|undefined,
-          protos.google.cloud.essentialcontacts.v1.IContact>): void;
-  listContacts(
-      request: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
-          protos.google.cloud.essentialcontacts.v1.IListContactsResponse|null|undefined,
-          protos.google.cloud.essentialcontacts.v1.IContact>): void;
-/**
+ /**
  * Lists the contacts that have been set on a resource.
  *
  * @param {Object} request
@@ -744,6 +723,27 @@ export class EssentialContactsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listContacts(
+      request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.essentialcontacts.v1.IContact[],
+        protos.google.cloud.essentialcontacts.v1.IListContactsRequest|null,
+        protos.google.cloud.essentialcontacts.v1.IListContactsResponse
+      ]>;
+  listContacts(
+      request: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
+          protos.google.cloud.essentialcontacts.v1.IListContactsResponse|null|undefined,
+          protos.google.cloud.essentialcontacts.v1.IContact>): void;
+  listContacts(
+      request: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
+          protos.google.cloud.essentialcontacts.v1.IListContactsResponse|null|undefined,
+          protos.google.cloud.essentialcontacts.v1.IContact>): void;
   listContacts(
       request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -863,11 +863,8 @@ export class EssentialContactsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listContactsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.list_contacts.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_ListContacts_async
  */
   listContactsAsync(
       request?: protos.google.cloud.essentialcontacts.v1.IListContactsRequest,
@@ -882,7 +879,6 @@ export class EssentialContactsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listContacts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -892,28 +888,7 @@ export class EssentialContactsServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.essentialcontacts.v1.IContact>;
   }
-  computeContacts(
-      request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.essentialcontacts.v1.IContact[],
-        protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest|null,
-        protos.google.cloud.essentialcontacts.v1.IComputeContactsResponse
-      ]>;
-  computeContacts(
-      request: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
-          protos.google.cloud.essentialcontacts.v1.IComputeContactsResponse|null|undefined,
-          protos.google.cloud.essentialcontacts.v1.IContact>): void;
-  computeContacts(
-      request: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
-          protos.google.cloud.essentialcontacts.v1.IComputeContactsResponse|null|undefined,
-          protos.google.cloud.essentialcontacts.v1.IContact>): void;
-/**
+ /**
  * Lists all contacts for the resource that are subscribed to the
  * specified notification categories, including contacts inherited from
  * any parent resources.
@@ -951,6 +926,27 @@ export class EssentialContactsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  computeContacts(
+      request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.essentialcontacts.v1.IContact[],
+        protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest|null,
+        protos.google.cloud.essentialcontacts.v1.IComputeContactsResponse
+      ]>;
+  computeContacts(
+      request: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
+          protos.google.cloud.essentialcontacts.v1.IComputeContactsResponse|null|undefined,
+          protos.google.cloud.essentialcontacts.v1.IContact>): void;
+  computeContacts(
+      request: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
+          protos.google.cloud.essentialcontacts.v1.IComputeContactsResponse|null|undefined,
+          protos.google.cloud.essentialcontacts.v1.IContact>): void;
   computeContacts(
       request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1078,11 +1074,8 @@ export class EssentialContactsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.computeContactsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/essential_contacts_service.compute_contacts.js</caption>
+ * region_tag:essentialcontacts_v1_generated_EssentialContactsService_ComputeContacts_async
  */
   computeContactsAsync(
       request?: protos.google.cloud.essentialcontacts.v1.IComputeContactsRequest,
@@ -1097,7 +1090,6 @@ export class EssentialContactsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['computeContacts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

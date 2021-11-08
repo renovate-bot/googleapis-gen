@@ -381,6 +381,25 @@ export class GroupServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a single group.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The group to retrieve. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Group]{@link google.monitoring.v3.Group}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/group_service.get_group.js</caption>
+ * region_tag:monitoring_v3_generated_GroupService_GetGroup_async
+ */
   getGroup(
       request?: protos.google.monitoring.v3.IGetGroupRequest,
       options?: CallOptions):
@@ -401,25 +420,6 @@ export class GroupServiceClient {
           protos.google.monitoring.v3.IGroup,
           protos.google.monitoring.v3.IGetGroupRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single group.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The group to retrieve. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Group]{@link google.monitoring.v3.Group}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getGroup(request);
- */
   getGroup(
       request?: protos.google.monitoring.v3.IGetGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -454,26 +454,6 @@ export class GroupServiceClient {
     this.initialize();
     return this.innerApiCalls.getGroup(request, options, callback);
   }
-  createGroup(
-      request?: protos.google.monitoring.v3.ICreateGroupRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IGroup,
-        protos.google.monitoring.v3.ICreateGroupRequest|undefined, {}|undefined
-      ]>;
-  createGroup(
-      request: protos.google.monitoring.v3.ICreateGroupRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IGroup,
-          protos.google.monitoring.v3.ICreateGroupRequest|null|undefined,
-          {}|null|undefined>): void;
-  createGroup(
-      request: protos.google.monitoring.v3.ICreateGroupRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IGroup,
-          protos.google.monitoring.v3.ICreateGroupRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new group.
  *
@@ -496,9 +476,29 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createGroup(request);
+ * @example <caption>include:samples/generated/v3/group_service.create_group.js</caption>
+ * region_tag:monitoring_v3_generated_GroupService_CreateGroup_async
  */
+  createGroup(
+      request?: protos.google.monitoring.v3.ICreateGroupRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IGroup,
+        protos.google.monitoring.v3.ICreateGroupRequest|undefined, {}|undefined
+      ]>;
+  createGroup(
+      request: protos.google.monitoring.v3.ICreateGroupRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IGroup,
+          protos.google.monitoring.v3.ICreateGroupRequest|null|undefined,
+          {}|null|undefined>): void;
+  createGroup(
+      request: protos.google.monitoring.v3.ICreateGroupRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IGroup,
+          protos.google.monitoring.v3.ICreateGroupRequest|null|undefined,
+          {}|null|undefined>): void;
   createGroup(
       request?: protos.google.monitoring.v3.ICreateGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -533,6 +533,27 @@ export class GroupServiceClient {
     this.initialize();
     return this.innerApiCalls.createGroup(request, options, callback);
   }
+/**
+ * Updates an existing group.
+ * You can change any group attributes except `name`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.monitoring.v3.Group} request.group
+ *   Required. The new definition of the group.  All fields of the existing group,
+ *   excepting `name`, are replaced with the corresponding fields of this group.
+ * @param {boolean} request.validateOnly
+ *   If true, validate this request but do not update the existing group.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Group]{@link google.monitoring.v3.Group}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/group_service.update_group.js</caption>
+ * region_tag:monitoring_v3_generated_GroupService_UpdateGroup_async
+ */
   updateGroup(
       request?: protos.google.monitoring.v3.IUpdateGroupRequest,
       options?: CallOptions):
@@ -553,27 +574,6 @@ export class GroupServiceClient {
           protos.google.monitoring.v3.IGroup,
           protos.google.monitoring.v3.IUpdateGroupRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an existing group.
- * You can change any group attributes except `name`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.monitoring.v3.Group} request.group
- *   Required. The new definition of the group.  All fields of the existing group,
- *   excepting `name`, are replaced with the corresponding fields of this group.
- * @param {boolean} request.validateOnly
- *   If true, validate this request but do not update the existing group.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Group]{@link google.monitoring.v3.Group}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateGroup(request);
- */
   updateGroup(
       request?: protos.google.monitoring.v3.IUpdateGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -608,26 +608,6 @@ export class GroupServiceClient {
     this.initialize();
     return this.innerApiCalls.updateGroup(request, options, callback);
   }
-  deleteGroup(
-      request?: protos.google.monitoring.v3.IDeleteGroupRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.monitoring.v3.IDeleteGroupRequest|undefined, {}|undefined
-      ]>;
-  deleteGroup(
-      request: protos.google.monitoring.v3.IDeleteGroupRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.IDeleteGroupRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteGroup(
-      request: protos.google.monitoring.v3.IDeleteGroupRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.IDeleteGroupRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes an existing group.
  *
@@ -648,9 +628,29 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteGroup(request);
+ * @example <caption>include:samples/generated/v3/group_service.delete_group.js</caption>
+ * region_tag:monitoring_v3_generated_GroupService_DeleteGroup_async
  */
+  deleteGroup(
+      request?: protos.google.monitoring.v3.IDeleteGroupRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.IDeleteGroupRequest|undefined, {}|undefined
+      ]>;
+  deleteGroup(
+      request: protos.google.monitoring.v3.IDeleteGroupRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.IDeleteGroupRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteGroup(
+      request: protos.google.monitoring.v3.IDeleteGroupRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.IDeleteGroupRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteGroup(
       request?: protos.google.monitoring.v3.IDeleteGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -686,28 +686,7 @@ export class GroupServiceClient {
     return this.innerApiCalls.deleteGroup(request, options, callback);
   }
 
-  listGroups(
-      request?: protos.google.monitoring.v3.IListGroupsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IGroup[],
-        protos.google.monitoring.v3.IListGroupsRequest|null,
-        protos.google.monitoring.v3.IListGroupsResponse
-      ]>;
-  listGroups(
-      request: protos.google.monitoring.v3.IListGroupsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListGroupsRequest,
-          protos.google.monitoring.v3.IListGroupsResponse|null|undefined,
-          protos.google.monitoring.v3.IGroup>): void;
-  listGroups(
-      request: protos.google.monitoring.v3.IListGroupsRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListGroupsRequest,
-          protos.google.monitoring.v3.IListGroupsResponse|null|undefined,
-          protos.google.monitoring.v3.IGroup>): void;
-/**
+ /**
  * Lists the existing groups.
  *
  * @param {Object} request
@@ -760,6 +739,27 @@ export class GroupServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listGroups(
+      request?: protos.google.monitoring.v3.IListGroupsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IGroup[],
+        protos.google.monitoring.v3.IListGroupsRequest|null,
+        protos.google.monitoring.v3.IListGroupsResponse
+      ]>;
+  listGroups(
+      request: protos.google.monitoring.v3.IListGroupsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListGroupsRequest,
+          protos.google.monitoring.v3.IListGroupsResponse|null|undefined,
+          protos.google.monitoring.v3.IGroup>): void;
+  listGroups(
+      request: protos.google.monitoring.v3.IListGroupsRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListGroupsRequest,
+          protos.google.monitoring.v3.IListGroupsResponse|null|undefined,
+          protos.google.monitoring.v3.IGroup>): void;
   listGroups(
       request?: protos.google.monitoring.v3.IListGroupsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -921,11 +921,8 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listGroupsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/group_service.list_groups.js</caption>
+ * region_tag:monitoring_v3_generated_GroupService_ListGroups_async
  */
   listGroupsAsync(
       request?: protos.google.monitoring.v3.IListGroupsRequest,
@@ -940,7 +937,6 @@ export class GroupServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listGroups'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -950,28 +946,7 @@ export class GroupServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.monitoring.v3.IGroup>;
   }
-  listGroupMembers(
-      request?: protos.google.monitoring.v3.IListGroupMembersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IMonitoredResource[],
-        protos.google.monitoring.v3.IListGroupMembersRequest|null,
-        protos.google.monitoring.v3.IListGroupMembersResponse
-      ]>;
-  listGroupMembers(
-      request: protos.google.monitoring.v3.IListGroupMembersRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListGroupMembersRequest,
-          protos.google.monitoring.v3.IListGroupMembersResponse|null|undefined,
-          protos.google.api.IMonitoredResource>): void;
-  listGroupMembers(
-      request: protos.google.monitoring.v3.IListGroupMembersRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListGroupMembersRequest,
-          protos.google.monitoring.v3.IListGroupMembersResponse|null|undefined,
-          protos.google.api.IMonitoredResource>): void;
-/**
+ /**
  * Lists the monitored resources that are members of a group.
  *
  * @param {Object} request
@@ -1013,6 +988,27 @@ export class GroupServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listGroupMembers(
+      request?: protos.google.monitoring.v3.IListGroupMembersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IMonitoredResource[],
+        protos.google.monitoring.v3.IListGroupMembersRequest|null,
+        protos.google.monitoring.v3.IListGroupMembersResponse
+      ]>;
+  listGroupMembers(
+      request: protos.google.monitoring.v3.IListGroupMembersRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListGroupMembersRequest,
+          protos.google.monitoring.v3.IListGroupMembersResponse|null|undefined,
+          protos.google.api.IMonitoredResource>): void;
+  listGroupMembers(
+      request: protos.google.monitoring.v3.IListGroupMembersRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListGroupMembersRequest,
+          protos.google.monitoring.v3.IListGroupMembersResponse|null|undefined,
+          protos.google.api.IMonitoredResource>): void;
   listGroupMembers(
       request?: protos.google.monitoring.v3.IListGroupMembersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1152,11 +1148,8 @@ export class GroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listGroupMembersAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/group_service.list_group_members.js</caption>
+ * region_tag:monitoring_v3_generated_GroupService_ListGroupMembers_async
  */
   listGroupMembersAsync(
       request?: protos.google.monitoring.v3.IListGroupMembersRequest,
@@ -1171,7 +1164,6 @@ export class GroupServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listGroupMembers'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

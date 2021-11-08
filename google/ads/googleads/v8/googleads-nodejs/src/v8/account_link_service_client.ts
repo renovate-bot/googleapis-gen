@@ -677,26 +677,6 @@ export class AccountLinkServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAccountLink(
-      request?: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAccountLink,
-        protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|undefined, {}|undefined
-      ]>;
-  getAccountLink(
-      request: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAccountLink,
-          protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAccountLink(
-      request: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAccountLink,
-          protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the account link in full detail.
  *
@@ -719,9 +699,29 @@ export class AccountLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAccountLink(request);
+ * @example <caption>include:samples/generated/v8/account_link_service.get_account_link.js</caption>
+ * region_tag:googleads_v8_generated_AccountLinkService_GetAccountLink_async
  */
+  getAccountLink(
+      request?: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAccountLink,
+        protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|undefined, {}|undefined
+      ]>;
+  getAccountLink(
+      request: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAccountLink,
+          protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAccountLink(
+      request: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAccountLink,
+          protos.google.ads.googleads.v8.services.IGetAccountLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   getAccountLink(
       request?: protos.google.ads.googleads.v8.services.IGetAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -756,26 +756,6 @@ export class AccountLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.getAccountLink(request, options, callback);
   }
-  createAccountLink(
-      request?: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
-        protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|undefined, {}|undefined
-      ]>;
-  createAccountLink(
-      request: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
-          protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  createAccountLink(
-      request: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
-          protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an account link.
  *
@@ -804,9 +784,29 @@ export class AccountLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createAccountLink(request);
+ * @example <caption>include:samples/generated/v8/account_link_service.create_account_link.js</caption>
+ * region_tag:googleads_v8_generated_AccountLinkService_CreateAccountLink_async
  */
+  createAccountLink(
+      request?: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
+        protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|undefined, {}|undefined
+      ]>;
+  createAccountLink(
+      request: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
+          protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  createAccountLink(
+      request: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ICreateAccountLinkResponse,
+          protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   createAccountLink(
       request?: protos.google.ads.googleads.v8.services.ICreateAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -841,26 +841,6 @@ export class AccountLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.createAccountLink(request, options, callback);
   }
-  mutateAccountLink(
-      request?: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
-        protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|undefined, {}|undefined
-      ]>;
-  mutateAccountLink(
-      request: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
-          protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAccountLink(
-      request: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
-          protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or removes an account link.
  * From V5, create is not supported through
@@ -899,9 +879,29 @@ export class AccountLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAccountLink(request);
+ * @example <caption>include:samples/generated/v8/account_link_service.mutate_account_link.js</caption>
+ * region_tag:googleads_v8_generated_AccountLinkService_MutateAccountLink_async
  */
+  mutateAccountLink(
+      request?: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
+        protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|undefined, {}|undefined
+      ]>;
+  mutateAccountLink(
+      request: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
+          protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAccountLink(
+      request: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateAccountLinkResponse,
+          protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAccountLink(
       request?: protos.google.ads.googleads.v8.services.IMutateAccountLinkRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AccountBudgetProposalServiceClient();
 
-  async function getAccountBudgetProposal() {
+  async function callGetAccountBudgetProposal() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAccountBudgetProposal();
+  callGetAccountBudgetProposal();
   // [END googleads_v7_generated_AccountBudgetProposalService_GetAccountBudgetProposal_async]
 }
 

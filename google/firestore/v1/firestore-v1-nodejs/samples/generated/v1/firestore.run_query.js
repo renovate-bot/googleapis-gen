@@ -32,7 +32,7 @@ function main(parent) {
   /**
    *  A structured query.
    */
-  // const structuredQuery = ''
+  // const structuredQuery = {}
   /**
    *  Reads documents in a transaction.
    */
@@ -43,12 +43,12 @@ function main(parent) {
    *  The new transaction ID will be returned as the first response in the
    *  stream.
    */
-  // const newTransaction = ''
+  // const newTransaction = {}
   /**
    *  Reads documents as they were at the given time.
    *  This may not be older than 270 seconds.
    */
-  // const readTime = ''
+  // const readTime = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('@google-cloud/firestore').v1;
@@ -56,7 +56,7 @@ function main(parent) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function runQuery() {
+  async function callRunQuery() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  runQuery();
+  callRunQuery();
   // [END firestore_v1_generated_Firestore_RunQuery_async]
 }
 

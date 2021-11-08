@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function deleteCustomClass() {
+  async function callDeleteCustomClass() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteCustomClass();
+  callDeleteCustomClass();
   // [END speech_v1p1beta1_generated_Adaptation_DeleteCustomClass_async]
 }
 

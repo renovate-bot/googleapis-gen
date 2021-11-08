@@ -311,26 +311,6 @@ export class ResourceSettingsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getSetting(
-      request?: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.resourcesettings.v1.ISetting,
-        protos.google.cloud.resourcesettings.v1.IGetSettingRequest|undefined, {}|undefined
-      ]>;
-  getSetting(
-      request: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.resourcesettings.v1.ISetting,
-          protos.google.cloud.resourcesettings.v1.IGetSettingRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSetting(
-      request: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
-      callback: Callback<
-          protos.google.cloud.resourcesettings.v1.ISetting,
-          protos.google.cloud.resourcesettings.v1.IGetSettingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a setting.
  *
@@ -351,9 +331,29 @@ export class ResourceSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSetting(request);
+ * @example <caption>include:samples/generated/v1/resource_settings_service.get_setting.js</caption>
+ * region_tag:resourcesettings_v1_generated_ResourceSettingsService_GetSetting_async
  */
+  getSetting(
+      request?: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.resourcesettings.v1.ISetting,
+        protos.google.cloud.resourcesettings.v1.IGetSettingRequest|undefined, {}|undefined
+      ]>;
+  getSetting(
+      request: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.resourcesettings.v1.ISetting,
+          protos.google.cloud.resourcesettings.v1.IGetSettingRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSetting(
+      request: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
+      callback: Callback<
+          protos.google.cloud.resourcesettings.v1.ISetting,
+          protos.google.cloud.resourcesettings.v1.IGetSettingRequest|null|undefined,
+          {}|null|undefined>): void;
   getSetting(
       request?: protos.google.cloud.resourcesettings.v1.IGetSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -388,26 +388,6 @@ export class ResourceSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.getSetting(request, options, callback);
   }
-  updateSetting(
-      request?: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.resourcesettings.v1.ISetting,
-        protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest|undefined, {}|undefined
-      ]>;
-  updateSetting(
-      request: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.resourcesettings.v1.ISetting,
-          protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateSetting(
-      request: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
-      callback: Callback<
-          protos.google.cloud.resourcesettings.v1.ISetting,
-          protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a setting.
  *
@@ -437,9 +417,29 @@ export class ResourceSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateSetting(request);
+ * @example <caption>include:samples/generated/v1/resource_settings_service.update_setting.js</caption>
+ * region_tag:resourcesettings_v1_generated_ResourceSettingsService_UpdateSetting_async
  */
+  updateSetting(
+      request?: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.resourcesettings.v1.ISetting,
+        protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest|undefined, {}|undefined
+      ]>;
+  updateSetting(
+      request: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.resourcesettings.v1.ISetting,
+          protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateSetting(
+      request: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
+      callback: Callback<
+          protos.google.cloud.resourcesettings.v1.ISetting,
+          protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest|null|undefined,
+          {}|null|undefined>): void;
   updateSetting(
       request?: protos.google.cloud.resourcesettings.v1.IUpdateSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -475,28 +475,7 @@ export class ResourceSettingsServiceClient {
     return this.innerApiCalls.updateSetting(request, options, callback);
   }
 
-  listSettings(
-      request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.resourcesettings.v1.ISetting[],
-        protos.google.cloud.resourcesettings.v1.IListSettingsRequest|null,
-        protos.google.cloud.resourcesettings.v1.IListSettingsResponse
-      ]>;
-  listSettings(
-      request: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
-          protos.google.cloud.resourcesettings.v1.IListSettingsResponse|null|undefined,
-          protos.google.cloud.resourcesettings.v1.ISetting>): void;
-  listSettings(
-      request: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
-          protos.google.cloud.resourcesettings.v1.IListSettingsResponse|null|undefined,
-          protos.google.cloud.resourcesettings.v1.ISetting>): void;
-/**
+ /**
  * Lists all the settings that are available on the Cloud resource `parent`.
  *
  * @param {Object} request
@@ -528,6 +507,27 @@ export class ResourceSettingsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listSettings(
+      request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.resourcesettings.v1.ISetting[],
+        protos.google.cloud.resourcesettings.v1.IListSettingsRequest|null,
+        protos.google.cloud.resourcesettings.v1.IListSettingsResponse
+      ]>;
+  listSettings(
+      request: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
+          protos.google.cloud.resourcesettings.v1.IListSettingsResponse|null|undefined,
+          protos.google.cloud.resourcesettings.v1.ISetting>): void;
+  listSettings(
+      request: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
+          protos.google.cloud.resourcesettings.v1.IListSettingsResponse|null|undefined,
+          protos.google.cloud.resourcesettings.v1.ISetting>): void;
   listSettings(
       request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -647,11 +647,8 @@ export class ResourceSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSettingsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/resource_settings_service.list_settings.js</caption>
+ * region_tag:resourcesettings_v1_generated_ResourceSettingsService_ListSettings_async
  */
   listSettingsAsync(
       request?: protos.google.cloud.resourcesettings.v1.IListSettingsRequest,
@@ -666,7 +663,6 @@ export class ResourceSettingsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSettings'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

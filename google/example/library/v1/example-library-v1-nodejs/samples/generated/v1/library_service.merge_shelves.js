@@ -35,7 +35,7 @@ function main(name, otherShelf) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function mergeShelves() {
+  async function callMergeShelves() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, otherShelf) {
     console.log(response);
   }
 
-  mergeShelves();
+  callMergeShelves();
   // [END library-example_v1_generated_LibraryService_MergeShelves_async]
 }
 

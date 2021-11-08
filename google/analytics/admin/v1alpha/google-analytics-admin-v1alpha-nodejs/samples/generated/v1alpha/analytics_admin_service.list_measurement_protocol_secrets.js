@@ -48,7 +48,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listMeasurementProtocolSecrets() {
+  async function callListMeasurementProtocolSecrets() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent) {
     }
   }
 
-  listMeasurementProtocolSecrets();
+  callListMeasurementProtocolSecrets();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListMeasurementProtocolSecrets_async]
 }
 

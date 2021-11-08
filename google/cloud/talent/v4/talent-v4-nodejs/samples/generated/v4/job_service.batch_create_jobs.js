@@ -38,7 +38,7 @@ function main(parent, jobs) {
   // Instantiates a client
   const talentClient = new JobServiceClient();
 
-  async function batchCreateJobs() {
+  async function callBatchCreateJobs() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, jobs) {
     console.log(response);
   }
 
-  batchCreateJobs();
+  callBatchCreateJobs();
   // [END jobs_v4_generated_JobService_BatchCreateJobs_async]
 }
 

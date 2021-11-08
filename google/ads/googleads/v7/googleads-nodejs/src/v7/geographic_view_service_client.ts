@@ -646,26 +646,6 @@ export class GeographicViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getGeographicView(
-      request?: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IGeographicView,
-        protos.google.ads.googleads.v7.services.IGetGeographicViewRequest|undefined, {}|undefined
-      ]>;
-  getGeographicView(
-      request: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IGeographicView,
-          protos.google.ads.googleads.v7.services.IGetGeographicViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getGeographicView(
-      request: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IGeographicView,
-          protos.google.ads.googleads.v7.services.IGetGeographicViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested geographic view in full detail.
  *
@@ -688,9 +668,29 @@ export class GeographicViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getGeographicView(request);
+ * @example <caption>include:samples/generated/v7/geographic_view_service.get_geographic_view.js</caption>
+ * region_tag:googleads_v7_generated_GeographicViewService_GetGeographicView_async
  */
+  getGeographicView(
+      request?: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IGeographicView,
+        protos.google.ads.googleads.v7.services.IGetGeographicViewRequest|undefined, {}|undefined
+      ]>;
+  getGeographicView(
+      request: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IGeographicView,
+          protos.google.ads.googleads.v7.services.IGetGeographicViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getGeographicView(
+      request: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IGeographicView,
+          protos.google.ads.googleads.v7.services.IGetGeographicViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getGeographicView(
       request?: protos.google.ads.googleads.v7.services.IGetGeographicViewRequest,
       optionsOrCallback?: CallOptions|Callback<

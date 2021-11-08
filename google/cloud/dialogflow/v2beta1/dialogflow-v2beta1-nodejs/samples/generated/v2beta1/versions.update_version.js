@@ -27,11 +27,11 @@ function main(version, updateMask) {
    *  - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
    *    ID>`
    */
-  // const version = ''
+  // const version = {}
   /**
    *  Required. The mask to control which fields get updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Dialogflow library
   const {VersionsClient} = require('@google-cloud/dialogflow').v2beta1;
@@ -39,7 +39,7 @@ function main(version, updateMask) {
   // Instantiates a client
   const dialogflowClient = new VersionsClient();
 
-  async function updateVersion() {
+  async function callUpdateVersion() {
     // Construct request
     const request = {
       version,
@@ -51,7 +51,7 @@ function main(version, updateMask) {
     console.log(response);
   }
 
-  updateVersion();
+  callUpdateVersion();
   // [END dialogflow_v2beta1_generated_Versions_UpdateVersion_async]
 }
 

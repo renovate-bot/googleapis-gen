@@ -65,7 +65,7 @@ function main(name) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function generateConnectManifest() {
+  async function callGenerateConnectManifest() {
     // Construct request
     const request = {
       name,
@@ -76,7 +76,7 @@ function main(name) {
     console.log(response);
   }
 
-  generateConnectManifest();
+  callGenerateConnectManifest();
   // [END gkehub_v1alpha2_generated_GkeHub_GenerateConnectManifest_async]
 }
 

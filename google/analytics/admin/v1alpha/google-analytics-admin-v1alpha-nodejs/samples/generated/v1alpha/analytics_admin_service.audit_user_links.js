@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function auditUserLinks() {
+  async function callAuditUserLinks() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  auditUserLinks();
+  callAuditUserLinks();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_AuditUserLinks_async]
 }
 

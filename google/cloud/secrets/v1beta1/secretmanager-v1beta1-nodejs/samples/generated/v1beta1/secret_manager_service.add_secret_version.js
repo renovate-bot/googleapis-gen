@@ -21,14 +21,14 @@ function main(parent, payload) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to associate with the
-   *  [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format `projects/* /secrets/*`.
+   *  Required. The resource name of the Secret google.cloud.secrets.v1beta1.Secret  to associate with the
+   *  SecretVersion google.cloud.secrets.v1beta1.SecretVersion  in the format `projects/* /secrets/*`.
    */
   // const parent = 'abc123'
   /**
-   *  Required. The secret payload of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   *  Required. The secret payload of the SecretVersion google.cloud.secrets.v1beta1.SecretVersion.
    */
-  // const payload = ''
+  // const payload = {}
 
   // Imports the Secrets library
   const {SecretManagerServiceClient} = require('@google-cloud/secret-manager').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, payload) {
   // Instantiates a client
   const secretsClient = new SecretManagerServiceClient();
 
-  async function addSecretVersion() {
+  async function callAddSecretVersion() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, payload) {
     console.log(response);
   }
 
-  addSecretVersion();
+  callAddSecretVersion();
   // [END secretmanager_v1beta1_generated_SecretManagerService_AddSecretVersion_async]
 }
 

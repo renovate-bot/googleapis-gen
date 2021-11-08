@@ -31,7 +31,7 @@ function main(parent, tag) {
   /**
    *  Required. The tag to create.
    */
-  // const tag = ''
+  // const tag = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -39,7 +39,7 @@ function main(parent, tag) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function createTag() {
+  async function callCreateTag() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, tag) {
     console.log(response);
   }
 
-  createTag();
+  callCreateTag();
   // [END datacatalog_v1_generated_DataCatalog_CreateTag_async]
 }
 

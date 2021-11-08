@@ -727,26 +727,6 @@ export class UserDataServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  uploadUserData(
-      request?: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IUploadUserDataResponse,
-        protos.google.ads.googleads.v9.services.IUploadUserDataRequest|undefined, {}|undefined
-      ]>;
-  uploadUserData(
-      request: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IUploadUserDataResponse,
-          protos.google.ads.googleads.v9.services.IUploadUserDataRequest|null|undefined,
-          {}|null|undefined>): void;
-  uploadUserData(
-      request: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IUploadUserDataResponse,
-          protos.google.ads.googleads.v9.services.IUploadUserDataRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Uploads the given user data.
  *
@@ -778,9 +758,29 @@ export class UserDataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.uploadUserData(request);
+ * @example <caption>include:samples/generated/v9/user_data_service.upload_user_data.js</caption>
+ * region_tag:googleads_v9_generated_UserDataService_UploadUserData_async
  */
+  uploadUserData(
+      request?: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IUploadUserDataResponse,
+        protos.google.ads.googleads.v9.services.IUploadUserDataRequest|undefined, {}|undefined
+      ]>;
+  uploadUserData(
+      request: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IUploadUserDataResponse,
+          protos.google.ads.googleads.v9.services.IUploadUserDataRequest|null|undefined,
+          {}|null|undefined>): void;
+  uploadUserData(
+      request: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IUploadUserDataResponse,
+          protos.google.ads.googleads.v9.services.IUploadUserDataRequest|null|undefined,
+          {}|null|undefined>): void;
   uploadUserData(
       request?: protos.google.ads.googleads.v9.services.IUploadUserDataRequest,
       optionsOrCallback?: CallOptions|Callback<

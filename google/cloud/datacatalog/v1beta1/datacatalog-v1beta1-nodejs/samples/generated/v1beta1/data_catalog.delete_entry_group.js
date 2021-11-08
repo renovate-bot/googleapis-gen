@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function deleteEntryGroup() {
+  async function callDeleteEntryGroup() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteEntryGroup();
+  callDeleteEntryGroup();
   // [END datacatalog_v1beta1_generated_DataCatalog_DeleteEntryGroup_async]
 }
 

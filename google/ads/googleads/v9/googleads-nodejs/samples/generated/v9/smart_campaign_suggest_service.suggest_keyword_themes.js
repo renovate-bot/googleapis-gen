@@ -33,7 +33,7 @@ function main(customerId, suggestionInfo) {
    *  Recommended fields:
    *  * suggestion_info.business_setting
    */
-  // const suggestionInfo = ''
+  // const suggestionInfo = {}
 
   // Imports the Googleads library
   const {SmartCampaignSuggestServiceClient} = require('google-ads').v9;
@@ -41,7 +41,7 @@ function main(customerId, suggestionInfo) {
   // Instantiates a client
   const googleadsClient = new SmartCampaignSuggestServiceClient();
 
-  async function suggestKeywordThemes() {
+  async function callSuggestKeywordThemes() {
     // Construct request
     const request = {
       customerId,
@@ -53,7 +53,7 @@ function main(customerId, suggestionInfo) {
     console.log(response);
   }
 
-  suggestKeywordThemes();
+  callSuggestKeywordThemes();
   // [END googleads_v9_generated_SmartCampaignSuggestService_SuggestKeywordThemes_async]
 }
 

@@ -727,26 +727,6 @@ export class CustomizerAttributeServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateCustomizerAttributes(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomizerAttributes(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomizerAttributes(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes customizer attributes. Operation statuses are
  * returned.
@@ -775,9 +755,29 @@ export class CustomizerAttributeServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomizerAttributes(request);
+ * @example <caption>include:samples/generated/v9/customizer_attribute_service.mutate_customizer_attributes.js</caption>
+ * region_tag:googleads_v9_generated_CustomizerAttributeService_MutateCustomizerAttributes_async
  */
+  mutateCustomizerAttributes(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomizerAttributes(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomizerAttributes(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomizerAttributes(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomizerAttributesRequest,
       optionsOrCallback?: CallOptions|Callback<

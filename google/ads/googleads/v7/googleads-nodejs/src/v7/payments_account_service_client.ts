@@ -647,26 +647,6 @@ export class PaymentsAccountServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  listPaymentsAccounts(
-      request?: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IListPaymentsAccountsResponse,
-        protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest|undefined, {}|undefined
-      ]>;
-  listPaymentsAccounts(
-      request: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListPaymentsAccountsResponse,
-          protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listPaymentsAccounts(
-      request: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListPaymentsAccountsResponse,
-          protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns all payments accounts associated with all managers
  * between the login customer ID and specified serving customer in the
@@ -692,9 +672,29 @@ export class PaymentsAccountServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listPaymentsAccounts(request);
+ * @example <caption>include:samples/generated/v7/payments_account_service.list_payments_accounts.js</caption>
+ * region_tag:googleads_v7_generated_PaymentsAccountService_ListPaymentsAccounts_async
  */
+  listPaymentsAccounts(
+      request?: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IListPaymentsAccountsResponse,
+        protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest|undefined, {}|undefined
+      ]>;
+  listPaymentsAccounts(
+      request: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListPaymentsAccountsResponse,
+          protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listPaymentsAccounts(
+      request: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListPaymentsAccountsResponse,
+          protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest|null|undefined,
+          {}|null|undefined>): void;
   listPaymentsAccounts(
       request?: protos.google.ads.googleads.v7.services.IListPaymentsAccountsRequest,
       optionsOrCallback?: CallOptions|Callback<

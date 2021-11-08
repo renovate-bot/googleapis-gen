@@ -288,28 +288,7 @@ export class DriveActivityServiceClient {
   // -- Service calls --
   // -------------------
 
-  queryDriveActivity(
-      request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.drive.activity.v2.IDriveActivity[],
-        protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest|null,
-        protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse
-      ]>;
-  queryDriveActivity(
-      request: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
-          protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse|null|undefined,
-          protos.google.apps.drive.activity.v2.IDriveActivity>): void;
-  queryDriveActivity(
-      request: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
-      callback: PaginationCallback<
-          protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
-          protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse|null|undefined,
-          protos.google.apps.drive.activity.v2.IDriveActivity>): void;
-/**
+ /**
  * Query past activity in Google Drive.
  *
  * @param {Object} request
@@ -368,6 +347,27 @@ export class DriveActivityServiceClient {
  */
   queryDriveActivity(
       request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.drive.activity.v2.IDriveActivity[],
+        protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest|null,
+        protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse
+      ]>;
+  queryDriveActivity(
+      request: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+          protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse|null|undefined,
+          protos.google.apps.drive.activity.v2.IDriveActivity>): void;
+  queryDriveActivity(
+      request: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+      callback: PaginationCallback<
+          protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
+          protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse|null|undefined,
+          protos.google.apps.drive.activity.v2.IDriveActivity>): void;
+  queryDriveActivity(
+      request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
           protos.google.apps.drive.activity.v2.IQueryDriveActivityResponse|null|undefined,
@@ -391,6 +391,8 @@ export class DriveActivityServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.queryDriveActivity(request, options, callback);
   }
@@ -456,6 +458,8 @@ export class DriveActivityServiceClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['queryDriveActivity'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -521,11 +525,8 @@ export class DriveActivityServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.queryDriveActivityAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/drive_activity_service.query_drive_activity.js</caption>
+ * region_tag:driveactivity_v2_generated_DriveActivityService_QueryDriveActivity_async
  */
   queryDriveActivityAsync(
       request?: protos.google.apps.drive.activity.v2.IQueryDriveActivityRequest,
@@ -533,7 +534,8 @@ export class DriveActivityServiceClient {
     AsyncIterable<protos.google.apps.drive.activity.v2.IDriveActivity>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['queryDriveActivity'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

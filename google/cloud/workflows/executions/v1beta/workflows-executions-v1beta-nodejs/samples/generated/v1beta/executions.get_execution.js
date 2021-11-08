@@ -30,7 +30,7 @@ function main(name) {
    *  Optional. A view defining which fields should be filled in the returned execution.
    *  The API will default to the FULL view.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Executions library
   const {ExecutionsClient} = require('@google-cloud/workflows-executions').v1beta;
@@ -38,7 +38,7 @@ function main(name) {
   // Instantiates a client
   const executionsClient = new ExecutionsClient();
 
-  async function getExecution() {
+  async function callGetExecution() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name) {
     console.log(response);
   }
 
-  getExecution();
+  callGetExecution();
   // [END workflowexecutions_v1beta_generated_Executions_GetExecution_async]
 }
 

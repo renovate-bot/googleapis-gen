@@ -32,7 +32,7 @@ function main(projectId) {
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function getGoogleServiceAccount() {
+  async function callGetGoogleServiceAccount() {
     // Construct request
     const request = {
       projectId,
@@ -43,7 +43,7 @@ function main(projectId) {
     console.log(response);
   }
 
-  getGoogleServiceAccount();
+  callGetGoogleServiceAccount();
   // [END storagetransfer_v1_generated_StorageTransferService_GetGoogleServiceAccount_async]
 }
 

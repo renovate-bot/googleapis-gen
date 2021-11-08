@@ -57,7 +57,7 @@ function main(parent) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function listRecommendations() {
+  async function callListRecommendations() {
     // Construct request
     const request = {
       parent,
@@ -70,7 +70,7 @@ function main(parent) {
     }
   }
 
-  listRecommendations();
+  callListRecommendations();
   // [END recommender_v1_generated_Recommender_ListRecommendations_async]
 }
 

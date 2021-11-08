@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function deleteReferenceImage() {
+  async function callDeleteReferenceImage() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteReferenceImage();
+  callDeleteReferenceImage();
   // [END vision_v1p4beta1_generated_ProductSearch_DeleteReferenceImage_async]
 }
 

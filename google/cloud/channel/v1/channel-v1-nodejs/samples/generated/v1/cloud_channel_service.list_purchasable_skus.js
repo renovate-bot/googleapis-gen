@@ -23,11 +23,11 @@ function main(customer) {
   /**
    *  List SKUs for CreateEntitlement purchase.
    */
-  // const createEntitlementPurchase = ''
+  // const createEntitlementPurchase = {}
   /**
    *  List SKUs for ChangeOffer purchase with a new SKU.
    */
-  // const changeOfferPurchase = ''
+  // const changeOfferPurchase = {}
   /**
    *  Required. The resource name of the customer to list SKUs for.
    *  Format: accounts/{account_id}/customers/{customer_id}.
@@ -56,7 +56,7 @@ function main(customer) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function listPurchasableSkus() {
+  async function callListPurchasableSkus() {
     // Construct request
     const request = {
       customer,
@@ -69,7 +69,7 @@ function main(customer) {
     }
   }
 
-  listPurchasableSkus();
+  callListPurchasableSkus();
   // [END cloudchannel_v1_generated_CloudChannelService_ListPurchasableSkus_async]
 }
 

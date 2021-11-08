@@ -28,7 +28,7 @@ function main(parent, workflow, workflowId) {
   /**
    *  Required. Workflow to be created.
    */
-  // const workflow = ''
+  // const workflow = {}
   /**
    *  Required. The ID of the workflow to be created. It has to fulfill the
    *  following requirements:
@@ -46,7 +46,7 @@ function main(parent, workflow, workflowId) {
   // Instantiates a client
   const workflowsClient = new WorkflowsClient();
 
-  async function createWorkflow() {
+  async function callCreateWorkflow() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent, workflow, workflowId) {
     console.log(response);
   }
 
-  createWorkflow();
+  callCreateWorkflow();
   // [END workflows_v1beta_generated_Workflows_CreateWorkflow_async]
 }
 

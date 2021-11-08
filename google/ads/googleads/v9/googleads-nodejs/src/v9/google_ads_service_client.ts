@@ -745,26 +745,6 @@ export class GoogleAdsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutate(
-      request?: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateGoogleAdsResponse,
-        protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest|undefined, {}|undefined
-      ]>;
-  mutate(
-      request: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateGoogleAdsResponse,
-          protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutate(
-      request: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateGoogleAdsResponse,
-          protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes resources. This method supports atomic
  * transactions with multiple types of resources. For example, you can
@@ -905,9 +885,29 @@ export class GoogleAdsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutate(request);
+ * @example <caption>include:samples/generated/v9/google_ads_service.mutate.js</caption>
+ * region_tag:googleads_v9_generated_GoogleAdsService_Mutate_async
  */
+  mutate(
+      request?: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateGoogleAdsResponse,
+        protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest|undefined, {}|undefined
+      ]>;
+  mutate(
+      request: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateGoogleAdsResponse,
+          protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutate(
+      request: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateGoogleAdsResponse,
+          protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutate(
       request?: protos.google.ads.googleads.v9.services.IMutateGoogleAdsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -975,10 +975,8 @@ export class GoogleAdsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.searchStream(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v9/google_ads_service.search_stream.js</caption>
+ * region_tag:googleads_v9_generated_GoogleAdsService_SearchStream_async
  */
   searchStream(
       request?: protos.google.ads.googleads.v9.services.ISearchGoogleAdsStreamRequest,
@@ -997,28 +995,7 @@ export class GoogleAdsServiceClient {
     return this.innerApiCalls.searchStream(request, options);
   }
 
-  search(
-      request?: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IGoogleAdsRow[],
-        protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest|null,
-        protos.google.ads.googleads.v9.services.ISearchGoogleAdsResponse
-      ]>;
-  search(
-      request: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
-          protos.google.ads.googleads.v9.services.ISearchGoogleAdsResponse|null|undefined,
-          protos.google.ads.googleads.v9.services.IGoogleAdsRow>): void;
-  search(
-      request: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
-          protos.google.ads.googleads.v9.services.ISearchGoogleAdsResponse|null|undefined,
-          protos.google.ads.googleads.v9.services.IGoogleAdsRow>): void;
-/**
+ /**
  * Returns all rows that match the search query.
  *
  * List of thrown errors:
@@ -1071,6 +1048,27 @@ export class GoogleAdsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  search(
+      request?: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IGoogleAdsRow[],
+        protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest|null,
+        protos.google.ads.googleads.v9.services.ISearchGoogleAdsResponse
+      ]>;
+  search(
+      request: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
+          protos.google.ads.googleads.v9.services.ISearchGoogleAdsResponse|null|undefined,
+          protos.google.ads.googleads.v9.services.IGoogleAdsRow>): void;
+  search(
+      request: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
+          protos.google.ads.googleads.v9.services.ISearchGoogleAdsResponse|null|undefined,
+          protos.google.ads.googleads.v9.services.IGoogleAdsRow>): void;
   search(
       request?: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1208,11 +1206,8 @@ export class GoogleAdsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v9/google_ads_service.search.js</caption>
+ * region_tag:googleads_v9_generated_GoogleAdsService_Search_async
  */
   searchAsync(
       request?: protos.google.ads.googleads.v9.services.ISearchGoogleAdsRequest,
@@ -1227,7 +1222,6 @@ export class GoogleAdsServiceClient {
     ] = gax.routingHeader.fromParams({
       'customer_id': request.customerId || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['search'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

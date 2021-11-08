@@ -23,7 +23,7 @@ function main(evaluationJob) {
   /**
    *  Required. Evaluation job that is going to be updated.
    */
-  // const evaluationJob = ''
+  // const evaluationJob = {}
   /**
    *  Optional. Mask for which fields to update. You can only provide the
    *  following fields:
@@ -33,7 +33,7 @@ function main(evaluationJob) {
    *  You can provide more than one of these fields by separating them with
    *  commas.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -41,7 +41,7 @@ function main(evaluationJob) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function updateEvaluationJob() {
+  async function callUpdateEvaluationJob() {
     // Construct request
     const request = {
       evaluationJob,
@@ -52,7 +52,7 @@ function main(evaluationJob) {
     console.log(response);
   }
 
-  updateEvaluationJob();
+  callUpdateEvaluationJob();
   // [END datalabeling_v1beta1_generated_DataLabelingService_UpdateEvaluationJob_async]
 }
 

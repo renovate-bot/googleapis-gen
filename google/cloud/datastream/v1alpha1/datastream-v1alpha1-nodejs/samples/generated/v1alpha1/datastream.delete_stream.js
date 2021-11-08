@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function deleteStream() {
+  async function callDeleteStream() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteStream();
+  callDeleteStream();
   // [END datastream_v1alpha1_generated_Datastream_DeleteStream_async]
 }
 

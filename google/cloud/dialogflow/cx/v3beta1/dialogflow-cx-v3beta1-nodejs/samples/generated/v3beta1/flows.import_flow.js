@@ -26,7 +26,7 @@ function main(parent) {
    */
   // const parent = 'abc123'
   /**
-   *  The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+   *  The Google Cloud Storage (https://cloud.google.com/storage/docs/) URI
    *  to import flow from. The format of this URI must be
    *  `gs://<bucket-name>/<object-name>`.
    */
@@ -38,7 +38,7 @@ function main(parent) {
   /**
    *  Flow import mode. If not specified, `KEEP` is assumed.
    */
-  // const importOption = ''
+  // const importOption = {}
 
   // Imports the Cx library
   const {FlowsClient} = require('@google-cloud/dialogflow-cx').v3beta1;
@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const cxClient = new FlowsClient();
 
-  async function importFlow() {
+  async function callImportFlow() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     console.log(response);
   }
 
-  importFlow();
+  callImportFlow();
   // [END dialogflow_v3beta1_generated_Flows_ImportFlow_async]
 }
 

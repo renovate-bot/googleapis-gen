@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new ServiceMonitoringServiceClient();
 
-  async function deleteServiceLevelObjective() {
+  async function callDeleteServiceLevelObjective() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteServiceLevelObjective();
+  callDeleteServiceLevelObjective();
   // [END monitoring_v3_generated_ServiceMonitoringService_DeleteServiceLevelObjective_async]
 }
 

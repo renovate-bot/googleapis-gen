@@ -21,8 +21,8 @@ function main(parent) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret] associated with the
-   *  [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] to list, in the format
+   *  Required. The resource name of the Secret google.cloud.secretmanager.v1.Secret  associated with the
+   *  SecretVersions google.cloud.secretmanager.v1.SecretVersion  to list, in the format
    *  `projects/* /secrets/*`.
    */
   // const parent = 'abc123'
@@ -34,13 +34,13 @@ function main(parent) {
   // const pageSize = 1234
   /**
    *  Optional. Pagination token, returned earlier via
-   *  ListSecretVersionsResponse.next_page_token][].
+   *  ListSecretVersionsResponse.next_page_token .
    */
   // const pageToken = 'abc123'
   /**
    *  Optional. Filter string, adhering to the rules in
-   *  [List-operation
-   *  filtering](https://cloud.google.com/secret-manager/docs/filtering). List
+   *  List-operation
+   *  filtering (https://cloud.google.com/secret-manager/docs/filtering). List
    *  only secret versions matching the filter. If filter is empty, all secret
    *  versions are listed.
    */
@@ -52,7 +52,7 @@ function main(parent) {
   // Instantiates a client
   const secretmanagerClient = new SecretManagerServiceClient();
 
-  async function listSecretVersions() {
+  async function callListSecretVersions() {
     // Construct request
     const request = {
       parent,
@@ -65,7 +65,7 @@ function main(parent) {
     }
   }
 
-  listSecretVersions();
+  callListSecretVersions();
   // [END secretmanager_v1_generated_SecretManagerService_ListSecretVersions_async]
 }
 

@@ -23,7 +23,7 @@ function main(webDataStream, parent) {
   /**
    *  Required. The web stream to create.
    */
-  // const webDataStream = ''
+  // const webDataStream = {}
   /**
    *  Required. The parent resource where this web data stream will be created.
    *  Format: properties/123
@@ -36,7 +36,7 @@ function main(webDataStream, parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createWebDataStream() {
+  async function callCreateWebDataStream() {
     // Construct request
     const request = {
       webDataStream,
@@ -48,7 +48,7 @@ function main(webDataStream, parent) {
     console.log(response);
   }
 
-  createWebDataStream();
+  callCreateWebDataStream();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateWebDataStream_async]
 }
 

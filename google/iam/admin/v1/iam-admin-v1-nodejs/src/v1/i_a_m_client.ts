@@ -324,6 +324,27 @@ export class IAMClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the service account in the following format:
+ *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
+ *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
+ *   the account. The `ACCOUNT` value can be the `email` address or the
+ *   `unique_id` of the service account.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServiceAccount]{@link google.iam.admin.v1.ServiceAccount}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/i_a_m.get_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_GetServiceAccount_async
+ */
   getServiceAccount(
       request?: protos.google.iam.admin.v1.IGetServiceAccountRequest,
       options?: CallOptions):
@@ -344,27 +365,6 @@ export class IAMClient {
           protos.google.iam.admin.v1.IServiceAccount,
           protos.google.iam.admin.v1.IGetServiceAccountRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the service account in the following format:
- *   `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
- *   Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
- *   the account. The `ACCOUNT` value can be the `email` address or the
- *   `unique_id` of the service account.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ServiceAccount]{@link google.iam.admin.v1.ServiceAccount}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getServiceAccount(request);
- */
   getServiceAccount(
       request?: protos.google.iam.admin.v1.IGetServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -399,26 +399,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.getServiceAccount(request, options, callback);
   }
-  createServiceAccount(
-      request?: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IServiceAccount,
-        protos.google.iam.admin.v1.ICreateServiceAccountRequest|undefined, {}|undefined
-      ]>;
-  createServiceAccount(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccount,
-          protos.google.iam.admin.v1.ICreateServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  createServiceAccount(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccount,
-          protos.google.iam.admin.v1.ICreateServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
@@ -443,9 +423,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createServiceAccount(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.create_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_CreateServiceAccount_async
  */
+  createServiceAccount(
+      request?: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccount,
+        protos.google.iam.admin.v1.ICreateServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  createServiceAccount(
+      request: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.ICreateServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  createServiceAccount(
+      request: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.ICreateServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   createServiceAccount(
       request?: protos.google.iam.admin.v1.ICreateServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -480,26 +480,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.createServiceAccount(request, options, callback);
   }
-  updateServiceAccount(
-      request?: protos.google.iam.admin.v1.IServiceAccount,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IServiceAccount,
-        protos.google.iam.admin.v1.IServiceAccount|undefined, {}|undefined
-      ]>;
-  updateServiceAccount(
-      request: protos.google.iam.admin.v1.IServiceAccount,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccount,
-          protos.google.iam.admin.v1.IServiceAccount|null|undefined,
-          {}|null|undefined>): void;
-  updateServiceAccount(
-      request: protos.google.iam.admin.v1.IServiceAccount,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccount,
-          protos.google.iam.admin.v1.IServiceAccount|null|undefined,
-          {}|null|undefined>): void;
 /**
  * **Note:** We are in the process of deprecating this method. Use
  * {@link google.iam.admin.v1.IAM.PatchServiceAccount|PatchServiceAccount} instead.
@@ -560,9 +540,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateServiceAccount(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.update_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_UpdateServiceAccount_async
  */
+  updateServiceAccount(
+      request?: protos.google.iam.admin.v1.IServiceAccount,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccount,
+        protos.google.iam.admin.v1.IServiceAccount|undefined, {}|undefined
+      ]>;
+  updateServiceAccount(
+      request: protos.google.iam.admin.v1.IServiceAccount,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.IServiceAccount|null|undefined,
+          {}|null|undefined>): void;
+  updateServiceAccount(
+      request: protos.google.iam.admin.v1.IServiceAccount,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccount,
+          protos.google.iam.admin.v1.IServiceAccount|null|undefined,
+          {}|null|undefined>): void;
   updateServiceAccount(
       request?: protos.google.iam.admin.v1.IServiceAccount,
       optionsOrCallback?: CallOptions|Callback<
@@ -597,6 +597,23 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.updateServiceAccount(request, options, callback);
   }
+/**
+ * Patches a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.iam.admin.v1.ServiceAccount} request.serviceAccount
+ * @param {google.protobuf.FieldMask} request.updateMask
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServiceAccount]{@link google.iam.admin.v1.ServiceAccount}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/i_a_m.patch_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_PatchServiceAccount_async
+ */
   patchServiceAccount(
       request?: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
       options?: CallOptions):
@@ -617,23 +634,6 @@ export class IAMClient {
           protos.google.iam.admin.v1.IServiceAccount,
           protos.google.iam.admin.v1.IPatchServiceAccountRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Patches a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.iam.admin.v1.ServiceAccount} request.serviceAccount
- * @param {google.protobuf.FieldMask} request.updateMask
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ServiceAccount]{@link google.iam.admin.v1.ServiceAccount}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.patchServiceAccount(request);
- */
   patchServiceAccount(
       request?: protos.google.iam.admin.v1.IPatchServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -668,26 +668,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.patchServiceAccount(request, options, callback);
   }
-  deleteServiceAccount(
-      request?: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.iam.admin.v1.IDeleteServiceAccountRequest|undefined, {}|undefined
-      ]>;
-  deleteServiceAccount(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IDeleteServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteServiceAccount(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IDeleteServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
@@ -720,9 +700,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteServiceAccount(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.delete_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_DeleteServiceAccount_async
  */
+  deleteServiceAccount(
+      request?: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IDeleteServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  deleteServiceAccount(
+      request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteServiceAccount(
+      request: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteServiceAccount(
       request?: protos.google.iam.admin.v1.IDeleteServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -757,26 +757,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.deleteServiceAccount(request, options, callback);
   }
-  undeleteServiceAccount(
-      request?: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
-        protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|undefined, {}|undefined
-      ]>;
-  undeleteServiceAccount(
-      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
-          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  undeleteServiceAccount(
-      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
-          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Restores a deleted {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
@@ -801,9 +781,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.undeleteServiceAccount(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.undelete_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_UndeleteServiceAccount_async
  */
+  undeleteServiceAccount(
+      request?: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+        protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  undeleteServiceAccount(
+      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  undeleteServiceAccount(
+      request: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IUndeleteServiceAccountResponse,
+          protos.google.iam.admin.v1.IUndeleteServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   undeleteServiceAccount(
       request?: protos.google.iam.admin.v1.IUndeleteServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -838,26 +838,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.undeleteServiceAccount(request, options, callback);
   }
-  enableServiceAccount(
-      request?: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.iam.admin.v1.IEnableServiceAccountRequest|undefined, {}|undefined
-      ]>;
-  enableServiceAccount(
-      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  enableServiceAccount(
-      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Enables a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount} that was disabled by
  * {@link google.iam.admin.v1.IAM.DisableServiceAccount|DisableServiceAccount}.
@@ -883,9 +863,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.enableServiceAccount(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.enable_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_EnableServiceAccount_async
  */
+  enableServiceAccount(
+      request?: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IEnableServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  enableServiceAccount(
+      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  enableServiceAccount(
+      request: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IEnableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   enableServiceAccount(
       request?: protos.google.iam.admin.v1.IEnableServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -920,26 +920,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.enableServiceAccount(request, options, callback);
   }
-  disableServiceAccount(
-      request?: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.iam.admin.v1.IDisableServiceAccountRequest|undefined, {}|undefined
-      ]>;
-  disableServiceAccount(
-      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  disableServiceAccount(
-      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Disables a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount} immediately.
  *
@@ -973,9 +953,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.disableServiceAccount(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.disable_service_account.js</caption>
+ * region_tag:iam_v1_generated_IAM_DisableServiceAccount_async
  */
+  disableServiceAccount(
+      request?: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IDisableServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  disableServiceAccount(
+      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  disableServiceAccount(
+      request: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDisableServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   disableServiceAccount(
       request?: protos.google.iam.admin.v1.IDisableServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1010,26 +1010,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.disableServiceAccount(request, options, callback);
   }
-  listServiceAccountKeys(
-      request?: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
-        protos.google.iam.admin.v1.IListServiceAccountKeysRequest|undefined, {}|undefined
-      ]>;
-  listServiceAccountKeys(
-      request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
-          protos.google.iam.admin.v1.IListServiceAccountKeysRequest|null|undefined,
-          {}|null|undefined>): void;
-  listServiceAccountKeys(
-      request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
-          protos.google.iam.admin.v1.IListServiceAccountKeysRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists every {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey} for a service account.
  *
@@ -1053,9 +1033,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listServiceAccountKeys(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.list_service_account_keys.js</caption>
+ * region_tag:iam_v1_generated_IAM_ListServiceAccountKeys_async
  */
+  listServiceAccountKeys(
+      request?: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
+        protos.google.iam.admin.v1.IListServiceAccountKeysRequest|undefined, {}|undefined
+      ]>;
+  listServiceAccountKeys(
+      request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
+          protos.google.iam.admin.v1.IListServiceAccountKeysRequest|null|undefined,
+          {}|null|undefined>): void;
+  listServiceAccountKeys(
+      request: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IListServiceAccountKeysResponse,
+          protos.google.iam.admin.v1.IListServiceAccountKeysRequest|null|undefined,
+          {}|null|undefined>): void;
   listServiceAccountKeys(
       request?: protos.google.iam.admin.v1.IListServiceAccountKeysRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1090,26 +1090,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.listServiceAccountKeys(request, options, callback);
   }
-  getServiceAccountKey(
-      request?: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IServiceAccountKey,
-        protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|undefined, {}|undefined
-      ]>;
-  getServiceAccountKey(
-      request: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccountKey,
-          protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getServiceAccountKey(
-      request: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccountKey,
-          protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}.
  *
@@ -1132,9 +1112,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getServiceAccountKey(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.get_service_account_key.js</caption>
+ * region_tag:iam_v1_generated_IAM_GetServiceAccountKey_async
  */
+  getServiceAccountKey(
+      request?: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccountKey,
+        protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|undefined, {}|undefined
+      ]>;
+  getServiceAccountKey(
+      request: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getServiceAccountKey(
+      request: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IGetServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   getServiceAccountKey(
       request?: protos.google.iam.admin.v1.IGetServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1169,26 +1169,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.getServiceAccountKey(request, options, callback);
   }
-  createServiceAccountKey(
-      request?: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IServiceAccountKey,
-        protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|undefined, {}|undefined
-      ]>;
-  createServiceAccountKey(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccountKey,
-          protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  createServiceAccountKey(
-      request: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccountKey,
-          protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}.
  *
@@ -1215,9 +1195,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createServiceAccountKey(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.create_service_account_key.js</caption>
+ * region_tag:iam_v1_generated_IAM_CreateServiceAccountKey_async
  */
+  createServiceAccountKey(
+      request?: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccountKey,
+        protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|undefined, {}|undefined
+      ]>;
+  createServiceAccountKey(
+      request: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  createServiceAccountKey(
+      request: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   createServiceAccountKey(
       request?: protos.google.iam.admin.v1.ICreateServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1252,26 +1252,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.createServiceAccountKey(request, options, callback);
   }
-  uploadServiceAccountKey(
-      request?: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IServiceAccountKey,
-        protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|undefined, {}|undefined
-      ]>;
-  uploadServiceAccountKey(
-      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccountKey,
-          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  uploadServiceAccountKey(
-      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IServiceAccountKey,
-          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}, using a public key that you provide.
  *
@@ -1295,9 +1275,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.uploadServiceAccountKey(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.upload_service_account_key.js</caption>
+ * region_tag:iam_v1_generated_IAM_UploadServiceAccountKey_async
  */
+  uploadServiceAccountKey(
+      request?: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccountKey,
+        protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|undefined, {}|undefined
+      ]>;
+  uploadServiceAccountKey(
+      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  uploadServiceAccountKey(
+      request: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IServiceAccountKey,
+          protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   uploadServiceAccountKey(
       request?: protos.google.iam.admin.v1.IUploadServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1332,26 +1332,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.uploadServiceAccountKey(request, options, callback);
   }
-  deleteServiceAccountKey(
-      request?: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|undefined, {}|undefined
-      ]>;
-  deleteServiceAccountKey(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteServiceAccountKey(
-      request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a {@link google.iam.admin.v1.ServiceAccountKey|ServiceAccountKey}. Deleting a service account key does not
  * revoke short-lived credentials that have been issued based on the service
@@ -1372,9 +1352,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteServiceAccountKey(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.delete_service_account_key.js</caption>
+ * region_tag:iam_v1_generated_IAM_DeleteServiceAccountKey_async
  */
+  deleteServiceAccountKey(
+      request?: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|undefined, {}|undefined
+      ]>;
+  deleteServiceAccountKey(
+      request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteServiceAccountKey(
+      request: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteServiceAccountKey(
       request?: protos.google.iam.admin.v1.IDeleteServiceAccountKeyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1409,26 +1409,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.deleteServiceAccountKey(request, options, callback);
   }
-  signBlob(
-      request?: protos.google.iam.admin.v1.ISignBlobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.ISignBlobResponse,
-        protos.google.iam.admin.v1.ISignBlobRequest|undefined, {}|undefined
-      ]>;
-  signBlob(
-      request: protos.google.iam.admin.v1.ISignBlobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.ISignBlobResponse,
-          protos.google.iam.admin.v1.ISignBlobRequest|null|undefined,
-          {}|null|undefined>): void;
-  signBlob(
-      request: protos.google.iam.admin.v1.ISignBlobRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.ISignBlobResponse,
-          protos.google.iam.admin.v1.ISignBlobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * **Note:** This method is deprecated. Use the
  * [`signBlob`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signBlob)
@@ -1462,10 +1442,30 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.signBlob(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.sign_blob.js</caption>
+ * region_tag:iam_v1_generated_IAM_SignBlob_async
  * @deprecated SignBlob is deprecated and may be removed in a future version.
  */
+  signBlob(
+      request?: protos.google.iam.admin.v1.ISignBlobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.ISignBlobResponse,
+        protos.google.iam.admin.v1.ISignBlobRequest|undefined, {}|undefined
+      ]>;
+  signBlob(
+      request: protos.google.iam.admin.v1.ISignBlobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.ISignBlobResponse,
+          protos.google.iam.admin.v1.ISignBlobRequest|null|undefined,
+          {}|null|undefined>): void;
+  signBlob(
+      request: protos.google.iam.admin.v1.ISignBlobRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.ISignBlobResponse,
+          protos.google.iam.admin.v1.ISignBlobRequest|null|undefined,
+          {}|null|undefined>): void;
   signBlob(
       request?: protos.google.iam.admin.v1.ISignBlobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1501,26 +1501,6 @@ export class IAMClient {
     this.warn('DEP$IAM-$SignBlob','SignBlob is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.signBlob(request, options, callback);
   }
-  signJwt(
-      request?: protos.google.iam.admin.v1.ISignJwtRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.ISignJwtResponse,
-        protos.google.iam.admin.v1.ISignJwtRequest|undefined, {}|undefined
-      ]>;
-  signJwt(
-      request: protos.google.iam.admin.v1.ISignJwtRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.ISignJwtResponse,
-          protos.google.iam.admin.v1.ISignJwtRequest|null|undefined,
-          {}|null|undefined>): void;
-  signJwt(
-      request: protos.google.iam.admin.v1.ISignJwtRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.ISignJwtResponse,
-          protos.google.iam.admin.v1.ISignJwtRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * **Note:** This method is deprecated. Use the
  * [`signJwt`](https://cloud.google.com/iam/help/rest-credentials/v1/projects.serviceAccounts/signJwt)
@@ -1564,10 +1544,30 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.signJwt(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.sign_jwt.js</caption>
+ * region_tag:iam_v1_generated_IAM_SignJwt_async
  * @deprecated SignJwt is deprecated and may be removed in a future version.
  */
+  signJwt(
+      request?: protos.google.iam.admin.v1.ISignJwtRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.ISignJwtResponse,
+        protos.google.iam.admin.v1.ISignJwtRequest|undefined, {}|undefined
+      ]>;
+  signJwt(
+      request: protos.google.iam.admin.v1.ISignJwtRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.ISignJwtResponse,
+          protos.google.iam.admin.v1.ISignJwtRequest|null|undefined,
+          {}|null|undefined>): void;
+  signJwt(
+      request: protos.google.iam.admin.v1.ISignJwtRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.ISignJwtResponse,
+          protos.google.iam.admin.v1.ISignJwtRequest|null|undefined,
+          {}|null|undefined>): void;
   signJwt(
       request?: protos.google.iam.admin.v1.ISignJwtRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1603,26 +1603,6 @@ export class IAMClient {
     this.warn('DEP$IAM-$SignJwt','SignJwt is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.signJwt(request, options, callback);
   }
-  getIamPolicy(
-      request?: protos.google.iam.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the IAM policy that is attached to a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}. This IAM
  * policy specifies which members have access to the service account.
@@ -1650,9 +1630,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.get_iam_policy.js</caption>
+ * region_tag:iam_v1_generated_IAM_GetIamPolicy_async
  */
+  getIamPolicy(
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1687,26 +1687,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the IAM policy that is attached to a {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
  *
@@ -1743,9 +1723,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.set_iam_policy.js</caption>
+ * region_tag:iam_v1_generated_IAM_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1780,26 +1780,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Tests whether the caller has the specified permissions on a
  * {@link google.iam.admin.v1.ServiceAccount|ServiceAccount}.
@@ -1821,9 +1801,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.test_iam_permissions.js</caption>
+ * region_tag:iam_v1_generated_IAM_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1858,26 +1858,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
-  getRole(
-      request?: protos.google.iam.admin.v1.IGetRoleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole,
-        protos.google.iam.admin.v1.IGetRoleRequest|undefined, {}|undefined
-      ]>;
-  getRole(
-      request: protos.google.iam.admin.v1.IGetRoleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IGetRoleRequest|null|undefined,
-          {}|null|undefined>): void;
-  getRole(
-      request: protos.google.iam.admin.v1.IGetRoleRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IGetRoleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the definition of a {@link google.iam.admin.v1.Role|Role}.
  *
@@ -1918,9 +1898,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getRole(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.get_role.js</caption>
+ * region_tag:iam_v1_generated_IAM_GetRole_async
  */
+  getRole(
+      request?: protos.google.iam.admin.v1.IGetRoleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole,
+        protos.google.iam.admin.v1.IGetRoleRequest|undefined, {}|undefined
+      ]>;
+  getRole(
+      request: protos.google.iam.admin.v1.IGetRoleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IGetRoleRequest|null|undefined,
+          {}|null|undefined>): void;
+  getRole(
+      request: protos.google.iam.admin.v1.IGetRoleRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IGetRoleRequest|null|undefined,
+          {}|null|undefined>): void;
   getRole(
       request?: protos.google.iam.admin.v1.IGetRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1955,26 +1955,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.getRole(request, options, callback);
   }
-  createRole(
-      request?: protos.google.iam.admin.v1.ICreateRoleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole,
-        protos.google.iam.admin.v1.ICreateRoleRequest|undefined, {}|undefined
-      ]>;
-  createRole(
-      request: protos.google.iam.admin.v1.ICreateRoleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.ICreateRoleRequest|null|undefined,
-          {}|null|undefined>): void;
-  createRole(
-      request: protos.google.iam.admin.v1.ICreateRoleRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.ICreateRoleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new custom {@link google.iam.admin.v1.Role|Role}.
  *
@@ -2016,9 +1996,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createRole(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.create_role.js</caption>
+ * region_tag:iam_v1_generated_IAM_CreateRole_async
  */
+  createRole(
+      request?: protos.google.iam.admin.v1.ICreateRoleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole,
+        protos.google.iam.admin.v1.ICreateRoleRequest|undefined, {}|undefined
+      ]>;
+  createRole(
+      request: protos.google.iam.admin.v1.ICreateRoleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.ICreateRoleRequest|null|undefined,
+          {}|null|undefined>): void;
+  createRole(
+      request: protos.google.iam.admin.v1.ICreateRoleRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.ICreateRoleRequest|null|undefined,
+          {}|null|undefined>): void;
   createRole(
       request?: protos.google.iam.admin.v1.ICreateRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2053,26 +2053,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.createRole(request, options, callback);
   }
-  updateRole(
-      request?: protos.google.iam.admin.v1.IUpdateRoleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole,
-        protos.google.iam.admin.v1.IUpdateRoleRequest|undefined, {}|undefined
-      ]>;
-  updateRole(
-      request: protos.google.iam.admin.v1.IUpdateRoleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IUpdateRoleRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateRole(
-      request: protos.google.iam.admin.v1.IUpdateRoleRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IUpdateRoleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the definition of a custom {@link google.iam.admin.v1.Role|Role}.
  *
@@ -2110,9 +2090,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateRole(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.update_role.js</caption>
+ * region_tag:iam_v1_generated_IAM_UpdateRole_async
  */
+  updateRole(
+      request?: protos.google.iam.admin.v1.IUpdateRoleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole,
+        protos.google.iam.admin.v1.IUpdateRoleRequest|undefined, {}|undefined
+      ]>;
+  updateRole(
+      request: protos.google.iam.admin.v1.IUpdateRoleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IUpdateRoleRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateRole(
+      request: protos.google.iam.admin.v1.IUpdateRoleRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IUpdateRoleRequest|null|undefined,
+          {}|null|undefined>): void;
   updateRole(
       request?: protos.google.iam.admin.v1.IUpdateRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2147,26 +2147,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.updateRole(request, options, callback);
   }
-  deleteRole(
-      request?: protos.google.iam.admin.v1.IDeleteRoleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole,
-        protos.google.iam.admin.v1.IDeleteRoleRequest|undefined, {}|undefined
-      ]>;
-  deleteRole(
-      request: protos.google.iam.admin.v1.IDeleteRoleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IDeleteRoleRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteRole(
-      request: protos.google.iam.admin.v1.IDeleteRoleRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IDeleteRoleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a custom {@link google.iam.admin.v1.Role|Role}.
  *
@@ -2218,9 +2198,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteRole(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.delete_role.js</caption>
+ * region_tag:iam_v1_generated_IAM_DeleteRole_async
  */
+  deleteRole(
+      request?: protos.google.iam.admin.v1.IDeleteRoleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole,
+        protos.google.iam.admin.v1.IDeleteRoleRequest|undefined, {}|undefined
+      ]>;
+  deleteRole(
+      request: protos.google.iam.admin.v1.IDeleteRoleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IDeleteRoleRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteRole(
+      request: protos.google.iam.admin.v1.IDeleteRoleRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IDeleteRoleRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteRole(
       request?: protos.google.iam.admin.v1.IDeleteRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2255,26 +2255,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.deleteRole(request, options, callback);
   }
-  undeleteRole(
-      request?: protos.google.iam.admin.v1.IUndeleteRoleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole,
-        protos.google.iam.admin.v1.IUndeleteRoleRequest|undefined, {}|undefined
-      ]>;
-  undeleteRole(
-      request: protos.google.iam.admin.v1.IUndeleteRoleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IUndeleteRoleRequest|null|undefined,
-          {}|null|undefined>): void;
-  undeleteRole(
-      request: protos.google.iam.admin.v1.IUndeleteRoleRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IRole,
-          protos.google.iam.admin.v1.IUndeleteRoleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Undeletes a custom {@link google.iam.admin.v1.Role|Role}.
  *
@@ -2310,9 +2290,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.undeleteRole(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.undelete_role.js</caption>
+ * region_tag:iam_v1_generated_IAM_UndeleteRole_async
  */
+  undeleteRole(
+      request?: protos.google.iam.admin.v1.IUndeleteRoleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole,
+        protos.google.iam.admin.v1.IUndeleteRoleRequest|undefined, {}|undefined
+      ]>;
+  undeleteRole(
+      request: protos.google.iam.admin.v1.IUndeleteRoleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IUndeleteRoleRequest|null|undefined,
+          {}|null|undefined>): void;
+  undeleteRole(
+      request: protos.google.iam.admin.v1.IUndeleteRoleRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IRole,
+          protos.google.iam.admin.v1.IUndeleteRoleRequest|null|undefined,
+          {}|null|undefined>): void;
   undeleteRole(
       request?: protos.google.iam.admin.v1.IUndeleteRoleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2347,26 +2347,6 @@ export class IAMClient {
     this.initialize();
     return this.innerApiCalls.undeleteRole(request, options, callback);
   }
-  queryAuditableServices(
-      request?: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
-        protos.google.iam.admin.v1.IQueryAuditableServicesRequest|undefined, {}|undefined
-      ]>;
-  queryAuditableServices(
-      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
-          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
-          {}|null|undefined>): void;
-  queryAuditableServices(
-      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
-          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns a list of services that allow you to opt into audit logs that are
  * not generated by default.
@@ -2390,9 +2370,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.queryAuditableServices(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.query_auditable_services.js</caption>
+ * region_tag:iam_v1_generated_IAM_QueryAuditableServices_async
  */
+  queryAuditableServices(
+      request?: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+        protos.google.iam.admin.v1.IQueryAuditableServicesRequest|undefined, {}|undefined
+      ]>;
+  queryAuditableServices(
+      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  queryAuditableServices(
+      request: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.IQueryAuditableServicesResponse,
+          protos.google.iam.admin.v1.IQueryAuditableServicesRequest|null|undefined,
+          {}|null|undefined>): void;
   queryAuditableServices(
       request?: protos.google.iam.admin.v1.IQueryAuditableServicesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2417,29 +2417,11 @@ export class IAMClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.queryAuditableServices(request, options, callback);
   }
-  lintPolicy(
-      request?: protos.google.iam.admin.v1.ILintPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.ILintPolicyResponse,
-        protos.google.iam.admin.v1.ILintPolicyRequest|undefined, {}|undefined
-      ]>;
-  lintPolicy(
-      request: protos.google.iam.admin.v1.ILintPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.admin.v1.ILintPolicyResponse,
-          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  lintPolicy(
-      request: protos.google.iam.admin.v1.ILintPolicyRequest,
-      callback: Callback<
-          protos.google.iam.admin.v1.ILintPolicyResponse,
-          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lints, or validates, an IAM policy. Currently checks the
  * {@link google.iam.v1.Binding.condition|google.iam.v1.Binding.condition} field, which contains a condition
@@ -2469,9 +2451,29 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.lintPolicy(request);
+ * @example <caption>include:samples/generated/v1/i_a_m.lint_policy.js</caption>
+ * region_tag:iam_v1_generated_IAM_LintPolicy_async
  */
+  lintPolicy(
+      request?: protos.google.iam.admin.v1.ILintPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.ILintPolicyResponse,
+        protos.google.iam.admin.v1.ILintPolicyRequest|undefined, {}|undefined
+      ]>;
+  lintPolicy(
+      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.admin.v1.ILintPolicyResponse,
+          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  lintPolicy(
+      request: protos.google.iam.admin.v1.ILintPolicyRequest,
+      callback: Callback<
+          protos.google.iam.admin.v1.ILintPolicyResponse,
+          protos.google.iam.admin.v1.ILintPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   lintPolicy(
       request?: protos.google.iam.admin.v1.ILintPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2496,32 +2498,13 @@ export class IAMClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.lintPolicy(request, options, callback);
   }
 
-  listServiceAccounts(
-      request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IServiceAccount[],
-        protos.google.iam.admin.v1.IListServiceAccountsRequest|null,
-        protos.google.iam.admin.v1.IListServiceAccountsResponse
-      ]>;
-  listServiceAccounts(
-      request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IListServiceAccountsRequest,
-          protos.google.iam.admin.v1.IListServiceAccountsResponse|null|undefined,
-          protos.google.iam.admin.v1.IServiceAccount>): void;
-  listServiceAccounts(
-      request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IListServiceAccountsRequest,
-          protos.google.iam.admin.v1.IListServiceAccountsResponse|null|undefined,
-          protos.google.iam.admin.v1.IServiceAccount>): void;
-/**
+ /**
  * Lists every {@link google.iam.admin.v1.ServiceAccount|ServiceAccount} that belongs to a specific project.
  *
  * @param {Object} request
@@ -2552,6 +2535,27 @@ export class IAMClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServiceAccounts(
+      request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IServiceAccount[],
+        protos.google.iam.admin.v1.IListServiceAccountsRequest|null,
+        protos.google.iam.admin.v1.IListServiceAccountsResponse
+      ]>;
+  listServiceAccounts(
+      request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IListServiceAccountsRequest,
+          protos.google.iam.admin.v1.IListServiceAccountsResponse|null|undefined,
+          protos.google.iam.admin.v1.IServiceAccount>): void;
+  listServiceAccounts(
+      request: protos.google.iam.admin.v1.IListServiceAccountsRequest,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IListServiceAccountsRequest,
+          protos.google.iam.admin.v1.IListServiceAccountsResponse|null|undefined,
+          protos.google.iam.admin.v1.IServiceAccount>): void;
   listServiceAccounts(
       request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2669,11 +2673,8 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServiceAccountsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/i_a_m.list_service_accounts.js</caption>
+ * region_tag:iam_v1_generated_IAM_ListServiceAccounts_async
  */
   listServiceAccountsAsync(
       request?: protos.google.iam.admin.v1.IListServiceAccountsRequest,
@@ -2688,7 +2689,6 @@ export class IAMClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServiceAccounts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2698,28 +2698,7 @@ export class IAMClient {
       callSettings
     ) as AsyncIterable<protos.google.iam.admin.v1.IServiceAccount>;
   }
-  queryGrantableRoles(
-      request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole[],
-        protos.google.iam.admin.v1.IQueryGrantableRolesRequest|null,
-        protos.google.iam.admin.v1.IQueryGrantableRolesResponse
-      ]>;
-  queryGrantableRoles(
-      request: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
-          protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
-          protos.google.iam.admin.v1.IRole>): void;
-  queryGrantableRoles(
-      request: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
-          protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
-          protos.google.iam.admin.v1.IRole>): void;
-/**
+ /**
  * Lists roles that can be granted on a Google Cloud resource. A role is
  * grantable if the IAM policy for the resource can contain bindings to the
  * role.
@@ -2755,6 +2734,27 @@ export class IAMClient {
  */
   queryGrantableRoles(
       request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole[],
+        protos.google.iam.admin.v1.IQueryGrantableRolesRequest|null,
+        protos.google.iam.admin.v1.IQueryGrantableRolesResponse
+      ]>;
+  queryGrantableRoles(
+      request: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+          protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
+          protos.google.iam.admin.v1.IRole>): void;
+  queryGrantableRoles(
+      request: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
+          protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
+          protos.google.iam.admin.v1.IRole>): void;
+  queryGrantableRoles(
+      request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
           protos.google.iam.admin.v1.IQueryGrantableRolesResponse|null|undefined,
@@ -2778,6 +2778,8 @@ export class IAMClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.queryGrantableRoles(request, options, callback);
   }
@@ -2818,6 +2820,8 @@ export class IAMClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['queryGrantableRoles'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2858,11 +2862,8 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.queryGrantableRolesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/i_a_m.query_grantable_roles.js</caption>
+ * region_tag:iam_v1_generated_IAM_QueryGrantableRoles_async
  */
   queryGrantableRolesAsync(
       request?: protos.google.iam.admin.v1.IQueryGrantableRolesRequest,
@@ -2870,7 +2871,8 @@ export class IAMClient {
     AsyncIterable<protos.google.iam.admin.v1.IRole>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['queryGrantableRoles'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2880,28 +2882,7 @@ export class IAMClient {
       callSettings
     ) as AsyncIterable<protos.google.iam.admin.v1.IRole>;
   }
-  listRoles(
-      request?: protos.google.iam.admin.v1.IListRolesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IRole[],
-        protos.google.iam.admin.v1.IListRolesRequest|null,
-        protos.google.iam.admin.v1.IListRolesResponse
-      ]>;
-  listRoles(
-      request: protos.google.iam.admin.v1.IListRolesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IListRolesRequest,
-          protos.google.iam.admin.v1.IListRolesResponse|null|undefined,
-          protos.google.iam.admin.v1.IRole>): void;
-  listRoles(
-      request: protos.google.iam.admin.v1.IListRolesRequest,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IListRolesRequest,
-          protos.google.iam.admin.v1.IListRolesResponse|null|undefined,
-          protos.google.iam.admin.v1.IRole>): void;
-/**
+ /**
  * Lists every predefined {@link google.iam.admin.v1.Role|Role} that IAM supports, or every custom role
  * that is defined for an organization or project.
  *
@@ -2961,6 +2942,27 @@ export class IAMClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listRoles(
+      request?: protos.google.iam.admin.v1.IListRolesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IRole[],
+        protos.google.iam.admin.v1.IListRolesRequest|null,
+        protos.google.iam.admin.v1.IListRolesResponse
+      ]>;
+  listRoles(
+      request: protos.google.iam.admin.v1.IListRolesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IListRolesRequest,
+          protos.google.iam.admin.v1.IListRolesResponse|null|undefined,
+          protos.google.iam.admin.v1.IRole>): void;
+  listRoles(
+      request: protos.google.iam.admin.v1.IListRolesRequest,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IListRolesRequest,
+          protos.google.iam.admin.v1.IListRolesResponse|null|undefined,
+          protos.google.iam.admin.v1.IRole>): void;
   listRoles(
       request?: protos.google.iam.admin.v1.IListRolesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3134,11 +3136,8 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listRolesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/i_a_m.list_roles.js</caption>
+ * region_tag:iam_v1_generated_IAM_ListRoles_async
  */
   listRolesAsync(
       request?: protos.google.iam.admin.v1.IListRolesRequest,
@@ -3153,7 +3152,6 @@ export class IAMClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listRoles'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3163,28 +3161,7 @@ export class IAMClient {
       callSettings
     ) as AsyncIterable<protos.google.iam.admin.v1.IRole>;
   }
-  queryTestablePermissions(
-      request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.admin.v1.IPermission[],
-        protos.google.iam.admin.v1.IQueryTestablePermissionsRequest|null,
-        protos.google.iam.admin.v1.IQueryTestablePermissionsResponse
-      ]>;
-  queryTestablePermissions(
-      request: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
-          protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,
-          protos.google.iam.admin.v1.IPermission>): void;
-  queryTestablePermissions(
-      request: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
-      callback: PaginationCallback<
-          protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
-          protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,
-          protos.google.iam.admin.v1.IPermission>): void;
-/**
+ /**
  * Lists every permission that you can test on a resource. A permission is
  * testable if you can check whether a member has that permission on the
  * resource.
@@ -3220,6 +3197,27 @@ export class IAMClient {
  */
   queryTestablePermissions(
       request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.admin.v1.IPermission[],
+        protos.google.iam.admin.v1.IQueryTestablePermissionsRequest|null,
+        protos.google.iam.admin.v1.IQueryTestablePermissionsResponse
+      ]>;
+  queryTestablePermissions(
+      request: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+          protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,
+          protos.google.iam.admin.v1.IPermission>): void;
+  queryTestablePermissions(
+      request: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+      callback: PaginationCallback<
+          protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
+          protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,
+          protos.google.iam.admin.v1.IPermission>): void;
+  queryTestablePermissions(
+      request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
           protos.google.iam.admin.v1.IQueryTestablePermissionsResponse|null|undefined,
@@ -3243,6 +3241,8 @@ export class IAMClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.queryTestablePermissions(request, options, callback);
   }
@@ -3283,6 +3283,8 @@ export class IAMClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['queryTestablePermissions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3323,11 +3325,8 @@ export class IAMClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.queryTestablePermissionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/i_a_m.query_testable_permissions.js</caption>
+ * region_tag:iam_v1_generated_IAM_QueryTestablePermissions_async
  */
   queryTestablePermissionsAsync(
       request?: protos.google.iam.admin.v1.IQueryTestablePermissionsRequest,
@@ -3335,7 +3334,8 @@ export class IAMClient {
     AsyncIterable<protos.google.iam.admin.v1.IPermission>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['queryTestablePermissions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

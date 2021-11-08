@@ -27,7 +27,7 @@ function main(parent) {
   /**
    *  Mask specifying which fields to read.
    */
-  // const fieldMask = ''
+  // const fieldMask = {}
   /**
    *  Filter expression, see go/filtering.
    */
@@ -40,8 +40,8 @@ function main(parent) {
   /**
    *  A token identifying a page of results for the server to return.
    *  Typically obtained from the
-   *  [ListColumnSpecsResponse.next_page_token][google.cloud.automl.v1beta1.ListColumnSpecsResponse.next_page_token] field of the previous
-   *  [AutoMl.ListColumnSpecs][google.cloud.automl.v1beta1.AutoMl.ListColumnSpecs] call.
+   *  ListColumnSpecsResponse.next_page_token google.cloud.automl.v1beta1.ListColumnSpecsResponse.next_page_token  field of the previous
+   *  AutoMl.ListColumnSpecs google.cloud.automl.v1beta1.AutoMl.ListColumnSpecs  call.
    */
   // const pageToken = 'abc123'
 
@@ -51,7 +51,7 @@ function main(parent) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function listColumnSpecs() {
+  async function callListColumnSpecs() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     }
   }
 
-  listColumnSpecs();
+  callListColumnSpecs();
   // [END automl_v1beta1_generated_AutoMl_ListColumnSpecs_async]
 }
 

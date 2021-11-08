@@ -34,9 +34,9 @@ function main(sinkName, sink) {
    *  Required. The updated sink, whose name is the same identifier that appears as part
    *  of `sink_name`.
    */
-  // const sink = ''
+  // const sink = {}
   /**
-   *  Optional. See [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink]
+   *  Optional. See sinks.create google.logging.v2.ConfigServiceV2.CreateSink 
    *  for a description of this field. When updating a sink, the effect of this
    *  field on the value of `writer_identity` in the updated sink depends on both
    *  the old and new values of this field:
@@ -61,7 +61,7 @@ function main(sinkName, sink) {
    *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *  Example: `updateMask=filter`.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -69,7 +69,7 @@ function main(sinkName, sink) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function updateSink() {
+  async function callUpdateSink() {
     // Construct request
     const request = {
       sinkName,
@@ -81,7 +81,7 @@ function main(sinkName, sink) {
     console.log(response);
   }
 
-  updateSink();
+  callUpdateSink();
   // [END logging_v2_generated_ConfigServiceV2_UpdateSink_async]
 }
 

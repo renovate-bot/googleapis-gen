@@ -32,9 +32,9 @@ function main() {
    *  Return only metric data that has changed since this time.
    *  Default is to return all information about all metrics for the job.
    */
-  // const startTime = ''
+  // const startTime = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains the job specified by job_id.
    */
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new MetricsV1Beta3Client();
 
-  async function getJobMetrics() {
+  async function callGetJobMetrics() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  getJobMetrics();
+  callGetJobMetrics();
   // [END dataflow_v1beta3_generated_MetricsV1Beta3_GetJobMetrics_async]
 }
 

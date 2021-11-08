@@ -33,7 +33,7 @@ function main() {
   /**
    *  The command message to execute, represented as a Struct.
    */
-  // const params = ''
+  // const params = {}
 
   // Imports the Sdm library
   const {SmartDeviceManagementServiceClient} = require('sdm').v1;
@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const sdmClient = new SmartDeviceManagementServiceClient();
 
-  async function executeDeviceCommand() {
+  async function callExecuteDeviceCommand() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  executeDeviceCommand();
+  callExecuteDeviceCommand();
   // [END smartdevicemanagement_v1_generated_SmartDeviceManagementService_ExecuteDeviceCommand_async]
 }
 

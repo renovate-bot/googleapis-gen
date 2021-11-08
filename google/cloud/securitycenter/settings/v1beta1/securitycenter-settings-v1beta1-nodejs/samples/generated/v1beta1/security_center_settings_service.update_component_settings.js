@@ -31,11 +31,11 @@ function main(componentSettings) {
    *   * `projects/{project}/regions/{region}/clusters/{cluster}/components/{component}/settings`
    *   * `projects/{project}/zones/{zone}/clusters/{cluster}/components/{component}/settings`
    */
-  // const componentSettings = ''
+  // const componentSettings = {}
   /**
    *  The list of fields to be updated on the component settings resource.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Settings library
   const {SecurityCenterSettingsServiceClient} = require('settings').v1beta1;
@@ -43,7 +43,7 @@ function main(componentSettings) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function updateComponentSettings() {
+  async function callUpdateComponentSettings() {
     // Construct request
     const request = {
       componentSettings,
@@ -54,7 +54,7 @@ function main(componentSettings) {
     console.log(response);
   }
 
-  updateComponentSettings();
+  callUpdateComponentSettings();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_UpdateComponentSettings_async]
 }
 

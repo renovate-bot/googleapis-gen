@@ -35,7 +35,7 @@ function main(agentUserId) {
   // Instantiates a client
   const graphClient = new HomeGraphApiServiceClient();
 
-  async function deleteAgentUser() {
+  async function callDeleteAgentUser() {
     // Construct request
     const request = {
       agentUserId,
@@ -46,7 +46,7 @@ function main(agentUserId) {
     console.log(response);
   }
 
-  deleteAgentUser();
+  callDeleteAgentUser();
   // [END homegraph_v1_generated_HomeGraphApiService_DeleteAgentUser_async]
 }
 

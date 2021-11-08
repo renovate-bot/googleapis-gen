@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const apigatewayClient = new ApiGatewayServiceClient();
 
-  async function deleteApiConfig() {
+  async function callDeleteApiConfig() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteApiConfig();
+  callDeleteApiConfig();
   // [END apigateway_v1_generated_ApiGatewayService_DeleteApiConfig_async]
 }
 

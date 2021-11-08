@@ -30,7 +30,7 @@ function main(name, view) {
   /**
    *  Required. The updated view.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Optional. Field mask that specifies the fields in `view` that need
    *  an update. A field will be overwritten if, and only if, it is
@@ -39,7 +39,7 @@ function main(name, view) {
    *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *  Example: `updateMask=filter`.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -47,7 +47,7 @@ function main(name, view) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function updateView() {
+  async function callUpdateView() {
     // Construct request
     const request = {
       name,
@@ -59,7 +59,7 @@ function main(name, view) {
     console.log(response);
   }
 
-  updateView();
+  callUpdateView();
   // [END logging_v2_generated_ConfigServiceV2_UpdateView_async]
 }
 

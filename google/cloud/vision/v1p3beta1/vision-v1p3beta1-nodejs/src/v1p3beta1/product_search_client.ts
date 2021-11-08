@@ -347,26 +347,6 @@ export class ProductSearchClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProductSet,
-        protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest|undefined, {}|undefined
-      ]>;
-  createProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProductSet,
-          protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  createProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProductSet,
-          protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and returns a new ProductSet resource.
  *
@@ -395,9 +375,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createProductSet(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.create_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_CreateProductSet_async
  */
+  createProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProductSet,
+        protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest|undefined, {}|undefined
+      ]>;
+  createProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProductSet,
+          protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  createProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProductSet,
+          protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
   createProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.ICreateProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -432,26 +432,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.createProductSet(request, options, callback);
   }
-  getProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProductSet,
-        protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest|undefined, {}|undefined
-      ]>;
-  getProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProductSet,
-          protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProductSet,
-          protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets information associated with a ProductSet.
  *
@@ -473,9 +453,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getProductSet(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.get_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_GetProductSet_async
  */
+  getProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProductSet,
+        protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest|undefined, {}|undefined
+      ]>;
+  getProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProductSet,
+          protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProductSet,
+          protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
   getProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.IGetProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -510,26 +510,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.getProductSet(request, options, callback);
   }
-  updateProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProductSet,
-        protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest|undefined, {}|undefined
-      ]>;
-  updateProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProductSet,
-          protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProductSet,
-          protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Makes changes to a ProductSet resource.
  * Only display_name can be updated currently.
@@ -556,9 +536,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateProductSet(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.update_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_UpdateProductSet_async
  */
+  updateProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProductSet,
+        protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest|undefined, {}|undefined
+      ]>;
+  updateProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProductSet,
+          protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProductSet,
+          protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
   updateProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.IUpdateProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -593,26 +593,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.updateProductSet(request, options, callback);
   }
-  deleteProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest|undefined, {}|undefined
-      ]>;
-  deleteProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes a ProductSet. All Products and ReferenceImages in the
  * ProductSet will be deleted.
@@ -637,9 +617,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteProductSet(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.delete_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_DeleteProductSet_async
  */
+  deleteProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest|undefined, {}|undefined
+      ]>;
+  deleteProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.IDeleteProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -674,26 +674,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.deleteProductSet(request, options, callback);
   }
-  createProduct(
-      request?: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProduct,
-        protos.google.cloud.vision.v1p3beta1.ICreateProductRequest|undefined, {}|undefined
-      ]>;
-  createProduct(
-      request: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProduct,
-          protos.google.cloud.vision.v1p3beta1.ICreateProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  createProduct(
-      request: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProduct,
-          protos.google.cloud.vision.v1p3beta1.ICreateProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and returns a new product resource.
  *
@@ -725,9 +705,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createProduct(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.create_product.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_CreateProduct_async
  */
+  createProduct(
+      request?: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProduct,
+        protos.google.cloud.vision.v1p3beta1.ICreateProductRequest|undefined, {}|undefined
+      ]>;
+  createProduct(
+      request: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProduct,
+          protos.google.cloud.vision.v1p3beta1.ICreateProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  createProduct(
+      request: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProduct,
+          protos.google.cloud.vision.v1p3beta1.ICreateProductRequest|null|undefined,
+          {}|null|undefined>): void;
   createProduct(
       request?: protos.google.cloud.vision.v1p3beta1.ICreateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -762,26 +762,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.createProduct(request, options, callback);
   }
-  getProduct(
-      request?: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProduct,
-        protos.google.cloud.vision.v1p3beta1.IGetProductRequest|undefined, {}|undefined
-      ]>;
-  getProduct(
-      request: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProduct,
-          protos.google.cloud.vision.v1p3beta1.IGetProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  getProduct(
-      request: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProduct,
-          protos.google.cloud.vision.v1p3beta1.IGetProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets information associated with a Product.
  *
@@ -803,9 +783,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getProduct(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.get_product.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_GetProduct_async
  */
+  getProduct(
+      request?: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProduct,
+        protos.google.cloud.vision.v1p3beta1.IGetProductRequest|undefined, {}|undefined
+      ]>;
+  getProduct(
+      request: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProduct,
+          protos.google.cloud.vision.v1p3beta1.IGetProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  getProduct(
+      request: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProduct,
+          protos.google.cloud.vision.v1p3beta1.IGetProductRequest|null|undefined,
+          {}|null|undefined>): void;
   getProduct(
       request?: protos.google.cloud.vision.v1p3beta1.IGetProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -840,26 +840,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.getProduct(request, options, callback);
   }
-  updateProduct(
-      request?: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProduct,
-        protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest|undefined, {}|undefined
-      ]>;
-  updateProduct(
-      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProduct,
-          protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateProduct(
-      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IProduct,
-          protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Makes changes to a Product resource.
  * Only display_name, description and labels can be updated right now.
@@ -894,9 +874,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateProduct(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.update_product.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_UpdateProduct_async
  */
+  updateProduct(
+      request?: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProduct,
+        protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest|undefined, {}|undefined
+      ]>;
+  updateProduct(
+      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProduct,
+          protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateProduct(
+      request: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IProduct,
+          protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest|null|undefined,
+          {}|null|undefined>): void;
   updateProduct(
       request?: protos.google.cloud.vision.v1p3beta1.IUpdateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -931,26 +931,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.updateProduct(request, options, callback);
   }
-  deleteProduct(
-      request?: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest|undefined, {}|undefined
-      ]>;
-  deleteProduct(
-      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteProduct(
-      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes a product and its reference images.
  *
@@ -976,9 +956,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteProduct(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.delete_product.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_DeleteProduct_async
  */
+  deleteProduct(
+      request?: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest|undefined, {}|undefined
+      ]>;
+  deleteProduct(
+      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteProduct(
+      request: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteProduct(
       request?: protos.google.cloud.vision.v1p3beta1.IDeleteProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1013,26 +1013,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.deleteProduct(request, options, callback);
   }
-  createReferenceImage(
-      request?: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IReferenceImage,
-        protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest|undefined, {}|undefined
-      ]>;
-  createReferenceImage(
-      request: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
-          protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest|null|undefined,
-          {}|null|undefined>): void;
-  createReferenceImage(
-      request: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
-          protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and returns a new ReferenceImage resource.
  *
@@ -1076,9 +1056,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createReferenceImage(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.create_reference_image.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_CreateReferenceImage_async
  */
+  createReferenceImage(
+      request?: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IReferenceImage,
+        protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest|undefined, {}|undefined
+      ]>;
+  createReferenceImage(
+      request: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
+          protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest|null|undefined,
+          {}|null|undefined>): void;
+  createReferenceImage(
+      request: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
+          protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest|null|undefined,
+          {}|null|undefined>): void;
   createReferenceImage(
       request?: protos.google.cloud.vision.v1p3beta1.ICreateReferenceImageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1113,26 +1113,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.createReferenceImage(request, options, callback);
   }
-  deleteReferenceImage(
-      request?: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest|undefined, {}|undefined
-      ]>;
-  deleteReferenceImage(
-      request: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteReferenceImage(
-      request: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Permanently deletes a reference image.
  *
@@ -1161,9 +1141,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteReferenceImage(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.delete_reference_image.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_DeleteReferenceImage_async
  */
+  deleteReferenceImage(
+      request?: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest|undefined, {}|undefined
+      ]>;
+  deleteReferenceImage(
+      request: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteReferenceImage(
+      request: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteReferenceImage(
       request?: protos.google.cloud.vision.v1p3beta1.IDeleteReferenceImageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1198,26 +1198,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.deleteReferenceImage(request, options, callback);
   }
-  getReferenceImage(
-      request?: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IReferenceImage,
-        protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest|undefined, {}|undefined
-      ]>;
-  getReferenceImage(
-      request: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
-          protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest|null|undefined,
-          {}|null|undefined>): void;
-  getReferenceImage(
-      request: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
-          protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets information associated with a ReferenceImage.
  *
@@ -1240,9 +1220,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getReferenceImage(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.get_reference_image.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_GetReferenceImage_async
  */
+  getReferenceImage(
+      request?: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IReferenceImage,
+        protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest|undefined, {}|undefined
+      ]>;
+  getReferenceImage(
+      request: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
+          protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest|null|undefined,
+          {}|null|undefined>): void;
+  getReferenceImage(
+      request: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1p3beta1.IReferenceImage,
+          protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest|null|undefined,
+          {}|null|undefined>): void;
   getReferenceImage(
       request?: protos.google.cloud.vision.v1p3beta1.IGetReferenceImageRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1277,26 +1277,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.getReferenceImage(request, options, callback);
   }
-  addProductToProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest|undefined, {}|undefined
-      ]>;
-  addProductToProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  addProductToProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a Product to the specified ProductSet. If the Product is already
  * present, no change is made.
@@ -1326,9 +1306,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.addProductToProductSet(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.add_product_to_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_AddProductToProductSet_async
  */
+  addProductToProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest|undefined, {}|undefined
+      ]>;
+  addProductToProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  addProductToProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
   addProductToProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.IAddProductToProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1363,26 +1363,6 @@ export class ProductSearchClient {
     this.initialize();
     return this.innerApiCalls.addProductToProductSet(request, options, callback);
   }
-  removeProductFromProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest|undefined, {}|undefined
-      ]>;
-  removeProductFromProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  removeProductFromProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Removes a Product from the specified ProductSet.
  *
@@ -1409,9 +1389,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.removeProductFromProductSet(request);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.remove_product_from_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_RemoveProductFromProductSet_async
  */
+  removeProductFromProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest|undefined, {}|undefined
+      ]>;
+  removeProductFromProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  removeProductFromProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest|null|undefined,
+          {}|null|undefined>): void;
   removeProductFromProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.IRemoveProductFromProductSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1447,26 +1447,6 @@ export class ProductSearchClient {
     return this.innerApiCalls.removeProductFromProductSet(request, options, callback);
   }
 
-  importProductSets(
-      request?: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.vision.v1p3beta1.IImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.IBatchOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importProductSets(
-      request: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.vision.v1p3beta1.IImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.IBatchOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importProductSets(
-      request: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.vision.v1p3beta1.IImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.IBatchOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Asynchronous API that imports a list of reference images to specified
  * product sets based on a list of image information.
@@ -1497,10 +1477,29 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importProductSets(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.import_product_sets.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_ImportProductSets_async
  */
+  importProductSets(
+      request?: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.vision.v1p3beta1.IImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.IBatchOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importProductSets(
+      request: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.vision.v1p3beta1.IImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.IBatchOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importProductSets(
+      request: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.vision.v1p3beta1.IImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.IBatchOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importProductSets(
       request?: protos.google.cloud.vision.v1p3beta1.IImportProductSetsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1544,11 +1543,8 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportProductSetsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.import_product_sets.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_ImportProductSets_async
  */
   async checkImportProductSetsProgress(name: string): Promise<LROperation<protos.google.cloud.vision.v1p3beta1.ImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.BatchOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1556,28 +1552,7 @@ export class ProductSearchClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importProductSets, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.vision.v1p3beta1.ImportProductSetsResponse, protos.google.cloud.vision.v1p3beta1.BatchOperationMetadata>;
   }
-  listProductSets(
-      request?: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProductSet[],
-        protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest|null,
-        protos.google.cloud.vision.v1p3beta1.IListProductSetsResponse
-      ]>;
-  listProductSets(
-      request: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
-          protos.google.cloud.vision.v1p3beta1.IListProductSetsResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IProductSet>): void;
-  listProductSets(
-      request: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
-          protos.google.cloud.vision.v1p3beta1.IListProductSetsResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IProductSet>): void;
-/**
+ /**
  * Lists ProductSets in an unspecified order.
  *
  * Possible errors:
@@ -1608,6 +1583,27 @@ export class ProductSearchClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listProductSets(
+      request?: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProductSet[],
+        protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest|null,
+        protos.google.cloud.vision.v1p3beta1.IListProductSetsResponse
+      ]>;
+  listProductSets(
+      request: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
+          protos.google.cloud.vision.v1p3beta1.IListProductSetsResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IProductSet>): void;
+  listProductSets(
+      request: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
+          protos.google.cloud.vision.v1p3beta1.IListProductSetsResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IProductSet>): void;
   listProductSets(
       request?: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1715,11 +1711,8 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listProductSetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.list_product_sets.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_ListProductSets_async
  */
   listProductSetsAsync(
       request?: protos.google.cloud.vision.v1p3beta1.IListProductSetsRequest,
@@ -1734,7 +1727,6 @@ export class ProductSearchClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listProductSets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1744,28 +1736,7 @@ export class ProductSearchClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.vision.v1p3beta1.IProductSet>;
   }
-  listProducts(
-      request?: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProduct[],
-        protos.google.cloud.vision.v1p3beta1.IListProductsRequest|null,
-        protos.google.cloud.vision.v1p3beta1.IListProductsResponse
-      ]>;
-  listProducts(
-      request: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
-          protos.google.cloud.vision.v1p3beta1.IListProductsResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
-  listProducts(
-      request: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
-          protos.google.cloud.vision.v1p3beta1.IListProductsResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
-/**
+ /**
  * Lists products in an unspecified order.
  *
  * Possible errors:
@@ -1796,6 +1767,27 @@ export class ProductSearchClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listProducts(
+      request?: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProduct[],
+        protos.google.cloud.vision.v1p3beta1.IListProductsRequest|null,
+        protos.google.cloud.vision.v1p3beta1.IListProductsResponse
+      ]>;
+  listProducts(
+      request: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
+          protos.google.cloud.vision.v1p3beta1.IListProductsResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
+  listProducts(
+      request: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
+          protos.google.cloud.vision.v1p3beta1.IListProductsResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
   listProducts(
       request?: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1905,11 +1897,8 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listProductsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.list_products.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_ListProducts_async
  */
   listProductsAsync(
       request?: protos.google.cloud.vision.v1p3beta1.IListProductsRequest,
@@ -1924,7 +1913,6 @@ export class ProductSearchClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listProducts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1934,28 +1922,7 @@ export class ProductSearchClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.vision.v1p3beta1.IProduct>;
   }
-  listReferenceImages(
-      request?: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IReferenceImage[],
-        protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest|null,
-        protos.google.cloud.vision.v1p3beta1.IListReferenceImagesResponse
-      ]>;
-  listReferenceImages(
-      request: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
-          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IReferenceImage>): void;
-  listReferenceImages(
-      request: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
-          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IReferenceImage>): void;
-/**
+ /**
  * Lists reference images.
  *
  * Possible errors:
@@ -1991,6 +1958,27 @@ export class ProductSearchClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listReferenceImages(
+      request?: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IReferenceImage[],
+        protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest|null,
+        protos.google.cloud.vision.v1p3beta1.IListReferenceImagesResponse
+      ]>;
+  listReferenceImages(
+      request: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
+          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IReferenceImage>): void;
+  listReferenceImages(
+      request: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
+          protos.google.cloud.vision.v1p3beta1.IListReferenceImagesResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IReferenceImage>): void;
   listReferenceImages(
       request?: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2106,11 +2094,8 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listReferenceImagesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.list_reference_images.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_ListReferenceImages_async
  */
   listReferenceImagesAsync(
       request?: protos.google.cloud.vision.v1p3beta1.IListReferenceImagesRequest,
@@ -2125,7 +2110,6 @@ export class ProductSearchClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listReferenceImages'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2135,28 +2119,7 @@ export class ProductSearchClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.vision.v1p3beta1.IReferenceImage>;
   }
-  listProductsInProductSet(
-      request?: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1p3beta1.IProduct[],
-        protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest|null,
-        protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetResponse
-      ]>;
-  listProductsInProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
-          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
-  listProductsInProductSet(
-      request: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
-          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetResponse|null|undefined,
-          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
-/**
+ /**
  * Lists the Products in a ProductSet, in an unspecified order. If the
  * ProductSet does not exist, the products field of the response will be
  * empty.
@@ -2189,6 +2152,27 @@ export class ProductSearchClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listProductsInProductSet(
+      request?: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1p3beta1.IProduct[],
+        protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest|null,
+        protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetResponse
+      ]>;
+  listProductsInProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
+          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
+  listProductsInProductSet(
+      request: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
+          protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetResponse|null|undefined,
+          protos.google.cloud.vision.v1p3beta1.IProduct>): void;
   listProductsInProductSet(
       request?: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2298,11 +2282,8 @@ export class ProductSearchClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listProductsInProductSetAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1p3beta1/product_search.list_products_in_product_set.js</caption>
+ * region_tag:vision_v1p3beta1_generated_ProductSearch_ListProductsInProductSet_async
  */
   listProductsInProductSetAsync(
       request?: protos.google.cloud.vision.v1p3beta1.IListProductsInProductSetRequest,
@@ -2317,7 +2298,6 @@ export class ProductSearchClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listProductsInProductSet'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

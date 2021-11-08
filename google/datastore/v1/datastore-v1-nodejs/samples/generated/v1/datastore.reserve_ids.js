@@ -40,7 +40,7 @@ function main(projectId, keys) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function reserveIds() {
+  async function callReserveIds() {
     // Construct request
     const request = {
       projectId,
@@ -52,7 +52,7 @@ function main(projectId, keys) {
     console.log(response);
   }
 
-  reserveIds();
+  callReserveIds();
   // [END datastore_v1_generated_Datastore_ReserveIds_async]
 }
 

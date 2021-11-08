@@ -23,17 +23,17 @@ function main(updateMask, domain) {
   /**
    *  Required. Mask of fields to update. At least one path must be supplied in this
    *  field. The elements of the repeated paths field may only include
-   *  fields from [Domain][google.cloud.managedidentities.v1.Domain]:
+   *  fields from Domain google.cloud.managedidentities.v1.Domain:
    *   * `labels`
    *   * `locations`
    *   * `authorized_networks`
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. Domain message with updated fields. Only supported fields specified in
    *  update_mask are updated.
    */
-  // const domain = ''
+  // const domain = {}
 
   // Imports the Managedidentities library
   const {ManagedIdentitiesServiceClient} = require('@google-cloud/managed-identities').v1;
@@ -41,7 +41,7 @@ function main(updateMask, domain) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function updateDomain() {
+  async function callUpdateDomain() {
     // Construct request
     const request = {
       updateMask,
@@ -54,7 +54,7 @@ function main(updateMask, domain) {
     console.log(response);
   }
 
-  updateDomain();
+  callUpdateDomain();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_UpdateDomain_async]
 }
 

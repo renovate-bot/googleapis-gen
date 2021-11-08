@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function getEvaluation() {
+  async function callGetEvaluation() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEvaluation();
+  callGetEvaluation();
   // [END datalabeling_v1beta1_generated_DataLabelingService_GetEvaluation_async]
 }
 

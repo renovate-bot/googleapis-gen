@@ -126,7 +126,7 @@ describe('v9.ReachPlanServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableLocationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableLocationsResponse());
             client.innerApiCalls.listPlannableLocations = stubSimpleCall(expectedResponse);
             const [response] = await client.listPlannableLocations(request);
@@ -142,7 +142,7 @@ describe('v9.ReachPlanServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableLocationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableLocationsResponse());
             client.innerApiCalls.listPlannableLocations = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v9.ReachPlanServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableLocationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listPlannableLocations = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listPlannableLocations(request), expectedError);
@@ -186,7 +186,7 @@ describe('v9.ReachPlanServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableProductsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableProductsResponse());
             client.innerApiCalls.listPlannableProducts = stubSimpleCall(expectedResponse);
             const [response] = await client.listPlannableProducts(request);
@@ -202,7 +202,7 @@ describe('v9.ReachPlanServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableProductsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableProductsResponse());
             client.innerApiCalls.listPlannableProducts = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v9.ReachPlanServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.ListPlannableProductsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listPlannableProducts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listPlannableProducts(request), expectedError);

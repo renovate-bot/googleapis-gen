@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function enableServiceAccount() {
+  async function callEnableServiceAccount() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  enableServiceAccount();
+  callEnableServiceAccount();
   // [END iam_v1_generated_IAM_EnableServiceAccount_async]
 }
 

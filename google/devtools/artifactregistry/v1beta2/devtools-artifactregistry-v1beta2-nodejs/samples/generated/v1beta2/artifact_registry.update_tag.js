@@ -23,13 +23,13 @@ function main() {
   /**
    *  The tag that replaces the resource on the server.
    */
-  // const tag = ''
+  // const tag = {}
   /**
    *  The update mask applies to the resource. For the `FieldMask` definition,
    *  see
    *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Artifactregistry library
   const {ArtifactRegistryClient} = require('@google-cloud/artifact-registry').v1beta2;
@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const artifactregistryClient = new ArtifactRegistryClient();
 
-  async function updateTag() {
+  async function callUpdateTag() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  updateTag();
+  callUpdateTag();
   // [END artifactregistry_v1beta2_generated_ArtifactRegistry_UpdateTag_async]
 }
 

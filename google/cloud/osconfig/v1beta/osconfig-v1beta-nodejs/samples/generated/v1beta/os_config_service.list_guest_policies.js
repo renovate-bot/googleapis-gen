@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function listGuestPolicies() {
+  async function callListGuestPolicies() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listGuestPolicies();
+  callListGuestPolicies();
   // [END osconfig_v1beta_generated_OsConfigService_ListGuestPolicies_async]
 }
 

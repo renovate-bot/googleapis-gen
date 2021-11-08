@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function getDomain() {
+  async function callGetDomain() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDomain();
+  callGetDomain();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_GetDomain_async]
 }
 

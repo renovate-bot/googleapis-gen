@@ -29,7 +29,7 @@ function main() {
    */
   // const jobId = 'abc123'
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains the job specified by job_id.
    */
@@ -53,7 +53,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new MetricsV1Beta3Client();
 
-  async function getJobExecutionDetails() {
+  async function callGetJobExecutionDetails() {
     // Construct request
     const request = {
     };
@@ -65,7 +65,7 @@ function main() {
     }
   }
 
-  getJobExecutionDetails();
+  callGetJobExecutionDetails();
   // [END dataflow_v1beta3_generated_MetricsV1Beta3_GetJobExecutionDetails_async]
 }
 

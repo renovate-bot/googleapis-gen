@@ -37,7 +37,7 @@ function main(projectId, datasetId, modelId, model) {
    *  Follows RFC5789 patch semantics. Missing fields are not updated.
    *  To clear a field, explicitly set to default value.
    */
-  // const model = ''
+  // const model = {}
 
   // Imports the Bigquery library
   const {ModelServiceClient} = require('bigquery').v2;
@@ -45,7 +45,7 @@ function main(projectId, datasetId, modelId, model) {
   // Instantiates a client
   const bigqueryClient = new ModelServiceClient();
 
-  async function patchModel() {
+  async function callPatchModel() {
     // Construct request
     const request = {
       projectId,
@@ -59,7 +59,7 @@ function main(projectId, datasetId, modelId, model) {
     console.log(response);
   }
 
-  patchModel();
+  callPatchModel();
   // [END bigquery_v2_generated_ModelService_PatchModel_async]
 }
 

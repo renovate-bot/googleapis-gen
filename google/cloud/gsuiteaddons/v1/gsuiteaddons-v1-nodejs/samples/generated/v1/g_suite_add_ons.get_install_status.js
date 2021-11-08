@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function getInstallStatus() {
+  async function callGetInstallStatus() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getInstallStatus();
+  callGetInstallStatus();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_GetInstallStatus_async]
 }
 

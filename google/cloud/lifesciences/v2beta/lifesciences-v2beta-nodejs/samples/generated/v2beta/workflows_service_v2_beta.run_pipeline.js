@@ -27,7 +27,7 @@ function main(pipeline) {
   /**
    *  Required. The description of the pipeline to run.
    */
-  // const pipeline = ''
+  // const pipeline = {}
   /**
    *  User-defined labels to associate with the returned operation. These
    *  labels are not propagated to any Google Cloud Platform resources used by
@@ -50,7 +50,7 @@ function main(pipeline) {
   // Instantiates a client
   const lifesciencesClient = new WorkflowsServiceV2BetaClient();
 
-  async function runPipeline() {
+  async function callRunPipeline() {
     // Construct request
     const request = {
       pipeline,
@@ -62,7 +62,7 @@ function main(pipeline) {
     console.log(response);
   }
 
-  runPipeline();
+  callRunPipeline();
   // [END lifesciences_v2beta_generated_WorkflowsServiceV2Beta_RunPipeline_async]
 }
 

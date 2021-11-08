@@ -23,8 +23,8 @@ function main(projectName, groupId) {
   /**
    *  Required. The resource name of the Google Cloud Platform project. Written
    *  as `projects/{projectID}`, where `{projectID}` is the
-   *  [Google Cloud Platform project
-   *  ID](https://support.google.com/cloud/answer/6158840).
+   *  Google Cloud Platform project
+   *  ID (https://support.google.com/cloud/answer/6158840).
    *  Example: `projects/my-project-123`.
    */
   // const projectName = 'abc123'
@@ -37,13 +37,13 @@ function main(projectName, groupId) {
    *  matches the filter.
    *  Data for all service contexts is returned if this field is not specified.
    */
-  // const serviceFilter = ''
+  // const serviceFilter = {}
   /**
    *  Optional. List only data for the given time range.
    *  If not set a default time range is used. The field time_range_begin
    *  in the response will specify the beginning of this time range.
    */
-  // const timeRange = ''
+  // const timeRange = {}
   /**
    *  Optional. The maximum number of results to return per response.
    */
@@ -59,7 +59,7 @@ function main(projectName, groupId) {
   // Instantiates a client
   const clouderrorreportingClient = new ErrorStatsServiceClient();
 
-  async function listEvents() {
+  async function callListEvents() {
     // Construct request
     const request = {
       projectName,
@@ -73,7 +73,7 @@ function main(projectName, groupId) {
     }
   }
 
-  listEvents();
+  callListEvents();
   // [END clouderrorreporting_v1beta1_generated_ErrorStatsService_ListEvents_async]
 }
 

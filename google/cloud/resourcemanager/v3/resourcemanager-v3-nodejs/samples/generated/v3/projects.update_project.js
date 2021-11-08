@@ -27,7 +27,7 @@ function main(project) {
   /**
    *  Optional. An update mask to selectively update fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Resourcemanager library
   const {ProjectsClient} = require('@google-cloud/resource-manager').v3;
@@ -35,7 +35,7 @@ function main(project) {
   // Instantiates a client
   const resourcemanagerClient = new ProjectsClient();
 
-  async function updateProject() {
+  async function callUpdateProject() {
     // Construct request
     const request = {
       project,
@@ -47,7 +47,7 @@ function main(project) {
     console.log(response);
   }
 
-  updateProject();
+  callUpdateProject();
   // [END cloudresourcemanager_v3_generated_Projects_UpdateProject_async]
 }
 

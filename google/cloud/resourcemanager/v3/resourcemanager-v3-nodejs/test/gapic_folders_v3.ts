@@ -525,7 +525,7 @@ describe('v3.FoldersClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createFolder = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createFolder(request);
@@ -542,7 +542,7 @@ describe('v3.FoldersClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createFolder = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -572,7 +572,7 @@ describe('v3.FoldersClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createFolder = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createFolder(request), expectedError);
@@ -587,7 +587,7 @@ describe('v3.FoldersClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createFolder = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createFolder(request);
@@ -1217,7 +1217,7 @@ describe('v3.FoldersClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListFoldersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
@@ -1237,7 +1237,7 @@ describe('v3.FoldersClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListFoldersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
@@ -1268,7 +1268,7 @@ describe('v3.FoldersClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListFoldersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listFolders = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listFolders(request), expectedError);
@@ -1388,7 +1388,7 @@ describe('v3.FoldersClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchFoldersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
@@ -1408,7 +1408,7 @@ describe('v3.FoldersClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchFoldersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
@@ -1439,7 +1439,7 @@ describe('v3.FoldersClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchFoldersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.searchFolders = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.searchFolders(request), expectedError);

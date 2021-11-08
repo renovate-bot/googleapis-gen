@@ -26,10 +26,10 @@ function main(parent, processor) {
    */
   // const parent = 'abc123'
   /**
-   *  Required. The processor to be created, requires [processor_type] and [display_name]
+   *  Required. The processor to be created, requires processor_type  and display_name 
    *  to be set. Also, the processor is under CMEK if CMEK fields are set.
    */
-  // const processor = ''
+  // const processor = {}
 
   // Imports the Documentai library
   const {DocumentProcessorServiceClient} = require('@google-cloud/documentai').v1beta3;
@@ -37,7 +37,7 @@ function main(parent, processor) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function createProcessor() {
+  async function callCreateProcessor() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, processor) {
     console.log(response);
   }
 
-  createProcessor();
+  callCreateProcessor();
   // [END documentai_v1beta3_generated_DocumentProcessorService_CreateProcessor_async]
 }
 

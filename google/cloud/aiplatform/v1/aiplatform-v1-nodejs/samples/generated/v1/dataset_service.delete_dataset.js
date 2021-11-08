@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new DatasetServiceClient();
 
-  async function deleteDataset() {
+  async function callDeleteDataset() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteDataset();
+  callDeleteDataset();
   // [END aiplatform_v1_generated_DatasetService_DeleteDataset_async]
 }
 

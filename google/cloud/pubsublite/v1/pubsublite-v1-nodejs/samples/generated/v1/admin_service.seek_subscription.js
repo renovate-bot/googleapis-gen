@@ -27,13 +27,13 @@ function main(name) {
   /**
    *  Seek to a named position with respect to the message backlog.
    */
-  // const namedTarget = ''
+  // const namedTarget = {}
   /**
    *  Seek to the first message whose publish or event time is greater than or
    *  equal to the specified query time. If no such message can be located,
    *  will seek to the end of the message backlog.
    */
-  // const timeTarget = ''
+  // const timeTarget = {}
 
   // Imports the Pubsublite library
   const {AdminServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -41,7 +41,7 @@ function main(name) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function seekSubscription() {
+  async function callSeekSubscription() {
     // Construct request
     const request = {
       name,
@@ -53,7 +53,7 @@ function main(name) {
     console.log(response);
   }
 
-  seekSubscription();
+  callSeekSubscription();
   // [END pubsublite_v1_generated_AdminService_SeekSubscription_async]
 }
 

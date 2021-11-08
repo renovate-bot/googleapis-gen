@@ -677,7 +677,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetSettingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Settings());
             client.innerApiCalls.getSettings = stubSimpleCall(expectedResponse);
             const [response] = await client.getSettings(request);
@@ -693,7 +693,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetSettingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Settings());
             client.innerApiCalls.getSettings = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -720,7 +720,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetSettingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getSettings = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getSettings(request), expectedError);
@@ -737,7 +737,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UpdateSettingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Settings());
             client.innerApiCalls.updateSettings = stubSimpleCall(expectedResponse);
             const [response] = await client.updateSettings(request);
@@ -753,7 +753,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UpdateSettingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Settings());
             client.innerApiCalls.updateSettings = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -780,7 +780,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UpdateSettingsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateSettings = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateSettings(request), expectedError);
@@ -797,7 +797,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsResponse());
             client.innerApiCalls.batchDeleteAlerts = stubSimpleCall(expectedResponse);
             const [response] = await client.batchDeleteAlerts(request);
@@ -813,7 +813,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsResponse());
             client.innerApiCalls.batchDeleteAlerts = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -840,7 +840,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchDeleteAlerts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchDeleteAlerts(request), expectedError);
@@ -857,7 +857,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsResponse());
             client.innerApiCalls.batchUndeleteAlerts = stubSimpleCall(expectedResponse);
             const [response] = await client.batchUndeleteAlerts(request);
@@ -873,7 +873,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsResponse());
             client.innerApiCalls.batchUndeleteAlerts = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -900,7 +900,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchUndeleteAlerts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchUndeleteAlerts(request), expectedError);
@@ -917,7 +917,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),
@@ -937,7 +937,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),
@@ -968,7 +968,7 @@ describe('v1beta1.AlertCenterServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listAlerts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listAlerts(request), expectedError);

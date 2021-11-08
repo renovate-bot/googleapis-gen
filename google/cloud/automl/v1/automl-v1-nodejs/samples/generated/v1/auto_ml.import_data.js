@@ -29,7 +29,7 @@ function main(name, inputConfig) {
    *  Required. The desired input location and its domain specific semantics,
    *  if any.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1;
@@ -37,7 +37,7 @@ function main(name, inputConfig) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function importData() {
+  async function callImportData() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name, inputConfig) {
     console.log(response);
   }
 
-  importData();
+  callImportData();
   // [END automl_v1_generated_AutoMl_ImportData_async]
 }
 

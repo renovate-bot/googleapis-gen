@@ -330,6 +330,26 @@ export class GSuiteAddOnsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the authorization information for deployments in a given project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the project for which to get the Google Workspace Add-ons
+ *   authorization information.
+ *
+ *   Example: `projects/my_project/authorization`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Authorization]{@link google.cloud.gsuiteaddons.v1.Authorization}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.get_authorization.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_GetAuthorization_async
+ */
   getAuthorization(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
       options?: CallOptions):
@@ -350,26 +370,6 @@ export class GSuiteAddOnsClient {
           protos.google.cloud.gsuiteaddons.v1.IAuthorization,
           protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the authorization information for deployments in a given project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the project for which to get the Google Workspace Add-ons
- *   authorization information.
- *
- *   Example: `projects/my_project/authorization`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Authorization]{@link google.cloud.gsuiteaddons.v1.Authorization}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAuthorization(request);
- */
   getAuthorization(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetAuthorizationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -404,26 +404,6 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.getAuthorization(request, options, callback);
   }
-  createDeployment(
-      request?: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gsuiteaddons.v1.IDeployment,
-        protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|undefined, {}|undefined
-      ]>;
-  createDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gsuiteaddons.v1.IDeployment,
-          protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|null|undefined,
-          {}|null|undefined>): void;
-  createDeployment(
-      request: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
-      callback: Callback<
-          protos.google.cloud.gsuiteaddons.v1.IDeployment,
-          protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a deployment with the specified name and configuration.
  *
@@ -445,9 +425,29 @@ export class GSuiteAddOnsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createDeployment(request);
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.create_deployment.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_CreateDeployment_async
  */
+  createDeployment(
+      request?: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gsuiteaddons.v1.IDeployment,
+        protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|undefined, {}|undefined
+      ]>;
+  createDeployment(
+      request: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gsuiteaddons.v1.IDeployment,
+          protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|null|undefined,
+          {}|null|undefined>): void;
+  createDeployment(
+      request: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
+      callback: Callback<
+          protos.google.cloud.gsuiteaddons.v1.IDeployment,
+          protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest|null|undefined,
+          {}|null|undefined>): void;
   createDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.ICreateDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -482,6 +482,23 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.createDeployment(request, options, callback);
   }
+/**
+ * Creates or replaces a deployment with the specified name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.gsuiteaddons.v1.Deployment} request.deployment
+ *   Required. The deployment to create or replace.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Deployment]{@link google.cloud.gsuiteaddons.v1.Deployment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.replace_deployment.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_ReplaceDeployment_async
+ */
   replaceDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
       options?: CallOptions):
@@ -502,23 +519,6 @@ export class GSuiteAddOnsClient {
           protos.google.cloud.gsuiteaddons.v1.IDeployment,
           protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates or replaces a deployment with the specified name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.gsuiteaddons.v1.Deployment} request.deployment
- *   Required. The deployment to create or replace.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Deployment]{@link google.cloud.gsuiteaddons.v1.Deployment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.replaceDeployment(request);
- */
   replaceDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IReplaceDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -553,6 +553,25 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.replaceDeployment(request, options, callback);
   }
+/**
+ * Gets the deployment with the specified name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The full resource name of the deployment to get.
+ *
+ *   Example:  `projects/my_project/deployments/my_deployment`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Deployment]{@link google.cloud.gsuiteaddons.v1.Deployment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.get_deployment.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_GetDeployment_async
+ */
   getDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
       options?: CallOptions):
@@ -573,25 +592,6 @@ export class GSuiteAddOnsClient {
           protos.google.cloud.gsuiteaddons.v1.IDeployment,
           protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the deployment with the specified name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The full resource name of the deployment to get.
- *
- *   Example:  `projects/my_project/deployments/my_deployment`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Deployment]{@link google.cloud.gsuiteaddons.v1.Deployment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDeployment(request);
- */
   getDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -626,6 +626,28 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.getDeployment(request, options, callback);
   }
+/**
+ * Deletes the deployment with the given name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The full resource name of the deployment to delete.
+ *
+ *   Example:  `projects/my_project/deployments/my_deployment`.
+ * @param {string} request.etag
+ *   The etag of the deployment to delete.
+ *   If this is provided, it must match the server's etag.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.delete_deployment.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_DeleteDeployment_async
+ */
   deleteDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
       options?: CallOptions):
@@ -646,28 +668,6 @@ export class GSuiteAddOnsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the deployment with the given name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The full resource name of the deployment to delete.
- *
- *   Example:  `projects/my_project/deployments/my_deployment`.
- * @param {string} request.etag
- *   The etag of the deployment to delete.
- *   If this is provided, it must match the server's etag.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteDeployment(request);
- */
   deleteDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IDeleteDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -702,6 +702,27 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.deleteDeployment(request, options, callback);
   }
+/**
+ * Installs a deployment in developer mode.
+ * See:
+ * https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The full resource name of the deployment to install.
+ *
+ *   Example:  `projects/my_project/deployments/my_deployment`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.install_deployment.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_InstallDeployment_async
+ */
   installDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
       options?: CallOptions):
@@ -722,27 +743,6 @@ export class GSuiteAddOnsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Installs a deployment in developer mode.
- * See:
- * https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The full resource name of the deployment to install.
- *
- *   Example:  `projects/my_project/deployments/my_deployment`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.installDeployment(request);
- */
   installDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IInstallDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -777,6 +777,27 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.installDeployment(request, options, callback);
   }
+/**
+ * Uninstalls a developer mode deployment.
+ * See:
+ * https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The full resource name of the deployment to install.
+ *
+ *   Example:  `projects/my_project/deployments/my_deployment`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.uninstall_deployment.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_UninstallDeployment_async
+ */
   uninstallDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
       options?: CallOptions):
@@ -797,27 +818,6 @@ export class GSuiteAddOnsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Uninstalls a developer mode deployment.
- * See:
- * https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The full resource name of the deployment to install.
- *
- *   Example:  `projects/my_project/deployments/my_deployment`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.uninstallDeployment(request);
- */
   uninstallDeployment(
       request?: protos.google.cloud.gsuiteaddons.v1.IUninstallDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -852,6 +852,25 @@ export class GSuiteAddOnsClient {
     this.initialize();
     return this.innerApiCalls.uninstallDeployment(request, options, callback);
   }
+/**
+ * Fetches the install status of a developer mode deployment.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The full resource name of the deployment.
+ *
+ *   Example:  `projects/my_project/deployments/my_deployment/installStatus`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [InstallStatus]{@link google.cloud.gsuiteaddons.v1.InstallStatus}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.get_install_status.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_GetInstallStatus_async
+ */
   getInstallStatus(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
       options?: CallOptions):
@@ -872,25 +891,6 @@ export class GSuiteAddOnsClient {
           protos.google.cloud.gsuiteaddons.v1.IInstallStatus,
           protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Fetches the install status of a developer mode deployment.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The full resource name of the deployment.
- *
- *   Example:  `projects/my_project/deployments/my_deployment/installStatus`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [InstallStatus]{@link google.cloud.gsuiteaddons.v1.InstallStatus}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getInstallStatus(request);
- */
   getInstallStatus(
       request?: protos.google.cloud.gsuiteaddons.v1.IGetInstallStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -926,28 +926,7 @@ export class GSuiteAddOnsClient {
     return this.innerApiCalls.getInstallStatus(request, options, callback);
   }
 
-  listDeployments(
-      request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gsuiteaddons.v1.IDeployment[],
-        protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest|null,
-        protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse
-      ]>;
-  listDeployments(
-      request: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
-          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse|null|undefined,
-          protos.google.cloud.gsuiteaddons.v1.IDeployment>): void;
-  listDeployments(
-      request: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
-          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse|null|undefined,
-          protos.google.cloud.gsuiteaddons.v1.IDeployment>): void;
-/**
+ /**
  * Lists all deployments in a particular project.
  *
  * @param {Object} request
@@ -980,6 +959,27 @@ export class GSuiteAddOnsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDeployments(
+      request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gsuiteaddons.v1.IDeployment[],
+        protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest|null,
+        protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse
+      ]>;
+  listDeployments(
+      request: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse|null|undefined,
+          protos.google.cloud.gsuiteaddons.v1.IDeployment>): void;
+  listDeployments(
+      request: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
+          protos.google.cloud.gsuiteaddons.v1.IListDeploymentsResponse|null|undefined,
+          protos.google.cloud.gsuiteaddons.v1.IDeployment>): void;
   listDeployments(
       request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1101,11 +1101,8 @@ export class GSuiteAddOnsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDeploymentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/g_suite_add_ons.list_deployments.js</caption>
+ * region_tag:gsuiteaddons_v1_generated_GSuiteAddOns_ListDeployments_async
  */
   listDeploymentsAsync(
       request?: protos.google.cloud.gsuiteaddons.v1.IListDeploymentsRequest,
@@ -1120,7 +1117,6 @@ export class GSuiteAddOnsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDeployments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

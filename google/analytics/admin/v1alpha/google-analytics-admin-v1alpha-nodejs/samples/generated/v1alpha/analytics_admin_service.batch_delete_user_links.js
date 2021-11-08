@@ -39,7 +39,7 @@ function main(parent, requests) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function batchDeleteUserLinks() {
+  async function callBatchDeleteUserLinks() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, requests) {
     console.log(response);
   }
 
-  batchDeleteUserLinks();
+  callBatchDeleteUserLinks();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_BatchDeleteUserLinks_async]
 }
 

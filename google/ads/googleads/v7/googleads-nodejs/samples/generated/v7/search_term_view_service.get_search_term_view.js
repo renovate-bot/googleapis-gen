@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new SearchTermViewServiceClient();
 
-  async function getSearchTermView() {
+  async function callGetSearchTermView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getSearchTermView();
+  callGetSearchTermView();
   // [END googleads_v7_generated_SearchTermViewService_GetSearchTermView_async]
 }
 

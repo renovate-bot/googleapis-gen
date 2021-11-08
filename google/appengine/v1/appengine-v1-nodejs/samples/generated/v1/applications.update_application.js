@@ -27,11 +27,11 @@ function main() {
   /**
    *  An Application containing the updated resource.
    */
-  // const application = ''
+  // const application = {}
   /**
    *  Standard field mask for the set of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Appengine library
   const {ApplicationsClient} = require('@google-cloud/appengine-admin').v1;
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ApplicationsClient();
 
-  async function updateApplication() {
+  async function callUpdateApplication() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  updateApplication();
+  callUpdateApplication();
   // [END appengine_v1_generated_Applications_UpdateApplication_async]
 }
 

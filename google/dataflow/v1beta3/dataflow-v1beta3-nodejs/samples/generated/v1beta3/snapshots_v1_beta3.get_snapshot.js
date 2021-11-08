@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new SnapshotsV1Beta3Client();
 
-  async function getSnapshot() {
+  async function callGetSnapshot() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  getSnapshot();
+  callGetSnapshot();
   // [END dataflow_v1beta3_generated_SnapshotsV1Beta3_GetSnapshot_async]
 }
 

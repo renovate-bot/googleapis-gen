@@ -29,7 +29,7 @@ function main(debuggeeId, breakpoint) {
    *  The field `id` must be set.
    *  The agent must echo all Breakpoint specification fields in the update.
    */
-  // const breakpoint = ''
+  // const breakpoint = {}
 
   // Imports the Clouddebugger library
   const {Controller2Client} = require('clouddebugger').v2;
@@ -37,7 +37,7 @@ function main(debuggeeId, breakpoint) {
   // Instantiates a client
   const clouddebuggerClient = new Controller2Client();
 
-  async function updateActiveBreakpoint() {
+  async function callUpdateActiveBreakpoint() {
     // Construct request
     const request = {
       debuggeeId,
@@ -49,7 +49,7 @@ function main(debuggeeId, breakpoint) {
     console.log(response);
   }
 
-  updateActiveBreakpoint();
+  callUpdateActiveBreakpoint();
   // [END clouddebugger_v2_generated_Controller2_UpdateActiveBreakpoint_async]
 }
 

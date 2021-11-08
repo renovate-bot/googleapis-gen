@@ -31,11 +31,11 @@ function main(name) {
    *  version of the storedInfoType will be created with the existing
    *  configuration.
    */
-  // const config = ''
+  // const config = {}
   /**
    *  Mask to control which fields get updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Dlp library
   const {DlpServiceClient} = require('@google-cloud/dlp').v2;
@@ -43,7 +43,7 @@ function main(name) {
   // Instantiates a client
   const dlpClient = new DlpServiceClient();
 
-  async function updateStoredInfoType() {
+  async function callUpdateStoredInfoType() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     console.log(response);
   }
 
-  updateStoredInfoType();
+  callUpdateStoredInfoType();
   // [END dlp_v2_generated_DlpService_UpdateStoredInfoType_async]
 }
 

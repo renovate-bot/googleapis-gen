@@ -23,7 +23,7 @@ function main(service) {
   /**
    *  Required. Initial values for the service resource.
    */
-  // const service = ''
+  // const service = {}
 
   // Imports the Servicemanagement library
   const {ServiceManagerClient} = require('@google-cloud/service-management').v1;
@@ -31,7 +31,7 @@ function main(service) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function createService() {
+  async function callCreateService() {
     // Construct request
     const request = {
       service,
@@ -43,7 +43,7 @@ function main(service) {
     console.log(response);
   }
 
-  createService();
+  callCreateService();
   // [END servicemanagement_v1_generated_ServiceManager_CreateService_async]
 }
 

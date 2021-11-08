@@ -44,7 +44,7 @@ function main(name) {
   // Instantiates a client
   const gkehubClient = new GkeHubMembershipServiceClient();
 
-  async function generateExclusivityManifest() {
+  async function callGenerateExclusivityManifest() {
     // Construct request
     const request = {
       name,
@@ -55,7 +55,7 @@ function main(name) {
     console.log(response);
   }
 
-  generateExclusivityManifest();
+  callGenerateExclusivityManifest();
   // [END gkehub_v1beta1_generated_GkeHubMembershipService_GenerateExclusivityManifest_async]
 }
 

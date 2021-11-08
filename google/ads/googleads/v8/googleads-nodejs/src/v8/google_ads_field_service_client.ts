@@ -687,26 +687,6 @@ export class GoogleAdsFieldServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getGoogleAdsField(
-      request?: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IGoogleAdsField,
-        protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|undefined, {}|undefined
-      ]>;
-  getGoogleAdsField(
-      request: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IGoogleAdsField,
-          protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|null|undefined,
-          {}|null|undefined>): void;
-  getGoogleAdsField(
-      request: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IGoogleAdsField,
-          protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns just the requested field.
  *
@@ -729,9 +709,29 @@ export class GoogleAdsFieldServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getGoogleAdsField(request);
+ * @example <caption>include:samples/generated/v8/google_ads_field_service.get_google_ads_field.js</caption>
+ * region_tag:googleads_v8_generated_GoogleAdsFieldService_GetGoogleAdsField_async
  */
+  getGoogleAdsField(
+      request?: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IGoogleAdsField,
+        protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|undefined, {}|undefined
+      ]>;
+  getGoogleAdsField(
+      request: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IGoogleAdsField,
+          protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|null|undefined,
+          {}|null|undefined>): void;
+  getGoogleAdsField(
+      request: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IGoogleAdsField,
+          protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest|null|undefined,
+          {}|null|undefined>): void;
   getGoogleAdsField(
       request?: protos.google.ads.googleads.v8.services.IGetGoogleAdsFieldRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -767,28 +767,7 @@ export class GoogleAdsFieldServiceClient {
     return this.innerApiCalls.getGoogleAdsField(request, options, callback);
   }
 
-  searchGoogleAdsFields(
-      request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IGoogleAdsField[],
-        protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest|null,
-        protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse
-      ]>;
-  searchGoogleAdsFields(
-      request: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
-          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse|null|undefined,
-          protos.google.ads.googleads.v8.resources.IGoogleAdsField>): void;
-  searchGoogleAdsFields(
-      request: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
-          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse|null|undefined,
-          protos.google.ads.googleads.v8.resources.IGoogleAdsField>): void;
-/**
+ /**
  * Returns all fields that match the search query.
  *
  * List of thrown errors:
@@ -827,6 +806,27 @@ export class GoogleAdsFieldServiceClient {
  */
   searchGoogleAdsFields(
       request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IGoogleAdsField[],
+        protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest|null,
+        protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse
+      ]>;
+  searchGoogleAdsFields(
+      request: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse|null|undefined,
+          protos.google.ads.googleads.v8.resources.IGoogleAdsField>): void;
+  searchGoogleAdsFields(
+      request: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
+          protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse|null|undefined,
+          protos.google.ads.googleads.v8.resources.IGoogleAdsField>): void;
+  searchGoogleAdsFields(
+      request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
           protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsResponse|null|undefined,
@@ -850,6 +850,8 @@ export class GoogleAdsFieldServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.searchGoogleAdsFields(request, options, callback);
   }
@@ -886,6 +888,8 @@ export class GoogleAdsFieldServiceClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -922,11 +926,8 @@ export class GoogleAdsFieldServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchGoogleAdsFieldsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v8/google_ads_field_service.search_google_ads_fields.js</caption>
+ * region_tag:googleads_v8_generated_GoogleAdsFieldService_SearchGoogleAdsFields_async
  */
   searchGoogleAdsFieldsAsync(
       request?: protos.google.ads.googleads.v8.services.ISearchGoogleAdsFieldsRequest,
@@ -934,7 +935,8 @@ export class GoogleAdsFieldServiceClient {
     AsyncIterable<protos.google.ads.googleads.v8.resources.IGoogleAdsField>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchGoogleAdsFields'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

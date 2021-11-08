@@ -49,7 +49,7 @@ function main(instance) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function lookupEffectiveGuestPolicy() {
+  async function callLookupEffectiveGuestPolicy() {
     // Construct request
     const request = {
       instance,
@@ -60,7 +60,7 @@ function main(instance) {
     console.log(response);
   }
 
-  lookupEffectiveGuestPolicy();
+  callLookupEffectiveGuestPolicy();
   // [END osconfig_v1beta_generated_OsConfigService_LookupEffectiveGuestPolicy_async]
 }
 

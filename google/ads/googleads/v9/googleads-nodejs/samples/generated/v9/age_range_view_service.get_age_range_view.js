@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AgeRangeViewServiceClient();
 
-  async function getAgeRangeView() {
+  async function callGetAgeRangeView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAgeRangeView();
+  callGetAgeRangeView();
   // [END googleads_v9_generated_AgeRangeViewService_GetAgeRangeView_async]
 }
 

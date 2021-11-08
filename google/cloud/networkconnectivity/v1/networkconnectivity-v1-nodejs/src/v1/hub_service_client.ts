@@ -380,6 +380,23 @@ export class HubServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details about the specified hub.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the hub resource to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Hub]{@link google.cloud.networkconnectivity.v1.Hub}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/hub_service.get_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_GetHub_async
+ */
   getHub(
       request?: protos.google.cloud.networkconnectivity.v1.IGetHubRequest,
       options?: CallOptions):
@@ -400,23 +417,6 @@ export class HubServiceClient {
           protos.google.cloud.networkconnectivity.v1.IHub,
           protos.google.cloud.networkconnectivity.v1.IGetHubRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details about the specified hub.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the hub resource to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Hub]{@link google.cloud.networkconnectivity.v1.Hub}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getHub(request);
- */
   getHub(
       request?: protos.google.cloud.networkconnectivity.v1.IGetHubRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -451,6 +451,23 @@ export class HubServiceClient {
     this.initialize();
     return this.innerApiCalls.getHub(request, options, callback);
   }
+/**
+ * Gets details about the specified spoke.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the spoke resource.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Spoke]{@link google.cloud.networkconnectivity.v1.Spoke}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/hub_service.get_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_GetSpoke_async
+ */
   getSpoke(
       request?: protos.google.cloud.networkconnectivity.v1.IGetSpokeRequest,
       options?: CallOptions):
@@ -471,23 +488,6 @@ export class HubServiceClient {
           protos.google.cloud.networkconnectivity.v1.ISpoke,
           protos.google.cloud.networkconnectivity.v1.IGetSpokeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details about the specified spoke.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the spoke resource.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Spoke]{@link google.cloud.networkconnectivity.v1.Spoke}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSpoke(request);
- */
   getSpoke(
       request?: protos.google.cloud.networkconnectivity.v1.IGetSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -523,26 +523,6 @@ export class HubServiceClient {
     return this.innerApiCalls.getSpoke(request, options, callback);
   }
 
-  createHub(
-      request?: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createHub(
-      request: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createHub(
-      request: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new hub in the specified project.
  *
@@ -578,10 +558,29 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createHub(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/hub_service.create_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_CreateHub_async
  */
+  createHub(
+      request?: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createHub(
+      request: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createHub(
+      request: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createHub(
       request?: protos.google.cloud.networkconnectivity.v1.ICreateHubRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -625,11 +624,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateHubProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/hub_service.create_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_CreateHub_async
  */
   async checkCreateHubProgress(name: string): Promise<LROperation<protos.google.cloud.networkconnectivity.v1.Hub, protos.google.cloud.networkconnectivity.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -637,26 +633,6 @@ export class HubServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createHub, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1.Hub, protos.google.cloud.networkconnectivity.v1.OperationMetadata>;
   }
-  updateHub(
-      request?: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateHub(
-      request: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateHub(
-      request: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the description and/or labels of the specified hub.
  *
@@ -694,10 +670,29 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateHub(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/hub_service.update_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_UpdateHub_async
  */
+  updateHub(
+      request?: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateHub(
+      request: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateHub(
+      request: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.IHub, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateHub(
       request?: protos.google.cloud.networkconnectivity.v1.IUpdateHubRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -741,11 +736,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateHubProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/hub_service.update_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_UpdateHub_async
  */
   async checkUpdateHubProgress(name: string): Promise<LROperation<protos.google.cloud.networkconnectivity.v1.Hub, protos.google.cloud.networkconnectivity.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -753,26 +745,6 @@ export class HubServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateHub, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1.Hub, protos.google.cloud.networkconnectivity.v1.OperationMetadata>;
   }
-  deleteHub(
-      request?: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteHub(
-      request: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteHub(
-      request: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified hub.
  *
@@ -804,10 +776,29 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteHub(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/hub_service.delete_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_DeleteHub_async
  */
+  deleteHub(
+      request?: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteHub(
+      request: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteHub(
+      request: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteHub(
       request?: protos.google.cloud.networkconnectivity.v1.IDeleteHubRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -851,11 +842,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteHubProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/hub_service.delete_hub.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_DeleteHub_async
  */
   async checkDeleteHubProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkconnectivity.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -863,26 +851,6 @@ export class HubServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteHub, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkconnectivity.v1.OperationMetadata>;
   }
-  createSpoke(
-      request?: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createSpoke(
-      request: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createSpoke(
-      request: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a spoke in the specified project and location.
  *
@@ -918,10 +886,29 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createSpoke(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/hub_service.create_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_CreateSpoke_async
  */
+  createSpoke(
+      request?: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createSpoke(
+      request: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createSpoke(
+      request: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createSpoke(
       request?: protos.google.cloud.networkconnectivity.v1.ICreateSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -965,11 +952,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateSpokeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/hub_service.create_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_CreateSpoke_async
  */
   async checkCreateSpokeProgress(name: string): Promise<LROperation<protos.google.cloud.networkconnectivity.v1.Spoke, protos.google.cloud.networkconnectivity.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -977,26 +961,6 @@ export class HubServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createSpoke, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1.Spoke, protos.google.cloud.networkconnectivity.v1.OperationMetadata>;
   }
-  updateSpoke(
-      request?: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateSpoke(
-      request: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateSpoke(
-      request: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of the specified spoke.
  *
@@ -1034,10 +998,29 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateSpoke(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/hub_service.update_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_UpdateSpoke_async
  */
+  updateSpoke(
+      request?: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateSpoke(
+      request: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateSpoke(
+      request: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkconnectivity.v1.ISpoke, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateSpoke(
       request?: protos.google.cloud.networkconnectivity.v1.IUpdateSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1081,11 +1064,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateSpokeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/hub_service.update_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_UpdateSpoke_async
  */
   async checkUpdateSpokeProgress(name: string): Promise<LROperation<protos.google.cloud.networkconnectivity.v1.Spoke, protos.google.cloud.networkconnectivity.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1093,26 +1073,6 @@ export class HubServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateSpoke, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networkconnectivity.v1.Spoke, protos.google.cloud.networkconnectivity.v1.OperationMetadata>;
   }
-  deleteSpoke(
-      request?: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteSpoke(
-      request: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteSpoke(
-      request: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified spoke.
  *
@@ -1144,10 +1104,29 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteSpoke(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/hub_service.delete_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_DeleteSpoke_async
  */
+  deleteSpoke(
+      request?: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteSpoke(
+      request: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteSpoke(
+      request: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkconnectivity.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteSpoke(
       request?: protos.google.cloud.networkconnectivity.v1.IDeleteSpokeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1191,11 +1170,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteSpokeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/hub_service.delete_spoke.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_DeleteSpoke_async
  */
   async checkDeleteSpokeProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkconnectivity.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1203,28 +1179,7 @@ export class HubServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteSpoke, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkconnectivity.v1.OperationMetadata>;
   }
-  listHubs(
-      request?: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.networkconnectivity.v1.IHub[],
-        protos.google.cloud.networkconnectivity.v1.IListHubsRequest|null,
-        protos.google.cloud.networkconnectivity.v1.IListHubsResponse
-      ]>;
-  listHubs(
-      request: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
-          protos.google.cloud.networkconnectivity.v1.IListHubsResponse|null|undefined,
-          protos.google.cloud.networkconnectivity.v1.IHub>): void;
-  listHubs(
-      request: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
-          protos.google.cloud.networkconnectivity.v1.IListHubsResponse|null|undefined,
-          protos.google.cloud.networkconnectivity.v1.IHub>): void;
-/**
+ /**
  * Lists hubs in a given project.
  *
  * @param {Object} request
@@ -1252,6 +1207,27 @@ export class HubServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listHubs(
+      request?: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.networkconnectivity.v1.IHub[],
+        protos.google.cloud.networkconnectivity.v1.IListHubsRequest|null,
+        protos.google.cloud.networkconnectivity.v1.IListHubsResponse
+      ]>;
+  listHubs(
+      request: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
+          protos.google.cloud.networkconnectivity.v1.IListHubsResponse|null|undefined,
+          protos.google.cloud.networkconnectivity.v1.IHub>): void;
+  listHubs(
+      request: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
+          protos.google.cloud.networkconnectivity.v1.IListHubsResponse|null|undefined,
+          protos.google.cloud.networkconnectivity.v1.IHub>): void;
   listHubs(
       request?: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1363,11 +1339,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listHubsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/hub_service.list_hubs.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_ListHubs_async
  */
   listHubsAsync(
       request?: protos.google.cloud.networkconnectivity.v1.IListHubsRequest,
@@ -1382,7 +1355,6 @@ export class HubServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listHubs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1392,28 +1364,7 @@ export class HubServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.networkconnectivity.v1.IHub>;
   }
-  listSpokes(
-      request?: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.networkconnectivity.v1.ISpoke[],
-        protos.google.cloud.networkconnectivity.v1.IListSpokesRequest|null,
-        protos.google.cloud.networkconnectivity.v1.IListSpokesResponse
-      ]>;
-  listSpokes(
-      request: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
-          protos.google.cloud.networkconnectivity.v1.IListSpokesResponse|null|undefined,
-          protos.google.cloud.networkconnectivity.v1.ISpoke>): void;
-  listSpokes(
-      request: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
-          protos.google.cloud.networkconnectivity.v1.IListSpokesResponse|null|undefined,
-          protos.google.cloud.networkconnectivity.v1.ISpoke>): void;
-/**
+ /**
  * Lists the spokes in the specified project and location.
  *
  * @param {Object} request
@@ -1441,6 +1392,27 @@ export class HubServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listSpokes(
+      request?: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.networkconnectivity.v1.ISpoke[],
+        protos.google.cloud.networkconnectivity.v1.IListSpokesRequest|null,
+        protos.google.cloud.networkconnectivity.v1.IListSpokesResponse
+      ]>;
+  listSpokes(
+      request: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
+          protos.google.cloud.networkconnectivity.v1.IListSpokesResponse|null|undefined,
+          protos.google.cloud.networkconnectivity.v1.ISpoke>): void;
+  listSpokes(
+      request: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
+          protos.google.cloud.networkconnectivity.v1.IListSpokesResponse|null|undefined,
+          protos.google.cloud.networkconnectivity.v1.ISpoke>): void;
   listSpokes(
       request?: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1552,11 +1524,8 @@ export class HubServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSpokesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/hub_service.list_spokes.js</caption>
+ * region_tag:networkconnectivity_v1_generated_HubService_ListSpokes_async
  */
   listSpokesAsync(
       request?: protos.google.cloud.networkconnectivity.v1.IListSpokesRequest,
@@ -1571,7 +1540,6 @@ export class HubServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSpokes'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

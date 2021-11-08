@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function listReservations() {
+  async function callListReservations() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listReservations();
+  callListReservations();
   // [END pubsublite_v1_generated_AdminService_ListReservations_async]
 }
 

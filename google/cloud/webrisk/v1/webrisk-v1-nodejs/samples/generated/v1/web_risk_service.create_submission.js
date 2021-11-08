@@ -28,7 +28,7 @@ function main(parent, submission) {
   /**
    *  Required. The submission that contains the content of the phishing report.
    */
-  // const submission = ''
+  // const submission = {}
 
   // Imports the Webrisk library
   const {WebRiskServiceClient} = require('@google-cloud/web-risk').v1;
@@ -36,7 +36,7 @@ function main(parent, submission) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function createSubmission() {
+  async function callCreateSubmission() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, submission) {
     console.log(response);
   }
 
-  createSubmission();
+  callCreateSubmission();
   // [END webrisk_v1_generated_WebRiskService_CreateSubmission_async]
 }
 

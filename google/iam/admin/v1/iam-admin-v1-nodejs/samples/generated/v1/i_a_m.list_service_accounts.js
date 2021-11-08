@@ -28,14 +28,14 @@ function main(name) {
   /**
    *  Optional limit on the number of service accounts to include in the
    *  response. Further accounts can subsequently be obtained by including the
-   *  [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token]
+   *  ListServiceAccountsResponse.next_page_token google.iam.admin.v1.ListServiceAccountsResponse.next_page_token 
    *  in a subsequent request.
    *  The default is 20, and the maximum is 100.
    */
   // const pageSize = 1234
   /**
    *  Optional pagination token returned in an earlier
-   *  [ListServiceAccountsResponse.next_page_token][google.iam.admin.v1.ListServiceAccountsResponse.next_page_token].
+   *  ListServiceAccountsResponse.next_page_token google.iam.admin.v1.ListServiceAccountsResponse.next_page_token.
    */
   // const pageToken = 'abc123'
 
@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function listServiceAccounts() {
+  async function callListServiceAccounts() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name) {
     }
   }
 
-  listServiceAccounts();
+  callListServiceAccounts();
   // [END iam_v1_generated_IAM_ListServiceAccounts_async]
 }
 

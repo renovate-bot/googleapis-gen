@@ -35,7 +35,7 @@ function main(domainName, location) {
   // Instantiates a client
   const domainsClient = new DomainsClient();
 
-  async function retrieveRegisterParameters() {
+  async function callRetrieveRegisterParameters() {
     // Construct request
     const request = {
       domainName,
@@ -47,7 +47,7 @@ function main(domainName, location) {
     console.log(response);
   }
 
-  retrieveRegisterParameters();
+  callRetrieveRegisterParameters();
   // [END domains_v1beta1_generated_Domains_RetrieveRegisterParameters_async]
 }
 

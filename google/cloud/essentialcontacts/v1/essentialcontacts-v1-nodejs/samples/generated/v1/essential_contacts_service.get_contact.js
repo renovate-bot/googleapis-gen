@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function getContact() {
+  async function callGetContact() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getContact();
+  callGetContact();
   // [END essentialcontacts_v1_generated_EssentialContactsService_GetContact_async]
 }
 

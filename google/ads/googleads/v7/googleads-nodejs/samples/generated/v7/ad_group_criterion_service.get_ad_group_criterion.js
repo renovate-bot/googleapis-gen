@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdGroupCriterionServiceClient();
 
-  async function getAdGroupCriterion() {
+  async function callGetAdGroupCriterion() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdGroupCriterion();
+  callGetAdGroupCriterion();
   // [END googleads_v7_generated_AdGroupCriterionService_GetAdGroupCriterion_async]
 }
 

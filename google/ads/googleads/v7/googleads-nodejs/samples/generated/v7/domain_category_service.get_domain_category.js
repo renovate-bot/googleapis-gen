@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new DomainCategoryServiceClient();
 
-  async function getDomainCategory() {
+  async function callGetDomainCategory() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getDomainCategory();
+  callGetDomainCategory();
   // [END googleads_v7_generated_DomainCategoryService_GetDomainCategory_async]
 }
 

@@ -23,11 +23,11 @@ function main(project) {
   /**
    *  Apply a predefined set of access controls to this bucket.
    */
-  // const predefinedAcl = ''
+  // const predefinedAcl = {}
   /**
    *  Apply a predefined set of default object access controls to this bucket.
    */
-  // const predefinedDefaultObjectAcl = ''
+  // const predefinedDefaultObjectAcl = {}
   /**
    *  Required. A valid API project identifier.
    */
@@ -37,15 +37,15 @@ function main(project) {
    *  bucket resource specifies `acl` or `defaultObjectAcl`
    *  properties, when it defaults to `FULL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  Properties of the new bucket being inserted, including its name.
    */
-  // const bucket = ''
+  // const bucket = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -53,7 +53,7 @@ function main(project) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function insertBucket() {
+  async function callInsertBucket() {
     // Construct request
     const request = {
       project,
@@ -64,7 +64,7 @@ function main(project) {
     console.log(response);
   }
 
-  insertBucket();
+  callInsertBucket();
   // [END storage_v1_generated_Storage_InsertBucket_async]
 }
 

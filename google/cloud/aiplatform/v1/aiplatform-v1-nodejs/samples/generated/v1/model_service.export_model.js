@@ -27,7 +27,7 @@ function main(name, outputConfig) {
   /**
    *  Required. The desired output location and configuration.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
 
   // Imports the Aiplatform library
   const {ModelServiceClient} = require('@google-cloud/aiplatform').v1;
@@ -35,7 +35,7 @@ function main(name, outputConfig) {
   // Instantiates a client
   const aiplatformClient = new ModelServiceClient();
 
-  async function exportModel() {
+  async function callExportModel() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name, outputConfig) {
     console.log(response);
   }
 
-  exportModel();
+  callExportModel();
   // [END aiplatform_v1_generated_ModelService_ExportModel_async]
 }
 

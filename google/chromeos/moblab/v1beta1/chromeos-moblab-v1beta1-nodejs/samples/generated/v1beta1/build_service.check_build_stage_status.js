@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const moblabClient = new BuildServiceClient();
 
-  async function checkBuildStageStatus() {
+  async function callCheckBuildStageStatus() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name) {
     console.log(response);
   }
 
-  checkBuildStageStatus();
+  callCheckBuildStageStatus();
   // [END chromeosmoblab_v1beta1_generated_BuildService_CheckBuildStageStatus_async]
 }
 

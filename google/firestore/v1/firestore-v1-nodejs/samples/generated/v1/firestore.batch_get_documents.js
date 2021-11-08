@@ -37,7 +37,7 @@ function main(database) {
    *  If a document has a field that is not present in this mask, that field will
    *  not be returned in the response.
    */
-  // const mask = ''
+  // const mask = {}
   /**
    *  Reads documents in a transaction.
    */
@@ -48,12 +48,12 @@ function main(database) {
    *  The new transaction ID will be returned as the first response in the
    *  stream.
    */
-  // const newTransaction = ''
+  // const newTransaction = {}
   /**
    *  Reads documents as they were at the given time.
    *  This may not be older than 270 seconds.
    */
-  // const readTime = ''
+  // const readTime = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('@google-cloud/firestore').v1;
@@ -61,7 +61,7 @@ function main(database) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function batchGetDocuments() {
+  async function callBatchGetDocuments() {
     // Construct request
     const request = {
       database,
@@ -74,7 +74,7 @@ function main(database) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  batchGetDocuments();
+  callBatchGetDocuments();
   // [END firestore_v1_generated_Firestore_BatchGetDocuments_async]
 }
 

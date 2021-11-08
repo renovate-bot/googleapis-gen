@@ -38,7 +38,7 @@ function main(parent, migrateResourceRequests) {
   // Instantiates a client
   const aiplatformClient = new MigrationServiceClient();
 
-  async function batchMigrateResources() {
+  async function callBatchMigrateResources() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, migrateResourceRequests) {
     console.log(response);
   }
 
-  batchMigrateResources();
+  callBatchMigrateResources();
   // [END aiplatform_v1beta1_generated_MigrationService_BatchMigrateResources_async]
 }
 

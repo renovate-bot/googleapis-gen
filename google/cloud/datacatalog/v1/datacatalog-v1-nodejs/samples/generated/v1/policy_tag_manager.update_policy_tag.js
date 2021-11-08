@@ -24,15 +24,15 @@ function main() {
    *  The policy tag to update. You can update only its description, display
    *  name, and parent policy tag fields.
    */
-  // const policyTag = ''
+  // const policyTag = {}
   /**
    *  Specifies the fields to update.
    *  You can update only display name, description, and parent policy tag.
    *  If not set, defaults to all updatable fields.
-   *  For more information, see [FieldMask]
+   *  For more information, see FieldMask 
    *  (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {PolicyTagManagerClient} = require('@google-cloud/datacatalog').v1;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function updatePolicyTag() {
+  async function callUpdatePolicyTag() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  updatePolicyTag();
+  callUpdatePolicyTag();
   // [END datacatalog_v1_generated_PolicyTagManager_UpdatePolicyTag_async]
 }
 

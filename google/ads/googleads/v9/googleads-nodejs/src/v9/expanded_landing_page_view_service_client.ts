@@ -727,26 +727,6 @@ export class ExpandedLandingPageViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getExpandedLandingPageView(
-      request?: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IExpandedLandingPageView,
-        protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest|undefined, {}|undefined
-      ]>;
-  getExpandedLandingPageView(
-      request: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IExpandedLandingPageView,
-          protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getExpandedLandingPageView(
-      request: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IExpandedLandingPageView,
-          protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested expanded landing page view in full detail.
  *
@@ -769,9 +749,29 @@ export class ExpandedLandingPageViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getExpandedLandingPageView(request);
+ * @example <caption>include:samples/generated/v9/expanded_landing_page_view_service.get_expanded_landing_page_view.js</caption>
+ * region_tag:googleads_v9_generated_ExpandedLandingPageViewService_GetExpandedLandingPageView_async
  */
+  getExpandedLandingPageView(
+      request?: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IExpandedLandingPageView,
+        protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest|undefined, {}|undefined
+      ]>;
+  getExpandedLandingPageView(
+      request: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IExpandedLandingPageView,
+          protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getExpandedLandingPageView(
+      request: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IExpandedLandingPageView,
+          protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getExpandedLandingPageView(
       request?: protos.google.ads.googleads.v9.services.IGetExpandedLandingPageViewRequest,
       optionsOrCallback?: CallOptions|Callback<

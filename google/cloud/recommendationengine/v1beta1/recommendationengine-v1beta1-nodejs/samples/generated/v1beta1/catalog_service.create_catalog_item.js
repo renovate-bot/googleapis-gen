@@ -28,7 +28,7 @@ function main(parent, catalogItem) {
   /**
    *  Required. The catalog item to create.
    */
-  // const catalogItem = ''
+  // const catalogItem = {}
 
   // Imports the Recommendationengine library
   const {CatalogServiceClient} = require('recommendationengine').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, catalogItem) {
   // Instantiates a client
   const recommendationengineClient = new CatalogServiceClient();
 
-  async function createCatalogItem() {
+  async function callCreateCatalogItem() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, catalogItem) {
     console.log(response);
   }
 
-  createCatalogItem();
+  callCreateCatalogItem();
   // [END recommendationengine_v1beta1_generated_CatalogService_CreateCatalogItem_async]
 }
 

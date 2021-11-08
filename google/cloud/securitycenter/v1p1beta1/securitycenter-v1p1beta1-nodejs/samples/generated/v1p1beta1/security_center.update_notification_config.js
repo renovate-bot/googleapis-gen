@@ -23,12 +23,12 @@ function main(notificationConfig) {
   /**
    *  Required. The notification config to update.
    */
-  // const notificationConfig = ''
+  // const notificationConfig = {}
   /**
    *  The FieldMask to use when updating the notification config.
    *  If empty all mutable fields will be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Securitycenter library
   const {SecurityCenterClient} = require('@google-cloud/security-center').v1p1beta1;
@@ -36,7 +36,7 @@ function main(notificationConfig) {
   // Instantiates a client
   const securitycenterClient = new SecurityCenterClient();
 
-  async function updateNotificationConfig() {
+  async function callUpdateNotificationConfig() {
     // Construct request
     const request = {
       notificationConfig,
@@ -47,7 +47,7 @@ function main(notificationConfig) {
     console.log(response);
   }
 
-  updateNotificationConfig();
+  callUpdateNotificationConfig();
   // [END securitycenter_v1p1beta1_generated_SecurityCenter_UpdateNotificationConfig_async]
 }
 

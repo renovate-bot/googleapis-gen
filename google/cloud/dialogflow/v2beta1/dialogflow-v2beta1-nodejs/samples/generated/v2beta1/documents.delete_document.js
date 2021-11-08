@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new DocumentsClient();
 
-  async function deleteDocument() {
+  async function callDeleteDocument() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteDocument();
+  callDeleteDocument();
   // [END dialogflow_v2beta1_generated_Documents_DeleteDocument_async]
 }
 

@@ -28,7 +28,7 @@ function main(parent) {
   /**
    *  Assignment resource to create.
    */
-  // const assignment = ''
+  // const assignment = {}
 
   // Imports the Reservation library
   const {ReservationServiceClient} = require('reservation').v1beta1;
@@ -36,7 +36,7 @@ function main(parent) {
   // Instantiates a client
   const reservationClient = new ReservationServiceClient();
 
-  async function createAssignment() {
+  async function callCreateAssignment() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent) {
     console.log(response);
   }
 
-  createAssignment();
+  callCreateAssignment();
   // [END bigqueryreservation_v1beta1_generated_ReservationService_CreateAssignment_async]
 }
 

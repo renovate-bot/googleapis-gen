@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdGroupExtensionSettingServiceClient();
 
-  async function getAdGroupExtensionSetting() {
+  async function callGetAdGroupExtensionSetting() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdGroupExtensionSetting();
+  callGetAdGroupExtensionSetting();
   // [END googleads_v9_generated_AdGroupExtensionSettingService_GetAdGroupExtensionSetting_async]
 }
 

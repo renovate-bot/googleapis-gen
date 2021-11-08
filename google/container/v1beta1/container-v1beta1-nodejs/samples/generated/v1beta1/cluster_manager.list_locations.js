@@ -32,7 +32,7 @@ function main(parent) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function listLocations() {
+  async function callListLocations() {
     // Construct request
     const request = {
       parent,
@@ -43,7 +43,7 @@ function main(parent) {
     console.log(response);
   }
 
-  listLocations();
+  callListLocations();
   // [END container_v1beta1_generated_ClusterManager_ListLocations_async]
 }
 

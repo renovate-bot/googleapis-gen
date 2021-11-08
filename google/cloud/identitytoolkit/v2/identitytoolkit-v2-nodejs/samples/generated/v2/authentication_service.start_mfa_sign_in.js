@@ -31,7 +31,7 @@ function main(mfaPendingCredential, mfaEnrollmentId) {
   /**
    *  Verification info to authorize sending an SMS for phone verification.
    */
-  // const phoneSignInInfo = ''
+  // const phoneSignInInfo = {}
   /**
    *  The ID of the Identity Platform tenant the user is signing in to. If not
    *  set, the user will sign in to the default Identity Platform project.
@@ -44,7 +44,7 @@ function main(mfaPendingCredential, mfaEnrollmentId) {
   // Instantiates a client
   const identitytoolkitClient = new AuthenticationServiceClient();
 
-  async function startMfaSignIn() {
+  async function callStartMfaSignIn() {
     // Construct request
     const request = {
       mfaPendingCredential,
@@ -56,7 +56,7 @@ function main(mfaPendingCredential, mfaEnrollmentId) {
     console.log(response);
   }
 
-  startMfaSignIn();
+  callStartMfaSignIn();
   // [END identitytoolkit_v2_generated_AuthenticationService_StartMfaSignIn_async]
 }
 

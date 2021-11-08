@@ -317,26 +317,6 @@ export class AssetServiceClient {
   // -- Service calls --
   // -------------------
 
-  exportAssets(
-      request?: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  exportAssets(
-      request: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  exportAssets(
-      request: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Exports assets with time and resource types to a given Cloud Storage
  * location/BigQuery table. For Cloud Storage location destinations, the
@@ -408,10 +388,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.exportAssets(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1p7beta1/asset_service.export_assets.js</caption>
+ * region_tag:cloudasset_v1p7beta1_generated_AssetService_ExportAssets_async
  */
+  exportAssets(
+      request?: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  exportAssets(
+      request: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  exportAssets(
+      request: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.asset.v1p7beta1.IExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   exportAssets(
       request?: protos.google.cloud.asset.v1p7beta1.IExportAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -455,11 +454,8 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkExportAssetsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1p7beta1/asset_service.export_assets.js</caption>
+ * region_tag:cloudasset_v1p7beta1_generated_AssetService_ExportAssets_async
  */
   async checkExportAssetsProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1p7beta1.ExportAssetsResponse, protos.google.cloud.asset.v1p7beta1.ExportAssetsRequest>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

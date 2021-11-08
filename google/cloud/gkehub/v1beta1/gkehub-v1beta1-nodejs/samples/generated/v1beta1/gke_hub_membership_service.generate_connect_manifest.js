@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  Optional. The connect agent to generate manifest for.
    */
-  // const connectAgent = ''
+  // const connectAgent = {}
   /**
    *  Optional. The Connect agent version to use. Defaults to the most current version.
    */
@@ -54,7 +54,7 @@ function main(name) {
   // Instantiates a client
   const gkehubClient = new GkeHubMembershipServiceClient();
 
-  async function generateConnectManifest() {
+  async function callGenerateConnectManifest() {
     // Construct request
     const request = {
       name,
@@ -65,7 +65,7 @@ function main(name) {
     console.log(response);
   }
 
-  generateConnectManifest();
+  callGenerateConnectManifest();
   // [END gkehub_v1beta1_generated_GkeHubMembershipService_GenerateConnectManifest_async]
 }
 

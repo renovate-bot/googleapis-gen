@@ -42,7 +42,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function listTaxonomies() {
+  async function callListTaxonomies() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent) {
     }
   }
 
-  listTaxonomies();
+  callListTaxonomies();
   // [END datacatalog_v1_generated_PolicyTagManager_ListTaxonomies_async]
 }
 

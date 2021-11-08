@@ -45,7 +45,7 @@ function main(name, binaryData) {
   // Instantiates a client
   const iotClient = new DeviceManagerClient();
 
-  async function modifyCloudToDeviceConfig() {
+  async function callModifyCloudToDeviceConfig() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name, binaryData) {
     console.log(response);
   }
 
-  modifyCloudToDeviceConfig();
+  callModifyCloudToDeviceConfig();
   // [END cloudiot_v1_generated_DeviceManager_ModifyCloudToDeviceConfig_async]
 }
 

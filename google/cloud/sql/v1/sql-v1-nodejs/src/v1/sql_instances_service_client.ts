@@ -274,26 +274,6 @@ export class SqlInstancesServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  addServerCa(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IOperation,
-        protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest|undefined, {}|undefined
-      ]>;
-  addServerCa(
-      request: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest|null|undefined,
-          {}|null|undefined>): void;
-  addServerCa(
-      request: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a new trusted Certificate Authority (CA) version for the specified
  * instance. Required to prepare for a certificate rotation. If a CA version
@@ -314,9 +294,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.addServerCa(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.add_server_ca.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_AddServerCa_async
  */
+  addServerCa(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IOperation,
+        protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest|undefined, {}|undefined
+      ]>;
+  addServerCa(
+      request: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest|null|undefined,
+          {}|null|undefined>): void;
+  addServerCa(
+      request: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest|null|undefined,
+          {}|null|undefined>): void;
   addServerCa(
       request?: protos.google.cloud.sql.v1.ISqlInstancesAddServerCaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -351,6 +351,28 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.addServerCa(request, options, callback);
   }
+/**
+ * Creates a Cloud SQL instance as a clone of the source instance. Using this
+ * operation might cause your instance to restart.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   The ID of the Cloud SQL instance to be cloned (source). This does not
+ *   include the project ID.
+ * @param {string} request.project
+ *   Project ID of the source as well as the clone Cloud SQL instance.
+ * @param {google.cloud.sql.v1.InstancesCloneRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.clone.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Clone_async
+ */
   clone(
       request?: protos.google.cloud.sql.v1.ISqlInstancesCloneRequest,
       options?: CallOptions):
@@ -371,28 +393,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesCloneRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a Cloud SQL instance as a clone of the source instance. Using this
- * operation might cause your instance to restart.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   The ID of the Cloud SQL instance to be cloned (source). This does not
- *   include the project ID.
- * @param {string} request.project
- *   Project ID of the source as well as the clone Cloud SQL instance.
- * @param {google.cloud.sql.v1.InstancesCloneRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.clone(request);
- */
   clone(
       request?: protos.google.cloud.sql.v1.ISqlInstancesCloneRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -427,6 +427,25 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.clone(request, options, callback);
   }
+/**
+ * Deletes a Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance to be deleted.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.delete.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Delete_async
+ */
   delete(
       request?: protos.google.cloud.sql.v1.ISqlInstancesDeleteRequest,
       options?: CallOptions):
@@ -447,25 +466,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesDeleteRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance to be deleted.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.delete(request);
- */
   delete(
       request?: protos.google.cloud.sql.v1.ISqlInstancesDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,6 +500,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.delete(request, options, callback);
   }
+/**
+ * Demotes the stand-alone instance to be a Cloud SQL read replica for an
+ * external database server.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance name.
+ * @param {string} request.project
+ *   ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.InstancesDemoteMasterRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.demote_master.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_DemoteMaster_async
+ */
   demoteMaster(
       request?: protos.google.cloud.sql.v1.ISqlInstancesDemoteMasterRequest,
       options?: CallOptions):
@@ -520,27 +541,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesDemoteMasterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Demotes the stand-alone instance to be a Cloud SQL read replica for an
- * external database server.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance name.
- * @param {string} request.project
- *   ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.InstancesDemoteMasterRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.demoteMaster(request);
- */
   demoteMaster(
       request?: protos.google.cloud.sql.v1.ISqlInstancesDemoteMasterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -575,6 +575,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.demoteMaster(request, options, callback);
   }
+/**
+ * Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL
+ * dump or CSV file.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance to be exported.
+ * @param {google.cloud.sql.v1.InstancesExportRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.export.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Export_async
+ */
   export(
       request?: protos.google.cloud.sql.v1.ISqlInstancesExportRequest,
       options?: CallOptions):
@@ -595,27 +616,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesExportRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL
- * dump or CSV file.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance to be exported.
- * @param {google.cloud.sql.v1.InstancesExportRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.export(request);
- */
   export(
       request?: protos.google.cloud.sql.v1.ISqlInstancesExportRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -650,26 +650,6 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.export(request, options, callback);
   }
-  failover(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IOperation,
-        protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest|undefined, {}|undefined
-      ]>;
-  failover(
-      request: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest|null|undefined,
-          {}|null|undefined>): void;
-  failover(
-      request: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Initiates a manual failover of a high availability (HA) primary instance
  * to a standby instance, which becomes the primary instance. Users are
@@ -694,9 +674,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.failover(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.failover.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Failover_async
  */
+  failover(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IOperation,
+        protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest|undefined, {}|undefined
+      ]>;
+  failover(
+      request: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest|null|undefined,
+          {}|null|undefined>): void;
+  failover(
+      request: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest|null|undefined,
+          {}|null|undefined>): void;
   failover(
       request?: protos.google.cloud.sql.v1.ISqlInstancesFailoverRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -731,6 +731,25 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.failover(request, options, callback);
   }
+/**
+ * Retrieves a resource containing information about a Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Database instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DatabaseInstance]{@link google.cloud.sql.v1.DatabaseInstance}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.get.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Get_async
+ */
   get(
       request?: protos.google.cloud.sql.v1.ISqlInstancesGetRequest,
       options?: CallOptions):
@@ -751,25 +770,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IDatabaseInstance,
           protos.google.cloud.sql.v1.ISqlInstancesGetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a resource containing information about a Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Database instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DatabaseInstance]{@link google.cloud.sql.v1.DatabaseInstance}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
- */
   get(
       request?: protos.google.cloud.sql.v1.ISqlInstancesGetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -804,6 +804,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.get(request, options, callback);
   }
+/**
+ * Imports data into a Cloud SQL instance from a SQL dump  or CSV file in
+ * Cloud Storage.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.InstancesImportRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.import.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Import_async
+ */
   import(
       request?: protos.google.cloud.sql.v1.ISqlInstancesImportRequest,
       options?: CallOptions):
@@ -824,27 +845,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesImportRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Imports data into a Cloud SQL instance from a SQL dump  or CSV file in
- * Cloud Storage.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.InstancesImportRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.import(request);
- */
   import(
       request?: protos.google.cloud.sql.v1.ISqlInstancesImportRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -879,6 +879,25 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.import(request, options, callback);
   }
+/**
+ * Creates a new Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.project
+ *   Project ID of the project to which the newly created Cloud SQL instances
+ *   should belong.
+ * @param {google.cloud.sql.v1.DatabaseInstance} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.insert.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Insert_async
+ */
   insert(
       request?: protos.google.cloud.sql.v1.ISqlInstancesInsertRequest,
       options?: CallOptions):
@@ -899,25 +918,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesInsertRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.project
- *   Project ID of the project to which the newly created Cloud SQL instances
- *   should belong.
- * @param {google.cloud.sql.v1.DatabaseInstance} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.insert(request);
- */
   insert(
       request?: protos.google.cloud.sql.v1.ISqlInstancesInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -952,26 +952,6 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.insert(request, options, callback);
   }
-  list(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IInstancesListResponse,
-        protos.google.cloud.sql.v1.ISqlInstancesListRequest|undefined, {}|undefined
-      ]>;
-  list(
-      request: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IInstancesListResponse,
-          protos.google.cloud.sql.v1.ISqlInstancesListRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IInstancesListResponse,
-          protos.google.cloud.sql.v1.ISqlInstancesListRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists instances under a given project.
  *
@@ -1001,9 +981,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.list.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_List_async
  */
+  list(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IInstancesListResponse,
+        protos.google.cloud.sql.v1.ISqlInstancesListRequest|undefined, {}|undefined
+      ]>;
+  list(
+      request: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IInstancesListResponse,
+          protos.google.cloud.sql.v1.ISqlInstancesListRequest|null|undefined,
+          {}|null|undefined>): void;
+  list(
+      request: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IInstancesListResponse,
+          protos.google.cloud.sql.v1.ISqlInstancesListRequest|null|undefined,
+          {}|null|undefined>): void;
   list(
       request?: protos.google.cloud.sql.v1.ISqlInstancesListRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1038,26 +1038,6 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.list(request, options, callback);
   }
-  listServerCas(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IInstancesListServerCasResponse,
-        protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest|undefined, {}|undefined
-      ]>;
-  listServerCas(
-      request: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IInstancesListServerCasResponse,
-          protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest|null|undefined,
-          {}|null|undefined>): void;
-  listServerCas(
-      request: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IInstancesListServerCasResponse,
-          protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all of the trusted Certificate Authorities (CAs) for the specified
  * instance. There can be up to three CAs listed: the CA that was used to sign
@@ -1078,9 +1058,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listServerCas(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.list_server_cas.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_ListServerCas_async
  */
+  listServerCas(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IInstancesListServerCasResponse,
+        protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest|undefined, {}|undefined
+      ]>;
+  listServerCas(
+      request: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IInstancesListServerCasResponse,
+          protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest|null|undefined,
+          {}|null|undefined>): void;
+  listServerCas(
+      request: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IInstancesListServerCasResponse,
+          protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest|null|undefined,
+          {}|null|undefined>): void;
   listServerCas(
       request?: protos.google.cloud.sql.v1.ISqlInstancesListServerCasRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1115,6 +1115,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.listServerCas(request, options, callback);
   }
+/**
+ * Updates settings of a Cloud SQL instance.
+ * This method supports patch semantics.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.DatabaseInstance} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.patch.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Patch_async
+ */
   patch(
       request?: protos.google.cloud.sql.v1.ISqlInstancesPatchRequest,
       options?: CallOptions):
@@ -1135,27 +1156,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesPatchRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates settings of a Cloud SQL instance.
- * This method supports patch semantics.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.DatabaseInstance} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.patch(request);
- */
   patch(
       request?: protos.google.cloud.sql.v1.ISqlInstancesPatchRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1190,6 +1190,26 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.patch(request, options, callback);
   }
+/**
+ * Promotes the read replica instance to be a stand-alone Cloud SQL instance.
+ * Using this operation might cause your instance to restart.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL read replica instance name.
+ * @param {string} request.project
+ *   ID of the project that contains the read replica.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.promote_replica.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_PromoteReplica_async
+ */
   promoteReplica(
       request?: protos.google.cloud.sql.v1.ISqlInstancesPromoteReplicaRequest,
       options?: CallOptions):
@@ -1210,26 +1230,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesPromoteReplicaRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Promotes the read replica instance to be a stand-alone Cloud SQL instance.
- * Using this operation might cause your instance to restart.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL read replica instance name.
- * @param {string} request.project
- *   ID of the project that contains the read replica.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.promoteReplica(request);
- */
   promoteReplica(
       request?: protos.google.cloud.sql.v1.ISqlInstancesPromoteReplicaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1264,6 +1264,26 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.promoteReplica(request, options, callback);
   }
+/**
+ * Deletes all client certificates and generates a new server SSL certificate
+ * for the instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.reset_ssl_config.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_ResetSslConfig_async
+ */
   resetSslConfig(
       request?: protos.google.cloud.sql.v1.ISqlInstancesResetSslConfigRequest,
       options?: CallOptions):
@@ -1284,26 +1304,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesResetSslConfigRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes all client certificates and generates a new server SSL certificate
- * for the instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.resetSslConfig(request);
- */
   resetSslConfig(
       request?: protos.google.cloud.sql.v1.ISqlInstancesResetSslConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1338,6 +1338,25 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.resetSslConfig(request, options, callback);
   }
+/**
+ * Restarts a Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance to be restarted.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.restart.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Restart_async
+ */
   restart(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRestartRequest,
       options?: CallOptions):
@@ -1358,25 +1377,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesRestartRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Restarts a Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance to be restarted.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.restart(request);
- */
   restart(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRestartRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1411,6 +1411,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.restart(request, options, callback);
   }
+/**
+ * Restores a backup of a Cloud SQL instance. Using this operation might cause
+ * your instance to restart.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.InstancesRestoreBackupRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.restore_backup.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_RestoreBackup_async
+ */
   restoreBackup(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRestoreBackupRequest,
       options?: CallOptions):
@@ -1431,27 +1452,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesRestoreBackupRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Restores a backup of a Cloud SQL instance. Using this operation might cause
- * your instance to restart.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.InstancesRestoreBackupRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.restoreBackup(request);
- */
   restoreBackup(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRestoreBackupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1486,6 +1486,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.restoreBackup(request, options, callback);
   }
+/**
+ * Rotates the server certificate to one signed by the Certificate Authority
+ * (CA) version previously added with the addServerCA method.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.InstancesRotateServerCaRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.rotate_server_ca.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_RotateServerCa_async
+ */
   rotateServerCa(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRotateServerCaRequest,
       options?: CallOptions):
@@ -1506,27 +1527,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesRotateServerCaRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Rotates the server certificate to one signed by the Certificate Authority
- * (CA) version previously added with the addServerCA method.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.InstancesRotateServerCaRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.rotateServerCa(request);
- */
   rotateServerCa(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRotateServerCaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1561,6 +1561,25 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.rotateServerCa(request, options, callback);
   }
+/**
+ * Starts the replication in the read replica instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL read replica instance name.
+ * @param {string} request.project
+ *   ID of the project that contains the read replica.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.start_replica.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_StartReplica_async
+ */
   startReplica(
       request?: protos.google.cloud.sql.v1.ISqlInstancesStartReplicaRequest,
       options?: CallOptions):
@@ -1581,25 +1600,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesStartReplicaRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Starts the replication in the read replica instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL read replica instance name.
- * @param {string} request.project
- *   ID of the project that contains the read replica.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.startReplica(request);
- */
   startReplica(
       request?: protos.google.cloud.sql.v1.ISqlInstancesStartReplicaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1634,6 +1634,25 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.startReplica(request, options, callback);
   }
+/**
+ * Stops the replication in the read replica instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL read replica instance name.
+ * @param {string} request.project
+ *   ID of the project that contains the read replica.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.stop_replica.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_StopReplica_async
+ */
   stopReplica(
       request?: protos.google.cloud.sql.v1.ISqlInstancesStopReplicaRequest,
       options?: CallOptions):
@@ -1654,25 +1673,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesStopReplicaRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Stops the replication in the read replica instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL read replica instance name.
- * @param {string} request.project
- *   ID of the project that contains the read replica.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.stopReplica(request);
- */
   stopReplica(
       request?: protos.google.cloud.sql.v1.ISqlInstancesStopReplicaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1707,6 +1707,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.stopReplica(request, options, callback);
   }
+/**
+ * Truncate MySQL general and slow query log tables
+ * MySQL only.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the Cloud SQL project.
+ * @param {google.cloud.sql.v1.InstancesTruncateLogRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.truncate_log.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_TruncateLog_async
+ */
   truncateLog(
       request?: protos.google.cloud.sql.v1.ISqlInstancesTruncateLogRequest,
       options?: CallOptions):
@@ -1727,27 +1748,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesTruncateLogRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Truncate MySQL general and slow query log tables
- * MySQL only.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the Cloud SQL project.
- * @param {google.cloud.sql.v1.InstancesTruncateLogRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.truncateLog(request);
- */
   truncateLog(
       request?: protos.google.cloud.sql.v1.ISqlInstancesTruncateLogRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1782,6 +1782,27 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.truncateLog(request, options, callback);
   }
+/**
+ * Updates settings of a Cloud SQL instance. Using this operation might cause
+ * your instance to restart.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.DatabaseInstance} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.update.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_Update_async
+ */
   update(
       request?: protos.google.cloud.sql.v1.ISqlInstancesUpdateRequest,
       options?: CallOptions):
@@ -1802,27 +1823,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesUpdateRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates settings of a Cloud SQL instance. Using this operation might cause
- * your instance to restart.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.DatabaseInstance} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.update(request);
- */
   update(
       request?: protos.google.cloud.sql.v1.ISqlInstancesUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1857,26 +1857,6 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.update(request, options, callback);
   }
-  createEphemeral(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.ISslCert,
-        protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest|undefined, {}|undefined
-      ]>;
-  createEphemeral(
-      request: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.ISslCert,
-          protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest|null|undefined,
-          {}|null|undefined>): void;
-  createEphemeral(
-      request: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.ISslCert,
-          protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates a short-lived X509 certificate containing the provided public key
  * and signed by a private key specific to the target instance. Users may use
@@ -1897,9 +1877,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createEphemeral(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.create_ephemeral.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_CreateEphemeral_async
  */
+  createEphemeral(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.ISslCert,
+        protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest|undefined, {}|undefined
+      ]>;
+  createEphemeral(
+      request: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.ISslCert,
+          protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest|null|undefined,
+          {}|null|undefined>): void;
+  createEphemeral(
+      request: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.ISslCert,
+          protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest|null|undefined,
+          {}|null|undefined>): void;
   createEphemeral(
       request?: protos.google.cloud.sql.v1.ISqlInstancesCreateEphemeralCertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1934,6 +1934,26 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.createEphemeral(request, options, callback);
   }
+/**
+ * Reschedules the maintenance on the given instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.SqlInstancesRescheduleMaintenanceRequestBody} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_instances_service.reschedule_maintenance.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_RescheduleMaintenance_async
+ */
   rescheduleMaintenance(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRescheduleMaintenanceRequest,
       options?: CallOptions):
@@ -1954,26 +1974,6 @@ export class SqlInstancesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlInstancesRescheduleMaintenanceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Reschedules the maintenance on the given instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.SqlInstancesRescheduleMaintenanceRequestBody} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.rescheduleMaintenance(request);
- */
   rescheduleMaintenance(
       request?: protos.google.cloud.sql.v1.ISqlInstancesRescheduleMaintenanceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2008,26 +2008,6 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.rescheduleMaintenance(request, options, callback);
   }
-  verifyExternalSyncSettings(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsResponse,
-        protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest|undefined, {}|undefined
-      ]>;
-  verifyExternalSyncSettings(
-      request: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsResponse,
-          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  verifyExternalSyncSettings(
-      request: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsResponse,
-          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Verify External primary instance external sync settings.
  *
@@ -2052,9 +2032,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.verifyExternalSyncSettings(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.verify_external_sync_settings.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_VerifyExternalSyncSettings_async
  */
+  verifyExternalSyncSettings(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsResponse,
+        protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest|undefined, {}|undefined
+      ]>;
+  verifyExternalSyncSettings(
+      request: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsResponse,
+          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  verifyExternalSyncSettings(
+      request: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsResponse,
+          protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   verifyExternalSyncSettings(
       request?: protos.google.cloud.sql.v1.ISqlInstancesVerifyExternalSyncSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2089,26 +2089,6 @@ export class SqlInstancesServiceClient {
     this.initialize();
     return this.innerApiCalls.verifyExternalSyncSettings(request, options, callback);
   }
-  startExternalSync(
-      request?: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IOperation,
-        protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest|undefined, {}|undefined
-      ]>;
-  startExternalSync(
-      request: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest|null|undefined,
-          {}|null|undefined>): void;
-  startExternalSync(
-      request: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Start External primary instance migration.
  *
@@ -2131,9 +2111,29 @@ export class SqlInstancesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.startExternalSync(request);
+ * @example <caption>include:samples/generated/v1/sql_instances_service.start_external_sync.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlInstancesService_StartExternalSync_async
  */
+  startExternalSync(
+      request?: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IOperation,
+        protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest|undefined, {}|undefined
+      ]>;
+  startExternalSync(
+      request: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest|null|undefined,
+          {}|null|undefined>): void;
+  startExternalSync(
+      request: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest|null|undefined,
+          {}|null|undefined>): void;
   startExternalSync(
       request?: protos.google.cloud.sql.v1.ISqlInstancesStartExternalSyncRequest,
       optionsOrCallback?: CallOptions|Callback<

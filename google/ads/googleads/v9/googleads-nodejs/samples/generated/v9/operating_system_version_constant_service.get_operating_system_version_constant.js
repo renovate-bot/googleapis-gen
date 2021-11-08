@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new OperatingSystemVersionConstantServiceClient();
 
-  async function getOperatingSystemVersionConstant() {
+  async function callGetOperatingSystemVersionConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getOperatingSystemVersionConstant();
+  callGetOperatingSystemVersionConstant();
   // [END googleads_v9_generated_OperatingSystemVersionConstantService_GetOperatingSystemVersionConstant_async]
 }
 

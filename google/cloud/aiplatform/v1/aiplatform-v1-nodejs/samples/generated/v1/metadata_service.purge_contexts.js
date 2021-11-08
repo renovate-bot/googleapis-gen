@@ -44,7 +44,7 @@ function main(parent, filter) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function purgeContexts() {
+  async function callPurgeContexts() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent, filter) {
     console.log(response);
   }
 
-  purgeContexts();
+  callPurgeContexts();
   // [END aiplatform_v1_generated_MetadataService_PurgeContexts_async]
 }
 

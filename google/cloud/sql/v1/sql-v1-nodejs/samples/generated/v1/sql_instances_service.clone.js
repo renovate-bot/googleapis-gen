@@ -31,7 +31,7 @@ function main() {
   // const project = 'my-project'
   /**
    */
-  // const body = ''
+  // const body = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1;
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function clone() {
+  async function callClone() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  clone();
+  callClone();
   // [END sqladmin_v1_generated_SqlInstancesService_Clone_async]
 }
 

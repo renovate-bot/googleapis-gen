@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const talentClient = new ProfileServiceClient();
 
-  async function getProfile() {
+  async function callGetProfile() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getProfile();
+  callGetProfile();
   // [END jobs_v4beta1_generated_ProfileService_GetProfile_async]
 }
 

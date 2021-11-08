@@ -41,7 +41,7 @@ function main() {
    *  Metadata is optional custom metadata that is added to the game server at
    *  allocation. You can use this to tell the server necessary session data.
    */
-  // const metadata = ''
+  // const metadata = {}
 
   // Imports the Allocationendpoint library
   const {AllocationEndpointServiceClient} = require('@google-cloud/allocationendpoint').v1alpha;
@@ -49,7 +49,7 @@ function main() {
   // Instantiates a client
   const allocationendpointClient = new AllocationEndpointServiceClient();
 
-  async function allocate() {
+  async function callAllocate() {
     // Construct request
     const request = {
     };
@@ -59,7 +59,7 @@ function main() {
     console.log(response);
   }
 
-  allocate();
+  callAllocate();
   // [END example_v1alpha_generated_AllocationEndpointService_Allocate_async]
 }
 

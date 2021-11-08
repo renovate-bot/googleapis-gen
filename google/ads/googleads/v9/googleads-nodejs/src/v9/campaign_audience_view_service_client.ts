@@ -727,26 +727,6 @@ export class CampaignAudienceViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignAudienceView(
-      request?: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICampaignAudienceView,
-        protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest|undefined, {}|undefined
-      ]>;
-  getCampaignAudienceView(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignAudienceView,
-          protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignAudienceView(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignAudienceView,
-          protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign audience view in full detail.
  *
@@ -769,9 +749,29 @@ export class CampaignAudienceViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignAudienceView(request);
+ * @example <caption>include:samples/generated/v9/campaign_audience_view_service.get_campaign_audience_view.js</caption>
+ * region_tag:googleads_v9_generated_CampaignAudienceViewService_GetCampaignAudienceView_async
  */
+  getCampaignAudienceView(
+      request?: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICampaignAudienceView,
+        protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest|undefined, {}|undefined
+      ]>;
+  getCampaignAudienceView(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignAudienceView,
+          protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignAudienceView(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignAudienceView,
+          protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignAudienceView(
       request?: protos.google.ads.googleads.v9.services.IGetCampaignAudienceViewRequest,
       optionsOrCallback?: CallOptions|Callback<

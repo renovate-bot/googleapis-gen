@@ -31,7 +31,7 @@ function main(customerId, operations) {
   /**
    *  Metadata for data updates to a Customer Match user list.
    */
-  // const customerMatchUserListMetadata = ''
+  // const customerMatchUserListMetadata = {}
 
   // Imports the Googleads library
   const {UserDataServiceClient} = require('google-ads').v9;
@@ -39,7 +39,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new UserDataServiceClient();
 
-  async function uploadUserData() {
+  async function callUploadUserData() {
     // Construct request
     const request = {
       customerId,
@@ -51,7 +51,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  uploadUserData();
+  callUploadUserData();
   // [END googleads_v9_generated_UserDataService_UploadUserData_async]
 }
 

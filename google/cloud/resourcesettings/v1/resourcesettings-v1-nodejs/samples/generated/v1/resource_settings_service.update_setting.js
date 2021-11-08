@@ -21,9 +21,9 @@ function main(setting) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The setting to update. See [Setting][google.cloud.resourcesettings.v1.Setting] for field requirements.
+   *  Required. The setting to update. See Setting google.cloud.resourcesettings.v1.Setting  for field requirements.
    */
-  // const setting = ''
+  // const setting = {}
 
   // Imports the Resourcesettings library
   const {ResourceSettingsServiceClient} = require('@google-cloud/resource-settings').v1;
@@ -31,7 +31,7 @@ function main(setting) {
   // Instantiates a client
   const resourcesettingsClient = new ResourceSettingsServiceClient();
 
-  async function updateSetting() {
+  async function callUpdateSetting() {
     // Construct request
     const request = {
       setting,
@@ -42,7 +42,7 @@ function main(setting) {
     console.log(response);
   }
 
-  updateSetting();
+  callUpdateSetting();
   // [END resourcesettings_v1_generated_ResourceSettingsService_UpdateSetting_async]
 }
 

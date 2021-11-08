@@ -23,7 +23,7 @@ function main() {
   /**
    *  Application configuration.
    */
-  // const application = ''
+  // const application = {}
 
   // Imports the Appengine library
   const {ApplicationsClient} = require('@google-cloud/appengine-admin').v1;
@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ApplicationsClient();
 
-  async function createApplication() {
+  async function callCreateApplication() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  createApplication();
+  callCreateApplication();
   // [END appengine_v1_generated_Applications_CreateApplication_async]
 }
 

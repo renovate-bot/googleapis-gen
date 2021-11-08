@@ -368,28 +368,7 @@ export class QueryServiceClient {
   // -- Service calls --
   // -------------------
 
-  queryTimeSeries(
-      request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.ITimeSeriesData[],
-        protos.google.monitoring.v3.IQueryTimeSeriesRequest|null,
-        protos.google.monitoring.v3.IQueryTimeSeriesResponse
-      ]>;
-  queryTimeSeries(
-      request: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IQueryTimeSeriesRequest,
-          protos.google.monitoring.v3.IQueryTimeSeriesResponse|null|undefined,
-          protos.google.monitoring.v3.ITimeSeriesData>): void;
-  queryTimeSeries(
-      request: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IQueryTimeSeriesRequest,
-          protos.google.monitoring.v3.IQueryTimeSeriesResponse|null|undefined,
-          protos.google.monitoring.v3.ITimeSeriesData>): void;
-/**
+ /**
  * Queries time series using Monitoring Query Language. This method does not require a Workspace.
  *
  * @param {Object} request
@@ -422,6 +401,27 @@ export class QueryServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  queryTimeSeries(
+      request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.ITimeSeriesData[],
+        protos.google.monitoring.v3.IQueryTimeSeriesRequest|null,
+        protos.google.monitoring.v3.IQueryTimeSeriesResponse
+      ]>;
+  queryTimeSeries(
+      request: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+          protos.google.monitoring.v3.IQueryTimeSeriesResponse|null|undefined,
+          protos.google.monitoring.v3.ITimeSeriesData>): void;
+  queryTimeSeries(
+      request: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IQueryTimeSeriesRequest,
+          protos.google.monitoring.v3.IQueryTimeSeriesResponse|null|undefined,
+          protos.google.monitoring.v3.ITimeSeriesData>): void;
   queryTimeSeries(
       request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -543,11 +543,8 @@ export class QueryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.queryTimeSeriesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/query_service.query_time_series.js</caption>
+ * region_tag:monitoring_v3_generated_QueryService_QueryTimeSeries_async
  */
   queryTimeSeriesAsync(
       request?: protos.google.monitoring.v3.IQueryTimeSeriesRequest,
@@ -562,7 +559,6 @@ export class QueryServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['queryTimeSeries'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -286,6 +286,24 @@ export class IdentityAwareProxyOAuthServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Lists the existing brands for the project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. GCP Project number/id.
+ *   In the following format: projects/{project_number/id}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListBrandsResponse]{@link google.cloud.iap.v1.ListBrandsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.list_brands.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_ListBrands_async
+ */
   listBrands(
       request?: protos.google.cloud.iap.v1.IListBrandsRequest,
       options?: CallOptions):
@@ -306,24 +324,6 @@ export class IdentityAwareProxyOAuthServiceClient {
           protos.google.cloud.iap.v1.IListBrandsResponse,
           protos.google.cloud.iap.v1.IListBrandsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists the existing brands for the project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. GCP Project number/id.
- *   In the following format: projects/{project_number/id}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListBrandsResponse]{@link google.cloud.iap.v1.ListBrandsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listBrands(request);
- */
   listBrands(
       request?: protos.google.cloud.iap.v1.IListBrandsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -358,26 +358,6 @@ export class IdentityAwareProxyOAuthServiceClient {
     this.initialize();
     return this.innerApiCalls.listBrands(request, options, callback);
   }
-  createBrand(
-      request?: protos.google.cloud.iap.v1.ICreateBrandRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iap.v1.IBrand,
-        protos.google.cloud.iap.v1.ICreateBrandRequest|undefined, {}|undefined
-      ]>;
-  createBrand(
-      request: protos.google.cloud.iap.v1.ICreateBrandRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iap.v1.IBrand,
-          protos.google.cloud.iap.v1.ICreateBrandRequest|null|undefined,
-          {}|null|undefined>): void;
-  createBrand(
-      request: protos.google.cloud.iap.v1.ICreateBrandRequest,
-      callback: Callback<
-          protos.google.cloud.iap.v1.IBrand,
-          protos.google.cloud.iap.v1.ICreateBrandRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Constructs a new OAuth brand for the project if one does not exist.
  * The created brand is "internal only", meaning that OAuth clients created
@@ -401,9 +381,29 @@ export class IdentityAwareProxyOAuthServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createBrand(request);
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.create_brand.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_CreateBrand_async
  */
+  createBrand(
+      request?: protos.google.cloud.iap.v1.ICreateBrandRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iap.v1.IBrand,
+        protos.google.cloud.iap.v1.ICreateBrandRequest|undefined, {}|undefined
+      ]>;
+  createBrand(
+      request: protos.google.cloud.iap.v1.ICreateBrandRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iap.v1.IBrand,
+          protos.google.cloud.iap.v1.ICreateBrandRequest|null|undefined,
+          {}|null|undefined>): void;
+  createBrand(
+      request: protos.google.cloud.iap.v1.ICreateBrandRequest,
+      callback: Callback<
+          protos.google.cloud.iap.v1.IBrand,
+          protos.google.cloud.iap.v1.ICreateBrandRequest|null|undefined,
+          {}|null|undefined>): void;
   createBrand(
       request?: protos.google.cloud.iap.v1.ICreateBrandRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -438,6 +438,24 @@ export class IdentityAwareProxyOAuthServiceClient {
     this.initialize();
     return this.innerApiCalls.createBrand(request, options, callback);
   }
+/**
+ * Retrieves the OAuth brand of the project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the brand to be fetched.
+ *   In the following format: projects/{project_number/id}/brands/{brand}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Brand]{@link google.cloud.iap.v1.Brand}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.get_brand.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_GetBrand_async
+ */
   getBrand(
       request?: protos.google.cloud.iap.v1.IGetBrandRequest,
       options?: CallOptions):
@@ -458,24 +476,6 @@ export class IdentityAwareProxyOAuthServiceClient {
           protos.google.cloud.iap.v1.IBrand,
           protos.google.cloud.iap.v1.IGetBrandRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the OAuth brand of the project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the brand to be fetched.
- *   In the following format: projects/{project_number/id}/brands/{brand}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Brand]{@link google.cloud.iap.v1.Brand}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBrand(request);
- */
   getBrand(
       request?: protos.google.cloud.iap.v1.IGetBrandRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -510,26 +510,6 @@ export class IdentityAwareProxyOAuthServiceClient {
     this.initialize();
     return this.innerApiCalls.getBrand(request, options, callback);
   }
-  createIdentityAwareProxyClient(
-      request?: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
-        protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest|undefined, {}|undefined
-      ]>;
-  createIdentityAwareProxyClient(
-      request: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
-          protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest|null|undefined,
-          {}|null|undefined>): void;
-  createIdentityAwareProxyClient(
-      request: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
-      callback: Callback<
-          protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
-          protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an Identity Aware Proxy (IAP) OAuth client. The client is owned
  * by IAP. Requires that the brand for the project exists and that it is
@@ -551,9 +531,29 @@ export class IdentityAwareProxyOAuthServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createIdentityAwareProxyClient(request);
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.create_identity_aware_proxy_client.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_CreateIdentityAwareProxyClient_async
  */
+  createIdentityAwareProxyClient(
+      request?: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
+        protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest|undefined, {}|undefined
+      ]>;
+  createIdentityAwareProxyClient(
+      request: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
+          protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest|null|undefined,
+          {}|null|undefined>): void;
+  createIdentityAwareProxyClient(
+      request: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
+      callback: Callback<
+          protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
+          protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest|null|undefined,
+          {}|null|undefined>): void;
   createIdentityAwareProxyClient(
       request?: protos.google.cloud.iap.v1.ICreateIdentityAwareProxyClientRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -588,6 +588,26 @@ export class IdentityAwareProxyOAuthServiceClient {
     this.initialize();
     return this.innerApiCalls.createIdentityAwareProxyClient(request, options, callback);
   }
+/**
+ * Retrieves an Identity Aware Proxy (IAP) OAuth client.
+ * Requires that the client is owned by IAP.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the Identity Aware Proxy client to be fetched.
+ *   In the following format:
+ *   projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [IdentityAwareProxyClient]{@link google.cloud.iap.v1.IdentityAwareProxyClient}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.get_identity_aware_proxy_client.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_GetIdentityAwareProxyClient_async
+ */
   getIdentityAwareProxyClient(
       request?: protos.google.cloud.iap.v1.IGetIdentityAwareProxyClientRequest,
       options?: CallOptions):
@@ -608,26 +628,6 @@ export class IdentityAwareProxyOAuthServiceClient {
           protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
           protos.google.cloud.iap.v1.IGetIdentityAwareProxyClientRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves an Identity Aware Proxy (IAP) OAuth client.
- * Requires that the client is owned by IAP.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the Identity Aware Proxy client to be fetched.
- *   In the following format:
- *   projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [IdentityAwareProxyClient]{@link google.cloud.iap.v1.IdentityAwareProxyClient}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIdentityAwareProxyClient(request);
- */
   getIdentityAwareProxyClient(
       request?: protos.google.cloud.iap.v1.IGetIdentityAwareProxyClientRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -662,6 +662,26 @@ export class IdentityAwareProxyOAuthServiceClient {
     this.initialize();
     return this.innerApiCalls.getIdentityAwareProxyClient(request, options, callback);
   }
+/**
+ * Resets an Identity Aware Proxy (IAP) OAuth client secret. Useful if the
+ * secret was compromised. Requires that the client is owned by IAP.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the Identity Aware Proxy client to that will have its
+ *   secret reset. In the following format:
+ *   projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [IdentityAwareProxyClient]{@link google.cloud.iap.v1.IdentityAwareProxyClient}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.reset_identity_aware_proxy_client_secret.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_ResetIdentityAwareProxyClientSecret_async
+ */
   resetIdentityAwareProxyClientSecret(
       request?: protos.google.cloud.iap.v1.IResetIdentityAwareProxyClientSecretRequest,
       options?: CallOptions):
@@ -682,26 +702,6 @@ export class IdentityAwareProxyOAuthServiceClient {
           protos.google.cloud.iap.v1.IIdentityAwareProxyClient,
           protos.google.cloud.iap.v1.IResetIdentityAwareProxyClientSecretRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Resets an Identity Aware Proxy (IAP) OAuth client secret. Useful if the
- * secret was compromised. Requires that the client is owned by IAP.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the Identity Aware Proxy client to that will have its
- *   secret reset. In the following format:
- *   projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [IdentityAwareProxyClient]{@link google.cloud.iap.v1.IdentityAwareProxyClient}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.resetIdentityAwareProxyClientSecret(request);
- */
   resetIdentityAwareProxyClientSecret(
       request?: protos.google.cloud.iap.v1.IResetIdentityAwareProxyClientSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -736,6 +736,27 @@ export class IdentityAwareProxyOAuthServiceClient {
     this.initialize();
     return this.innerApiCalls.resetIdentityAwareProxyClientSecret(request, options, callback);
   }
+/**
+ * Deletes an Identity Aware Proxy (IAP) OAuth client. Useful for removing
+ * obsolete clients, managing the number of clients in a given project, and
+ * cleaning up after tests. Requires that the client is owned by IAP.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the Identity Aware Proxy client to be deleted.
+ *   In the following format:
+ *   projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.delete_identity_aware_proxy_client.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_DeleteIdentityAwareProxyClient_async
+ */
   deleteIdentityAwareProxyClient(
       request?: protos.google.cloud.iap.v1.IDeleteIdentityAwareProxyClientRequest,
       options?: CallOptions):
@@ -756,27 +777,6 @@ export class IdentityAwareProxyOAuthServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.iap.v1.IDeleteIdentityAwareProxyClientRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an Identity Aware Proxy (IAP) OAuth client. Useful for removing
- * obsolete clients, managing the number of clients in a given project, and
- * cleaning up after tests. Requires that the client is owned by IAP.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the Identity Aware Proxy client to be deleted.
- *   In the following format:
- *   projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteIdentityAwareProxyClient(request);
- */
   deleteIdentityAwareProxyClient(
       request?: protos.google.cloud.iap.v1.IDeleteIdentityAwareProxyClientRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -812,28 +812,7 @@ export class IdentityAwareProxyOAuthServiceClient {
     return this.innerApiCalls.deleteIdentityAwareProxyClient(request, options, callback);
   }
 
-  listIdentityAwareProxyClients(
-      request?: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iap.v1.IIdentityAwareProxyClient[],
-        protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest|null,
-        protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsResponse
-      ]>;
-  listIdentityAwareProxyClients(
-      request: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
-          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsResponse|null|undefined,
-          protos.google.cloud.iap.v1.IIdentityAwareProxyClient>): void;
-  listIdentityAwareProxyClients(
-      request: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
-          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsResponse|null|undefined,
-          protos.google.cloud.iap.v1.IIdentityAwareProxyClient>): void;
-/**
+ /**
  * Lists the existing clients for the brand.
  *
  * @param {Object} request
@@ -866,6 +845,27 @@ export class IdentityAwareProxyOAuthServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listIdentityAwareProxyClients(
+      request?: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iap.v1.IIdentityAwareProxyClient[],
+        protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest|null,
+        protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsResponse
+      ]>;
+  listIdentityAwareProxyClients(
+      request: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
+          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsResponse|null|undefined,
+          protos.google.cloud.iap.v1.IIdentityAwareProxyClient>): void;
+  listIdentityAwareProxyClients(
+      request: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
+          protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsResponse|null|undefined,
+          protos.google.cloud.iap.v1.IIdentityAwareProxyClient>): void;
   listIdentityAwareProxyClients(
       request?: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -987,11 +987,8 @@ export class IdentityAwareProxyOAuthServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listIdentityAwareProxyClientsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/identity_aware_proxy_o_auth_service.list_identity_aware_proxy_clients.js</caption>
+ * region_tag:iap_v1_generated_IdentityAwareProxyOAuthService_ListIdentityAwareProxyClients_async
  */
   listIdentityAwareProxyClientsAsync(
       request?: protos.google.cloud.iap.v1.IListIdentityAwareProxyClientsRequest,
@@ -1006,7 +1003,6 @@ export class IdentityAwareProxyOAuthServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listIdentityAwareProxyClients'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

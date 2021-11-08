@@ -40,7 +40,7 @@ function main(parent, names) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function batchGetUserLinks() {
+  async function callBatchGetUserLinks() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, names) {
     console.log(response);
   }
 
-  batchGetUserLinks();
+  callBatchGetUserLinks();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_BatchGetUserLinks_async]
 }
 

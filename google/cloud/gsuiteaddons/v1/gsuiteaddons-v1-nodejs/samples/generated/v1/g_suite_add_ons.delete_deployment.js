@@ -37,7 +37,7 @@ function main(name) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function deleteDeployment() {
+  async function callDeleteDeployment() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteDeployment();
+  callDeleteDeployment();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_DeleteDeployment_async]
 }
 

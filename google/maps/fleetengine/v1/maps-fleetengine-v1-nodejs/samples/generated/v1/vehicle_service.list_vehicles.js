@@ -23,7 +23,7 @@ function main(parent, vehicleTypeCategories) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format "providers/{provider}".
    *  The provider must be the Project ID (for example, sample-cloud-project)
@@ -46,7 +46,7 @@ function main(parent, vehicleTypeCategories) {
    *  This is just the number of passengers being considered for a trip.
    *  If set, must be greater or equal to 0.
    */
-  // const minimumCapacity = ''
+  // const minimumCapacity = {}
   /**
    *  Restrict the search to only those vehicles that support at least
    *  one of the specified trip types.
@@ -57,7 +57,7 @@ function main(parent, vehicleTypeCategories) {
    *  their locations within the specified duration back from now.
    *  If present, must be a valid positive duration.
    */
-  // const maximumStaleness = ''
+  // const maximumStaleness = {}
   /**
    *  Required. Restrict the search to those vehicles with the specified type categories.
    */
@@ -69,11 +69,11 @@ function main(parent, vehicleTypeCategories) {
    *  allows a list of lists. In combination, the two fields allow the
    *  composition of this expression:
    *  ```
-   *  (required_attribute[0] AND required_attribute[1] AND ...)
+   *  (required_attribute0  AND required_attribute1  AND ...)
    *  AND
-   *  (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+   *  (required_one_of_attribute0 0  OR required_one_of_attribute0 1  OR ...)
    *  AND
-   *  (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+   *  (required_one_of_attribute1 0  OR required_one_of_attribute1 1  OR ...)
    *  ```
    *  Restrict the search to only those vehicles
    *  with the specified attributes. This field is a conjunction/AND operation.
@@ -103,7 +103,7 @@ function main(parent, vehicleTypeCategories) {
   /**
    *  Restrict the search to only those vehicles that have this vehicle state.
    */
-  // const vehicleState = ''
+  // const vehicleState = {}
   /**
    *  Only return the vehicles with current trip(s).
    */
@@ -115,7 +115,7 @@ function main(parent, vehicleTypeCategories) {
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function listVehicles() {
+  async function callListVehicles() {
     // Construct request
     const request = {
       parent,
@@ -129,7 +129,7 @@ function main(parent, vehicleTypeCategories) {
     }
   }
 
-  listVehicles();
+  callListVehicles();
   // [END fleetengine_v1_generated_VehicleService_ListVehicles_async]
 }
 

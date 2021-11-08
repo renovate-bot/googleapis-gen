@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function getDataset() {
+  async function callGetDataset() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDataset();
+  callGetDataset();
   // [END datalabeling_v1beta1_generated_DataLabelingService_GetDataset_async]
 }
 

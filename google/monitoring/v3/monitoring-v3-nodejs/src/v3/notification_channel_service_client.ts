@@ -371,6 +371,26 @@ export class NotificationChannelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a single channel descriptor. The descriptor indicates which fields
+ * are expected / permitted for a notification channel of the given type.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The channel type for which to execute the request. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [NotificationChannelDescriptor]{@link google.monitoring.v3.NotificationChannelDescriptor}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/notification_channel_service.get_notification_channel_descriptor.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_GetNotificationChannelDescriptor_async
+ */
   getNotificationChannelDescriptor(
       request?: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
       options?: CallOptions):
@@ -391,26 +411,6 @@ export class NotificationChannelServiceClient {
           protos.google.monitoring.v3.INotificationChannelDescriptor,
           protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single channel descriptor. The descriptor indicates which fields
- * are expected / permitted for a notification channel of the given type.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The channel type for which to execute the request. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [NotificationChannelDescriptor]{@link google.monitoring.v3.NotificationChannelDescriptor}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getNotificationChannelDescriptor(request);
- */
   getNotificationChannelDescriptor(
       request?: protos.google.monitoring.v3.IGetNotificationChannelDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -445,26 +445,6 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.getNotificationChannelDescriptor(request, options, callback);
   }
-  getNotificationChannel(
-      request?: protos.google.monitoring.v3.IGetNotificationChannelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.INotificationChannel,
-        protos.google.monitoring.v3.IGetNotificationChannelRequest|undefined, {}|undefined
-      ]>;
-  getNotificationChannel(
-      request: protos.google.monitoring.v3.IGetNotificationChannelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.IGetNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
-  getNotificationChannel(
-      request: protos.google.monitoring.v3.IGetNotificationChannelRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.IGetNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a single notification channel. The channel includes the relevant
  * configuration details with which the channel was created. However, the
@@ -485,9 +465,29 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getNotificationChannel(request);
+ * @example <caption>include:samples/generated/v3/notification_channel_service.get_notification_channel.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_GetNotificationChannel_async
  */
+  getNotificationChannel(
+      request?: protos.google.monitoring.v3.IGetNotificationChannelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.INotificationChannel,
+        protos.google.monitoring.v3.IGetNotificationChannelRequest|undefined, {}|undefined
+      ]>;
+  getNotificationChannel(
+      request: protos.google.monitoring.v3.IGetNotificationChannelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.IGetNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
+  getNotificationChannel(
+      request: protos.google.monitoring.v3.IGetNotificationChannelRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.IGetNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
   getNotificationChannel(
       request?: protos.google.monitoring.v3.IGetNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -522,26 +522,6 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.getNotificationChannel(request, options, callback);
   }
-  createNotificationChannel(
-      request?: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.INotificationChannel,
-        protos.google.monitoring.v3.ICreateNotificationChannelRequest|undefined, {}|undefined
-      ]>;
-  createNotificationChannel(
-      request: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.ICreateNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
-  createNotificationChannel(
-      request: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.ICreateNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new notification channel, representing a single notification
  * endpoint such as an email address, SMS number, or PagerDuty service.
@@ -567,9 +547,29 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createNotificationChannel(request);
+ * @example <caption>include:samples/generated/v3/notification_channel_service.create_notification_channel.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_CreateNotificationChannel_async
  */
+  createNotificationChannel(
+      request?: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.INotificationChannel,
+        protos.google.monitoring.v3.ICreateNotificationChannelRequest|undefined, {}|undefined
+      ]>;
+  createNotificationChannel(
+      request: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.ICreateNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
+  createNotificationChannel(
+      request: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.ICreateNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
   createNotificationChannel(
       request?: protos.google.monitoring.v3.ICreateNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -604,26 +604,6 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.createNotificationChannel(request, options, callback);
   }
-  updateNotificationChannel(
-      request?: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.INotificationChannel,
-        protos.google.monitoring.v3.IUpdateNotificationChannelRequest|undefined, {}|undefined
-      ]>;
-  updateNotificationChannel(
-      request: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.IUpdateNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateNotificationChannel(
-      request: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.IUpdateNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a notification channel. Fields not specified in the field mask
  * remain unchanged.
@@ -644,9 +624,29 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateNotificationChannel(request);
+ * @example <caption>include:samples/generated/v3/notification_channel_service.update_notification_channel.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_UpdateNotificationChannel_async
  */
+  updateNotificationChannel(
+      request?: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.INotificationChannel,
+        protos.google.monitoring.v3.IUpdateNotificationChannelRequest|undefined, {}|undefined
+      ]>;
+  updateNotificationChannel(
+      request: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.IUpdateNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateNotificationChannel(
+      request: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.IUpdateNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
   updateNotificationChannel(
       request?: protos.google.monitoring.v3.IUpdateNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -681,26 +681,6 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.updateNotificationChannel(request, options, callback);
   }
-  deleteNotificationChannel(
-      request?: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.monitoring.v3.IDeleteNotificationChannelRequest|undefined, {}|undefined
-      ]>;
-  deleteNotificationChannel(
-      request: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.IDeleteNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteNotificationChannel(
-      request: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.IDeleteNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a notification channel.
  *
@@ -722,9 +702,29 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteNotificationChannel(request);
+ * @example <caption>include:samples/generated/v3/notification_channel_service.delete_notification_channel.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_DeleteNotificationChannel_async
  */
+  deleteNotificationChannel(
+      request?: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.IDeleteNotificationChannelRequest|undefined, {}|undefined
+      ]>;
+  deleteNotificationChannel(
+      request: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.IDeleteNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteNotificationChannel(
+      request: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.IDeleteNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteNotificationChannel(
       request?: protos.google.monitoring.v3.IDeleteNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -759,6 +759,24 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteNotificationChannel(request, options, callback);
   }
+/**
+ * Causes a verification code to be delivered to the channel. The code
+ * can then be supplied in `VerifyNotificationChannel` to verify the channel.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The notification channel to which to send a verification code.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/notification_channel_service.send_notification_channel_verification_code.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_SendNotificationChannelVerificationCode_async
+ */
   sendNotificationChannelVerificationCode(
       request?: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
       options?: CallOptions):
@@ -779,24 +797,6 @@ export class NotificationChannelServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Causes a verification code to be delivered to the channel. The code
- * can then be supplied in `VerifyNotificationChannel` to verify the channel.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The notification channel to which to send a verification code.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.sendNotificationChannelVerificationCode(request);
- */
   sendNotificationChannelVerificationCode(
       request?: protos.google.monitoring.v3.ISendNotificationChannelVerificationCodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -831,26 +831,6 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.sendNotificationChannelVerificationCode(request, options, callback);
   }
-  getNotificationChannelVerificationCode(
-      request?: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
-        protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|undefined, {}|undefined
-      ]>;
-  getNotificationChannelVerificationCode(
-      request: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
-          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|null|undefined,
-          {}|null|undefined>): void;
-  getNotificationChannelVerificationCode(
-      request: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
-          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Requests a verification code for an already verified channel that can then
  * be used in a call to VerifyNotificationChannel() on a different channel
@@ -897,9 +877,29 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getNotificationChannelVerificationCode(request);
+ * @example <caption>include:samples/generated/v3/notification_channel_service.get_notification_channel_verification_code.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_GetNotificationChannelVerificationCode_async
  */
+  getNotificationChannelVerificationCode(
+      request?: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
+        protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|undefined, {}|undefined
+      ]>;
+  getNotificationChannelVerificationCode(
+      request: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
+          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|null|undefined,
+          {}|null|undefined>): void;
+  getNotificationChannelVerificationCode(
+      request: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeResponse,
+          protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest|null|undefined,
+          {}|null|undefined>): void;
   getNotificationChannelVerificationCode(
       request?: protos.google.monitoring.v3.IGetNotificationChannelVerificationCodeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -934,26 +934,6 @@ export class NotificationChannelServiceClient {
     this.initialize();
     return this.innerApiCalls.getNotificationChannelVerificationCode(request, options, callback);
   }
-  verifyNotificationChannel(
-      request?: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.INotificationChannel,
-        protos.google.monitoring.v3.IVerifyNotificationChannelRequest|undefined, {}|undefined
-      ]>;
-  verifyNotificationChannel(
-      request: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.IVerifyNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
-  verifyNotificationChannel(
-      request: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.INotificationChannel,
-          protos.google.monitoring.v3.IVerifyNotificationChannelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Verifies a `NotificationChannel` by proving receipt of the code
  * delivered to the channel as a result of calling
@@ -978,9 +958,29 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.verifyNotificationChannel(request);
+ * @example <caption>include:samples/generated/v3/notification_channel_service.verify_notification_channel.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_VerifyNotificationChannel_async
  */
+  verifyNotificationChannel(
+      request?: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.INotificationChannel,
+        protos.google.monitoring.v3.IVerifyNotificationChannelRequest|undefined, {}|undefined
+      ]>;
+  verifyNotificationChannel(
+      request: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.IVerifyNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
+  verifyNotificationChannel(
+      request: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.INotificationChannel,
+          protos.google.monitoring.v3.IVerifyNotificationChannelRequest|null|undefined,
+          {}|null|undefined>): void;
   verifyNotificationChannel(
       request?: protos.google.monitoring.v3.IVerifyNotificationChannelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1016,28 +1016,7 @@ export class NotificationChannelServiceClient {
     return this.innerApiCalls.verifyNotificationChannel(request, options, callback);
   }
 
-  listNotificationChannelDescriptors(
-      request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.INotificationChannelDescriptor[],
-        protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest|null,
-        protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse
-      ]>;
-  listNotificationChannelDescriptors(
-      request: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
-          protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse|null|undefined,
-          protos.google.monitoring.v3.INotificationChannelDescriptor>): void;
-  listNotificationChannelDescriptors(
-      request: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
-          protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse|null|undefined,
-          protos.google.monitoring.v3.INotificationChannelDescriptor>): void;
-/**
+ /**
  * Lists the descriptors for supported channel types. The use of descriptors
  * makes it possible for new channel types to be dynamically added.
  *
@@ -1076,6 +1055,27 @@ export class NotificationChannelServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listNotificationChannelDescriptors(
+      request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.INotificationChannelDescriptor[],
+        protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest|null,
+        protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse
+      ]>;
+  listNotificationChannelDescriptors(
+      request: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+          protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse|null|undefined,
+          protos.google.monitoring.v3.INotificationChannelDescriptor>): void;
+  listNotificationChannelDescriptors(
+      request: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
+          protos.google.monitoring.v3.IListNotificationChannelDescriptorsResponse|null|undefined,
+          protos.google.monitoring.v3.INotificationChannelDescriptor>): void;
   listNotificationChannelDescriptors(
       request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1207,11 +1207,8 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listNotificationChannelDescriptorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channel_descriptors.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_ListNotificationChannelDescriptors_async
  */
   listNotificationChannelDescriptorsAsync(
       request?: protos.google.monitoring.v3.IListNotificationChannelDescriptorsRequest,
@@ -1226,7 +1223,6 @@ export class NotificationChannelServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listNotificationChannelDescriptors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1236,28 +1232,7 @@ export class NotificationChannelServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.monitoring.v3.INotificationChannelDescriptor>;
   }
-  listNotificationChannels(
-      request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.INotificationChannel[],
-        protos.google.monitoring.v3.IListNotificationChannelsRequest|null,
-        protos.google.monitoring.v3.IListNotificationChannelsResponse
-      ]>;
-  listNotificationChannels(
-      request: protos.google.monitoring.v3.IListNotificationChannelsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListNotificationChannelsRequest,
-          protos.google.monitoring.v3.IListNotificationChannelsResponse|null|undefined,
-          protos.google.monitoring.v3.INotificationChannel>): void;
-  listNotificationChannels(
-      request: protos.google.monitoring.v3.IListNotificationChannelsRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListNotificationChannelsRequest,
-          protos.google.monitoring.v3.IListNotificationChannelsResponse|null|undefined,
-          protos.google.monitoring.v3.INotificationChannel>): void;
-/**
+ /**
  * Lists the notification channels that have been created for the project.
  *
  * @param {Object} request
@@ -1308,6 +1283,27 @@ export class NotificationChannelServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listNotificationChannels(
+      request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.INotificationChannel[],
+        protos.google.monitoring.v3.IListNotificationChannelsRequest|null,
+        protos.google.monitoring.v3.IListNotificationChannelsResponse
+      ]>;
+  listNotificationChannels(
+      request: protos.google.monitoring.v3.IListNotificationChannelsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListNotificationChannelsRequest,
+          protos.google.monitoring.v3.IListNotificationChannelsResponse|null|undefined,
+          protos.google.monitoring.v3.INotificationChannel>): void;
+  listNotificationChannels(
+      request: protos.google.monitoring.v3.IListNotificationChannelsRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListNotificationChannelsRequest,
+          protos.google.monitoring.v3.IListNotificationChannelsResponse|null|undefined,
+          protos.google.monitoring.v3.INotificationChannel>): void;
   listNotificationChannels(
       request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1465,11 +1461,8 @@ export class NotificationChannelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listNotificationChannelsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/notification_channel_service.list_notification_channels.js</caption>
+ * region_tag:monitoring_v3_generated_NotificationChannelService_ListNotificationChannels_async
  */
   listNotificationChannelsAsync(
       request?: protos.google.monitoring.v3.IListNotificationChannelsRequest,
@@ -1484,7 +1477,6 @@ export class NotificationChannelServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listNotificationChannels'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

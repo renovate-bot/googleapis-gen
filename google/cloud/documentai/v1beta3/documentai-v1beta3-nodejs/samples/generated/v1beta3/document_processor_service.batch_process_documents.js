@@ -31,15 +31,15 @@ function main(name) {
   /**
    *  The overall output config for batch process.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
   /**
    *  The input documents for batch process.
    */
-  // const inputDocuments = ''
+  // const inputDocuments = {}
   /**
    *  The overall output config for batch process.
    */
-  // const documentOutputConfig = ''
+  // const documentOutputConfig = {}
   /**
    *  Whether Human Review feature should be skipped for this request. Default to
    *  false.
@@ -52,7 +52,7 @@ function main(name) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function batchProcessDocuments() {
+  async function callBatchProcessDocuments() {
     // Construct request
     const request = {
       name,
@@ -64,7 +64,7 @@ function main(name) {
     console.log(response);
   }
 
-  batchProcessDocuments();
+  callBatchProcessDocuments();
   // [END documentai_v1beta3_generated_DocumentProcessorService_BatchProcessDocuments_async]
 }
 

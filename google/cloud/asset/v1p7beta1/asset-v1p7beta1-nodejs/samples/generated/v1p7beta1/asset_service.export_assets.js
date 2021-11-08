@@ -34,7 +34,7 @@ function main(parent, outputConfig) {
    *  data collection and indexing, there is a volatile window during which
    *  running the same query may get different results.
    */
-  // const readTime = ''
+  // const readTime = {}
   /**
    *  A list of asset types to take a snapshot for. For example:
    *  "compute.googleapis.com/Disk".
@@ -43,12 +43,12 @@ function main(parent, outputConfig) {
    *  with "compute.googleapis.com".
    *  * ".*Instance" snapshots resources whose asset type ends with "Instance".
    *  * ".*Instance.*" snapshots resources whose asset type contains "Instance".
-   *  See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   *  See RE2 (https://github.com/google/re2/wiki/Syntax) for all supported
    *  regular expression syntax. If the regular expression does not match any
    *  supported asset type, an INVALID_ARGUMENT error will be returned.
    *  If specified, only matching assets will be returned, otherwise, it will
-   *  snapshot all asset types. See [Introduction to Cloud Asset
-   *  Inventory](https://cloud.google.com/asset-inventory/docs/overview)
+   *  snapshot all asset types. See Introduction to Cloud Asset
+   *  Inventory (https://cloud.google.com/asset-inventory/docs/overview)
    *  for all supported asset types.
    */
   // const assetTypes = 'abc123'
@@ -56,22 +56,22 @@ function main(parent, outputConfig) {
    *  Asset content type. If not specified, no content but the asset name will be
    *  returned.
    */
-  // const contentType = ''
+  // const contentType = {}
   /**
    *  Required. Output configuration indicating where the results will be output
    *  to.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
   /**
    *  A list of relationship types to export, for example:
    *  `INSTANCE_TO_INSTANCEGROUP`. This field should only be specified if
-   *  content_type=RELATIONSHIP. If specified, it will snapshot [asset_types]'
+   *  content_type=RELATIONSHIP. If specified, it will snapshot asset_types'
    *  specified relationships, or give errors if any relationship_types'
-   *  supported types are not in [asset_types]. If not specified, it will
-   *  snapshot all [asset_types]' supported relationships. An unspecified
-   *  [asset_types] field means all supported asset_types. See [Introduction to
+   *  supported types are not in asset_types. If not specified, it will
+   *  snapshot all asset_types' supported relationships. An unspecified
+   *  asset_types  field means all supported asset_types. See Introduction to
    *  Cloud Asset
-   *  Inventory](https://cloud.google.com/asset-inventory/docs/overview) for all
+   *  Inventory (https://cloud.google.com/asset-inventory/docs/overview) for all
    *  supported asset types and relationship types.
    */
   // const relationshipTypes = 'abc123'
@@ -82,7 +82,7 @@ function main(parent, outputConfig) {
   // Instantiates a client
   const assetClient = new AssetServiceClient();
 
-  async function exportAssets() {
+  async function callExportAssets() {
     // Construct request
     const request = {
       parent,
@@ -95,7 +95,7 @@ function main(parent, outputConfig) {
     console.log(response);
   }
 
-  exportAssets();
+  callExportAssets();
   // [END cloudasset_v1p7beta1_generated_AssetService_ExportAssets_async]
 }
 

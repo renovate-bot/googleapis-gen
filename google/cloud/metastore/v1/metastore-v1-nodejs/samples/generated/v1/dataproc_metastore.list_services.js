@@ -33,11 +33,11 @@ function main(parent) {
    */
   // const pageSize = 1234
   /**
-   *  Optional. A page token, received from a previous [DataprocMetastore.ListServices][google.cloud.metastore.v1.DataprocMetastore.ListServices]
+   *  Optional. A page token, received from a previous DataprocMetastore.ListServices google.cloud.metastore.v1.DataprocMetastore.ListServices 
    *  call. Provide this token to retrieve the subsequent page.
    *  To retrieve the first page, supply an empty page token.
    *  When paginating, other parameters provided to
-   *  [DataprocMetastore.ListServices][google.cloud.metastore.v1.DataprocMetastore.ListServices] must match the call that provided the
+   *  DataprocMetastore.ListServices google.cloud.metastore.v1.DataprocMetastore.ListServices  must match the call that provided the
    *  page token.
    */
   // const pageToken = 'abc123'
@@ -46,8 +46,8 @@ function main(parent) {
    */
   // const filter = 'abc123'
   /**
-   *  Optional. Specify the ordering of results as described in [Sorting
-   *  Order](https://cloud.google.com/apis/design/design_patterns#sorting_order).
+   *  Optional. Specify the ordering of results as described in Sorting
+   *  Order (https://cloud.google.com/apis/design/design_patterns#sorting_order).
    *  If not specified, the results will be sorted in the default order.
    */
   // const orderBy = 'abc123'
@@ -58,7 +58,7 @@ function main(parent) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function listServices() {
+  async function callListServices() {
     // Construct request
     const request = {
       parent,
@@ -71,7 +71,7 @@ function main(parent) {
     }
   }
 
-  listServices();
+  callListServices();
   // [END metastore_v1_generated_DataprocMetastore_ListServices_async]
 }
 

@@ -33,7 +33,7 @@ function main(parent, monitoredProject) {
    *  ignored. The `monitored_project.name` must be in the format:
    *  `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
    */
-  // const monitoredProject = ''
+  // const monitoredProject = {}
 
   // Imports the Metricsscope library
   const {MetricsScopesClient} = require('@google-cloud/metricsscope').v1;
@@ -41,7 +41,7 @@ function main(parent, monitoredProject) {
   // Instantiates a client
   const metricsscopeClient = new MetricsScopesClient();
 
-  async function createMonitoredProject() {
+  async function callCreateMonitoredProject() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, monitoredProject) {
     console.log(response);
   }
 
-  createMonitoredProject();
+  callCreateMonitoredProject();
   // [END monitoring_v1_generated_MetricsScopes_CreateMonitoredProject_async]
 }
 

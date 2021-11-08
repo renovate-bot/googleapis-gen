@@ -273,6 +273,28 @@ export class AuthenticationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Verifies the MFA challenge and performs sign-in
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.mfaPendingCredential
+ *   Required. Pending credential from first factor sign-in.
+ * @param {google.cloud.identitytoolkit.v2.FinalizeMfaPhoneRequestInfo} request.phoneVerificationInfo
+ *   Proof of completion of the SMS based MFA challenge.
+ * @param {string} request.tenantId
+ *   The ID of the Identity Platform tenant the user is signing in to. If not
+ *   set, the user will sign in to the default Identity Platform project.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [FinalizeMfaSignInResponse]{@link google.cloud.identitytoolkit.v2.FinalizeMfaSignInResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/authentication_service.finalize_mfa_sign_in.js</caption>
+ * region_tag:identitytoolkit_v2_generated_AuthenticationService_FinalizeMfaSignIn_async
+ */
   finalizeMfaSignIn(
       request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaSignInRequest,
       options?: CallOptions):
@@ -293,28 +315,6 @@ export class AuthenticationServiceClient {
           protos.google.cloud.identitytoolkit.v2.IFinalizeMfaSignInResponse,
           protos.google.cloud.identitytoolkit.v2.IFinalizeMfaSignInRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Verifies the MFA challenge and performs sign-in
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.mfaPendingCredential
- *   Required. Pending credential from first factor sign-in.
- * @param {google.cloud.identitytoolkit.v2.FinalizeMfaPhoneRequestInfo} request.phoneVerificationInfo
- *   Proof of completion of the SMS based MFA challenge.
- * @param {string} request.tenantId
- *   The ID of the Identity Platform tenant the user is signing in to. If not
- *   set, the user will sign in to the default Identity Platform project.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [FinalizeMfaSignInResponse]{@link google.cloud.identitytoolkit.v2.FinalizeMfaSignInResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.finalizeMfaSignIn(request);
- */
   finalizeMfaSignIn(
       request?: protos.google.cloud.identitytoolkit.v2.IFinalizeMfaSignInRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -339,29 +339,11 @@ export class AuthenticationServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.finalizeMfaSignIn(request, options, callback);
   }
-  startMfaSignIn(
-      request?: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.identitytoolkit.v2.IStartMfaSignInResponse,
-        protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest|undefined, {}|undefined
-      ]>;
-  startMfaSignIn(
-      request: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInResponse,
-          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest|null|undefined,
-          {}|null|undefined>): void;
-  startMfaSignIn(
-      request: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
-      callback: Callback<
-          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInResponse,
-          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sends the MFA challenge
  *
@@ -383,9 +365,29 @@ export class AuthenticationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.startMfaSignIn(request);
+ * @example <caption>include:samples/generated/v2/authentication_service.start_mfa_sign_in.js</caption>
+ * region_tag:identitytoolkit_v2_generated_AuthenticationService_StartMfaSignIn_async
  */
+  startMfaSignIn(
+      request?: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.identitytoolkit.v2.IStartMfaSignInResponse,
+        protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest|undefined, {}|undefined
+      ]>;
+  startMfaSignIn(
+      request: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInResponse,
+          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest|null|undefined,
+          {}|null|undefined>): void;
+  startMfaSignIn(
+      request: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
+      callback: Callback<
+          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInResponse,
+          protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest|null|undefined,
+          {}|null|undefined>): void;
   startMfaSignIn(
       request?: protos.google.cloud.identitytoolkit.v2.IStartMfaSignInRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -410,6 +412,8 @@ export class AuthenticationServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.startMfaSignIn(request, options, callback);
   }

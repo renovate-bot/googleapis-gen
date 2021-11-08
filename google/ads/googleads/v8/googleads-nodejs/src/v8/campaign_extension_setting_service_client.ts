@@ -676,26 +676,6 @@ export class CampaignExtensionSettingServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignExtensionSetting(
-      request?: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ICampaignExtensionSetting,
-        protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest|undefined, {}|undefined
-      ]>;
-  getCampaignExtensionSetting(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICampaignExtensionSetting,
-          protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignExtensionSetting(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICampaignExtensionSetting,
-          protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign extension setting in full detail.
  *
@@ -718,9 +698,29 @@ export class CampaignExtensionSettingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignExtensionSetting(request);
+ * @example <caption>include:samples/generated/v8/campaign_extension_setting_service.get_campaign_extension_setting.js</caption>
+ * region_tag:googleads_v8_generated_CampaignExtensionSettingService_GetCampaignExtensionSetting_async
  */
+  getCampaignExtensionSetting(
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ICampaignExtensionSetting,
+        protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest|undefined, {}|undefined
+      ]>;
+  getCampaignExtensionSetting(
+      request: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICampaignExtensionSetting,
+          protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignExtensionSetting(
+      request: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICampaignExtensionSetting,
+          protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignExtensionSetting(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignExtensionSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class CampaignExtensionSettingServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignExtensionSetting(request, options, callback);
   }
-  mutateCampaignExtensionSettings(
-      request?: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsResponse,
-        protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignExtensionSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignExtensionSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes campaign extension settings. Operation
  * statuses are returned.
@@ -834,9 +814,29 @@ export class CampaignExtensionSettingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignExtensionSettings(request);
+ * @example <caption>include:samples/generated/v8/campaign_extension_setting_service.mutate_campaign_extension_settings.js</caption>
+ * region_tag:googleads_v8_generated_CampaignExtensionSettingService_MutateCampaignExtensionSettings_async
  */
+  mutateCampaignExtensionSettings(
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsResponse,
+        protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignExtensionSettings(
+      request: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignExtensionSettings(
+      request: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignExtensionSettings(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignExtensionSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<

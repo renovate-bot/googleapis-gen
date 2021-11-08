@@ -42,7 +42,7 @@ function main(tableName, rowKey) {
    *  `false_mutations` will be executed. If unset, checks that the row contains
    *  any values at all.
    */
-  // const predicateFilter = ''
+  // const predicateFilter = {}
   /**
    *  Changes to be atomically applied to the specified row if `predicate_filter`
    *  yields at least one cell when applied to `row_key`. Entries are applied in
@@ -66,7 +66,7 @@ function main(tableName, rowKey) {
   // Instantiates a client
   const bigtableClient = new BigtableClient();
 
-  async function checkAndMutateRow() {
+  async function callCheckAndMutateRow() {
     // Construct request
     const request = {
       tableName,
@@ -78,7 +78,7 @@ function main(tableName, rowKey) {
     console.log(response);
   }
 
-  checkAndMutateRow();
+  callCheckAndMutateRow();
   // [END bigtable_v2_generated_Bigtable_CheckAndMutateRow_async]
 }
 

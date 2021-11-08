@@ -23,11 +23,11 @@ function main() {
   /**
    *  The request sent to IAM.
    */
-  // const iamRequest = ''
+  // const iamRequest = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function getBucketIamPolicy() {
+  async function callGetBucketIamPolicy() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  getBucketIamPolicy();
+  callGetBucketIamPolicy();
   // [END storage_v1_generated_Storage_GetBucketIamPolicy_async]
 }
 

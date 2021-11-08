@@ -646,26 +646,6 @@ export class ConversionCustomVariableServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getConversionCustomVariable(
-      request?: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IConversionCustomVariable,
-        protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest|undefined, {}|undefined
-      ]>;
-  getConversionCustomVariable(
-      request: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IConversionCustomVariable,
-          protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest|null|undefined,
-          {}|null|undefined>): void;
-  getConversionCustomVariable(
-      request: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IConversionCustomVariable,
-          protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested conversion custom variable.
  *
@@ -688,9 +668,29 @@ export class ConversionCustomVariableServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getConversionCustomVariable(request);
+ * @example <caption>include:samples/generated/v7/conversion_custom_variable_service.get_conversion_custom_variable.js</caption>
+ * region_tag:googleads_v7_generated_ConversionCustomVariableService_GetConversionCustomVariable_async
  */
+  getConversionCustomVariable(
+      request?: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IConversionCustomVariable,
+        protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest|undefined, {}|undefined
+      ]>;
+  getConversionCustomVariable(
+      request: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IConversionCustomVariable,
+          protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest|null|undefined,
+          {}|null|undefined>): void;
+  getConversionCustomVariable(
+      request: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IConversionCustomVariable,
+          protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest|null|undefined,
+          {}|null|undefined>): void;
   getConversionCustomVariable(
       request?: protos.google.ads.googleads.v7.services.IGetConversionCustomVariableRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class ConversionCustomVariableServiceClient {
     this.initialize();
     return this.innerApiCalls.getConversionCustomVariable(request, options, callback);
   }
-  mutateConversionCustomVariables(
-      request?: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesResponse,
-        protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest|undefined, {}|undefined
-      ]>;
-  mutateConversionCustomVariables(
-      request: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesResponse,
-          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateConversionCustomVariables(
-      request: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesResponse,
-          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or updates conversion custom variables. Operation statuses are
  * returned.
@@ -785,9 +765,29 @@ export class ConversionCustomVariableServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateConversionCustomVariables(request);
+ * @example <caption>include:samples/generated/v7/conversion_custom_variable_service.mutate_conversion_custom_variables.js</caption>
+ * region_tag:googleads_v7_generated_ConversionCustomVariableService_MutateConversionCustomVariables_async
  */
+  mutateConversionCustomVariables(
+      request?: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesResponse,
+        protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest|undefined, {}|undefined
+      ]>;
+  mutateConversionCustomVariables(
+      request: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesResponse,
+          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateConversionCustomVariables(
+      request: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesResponse,
+          protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateConversionCustomVariables(
       request?: protos.google.ads.googleads.v7.services.IMutateConversionCustomVariablesRequest,
       optionsOrCallback?: CallOptions|Callback<

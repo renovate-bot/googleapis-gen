@@ -305,26 +305,6 @@ export class TestEnvironmentDiscoveryServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getTestEnvironmentCatalog(
-      request?: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
-        protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|undefined, {}|undefined
-      ]>;
-  getTestEnvironmentCatalog(
-      request: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
-          protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|null|undefined,
-          {}|null|undefined>): void;
-  getTestEnvironmentCatalog(
-      request: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
-      callback: Callback<
-          protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
-          protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the catalog of supported test environments.
  *
@@ -347,9 +327,29 @@ export class TestEnvironmentDiscoveryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getTestEnvironmentCatalog(request);
+ * @example <caption>include:samples/generated/v1/test_environment_discovery_service.get_test_environment_catalog.js</caption>
+ * region_tag:testing_v1_generated_TestEnvironmentDiscoveryService_GetTestEnvironmentCatalog_async
  */
+  getTestEnvironmentCatalog(
+      request?: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
+        protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|undefined, {}|undefined
+      ]>;
+  getTestEnvironmentCatalog(
+      request: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
+          protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|null|undefined,
+          {}|null|undefined>): void;
+  getTestEnvironmentCatalog(
+      request: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
+      callback: Callback<
+          protos.google.devtools.testing.v1.ITestEnvironmentCatalog,
+          protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest|null|undefined,
+          {}|null|undefined>): void;
   getTestEnvironmentCatalog(
       request?: protos.google.devtools.testing.v1.IGetTestEnvironmentCatalogRequest,
       optionsOrCallback?: CallOptions|Callback<

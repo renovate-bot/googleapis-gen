@@ -727,26 +727,6 @@ export class CampaignFeedServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignFeed(
-      request?: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICampaignFeed,
-        protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest|undefined, {}|undefined
-      ]>;
-  getCampaignFeed(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignFeed,
-          protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignFeed(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignFeed,
-          protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign feed in full detail.
  *
@@ -769,9 +749,29 @@ export class CampaignFeedServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignFeed(request);
+ * @example <caption>include:samples/generated/v9/campaign_feed_service.get_campaign_feed.js</caption>
+ * region_tag:googleads_v9_generated_CampaignFeedService_GetCampaignFeed_async
  */
+  getCampaignFeed(
+      request?: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICampaignFeed,
+        protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest|undefined, {}|undefined
+      ]>;
+  getCampaignFeed(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignFeed,
+          protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignFeed(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignFeed,
+          protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignFeed(
       request?: protos.google.ads.googleads.v9.services.IGetCampaignFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class CampaignFeedServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignFeed(request, options, callback);
   }
-  mutateCampaignFeeds(
-      request?: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCampaignFeedsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignFeeds(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignFeeds(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes campaign feeds. Operation statuses are
  * returned.
@@ -879,9 +859,29 @@ export class CampaignFeedServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignFeeds(request);
+ * @example <caption>include:samples/generated/v9/campaign_feed_service.mutate_campaign_feeds.js</caption>
+ * region_tag:googleads_v9_generated_CampaignFeedService_MutateCampaignFeeds_async
  */
+  mutateCampaignFeeds(
+      request?: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCampaignFeedsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignFeeds(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignFeeds(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignFeeds(
       request?: protos.google.ads.googleads.v9.services.IMutateCampaignFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<

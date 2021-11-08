@@ -727,26 +727,6 @@ export class MobileDeviceConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getMobileDeviceConstant(
-      request?: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IMobileDeviceConstant,
-        protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest|undefined, {}|undefined
-      ]>;
-  getMobileDeviceConstant(
-      request: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IMobileDeviceConstant,
-          protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getMobileDeviceConstant(
-      request: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IMobileDeviceConstant,
-          protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested mobile device constant in full detail.
  *
@@ -769,9 +749,29 @@ export class MobileDeviceConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getMobileDeviceConstant(request);
+ * @example <caption>include:samples/generated/v9/mobile_device_constant_service.get_mobile_device_constant.js</caption>
+ * region_tag:googleads_v9_generated_MobileDeviceConstantService_GetMobileDeviceConstant_async
  */
+  getMobileDeviceConstant(
+      request?: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IMobileDeviceConstant,
+        protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest|undefined, {}|undefined
+      ]>;
+  getMobileDeviceConstant(
+      request: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IMobileDeviceConstant,
+          protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getMobileDeviceConstant(
+      request: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IMobileDeviceConstant,
+          protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getMobileDeviceConstant(
       request?: protos.google.ads.googleads.v9.services.IGetMobileDeviceConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

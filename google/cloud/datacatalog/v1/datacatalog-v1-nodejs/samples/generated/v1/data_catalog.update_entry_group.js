@@ -23,14 +23,14 @@ function main(entryGroup) {
   /**
    *  Required. Updates for the entry group. The `name` field must be set.
    */
-  // const entryGroup = ''
+  // const entryGroup = {}
   /**
    *  Names of fields whose values to overwrite on an entry group.
    *  If this parameter is absent or empty, all modifiable fields
    *  are overwritten. If such fields are non-required and omitted in the
    *  request body, their values are emptied.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -38,7 +38,7 @@ function main(entryGroup) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function updateEntryGroup() {
+  async function callUpdateEntryGroup() {
     // Construct request
     const request = {
       entryGroup,
@@ -49,7 +49,7 @@ function main(entryGroup) {
     console.log(response);
   }
 
-  updateEntryGroup();
+  callUpdateEntryGroup();
   // [END datacatalog_v1_generated_DataCatalog_UpdateEntryGroup_async]
 }
 

@@ -34,7 +34,7 @@ function main() {
   // const project = 'my-project'
   /**
    */
-  // const body = ''
+  // const body = {}
 
   // Imports the Sql library
   const {SqlDatabasesServiceClient} = require('@google-cloud/sql').v1beta4;
@@ -42,7 +42,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlDatabasesServiceClient();
 
-  async function patch() {
+  async function callPatch() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  patch();
+  callPatch();
   // [END sqladmin_v1beta4_generated_SqlDatabasesService_Patch_async]
 }
 

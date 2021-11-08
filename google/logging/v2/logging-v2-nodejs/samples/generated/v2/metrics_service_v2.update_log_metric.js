@@ -31,7 +31,7 @@ function main(metricName, metric) {
   /**
    *  Required. The updated metric.
    */
-  // const metric = ''
+  // const metric = {}
 
   // Imports the Logging library
   const {MetricsServiceV2Client} = require('@google-cloud/logging').v2;
@@ -39,7 +39,7 @@ function main(metricName, metric) {
   // Instantiates a client
   const loggingClient = new MetricsServiceV2Client();
 
-  async function updateLogMetric() {
+  async function callUpdateLogMetric() {
     // Construct request
     const request = {
       metricName,
@@ -51,7 +51,7 @@ function main(metricName, metric) {
     console.log(response);
   }
 
-  updateLogMetric();
+  callUpdateLogMetric();
   // [END logging_v2_generated_MetricsServiceV2_UpdateLogMetric_async]
 }
 

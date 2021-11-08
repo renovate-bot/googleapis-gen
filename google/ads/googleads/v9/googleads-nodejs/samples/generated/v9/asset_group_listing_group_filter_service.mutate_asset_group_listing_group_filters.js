@@ -39,7 +39,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {AssetGroupListingGroupFilterServiceClient} = require('google-ads').v9;
@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new AssetGroupListingGroupFilterServiceClient();
 
-  async function mutateAssetGroupListingGroupFilters() {
+  async function callMutateAssetGroupListingGroupFilters() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateAssetGroupListingGroupFilters();
+  callMutateAssetGroupListingGroupFilters();
   // [END googleads_v9_generated_AssetGroupListingGroupFilterService_MutateAssetGroupListingGroupFilters_async]
 }
 

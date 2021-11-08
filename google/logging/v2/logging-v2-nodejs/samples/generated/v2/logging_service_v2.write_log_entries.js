@@ -42,14 +42,14 @@ function main(entries) {
    *      { "type": "gce_instance",
    *        "labels": {
    *          "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
-   *  See [LogEntry][google.logging.v2.LogEntry].
+   *  See LogEntry google.logging.v2.LogEntry.
    */
-  // const resource = ''
+  // const resource = {}
   /**
    *  Optional. Default labels that are added to the `labels` field of all log
    *  entries in `entries`. If a log entry already has a label with the same key
    *  as a label in this parameter, then the log entry's label is not changed.
-   *  See [LogEntry][google.logging.v2.LogEntry].
+   *  See LogEntry google.logging.v2.LogEntry.
    */
   // const labels = 1234
   /**
@@ -58,20 +58,20 @@ function main(entries) {
    *  `log_name`, `resource`, and `labels` fields are copied into those log
    *  entries in this list that do not include values for their corresponding
    *  fields. For more information, see the
-   *  [LogEntry][google.logging.v2.LogEntry] type.
+   *  LogEntry google.logging.v2.LogEntry  type.
    *  If the `timestamp` or `insert_id` fields are missing in log entries, then
    *  this method supplies the current time or a unique identifier, respectively.
    *  The supplied values are chosen so that, among the log entries that did not
    *  supply their own values, the entries earlier in the list will sort before
    *  the entries later in the list. See the `entries.list` method.
    *  Log entries with timestamps that are more than the
-   *  [logs retention period](https://cloud.google.com/logging/quota-policy) in
+   *  logs retention period (https://cloud.google.com/logging/quota-policy) in
    *  the past or more than 24 hours in the future will not be available when
-   *  calling `entries.list`. However, those log entries can still be [exported
+   *  calling `entries.list`. However, those log entries can still be exported
    *  with
-   *  LogSinks](https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
+   *  LogSinks (https://cloud.google.com/logging/docs/api/tasks/exporting-logs).
    *  To improve throughput and to avoid exceeding the
-   *  [quota limit](https://cloud.google.com/logging/quota-policy) for calls to
+   *  quota limit (https://cloud.google.com/logging/quota-policy) for calls to
    *  `entries.write`, you should try to include several log entries in this
    *  list, rather than calling this method for each individual log entry.
    */
@@ -97,7 +97,7 @@ function main(entries) {
   // Instantiates a client
   const loggingClient = new LoggingServiceV2Client();
 
-  async function writeLogEntries() {
+  async function callWriteLogEntries() {
     // Construct request
     const request = {
       entries,
@@ -108,7 +108,7 @@ function main(entries) {
     console.log(response);
   }
 
-  writeLogEntries();
+  callWriteLogEntries();
   // [END logging_v2_generated_LoggingServiceV2_WriteLogEntries_async]
 }
 

@@ -300,6 +300,28 @@ export class ErrorStatsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Deletes all error events of a given project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectName
+ *   Required. The resource name of the Google Cloud Platform project. Written
+ *   as `projects/{projectID}`, where `{projectID}` is the
+ *   [Google Cloud Platform project
+ *   ID](https://support.google.com/cloud/answer/6158840).
+ *
+ *   Example: `projects/my-project-123`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DeleteEventsResponse]{@link google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.delete_events.js</caption>
+ * region_tag:clouderrorreporting_v1beta1_generated_ErrorStatsService_DeleteEvents_async
+ */
   deleteEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
       options?: CallOptions):
@@ -320,28 +342,6 @@ export class ErrorStatsServiceClient {
           protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsResponse,
           protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes all error events of a given project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectName
- *   Required. The resource name of the Google Cloud Platform project. Written
- *   as `projects/{projectID}`, where `{projectID}` is the
- *   [Google Cloud Platform project
- *   ID](https://support.google.com/cloud/answer/6158840).
- *
- *   Example: `projects/my-project-123`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DeleteEventsResponse]{@link google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteEvents(request);
- */
   deleteEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IDeleteEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -377,28 +377,7 @@ export class ErrorStatsServiceClient {
     return this.innerApiCalls.deleteEvents(request, options, callback);
   }
 
-  listGroupStats(
-      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats[],
-        protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest|null,
-        protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse
-      ]>;
-  listGroupStats(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
-          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse|null|undefined,
-          protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats>): void;
-  listGroupStats(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
-      callback: PaginationCallback<
-          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
-          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse|null|undefined,
-          protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats>): void;
-/**
+ /**
  * Lists the specified groups.
  *
  * @param {Object} request
@@ -457,6 +436,27 @@ export class ErrorStatsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listGroupStats(
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats[],
+        protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest|null,
+        protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse
+      ]>;
+  listGroupStats(
+      request: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse|null|undefined,
+          protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats>): void;
+  listGroupStats(
+      request: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+      callback: PaginationCallback<
+          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
+          protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsResponse|null|undefined,
+          protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats>): void;
   listGroupStats(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -630,11 +630,8 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listGroupStatsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_group_stats.js</caption>
+ * region_tag:clouderrorreporting_v1beta1_generated_ErrorStatsService_ListGroupStats_async
  */
   listGroupStatsAsync(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListGroupStatsRequest,
@@ -649,7 +646,6 @@ export class ErrorStatsServiceClient {
     ] = gax.routingHeader.fromParams({
       'project_name': request.projectName || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listGroupStats'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -659,28 +655,7 @@ export class ErrorStatsServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroupStats>;
   }
-  listEvents(
-      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent[],
-        protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest|null,
-        protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse
-      ]>;
-  listEvents(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
-          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse|null|undefined,
-          protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent>): void;
-  listEvents(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
-      callback: PaginationCallback<
-          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
-          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse|null|undefined,
-          protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent>): void;
-/**
+ /**
  * Lists the specified events.
  *
  * @param {Object} request
@@ -719,6 +694,27 @@ export class ErrorStatsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEvents(
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent[],
+        protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest|null,
+        protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse
+      ]>;
+  listEvents(
+      request: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse|null|undefined,
+          protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent>): void;
+  listEvents(
+      request: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+      callback: PaginationCallback<
+          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
+          protos.google.devtools.clouderrorreporting.v1beta1.IListEventsResponse|null|undefined,
+          protos.google.devtools.clouderrorreporting.v1beta1.IErrorEvent>): void;
   listEvents(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -852,11 +848,8 @@ export class ErrorStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEventsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/error_stats_service.list_events.js</caption>
+ * region_tag:clouderrorreporting_v1beta1_generated_ErrorStatsService_ListEvents_async
  */
   listEventsAsync(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IListEventsRequest,
@@ -871,7 +864,6 @@ export class ErrorStatsServiceClient {
     ] = gax.routingHeader.fromParams({
       'project_name': request.projectName || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEvents'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

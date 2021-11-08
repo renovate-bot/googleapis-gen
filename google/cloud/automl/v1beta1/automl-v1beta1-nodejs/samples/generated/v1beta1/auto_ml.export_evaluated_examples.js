@@ -28,7 +28,7 @@ function main(name, outputConfig) {
   /**
    *  Required. The desired output location and configuration.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
@@ -36,7 +36,7 @@ function main(name, outputConfig) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function exportEvaluatedExamples() {
+  async function callExportEvaluatedExamples() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name, outputConfig) {
     console.log(response);
   }
 
-  exportEvaluatedExamples();
+  callExportEvaluatedExamples();
   // [END automl_v1beta1_generated_AutoMl_ExportEvaluatedExamples_async]
 }
 

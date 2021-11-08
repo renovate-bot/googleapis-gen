@@ -646,26 +646,6 @@ export class AdGroupFeedServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupFeed(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroupFeed,
-        protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupFeed(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupFeed,
-          protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupFeed(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupFeed,
-          protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group feed in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupFeedServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupFeed(request);
+ * @example <caption>include:samples/generated/v7/ad_group_feed_service.get_ad_group_feed.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupFeedService_GetAdGroupFeed_async
  */
+  getAdGroupFeed(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroupFeed,
+        protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupFeed(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupFeed,
+          protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupFeed(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupFeed,
+          protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupFeed(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class AdGroupFeedServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroupFeed(request, options, callback);
   }
-  mutateAdGroupFeeds(
-      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsResponse,
-        protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupFeeds(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupFeeds(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes ad group feeds. Operation statuses are
  * returned.
@@ -797,9 +777,29 @@ export class AdGroupFeedServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupFeeds(request);
+ * @example <caption>include:samples/generated/v7/ad_group_feed_service.mutate_ad_group_feeds.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupFeedService_MutateAdGroupFeeds_async
  */
+  mutateAdGroupFeeds(
+      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsResponse,
+        protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupFeeds(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupFeeds(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupFeeds(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<

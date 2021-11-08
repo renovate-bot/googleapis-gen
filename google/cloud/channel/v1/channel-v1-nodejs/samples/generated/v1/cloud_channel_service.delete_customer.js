@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function deleteCustomer() {
+  async function callDeleteCustomer() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteCustomer();
+  callDeleteCustomer();
   // [END cloudchannel_v1_generated_CloudChannelService_DeleteCustomer_async]
 }
 

@@ -28,7 +28,7 @@ function main(parent, trial) {
   /**
    *  Required. The Trial to create.
    */
-  // const trial = ''
+  // const trial = {}
 
   // Imports the Aiplatform library
   const {VizierServiceClient} = require('@google-cloud/aiplatform').v1;
@@ -36,7 +36,7 @@ function main(parent, trial) {
   // Instantiates a client
   const aiplatformClient = new VizierServiceClient();
 
-  async function createTrial() {
+  async function callCreateTrial() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, trial) {
     console.log(response);
   }
 
-  createTrial();
+  callCreateTrial();
   // [END aiplatform_v1_generated_VizierService_CreateTrial_async]
 }
 

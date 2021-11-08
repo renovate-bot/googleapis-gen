@@ -676,26 +676,6 @@ export class KeywordPlanAdGroupServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getKeywordPlanAdGroup(
-      request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IKeywordPlanAdGroup,
-        protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest|undefined, {}|undefined
-      ]>;
-  getKeywordPlanAdGroup(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IKeywordPlanAdGroup,
-          protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest|null|undefined,
-          {}|null|undefined>): void;
-  getKeywordPlanAdGroup(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IKeywordPlanAdGroup,
-          protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Keyword Plan ad group in full detail.
  *
@@ -718,9 +698,29 @@ export class KeywordPlanAdGroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getKeywordPlanAdGroup(request);
+ * @example <caption>include:samples/generated/v8/keyword_plan_ad_group_service.get_keyword_plan_ad_group.js</caption>
+ * region_tag:googleads_v8_generated_KeywordPlanAdGroupService_GetKeywordPlanAdGroup_async
  */
+  getKeywordPlanAdGroup(
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IKeywordPlanAdGroup,
+        protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest|undefined, {}|undefined
+      ]>;
+  getKeywordPlanAdGroup(
+      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IKeywordPlanAdGroup,
+          protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest|null|undefined,
+          {}|null|undefined>): void;
+  getKeywordPlanAdGroup(
+      request: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IKeywordPlanAdGroup,
+          protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest|null|undefined,
+          {}|null|undefined>): void;
   getKeywordPlanAdGroup(
       request?: protos.google.ads.googleads.v8.services.IGetKeywordPlanAdGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class KeywordPlanAdGroupServiceClient {
     this.initialize();
     return this.innerApiCalls.getKeywordPlanAdGroup(request, options, callback);
   }
-  mutateKeywordPlanAdGroups(
-      request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsResponse,
-        protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest|undefined, {}|undefined
-      ]>;
-  mutateKeywordPlanAdGroups(
-      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsResponse,
-          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateKeywordPlanAdGroups(
-      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsResponse,
-          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes Keyword Plan ad groups. Operation statuses are
  * returned.
@@ -816,9 +796,29 @@ export class KeywordPlanAdGroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateKeywordPlanAdGroups(request);
+ * @example <caption>include:samples/generated/v8/keyword_plan_ad_group_service.mutate_keyword_plan_ad_groups.js</caption>
+ * region_tag:googleads_v8_generated_KeywordPlanAdGroupService_MutateKeywordPlanAdGroups_async
  */
+  mutateKeywordPlanAdGroups(
+      request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsResponse,
+        protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest|undefined, {}|undefined
+      ]>;
+  mutateKeywordPlanAdGroups(
+      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsResponse,
+          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateKeywordPlanAdGroups(
+      request: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsResponse,
+          protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateKeywordPlanAdGroups(
       request?: protos.google.ads.googleads.v8.services.IMutateKeywordPlanAdGroupsRequest,
       optionsOrCallback?: CallOptions|Callback<

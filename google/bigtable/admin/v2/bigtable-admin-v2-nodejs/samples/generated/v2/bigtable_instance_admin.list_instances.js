@@ -36,7 +36,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new BigtableInstanceAdminClient();
 
-  async function listInstances() {
+  async function callListInstances() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent) {
     console.log(response);
   }
 
-  listInstances();
+  callListInstances();
   // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_ListInstances_async]
 }
 

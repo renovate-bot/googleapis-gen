@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function deletePhraseSet() {
+  async function callDeletePhraseSet() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deletePhraseSet();
+  callDeletePhraseSet();
   // [END speech_v1p1beta1_generated_Adaptation_DeletePhraseSet_async]
 }
 

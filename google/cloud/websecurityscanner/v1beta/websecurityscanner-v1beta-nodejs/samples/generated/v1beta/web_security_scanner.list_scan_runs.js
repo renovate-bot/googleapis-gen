@@ -44,7 +44,7 @@ function main(parent) {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function listScanRuns() {
+  async function callListScanRuns() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     }
   }
 
-  listScanRuns();
+  callListScanRuns();
   // [END websecurityscanner_v1beta_generated_WebSecurityScanner_ListScanRuns_async]
 }
 

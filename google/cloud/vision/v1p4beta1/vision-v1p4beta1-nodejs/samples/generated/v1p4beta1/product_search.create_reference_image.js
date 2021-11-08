@@ -31,7 +31,7 @@ function main(parent, referenceImage) {
    *  Required. The reference image to create.
    *  If an image ID is specified, it is ignored.
    */
-  // const referenceImage = ''
+  // const referenceImage = {}
   /**
    *  A user-supplied resource id for the ReferenceImage to be added. If set,
    *  the server will attempt to use this value as the resource id. If it is
@@ -46,7 +46,7 @@ function main(parent, referenceImage) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function createReferenceImage() {
+  async function callCreateReferenceImage() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent, referenceImage) {
     console.log(response);
   }
 
-  createReferenceImage();
+  callCreateReferenceImage();
   // [END vision_v1p4beta1_generated_ProductSearch_CreateReferenceImage_async]
 }
 

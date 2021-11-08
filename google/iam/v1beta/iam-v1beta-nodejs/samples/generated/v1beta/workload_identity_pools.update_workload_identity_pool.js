@@ -23,11 +23,11 @@ function main(workloadIdentityPool, updateMask) {
   /**
    *  Required. The pool to update. The `name` field is used to identify the pool.
    */
-  // const workloadIdentityPool = ''
+  // const workloadIdentityPool = {}
   /**
    *  Required. The list of fields update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Iam library
   const {WorkloadIdentityPoolsClient} = require('iam').v1beta;
@@ -35,7 +35,7 @@ function main(workloadIdentityPool, updateMask) {
   // Instantiates a client
   const iamClient = new WorkloadIdentityPoolsClient();
 
-  async function updateWorkloadIdentityPool() {
+  async function callUpdateWorkloadIdentityPool() {
     // Construct request
     const request = {
       workloadIdentityPool,
@@ -48,7 +48,7 @@ function main(workloadIdentityPool, updateMask) {
     console.log(response);
   }
 
-  updateWorkloadIdentityPool();
+  callUpdateWorkloadIdentityPool();
   // [END iam_v1beta_generated_WorkloadIdentityPools_UpdateWorkloadIdentityPool_async]
 }
 

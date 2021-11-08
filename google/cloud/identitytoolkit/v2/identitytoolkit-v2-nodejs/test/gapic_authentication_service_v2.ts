@@ -126,7 +126,7 @@ describe('v2.AuthenticationServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaSignInRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaSignInResponse());
             client.innerApiCalls.finalizeMfaSignIn = stubSimpleCall(expectedResponse);
             const [response] = await client.finalizeMfaSignIn(request);
@@ -142,7 +142,7 @@ describe('v2.AuthenticationServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaSignInRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaSignInResponse());
             client.innerApiCalls.finalizeMfaSignIn = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v2.AuthenticationServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaSignInRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.finalizeMfaSignIn = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.finalizeMfaSignIn(request), expectedError);
@@ -186,7 +186,7 @@ describe('v2.AuthenticationServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaSignInRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaSignInResponse());
             client.innerApiCalls.startMfaSignIn = stubSimpleCall(expectedResponse);
             const [response] = await client.startMfaSignIn(request);
@@ -202,7 +202,7 @@ describe('v2.AuthenticationServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaSignInRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaSignInResponse());
             client.innerApiCalls.startMfaSignIn = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v2.AuthenticationServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaSignInRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.startMfaSignIn = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.startMfaSignIn(request), expectedError);

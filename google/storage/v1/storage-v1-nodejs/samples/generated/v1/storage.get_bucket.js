@@ -28,20 +28,20 @@ function main(bucket) {
    *  Makes the return of the bucket metadata conditional on whether the bucket's
    *  current metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the return of the bucket metadata conditional on whether the bucket's
    *  current metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  Set of properties to return. Defaults to `NO_ACL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -49,7 +49,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function getBucket() {
+  async function callGetBucket() {
     // Construct request
     const request = {
       bucket,
@@ -60,7 +60,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  getBucket();
+  callGetBucket();
   // [END storage_v1_generated_Storage_GetBucket_async]
 }
 

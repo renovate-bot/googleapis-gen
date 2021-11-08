@@ -270,26 +270,6 @@ export class AllocationEndpointServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  allocate(
-      request?: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationResponse,
-        protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest|undefined, {}|undefined
-      ]>;
-  allocate(
-      request: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationResponse,
-          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest|null|undefined,
-          {}|null|undefined>): void;
-  allocate(
-      request: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
-      callback: Callback<
-          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationResponse,
-          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Proxy allocation service to the Game Server Clusters.
  *
@@ -316,9 +296,29 @@ export class AllocationEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.allocate(request);
+ * @example <caption>include:samples/generated/v1alpha/allocation_endpoint_service.allocate.js</caption>
+ * region_tag:example_v1alpha_generated_AllocationEndpointService_Allocate_async
  */
+  allocate(
+      request?: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationResponse,
+        protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest|undefined, {}|undefined
+      ]>;
+  allocate(
+      request: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationResponse,
+          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest|null|undefined,
+          {}|null|undefined>): void;
+  allocate(
+      request: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
+      callback: Callback<
+          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationResponse,
+          protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest|null|undefined,
+          {}|null|undefined>): void;
   allocate(
       request?: protos.google.cloud.gaming.allocationendpoint.v1alpha.IAllocationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -343,6 +343,8 @@ export class AllocationEndpointServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.allocate(request, options, callback);
   }

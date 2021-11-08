@@ -309,26 +309,6 @@ export class SpannerClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createSession(
-      request?: protos.google.spanner.v1.ICreateSessionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.ISession,
-        protos.google.spanner.v1.ICreateSessionRequest|undefined, {}|undefined
-      ]>;
-  createSession(
-      request: protos.google.spanner.v1.ICreateSessionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.ISession,
-          protos.google.spanner.v1.ICreateSessionRequest|null|undefined,
-          {}|null|undefined>): void;
-  createSession(
-      request: protos.google.spanner.v1.ICreateSessionRequest,
-      callback: Callback<
-          protos.google.spanner.v1.ISession,
-          protos.google.spanner.v1.ICreateSessionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new session. A session can be used to perform
  * transactions that read and/or modify data in a Cloud Spanner database.
@@ -363,9 +343,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createSession(request);
+ * @example <caption>include:samples/generated/v1/spanner.create_session.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_CreateSession_async
  */
+  createSession(
+      request?: protos.google.spanner.v1.ICreateSessionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.ISession,
+        protos.google.spanner.v1.ICreateSessionRequest|undefined, {}|undefined
+      ]>;
+  createSession(
+      request: protos.google.spanner.v1.ICreateSessionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.ISession,
+          protos.google.spanner.v1.ICreateSessionRequest|null|undefined,
+          {}|null|undefined>): void;
+  createSession(
+      request: protos.google.spanner.v1.ICreateSessionRequest,
+      callback: Callback<
+          protos.google.spanner.v1.ISession,
+          protos.google.spanner.v1.ICreateSessionRequest|null|undefined,
+          {}|null|undefined>): void;
   createSession(
       request?: protos.google.spanner.v1.ICreateSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -400,26 +400,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.createSession(request, options, callback);
   }
-  batchCreateSessions(
-      request?: protos.google.spanner.v1.IBatchCreateSessionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.IBatchCreateSessionsResponse,
-        protos.google.spanner.v1.IBatchCreateSessionsRequest|undefined, {}|undefined
-      ]>;
-  batchCreateSessions(
-      request: protos.google.spanner.v1.IBatchCreateSessionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.IBatchCreateSessionsResponse,
-          protos.google.spanner.v1.IBatchCreateSessionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchCreateSessions(
-      request: protos.google.spanner.v1.IBatchCreateSessionsRequest,
-      callback: Callback<
-          protos.google.spanner.v1.IBatchCreateSessionsResponse,
-          protos.google.spanner.v1.IBatchCreateSessionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates multiple new sessions.
  *
@@ -445,9 +425,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchCreateSessions(request);
+ * @example <caption>include:samples/generated/v1/spanner.batch_create_sessions.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_BatchCreateSessions_async
  */
+  batchCreateSessions(
+      request?: protos.google.spanner.v1.IBatchCreateSessionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.IBatchCreateSessionsResponse,
+        protos.google.spanner.v1.IBatchCreateSessionsRequest|undefined, {}|undefined
+      ]>;
+  batchCreateSessions(
+      request: protos.google.spanner.v1.IBatchCreateSessionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.IBatchCreateSessionsResponse,
+          protos.google.spanner.v1.IBatchCreateSessionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchCreateSessions(
+      request: protos.google.spanner.v1.IBatchCreateSessionsRequest,
+      callback: Callback<
+          protos.google.spanner.v1.IBatchCreateSessionsResponse,
+          protos.google.spanner.v1.IBatchCreateSessionsRequest|null|undefined,
+          {}|null|undefined>): void;
   batchCreateSessions(
       request?: protos.google.spanner.v1.IBatchCreateSessionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -482,6 +482,25 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.batchCreateSessions(request, options, callback);
   }
+/**
+ * Gets a session. Returns `NOT_FOUND` if the session does not exist.
+ * This is mainly useful for determining whether a session is still
+ * alive.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the session to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Session]{@link google.spanner.v1.Session}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/spanner.get_session.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_GetSession_async
+ */
   getSession(
       request?: protos.google.spanner.v1.IGetSessionRequest,
       options?: CallOptions):
@@ -502,25 +521,6 @@ export class SpannerClient {
           protos.google.spanner.v1.ISession,
           protos.google.spanner.v1.IGetSessionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a session. Returns `NOT_FOUND` if the session does not exist.
- * This is mainly useful for determining whether a session is still
- * alive.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the session to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Session]{@link google.spanner.v1.Session}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSession(request);
- */
   getSession(
       request?: protos.google.spanner.v1.IGetSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -555,6 +555,25 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.getSession(request, options, callback);
   }
+/**
+ * Ends a session, releasing server resources associated with it. This will
+ * asynchronously trigger cancellation of any operations that are running with
+ * this session.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the session to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/spanner.delete_session.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_DeleteSession_async
+ */
   deleteSession(
       request?: protos.google.spanner.v1.IDeleteSessionRequest,
       options?: CallOptions):
@@ -575,25 +594,6 @@ export class SpannerClient {
           protos.google.protobuf.IEmpty,
           protos.google.spanner.v1.IDeleteSessionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Ends a session, releasing server resources associated with it. This will
- * asynchronously trigger cancellation of any operations that are running with
- * this session.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the session to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteSession(request);
- */
   deleteSession(
       request?: protos.google.spanner.v1.IDeleteSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -628,26 +628,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.deleteSession(request, options, callback);
   }
-  executeSql(
-      request?: protos.google.spanner.v1.IExecuteSqlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.IResultSet,
-        protos.google.spanner.v1.IExecuteSqlRequest|undefined, {}|undefined
-      ]>;
-  executeSql(
-      request: protos.google.spanner.v1.IExecuteSqlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.IResultSet,
-          protos.google.spanner.v1.IExecuteSqlRequest|null|undefined,
-          {}|null|undefined>): void;
-  executeSql(
-      request: protos.google.spanner.v1.IExecuteSqlRequest,
-      callback: Callback<
-          protos.google.spanner.v1.IResultSet,
-          protos.google.spanner.v1.IExecuteSqlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Executes an SQL statement, returning all results in a single reply. This
  * method cannot be used to return a result set larger than 10 MiB;
@@ -739,9 +719,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.executeSql(request);
+ * @example <caption>include:samples/generated/v1/spanner.execute_sql.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_ExecuteSql_async
  */
+  executeSql(
+      request?: protos.google.spanner.v1.IExecuteSqlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.IResultSet,
+        protos.google.spanner.v1.IExecuteSqlRequest|undefined, {}|undefined
+      ]>;
+  executeSql(
+      request: protos.google.spanner.v1.IExecuteSqlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.IResultSet,
+          protos.google.spanner.v1.IExecuteSqlRequest|null|undefined,
+          {}|null|undefined>): void;
+  executeSql(
+      request: protos.google.spanner.v1.IExecuteSqlRequest,
+      callback: Callback<
+          protos.google.spanner.v1.IResultSet,
+          protos.google.spanner.v1.IExecuteSqlRequest|null|undefined,
+          {}|null|undefined>): void;
   executeSql(
       request?: protos.google.spanner.v1.IExecuteSqlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -776,26 +776,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.executeSql(request, options, callback);
   }
-  executeBatchDml(
-      request?: protos.google.spanner.v1.IExecuteBatchDmlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.IExecuteBatchDmlResponse,
-        protos.google.spanner.v1.IExecuteBatchDmlRequest|undefined, {}|undefined
-      ]>;
-  executeBatchDml(
-      request: protos.google.spanner.v1.IExecuteBatchDmlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.IExecuteBatchDmlResponse,
-          protos.google.spanner.v1.IExecuteBatchDmlRequest|null|undefined,
-          {}|null|undefined>): void;
-  executeBatchDml(
-      request: protos.google.spanner.v1.IExecuteBatchDmlRequest,
-      callback: Callback<
-          protos.google.spanner.v1.IExecuteBatchDmlResponse,
-          protos.google.spanner.v1.IExecuteBatchDmlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Executes a batch of SQL DML statements. This method allows many statements
  * to be run with lower latency than submitting them sequentially with
@@ -844,9 +824,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.executeBatchDml(request);
+ * @example <caption>include:samples/generated/v1/spanner.execute_batch_dml.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_ExecuteBatchDml_async
  */
+  executeBatchDml(
+      request?: protos.google.spanner.v1.IExecuteBatchDmlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.IExecuteBatchDmlResponse,
+        protos.google.spanner.v1.IExecuteBatchDmlRequest|undefined, {}|undefined
+      ]>;
+  executeBatchDml(
+      request: protos.google.spanner.v1.IExecuteBatchDmlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.IExecuteBatchDmlResponse,
+          protos.google.spanner.v1.IExecuteBatchDmlRequest|null|undefined,
+          {}|null|undefined>): void;
+  executeBatchDml(
+      request: protos.google.spanner.v1.IExecuteBatchDmlRequest,
+      callback: Callback<
+          protos.google.spanner.v1.IExecuteBatchDmlResponse,
+          protos.google.spanner.v1.IExecuteBatchDmlRequest|null|undefined,
+          {}|null|undefined>): void;
   executeBatchDml(
       request?: protos.google.spanner.v1.IExecuteBatchDmlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -881,26 +881,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.executeBatchDml(request, options, callback);
   }
-  read(
-      request?: protos.google.spanner.v1.IReadRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.IResultSet,
-        protos.google.spanner.v1.IReadRequest|undefined, {}|undefined
-      ]>;
-  read(
-      request: protos.google.spanner.v1.IReadRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.IResultSet,
-          protos.google.spanner.v1.IReadRequest|null|undefined,
-          {}|null|undefined>): void;
-  read(
-      request: protos.google.spanner.v1.IReadRequest,
-      callback: Callback<
-          protos.google.spanner.v1.IResultSet,
-          protos.google.spanner.v1.IReadRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reads rows from the database using key lookups and scans, as a
  * simple key/value style alternative to
@@ -970,9 +950,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.read(request);
+ * @example <caption>include:samples/generated/v1/spanner.read.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_Read_async
  */
+  read(
+      request?: protos.google.spanner.v1.IReadRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.IResultSet,
+        protos.google.spanner.v1.IReadRequest|undefined, {}|undefined
+      ]>;
+  read(
+      request: protos.google.spanner.v1.IReadRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.IResultSet,
+          protos.google.spanner.v1.IReadRequest|null|undefined,
+          {}|null|undefined>): void;
+  read(
+      request: protos.google.spanner.v1.IReadRequest,
+      callback: Callback<
+          protos.google.spanner.v1.IResultSet,
+          protos.google.spanner.v1.IReadRequest|null|undefined,
+          {}|null|undefined>): void;
   read(
       request?: protos.google.spanner.v1.IReadRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1007,26 +1007,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.read(request, options, callback);
   }
-  beginTransaction(
-      request?: protos.google.spanner.v1.IBeginTransactionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.ITransaction,
-        protos.google.spanner.v1.IBeginTransactionRequest|undefined, {}|undefined
-      ]>;
-  beginTransaction(
-      request: protos.google.spanner.v1.IBeginTransactionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.ITransaction,
-          protos.google.spanner.v1.IBeginTransactionRequest|null|undefined,
-          {}|null|undefined>): void;
-  beginTransaction(
-      request: protos.google.spanner.v1.IBeginTransactionRequest,
-      callback: Callback<
-          protos.google.spanner.v1.ITransaction,
-          protos.google.spanner.v1.IBeginTransactionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Begins a new transaction. This step can often be skipped:
  * {@link google.spanner.v1.Spanner.Read|Read}, {@link google.spanner.v1.Spanner.ExecuteSql|ExecuteSql} and
@@ -1052,9 +1032,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.beginTransaction(request);
+ * @example <caption>include:samples/generated/v1/spanner.begin_transaction.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_BeginTransaction_async
  */
+  beginTransaction(
+      request?: protos.google.spanner.v1.IBeginTransactionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.ITransaction,
+        protos.google.spanner.v1.IBeginTransactionRequest|undefined, {}|undefined
+      ]>;
+  beginTransaction(
+      request: protos.google.spanner.v1.IBeginTransactionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.ITransaction,
+          protos.google.spanner.v1.IBeginTransactionRequest|null|undefined,
+          {}|null|undefined>): void;
+  beginTransaction(
+      request: protos.google.spanner.v1.IBeginTransactionRequest,
+      callback: Callback<
+          protos.google.spanner.v1.ITransaction,
+          protos.google.spanner.v1.IBeginTransactionRequest|null|undefined,
+          {}|null|undefined>): void;
   beginTransaction(
       request?: protos.google.spanner.v1.IBeginTransactionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1089,26 +1089,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.beginTransaction(request, options, callback);
   }
-  commit(
-      request?: protos.google.spanner.v1.ICommitRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.ICommitResponse,
-        protos.google.spanner.v1.ICommitRequest|undefined, {}|undefined
-      ]>;
-  commit(
-      request: protos.google.spanner.v1.ICommitRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.ICommitResponse,
-          protos.google.spanner.v1.ICommitRequest|null|undefined,
-          {}|null|undefined>): void;
-  commit(
-      request: protos.google.spanner.v1.ICommitRequest,
-      callback: Callback<
-          protos.google.spanner.v1.ICommitResponse,
-          protos.google.spanner.v1.ICommitRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Commits a transaction. The request includes the mutations to be
  * applied to rows in the database.
@@ -1158,9 +1138,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.commit(request);
+ * @example <caption>include:samples/generated/v1/spanner.commit.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_Commit_async
  */
+  commit(
+      request?: protos.google.spanner.v1.ICommitRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.ICommitResponse,
+        protos.google.spanner.v1.ICommitRequest|undefined, {}|undefined
+      ]>;
+  commit(
+      request: protos.google.spanner.v1.ICommitRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.ICommitResponse,
+          protos.google.spanner.v1.ICommitRequest|null|undefined,
+          {}|null|undefined>): void;
+  commit(
+      request: protos.google.spanner.v1.ICommitRequest,
+      callback: Callback<
+          protos.google.spanner.v1.ICommitResponse,
+          protos.google.spanner.v1.ICommitRequest|null|undefined,
+          {}|null|undefined>): void;
   commit(
       request?: protos.google.spanner.v1.ICommitRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1195,26 +1195,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.commit(request, options, callback);
   }
-  rollback(
-      request?: protos.google.spanner.v1.IRollbackRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.spanner.v1.IRollbackRequest|undefined, {}|undefined
-      ]>;
-  rollback(
-      request: protos.google.spanner.v1.IRollbackRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.spanner.v1.IRollbackRequest|null|undefined,
-          {}|null|undefined>): void;
-  rollback(
-      request: protos.google.spanner.v1.IRollbackRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.spanner.v1.IRollbackRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Rolls back a transaction, releasing any locks it holds. It is a good
  * idea to call this for any transaction that includes one or more
@@ -1238,9 +1218,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.rollback(request);
+ * @example <caption>include:samples/generated/v1/spanner.rollback.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_Rollback_async
  */
+  rollback(
+      request?: protos.google.spanner.v1.IRollbackRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.spanner.v1.IRollbackRequest|undefined, {}|undefined
+      ]>;
+  rollback(
+      request: protos.google.spanner.v1.IRollbackRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.spanner.v1.IRollbackRequest|null|undefined,
+          {}|null|undefined>): void;
+  rollback(
+      request: protos.google.spanner.v1.IRollbackRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.spanner.v1.IRollbackRequest|null|undefined,
+          {}|null|undefined>): void;
   rollback(
       request?: protos.google.spanner.v1.IRollbackRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1275,26 +1275,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.rollback(request, options, callback);
   }
-  partitionQuery(
-      request?: protos.google.spanner.v1.IPartitionQueryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.IPartitionResponse,
-        protos.google.spanner.v1.IPartitionQueryRequest|undefined, {}|undefined
-      ]>;
-  partitionQuery(
-      request: protos.google.spanner.v1.IPartitionQueryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.IPartitionResponse,
-          protos.google.spanner.v1.IPartitionQueryRequest|null|undefined,
-          {}|null|undefined>): void;
-  partitionQuery(
-      request: protos.google.spanner.v1.IPartitionQueryRequest,
-      callback: Callback<
-          protos.google.spanner.v1.IPartitionResponse,
-          protos.google.spanner.v1.IPartitionQueryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a set of partition tokens that can be used to execute a query
  * operation in parallel.  Each of the returned partition tokens can be used
@@ -1357,9 +1337,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.partitionQuery(request);
+ * @example <caption>include:samples/generated/v1/spanner.partition_query.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_PartitionQuery_async
  */
+  partitionQuery(
+      request?: protos.google.spanner.v1.IPartitionQueryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.IPartitionResponse,
+        protos.google.spanner.v1.IPartitionQueryRequest|undefined, {}|undefined
+      ]>;
+  partitionQuery(
+      request: protos.google.spanner.v1.IPartitionQueryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.IPartitionResponse,
+          protos.google.spanner.v1.IPartitionQueryRequest|null|undefined,
+          {}|null|undefined>): void;
+  partitionQuery(
+      request: protos.google.spanner.v1.IPartitionQueryRequest,
+      callback: Callback<
+          protos.google.spanner.v1.IPartitionResponse,
+          protos.google.spanner.v1.IPartitionQueryRequest|null|undefined,
+          {}|null|undefined>): void;
   partitionQuery(
       request?: protos.google.spanner.v1.IPartitionQueryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1394,26 +1394,6 @@ export class SpannerClient {
     this.initialize();
     return this.innerApiCalls.partitionQuery(request, options, callback);
   }
-  partitionRead(
-      request?: protos.google.spanner.v1.IPartitionReadRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.IPartitionResponse,
-        protos.google.spanner.v1.IPartitionReadRequest|undefined, {}|undefined
-      ]>;
-  partitionRead(
-      request: protos.google.spanner.v1.IPartitionReadRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.spanner.v1.IPartitionResponse,
-          protos.google.spanner.v1.IPartitionReadRequest|null|undefined,
-          {}|null|undefined>): void;
-  partitionRead(
-      request: protos.google.spanner.v1.IPartitionReadRequest,
-      callback: Callback<
-          protos.google.spanner.v1.IPartitionResponse,
-          protos.google.spanner.v1.IPartitionReadRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a set of partition tokens that can be used to execute a read
  * operation in parallel.  Each of the returned partition tokens can be used
@@ -1462,9 +1442,29 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.partitionRead(request);
+ * @example <caption>include:samples/generated/v1/spanner.partition_read.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_PartitionRead_async
  */
+  partitionRead(
+      request?: protos.google.spanner.v1.IPartitionReadRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.IPartitionResponse,
+        protos.google.spanner.v1.IPartitionReadRequest|undefined, {}|undefined
+      ]>;
+  partitionRead(
+      request: protos.google.spanner.v1.IPartitionReadRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.spanner.v1.IPartitionResponse,
+          protos.google.spanner.v1.IPartitionReadRequest|null|undefined,
+          {}|null|undefined>): void;
+  partitionRead(
+      request: protos.google.spanner.v1.IPartitionReadRequest,
+      callback: Callback<
+          protos.google.spanner.v1.IPartitionResponse,
+          protos.google.spanner.v1.IPartitionReadRequest|null|undefined,
+          {}|null|undefined>): void;
   partitionRead(
       request?: protos.google.spanner.v1.IPartitionReadRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1585,10 +1585,8 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.executeStreamingSql(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1/spanner.execute_streaming_sql.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_ExecuteStreamingSql_async
  */
   executeStreamingSql(
       request?: protos.google.spanner.v1.IExecuteSqlRequest,
@@ -1668,10 +1666,8 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.streamingRead(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1/spanner.streaming_read.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_StreamingRead_async
  */
   streamingRead(
       request?: protos.google.spanner.v1.IReadRequest,
@@ -1690,28 +1686,7 @@ export class SpannerClient {
     return this.innerApiCalls.streamingRead(request, options);
   }
 
-  listSessions(
-      request?: protos.google.spanner.v1.IListSessionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.spanner.v1.ISession[],
-        protos.google.spanner.v1.IListSessionsRequest|null,
-        protos.google.spanner.v1.IListSessionsResponse
-      ]>;
-  listSessions(
-      request: protos.google.spanner.v1.IListSessionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.spanner.v1.IListSessionsRequest,
-          protos.google.spanner.v1.IListSessionsResponse|null|undefined,
-          protos.google.spanner.v1.ISession>): void;
-  listSessions(
-      request: protos.google.spanner.v1.IListSessionsRequest,
-      callback: PaginationCallback<
-          protos.google.spanner.v1.IListSessionsRequest,
-          protos.google.spanner.v1.IListSessionsResponse|null|undefined,
-          protos.google.spanner.v1.ISession>): void;
-/**
+ /**
  * Lists all sessions in a given database.
  *
  * @param {Object} request
@@ -1749,6 +1724,27 @@ export class SpannerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listSessions(
+      request?: protos.google.spanner.v1.IListSessionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.spanner.v1.ISession[],
+        protos.google.spanner.v1.IListSessionsRequest|null,
+        protos.google.spanner.v1.IListSessionsResponse
+      ]>;
+  listSessions(
+      request: protos.google.spanner.v1.IListSessionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.spanner.v1.IListSessionsRequest,
+          protos.google.spanner.v1.IListSessionsResponse|null|undefined,
+          protos.google.spanner.v1.ISession>): void;
+  listSessions(
+      request: protos.google.spanner.v1.IListSessionsRequest,
+      callback: PaginationCallback<
+          protos.google.spanner.v1.IListSessionsRequest,
+          protos.google.spanner.v1.IListSessionsResponse|null|undefined,
+          protos.google.spanner.v1.ISession>): void;
   listSessions(
       request?: protos.google.spanner.v1.IListSessionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1880,11 +1876,8 @@ export class SpannerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSessionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/spanner.list_sessions.js</caption>
+ * region_tag:spanner_v1_generated_Spanner_ListSessions_async
  */
   listSessionsAsync(
       request?: protos.google.spanner.v1.IListSessionsRequest,
@@ -1899,7 +1892,6 @@ export class SpannerClient {
     ] = gax.routingHeader.fromParams({
       'database': request.database || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSessions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

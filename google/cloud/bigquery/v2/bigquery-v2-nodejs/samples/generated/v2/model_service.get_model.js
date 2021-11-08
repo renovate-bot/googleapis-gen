@@ -39,7 +39,7 @@ function main(projectId, datasetId, modelId) {
   // Instantiates a client
   const bigqueryClient = new ModelServiceClient();
 
-  async function getModel() {
+  async function callGetModel() {
     // Construct request
     const request = {
       projectId,
@@ -52,7 +52,7 @@ function main(projectId, datasetId, modelId) {
     console.log(response);
   }
 
-  getModel();
+  callGetModel();
   // [END bigquery_v2_generated_ModelService_GetModel_async]
 }
 

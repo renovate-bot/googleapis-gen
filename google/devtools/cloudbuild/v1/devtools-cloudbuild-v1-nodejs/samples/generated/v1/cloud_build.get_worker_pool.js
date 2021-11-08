@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function getWorkerPool() {
+  async function callGetWorkerPool() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getWorkerPool();
+  callGetWorkerPool();
   // [END cloudbuild_v1_generated_CloudBuild_GetWorkerPool_async]
 }
 

@@ -38,7 +38,7 @@ function main(parent, guestPolicyId, guestPolicy) {
   /**
    *  Required. The GuestPolicy to create.
    */
-  // const guestPolicy = ''
+  // const guestPolicy = {}
 
   // Imports the Osconfig library
   const {OsConfigServiceClient} = require('osconfig').v1beta;
@@ -46,7 +46,7 @@ function main(parent, guestPolicyId, guestPolicy) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function createGuestPolicy() {
+  async function callCreateGuestPolicy() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent, guestPolicyId, guestPolicy) {
     console.log(response);
   }
 
-  createGuestPolicy();
+  callCreateGuestPolicy();
   // [END osconfig_v1beta_generated_OsConfigService_CreateGuestPolicy_async]
 }
 

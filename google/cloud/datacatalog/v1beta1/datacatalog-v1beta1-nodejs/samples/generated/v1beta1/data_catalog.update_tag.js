@@ -23,12 +23,12 @@ function main(tag) {
   /**
    *  Required. The updated tag. The "name" field must be set.
    */
-  // const tag = ''
+  // const tag = {}
   /**
    *  The fields to update on the Tag. If absent or empty, all modifiable fields
    *  are updated. Currently the only modifiable field is the field `fields`.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1beta1;
@@ -36,7 +36,7 @@ function main(tag) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function updateTag() {
+  async function callUpdateTag() {
     // Construct request
     const request = {
       tag,
@@ -47,7 +47,7 @@ function main(tag) {
     console.log(response);
   }
 
-  updateTag();
+  callUpdateTag();
   // [END datacatalog_v1beta1_generated_DataCatalog_UpdateTag_async]
 }
 

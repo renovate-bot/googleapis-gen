@@ -23,15 +23,15 @@ function main() {
   /**
    *  The destination bucket, object, and metadata, as well as any preconditions.
    */
-  // const insertObjectSpec = ''
+  // const insertObjectSpec = {}
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function startResumableWrite() {
+  async function callStartResumableWrite() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  startResumableWrite();
+  callStartResumableWrite();
   // [END storage_v1_generated_Storage_StartResumableWrite_async]
 }
 

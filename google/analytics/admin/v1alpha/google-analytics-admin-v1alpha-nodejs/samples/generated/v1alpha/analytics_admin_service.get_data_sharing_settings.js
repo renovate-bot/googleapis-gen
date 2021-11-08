@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function getDataSharingSettings() {
+  async function callGetDataSharingSettings() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDataSharingSettings();
+  callGetDataSharingSettings();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetDataSharingSettings_async]
 }
 

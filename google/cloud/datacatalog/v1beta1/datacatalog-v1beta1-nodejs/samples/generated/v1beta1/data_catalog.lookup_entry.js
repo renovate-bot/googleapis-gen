@@ -49,7 +49,7 @@ function main() {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function lookupEntry() {
+  async function callLookupEntry() {
     // Construct request
     const request = {
     };
@@ -59,7 +59,7 @@ function main() {
     console.log(response);
   }
 
-  lookupEntry();
+  callLookupEntry();
   // [END datacatalog_v1beta1_generated_DataCatalog_LookupEntry_async]
 }
 

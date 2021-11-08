@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AccountLinkServiceClient();
 
-  async function getAccountLink() {
+  async function callGetAccountLink() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAccountLink();
+  callGetAccountLink();
   // [END googleads_v9_generated_AccountLinkService_GetAccountLink_async]
 }
 

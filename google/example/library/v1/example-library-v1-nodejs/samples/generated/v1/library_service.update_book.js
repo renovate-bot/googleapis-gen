@@ -23,11 +23,11 @@ function main(book, updateMask) {
   /**
    *  The name of the book to update.
    */
-  // const book = ''
+  // const book = {}
   /**
    *  Required. Mask of fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Library library
   const {LibraryServiceClient} = require('@google-cloud/library').v1;
@@ -35,7 +35,7 @@ function main(book, updateMask) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function updateBook() {
+  async function callUpdateBook() {
     // Construct request
     const request = {
       book,
@@ -47,7 +47,7 @@ function main(book, updateMask) {
     console.log(response);
   }
 
-  updateBook();
+  callUpdateBook();
   // [END library-example_v1_generated_LibraryService_UpdateBook_async]
 }
 

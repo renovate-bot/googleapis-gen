@@ -173,7 +173,7 @@ describe('v1.CloudCatalogClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
@@ -193,7 +193,7 @@ describe('v1.CloudCatalogClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
@@ -224,7 +224,7 @@ describe('v1.CloudCatalogClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listServices = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listServices(request), expectedError);

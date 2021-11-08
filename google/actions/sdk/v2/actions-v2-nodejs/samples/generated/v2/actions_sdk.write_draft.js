@@ -34,7 +34,7 @@ function main(parent, files) {
    *  4. The webhook ConfigFile corresponding to inline cloud function must be
    *     streamed before the DataFile corresponding to its source code.
    */
-  // const files = ''
+  // const files = {}
 
   // Imports the Sdk library
   const {ActionsSdkClient} = require('@assistant/actions').v2;
@@ -42,7 +42,7 @@ function main(parent, files) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function writeDraft() {
+  async function callWriteDraft() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, files) {
     stream.end();
   }
 
-  writeDraft();
+  callWriteDraft();
   // [END actions_v2_generated_ActionsSdk_WriteDraft_async]
 }
 

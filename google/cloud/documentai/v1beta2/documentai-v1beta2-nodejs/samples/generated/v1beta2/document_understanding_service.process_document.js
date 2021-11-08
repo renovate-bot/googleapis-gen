@@ -30,12 +30,12 @@ function main(inputConfig) {
   /**
    *  Required. Information about the input file.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
   /**
    *  Optional. The desired output location. This field is only needed in
    *  BatchProcessDocumentsRequest.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
   /**
    *  Specifies a known document type for deeper structure detection. Valid
    *  values are currently "general" and "invoice". If not provided, "general"\
@@ -46,27 +46,27 @@ function main(inputConfig) {
    *  Controls table extraction behavior. If not specified, the system will
    *  decide reasonable defaults.
    */
-  // const tableExtractionParams = ''
+  // const tableExtractionParams = {}
   /**
    *  Controls form extraction behavior. If not specified, the system will
    *  decide reasonable defaults.
    */
-  // const formExtractionParams = ''
+  // const formExtractionParams = {}
   /**
    *  Controls entity extraction behavior. If not specified, the system will
    *  decide reasonable defaults.
    */
-  // const entityExtractionParams = ''
+  // const entityExtractionParams = {}
   /**
    *  Controls OCR behavior. If not specified, the system will decide reasonable
    *  defaults.
    */
-  // const ocrParams = ''
+  // const ocrParams = {}
   /**
    *  Controls AutoML model prediction behavior. AutoMlParams cannot be used
    *  together with other Params.
    */
-  // const automlParams = ''
+  // const automlParams = {}
 
   // Imports the Documentai library
   const {DocumentUnderstandingServiceClient} = require('@google-cloud/documentai').v1beta2;
@@ -74,7 +74,7 @@ function main(inputConfig) {
   // Instantiates a client
   const documentaiClient = new DocumentUnderstandingServiceClient();
 
-  async function processDocument() {
+  async function callProcessDocument() {
     // Construct request
     const request = {
       inputConfig,
@@ -85,7 +85,7 @@ function main(inputConfig) {
     console.log(response);
   }
 
-  processDocument();
+  callProcessDocument();
   // [END documentai_v1beta2_generated_DocumentUnderstandingService_ProcessDocument_async]
 }
 

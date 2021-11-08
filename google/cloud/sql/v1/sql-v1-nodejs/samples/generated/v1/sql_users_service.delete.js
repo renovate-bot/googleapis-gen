@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlUsersServiceClient();
 
-  async function delete() {
+  async function callDelete() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  delete();
+  callDelete();
   // [END sqladmin_v1_generated_SqlUsersService_Delete_async]
 }
 

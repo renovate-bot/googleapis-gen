@@ -28,7 +28,7 @@ function main(database) {
   /**
    *  A target to add to this stream.
    */
-  // const addTarget = ''
+  // const addTarget = {}
   /**
    *  The ID of a target to remove from this stream.
    */
@@ -44,7 +44,7 @@ function main(database) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function listen() {
+  async function callListen() {
     // Construct request
     const request = {
       database,
@@ -59,7 +59,7 @@ function main(database) {
     stream.end(); 
   }
 
-  listen();
+  callListen();
   // [END firestore_v1beta1_generated_Firestore_Listen_async]
 }
 

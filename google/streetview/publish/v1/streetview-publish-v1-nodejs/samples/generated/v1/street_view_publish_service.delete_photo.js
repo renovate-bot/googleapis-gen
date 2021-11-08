@@ -21,7 +21,7 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. ID of the [Photo][google.streetview.publish.v1.Photo].
+   *  Required. ID of the Photo google.streetview.publish.v1.Photo.
    */
   // const photoId = 'abc123'
 
@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function deletePhoto() {
+  async function callDeletePhoto() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  deletePhoto();
+  callDeletePhoto();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_DeletePhoto_async]
 }
 

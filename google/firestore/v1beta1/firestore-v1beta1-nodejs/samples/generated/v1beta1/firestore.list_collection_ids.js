@@ -33,7 +33,7 @@ function main(parent) {
   // const pageSize = 1234
   /**
    *  A page token. Must be a value from
-   *  [ListCollectionIdsResponse][google.firestore.v1beta1.ListCollectionIdsResponse].
+   *  ListCollectionIdsResponse google.firestore.v1beta1.ListCollectionIdsResponse.
    */
   // const pageToken = 'abc123'
 
@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function listCollectionIds() {
+  async function callListCollectionIds() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listCollectionIds();
+  callListCollectionIds();
   // [END firestore_v1beta1_generated_Firestore_ListCollectionIds_async]
 }
 

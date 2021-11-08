@@ -727,26 +727,6 @@ export class HotelPerformanceViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getHotelPerformanceView(
-      request?: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IHotelPerformanceView,
-        protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest|undefined, {}|undefined
-      ]>;
-  getHotelPerformanceView(
-      request: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IHotelPerformanceView,
-          protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getHotelPerformanceView(
-      request: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IHotelPerformanceView,
-          protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Hotel Performance View in full detail.
  *
@@ -769,9 +749,29 @@ export class HotelPerformanceViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getHotelPerformanceView(request);
+ * @example <caption>include:samples/generated/v9/hotel_performance_view_service.get_hotel_performance_view.js</caption>
+ * region_tag:googleads_v9_generated_HotelPerformanceViewService_GetHotelPerformanceView_async
  */
+  getHotelPerformanceView(
+      request?: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IHotelPerformanceView,
+        protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest|undefined, {}|undefined
+      ]>;
+  getHotelPerformanceView(
+      request: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IHotelPerformanceView,
+          protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getHotelPerformanceView(
+      request: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IHotelPerformanceView,
+          protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getHotelPerformanceView(
       request?: protos.google.ads.googleads.v9.services.IGetHotelPerformanceViewRequest,
       optionsOrCallback?: CallOptions|Callback<

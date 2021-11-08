@@ -299,26 +299,6 @@ export class DocumentUnderstandingServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  processDocument(
-      request?: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.documentai.v1beta2.IDocument,
-        protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|undefined, {}|undefined
-      ]>;
-  processDocument(
-      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.documentai.v1beta2.IDocument,
-          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
-          {}|null|undefined>): void;
-  processDocument(
-      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
-      callback: Callback<
-          protos.google.cloud.documentai.v1beta2.IDocument,
-          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Processes a single document.
  *
@@ -362,9 +342,29 @@ export class DocumentUnderstandingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.processDocument(request);
+ * @example <caption>include:samples/generated/v1beta2/document_understanding_service.process_document.js</caption>
+ * region_tag:documentai_v1beta2_generated_DocumentUnderstandingService_ProcessDocument_async
  */
+  processDocument(
+      request?: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.documentai.v1beta2.IDocument,
+        protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|undefined, {}|undefined
+      ]>;
+  processDocument(
+      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.documentai.v1beta2.IDocument,
+          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
+          {}|null|undefined>): void;
+  processDocument(
+      request: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
+      callback: Callback<
+          protos.google.cloud.documentai.v1beta2.IDocument,
+          protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest|null|undefined,
+          {}|null|undefined>): void;
   processDocument(
       request?: protos.google.cloud.documentai.v1beta2.IProcessDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -400,26 +400,6 @@ export class DocumentUnderstandingServiceClient {
     return this.innerApiCalls.processDocument(request, options, callback);
   }
 
-  batchProcessDocuments(
-      request?: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * LRO endpoint to batch process many documents. The output is written
  * to Cloud Storage as JSON in the [Document] format.
@@ -443,10 +423,29 @@ export class DocumentUnderstandingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchProcessDocuments(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta2/document_understanding_service.batch_process_documents.js</caption>
+ * region_tag:documentai_v1beta2_generated_DocumentUnderstandingService_BatchProcessDocuments_async
  */
+  batchProcessDocuments(
+      request?: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchProcessDocuments(
+      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchProcessDocuments(
+      request: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchProcessDocuments(
       request?: protos.google.cloud.documentai.v1beta2.IBatchProcessDocumentsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -490,11 +489,8 @@ export class DocumentUnderstandingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchProcessDocumentsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta2/document_understanding_service.batch_process_documents.js</caption>
+ * region_tag:documentai_v1beta2_generated_DocumentUnderstandingService_BatchProcessDocuments_async
  */
   async checkBatchProcessDocumentsProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta2.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

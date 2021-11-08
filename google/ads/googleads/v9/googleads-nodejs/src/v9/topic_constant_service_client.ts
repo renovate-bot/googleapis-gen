@@ -727,26 +727,6 @@ export class TopicConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getTopicConstant(
-      request?: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ITopicConstant,
-        protos.google.ads.googleads.v9.services.IGetTopicConstantRequest|undefined, {}|undefined
-      ]>;
-  getTopicConstant(
-      request: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ITopicConstant,
-          protos.google.ads.googleads.v9.services.IGetTopicConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getTopicConstant(
-      request: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ITopicConstant,
-          protos.google.ads.googleads.v9.services.IGetTopicConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested topic constant in full detail.
  *
@@ -769,9 +749,29 @@ export class TopicConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getTopicConstant(request);
+ * @example <caption>include:samples/generated/v9/topic_constant_service.get_topic_constant.js</caption>
+ * region_tag:googleads_v9_generated_TopicConstantService_GetTopicConstant_async
  */
+  getTopicConstant(
+      request?: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ITopicConstant,
+        protos.google.ads.googleads.v9.services.IGetTopicConstantRequest|undefined, {}|undefined
+      ]>;
+  getTopicConstant(
+      request: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ITopicConstant,
+          protos.google.ads.googleads.v9.services.IGetTopicConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getTopicConstant(
+      request: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ITopicConstant,
+          protos.google.ads.googleads.v9.services.IGetTopicConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getTopicConstant(
       request?: protos.google.ads.googleads.v9.services.IGetTopicConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -31,7 +31,7 @@ function main(parent, hub) {
   /**
    *  Required. Initial values for a new Hub.
    */
-  // const hub = ''
+  // const hub = {}
   /**
    *  Optional. An optional request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -53,7 +53,7 @@ function main(parent, hub) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function createHub() {
+  async function callCreateHub() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent, hub) {
     console.log(response);
   }
 
-  createHub();
+  callCreateHub();
   // [END networkconnectivity_v1alpha1_generated_HubService_CreateHub_async]
 }
 

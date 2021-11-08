@@ -38,7 +38,7 @@ function main(parent, context) {
   /**
    *  Required. The context to create.
    */
-  // const context = ''
+  // const context = {}
 
   // Imports the Dialogflow library
   const {ContextsClient} = require('@google-cloud/dialogflow').v2beta1;
@@ -46,7 +46,7 @@ function main(parent, context) {
   // Instantiates a client
   const dialogflowClient = new ContextsClient();
 
-  async function createContext() {
+  async function callCreateContext() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent, context) {
     console.log(response);
   }
 
-  createContext();
+  callCreateContext();
   // [END dialogflow_v2beta1_generated_Contexts_CreateContext_async]
 }
 

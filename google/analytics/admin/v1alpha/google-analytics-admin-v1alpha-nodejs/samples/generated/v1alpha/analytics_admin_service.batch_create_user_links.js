@@ -45,7 +45,7 @@ function main(parent, requests) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function batchCreateUserLinks() {
+  async function callBatchCreateUserLinks() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent, requests) {
     console.log(response);
   }
 
-  batchCreateUserLinks();
+  callBatchCreateUserLinks();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_BatchCreateUserLinks_async]
 }
 

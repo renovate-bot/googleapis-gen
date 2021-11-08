@@ -646,26 +646,6 @@ export class AdGroupCriterionLabelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupCriterionLabel(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroupCriterionLabel,
-        protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupCriterionLabel(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupCriterionLabel,
-          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupCriterionLabel(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupCriterionLabel,
-          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group criterion label in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupCriterionLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupCriterionLabel(request);
+ * @example <caption>include:samples/generated/v7/ad_group_criterion_label_service.get_ad_group_criterion_label.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupCriterionLabelService_GetAdGroupCriterionLabel_async
  */
+  getAdGroupCriterionLabel(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroupCriterionLabel,
+        protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupCriterionLabel(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupCriterionLabel,
+          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupCriterionLabel(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupCriterionLabel,
+          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupCriterionLabel(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class AdGroupCriterionLabelServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroupCriterionLabel(request, options, callback);
   }
-  mutateAdGroupCriterionLabels(
-      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsResponse,
-        protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupCriterionLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupCriterionLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and removes ad group criterion labels.
  * Operation statuses are returned.
@@ -780,9 +760,29 @@ export class AdGroupCriterionLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupCriterionLabels(request);
+ * @example <caption>include:samples/generated/v7/ad_group_criterion_label_service.mutate_ad_group_criterion_labels.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_async
  */
+  mutateAdGroupCriterionLabels(
+      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsResponse,
+        protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupCriterionLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupCriterionLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupCriterionLabels(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupCriterionLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<

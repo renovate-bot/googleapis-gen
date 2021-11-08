@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function deleteFunction() {
+  async function callDeleteFunction() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteFunction();
+  callDeleteFunction();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_DeleteFunction_async]
 }
 

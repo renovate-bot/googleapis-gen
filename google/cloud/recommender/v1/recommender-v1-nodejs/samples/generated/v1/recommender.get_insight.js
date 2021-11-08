@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function getInsight() {
+  async function callGetInsight() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getInsight();
+  callGetInsight();
   // [END recommender_v1_generated_Recommender_GetInsight_async]
 }
 

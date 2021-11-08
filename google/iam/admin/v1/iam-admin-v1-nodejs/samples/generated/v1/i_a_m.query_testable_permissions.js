@@ -45,7 +45,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function queryTestablePermissions() {
+  async function callQueryTestablePermissions() {
     // Construct request
     const request = {
     };
@@ -57,7 +57,7 @@ function main() {
     }
   }
 
-  queryTestablePermissions();
+  callQueryTestablePermissions();
   // [END iam_v1_generated_IAM_QueryTestablePermissions_async]
 }
 

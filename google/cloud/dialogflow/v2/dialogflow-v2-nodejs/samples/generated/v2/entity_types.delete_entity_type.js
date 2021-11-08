@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new EntityTypesClient();
 
-  async function deleteEntityType() {
+  async function callDeleteEntityType() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteEntityType();
+  callDeleteEntityType();
   // [END dialogflow_v2_generated_EntityTypes_DeleteEntityType_async]
 }
 

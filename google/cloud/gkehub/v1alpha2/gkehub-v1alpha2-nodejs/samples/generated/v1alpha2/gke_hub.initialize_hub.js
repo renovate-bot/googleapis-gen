@@ -32,7 +32,7 @@ function main(project) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function initializeHub() {
+  async function callInitializeHub() {
     // Construct request
     const request = {
       project,
@@ -43,7 +43,7 @@ function main(project) {
     console.log(response);
   }
 
-  initializeHub();
+  callInitializeHub();
   // [END gkehub_v1alpha2_generated_GkeHub_InitializeHub_async]
 }
 

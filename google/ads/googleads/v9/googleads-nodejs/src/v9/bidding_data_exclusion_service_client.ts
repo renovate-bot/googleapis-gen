@@ -727,6 +727,23 @@ export class BiddingDataExclusionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested data exclusion in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the data exclusion to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BiddingDataExclusion]{@link google.ads.googleads.v9.resources.BiddingDataExclusion}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v9/bidding_data_exclusion_service.get_bidding_data_exclusion.js</caption>
+ * region_tag:googleads_v9_generated_BiddingDataExclusionService_GetBiddingDataExclusion_async
+ */
   getBiddingDataExclusion(
       request?: protos.google.ads.googleads.v9.services.IGetBiddingDataExclusionRequest,
       options?: CallOptions):
@@ -747,23 +764,6 @@ export class BiddingDataExclusionServiceClient {
           protos.google.ads.googleads.v9.resources.IBiddingDataExclusion,
           protos.google.ads.googleads.v9.services.IGetBiddingDataExclusionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested data exclusion in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the data exclusion to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BiddingDataExclusion]{@link google.ads.googleads.v9.resources.BiddingDataExclusion}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBiddingDataExclusion(request);
- */
   getBiddingDataExclusion(
       request?: protos.google.ads.googleads.v9.services.IGetBiddingDataExclusionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -798,26 +798,6 @@ export class BiddingDataExclusionServiceClient {
     this.initialize();
     return this.innerApiCalls.getBiddingDataExclusion(request, options, callback);
   }
-  mutateBiddingDataExclusions(
-      request?: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsResponse,
-        protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest|undefined, {}|undefined
-      ]>;
-  mutateBiddingDataExclusions(
-      request: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsResponse,
-          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateBiddingDataExclusions(
-      request: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsResponse,
-          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes data exclusions.
  * Operation statuses are returned.
@@ -846,9 +826,29 @@ export class BiddingDataExclusionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateBiddingDataExclusions(request);
+ * @example <caption>include:samples/generated/v9/bidding_data_exclusion_service.mutate_bidding_data_exclusions.js</caption>
+ * region_tag:googleads_v9_generated_BiddingDataExclusionService_MutateBiddingDataExclusions_async
  */
+  mutateBiddingDataExclusions(
+      request?: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsResponse,
+        protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest|undefined, {}|undefined
+      ]>;
+  mutateBiddingDataExclusions(
+      request: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsResponse,
+          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateBiddingDataExclusions(
+      request: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsResponse,
+          protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateBiddingDataExclusions(
       request?: protos.google.ads.googleads.v9.services.IMutateBiddingDataExclusionsRequest,
       optionsOrCallback?: CallOptions|Callback<

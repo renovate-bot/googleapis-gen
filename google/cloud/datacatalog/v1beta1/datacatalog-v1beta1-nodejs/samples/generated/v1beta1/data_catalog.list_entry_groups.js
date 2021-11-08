@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function listEntryGroups() {
+  async function callListEntryGroups() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listEntryGroups();
+  callListEntryGroups();
   // [END datacatalog_v1beta1_generated_DataCatalog_ListEntryGroups_async]
 }
 

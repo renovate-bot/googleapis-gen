@@ -32,7 +32,7 @@ function main(customerId) {
   // Instantiates a client
   const googleadsClient = new MerchantCenterLinkServiceClient();
 
-  async function listMerchantCenterLinks() {
+  async function callListMerchantCenterLinks() {
     // Construct request
     const request = {
       customerId,
@@ -43,7 +43,7 @@ function main(customerId) {
     console.log(response);
   }
 
-  listMerchantCenterLinks();
+  callListMerchantCenterLinks();
   // [END googleads_v9_generated_MerchantCenterLinkService_ListMerchantCenterLinks_async]
 }
 

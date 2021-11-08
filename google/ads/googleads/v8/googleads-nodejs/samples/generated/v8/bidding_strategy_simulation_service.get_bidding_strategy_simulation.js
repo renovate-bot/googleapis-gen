@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BiddingStrategySimulationServiceClient();
 
-  async function getBiddingStrategySimulation() {
+  async function callGetBiddingStrategySimulation() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getBiddingStrategySimulation();
+  callGetBiddingStrategySimulation();
   // [END googleads_v8_generated_BiddingStrategySimulationService_GetBiddingStrategySimulation_async]
 }
 

@@ -32,9 +32,9 @@ function main() {
    *  The updated job.
    *  Only the job state is updatable; other fields will be ignored.
    */
-  // const job = ''
+  // const job = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains this job.
    */
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new JobsV1Beta3Client();
 
-  async function updateJob() {
+  async function callUpdateJob() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  updateJob();
+  callUpdateJob();
   // [END dataflow_v1beta3_generated_JobsV1Beta3_UpdateJob_async]
 }
 

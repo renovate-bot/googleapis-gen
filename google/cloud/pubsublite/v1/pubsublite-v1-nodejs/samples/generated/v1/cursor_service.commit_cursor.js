@@ -26,13 +26,13 @@ function main() {
   // const subscription = 'abc123'
   /**
    *  The partition for which to update the cursor. Partitions are zero indexed,
-   *  so `partition` must be in the range [0, topic.num_partitions).
+   *  so `partition` must be in the range 0, topic.num_partitions).
    */
   // const partition = 1234
   /**
    *  The new value for the committed cursor.
    */
-  // const cursor = ''
+  // const cursor = {}
 
   // Imports the Pubsublite library
   const {CursorServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const pubsubliteClient = new CursorServiceClient();
 
-  async function commitCursor() {
+  async function callCommitCursor() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  commitCursor();
+  callCommitCursor();
   // [END pubsublite_v1_generated_CursorService_CommitCursor_async]
 }
 

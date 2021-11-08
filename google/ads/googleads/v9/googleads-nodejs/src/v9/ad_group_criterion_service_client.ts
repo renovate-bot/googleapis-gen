@@ -727,26 +727,6 @@ export class AdGroupCriterionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupCriterion(
-      request?: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IAdGroupCriterion,
-        protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupCriterion(
-      request: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IAdGroupCriterion,
-          protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupCriterion(
-      request: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IAdGroupCriterion,
-          protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested criterion in full detail.
  *
@@ -769,9 +749,29 @@ export class AdGroupCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupCriterion(request);
+ * @example <caption>include:samples/generated/v9/ad_group_criterion_service.get_ad_group_criterion.js</caption>
+ * region_tag:googleads_v9_generated_AdGroupCriterionService_GetAdGroupCriterion_async
  */
+  getAdGroupCriterion(
+      request?: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IAdGroupCriterion,
+        protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupCriterion(
+      request: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IAdGroupCriterion,
+          protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupCriterion(
+      request: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IAdGroupCriterion,
+          protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupCriterion(
       request?: protos.google.ads.googleads.v9.services.IGetAdGroupCriterionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class AdGroupCriterionServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroupCriterion(request, options, callback);
   }
-  mutateAdGroupCriteria(
-      request?: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaResponse,
-        protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupCriteria(
-      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaResponse,
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupCriteria(
-      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaResponse,
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes criteria. Operation statuses are returned.
  *
@@ -888,9 +868,29 @@ export class AdGroupCriterionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupCriteria(request);
+ * @example <caption>include:samples/generated/v9/ad_group_criterion_service.mutate_ad_group_criteria.js</caption>
+ * region_tag:googleads_v9_generated_AdGroupCriterionService_MutateAdGroupCriteria_async
  */
+  mutateAdGroupCriteria(
+      request?: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaResponse,
+        protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupCriteria(
+      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaResponse,
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupCriteria(
+      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaResponse,
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupCriteria(
       request?: protos.google.ads.googleads.v9.services.IMutateAdGroupCriteriaRequest,
       optionsOrCallback?: CallOptions|Callback<

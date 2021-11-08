@@ -41,7 +41,7 @@ function main(project, clientVersion) {
   // Instantiates a client
   const clouddebuggerClient = new Debugger2Client();
 
-  async function listDebuggees() {
+  async function callListDebuggees() {
     // Construct request
     const request = {
       project,
@@ -53,7 +53,7 @@ function main(project, clientVersion) {
     console.log(response);
   }
 
-  listDebuggees();
+  callListDebuggees();
   // [END clouddebugger_v2_generated_Debugger2_ListDebuggees_async]
 }
 

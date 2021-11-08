@@ -414,6 +414,27 @@ export class PipelineServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a TrainingPipeline. A created TrainingPipeline right away will be
+ * attempted to be run.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource name of the Location to create the TrainingPipeline in.
+ *   Format: `projects/{project}/locations/{location}`
+ * @param {google.cloud.aiplatform.v1.TrainingPipeline} request.trainingPipeline
+ *   Required. The TrainingPipeline to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [TrainingPipeline]{@link google.cloud.aiplatform.v1.TrainingPipeline}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/pipeline_service.create_training_pipeline.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_CreateTrainingPipeline_async
+ */
   createTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.ICreateTrainingPipelineRequest,
       options?: CallOptions):
@@ -434,27 +455,6 @@ export class PipelineServiceClient {
           protos.google.cloud.aiplatform.v1.ITrainingPipeline,
           protos.google.cloud.aiplatform.v1.ICreateTrainingPipelineRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a TrainingPipeline. A created TrainingPipeline right away will be
- * attempted to be run.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource name of the Location to create the TrainingPipeline in.
- *   Format: `projects/{project}/locations/{location}`
- * @param {google.cloud.aiplatform.v1.TrainingPipeline} request.trainingPipeline
- *   Required. The TrainingPipeline to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TrainingPipeline]{@link google.cloud.aiplatform.v1.TrainingPipeline}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createTrainingPipeline(request);
- */
   createTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.ICreateTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -489,6 +489,25 @@ export class PipelineServiceClient {
     this.initialize();
     return this.innerApiCalls.createTrainingPipeline(request, options, callback);
   }
+/**
+ * Gets a TrainingPipeline.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the TrainingPipeline resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [TrainingPipeline]{@link google.cloud.aiplatform.v1.TrainingPipeline}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/pipeline_service.get_training_pipeline.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_GetTrainingPipeline_async
+ */
   getTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.IGetTrainingPipelineRequest,
       options?: CallOptions):
@@ -509,25 +528,6 @@ export class PipelineServiceClient {
           protos.google.cloud.aiplatform.v1.ITrainingPipeline,
           protos.google.cloud.aiplatform.v1.IGetTrainingPipelineRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a TrainingPipeline.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the TrainingPipeline resource.
- *   Format:
- *   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TrainingPipeline]{@link google.cloud.aiplatform.v1.TrainingPipeline}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTrainingPipeline(request);
- */
   getTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.IGetTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -562,26 +562,6 @@ export class PipelineServiceClient {
     this.initialize();
     return this.innerApiCalls.getTrainingPipeline(request, options, callback);
   }
-  cancelTrainingPipeline(
-      request?: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest|undefined, {}|undefined
-      ]>;
-  cancelTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest|null|undefined,
-          {}|null|undefined>): void;
-  cancelTrainingPipeline(
-      request: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Cancels a TrainingPipeline.
  * Starts asynchronous cancellation on the TrainingPipeline. The server
@@ -607,9 +587,29 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.cancelTrainingPipeline(request);
+ * @example <caption>include:samples/generated/v1/pipeline_service.cancel_training_pipeline.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_CancelTrainingPipeline_async
  */
+  cancelTrainingPipeline(
+      request?: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest|undefined, {}|undefined
+      ]>;
+  cancelTrainingPipeline(
+      request: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest|null|undefined,
+          {}|null|undefined>): void;
+  cancelTrainingPipeline(
+      request: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest|null|undefined,
+          {}|null|undefined>): void;
   cancelTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.ICancelTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -644,26 +644,6 @@ export class PipelineServiceClient {
     this.initialize();
     return this.innerApiCalls.cancelTrainingPipeline(request, options, callback);
   }
-  createPipelineJob(
-      request?: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IPipelineJob,
-        protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest|undefined, {}|undefined
-      ]>;
-  createPipelineJob(
-      request: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IPipelineJob,
-          protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  createPipelineJob(
-      request: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IPipelineJob,
-          protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a PipelineJob. A PipelineJob will run immediately when created.
  *
@@ -688,9 +668,29 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createPipelineJob(request);
+ * @example <caption>include:samples/generated/v1/pipeline_service.create_pipeline_job.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_CreatePipelineJob_async
  */
+  createPipelineJob(
+      request?: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IPipelineJob,
+        protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest|undefined, {}|undefined
+      ]>;
+  createPipelineJob(
+      request: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IPipelineJob,
+          protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  createPipelineJob(
+      request: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IPipelineJob,
+          protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest|null|undefined,
+          {}|null|undefined>): void;
   createPipelineJob(
       request?: protos.google.cloud.aiplatform.v1.ICreatePipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,6 +725,25 @@ export class PipelineServiceClient {
     this.initialize();
     return this.innerApiCalls.createPipelineJob(request, options, callback);
   }
+/**
+ * Gets a PipelineJob.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the PipelineJob resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PipelineJob]{@link google.cloud.aiplatform.v1.PipelineJob}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/pipeline_service.get_pipeline_job.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_GetPipelineJob_async
+ */
   getPipelineJob(
       request?: protos.google.cloud.aiplatform.v1.IGetPipelineJobRequest,
       options?: CallOptions):
@@ -745,25 +764,6 @@ export class PipelineServiceClient {
           protos.google.cloud.aiplatform.v1.IPipelineJob,
           protos.google.cloud.aiplatform.v1.IGetPipelineJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a PipelineJob.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the PipelineJob resource.
- *   Format:
- *   `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PipelineJob]{@link google.cloud.aiplatform.v1.PipelineJob}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPipelineJob(request);
- */
   getPipelineJob(
       request?: protos.google.cloud.aiplatform.v1.IGetPipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -798,26 +798,6 @@ export class PipelineServiceClient {
     this.initialize();
     return this.innerApiCalls.getPipelineJob(request, options, callback);
   }
-  cancelPipelineJob(
-      request?: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest|undefined, {}|undefined
-      ]>;
-  cancelPipelineJob(
-      request: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  cancelPipelineJob(
-      request: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Cancels a PipelineJob.
  * Starts asynchronous cancellation on the PipelineJob. The server
@@ -843,9 +823,29 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.cancelPipelineJob(request);
+ * @example <caption>include:samples/generated/v1/pipeline_service.cancel_pipeline_job.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_CancelPipelineJob_async
  */
+  cancelPipelineJob(
+      request?: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest|undefined, {}|undefined
+      ]>;
+  cancelPipelineJob(
+      request: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  cancelPipelineJob(
+      request: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest|null|undefined,
+          {}|null|undefined>): void;
   cancelPipelineJob(
       request?: protos.google.cloud.aiplatform.v1.ICancelPipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -881,6 +881,27 @@ export class PipelineServiceClient {
     return this.innerApiCalls.cancelPipelineJob(request, options, callback);
   }
 
+/**
+ * Deletes a TrainingPipeline.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the TrainingPipeline resource to be deleted.
+ *   Format:
+ *   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/pipeline_service.delete_training_pipeline.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_DeleteTrainingPipeline_async
+ */
   deleteTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.IDeleteTrainingPipelineRequest,
       options?: CallOptions):
@@ -901,28 +922,6 @@ export class PipelineServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a TrainingPipeline.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the TrainingPipeline resource to be deleted.
- *   Format:
- *   `projects/{project}/locations/{location}/trainingPipelines/{training_pipeline}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteTrainingPipeline(request);
- * const [response] = await operation.promise();
- */
   deleteTrainingPipeline(
       request?: protos.google.cloud.aiplatform.v1.IDeleteTrainingPipelineRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -966,11 +965,8 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteTrainingPipelineProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/pipeline_service.delete_training_pipeline.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_DeleteTrainingPipeline_async
  */
   async checkDeleteTrainingPipelineProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -978,6 +974,27 @@ export class PipelineServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteTrainingPipeline, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>;
   }
+/**
+ * Deletes a PipelineJob.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the PipelineJob resource to be deleted.
+ *   Format:
+ *   `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/pipeline_service.delete_pipeline_job.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_DeletePipelineJob_async
+ */
   deletePipelineJob(
       request?: protos.google.cloud.aiplatform.v1.IDeletePipelineJobRequest,
       options?: CallOptions):
@@ -998,28 +1015,6 @@ export class PipelineServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a PipelineJob.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the PipelineJob resource to be deleted.
- *   Format:
- *   `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deletePipelineJob(request);
- * const [response] = await operation.promise();
- */
   deletePipelineJob(
       request?: protos.google.cloud.aiplatform.v1.IDeletePipelineJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1063,11 +1058,8 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeletePipelineJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/pipeline_service.delete_pipeline_job.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_DeletePipelineJob_async
  */
   async checkDeletePipelineJobProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1075,28 +1067,7 @@ export class PipelineServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deletePipelineJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>;
   }
-  listTrainingPipelines(
-      request?: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.ITrainingPipeline[],
-        protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest|null,
-        protos.google.cloud.aiplatform.v1.IListTrainingPipelinesResponse
-      ]>;
-  listTrainingPipelines(
-      request: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
-          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.ITrainingPipeline>): void;
-  listTrainingPipelines(
-      request: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
-          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.ITrainingPipeline>): void;
-/**
+ /**
  * Lists TrainingPipelines in a Location.
  *
  * @param {Object} request
@@ -1143,6 +1114,27 @@ export class PipelineServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTrainingPipelines(
+      request?: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.ITrainingPipeline[],
+        protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest|null,
+        protos.google.cloud.aiplatform.v1.IListTrainingPipelinesResponse
+      ]>;
+  listTrainingPipelines(
+      request: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
+          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.ITrainingPipeline>): void;
+  listTrainingPipelines(
+      request: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
+          protos.google.cloud.aiplatform.v1.IListTrainingPipelinesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.ITrainingPipeline>): void;
   listTrainingPipelines(
       request?: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1292,11 +1284,8 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTrainingPipelinesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/pipeline_service.list_training_pipelines.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_ListTrainingPipelines_async
  */
   listTrainingPipelinesAsync(
       request?: protos.google.cloud.aiplatform.v1.IListTrainingPipelinesRequest,
@@ -1311,7 +1300,6 @@ export class PipelineServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTrainingPipelines'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1321,28 +1309,7 @@ export class PipelineServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1.ITrainingPipeline>;
   }
-  listPipelineJobs(
-      request?: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IPipelineJob[],
-        protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest|null,
-        protos.google.cloud.aiplatform.v1.IListPipelineJobsResponse
-      ]>;
-  listPipelineJobs(
-      request: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
-          protos.google.cloud.aiplatform.v1.IListPipelineJobsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IPipelineJob>): void;
-  listPipelineJobs(
-      request: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
-          protos.google.cloud.aiplatform.v1.IListPipelineJobsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IPipelineJob>): void;
-/**
+ /**
  * Lists PipelineJobs in a Location.
  *
  * @param {Object} request
@@ -1414,6 +1381,27 @@ export class PipelineServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPipelineJobs(
+      request?: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IPipelineJob[],
+        protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest|null,
+        protos.google.cloud.aiplatform.v1.IListPipelineJobsResponse
+      ]>;
+  listPipelineJobs(
+      request: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
+          protos.google.cloud.aiplatform.v1.IListPipelineJobsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IPipelineJob>): void;
+  listPipelineJobs(
+      request: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
+          protos.google.cloud.aiplatform.v1.IListPipelineJobsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IPipelineJob>): void;
   listPipelineJobs(
       request?: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1613,11 +1601,8 @@ export class PipelineServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPipelineJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/pipeline_service.list_pipeline_jobs.js</caption>
+ * region_tag:aiplatform_v1_generated_PipelineService_ListPipelineJobs_async
  */
   listPipelineJobsAsync(
       request?: protos.google.cloud.aiplatform.v1.IListPipelineJobsRequest,
@@ -1632,7 +1617,6 @@ export class PipelineServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPipelineJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

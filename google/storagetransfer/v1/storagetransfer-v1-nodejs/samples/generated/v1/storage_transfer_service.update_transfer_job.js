@@ -32,30 +32,30 @@ function main(jobName, projectId, transferJob) {
   /**
    *  Required. The job to update. `transferJob` is expected to specify only
    *  four fields:
-   *  [description][google.storagetransfer.v1.TransferJob.description],
-   *  [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
-   *  [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-   *  and [status][google.storagetransfer.v1.TransferJob.status].  An
+   *  description google.storagetransfer.v1.TransferJob.description,
+   *  transfer_spec google.storagetransfer.v1.TransferJob.transfer_spec,
+   *  notification_config google.storagetransfer.v1.TransferJob.notification_config,
+   *  and status google.storagetransfer.v1.TransferJob.status.  An
    *  `UpdateTransferJobRequest` that specifies other fields are rejected with
-   *  the error [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. Updating a
+   *  the error INVALID_ARGUMENT google.rpc.Code.INVALID_ARGUMENT. Updating a
    *  job status to
-   *  [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED] requires
+   *  DELETED google.storagetransfer.v1.TransferJob.Status.DELETED  requires
    *  `storagetransfer.jobs.delete` permissions.
    */
-  // const transferJob = ''
+  // const transferJob = {}
   /**
    *  The field mask of the fields in `transferJob` that are to be updated in
    *  this request.  Fields in `transferJob` that can be updated are:
-   *  [description][google.storagetransfer.v1.TransferJob.description],
-   *  [transfer_spec][google.storagetransfer.v1.TransferJob.transfer_spec],
-   *  [notification_config][google.storagetransfer.v1.TransferJob.notification_config],
-   *  and [status][google.storagetransfer.v1.TransferJob.status].  To update the
+   *  description google.storagetransfer.v1.TransferJob.description,
+   *  transfer_spec google.storagetransfer.v1.TransferJob.transfer_spec,
+   *  notification_config google.storagetransfer.v1.TransferJob.notification_config,
+   *  and status google.storagetransfer.v1.TransferJob.status.  To update the
    *  `transfer_spec` of the job, a complete transfer specification must be
    *  provided. An incomplete specification missing any required fields is
    *  rejected with the error
-   *  [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   *  INVALID_ARGUMENT google.rpc.Code.INVALID_ARGUMENT.
    */
-  // const updateTransferJobFieldMask = ''
+  // const updateTransferJobFieldMask = {}
 
   // Imports the Storagetransfer library
   const {StorageTransferServiceClient} = require('@google-cloud/storage-transfer').v1;
@@ -63,7 +63,7 @@ function main(jobName, projectId, transferJob) {
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function updateTransferJob() {
+  async function callUpdateTransferJob() {
     // Construct request
     const request = {
       jobName,
@@ -76,7 +76,7 @@ function main(jobName, projectId, transferJob) {
     console.log(response);
   }
 
-  updateTransferJob();
+  callUpdateTransferJob();
   // [END storagetransfer_v1_generated_StorageTransferService_UpdateTransferJob_async]
 }
 

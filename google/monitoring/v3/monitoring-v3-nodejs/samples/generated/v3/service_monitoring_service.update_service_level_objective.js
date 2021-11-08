@@ -24,11 +24,11 @@ function main(serviceLevelObjective) {
    *  Required. The `ServiceLevelObjective` to draw updates from.
    *  The given `name` specifies the resource to update.
    */
-  // const serviceLevelObjective = ''
+  // const serviceLevelObjective = {}
   /**
    *  A set of field paths defining which fields to use for the update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Monitoring library
   const {ServiceMonitoringServiceClient} = require('@google-cloud/monitoring').v3;
@@ -36,7 +36,7 @@ function main(serviceLevelObjective) {
   // Instantiates a client
   const monitoringClient = new ServiceMonitoringServiceClient();
 
-  async function updateServiceLevelObjective() {
+  async function callUpdateServiceLevelObjective() {
     // Construct request
     const request = {
       serviceLevelObjective,
@@ -47,7 +47,7 @@ function main(serviceLevelObjective) {
     console.log(response);
   }
 
-  updateServiceLevelObjective();
+  callUpdateServiceLevelObjective();
   // [END monitoring_v3_generated_ServiceMonitoringService_UpdateServiceLevelObjective_async]
 }
 

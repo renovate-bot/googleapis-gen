@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const resourcemanagerClient = new OrganizationsClient();
 
-  async function getOrganization() {
+  async function callGetOrganization() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getOrganization();
+  callGetOrganization();
   // [END cloudresourcemanager_v3_generated_Organizations_GetOrganization_async]
 }
 

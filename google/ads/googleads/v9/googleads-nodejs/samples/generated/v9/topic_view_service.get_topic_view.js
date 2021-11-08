@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new TopicViewServiceClient();
 
-  async function getTopicView() {
+  async function callGetTopicView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getTopicView();
+  callGetTopicView();
   // [END googleads_v9_generated_TopicViewService_GetTopicView_async]
 }
 

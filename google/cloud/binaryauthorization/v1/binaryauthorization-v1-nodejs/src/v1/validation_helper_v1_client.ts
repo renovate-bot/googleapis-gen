@@ -292,26 +292,6 @@ export class ValidationHelperV1Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  validateAttestationOccurrence(
-      request?: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceResponse,
-        protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest|undefined, {}|undefined
-      ]>;
-  validateAttestationOccurrence(
-      request: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceResponse,
-          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest|null|undefined,
-          {}|null|undefined>): void;
-  validateAttestationOccurrence(
-      request: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
-      callback: Callback<
-          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceResponse,
-          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns whether the given Attestation for the given image URI
  * was signed by the given Attestor
@@ -340,9 +320,29 @@ export class ValidationHelperV1Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.validateAttestationOccurrence(request);
+ * @example <caption>include:samples/generated/v1/validation_helper_v1.validate_attestation_occurrence.js</caption>
+ * region_tag:binaryauthorization_v1_generated_ValidationHelperV1_ValidateAttestationOccurrence_async
  */
+  validateAttestationOccurrence(
+      request?: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceResponse,
+        protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest|undefined, {}|undefined
+      ]>;
+  validateAttestationOccurrence(
+      request: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceResponse,
+          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest|null|undefined,
+          {}|null|undefined>): void;
+  validateAttestationOccurrence(
+      request: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
+      callback: Callback<
+          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceResponse,
+          protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest|null|undefined,
+          {}|null|undefined>): void;
   validateAttestationOccurrence(
       request?: protos.google.cloud.binaryauthorization.v1.IValidateAttestationOccurrenceRequest,
       optionsOrCallback?: CallOptions|Callback<

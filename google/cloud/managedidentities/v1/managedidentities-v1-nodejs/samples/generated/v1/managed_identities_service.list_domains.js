@@ -30,7 +30,7 @@ function main(parent) {
    *  If not specified, a default value of 1000 will be used.
    *  Regardless of the page_size value, the response may include a partial list.
    *  Callers should rely on a response's
-   *  [next_page_token][google.cloud.managedidentities.v1.ListDomainsResponse.next_page_token]
+   *  next_page_token google.cloud.managedidentities.v1.ListDomainsResponse.next_page_token 
    *  to determine if there are additional results to list.
    */
   // const pageSize = 1234
@@ -46,8 +46,8 @@ function main(parent) {
   // const filter = 'abc123'
   /**
    *  Optional. Specifies the ordering of results. See
-   *  [Sorting
-   *  order](https://cloud.google.com/apis/design/design_patterns#sorting_order)
+   *  Sorting
+   *  order (https://cloud.google.com/apis/design/design_patterns#sorting_order)
    *  for more information.
    */
   // const orderBy = 'abc123'
@@ -58,7 +58,7 @@ function main(parent) {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function listDomains() {
+  async function callListDomains() {
     // Construct request
     const request = {
       parent,
@@ -71,7 +71,7 @@ function main(parent) {
     }
   }
 
-  listDomains();
+  callListDomains();
   // [END managedidentities_v1_generated_ManagedIdentitiesService_ListDomains_async]
 }
 

@@ -501,7 +501,7 @@ describe('v1beta1.BuildServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
@@ -521,7 +521,7 @@ describe('v1beta1.BuildServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
@@ -552,7 +552,7 @@ describe('v1beta1.BuildServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listBuildTargets = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listBuildTargets(request), expectedError);

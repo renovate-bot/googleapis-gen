@@ -48,7 +48,7 @@ function main(parent) {
   // Instantiates a client
   const orgpolicyClient = new OrgPolicyClient();
 
-  async function listPolicies() {
+  async function callListPolicies() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent) {
     }
   }
 
-  listPolicies();
+  callListPolicies();
   // [END orgpolicy_v2_generated_OrgPolicy_ListPolicies_async]
 }
 

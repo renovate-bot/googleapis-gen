@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function deleteFirebaseLink() {
+  async function callDeleteFirebaseLink() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteFirebaseLink();
+  callDeleteFirebaseLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_DeleteFirebaseLink_async]
 }
 

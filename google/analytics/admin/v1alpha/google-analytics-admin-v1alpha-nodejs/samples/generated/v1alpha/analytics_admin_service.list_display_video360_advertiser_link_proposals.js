@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listDisplayVideo360AdvertiserLinkProposals() {
+  async function callListDisplayVideo360AdvertiserLinkProposals() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listDisplayVideo360AdvertiserLinkProposals();
+  callListDisplayVideo360AdvertiserLinkProposals();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListDisplayVideo360AdvertiserLinkProposals_async]
 }
 

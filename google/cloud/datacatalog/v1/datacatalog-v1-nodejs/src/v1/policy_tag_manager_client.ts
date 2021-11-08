@@ -325,6 +325,27 @@ export class PolicyTagManagerClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a taxonomy in a specified project.
+ *
+ * The taxonomy is initially empty, that is, it doesn't contain policy tags.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Resource name of the project that the taxonomy will belong to.
+ * @param {google.cloud.datacatalog.v1.Taxonomy} request.taxonomy
+ *   The taxonomy to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Taxonomy]{@link google.cloud.datacatalog.v1.Taxonomy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.create_taxonomy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_CreateTaxonomy_async
+ */
   createTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.ICreateTaxonomyRequest,
       options?: CallOptions):
@@ -345,27 +366,6 @@ export class PolicyTagManagerClient {
           protos.google.cloud.datacatalog.v1.ITaxonomy,
           protos.google.cloud.datacatalog.v1.ICreateTaxonomyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a taxonomy in a specified project.
- *
- * The taxonomy is initially empty, that is, it doesn't contain policy tags.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Resource name of the project that the taxonomy will belong to.
- * @param {google.cloud.datacatalog.v1.Taxonomy} request.taxonomy
- *   The taxonomy to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Taxonomy]{@link google.cloud.datacatalog.v1.Taxonomy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createTaxonomy(request);
- */
   createTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.ICreateTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -400,6 +400,27 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.createTaxonomy(request, options, callback);
   }
+/**
+ * Deletes a taxonomy, including all policy tags in this
+ * taxonomy, their associated policies, and the policy tags references from
+ * BigQuery columns.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the taxonomy to delete.
+ *
+ *   Note: All policy tags in this taxonomy are also deleted.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.delete_taxonomy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_DeleteTaxonomy_async
+ */
   deleteTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IDeleteTaxonomyRequest,
       options?: CallOptions):
@@ -420,27 +441,6 @@ export class PolicyTagManagerClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.datacatalog.v1.IDeleteTaxonomyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a taxonomy, including all policy tags in this
- * taxonomy, their associated policies, and the policy tags references from
- * BigQuery columns.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the taxonomy to delete.
- *
- *   Note: All policy tags in this taxonomy are also deleted.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteTaxonomy(request);
- */
   deleteTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IDeleteTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -475,26 +475,6 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.deleteTaxonomy(request, options, callback);
   }
-  updateTaxonomy(
-      request?: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.ITaxonomy,
-        protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest|undefined, {}|undefined
-      ]>;
-  updateTaxonomy(
-      request: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.ITaxonomy,
-          protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateTaxonomy(
-      request: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.ITaxonomy,
-          protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a taxonomy, including its display name,
  * description, and activated policy types.
@@ -517,9 +497,29 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateTaxonomy(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.update_taxonomy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_UpdateTaxonomy_async
  */
+  updateTaxonomy(
+      request?: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.ITaxonomy,
+        protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest|undefined, {}|undefined
+      ]>;
+  updateTaxonomy(
+      request: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.ITaxonomy,
+          protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateTaxonomy(
+      request: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.ITaxonomy,
+          protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest|null|undefined,
+          {}|null|undefined>): void;
   updateTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IUpdateTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -554,6 +554,23 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.updateTaxonomy(request, options, callback);
   }
+/**
+ * Gets a taxonomy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the taxonomy to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Taxonomy]{@link google.cloud.datacatalog.v1.Taxonomy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.get_taxonomy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_GetTaxonomy_async
+ */
   getTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IGetTaxonomyRequest,
       options?: CallOptions):
@@ -574,23 +591,6 @@ export class PolicyTagManagerClient {
           protos.google.cloud.datacatalog.v1.ITaxonomy,
           protos.google.cloud.datacatalog.v1.IGetTaxonomyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a taxonomy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the taxonomy to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Taxonomy]{@link google.cloud.datacatalog.v1.Taxonomy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTaxonomy(request);
- */
   getTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IGetTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -625,6 +625,25 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.getTaxonomy(request, options, callback);
   }
+/**
+ * Creates a policy tag in a taxonomy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Resource name of the taxonomy that the policy tag will belong to.
+ * @param {google.cloud.datacatalog.v1.PolicyTag} request.policyTag
+ *   The policy tag to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PolicyTag]{@link google.cloud.datacatalog.v1.PolicyTag}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.create_policy_tag.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_CreatePolicyTag_async
+ */
   createPolicyTag(
       request?: protos.google.cloud.datacatalog.v1.ICreatePolicyTagRequest,
       options?: CallOptions):
@@ -645,25 +664,6 @@ export class PolicyTagManagerClient {
           protos.google.cloud.datacatalog.v1.IPolicyTag,
           protos.google.cloud.datacatalog.v1.ICreatePolicyTagRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a policy tag in a taxonomy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Resource name of the taxonomy that the policy tag will belong to.
- * @param {google.cloud.datacatalog.v1.PolicyTag} request.policyTag
- *   The policy tag to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PolicyTag]{@link google.cloud.datacatalog.v1.PolicyTag}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createPolicyTag(request);
- */
   createPolicyTag(
       request?: protos.google.cloud.datacatalog.v1.ICreatePolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -698,26 +698,6 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.createPolicyTag(request, options, callback);
   }
-  deletePolicyTag(
-      request?: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest|undefined, {}|undefined
-      ]>;
-  deletePolicyTag(
-      request: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest|null|undefined,
-          {}|null|undefined>): void;
-  deletePolicyTag(
-      request: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a policy tag together with the following:
  *
@@ -739,9 +719,29 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deletePolicyTag(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.delete_policy_tag.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_DeletePolicyTag_async
  */
+  deletePolicyTag(
+      request?: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest|undefined, {}|undefined
+      ]>;
+  deletePolicyTag(
+      request: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest|null|undefined,
+          {}|null|undefined>): void;
+  deletePolicyTag(
+      request: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest|null|undefined,
+          {}|null|undefined>): void;
   deletePolicyTag(
       request?: protos.google.cloud.datacatalog.v1.IDeletePolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -776,26 +776,6 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.deletePolicyTag(request, options, callback);
   }
-  updatePolicyTag(
-      request?: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.IPolicyTag,
-        protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest|undefined, {}|undefined
-      ]>;
-  updatePolicyTag(
-      request: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.IPolicyTag,
-          protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest|null|undefined,
-          {}|null|undefined>): void;
-  updatePolicyTag(
-      request: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.IPolicyTag,
-          protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a policy tag, including its display
  * name, description, and parent policy tag.
@@ -819,9 +799,29 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updatePolicyTag(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.update_policy_tag.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_UpdatePolicyTag_async
  */
+  updatePolicyTag(
+      request?: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.IPolicyTag,
+        protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest|undefined, {}|undefined
+      ]>;
+  updatePolicyTag(
+      request: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.IPolicyTag,
+          protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest|null|undefined,
+          {}|null|undefined>): void;
+  updatePolicyTag(
+      request: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.IPolicyTag,
+          protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest|null|undefined,
+          {}|null|undefined>): void;
   updatePolicyTag(
       request?: protos.google.cloud.datacatalog.v1.IUpdatePolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -856,6 +856,23 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.updatePolicyTag(request, options, callback);
   }
+/**
+ * Gets a policy tag.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the policy tag.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PolicyTag]{@link google.cloud.datacatalog.v1.PolicyTag}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.get_policy_tag.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_GetPolicyTag_async
+ */
   getPolicyTag(
       request?: protos.google.cloud.datacatalog.v1.IGetPolicyTagRequest,
       options?: CallOptions):
@@ -876,23 +893,6 @@ export class PolicyTagManagerClient {
           protos.google.cloud.datacatalog.v1.IPolicyTag,
           protos.google.cloud.datacatalog.v1.IGetPolicyTagRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a policy tag.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the policy tag.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PolicyTag]{@link google.cloud.datacatalog.v1.PolicyTag}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPolicyTag(request);
- */
   getPolicyTag(
       request?: protos.google.cloud.datacatalog.v1.IGetPolicyTagRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -927,6 +927,27 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.getPolicyTag(request, options, callback);
   }
+/**
+ * Gets the IAM policy for a policy tag or a taxonomy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resource
+ *   REQUIRED: The resource for which the policy is being requested.
+ *   See the operation documentation for the appropriate value for this field.
+ * @param {google.iam.v1.GetPolicyOptions} request.options
+ *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
+ *   `GetIamPolicy`. This field is only used by Cloud IAM.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.get_iam_policy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_GetIamPolicy_async
+ */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
@@ -947,27 +968,6 @@ export class PolicyTagManagerClient {
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the IAM policy for a policy tag or a taxonomy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {google.iam.v1.GetPolicyOptions} request.options
- *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
- *   `GetIamPolicy`. This field is only used by Cloud IAM.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
- */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1002,26 +1002,6 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the IAM policy for a policy tag or a taxonomy.
  *
@@ -1042,9 +1022,29 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.set_iam_policy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1079,26 +1079,6 @@ export class PolicyTagManagerClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns your permissions on a specified policy tag or
  * taxonomy.
@@ -1120,9 +1100,29 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.test_iam_permissions.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1158,28 +1158,7 @@ export class PolicyTagManagerClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
-  listTaxonomies(
-      request?: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.ITaxonomy[],
-        protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest|null,
-        protos.google.cloud.datacatalog.v1.IListTaxonomiesResponse
-      ]>;
-  listTaxonomies(
-      request: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
-          protos.google.cloud.datacatalog.v1.IListTaxonomiesResponse|null|undefined,
-          protos.google.cloud.datacatalog.v1.ITaxonomy>): void;
-  listTaxonomies(
-      request: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
-          protos.google.cloud.datacatalog.v1.IListTaxonomiesResponse|null|undefined,
-          protos.google.cloud.datacatalog.v1.ITaxonomy>): void;
-/**
+ /**
  * Lists all taxonomies in a project in a particular location that you
  * have a permission to view.
  *
@@ -1208,6 +1187,27 @@ export class PolicyTagManagerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTaxonomies(
+      request?: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.ITaxonomy[],
+        protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest|null,
+        protos.google.cloud.datacatalog.v1.IListTaxonomiesResponse
+      ]>;
+  listTaxonomies(
+      request: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
+          protos.google.cloud.datacatalog.v1.IListTaxonomiesResponse|null|undefined,
+          protos.google.cloud.datacatalog.v1.ITaxonomy>): void;
+  listTaxonomies(
+      request: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
+          protos.google.cloud.datacatalog.v1.IListTaxonomiesResponse|null|undefined,
+          protos.google.cloud.datacatalog.v1.ITaxonomy>): void;
   listTaxonomies(
       request?: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1319,11 +1319,8 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTaxonomiesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.list_taxonomies.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_ListTaxonomies_async
  */
   listTaxonomiesAsync(
       request?: protos.google.cloud.datacatalog.v1.IListTaxonomiesRequest,
@@ -1338,7 +1335,6 @@ export class PolicyTagManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTaxonomies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1348,28 +1344,7 @@ export class PolicyTagManagerClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.datacatalog.v1.ITaxonomy>;
   }
-  listPolicyTags(
-      request?: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.IPolicyTag[],
-        protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest|null,
-        protos.google.cloud.datacatalog.v1.IListPolicyTagsResponse
-      ]>;
-  listPolicyTags(
-      request: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
-          protos.google.cloud.datacatalog.v1.IListPolicyTagsResponse|null|undefined,
-          protos.google.cloud.datacatalog.v1.IPolicyTag>): void;
-  listPolicyTags(
-      request: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
-          protos.google.cloud.datacatalog.v1.IListPolicyTagsResponse|null|undefined,
-          protos.google.cloud.datacatalog.v1.IPolicyTag>): void;
-/**
+ /**
  * Lists all policy tags in a taxonomy.
  *
  * @param {Object} request
@@ -1398,6 +1373,27 @@ export class PolicyTagManagerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPolicyTags(
+      request?: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.IPolicyTag[],
+        protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest|null,
+        protos.google.cloud.datacatalog.v1.IListPolicyTagsResponse
+      ]>;
+  listPolicyTags(
+      request: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
+          protos.google.cloud.datacatalog.v1.IListPolicyTagsResponse|null|undefined,
+          protos.google.cloud.datacatalog.v1.IPolicyTag>): void;
+  listPolicyTags(
+      request: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
+          protos.google.cloud.datacatalog.v1.IListPolicyTagsResponse|null|undefined,
+          protos.google.cloud.datacatalog.v1.IPolicyTag>): void;
   listPolicyTags(
       request?: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1511,11 +1507,8 @@ export class PolicyTagManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPolicyTagsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/policy_tag_manager.list_policy_tags.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManager_ListPolicyTags_async
  */
   listPolicyTagsAsync(
       request?: protos.google.cloud.datacatalog.v1.IListPolicyTagsRequest,
@@ -1530,7 +1523,6 @@ export class PolicyTagManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPolicyTags'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

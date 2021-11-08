@@ -303,6 +303,28 @@ export class DeviceManagerClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a device registry that contains devices.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The project and cloud region where this device registry must be created.
+ *   For example, `projects/example-project/locations/us-central1`.
+ * @param {google.cloud.iot.v1.DeviceRegistry} request.deviceRegistry
+ *   Required. The device registry. The field `name` must be empty. The server will
+ *   generate that field from the device registry `id` provided and the
+ *   `parent` field.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DeviceRegistry]{@link google.cloud.iot.v1.DeviceRegistry}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/device_manager.create_device_registry.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_CreateDeviceRegistry_async
+ */
   createDeviceRegistry(
       request?: protos.google.cloud.iot.v1.ICreateDeviceRegistryRequest,
       options?: CallOptions):
@@ -323,28 +345,6 @@ export class DeviceManagerClient {
           protos.google.cloud.iot.v1.IDeviceRegistry,
           protos.google.cloud.iot.v1.ICreateDeviceRegistryRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a device registry that contains devices.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The project and cloud region where this device registry must be created.
- *   For example, `projects/example-project/locations/us-central1`.
- * @param {google.cloud.iot.v1.DeviceRegistry} request.deviceRegistry
- *   Required. The device registry. The field `name` must be empty. The server will
- *   generate that field from the device registry `id` provided and the
- *   `parent` field.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DeviceRegistry]{@link google.cloud.iot.v1.DeviceRegistry}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createDeviceRegistry(request);
- */
   createDeviceRegistry(
       request?: protos.google.cloud.iot.v1.ICreateDeviceRegistryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -379,6 +379,24 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.createDeviceRegistry(request, options, callback);
   }
+/**
+ * Gets a device registry configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the device registry. For example,
+ *   `projects/example-project/locations/us-central1/registries/my-registry`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DeviceRegistry]{@link google.cloud.iot.v1.DeviceRegistry}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/device_manager.get_device_registry.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_GetDeviceRegistry_async
+ */
   getDeviceRegistry(
       request?: protos.google.cloud.iot.v1.IGetDeviceRegistryRequest,
       options?: CallOptions):
@@ -399,24 +417,6 @@ export class DeviceManagerClient {
           protos.google.cloud.iot.v1.IDeviceRegistry,
           protos.google.cloud.iot.v1.IGetDeviceRegistryRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a device registry configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the device registry. For example,
- *   `projects/example-project/locations/us-central1/registries/my-registry`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DeviceRegistry]{@link google.cloud.iot.v1.DeviceRegistry}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDeviceRegistry(request);
- */
   getDeviceRegistry(
       request?: protos.google.cloud.iot.v1.IGetDeviceRegistryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -451,26 +451,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.getDeviceRegistry(request, options, callback);
   }
-  updateDeviceRegistry(
-      request?: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDeviceRegistry,
-        protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest|undefined, {}|undefined
-      ]>;
-  updateDeviceRegistry(
-      request: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDeviceRegistry,
-          protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateDeviceRegistry(
-      request: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDeviceRegistry,
-          protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a device registry configuration.
  *
@@ -493,9 +473,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateDeviceRegistry(request);
+ * @example <caption>include:samples/generated/v1/device_manager.update_device_registry.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_UpdateDeviceRegistry_async
  */
+  updateDeviceRegistry(
+      request?: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDeviceRegistry,
+        protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest|undefined, {}|undefined
+      ]>;
+  updateDeviceRegistry(
+      request: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDeviceRegistry,
+          protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateDeviceRegistry(
+      request: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDeviceRegistry,
+          protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest|null|undefined,
+          {}|null|undefined>): void;
   updateDeviceRegistry(
       request?: protos.google.cloud.iot.v1.IUpdateDeviceRegistryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -530,6 +530,24 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.updateDeviceRegistry(request, options, callback);
   }
+/**
+ * Deletes a device registry configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the device registry. For example,
+ *   `projects/example-project/locations/us-central1/registries/my-registry`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/device_manager.delete_device_registry.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_DeleteDeviceRegistry_async
+ */
   deleteDeviceRegistry(
       request?: protos.google.cloud.iot.v1.IDeleteDeviceRegistryRequest,
       options?: CallOptions):
@@ -550,24 +568,6 @@ export class DeviceManagerClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.iot.v1.IDeleteDeviceRegistryRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a device registry configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the device registry. For example,
- *   `projects/example-project/locations/us-central1/registries/my-registry`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteDeviceRegistry(request);
- */
   deleteDeviceRegistry(
       request?: protos.google.cloud.iot.v1.IDeleteDeviceRegistryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -602,26 +602,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.deleteDeviceRegistry(request, options, callback);
   }
-  createDevice(
-      request?: protos.google.cloud.iot.v1.ICreateDeviceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDevice,
-        protos.google.cloud.iot.v1.ICreateDeviceRequest|undefined, {}|undefined
-      ]>;
-  createDevice(
-      request: protos.google.cloud.iot.v1.ICreateDeviceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDevice,
-          protos.google.cloud.iot.v1.ICreateDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
-  createDevice(
-      request: protos.google.cloud.iot.v1.ICreateDeviceRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDevice,
-          protos.google.cloud.iot.v1.ICreateDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a device in a device registry.
  *
@@ -642,9 +622,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createDevice(request);
+ * @example <caption>include:samples/generated/v1/device_manager.create_device.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_CreateDevice_async
  */
+  createDevice(
+      request?: protos.google.cloud.iot.v1.ICreateDeviceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDevice,
+        protos.google.cloud.iot.v1.ICreateDeviceRequest|undefined, {}|undefined
+      ]>;
+  createDevice(
+      request: protos.google.cloud.iot.v1.ICreateDeviceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDevice,
+          protos.google.cloud.iot.v1.ICreateDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
+  createDevice(
+      request: protos.google.cloud.iot.v1.ICreateDeviceRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDevice,
+          protos.google.cloud.iot.v1.ICreateDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
   createDevice(
       request?: protos.google.cloud.iot.v1.ICreateDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -679,26 +679,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.createDevice(request, options, callback);
   }
-  getDevice(
-      request?: protos.google.cloud.iot.v1.IGetDeviceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDevice,
-        protos.google.cloud.iot.v1.IGetDeviceRequest|undefined, {}|undefined
-      ]>;
-  getDevice(
-      request: protos.google.cloud.iot.v1.IGetDeviceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDevice,
-          protos.google.cloud.iot.v1.IGetDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDevice(
-      request: protos.google.cloud.iot.v1.IGetDeviceRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDevice,
-          protos.google.cloud.iot.v1.IGetDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets details about a device.
  *
@@ -719,9 +699,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDevice(request);
+ * @example <caption>include:samples/generated/v1/device_manager.get_device.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_GetDevice_async
  */
+  getDevice(
+      request?: protos.google.cloud.iot.v1.IGetDeviceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDevice,
+        protos.google.cloud.iot.v1.IGetDeviceRequest|undefined, {}|undefined
+      ]>;
+  getDevice(
+      request: protos.google.cloud.iot.v1.IGetDeviceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDevice,
+          protos.google.cloud.iot.v1.IGetDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDevice(
+      request: protos.google.cloud.iot.v1.IGetDeviceRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDevice,
+          protos.google.cloud.iot.v1.IGetDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
   getDevice(
       request?: protos.google.cloud.iot.v1.IGetDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -756,26 +756,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.getDevice(request, options, callback);
   }
-  updateDevice(
-      request?: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDevice,
-        protos.google.cloud.iot.v1.IUpdateDeviceRequest|undefined, {}|undefined
-      ]>;
-  updateDevice(
-      request: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDevice,
-          protos.google.cloud.iot.v1.IUpdateDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateDevice(
-      request: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDevice,
-          protos.google.cloud.iot.v1.IUpdateDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a device.
  *
@@ -798,9 +778,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateDevice(request);
+ * @example <caption>include:samples/generated/v1/device_manager.update_device.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_UpdateDevice_async
  */
+  updateDevice(
+      request?: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDevice,
+        protos.google.cloud.iot.v1.IUpdateDeviceRequest|undefined, {}|undefined
+      ]>;
+  updateDevice(
+      request: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDevice,
+          protos.google.cloud.iot.v1.IUpdateDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateDevice(
+      request: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDevice,
+          protos.google.cloud.iot.v1.IUpdateDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
   updateDevice(
       request?: protos.google.cloud.iot.v1.IUpdateDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -835,6 +835,25 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.updateDevice(request, options, callback);
   }
+/**
+ * Deletes a device.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the device. For example,
+ *   `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+ *   `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/device_manager.delete_device.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_DeleteDevice_async
+ */
   deleteDevice(
       request?: protos.google.cloud.iot.v1.IDeleteDeviceRequest,
       options?: CallOptions):
@@ -855,25 +874,6 @@ export class DeviceManagerClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.iot.v1.IDeleteDeviceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a device.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the device. For example,
- *   `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
- *   `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteDevice(request);
- */
   deleteDevice(
       request?: protos.google.cloud.iot.v1.IDeleteDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -908,26 +908,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.deleteDevice(request, options, callback);
   }
-  modifyCloudToDeviceConfig(
-      request?: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDeviceConfig,
-        protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest|undefined, {}|undefined
-      ]>;
-  modifyCloudToDeviceConfig(
-      request: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDeviceConfig,
-          protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest|null|undefined,
-          {}|null|undefined>): void;
-  modifyCloudToDeviceConfig(
-      request: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IDeviceConfig,
-          protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Modifies the configuration for the device, which is eventually sent from
  * the Cloud IoT Core servers. Returns the modified configuration version and
@@ -954,9 +934,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.modifyCloudToDeviceConfig(request);
+ * @example <caption>include:samples/generated/v1/device_manager.modify_cloud_to_device_config.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_ModifyCloudToDeviceConfig_async
  */
+  modifyCloudToDeviceConfig(
+      request?: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDeviceConfig,
+        protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest|undefined, {}|undefined
+      ]>;
+  modifyCloudToDeviceConfig(
+      request: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDeviceConfig,
+          protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest|null|undefined,
+          {}|null|undefined>): void;
+  modifyCloudToDeviceConfig(
+      request: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IDeviceConfig,
+          protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest|null|undefined,
+          {}|null|undefined>): void;
   modifyCloudToDeviceConfig(
       request?: protos.google.cloud.iot.v1.IModifyCloudToDeviceConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -991,26 +991,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.modifyCloudToDeviceConfig(request, options, callback);
   }
-  listDeviceConfigVersions(
-      request?: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IListDeviceConfigVersionsResponse,
-        protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest|undefined, {}|undefined
-      ]>;
-  listDeviceConfigVersions(
-      request: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IListDeviceConfigVersionsResponse,
-          protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listDeviceConfigVersions(
-      request: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IListDeviceConfigVersionsResponse,
-          protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists the last few versions of the device configuration in descending
  * order (i.e.: newest first).
@@ -1032,9 +1012,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listDeviceConfigVersions(request);
+ * @example <caption>include:samples/generated/v1/device_manager.list_device_config_versions.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_ListDeviceConfigVersions_async
  */
+  listDeviceConfigVersions(
+      request?: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IListDeviceConfigVersionsResponse,
+        protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest|undefined, {}|undefined
+      ]>;
+  listDeviceConfigVersions(
+      request: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IListDeviceConfigVersionsResponse,
+          protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listDeviceConfigVersions(
+      request: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IListDeviceConfigVersionsResponse,
+          protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest|null|undefined,
+          {}|null|undefined>): void;
   listDeviceConfigVersions(
       request?: protos.google.cloud.iot.v1.IListDeviceConfigVersionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1069,26 +1069,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.listDeviceConfigVersions(request, options, callback);
   }
-  listDeviceStates(
-      request?: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IListDeviceStatesResponse,
-        protos.google.cloud.iot.v1.IListDeviceStatesRequest|undefined, {}|undefined
-      ]>;
-  listDeviceStates(
-      request: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IListDeviceStatesResponse,
-          protos.google.cloud.iot.v1.IListDeviceStatesRequest|null|undefined,
-          {}|null|undefined>): void;
-  listDeviceStates(
-      request: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IListDeviceStatesResponse,
-          protos.google.cloud.iot.v1.IListDeviceStatesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists the last few versions of the device state in descending order (i.e.:
  * newest first).
@@ -1110,9 +1090,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listDeviceStates(request);
+ * @example <caption>include:samples/generated/v1/device_manager.list_device_states.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_ListDeviceStates_async
  */
+  listDeviceStates(
+      request?: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IListDeviceStatesResponse,
+        protos.google.cloud.iot.v1.IListDeviceStatesRequest|undefined, {}|undefined
+      ]>;
+  listDeviceStates(
+      request: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IListDeviceStatesResponse,
+          protos.google.cloud.iot.v1.IListDeviceStatesRequest|null|undefined,
+          {}|null|undefined>): void;
+  listDeviceStates(
+      request: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IListDeviceStatesResponse,
+          protos.google.cloud.iot.v1.IListDeviceStatesRequest|null|undefined,
+          {}|null|undefined>): void;
   listDeviceStates(
       request?: protos.google.cloud.iot.v1.IListDeviceStatesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1147,26 +1147,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.listDeviceStates(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the access control policy on the specified resource. Replaces any
  * existing policy.
@@ -1188,9 +1168,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/device_manager.set_iam_policy.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1225,26 +1225,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  getIamPolicy(
-      request?: protos.google.iam.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the access control policy for a resource.
  * Returns an empty policy if the resource exists and does not have a policy
@@ -1265,9 +1245,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/device_manager.get_iam_policy.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_GetIamPolicy_async
  */
+  getIamPolicy(
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1302,26 +1302,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns permissions that a caller has on the specified resource.
  * If the resource does not exist, this will return an empty set of
@@ -1344,9 +1324,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/device_manager.test_iam_permissions.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1381,26 +1381,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
-  sendCommandToDevice(
-      request?: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.ISendCommandToDeviceResponse,
-        protos.google.cloud.iot.v1.ISendCommandToDeviceRequest|undefined, {}|undefined
-      ]>;
-  sendCommandToDevice(
-      request: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.ISendCommandToDeviceResponse,
-          protos.google.cloud.iot.v1.ISendCommandToDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
-  sendCommandToDevice(
-      request: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.ISendCommandToDeviceResponse,
-          protos.google.cloud.iot.v1.ISendCommandToDeviceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sends a command to the specified device. In order for a device to be able
  * to receive commands, it must:
@@ -1437,9 +1417,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.sendCommandToDevice(request);
+ * @example <caption>include:samples/generated/v1/device_manager.send_command_to_device.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_SendCommandToDevice_async
  */
+  sendCommandToDevice(
+      request?: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.ISendCommandToDeviceResponse,
+        protos.google.cloud.iot.v1.ISendCommandToDeviceRequest|undefined, {}|undefined
+      ]>;
+  sendCommandToDevice(
+      request: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.ISendCommandToDeviceResponse,
+          protos.google.cloud.iot.v1.ISendCommandToDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
+  sendCommandToDevice(
+      request: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.ISendCommandToDeviceResponse,
+          protos.google.cloud.iot.v1.ISendCommandToDeviceRequest|null|undefined,
+          {}|null|undefined>): void;
   sendCommandToDevice(
       request?: protos.google.cloud.iot.v1.ISendCommandToDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1474,26 +1474,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.sendCommandToDevice(request, options, callback);
   }
-  bindDeviceToGateway(
-      request?: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IBindDeviceToGatewayResponse,
-        protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest|undefined, {}|undefined
-      ]>;
-  bindDeviceToGateway(
-      request: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IBindDeviceToGatewayResponse,
-          protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest|null|undefined,
-          {}|null|undefined>): void;
-  bindDeviceToGateway(
-      request: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IBindDeviceToGatewayResponse,
-          protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Associates the device with the gateway.
  *
@@ -1516,9 +1496,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.bindDeviceToGateway(request);
+ * @example <caption>include:samples/generated/v1/device_manager.bind_device_to_gateway.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_BindDeviceToGateway_async
  */
+  bindDeviceToGateway(
+      request?: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IBindDeviceToGatewayResponse,
+        protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest|undefined, {}|undefined
+      ]>;
+  bindDeviceToGateway(
+      request: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IBindDeviceToGatewayResponse,
+          protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest|null|undefined,
+          {}|null|undefined>): void;
+  bindDeviceToGateway(
+      request: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IBindDeviceToGatewayResponse,
+          protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest|null|undefined,
+          {}|null|undefined>): void;
   bindDeviceToGateway(
       request?: protos.google.cloud.iot.v1.IBindDeviceToGatewayRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1553,26 +1553,6 @@ export class DeviceManagerClient {
     this.initialize();
     return this.innerApiCalls.bindDeviceToGateway(request, options, callback);
   }
-  unbindDeviceFromGateway(
-      request?: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayResponse,
-        protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest|undefined, {}|undefined
-      ]>;
-  unbindDeviceFromGateway(
-      request: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayResponse,
-          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest|null|undefined,
-          {}|null|undefined>): void;
-  unbindDeviceFromGateway(
-      request: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
-      callback: Callback<
-          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayResponse,
-          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the association between the device and the gateway.
  *
@@ -1595,9 +1575,29 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.unbindDeviceFromGateway(request);
+ * @example <caption>include:samples/generated/v1/device_manager.unbind_device_from_gateway.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_UnbindDeviceFromGateway_async
  */
+  unbindDeviceFromGateway(
+      request?: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayResponse,
+        protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest|undefined, {}|undefined
+      ]>;
+  unbindDeviceFromGateway(
+      request: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayResponse,
+          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest|null|undefined,
+          {}|null|undefined>): void;
+  unbindDeviceFromGateway(
+      request: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
+      callback: Callback<
+          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayResponse,
+          protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest|null|undefined,
+          {}|null|undefined>): void;
   unbindDeviceFromGateway(
       request?: protos.google.cloud.iot.v1.IUnbindDeviceFromGatewayRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1633,28 +1633,7 @@ export class DeviceManagerClient {
     return this.innerApiCalls.unbindDeviceFromGateway(request, options, callback);
   }
 
-  listDeviceRegistries(
-      request?: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDeviceRegistry[],
-        protos.google.cloud.iot.v1.IListDeviceRegistriesRequest|null,
-        protos.google.cloud.iot.v1.IListDeviceRegistriesResponse
-      ]>;
-  listDeviceRegistries(
-      request: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
-          protos.google.cloud.iot.v1.IListDeviceRegistriesResponse|null|undefined,
-          protos.google.cloud.iot.v1.IDeviceRegistry>): void;
-  listDeviceRegistries(
-      request: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
-          protos.google.cloud.iot.v1.IListDeviceRegistriesResponse|null|undefined,
-          protos.google.cloud.iot.v1.IDeviceRegistry>): void;
-/**
+ /**
  * Lists device registries.
  *
  * @param {Object} request
@@ -1684,6 +1663,27 @@ export class DeviceManagerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDeviceRegistries(
+      request?: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDeviceRegistry[],
+        protos.google.cloud.iot.v1.IListDeviceRegistriesRequest|null,
+        protos.google.cloud.iot.v1.IListDeviceRegistriesResponse
+      ]>;
+  listDeviceRegistries(
+      request: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
+          protos.google.cloud.iot.v1.IListDeviceRegistriesResponse|null|undefined,
+          protos.google.cloud.iot.v1.IDeviceRegistry>): void;
+  listDeviceRegistries(
+      request: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
+          protos.google.cloud.iot.v1.IListDeviceRegistriesResponse|null|undefined,
+          protos.google.cloud.iot.v1.IDeviceRegistry>): void;
   listDeviceRegistries(
       request?: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1799,11 +1799,8 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDeviceRegistriesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/device_manager.list_device_registries.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_ListDeviceRegistries_async
  */
   listDeviceRegistriesAsync(
       request?: protos.google.cloud.iot.v1.IListDeviceRegistriesRequest,
@@ -1818,7 +1815,6 @@ export class DeviceManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDeviceRegistries'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1828,28 +1824,7 @@ export class DeviceManagerClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.iot.v1.IDeviceRegistry>;
   }
-  listDevices(
-      request?: protos.google.cloud.iot.v1.IListDevicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.iot.v1.IDevice[],
-        protos.google.cloud.iot.v1.IListDevicesRequest|null,
-        protos.google.cloud.iot.v1.IListDevicesResponse
-      ]>;
-  listDevices(
-      request: protos.google.cloud.iot.v1.IListDevicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.iot.v1.IListDevicesRequest,
-          protos.google.cloud.iot.v1.IListDevicesResponse|null|undefined,
-          protos.google.cloud.iot.v1.IDevice>): void;
-  listDevices(
-      request: protos.google.cloud.iot.v1.IListDevicesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.iot.v1.IListDevicesRequest,
-          protos.google.cloud.iot.v1.IListDevicesResponse|null|undefined,
-          protos.google.cloud.iot.v1.IDevice>): void;
-/**
+ /**
  * List devices in a device registry.
  *
  * @param {Object} request
@@ -1892,6 +1867,27 @@ export class DeviceManagerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDevices(
+      request?: protos.google.cloud.iot.v1.IListDevicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.iot.v1.IDevice[],
+        protos.google.cloud.iot.v1.IListDevicesRequest|null,
+        protos.google.cloud.iot.v1.IListDevicesResponse
+      ]>;
+  listDevices(
+      request: protos.google.cloud.iot.v1.IListDevicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.iot.v1.IListDevicesRequest,
+          protos.google.cloud.iot.v1.IListDevicesResponse|null|undefined,
+          protos.google.cloud.iot.v1.IDevice>): void;
+  listDevices(
+      request: protos.google.cloud.iot.v1.IListDevicesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.iot.v1.IListDevicesRequest,
+          protos.google.cloud.iot.v1.IListDevicesResponse|null|undefined,
+          protos.google.cloud.iot.v1.IDevice>): void;
   listDevices(
       request?: protos.google.cloud.iot.v1.IListDevicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2033,11 +2029,8 @@ export class DeviceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDevicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/device_manager.list_devices.js</caption>
+ * region_tag:cloudiot_v1_generated_DeviceManager_ListDevices_async
  */
   listDevicesAsync(
       request?: protos.google.cloud.iot.v1.IListDevicesRequest,
@@ -2052,7 +2045,6 @@ export class DeviceManagerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDevices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

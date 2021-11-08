@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlSslCertsServiceClient();
 
-  async function delete() {
+  async function callDelete() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  delete();
+  callDelete();
   // [END sqladmin_v1beta4_generated_SqlSslCertsService_Delete_async]
 }
 

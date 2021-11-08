@@ -21,24 +21,6 @@ function main(projectId, zone, operationId) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Required. Deprecated. The server-assigned `name` of the operation.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const operationId = 'abc123'
-  /**
    *  The name (project, location, operation id) of the operation to get.
    *  Specified in the format `projects/* /locations/* /operations/*`.
    */
@@ -50,7 +32,7 @@ function main(projectId, zone, operationId) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function getOperation() {
+  async function callGetOperation() {
     // Construct request
     const request = {
       projectId,
@@ -63,7 +45,7 @@ function main(projectId, zone, operationId) {
     console.log(response);
   }
 
-  getOperation();
+  callGetOperation();
   // [END container_v1beta1_generated_ClusterManager_GetOperation_async]
 }
 

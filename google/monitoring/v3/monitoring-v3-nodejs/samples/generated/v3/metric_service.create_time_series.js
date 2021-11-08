@@ -21,7 +21,7 @@ function main(name, timeSeries) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on
    *  which to execute the request. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
@@ -42,7 +42,7 @@ function main(name, timeSeries) {
   // Instantiates a client
   const monitoringClient = new MetricServiceClient();
 
-  async function createTimeSeries() {
+  async function callCreateTimeSeries() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name, timeSeries) {
     console.log(response);
   }
 
-  createTimeSeries();
+  callCreateTimeSeries();
   // [END monitoring_v3_generated_MetricService_CreateTimeSeries_async]
 }
 

@@ -309,6 +309,28 @@ export class CursorServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Updates the committed cursor.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.subscription
+ *   The subscription for which to update the cursor.
+ * @param {number} request.partition
+ *   The partition for which to update the cursor. Partitions are zero indexed,
+ *   so `partition` must be in the range [0, topic.num_partitions).
+ * @param {google.cloud.pubsublite.v1.Cursor} request.cursor
+ *   The new value for the committed cursor.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CommitCursorResponse]{@link google.cloud.pubsublite.v1.CommitCursorResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cursor_service.commit_cursor.js</caption>
+ * region_tag:pubsublite_v1_generated_CursorService_CommitCursor_async
+ */
   commitCursor(
       request?: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
       options?: CallOptions):
@@ -329,28 +351,6 @@ export class CursorServiceClient {
           protos.google.cloud.pubsublite.v1.ICommitCursorResponse,
           protos.google.cloud.pubsublite.v1.ICommitCursorRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates the committed cursor.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.subscription
- *   The subscription for which to update the cursor.
- * @param {number} request.partition
- *   The partition for which to update the cursor. Partitions are zero indexed,
- *   so `partition` must be in the range [0, topic.num_partitions).
- * @param {google.cloud.pubsublite.v1.Cursor} request.cursor
- *   The new value for the committed cursor.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CommitCursorResponse]{@link google.cloud.pubsublite.v1.CommitCursorResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.commitCursor(request);
- */
   commitCursor(
       request?: protos.google.cloud.pubsublite.v1.ICommitCursorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -398,12 +398,8 @@ export class CursorServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.streamingCommitCursor();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/cursor_service.streaming_commit_cursor.js</caption>
+ * region_tag:pubsublite_v1_generated_CursorService_StreamingCommitCursor_async
  */
   streamingCommitCursor(
       options?: CallOptions):
@@ -412,28 +408,7 @@ export class CursorServiceClient {
     return this.innerApiCalls.streamingCommitCursor(options);
   }
 
-  listPartitionCursors(
-      request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.IPartitionCursor[],
-        protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest|null,
-        protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse
-      ]>;
-  listPartitionCursors(
-      request: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
-          protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.IPartitionCursor>): void;
-  listPartitionCursors(
-      request: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
-          protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.IPartitionCursor>): void;
-/**
+ /**
  * Returns all committed cursor information for a subscription.
  *
  * @param {Object} request
@@ -465,6 +440,27 @@ export class CursorServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPartitionCursors(
+      request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IPartitionCursor[],
+        protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse
+      ]>;
+  listPartitionCursors(
+      request: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+          protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IPartitionCursor>): void;
+  listPartitionCursors(
+      request: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
+          protos.google.cloud.pubsublite.v1.IListPartitionCursorsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IPartitionCursor>): void;
   listPartitionCursors(
       request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -584,11 +580,8 @@ export class CursorServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPartitionCursorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/cursor_service.list_partition_cursors.js</caption>
+ * region_tag:pubsublite_v1_generated_CursorService_ListPartitionCursors_async
  */
   listPartitionCursorsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListPartitionCursorsRequest,
@@ -603,7 +596,6 @@ export class CursorServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPartitionCursors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

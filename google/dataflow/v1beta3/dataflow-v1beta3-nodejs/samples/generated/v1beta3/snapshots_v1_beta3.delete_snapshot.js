@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new SnapshotsV1Beta3Client();
 
-  async function deleteSnapshot() {
+  async function callDeleteSnapshot() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  deleteSnapshot();
+  callDeleteSnapshot();
   // [END dataflow_v1beta3_generated_SnapshotsV1Beta3_DeleteSnapshot_async]
 }
 

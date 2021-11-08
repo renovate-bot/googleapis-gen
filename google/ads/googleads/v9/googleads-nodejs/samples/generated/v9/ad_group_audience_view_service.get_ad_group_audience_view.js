@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdGroupAudienceViewServiceClient();
 
-  async function getAdGroupAudienceView() {
+  async function callGetAdGroupAudienceView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdGroupAudienceView();
+  callGetAdGroupAudienceView();
   // [END googleads_v9_generated_AdGroupAudienceViewService_GetAdGroupAudienceView_async]
 }
 

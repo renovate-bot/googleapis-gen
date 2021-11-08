@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function generateUploadUrl() {
+  async function callGenerateUploadUrl() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  generateUploadUrl();
+  callGenerateUploadUrl();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_GenerateUploadUrl_async]
 }
 

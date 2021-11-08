@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CustomerUserAccessServiceClient();
 
-  async function getCustomerUserAccess() {
+  async function callGetCustomerUserAccess() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCustomerUserAccess();
+  callGetCustomerUserAccess();
   // [END googleads_v8_generated_CustomerUserAccessService_GetCustomerUserAccess_async]
 }
 

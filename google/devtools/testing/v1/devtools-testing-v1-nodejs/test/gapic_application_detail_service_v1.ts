@@ -126,7 +126,7 @@ describe('v1.ApplicationDetailServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.GetApkDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.devtools.testing.v1.GetApkDetailsResponse());
             client.innerApiCalls.getApkDetails = stubSimpleCall(expectedResponse);
             const [response] = await client.getApkDetails(request);
@@ -142,7 +142,7 @@ describe('v1.ApplicationDetailServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.GetApkDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.devtools.testing.v1.GetApkDetailsResponse());
             client.innerApiCalls.getApkDetails = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1.ApplicationDetailServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.GetApkDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getApkDetails = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getApkDetails(request), expectedError);

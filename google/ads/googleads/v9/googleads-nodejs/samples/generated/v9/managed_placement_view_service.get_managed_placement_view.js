@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ManagedPlacementViewServiceClient();
 
-  async function getManagedPlacementView() {
+  async function callGetManagedPlacementView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getManagedPlacementView();
+  callGetManagedPlacementView();
   // [END googleads_v9_generated_ManagedPlacementViewService_GetManagedPlacementView_async]
 }
 

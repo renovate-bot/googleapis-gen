@@ -28,7 +28,7 @@ function main(parent, workerPool, workerPoolId) {
   /**
    *  Required. `WorkerPool` resource to create.
    */
-  // const workerPool = ''
+  // const workerPool = {}
   /**
    *  Required. Immutable. The ID to use for the `WorkerPool`, which will become
    *  the final component of the resource name.
@@ -48,7 +48,7 @@ function main(parent, workerPool, workerPoolId) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function createWorkerPool() {
+  async function callCreateWorkerPool() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent, workerPool, workerPoolId) {
     console.log(response);
   }
 
-  createWorkerPool();
+  callCreateWorkerPool();
   // [END cloudbuild_v1_generated_CloudBuild_CreateWorkerPool_async]
 }
 

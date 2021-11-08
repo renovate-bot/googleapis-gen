@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function getPatchDeployment() {
+  async function callGetPatchDeployment() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getPatchDeployment();
+  callGetPatchDeployment();
   // [END osconfig_v1beta_generated_OsConfigService_GetPatchDeployment_async]
 }
 

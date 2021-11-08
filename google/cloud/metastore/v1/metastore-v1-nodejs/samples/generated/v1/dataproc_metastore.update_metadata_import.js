@@ -26,14 +26,14 @@ function main(updateMask, metadataImport) {
    *  Fields specified in the `update_mask` are relative to the resource (not
    *  to the full request). A field is overwritten if it is in the mask.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. The metadata import to update. The server only merges fields
    *  in the import if they are specified in `update_mask`.
    *  The metadata import's `name` field is used to identify the metastore
    *  import to be updated.
    */
-  // const metadataImport = ''
+  // const metadataImport = {}
   /**
    *  Optional. A request ID. Specify a unique request ID to allow the server to ignore the
    *  request if it has completed. The server will ignore subsequent requests
@@ -43,7 +43,7 @@ function main(updateMask, metadataImport) {
    *  with the same request ID, the server ignores the second request to prevent
    *  the creation of duplicate commitments.
    *  The request ID must be a valid
-   *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
+   *  UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    *  A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
    */
   // const requestId = 'abc123'
@@ -54,7 +54,7 @@ function main(updateMask, metadataImport) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function updateMetadataImport() {
+  async function callUpdateMetadataImport() {
     // Construct request
     const request = {
       updateMask,
@@ -67,7 +67,7 @@ function main(updateMask, metadataImport) {
     console.log(response);
   }
 
-  updateMetadataImport();
+  callUpdateMetadataImport();
   // [END metastore_v1_generated_DataprocMetastore_UpdateMetadataImport_async]
 }
 

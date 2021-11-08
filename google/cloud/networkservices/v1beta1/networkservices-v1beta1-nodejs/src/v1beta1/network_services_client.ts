@@ -333,6 +333,24 @@ export class NetworkServicesClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single EndpointPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the EndpointPolicy to get. Must be in the format
+ *   `projects/* /locations/global/endpointPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [EndpointPolicy]{@link google.cloud.networkservices.v1beta1.EndpointPolicy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_services.get_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_GetEndpointPolicy_async
+ */
   getEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IGetEndpointPolicyRequest,
       options?: CallOptions):
@@ -353,24 +371,6 @@ export class NetworkServicesClient {
           protos.google.cloud.networkservices.v1beta1.IEndpointPolicy,
           protos.google.cloud.networkservices.v1beta1.IGetEndpointPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single EndpointPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the EndpointPolicy to get. Must be in the format
- *   `projects/* /locations/global/endpointPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [EndpointPolicy]{@link google.cloud.networkservices.v1beta1.EndpointPolicy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEndpointPolicy(request);
- */
   getEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IGetEndpointPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -406,26 +406,6 @@ export class NetworkServicesClient {
     return this.innerApiCalls.getEndpointPolicy(request, options, callback);
   }
 
-  createEndpointPolicy(
-      request?: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createEndpointPolicy(
-      request: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createEndpointPolicy(
-      request: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new EndpointPolicy in a given project and location.
  *
@@ -448,10 +428,29 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createEndpointPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_services.create_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_CreateEndpointPolicy_async
  */
+  createEndpointPolicy(
+      request?: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createEndpointPolicy(
+      request: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createEndpointPolicy(
+      request: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.ICreateEndpointPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -495,11 +494,8 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateEndpointPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_services.create_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_CreateEndpointPolicy_async
  */
   async checkCreateEndpointPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networkservices.v1beta1.EndpointPolicy, protos.google.cloud.networkservices.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -507,26 +503,6 @@ export class NetworkServicesClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createEndpointPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networkservices.v1beta1.EndpointPolicy, protos.google.cloud.networkservices.v1beta1.OperationMetadata>;
   }
-  updateEndpointPolicy(
-      request?: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateEndpointPolicy(
-      request: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateEndpointPolicy(
-      request: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single EndpointPolicy.
  *
@@ -549,10 +525,29 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateEndpointPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_services.update_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_UpdateEndpointPolicy_async
  */
+  updateEndpointPolicy(
+      request?: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateEndpointPolicy(
+      request: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateEndpointPolicy(
+      request: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networkservices.v1beta1.IEndpointPolicy, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IUpdateEndpointPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -596,11 +591,8 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateEndpointPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_services.update_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_UpdateEndpointPolicy_async
  */
   async checkUpdateEndpointPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networkservices.v1beta1.EndpointPolicy, protos.google.cloud.networkservices.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -608,6 +600,26 @@ export class NetworkServicesClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateEndpointPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networkservices.v1beta1.EndpointPolicy, protos.google.cloud.networkservices.v1beta1.OperationMetadata>;
   }
+/**
+ * Deletes a single EndpointPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the EndpointPolicy to delete. Must be in the format
+ *   `projects/* /locations/global/endpointPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_services.delete_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_DeleteEndpointPolicy_async
+ */
   deleteEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IDeleteEndpointPolicyRequest,
       options?: CallOptions):
@@ -628,27 +640,6 @@ export class NetworkServicesClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networkservices.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single EndpointPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the EndpointPolicy to delete. Must be in the format
- *   `projects/* /locations/global/endpointPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteEndpointPolicy(request);
- * const [response] = await operation.promise();
- */
   deleteEndpointPolicy(
       request?: protos.google.cloud.networkservices.v1beta1.IDeleteEndpointPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -692,11 +683,8 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteEndpointPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_services.delete_endpoint_policy.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_DeleteEndpointPolicy_async
  */
   async checkDeleteEndpointPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkservices.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -704,28 +692,7 @@ export class NetworkServicesClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteEndpointPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networkservices.v1beta1.OperationMetadata>;
   }
-  listEndpointPolicies(
-      request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.networkservices.v1beta1.IEndpointPolicy[],
-        protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest|null,
-        protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesResponse
-      ]>;
-  listEndpointPolicies(
-      request: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
-          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesResponse|null|undefined,
-          protos.google.cloud.networkservices.v1beta1.IEndpointPolicy>): void;
-  listEndpointPolicies(
-      request: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
-          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesResponse|null|undefined,
-          protos.google.cloud.networkservices.v1beta1.IEndpointPolicy>): void;
-/**
+ /**
  * Lists EndpointPolicies in a given project and location.
  *
  * @param {Object} request
@@ -753,6 +720,27 @@ export class NetworkServicesClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEndpointPolicies(
+      request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.networkservices.v1beta1.IEndpointPolicy[],
+        protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest|null,
+        protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesResponse
+      ]>;
+  listEndpointPolicies(
+      request: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
+          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesResponse|null|undefined,
+          protos.google.cloud.networkservices.v1beta1.IEndpointPolicy>): void;
+  listEndpointPolicies(
+      request: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
+          protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesResponse|null|undefined,
+          protos.google.cloud.networkservices.v1beta1.IEndpointPolicy>): void;
   listEndpointPolicies(
       request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -864,11 +852,8 @@ export class NetworkServicesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEndpointPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/network_services.list_endpoint_policies.js</caption>
+ * region_tag:networkservices_v1beta1_generated_NetworkServices_ListEndpointPolicies_async
  */
   listEndpointPoliciesAsync(
       request?: protos.google.cloud.networkservices.v1beta1.IListEndpointPoliciesRequest,
@@ -883,7 +868,6 @@ export class NetworkServicesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEndpointPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -30,7 +30,7 @@ function main(logName) {
    *  `"projects/my-project-id/logs/syslog"`,
    *  `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
    *  For more information about log names, see
-   *  [LogEntry][google.logging.v2.LogEntry].
+   *  LogEntry google.logging.v2.LogEntry.
    */
   // const logName = 'abc123'
 
@@ -40,7 +40,7 @@ function main(logName) {
   // Instantiates a client
   const loggingClient = new LoggingServiceV2Client();
 
-  async function deleteLog() {
+  async function callDeleteLog() {
     // Construct request
     const request = {
       logName,
@@ -51,7 +51,7 @@ function main(logName) {
     console.log(response);
   }
 
-  deleteLog();
+  callDeleteLog();
   // [END logging_v2_generated_LoggingServiceV2_DeleteLog_async]
 }
 

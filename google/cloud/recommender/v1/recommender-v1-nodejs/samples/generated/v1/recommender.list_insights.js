@@ -57,7 +57,7 @@ function main(parent) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function listInsights() {
+  async function callListInsights() {
     // Construct request
     const request = {
       parent,
@@ -70,7 +70,7 @@ function main(parent) {
     }
   }
 
-  listInsights();
+  callListInsights();
   // [END recommender_v1_generated_Recommender_ListInsights_async]
 }
 

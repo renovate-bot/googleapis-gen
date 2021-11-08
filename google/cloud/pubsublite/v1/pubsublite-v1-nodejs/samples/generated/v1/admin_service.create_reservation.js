@@ -28,7 +28,7 @@ function main(parent, reservation, reservationId) {
   /**
    *  Required. Configuration of the reservation to create. Its `name` field is ignored.
    */
-  // const reservation = ''
+  // const reservation = {}
   /**
    *  Required. The ID to use for the reservation, which will become the final component of
    *  the reservation's name.
@@ -42,7 +42,7 @@ function main(parent, reservation, reservationId) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function createReservation() {
+  async function callCreateReservation() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, reservation, reservationId) {
     console.log(response);
   }
 
-  createReservation();
+  callCreateReservation();
   // [END pubsublite_v1_generated_AdminService_CreateReservation_async]
 }
 

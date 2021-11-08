@@ -347,6 +347,25 @@ export class GameServerClustersServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single game server cluster.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the game server cluster to retrieve. Uses the form:
+ *
+ *   `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [GameServerCluster]{@link google.cloud.gaming.v1beta.GameServerCluster}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.get_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_GetGameServerCluster_async
+ */
   getGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IGetGameServerClusterRequest,
       options?: CallOptions):
@@ -367,25 +386,6 @@ export class GameServerClustersServiceClient {
           protos.google.cloud.gaming.v1beta.IGameServerCluster,
           protos.google.cloud.gaming.v1beta.IGetGameServerClusterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single game server cluster.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the game server cluster to retrieve. Uses the form:
- *
- *   `projects/{project}/locations/{location}/realms/{realm-id}/gameServerClusters/{cluster}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [GameServerCluster]{@link google.cloud.gaming.v1beta.GameServerCluster}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getGameServerCluster(request);
- */
   getGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IGetGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -420,26 +420,6 @@ export class GameServerClustersServiceClient {
     this.initialize();
     return this.innerApiCalls.getGameServerCluster(request, options, callback);
   }
-  previewCreateGameServerCluster(
-      request?: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterResponse,
-        protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest|undefined, {}|undefined
-      ]>;
-  previewCreateGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterResponse,
-          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest|null|undefined,
-          {}|null|undefined>): void;
-  previewCreateGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
-      callback: Callback<
-          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterResponse,
-          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Previews creation of a new game server cluster in a given project and
  * location.
@@ -462,9 +442,29 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.previewCreateGameServerCluster(request);
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.preview_create_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_PreviewCreateGameServerCluster_async
  */
+  previewCreateGameServerCluster(
+      request?: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterResponse,
+        protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest|undefined, {}|undefined
+      ]>;
+  previewCreateGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterResponse,
+          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest|null|undefined,
+          {}|null|undefined>): void;
+  previewCreateGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
+      callback: Callback<
+          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterResponse,
+          protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest|null|undefined,
+          {}|null|undefined>): void;
   previewCreateGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewCreateGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -499,6 +499,26 @@ export class GameServerClustersServiceClient {
     this.initialize();
     return this.innerApiCalls.previewCreateGameServerCluster(request, options, callback);
   }
+/**
+ * Previews deletion of a single game server cluster.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the game server cluster to delete. Uses the form:
+ *   `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
+ * @param {google.protobuf.Timestamp} [request.previewTime]
+ *   Optional. The target timestamp to compute the preview.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PreviewDeleteGameServerClusterResponse]{@link google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.preview_delete_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_PreviewDeleteGameServerCluster_async
+ */
   previewDeleteGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewDeleteGameServerClusterRequest,
       options?: CallOptions):
@@ -519,26 +539,6 @@ export class GameServerClustersServiceClient {
           protos.google.cloud.gaming.v1beta.IPreviewDeleteGameServerClusterResponse,
           protos.google.cloud.gaming.v1beta.IPreviewDeleteGameServerClusterRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Previews deletion of a single game server cluster.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the game server cluster to delete. Uses the form:
- *   `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
- * @param {google.protobuf.Timestamp} [request.previewTime]
- *   Optional. The target timestamp to compute the preview.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PreviewDeleteGameServerClusterResponse]{@link google.cloud.gaming.v1beta.PreviewDeleteGameServerClusterResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.previewDeleteGameServerCluster(request);
- */
   previewDeleteGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewDeleteGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -573,26 +573,6 @@ export class GameServerClustersServiceClient {
     this.initialize();
     return this.innerApiCalls.previewDeleteGameServerCluster(request, options, callback);
   }
-  previewUpdateGameServerCluster(
-      request?: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterResponse,
-        protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest|undefined, {}|undefined
-      ]>;
-  previewUpdateGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterResponse,
-          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest|null|undefined,
-          {}|null|undefined>): void;
-  previewUpdateGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
-      callback: Callback<
-          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterResponse,
-          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Previews updating a GameServerCluster.
  *
@@ -617,9 +597,29 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.previewUpdateGameServerCluster(request);
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.preview_update_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_PreviewUpdateGameServerCluster_async
  */
+  previewUpdateGameServerCluster(
+      request?: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterResponse,
+        protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest|undefined, {}|undefined
+      ]>;
+  previewUpdateGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterResponse,
+          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest|null|undefined,
+          {}|null|undefined>): void;
+  previewUpdateGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
+      callback: Callback<
+          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterResponse,
+          protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest|null|undefined,
+          {}|null|undefined>): void;
   previewUpdateGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IPreviewUpdateGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -655,26 +655,6 @@ export class GameServerClustersServiceClient {
     return this.innerApiCalls.previewUpdateGameServerCluster(request, options, callback);
   }
 
-  createGameServerCluster(
-      request?: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new game server cluster in a given project and location.
  *
@@ -696,10 +676,29 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createGameServerCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.create_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_CreateGameServerCluster_async
  */
+  createGameServerCluster(
+      request?: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.ICreateGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -743,11 +742,8 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateGameServerClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.create_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_CreateGameServerCluster_async
  */
   async checkCreateGameServerClusterProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1beta.GameServerCluster, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -755,6 +751,26 @@ export class GameServerClustersServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createGameServerCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gaming.v1beta.GameServerCluster, protos.google.cloud.gaming.v1beta.OperationMetadata>;
   }
+/**
+ * Deletes a single game server cluster.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the game server cluster to delete. Uses the form:
+ *   `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.delete_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_DeleteGameServerCluster_async
+ */
   deleteGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IDeleteGameServerClusterRequest,
       options?: CallOptions):
@@ -775,27 +791,6 @@ export class GameServerClustersServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single game server cluster.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the game server cluster to delete. Uses the form:
- *   `projects/{project}/locations/{location}/gameServerClusters/{cluster}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteGameServerCluster(request);
- * const [response] = await operation.promise();
- */
   deleteGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IDeleteGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -839,11 +834,8 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteGameServerClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.delete_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_DeleteGameServerCluster_async
  */
   async checkDeleteGameServerClusterProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -851,26 +843,6 @@ export class GameServerClustersServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteGameServerCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.gaming.v1beta.OperationMetadata>;
   }
-  updateGameServerCluster(
-      request?: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateGameServerCluster(
-      request: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Patches a single game server cluster.
  *
@@ -895,10 +867,29 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateGameServerCluster(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.update_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_UpdateGameServerCluster_async
  */
+  updateGameServerCluster(
+      request?: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateGameServerCluster(
+      request: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gaming.v1beta.IGameServerCluster, protos.google.cloud.gaming.v1beta.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateGameServerCluster(
       request?: protos.google.cloud.gaming.v1beta.IUpdateGameServerClusterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -942,11 +933,8 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateGameServerClusterProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.update_game_server_cluster.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_UpdateGameServerCluster_async
  */
   async checkUpdateGameServerClusterProgress(name: string): Promise<LROperation<protos.google.cloud.gaming.v1beta.GameServerCluster, protos.google.cloud.gaming.v1beta.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -954,28 +942,7 @@ export class GameServerClustersServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateGameServerCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gaming.v1beta.GameServerCluster, protos.google.cloud.gaming.v1beta.OperationMetadata>;
   }
-  listGameServerClusters(
-      request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gaming.v1beta.IGameServerCluster[],
-        protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest|null,
-        protos.google.cloud.gaming.v1beta.IListGameServerClustersResponse
-      ]>;
-  listGameServerClusters(
-      request: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
-          protos.google.cloud.gaming.v1beta.IListGameServerClustersResponse|null|undefined,
-          protos.google.cloud.gaming.v1beta.IGameServerCluster>): void;
-  listGameServerClusters(
-      request: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
-          protos.google.cloud.gaming.v1beta.IListGameServerClustersResponse|null|undefined,
-          protos.google.cloud.gaming.v1beta.IGameServerCluster>): void;
-/**
+ /**
  * Lists game server clusters in a given project and location.
  *
  * @param {Object} request
@@ -1010,6 +977,27 @@ export class GameServerClustersServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listGameServerClusters(
+      request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gaming.v1beta.IGameServerCluster[],
+        protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest|null,
+        protos.google.cloud.gaming.v1beta.IListGameServerClustersResponse
+      ]>;
+  listGameServerClusters(
+      request: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
+          protos.google.cloud.gaming.v1beta.IListGameServerClustersResponse|null|undefined,
+          protos.google.cloud.gaming.v1beta.IGameServerCluster>): void;
+  listGameServerClusters(
+      request: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
+          protos.google.cloud.gaming.v1beta.IListGameServerClustersResponse|null|undefined,
+          protos.google.cloud.gaming.v1beta.IGameServerCluster>): void;
   listGameServerClusters(
       request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1135,11 +1123,8 @@ export class GameServerClustersServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listGameServerClustersAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta/game_server_clusters_service.list_game_server_clusters.js</caption>
+ * region_tag:gameservices_v1beta_generated_GameServerClustersService_ListGameServerClusters_async
  */
   listGameServerClustersAsync(
       request?: protos.google.cloud.gaming.v1beta.IListGameServerClustersRequest,
@@ -1154,7 +1139,6 @@ export class GameServerClustersServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listGameServerClusters'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -525,7 +525,7 @@ describe('v3.ProjectsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createProject = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createProject(request);
@@ -542,7 +542,7 @@ describe('v3.ProjectsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createProject = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -572,7 +572,7 @@ describe('v3.ProjectsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createProject = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createProject(request), expectedError);
@@ -587,7 +587,7 @@ describe('v3.ProjectsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createProject = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createProject(request);
@@ -1217,7 +1217,7 @@ describe('v3.ProjectsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
@@ -1237,7 +1237,7 @@ describe('v3.ProjectsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
@@ -1268,7 +1268,7 @@ describe('v3.ProjectsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listProjects = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listProjects(request), expectedError);
@@ -1388,7 +1388,7 @@ describe('v3.ProjectsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
@@ -1408,7 +1408,7 @@ describe('v3.ProjectsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
@@ -1439,7 +1439,7 @@ describe('v3.ProjectsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.searchProjects = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.searchProjects(request), expectedError);

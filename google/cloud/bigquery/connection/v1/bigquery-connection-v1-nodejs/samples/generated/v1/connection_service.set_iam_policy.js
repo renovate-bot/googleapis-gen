@@ -31,7 +31,7 @@ function main(resource, policy) {
    *  valid policy but certain Cloud Platform services (such as Projects)
    *  might reject them.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Connection library
   const {ConnectionServiceClient} = require('@google-cloud/bigquery-connection').v1;
@@ -39,7 +39,7 @@ function main(resource, policy) {
   // Instantiates a client
   const connectionClient = new ConnectionServiceClient();
 
-  async function setIamPolicy() {
+  async function callSetIamPolicy() {
     // Construct request
     const request = {
       resource,
@@ -51,7 +51,7 @@ function main(resource, policy) {
     console.log(response);
   }
 
-  setIamPolicy();
+  callSetIamPolicy();
   // [END bigqueryconnection_v1_generated_ConnectionService_SetIamPolicy_async]
 }
 

@@ -349,26 +349,6 @@ export class ProductServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createProduct(
-      request?: protos.google.cloud.retail.v2.ICreateProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.retail.v2.IProduct,
-        protos.google.cloud.retail.v2.ICreateProductRequest|undefined, {}|undefined
-      ]>;
-  createProduct(
-      request: protos.google.cloud.retail.v2.ICreateProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.retail.v2.IProduct,
-          protos.google.cloud.retail.v2.ICreateProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  createProduct(
-      request: protos.google.cloud.retail.v2.ICreateProductRequest,
-      callback: Callback<
-          protos.google.cloud.retail.v2.IProduct,
-          protos.google.cloud.retail.v2.ICreateProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a {@link google.cloud.retail.v2.Product|Product}.
  *
@@ -402,9 +382,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createProduct(request);
+ * @example <caption>include:samples/generated/v2/product_service.create_product.js</caption>
+ * region_tag:retail_v2_generated_ProductService_CreateProduct_async
  */
+  createProduct(
+      request?: protos.google.cloud.retail.v2.ICreateProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.retail.v2.IProduct,
+        protos.google.cloud.retail.v2.ICreateProductRequest|undefined, {}|undefined
+      ]>;
+  createProduct(
+      request: protos.google.cloud.retail.v2.ICreateProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.retail.v2.IProduct,
+          protos.google.cloud.retail.v2.ICreateProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  createProduct(
+      request: protos.google.cloud.retail.v2.ICreateProductRequest,
+      callback: Callback<
+          protos.google.cloud.retail.v2.IProduct,
+          protos.google.cloud.retail.v2.ICreateProductRequest|null|undefined,
+          {}|null|undefined>): void;
   createProduct(
       request?: protos.google.cloud.retail.v2.ICreateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -439,26 +439,6 @@ export class ProductServiceClient {
     this.initialize();
     return this.innerApiCalls.createProduct(request, options, callback);
   }
-  getProduct(
-      request?: protos.google.cloud.retail.v2.IGetProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.retail.v2.IProduct,
-        protos.google.cloud.retail.v2.IGetProductRequest|undefined, {}|undefined
-      ]>;
-  getProduct(
-      request: protos.google.cloud.retail.v2.IGetProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.retail.v2.IProduct,
-          protos.google.cloud.retail.v2.IGetProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  getProduct(
-      request: protos.google.cloud.retail.v2.IGetProductRequest,
-      callback: Callback<
-          protos.google.cloud.retail.v2.IProduct,
-          protos.google.cloud.retail.v2.IGetProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a {@link google.cloud.retail.v2.Product|Product}.
  *
@@ -482,9 +462,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getProduct(request);
+ * @example <caption>include:samples/generated/v2/product_service.get_product.js</caption>
+ * region_tag:retail_v2_generated_ProductService_GetProduct_async
  */
+  getProduct(
+      request?: protos.google.cloud.retail.v2.IGetProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.retail.v2.IProduct,
+        protos.google.cloud.retail.v2.IGetProductRequest|undefined, {}|undefined
+      ]>;
+  getProduct(
+      request: protos.google.cloud.retail.v2.IGetProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.retail.v2.IProduct,
+          protos.google.cloud.retail.v2.IGetProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  getProduct(
+      request: protos.google.cloud.retail.v2.IGetProductRequest,
+      callback: Callback<
+          protos.google.cloud.retail.v2.IProduct,
+          protos.google.cloud.retail.v2.IGetProductRequest|null|undefined,
+          {}|null|undefined>): void;
   getProduct(
       request?: protos.google.cloud.retail.v2.IGetProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -519,26 +519,6 @@ export class ProductServiceClient {
     this.initialize();
     return this.innerApiCalls.getProduct(request, options, callback);
   }
-  updateProduct(
-      request?: protos.google.cloud.retail.v2.IUpdateProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.retail.v2.IProduct,
-        protos.google.cloud.retail.v2.IUpdateProductRequest|undefined, {}|undefined
-      ]>;
-  updateProduct(
-      request: protos.google.cloud.retail.v2.IUpdateProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.retail.v2.IProduct,
-          protos.google.cloud.retail.v2.IUpdateProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateProduct(
-      request: protos.google.cloud.retail.v2.IUpdateProductRequest,
-      callback: Callback<
-          protos.google.cloud.retail.v2.IProduct,
-          protos.google.cloud.retail.v2.IUpdateProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a {@link google.cloud.retail.v2.Product|Product}.
  *
@@ -574,9 +554,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateProduct(request);
+ * @example <caption>include:samples/generated/v2/product_service.update_product.js</caption>
+ * region_tag:retail_v2_generated_ProductService_UpdateProduct_async
  */
+  updateProduct(
+      request?: protos.google.cloud.retail.v2.IUpdateProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.retail.v2.IProduct,
+        protos.google.cloud.retail.v2.IUpdateProductRequest|undefined, {}|undefined
+      ]>;
+  updateProduct(
+      request: protos.google.cloud.retail.v2.IUpdateProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.retail.v2.IProduct,
+          protos.google.cloud.retail.v2.IUpdateProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateProduct(
+      request: protos.google.cloud.retail.v2.IUpdateProductRequest,
+      callback: Callback<
+          protos.google.cloud.retail.v2.IProduct,
+          protos.google.cloud.retail.v2.IUpdateProductRequest|null|undefined,
+          {}|null|undefined>): void;
   updateProduct(
       request?: protos.google.cloud.retail.v2.IUpdateProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -611,26 +611,6 @@ export class ProductServiceClient {
     this.initialize();
     return this.innerApiCalls.updateProduct(request, options, callback);
   }
-  deleteProduct(
-      request?: protos.google.cloud.retail.v2.IDeleteProductRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.retail.v2.IDeleteProductRequest|undefined, {}|undefined
-      ]>;
-  deleteProduct(
-      request: protos.google.cloud.retail.v2.IDeleteProductRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.retail.v2.IDeleteProductRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteProduct(
-      request: protos.google.cloud.retail.v2.IDeleteProductRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.retail.v2.IDeleteProductRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a {@link google.cloud.retail.v2.Product|Product}.
  *
@@ -665,9 +645,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteProduct(request);
+ * @example <caption>include:samples/generated/v2/product_service.delete_product.js</caption>
+ * region_tag:retail_v2_generated_ProductService_DeleteProduct_async
  */
+  deleteProduct(
+      request?: protos.google.cloud.retail.v2.IDeleteProductRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.retail.v2.IDeleteProductRequest|undefined, {}|undefined
+      ]>;
+  deleteProduct(
+      request: protos.google.cloud.retail.v2.IDeleteProductRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.retail.v2.IDeleteProductRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteProduct(
+      request: protos.google.cloud.retail.v2.IDeleteProductRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.retail.v2.IDeleteProductRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteProduct(
       request?: protos.google.cloud.retail.v2.IDeleteProductRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -703,26 +703,6 @@ export class ProductServiceClient {
     return this.innerApiCalls.deleteProduct(request, options, callback);
   }
 
-  importProducts(
-      request?: protos.google.cloud.retail.v2.IImportProductsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.retail.v2.IImportProductsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importProducts(
-      request: protos.google.cloud.retail.v2.IImportProductsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.IImportProductsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importProducts(
-      request: protos.google.cloud.retail.v2.IImportProductsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.IImportProductsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Bulk import of multiple {@link google.cloud.retail.v2.Product|Product}s.
  *
@@ -780,10 +760,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importProducts(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/product_service.import_products.js</caption>
+ * region_tag:retail_v2_generated_ProductService_ImportProducts_async
  */
+  importProducts(
+      request?: protos.google.cloud.retail.v2.IImportProductsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.retail.v2.IImportProductsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importProducts(
+      request: protos.google.cloud.retail.v2.IImportProductsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.IImportProductsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importProducts(
+      request: protos.google.cloud.retail.v2.IImportProductsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.IImportProductsResponse, protos.google.cloud.retail.v2.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importProducts(
       request?: protos.google.cloud.retail.v2.IImportProductsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -827,11 +826,8 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportProductsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/product_service.import_products.js</caption>
+ * region_tag:retail_v2_generated_ProductService_ImportProducts_async
  */
   async checkImportProductsProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2.ImportProductsResponse, protos.google.cloud.retail.v2.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -839,26 +835,6 @@ export class ProductServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importProducts, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.retail.v2.ImportProductsResponse, protos.google.cloud.retail.v2.ImportMetadata>;
   }
-  setInventory(
-      request?: protos.google.cloud.retail.v2.ISetInventoryRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.retail.v2.ISetInventoryResponse, protos.google.cloud.retail.v2.ISetInventoryMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  setInventory(
-      request: protos.google.cloud.retail.v2.ISetInventoryRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.ISetInventoryResponse, protos.google.cloud.retail.v2.ISetInventoryMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  setInventory(
-      request: protos.google.cloud.retail.v2.ISetInventoryRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.ISetInventoryResponse, protos.google.cloud.retail.v2.ISetInventoryMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates inventory information for a
  * {@link google.cloud.retail.v2.Product|Product} while respecting the last update
@@ -966,10 +942,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.setInventory(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/product_service.set_inventory.js</caption>
+ * region_tag:retail_v2_generated_ProductService_SetInventory_async
  */
+  setInventory(
+      request?: protos.google.cloud.retail.v2.ISetInventoryRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.retail.v2.ISetInventoryResponse, protos.google.cloud.retail.v2.ISetInventoryMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  setInventory(
+      request: protos.google.cloud.retail.v2.ISetInventoryRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.ISetInventoryResponse, protos.google.cloud.retail.v2.ISetInventoryMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  setInventory(
+      request: protos.google.cloud.retail.v2.ISetInventoryRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.ISetInventoryResponse, protos.google.cloud.retail.v2.ISetInventoryMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   setInventory(
       request?: protos.google.cloud.retail.v2.ISetInventoryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1013,11 +1008,8 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkSetInventoryProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/product_service.set_inventory.js</caption>
+ * region_tag:retail_v2_generated_ProductService_SetInventory_async
  */
   async checkSetInventoryProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2.SetInventoryResponse, protos.google.cloud.retail.v2.SetInventoryMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1025,26 +1017,6 @@ export class ProductServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.setInventory, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.retail.v2.SetInventoryResponse, protos.google.cloud.retail.v2.SetInventoryMetadata>;
   }
-  addFulfillmentPlaces(
-      request?: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.retail.v2.IAddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IAddFulfillmentPlacesMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  addFulfillmentPlaces(
-      request: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.IAddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IAddFulfillmentPlacesMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  addFulfillmentPlaces(
-      request: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.IAddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IAddFulfillmentPlacesMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Incrementally adds place IDs to
  * {@link google.cloud.retail.v2.FulfillmentInfo.place_ids|Product.fulfillment_info.place_ids}.
@@ -1128,10 +1100,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.addFulfillmentPlaces(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/product_service.add_fulfillment_places.js</caption>
+ * region_tag:retail_v2_generated_ProductService_AddFulfillmentPlaces_async
  */
+  addFulfillmentPlaces(
+      request?: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.retail.v2.IAddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IAddFulfillmentPlacesMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  addFulfillmentPlaces(
+      request: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.IAddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IAddFulfillmentPlacesMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  addFulfillmentPlaces(
+      request: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.IAddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IAddFulfillmentPlacesMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   addFulfillmentPlaces(
       request?: protos.google.cloud.retail.v2.IAddFulfillmentPlacesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1175,11 +1166,8 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkAddFulfillmentPlacesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/product_service.add_fulfillment_places.js</caption>
+ * region_tag:retail_v2_generated_ProductService_AddFulfillmentPlaces_async
  */
   async checkAddFulfillmentPlacesProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2.AddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.AddFulfillmentPlacesMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1187,26 +1175,6 @@ export class ProductServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.addFulfillmentPlaces, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.retail.v2.AddFulfillmentPlacesResponse, protos.google.cloud.retail.v2.AddFulfillmentPlacesMetadata>;
   }
-  removeFulfillmentPlaces(
-      request?: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  removeFulfillmentPlaces(
-      request: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  removeFulfillmentPlaces(
-      request: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Incrementally removes place IDs from a
  * {@link google.cloud.retail.v2.FulfillmentInfo.place_ids|Product.fulfillment_info.place_ids}.
@@ -1285,10 +1253,29 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.removeFulfillmentPlaces(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/product_service.remove_fulfillment_places.js</caption>
+ * region_tag:retail_v2_generated_ProductService_RemoveFulfillmentPlaces_async
  */
+  removeFulfillmentPlaces(
+      request?: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  removeFulfillmentPlaces(
+      request: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  removeFulfillmentPlaces(
+      request: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   removeFulfillmentPlaces(
       request?: protos.google.cloud.retail.v2.IRemoveFulfillmentPlacesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1332,11 +1319,8 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRemoveFulfillmentPlacesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/product_service.remove_fulfillment_places.js</caption>
+ * region_tag:retail_v2_generated_ProductService_RemoveFulfillmentPlaces_async
  */
   async checkRemoveFulfillmentPlacesProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1344,28 +1328,7 @@ export class ProductServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.removeFulfillmentPlaces, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.retail.v2.RemoveFulfillmentPlacesResponse, protos.google.cloud.retail.v2.RemoveFulfillmentPlacesMetadata>;
   }
-  listProducts(
-      request?: protos.google.cloud.retail.v2.IListProductsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.retail.v2.IProduct[],
-        protos.google.cloud.retail.v2.IListProductsRequest|null,
-        protos.google.cloud.retail.v2.IListProductsResponse
-      ]>;
-  listProducts(
-      request: protos.google.cloud.retail.v2.IListProductsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.retail.v2.IListProductsRequest,
-          protos.google.cloud.retail.v2.IListProductsResponse|null|undefined,
-          protos.google.cloud.retail.v2.IProduct>): void;
-  listProducts(
-      request: protos.google.cloud.retail.v2.IListProductsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.retail.v2.IListProductsRequest,
-          protos.google.cloud.retail.v2.IListProductsResponse|null|undefined,
-          protos.google.cloud.retail.v2.IProduct>): void;
-/**
+ /**
  * Gets a list of {@link google.cloud.retail.v2.Product|Product}s.
  *
  * @param {Object} request
@@ -1456,6 +1419,27 @@ export class ProductServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listProducts(
+      request?: protos.google.cloud.retail.v2.IListProductsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.retail.v2.IProduct[],
+        protos.google.cloud.retail.v2.IListProductsRequest|null,
+        protos.google.cloud.retail.v2.IListProductsResponse
+      ]>;
+  listProducts(
+      request: protos.google.cloud.retail.v2.IListProductsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.retail.v2.IListProductsRequest,
+          protos.google.cloud.retail.v2.IListProductsResponse|null|undefined,
+          protos.google.cloud.retail.v2.IProduct>): void;
+  listProducts(
+      request: protos.google.cloud.retail.v2.IListProductsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.retail.v2.IListProductsRequest,
+          protos.google.cloud.retail.v2.IListProductsResponse|null|undefined,
+          protos.google.cloud.retail.v2.IProduct>): void;
   listProducts(
       request?: protos.google.cloud.retail.v2.IListProductsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1693,11 +1677,8 @@ export class ProductServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listProductsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/product_service.list_products.js</caption>
+ * region_tag:retail_v2_generated_ProductService_ListProducts_async
  */
   listProductsAsync(
       request?: protos.google.cloud.retail.v2.IListProductsRequest,
@@ -1712,7 +1693,6 @@ export class ProductServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listProducts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

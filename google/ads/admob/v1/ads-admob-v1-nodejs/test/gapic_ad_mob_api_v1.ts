@@ -403,7 +403,7 @@ describe('v1.AdMobApiClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.admob.v1.ListPublisherAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.ads.admob.v1.PublisherAccount()),
               generateSampleMessage(new protos.google.ads.admob.v1.PublisherAccount()),
@@ -423,7 +423,7 @@ describe('v1.AdMobApiClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.admob.v1.ListPublisherAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.ads.admob.v1.PublisherAccount()),
               generateSampleMessage(new protos.google.ads.admob.v1.PublisherAccount()),
@@ -454,7 +454,7 @@ describe('v1.AdMobApiClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.admob.v1.ListPublisherAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listPublisherAccounts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listPublisherAccounts(request), expectedError);

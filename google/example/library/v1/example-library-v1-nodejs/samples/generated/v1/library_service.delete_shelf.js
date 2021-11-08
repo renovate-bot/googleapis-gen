@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function deleteShelf() {
+  async function callDeleteShelf() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteShelf();
+  callDeleteShelf();
   // [END library-example_v1_generated_LibraryService_DeleteShelf_async]
 }
 

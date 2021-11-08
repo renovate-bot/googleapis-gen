@@ -525,7 +525,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportResponse());
             client.innerApiCalls.generateConfigReport = stubSimpleCall(expectedResponse);
             const [response] = await client.generateConfigReport(request);
@@ -541,7 +541,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportResponse());
             client.innerApiCalls.generateConfigReport = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -568,7 +568,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.generateConfigReport = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.generateConfigReport(request), expectedError);
@@ -585,7 +585,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createService = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createService(request);
@@ -602,7 +602,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createService = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -632,7 +632,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createService = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createService(request), expectedError);
@@ -647,7 +647,7 @@ describe('v1.ServiceManagerClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createService = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createService(request);
@@ -1585,7 +1585,7 @@ describe('v1.ServiceManagerClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
@@ -1605,7 +1605,7 @@ describe('v1.ServiceManagerClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
@@ -1636,7 +1636,7 @@ describe('v1.ServiceManagerClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listServices = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listServices(request), expectedError);

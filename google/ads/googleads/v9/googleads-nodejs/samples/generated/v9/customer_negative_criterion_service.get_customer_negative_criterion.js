@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CustomerNegativeCriterionServiceClient();
 
-  async function getCustomerNegativeCriterion() {
+  async function callGetCustomerNegativeCriterion() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCustomerNegativeCriterion();
+  callGetCustomerNegativeCriterion();
   // [END googleads_v9_generated_CustomerNegativeCriterionService_GetCustomerNegativeCriterion_async]
 }
 

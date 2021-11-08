@@ -676,26 +676,6 @@ export class HotelGroupViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getHotelGroupView(
-      request?: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IHotelGroupView,
-        protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest|undefined, {}|undefined
-      ]>;
-  getHotelGroupView(
-      request: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IHotelGroupView,
-          protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getHotelGroupView(
-      request: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IHotelGroupView,
-          protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Hotel Group View in full detail.
  *
@@ -718,9 +698,29 @@ export class HotelGroupViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getHotelGroupView(request);
+ * @example <caption>include:samples/generated/v8/hotel_group_view_service.get_hotel_group_view.js</caption>
+ * region_tag:googleads_v8_generated_HotelGroupViewService_GetHotelGroupView_async
  */
+  getHotelGroupView(
+      request?: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IHotelGroupView,
+        protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest|undefined, {}|undefined
+      ]>;
+  getHotelGroupView(
+      request: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IHotelGroupView,
+          protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getHotelGroupView(
+      request: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IHotelGroupView,
+          protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getHotelGroupView(
       request?: protos.google.ads.googleads.v8.services.IGetHotelGroupViewRequest,
       optionsOrCallback?: CallOptions|Callback<

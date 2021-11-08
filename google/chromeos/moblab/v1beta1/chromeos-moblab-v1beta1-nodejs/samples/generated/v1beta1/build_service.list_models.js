@@ -40,7 +40,7 @@ function main(parent) {
   // Instantiates a client
   const moblabClient = new BuildServiceClient();
 
-  async function listModels() {
+  async function callListModels() {
     // Construct request
     const request = {
       parent,
@@ -53,7 +53,7 @@ function main(parent) {
     }
   }
 
-  listModels();
+  callListModels();
   // [END chromeosmoblab_v1beta1_generated_BuildService_ListModels_async]
 }
 

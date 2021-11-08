@@ -21,7 +21,7 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on
    *  which to execute the request. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
@@ -29,10 +29,10 @@ function main(name) {
   /**
    *  If this field is empty, all custom and
    *  system-defined metric descriptors are returned.
-   *  Otherwise, the [filter](https://cloud.google.com/monitoring/api/v3/filters)
+   *  Otherwise, the filter (https://cloud.google.com/monitoring/api/v3/filters)
    *  specifies which metric descriptors are to be
    *  returned. For example, the following filter matches all
-   *  [custom metrics](https://cloud.google.com/monitoring/custom-metrics):
+   *  custom metrics (https://cloud.google.com/monitoring/custom-metrics):
    *      metric.type = starts_with("custom.googleapis.com/")
    */
   // const filter = 'abc123'
@@ -53,7 +53,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new MetricServiceClient();
 
-  async function listMetricDescriptors() {
+  async function callListMetricDescriptors() {
     // Construct request
     const request = {
       name,
@@ -66,7 +66,7 @@ function main(name) {
     }
   }
 
-  listMetricDescriptors();
+  callListMetricDescriptors();
   // [END monitoring_v3_generated_MetricService_ListMetricDescriptors_async]
 }
 

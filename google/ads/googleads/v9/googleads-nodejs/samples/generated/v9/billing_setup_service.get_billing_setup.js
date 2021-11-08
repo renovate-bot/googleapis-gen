@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BillingSetupServiceClient();
 
-  async function getBillingSetup() {
+  async function callGetBillingSetup() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getBillingSetup();
+  callGetBillingSetup();
   // [END googleads_v9_generated_BillingSetupService_GetBillingSetup_async]
 }
 

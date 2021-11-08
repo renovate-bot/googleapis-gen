@@ -28,11 +28,11 @@ function main() {
    *  * "file_shares"
    *  * "labels"
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Only fields specified in update_mask are updated.
    */
-  // const instance = ''
+  // const instance = {}
 
   // Imports the Filestore library
   const {CloudFilestoreManagerClient} = require('@google-cloud/filestore').v1;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const filestoreClient = new CloudFilestoreManagerClient();
 
-  async function updateInstance() {
+  async function callUpdateInstance() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  updateInstance();
+  callUpdateInstance();
   // [END file_v1_generated_CloudFilestoreManager_UpdateInstance_async]
 }
 

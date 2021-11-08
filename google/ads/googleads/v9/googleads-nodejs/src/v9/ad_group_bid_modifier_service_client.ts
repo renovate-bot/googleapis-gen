@@ -727,26 +727,6 @@ export class AdGroupBidModifierServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupBidModifier(
-      request?: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IAdGroupBidModifier,
-        protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupBidModifier(
-      request: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IAdGroupBidModifier,
-          protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupBidModifier(
-      request: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IAdGroupBidModifier,
-          protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group bid modifier in full detail.
  *
@@ -769,9 +749,29 @@ export class AdGroupBidModifierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupBidModifier(request);
+ * @example <caption>include:samples/generated/v9/ad_group_bid_modifier_service.get_ad_group_bid_modifier.js</caption>
+ * region_tag:googleads_v9_generated_AdGroupBidModifierService_GetAdGroupBidModifier_async
  */
+  getAdGroupBidModifier(
+      request?: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IAdGroupBidModifier,
+        protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupBidModifier(
+      request: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IAdGroupBidModifier,
+          protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupBidModifier(
+      request: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IAdGroupBidModifier,
+          protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupBidModifier(
       request?: protos.google.ads.googleads.v9.services.IGetAdGroupBidModifierRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class AdGroupBidModifierServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroupBidModifier(request, options, callback);
   }
-  mutateAdGroupBidModifiers(
-      request?: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersResponse,
-        protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupBidModifiers(
-      request: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersResponse,
-          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupBidModifiers(
-      request: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersResponse,
-          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes ad group bid modifiers.
  * Operation statuses are returned.
@@ -879,9 +859,29 @@ export class AdGroupBidModifierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupBidModifiers(request);
+ * @example <caption>include:samples/generated/v9/ad_group_bid_modifier_service.mutate_ad_group_bid_modifiers.js</caption>
+ * region_tag:googleads_v9_generated_AdGroupBidModifierService_MutateAdGroupBidModifiers_async
  */
+  mutateAdGroupBidModifiers(
+      request?: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersResponse,
+        protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupBidModifiers(
+      request: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersResponse,
+          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupBidModifiers(
+      request: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersResponse,
+          protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupBidModifiers(
       request?: protos.google.ads.googleads.v9.services.IMutateAdGroupBidModifiersRequest,
       optionsOrCallback?: CallOptions|Callback<

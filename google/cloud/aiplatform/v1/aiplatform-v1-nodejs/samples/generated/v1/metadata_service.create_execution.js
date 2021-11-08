@@ -30,7 +30,7 @@ function main(parent, execution) {
   /**
    *  Required. The Execution to create.
    */
-  // const execution = ''
+  // const execution = {}
   /**
    *  The {execution} portion of the resource name with the format:
    *  `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
@@ -49,7 +49,7 @@ function main(parent, execution) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function createExecution() {
+  async function callCreateExecution() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent, execution) {
     console.log(response);
   }
 
-  createExecution();
+  callCreateExecution();
   // [END aiplatform_v1_generated_MetadataService_CreateExecution_async]
 }
 

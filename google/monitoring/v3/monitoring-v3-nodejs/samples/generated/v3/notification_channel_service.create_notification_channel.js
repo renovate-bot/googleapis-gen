@@ -21,7 +21,7 @@ function main(name, notificationChannel) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on
    *  which to execute the request. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    *  This names the container into which the channel will be
@@ -33,7 +33,7 @@ function main(name, notificationChannel) {
   /**
    *  Required. The definition of the `NotificationChannel` to create.
    */
-  // const notificationChannel = ''
+  // const notificationChannel = {}
 
   // Imports the Monitoring library
   const {NotificationChannelServiceClient} = require('@google-cloud/monitoring').v3;
@@ -41,7 +41,7 @@ function main(name, notificationChannel) {
   // Instantiates a client
   const monitoringClient = new NotificationChannelServiceClient();
 
-  async function createNotificationChannel() {
+  async function callCreateNotificationChannel() {
     // Construct request
     const request = {
       name,
@@ -53,7 +53,7 @@ function main(name, notificationChannel) {
     console.log(response);
   }
 
-  createNotificationChannel();
+  callCreateNotificationChannel();
   // [END monitoring_v3_generated_NotificationChannelService_CreateNotificationChannel_async]
 }
 

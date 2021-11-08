@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const cxClient = new IntentsClient();
 
-  async function deleteIntent() {
+  async function callDeleteIntent() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteIntent();
+  callDeleteIntent();
   // [END dialogflow_v3beta1_generated_Intents_DeleteIntent_async]
 }
 

@@ -152,7 +152,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteBucketAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteBucketAccessControl(request);
@@ -168,7 +168,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteBucketAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -195,7 +195,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteBucketAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteBucketAccessControl(request), expectedError);
@@ -212,7 +212,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.getBucketAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.getBucketAccessControl(request);
@@ -228,7 +228,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.getBucketAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -255,7 +255,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getBucketAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getBucketAccessControl(request), expectedError);
@@ -272,7 +272,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.insertBucketAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.insertBucketAccessControl(request);
@@ -288,7 +288,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.insertBucketAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -315,7 +315,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.insertBucketAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.insertBucketAccessControl(request), expectedError);
@@ -332,7 +332,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsResponse());
             client.innerApiCalls.listBucketAccessControls = stubSimpleCall(expectedResponse);
             const [response] = await client.listBucketAccessControls(request);
@@ -348,7 +348,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsResponse());
             client.innerApiCalls.listBucketAccessControls = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -375,7 +375,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listBucketAccessControls = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listBucketAccessControls(request), expectedError);
@@ -392,7 +392,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.updateBucketAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.updateBucketAccessControl(request);
@@ -408,7 +408,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.updateBucketAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -435,7 +435,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateBucketAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateBucketAccessControl(request), expectedError);
@@ -452,7 +452,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.patchBucketAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.patchBucketAccessControl(request);
@@ -468,7 +468,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.BucketAccessControl());
             client.innerApiCalls.patchBucketAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -495,7 +495,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.patchBucketAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchBucketAccessControl(request), expectedError);
@@ -512,7 +512,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteBucket = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteBucket(request);
@@ -528,7 +528,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteBucket = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -555,7 +555,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteBucket = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteBucket(request), expectedError);
@@ -572,7 +572,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.getBucket = stubSimpleCall(expectedResponse);
             const [response] = await client.getBucket(request);
@@ -588,7 +588,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.getBucket = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -615,7 +615,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getBucket = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getBucket(request), expectedError);
@@ -632,7 +632,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.insertBucket = stubSimpleCall(expectedResponse);
             const [response] = await client.insertBucket(request);
@@ -648,7 +648,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.insertBucket = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -675,7 +675,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.insertBucket = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.insertBucket(request), expectedError);
@@ -692,7 +692,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListChannelsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListChannelsResponse());
             client.innerApiCalls.listChannels = stubSimpleCall(expectedResponse);
             const [response] = await client.listChannels(request);
@@ -708,7 +708,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListChannelsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListChannelsResponse());
             client.innerApiCalls.listChannels = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -735,7 +735,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListChannelsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listChannels = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listChannels(request), expectedError);
@@ -752,7 +752,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListBucketsResponse());
             client.innerApiCalls.listBuckets = stubSimpleCall(expectedResponse);
             const [response] = await client.listBuckets(request);
@@ -768,7 +768,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListBucketsResponse());
             client.innerApiCalls.listBuckets = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -795,7 +795,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listBuckets = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listBuckets(request), expectedError);
@@ -812,7 +812,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.LockRetentionPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.lockBucketRetentionPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.lockBucketRetentionPolicy(request);
@@ -828,7 +828,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.LockRetentionPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.lockBucketRetentionPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -855,7 +855,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.LockRetentionPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.lockBucketRetentionPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.lockBucketRetentionPolicy(request), expectedError);
@@ -872,7 +872,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.getBucketIamPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.getBucketIamPolicy(request);
@@ -888,7 +888,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.getBucketIamPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -915,7 +915,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getBucketIamPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getBucketIamPolicy(request), expectedError);
@@ -932,7 +932,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.setBucketIamPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.setBucketIamPolicy(request);
@@ -948,7 +948,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.setBucketIamPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -975,7 +975,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.setBucketIamPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.setBucketIamPolicy(request), expectedError);
@@ -992,7 +992,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsResponse());
             client.innerApiCalls.testBucketIamPermissions = stubSimpleCall(expectedResponse);
             const [response] = await client.testBucketIamPermissions(request);
@@ -1008,7 +1008,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsResponse());
             client.innerApiCalls.testBucketIamPermissions = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1035,7 +1035,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.testBucketIamPermissions = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.testBucketIamPermissions(request), expectedError);
@@ -1052,7 +1052,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.patchBucket = stubSimpleCall(expectedResponse);
             const [response] = await client.patchBucket(request);
@@ -1068,7 +1068,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.patchBucket = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1095,7 +1095,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.patchBucket = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchBucket(request), expectedError);
@@ -1112,7 +1112,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.updateBucket = stubSimpleCall(expectedResponse);
             const [response] = await client.updateBucket(request);
@@ -1128,7 +1128,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Bucket());
             client.innerApiCalls.updateBucket = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1155,7 +1155,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateBucket = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateBucket(request), expectedError);
@@ -1172,7 +1172,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StopChannelRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.stopChannel = stubSimpleCall(expectedResponse);
             const [response] = await client.stopChannel(request);
@@ -1188,7 +1188,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StopChannelRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.stopChannel = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1215,7 +1215,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StopChannelRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.stopChannel = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.stopChannel(request), expectedError);
@@ -1232,7 +1232,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteDefaultObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteDefaultObjectAccessControl(request);
@@ -1248,7 +1248,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteDefaultObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1275,7 +1275,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteDefaultObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteDefaultObjectAccessControl(request), expectedError);
@@ -1292,7 +1292,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.getDefaultObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.getDefaultObjectAccessControl(request);
@@ -1308,7 +1308,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.getDefaultObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1335,7 +1335,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getDefaultObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getDefaultObjectAccessControl(request), expectedError);
@@ -1352,7 +1352,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.insertDefaultObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.insertDefaultObjectAccessControl(request);
@@ -1368,7 +1368,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.insertDefaultObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1395,7 +1395,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.insertDefaultObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.insertDefaultObjectAccessControl(request), expectedError);
@@ -1412,7 +1412,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListDefaultObjectAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsResponse());
             client.innerApiCalls.listDefaultObjectAccessControls = stubSimpleCall(expectedResponse);
             const [response] = await client.listDefaultObjectAccessControls(request);
@@ -1428,7 +1428,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListDefaultObjectAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsResponse());
             client.innerApiCalls.listDefaultObjectAccessControls = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1455,7 +1455,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListDefaultObjectAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listDefaultObjectAccessControls = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listDefaultObjectAccessControls(request), expectedError);
@@ -1472,7 +1472,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.patchDefaultObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.patchDefaultObjectAccessControl(request);
@@ -1488,7 +1488,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.patchDefaultObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1515,7 +1515,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.patchDefaultObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchDefaultObjectAccessControl(request), expectedError);
@@ -1532,7 +1532,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.updateDefaultObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.updateDefaultObjectAccessControl(request);
@@ -1548,7 +1548,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.updateDefaultObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1575,7 +1575,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateDefaultObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateDefaultObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateDefaultObjectAccessControl(request), expectedError);
@@ -1592,7 +1592,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteNotification = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteNotification(request);
@@ -1608,7 +1608,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteNotification = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1635,7 +1635,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteNotification = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteNotification(request), expectedError);
@@ -1652,7 +1652,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Notification());
             client.innerApiCalls.getNotification = stubSimpleCall(expectedResponse);
             const [response] = await client.getNotification(request);
@@ -1668,7 +1668,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Notification());
             client.innerApiCalls.getNotification = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1695,7 +1695,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getNotification = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getNotification(request), expectedError);
@@ -1712,7 +1712,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Notification());
             client.innerApiCalls.insertNotification = stubSimpleCall(expectedResponse);
             const [response] = await client.insertNotification(request);
@@ -1728,7 +1728,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Notification());
             client.innerApiCalls.insertNotification = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1755,7 +1755,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.insertNotification = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.insertNotification(request), expectedError);
@@ -1772,7 +1772,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListNotificationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListNotificationsResponse());
             client.innerApiCalls.listNotifications = stubSimpleCall(expectedResponse);
             const [response] = await client.listNotifications(request);
@@ -1788,7 +1788,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListNotificationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListNotificationsResponse());
             client.innerApiCalls.listNotifications = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1815,7 +1815,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListNotificationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listNotifications = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listNotifications(request), expectedError);
@@ -1832,7 +1832,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteObjectAccessControl(request);
@@ -1848,7 +1848,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1875,7 +1875,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteObjectAccessControl(request), expectedError);
@@ -1892,7 +1892,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.getObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.getObjectAccessControl(request);
@@ -1908,7 +1908,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.getObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1935,7 +1935,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getObjectAccessControl(request), expectedError);
@@ -1952,7 +1952,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.insertObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.insertObjectAccessControl(request);
@@ -1968,7 +1968,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.insertObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -1995,7 +1995,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.insertObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.insertObjectAccessControl(request), expectedError);
@@ -2012,7 +2012,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsResponse());
             client.innerApiCalls.listObjectAccessControls = stubSimpleCall(expectedResponse);
             const [response] = await client.listObjectAccessControls(request);
@@ -2028,7 +2028,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsResponse());
             client.innerApiCalls.listObjectAccessControls = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2055,7 +2055,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listObjectAccessControls = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listObjectAccessControls(request), expectedError);
@@ -2072,7 +2072,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.patchObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.patchObjectAccessControl(request);
@@ -2088,7 +2088,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.patchObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2115,7 +2115,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.patchObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchObjectAccessControl(request), expectedError);
@@ -2132,7 +2132,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.updateObjectAccessControl = stubSimpleCall(expectedResponse);
             const [response] = await client.updateObjectAccessControl(request);
@@ -2148,7 +2148,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ObjectAccessControl());
             client.innerApiCalls.updateObjectAccessControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2175,7 +2175,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectAccessControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateObjectAccessControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateObjectAccessControl(request), expectedError);
@@ -2192,7 +2192,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ComposeObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.composeObject = stubSimpleCall(expectedResponse);
             const [response] = await client.composeObject(request);
@@ -2208,7 +2208,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ComposeObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.composeObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2235,7 +2235,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ComposeObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.composeObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.composeObject(request), expectedError);
@@ -2252,7 +2252,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CopyObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.copyObject = stubSimpleCall(expectedResponse);
             const [response] = await client.copyObject(request);
@@ -2268,7 +2268,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CopyObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.copyObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2295,7 +2295,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CopyObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.copyObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.copyObject(request), expectedError);
@@ -2312,7 +2312,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteObject = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteObject(request);
@@ -2328,7 +2328,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2355,7 +2355,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteObject(request), expectedError);
@@ -2372,7 +2372,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.getObject = stubSimpleCall(expectedResponse);
             const [response] = await client.getObject(request);
@@ -2388,7 +2388,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.getObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2415,7 +2415,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getObject(request), expectedError);
@@ -2432,7 +2432,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListObjectsResponse());
             client.innerApiCalls.listObjects = stubSimpleCall(expectedResponse);
             const [response] = await client.listObjects(request);
@@ -2448,7 +2448,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListObjectsResponse());
             client.innerApiCalls.listObjects = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2475,7 +2475,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listObjects = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listObjects(request), expectedError);
@@ -2492,7 +2492,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.RewriteObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.RewriteResponse());
             client.innerApiCalls.rewriteObject = stubSimpleCall(expectedResponse);
             const [response] = await client.rewriteObject(request);
@@ -2508,7 +2508,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.RewriteObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.RewriteResponse());
             client.innerApiCalls.rewriteObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2535,7 +2535,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.RewriteObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.rewriteObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.rewriteObject(request), expectedError);
@@ -2552,7 +2552,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteResponse());
             client.innerApiCalls.startResumableWrite = stubSimpleCall(expectedResponse);
             const [response] = await client.startResumableWrite(request);
@@ -2568,7 +2568,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteResponse());
             client.innerApiCalls.startResumableWrite = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2595,7 +2595,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.startResumableWrite = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.startResumableWrite(request), expectedError);
@@ -2612,7 +2612,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusResponse());
             client.innerApiCalls.queryWriteStatus = stubSimpleCall(expectedResponse);
             const [response] = await client.queryWriteStatus(request);
@@ -2628,7 +2628,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusResponse());
             client.innerApiCalls.queryWriteStatus = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2655,7 +2655,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.queryWriteStatus = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.queryWriteStatus(request), expectedError);
@@ -2672,7 +2672,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.patchObject = stubSimpleCall(expectedResponse);
             const [response] = await client.patchObject(request);
@@ -2688,7 +2688,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.patchObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2715,7 +2715,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.patchObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchObject(request), expectedError);
@@ -2732,7 +2732,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.updateObject = stubSimpleCall(expectedResponse);
             const [response] = await client.updateObject(request);
@@ -2748,7 +2748,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
             client.innerApiCalls.updateObject = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2775,7 +2775,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateObject = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateObject(request), expectedError);
@@ -2792,7 +2792,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.getObjectIamPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.getObjectIamPolicy(request);
@@ -2808,7 +2808,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.getObjectIamPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2835,7 +2835,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getObjectIamPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getObjectIamPolicy(request), expectedError);
@@ -2852,7 +2852,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.setObjectIamPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.setObjectIamPolicy(request);
@@ -2868,7 +2868,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.Policy());
             client.innerApiCalls.setObjectIamPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2895,7 +2895,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.setObjectIamPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.setObjectIamPolicy(request), expectedError);
@@ -2912,7 +2912,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsResponse());
             client.innerApiCalls.testObjectIamPermissions = stubSimpleCall(expectedResponse);
             const [response] = await client.testObjectIamPermissions(request);
@@ -2928,7 +2928,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsResponse());
             client.innerApiCalls.testObjectIamPermissions = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2955,7 +2955,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.testObjectIamPermissions = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.testObjectIamPermissions(request), expectedError);
@@ -2972,7 +2972,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.WatchAllObjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Channel());
             client.innerApiCalls.watchAllObjects = stubSimpleCall(expectedResponse);
             const [response] = await client.watchAllObjects(request);
@@ -2988,7 +2988,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.WatchAllObjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Channel());
             client.innerApiCalls.watchAllObjects = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3015,7 +3015,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.WatchAllObjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.watchAllObjects = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.watchAllObjects(request), expectedError);
@@ -3032,7 +3032,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetProjectServiceAccountRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ServiceAccount());
             client.innerApiCalls.getServiceAccount = stubSimpleCall(expectedResponse);
             const [response] = await client.getServiceAccount(request);
@@ -3048,7 +3048,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetProjectServiceAccountRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ServiceAccount());
             client.innerApiCalls.getServiceAccount = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3075,7 +3075,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetProjectServiceAccountRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getServiceAccount = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getServiceAccount(request), expectedError);
@@ -3092,7 +3092,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyResponse());
             client.innerApiCalls.createHmacKey = stubSimpleCall(expectedResponse);
             const [response] = await client.createHmacKey(request);
@@ -3108,7 +3108,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyResponse());
             client.innerApiCalls.createHmacKey = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3135,7 +3135,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createHmacKey = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createHmacKey(request), expectedError);
@@ -3152,7 +3152,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteHmacKey = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteHmacKey(request);
@@ -3168,7 +3168,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteHmacKey = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3195,7 +3195,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteHmacKey = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteHmacKey(request), expectedError);
@@ -3212,7 +3212,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.HmacKeyMetadata());
             client.innerApiCalls.getHmacKey = stubSimpleCall(expectedResponse);
             const [response] = await client.getHmacKey(request);
@@ -3228,7 +3228,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.HmacKeyMetadata());
             client.innerApiCalls.getHmacKey = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3255,7 +3255,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getHmacKey = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getHmacKey(request), expectedError);
@@ -3272,7 +3272,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysResponse());
             client.innerApiCalls.listHmacKeys = stubSimpleCall(expectedResponse);
             const [response] = await client.listHmacKeys(request);
@@ -3288,7 +3288,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysResponse());
             client.innerApiCalls.listHmacKeys = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3315,7 +3315,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listHmacKeys = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listHmacKeys(request), expectedError);
@@ -3332,7 +3332,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.HmacKeyMetadata());
             client.innerApiCalls.updateHmacKey = stubSimpleCall(expectedResponse);
             const [response] = await client.updateHmacKey(request);
@@ -3348,7 +3348,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.HmacKeyMetadata());
             client.innerApiCalls.updateHmacKey = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -3375,7 +3375,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateHmacKeyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateHmacKey = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateHmacKey(request), expectedError);
@@ -3392,7 +3392,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectMediaRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.GetObjectMediaResponse());
             client.innerApiCalls.getObjectMedia = stubServerStreamingCall(expectedResponse);
             const stream = client.getObjectMedia(request);
@@ -3417,7 +3417,7 @@ describe('v1.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectMediaRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getObjectMedia = stubServerStreamingCall(undefined, expectedError);
             const stream = client.getObjectMedia(request);

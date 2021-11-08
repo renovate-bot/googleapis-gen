@@ -33,7 +33,7 @@ function main(parent, endpointPolicyId, endpointPolicy) {
   /**
    *  Required. EndpointPolicy resource to be created.
    */
-  // const endpointPolicy = ''
+  // const endpointPolicy = {}
 
   // Imports the Networkservices library
   const {NetworkServicesClient} = require('@google-cloud/networkservices').v1beta1;
@@ -41,7 +41,7 @@ function main(parent, endpointPolicyId, endpointPolicy) {
   // Instantiates a client
   const networkservicesClient = new NetworkServicesClient();
 
-  async function createEndpointPolicy() {
+  async function callCreateEndpointPolicy() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, endpointPolicyId, endpointPolicy) {
     console.log(response);
   }
 
-  createEndpointPolicy();
+  callCreateEndpointPolicy();
   // [END networkservices_v1beta1_generated_NetworkServices_CreateEndpointPolicy_async]
 }
 

@@ -37,7 +37,7 @@ function main(instanceIdToken, inventoryChecksum) {
    *  the inventory has changed since the last report, or if instructed by the
    *  service to provide full inventory.
    */
-  // const inventory = ''
+  // const inventory = {}
 
   // Imports the Agentendpoint library
   const {AgentEndpointServiceClient} = require('agentendpoint').v1;
@@ -45,7 +45,7 @@ function main(instanceIdToken, inventoryChecksum) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function reportInventory() {
+  async function callReportInventory() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -57,7 +57,7 @@ function main(instanceIdToken, inventoryChecksum) {
     console.log(response);
   }
 
-  reportInventory();
+  callReportInventory();
   // [END osconfig_v1_generated_AgentEndpointService_ReportInventory_async]
 }
 

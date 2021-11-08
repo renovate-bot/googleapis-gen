@@ -41,50 +41,50 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   /**
    *  Apply a predefined set of access controls to the destination object.
    */
-  // const destinationPredefinedAcl = ''
+  // const destinationPredefinedAcl = {}
   /**
    *  Makes the operation conditional on whether the object's current generation
    *  matches the given value. Setting to 0 makes the operation succeed only if
    *  there are no live versions of the object.
    */
-  // const ifGenerationMatch = ''
+  // const ifGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current generation
    *  does not match the given value. If no live object exists, the precondition
    *  fails. Setting to 0 makes the operation succeed only if there is a live
    *  version of the object.
    */
-  // const ifGenerationNotMatch = ''
+  // const ifGenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the destination object's current
    *  metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the destination object's current
    *  metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  generation matches the given value.
    */
-  // const ifSourceGenerationMatch = ''
+  // const ifSourceGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  generation does not match the given value.
    */
-  // const ifSourceGenerationNotMatch = ''
+  // const ifSourceGenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  metageneration matches the given value.
    */
-  // const ifSourceMetagenerationMatch = ''
+  // const ifSourceMetagenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  metageneration does not match the given value.
    */
-  // const ifSourceMetagenerationNotMatch = ''
+  // const ifSourceMetagenerationNotMatch = {}
   /**
    *  The maximum number of bytes that will be rewritten per rewrite request.
    *  Most callers
@@ -101,7 +101,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
    *  object resource specifies the `acl` property, when it defaults
    *  to `full`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  Include this field (from the previous rewrite response) on each rewrite
    *  request after the first one, until the rewrite response 'done' flag is
@@ -126,7 +126,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   /**
    *  Properties of the destination, post-rewrite object.
    */
-  // const object = ''
+  // const object = {}
   /**
    *  The algorithm used to encrypt the source object, if any.
    */
@@ -142,11 +142,11 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -154,7 +154,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function rewriteObject() {
+  async function callRewriteObject() {
     // Construct request
     const request = {
       destinationBucket,
@@ -168,7 +168,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
     console.log(response);
   }
 
-  rewriteObject();
+  callRewriteObject();
   // [END storage_v1_generated_Storage_RewriteObject_async]
 }
 

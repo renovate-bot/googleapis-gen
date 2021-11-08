@@ -37,8 +37,8 @@ function main(parent) {
   /**
    *  Optional. A token identifying a page of results for the server to return.
    *  Typically obtained by
-   *  [ListAnnotatedDatasetsResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token] of the previous
-   *  [DataLabelingService.ListAnnotatedDatasets] call.
+   *  ListAnnotatedDatasetsResponse.next_page_token google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse.next_page_token  of the previous
+   *  DataLabelingService.ListAnnotatedDatasets  call.
    *  Return first page if empty.
    */
   // const pageToken = 'abc123'
@@ -49,7 +49,7 @@ function main(parent) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function listAnnotatedDatasets() {
+  async function callListAnnotatedDatasets() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent) {
     }
   }
 
-  listAnnotatedDatasets();
+  callListAnnotatedDatasets();
   // [END datalabeling_v1beta1_generated_DataLabelingService_ListAnnotatedDatasets_async]
 }
 

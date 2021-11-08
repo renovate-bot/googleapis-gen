@@ -21,10 +21,10 @@ function main(gcpUserAccessBinding, updateMask) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. [GcpUserAccessBinding]
-   *  [google.identity.accesscontextmanager.v1.GcpUserAccessBinding]
+   *  Required. GcpUserAccessBinding 
+   *  google.identity.accesscontextmanager.v1.GcpUserAccessBinding 
    */
-  // const gcpUserAccessBinding = ''
+  // const gcpUserAccessBinding = {}
   /**
    *  Required. Only the fields specified in this mask are updated. Because name and
    *  group_key cannot be changed, update_mask is required and must always be:
@@ -32,7 +32,7 @@ function main(gcpUserAccessBinding, updateMask) {
    *  paths: "access_levels"
    *  }
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Accesscontextmanager library
   const {AccessContextManagerClient} = require('@google-cloud/access-context-manager').v1;
@@ -40,7 +40,7 @@ function main(gcpUserAccessBinding, updateMask) {
   // Instantiates a client
   const accesscontextmanagerClient = new AccessContextManagerClient();
 
-  async function updateGcpUserAccessBinding() {
+  async function callUpdateGcpUserAccessBinding() {
     // Construct request
     const request = {
       gcpUserAccessBinding,
@@ -53,7 +53,7 @@ function main(gcpUserAccessBinding, updateMask) {
     console.log(response);
   }
 
-  updateGcpUserAccessBinding();
+  callUpdateGcpUserAccessBinding();
   // [END accesscontextmanager_v1_generated_AccessContextManager_UpdateGcpUserAccessBinding_async]
 }
 

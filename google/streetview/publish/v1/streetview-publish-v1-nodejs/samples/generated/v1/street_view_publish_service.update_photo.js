@@ -21,15 +21,15 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. [Photo][google.streetview.publish.v1.Photo] object containing the
+   *  Required. Photo google.streetview.publish.v1.Photo  object containing the
    *  new metadata.
    */
-  // const photo = ''
+  // const photo = {}
   /**
    *  Mask that identifies fields on the photo metadata to update.
-   *  If not present, the old [Photo][google.streetview.publish.v1.Photo]
+   *  If not present, the old Photo google.streetview.publish.v1.Photo 
    *  metadata is entirely replaced with the
-   *  new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
+   *  new Photo google.streetview.publish.v1.Photo  metadata in this request.
    *  The update fails if invalid fields are specified. Multiple fields can be
    *  specified in a comma-delimited list.
    *  The following fields are valid:
@@ -42,14 +42,14 @@ function main() {
    *  * `connections`
    *  * `places`
    *  <aside class="note"><b>Note:</b>  When
-   *  [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+   *  updateMask google.streetview.publish.v1.UpdatePhotoRequest.update_mask 
    *  contains repeated fields, the entire set of repeated values get replaced
    *  with the new contents. For example, if
-   *  [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+   *  updateMask google.streetview.publish.v1.UpdatePhotoRequest.update_mask 
    *  contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
    *  all connections are removed.</aside>
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Publish library
   const {StreetViewPublishServiceClient} = require('publish').v1;
@@ -57,7 +57,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function updatePhoto() {
+  async function callUpdatePhoto() {
     // Construct request
     const request = {
     };
@@ -67,7 +67,7 @@ function main() {
     console.log(response);
   }
 
-  updatePhoto();
+  callUpdatePhoto();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_UpdatePhoto_async]
 }
 

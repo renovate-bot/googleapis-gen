@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdGroupAdLabelServiceClient();
 
-  async function getAdGroupAdLabel() {
+  async function callGetAdGroupAdLabel() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdGroupAdLabel();
+  callGetAdGroupAdLabel();
   // [END googleads_v9_generated_AdGroupAdLabelService_GetAdGroupAdLabel_async]
 }
 

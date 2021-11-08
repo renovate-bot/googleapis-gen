@@ -29,11 +29,11 @@ function main() {
    *  A Version containing the updated resource. Only fields set in the field
    *  mask will be updated.
    */
-  // const version = ''
+  // const version = {}
   /**
    *  Standard field mask for the set of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Appengine library
   const {VersionsClient} = require('@google-cloud/appengine-admin').v1;
@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new VersionsClient();
 
-  async function updateVersion() {
+  async function callUpdateVersion() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  updateVersion();
+  callUpdateVersion();
   // [END appengine_v1_generated_Versions_UpdateVersion_async]
 }
 

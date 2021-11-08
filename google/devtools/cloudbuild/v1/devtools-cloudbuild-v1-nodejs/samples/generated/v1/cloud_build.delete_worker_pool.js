@@ -48,7 +48,7 @@ function main(name) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function deleteWorkerPool() {
+  async function callDeleteWorkerPool() {
     // Construct request
     const request = {
       name,
@@ -60,7 +60,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteWorkerPool();
+  callDeleteWorkerPool();
   // [END cloudbuild_v1_generated_CloudBuild_DeleteWorkerPool_async]
 }
 

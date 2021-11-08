@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new SmartCampaignSettingServiceClient();
 
-  async function getSmartCampaignSetting() {
+  async function callGetSmartCampaignSetting() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getSmartCampaignSetting();
+  callGetSmartCampaignSetting();
   // [END googleads_v8_generated_SmartCampaignSettingService_GetSmartCampaignSetting_async]
 }
 

@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const schedulerClient = new CloudSchedulerClient();
 
-  async function resumeJob() {
+  async function callResumeJob() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  resumeJob();
+  callResumeJob();
   // [END cloudscheduler_v1beta1_generated_CloudScheduler_ResumeJob_async]
 }
 

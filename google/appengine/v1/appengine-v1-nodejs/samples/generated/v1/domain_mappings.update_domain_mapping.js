@@ -29,11 +29,11 @@ function main() {
    *  A domain mapping containing the updated resource. Only fields set
    *  in the field mask will be updated.
    */
-  // const domainMapping = ''
+  // const domainMapping = {}
   /**
    *  Standard field mask for the set of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Appengine library
   const {DomainMappingsClient} = require('@google-cloud/appengine-admin').v1;
@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new DomainMappingsClient();
 
-  async function updateDomainMapping() {
+  async function callUpdateDomainMapping() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  updateDomainMapping();
+  callUpdateDomainMapping();
   // [END appengine_v1_generated_DomainMappings_UpdateDomainMapping_async]
 }
 

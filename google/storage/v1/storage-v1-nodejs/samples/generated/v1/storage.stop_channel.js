@@ -23,11 +23,11 @@ function main() {
   /**
    *  The channel to be stopped.
    */
-  // const channel = ''
+  // const channel = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function stopChannel() {
+  async function callStopChannel() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  stopChannel();
+  callStopChannel();
   // [END storage_v1_generated_Storage_StopChannel_async]
 }
 

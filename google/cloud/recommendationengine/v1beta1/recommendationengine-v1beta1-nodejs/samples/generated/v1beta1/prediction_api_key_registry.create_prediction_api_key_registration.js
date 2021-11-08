@@ -28,7 +28,7 @@ function main(parent, predictionApiKeyRegistration) {
   /**
    *  Required. The prediction API key registration.
    */
-  // const predictionApiKeyRegistration = ''
+  // const predictionApiKeyRegistration = {}
 
   // Imports the Recommendationengine library
   const {PredictionApiKeyRegistryClient} = require('recommendationengine').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, predictionApiKeyRegistration) {
   // Instantiates a client
   const recommendationengineClient = new PredictionApiKeyRegistryClient();
 
-  async function createPredictionApiKeyRegistration() {
+  async function callCreatePredictionApiKeyRegistration() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, predictionApiKeyRegistration) {
     console.log(response);
   }
 
-  createPredictionApiKeyRegistration();
+  callCreatePredictionApiKeyRegistration();
   // [END recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_CreatePredictionApiKeyRegistration_async]
 }
 

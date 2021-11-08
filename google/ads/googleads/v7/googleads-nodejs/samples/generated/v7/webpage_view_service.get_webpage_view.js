@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new WebpageViewServiceClient();
 
-  async function getWebpageView() {
+  async function callGetWebpageView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getWebpageView();
+  callGetWebpageView();
   // [END googleads_v7_generated_WebpageViewService_GetWebpageView_async]
 }
 

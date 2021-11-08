@@ -27,11 +27,11 @@ function main(spoke) {
    *  the full request. A field will be overwritten if it is in the mask. If the
    *  user does not provide a mask then all fields will be overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. The state that the Spoke should be in after the update.
    */
-  // const spoke = ''
+  // const spoke = {}
   /**
    *  Optional. An optional request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -53,7 +53,7 @@ function main(spoke) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function updateSpoke() {
+  async function callUpdateSpoke() {
     // Construct request
     const request = {
       spoke,
@@ -65,7 +65,7 @@ function main(spoke) {
     console.log(response);
   }
 
-  updateSpoke();
+  callUpdateSpoke();
   // [END networkconnectivity_v1alpha1_generated_HubService_UpdateSpoke_async]
 }
 

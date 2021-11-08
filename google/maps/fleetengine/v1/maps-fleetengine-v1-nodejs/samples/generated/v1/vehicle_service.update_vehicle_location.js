@@ -23,7 +23,7 @@ function main(name, currentLocation) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format
    *  "providers/{provider}/vehicles/{vehicle}.
@@ -36,12 +36,12 @@ function main(name, currentLocation) {
    *  Required. The location to update to.  The last_location and update_time
    *  subfields are required.
    */
-  // const currentLocation = ''
+  // const currentLocation = {}
   /**
    *  Set current vehicle state to either ONLINE or OFFLINE;
    *  if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
    */
-  // const currentState = ''
+  // const currentState = {}
 
   // Imports the Fleetengine library
   const {VehicleServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -49,7 +49,7 @@ function main(name, currentLocation) {
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function updateVehicleLocation() {
+  async function callUpdateVehicleLocation() {
     // Construct request
     const request = {
       name,
@@ -61,7 +61,7 @@ function main(name, currentLocation) {
     console.log(response);
   }
 
-  updateVehicleLocation();
+  callUpdateVehicleLocation();
   // [END fleetengine_v1_generated_VehicleService_UpdateVehicleLocation_async]
 }
 

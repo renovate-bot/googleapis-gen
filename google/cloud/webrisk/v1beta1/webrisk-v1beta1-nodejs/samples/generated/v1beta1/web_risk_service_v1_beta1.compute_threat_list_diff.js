@@ -23,7 +23,7 @@ function main(threatType, constraints) {
   /**
    *  The ThreatList to update.
    */
-  // const threatType = ''
+  // const threatType = {}
   /**
    *  The current version token of the client for the requested list (the
    *  client version that was received from the last successful diff).
@@ -32,7 +32,7 @@ function main(threatType, constraints) {
   /**
    *  Required. The constraints associated with this request.
    */
-  // const constraints = ''
+  // const constraints = {}
 
   // Imports the Webrisk library
   const {WebRiskServiceV1Beta1Client} = require('@google-cloud/web-risk').v1beta1;
@@ -40,7 +40,7 @@ function main(threatType, constraints) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceV1Beta1Client();
 
-  async function computeThreatListDiff() {
+  async function callComputeThreatListDiff() {
     // Construct request
     const request = {
       threatType,
@@ -52,7 +52,7 @@ function main(threatType, constraints) {
     console.log(response);
   }
 
-  computeThreatListDiff();
+  callComputeThreatListDiff();
   // [END webrisk_v1beta1_generated_WebRiskServiceV1Beta1_ComputeThreatListDiff_async]
 }
 

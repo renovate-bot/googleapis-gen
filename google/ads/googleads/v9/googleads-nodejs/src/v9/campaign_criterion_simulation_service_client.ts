@@ -727,26 +727,6 @@ export class CampaignCriterionSimulationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignCriterionSimulation(
-      request?: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICampaignCriterionSimulation,
-        protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest|undefined, {}|undefined
-      ]>;
-  getCampaignCriterionSimulation(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignCriterionSimulation,
-          protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignCriterionSimulation(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignCriterionSimulation,
-          protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign criterion simulation in full detail.
  *
@@ -769,9 +749,29 @@ export class CampaignCriterionSimulationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignCriterionSimulation(request);
+ * @example <caption>include:samples/generated/v9/campaign_criterion_simulation_service.get_campaign_criterion_simulation.js</caption>
+ * region_tag:googleads_v9_generated_CampaignCriterionSimulationService_GetCampaignCriterionSimulation_async
  */
+  getCampaignCriterionSimulation(
+      request?: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICampaignCriterionSimulation,
+        protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest|undefined, {}|undefined
+      ]>;
+  getCampaignCriterionSimulation(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignCriterionSimulation,
+          protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignCriterionSimulation(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignCriterionSimulation,
+          protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignCriterionSimulation(
       request?: protos.google.ads.googleads.v9.services.IGetCampaignCriterionSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<

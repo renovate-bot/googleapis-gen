@@ -363,6 +363,25 @@ export class ServiceManagerClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a managed service. Authentication is required unless the service is
+ * public.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.serviceName
+ *   Required. The name of the service.  See the `ServiceManager` overview for naming
+ *   requirements.  For example: `example.googleapis.com`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ManagedService]{@link google.api.servicemanagement.v1.ManagedService}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/service_manager.get_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_GetService_async
+ */
   getService(
       request?: protos.google.api.servicemanagement.v1.IGetServiceRequest,
       options?: CallOptions):
@@ -383,25 +402,6 @@ export class ServiceManagerClient {
           protos.google.api.servicemanagement.v1.IManagedService,
           protos.google.api.servicemanagement.v1.IGetServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a managed service. Authentication is required unless the service is
- * public.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.serviceName
- *   Required. The name of the service.  See the `ServiceManager` overview for naming
- *   requirements.  For example: `example.googleapis.com`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ManagedService]{@link google.api.servicemanagement.v1.ManagedService}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getService(request);
- */
   getService(
       request?: protos.google.api.servicemanagement.v1.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -436,26 +436,6 @@ export class ServiceManagerClient {
     this.initialize();
     return this.innerApiCalls.getService(request, options, callback);
   }
-  getServiceConfig(
-      request?: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IService,
-        protos.google.api.servicemanagement.v1.IGetServiceConfigRequest|undefined, {}|undefined
-      ]>;
-  getServiceConfig(
-      request: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.IService,
-          protos.google.api.servicemanagement.v1.IGetServiceConfigRequest|null|undefined,
-          {}|null|undefined>): void;
-  getServiceConfig(
-      request: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
-      callback: Callback<
-          protos.google.api.IService,
-          protos.google.api.servicemanagement.v1.IGetServiceConfigRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a service configuration (version) for a managed service.
  *
@@ -479,9 +459,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getServiceConfig(request);
+ * @example <caption>include:samples/generated/v1/service_manager.get_service_config.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_GetServiceConfig_async
  */
+  getServiceConfig(
+      request?: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IService,
+        protos.google.api.servicemanagement.v1.IGetServiceConfigRequest|undefined, {}|undefined
+      ]>;
+  getServiceConfig(
+      request: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.IService,
+          protos.google.api.servicemanagement.v1.IGetServiceConfigRequest|null|undefined,
+          {}|null|undefined>): void;
+  getServiceConfig(
+      request: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
+      callback: Callback<
+          protos.google.api.IService,
+          protos.google.api.servicemanagement.v1.IGetServiceConfigRequest|null|undefined,
+          {}|null|undefined>): void;
   getServiceConfig(
       request?: protos.google.api.servicemanagement.v1.IGetServiceConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -516,26 +516,6 @@ export class ServiceManagerClient {
     this.initialize();
     return this.innerApiCalls.getServiceConfig(request, options, callback);
   }
-  createServiceConfig(
-      request?: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IService,
-        protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest|undefined, {}|undefined
-      ]>;
-  createServiceConfig(
-      request: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.IService,
-          protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest|null|undefined,
-          {}|null|undefined>): void;
-  createServiceConfig(
-      request: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
-      callback: Callback<
-          protos.google.api.IService,
-          protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new service configuration (version) for a managed service.
  * This method only stores the service configuration. To roll out the service
@@ -560,9 +540,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createServiceConfig(request);
+ * @example <caption>include:samples/generated/v1/service_manager.create_service_config.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_CreateServiceConfig_async
  */
+  createServiceConfig(
+      request?: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IService,
+        protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest|undefined, {}|undefined
+      ]>;
+  createServiceConfig(
+      request: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.IService,
+          protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest|null|undefined,
+          {}|null|undefined>): void;
+  createServiceConfig(
+      request: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
+      callback: Callback<
+          protos.google.api.IService,
+          protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest|null|undefined,
+          {}|null|undefined>): void;
   createServiceConfig(
       request?: protos.google.api.servicemanagement.v1.ICreateServiceConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -597,6 +597,26 @@ export class ServiceManagerClient {
     this.initialize();
     return this.innerApiCalls.createServiceConfig(request, options, callback);
   }
+/**
+ * Gets a service configuration {@link google.api.servicemanagement.v1.Rollout|rollout}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.serviceName
+ *   Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+ *   for naming requirements.  For example: `example.googleapis.com`.
+ * @param {string} request.rolloutId
+ *   Required. The id of the rollout resource.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Rollout]{@link google.api.servicemanagement.v1.Rollout}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/service_manager.get_service_rollout.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_GetServiceRollout_async
+ */
   getServiceRollout(
       request?: protos.google.api.servicemanagement.v1.IGetServiceRolloutRequest,
       options?: CallOptions):
@@ -617,26 +637,6 @@ export class ServiceManagerClient {
           protos.google.api.servicemanagement.v1.IRollout,
           protos.google.api.servicemanagement.v1.IGetServiceRolloutRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a service configuration {@link google.api.servicemanagement.v1.Rollout|rollout}.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.serviceName
- *   Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
- *   for naming requirements.  For example: `example.googleapis.com`.
- * @param {string} request.rolloutId
- *   Required. The id of the rollout resource.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Rollout]{@link google.api.servicemanagement.v1.Rollout}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getServiceRollout(request);
- */
   getServiceRollout(
       request?: protos.google.api.servicemanagement.v1.IGetServiceRolloutRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -671,26 +671,6 @@ export class ServiceManagerClient {
     this.initialize();
     return this.innerApiCalls.getServiceRollout(request, options, callback);
   }
-  generateConfigReport(
-      request?: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.servicemanagement.v1.IGenerateConfigReportResponse,
-        protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest|undefined, {}|undefined
-      ]>;
-  generateConfigReport(
-      request: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.servicemanagement.v1.IGenerateConfigReportResponse,
-          protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateConfigReport(
-      request: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
-      callback: Callback<
-          protos.google.api.servicemanagement.v1.IGenerateConfigReportResponse,
-          protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates and returns a report (errors, warnings and changes from
  * existing configurations) associated with
@@ -725,9 +705,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateConfigReport(request);
+ * @example <caption>include:samples/generated/v1/service_manager.generate_config_report.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_GenerateConfigReport_async
  */
+  generateConfigReport(
+      request?: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.servicemanagement.v1.IGenerateConfigReportResponse,
+        protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest|undefined, {}|undefined
+      ]>;
+  generateConfigReport(
+      request: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.servicemanagement.v1.IGenerateConfigReportResponse,
+          protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConfigReport(
+      request: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
+      callback: Callback<
+          protos.google.api.servicemanagement.v1.IGenerateConfigReportResponse,
+          protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest|null|undefined,
+          {}|null|undefined>): void;
   generateConfigReport(
       request?: protos.google.api.servicemanagement.v1.IGenerateConfigReportRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -752,10 +752,34 @@ export class ServiceManagerClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.generateConfigReport(request, options, callback);
   }
 
+/**
+ * Creates a new managed service.
+ * Please note one producer project can own no more than 20 services.
+ *
+ * Operation<response: ManagedService>
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.api.servicemanagement.v1.ManagedService} request.service
+ *   Required. Initial values for the service resource.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/service_manager.create_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_CreateService_async
+ */
   createService(
       request?: protos.google.api.servicemanagement.v1.ICreateServiceRequest,
       options?: CallOptions):
@@ -776,29 +800,6 @@ export class ServiceManagerClient {
           LROperation<protos.google.api.servicemanagement.v1.IManagedService, protos.google.api.servicemanagement.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new managed service.
- * Please note one producer project can own no more than 20 services.
- *
- * Operation<response: ManagedService>
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.api.servicemanagement.v1.ManagedService} request.service
- *   Required. Initial values for the service resource.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.createService(request);
- * const [response] = await operation.promise();
- */
   createService(
       request?: protos.google.api.servicemanagement.v1.ICreateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -823,6 +824,8 @@ export class ServiceManagerClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createService(request, options, callback);
   }
@@ -835,11 +838,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.create_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_CreateService_async
  */
   async checkCreateServiceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.ManagedService, protos.google.api.servicemanagement.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -847,26 +847,6 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.servicemanagement.v1.ManagedService, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  deleteService(
-      request?: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteService(
-      request: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteService(
-      request: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a managed service. This method will change the service to the
  * `Soft-Delete` state for 30 days. Within this period, service producers may
@@ -889,10 +869,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_manager.delete_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_DeleteService_async
  */
+  deleteService(
+      request?: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteService(
+      request: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteService(
+      request: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteService(
       request?: protos.google.api.servicemanagement.v1.IDeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -936,11 +935,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.delete_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_DeleteService_async
  */
   async checkDeleteServiceProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.api.servicemanagement.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -948,26 +944,6 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  undeleteService(
-      request?: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.servicemanagement.v1.IUndeleteServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  undeleteService(
-      request: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IUndeleteServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  undeleteService(
-      request: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IUndeleteServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Revives a previously deleted managed service. The method restores the
  * service using the configuration at the time the service was deleted.
@@ -990,10 +966,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.undeleteService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_manager.undelete_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_UndeleteService_async
  */
+  undeleteService(
+      request?: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.servicemanagement.v1.IUndeleteServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  undeleteService(
+      request: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IUndeleteServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  undeleteService(
+      request: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IUndeleteServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   undeleteService(
       request?: protos.google.api.servicemanagement.v1.IUndeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1037,11 +1032,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUndeleteServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.undelete_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_UndeleteService_async
  */
   async checkUndeleteServiceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.UndeleteServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1049,26 +1041,6 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.undeleteService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.servicemanagement.v1.UndeleteServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  submitConfigSource(
-      request?: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.servicemanagement.v1.ISubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  submitConfigSource(
-      request: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.ISubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  submitConfigSource(
-      request: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.ISubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new service configuration (version) for a managed service based
  * on
@@ -1104,10 +1076,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.submitConfigSource(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_manager.submit_config_source.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_SubmitConfigSource_async
  */
+  submitConfigSource(
+      request?: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.servicemanagement.v1.ISubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  submitConfigSource(
+      request: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.ISubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  submitConfigSource(
+      request: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.ISubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   submitConfigSource(
       request?: protos.google.api.servicemanagement.v1.ISubmitConfigSourceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1151,11 +1142,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkSubmitConfigSourceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.submit_config_source.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_SubmitConfigSource_async
  */
   async checkSubmitConfigSourceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.SubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1163,26 +1151,6 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.submitConfigSource, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.servicemanagement.v1.SubmitConfigSourceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  createServiceRollout(
-      request?: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.servicemanagement.v1.IRollout, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createServiceRollout(
-      request: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IRollout, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createServiceRollout(
-      request: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IRollout, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new service configuration rollout. Based on rollout, the
  * Google Service Management will roll out the service configurations to
@@ -1215,10 +1183,29 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createServiceRollout(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_manager.create_service_rollout.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_CreateServiceRollout_async
  */
+  createServiceRollout(
+      request?: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.servicemanagement.v1.IRollout, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createServiceRollout(
+      request: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IRollout, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createServiceRollout(
+      request: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IRollout, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createServiceRollout(
       request?: protos.google.api.servicemanagement.v1.ICreateServiceRolloutRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1262,11 +1249,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateServiceRolloutProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.create_service_rollout.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_CreateServiceRollout_async
  */
   async checkCreateServiceRolloutProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.Rollout, protos.google.api.servicemanagement.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1274,26 +1258,6 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createServiceRollout, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.servicemanagement.v1.Rollout, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  enableService(
-      request?: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.servicemanagement.v1.IEnableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  enableService(
-      request: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IEnableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  enableService(
-      request: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IEnableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Enables a {@link google.api.servicemanagement.v1.ManagedService|service} for a project, so it can be used
  * for the project. See
@@ -1326,11 +1290,30 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.enableService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_manager.enable_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_EnableService_async
  * @deprecated EnableService is deprecated and may be removed in a future version.
  */
+  enableService(
+      request?: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.servicemanagement.v1.IEnableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  enableService(
+      request: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IEnableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  enableService(
+      request: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IEnableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   enableService(
       request?: protos.google.api.servicemanagement.v1.IEnableServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1375,11 +1358,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkEnableServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.enable_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_EnableService_async
  * @deprecated EnableService is deprecated and may be removed in a future version.
  */
   async checkEnableServiceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.EnableServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>>{
@@ -1389,26 +1369,6 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.enableService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.servicemanagement.v1.EnableServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  disableService(
-      request?: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.servicemanagement.v1.IDisableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  disableService(
-      request: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IDisableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  disableService(
-      request: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.api.servicemanagement.v1.IDisableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Disables a {@link google.api.servicemanagement.v1.ManagedService|service} for a project, so it can no longer be
  * be used for the project. It prevents accidental usage that may cause
@@ -1440,11 +1400,30 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.disableService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_manager.disable_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_DisableService_async
  * @deprecated DisableService is deprecated and may be removed in a future version.
  */
+  disableService(
+      request?: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.servicemanagement.v1.IDisableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  disableService(
+      request: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IDisableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  disableService(
+      request: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.api.servicemanagement.v1.IDisableServiceResponse, protos.google.api.servicemanagement.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   disableService(
       request?: protos.google.api.servicemanagement.v1.IDisableServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1489,11 +1468,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDisableServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_manager.disable_service.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_DisableService_async
  * @deprecated DisableService is deprecated and may be removed in a future version.
  */
   async checkDisableServiceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.DisableServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>>{
@@ -1503,28 +1479,7 @@ export class ServiceManagerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.disableService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.servicemanagement.v1.DisableServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>;
   }
-  listServices(
-      request?: protos.google.api.servicemanagement.v1.IListServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.servicemanagement.v1.IManagedService[],
-        protos.google.api.servicemanagement.v1.IListServicesRequest|null,
-        protos.google.api.servicemanagement.v1.IListServicesResponse
-      ]>;
-  listServices(
-      request: protos.google.api.servicemanagement.v1.IListServicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.api.servicemanagement.v1.IListServicesRequest,
-          protos.google.api.servicemanagement.v1.IListServicesResponse|null|undefined,
-          protos.google.api.servicemanagement.v1.IManagedService>): void;
-  listServices(
-      request: protos.google.api.servicemanagement.v1.IListServicesRequest,
-      callback: PaginationCallback<
-          protos.google.api.servicemanagement.v1.IListServicesRequest,
-          protos.google.api.servicemanagement.v1.IListServicesResponse|null|undefined,
-          protos.google.api.servicemanagement.v1.IManagedService>): void;
-/**
+ /**
  * Lists managed services.
  *
  * Returns all public services. For authenticated users, also returns all
@@ -1566,6 +1521,27 @@ export class ServiceManagerClient {
  */
   listServices(
       request?: protos.google.api.servicemanagement.v1.IListServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.servicemanagement.v1.IManagedService[],
+        protos.google.api.servicemanagement.v1.IListServicesRequest|null,
+        protos.google.api.servicemanagement.v1.IListServicesResponse
+      ]>;
+  listServices(
+      request: protos.google.api.servicemanagement.v1.IListServicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.api.servicemanagement.v1.IListServicesRequest,
+          protos.google.api.servicemanagement.v1.IListServicesResponse|null|undefined,
+          protos.google.api.servicemanagement.v1.IManagedService>): void;
+  listServices(
+      request: protos.google.api.servicemanagement.v1.IListServicesRequest,
+      callback: PaginationCallback<
+          protos.google.api.servicemanagement.v1.IListServicesRequest,
+          protos.google.api.servicemanagement.v1.IListServicesResponse|null|undefined,
+          protos.google.api.servicemanagement.v1.IManagedService>): void;
+  listServices(
+      request?: protos.google.api.servicemanagement.v1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.api.servicemanagement.v1.IListServicesRequest,
           protos.google.api.servicemanagement.v1.IListServicesResponse|null|undefined,
@@ -1589,6 +1565,8 @@ export class ServiceManagerClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listServices(request, options, callback);
   }
@@ -1629,6 +1607,8 @@ export class ServiceManagerClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listServices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1669,11 +1649,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/service_manager.list_services.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_ListServices_async
  */
   listServicesAsync(
       request?: protos.google.api.servicemanagement.v1.IListServicesRequest,
@@ -1681,7 +1658,8 @@ export class ServiceManagerClient {
     AsyncIterable<protos.google.api.servicemanagement.v1.IManagedService>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listServices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1691,28 +1669,7 @@ export class ServiceManagerClient {
       callSettings
     ) as AsyncIterable<protos.google.api.servicemanagement.v1.IManagedService>;
   }
-  listServiceConfigs(
-      request?: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IService[],
-        protos.google.api.servicemanagement.v1.IListServiceConfigsRequest|null,
-        protos.google.api.servicemanagement.v1.IListServiceConfigsResponse
-      ]>;
-  listServiceConfigs(
-      request: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
-          protos.google.api.servicemanagement.v1.IListServiceConfigsResponse|null|undefined,
-          protos.google.api.IService>): void;
-  listServiceConfigs(
-      request: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
-      callback: PaginationCallback<
-          protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
-          protos.google.api.servicemanagement.v1.IListServiceConfigsResponse|null|undefined,
-          protos.google.api.IService>): void;
-/**
+ /**
  * Lists the history of the service configuration for a managed service,
  * from the newest to the oldest.
  *
@@ -1739,6 +1696,27 @@ export class ServiceManagerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServiceConfigs(
+      request?: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IService[],
+        protos.google.api.servicemanagement.v1.IListServiceConfigsRequest|null,
+        protos.google.api.servicemanagement.v1.IListServiceConfigsResponse
+      ]>;
+  listServiceConfigs(
+      request: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
+          protos.google.api.servicemanagement.v1.IListServiceConfigsResponse|null|undefined,
+          protos.google.api.IService>): void;
+  listServiceConfigs(
+      request: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
+      callback: PaginationCallback<
+          protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
+          protos.google.api.servicemanagement.v1.IListServiceConfigsResponse|null|undefined,
+          protos.google.api.IService>): void;
   listServiceConfigs(
       request?: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1846,11 +1824,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServiceConfigsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/service_manager.list_service_configs.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_ListServiceConfigs_async
  */
   listServiceConfigsAsync(
       request?: protos.google.api.servicemanagement.v1.IListServiceConfigsRequest,
@@ -1865,7 +1840,6 @@ export class ServiceManagerClient {
     ] = gax.routingHeader.fromParams({
       'service_name': request.serviceName || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServiceConfigs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1875,28 +1849,7 @@ export class ServiceManagerClient {
       callSettings
     ) as AsyncIterable<protos.google.api.IService>;
   }
-  listServiceRollouts(
-      request?: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.servicemanagement.v1.IRollout[],
-        protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest|null,
-        protos.google.api.servicemanagement.v1.IListServiceRolloutsResponse
-      ]>;
-  listServiceRollouts(
-      request: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
-          protos.google.api.servicemanagement.v1.IListServiceRolloutsResponse|null|undefined,
-          protos.google.api.servicemanagement.v1.IRollout>): void;
-  listServiceRollouts(
-      request: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
-      callback: PaginationCallback<
-          protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
-          protos.google.api.servicemanagement.v1.IListServiceRolloutsResponse|null|undefined,
-          protos.google.api.servicemanagement.v1.IRollout>): void;
-/**
+ /**
  * Lists the history of the service configuration rollouts for a managed
  * service, from the newest to the oldest.
  *
@@ -1932,6 +1885,27 @@ export class ServiceManagerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServiceRollouts(
+      request?: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.servicemanagement.v1.IRollout[],
+        protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest|null,
+        protos.google.api.servicemanagement.v1.IListServiceRolloutsResponse
+      ]>;
+  listServiceRollouts(
+      request: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
+          protos.google.api.servicemanagement.v1.IListServiceRolloutsResponse|null|undefined,
+          protos.google.api.servicemanagement.v1.IRollout>): void;
+  listServiceRollouts(
+      request: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
+      callback: PaginationCallback<
+          protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
+          protos.google.api.servicemanagement.v1.IListServiceRolloutsResponse|null|undefined,
+          protos.google.api.servicemanagement.v1.IRollout>): void;
   listServiceRollouts(
       request?: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2057,11 +2031,8 @@ export class ServiceManagerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServiceRolloutsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/service_manager.list_service_rollouts.js</caption>
+ * region_tag:servicemanagement_v1_generated_ServiceManager_ListServiceRollouts_async
  */
   listServiceRolloutsAsync(
       request?: protos.google.api.servicemanagement.v1.IListServiceRolloutsRequest,
@@ -2076,7 +2047,6 @@ export class ServiceManagerClient {
     ] = gax.routingHeader.fromParams({
       'service_name': request.serviceName || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServiceRollouts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

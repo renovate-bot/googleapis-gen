@@ -676,26 +676,6 @@ export class FeedItemSetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getFeedItemSet(
-      request?: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IFeedItemSet,
-        protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest|undefined, {}|undefined
-      ]>;
-  getFeedItemSet(
-      request: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IFeedItemSet,
-          protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getFeedItemSet(
-      request: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IFeedItemSet,
-          protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested feed item set in full detail.
  *
@@ -718,9 +698,29 @@ export class FeedItemSetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getFeedItemSet(request);
+ * @example <caption>include:samples/generated/v8/feed_item_set_service.get_feed_item_set.js</caption>
+ * region_tag:googleads_v8_generated_FeedItemSetService_GetFeedItemSet_async
  */
+  getFeedItemSet(
+      request?: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IFeedItemSet,
+        protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest|undefined, {}|undefined
+      ]>;
+  getFeedItemSet(
+      request: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IFeedItemSet,
+          protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getFeedItemSet(
+      request: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IFeedItemSet,
+          protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest|null|undefined,
+          {}|null|undefined>): void;
   getFeedItemSet(
       request?: protos.google.ads.googleads.v8.services.IGetFeedItemSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class FeedItemSetServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeedItemSet(request, options, callback);
   }
-  mutateFeedItemSets(
-      request?: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateFeedItemSetsResponse,
-        protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest|undefined, {}|undefined
-      ]>;
-  mutateFeedItemSets(
-      request: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsResponse,
-          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateFeedItemSets(
-      request: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsResponse,
-          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes feed item sets. Operation statuses are
  * returned.
@@ -809,9 +789,29 @@ export class FeedItemSetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateFeedItemSets(request);
+ * @example <caption>include:samples/generated/v8/feed_item_set_service.mutate_feed_item_sets.js</caption>
+ * region_tag:googleads_v8_generated_FeedItemSetService_MutateFeedItemSets_async
  */
+  mutateFeedItemSets(
+      request?: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateFeedItemSetsResponse,
+        protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest|undefined, {}|undefined
+      ]>;
+  mutateFeedItemSets(
+      request: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsResponse,
+          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateFeedItemSets(
+      request: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsResponse,
+          protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateFeedItemSets(
       request?: protos.google.ads.googleads.v8.services.IMutateFeedItemSetsRequest,
       optionsOrCallback?: CallOptions|Callback<

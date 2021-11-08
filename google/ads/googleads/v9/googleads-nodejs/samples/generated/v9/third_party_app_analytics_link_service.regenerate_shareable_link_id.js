@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const googleadsClient = new ThirdPartyAppAnalyticsLinkServiceClient();
 
-  async function regenerateShareableLinkId() {
+  async function callRegenerateShareableLinkId() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  regenerateShareableLinkId();
+  callRegenerateShareableLinkId();
   // [END googleads_v9_generated_ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_async]
 }
 

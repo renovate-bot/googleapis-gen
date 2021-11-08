@@ -42,7 +42,7 @@ function main(parent) {
   // Instantiates a client
   const dataprocClient = new BatchControllerClient();
 
-  async function listBatches() {
+  async function callListBatches() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent) {
     }
   }
 
-  listBatches();
+  callListBatches();
   // [END dataproc_v1_generated_BatchController_ListBatches_async]
 }
 

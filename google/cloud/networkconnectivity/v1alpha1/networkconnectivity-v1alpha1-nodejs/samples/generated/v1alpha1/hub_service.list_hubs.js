@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function listHubs() {
+  async function callListHubs() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listHubs();
+  callListHubs();
   // [END networkconnectivity_v1alpha1_generated_HubService_ListHubs_async]
 }
 

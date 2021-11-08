@@ -305,26 +305,6 @@ export class FirewallClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  batchUpdateIngressRules(
-      request?: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
-        protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|undefined, {}|undefined
-      ]>;
-  batchUpdateIngressRules(
-      request: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
-          protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchUpdateIngressRules(
-      request: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
-      callback: Callback<
-          protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
-          protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Replaces the entire firewall ruleset in one bulk operation. This overrides
  * and replaces the rules of an existing firewall with the new rules.
@@ -346,9 +326,29 @@ export class FirewallClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchUpdateIngressRules(request);
+ * @example <caption>include:samples/generated/v1/firewall.batch_update_ingress_rules.js</caption>
+ * region_tag:appengine_v1_generated_Firewall_BatchUpdateIngressRules_async
  */
+  batchUpdateIngressRules(
+      request?: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
+        protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|undefined, {}|undefined
+      ]>;
+  batchUpdateIngressRules(
+      request: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
+          protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchUpdateIngressRules(
+      request: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
+      callback: Callback<
+          protos.google.appengine.v1.IBatchUpdateIngressRulesResponse,
+          protos.google.appengine.v1.IBatchUpdateIngressRulesRequest|null|undefined,
+          {}|null|undefined>): void;
   batchUpdateIngressRules(
       request?: protos.google.appengine.v1.IBatchUpdateIngressRulesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -383,26 +383,6 @@ export class FirewallClient {
     this.initialize();
     return this.innerApiCalls.batchUpdateIngressRules(request, options, callback);
   }
-  createIngressRule(
-      request?: protos.google.appengine.v1.ICreateIngressRuleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.appengine.v1.IFirewallRule,
-        protos.google.appengine.v1.ICreateIngressRuleRequest|undefined, {}|undefined
-      ]>;
-  createIngressRule(
-      request: protos.google.appengine.v1.ICreateIngressRuleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.appengine.v1.IFirewallRule,
-          protos.google.appengine.v1.ICreateIngressRuleRequest|null|undefined,
-          {}|null|undefined>): void;
-  createIngressRule(
-      request: protos.google.appengine.v1.ICreateIngressRuleRequest,
-      callback: Callback<
-          protos.google.appengine.v1.IFirewallRule,
-          protos.google.appengine.v1.ICreateIngressRuleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a firewall rule for the application.
  *
@@ -429,9 +409,29 @@ export class FirewallClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createIngressRule(request);
+ * @example <caption>include:samples/generated/v1/firewall.create_ingress_rule.js</caption>
+ * region_tag:appengine_v1_generated_Firewall_CreateIngressRule_async
  */
+  createIngressRule(
+      request?: protos.google.appengine.v1.ICreateIngressRuleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.appengine.v1.IFirewallRule,
+        protos.google.appengine.v1.ICreateIngressRuleRequest|undefined, {}|undefined
+      ]>;
+  createIngressRule(
+      request: protos.google.appengine.v1.ICreateIngressRuleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.appengine.v1.IFirewallRule,
+          protos.google.appengine.v1.ICreateIngressRuleRequest|null|undefined,
+          {}|null|undefined>): void;
+  createIngressRule(
+      request: protos.google.appengine.v1.ICreateIngressRuleRequest,
+      callback: Callback<
+          protos.google.appengine.v1.IFirewallRule,
+          protos.google.appengine.v1.ICreateIngressRuleRequest|null|undefined,
+          {}|null|undefined>): void;
   createIngressRule(
       request?: protos.google.appengine.v1.ICreateIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -466,6 +466,24 @@ export class FirewallClient {
     this.initialize();
     return this.innerApiCalls.createIngressRule(request, options, callback);
   }
+/**
+ * Gets the specified firewall rule.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the Firewall resource to retrieve.
+ *   Example: `apps/myapp/firewall/ingressRules/100`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [FirewallRule]{@link google.appengine.v1.FirewallRule}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/firewall.get_ingress_rule.js</caption>
+ * region_tag:appengine_v1_generated_Firewall_GetIngressRule_async
+ */
   getIngressRule(
       request?: protos.google.appengine.v1.IGetIngressRuleRequest,
       options?: CallOptions):
@@ -486,24 +504,6 @@ export class FirewallClient {
           protos.google.appengine.v1.IFirewallRule,
           protos.google.appengine.v1.IGetIngressRuleRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the specified firewall rule.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the Firewall resource to retrieve.
- *   Example: `apps/myapp/firewall/ingressRules/100`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [FirewallRule]{@link google.appengine.v1.FirewallRule}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIngressRule(request);
- */
   getIngressRule(
       request?: protos.google.appengine.v1.IGetIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -538,6 +538,28 @@ export class FirewallClient {
     this.initialize();
     return this.innerApiCalls.getIngressRule(request, options, callback);
   }
+/**
+ * Updates the specified firewall rule.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the Firewall resource to update.
+ *   Example: `apps/myapp/firewall/ingressRules/100`.
+ * @param {google.appengine.v1.FirewallRule} request.rule
+ *   A FirewallRule containing the updated resource
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Standard field mask for the set of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [FirewallRule]{@link google.appengine.v1.FirewallRule}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/firewall.update_ingress_rule.js</caption>
+ * region_tag:appengine_v1_generated_Firewall_UpdateIngressRule_async
+ */
   updateIngressRule(
       request?: protos.google.appengine.v1.IUpdateIngressRuleRequest,
       options?: CallOptions):
@@ -558,28 +580,6 @@ export class FirewallClient {
           protos.google.appengine.v1.IFirewallRule,
           protos.google.appengine.v1.IUpdateIngressRuleRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates the specified firewall rule.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the Firewall resource to update.
- *   Example: `apps/myapp/firewall/ingressRules/100`.
- * @param {google.appengine.v1.FirewallRule} request.rule
- *   A FirewallRule containing the updated resource
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Standard field mask for the set of fields to be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [FirewallRule]{@link google.appengine.v1.FirewallRule}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateIngressRule(request);
- */
   updateIngressRule(
       request?: protos.google.appengine.v1.IUpdateIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -614,6 +614,24 @@ export class FirewallClient {
     this.initialize();
     return this.innerApiCalls.updateIngressRule(request, options, callback);
   }
+/**
+ * Deletes the specified firewall rule.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the Firewall resource to delete.
+ *   Example: `apps/myapp/firewall/ingressRules/100`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/firewall.delete_ingress_rule.js</caption>
+ * region_tag:appengine_v1_generated_Firewall_DeleteIngressRule_async
+ */
   deleteIngressRule(
       request?: protos.google.appengine.v1.IDeleteIngressRuleRequest,
       options?: CallOptions):
@@ -634,24 +652,6 @@ export class FirewallClient {
           protos.google.protobuf.IEmpty,
           protos.google.appengine.v1.IDeleteIngressRuleRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified firewall rule.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the Firewall resource to delete.
- *   Example: `apps/myapp/firewall/ingressRules/100`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteIngressRule(request);
- */
   deleteIngressRule(
       request?: protos.google.appengine.v1.IDeleteIngressRuleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -687,28 +687,7 @@ export class FirewallClient {
     return this.innerApiCalls.deleteIngressRule(request, options, callback);
   }
 
-  listIngressRules(
-      request?: protos.google.appengine.v1.IListIngressRulesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.appengine.v1.IFirewallRule[],
-        protos.google.appengine.v1.IListIngressRulesRequest|null,
-        protos.google.appengine.v1.IListIngressRulesResponse
-      ]>;
-  listIngressRules(
-      request: protos.google.appengine.v1.IListIngressRulesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListIngressRulesRequest,
-          protos.google.appengine.v1.IListIngressRulesResponse|null|undefined,
-          protos.google.appengine.v1.IFirewallRule>): void;
-  listIngressRules(
-      request: protos.google.appengine.v1.IListIngressRulesRequest,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListIngressRulesRequest,
-          protos.google.appengine.v1.IListIngressRulesResponse|null|undefined,
-          protos.google.appengine.v1.IFirewallRule>): void;
-/**
+ /**
  * Lists the firewall rules of an application.
  *
  * @param {Object} request
@@ -737,6 +716,27 @@ export class FirewallClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listIngressRules(
+      request?: protos.google.appengine.v1.IListIngressRulesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.appengine.v1.IFirewallRule[],
+        protos.google.appengine.v1.IListIngressRulesRequest|null,
+        protos.google.appengine.v1.IListIngressRulesResponse
+      ]>;
+  listIngressRules(
+      request: protos.google.appengine.v1.IListIngressRulesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListIngressRulesRequest,
+          protos.google.appengine.v1.IListIngressRulesResponse|null|undefined,
+          protos.google.appengine.v1.IFirewallRule>): void;
+  listIngressRules(
+      request: protos.google.appengine.v1.IListIngressRulesRequest,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListIngressRulesRequest,
+          protos.google.appengine.v1.IListIngressRulesResponse|null|undefined,
+          protos.google.appengine.v1.IFirewallRule>): void;
   listIngressRules(
       request?: protos.google.appengine.v1.IListIngressRulesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -850,11 +850,8 @@ export class FirewallClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listIngressRulesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/firewall.list_ingress_rules.js</caption>
+ * region_tag:appengine_v1_generated_Firewall_ListIngressRules_async
  */
   listIngressRulesAsync(
       request?: protos.google.appengine.v1.IListIngressRulesRequest,
@@ -869,7 +866,6 @@ export class FirewallClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listIngressRules'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

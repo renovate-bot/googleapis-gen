@@ -34,8 +34,8 @@ function main(resourceNames) {
    */
   // const resourceNames = 'abc123'
   /**
-   *  Optional. A filter that chooses which log entries to return.  See [Advanced
-   *  Logs Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
+   *  Optional. A filter that chooses which log entries to return.  See Advanced
+   *  Logs Filters (https://cloud.google.com/logging/docs/view/advanced_filters).
    *  Only log entries that match the filter are returned.  An empty filter
    *  matches all log entries in the resources listed in `resource_names`.
    *  Referencing a parent resource that is not in `resource_names` will cause
@@ -49,7 +49,7 @@ function main(resourceNames) {
    *  entries. Valid values are between 0-60000 milliseconds. Defaults to 2000
    *  milliseconds.
    */
-  // const bufferWindow = ''
+  // const bufferWindow = {}
 
   // Imports the Logging library
   const {LoggingServiceV2Client} = require('@google-cloud/logging').v2;
@@ -57,7 +57,7 @@ function main(resourceNames) {
   // Instantiates a client
   const loggingClient = new LoggingServiceV2Client();
 
-  async function tailLogEntries() {
+  async function callTailLogEntries() {
     // Construct request
     const request = {
       resourceNames,
@@ -72,7 +72,7 @@ function main(resourceNames) {
     stream.end(); 
   }
 
-  tailLogEntries();
+  callTailLogEntries();
   // [END logging_v2_generated_LoggingServiceV2_TailLogEntries_async]
 }
 

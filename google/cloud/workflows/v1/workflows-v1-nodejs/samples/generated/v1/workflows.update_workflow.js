@@ -23,12 +23,12 @@ function main(workflow) {
   /**
    *  Required. Workflow to be updated.
    */
-  // const workflow = ''
+  // const workflow = {}
   /**
    *  List of fields to be updated. If not present, the entire workflow
    *  will be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Workflows library
   const {WorkflowsClient} = require('@google-cloud/workflows').v1;
@@ -36,7 +36,7 @@ function main(workflow) {
   // Instantiates a client
   const workflowsClient = new WorkflowsClient();
 
-  async function updateWorkflow() {
+  async function callUpdateWorkflow() {
     // Construct request
     const request = {
       workflow,
@@ -48,7 +48,7 @@ function main(workflow) {
     console.log(response);
   }
 
-  updateWorkflow();
+  callUpdateWorkflow();
   // [END workflows_v1_generated_Workflows_UpdateWorkflow_async]
 }
 

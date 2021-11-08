@@ -310,26 +310,6 @@ export class PolicyTagManagerSerializationClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  replaceTaxonomy(
-      request?: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.ITaxonomy,
-        protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest|undefined, {}|undefined
-      ]>;
-  replaceTaxonomy(
-      request: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.ITaxonomy,
-          protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest|null|undefined,
-          {}|null|undefined>): void;
-  replaceTaxonomy(
-      request: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.ITaxonomy,
-          protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Replaces (updates) a taxonomy and all its policy tags.
  *
@@ -358,9 +338,29 @@ export class PolicyTagManagerSerializationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.replaceTaxonomy(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager_serialization.replace_taxonomy.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManagerSerialization_ReplaceTaxonomy_async
  */
+  replaceTaxonomy(
+      request?: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.ITaxonomy,
+        protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest|undefined, {}|undefined
+      ]>;
+  replaceTaxonomy(
+      request: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.ITaxonomy,
+          protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest|null|undefined,
+          {}|null|undefined>): void;
+  replaceTaxonomy(
+      request: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.ITaxonomy,
+          protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest|null|undefined,
+          {}|null|undefined>): void;
   replaceTaxonomy(
       request?: protos.google.cloud.datacatalog.v1.IReplaceTaxonomyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -395,26 +395,6 @@ export class PolicyTagManagerSerializationClient {
     this.initialize();
     return this.innerApiCalls.replaceTaxonomy(request, options, callback);
   }
-  importTaxonomies(
-      request?: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.IImportTaxonomiesResponse,
-        protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest|undefined, {}|undefined
-      ]>;
-  importTaxonomies(
-      request: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.IImportTaxonomiesResponse,
-          protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest|null|undefined,
-          {}|null|undefined>): void;
-  importTaxonomies(
-      request: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.IImportTaxonomiesResponse,
-          protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates new taxonomies (including their policy tags) in a given project
  * by importing from inlined or cross-regional sources.
@@ -440,9 +420,29 @@ export class PolicyTagManagerSerializationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.importTaxonomies(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager_serialization.import_taxonomies.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManagerSerialization_ImportTaxonomies_async
  */
+  importTaxonomies(
+      request?: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.IImportTaxonomiesResponse,
+        protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest|undefined, {}|undefined
+      ]>;
+  importTaxonomies(
+      request: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.IImportTaxonomiesResponse,
+          protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest|null|undefined,
+          {}|null|undefined>): void;
+  importTaxonomies(
+      request: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.IImportTaxonomiesResponse,
+          protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest|null|undefined,
+          {}|null|undefined>): void;
   importTaxonomies(
       request?: protos.google.cloud.datacatalog.v1.IImportTaxonomiesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -477,26 +477,6 @@ export class PolicyTagManagerSerializationClient {
     this.initialize();
     return this.innerApiCalls.importTaxonomies(request, options, callback);
   }
-  exportTaxonomies(
-      request?: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.datacatalog.v1.IExportTaxonomiesResponse,
-        protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest|undefined, {}|undefined
-      ]>;
-  exportTaxonomies(
-      request: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.IExportTaxonomiesResponse,
-          protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest|null|undefined,
-          {}|null|undefined>): void;
-  exportTaxonomies(
-      request: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
-      callback: Callback<
-          protos.google.cloud.datacatalog.v1.IExportTaxonomiesResponse,
-          protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Exports taxonomies in the requested type and returns them,
  * including their policy tags. The requested taxonomies must belong to the
@@ -521,9 +501,29 @@ export class PolicyTagManagerSerializationClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.exportTaxonomies(request);
+ * @example <caption>include:samples/generated/v1/policy_tag_manager_serialization.export_taxonomies.js</caption>
+ * region_tag:datacatalog_v1_generated_PolicyTagManagerSerialization_ExportTaxonomies_async
  */
+  exportTaxonomies(
+      request?: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.datacatalog.v1.IExportTaxonomiesResponse,
+        protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest|undefined, {}|undefined
+      ]>;
+  exportTaxonomies(
+      request: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.IExportTaxonomiesResponse,
+          protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest|null|undefined,
+          {}|null|undefined>): void;
+  exportTaxonomies(
+      request: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
+      callback: Callback<
+          protos.google.cloud.datacatalog.v1.IExportTaxonomiesResponse,
+          protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest|null|undefined,
+          {}|null|undefined>): void;
   exportTaxonomies(
       request?: protos.google.cloud.datacatalog.v1.IExportTaxonomiesRequest,
       optionsOrCallback?: CallOptions|Callback<

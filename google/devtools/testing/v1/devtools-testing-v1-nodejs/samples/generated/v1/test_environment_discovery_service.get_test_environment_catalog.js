@@ -23,7 +23,7 @@ function main() {
   /**
    *  Required. The type of environment that should be listed.
    */
-  // const environmentType = ''
+  // const environmentType = {}
   /**
    *  For authorization, the cloud project requesting the TestEnvironmentCatalog.
    */
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const testingClient = new TestEnvironmentDiscoveryServiceClient();
 
-  async function getTestEnvironmentCatalog() {
+  async function callGetTestEnvironmentCatalog() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  getTestEnvironmentCatalog();
+  callGetTestEnvironmentCatalog();
   // [END testing_v1_generated_TestEnvironmentDiscoveryService_GetTestEnvironmentCatalog_async]
 }
 

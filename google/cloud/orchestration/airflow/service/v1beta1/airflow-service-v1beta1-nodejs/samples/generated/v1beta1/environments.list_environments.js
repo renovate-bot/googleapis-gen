@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const serviceClient = new EnvironmentsClient();
 
-  async function listEnvironments() {
+  async function callListEnvironments() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     }
   }
 
-  listEnvironments();
+  callListEnvironments();
   // [END composer_v1beta1_generated_Environments_ListEnvironments_async]
 }
 

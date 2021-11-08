@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new KeywordPlanAdGroupServiceClient();
 
-  async function getKeywordPlanAdGroup() {
+  async function callGetKeywordPlanAdGroup() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getKeywordPlanAdGroup();
+  callGetKeywordPlanAdGroup();
   // [END googleads_v8_generated_KeywordPlanAdGroupService_GetKeywordPlanAdGroup_async]
 }
 

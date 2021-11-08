@@ -62,7 +62,7 @@ function main(filter) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listProperties() {
+  async function callListProperties() {
     // Construct request
     const request = {
       filter,
@@ -75,7 +75,7 @@ function main(filter) {
     }
   }
 
-  listProperties();
+  callListProperties();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListProperties_async]
 }
 

@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function upgradeInstance() {
+  async function callUpgradeInstance() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  upgradeInstance();
+  callUpgradeInstance();
   // [END notebooks_v1_generated_NotebookService_UpgradeInstance_async]
 }
 

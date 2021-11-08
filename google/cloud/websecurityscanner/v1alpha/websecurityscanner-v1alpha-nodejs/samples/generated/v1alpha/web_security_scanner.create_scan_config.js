@@ -28,7 +28,7 @@ function main(parent, scanConfig) {
   /**
    *  Required. The ScanConfig to be created.
    */
-  // const scanConfig = ''
+  // const scanConfig = {}
 
   // Imports the Websecurityscanner library
   const {WebSecurityScannerClient} = require('@google-cloud/web-security-scanner').v1alpha;
@@ -36,7 +36,7 @@ function main(parent, scanConfig) {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function createScanConfig() {
+  async function callCreateScanConfig() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, scanConfig) {
     console.log(response);
   }
 
-  createScanConfig();
+  callCreateScanConfig();
   // [END websecurityscanner_v1alpha_generated_WebSecurityScanner_CreateScanConfig_async]
 }
 

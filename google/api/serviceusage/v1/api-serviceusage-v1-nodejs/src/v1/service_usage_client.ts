@@ -330,6 +330,27 @@ export class ServiceUsageClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the service configuration and enabled state for a given service.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the consumer and service to get the `ConsumerState` for.
+ *
+ *   An example name would be:
+ *   `projects/123/services/serviceusage.googleapis.com` where `123` is the
+ *   project number.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Service]{@link google.api.serviceusage.v1.Service}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/service_usage.get_service.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_GetService_async
+ */
   getService(
       request?: protos.google.api.serviceusage.v1.IGetServiceRequest,
       options?: CallOptions):
@@ -350,27 +371,6 @@ export class ServiceUsageClient {
           protos.google.api.serviceusage.v1.IService,
           protos.google.api.serviceusage.v1.IGetServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the service configuration and enabled state for a given service.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the consumer and service to get the `ConsumerState` for.
- *
- *   An example name would be:
- *   `projects/123/services/serviceusage.googleapis.com` where `123` is the
- *   project number.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Service]{@link google.api.serviceusage.v1.Service}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getService(request);
- */
   getService(
       request?: protos.google.api.serviceusage.v1.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -405,26 +405,6 @@ export class ServiceUsageClient {
     this.initialize();
     return this.innerApiCalls.getService(request, options, callback);
   }
-  batchGetServices(
-      request?: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.serviceusage.v1.IBatchGetServicesResponse,
-        protos.google.api.serviceusage.v1.IBatchGetServicesRequest|undefined, {}|undefined
-      ]>;
-  batchGetServices(
-      request: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.serviceusage.v1.IBatchGetServicesResponse,
-          protos.google.api.serviceusage.v1.IBatchGetServicesRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchGetServices(
-      request: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
-      callback: Callback<
-          protos.google.api.serviceusage.v1.IBatchGetServicesResponse,
-          protos.google.api.serviceusage.v1.IBatchGetServicesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the service configurations and enabled states for a given list of
  * services.
@@ -451,9 +431,29 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchGetServices(request);
+ * @example <caption>include:samples/generated/v1/service_usage.batch_get_services.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_BatchGetServices_async
  */
+  batchGetServices(
+      request?: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.serviceusage.v1.IBatchGetServicesResponse,
+        protos.google.api.serviceusage.v1.IBatchGetServicesRequest|undefined, {}|undefined
+      ]>;
+  batchGetServices(
+      request: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.serviceusage.v1.IBatchGetServicesResponse,
+          protos.google.api.serviceusage.v1.IBatchGetServicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchGetServices(
+      request: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
+      callback: Callback<
+          protos.google.api.serviceusage.v1.IBatchGetServicesResponse,
+          protos.google.api.serviceusage.v1.IBatchGetServicesRequest|null|undefined,
+          {}|null|undefined>): void;
   batchGetServices(
       request?: protos.google.api.serviceusage.v1.IBatchGetServicesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -489,26 +489,6 @@ export class ServiceUsageClient {
     return this.innerApiCalls.batchGetServices(request, options, callback);
   }
 
-  enableService(
-      request?: protos.google.api.serviceusage.v1.IEnableServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.serviceusage.v1.IEnableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  enableService(
-      request: protos.google.api.serviceusage.v1.IEnableServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.serviceusage.v1.IEnableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  enableService(
-      request: protos.google.api.serviceusage.v1.IEnableServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.api.serviceusage.v1.IEnableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Enable a service so that it can be used with a project.
  *
@@ -535,10 +515,29 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.enableService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_usage.enable_service.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_EnableService_async
  */
+  enableService(
+      request?: protos.google.api.serviceusage.v1.IEnableServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.serviceusage.v1.IEnableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  enableService(
+      request: protos.google.api.serviceusage.v1.IEnableServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.serviceusage.v1.IEnableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  enableService(
+      request: protos.google.api.serviceusage.v1.IEnableServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.api.serviceusage.v1.IEnableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   enableService(
       request?: protos.google.api.serviceusage.v1.IEnableServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -582,11 +581,8 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkEnableServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_usage.enable_service.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_EnableService_async
  */
   async checkEnableServiceProgress(name: string): Promise<LROperation<protos.google.api.serviceusage.v1.EnableServiceResponse, protos.google.api.serviceusage.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -594,26 +590,6 @@ export class ServiceUsageClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.enableService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1.EnableServiceResponse, protos.google.api.serviceusage.v1.OperationMetadata>;
   }
-  disableService(
-      request?: protos.google.api.serviceusage.v1.IDisableServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.serviceusage.v1.IDisableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  disableService(
-      request: protos.google.api.serviceusage.v1.IDisableServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.serviceusage.v1.IDisableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  disableService(
-      request: protos.google.api.serviceusage.v1.IDisableServiceRequest,
-      callback: Callback<
-          LROperation<protos.google.api.serviceusage.v1.IDisableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Disable a service so that it can no longer be used with a project.
  * This prevents unintended usage that may cause unexpected billing
@@ -650,10 +626,29 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.disableService(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_usage.disable_service.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_DisableService_async
  */
+  disableService(
+      request?: protos.google.api.serviceusage.v1.IDisableServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.serviceusage.v1.IDisableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  disableService(
+      request: protos.google.api.serviceusage.v1.IDisableServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.serviceusage.v1.IDisableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  disableService(
+      request: protos.google.api.serviceusage.v1.IDisableServiceRequest,
+      callback: Callback<
+          LROperation<protos.google.api.serviceusage.v1.IDisableServiceResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   disableService(
       request?: protos.google.api.serviceusage.v1.IDisableServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -697,11 +692,8 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDisableServiceProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_usage.disable_service.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_DisableService_async
  */
   async checkDisableServiceProgress(name: string): Promise<LROperation<protos.google.api.serviceusage.v1.DisableServiceResponse, protos.google.api.serviceusage.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -709,26 +701,6 @@ export class ServiceUsageClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.disableService, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1.DisableServiceResponse, protos.google.api.serviceusage.v1.OperationMetadata>;
   }
-  batchEnableServices(
-      request?: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.api.serviceusage.v1.IBatchEnableServicesResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchEnableServices(
-      request: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.api.serviceusage.v1.IBatchEnableServicesResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchEnableServices(
-      request: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
-      callback: Callback<
-          LROperation<protos.google.api.serviceusage.v1.IBatchEnableServicesResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Enable multiple services on a project. The operation is atomic: if enabling
  * any service fails, then the entire batch fails, and no state changes occur.
@@ -764,10 +736,29 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchEnableServices(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/service_usage.batch_enable_services.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_BatchEnableServices_async
  */
+  batchEnableServices(
+      request?: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.api.serviceusage.v1.IBatchEnableServicesResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchEnableServices(
+      request: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.api.serviceusage.v1.IBatchEnableServicesResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchEnableServices(
+      request: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
+      callback: Callback<
+          LROperation<protos.google.api.serviceusage.v1.IBatchEnableServicesResponse, protos.google.api.serviceusage.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchEnableServices(
       request?: protos.google.api.serviceusage.v1.IBatchEnableServicesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -811,11 +802,8 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchEnableServicesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/service_usage.batch_enable_services.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_BatchEnableServices_async
  */
   async checkBatchEnableServicesProgress(name: string): Promise<LROperation<protos.google.api.serviceusage.v1.BatchEnableServicesResponse, protos.google.api.serviceusage.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -823,28 +811,7 @@ export class ServiceUsageClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.batchEnableServices, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.api.serviceusage.v1.BatchEnableServicesResponse, protos.google.api.serviceusage.v1.OperationMetadata>;
   }
-  listServices(
-      request?: protos.google.api.serviceusage.v1.IListServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.serviceusage.v1.IService[],
-        protos.google.api.serviceusage.v1.IListServicesRequest|null,
-        protos.google.api.serviceusage.v1.IListServicesResponse
-      ]>;
-  listServices(
-      request: protos.google.api.serviceusage.v1.IListServicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.api.serviceusage.v1.IListServicesRequest,
-          protos.google.api.serviceusage.v1.IListServicesResponse|null|undefined,
-          protos.google.api.serviceusage.v1.IService>): void;
-  listServices(
-      request: protos.google.api.serviceusage.v1.IListServicesRequest,
-      callback: PaginationCallback<
-          protos.google.api.serviceusage.v1.IListServicesRequest,
-          protos.google.api.serviceusage.v1.IListServicesResponse|null|undefined,
-          protos.google.api.serviceusage.v1.IService>): void;
-/**
+ /**
  * List all services available to the specified project, and the current
  * state of those services with respect to the project. The list includes
  * all public services, all services for which the calling user has the
@@ -889,6 +856,27 @@ export class ServiceUsageClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServices(
+      request?: protos.google.api.serviceusage.v1.IListServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.serviceusage.v1.IService[],
+        protos.google.api.serviceusage.v1.IListServicesRequest|null,
+        protos.google.api.serviceusage.v1.IListServicesResponse
+      ]>;
+  listServices(
+      request: protos.google.api.serviceusage.v1.IListServicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.api.serviceusage.v1.IListServicesRequest,
+          protos.google.api.serviceusage.v1.IListServicesResponse|null|undefined,
+          protos.google.api.serviceusage.v1.IService>): void;
+  listServices(
+      request: protos.google.api.serviceusage.v1.IListServicesRequest,
+      callback: PaginationCallback<
+          protos.google.api.serviceusage.v1.IListServicesRequest,
+          protos.google.api.serviceusage.v1.IListServicesResponse|null|undefined,
+          protos.google.api.serviceusage.v1.IService>): void;
   listServices(
       request?: protos.google.api.serviceusage.v1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1010,11 +998,8 @@ export class ServiceUsageClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/service_usage.list_services.js</caption>
+ * region_tag:serviceusage_v1_generated_ServiceUsage_ListServices_async
  */
   listServicesAsync(
       request?: protos.google.api.serviceusage.v1.IListServicesRequest,
@@ -1029,7 +1014,6 @@ export class ServiceUsageClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

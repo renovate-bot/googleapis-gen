@@ -27,7 +27,7 @@ function main(projectId, keys) {
   /**
    *  The options for this lookup request.
    */
-  // const readOptions = ''
+  // const readOptions = {}
   /**
    *  Required. Keys of entities to look up.
    */
@@ -39,7 +39,7 @@ function main(projectId, keys) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function lookup() {
+  async function callLookup() {
     // Construct request
     const request = {
       projectId,
@@ -51,7 +51,7 @@ function main(projectId, keys) {
     console.log(response);
   }
 
-  lookup();
+  callLookup();
   // [END datastore_v1_generated_Datastore_Lookup_async]
 }
 

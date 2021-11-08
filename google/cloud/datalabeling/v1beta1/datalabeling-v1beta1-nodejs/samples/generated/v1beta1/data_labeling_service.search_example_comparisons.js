@@ -21,7 +21,7 @@ function main(parent) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Name of the [Evaluation][google.cloud.datalabeling.v1beta1.Evaluation] resource to search for example
+   *  Required. Name of the Evaluation google.cloud.datalabeling.v1beta1.Evaluation  resource to search for example
    *  comparisons from. Format:
    *  "projects/<var>{project_id}</var>/datasets/<var>{dataset_id}</var>/evaluations/<var>{evaluation_id}</var>"
    */
@@ -34,7 +34,7 @@ function main(parent) {
   /**
    *  Optional. A token identifying a page of results for the server to return.
    *  Typically obtained by the
-   *  [nextPageToken][SearchExampleComparisons.next_page_token] of the response
+   *  nextPageToken SearchExampleComparisons.next_page_token  of the response
    *  to a previous search rquest.
    *  If you don't specify this field, the API call requests the first page of
    *  the search.
@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function searchExampleComparisons() {
+  async function callSearchExampleComparisons() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  searchExampleComparisons();
+  callSearchExampleComparisons();
   // [END datalabeling_v1beta1_generated_DataLabelingService_SearchExampleComparisons_async]
 }
 

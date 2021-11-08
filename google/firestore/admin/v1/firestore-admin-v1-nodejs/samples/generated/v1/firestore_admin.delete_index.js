@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function deleteIndex() {
+  async function callDeleteIndex() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteIndex();
+  callDeleteIndex();
   // [END firestore_v1_generated_FirestoreAdmin_DeleteIndex_async]
 }
 

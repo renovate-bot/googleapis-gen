@@ -44,7 +44,7 @@ function main(name) {
   // Instantiates a client
   const containeranalysisClient = new GrafeasClient();
 
-  async function listNoteOccurrences() {
+  async function callListNoteOccurrences() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     }
   }
 
-  listNoteOccurrences();
+  callListNoteOccurrences();
   // [END containeranalysis_v1_generated_Grafeas_ListNoteOccurrences_async]
 }
 

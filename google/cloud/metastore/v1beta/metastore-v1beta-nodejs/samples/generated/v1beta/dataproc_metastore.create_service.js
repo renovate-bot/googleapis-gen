@@ -39,7 +39,7 @@ function main(parent, serviceId, service) {
    *  ignored. The ID of the created metastore service must be provided in
    *  the request's `service_id` field.
    */
-  // const service = ''
+  // const service = {}
   /**
    *  Optional. A request ID. Specify a unique request ID to allow the server to
    *  ignore the request if it has completed. The server will ignore subsequent
@@ -49,7 +49,7 @@ function main(parent, serviceId, service) {
    *  with the same request ID, the server ignores the second request to prevent
    *  the creation of duplicate commitments.
    *  The request ID must be a valid
-   *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
+   *  UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    *  A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
    */
   // const requestId = 'abc123'
@@ -60,7 +60,7 @@ function main(parent, serviceId, service) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function createService() {
+  async function callCreateService() {
     // Construct request
     const request = {
       parent,
@@ -74,7 +74,7 @@ function main(parent, serviceId, service) {
     console.log(response);
   }
 
-  createService();
+  callCreateService();
   // [END metastore_v1beta_generated_DataprocMetastore_CreateService_async]
 }
 

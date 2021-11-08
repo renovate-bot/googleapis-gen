@@ -676,6 +676,23 @@ export class ConversionValueRuleSetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested conversion value rule set.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the conversion value rule set to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ConversionValueRuleSet]{@link google.ads.googleads.v8.resources.ConversionValueRuleSet}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v8/conversion_value_rule_set_service.get_conversion_value_rule_set.js</caption>
+ * region_tag:googleads_v8_generated_ConversionValueRuleSetService_GetConversionValueRuleSet_async
+ */
   getConversionValueRuleSet(
       request?: protos.google.ads.googleads.v8.services.IGetConversionValueRuleSetRequest,
       options?: CallOptions):
@@ -696,23 +713,6 @@ export class ConversionValueRuleSetServiceClient {
           protos.google.ads.googleads.v8.resources.IConversionValueRuleSet,
           protos.google.ads.googleads.v8.services.IGetConversionValueRuleSetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested conversion value rule set.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the conversion value rule set to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ConversionValueRuleSet]{@link google.ads.googleads.v8.resources.ConversionValueRuleSet}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getConversionValueRuleSet(request);
- */
   getConversionValueRuleSet(
       request?: protos.google.ads.googleads.v8.services.IGetConversionValueRuleSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -747,26 +747,6 @@ export class ConversionValueRuleSetServiceClient {
     this.initialize();
     return this.innerApiCalls.getConversionValueRuleSet(request, options, callback);
   }
-  mutateConversionValueRuleSets(
-      request?: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsResponse,
-        protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest|undefined, {}|undefined
-      ]>;
-  mutateConversionValueRuleSets(
-      request: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsResponse,
-          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateConversionValueRuleSets(
-      request: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsResponse,
-          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes conversion value rule sets. Operation statuses
  * are returned.
@@ -795,9 +775,29 @@ export class ConversionValueRuleSetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateConversionValueRuleSets(request);
+ * @example <caption>include:samples/generated/v8/conversion_value_rule_set_service.mutate_conversion_value_rule_sets.js</caption>
+ * region_tag:googleads_v8_generated_ConversionValueRuleSetService_MutateConversionValueRuleSets_async
  */
+  mutateConversionValueRuleSets(
+      request?: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsResponse,
+        protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest|undefined, {}|undefined
+      ]>;
+  mutateConversionValueRuleSets(
+      request: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsResponse,
+          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateConversionValueRuleSets(
+      request: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsResponse,
+          protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateConversionValueRuleSets(
       request?: protos.google.ads.googleads.v8.services.IMutateConversionValueRuleSetsRequest,
       optionsOrCallback?: CallOptions|Callback<

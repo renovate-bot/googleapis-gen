@@ -21,7 +21,7 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP
+   *  Required. IDs of the Photos google.streetview.publish.v1.Photo. HTTP
    *  GET requests require the following syntax for the URL query parameter:
    *  `photoIds=<id1>&photoIds=<id2>&...`.
    */
@@ -33,7 +33,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function batchDeletePhotos() {
+  async function callBatchDeletePhotos() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  batchDeletePhotos();
+  callBatchDeletePhotos();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_BatchDeletePhotos_async]
 }
 

@@ -30,7 +30,7 @@ function main() {
   // const project = 'my-project'
   /**
    */
-  // const body = ''
+  // const body = {}
 
   // Imports the Sql library
   const {SqlSslCertsServiceClient} = require('@google-cloud/sql').v1;
@@ -38,7 +38,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlSslCertsServiceClient();
 
-  async function insert() {
+  async function callInsert() {
     // Construct request
     const request = {
     };
@@ -48,7 +48,7 @@ function main() {
     console.log(response);
   }
 
-  insert();
+  callInsert();
   // [END sqladmin_v1_generated_SqlSslCertsService_Insert_async]
 }
 

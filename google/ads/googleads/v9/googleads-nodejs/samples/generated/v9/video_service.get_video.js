@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new VideoServiceClient();
 
-  async function getVideo() {
+  async function callGetVideo() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getVideo();
+  callGetVideo();
   // [END googleads_v9_generated_VideoService_GetVideo_async]
 }
 

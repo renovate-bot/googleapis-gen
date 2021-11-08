@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const accesscontextmanagerClient = new AccessContextManagerClient();
 
-  async function listAccessPolicies() {
+  async function callListAccessPolicies() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listAccessPolicies();
+  callListAccessPolicies();
   // [END accesscontextmanager_v1_generated_AccessContextManager_ListAccessPolicies_async]
 }
 

@@ -23,7 +23,7 @@ function main(parent, tripId, trip) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format "providers/{provider}".
    *  The provider must be the Project ID (for example, sample-cloud-project)
@@ -62,7 +62,7 @@ function main(parent, tripId, trip) {
    *  other TripWaypoint fields in vehicle_waypoints are ignored.
    *  All other Trip fields are ignored.
    */
-  // const trip = ''
+  // const trip = {}
 
   // Imports the Fleetengine library
   const {TripServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -70,7 +70,7 @@ function main(parent, tripId, trip) {
   // Instantiates a client
   const fleetengineClient = new TripServiceClient();
 
-  async function createTrip() {
+  async function callCreateTrip() {
     // Construct request
     const request = {
       parent,
@@ -83,7 +83,7 @@ function main(parent, tripId, trip) {
     console.log(response);
   }
 
-  createTrip();
+  callCreateTrip();
   // [END fleetengine_v1_generated_TripService_CreateTrip_async]
 }
 

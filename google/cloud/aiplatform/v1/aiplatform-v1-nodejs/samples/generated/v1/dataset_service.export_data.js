@@ -29,7 +29,7 @@ function main(name, exportConfig) {
   /**
    *  Required. The desired output location.
    */
-  // const exportConfig = ''
+  // const exportConfig = {}
 
   // Imports the Aiplatform library
   const {DatasetServiceClient} = require('@google-cloud/aiplatform').v1;
@@ -37,7 +37,7 @@ function main(name, exportConfig) {
   // Instantiates a client
   const aiplatformClient = new DatasetServiceClient();
 
-  async function exportData() {
+  async function callExportData() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name, exportConfig) {
     console.log(response);
   }
 
-  exportData();
+  callExportData();
   // [END aiplatform_v1_generated_DatasetService_ExportData_async]
 }
 

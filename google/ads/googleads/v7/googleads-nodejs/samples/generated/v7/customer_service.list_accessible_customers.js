@@ -27,7 +27,7 @@ function main() {
   // Instantiates a client
   const googleadsClient = new CustomerServiceClient();
 
-  async function listAccessibleCustomers() {
+  async function callListAccessibleCustomers() {
     // Construct request
     const request = {
     };
@@ -37,7 +37,7 @@ function main() {
     console.log(response);
   }
 
-  listAccessibleCustomers();
+  callListAccessibleCustomers();
   // [END googleads_v7_generated_CustomerService_ListAccessibleCustomers_async]
 }
 

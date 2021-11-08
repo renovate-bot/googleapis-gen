@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const serviceusageClient = new ServiceUsageClient();
 
-  async function listAdminOverrides() {
+  async function callListAdminOverrides() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     }
   }
 
-  listAdminOverrides();
+  callListAdminOverrides();
   // [END serviceusage_v1beta1_generated_ServiceUsage_ListAdminOverrides_async]
 }
 

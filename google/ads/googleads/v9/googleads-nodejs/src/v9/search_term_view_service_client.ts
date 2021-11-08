@@ -727,26 +727,6 @@ export class SearchTermViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getSearchTermView(
-      request?: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ISearchTermView,
-        protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest|undefined, {}|undefined
-      ]>;
-  getSearchTermView(
-      request: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ISearchTermView,
-          protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSearchTermView(
-      request: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ISearchTermView,
-          protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the attributes of the requested search term view.
  *
@@ -769,9 +749,29 @@ export class SearchTermViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSearchTermView(request);
+ * @example <caption>include:samples/generated/v9/search_term_view_service.get_search_term_view.js</caption>
+ * region_tag:googleads_v9_generated_SearchTermViewService_GetSearchTermView_async
  */
+  getSearchTermView(
+      request?: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ISearchTermView,
+        protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest|undefined, {}|undefined
+      ]>;
+  getSearchTermView(
+      request: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ISearchTermView,
+          protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSearchTermView(
+      request: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ISearchTermView,
+          protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getSearchTermView(
       request?: protos.google.ads.googleads.v9.services.IGetSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<

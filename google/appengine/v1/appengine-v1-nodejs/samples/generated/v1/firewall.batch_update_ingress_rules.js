@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new FirewallClient();
 
-  async function batchUpdateIngressRules() {
+  async function callBatchUpdateIngressRules() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  batchUpdateIngressRules();
+  callBatchUpdateIngressRules();
   // [END appengine_v1_generated_Firewall_BatchUpdateIngressRules_async]
 }
 

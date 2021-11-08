@@ -676,6 +676,23 @@ export class AssetFieldTypeViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested asset field type view in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the asset field type view to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AssetFieldTypeView]{@link google.ads.googleads.v8.resources.AssetFieldTypeView}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v8/asset_field_type_view_service.get_asset_field_type_view.js</caption>
+ * region_tag:googleads_v8_generated_AssetFieldTypeViewService_GetAssetFieldTypeView_async
+ */
   getAssetFieldTypeView(
       request?: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,
       options?: CallOptions):
@@ -696,23 +713,6 @@ export class AssetFieldTypeViewServiceClient {
           protos.google.ads.googleads.v8.resources.IAssetFieldTypeView,
           protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested asset field type view in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the asset field type view to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AssetFieldTypeView]{@link google.ads.googleads.v8.resources.AssetFieldTypeView}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAssetFieldTypeView(request);
- */
   getAssetFieldTypeView(
       request?: protos.google.ads.googleads.v8.services.IGetAssetFieldTypeViewRequest,
       optionsOrCallback?: CallOptions|Callback<

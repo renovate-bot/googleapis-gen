@@ -395,6 +395,28 @@ export class MetricServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a single monitored resource descriptor. This method does not require a Workspace.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The monitored resource descriptor to get.  The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
+ *
+ *   The `[RESOURCE_TYPE]` is a predefined type, such as
+ *   `cloudsql_database`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MonitoredResourceDescriptor]{@link google.api.MonitoredResourceDescriptor}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/metric_service.get_monitored_resource_descriptor.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_GetMonitoredResourceDescriptor_async
+ */
   getMonitoredResourceDescriptor(
       request?: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
       options?: CallOptions):
@@ -415,28 +437,6 @@ export class MetricServiceClient {
           protos.google.api.IMonitoredResourceDescriptor,
           protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single monitored resource descriptor. This method does not require a Workspace.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The monitored resource descriptor to get.  The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
- *
- *   The `[RESOURCE_TYPE]` is a predefined type, such as
- *   `cloudsql_database`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MonitoredResourceDescriptor]{@link google.api.MonitoredResourceDescriptor}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMonitoredResourceDescriptor(request);
- */
   getMonitoredResourceDescriptor(
       request?: protos.google.monitoring.v3.IGetMonitoredResourceDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -471,6 +471,28 @@ export class MetricServiceClient {
     this.initialize();
     return this.innerApiCalls.getMonitoredResourceDescriptor(request, options, callback);
   }
+/**
+ * Gets a single metric descriptor. This method does not require a Workspace.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The metric descriptor on which to execute the request. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
+ *
+ *   An example value of `[METRIC_ID]` is
+ *   `"compute.googleapis.com/instance/disk/read_bytes_count"`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MetricDescriptor]{@link google.api.MetricDescriptor}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/metric_service.get_metric_descriptor.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_GetMetricDescriptor_async
+ */
   getMetricDescriptor(
       request?: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
       options?: CallOptions):
@@ -491,28 +513,6 @@ export class MetricServiceClient {
           protos.google.api.IMetricDescriptor,
           protos.google.monitoring.v3.IGetMetricDescriptorRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single metric descriptor. This method does not require a Workspace.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The metric descriptor on which to execute the request. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
- *
- *   An example value of `[METRIC_ID]` is
- *   `"compute.googleapis.com/instance/disk/read_bytes_count"`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MetricDescriptor]{@link google.api.MetricDescriptor}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMetricDescriptor(request);
- */
   getMetricDescriptor(
       request?: protos.google.monitoring.v3.IGetMetricDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -547,26 +547,6 @@ export class MetricServiceClient {
     this.initialize();
     return this.innerApiCalls.getMetricDescriptor(request, options, callback);
   }
-  createMetricDescriptor(
-      request?: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IMetricDescriptor,
-        protos.google.monitoring.v3.ICreateMetricDescriptorRequest|undefined, {}|undefined
-      ]>;
-  createMetricDescriptor(
-      request: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.IMetricDescriptor,
-          protos.google.monitoring.v3.ICreateMetricDescriptorRequest|null|undefined,
-          {}|null|undefined>): void;
-  createMetricDescriptor(
-      request: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
-      callback: Callback<
-          protos.google.api.IMetricDescriptor,
-          protos.google.monitoring.v3.ICreateMetricDescriptorRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new metric descriptor.
  * The creation is executed asynchronously and callers may check the returned
@@ -591,9 +571,29 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createMetricDescriptor(request);
+ * @example <caption>include:samples/generated/v3/metric_service.create_metric_descriptor.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_CreateMetricDescriptor_async
  */
+  createMetricDescriptor(
+      request?: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IMetricDescriptor,
+        protos.google.monitoring.v3.ICreateMetricDescriptorRequest|undefined, {}|undefined
+      ]>;
+  createMetricDescriptor(
+      request: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.IMetricDescriptor,
+          protos.google.monitoring.v3.ICreateMetricDescriptorRequest|null|undefined,
+          {}|null|undefined>): void;
+  createMetricDescriptor(
+      request: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
+      callback: Callback<
+          protos.google.api.IMetricDescriptor,
+          protos.google.monitoring.v3.ICreateMetricDescriptorRequest|null|undefined,
+          {}|null|undefined>): void;
   createMetricDescriptor(
       request?: protos.google.monitoring.v3.ICreateMetricDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -628,26 +628,6 @@ export class MetricServiceClient {
     this.initialize();
     return this.innerApiCalls.createMetricDescriptor(request, options, callback);
   }
-  deleteMetricDescriptor(
-      request?: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|undefined, {}|undefined
-      ]>;
-  deleteMetricDescriptor(
-      request: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteMetricDescriptor(
-      request: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a metric descriptor. Only user-created
  * [custom metrics](https://cloud.google.com/monitoring/custom-metrics) can be
@@ -669,9 +649,29 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteMetricDescriptor(request);
+ * @example <caption>include:samples/generated/v3/metric_service.delete_metric_descriptor.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_DeleteMetricDescriptor_async
  */
+  deleteMetricDescriptor(
+      request?: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|undefined, {}|undefined
+      ]>;
+  deleteMetricDescriptor(
+      request: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteMetricDescriptor(
+      request: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.IDeleteMetricDescriptorRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteMetricDescriptor(
       request?: protos.google.monitoring.v3.IDeleteMetricDescriptorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -706,26 +706,6 @@ export class MetricServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteMetricDescriptor(request, options, callback);
   }
-  createTimeSeries(
-      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.monitoring.v3.ICreateTimeSeriesRequest|undefined, {}|undefined
-      ]>;
-  createTimeSeries(
-      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
-          {}|null|undefined>): void;
-  createTimeSeries(
-      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or adds data to one or more time series.
  * The response is empty if all time series in the request were written.
@@ -754,9 +734,29 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createTimeSeries(request);
+ * @example <caption>include:samples/generated/v3/metric_service.create_time_series.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_CreateTimeSeries_async
  */
+  createTimeSeries(
+      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.ICreateTimeSeriesRequest|undefined, {}|undefined
+      ]>;
+  createTimeSeries(
+      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>): void;
+  createTimeSeries(
+      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>): void;
   createTimeSeries(
       request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -791,26 +791,6 @@ export class MetricServiceClient {
     this.initialize();
     return this.innerApiCalls.createTimeSeries(request, options, callback);
   }
-  createServiceTimeSeries(
-      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.monitoring.v3.ICreateTimeSeriesRequest|undefined, {}|undefined
-      ]>;
-  createServiceTimeSeries(
-      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
-          {}|null|undefined>): void;
-  createServiceTimeSeries(
-      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or adds data to one or more service time series. A service time
  * series is a time series for a metric from a Google Cloud service. The
@@ -844,9 +824,29 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createServiceTimeSeries(request);
+ * @example <caption>include:samples/generated/v3/metric_service.create_service_time_series.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_CreateServiceTimeSeries_async
  */
+  createServiceTimeSeries(
+      request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.monitoring.v3.ICreateTimeSeriesRequest|undefined, {}|undefined
+      ]>;
+  createServiceTimeSeries(
+      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>): void;
+  createServiceTimeSeries(
+      request: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.monitoring.v3.ICreateTimeSeriesRequest|null|undefined,
+          {}|null|undefined>): void;
   createServiceTimeSeries(
       request?: protos.google.monitoring.v3.ICreateTimeSeriesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -882,28 +882,7 @@ export class MetricServiceClient {
     return this.innerApiCalls.createServiceTimeSeries(request, options, callback);
   }
 
-  listMonitoredResourceDescriptors(
-      request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IMonitoredResourceDescriptor[],
-        protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest|null,
-        protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse
-      ]>;
-  listMonitoredResourceDescriptors(
-      request: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
-          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse|null|undefined,
-          protos.google.api.IMonitoredResourceDescriptor>): void;
-  listMonitoredResourceDescriptors(
-      request: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
-          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse|null|undefined,
-          protos.google.api.IMonitoredResourceDescriptor>): void;
-/**
+ /**
  * Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
  *
  * @param {Object} request
@@ -939,6 +918,27 @@ export class MetricServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMonitoredResourceDescriptors(
+      request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IMonitoredResourceDescriptor[],
+        protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest|null,
+        protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse
+      ]>;
+  listMonitoredResourceDescriptors(
+      request: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse|null|undefined,
+          protos.google.api.IMonitoredResourceDescriptor>): void;
+  listMonitoredResourceDescriptors(
+      request: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
+          protos.google.monitoring.v3.IListMonitoredResourceDescriptorsResponse|null|undefined,
+          protos.google.api.IMonitoredResourceDescriptor>): void;
   listMonitoredResourceDescriptors(
       request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1066,11 +1066,8 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMonitoredResourceDescriptorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/metric_service.list_monitored_resource_descriptors.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_ListMonitoredResourceDescriptors_async
  */
   listMonitoredResourceDescriptorsAsync(
       request?: protos.google.monitoring.v3.IListMonitoredResourceDescriptorsRequest,
@@ -1085,7 +1082,6 @@ export class MetricServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1095,28 +1091,7 @@ export class MetricServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.api.IMonitoredResourceDescriptor>;
   }
-  listMetricDescriptors(
-      request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IMetricDescriptor[],
-        protos.google.monitoring.v3.IListMetricDescriptorsRequest|null,
-        protos.google.monitoring.v3.IListMetricDescriptorsResponse
-      ]>;
-  listMetricDescriptors(
-      request: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListMetricDescriptorsRequest,
-          protos.google.monitoring.v3.IListMetricDescriptorsResponse|null|undefined,
-          protos.google.api.IMetricDescriptor>): void;
-  listMetricDescriptors(
-      request: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListMetricDescriptorsRequest,
-          protos.google.monitoring.v3.IListMetricDescriptorsResponse|null|undefined,
-          protos.google.api.IMetricDescriptor>): void;
-/**
+ /**
  * Lists metric descriptors that match a filter. This method does not require a Workspace.
  *
  * @param {Object} request
@@ -1154,6 +1129,27 @@ export class MetricServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMetricDescriptors(
+      request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IMetricDescriptor[],
+        protos.google.monitoring.v3.IListMetricDescriptorsRequest|null,
+        protos.google.monitoring.v3.IListMetricDescriptorsResponse
+      ]>;
+  listMetricDescriptors(
+      request: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+          protos.google.monitoring.v3.IListMetricDescriptorsResponse|null|undefined,
+          protos.google.api.IMetricDescriptor>): void;
+  listMetricDescriptors(
+      request: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListMetricDescriptorsRequest,
+          protos.google.monitoring.v3.IListMetricDescriptorsResponse|null|undefined,
+          protos.google.api.IMetricDescriptor>): void;
   listMetricDescriptors(
       request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1285,11 +1281,8 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMetricDescriptorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/metric_service.list_metric_descriptors.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_ListMetricDescriptors_async
  */
   listMetricDescriptorsAsync(
       request?: protos.google.monitoring.v3.IListMetricDescriptorsRequest,
@@ -1304,7 +1297,6 @@ export class MetricServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMetricDescriptors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1314,28 +1306,7 @@ export class MetricServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.api.IMetricDescriptor>;
   }
-  listTimeSeries(
-      request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.ITimeSeries[],
-        protos.google.monitoring.v3.IListTimeSeriesRequest|null,
-        protos.google.monitoring.v3.IListTimeSeriesResponse
-      ]>;
-  listTimeSeries(
-      request: protos.google.monitoring.v3.IListTimeSeriesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListTimeSeriesRequest,
-          protos.google.monitoring.v3.IListTimeSeriesResponse|null|undefined,
-          protos.google.monitoring.v3.ITimeSeries>): void;
-  listTimeSeries(
-      request: protos.google.monitoring.v3.IListTimeSeriesRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListTimeSeriesRequest,
-          protos.google.monitoring.v3.IListTimeSeriesResponse|null|undefined,
-          protos.google.monitoring.v3.ITimeSeries>): void;
-/**
+ /**
  * Lists time series that match a filter. This method does not require a Workspace.
  *
  * @param {Object} request
@@ -1396,6 +1367,27 @@ export class MetricServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTimeSeries(
+      request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.ITimeSeries[],
+        protos.google.monitoring.v3.IListTimeSeriesRequest|null,
+        protos.google.monitoring.v3.IListTimeSeriesResponse
+      ]>;
+  listTimeSeries(
+      request: protos.google.monitoring.v3.IListTimeSeriesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListTimeSeriesRequest,
+          protos.google.monitoring.v3.IListTimeSeriesResponse|null|undefined,
+          protos.google.monitoring.v3.ITimeSeries>): void;
+  listTimeSeries(
+      request: protos.google.monitoring.v3.IListTimeSeriesRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListTimeSeriesRequest,
+          protos.google.monitoring.v3.IListTimeSeriesResponse|null|undefined,
+          protos.google.monitoring.v3.ITimeSeries>): void;
   listTimeSeries(
       request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1573,11 +1565,8 @@ export class MetricServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTimeSeriesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/metric_service.list_time_series.js</caption>
+ * region_tag:monitoring_v3_generated_MetricService_ListTimeSeries_async
  */
   listTimeSeriesAsync(
       request?: protos.google.monitoring.v3.IListTimeSeriesRequest,
@@ -1592,7 +1581,6 @@ export class MetricServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTimeSeries'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const googleadsClient = new ThirdPartyAppAnalyticsLinkServiceClient();
 
-  async function getThirdPartyAppAnalyticsLink() {
+  async function callGetThirdPartyAppAnalyticsLink() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  getThirdPartyAppAnalyticsLink();
+  callGetThirdPartyAppAnalyticsLink();
   // [END googleads_v8_generated_ThirdPartyAppAnalyticsLinkService_GetThirdPartyAppAnalyticsLink_async]
 }
 

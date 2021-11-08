@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new FeedItemTargetServiceClient();
 
-  async function getFeedItemTarget() {
+  async function callGetFeedItemTarget() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getFeedItemTarget();
+  callGetFeedItemTarget();
   // [END googleads_v7_generated_FeedItemTargetService_GetFeedItemTarget_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CustomerServiceClient();
 
-  async function getCustomer() {
+  async function callGetCustomer() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCustomer();
+  callGetCustomer();
   // [END googleads_v8_generated_CustomerService_GetCustomer_async]
 }
 

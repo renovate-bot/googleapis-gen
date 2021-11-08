@@ -26,7 +26,7 @@ function main(scope, query) {
    *  `include_gcp_public_datasets` is considered invalid. Data Catalog will
    *  return an error in such a case.
    */
-  // const scope = ''
+  // const scope = {}
   /**
    *  Required. The query string in search query syntax. The query must be non-empty.
    *  Query strings can be simple as "x" or more qualified as:
@@ -34,8 +34,8 @@ function main(scope, query) {
    *  * column:x
    *  * description:y
    *  Note: Query tokens need to have a minimum of 3 characters for substring
-   *  matching to work correctly. See [Data Catalog Search
-   *  Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
+   *  matching to work correctly. See Data Catalog Search
+   *  Syntax (https://cloud.google.com/data-catalog/docs/how-to/search-reference)
    *  for more information.
    */
   // const query = 'abc123'
@@ -46,9 +46,9 @@ function main(scope, query) {
   // const pageSize = 1234
   /**
    *  Optional. Pagination token returned in an earlier
-   *  [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token], which
+   *  SearchCatalogResponse.next_page_token google.cloud.datacatalog.v1beta1.SearchCatalogResponse.next_page_token, which
    *  indicates that this is a continuation of a prior
-   *  [SearchCatalogRequest][google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog]
+   *  SearchCatalogRequest google.cloud.datacatalog.v1beta1.DataCatalog.SearchCatalog 
    *  call, and that the system should return the next page of data. If empty,
    *  the first page is returned.
    */
@@ -57,7 +57,7 @@ function main(scope, query) {
    *  Specifies the ordering of results, currently supported case-sensitive
    *  choices are:
    *    * `relevance`, only supports descending
-   *    * `last_modified_timestamp [asc|desc]`, defaults to descending if not
+   *    * `last_modified_timestamp asc|desc`, defaults to descending if not
    *      specified
    *  If not specified, defaults to `relevance` descending.
    */
@@ -69,7 +69,7 @@ function main(scope, query) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function searchCatalog() {
+  async function callSearchCatalog() {
     // Construct request
     const request = {
       scope,
@@ -83,7 +83,7 @@ function main(scope, query) {
     }
   }
 
-  searchCatalog();
+  callSearchCatalog();
   // [END datacatalog_v1beta1_generated_DataCatalog_SearchCatalog_async]
 }
 

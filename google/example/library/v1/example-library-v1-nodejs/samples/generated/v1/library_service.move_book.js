@@ -35,7 +35,7 @@ function main(name, otherShelfName) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function moveBook() {
+  async function callMoveBook() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, otherShelfName) {
     console.log(response);
   }
 
-  moveBook();
+  callMoveBook();
   // [END library-example_v1_generated_LibraryService_MoveBook_async]
 }
 

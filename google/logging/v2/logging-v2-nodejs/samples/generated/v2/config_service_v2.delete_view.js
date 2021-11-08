@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function deleteView() {
+  async function callDeleteView() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteView();
+  callDeleteView();
   // [END logging_v2_generated_ConfigServiceV2_DeleteView_async]
 }
 

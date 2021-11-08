@@ -37,7 +37,7 @@ function main(debuggeeId, clientVersion) {
   /**
    *  When set, the response includes only breakpoints with the specified action.
    */
-  // const action = ''
+  // const action = {}
   /**
    *  This field is deprecated. The following fields are always stripped out of
    *  the result: `stack_frames`, `evaluated_expressions` and `variable_table`.
@@ -63,7 +63,7 @@ function main(debuggeeId, clientVersion) {
   // Instantiates a client
   const clouddebuggerClient = new Debugger2Client();
 
-  async function listBreakpoints() {
+  async function callListBreakpoints() {
     // Construct request
     const request = {
       debuggeeId,
@@ -75,7 +75,7 @@ function main(debuggeeId, clientVersion) {
     console.log(response);
   }
 
-  listBreakpoints();
+  callListBreakpoints();
   // [END clouddebugger_v2_generated_Debugger2_ListBreakpoints_async]
 }
 

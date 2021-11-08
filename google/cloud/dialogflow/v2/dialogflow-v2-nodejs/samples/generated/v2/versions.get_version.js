@@ -35,7 +35,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new VersionsClient();
 
-  async function getVersion() {
+  async function callGetVersion() {
     // Construct request
     const request = {
       name,
@@ -46,7 +46,7 @@ function main(name) {
     console.log(response);
   }
 
-  getVersion();
+  callGetVersion();
   // [END dialogflow_v2_generated_Versions_GetVersion_async]
 }
 

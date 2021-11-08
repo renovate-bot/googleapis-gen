@@ -48,7 +48,7 @@ function main() {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function listServices() {
+  async function callListServices() {
     // Construct request
     const request = {
     };
@@ -60,7 +60,7 @@ function main() {
     }
   }
 
-  listServices();
+  callListServices();
   // [END servicemanagement_v1_generated_ServiceManager_ListServices_async]
 }
 

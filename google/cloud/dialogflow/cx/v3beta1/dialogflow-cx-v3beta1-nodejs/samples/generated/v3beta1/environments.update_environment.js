@@ -23,11 +23,11 @@ function main(environment, updateMask) {
   /**
    *  Required. The environment to update.
    */
-  // const environment = ''
+  // const environment = {}
   /**
    *  Required. The mask to control which fields get updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Cx library
   const {EnvironmentsClient} = require('@google-cloud/dialogflow-cx').v3beta1;
@@ -35,7 +35,7 @@ function main(environment, updateMask) {
   // Instantiates a client
   const cxClient = new EnvironmentsClient();
 
-  async function updateEnvironment() {
+  async function callUpdateEnvironment() {
     // Construct request
     const request = {
       environment,
@@ -48,7 +48,7 @@ function main(environment, updateMask) {
     console.log(response);
   }
 
-  updateEnvironment();
+  callUpdateEnvironment();
   // [END dialogflow_v3beta1_generated_Environments_UpdateEnvironment_async]
 }
 

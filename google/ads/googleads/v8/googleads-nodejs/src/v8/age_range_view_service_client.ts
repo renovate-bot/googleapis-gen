@@ -676,26 +676,6 @@ export class AgeRangeViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAgeRangeView(
-      request?: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAgeRangeView,
-        protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest|undefined, {}|undefined
-      ]>;
-  getAgeRangeView(
-      request: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAgeRangeView,
-          protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAgeRangeView(
-      request: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAgeRangeView,
-          protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested age range view in full detail.
  *
@@ -718,9 +698,29 @@ export class AgeRangeViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAgeRangeView(request);
+ * @example <caption>include:samples/generated/v8/age_range_view_service.get_age_range_view.js</caption>
+ * region_tag:googleads_v8_generated_AgeRangeViewService_GetAgeRangeView_async
  */
+  getAgeRangeView(
+      request?: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAgeRangeView,
+        protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest|undefined, {}|undefined
+      ]>;
+  getAgeRangeView(
+      request: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAgeRangeView,
+          protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAgeRangeView(
+      request: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAgeRangeView,
+          protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getAgeRangeView(
       request?: protos.google.ads.googleads.v8.services.IGetAgeRangeViewRequest,
       optionsOrCallback?: CallOptions|Callback<

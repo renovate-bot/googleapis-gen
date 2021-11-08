@@ -173,7 +173,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobMetricsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.JobMetrics());
             client.innerApiCalls.getJobMetrics = stubSimpleCall(expectedResponse);
             const [response] = await client.getJobMetrics(request);
@@ -189,7 +189,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobMetricsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.JobMetrics());
             client.innerApiCalls.getJobMetrics = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -216,7 +216,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobMetricsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getJobMetrics = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getJobMetrics(request), expectedError);
@@ -233,7 +233,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobExecutionDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
@@ -253,7 +253,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobExecutionDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
@@ -284,7 +284,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobExecutionDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getJobExecutionDetails = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getJobExecutionDetails(request), expectedError);
@@ -404,7 +404,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetStageExecutionDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),
@@ -424,7 +424,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetStageExecutionDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),
@@ -455,7 +455,7 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetStageExecutionDetailsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getStageExecutionDetails = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getStageExecutionDetails(request), expectedError);

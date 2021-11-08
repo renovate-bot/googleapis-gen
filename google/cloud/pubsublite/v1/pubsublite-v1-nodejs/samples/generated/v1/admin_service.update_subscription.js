@@ -24,11 +24,11 @@ function main(subscription, updateMask) {
    *  Required. The subscription to update. Its `name` field must be populated.
    *  Topic field must not be populated.
    */
-  // const subscription = ''
+  // const subscription = {}
   /**
    *  Required. A mask specifying the subscription fields to change.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Pubsublite library
   const {AdminServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -36,7 +36,7 @@ function main(subscription, updateMask) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function updateSubscription() {
+  async function callUpdateSubscription() {
     // Construct request
     const request = {
       subscription,
@@ -48,7 +48,7 @@ function main(subscription, updateMask) {
     console.log(response);
   }
 
-  updateSubscription();
+  callUpdateSubscription();
   // [END pubsublite_v1_generated_AdminService_UpdateSubscription_async]
 }
 

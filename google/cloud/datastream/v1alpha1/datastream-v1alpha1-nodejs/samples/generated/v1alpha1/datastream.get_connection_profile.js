@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function getConnectionProfile() {
+  async function callGetConnectionProfile() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getConnectionProfile();
+  callGetConnectionProfile();
   // [END datastream_v1alpha1_generated_Datastream_GetConnectionProfile_async]
 }
 

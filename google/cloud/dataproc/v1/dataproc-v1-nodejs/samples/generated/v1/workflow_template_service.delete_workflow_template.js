@@ -44,7 +44,7 @@ function main(name) {
   // Instantiates a client
   const dataprocClient = new WorkflowTemplateServiceClient();
 
-  async function deleteWorkflowTemplate() {
+  async function callDeleteWorkflowTemplate() {
     // Construct request
     const request = {
       name,
@@ -55,7 +55,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteWorkflowTemplate();
+  callDeleteWorkflowTemplate();
   // [END dataproc_v1_generated_WorkflowTemplateService_DeleteWorkflowTemplate_async]
 }
 

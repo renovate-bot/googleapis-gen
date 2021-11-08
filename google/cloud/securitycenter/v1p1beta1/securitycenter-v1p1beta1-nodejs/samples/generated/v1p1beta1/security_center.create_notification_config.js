@@ -35,7 +35,7 @@ function main(parent, configId, notificationConfig) {
    *  Required. The notification config being created. The name and the service account
    *  will be ignored as they are both output only fields on this resource.
    */
-  // const notificationConfig = ''
+  // const notificationConfig = {}
 
   // Imports the Securitycenter library
   const {SecurityCenterClient} = require('@google-cloud/security-center').v1p1beta1;
@@ -43,7 +43,7 @@ function main(parent, configId, notificationConfig) {
   // Instantiates a client
   const securitycenterClient = new SecurityCenterClient();
 
-  async function createNotificationConfig() {
+  async function callCreateNotificationConfig() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, configId, notificationConfig) {
     console.log(response);
   }
 
-  createNotificationConfig();
+  callCreateNotificationConfig();
   // [END securitycenter_v1p1beta1_generated_SecurityCenter_CreateNotificationConfig_async]
 }
 

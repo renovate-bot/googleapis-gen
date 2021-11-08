@@ -32,7 +32,7 @@ function main(notebookInstance) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function isInstanceUpgradeable() {
+  async function callIsInstanceUpgradeable() {
     // Construct request
     const request = {
       notebookInstance,
@@ -43,7 +43,7 @@ function main(notebookInstance) {
     console.log(response);
   }
 
-  isInstanceUpgradeable();
+  callIsInstanceUpgradeable();
   // [END notebooks_v1_generated_NotebookService_IsInstanceUpgradeable_async]
 }
 

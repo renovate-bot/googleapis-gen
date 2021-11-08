@@ -32,7 +32,7 @@ function main(name) {
    *  The output format of the public key requested.
    *  X509_PEM is the default output format.
    */
-  // const publicKeyType = ''
+  // const publicKeyType = {}
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -40,7 +40,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function getServiceAccountKey() {
+  async function callGetServiceAccountKey() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name) {
     console.log(response);
   }
 
-  getServiceAccountKey();
+  callGetServiceAccountKey();
   // [END iam_v1_generated_IAM_GetServiceAccountKey_async]
 }
 

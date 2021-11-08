@@ -43,7 +43,7 @@ function main(database) {
   /**
    *  A stream token that was previously sent by the server.
    *  The client should set this field to the token from the most recent
-   *  [WriteResponse][google.firestore.v1.WriteResponse] it has received. This acknowledges that the client has
+   *  WriteResponse google.firestore.v1.WriteResponse  it has received. This acknowledges that the client has
    *  received responses up to this token. After sending this token, earlier
    *  tokens may not be used anymore.
    *  The server may close the stream if there are too many unacknowledged
@@ -64,7 +64,7 @@ function main(database) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function write() {
+  async function callWrite() {
     // Construct request
     const request = {
       database,
@@ -79,7 +79,7 @@ function main(database) {
     stream.end(); 
   }
 
-  write();
+  callWrite();
   // [END firestore_v1_generated_Firestore_Write_async]
 }
 

@@ -727,26 +727,6 @@ export class ConversionUploadServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  uploadClickConversions(
-      request?: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IUploadClickConversionsResponse,
-        protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest|undefined, {}|undefined
-      ]>;
-  uploadClickConversions(
-      request: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IUploadClickConversionsResponse,
-          protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  uploadClickConversions(
-      request: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IUploadClickConversionsResponse,
-          protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Processes the given click conversions.
  *
@@ -784,9 +764,29 @@ export class ConversionUploadServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.uploadClickConversions(request);
+ * @example <caption>include:samples/generated/v9/conversion_upload_service.upload_click_conversions.js</caption>
+ * region_tag:googleads_v9_generated_ConversionUploadService_UploadClickConversions_async
  */
+  uploadClickConversions(
+      request?: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IUploadClickConversionsResponse,
+        protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest|undefined, {}|undefined
+      ]>;
+  uploadClickConversions(
+      request: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IUploadClickConversionsResponse,
+          protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  uploadClickConversions(
+      request: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IUploadClickConversionsResponse,
+          protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest|null|undefined,
+          {}|null|undefined>): void;
   uploadClickConversions(
       request?: protos.google.ads.googleads.v9.services.IUploadClickConversionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -821,26 +821,6 @@ export class ConversionUploadServiceClient {
     this.initialize();
     return this.innerApiCalls.uploadClickConversions(request, options, callback);
   }
-  uploadCallConversions(
-      request?: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IUploadCallConversionsResponse,
-        protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest|undefined, {}|undefined
-      ]>;
-  uploadCallConversions(
-      request: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IUploadCallConversionsResponse,
-          protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  uploadCallConversions(
-      request: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IUploadCallConversionsResponse,
-          protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Processes the given call conversions.
  *
@@ -877,9 +857,29 @@ export class ConversionUploadServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.uploadCallConversions(request);
+ * @example <caption>include:samples/generated/v9/conversion_upload_service.upload_call_conversions.js</caption>
+ * region_tag:googleads_v9_generated_ConversionUploadService_UploadCallConversions_async
  */
+  uploadCallConversions(
+      request?: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IUploadCallConversionsResponse,
+        protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest|undefined, {}|undefined
+      ]>;
+  uploadCallConversions(
+      request: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IUploadCallConversionsResponse,
+          protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  uploadCallConversions(
+      request: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IUploadCallConversionsResponse,
+          protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest|null|undefined,
+          {}|null|undefined>): void;
   uploadCallConversions(
       request?: protos.google.ads.googleads.v9.services.IUploadCallConversionsRequest,
       optionsOrCallback?: CallOptions|Callback<

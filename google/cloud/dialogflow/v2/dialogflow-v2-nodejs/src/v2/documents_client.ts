@@ -445,6 +445,25 @@ export class DocumentsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves the specified document.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the document to retrieve.
+ *   Format `projects/<Project ID>/locations/<Location
+ *   ID>/knowledgeBases/<Knowledge Base ID>/documents/<Document ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Document]{@link google.cloud.dialogflow.v2.Document}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/documents.get_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_GetDocument_async
+ */
   getDocument(
       request?: protos.google.cloud.dialogflow.v2.IGetDocumentRequest,
       options?: CallOptions):
@@ -465,25 +484,6 @@ export class DocumentsClient {
           protos.google.cloud.dialogflow.v2.IDocument,
           protos.google.cloud.dialogflow.v2.IGetDocumentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the specified document.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the document to retrieve.
- *   Format `projects/<Project ID>/locations/<Location
- *   ID>/knowledgeBases/<Knowledge Base ID>/documents/<Document ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Document]{@link google.cloud.dialogflow.v2.Document}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDocument(request);
- */
   getDocument(
       request?: protos.google.cloud.dialogflow.v2.IGetDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -519,26 +519,6 @@ export class DocumentsClient {
     return this.innerApiCalls.getDocument(request, options, callback);
   }
 
-  createDocument(
-      request?: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createDocument(
-      request: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createDocument(
-      request: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new document.
  *
@@ -566,10 +546,29 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createDocument(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/documents.create_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_CreateDocument_async
  */
+  createDocument(
+      request?: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createDocument(
+      request: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createDocument(
+      request: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createDocument(
       request?: protos.google.cloud.dialogflow.v2.ICreateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -613,11 +612,8 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateDocumentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/documents.create_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_CreateDocument_async
  */
   async checkCreateDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -625,26 +621,6 @@ export class DocumentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createDocument, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>;
   }
-  deleteDocument(
-      request?: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteDocument(
-      request: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteDocument(
-      request: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified document.
  *
@@ -671,10 +647,29 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteDocument(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/documents.delete_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_DeleteDocument_async
  */
+  deleteDocument(
+      request?: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteDocument(
+      request: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteDocument(
+      request: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteDocument(
       request?: protos.google.cloud.dialogflow.v2.IDeleteDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -718,11 +713,8 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteDocumentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/documents.delete_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_DeleteDocument_async
  */
   async checkDeleteDocumentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -730,26 +722,6 @@ export class DocumentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteDocument, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>;
   }
-  updateDocument(
-      request?: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateDocument(
-      request: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateDocument(
-      request: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified document.
  *
@@ -777,10 +749,29 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateDocument(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/documents.update_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_UpdateDocument_async
  */
+  updateDocument(
+      request?: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateDocument(
+      request: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateDocument(
+      request: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateDocument(
       request?: protos.google.cloud.dialogflow.v2.IUpdateDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -824,11 +815,8 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateDocumentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/documents.update_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_UpdateDocument_async
  */
   async checkUpdateDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -836,26 +824,6 @@ export class DocumentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateDocument, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>;
   }
-  reloadDocument(
-      request?: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  reloadDocument(
-      request: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  reloadDocument(
-      request: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reloads the specified document from its specified source, content_uri or
  * content. The previously loaded content of the document will be deleted.
@@ -893,10 +861,29 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.reloadDocument(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/documents.reload_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_ReloadDocument_async
  */
+  reloadDocument(
+      request?: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  reloadDocument(
+      request: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  reloadDocument(
+      request: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IDocument, protos.google.cloud.dialogflow.v2.IKnowledgeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   reloadDocument(
       request?: protos.google.cloud.dialogflow.v2.IReloadDocumentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -940,11 +927,8 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkReloadDocumentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/documents.reload_document.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_ReloadDocument_async
  */
   async checkReloadDocumentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -952,28 +936,7 @@ export class DocumentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.reloadDocument, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2.Document, protos.google.cloud.dialogflow.v2.KnowledgeOperationMetadata>;
   }
-  listDocuments(
-      request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2.IDocument[],
-        protos.google.cloud.dialogflow.v2.IListDocumentsRequest|null,
-        protos.google.cloud.dialogflow.v2.IListDocumentsResponse
-      ]>;
-  listDocuments(
-      request: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
-          protos.google.cloud.dialogflow.v2.IListDocumentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2.IDocument>): void;
-  listDocuments(
-      request: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
-          protos.google.cloud.dialogflow.v2.IListDocumentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2.IDocument>): void;
-/**
+ /**
  * Returns the list of all documents of the knowledge base.
  *
  * @param {Object} request
@@ -1000,6 +963,27 @@ export class DocumentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDocuments(
+      request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2.IDocument[],
+        protos.google.cloud.dialogflow.v2.IListDocumentsRequest|null,
+        protos.google.cloud.dialogflow.v2.IListDocumentsResponse
+      ]>;
+  listDocuments(
+      request: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
+          protos.google.cloud.dialogflow.v2.IListDocumentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2.IDocument>): void;
+  listDocuments(
+      request: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
+          protos.google.cloud.dialogflow.v2.IListDocumentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2.IDocument>): void;
   listDocuments(
       request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1109,11 +1093,8 @@ export class DocumentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDocumentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/documents.list_documents.js</caption>
+ * region_tag:dialogflow_v2_generated_Documents_ListDocuments_async
  */
   listDocumentsAsync(
       request?: protos.google.cloud.dialogflow.v2.IListDocumentsRequest,
@@ -1128,7 +1109,6 @@ export class DocumentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDocuments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -27,7 +27,7 @@ function main() {
   /**
    *  Contents of the profile to create.
    */
-  // const profile = ''
+  // const profile = {}
 
   // Imports the Cloudprofiler library
   const {ProfilerServiceClient} = require('@google-cloud/cloudprofiler').v2;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const cloudprofilerClient = new ProfilerServiceClient();
 
-  async function createOfflineProfile() {
+  async function callCreateOfflineProfile() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  createOfflineProfile();
+  callCreateOfflineProfile();
   // [END cloudprofiler_v2_generated_ProfilerService_CreateOfflineProfile_async]
 }
 

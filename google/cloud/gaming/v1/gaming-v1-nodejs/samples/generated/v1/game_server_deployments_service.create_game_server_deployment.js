@@ -32,7 +32,7 @@ function main(parent, deploymentId, gameServerDeployment) {
   /**
    *  Required. The game server delpoyment resource to be created.
    */
-  // const gameServerDeployment = ''
+  // const gameServerDeployment = {}
 
   // Imports the Gaming library
   const {GameServerDeploymentsServiceClient} = require('@google-cloud/game-servers').v1;
@@ -40,7 +40,7 @@ function main(parent, deploymentId, gameServerDeployment) {
   // Instantiates a client
   const gamingClient = new GameServerDeploymentsServiceClient();
 
-  async function createGameServerDeployment() {
+  async function callCreateGameServerDeployment() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, deploymentId, gameServerDeployment) {
     console.log(response);
   }
 
-  createGameServerDeployment();
+  callCreateGameServerDeployment();
   // [END gameservices_v1_generated_GameServerDeploymentsService_CreateGameServerDeployment_async]
 }
 

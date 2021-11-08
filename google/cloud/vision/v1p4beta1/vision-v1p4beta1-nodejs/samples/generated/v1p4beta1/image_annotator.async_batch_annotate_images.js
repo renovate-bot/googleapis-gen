@@ -27,7 +27,7 @@ function main(requests, outputConfig) {
   /**
    *  Required. The desired output location and metadata (e.g. format).
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
 
   // Imports the Vision library
   const {ImageAnnotatorClient} = require('@google-cloud/vision').v1p4beta1;
@@ -35,7 +35,7 @@ function main(requests, outputConfig) {
   // Instantiates a client
   const visionClient = new ImageAnnotatorClient();
 
-  async function asyncBatchAnnotateImages() {
+  async function callAsyncBatchAnnotateImages() {
     // Construct request
     const request = {
       requests,
@@ -48,7 +48,7 @@ function main(requests, outputConfig) {
     console.log(response);
   }
 
-  asyncBatchAnnotateImages();
+  callAsyncBatchAnnotateImages();
   // [END vision_v1p4beta1_generated_ImageAnnotator_AsyncBatchAnnotateImages_async]
 }
 

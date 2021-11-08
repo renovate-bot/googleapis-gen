@@ -324,26 +324,6 @@ export class AssuredWorkloadsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  updateWorkload(
-      request?: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.assuredworkloads.v1.IWorkload,
-        protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest|undefined, {}|undefined
-      ]>;
-  updateWorkload(
-      request: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.assuredworkloads.v1.IWorkload,
-          protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateWorkload(
-      request: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
-      callback: Callback<
-          protos.google.cloud.assuredworkloads.v1.IWorkload,
-          protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an existing workload.
  * Currently allows updating of workload display_name and labels.
@@ -366,9 +346,29 @@ export class AssuredWorkloadsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateWorkload(request);
+ * @example <caption>include:samples/generated/v1/assured_workloads_service.update_workload.js</caption>
+ * region_tag:assuredworkloads_v1_generated_AssuredWorkloadsService_UpdateWorkload_async
  */
+  updateWorkload(
+      request?: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.assuredworkloads.v1.IWorkload,
+        protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest|undefined, {}|undefined
+      ]>;
+  updateWorkload(
+      request: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.assuredworkloads.v1.IWorkload,
+          protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateWorkload(
+      request: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
+      callback: Callback<
+          protos.google.cloud.assuredworkloads.v1.IWorkload,
+          protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest|null|undefined,
+          {}|null|undefined>): void;
   updateWorkload(
       request?: protos.google.cloud.assuredworkloads.v1.IUpdateWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -403,26 +403,6 @@ export class AssuredWorkloadsServiceClient {
     this.initialize();
     return this.innerApiCalls.updateWorkload(request, options, callback);
   }
-  deleteWorkload(
-      request?: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest|undefined, {}|undefined
-      ]>;
-  deleteWorkload(
-      request: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteWorkload(
-      request: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the workload. Make sure that workload's direct children are already
  * in a deleted state, otherwise the request will fail with a
@@ -444,9 +424,29 @@ export class AssuredWorkloadsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteWorkload(request);
+ * @example <caption>include:samples/generated/v1/assured_workloads_service.delete_workload.js</caption>
+ * region_tag:assuredworkloads_v1_generated_AssuredWorkloadsService_DeleteWorkload_async
  */
+  deleteWorkload(
+      request?: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest|undefined, {}|undefined
+      ]>;
+  deleteWorkload(
+      request: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteWorkload(
+      request: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteWorkload(
       request?: protos.google.cloud.assuredworkloads.v1.IDeleteWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -481,6 +481,27 @@ export class AssuredWorkloadsServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteWorkload(request, options, callback);
   }
+/**
+ * Gets Assured Workload associated with a CRM Node
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the Workload to fetch. This is the workloads's
+ *   relative path in the API, formatted as
+ *   "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
+ *   For example,
+ *   "organizations/123/locations/us-east1/workloads/assured-workload-1".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Workload]{@link google.cloud.assuredworkloads.v1.Workload}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/assured_workloads_service.get_workload.js</caption>
+ * region_tag:assuredworkloads_v1_generated_AssuredWorkloadsService_GetWorkload_async
+ */
   getWorkload(
       request?: protos.google.cloud.assuredworkloads.v1.IGetWorkloadRequest,
       options?: CallOptions):
@@ -501,27 +522,6 @@ export class AssuredWorkloadsServiceClient {
           protos.google.cloud.assuredworkloads.v1.IWorkload,
           protos.google.cloud.assuredworkloads.v1.IGetWorkloadRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets Assured Workload associated with a CRM Node
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the Workload to fetch. This is the workloads's
- *   relative path in the API, formatted as
- *   "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
- *   For example,
- *   "organizations/123/locations/us-east1/workloads/assured-workload-1".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Workload]{@link google.cloud.assuredworkloads.v1.Workload}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getWorkload(request);
- */
   getWorkload(
       request?: protos.google.cloud.assuredworkloads.v1.IGetWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -557,26 +557,6 @@ export class AssuredWorkloadsServiceClient {
     return this.innerApiCalls.getWorkload(request, options, callback);
   }
 
-  createWorkload(
-      request?: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.assuredworkloads.v1.IWorkload, protos.google.cloud.assuredworkloads.v1.ICreateWorkloadOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createWorkload(
-      request: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.assuredworkloads.v1.IWorkload, protos.google.cloud.assuredworkloads.v1.ICreateWorkloadOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createWorkload(
-      request: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.assuredworkloads.v1.IWorkload, protos.google.cloud.assuredworkloads.v1.ICreateWorkloadOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates Assured Workload.
  *
@@ -601,10 +581,29 @@ export class AssuredWorkloadsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createWorkload(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/assured_workloads_service.create_workload.js</caption>
+ * region_tag:assuredworkloads_v1_generated_AssuredWorkloadsService_CreateWorkload_async
  */
+  createWorkload(
+      request?: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.assuredworkloads.v1.IWorkload, protos.google.cloud.assuredworkloads.v1.ICreateWorkloadOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createWorkload(
+      request: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.assuredworkloads.v1.IWorkload, protos.google.cloud.assuredworkloads.v1.ICreateWorkloadOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createWorkload(
+      request: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.assuredworkloads.v1.IWorkload, protos.google.cloud.assuredworkloads.v1.ICreateWorkloadOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createWorkload(
       request?: protos.google.cloud.assuredworkloads.v1.ICreateWorkloadRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -648,11 +647,8 @@ export class AssuredWorkloadsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateWorkloadProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/assured_workloads_service.create_workload.js</caption>
+ * region_tag:assuredworkloads_v1_generated_AssuredWorkloadsService_CreateWorkload_async
  */
   async checkCreateWorkloadProgress(name: string): Promise<LROperation<protos.google.cloud.assuredworkloads.v1.Workload, protos.google.cloud.assuredworkloads.v1.CreateWorkloadOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -660,28 +656,7 @@ export class AssuredWorkloadsServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createWorkload, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.assuredworkloads.v1.Workload, protos.google.cloud.assuredworkloads.v1.CreateWorkloadOperationMetadata>;
   }
-  listWorkloads(
-      request?: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.assuredworkloads.v1.IWorkload[],
-        protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest|null,
-        protos.google.cloud.assuredworkloads.v1.IListWorkloadsResponse
-      ]>;
-  listWorkloads(
-      request: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
-          protos.google.cloud.assuredworkloads.v1.IListWorkloadsResponse|null|undefined,
-          protos.google.cloud.assuredworkloads.v1.IWorkload>): void;
-  listWorkloads(
-      request: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
-          protos.google.cloud.assuredworkloads.v1.IListWorkloadsResponse|null|undefined,
-          protos.google.cloud.assuredworkloads.v1.IWorkload>): void;
-/**
+ /**
  * Lists Assured Workloads under a CRM Node.
  *
  * @param {Object} request
@@ -711,6 +686,27 @@ export class AssuredWorkloadsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listWorkloads(
+      request?: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.assuredworkloads.v1.IWorkload[],
+        protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest|null,
+        protos.google.cloud.assuredworkloads.v1.IListWorkloadsResponse
+      ]>;
+  listWorkloads(
+      request: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
+          protos.google.cloud.assuredworkloads.v1.IListWorkloadsResponse|null|undefined,
+          protos.google.cloud.assuredworkloads.v1.IWorkload>): void;
+  listWorkloads(
+      request: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
+          protos.google.cloud.assuredworkloads.v1.IListWorkloadsResponse|null|undefined,
+          protos.google.cloud.assuredworkloads.v1.IWorkload>): void;
   listWorkloads(
       request?: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -826,11 +822,8 @@ export class AssuredWorkloadsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listWorkloadsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/assured_workloads_service.list_workloads.js</caption>
+ * region_tag:assuredworkloads_v1_generated_AssuredWorkloadsService_ListWorkloads_async
  */
   listWorkloadsAsync(
       request?: protos.google.cloud.assuredworkloads.v1.IListWorkloadsRequest,
@@ -845,7 +838,6 @@ export class AssuredWorkloadsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listWorkloads'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

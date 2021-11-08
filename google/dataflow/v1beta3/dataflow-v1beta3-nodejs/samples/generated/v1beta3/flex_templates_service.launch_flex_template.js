@@ -27,9 +27,9 @@ function main() {
   /**
    *  Required. Parameter to launch a job form Flex Template.
    */
-  // const launchParameter = ''
+  // const launchParameter = {}
   /**
-   *  Required. The [regional endpoint]
+   *  Required. The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
    *  which to direct the request. E.g., us-central1, us-west1.
    */
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new FlexTemplatesServiceClient();
 
-  async function launchFlexTemplate() {
+  async function callLaunchFlexTemplate() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  launchFlexTemplate();
+  callLaunchFlexTemplate();
   // [END dataflow_v1beta3_generated_FlexTemplatesService_LaunchFlexTemplate_async]
 }
 

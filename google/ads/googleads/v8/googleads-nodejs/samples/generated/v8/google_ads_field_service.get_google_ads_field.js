@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new GoogleAdsFieldServiceClient();
 
-  async function getGoogleAdsField() {
+  async function callGetGoogleAdsField() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getGoogleAdsField();
+  callGetGoogleAdsField();
   // [END googleads_v8_generated_GoogleAdsFieldService_GetGoogleAdsField_async]
 }
 

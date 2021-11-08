@@ -28,7 +28,7 @@ function main() {
   /**
    *  The occurrence to create.
    */
-  // const occurrence = ''
+  // const occurrence = {}
 
   // Imports the Containeranalysis library
   const {GrafeasV1Beta1Client} = require('@google-cloud/containeranalysis').v1beta1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const containeranalysisClient = new GrafeasV1Beta1Client();
 
-  async function createOccurrence() {
+  async function callCreateOccurrence() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  createOccurrence();
+  callCreateOccurrence();
   // [END containeranalysis_v1beta1_generated_GrafeasV1Beta1_CreateOccurrence_async]
 }
 

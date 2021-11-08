@@ -46,7 +46,7 @@ function main(name) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function listReservationTopics() {
+  async function callListReservationTopics() {
     // Construct request
     const request = {
       name,
@@ -59,7 +59,7 @@ function main(name) {
     }
   }
 
-  listReservationTopics();
+  callListReservationTopics();
   // [END pubsublite_v1_generated_AdminService_ListReservationTopics_async]
 }
 

@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on the customer
    */
-  // const operation = ''
+  // const operation = {}
 
   // Imports the Googleads library
   const {CustomerUserAccessServiceClient} = require('google-ads').v9;
@@ -35,7 +35,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new CustomerUserAccessServiceClient();
 
-  async function mutateCustomerUserAccess() {
+  async function callMutateCustomerUserAccess() {
     // Construct request
     const request = {
       customerId,
@@ -47,7 +47,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateCustomerUserAccess();
+  callMutateCustomerUserAccess();
   // [END googleads_v9_generated_CustomerUserAccessService_MutateCustomerUserAccess_async]
 }
 

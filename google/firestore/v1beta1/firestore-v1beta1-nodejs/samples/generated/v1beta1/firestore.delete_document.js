@@ -29,7 +29,7 @@ function main(name) {
    *  An optional precondition on the document.
    *  The request will fail if this is set and not met by the target document.
    */
-  // const currentDocument = ''
+  // const currentDocument = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('firestore').v1beta1;
@@ -37,7 +37,7 @@ function main(name) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function deleteDocument() {
+  async function callDeleteDocument() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteDocument();
+  callDeleteDocument();
   // [END firestore_v1beta1_generated_Firestore_DeleteDocument_async]
 }
 

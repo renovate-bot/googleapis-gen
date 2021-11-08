@@ -142,7 +142,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.BatchAnnotateImagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.BatchAnnotateImagesResponse());
             client.innerApiCalls.batchAnnotateImages = stubSimpleCall(expectedResponse);
             const [response] = await client.batchAnnotateImages(request);
@@ -158,7 +158,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.BatchAnnotateImagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.BatchAnnotateImagesResponse());
             client.innerApiCalls.batchAnnotateImages = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -185,7 +185,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.BatchAnnotateImagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchAnnotateImages = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchAnnotateImages(request), expectedError);
@@ -202,7 +202,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.asyncBatchAnnotateFiles = stubLongRunningCall(expectedResponse);
             const [operation] = await client.asyncBatchAnnotateFiles(request);
@@ -219,7 +219,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.asyncBatchAnnotateFiles = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -249,7 +249,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.asyncBatchAnnotateFiles = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.asyncBatchAnnotateFiles(request), expectedError);
@@ -264,7 +264,7 @@ describe('v1p2beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.asyncBatchAnnotateFiles = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.asyncBatchAnnotateFiles(request);

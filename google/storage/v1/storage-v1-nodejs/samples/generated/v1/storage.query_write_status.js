@@ -28,11 +28,11 @@ function main(uploadId) {
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -40,7 +40,7 @@ function main(uploadId) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function queryWriteStatus() {
+  async function callQueryWriteStatus() {
     // Construct request
     const request = {
       uploadId,
@@ -51,7 +51,7 @@ function main(uploadId) {
     console.log(response);
   }
 
-  queryWriteStatus();
+  callQueryWriteStatus();
   // [END storage_v1_generated_Storage_QueryWriteStatus_async]
 }
 

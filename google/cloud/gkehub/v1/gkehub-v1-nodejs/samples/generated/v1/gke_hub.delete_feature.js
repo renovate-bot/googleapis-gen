@@ -52,7 +52,7 @@ function main() {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function deleteFeature() {
+  async function callDeleteFeature() {
     // Construct request
     const request = {
     };
@@ -63,7 +63,7 @@ function main() {
     console.log(response);
   }
 
-  deleteFeature();
+  callDeleteFeature();
   // [END gkehub_v1_generated_GkeHub_DeleteFeature_async]
 }
 

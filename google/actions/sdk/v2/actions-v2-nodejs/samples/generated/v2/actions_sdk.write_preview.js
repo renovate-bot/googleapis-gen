@@ -34,19 +34,19 @@ function main(parent, previewSettings) {
    *  4. The webhook ConfigFile corresponding to inline cloud function must be
    *     streamed before the DataFile corresponding to its source code.
    */
-  // const files = ''
+  // const files = {}
   /**
    *  Content sourced from the project draft.
    */
-  // const draft = ''
+  // const draft = {}
   /**
    *  Content sourced from the an exiting version.
    */
-  // const submittedVersion = ''
+  // const submittedVersion = {}
   /**
    *  Required. The settings for updating the user's preview.
    */
-  // const previewSettings = ''
+  // const previewSettings = {}
 
   // Imports the Sdk library
   const {ActionsSdkClient} = require('@assistant/actions').v2;
@@ -54,7 +54,7 @@ function main(parent, previewSettings) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function writePreview() {
+  async function callWritePreview() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent, previewSettings) {
     stream.end();
   }
 
-  writePreview();
+  callWritePreview();
   // [END actions_v2_generated_ActionsSdk_WritePreview_async]
 }
 

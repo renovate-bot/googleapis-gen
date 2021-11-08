@@ -40,7 +40,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CustomerManagerLinkServiceClient();
 
-  async function mutateCustomerManagerLink() {
+  async function callMutateCustomerManagerLink() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCustomerManagerLink();
+  callMutateCustomerManagerLink();
   // [END googleads_v7_generated_CustomerManagerLinkService_MutateCustomerManagerLink_async]
 }
 

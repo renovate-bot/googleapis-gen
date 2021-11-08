@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const talentClient = new JobServiceClient();
 
-  async function getJob() {
+  async function callGetJob() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getJob();
+  callGetJob();
   // [END jobs_v4_generated_JobService_GetJob_async]
 }
 

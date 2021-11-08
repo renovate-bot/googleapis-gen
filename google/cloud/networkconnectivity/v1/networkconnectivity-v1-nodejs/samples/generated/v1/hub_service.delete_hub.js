@@ -46,7 +46,7 @@ function main(name) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function deleteHub() {
+  async function callDeleteHub() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteHub();
+  callDeleteHub();
   // [END networkconnectivity_v1_generated_HubService_DeleteHub_async]
 }
 

@@ -126,7 +126,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaEnrollmentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaEnrollmentResponse());
             client.innerApiCalls.finalizeMfaEnrollment = stubSimpleCall(expectedResponse);
             const [response] = await client.finalizeMfaEnrollment(request);
@@ -142,7 +142,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaEnrollmentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaEnrollmentResponse());
             client.innerApiCalls.finalizeMfaEnrollment = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.FinalizeMfaEnrollmentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.finalizeMfaEnrollment = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.finalizeMfaEnrollment(request), expectedError);
@@ -186,7 +186,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaEnrollmentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaEnrollmentResponse());
             client.innerApiCalls.startMfaEnrollment = stubSimpleCall(expectedResponse);
             const [response] = await client.startMfaEnrollment(request);
@@ -202,7 +202,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaEnrollmentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaEnrollmentResponse());
             client.innerApiCalls.startMfaEnrollment = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.StartMfaEnrollmentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.startMfaEnrollment = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.startMfaEnrollment(request), expectedError);
@@ -246,7 +246,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.WithdrawMfaRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.WithdrawMfaResponse());
             client.innerApiCalls.withdrawMfa = stubSimpleCall(expectedResponse);
             const [response] = await client.withdrawMfa(request);
@@ -262,7 +262,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.WithdrawMfaRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.WithdrawMfaResponse());
             client.innerApiCalls.withdrawMfa = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -289,7 +289,7 @@ describe('v2.AccountManagementServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.identitytoolkit.v2.WithdrawMfaRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.withdrawMfa = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.withdrawMfa(request), expectedError);

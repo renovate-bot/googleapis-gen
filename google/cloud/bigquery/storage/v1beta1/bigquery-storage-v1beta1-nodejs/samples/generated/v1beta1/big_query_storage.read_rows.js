@@ -25,7 +25,7 @@ function main(readPosition) {
    *  The offset requested must be less than the last row read from ReadRows.
    *  Requesting a larger offset is undefined.
    */
-  // const readPosition = ''
+  // const readPosition = {}
 
   // Imports the Storage library
   const {BigQueryStorageClient} = require('@google-cloud/bigquery-storage').v1beta1;
@@ -33,7 +33,7 @@ function main(readPosition) {
   // Instantiates a client
   const storageClient = new BigQueryStorageClient();
 
-  async function readRows() {
+  async function callReadRows() {
     // Construct request
     const request = {
       readPosition,
@@ -46,7 +46,7 @@ function main(readPosition) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  readRows();
+  callReadRows();
   // [END bigquerystorage_v1beta1_generated_BigQueryStorage_ReadRows_async]
 }
 

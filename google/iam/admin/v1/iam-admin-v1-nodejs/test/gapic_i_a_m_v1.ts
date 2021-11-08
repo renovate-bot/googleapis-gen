@@ -2120,7 +2120,7 @@ describe('v1.IAMClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesResponse());
             client.innerApiCalls.queryAuditableServices = stubSimpleCall(expectedResponse);
             const [response] = await client.queryAuditableServices(request);
@@ -2136,7 +2136,7 @@ describe('v1.IAMClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesResponse());
             client.innerApiCalls.queryAuditableServices = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2163,7 +2163,7 @@ describe('v1.IAMClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryAuditableServicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.queryAuditableServices = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.queryAuditableServices(request), expectedError);
@@ -2180,7 +2180,7 @@ describe('v1.IAMClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyResponse());
             client.innerApiCalls.lintPolicy = stubSimpleCall(expectedResponse);
             const [response] = await client.lintPolicy(request);
@@ -2196,7 +2196,7 @@ describe('v1.IAMClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyResponse());
             client.innerApiCalls.lintPolicy = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -2223,7 +2223,7 @@ describe('v1.IAMClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.LintPolicyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.lintPolicy = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.lintPolicy(request), expectedError);
@@ -2463,7 +2463,7 @@ describe('v1.IAMClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryGrantableRolesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.iam.admin.v1.Role()),
               generateSampleMessage(new protos.google.iam.admin.v1.Role()),
@@ -2483,7 +2483,7 @@ describe('v1.IAMClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryGrantableRolesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.iam.admin.v1.Role()),
               generateSampleMessage(new protos.google.iam.admin.v1.Role()),
@@ -2514,7 +2514,7 @@ describe('v1.IAMClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryGrantableRolesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.queryGrantableRoles = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.queryGrantableRoles(request), expectedError);
@@ -2857,7 +2857,7 @@ describe('v1.IAMClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryTestablePermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.iam.admin.v1.Permission()),
               generateSampleMessage(new protos.google.iam.admin.v1.Permission()),
@@ -2877,7 +2877,7 @@ describe('v1.IAMClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryTestablePermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.iam.admin.v1.Permission()),
               generateSampleMessage(new protos.google.iam.admin.v1.Permission()),
@@ -2908,7 +2908,7 @@ describe('v1.IAMClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.admin.v1.QueryTestablePermissionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.queryTestablePermissions = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.queryTestablePermissions(request), expectedError);

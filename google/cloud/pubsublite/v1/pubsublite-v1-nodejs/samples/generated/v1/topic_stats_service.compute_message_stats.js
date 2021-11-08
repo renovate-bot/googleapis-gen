@@ -31,13 +31,13 @@ function main(topic, partition) {
   /**
    *  The inclusive start of the range.
    */
-  // const startCursor = ''
+  // const startCursor = {}
   /**
    *  The exclusive end of the range. The range is empty if end_cursor <=
    *  start_cursor. Specifying a start_cursor before the first message and an
    *  end_cursor after the last message will retrieve all messages.
    */
-  // const endCursor = ''
+  // const endCursor = {}
 
   // Imports the Pubsublite library
   const {TopicStatsServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -45,7 +45,7 @@ function main(topic, partition) {
   // Instantiates a client
   const pubsubliteClient = new TopicStatsServiceClient();
 
-  async function computeMessageStats() {
+  async function callComputeMessageStats() {
     // Construct request
     const request = {
       topic,
@@ -57,7 +57,7 @@ function main(topic, partition) {
     console.log(response);
   }
 
-  computeMessageStats();
+  callComputeMessageStats();
   // [END pubsublite_v1_generated_TopicStatsService_ComputeMessageStats_async]
 }
 

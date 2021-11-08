@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const billingClient = new CloudBillingClient();
 
-  async function getProjectBillingInfo() {
+  async function callGetProjectBillingInfo() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getProjectBillingInfo();
+  callGetProjectBillingInfo();
   // [END cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_async]
 }
 

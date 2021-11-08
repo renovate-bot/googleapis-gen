@@ -23,7 +23,7 @@ function main(page) {
   /**
    *  Required. The page to update.
    */
-  // const page = ''
+  // const page = {}
   /**
    *  The language of the following fields in `page`:
    *  *  `Page.entry_fulfillment.messages`
@@ -39,8 +39,8 @@ function main(page) {
    *  *  `Page.transition_routes.trigger_fulfillment.messages`
    *  *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
    *  If not specified, the agent's default language is used.
-   *  [Many
-   *  languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   *  Many
+   *  languages (https://cloud.google.com/dialogflow/cx/docs/reference/language)
    *  are supported.
    *  Note: languages must be enabled in the agent before they can be used.
    */
@@ -49,7 +49,7 @@ function main(page) {
    *  The mask to control which fields get updated. If the mask is not present,
    *  all fields will be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Cx library
   const {PagesClient} = require('@google-cloud/dialogflow-cx').v3beta1;
@@ -57,7 +57,7 @@ function main(page) {
   // Instantiates a client
   const cxClient = new PagesClient();
 
-  async function updatePage() {
+  async function callUpdatePage() {
     // Construct request
     const request = {
       page,
@@ -68,7 +68,7 @@ function main(page) {
     console.log(response);
   }
 
-  updatePage();
+  callUpdatePage();
   // [END dialogflow_v3beta1_generated_Pages_UpdatePage_async]
 }
 

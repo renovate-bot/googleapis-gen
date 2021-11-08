@@ -22,7 +22,7 @@ function main(parent, tagTemplateId, tagTemplate) {
    */
   /**
    *  Required. The name of the project and the template location
-   *  [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
+   *  region (https://cloud.google.com/data-catalog/docs/concepts/regions).
    */
   // const parent = 'abc123'
   /**
@@ -35,7 +35,7 @@ function main(parent, tagTemplateId, tagTemplate) {
   /**
    *  Required. The tag template to create.
    */
-  // const tagTemplate = ''
+  // const tagTemplate = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -43,7 +43,7 @@ function main(parent, tagTemplateId, tagTemplate) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function createTagTemplate() {
+  async function callCreateTagTemplate() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, tagTemplateId, tagTemplate) {
     console.log(response);
   }
 
-  createTagTemplate();
+  callCreateTagTemplate();
   // [END datacatalog_v1_generated_DataCatalog_CreateTagTemplate_async]
 }
 

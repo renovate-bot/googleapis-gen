@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  The fields to return. If not set or empty, all fields are returned.
    */
-  // const readMask = ''
+  // const readMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1beta1;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function getEntryGroup() {
+  async function callGetEntryGroup() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEntryGroup();
+  callGetEntryGroup();
   // [END datacatalog_v1beta1_generated_DataCatalog_GetEntryGroup_async]
 }
 

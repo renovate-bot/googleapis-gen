@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new TensorboardServiceClient();
 
-  async function deleteTensorboardExperiment() {
+  async function callDeleteTensorboardExperiment() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteTensorboardExperiment();
+  callDeleteTensorboardExperiment();
   // [END aiplatform_v1beta1_generated_TensorboardService_DeleteTensorboardExperiment_async]
 }
 

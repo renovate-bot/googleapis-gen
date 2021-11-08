@@ -677,26 +677,6 @@ export class MerchantCenterLinkServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  listMerchantCenterLinks(
-      request?: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
-        protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|undefined, {}|undefined
-      ]>;
-  listMerchantCenterLinks(
-      request: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
-          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|null|undefined,
-          {}|null|undefined>): void;
-  listMerchantCenterLinks(
-      request: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
-          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns Merchant Center links available for this customer.
  *
@@ -720,9 +700,29 @@ export class MerchantCenterLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listMerchantCenterLinks(request);
+ * @example <caption>include:samples/generated/v8/merchant_center_link_service.list_merchant_center_links.js</caption>
+ * region_tag:googleads_v8_generated_MerchantCenterLinkService_ListMerchantCenterLinks_async
  */
+  listMerchantCenterLinks(
+      request?: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
+        protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|undefined, {}|undefined
+      ]>;
+  listMerchantCenterLinks(
+      request: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
+          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|null|undefined,
+          {}|null|undefined>): void;
+  listMerchantCenterLinks(
+      request: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksResponse,
+          protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest|null|undefined,
+          {}|null|undefined>): void;
   listMerchantCenterLinks(
       request?: protos.google.ads.googleads.v8.services.IListMerchantCenterLinksRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -757,26 +757,6 @@ export class MerchantCenterLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.listMerchantCenterLinks(request, options, callback);
   }
-  getMerchantCenterLink(
-      request?: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
-        protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|undefined, {}|undefined
-      ]>;
-  getMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
-          protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  getMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
-          protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the Merchant Center link in full detail.
  *
@@ -799,9 +779,29 @@ export class MerchantCenterLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getMerchantCenterLink(request);
+ * @example <caption>include:samples/generated/v8/merchant_center_link_service.get_merchant_center_link.js</caption>
+ * region_tag:googleads_v8_generated_MerchantCenterLinkService_GetMerchantCenterLink_async
  */
+  getMerchantCenterLink(
+      request?: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
+        protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|undefined, {}|undefined
+      ]>;
+  getMerchantCenterLink(
+      request: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
+          protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  getMerchantCenterLink(
+      request: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IMerchantCenterLink,
+          protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   getMerchantCenterLink(
       request?: protos.google.ads.googleads.v8.services.IGetMerchantCenterLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -836,26 +836,6 @@ export class MerchantCenterLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.getMerchantCenterLink(request, options, callback);
   }
-  mutateMerchantCenterLink(
-      request?: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
-        protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|undefined, {}|undefined
-      ]>;
-  mutateMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
-          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateMerchantCenterLink(
-      request: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
-          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates status or removes a Merchant Center link.
  *
@@ -884,9 +864,29 @@ export class MerchantCenterLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateMerchantCenterLink(request);
+ * @example <caption>include:samples/generated/v8/merchant_center_link_service.mutate_merchant_center_link.js</caption>
+ * region_tag:googleads_v8_generated_MerchantCenterLinkService_MutateMerchantCenterLink_async
  */
+  mutateMerchantCenterLink(
+      request?: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
+        protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|undefined, {}|undefined
+      ]>;
+  mutateMerchantCenterLink(
+      request: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
+          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateMerchantCenterLink(
+      request: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkResponse,
+          protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateMerchantCenterLink(
       request?: protos.google.ads.googleads.v8.services.IMutateMerchantCenterLinkRequest,
       optionsOrCallback?: CallOptions|Callback<

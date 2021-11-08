@@ -32,7 +32,7 @@ function main(customerId, campaignDuration, plannedProducts) {
   /**
    *  Required. Campaign duration.
    */
-  // const campaignDuration = ''
+  // const campaignDuration = {}
   /**
    *  Desired cookie frequency cap that will be applied to each planned product.
    *  This is equivalent to the frequency cap exposed in Google Ads when creating
@@ -51,10 +51,10 @@ function main(customerId, campaignDuration, plannedProducts) {
    *  If not specified, a default of 0 (no cap) is applied.
    *  This field replaces the deprecated cookie_frequency_cap field.
    */
-  // const cookieFrequencyCapSetting = ''
+  // const cookieFrequencyCapSetting = {}
   /**
    *  Desired minimum effective frequency (the number of times a person was
-   *  exposed to the ad) for the reported reach metrics [1-10].
+   *  exposed to the ad) for the reported reach metrics 1-10.
    *  This won't affect the targeting, but just the reporting.
    *  If not specified, a default of 1 is applied.
    *  This field cannot be combined with the effective_frequency_limit field.
@@ -62,7 +62,7 @@ function main(customerId, campaignDuration, plannedProducts) {
   // const minEffectiveFrequency = 1234
   /**
    *  The highest minimum effective frequency (the number of times a person was
-   *  exposed to the ad) value [1-10] to include in
+   *  exposed to the ad) value 1-10  to include in
    *  Forecast.effective_frequency_breakdowns.
    *  If not specified, Forecast.effective_frequency_breakdowns will not be
    *  provided.
@@ -70,14 +70,14 @@ function main(customerId, campaignDuration, plannedProducts) {
    *  minimum effective frequency for the reported reach metrics.
    *  This field cannot be combined with the min_effective_frequency field.
    */
-  // const effectiveFrequencyLimit = ''
+  // const effectiveFrequencyLimit = {}
   /**
    *  The targeting to be applied to all products selected in the product mix.
    *  This is planned targeting: execution details might vary based on the
    *  advertising product, please consult an implementation specialist.
    *  See specific metrics for details on how targeting affects them.
    */
-  // const targeting = ''
+  // const targeting = {}
   /**
    *  Required. The products to be forecast.
    *  The max number of allowed planned products is 15.
@@ -90,7 +90,7 @@ function main(customerId, campaignDuration, plannedProducts) {
   // Instantiates a client
   const googleadsClient = new ReachPlanServiceClient();
 
-  async function generateReachForecast() {
+  async function callGenerateReachForecast() {
     // Construct request
     const request = {
       customerId,
@@ -103,7 +103,7 @@ function main(customerId, campaignDuration, plannedProducts) {
     console.log(response);
   }
 
-  generateReachForecast();
+  callGenerateReachForecast();
   // [END googleads_v9_generated_ReachPlanService_GenerateReachForecast_async]
 }
 

@@ -399,6 +399,27 @@ export class ParticipantsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a new participant in a conversation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Resource identifier of the conversation adding the participant.
+ *   Format: `projects/<Project ID>/locations/<Location
+ *   ID>/conversations/<Conversation ID>`.
+ * @param {google.cloud.dialogflow.v2beta1.Participant} request.participant
+ *   Required. The participant to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Participant]{@link google.cloud.dialogflow.v2beta1.Participant}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/participants.create_participant.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_CreateParticipant_async
+ */
   createParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
       options?: CallOptions):
@@ -419,27 +440,6 @@ export class ParticipantsClient {
           protos.google.cloud.dialogflow.v2beta1.IParticipant,
           protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new participant in a conversation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Resource identifier of the conversation adding the participant.
- *   Format: `projects/<Project ID>/locations/<Location
- *   ID>/conversations/<Conversation ID>`.
- * @param {google.cloud.dialogflow.v2beta1.Participant} request.participant
- *   Required. The participant to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Participant]{@link google.cloud.dialogflow.v2beta1.Participant}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createParticipant(request);
- */
   createParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.ICreateParticipantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -474,6 +474,25 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.createParticipant(request, options, callback);
   }
+/**
+ * Retrieves a conversation participant.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the participant. Format:
+ *   `projects/<Project ID>/locations/<Location ID>/conversations/<Conversation
+ *   ID>/participants/<Participant ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Participant]{@link google.cloud.dialogflow.v2beta1.Participant}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/participants.get_participant.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_GetParticipant_async
+ */
   getParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
       options?: CallOptions):
@@ -494,25 +513,6 @@ export class ParticipantsClient {
           protos.google.cloud.dialogflow.v2beta1.IParticipant,
           protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a conversation participant.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the participant. Format:
- *   `projects/<Project ID>/locations/<Location ID>/conversations/<Conversation
- *   ID>/participants/<Participant ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Participant]{@link google.cloud.dialogflow.v2beta1.Participant}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getParticipant(request);
- */
   getParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetParticipantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -547,6 +547,25 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.getParticipant(request, options, callback);
   }
+/**
+ * Updates the specified participant.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.dialogflow.v2beta1.Participant} request.participant
+ *   Required. The participant to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. The mask to specify which fields to update.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Participant]{@link google.cloud.dialogflow.v2beta1.Participant}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/participants.update_participant.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_UpdateParticipant_async
+ */
   updateParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
       options?: CallOptions):
@@ -567,25 +586,6 @@ export class ParticipantsClient {
           protos.google.cloud.dialogflow.v2beta1.IParticipant,
           protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates the specified participant.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.dialogflow.v2beta1.Participant} request.participant
- *   Required. The participant to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. The mask to specify which fields to update.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Participant]{@link google.cloud.dialogflow.v2beta1.Participant}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateParticipant(request);
- */
   updateParticipant(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateParticipantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -620,26 +620,6 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.updateParticipant(request, options, callback);
   }
-  analyzeContent(
-      request?: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
-        protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|undefined, {}|undefined
-      ]>;
-  analyzeContent(
-      request: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
-          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|null|undefined,
-          {}|null|undefined>): void;
-  analyzeContent(
-      request: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
-          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a text (chat, for example), or audio (phone recording, for example)
  * message from a participant into the conversation.
@@ -692,9 +672,29 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.analyzeContent(request);
+ * @example <caption>include:samples/generated/v2beta1/participants.analyze_content.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_AnalyzeContent_async
  */
+  analyzeContent(
+      request?: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
+        protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|undefined, {}|undefined
+      ]>;
+  analyzeContent(
+      request: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
+          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|null|undefined,
+          {}|null|undefined>): void;
+  analyzeContent(
+      request: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentResponse,
+          protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest|null|undefined,
+          {}|null|undefined>): void;
   analyzeContent(
       request?: protos.google.cloud.dialogflow.v2beta1.IAnalyzeContentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -729,26 +729,6 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.analyzeContent(request, options, callback);
   }
-  suggestArticles(
-      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
-        protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|undefined, {}|undefined
-      ]>;
-  suggestArticles(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|null|undefined,
-          {}|null|undefined>): void;
-  suggestArticles(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets suggested articles for a participant based on specific historical
  * messages.
@@ -780,9 +760,29 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.suggestArticles(request);
+ * @example <caption>include:samples/generated/v2beta1/participants.suggest_articles.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_SuggestArticles_async
  */
+  suggestArticles(
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
+        protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|undefined, {}|undefined
+      ]>;
+  suggestArticles(
+      request: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestArticles(
+      request: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesResponse,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest|null|undefined,
+          {}|null|undefined>): void;
   suggestArticles(
       request?: protos.google.cloud.dialogflow.v2beta1.ISuggestArticlesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -817,26 +817,6 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.suggestArticles(request, options, callback);
   }
-  suggestFaqAnswers(
-      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
-        protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|undefined, {}|undefined
-      ]>;
-  suggestFaqAnswers(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|null|undefined,
-          {}|null|undefined>): void;
-  suggestFaqAnswers(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets suggested faq answers for a participant based on specific historical
  * messages.
@@ -864,9 +844,29 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.suggestFaqAnswers(request);
+ * @example <caption>include:samples/generated/v2beta1/participants.suggest_faq_answers.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_SuggestFaqAnswers_async
  */
+  suggestFaqAnswers(
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
+        protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|undefined, {}|undefined
+      ]>;
+  suggestFaqAnswers(
+      request: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestFaqAnswers(
+      request: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersResponse,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest|null|undefined,
+          {}|null|undefined>): void;
   suggestFaqAnswers(
       request?: protos.google.cloud.dialogflow.v2beta1.ISuggestFaqAnswersRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -901,26 +901,6 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.suggestFaqAnswers(request, options, callback);
   }
-  suggestSmartReplies(
-      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
-        protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|undefined, {}|undefined
-      ]>;
-  suggestSmartReplies(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|null|undefined,
-          {}|null|undefined>): void;
-  suggestSmartReplies(
-      request: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets smart replies for a participant based on specific historical
  * messages.
@@ -952,9 +932,29 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.suggestSmartReplies(request);
+ * @example <caption>include:samples/generated/v2beta1/participants.suggest_smart_replies.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_SuggestSmartReplies_async
  */
+  suggestSmartReplies(
+      request?: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
+        protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|undefined, {}|undefined
+      ]>;
+  suggestSmartReplies(
+      request: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestSmartReplies(
+      request: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesResponse,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest|null|undefined,
+          {}|null|undefined>): void;
   suggestSmartReplies(
       request?: protos.google.cloud.dialogflow.v2beta1.ISuggestSmartRepliesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -989,26 +989,6 @@ export class ParticipantsClient {
     this.initialize();
     return this.innerApiCalls.suggestSmartReplies(request, options, callback);
   }
-  compileSuggestion(
-      request?: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
-        protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|undefined, {}|undefined
-      ]>;
-  compileSuggestion(
-      request: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
-          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|null|undefined,
-          {}|null|undefined>): void;
-  compileSuggestion(
-      request: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
-          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deprecated. use {@link google.cloud.dialogflow.v2beta1.Participants.SuggestArticles|SuggestArticles} and {@link google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers|SuggestFaqAnswers} instead.
  *
@@ -1042,10 +1022,30 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.compileSuggestion(request);
+ * @example <caption>include:samples/generated/v2beta1/participants.compile_suggestion.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_CompileSuggestion_async
  * @deprecated CompileSuggestion is deprecated and may be removed in a future version.
  */
+  compileSuggestion(
+      request?: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
+        protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|undefined, {}|undefined
+      ]>;
+  compileSuggestion(
+      request: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
+          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|null|undefined,
+          {}|null|undefined>): void;
+  compileSuggestion(
+      request: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionResponse,
+          protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest|null|undefined,
+          {}|null|undefined>): void;
   compileSuggestion(
       request?: protos.google.cloud.dialogflow.v2beta1.ICompileSuggestionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1082,28 +1082,7 @@ export class ParticipantsClient {
     return this.innerApiCalls.compileSuggestion(request, options, callback);
   }
 
-  listParticipants(
-      request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IParticipant[],
-        protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest|null,
-        protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse
-      ]>;
-  listParticipants(
-      request: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
-          protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.IParticipant>): void;
-  listParticipants(
-      request: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
-          protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.IParticipant>): void;
-/**
+ /**
  * Returns the list of all participants in the specified conversation.
  *
  * @param {Object} request
@@ -1130,6 +1109,27 @@ export class ParticipantsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listParticipants(
+      request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IParticipant[],
+        protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest|null,
+        protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse
+      ]>;
+  listParticipants(
+      request: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+          protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.IParticipant>): void;
+  listParticipants(
+      request: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
+          protos.google.cloud.dialogflow.v2beta1.IListParticipantsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.IParticipant>): void;
   listParticipants(
       request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1239,11 +1239,8 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listParticipantsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2beta1/participants.list_participants.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_ListParticipants_async
  */
   listParticipantsAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListParticipantsRequest,
@@ -1258,7 +1255,6 @@ export class ParticipantsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listParticipants'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1268,28 +1264,7 @@ export class ParticipantsClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.dialogflow.v2beta1.IParticipant>;
   }
-  listSuggestions(
-      request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.ISuggestion[],
-        protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest|null,
-        protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse
-      ]>;
-  listSuggestions(
-      request: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
-          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestion>): void;
-  listSuggestions(
-      request: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
-          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.ISuggestion>): void;
-/**
+ /**
  * Deprecated: Use inline suggestion, event based suggestion or
  * Suggestion* API instead.
  * See {@link google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name|HumanAgentAssistantConfig.name} for more
@@ -1345,6 +1320,27 @@ export class ParticipantsClient {
  *   for more details and examples.
  * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
+  listSuggestions(
+      request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.ISuggestion[],
+        protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest|null,
+        protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse
+      ]>;
+  listSuggestions(
+      request: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestion>): void;
+  listSuggestions(
+      request: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
+          protos.google.cloud.dialogflow.v2beta1.IListSuggestionsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.ISuggestion>): void;
   listSuggestions(
       request?: protos.google.cloud.dialogflow.v2beta1.IListSuggestionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1475,11 +1471,8 @@ export class ParticipantsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSuggestionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2beta1/participants.list_suggestions.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Participants_ListSuggestions_async
  * @deprecated ListSuggestions is deprecated and may be removed in a future version.
  */
   listSuggestionsAsync(
@@ -1495,7 +1488,6 @@ export class ParticipantsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSuggestions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

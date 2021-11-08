@@ -305,6 +305,24 @@ export class SmartDeviceManagementServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a device managed by the enterprise.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the device requested. For example:
+ *   "enterprises/XYZ/devices/123"
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Device]{@link google.home.enterprise.sdm.v1.Device}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.get_device.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetDevice_async
+ */
   getDevice(
       request?: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
       options?: CallOptions):
@@ -325,24 +343,6 @@ export class SmartDeviceManagementServiceClient {
           protos.google.home.enterprise.sdm.v1.IDevice,
           protos.google.home.enterprise.sdm.v1.IGetDeviceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a device managed by the enterprise.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the device requested. For example:
- *   "enterprises/XYZ/devices/123"
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Device]{@link google.home.enterprise.sdm.v1.Device}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDevice(request);
- */
   getDevice(
       request?: protos.google.home.enterprise.sdm.v1.IGetDeviceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -377,26 +377,6 @@ export class SmartDeviceManagementServiceClient {
     this.initialize();
     return this.innerApiCalls.getDevice(request, options, callback);
   }
-  executeDeviceCommand(
-      request?: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
-        protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|undefined, {}|undefined
-      ]>;
-  executeDeviceCommand(
-      request: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
-          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|null|undefined,
-          {}|null|undefined>): void;
-  executeDeviceCommand(
-      request: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
-      callback: Callback<
-          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
-          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Executes a command to device managed by the enterprise.
  *
@@ -417,9 +397,29 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.executeDeviceCommand(request);
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.execute_device_command.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_ExecuteDeviceCommand_async
  */
+  executeDeviceCommand(
+      request?: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
+        protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|undefined, {}|undefined
+      ]>;
+  executeDeviceCommand(
+      request: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
+          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|null|undefined,
+          {}|null|undefined>): void;
+  executeDeviceCommand(
+      request: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
+      callback: Callback<
+          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandResponse,
+          protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest|null|undefined,
+          {}|null|undefined>): void;
   executeDeviceCommand(
       request?: protos.google.home.enterprise.sdm.v1.IExecuteDeviceCommandRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -454,6 +454,24 @@ export class SmartDeviceManagementServiceClient {
     this.initialize();
     return this.innerApiCalls.executeDeviceCommand(request, options, callback);
   }
+/**
+ * Gets a structure managed by the enterprise.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the structure requested. For example:
+ *   "enterprises/XYZ/structures/ABC".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Structure]{@link google.home.enterprise.sdm.v1.Structure}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.get_structure.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetStructure_async
+ */
   getStructure(
       request?: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
       options?: CallOptions):
@@ -474,24 +492,6 @@ export class SmartDeviceManagementServiceClient {
           protos.google.home.enterprise.sdm.v1.IStructure,
           protos.google.home.enterprise.sdm.v1.IGetStructureRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a structure managed by the enterprise.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the structure requested. For example:
- *   "enterprises/XYZ/structures/ABC".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Structure]{@link google.home.enterprise.sdm.v1.Structure}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getStructure(request);
- */
   getStructure(
       request?: protos.google.home.enterprise.sdm.v1.IGetStructureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -526,6 +526,24 @@ export class SmartDeviceManagementServiceClient {
     this.initialize();
     return this.innerApiCalls.getStructure(request, options, callback);
   }
+/**
+ * Gets a room managed by the enterprise.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The name of the room requested. For example:
+ *   "enterprises/XYZ/structures/ABC/rooms/123".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Room]{@link google.home.enterprise.sdm.v1.Room}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.get_room.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetRoom_async
+ */
   getRoom(
       request?: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
       options?: CallOptions):
@@ -546,24 +564,6 @@ export class SmartDeviceManagementServiceClient {
           protos.google.home.enterprise.sdm.v1.IRoom,
           protos.google.home.enterprise.sdm.v1.IGetRoomRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a room managed by the enterprise.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The name of the room requested. For example:
- *   "enterprises/XYZ/structures/ABC/rooms/123".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Room]{@link google.home.enterprise.sdm.v1.Room}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getRoom(request);
- */
   getRoom(
       request?: protos.google.home.enterprise.sdm.v1.IGetRoomRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -599,28 +599,7 @@ export class SmartDeviceManagementServiceClient {
     return this.innerApiCalls.getRoom(request, options, callback);
   }
 
-  listDevices(
-      request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.enterprise.sdm.v1.IDevice[],
-        protos.google.home.enterprise.sdm.v1.IListDevicesRequest|null,
-        protos.google.home.enterprise.sdm.v1.IListDevicesResponse
-      ]>;
-  listDevices(
-      request: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
-          protos.google.home.enterprise.sdm.v1.IListDevicesResponse|null|undefined,
-          protos.google.home.enterprise.sdm.v1.IDevice>): void;
-  listDevices(
-      request: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
-      callback: PaginationCallback<
-          protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
-          protos.google.home.enterprise.sdm.v1.IListDevicesResponse|null|undefined,
-          protos.google.home.enterprise.sdm.v1.IDevice>): void;
-/**
+ /**
  * Lists devices managed by the enterprise.
  *
  * @param {Object} request
@@ -652,6 +631,27 @@ export class SmartDeviceManagementServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDevices(
+      request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.enterprise.sdm.v1.IDevice[],
+        protos.google.home.enterprise.sdm.v1.IListDevicesRequest|null,
+        protos.google.home.enterprise.sdm.v1.IListDevicesResponse
+      ]>;
+  listDevices(
+      request: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+          protos.google.home.enterprise.sdm.v1.IListDevicesResponse|null|undefined,
+          protos.google.home.enterprise.sdm.v1.IDevice>): void;
+  listDevices(
+      request: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+      callback: PaginationCallback<
+          protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
+          protos.google.home.enterprise.sdm.v1.IListDevicesResponse|null|undefined,
+          protos.google.home.enterprise.sdm.v1.IDevice>): void;
   listDevices(
       request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -771,11 +771,8 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDevicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.list_devices.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_ListDevices_async
  */
   listDevicesAsync(
       request?: protos.google.home.enterprise.sdm.v1.IListDevicesRequest,
@@ -790,7 +787,6 @@ export class SmartDeviceManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDevices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -800,28 +796,7 @@ export class SmartDeviceManagementServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.home.enterprise.sdm.v1.IDevice>;
   }
-  listStructures(
-      request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.enterprise.sdm.v1.IStructure[],
-        protos.google.home.enterprise.sdm.v1.IListStructuresRequest|null,
-        protos.google.home.enterprise.sdm.v1.IListStructuresResponse
-      ]>;
-  listStructures(
-      request: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
-          protos.google.home.enterprise.sdm.v1.IListStructuresResponse|null|undefined,
-          protos.google.home.enterprise.sdm.v1.IStructure>): void;
-  listStructures(
-      request: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
-      callback: PaginationCallback<
-          protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
-          protos.google.home.enterprise.sdm.v1.IListStructuresResponse|null|undefined,
-          protos.google.home.enterprise.sdm.v1.IStructure>): void;
-/**
+ /**
  * Lists structures managed by the enterprise.
  *
  * @param {Object} request
@@ -848,6 +823,27 @@ export class SmartDeviceManagementServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listStructures(
+      request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.enterprise.sdm.v1.IStructure[],
+        protos.google.home.enterprise.sdm.v1.IListStructuresRequest|null,
+        protos.google.home.enterprise.sdm.v1.IListStructuresResponse
+      ]>;
+  listStructures(
+      request: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+          protos.google.home.enterprise.sdm.v1.IListStructuresResponse|null|undefined,
+          protos.google.home.enterprise.sdm.v1.IStructure>): void;
+  listStructures(
+      request: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+      callback: PaginationCallback<
+          protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
+          protos.google.home.enterprise.sdm.v1.IListStructuresResponse|null|undefined,
+          protos.google.home.enterprise.sdm.v1.IStructure>): void;
   listStructures(
       request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -957,11 +953,8 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listStructuresAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.list_structures.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_ListStructures_async
  */
   listStructuresAsync(
       request?: protos.google.home.enterprise.sdm.v1.IListStructuresRequest,
@@ -976,7 +969,6 @@ export class SmartDeviceManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listStructures'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -986,28 +978,7 @@ export class SmartDeviceManagementServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.home.enterprise.sdm.v1.IStructure>;
   }
-  listRooms(
-      request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.enterprise.sdm.v1.IRoom[],
-        protos.google.home.enterprise.sdm.v1.IListRoomsRequest|null,
-        protos.google.home.enterprise.sdm.v1.IListRoomsResponse
-      ]>;
-  listRooms(
-      request: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
-          protos.google.home.enterprise.sdm.v1.IListRoomsResponse|null|undefined,
-          protos.google.home.enterprise.sdm.v1.IRoom>): void;
-  listRooms(
-      request: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
-      callback: PaginationCallback<
-          protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
-          protos.google.home.enterprise.sdm.v1.IListRoomsResponse|null|undefined,
-          protos.google.home.enterprise.sdm.v1.IRoom>): void;
-/**
+ /**
  * Lists rooms managed by the enterprise.
  *
  * @param {Object} request
@@ -1033,6 +1004,27 @@ export class SmartDeviceManagementServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listRooms(
+      request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.enterprise.sdm.v1.IRoom[],
+        protos.google.home.enterprise.sdm.v1.IListRoomsRequest|null,
+        protos.google.home.enterprise.sdm.v1.IListRoomsResponse
+      ]>;
+  listRooms(
+      request: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+          protos.google.home.enterprise.sdm.v1.IListRoomsResponse|null|undefined,
+          protos.google.home.enterprise.sdm.v1.IRoom>): void;
+  listRooms(
+      request: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+      callback: PaginationCallback<
+          protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
+          protos.google.home.enterprise.sdm.v1.IListRoomsResponse|null|undefined,
+          protos.google.home.enterprise.sdm.v1.IRoom>): void;
   listRooms(
       request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1140,11 +1132,8 @@ export class SmartDeviceManagementServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listRoomsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/smart_device_management_service.list_rooms.js</caption>
+ * region_tag:smartdevicemanagement_v1_generated_SmartDeviceManagementService_ListRooms_async
  */
   listRoomsAsync(
       request?: protos.google.home.enterprise.sdm.v1.IListRoomsRequest,
@@ -1159,7 +1148,6 @@ export class SmartDeviceManagementServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listRooms'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

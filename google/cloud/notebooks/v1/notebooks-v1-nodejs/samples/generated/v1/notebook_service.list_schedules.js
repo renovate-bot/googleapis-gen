@@ -49,7 +49,7 @@ function main(parent) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function listSchedules() {
+  async function callListSchedules() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent) {
     }
   }
 
-  listSchedules();
+  callListSchedules();
   // [END notebooks_v1_generated_NotebookService_ListSchedules_async]
 }
 

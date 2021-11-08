@@ -284,6 +284,28 @@ export class AlertCenterServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the specified alert. Attempting to get a nonexistent alert returns
+ * `NOT_FOUND` error.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customerId
+ *   Optional. The unique identifier of the Google Workspace organization
+ *   account of the customer the alert is associated with.
+ *   Inferred from the caller identity if not provided.
+ * @param {string} request.alertId
+ *   Required. The identifier of the alert to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Alert]{@link google.apps.alertcenter.v1beta1.Alert}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.get_alert.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_GetAlert_async
+ */
   getAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
       options?: CallOptions):
@@ -304,28 +326,6 @@ export class AlertCenterServiceClient {
           protos.google.apps.alertcenter.v1beta1.IAlert,
           protos.google.apps.alertcenter.v1beta1.IGetAlertRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the specified alert. Attempting to get a nonexistent alert returns
- * `NOT_FOUND` error.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.customerId
- *   Optional. The unique identifier of the Google Workspace organization
- *   account of the customer the alert is associated with.
- *   Inferred from the caller identity if not provided.
- * @param {string} request.alertId
- *   Required. The identifier of the alert to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Alert]{@link google.apps.alertcenter.v1beta1.Alert}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAlert(request);
- */
   getAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IGetAlertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -360,26 +360,6 @@ export class AlertCenterServiceClient {
     this.initialize();
     return this.innerApiCalls.getAlert(request, options, callback);
   }
-  deleteAlert(
-      request?: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|undefined, {}|undefined
-      ]>;
-  deleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks the specified alert for deletion. An alert that has been marked for
  * deletion is removed from Alert Center after 30 days.
@@ -402,9 +382,29 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteAlert(request);
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.delete_alert.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_DeleteAlert_async
  */
+  deleteAlert(
+      request?: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|undefined, {}|undefined
+      ]>;
+  deleteAlert(
+      request: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteAlert(
+      request: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IDeleteAlertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -439,26 +439,6 @@ export class AlertCenterServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteAlert(request, options, callback);
   }
-  undeleteAlert(
-      request?: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.alertcenter.v1beta1.IAlert,
-        protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|undefined, {}|undefined
-      ]>;
-  undeleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IAlert,
-          protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|null|undefined,
-          {}|null|undefined>): void;
-  undeleteAlert(
-      request: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IAlert,
-          protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Restores, or "undeletes", an alert that was marked for deletion within the
  * past 30 days. Attempting to undelete an alert which was marked for deletion
@@ -481,9 +461,29 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.undeleteAlert(request);
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.undelete_alert.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_UndeleteAlert_async
  */
+  undeleteAlert(
+      request?: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.alertcenter.v1beta1.IAlert,
+        protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|undefined, {}|undefined
+      ]>;
+  undeleteAlert(
+      request: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IAlert,
+          protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|null|undefined,
+          {}|null|undefined>): void;
+  undeleteAlert(
+      request: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IAlert,
+          protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest|null|undefined,
+          {}|null|undefined>): void;
   undeleteAlert(
       request?: protos.google.apps.alertcenter.v1beta1.IUndeleteAlertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -518,26 +518,6 @@ export class AlertCenterServiceClient {
     this.initialize();
     return this.innerApiCalls.undeleteAlert(request, options, callback);
   }
-  createAlertFeedback(
-      request?: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
-        protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|undefined, {}|undefined
-      ]>;
-  createAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
-          protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|null|undefined,
-          {}|null|undefined>): void;
-  createAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
-          protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates new feedback for an alert. Attempting to create a feedback for
  * a non-existent alert returns `NOT_FOUND` error. Attempting to create a
@@ -561,9 +541,29 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createAlertFeedback(request);
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.create_alert_feedback.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_CreateAlertFeedback_async
  */
+  createAlertFeedback(
+      request?: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
+        protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|undefined, {}|undefined
+      ]>;
+  createAlertFeedback(
+      request: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
+          protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
+  createAlertFeedback(
+      request: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IAlertFeedback,
+          protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
   createAlertFeedback(
       request?: protos.google.apps.alertcenter.v1beta1.ICreateAlertFeedbackRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -598,26 +598,6 @@ export class AlertCenterServiceClient {
     this.initialize();
     return this.innerApiCalls.createAlertFeedback(request, options, callback);
   }
-  listAlertFeedback(
-      request?: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
-        protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|undefined, {}|undefined
-      ]>;
-  listAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
-          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|null|undefined,
-          {}|null|undefined>): void;
-  listAlertFeedback(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
-          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all the feedback for an alert. Attempting to list feedbacks for
  * a non-existent alert returns `NOT_FOUND` error.
@@ -644,9 +624,29 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listAlertFeedback(request);
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.list_alert_feedback.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_ListAlertFeedback_async
  */
+  listAlertFeedback(
+      request?: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
+        protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|undefined, {}|undefined
+      ]>;
+  listAlertFeedback(
+      request: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
+          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
+  listAlertFeedback(
+      request: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackResponse,
+          protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
   listAlertFeedback(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertFeedbackRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -681,6 +681,28 @@ export class AlertCenterServiceClient {
     this.initialize();
     return this.innerApiCalls.listAlertFeedback(request, options, callback);
   }
+/**
+ * Returns the metadata of an alert. Attempting to get metadata for
+ * a non-existent alert returns `NOT_FOUND` error.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customerId
+ *   Optional. The unique identifier of the Google Workspace organization
+ *   account of the customer the alert metadata is associated with.
+ *   Inferred from the caller identity if not provided.
+ * @param {string} request.alertId
+ *   Required. The identifier of the alert this metadata belongs to.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AlertMetadata]{@link google.apps.alertcenter.v1beta1.AlertMetadata}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.get_alert_metadata.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_GetAlertMetadata_async
+ */
   getAlertMetadata(
       request?: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
       options?: CallOptions):
@@ -701,28 +723,6 @@ export class AlertCenterServiceClient {
           protos.google.apps.alertcenter.v1beta1.IAlertMetadata,
           protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the metadata of an alert. Attempting to get metadata for
- * a non-existent alert returns `NOT_FOUND` error.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.customerId
- *   Optional. The unique identifier of the Google Workspace organization
- *   account of the customer the alert metadata is associated with.
- *   Inferred from the caller identity if not provided.
- * @param {string} request.alertId
- *   Required. The identifier of the alert this metadata belongs to.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AlertMetadata]{@link google.apps.alertcenter.v1beta1.AlertMetadata}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAlertMetadata(request);
- */
   getAlertMetadata(
       request?: protos.google.apps.alertcenter.v1beta1.IGetAlertMetadataRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -757,6 +757,25 @@ export class AlertCenterServiceClient {
     this.initialize();
     return this.innerApiCalls.getAlertMetadata(request, options, callback);
   }
+/**
+ * Returns customer-level settings.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customerId
+ *   Optional. The unique identifier of the Google Workspace organization
+ *   account of the customer the alert settings are associated with.
+ *   Inferred from the caller identity if not provided.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Settings]{@link google.apps.alertcenter.v1beta1.Settings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.get_settings.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_GetSettings_async
+ */
   getSettings(
       request?: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
       options?: CallOptions):
@@ -777,25 +796,6 @@ export class AlertCenterServiceClient {
           protos.google.apps.alertcenter.v1beta1.ISettings,
           protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns customer-level settings.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.customerId
- *   Optional. The unique identifier of the Google Workspace organization
- *   account of the customer the alert settings are associated with.
- *   Inferred from the caller identity if not provided.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Settings]{@link google.apps.alertcenter.v1beta1.Settings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSettings(request);
- */
   getSettings(
       request?: protos.google.apps.alertcenter.v1beta1.IGetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -820,29 +820,11 @@ export class AlertCenterServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getSettings(request, options, callback);
   }
-  updateSettings(
-      request?: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.alertcenter.v1beta1.ISettings,
-        protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|undefined, {}|undefined
-      ]>;
-  updateSettings(
-      request: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.ISettings,
-          protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateSettings(
-      request: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.ISettings,
-          protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the customer-level settings.
  *
@@ -861,9 +843,29 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.update_settings.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_UpdateSettings_async
  */
+  updateSettings(
+      request?: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.alertcenter.v1beta1.ISettings,
+        protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|undefined, {}|undefined
+      ]>;
+  updateSettings(
+      request: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.ISettings,
+          protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateSettings(
+      request: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.ISettings,
+          protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   updateSettings(
       request?: protos.google.apps.alertcenter.v1beta1.IUpdateSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -888,29 +890,11 @@ export class AlertCenterServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateSettings(request, options, callback);
   }
-  batchDeleteAlerts(
-      request?: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
-        protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|undefined, {}|undefined
-      ]>;
-  batchDeleteAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
-          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchDeleteAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
-      callback: Callback<
-          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
-          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Performs batch delete operation on alerts.
  *
@@ -928,9 +912,29 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchDeleteAlerts(request);
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.batch_delete_alerts.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_BatchDeleteAlerts_async
  */
+  batchDeleteAlerts(
+      request?: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
+        protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|undefined, {}|undefined
+      ]>;
+  batchDeleteAlerts(
+      request: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
+          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchDeleteAlerts(
+      request: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
+      callback: Callback<
+          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsResponse,
+          protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest|null|undefined,
+          {}|null|undefined>): void;
   batchDeleteAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IBatchDeleteAlertsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -955,9 +959,31 @@ export class AlertCenterServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.batchDeleteAlerts(request, options, callback);
   }
+/**
+ * Performs batch undelete operation on alerts.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customerId
+ *   Optional. The unique identifier of the Google Workspace organization
+ *   account of the customer the alerts are associated with.
+ * @param {string[]} request.alertId
+ *   Required. list of alert IDs.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BatchUndeleteAlertsResponse]{@link google.apps.alertcenter.v1beta1.BatchUndeleteAlertsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.batch_undelete_alerts.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_BatchUndeleteAlerts_async
+ */
   batchUndeleteAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
       options?: CallOptions):
@@ -978,26 +1004,6 @@ export class AlertCenterServiceClient {
           protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsResponse,
           protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Performs batch undelete operation on alerts.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.customerId
- *   Optional. The unique identifier of the Google Workspace organization
- *   account of the customer the alerts are associated with.
- * @param {string[]} request.alertId
- *   Required. list of alert IDs.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BatchUndeleteAlertsResponse]{@link google.apps.alertcenter.v1beta1.BatchUndeleteAlertsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.batchUndeleteAlerts(request);
- */
   batchUndeleteAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IBatchUndeleteAlertsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1022,32 +1028,13 @@ export class AlertCenterServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.batchUndeleteAlerts(request, options, callback);
   }
 
-  listAlerts(
-      request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.apps.alertcenter.v1beta1.IAlert[],
-        protos.google.apps.alertcenter.v1beta1.IListAlertsRequest|null,
-        protos.google.apps.alertcenter.v1beta1.IListAlertsResponse
-      ]>;
-  listAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
-          protos.google.apps.alertcenter.v1beta1.IListAlertsResponse|null|undefined,
-          protos.google.apps.alertcenter.v1beta1.IAlert>): void;
-  listAlerts(
-      request: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
-      callback: PaginationCallback<
-          protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
-          protos.google.apps.alertcenter.v1beta1.IListAlertsResponse|null|undefined,
-          protos.google.apps.alertcenter.v1beta1.IAlert>): void;
-/**
+ /**
  * Lists the alerts.
  *
  * @param {Object} request
@@ -1092,6 +1079,27 @@ export class AlertCenterServiceClient {
  */
   listAlerts(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.apps.alertcenter.v1beta1.IAlert[],
+        protos.google.apps.alertcenter.v1beta1.IListAlertsRequest|null,
+        protos.google.apps.alertcenter.v1beta1.IListAlertsResponse
+      ]>;
+  listAlerts(
+      request: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+          protos.google.apps.alertcenter.v1beta1.IListAlertsResponse|null|undefined,
+          protos.google.apps.alertcenter.v1beta1.IAlert>): void;
+  listAlerts(
+      request: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+      callback: PaginationCallback<
+          protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
+          protos.google.apps.alertcenter.v1beta1.IListAlertsResponse|null|undefined,
+          protos.google.apps.alertcenter.v1beta1.IAlert>): void;
+  listAlerts(
+      request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
           protos.google.apps.alertcenter.v1beta1.IListAlertsResponse|null|undefined,
@@ -1115,6 +1123,8 @@ export class AlertCenterServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listAlerts(request, options, callback);
   }
@@ -1166,6 +1176,8 @@ export class AlertCenterServiceClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listAlerts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1217,11 +1229,8 @@ export class AlertCenterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAlertsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/alert_center_service.list_alerts.js</caption>
+ * region_tag:alertcenter_v1beta1_generated_AlertCenterService_ListAlerts_async
  */
   listAlertsAsync(
       request?: protos.google.apps.alertcenter.v1beta1.IListAlertsRequest,
@@ -1229,7 +1238,8 @@ export class AlertCenterServiceClient {
     AsyncIterable<protos.google.apps.alertcenter.v1beta1.IAlert>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listAlerts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

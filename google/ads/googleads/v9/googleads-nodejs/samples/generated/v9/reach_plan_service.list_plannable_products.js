@@ -22,7 +22,7 @@ function main(plannableLocationId) {
    */
   /**
    *  Required. The ID of the selected location for planning. To list the available
-   *  plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v9.services.ReachPlanService.ListPlannableLocations].
+   *  plannable location ids use ReachPlanService.ListPlannableLocations google.ads.googleads.v9.services.ReachPlanService.ListPlannableLocations.
    */
   // const plannableLocationId = 'abc123'
 
@@ -32,7 +32,7 @@ function main(plannableLocationId) {
   // Instantiates a client
   const googleadsClient = new ReachPlanServiceClient();
 
-  async function listPlannableProducts() {
+  async function callListPlannableProducts() {
     // Construct request
     const request = {
       plannableLocationId,
@@ -43,7 +43,7 @@ function main(plannableLocationId) {
     console.log(response);
   }
 
-  listPlannableProducts();
+  callListPlannableProducts();
   // [END googleads_v9_generated_ReachPlanService_ListPlannableProducts_async]
 }
 

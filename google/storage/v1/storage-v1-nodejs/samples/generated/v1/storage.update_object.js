@@ -38,44 +38,44 @@ function main(bucket, object) {
    *  matches the given value. Setting to 0 makes the operation succeed only if
    *  there are no live versions of the object.
    */
-  // const ifGenerationMatch = ''
+  // const ifGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current generation
    *  does not match the given value. If no live object exists, the precondition
    *  fails. Setting to 0 makes the operation succeed only if there is a live
    *  version of the object.
    */
-  // const ifGenerationNotMatch = ''
+  // const ifGenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current
    *  metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current
    *  metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  Apply a predefined set of access controls to this object.
    */
-  // const predefinedAcl = ''
+  // const predefinedAcl = {}
   /**
    *  Set of properties to return. Defaults to `FULL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  The Object metadata for updating.
    */
-  // const metadata = ''
+  // const metadata = {}
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -83,7 +83,7 @@ function main(bucket, object) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function updateObject() {
+  async function callUpdateObject() {
     // Construct request
     const request = {
       bucket,
@@ -95,7 +95,7 @@ function main(bucket, object) {
     console.log(response);
   }
 
-  updateObject();
+  callUpdateObject();
   // [END storage_v1_generated_Storage_UpdateObject_async]
 }
 

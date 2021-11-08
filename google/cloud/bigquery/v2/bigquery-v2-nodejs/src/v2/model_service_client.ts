@@ -275,6 +275,27 @@ export class ModelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the specified model resource by model ID.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   Required. Project ID of the requested model.
+ * @param {string} request.datasetId
+ *   Required. Dataset ID of the requested model.
+ * @param {string} request.modelId
+ *   Required. Model ID of the requested model.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Model]{@link google.cloud.bigquery.v2.Model}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/model_service.get_model.js</caption>
+ * region_tag:bigquery_v2_generated_ModelService_GetModel_async
+ */
   getModel(
       request?: protos.google.cloud.bigquery.v2.IGetModelRequest,
       options?: CallOptions):
@@ -295,27 +316,6 @@ export class ModelServiceClient {
           protos.google.cloud.bigquery.v2.IModel,
           protos.google.cloud.bigquery.v2.IGetModelRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the specified model resource by model ID.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   Required. Project ID of the requested model.
- * @param {string} request.datasetId
- *   Required. Dataset ID of the requested model.
- * @param {string} request.modelId
- *   Required. Model ID of the requested model.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Model]{@link google.cloud.bigquery.v2.Model}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getModel(request);
- */
   getModel(
       request?: protos.google.cloud.bigquery.v2.IGetModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -350,26 +350,6 @@ export class ModelServiceClient {
     this.initialize();
     return this.innerApiCalls.getModel(request, options, callback);
   }
-  listModels(
-      request?: protos.google.cloud.bigquery.v2.IListModelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.v2.IListModelsResponse,
-        protos.google.cloud.bigquery.v2.IListModelsRequest|undefined, {}|undefined
-      ]>;
-  listModels(
-      request: protos.google.cloud.bigquery.v2.IListModelsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.v2.IListModelsResponse,
-          protos.google.cloud.bigquery.v2.IListModelsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listModels(
-      request: protos.google.cloud.bigquery.v2.IListModelsRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.v2.IListModelsResponse,
-          protos.google.cloud.bigquery.v2.IListModelsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all models in the specified dataset. Requires the READER dataset
  * role. After retrieving the list of models, you can get information about a
@@ -394,9 +374,29 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listModels(request);
+ * @example <caption>include:samples/generated/v2/model_service.list_models.js</caption>
+ * region_tag:bigquery_v2_generated_ModelService_ListModels_async
  */
+  listModels(
+      request?: protos.google.cloud.bigquery.v2.IListModelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.v2.IListModelsResponse,
+        protos.google.cloud.bigquery.v2.IListModelsRequest|undefined, {}|undefined
+      ]>;
+  listModels(
+      request: protos.google.cloud.bigquery.v2.IListModelsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.v2.IListModelsResponse,
+          protos.google.cloud.bigquery.v2.IListModelsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listModels(
+      request: protos.google.cloud.bigquery.v2.IListModelsRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.v2.IListModelsResponse,
+          protos.google.cloud.bigquery.v2.IListModelsRequest|null|undefined,
+          {}|null|undefined>): void;
   listModels(
       request?: protos.google.cloud.bigquery.v2.IListModelsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -431,26 +431,6 @@ export class ModelServiceClient {
     this.initialize();
     return this.innerApiCalls.listModels(request, options, callback);
   }
-  patchModel(
-      request?: protos.google.cloud.bigquery.v2.IPatchModelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.v2.IModel,
-        protos.google.cloud.bigquery.v2.IPatchModelRequest|undefined, {}|undefined
-      ]>;
-  patchModel(
-      request: protos.google.cloud.bigquery.v2.IPatchModelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.v2.IModel,
-          protos.google.cloud.bigquery.v2.IPatchModelRequest|null|undefined,
-          {}|null|undefined>): void;
-  patchModel(
-      request: protos.google.cloud.bigquery.v2.IPatchModelRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.v2.IModel,
-          protos.google.cloud.bigquery.v2.IPatchModelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Patch specific fields in the specified model.
  *
@@ -473,9 +453,29 @@ export class ModelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patchModel(request);
+ * @example <caption>include:samples/generated/v2/model_service.patch_model.js</caption>
+ * region_tag:bigquery_v2_generated_ModelService_PatchModel_async
  */
+  patchModel(
+      request?: protos.google.cloud.bigquery.v2.IPatchModelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.v2.IModel,
+        protos.google.cloud.bigquery.v2.IPatchModelRequest|undefined, {}|undefined
+      ]>;
+  patchModel(
+      request: protos.google.cloud.bigquery.v2.IPatchModelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.v2.IModel,
+          protos.google.cloud.bigquery.v2.IPatchModelRequest|null|undefined,
+          {}|null|undefined>): void;
+  patchModel(
+      request: protos.google.cloud.bigquery.v2.IPatchModelRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.v2.IModel,
+          protos.google.cloud.bigquery.v2.IPatchModelRequest|null|undefined,
+          {}|null|undefined>): void;
   patchModel(
       request?: protos.google.cloud.bigquery.v2.IPatchModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -510,6 +510,27 @@ export class ModelServiceClient {
     this.initialize();
     return this.innerApiCalls.patchModel(request, options, callback);
   }
+/**
+ * Deletes the model specified by modelId from the dataset.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   Required. Project ID of the model to delete.
+ * @param {string} request.datasetId
+ *   Required. Dataset ID of the model to delete.
+ * @param {string} request.modelId
+ *   Required. Model ID of the model to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/model_service.delete_model.js</caption>
+ * region_tag:bigquery_v2_generated_ModelService_DeleteModel_async
+ */
   deleteModel(
       request?: protos.google.cloud.bigquery.v2.IDeleteModelRequest,
       options?: CallOptions):
@@ -530,27 +551,6 @@ export class ModelServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.v2.IDeleteModelRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the model specified by modelId from the dataset.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   Required. Project ID of the model to delete.
- * @param {string} request.datasetId
- *   Required. Dataset ID of the model to delete.
- * @param {string} request.modelId
- *   Required. Model ID of the model to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteModel(request);
- */
   deleteModel(
       request?: protos.google.cloud.bigquery.v2.IDeleteModelRequest,
       optionsOrCallback?: CallOptions|Callback<

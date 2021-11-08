@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new EnvironmentsClient();
 
-  async function deleteEnvironment() {
+  async function callDeleteEnvironment() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteEnvironment();
+  callDeleteEnvironment();
   // [END dialogflow_v2_generated_Environments_DeleteEnvironment_async]
 }
 

@@ -33,7 +33,7 @@ function main(parent) {
   /**
    *  Definition of the new reservation to create.
    */
-  // const reservation = ''
+  // const reservation = {}
 
   // Imports the Reservation library
   const {ReservationServiceClient} = require('@google-cloud/bigquery-reservation').v1;
@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const reservationClient = new ReservationServiceClient();
 
-  async function createReservation() {
+  async function callCreateReservation() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent) {
     console.log(response);
   }
 
-  createReservation();
+  callCreateReservation();
   // [END bigqueryreservation_v1_generated_ReservationService_CreateReservation_async]
 }
 

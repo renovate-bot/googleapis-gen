@@ -284,26 +284,6 @@ export class WebRiskServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  computeThreatListDiff(
-      request?: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.webrisk.v1.IComputeThreatListDiffResponse,
-        protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest|undefined, {}|undefined
-      ]>;
-  computeThreatListDiff(
-      request: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.IComputeThreatListDiffResponse,
-          protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest|null|undefined,
-          {}|null|undefined>): void;
-  computeThreatListDiff(
-      request: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.IComputeThreatListDiffResponse,
-          protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the most recent threat list diffs. These diffs should be applied to
  * a local database of hashes to keep it up-to-date. If the local database is
@@ -331,9 +311,29 @@ export class WebRiskServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.computeThreatListDiff(request);
+ * @example <caption>include:samples/generated/v1/web_risk_service.compute_threat_list_diff.js</caption>
+ * region_tag:webrisk_v1_generated_WebRiskService_ComputeThreatListDiff_async
  */
+  computeThreatListDiff(
+      request?: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.webrisk.v1.IComputeThreatListDiffResponse,
+        protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest|undefined, {}|undefined
+      ]>;
+  computeThreatListDiff(
+      request: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.IComputeThreatListDiffResponse,
+          protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest|null|undefined,
+          {}|null|undefined>): void;
+  computeThreatListDiff(
+      request: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.IComputeThreatListDiffResponse,
+          protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest|null|undefined,
+          {}|null|undefined>): void;
   computeThreatListDiff(
       request?: protos.google.cloud.webrisk.v1.IComputeThreatListDiffRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -358,29 +358,11 @@ export class WebRiskServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.computeThreatListDiff(request, options, callback);
   }
-  searchUris(
-      request?: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.webrisk.v1.ISearchUrisResponse,
-        protos.google.cloud.webrisk.v1.ISearchUrisRequest|undefined, {}|undefined
-      ]>;
-  searchUris(
-      request: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.ISearchUrisResponse,
-          protos.google.cloud.webrisk.v1.ISearchUrisRequest|null|undefined,
-          {}|null|undefined>): void;
-  searchUris(
-      request: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.ISearchUrisResponse,
-          protos.google.cloud.webrisk.v1.ISearchUrisRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * This method is used to check whether a URI is on a given threatList.
  * Multiple threatLists may be searched in a single query.
@@ -401,9 +383,29 @@ export class WebRiskServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.searchUris(request);
+ * @example <caption>include:samples/generated/v1/web_risk_service.search_uris.js</caption>
+ * region_tag:webrisk_v1_generated_WebRiskService_SearchUris_async
  */
+  searchUris(
+      request?: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.webrisk.v1.ISearchUrisResponse,
+        protos.google.cloud.webrisk.v1.ISearchUrisRequest|undefined, {}|undefined
+      ]>;
+  searchUris(
+      request: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.ISearchUrisResponse,
+          protos.google.cloud.webrisk.v1.ISearchUrisRequest|null|undefined,
+          {}|null|undefined>): void;
+  searchUris(
+      request: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.ISearchUrisResponse,
+          protos.google.cloud.webrisk.v1.ISearchUrisRequest|null|undefined,
+          {}|null|undefined>): void;
   searchUris(
       request?: protos.google.cloud.webrisk.v1.ISearchUrisRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -428,29 +430,11 @@ export class WebRiskServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.searchUris(request, options, callback);
   }
-  searchHashes(
-      request?: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.webrisk.v1.ISearchHashesResponse,
-        protos.google.cloud.webrisk.v1.ISearchHashesRequest|undefined, {}|undefined
-      ]>;
-  searchHashes(
-      request: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.ISearchHashesResponse,
-          protos.google.cloud.webrisk.v1.ISearchHashesRequest|null|undefined,
-          {}|null|undefined>): void;
-  searchHashes(
-      request: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.ISearchHashesResponse,
-          protos.google.cloud.webrisk.v1.ISearchHashesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the full hashes that match the requested hash prefix.
  * This is used after a hash prefix is looked up in a threatList
@@ -472,9 +456,29 @@ export class WebRiskServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.searchHashes(request);
+ * @example <caption>include:samples/generated/v1/web_risk_service.search_hashes.js</caption>
+ * region_tag:webrisk_v1_generated_WebRiskService_SearchHashes_async
  */
+  searchHashes(
+      request?: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.webrisk.v1.ISearchHashesResponse,
+        protos.google.cloud.webrisk.v1.ISearchHashesRequest|undefined, {}|undefined
+      ]>;
+  searchHashes(
+      request: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.ISearchHashesResponse,
+          protos.google.cloud.webrisk.v1.ISearchHashesRequest|null|undefined,
+          {}|null|undefined>): void;
+  searchHashes(
+      request: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.ISearchHashesResponse,
+          protos.google.cloud.webrisk.v1.ISearchHashesRequest|null|undefined,
+          {}|null|undefined>): void;
   searchHashes(
       request?: protos.google.cloud.webrisk.v1.ISearchHashesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -499,29 +503,11 @@ export class WebRiskServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.searchHashes(request, options, callback);
   }
-  createSubmission(
-      request?: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.webrisk.v1.ISubmission,
-        protos.google.cloud.webrisk.v1.ICreateSubmissionRequest|undefined, {}|undefined
-      ]>;
-  createSubmission(
-      request: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.ISubmission,
-          protos.google.cloud.webrisk.v1.ICreateSubmissionRequest|null|undefined,
-          {}|null|undefined>): void;
-  createSubmission(
-      request: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
-      callback: Callback<
-          protos.google.cloud.webrisk.v1.ISubmission,
-          protos.google.cloud.webrisk.v1.ICreateSubmissionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a Submission of a URI suspected of containing phishing content to
  * be reviewed. If the result verifies the existence of malicious phishing
@@ -544,9 +530,29 @@ export class WebRiskServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createSubmission(request);
+ * @example <caption>include:samples/generated/v1/web_risk_service.create_submission.js</caption>
+ * region_tag:webrisk_v1_generated_WebRiskService_CreateSubmission_async
  */
+  createSubmission(
+      request?: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.webrisk.v1.ISubmission,
+        protos.google.cloud.webrisk.v1.ICreateSubmissionRequest|undefined, {}|undefined
+      ]>;
+  createSubmission(
+      request: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.ISubmission,
+          protos.google.cloud.webrisk.v1.ICreateSubmissionRequest|null|undefined,
+          {}|null|undefined>): void;
+  createSubmission(
+      request: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
+      callback: Callback<
+          protos.google.cloud.webrisk.v1.ISubmission,
+          protos.google.cloud.webrisk.v1.ICreateSubmissionRequest|null|undefined,
+          {}|null|undefined>): void;
   createSubmission(
       request?: protos.google.cloud.webrisk.v1.ICreateSubmissionRequest,
       optionsOrCallback?: CallOptions|Callback<

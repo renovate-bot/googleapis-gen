@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new BigtableTableAdminClient();
 
-  async function getSnapshot() {
+  async function callGetSnapshot() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSnapshot();
+  callGetSnapshot();
   // [END bigtableadmin_v2_generated_BigtableTableAdmin_GetSnapshot_async]
 }
 

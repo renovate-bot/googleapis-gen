@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new ParticipantsClient();
 
-  async function getParticipant() {
+  async function callGetParticipant() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getParticipant();
+  callGetParticipant();
   // [END dialogflow_v2_generated_Participants_GetParticipant_async]
 }
 

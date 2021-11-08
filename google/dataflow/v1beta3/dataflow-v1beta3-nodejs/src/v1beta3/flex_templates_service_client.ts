@@ -276,26 +276,6 @@ export class FlexTemplatesServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  launchFlexTemplate(
-      request?: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.ILaunchFlexTemplateResponse,
-        protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest|undefined, {}|undefined
-      ]>;
-  launchFlexTemplate(
-      request: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.ILaunchFlexTemplateResponse,
-          protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest|null|undefined,
-          {}|null|undefined>): void;
-  launchFlexTemplate(
-      request: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.ILaunchFlexTemplateResponse,
-          protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Launch a job with a FlexTemplate.
  *
@@ -319,9 +299,29 @@ export class FlexTemplatesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.launchFlexTemplate(request);
+ * @example <caption>include:samples/generated/v1beta3/flex_templates_service.launch_flex_template.js</caption>
+ * region_tag:dataflow_v1beta3_generated_FlexTemplatesService_LaunchFlexTemplate_async
  */
+  launchFlexTemplate(
+      request?: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.ILaunchFlexTemplateResponse,
+        protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest|undefined, {}|undefined
+      ]>;
+  launchFlexTemplate(
+      request: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.ILaunchFlexTemplateResponse,
+          protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest|null|undefined,
+          {}|null|undefined>): void;
+  launchFlexTemplate(
+      request: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.ILaunchFlexTemplateResponse,
+          protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest|null|undefined,
+          {}|null|undefined>): void;
   launchFlexTemplate(
       request?: protos.google.dataflow.v1beta3.ILaunchFlexTemplateRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -346,6 +346,8 @@ export class FlexTemplatesServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.launchFlexTemplate(request, options, callback);
   }

@@ -405,26 +405,6 @@ export class SessionsClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  detectIntent(
-      request?: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IDetectIntentResponse,
-        protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest|undefined, {}|undefined
-      ]>;
-  detectIntent(
-      request: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IDetectIntentResponse,
-          protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  detectIntent(
-      request: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IDetectIntentResponse,
-          protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Processes a natural language query and returns structured, actionable data
  * as a result. This method is not idempotent, because it may cause contexts
@@ -501,9 +481,29 @@ export class SessionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.detectIntent(request);
+ * @example <caption>include:samples/generated/v2beta1/sessions.detect_intent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Sessions_DetectIntent_async
  */
+  detectIntent(
+      request?: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IDetectIntentResponse,
+        protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest|undefined, {}|undefined
+      ]>;
+  detectIntent(
+      request: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IDetectIntentResponse,
+          protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  detectIntent(
+      request: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IDetectIntentResponse,
+          protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   detectIntent(
       request?: protos.google.cloud.dialogflow.v2beta1.IDetectIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -564,12 +564,8 @@ export class SessionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.streamingDetectIntent();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v2beta1/sessions.streaming_detect_intent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Sessions_StreamingDetectIntent_async
  */
   streamingDetectIntent(
       options?: CallOptions):

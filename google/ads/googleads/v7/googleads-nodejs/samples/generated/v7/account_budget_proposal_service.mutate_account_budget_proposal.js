@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on an individual account-level budget proposal.
    */
-  // const operation = ''
+  // const operation = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -40,7 +40,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new AccountBudgetProposalServiceClient();
 
-  async function mutateAccountBudgetProposal() {
+  async function callMutateAccountBudgetProposal() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateAccountBudgetProposal();
+  callMutateAccountBudgetProposal();
   // [END googleads_v7_generated_AccountBudgetProposalService_MutateAccountBudgetProposal_async]
 }
 

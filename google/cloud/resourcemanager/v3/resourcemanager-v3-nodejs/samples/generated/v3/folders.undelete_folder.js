@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const resourcemanagerClient = new FoldersClient();
 
-  async function undeleteFolder() {
+  async function callUndeleteFolder() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  undeleteFolder();
+  callUndeleteFolder();
   // [END cloudresourcemanager_v3_generated_Folders_UndeleteFolder_async]
 }
 

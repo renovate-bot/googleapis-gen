@@ -469,6 +469,25 @@ export class MetadataServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves a specific MetadataStore.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the MetadataStore to retrieve.
+ *   Format:
+ *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MetadataStore]{@link google.cloud.aiplatform.v1.MetadataStore}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metadata_service.get_metadata_store.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_GetMetadataStore_async
+ */
   getMetadataStore(
       request?: protos.google.cloud.aiplatform.v1.IGetMetadataStoreRequest,
       options?: CallOptions):
@@ -489,25 +508,6 @@ export class MetadataServiceClient {
           protos.google.cloud.aiplatform.v1.IMetadataStore,
           protos.google.cloud.aiplatform.v1.IGetMetadataStoreRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a specific MetadataStore.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the MetadataStore to retrieve.
- *   Format:
- *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MetadataStore]{@link google.cloud.aiplatform.v1.MetadataStore}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMetadataStore(request);
- */
   getMetadataStore(
       request?: protos.google.cloud.aiplatform.v1.IGetMetadataStoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -542,26 +542,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.getMetadataStore(request, options, callback);
   }
-  createArtifact(
-      request?: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IArtifact,
-        protos.google.cloud.aiplatform.v1.ICreateArtifactRequest|undefined, {}|undefined
-      ]>;
-  createArtifact(
-      request: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IArtifact,
-          protos.google.cloud.aiplatform.v1.ICreateArtifactRequest|null|undefined,
-          {}|null|undefined>): void;
-  createArtifact(
-      request: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IArtifact,
-          protos.google.cloud.aiplatform.v1.ICreateArtifactRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an Artifact associated with a MetadataStore.
  *
@@ -589,9 +569,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createArtifact(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.create_artifact.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_CreateArtifact_async
  */
+  createArtifact(
+      request?: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IArtifact,
+        protos.google.cloud.aiplatform.v1.ICreateArtifactRequest|undefined, {}|undefined
+      ]>;
+  createArtifact(
+      request: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IArtifact,
+          protos.google.cloud.aiplatform.v1.ICreateArtifactRequest|null|undefined,
+          {}|null|undefined>): void;
+  createArtifact(
+      request: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IArtifact,
+          protos.google.cloud.aiplatform.v1.ICreateArtifactRequest|null|undefined,
+          {}|null|undefined>): void;
   createArtifact(
       request?: protos.google.cloud.aiplatform.v1.ICreateArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -626,6 +626,25 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.createArtifact(request, options, callback);
   }
+/**
+ * Retrieves a specific Artifact.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the Artifact to retrieve.
+ *   Format:
+ *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Artifact]{@link google.cloud.aiplatform.v1.Artifact}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metadata_service.get_artifact.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_GetArtifact_async
+ */
   getArtifact(
       request?: protos.google.cloud.aiplatform.v1.IGetArtifactRequest,
       options?: CallOptions):
@@ -646,25 +665,6 @@ export class MetadataServiceClient {
           protos.google.cloud.aiplatform.v1.IArtifact,
           protos.google.cloud.aiplatform.v1.IGetArtifactRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a specific Artifact.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the Artifact to retrieve.
- *   Format:
- *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Artifact]{@link google.cloud.aiplatform.v1.Artifact}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getArtifact(request);
- */
   getArtifact(
       request?: protos.google.cloud.aiplatform.v1.IGetArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -699,26 +699,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.getArtifact(request, options, callback);
   }
-  updateArtifact(
-      request?: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IArtifact,
-        protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest|undefined, {}|undefined
-      ]>;
-  updateArtifact(
-      request: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IArtifact,
-          protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateArtifact(
-      request: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IArtifact,
-          protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a stored Artifact.
  *
@@ -743,9 +723,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateArtifact(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.update_artifact.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_UpdateArtifact_async
  */
+  updateArtifact(
+      request?: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IArtifact,
+        protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest|undefined, {}|undefined
+      ]>;
+  updateArtifact(
+      request: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IArtifact,
+          protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateArtifact(
+      request: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IArtifact,
+          protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest|null|undefined,
+          {}|null|undefined>): void;
   updateArtifact(
       request?: protos.google.cloud.aiplatform.v1.IUpdateArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -780,26 +780,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.updateArtifact(request, options, callback);
   }
-  createContext(
-      request?: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IContext,
-        protos.google.cloud.aiplatform.v1.ICreateContextRequest|undefined, {}|undefined
-      ]>;
-  createContext(
-      request: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IContext,
-          protos.google.cloud.aiplatform.v1.ICreateContextRequest|null|undefined,
-          {}|null|undefined>): void;
-  createContext(
-      request: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IContext,
-          protos.google.cloud.aiplatform.v1.ICreateContextRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a Context associated with a MetadataStore.
  *
@@ -827,9 +807,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createContext(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.create_context.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_CreateContext_async
  */
+  createContext(
+      request?: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IContext,
+        protos.google.cloud.aiplatform.v1.ICreateContextRequest|undefined, {}|undefined
+      ]>;
+  createContext(
+      request: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IContext,
+          protos.google.cloud.aiplatform.v1.ICreateContextRequest|null|undefined,
+          {}|null|undefined>): void;
+  createContext(
+      request: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IContext,
+          protos.google.cloud.aiplatform.v1.ICreateContextRequest|null|undefined,
+          {}|null|undefined>): void;
   createContext(
       request?: protos.google.cloud.aiplatform.v1.ICreateContextRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -864,6 +864,25 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.createContext(request, options, callback);
   }
+/**
+ * Retrieves a specific Context.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the Context to retrieve.
+ *   Format:
+ *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Context]{@link google.cloud.aiplatform.v1.Context}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metadata_service.get_context.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_GetContext_async
+ */
   getContext(
       request?: protos.google.cloud.aiplatform.v1.IGetContextRequest,
       options?: CallOptions):
@@ -884,25 +903,6 @@ export class MetadataServiceClient {
           protos.google.cloud.aiplatform.v1.IContext,
           protos.google.cloud.aiplatform.v1.IGetContextRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a specific Context.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the Context to retrieve.
- *   Format:
- *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Context]{@link google.cloud.aiplatform.v1.Context}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getContext(request);
- */
   getContext(
       request?: protos.google.cloud.aiplatform.v1.IGetContextRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -937,26 +937,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.getContext(request, options, callback);
   }
-  updateContext(
-      request?: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IContext,
-        protos.google.cloud.aiplatform.v1.IUpdateContextRequest|undefined, {}|undefined
-      ]>;
-  updateContext(
-      request: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IContext,
-          protos.google.cloud.aiplatform.v1.IUpdateContextRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateContext(
-      request: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IContext,
-          protos.google.cloud.aiplatform.v1.IUpdateContextRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a stored Context.
  *
@@ -981,9 +961,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateContext(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.update_context.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_UpdateContext_async
  */
+  updateContext(
+      request?: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IContext,
+        protos.google.cloud.aiplatform.v1.IUpdateContextRequest|undefined, {}|undefined
+      ]>;
+  updateContext(
+      request: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IContext,
+          protos.google.cloud.aiplatform.v1.IUpdateContextRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateContext(
+      request: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IContext,
+          protos.google.cloud.aiplatform.v1.IUpdateContextRequest|null|undefined,
+          {}|null|undefined>): void;
   updateContext(
       request?: protos.google.cloud.aiplatform.v1.IUpdateContextRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1018,26 +1018,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.updateContext(request, options, callback);
   }
-  addContextArtifactsAndExecutions(
-      request?: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsResponse,
-        protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest|undefined, {}|undefined
-      ]>;
-  addContextArtifactsAndExecutions(
-      request: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsResponse,
-          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  addContextArtifactsAndExecutions(
-      request: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsResponse,
-          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a set of Artifacts and Executions to a Context. If any of the
  * Artifacts or Executions have already been added to a Context, they are
@@ -1068,9 +1048,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.addContextArtifactsAndExecutions(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.add_context_artifacts_and_executions.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_AddContextArtifactsAndExecutions_async
  */
+  addContextArtifactsAndExecutions(
+      request?: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsResponse,
+        protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest|undefined, {}|undefined
+      ]>;
+  addContextArtifactsAndExecutions(
+      request: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsResponse,
+          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  addContextArtifactsAndExecutions(
+      request: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsResponse,
+          protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest|null|undefined,
+          {}|null|undefined>): void;
   addContextArtifactsAndExecutions(
       request?: protos.google.cloud.aiplatform.v1.IAddContextArtifactsAndExecutionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1105,26 +1105,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.addContextArtifactsAndExecutions(request, options, callback);
   }
-  addContextChildren(
-      request?: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IAddContextChildrenResponse,
-        protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest|undefined, {}|undefined
-      ]>;
-  addContextChildren(
-      request: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IAddContextChildrenResponse,
-          protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest|null|undefined,
-          {}|null|undefined>): void;
-  addContextChildren(
-      request: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IAddContextChildrenResponse,
-          protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a set of Contexts as children to a parent Context. If any of the
  * child Contexts have already been added to the parent Context, they are
@@ -1148,9 +1128,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.addContextChildren(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.add_context_children.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_AddContextChildren_async
  */
+  addContextChildren(
+      request?: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IAddContextChildrenResponse,
+        protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest|undefined, {}|undefined
+      ]>;
+  addContextChildren(
+      request: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IAddContextChildrenResponse,
+          protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest|null|undefined,
+          {}|null|undefined>): void;
+  addContextChildren(
+      request: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IAddContextChildrenResponse,
+          protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest|null|undefined,
+          {}|null|undefined>): void;
   addContextChildren(
       request?: protos.google.cloud.aiplatform.v1.IAddContextChildrenRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1185,26 +1185,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.addContextChildren(request, options, callback);
   }
-  queryContextLineageSubgraph(
-      request?: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.ILineageSubgraph,
-        protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest|undefined, {}|undefined
-      ]>;
-  queryContextLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
-          protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest|null|undefined,
-          {}|null|undefined>): void;
-  queryContextLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
-          protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves Artifacts and Executions within the specified Context, connected
  * by Event edges and returned as a LineageSubgraph.
@@ -1227,9 +1207,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.queryContextLineageSubgraph(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.query_context_lineage_subgraph.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_QueryContextLineageSubgraph_async
  */
+  queryContextLineageSubgraph(
+      request?: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.ILineageSubgraph,
+        protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest|undefined, {}|undefined
+      ]>;
+  queryContextLineageSubgraph(
+      request: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
+          protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest|null|undefined,
+          {}|null|undefined>): void;
+  queryContextLineageSubgraph(
+      request: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
+          protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest|null|undefined,
+          {}|null|undefined>): void;
   queryContextLineageSubgraph(
       request?: protos.google.cloud.aiplatform.v1.IQueryContextLineageSubgraphRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1264,26 +1264,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.queryContextLineageSubgraph(request, options, callback);
   }
-  createExecution(
-      request?: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IExecution,
-        protos.google.cloud.aiplatform.v1.ICreateExecutionRequest|undefined, {}|undefined
-      ]>;
-  createExecution(
-      request: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IExecution,
-          protos.google.cloud.aiplatform.v1.ICreateExecutionRequest|null|undefined,
-          {}|null|undefined>): void;
-  createExecution(
-      request: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IExecution,
-          protos.google.cloud.aiplatform.v1.ICreateExecutionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an Execution associated with a MetadataStore.
  *
@@ -1312,9 +1292,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createExecution(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.create_execution.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_CreateExecution_async
  */
+  createExecution(
+      request?: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IExecution,
+        protos.google.cloud.aiplatform.v1.ICreateExecutionRequest|undefined, {}|undefined
+      ]>;
+  createExecution(
+      request: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IExecution,
+          protos.google.cloud.aiplatform.v1.ICreateExecutionRequest|null|undefined,
+          {}|null|undefined>): void;
+  createExecution(
+      request: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IExecution,
+          protos.google.cloud.aiplatform.v1.ICreateExecutionRequest|null|undefined,
+          {}|null|undefined>): void;
   createExecution(
       request?: protos.google.cloud.aiplatform.v1.ICreateExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1349,6 +1349,25 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.createExecution(request, options, callback);
   }
+/**
+ * Retrieves a specific Execution.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the Execution to retrieve.
+ *   Format:
+ *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Execution]{@link google.cloud.aiplatform.v1.Execution}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metadata_service.get_execution.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_GetExecution_async
+ */
   getExecution(
       request?: protos.google.cloud.aiplatform.v1.IGetExecutionRequest,
       options?: CallOptions):
@@ -1369,25 +1388,6 @@ export class MetadataServiceClient {
           protos.google.cloud.aiplatform.v1.IExecution,
           protos.google.cloud.aiplatform.v1.IGetExecutionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a specific Execution.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the Execution to retrieve.
- *   Format:
- *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Execution]{@link google.cloud.aiplatform.v1.Execution}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getExecution(request);
- */
   getExecution(
       request?: protos.google.cloud.aiplatform.v1.IGetExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1422,26 +1422,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.getExecution(request, options, callback);
   }
-  updateExecution(
-      request?: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IExecution,
-        protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest|undefined, {}|undefined
-      ]>;
-  updateExecution(
-      request: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IExecution,
-          protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateExecution(
-      request: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IExecution,
-          protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a stored Execution.
  *
@@ -1466,9 +1446,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateExecution(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.update_execution.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_UpdateExecution_async
  */
+  updateExecution(
+      request?: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IExecution,
+        protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest|undefined, {}|undefined
+      ]>;
+  updateExecution(
+      request: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IExecution,
+          protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateExecution(
+      request: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IExecution,
+          protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest|null|undefined,
+          {}|null|undefined>): void;
   updateExecution(
       request?: protos.google.cloud.aiplatform.v1.IUpdateExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1503,26 +1503,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.updateExecution(request, options, callback);
   }
-  addExecutionEvents(
-      request?: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IAddExecutionEventsResponse,
-        protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest|undefined, {}|undefined
-      ]>;
-  addExecutionEvents(
-      request: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IAddExecutionEventsResponse,
-          protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest|null|undefined,
-          {}|null|undefined>): void;
-  addExecutionEvents(
-      request: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IAddExecutionEventsResponse,
-          protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds Events to the specified Execution. An Event indicates whether an
  * Artifact was used as an input or output for an Execution. If an Event
@@ -1545,9 +1525,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.addExecutionEvents(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.add_execution_events.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_AddExecutionEvents_async
  */
+  addExecutionEvents(
+      request?: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IAddExecutionEventsResponse,
+        protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest|undefined, {}|undefined
+      ]>;
+  addExecutionEvents(
+      request: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IAddExecutionEventsResponse,
+          protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest|null|undefined,
+          {}|null|undefined>): void;
+  addExecutionEvents(
+      request: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IAddExecutionEventsResponse,
+          protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest|null|undefined,
+          {}|null|undefined>): void;
   addExecutionEvents(
       request?: protos.google.cloud.aiplatform.v1.IAddExecutionEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1582,6 +1582,28 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.addExecutionEvents(request, options, callback);
   }
+/**
+ * Obtains the set of input and output Artifacts for this Execution, in the
+ * form of LineageSubgraph that also contains the Execution and connecting
+ * Events.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.execution
+ *   Required. The resource name of the Execution whose input and output Artifacts should
+ *   be retrieved as a LineageSubgraph.
+ *   Format:
+ *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [LineageSubgraph]{@link google.cloud.aiplatform.v1.LineageSubgraph}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metadata_service.query_execution_inputs_and_outputs.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_QueryExecutionInputsAndOutputs_async
+ */
   queryExecutionInputsAndOutputs(
       request?: protos.google.cloud.aiplatform.v1.IQueryExecutionInputsAndOutputsRequest,
       options?: CallOptions):
@@ -1602,28 +1624,6 @@ export class MetadataServiceClient {
           protos.google.cloud.aiplatform.v1.ILineageSubgraph,
           protos.google.cloud.aiplatform.v1.IQueryExecutionInputsAndOutputsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Obtains the set of input and output Artifacts for this Execution, in the
- * form of LineageSubgraph that also contains the Execution and connecting
- * Events.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.execution
- *   Required. The resource name of the Execution whose input and output Artifacts should
- *   be retrieved as a LineageSubgraph.
- *   Format:
- *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [LineageSubgraph]{@link google.cloud.aiplatform.v1.LineageSubgraph}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.queryExecutionInputsAndOutputs(request);
- */
   queryExecutionInputsAndOutputs(
       request?: protos.google.cloud.aiplatform.v1.IQueryExecutionInputsAndOutputsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1658,26 +1658,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.queryExecutionInputsAndOutputs(request, options, callback);
   }
-  createMetadataSchema(
-      request?: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IMetadataSchema,
-        protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest|undefined, {}|undefined
-      ]>;
-  createMetadataSchema(
-      request: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IMetadataSchema,
-          protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest|null|undefined,
-          {}|null|undefined>): void;
-  createMetadataSchema(
-      request: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IMetadataSchema,
-          protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a MetadataSchema.
  *
@@ -1706,9 +1686,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createMetadataSchema(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.create_metadata_schema.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_CreateMetadataSchema_async
  */
+  createMetadataSchema(
+      request?: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IMetadataSchema,
+        protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest|undefined, {}|undefined
+      ]>;
+  createMetadataSchema(
+      request: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IMetadataSchema,
+          protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest|null|undefined,
+          {}|null|undefined>): void;
+  createMetadataSchema(
+      request: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IMetadataSchema,
+          protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest|null|undefined,
+          {}|null|undefined>): void;
   createMetadataSchema(
       request?: protos.google.cloud.aiplatform.v1.ICreateMetadataSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1743,6 +1743,25 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.createMetadataSchema(request, options, callback);
   }
+/**
+ * Retrieves a specific MetadataSchema.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the MetadataSchema to retrieve.
+ *   Format:
+ *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MetadataSchema]{@link google.cloud.aiplatform.v1.MetadataSchema}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metadata_service.get_metadata_schema.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_GetMetadataSchema_async
+ */
   getMetadataSchema(
       request?: protos.google.cloud.aiplatform.v1.IGetMetadataSchemaRequest,
       options?: CallOptions):
@@ -1763,25 +1782,6 @@ export class MetadataServiceClient {
           protos.google.cloud.aiplatform.v1.IMetadataSchema,
           protos.google.cloud.aiplatform.v1.IGetMetadataSchemaRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a specific MetadataSchema.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the MetadataSchema to retrieve.
- *   Format:
- *   `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MetadataSchema]{@link google.cloud.aiplatform.v1.MetadataSchema}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMetadataSchema(request);
- */
   getMetadataSchema(
       request?: protos.google.cloud.aiplatform.v1.IGetMetadataSchemaRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1816,26 +1816,6 @@ export class MetadataServiceClient {
     this.initialize();
     return this.innerApiCalls.getMetadataSchema(request, options, callback);
   }
-  queryArtifactLineageSubgraph(
-      request?: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.ILineageSubgraph,
-        protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest|undefined, {}|undefined
-      ]>;
-  queryArtifactLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
-          protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest|null|undefined,
-          {}|null|undefined>): void;
-  queryArtifactLineageSubgraph(
-      request: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
-          protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves lineage of an Artifact represented through Artifacts and
  * Executions connected by Event edges and returned as a LineageSubgraph.
@@ -1886,9 +1866,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.queryArtifactLineageSubgraph(request);
+ * @example <caption>include:samples/generated/v1/metadata_service.query_artifact_lineage_subgraph.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_QueryArtifactLineageSubgraph_async
  */
+  queryArtifactLineageSubgraph(
+      request?: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.ILineageSubgraph,
+        protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest|undefined, {}|undefined
+      ]>;
+  queryArtifactLineageSubgraph(
+      request: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
+          protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest|null|undefined,
+          {}|null|undefined>): void;
+  queryArtifactLineageSubgraph(
+      request: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.ILineageSubgraph,
+          protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest|null|undefined,
+          {}|null|undefined>): void;
   queryArtifactLineageSubgraph(
       request?: protos.google.cloud.aiplatform.v1.IQueryArtifactLineageSubgraphRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1924,26 +1924,6 @@ export class MetadataServiceClient {
     return this.innerApiCalls.queryArtifactLineageSubgraph(request, options, callback);
   }
 
-  createMetadataStore(
-      request?: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1.IMetadataStore, protos.google.cloud.aiplatform.v1.ICreateMetadataStoreOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createMetadataStore(
-      request: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IMetadataStore, protos.google.cloud.aiplatform.v1.ICreateMetadataStoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createMetadataStore(
-      request: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IMetadataStore, protos.google.cloud.aiplatform.v1.ICreateMetadataStoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Initializes a MetadataStore, including allocation of resources.
  *
@@ -1973,10 +1953,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createMetadataStore(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.create_metadata_store.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_CreateMetadataStore_async
  */
+  createMetadataStore(
+      request?: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1.IMetadataStore, protos.google.cloud.aiplatform.v1.ICreateMetadataStoreOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createMetadataStore(
+      request: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IMetadataStore, protos.google.cloud.aiplatform.v1.ICreateMetadataStoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createMetadataStore(
+      request: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IMetadataStore, protos.google.cloud.aiplatform.v1.ICreateMetadataStoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createMetadataStore(
       request?: protos.google.cloud.aiplatform.v1.ICreateMetadataStoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2020,11 +2019,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateMetadataStoreProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.create_metadata_store.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_CreateMetadataStore_async
  */
   async checkCreateMetadataStoreProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.MetadataStore, protos.google.cloud.aiplatform.v1.CreateMetadataStoreOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2032,26 +2028,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createMetadataStore, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.MetadataStore, protos.google.cloud.aiplatform.v1.CreateMetadataStoreOperationMetadata>;
   }
-  deleteMetadataStore(
-      request?: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteMetadataStore(
-      request: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteMetadataStore(
-      request: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single MetadataStore and all its child resources (Artifacts,
  * Executions, and Contexts).
@@ -2073,10 +2049,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteMetadataStore(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_metadata_store.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteMetadataStore_async
  */
+  deleteMetadataStore(
+      request?: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteMetadataStore(
+      request: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteMetadataStore(
+      request: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteMetadataStore(
       request?: protos.google.cloud.aiplatform.v1.IDeleteMetadataStoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2120,11 +2115,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteMetadataStoreProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_metadata_store.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteMetadataStore_async
  */
   async checkDeleteMetadataStoreProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteMetadataStoreOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2132,26 +2124,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteMetadataStore, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteMetadataStoreOperationMetadata>;
   }
-  deleteArtifact(
-      request?: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteArtifact(
-      request: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteArtifact(
-      request: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes an Artifact.
  *
@@ -2174,10 +2146,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteArtifact(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_artifact.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteArtifact_async
  */
+  deleteArtifact(
+      request?: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteArtifact(
+      request: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteArtifact(
+      request: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteArtifact(
       request?: protos.google.cloud.aiplatform.v1.IDeleteArtifactRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2221,11 +2212,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteArtifactProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_artifact.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteArtifact_async
  */
   async checkDeleteArtifactProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2233,26 +2221,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteArtifact, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>;
   }
-  purgeArtifacts(
-      request?: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1.IPurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.IPurgeArtifactsMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  purgeArtifacts(
-      request: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IPurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.IPurgeArtifactsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  purgeArtifacts(
-      request: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IPurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.IPurgeArtifactsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Purges Artifacts.
  *
@@ -2278,10 +2246,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.purgeArtifacts(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.purge_artifacts.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_PurgeArtifacts_async
  */
+  purgeArtifacts(
+      request?: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1.IPurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.IPurgeArtifactsMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  purgeArtifacts(
+      request: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IPurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.IPurgeArtifactsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  purgeArtifacts(
+      request: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IPurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.IPurgeArtifactsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   purgeArtifacts(
       request?: protos.google.cloud.aiplatform.v1.IPurgeArtifactsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2325,11 +2312,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPurgeArtifactsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.purge_artifacts.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_PurgeArtifacts_async
  */
   async checkPurgeArtifactsProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.PurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.PurgeArtifactsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2337,26 +2321,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.purgeArtifacts, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.PurgeArtifactsResponse, protos.google.cloud.aiplatform.v1.PurgeArtifactsMetadata>;
   }
-  deleteContext(
-      request?: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteContext(
-      request: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteContext(
-      request: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a stored Context.
  *
@@ -2382,10 +2346,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteContext(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_context.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteContext_async
  */
+  deleteContext(
+      request?: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteContext(
+      request: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteContext(
+      request: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteContext(
       request?: protos.google.cloud.aiplatform.v1.IDeleteContextRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2429,11 +2412,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteContextProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_context.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteContext_async
  */
   async checkDeleteContextProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2441,26 +2421,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteContext, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>;
   }
-  purgeContexts(
-      request?: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1.IPurgeContextsResponse, protos.google.cloud.aiplatform.v1.IPurgeContextsMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  purgeContexts(
-      request: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IPurgeContextsResponse, protos.google.cloud.aiplatform.v1.IPurgeContextsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  purgeContexts(
-      request: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IPurgeContextsResponse, protos.google.cloud.aiplatform.v1.IPurgeContextsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Purges Contexts.
  *
@@ -2486,10 +2446,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.purgeContexts(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.purge_contexts.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_PurgeContexts_async
  */
+  purgeContexts(
+      request?: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1.IPurgeContextsResponse, protos.google.cloud.aiplatform.v1.IPurgeContextsMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  purgeContexts(
+      request: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IPurgeContextsResponse, protos.google.cloud.aiplatform.v1.IPurgeContextsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  purgeContexts(
+      request: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IPurgeContextsResponse, protos.google.cloud.aiplatform.v1.IPurgeContextsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   purgeContexts(
       request?: protos.google.cloud.aiplatform.v1.IPurgeContextsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2533,11 +2512,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPurgeContextsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.purge_contexts.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_PurgeContexts_async
  */
   async checkPurgeContextsProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.PurgeContextsResponse, protos.google.cloud.aiplatform.v1.PurgeContextsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2545,26 +2521,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.purgeContexts, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.PurgeContextsResponse, protos.google.cloud.aiplatform.v1.PurgeContextsMetadata>;
   }
-  deleteExecution(
-      request?: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteExecution(
-      request: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteExecution(
-      request: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes an Execution.
  *
@@ -2587,10 +2543,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteExecution(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_execution.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteExecution_async
  */
+  deleteExecution(
+      request?: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteExecution(
+      request: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteExecution(
+      request: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteExecution(
       request?: protos.google.cloud.aiplatform.v1.IDeleteExecutionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2634,11 +2609,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteExecutionProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.delete_execution.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_DeleteExecution_async
  */
   async checkDeleteExecutionProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2646,26 +2618,6 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteExecution, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>;
   }
-  purgeExecutions(
-      request?: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1.IPurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.IPurgeExecutionsMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  purgeExecutions(
-      request: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IPurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.IPurgeExecutionsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  purgeExecutions(
-      request: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IPurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.IPurgeExecutionsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Purges Executions.
  *
@@ -2691,10 +2643,29 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.purgeExecutions(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metadata_service.purge_executions.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_PurgeExecutions_async
  */
+  purgeExecutions(
+      request?: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1.IPurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.IPurgeExecutionsMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  purgeExecutions(
+      request: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IPurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.IPurgeExecutionsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  purgeExecutions(
+      request: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IPurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.IPurgeExecutionsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   purgeExecutions(
       request?: protos.google.cloud.aiplatform.v1.IPurgeExecutionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2738,11 +2709,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPurgeExecutionsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metadata_service.purge_executions.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_PurgeExecutions_async
  */
   async checkPurgeExecutionsProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.PurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.PurgeExecutionsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2750,28 +2718,7 @@ export class MetadataServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.purgeExecutions, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.PurgeExecutionsResponse, protos.google.cloud.aiplatform.v1.PurgeExecutionsMetadata>;
   }
-  listMetadataStores(
-      request?: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IMetadataStore[],
-        protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest|null,
-        protos.google.cloud.aiplatform.v1.IListMetadataStoresResponse
-      ]>;
-  listMetadataStores(
-      request: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
-          protos.google.cloud.aiplatform.v1.IListMetadataStoresResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IMetadataStore>): void;
-  listMetadataStores(
-      request: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
-          protos.google.cloud.aiplatform.v1.IListMetadataStoresResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IMetadataStore>): void;
-/**
+ /**
  * Lists MetadataStores for a Location.
  *
  * @param {Object} request
@@ -2805,6 +2752,27 @@ export class MetadataServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMetadataStores(
+      request?: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IMetadataStore[],
+        protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest|null,
+        protos.google.cloud.aiplatform.v1.IListMetadataStoresResponse
+      ]>;
+  listMetadataStores(
+      request: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
+          protos.google.cloud.aiplatform.v1.IListMetadataStoresResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IMetadataStore>): void;
+  listMetadataStores(
+      request: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
+          protos.google.cloud.aiplatform.v1.IListMetadataStoresResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IMetadataStore>): void;
   listMetadataStores(
       request?: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2928,11 +2896,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMetadataStoresAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/metadata_service.list_metadata_stores.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_ListMetadataStores_async
  */
   listMetadataStoresAsync(
       request?: protos.google.cloud.aiplatform.v1.IListMetadataStoresRequest,
@@ -2947,7 +2912,6 @@ export class MetadataServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMetadataStores'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2957,28 +2921,7 @@ export class MetadataServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1.IMetadataStore>;
   }
-  listArtifacts(
-      request?: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IArtifact[],
-        protos.google.cloud.aiplatform.v1.IListArtifactsRequest|null,
-        protos.google.cloud.aiplatform.v1.IListArtifactsResponse
-      ]>;
-  listArtifacts(
-      request: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
-          protos.google.cloud.aiplatform.v1.IListArtifactsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IArtifact>): void;
-  listArtifacts(
-      request: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
-          protos.google.cloud.aiplatform.v1.IListArtifactsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IArtifact>): void;
-/**
+ /**
  * Lists Artifacts in the MetadataStore.
  *
  * @param {Object} request
@@ -3038,6 +2981,27 @@ export class MetadataServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listArtifacts(
+      request?: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IArtifact[],
+        protos.google.cloud.aiplatform.v1.IListArtifactsRequest|null,
+        protos.google.cloud.aiplatform.v1.IListArtifactsResponse
+      ]>;
+  listArtifacts(
+      request: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
+          protos.google.cloud.aiplatform.v1.IListArtifactsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IArtifact>): void;
+  listArtifacts(
+      request: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
+          protos.google.cloud.aiplatform.v1.IListArtifactsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IArtifact>): void;
   listArtifacts(
       request?: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3213,11 +3177,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listArtifactsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/metadata_service.list_artifacts.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_ListArtifacts_async
  */
   listArtifactsAsync(
       request?: protos.google.cloud.aiplatform.v1.IListArtifactsRequest,
@@ -3232,7 +3193,6 @@ export class MetadataServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listArtifacts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3242,28 +3202,7 @@ export class MetadataServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1.IArtifact>;
   }
-  listContexts(
-      request?: protos.google.cloud.aiplatform.v1.IListContextsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IContext[],
-        protos.google.cloud.aiplatform.v1.IListContextsRequest|null,
-        protos.google.cloud.aiplatform.v1.IListContextsResponse
-      ]>;
-  listContexts(
-      request: protos.google.cloud.aiplatform.v1.IListContextsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListContextsRequest,
-          protos.google.cloud.aiplatform.v1.IListContextsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IContext>): void;
-  listContexts(
-      request: protos.google.cloud.aiplatform.v1.IListContextsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListContextsRequest,
-          protos.google.cloud.aiplatform.v1.IListContextsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IContext>): void;
-/**
+ /**
  * Lists Contexts on the MetadataStore.
  *
  * @param {Object} request
@@ -3327,6 +3266,27 @@ export class MetadataServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listContexts(
+      request?: protos.google.cloud.aiplatform.v1.IListContextsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IContext[],
+        protos.google.cloud.aiplatform.v1.IListContextsRequest|null,
+        protos.google.cloud.aiplatform.v1.IListContextsResponse
+      ]>;
+  listContexts(
+      request: protos.google.cloud.aiplatform.v1.IListContextsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListContextsRequest,
+          protos.google.cloud.aiplatform.v1.IListContextsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IContext>): void;
+  listContexts(
+      request: protos.google.cloud.aiplatform.v1.IListContextsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListContextsRequest,
+          protos.google.cloud.aiplatform.v1.IListContextsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IContext>): void;
   listContexts(
       request?: protos.google.cloud.aiplatform.v1.IListContextsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3510,11 +3470,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listContextsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/metadata_service.list_contexts.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_ListContexts_async
  */
   listContextsAsync(
       request?: protos.google.cloud.aiplatform.v1.IListContextsRequest,
@@ -3529,7 +3486,6 @@ export class MetadataServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listContexts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3539,28 +3495,7 @@ export class MetadataServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1.IContext>;
   }
-  listExecutions(
-      request?: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IExecution[],
-        protos.google.cloud.aiplatform.v1.IListExecutionsRequest|null,
-        protos.google.cloud.aiplatform.v1.IListExecutionsResponse
-      ]>;
-  listExecutions(
-      request: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
-          protos.google.cloud.aiplatform.v1.IListExecutionsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IExecution>): void;
-  listExecutions(
-      request: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
-          protos.google.cloud.aiplatform.v1.IListExecutionsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IExecution>): void;
-/**
+ /**
  * Lists Executions in the MetadataStore.
  *
  * @param {Object} request
@@ -3619,6 +3554,27 @@ export class MetadataServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listExecutions(
+      request?: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IExecution[],
+        protos.google.cloud.aiplatform.v1.IListExecutionsRequest|null,
+        protos.google.cloud.aiplatform.v1.IListExecutionsResponse
+      ]>;
+  listExecutions(
+      request: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
+          protos.google.cloud.aiplatform.v1.IListExecutionsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IExecution>): void;
+  listExecutions(
+      request: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
+          protos.google.cloud.aiplatform.v1.IListExecutionsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IExecution>): void;
   listExecutions(
       request?: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3792,11 +3748,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listExecutionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/metadata_service.list_executions.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_ListExecutions_async
  */
   listExecutionsAsync(
       request?: protos.google.cloud.aiplatform.v1.IListExecutionsRequest,
@@ -3811,7 +3764,6 @@ export class MetadataServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listExecutions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3821,28 +3773,7 @@ export class MetadataServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1.IExecution>;
   }
-  listMetadataSchemas(
-      request?: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IMetadataSchema[],
-        protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest|null,
-        protos.google.cloud.aiplatform.v1.IListMetadataSchemasResponse
-      ]>;
-  listMetadataSchemas(
-      request: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
-          protos.google.cloud.aiplatform.v1.IListMetadataSchemasResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IMetadataSchema>): void;
-  listMetadataSchemas(
-      request: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
-          protos.google.cloud.aiplatform.v1.IListMetadataSchemasResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IMetadataSchema>): void;
-/**
+ /**
  * Lists MetadataSchemas.
  *
  * @param {Object} request
@@ -3878,6 +3809,27 @@ export class MetadataServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMetadataSchemas(
+      request?: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IMetadataSchema[],
+        protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest|null,
+        protos.google.cloud.aiplatform.v1.IListMetadataSchemasResponse
+      ]>;
+  listMetadataSchemas(
+      request: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
+          protos.google.cloud.aiplatform.v1.IListMetadataSchemasResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IMetadataSchema>): void;
+  listMetadataSchemas(
+      request: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
+          protos.google.cloud.aiplatform.v1.IListMetadataSchemasResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IMetadataSchema>): void;
   listMetadataSchemas(
       request?: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -4005,11 +3957,8 @@ export class MetadataServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMetadataSchemasAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/metadata_service.list_metadata_schemas.js</caption>
+ * region_tag:aiplatform_v1_generated_MetadataService_ListMetadataSchemas_async
  */
   listMetadataSchemasAsync(
       request?: protos.google.cloud.aiplatform.v1.IListMetadataSchemasRequest,
@@ -4024,7 +3973,6 @@ export class MetadataServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMetadataSchemas'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

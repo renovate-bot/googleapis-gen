@@ -646,26 +646,6 @@ export class AdGroupServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroup(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroup,
-        protos.google.ads.googleads.v7.services.IGetAdGroupRequest|undefined, {}|undefined
-      ]>;
-  getAdGroup(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroup,
-          protos.google.ads.googleads.v7.services.IGetAdGroupRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroup(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroup,
-          protos.google.ads.googleads.v7.services.IGetAdGroupRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroup(request);
+ * @example <caption>include:samples/generated/v7/ad_group_service.get_ad_group.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupService_GetAdGroup_async
  */
+  getAdGroup(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroup,
+        protos.google.ads.googleads.v7.services.IGetAdGroupRequest|undefined, {}|undefined
+      ]>;
+  getAdGroup(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroup,
+          protos.google.ads.googleads.v7.services.IGetAdGroupRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroup(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroup,
+          protos.google.ads.googleads.v7.services.IGetAdGroupRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroup(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class AdGroupServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroup(request, options, callback);
   }
-  mutateAdGroups(
-      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAdGroupsResponse,
-        protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroups(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroups(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes ad groups. Operation statuses are returned.
  *
@@ -805,9 +785,29 @@ export class AdGroupServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroups(request);
+ * @example <caption>include:samples/generated/v7/ad_group_service.mutate_ad_groups.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupService_MutateAdGroups_async
  */
+  mutateAdGroups(
+      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAdGroupsResponse,
+        protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroups(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroups(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroups(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupsRequest,
       optionsOrCallback?: CallOptions|Callback<

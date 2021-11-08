@@ -23,23 +23,23 @@ function main() {
   /**
    *  The `name` parameter's value depends on the target resource for the
    *  request, namely
-   *  [`roles`](/iam/reference/rest/v1/roles),
-   *  [`projects`](/iam/reference/rest/v1/projects.roles), or
-   *  [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+   *  `roles` (/iam/reference/rest/v1/roles),
+   *  `projects` (/iam/reference/rest/v1/projects.roles), or
+   *  `organizations` (/iam/reference/rest/v1/organizations.roles). Each
    *  resource type's `name` value format is described below:
-   *  * [`roles.get()`](/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
+   *  * `roles.get()` (/iam/reference/rest/v1/roles/get): `roles/{ROLE_NAME}`.
    *    This method returns results from all
-   *    [predefined roles](/iam/docs/understanding-roles#predefined_roles) in
+   *    predefined roles (/iam/docs/understanding-roles#predefined_roles) in
    *    Cloud IAM. Example request URL:
    *    `https://iam.googleapis.com/v1/roles/{ROLE_NAME}`
-   *  * [`projects.roles.get()`](/iam/reference/rest/v1/projects.roles/get):
+   *  * `projects.roles.get()` (/iam/reference/rest/v1/projects.roles/get):
    *    `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method returns only
-   *    [custom roles](/iam/docs/understanding-custom-roles) that have been
+   *    custom roles (/iam/docs/understanding-custom-roles) that have been
    *    created at the project level. Example request URL:
    *    `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   *  * [`organizations.roles.get()`](/iam/reference/rest/v1/organizations.roles/get):
+   *  * `organizations.roles.get()` (/iam/reference/rest/v1/organizations.roles/get):
    *    `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *    returns only [custom roles](/iam/docs/understanding-custom-roles) that
+   *    returns only custom roles (/iam/docs/understanding-custom-roles) that
    *    have been created at the organization level. Example request URL:
    *    `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    *  Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -53,7 +53,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function getRole() {
+  async function callGetRole() {
     // Construct request
     const request = {
     };
@@ -63,7 +63,7 @@ function main() {
     console.log(response);
   }
 
-  getRole();
+  callGetRole();
   // [END iam_v1_generated_IAM_GetRole_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ParentalStatusViewServiceClient();
 
-  async function getParentalStatusView() {
+  async function callGetParentalStatusView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getParentalStatusView();
+  callGetParentalStatusView();
   // [END googleads_v7_generated_ParentalStatusViewService_GetParentalStatusView_async]
 }
 

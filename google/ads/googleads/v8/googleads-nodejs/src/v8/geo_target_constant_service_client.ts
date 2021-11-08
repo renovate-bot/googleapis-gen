@@ -676,26 +676,6 @@ export class GeoTargetConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getGeoTargetConstant(
-      request?: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
-        protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|undefined, {}|undefined
-      ]>;
-  getGeoTargetConstant(
-      request: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
-          protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getGeoTargetConstant(
-      request: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
-          protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested geo target constant in full detail.
  *
@@ -718,9 +698,29 @@ export class GeoTargetConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getGeoTargetConstant(request);
+ * @example <caption>include:samples/generated/v8/geo_target_constant_service.get_geo_target_constant.js</caption>
+ * region_tag:googleads_v8_generated_GeoTargetConstantService_GetGeoTargetConstant_async
  */
+  getGeoTargetConstant(
+      request?: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
+        protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|undefined, {}|undefined
+      ]>;
+  getGeoTargetConstant(
+      request: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
+          protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getGeoTargetConstant(
+      request: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IGeoTargetConstant,
+          protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getGeoTargetConstant(
       request?: protos.google.ads.googleads.v8.services.IGetGeoTargetConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class GeoTargetConstantServiceClient {
     this.initialize();
     return this.innerApiCalls.getGeoTargetConstant(request, options, callback);
   }
-  suggestGeoTargetConstants(
-      request?: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
-        protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|undefined, {}|undefined
-      ]>;
-  suggestGeoTargetConstants(
-      request: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
-          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|null|undefined,
-          {}|null|undefined>): void;
-  suggestGeoTargetConstants(
-      request: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
-          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns GeoTargetConstant suggestions by location name or by resource name.
  *
@@ -806,9 +786,29 @@ export class GeoTargetConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.suggestGeoTargetConstants(request);
+ * @example <caption>include:samples/generated/v8/geo_target_constant_service.suggest_geo_target_constants.js</caption>
+ * region_tag:googleads_v8_generated_GeoTargetConstantService_SuggestGeoTargetConstants_async
  */
+  suggestGeoTargetConstants(
+      request?: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
+        protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|undefined, {}|undefined
+      ]>;
+  suggestGeoTargetConstants(
+      request: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
+          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestGeoTargetConstants(
+      request: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsResponse,
+          protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest|null|undefined,
+          {}|null|undefined>): void;
   suggestGeoTargetConstants(
       request?: protos.google.ads.googleads.v8.services.ISuggestGeoTargetConstantsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -833,6 +833,8 @@ export class GeoTargetConstantServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.suggestGeoTargetConstants(request, options, callback);
   }

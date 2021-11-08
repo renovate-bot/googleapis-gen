@@ -28,7 +28,7 @@ function main(parent) {
   /**
    *  The list of fields to be retrieved.
    */
-  // const readMask = ''
+  // const readMask = {}
   /**
    *  The maximum number of migration workflows to return. The service may return
    *  fewer than this number.
@@ -48,7 +48,7 @@ function main(parent) {
   // Instantiates a client
   const migrationClient = new MigrationServiceClient();
 
-  async function listMigrationWorkflows() {
+  async function callListMigrationWorkflows() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent) {
     }
   }
 
-  listMigrationWorkflows();
+  callListMigrationWorkflows();
   // [END bigquerymigration_v2alpha_generated_MigrationService_ListMigrationWorkflows_async]
 }
 

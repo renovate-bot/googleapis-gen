@@ -47,7 +47,7 @@ function main(context) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function addContextArtifactsAndExecutions() {
+  async function callAddContextArtifactsAndExecutions() {
     // Construct request
     const request = {
       context,
@@ -58,7 +58,7 @@ function main(context) {
     console.log(response);
   }
 
-  addContextArtifactsAndExecutions();
+  callAddContextArtifactsAndExecutions();
   // [END aiplatform_v1_generated_MetadataService_AddContextArtifactsAndExecutions_async]
 }
 

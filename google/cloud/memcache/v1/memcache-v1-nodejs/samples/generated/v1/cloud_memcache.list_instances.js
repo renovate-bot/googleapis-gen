@@ -31,7 +31,7 @@ function main(parent) {
    *  If not specified, a default value of 1000 will be used by the service.
    *  Regardless of the page_size value, the response may include a partial list
    *  and a caller should only rely on response's
-   *  [next_page_token][CloudMemcache.ListInstancesResponse.next_page_token]
+   *  next_page_token CloudMemcache.ListInstancesResponse.next_page_token 
    *  to determine if there are more instances left to be queried.
    */
   // const pageSize = 1234
@@ -56,7 +56,7 @@ function main(parent) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function listInstances() {
+  async function callListInstances() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent) {
     }
   }
 
-  listInstances();
+  callListInstances();
   // [END memcache_v1_generated_CloudMemcache_ListInstances_async]
 }
 

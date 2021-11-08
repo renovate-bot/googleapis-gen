@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const sdmClient = new SmartDeviceManagementServiceClient();
 
-  async function getStructure() {
+  async function callGetStructure() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  getStructure();
+  callGetStructure();
   // [END smartdevicemanagement_v1_generated_SmartDeviceManagementService_GetStructure_async]
 }
 

@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listAccounts() {
+  async function callListAccounts() {
     // Construct request
     const request = {
     };
@@ -59,7 +59,7 @@ function main() {
     }
   }
 
-  listAccounts();
+  callListAccounts();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListAccounts_async]
 }
 

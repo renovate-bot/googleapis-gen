@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function getReservation() {
+  async function callGetReservation() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getReservation();
+  callGetReservation();
   // [END pubsublite_v1_generated_AdminService_GetReservation_async]
 }
 

@@ -32,7 +32,7 @@ function main(parent, scheduleId, schedule) {
   /**
    *  Required. The schedule to be created.
    */
-  // const schedule = ''
+  // const schedule = {}
 
   // Imports the Notebooks library
   const {NotebookServiceClient} = require('@google-cloud/notebooks').v1;
@@ -40,7 +40,7 @@ function main(parent, scheduleId, schedule) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function createSchedule() {
+  async function callCreateSchedule() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, scheduleId, schedule) {
     console.log(response);
   }
 
-  createSchedule();
+  callCreateSchedule();
   // [END notebooks_v1_generated_NotebookService_CreateSchedule_async]
 }
 

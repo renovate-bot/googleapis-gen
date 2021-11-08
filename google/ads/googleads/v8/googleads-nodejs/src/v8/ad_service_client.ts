@@ -676,26 +676,6 @@ export class AdServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAd(
-      request?: protos.google.ads.googleads.v8.services.IGetAdRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAd,
-        protos.google.ads.googleads.v8.services.IGetAdRequest|undefined, {}|undefined
-      ]>;
-  getAd(
-      request: protos.google.ads.googleads.v8.services.IGetAdRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAd,
-          protos.google.ads.googleads.v8.services.IGetAdRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAd(
-      request: protos.google.ads.googleads.v8.services.IGetAdRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAd,
-          protos.google.ads.googleads.v8.services.IGetAdRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad in full detail.
  *
@@ -718,9 +698,29 @@ export class AdServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAd(request);
+ * @example <caption>include:samples/generated/v8/ad_service.get_ad.js</caption>
+ * region_tag:googleads_v8_generated_AdService_GetAd_async
  */
+  getAd(
+      request?: protos.google.ads.googleads.v8.services.IGetAdRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAd,
+        protos.google.ads.googleads.v8.services.IGetAdRequest|undefined, {}|undefined
+      ]>;
+  getAd(
+      request: protos.google.ads.googleads.v8.services.IGetAdRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAd,
+          protos.google.ads.googleads.v8.services.IGetAdRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAd(
+      request: protos.google.ads.googleads.v8.services.IGetAdRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAd,
+          protos.google.ads.googleads.v8.services.IGetAdRequest|null|undefined,
+          {}|null|undefined>): void;
   getAd(
       request?: protos.google.ads.googleads.v8.services.IGetAdRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class AdServiceClient {
     this.initialize();
     return this.innerApiCalls.getAd(request, options, callback);
   }
-  mutateAds(
-      request?: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateAdsResponse,
-        protos.google.ads.googleads.v8.services.IMutateAdsRequest|undefined, {}|undefined
-      ]>;
-  mutateAds(
-      request: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateAdsResponse,
-          protos.google.ads.googleads.v8.services.IMutateAdsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAds(
-      request: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateAdsResponse,
-          protos.google.ads.googleads.v8.services.IMutateAdsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates ads. Operation statuses are returned. Updating ads is not supported
  * for TextAd, ExpandedDynamicSearchAd, GmailAd and ImageAd.
@@ -843,9 +823,29 @@ export class AdServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAds(request);
+ * @example <caption>include:samples/generated/v8/ad_service.mutate_ads.js</caption>
+ * region_tag:googleads_v8_generated_AdService_MutateAds_async
  */
+  mutateAds(
+      request?: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateAdsResponse,
+        protos.google.ads.googleads.v8.services.IMutateAdsRequest|undefined, {}|undefined
+      ]>;
+  mutateAds(
+      request: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateAdsResponse,
+          protos.google.ads.googleads.v8.services.IMutateAdsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAds(
+      request: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateAdsResponse,
+          protos.google.ads.googleads.v8.services.IMutateAdsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAds(
       request?: protos.google.ads.googleads.v8.services.IMutateAdsRequest,
       optionsOrCallback?: CallOptions|Callback<

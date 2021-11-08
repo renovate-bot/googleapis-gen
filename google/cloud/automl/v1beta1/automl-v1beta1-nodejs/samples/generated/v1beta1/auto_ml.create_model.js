@@ -27,7 +27,7 @@ function main(parent, model) {
   /**
    *  Required. The model to create.
    */
-  // const model = ''
+  // const model = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
@@ -35,7 +35,7 @@ function main(parent, model) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function createModel() {
+  async function callCreateModel() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, model) {
     console.log(response);
   }
 
-  createModel();
+  callCreateModel();
   // [END automl_v1beta1_generated_AutoMl_CreateModel_async]
 }
 

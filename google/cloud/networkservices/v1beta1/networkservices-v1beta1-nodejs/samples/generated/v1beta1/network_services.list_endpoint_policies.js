@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const networkservicesClient = new NetworkServicesClient();
 
-  async function listEndpointPolicies() {
+  async function callListEndpointPolicies() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listEndpointPolicies();
+  callListEndpointPolicies();
   // [END networkservices_v1beta1_generated_NetworkServices_ListEndpointPolicies_async]
 }
 

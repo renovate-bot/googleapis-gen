@@ -25,25 +25,25 @@ function main(parent, basicConfig, feature) {
    *  One of video_classification_config, object_detection_config,
    *  object_tracking_config and event_config is required.
    */
-  // const videoClassificationConfig = ''
+  // const videoClassificationConfig = {}
   /**
    *  Configuration for video object detection task.
    *  One of video_classification_config, object_detection_config,
    *  object_tracking_config and event_config is required.
    */
-  // const objectDetectionConfig = ''
+  // const objectDetectionConfig = {}
   /**
    *  Configuration for video object tracking task.
    *  One of video_classification_config, object_detection_config,
    *  object_tracking_config and event_config is required.
    */
-  // const objectTrackingConfig = ''
+  // const objectTrackingConfig = {}
   /**
    *  Configuration for video event task.
    *  One of video_classification_config, object_detection_config,
    *  object_tracking_config and event_config is required.
    */
-  // const eventConfig = ''
+  // const eventConfig = {}
   /**
    *  Required. Name of the dataset to request labeling task, format:
    *  projects/{project_id}/datasets/{dataset_id}
@@ -52,11 +52,11 @@ function main(parent, basicConfig, feature) {
   /**
    *  Required. Basic human annotation config.
    */
-  // const basicConfig = ''
+  // const basicConfig = {}
   /**
    *  Required. The type of video labeling task.
    */
-  // const feature = ''
+  // const feature = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -64,7 +64,7 @@ function main(parent, basicConfig, feature) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function labelVideo() {
+  async function callLabelVideo() {
     // Construct request
     const request = {
       parent,
@@ -78,7 +78,7 @@ function main(parent, basicConfig, feature) {
     console.log(response);
   }
 
-  labelVideo();
+  callLabelVideo();
   // [END datalabeling_v1beta1_generated_DataLabelingService_LabelVideo_async]
 }
 

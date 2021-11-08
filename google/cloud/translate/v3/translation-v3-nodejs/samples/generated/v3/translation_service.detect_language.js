@@ -66,7 +66,7 @@ function main(parent) {
   // Instantiates a client
   const translationClient = new TranslationServiceClient();
 
-  async function detectLanguage() {
+  async function callDetectLanguage() {
     // Construct request
     const request = {
       parent,
@@ -77,7 +77,7 @@ function main(parent) {
     console.log(response);
   }
 
-  detectLanguage();
+  callDetectLanguage();
   // [END translate_v3_generated_TranslationService_DetectLanguage_async]
 }
 

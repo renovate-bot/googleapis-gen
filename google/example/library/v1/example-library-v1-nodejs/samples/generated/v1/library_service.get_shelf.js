@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function getShelf() {
+  async function callGetShelf() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getShelf();
+  callGetShelf();
   // [END library-example_v1_generated_LibraryService_GetShelf_async]
 }
 

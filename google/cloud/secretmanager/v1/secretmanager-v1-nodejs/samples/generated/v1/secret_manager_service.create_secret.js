@@ -22,7 +22,7 @@ function main(parent, secretId, secret) {
    */
   /**
    *  Required. The resource name of the project to associate with the
-   *  [Secret][google.cloud.secretmanager.v1.Secret], in the format `projects/*`.
+   *  Secret google.cloud.secretmanager.v1.Secret, in the format `projects/*`.
    */
   // const parent = 'abc123'
   /**
@@ -33,9 +33,9 @@ function main(parent, secretId, secret) {
    */
   // const secretId = 'abc123'
   /**
-   *  Required. A [Secret][google.cloud.secretmanager.v1.Secret] with initial field values.
+   *  Required. A Secret google.cloud.secretmanager.v1.Secret  with initial field values.
    */
-  // const secret = ''
+  // const secret = {}
 
   // Imports the Secretmanager library
   const {SecretManagerServiceClient} = require('@google-cloud/secret-manager').v1;
@@ -43,7 +43,7 @@ function main(parent, secretId, secret) {
   // Instantiates a client
   const secretmanagerClient = new SecretManagerServiceClient();
 
-  async function createSecret() {
+  async function callCreateSecret() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, secretId, secret) {
     console.log(response);
   }
 
-  createSecret();
+  callCreateSecret();
   // [END secretmanager_v1_generated_SecretManagerService_CreateSecret_async]
 }
 

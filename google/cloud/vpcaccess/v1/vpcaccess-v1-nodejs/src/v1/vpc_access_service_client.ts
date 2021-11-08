@@ -331,6 +331,24 @@ export class VpcAccessServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a Serverless VPC Access connector. Returns NOT_FOUND if the resource
+ * does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of a Serverless VPC Access connector to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Connector]{@link google.cloud.vpcaccess.v1.Connector}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/vpc_access_service.get_connector.js</caption>
+ * region_tag:vpcaccess_v1_generated_VpcAccessService_GetConnector_async
+ */
   getConnector(
       request?: protos.google.cloud.vpcaccess.v1.IGetConnectorRequest,
       options?: CallOptions):
@@ -351,24 +369,6 @@ export class VpcAccessServiceClient {
           protos.google.cloud.vpcaccess.v1.IConnector,
           protos.google.cloud.vpcaccess.v1.IGetConnectorRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a Serverless VPC Access connector. Returns NOT_FOUND if the resource
- * does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of a Serverless VPC Access connector to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Connector]{@link google.cloud.vpcaccess.v1.Connector}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getConnector(request);
- */
   getConnector(
       request?: protos.google.cloud.vpcaccess.v1.IGetConnectorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -404,26 +404,6 @@ export class VpcAccessServiceClient {
     return this.innerApiCalls.getConnector(request, options, callback);
   }
 
-  createConnector(
-      request?: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createConnector(
-      request: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createConnector(
-      request: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a Serverless VPC Access connector, returns an operation.
  *
@@ -445,10 +425,29 @@ export class VpcAccessServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createConnector(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/vpc_access_service.create_connector.js</caption>
+ * region_tag:vpcaccess_v1_generated_VpcAccessService_CreateConnector_async
  */
+  createConnector(
+      request?: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createConnector(
+      request: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createConnector(
+      request: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.vpcaccess.v1.IConnector, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createConnector(
       request?: protos.google.cloud.vpcaccess.v1.ICreateConnectorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -492,11 +491,8 @@ export class VpcAccessServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateConnectorProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/vpc_access_service.create_connector.js</caption>
+ * region_tag:vpcaccess_v1_generated_VpcAccessService_CreateConnector_async
  */
   async checkCreateConnectorProgress(name: string): Promise<LROperation<protos.google.cloud.vpcaccess.v1.Connector, protos.google.cloud.vpcaccess.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -504,6 +500,26 @@ export class VpcAccessServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createConnector, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.vpcaccess.v1.Connector, protos.google.cloud.vpcaccess.v1.OperationMetadata>;
   }
+/**
+ * Deletes a Serverless VPC Access connector. Returns NOT_FOUND if the
+ * resource does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of a Serverless VPC Access connector to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/vpc_access_service.delete_connector.js</caption>
+ * region_tag:vpcaccess_v1_generated_VpcAccessService_DeleteConnector_async
+ */
   deleteConnector(
       request?: protos.google.cloud.vpcaccess.v1.IDeleteConnectorRequest,
       options?: CallOptions):
@@ -524,27 +540,6 @@ export class VpcAccessServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.vpcaccess.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a Serverless VPC Access connector. Returns NOT_FOUND if the
- * resource does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of a Serverless VPC Access connector to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteConnector(request);
- * const [response] = await operation.promise();
- */
   deleteConnector(
       request?: protos.google.cloud.vpcaccess.v1.IDeleteConnectorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -588,11 +583,8 @@ export class VpcAccessServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteConnectorProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/vpc_access_service.delete_connector.js</caption>
+ * region_tag:vpcaccess_v1_generated_VpcAccessService_DeleteConnector_async
  */
   async checkDeleteConnectorProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.vpcaccess.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -600,28 +592,7 @@ export class VpcAccessServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteConnector, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.vpcaccess.v1.OperationMetadata>;
   }
-  listConnectors(
-      request?: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vpcaccess.v1.IConnector[],
-        protos.google.cloud.vpcaccess.v1.IListConnectorsRequest|null,
-        protos.google.cloud.vpcaccess.v1.IListConnectorsResponse
-      ]>;
-  listConnectors(
-      request: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
-          protos.google.cloud.vpcaccess.v1.IListConnectorsResponse|null|undefined,
-          protos.google.cloud.vpcaccess.v1.IConnector>): void;
-  listConnectors(
-      request: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
-          protos.google.cloud.vpcaccess.v1.IListConnectorsResponse|null|undefined,
-          protos.google.cloud.vpcaccess.v1.IConnector>): void;
-/**
+ /**
  * Lists Serverless VPC Access connectors.
  *
  * @param {Object} request
@@ -645,6 +616,27 @@ export class VpcAccessServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listConnectors(
+      request?: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vpcaccess.v1.IConnector[],
+        protos.google.cloud.vpcaccess.v1.IListConnectorsRequest|null,
+        protos.google.cloud.vpcaccess.v1.IListConnectorsResponse
+      ]>;
+  listConnectors(
+      request: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+          protos.google.cloud.vpcaccess.v1.IListConnectorsResponse|null|undefined,
+          protos.google.cloud.vpcaccess.v1.IConnector>): void;
+  listConnectors(
+      request: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
+          protos.google.cloud.vpcaccess.v1.IListConnectorsResponse|null|undefined,
+          protos.google.cloud.vpcaccess.v1.IConnector>): void;
   listConnectors(
       request?: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -748,11 +740,8 @@ export class VpcAccessServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listConnectorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/vpc_access_service.list_connectors.js</caption>
+ * region_tag:vpcaccess_v1_generated_VpcAccessService_ListConnectors_async
  */
   listConnectorsAsync(
       request?: protos.google.cloud.vpcaccess.v1.IListConnectorsRequest,
@@ -767,7 +756,6 @@ export class VpcAccessServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listConnectors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new LandingPageViewServiceClient();
 
-  async function getLandingPageView() {
+  async function callGetLandingPageView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getLandingPageView();
+  callGetLandingPageView();
   // [END googleads_v8_generated_LandingPageViewService_GetLandingPageView_async]
 }
 

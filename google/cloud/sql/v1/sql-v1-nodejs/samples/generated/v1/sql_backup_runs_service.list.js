@@ -45,7 +45,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlBackupRunsServiceClient();
 
-  async function list() {
+  async function callList() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     console.log(response);
   }
 
-  list();
+  callList();
   // [END sqladmin_v1_generated_SqlBackupRunsService_List_async]
 }
 

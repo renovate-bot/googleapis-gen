@@ -336,6 +336,24 @@ export class DomainMappingsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the specified domain mapping.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the resource requested. Example:
+ *   `apps/myapp/domainMappings/example.com`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DomainMapping]{@link google.appengine.v1.DomainMapping}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/domain_mappings.get_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_GetDomainMapping_async
+ */
   getDomainMapping(
       request?: protos.google.appengine.v1.IGetDomainMappingRequest,
       options?: CallOptions):
@@ -356,24 +374,6 @@ export class DomainMappingsClient {
           protos.google.appengine.v1.IDomainMapping,
           protos.google.appengine.v1.IGetDomainMappingRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the specified domain mapping.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the resource requested. Example:
- *   `apps/myapp/domainMappings/example.com`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DomainMapping]{@link google.appengine.v1.DomainMapping}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDomainMapping(request);
- */
   getDomainMapping(
       request?: protos.google.appengine.v1.IGetDomainMappingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -409,26 +409,6 @@ export class DomainMappingsClient {
     return this.innerApiCalls.getDomainMapping(request, options, callback);
   }
 
-  createDomainMapping(
-      request?: protos.google.appengine.v1.ICreateDomainMappingRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createDomainMapping(
-      request: protos.google.appengine.v1.ICreateDomainMappingRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createDomainMapping(
-      request: protos.google.appengine.v1.ICreateDomainMappingRequest,
-      callback: Callback<
-          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Maps a domain to an application. A user must be authorized to administer a
  * domain in order to map it to an application. For a list of available
@@ -452,10 +432,29 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createDomainMapping(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/domain_mappings.create_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_CreateDomainMapping_async
  */
+  createDomainMapping(
+      request?: protos.google.appengine.v1.ICreateDomainMappingRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createDomainMapping(
+      request: protos.google.appengine.v1.ICreateDomainMappingRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createDomainMapping(
+      request: protos.google.appengine.v1.ICreateDomainMappingRequest,
+      callback: Callback<
+          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createDomainMapping(
       request?: protos.google.appengine.v1.ICreateDomainMappingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -499,11 +498,8 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateDomainMappingProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/domain_mappings.create_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_CreateDomainMapping_async
  */
   async checkCreateDomainMappingProgress(name: string): Promise<LROperation<protos.google.appengine.v1.DomainMapping, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -511,26 +507,6 @@ export class DomainMappingsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createDomainMapping, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.appengine.v1.DomainMapping, protos.google.appengine.v1.OperationMetadataV1>;
   }
-  updateDomainMapping(
-      request?: protos.google.appengine.v1.IUpdateDomainMappingRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateDomainMapping(
-      request: protos.google.appengine.v1.IUpdateDomainMappingRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateDomainMapping(
-      request: protos.google.appengine.v1.IUpdateDomainMappingRequest,
-      callback: Callback<
-          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified domain mapping. To map an SSL certificate to a
  * domain mapping, update `certificate_id` to point to an `AuthorizedCertificate`
@@ -556,10 +532,29 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateDomainMapping(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/domain_mappings.update_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_UpdateDomainMapping_async
  */
+  updateDomainMapping(
+      request?: protos.google.appengine.v1.IUpdateDomainMappingRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateDomainMapping(
+      request: protos.google.appengine.v1.IUpdateDomainMappingRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateDomainMapping(
+      request: protos.google.appengine.v1.IUpdateDomainMappingRequest,
+      callback: Callback<
+          LROperation<protos.google.appengine.v1.IDomainMapping, protos.google.appengine.v1.IOperationMetadataV1>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateDomainMapping(
       request?: protos.google.appengine.v1.IUpdateDomainMappingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -603,11 +598,8 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateDomainMappingProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/domain_mappings.update_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_UpdateDomainMapping_async
  */
   async checkUpdateDomainMappingProgress(name: string): Promise<LROperation<protos.google.appengine.v1.DomainMapping, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -615,6 +607,28 @@ export class DomainMappingsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateDomainMapping, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.appengine.v1.DomainMapping, protos.google.appengine.v1.OperationMetadataV1>;
   }
+/**
+ * Deletes the specified domain mapping. A user must be authorized to
+ * administer the associated domain in order to delete a `DomainMapping`
+ * resource.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the resource to delete. Example:
+ *   `apps/myapp/domainMappings/example.com`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/domain_mappings.delete_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_DeleteDomainMapping_async
+ */
   deleteDomainMapping(
       request?: protos.google.appengine.v1.IDeleteDomainMappingRequest,
       options?: CallOptions):
@@ -635,29 +649,6 @@ export class DomainMappingsClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.appengine.v1.IOperationMetadataV1>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified domain mapping. A user must be authorized to
- * administer the associated domain in order to delete a `DomainMapping`
- * resource.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the resource to delete. Example:
- *   `apps/myapp/domainMappings/example.com`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteDomainMapping(request);
- * const [response] = await operation.promise();
- */
   deleteDomainMapping(
       request?: protos.google.appengine.v1.IDeleteDomainMappingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -701,11 +692,8 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteDomainMappingProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/domain_mappings.delete_domain_mapping.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_DeleteDomainMapping_async
  */
   async checkDeleteDomainMappingProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -713,28 +701,7 @@ export class DomainMappingsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteDomainMapping, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.appengine.v1.OperationMetadataV1>;
   }
-  listDomainMappings(
-      request?: protos.google.appengine.v1.IListDomainMappingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.appengine.v1.IDomainMapping[],
-        protos.google.appengine.v1.IListDomainMappingsRequest|null,
-        protos.google.appengine.v1.IListDomainMappingsResponse
-      ]>;
-  listDomainMappings(
-      request: protos.google.appengine.v1.IListDomainMappingsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListDomainMappingsRequest,
-          protos.google.appengine.v1.IListDomainMappingsResponse|null|undefined,
-          protos.google.appengine.v1.IDomainMapping>): void;
-  listDomainMappings(
-      request: protos.google.appengine.v1.IListDomainMappingsRequest,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListDomainMappingsRequest,
-          protos.google.appengine.v1.IListDomainMappingsResponse|null|undefined,
-          protos.google.appengine.v1.IDomainMapping>): void;
-/**
+ /**
  * Lists the domain mappings on an application.
  *
  * @param {Object} request
@@ -758,6 +725,27 @@ export class DomainMappingsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDomainMappings(
+      request?: protos.google.appengine.v1.IListDomainMappingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.appengine.v1.IDomainMapping[],
+        protos.google.appengine.v1.IListDomainMappingsRequest|null,
+        protos.google.appengine.v1.IListDomainMappingsResponse
+      ]>;
+  listDomainMappings(
+      request: protos.google.appengine.v1.IListDomainMappingsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListDomainMappingsRequest,
+          protos.google.appengine.v1.IListDomainMappingsResponse|null|undefined,
+          protos.google.appengine.v1.IDomainMapping>): void;
+  listDomainMappings(
+      request: protos.google.appengine.v1.IListDomainMappingsRequest,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListDomainMappingsRequest,
+          protos.google.appengine.v1.IListDomainMappingsResponse|null|undefined,
+          protos.google.appengine.v1.IDomainMapping>): void;
   listDomainMappings(
       request?: protos.google.appengine.v1.IListDomainMappingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -861,11 +849,8 @@ export class DomainMappingsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDomainMappingsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/domain_mappings.list_domain_mappings.js</caption>
+ * region_tag:appengine_v1_generated_DomainMappings_ListDomainMappings_async
  */
   listDomainMappingsAsync(
       request?: protos.google.appengine.v1.IListDomainMappingsRequest,
@@ -880,7 +865,6 @@ export class DomainMappingsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDomainMappings'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

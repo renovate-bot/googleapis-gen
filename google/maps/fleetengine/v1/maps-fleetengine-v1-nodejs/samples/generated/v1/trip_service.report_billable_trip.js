@@ -36,7 +36,7 @@ function main(name, countryCode) {
   /**
    *  The platform upon which the request was issued.
    */
-  // const platform = ''
+  // const platform = {}
   /**
    *  The identifiers that are directly related to the trip being reported. These
    *  are usually IDs (for example, session IDs) of pre-booking operations done
@@ -48,7 +48,7 @@ function main(name, countryCode) {
    *  The type of GMP product solution (for example,
    *  ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
    */
-  // const solutionType = ''
+  // const solutionType = {}
 
   // Imports the Fleetengine library
   const {TripServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -56,7 +56,7 @@ function main(name, countryCode) {
   // Instantiates a client
   const fleetengineClient = new TripServiceClient();
 
-  async function reportBillableTrip() {
+  async function callReportBillableTrip() {
     // Construct request
     const request = {
       name,
@@ -68,7 +68,7 @@ function main(name, countryCode) {
     console.log(response);
   }
 
-  reportBillableTrip();
+  callReportBillableTrip();
   // [END fleetengine_v1_generated_TripService_ReportBillableTrip_async]
 }
 

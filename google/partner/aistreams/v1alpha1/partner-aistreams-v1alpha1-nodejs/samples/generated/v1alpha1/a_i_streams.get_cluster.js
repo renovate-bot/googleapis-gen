@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function getCluster() {
+  async function callGetCluster() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getCluster();
+  callGetCluster();
   // [END aistreams_v1alpha1_generated_AIStreams_GetCluster_async]
 }
 

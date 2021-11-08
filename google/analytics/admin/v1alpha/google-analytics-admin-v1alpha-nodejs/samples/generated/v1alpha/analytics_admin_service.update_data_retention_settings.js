@@ -24,13 +24,13 @@ function main(dataRetentionSettings, updateMask) {
    *  Required. The settings to update.
    *  The `name` field is used to identify the settings to be updated.
    */
-  // const dataRetentionSettings = ''
+  // const dataRetentionSettings = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(dataRetentionSettings, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateDataRetentionSettings() {
+  async function callUpdateDataRetentionSettings() {
     // Construct request
     const request = {
       dataRetentionSettings,
@@ -50,7 +50,7 @@ function main(dataRetentionSettings, updateMask) {
     console.log(response);
   }
 
-  updateDataRetentionSettings();
+  callUpdateDataRetentionSettings();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateDataRetentionSettings_async]
 }
 

@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const cxClient = new ChangelogsClient();
 
-  async function getChangelog() {
+  async function callGetChangelog() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getChangelog();
+  callGetChangelog();
   // [END dialogflow_v3_generated_Changelogs_GetChangelog_async]
 }
 

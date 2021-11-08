@@ -33,7 +33,7 @@ function main(parent, exclusion) {
    *  Required. The new exclusion, whose `name` parameter is an exclusion name
    *  that is not already used in the parent resource.
    */
-  // const exclusion = ''
+  // const exclusion = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -41,7 +41,7 @@ function main(parent, exclusion) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function createExclusion() {
+  async function callCreateExclusion() {
     // Construct request
     const request = {
       parent,
@@ -53,7 +53,7 @@ function main(parent, exclusion) {
     console.log(response);
   }
 
-  createExclusion();
+  callCreateExclusion();
   // [END logging_v2_generated_ConfigServiceV2_CreateExclusion_async]
 }
 

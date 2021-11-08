@@ -23,11 +23,11 @@ function main(document) {
   /**
    *  Input document.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  The encoding type used by the API to calculate offsets.
    */
-  // const encodingType = ''
+  // const encodingType = {}
 
   // Imports the Language library
   const {LanguageServiceClient} = require('@google-cloud/language').v1;
@@ -35,7 +35,7 @@ function main(document) {
   // Instantiates a client
   const languageClient = new LanguageServiceClient();
 
-  async function analyzeEntitySentiment() {
+  async function callAnalyzeEntitySentiment() {
     // Construct request
     const request = {
       document,
@@ -46,7 +46,7 @@ function main(document) {
     console.log(response);
   }
 
-  analyzeEntitySentiment();
+  callAnalyzeEntitySentiment();
   // [END language_v1_generated_LanguageService_AnalyzeEntitySentiment_async]
 }
 

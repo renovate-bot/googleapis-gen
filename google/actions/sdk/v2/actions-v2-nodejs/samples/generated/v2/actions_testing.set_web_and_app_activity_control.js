@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const sdkClient = new ActionsTestingClient();
 
-  async function setWebAndAppActivityControl() {
+  async function callSetWebAndAppActivityControl() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  setWebAndAppActivityControl();
+  callSetWebAndAppActivityControl();
   // [END actions_v2_generated_ActionsTesting_SetWebAndAppActivityControl_async]
 }
 

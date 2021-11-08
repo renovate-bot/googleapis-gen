@@ -36,7 +36,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new OfflineUserDataJobServiceClient();
 
-  async function runOfflineUserDataJob() {
+  async function callRunOfflineUserDataJob() {
     // Construct request
     const request = {
       resourceName,
@@ -48,7 +48,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  runOfflineUserDataJob();
+  callRunOfflineUserDataJob();
   // [END googleads_v9_generated_OfflineUserDataJobService_RunOfflineUserDataJob_async]
 }
 

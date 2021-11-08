@@ -56,7 +56,7 @@ function main(parent) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function listOffers() {
+  async function callListOffers() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent) {
     }
   }
 
-  listOffers();
+  callListOffers();
   // [END cloudchannel_v1_generated_CloudChannelService_ListOffers_async]
 }
 

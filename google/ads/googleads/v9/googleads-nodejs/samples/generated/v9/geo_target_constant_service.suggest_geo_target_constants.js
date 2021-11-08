@@ -33,11 +33,11 @@ function main() {
   /**
    *  The location names to search by. At most 25 names can be set.
    */
-  // const locationNames = ''
+  // const locationNames = {}
   /**
    *  The geo target constant resource names to filter by.
    */
-  // const geoTargets = ''
+  // const geoTargets = {}
 
   // Imports the Googleads library
   const {GeoTargetConstantServiceClient} = require('google-ads').v9;
@@ -45,7 +45,7 @@ function main() {
   // Instantiates a client
   const googleadsClient = new GeoTargetConstantServiceClient();
 
-  async function suggestGeoTargetConstants() {
+  async function callSuggestGeoTargetConstants() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     console.log(response);
   }
 
-  suggestGeoTargetConstants();
+  callSuggestGeoTargetConstants();
   // [END googleads_v9_generated_GeoTargetConstantService_SuggestGeoTargetConstants_async]
 }
 

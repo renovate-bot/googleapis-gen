@@ -35,7 +35,7 @@ function main(name) {
    *  with the same request ID, the server ignores the second request to prevent
    *  the creation of duplicate commitments.
    *  The request ID must be a valid
-   *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
+   *  UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    *  A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
    */
   // const requestId = 'abc123'
@@ -46,7 +46,7 @@ function main(name) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function deleteService() {
+  async function callDeleteService() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteService();
+  callDeleteService();
   // [END metastore_v1beta_generated_DataprocMetastore_DeleteService_async]
 }
 

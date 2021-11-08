@@ -22,7 +22,7 @@ function main() {
    */
   /**
    *  Required. List of
-   *  [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
+   *  UpdatePhotoRequests google.streetview.publish.v1.UpdatePhotoRequest.
    */
   // const updatePhotoRequests = 1234
 
@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function batchUpdatePhotos() {
+  async function callBatchUpdatePhotos() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  batchUpdatePhotos();
+  callBatchUpdatePhotos();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_BatchUpdatePhotos_async]
 }
 

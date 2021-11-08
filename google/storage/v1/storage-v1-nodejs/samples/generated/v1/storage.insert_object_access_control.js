@@ -36,11 +36,11 @@ function main(bucket, object) {
   /**
    *  Properties of the object access control to be inserted.
    */
-  // const objectAccessControl = ''
+  // const objectAccessControl = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -48,7 +48,7 @@ function main(bucket, object) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function insertObjectAccessControl() {
+  async function callInsertObjectAccessControl() {
     // Construct request
     const request = {
       bucket,
@@ -60,7 +60,7 @@ function main(bucket, object) {
     console.log(response);
   }
 
-  insertObjectAccessControl();
+  callInsertObjectAccessControl();
   // [END storage_v1_generated_Storage_InsertObjectAccessControl_async]
 }
 

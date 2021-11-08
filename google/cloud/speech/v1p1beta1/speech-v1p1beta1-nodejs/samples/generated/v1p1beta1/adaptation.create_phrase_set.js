@@ -36,7 +36,7 @@ function main(parent, phraseSetId, phraseSet) {
   /**
    *  Required. The phrase set to create.
    */
-  // const phraseSet = ''
+  // const phraseSet = {}
 
   // Imports the Speech library
   const {AdaptationClient} = require('@google-cloud/speech').v1p1beta1;
@@ -44,7 +44,7 @@ function main(parent, phraseSetId, phraseSet) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function createPhraseSet() {
+  async function callCreatePhraseSet() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent, phraseSetId, phraseSet) {
     console.log(response);
   }
 
-  createPhraseSet();
+  callCreatePhraseSet();
   // [END speech_v1p1beta1_generated_Adaptation_CreatePhraseSet_async]
 }
 

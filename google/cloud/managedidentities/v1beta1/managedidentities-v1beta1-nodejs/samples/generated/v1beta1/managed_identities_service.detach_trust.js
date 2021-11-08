@@ -28,7 +28,7 @@ function main() {
   /**
    *  The domain trust resource to removed.
    */
-  // const trust = ''
+  // const trust = {}
 
   // Imports the Managedidentities library
   const {ManagedIdentitiesServiceClient} = require('@google-cloud/managed-identities').v1beta1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function detachTrust() {
+  async function callDetachTrust() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  detachTrust();
+  callDetachTrust();
   // [END managedidentities_v1beta1_generated_ManagedIdentitiesService_DetachTrust_async]
 }
 

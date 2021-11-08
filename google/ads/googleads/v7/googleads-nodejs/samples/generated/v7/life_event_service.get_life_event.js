@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new LifeEventServiceClient();
 
-  async function getLifeEvent() {
+  async function callGetLifeEvent() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getLifeEvent();
+  callGetLifeEvent();
   // [END googleads_v7_generated_LifeEventService_GetLifeEvent_async]
 }
 

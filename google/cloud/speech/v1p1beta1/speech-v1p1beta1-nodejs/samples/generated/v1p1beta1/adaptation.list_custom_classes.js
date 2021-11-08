@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function listCustomClasses() {
+  async function callListCustomClasses() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listCustomClasses();
+  callListCustomClasses();
   // [END speech_v1p1beta1_generated_Adaptation_ListCustomClasses_async]
 }
 

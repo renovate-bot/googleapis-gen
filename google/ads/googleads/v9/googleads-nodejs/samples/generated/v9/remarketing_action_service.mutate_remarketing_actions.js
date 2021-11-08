@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new RemarketingActionServiceClient();
 
-  async function mutateRemarketingActions() {
+  async function callMutateRemarketingActions() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateRemarketingActions();
+  callMutateRemarketingActions();
   // [END googleads_v9_generated_RemarketingActionService_MutateRemarketingActions_async]
 }
 

@@ -28,7 +28,7 @@ function main(agent, type) {
   /**
    *  Required. The type of coverage requested.
    */
-  // const type = ''
+  // const type = {}
 
   // Imports the Cx library
   const {TestCasesClient} = require('@google-cloud/dialogflow-cx').v3beta1;
@@ -36,7 +36,7 @@ function main(agent, type) {
   // Instantiates a client
   const cxClient = new TestCasesClient();
 
-  async function calculateCoverage() {
+  async function callCalculateCoverage() {
     // Construct request
     const request = {
       agent,
@@ -48,7 +48,7 @@ function main(agent, type) {
     console.log(response);
   }
 
-  calculateCoverage();
+  callCalculateCoverage();
   // [END dialogflow_v3beta1_generated_TestCases_CalculateCoverage_async]
 }
 

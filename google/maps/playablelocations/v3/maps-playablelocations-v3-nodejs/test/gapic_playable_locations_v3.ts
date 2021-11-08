@@ -126,7 +126,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsResponse());
             client.innerApiCalls.samplePlayableLocations = stubSimpleCall(expectedResponse);
             const [response] = await client.samplePlayableLocations(request);
@@ -142,7 +142,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsResponse());
             client.innerApiCalls.samplePlayableLocations = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.samplePlayableLocations = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.samplePlayableLocations(request), expectedError);
@@ -186,7 +186,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsResponse());
             client.innerApiCalls.logPlayerReports = stubSimpleCall(expectedResponse);
             const [response] = await client.logPlayerReports(request);
@@ -202,7 +202,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsResponse());
             client.innerApiCalls.logPlayerReports = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.logPlayerReports = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.logPlayerReports(request), expectedError);
@@ -246,7 +246,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsResponse());
             client.innerApiCalls.logImpressions = stubSimpleCall(expectedResponse);
             const [response] = await client.logImpressions(request);
@@ -262,7 +262,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsResponse());
             client.innerApiCalls.logImpressions = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -289,7 +289,7 @@ describe('v3.PlayableLocationsClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.logImpressions = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.logImpressions(request), expectedError);

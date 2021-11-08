@@ -31,7 +31,7 @@ function main() {
   /**
    *  External sync mode.
    */
-  // const syncMode = ''
+  // const syncMode = {}
   /**
    *  Whether to skip the verification step (VESS).
    */
@@ -39,7 +39,7 @@ function main() {
   /**
    *  MySQL-specific settings for start external sync.
    */
-  // const mysqlSyncConfig = ''
+  // const mysqlSyncConfig = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1;
@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function startExternalSync() {
+  async function callStartExternalSync() {
     // Construct request
     const request = {
     };
@@ -57,7 +57,7 @@ function main() {
     console.log(response);
   }
 
-  startExternalSync();
+  callStartExternalSync();
   // [END sqladmin_v1_generated_SqlInstancesService_StartExternalSync_async]
 }
 

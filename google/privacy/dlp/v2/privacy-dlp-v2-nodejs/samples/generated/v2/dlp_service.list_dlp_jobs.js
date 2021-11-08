@@ -22,9 +22,9 @@ function main(parent) {
    */
   /**
    *  Required. Parent resource name.
-   *  The format of this value varies depending on whether you have [specified a
+   *  The format of this value varies depending on whether you have specified a
    *  processing
-   *  location](https://cloud.google.com/dlp/docs/specifying-location):
+   *  location (https://cloud.google.com/dlp/docs/specifying-location):
    *  + Projects scope, location specified:<br/>
    *    `projects/`<var>PROJECT_ID</var>`/locations/`<var>LOCATION_ID</var>
    *  + Projects scope, no location specified (defaults to global):<br/>
@@ -72,7 +72,7 @@ function main(parent) {
   /**
    *  The type of job. Defaults to `DlpJobType.INSPECT`
    */
-  // const type = ''
+  // const type = {}
   /**
    *  Comma separated list of fields to order by,
    *  followed by `asc` or `desc` postfix. This list is case-insensitive,
@@ -86,10 +86,6 @@ function main(parent) {
    *  - `state`: corresponds to `state`
    */
   // const orderBy = 'abc123'
-  /**
-   *  Deprecated. This field has no effect.
-   */
-  // const locationId = 'abc123'
 
   // Imports the Dlp library
   const {DlpServiceClient} = require('@google-cloud/dlp').v2;
@@ -97,7 +93,7 @@ function main(parent) {
   // Instantiates a client
   const dlpClient = new DlpServiceClient();
 
-  async function listDlpJobs() {
+  async function callListDlpJobs() {
     // Construct request
     const request = {
       parent,
@@ -110,7 +106,7 @@ function main(parent) {
     }
   }
 
-  listDlpJobs();
+  callListDlpJobs();
   // [END dlp_v2_generated_DlpService_ListDlpJobs_async]
 }
 

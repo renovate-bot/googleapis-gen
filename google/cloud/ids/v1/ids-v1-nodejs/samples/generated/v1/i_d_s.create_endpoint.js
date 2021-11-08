@@ -36,7 +36,7 @@ function main(parent, endpointId, endpoint) {
   /**
    *  Required. The endpoint to create.
    */
-  // const endpoint = ''
+  // const endpoint = {}
   /**
    *  An optional request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -58,7 +58,7 @@ function main(parent, endpointId, endpoint) {
   // Instantiates a client
   const idsClient = new IDSClient();
 
-  async function createEndpoint() {
+  async function callCreateEndpoint() {
     // Construct request
     const request = {
       parent,
@@ -72,7 +72,7 @@ function main(parent, endpointId, endpoint) {
     console.log(response);
   }
 
-  createEndpoint();
+  callCreateEndpoint();
   // [END ids_v1_generated_IDS_CreateEndpoint_async]
 }
 

@@ -28,7 +28,7 @@ function main(parent, job) {
   /**
    *  Required. The evaluation job to create.
    */
-  // const job = ''
+  // const job = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, job) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function createEvaluationJob() {
+  async function callCreateEvaluationJob() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, job) {
     console.log(response);
   }
 
-  createEvaluationJob();
+  callCreateEvaluationJob();
   // [END datalabeling_v1beta1_generated_DataLabelingService_CreateEvaluationJob_async]
 }
 

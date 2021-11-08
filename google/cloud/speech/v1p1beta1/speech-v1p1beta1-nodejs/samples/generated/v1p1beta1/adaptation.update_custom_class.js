@@ -26,11 +26,11 @@ function main(customClass) {
    *  updated. Format:
    *  {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
    */
-  // const customClass = ''
+  // const customClass = {}
   /**
    *  The list of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Speech library
   const {AdaptationClient} = require('@google-cloud/speech').v1p1beta1;
@@ -38,7 +38,7 @@ function main(customClass) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function updateCustomClass() {
+  async function callUpdateCustomClass() {
     // Construct request
     const request = {
       customClass,
@@ -49,7 +49,7 @@ function main(customClass) {
     console.log(response);
   }
 
-  updateCustomClass();
+  callUpdateCustomClass();
   // [END speech_v1p1beta1_generated_Adaptation_UpdateCustomClass_async]
 }
 

@@ -28,7 +28,7 @@ function main(parent, productSet) {
   /**
    *  Required. The ProductSet to create.
    */
-  // const productSet = ''
+  // const productSet = {}
   /**
    *  A user-supplied resource id for this ProductSet. If set, the server will
    *  attempt to use this value as the resource id. If it is already in use, an
@@ -43,7 +43,7 @@ function main(parent, productSet) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function createProductSet() {
+  async function callCreateProductSet() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, productSet) {
     console.log(response);
   }
 
-  createProductSet();
+  callCreateProductSet();
   // [END vision_v1_generated_ProductSearch_CreateProductSet_async]
 }
 

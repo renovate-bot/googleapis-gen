@@ -677,26 +677,6 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getThirdPartyAppAnalyticsLink(
-      request?: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
-        protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|undefined, {}|undefined
-      ]>;
-  getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
-          protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  getThirdPartyAppAnalyticsLink(
-      request: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
-          protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the third party app analytics link in full detail.
  *
@@ -719,9 +699,29 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getThirdPartyAppAnalyticsLink(request);
+ * @example <caption>include:samples/generated/v8/third_party_app_analytics_link_service.get_third_party_app_analytics_link.js</caption>
+ * region_tag:googleads_v8_generated_ThirdPartyAppAnalyticsLinkService_GetThirdPartyAppAnalyticsLink_async
  */
+  getThirdPartyAppAnalyticsLink(
+      request?: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
+        protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|undefined, {}|undefined
+      ]>;
+  getThirdPartyAppAnalyticsLink(
+      request: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
+          protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  getThirdPartyAppAnalyticsLink(
+      request: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IThirdPartyAppAnalyticsLink,
+          protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   getThirdPartyAppAnalyticsLink(
       request?: protos.google.ads.googleads.v8.services.IGetThirdPartyAppAnalyticsLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -756,26 +756,6 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.getThirdPartyAppAnalyticsLink(request, options, callback);
   }
-  regenerateShareableLinkId(
-      request?: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
-        protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|undefined, {}|undefined
-      ]>;
-  regenerateShareableLinkId(
-      request: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
-          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|null|undefined,
-          {}|null|undefined>): void;
-  regenerateShareableLinkId(
-      request: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
-          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Regenerate ThirdPartyAppAnalyticsLink.shareable_link_id that should be
  * provided to the third party when setting up app analytics.
@@ -799,9 +779,29 @@ export class ThirdPartyAppAnalyticsLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.regenerateShareableLinkId(request);
+ * @example <caption>include:samples/generated/v8/third_party_app_analytics_link_service.regenerate_shareable_link_id.js</caption>
+ * region_tag:googleads_v8_generated_ThirdPartyAppAnalyticsLinkService_RegenerateShareableLinkId_async
  */
+  regenerateShareableLinkId(
+      request?: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
+        protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|undefined, {}|undefined
+      ]>;
+  regenerateShareableLinkId(
+      request: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
+          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|null|undefined,
+          {}|null|undefined>): void;
+  regenerateShareableLinkId(
+      request: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdResponse,
+          protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest|null|undefined,
+          {}|null|undefined>): void;
   regenerateShareableLinkId(
       request?: protos.google.ads.googleads.v8.services.IRegenerateShareableLinkIdRequest,
       optionsOrCallback?: CallOptions|Callback<

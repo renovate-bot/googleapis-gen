@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlOperationsServiceClient();
 
-  async function get() {
+  async function callGet() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  get();
+  callGet();
   // [END sqladmin_v1_generated_SqlOperationsService_Get_async]
 }
 

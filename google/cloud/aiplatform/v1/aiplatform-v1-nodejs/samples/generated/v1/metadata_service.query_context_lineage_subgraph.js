@@ -37,7 +37,7 @@ function main(context) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function queryContextLineageSubgraph() {
+  async function callQueryContextLineageSubgraph() {
     // Construct request
     const request = {
       context,
@@ -48,7 +48,7 @@ function main(context) {
     console.log(response);
   }
 
-  queryContextLineageSubgraph();
+  callQueryContextLineageSubgraph();
   // [END aiplatform_v1_generated_MetadataService_QueryContextLineageSubgraph_async]
 }
 

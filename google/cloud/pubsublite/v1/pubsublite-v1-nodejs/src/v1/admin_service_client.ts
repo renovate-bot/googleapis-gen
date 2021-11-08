@@ -336,26 +336,6 @@ export class AdminServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createTopic(
-      request?: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.ITopic,
-        protos.google.cloud.pubsublite.v1.ICreateTopicRequest|undefined, {}|undefined
-      ]>;
-  createTopic(
-      request: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.ITopic,
-          protos.google.cloud.pubsublite.v1.ICreateTopicRequest|null|undefined,
-          {}|null|undefined>): void;
-  createTopic(
-      request: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.ITopic,
-          protos.google.cloud.pubsublite.v1.ICreateTopicRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new topic.
  *
@@ -378,9 +358,29 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createTopic(request);
+ * @example <caption>include:samples/generated/v1/admin_service.create_topic.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_CreateTopic_async
  */
+  createTopic(
+      request?: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.ITopic,
+        protos.google.cloud.pubsublite.v1.ICreateTopicRequest|undefined, {}|undefined
+      ]>;
+  createTopic(
+      request: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.ITopic,
+          protos.google.cloud.pubsublite.v1.ICreateTopicRequest|null|undefined,
+          {}|null|undefined>): void;
+  createTopic(
+      request: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.ITopic,
+          protos.google.cloud.pubsublite.v1.ICreateTopicRequest|null|undefined,
+          {}|null|undefined>): void;
   createTopic(
       request?: protos.google.cloud.pubsublite.v1.ICreateTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -415,6 +415,23 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.createTopic(request, options, callback);
   }
+/**
+ * Returns the topic configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the topic whose configuration to return.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Topic]{@link google.cloud.pubsublite.v1.Topic}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.get_topic.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_GetTopic_async
+ */
   getTopic(
       request?: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
       options?: CallOptions):
@@ -435,23 +452,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.ITopic,
           protos.google.cloud.pubsublite.v1.IGetTopicRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the topic configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the topic whose configuration to return.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Topic]{@link google.cloud.pubsublite.v1.Topic}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTopic(request);
- */
   getTopic(
       request?: protos.google.cloud.pubsublite.v1.IGetTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -486,6 +486,23 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.getTopic(request, options, callback);
   }
+/**
+ * Returns the partition information for the requested topic.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The topic whose partition information to return.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [TopicPartitions]{@link google.cloud.pubsublite.v1.TopicPartitions}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.get_topic_partitions.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_GetTopicPartitions_async
+ */
   getTopicPartitions(
       request?: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
       options?: CallOptions):
@@ -506,23 +523,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.ITopicPartitions,
           protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the partition information for the requested topic.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The topic whose partition information to return.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TopicPartitions]{@link google.cloud.pubsublite.v1.TopicPartitions}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTopicPartitions(request);
- */
   getTopicPartitions(
       request?: protos.google.cloud.pubsublite.v1.IGetTopicPartitionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -557,6 +557,25 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.getTopicPartitions(request, options, callback);
   }
+/**
+ * Updates properties of the specified topic.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.pubsublite.v1.Topic} request.topic
+ *   Required. The topic to update. Its `name` field must be populated.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. A mask specifying the topic fields to change.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Topic]{@link google.cloud.pubsublite.v1.Topic}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.update_topic.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_UpdateTopic_async
+ */
   updateTopic(
       request?: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
       options?: CallOptions):
@@ -577,25 +596,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.ITopic,
           protos.google.cloud.pubsublite.v1.IUpdateTopicRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates properties of the specified topic.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.pubsublite.v1.Topic} request.topic
- *   Required. The topic to update. Its `name` field must be populated.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. A mask specifying the topic fields to change.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Topic]{@link google.cloud.pubsublite.v1.Topic}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateTopic(request);
- */
   updateTopic(
       request?: protos.google.cloud.pubsublite.v1.IUpdateTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -630,6 +630,23 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.updateTopic(request, options, callback);
   }
+/**
+ * Deletes the specified topic.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the topic to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.delete_topic.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_DeleteTopic_async
+ */
   deleteTopic(
       request?: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
       options?: CallOptions):
@@ -650,23 +667,6 @@ export class AdminServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.pubsublite.v1.IDeleteTopicRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified topic.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the topic to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteTopic(request);
- */
   deleteTopic(
       request?: protos.google.cloud.pubsublite.v1.IDeleteTopicRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -701,26 +701,6 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteTopic(request, options, callback);
   }
-  createSubscription(
-      request?: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.ISubscription,
-        protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|undefined, {}|undefined
-      ]>;
-  createSubscription(
-      request: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.ISubscription,
-          protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|null|undefined,
-          {}|null|undefined>): void;
-  createSubscription(
-      request: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.ISubscription,
-          protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new subscription.
  *
@@ -747,9 +727,29 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createSubscription(request);
+ * @example <caption>include:samples/generated/v1/admin_service.create_subscription.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_CreateSubscription_async
  */
+  createSubscription(
+      request?: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.ISubscription,
+        protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|undefined, {}|undefined
+      ]>;
+  createSubscription(
+      request: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.ISubscription,
+          protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|null|undefined,
+          {}|null|undefined>): void;
+  createSubscription(
+      request: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.ISubscription,
+          protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest|null|undefined,
+          {}|null|undefined>): void;
   createSubscription(
       request?: protos.google.cloud.pubsublite.v1.ICreateSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -784,6 +784,23 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.createSubscription(request, options, callback);
   }
+/**
+ * Returns the subscription configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the subscription whose configuration to return.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Subscription]{@link google.cloud.pubsublite.v1.Subscription}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.get_subscription.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_GetSubscription_async
+ */
   getSubscription(
       request?: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
       options?: CallOptions):
@@ -804,23 +821,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.ISubscription,
           protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the subscription configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the subscription whose configuration to return.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Subscription]{@link google.cloud.pubsublite.v1.Subscription}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSubscription(request);
- */
   getSubscription(
       request?: protos.google.cloud.pubsublite.v1.IGetSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -855,6 +855,26 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.getSubscription(request, options, callback);
   }
+/**
+ * Updates properties of the specified subscription.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.pubsublite.v1.Subscription} request.subscription
+ *   Required. The subscription to update. Its `name` field must be populated.
+ *   Topic field must not be populated.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. A mask specifying the subscription fields to change.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Subscription]{@link google.cloud.pubsublite.v1.Subscription}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.update_subscription.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_UpdateSubscription_async
+ */
   updateSubscription(
       request?: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
       options?: CallOptions):
@@ -875,26 +895,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.ISubscription,
           protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates properties of the specified subscription.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.pubsublite.v1.Subscription} request.subscription
- *   Required. The subscription to update. Its `name` field must be populated.
- *   Topic field must not be populated.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. A mask specifying the subscription fields to change.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Subscription]{@link google.cloud.pubsublite.v1.Subscription}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateSubscription(request);
- */
   updateSubscription(
       request?: protos.google.cloud.pubsublite.v1.IUpdateSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -929,6 +929,23 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.updateSubscription(request, options, callback);
   }
+/**
+ * Deletes the specified subscription.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the subscription to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.delete_subscription.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_DeleteSubscription_async
+ */
   deleteSubscription(
       request?: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
       options?: CallOptions):
@@ -949,23 +966,6 @@ export class AdminServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified subscription.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the subscription to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteSubscription(request);
- */
   deleteSubscription(
       request?: protos.google.cloud.pubsublite.v1.IDeleteSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1000,26 +1000,6 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteSubscription(request, options, callback);
   }
-  createReservation(
-      request?: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.IReservation,
-        protos.google.cloud.pubsublite.v1.ICreateReservationRequest|undefined, {}|undefined
-      ]>;
-  createReservation(
-      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IReservation,
-          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
-          {}|null|undefined>): void;
-  createReservation(
-      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IReservation,
-          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new reservation.
  *
@@ -1042,9 +1022,29 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createReservation(request);
+ * @example <caption>include:samples/generated/v1/admin_service.create_reservation.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_CreateReservation_async
  */
+  createReservation(
+      request?: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation,
+        protos.google.cloud.pubsublite.v1.ICreateReservationRequest|undefined, {}|undefined
+      ]>;
+  createReservation(
+      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
+          {}|null|undefined>): void;
+  createReservation(
+      request: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IReservation,
+          protos.google.cloud.pubsublite.v1.ICreateReservationRequest|null|undefined,
+          {}|null|undefined>): void;
   createReservation(
       request?: protos.google.cloud.pubsublite.v1.ICreateReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1079,6 +1079,25 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.createReservation(request, options, callback);
   }
+/**
+ * Returns the reservation configuration.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation whose configuration to return.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.get_reservation.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_GetReservation_async
+ */
   getReservation(
       request?: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
       options?: CallOptions):
@@ -1099,25 +1118,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.IReservation,
           protos.google.cloud.pubsublite.v1.IGetReservationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the reservation configuration.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the reservation whose configuration to return.
- *   Structured like:
- *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getReservation(request);
- */
   getReservation(
       request?: protos.google.cloud.pubsublite.v1.IGetReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1152,6 +1152,25 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.getReservation(request, options, callback);
   }
+/**
+ * Updates properties of the specified reservation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.pubsublite.v1.Reservation} request.reservation
+ *   Required. The reservation to update. Its `name` field must be populated.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. A mask specifying the reservation fields to change.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.update_reservation.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_UpdateReservation_async
+ */
   updateReservation(
       request?: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
       options?: CallOptions):
@@ -1172,25 +1191,6 @@ export class AdminServiceClient {
           protos.google.cloud.pubsublite.v1.IReservation,
           protos.google.cloud.pubsublite.v1.IUpdateReservationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates properties of the specified reservation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.pubsublite.v1.Reservation} request.reservation
- *   Required. The reservation to update. Its `name` field must be populated.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. A mask specifying the reservation fields to change.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Reservation]{@link google.cloud.pubsublite.v1.Reservation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateReservation(request);
- */
   updateReservation(
       request?: protos.google.cloud.pubsublite.v1.IUpdateReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1225,6 +1225,25 @@ export class AdminServiceClient {
     this.initialize();
     return this.innerApiCalls.updateReservation(request, options, callback);
   }
+/**
+ * Deletes the specified reservation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the reservation to delete.
+ *   Structured like:
+ *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/admin_service.delete_reservation.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_DeleteReservation_async
+ */
   deleteReservation(
       request?: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
       options?: CallOptions):
@@ -1245,25 +1264,6 @@ export class AdminServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.pubsublite.v1.IDeleteReservationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified reservation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the reservation to delete.
- *   Structured like:
- *   projects/{project_number}/locations/{location}/reservations/{reservation_id}
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteReservation(request);
- */
   deleteReservation(
       request?: protos.google.cloud.pubsublite.v1.IDeleteReservationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1299,26 +1299,6 @@ export class AdminServiceClient {
     return this.innerApiCalls.deleteReservation(request, options, callback);
   }
 
-  seekSubscription(
-      request?: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  seekSubscription(
-      request: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  seekSubscription(
-      request: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Performs an out-of-band seek for a subscription to a specified target,
  * which may be timestamps or named positions within the message backlog.
@@ -1361,10 +1341,29 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.seekSubscription(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/admin_service.seek_subscription.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_SeekSubscription_async
  */
+  seekSubscription(
+      request?: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  seekSubscription(
+      request: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  seekSubscription(
+      request: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.pubsublite.v1.ISeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   seekSubscription(
       request?: protos.google.cloud.pubsublite.v1.ISeekSubscriptionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1408,11 +1407,8 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkSeekSubscriptionProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/admin_service.seek_subscription.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_SeekSubscription_async
  */
   async checkSeekSubscriptionProgress(name: string): Promise<LROperation<protos.google.cloud.pubsublite.v1.SeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1420,28 +1416,7 @@ export class AdminServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.seekSubscription, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.pubsublite.v1.SeekSubscriptionResponse, protos.google.cloud.pubsublite.v1.OperationMetadata>;
   }
-  listTopics(
-      request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.ITopic[],
-        protos.google.cloud.pubsublite.v1.IListTopicsRequest|null,
-        protos.google.cloud.pubsublite.v1.IListTopicsResponse
-      ]>;
-  listTopics(
-      request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListTopicsRequest,
-          protos.google.cloud.pubsublite.v1.IListTopicsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.ITopic>): void;
-  listTopics(
-      request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListTopicsRequest,
-          protos.google.cloud.pubsublite.v1.IListTopicsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.ITopic>): void;
-/**
+ /**
  * Returns the list of topics for the given project.
  *
  * @param {Object} request
@@ -1472,6 +1447,27 @@ export class AdminServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTopics(
+      request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.ITopic[],
+        protos.google.cloud.pubsublite.v1.IListTopicsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListTopicsResponse
+      ]>;
+  listTopics(
+      request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListTopicsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.ITopic>): void;
+  listTopics(
+      request: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListTopicsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.ITopic>): void;
   listTopics(
       request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1589,11 +1585,8 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTopicsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/admin_service.list_topics.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_ListTopics_async
  */
   listTopicsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListTopicsRequest,
@@ -1608,7 +1601,6 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTopics'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1618,28 +1610,7 @@ export class AdminServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.ITopic>;
   }
-  listTopicSubscriptions(
-      request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
-      options?: CallOptions):
-      Promise<[
-        string[],
-        protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest|null,
-        protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse
-      ]>;
-  listTopicSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
-          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse|null|undefined,
-          string>): void;
-  listTopicSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
-          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse|null|undefined,
-          string>): void;
-/**
+ /**
  * Lists the subscriptions attached to the specified topic.
  *
  * @param {Object} request
@@ -1669,6 +1640,27 @@ export class AdminServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTopicSubscriptions(
+      request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+      options?: CallOptions):
+      Promise<[
+        string[],
+        protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse
+      ]>;
+  listTopicSubscriptions(
+      request: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse|null|undefined,
+          string>): void;
+  listTopicSubscriptions(
+      request: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
+          protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsResponse|null|undefined,
+          string>): void;
   listTopicSubscriptions(
       request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1784,11 +1776,8 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTopicSubscriptionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/admin_service.list_topic_subscriptions.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_ListTopicSubscriptions_async
  */
   listTopicSubscriptionsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListTopicSubscriptionsRequest,
@@ -1803,7 +1792,6 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTopicSubscriptions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1813,28 +1801,7 @@ export class AdminServiceClient {
       callSettings
     ) as AsyncIterable<string>;
   }
-  listSubscriptions(
-      request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.ISubscription[],
-        protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest|null,
-        protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse
-      ]>;
-  listSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
-          protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.ISubscription>): void;
-  listSubscriptions(
-      request: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
-          protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.ISubscription>): void;
-/**
+ /**
  * Returns the list of subscriptions for the given project.
  *
  * @param {Object} request
@@ -1865,6 +1832,27 @@ export class AdminServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listSubscriptions(
+      request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.ISubscription[],
+        protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse
+      ]>;
+  listSubscriptions(
+      request: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+          protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.ISubscription>): void;
+  listSubscriptions(
+      request: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
+          protos.google.cloud.pubsublite.v1.IListSubscriptionsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.ISubscription>): void;
   listSubscriptions(
       request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1982,11 +1970,8 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSubscriptionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/admin_service.list_subscriptions.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_ListSubscriptions_async
  */
   listSubscriptionsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListSubscriptionsRequest,
@@ -2001,7 +1986,6 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSubscriptions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2011,28 +1995,7 @@ export class AdminServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.ISubscription>;
   }
-  listReservations(
-      request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.IReservation[],
-        protos.google.cloud.pubsublite.v1.IListReservationsRequest|null,
-        protos.google.cloud.pubsublite.v1.IListReservationsResponse
-      ]>;
-  listReservations(
-      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
-          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.IReservation>): void;
-  listReservations(
-      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
-          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
-          protos.google.cloud.pubsublite.v1.IReservation>): void;
-/**
+ /**
  * Returns the list of reservations for the given project.
  *
  * @param {Object} request
@@ -2063,6 +2026,27 @@ export class AdminServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listReservations(
+      request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IReservation[],
+        protos.google.cloud.pubsublite.v1.IListReservationsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListReservationsResponse
+      ]>;
+  listReservations(
+      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IReservation>): void;
+  listReservations(
+      request: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationsResponse|null|undefined,
+          protos.google.cloud.pubsublite.v1.IReservation>): void;
   listReservations(
       request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2180,11 +2164,8 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listReservationsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservations.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_ListReservations_async
  */
   listReservationsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListReservationsRequest,
@@ -2199,7 +2180,6 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listReservations'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2209,28 +2189,7 @@ export class AdminServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.pubsublite.v1.IReservation>;
   }
-  listReservationTopics(
-      request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
-      options?: CallOptions):
-      Promise<[
-        string[],
-        protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest|null,
-        protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse
-      ]>;
-  listReservationTopics(
-      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
-          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
-          string>): void;
-  listReservationTopics(
-      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
-          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
-          string>): void;
-/**
+ /**
  * Lists the topics attached to the specified reservation.
  *
  * @param {Object} request
@@ -2262,6 +2221,27 @@ export class AdminServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listReservationTopics(
+      request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      options?: CallOptions):
+      Promise<[
+        string[],
+        protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest|null,
+        protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse
+      ]>;
+  listReservationTopics(
+      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
+          string>): void;
+  listReservationTopics(
+      request: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
+          protos.google.cloud.pubsublite.v1.IListReservationTopicsResponse|null|undefined,
+          string>): void;
   listReservationTopics(
       request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2381,11 +2361,8 @@ export class AdminServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listReservationTopicsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/admin_service.list_reservation_topics.js</caption>
+ * region_tag:pubsublite_v1_generated_AdminService_ListReservationTopics_async
  */
   listReservationTopicsAsync(
       request?: protos.google.cloud.pubsublite.v1.IListReservationTopicsRequest,
@@ -2400,7 +2377,6 @@ export class AdminServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listReservationTopics'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

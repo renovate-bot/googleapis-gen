@@ -32,7 +32,7 @@ function main(parent, policy) {
   /**
    *  Required. `Policy` to create.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Orgpolicy library
   const {OrgPolicyClient} = require('@google-cloud/org-policy').v2;
@@ -40,7 +40,7 @@ function main(parent, policy) {
   // Instantiates a client
   const orgpolicyClient = new OrgPolicyClient();
 
-  async function createPolicy() {
+  async function callCreatePolicy() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, policy) {
     console.log(response);
   }
 
-  createPolicy();
+  callCreatePolicy();
   // [END orgpolicy_v2_generated_OrgPolicy_CreatePolicy_async]
 }
 

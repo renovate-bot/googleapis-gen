@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function getPolicyTag() {
+  async function callGetPolicyTag() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getPolicyTag();
+  callGetPolicyTag();
   // [END datacatalog_v1_generated_PolicyTagManager_GetPolicyTag_async]
 }
 

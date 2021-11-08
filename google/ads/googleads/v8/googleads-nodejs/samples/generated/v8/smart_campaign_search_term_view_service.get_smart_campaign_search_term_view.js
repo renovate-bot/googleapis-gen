@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new SmartCampaignSearchTermViewServiceClient();
 
-  async function getSmartCampaignSearchTermView() {
+  async function callGetSmartCampaignSearchTermView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getSmartCampaignSearchTermView();
+  callGetSmartCampaignSearchTermView();
   // [END googleads_v8_generated_SmartCampaignSearchTermViewService_GetSmartCampaignSearchTermView_async]
 }
 

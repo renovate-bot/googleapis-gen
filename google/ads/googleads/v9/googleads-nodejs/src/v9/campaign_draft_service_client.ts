@@ -762,26 +762,6 @@ export class CampaignDraftServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignDraft(
-      request?: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICampaignDraft,
-        protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest|undefined, {}|undefined
-      ]>;
-  getCampaignDraft(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignDraft,
-          protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignDraft(
-      request: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICampaignDraft,
-          protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign draft in full detail.
  *
@@ -804,9 +784,29 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignDraft(request);
+ * @example <caption>include:samples/generated/v9/campaign_draft_service.get_campaign_draft.js</caption>
+ * region_tag:googleads_v9_generated_CampaignDraftService_GetCampaignDraft_async
  */
+  getCampaignDraft(
+      request?: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICampaignDraft,
+        protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest|undefined, {}|undefined
+      ]>;
+  getCampaignDraft(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignDraft,
+          protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignDraft(
+      request: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICampaignDraft,
+          protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignDraft(
       request?: protos.google.ads.googleads.v9.services.IGetCampaignDraftRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -841,26 +841,6 @@ export class CampaignDraftServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignDraft(request, options, callback);
   }
-  mutateCampaignDrafts(
-      request?: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCampaignDraftsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignDrafts(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignDrafts(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes campaign drafts. Operation statuses are
  * returned.
@@ -901,9 +881,29 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignDrafts(request);
+ * @example <caption>include:samples/generated/v9/campaign_draft_service.mutate_campaign_drafts.js</caption>
+ * region_tag:googleads_v9_generated_CampaignDraftService_MutateCampaignDrafts_async
  */
+  mutateCampaignDrafts(
+      request?: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCampaignDraftsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignDrafts(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignDrafts(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignDrafts(
       request?: protos.google.ads.googleads.v9.services.IMutateCampaignDraftsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -939,26 +939,6 @@ export class CampaignDraftServiceClient {
     return this.innerApiCalls.mutateCampaignDrafts(request, options, callback);
   }
 
-  promoteCampaignDraft(
-      request?: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  promoteCampaignDraft(
-      request: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  promoteCampaignDraft(
-      request: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Promotes the changes in a draft back to the base campaign.
  *
@@ -995,10 +975,29 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.promoteCampaignDraft(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v9/campaign_draft_service.promote_campaign_draft.js</caption>
+ * region_tag:googleads_v9_generated_CampaignDraftService_PromoteCampaignDraft_async
  */
+  promoteCampaignDraft(
+      request?: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  promoteCampaignDraft(
+      request: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  promoteCampaignDraft(
+      request: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IEmpty>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   promoteCampaignDraft(
       request?: protos.google.ads.googleads.v9.services.IPromoteCampaignDraftRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1042,11 +1041,8 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPromoteCampaignDraftProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v9/campaign_draft_service.promote_campaign_draft.js</caption>
+ * region_tag:googleads_v9_generated_CampaignDraftService_PromoteCampaignDraft_async
  */
   async checkPromoteCampaignDraftProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1054,28 +1050,7 @@ export class CampaignDraftServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.promoteCampaignDraft, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Empty>;
   }
-  listCampaignDraftAsyncErrors(
-      request?: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.rpc.IStatus[],
-        protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest|null,
-        protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsResponse
-      ]>;
-  listCampaignDraftAsyncErrors(
-      request: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
-          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,
-          protos.google.rpc.IStatus>): void;
-  listCampaignDraftAsyncErrors(
-      request: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
-      callback: PaginationCallback<
-          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
-          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,
-          protos.google.rpc.IStatus>): void;
-/**
+ /**
  * Returns all errors that occurred during CampaignDraft promote. Throws an
  * error if called before campaign draft is promoted.
  * Supports standard list paging.
@@ -1114,6 +1089,27 @@ export class CampaignDraftServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listCampaignDraftAsyncErrors(
+      request?: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.rpc.IStatus[],
+        protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest|null,
+        protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsResponse
+      ]>;
+  listCampaignDraftAsyncErrors(
+      request: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
+          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,
+          protos.google.rpc.IStatus>): void;
+  listCampaignDraftAsyncErrors(
+      request: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
+      callback: PaginationCallback<
+          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
+          protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsResponse|null|undefined,
+          protos.google.rpc.IStatus>): void;
   listCampaignDraftAsyncErrors(
       request?: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1227,11 +1223,8 @@ export class CampaignDraftServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listCampaignDraftAsyncErrorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v9/campaign_draft_service.list_campaign_draft_async_errors.js</caption>
+ * region_tag:googleads_v9_generated_CampaignDraftService_ListCampaignDraftAsyncErrors_async
  */
   listCampaignDraftAsyncErrorsAsync(
       request?: protos.google.ads.googleads.v9.services.IListCampaignDraftAsyncErrorsRequest,
@@ -1246,7 +1239,6 @@ export class CampaignDraftServiceClient {
     ] = gax.routingHeader.fromParams({
       'resource_name': request.resourceName || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listCampaignDraftAsyncErrors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

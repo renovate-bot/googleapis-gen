@@ -36,7 +36,7 @@ function main(name, interpretationIndex) {
   // Instantiates a client
   const dataqnaClient = new QuestionServiceClient();
 
-  async function executeQuestion() {
+  async function callExecuteQuestion() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name, interpretationIndex) {
     console.log(response);
   }
 
-  executeQuestion();
+  callExecuteQuestion();
   // [END dataqna_v1alpha_generated_QuestionService_ExecuteQuestion_async]
 }
 

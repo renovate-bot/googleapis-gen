@@ -40,7 +40,7 @@ function main(debuggeeId, breakpointId, clientVersion) {
   // Instantiates a client
   const clouddebuggerClient = new Debugger2Client();
 
-  async function deleteBreakpoint() {
+  async function callDeleteBreakpoint() {
     // Construct request
     const request = {
       debuggeeId,
@@ -53,7 +53,7 @@ function main(debuggeeId, breakpointId, clientVersion) {
     console.log(response);
   }
 
-  deleteBreakpoint();
+  callDeleteBreakpoint();
   // [END clouddebugger_v2_generated_Debugger2_DeleteBreakpoint_async]
 }
 

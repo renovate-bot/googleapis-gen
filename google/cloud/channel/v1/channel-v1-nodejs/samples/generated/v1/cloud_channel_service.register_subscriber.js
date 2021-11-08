@@ -35,7 +35,7 @@ function main(account, serviceAccount) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function registerSubscriber() {
+  async function callRegisterSubscriber() {
     // Construct request
     const request = {
       account,
@@ -47,7 +47,7 @@ function main(account, serviceAccount) {
     console.log(response);
   }
 
-  registerSubscriber();
+  callRegisterSubscriber();
   // [END cloudchannel_v1_generated_CloudChannelService_RegisterSubscriber_async]
 }
 

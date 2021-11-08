@@ -27,16 +27,16 @@ function main(bucket) {
   /**
    *  If set, only deletes the bucket if its metageneration matches this value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  If set, only deletes the bucket if its metageneration does not match this
    *  value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -44,7 +44,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function deleteBucket() {
+  async function callDeleteBucket() {
     // Construct request
     const request = {
       bucket,
@@ -55,7 +55,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  deleteBucket();
+  callDeleteBucket();
   // [END storage_v1_generated_Storage_DeleteBucket_async]
 }
 

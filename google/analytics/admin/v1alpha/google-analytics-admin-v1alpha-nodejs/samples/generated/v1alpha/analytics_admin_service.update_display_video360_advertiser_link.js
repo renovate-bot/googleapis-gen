@@ -23,13 +23,13 @@ function main(updateMask) {
   /**
    *  The DisplayVideo360AdvertiserLink to update
    */
-  // const displayVideo360AdvertiserLink = ''
+  // const displayVideo_360AdvertiserLink = {}
   /**
    *  Required. The list of fields to be updated. Omitted fields will not be updated.
    *  To replace the entire entity, use one path with the string "*" to match
    *  all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -37,7 +37,7 @@ function main(updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateDisplayVideo360AdvertiserLink() {
+  async function callUpdateDisplayVideo360AdvertiserLink() {
     // Construct request
     const request = {
       updateMask,
@@ -48,7 +48,7 @@ function main(updateMask) {
     console.log(response);
   }
 
-  updateDisplayVideo360AdvertiserLink();
+  callUpdateDisplayVideo360AdvertiserLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateDisplayVideo360AdvertiserLink_async]
 }
 

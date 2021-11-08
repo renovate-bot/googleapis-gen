@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const networkmanagementClient = new ReachabilityServiceClient();
 
-  async function deleteConnectivityTest() {
+  async function callDeleteConnectivityTest() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteConnectivityTest();
+  callDeleteConnectivityTest();
   // [END networkmanagement_v1_generated_ReachabilityService_DeleteConnectivityTest_async]
 }
 

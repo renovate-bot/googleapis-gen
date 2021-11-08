@@ -55,7 +55,7 @@ function main(parent, account) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function listSkus() {
+  async function callListSkus() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent, account) {
     }
   }
 
-  listSkus();
+  callListSkus();
   // [END cloudchannel_v1_generated_CloudChannelService_ListSkus_async]
 }
 

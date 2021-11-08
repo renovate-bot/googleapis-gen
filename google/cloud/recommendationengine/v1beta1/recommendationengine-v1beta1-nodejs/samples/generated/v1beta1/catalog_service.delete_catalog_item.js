@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const recommendationengineClient = new CatalogServiceClient();
 
-  async function deleteCatalogItem() {
+  async function callDeleteCatalogItem() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteCatalogItem();
+  callDeleteCatalogItem();
   // [END recommendationengine_v1beta1_generated_CatalogService_DeleteCatalogItem_async]
 }
 

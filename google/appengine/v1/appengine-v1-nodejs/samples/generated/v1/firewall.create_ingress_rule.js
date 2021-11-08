@@ -35,7 +35,7 @@ function main() {
    *  last rule in the sequence before the required default allow-all or deny-all
    *  rule.
    */
-  // const rule = ''
+  // const rule = {}
 
   // Imports the Appengine library
   const {FirewallClient} = require('@google-cloud/appengine-admin').v1;
@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new FirewallClient();
 
-  async function createIngressRule() {
+  async function callCreateIngressRule() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  createIngressRule();
+  callCreateIngressRule();
   // [END appengine_v1_generated_Firewall_CreateIngressRule_async]
 }
 

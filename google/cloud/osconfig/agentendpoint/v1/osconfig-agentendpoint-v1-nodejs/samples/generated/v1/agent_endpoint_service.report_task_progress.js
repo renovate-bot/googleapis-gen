@@ -38,19 +38,19 @@ function main(instanceIdToken, taskId, taskType) {
    *  EXEC_STEP = Progress not supported for this type.
    *  APPLY_CONFIG_TASK = ApplyConfigTaskProgress
    */
-  // const taskType = ''
+  // const taskType = {}
   /**
    *  Details about the progress of the apply patches task.
    */
-  // const applyPatchesTaskProgress = ''
+  // const applyPatchesTaskProgress = {}
   /**
    *  Details about the progress of the exec step task.
    */
-  // const execStepTaskProgress = ''
+  // const execStepTaskProgress = {}
   /**
    *  Details about the progress of the apply config task.
    */
-  // const applyConfigTaskProgress = ''
+  // const applyConfigTaskProgress = {}
 
   // Imports the Agentendpoint library
   const {AgentEndpointServiceClient} = require('agentendpoint').v1;
@@ -58,7 +58,7 @@ function main(instanceIdToken, taskId, taskType) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function reportTaskProgress() {
+  async function callReportTaskProgress() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -71,7 +71,7 @@ function main(instanceIdToken, taskId, taskType) {
     console.log(response);
   }
 
-  reportTaskProgress();
+  callReportTaskProgress();
   // [END osconfig_v1_generated_AgentEndpointService_ReportTaskProgress_async]
 }
 

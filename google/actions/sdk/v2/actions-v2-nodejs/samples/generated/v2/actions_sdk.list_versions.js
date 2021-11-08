@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function listVersions() {
+  async function callListVersions() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listVersions();
+  callListVersions();
   // [END actions_v2_generated_ActionsSdk_ListVersions_async]
 }
 

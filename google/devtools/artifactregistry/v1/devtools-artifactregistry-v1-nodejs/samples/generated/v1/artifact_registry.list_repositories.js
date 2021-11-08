@@ -39,7 +39,7 @@ function main(parent) {
   // Instantiates a client
   const artifactregistryClient = new ArtifactRegistryClient();
 
-  async function listRepositories() {
+  async function callListRepositories() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent) {
     }
   }
 
-  listRepositories();
+  callListRepositories();
   // [END artifactregistry_v1_generated_ArtifactRegistry_ListRepositories_async]
 }
 

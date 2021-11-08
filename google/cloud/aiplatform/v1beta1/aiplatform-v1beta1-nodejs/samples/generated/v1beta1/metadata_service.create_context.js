@@ -30,7 +30,7 @@ function main(parent, context) {
   /**
    *  Required. The Context to create.
    */
-  // const context = ''
+  // const context = {}
   /**
    *  The {context} portion of the resource name with the format:
    *  `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`.
@@ -48,7 +48,7 @@ function main(parent, context) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function createContext() {
+  async function callCreateContext() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent, context) {
     console.log(response);
   }
 
-  createContext();
+  callCreateContext();
   // [END aiplatform_v1beta1_generated_MetadataService_CreateContext_async]
 }
 

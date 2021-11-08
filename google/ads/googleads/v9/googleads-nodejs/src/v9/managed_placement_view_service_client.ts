@@ -727,26 +727,6 @@ export class ManagedPlacementViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getManagedPlacementView(
-      request?: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IManagedPlacementView,
-        protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest|undefined, {}|undefined
-      ]>;
-  getManagedPlacementView(
-      request: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IManagedPlacementView,
-          protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getManagedPlacementView(
-      request: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IManagedPlacementView,
-          protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Managed Placement view in full detail.
  *
@@ -769,9 +749,29 @@ export class ManagedPlacementViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getManagedPlacementView(request);
+ * @example <caption>include:samples/generated/v9/managed_placement_view_service.get_managed_placement_view.js</caption>
+ * region_tag:googleads_v9_generated_ManagedPlacementViewService_GetManagedPlacementView_async
  */
+  getManagedPlacementView(
+      request?: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IManagedPlacementView,
+        protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest|undefined, {}|undefined
+      ]>;
+  getManagedPlacementView(
+      request: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IManagedPlacementView,
+          protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getManagedPlacementView(
+      request: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IManagedPlacementView,
+          protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getManagedPlacementView(
       request?: protos.google.ads.googleads.v9.services.IGetManagedPlacementViewRequest,
       optionsOrCallback?: CallOptions|Callback<

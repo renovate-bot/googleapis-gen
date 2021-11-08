@@ -30,7 +30,7 @@ function main(parent, artifact) {
   /**
    *  Required. The Artifact to create.
    */
-  // const artifact = ''
+  // const artifact = {}
   /**
    *  The {artifact} portion of the resource name with the format:
    *  `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
@@ -48,7 +48,7 @@ function main(parent, artifact) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function createArtifact() {
+  async function callCreateArtifact() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent, artifact) {
     console.log(response);
   }
 
-  createArtifact();
+  callCreateArtifact();
   // [END aiplatform_v1_generated_MetadataService_CreateArtifact_async]
 }
 

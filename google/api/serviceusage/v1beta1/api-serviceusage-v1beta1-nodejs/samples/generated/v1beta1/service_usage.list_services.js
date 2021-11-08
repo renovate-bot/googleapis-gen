@@ -50,7 +50,7 @@ function main() {
   // Instantiates a client
   const serviceusageClient = new ServiceUsageClient();
 
-  async function listServices() {
+  async function callListServices() {
     // Construct request
     const request = {
     };
@@ -62,7 +62,7 @@ function main() {
     }
   }
 
-  listServices();
+  callListServices();
   // [END serviceusage_v1beta1_generated_ServiceUsage_ListServices_async]
 }
 

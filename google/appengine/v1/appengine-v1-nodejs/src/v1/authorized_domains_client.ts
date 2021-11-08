@@ -299,28 +299,7 @@ export class AuthorizedDomainsClient {
   // -- Service calls --
   // -------------------
 
-  listAuthorizedDomains(
-      request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.appengine.v1.IAuthorizedDomain[],
-        protos.google.appengine.v1.IListAuthorizedDomainsRequest|null,
-        protos.google.appengine.v1.IListAuthorizedDomainsResponse
-      ]>;
-  listAuthorizedDomains(
-      request: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListAuthorizedDomainsRequest,
-          protos.google.appengine.v1.IListAuthorizedDomainsResponse|null|undefined,
-          protos.google.appengine.v1.IAuthorizedDomain>): void;
-  listAuthorizedDomains(
-      request: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
-      callback: PaginationCallback<
-          protos.google.appengine.v1.IListAuthorizedDomainsRequest,
-          protos.google.appengine.v1.IListAuthorizedDomainsResponse|null|undefined,
-          protos.google.appengine.v1.IAuthorizedDomain>): void;
-/**
+ /**
  * Lists all domains the user is authorized to administer.
  *
  * @param {Object} request
@@ -344,6 +323,27 @@ export class AuthorizedDomainsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAuthorizedDomains(
+      request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.appengine.v1.IAuthorizedDomain[],
+        protos.google.appengine.v1.IListAuthorizedDomainsRequest|null,
+        protos.google.appengine.v1.IListAuthorizedDomainsResponse
+      ]>;
+  listAuthorizedDomains(
+      request: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListAuthorizedDomainsRequest,
+          protos.google.appengine.v1.IListAuthorizedDomainsResponse|null|undefined,
+          protos.google.appengine.v1.IAuthorizedDomain>): void;
+  listAuthorizedDomains(
+      request: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
+      callback: PaginationCallback<
+          protos.google.appengine.v1.IListAuthorizedDomainsRequest,
+          protos.google.appengine.v1.IListAuthorizedDomainsResponse|null|undefined,
+          protos.google.appengine.v1.IAuthorizedDomain>): void;
   listAuthorizedDomains(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -447,11 +447,8 @@ export class AuthorizedDomainsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAuthorizedDomainsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/authorized_domains.list_authorized_domains.js</caption>
+ * region_tag:appengine_v1_generated_AuthorizedDomains_ListAuthorizedDomains_async
  */
   listAuthorizedDomainsAsync(
       request?: protos.google.appengine.v1.IListAuthorizedDomainsRequest,
@@ -466,7 +463,6 @@ export class AuthorizedDomainsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAuthorizedDomains'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

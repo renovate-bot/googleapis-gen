@@ -40,7 +40,7 @@ function main(projectId, triggerId) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function getBuildTrigger() {
+  async function callGetBuildTrigger() {
     // Construct request
     const request = {
       projectId,
@@ -52,7 +52,7 @@ function main(projectId, triggerId) {
     console.log(response);
   }
 
-  getBuildTrigger();
+  callGetBuildTrigger();
   // [END cloudbuild_v1_generated_CloudBuild_GetBuildTrigger_async]
 }
 

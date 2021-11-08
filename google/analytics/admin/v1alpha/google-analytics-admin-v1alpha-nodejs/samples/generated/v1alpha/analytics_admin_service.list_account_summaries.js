@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listAccountSummaries() {
+  async function callListAccountSummaries() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     }
   }
 
-  listAccountSummaries();
+  callListAccountSummaries();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListAccountSummaries_async]
 }
 

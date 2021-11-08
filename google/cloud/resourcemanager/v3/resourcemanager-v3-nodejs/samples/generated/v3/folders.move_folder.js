@@ -38,7 +38,7 @@ function main(name, destinationParent) {
   // Instantiates a client
   const resourcemanagerClient = new FoldersClient();
 
-  async function moveFolder() {
+  async function callMoveFolder() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name, destinationParent) {
     console.log(response);
   }
 
-  moveFolder();
+  callMoveFolder();
   // [END cloudresourcemanager_v3_generated_Folders_MoveFolder_async]
 }
 

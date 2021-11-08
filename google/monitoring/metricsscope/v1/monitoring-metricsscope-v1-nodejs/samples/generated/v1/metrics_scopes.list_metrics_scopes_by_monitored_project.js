@@ -33,7 +33,7 @@ function main(monitoredResourceContainer) {
   // Instantiates a client
   const metricsscopeClient = new MetricsScopesClient();
 
-  async function listMetricsScopesByMonitoredProject() {
+  async function callListMetricsScopesByMonitoredProject() {
     // Construct request
     const request = {
       monitoredResourceContainer,
@@ -44,7 +44,7 @@ function main(monitoredResourceContainer) {
     console.log(response);
   }
 
-  listMetricsScopesByMonitoredProject();
+  callListMetricsScopesByMonitoredProject();
   // [END monitoring_v1_generated_MetricsScopes_ListMetricsScopesByMonitoredProject_async]
 }
 

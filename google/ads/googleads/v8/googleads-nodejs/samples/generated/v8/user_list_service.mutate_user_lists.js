@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new UserListServiceClient();
 
-  async function mutateUserLists() {
+  async function callMutateUserLists() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateUserLists();
+  callMutateUserLists();
   // [END googleads_v8_generated_UserListService_MutateUserLists_async]
 }
 

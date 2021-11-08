@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function deleteModel() {
+  async function callDeleteModel() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteModel();
+  callDeleteModel();
   // [END automl_v1_generated_AutoMl_DeleteModel_async]
 }
 

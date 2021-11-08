@@ -322,6 +322,25 @@ export class MetricsScopesClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns a specific `Metrics Scope`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the `Metrics Scope`.
+ *   Example:
+ *   `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MetricsScope]{@link google.monitoring.metricsscope.v1.MetricsScope}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metrics_scopes.get_metrics_scope.js</caption>
+ * region_tag:monitoring_v1_generated_MetricsScopes_GetMetricsScope_async
+ */
   getMetricsScope(
       request?: protos.google.monitoring.metricsscope.v1.IGetMetricsScopeRequest,
       options?: CallOptions):
@@ -342,25 +361,6 @@ export class MetricsScopesClient {
           protos.google.monitoring.metricsscope.v1.IMetricsScope,
           protos.google.monitoring.metricsscope.v1.IGetMetricsScopeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns a specific `Metrics Scope`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the `Metrics Scope`.
- *   Example:
- *   `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MetricsScope]{@link google.monitoring.metricsscope.v1.MetricsScope}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMetricsScope(request);
- */
   getMetricsScope(
       request?: protos.google.monitoring.metricsscope.v1.IGetMetricsScopeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -395,6 +395,27 @@ export class MetricsScopesClient {
     this.initialize();
     return this.innerApiCalls.getMetricsScope(request, options, callback);
   }
+/**
+ * Returns a list of every `Metrics Scope` that a specific `MonitoredProject`
+ * has been added to. The metrics scope representing the specified monitored
+ * project will always be the first entry in the response.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.monitoredResourceContainer
+ *   Required. The resource name of the `Monitored Project` being requested.
+ *   Example:
+ *   `projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListMetricsScopesByMonitoredProjectResponse]{@link google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/metrics_scopes.list_metrics_scopes_by_monitored_project.js</caption>
+ * region_tag:monitoring_v1_generated_MetricsScopes_ListMetricsScopesByMonitoredProject_async
+ */
   listMetricsScopesByMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.IListMetricsScopesByMonitoredProjectRequest,
       options?: CallOptions):
@@ -415,27 +436,6 @@ export class MetricsScopesClient {
           protos.google.monitoring.metricsscope.v1.IListMetricsScopesByMonitoredProjectResponse,
           protos.google.monitoring.metricsscope.v1.IListMetricsScopesByMonitoredProjectRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns a list of every `Metrics Scope` that a specific `MonitoredProject`
- * has been added to. The metrics scope representing the specified monitored
- * project will always be the first entry in the response.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.monitoredResourceContainer
- *   Required. The resource name of the `Monitored Project` being requested.
- *   Example:
- *   `projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListMetricsScopesByMonitoredProjectResponse]{@link google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listMetricsScopesByMonitoredProject(request);
- */
   listMetricsScopesByMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.IListMetricsScopesByMonitoredProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -460,30 +460,12 @@ export class MetricsScopesClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listMetricsScopesByMonitoredProject(request, options, callback);
   }
 
-  createMonitoredProject(
-      request?: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.monitoring.metricsscope.v1.IMonitoredProject, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createMonitoredProject(
-      request: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.monitoring.metricsscope.v1.IMonitoredProject, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createMonitoredProject(
-      request: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.monitoring.metricsscope.v1.IMonitoredProject, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds a `MonitoredProject` with the given project ID
  * to the specified `Metrics Scope`.
@@ -509,10 +491,29 @@ export class MetricsScopesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createMonitoredProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metrics_scopes.create_monitored_project.js</caption>
+ * region_tag:monitoring_v1_generated_MetricsScopes_CreateMonitoredProject_async
  */
+  createMonitoredProject(
+      request?: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.monitoring.metricsscope.v1.IMonitoredProject, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createMonitoredProject(
+      request: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.monitoring.metricsscope.v1.IMonitoredProject, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createMonitoredProject(
+      request: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.monitoring.metricsscope.v1.IMonitoredProject, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.ICreateMonitoredProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -556,11 +557,8 @@ export class MetricsScopesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateMonitoredProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metrics_scopes.create_monitored_project.js</caption>
+ * region_tag:monitoring_v1_generated_MetricsScopes_CreateMonitoredProject_async
  */
   async checkCreateMonitoredProjectProgress(name: string): Promise<LROperation<protos.google.monitoring.metricsscope.v1.MonitoredProject, protos.google.monitoring.metricsscope.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -568,26 +566,6 @@ export class MetricsScopesClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createMonitoredProject, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.monitoring.metricsscope.v1.MonitoredProject, protos.google.monitoring.metricsscope.v1.OperationMetadata>;
   }
-  deleteMonitoredProject(
-      request?: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteMonitoredProject(
-      request: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteMonitoredProject(
-      request: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a `MonitoredProject` from the specified `Metrics Scope`.
  *
@@ -610,10 +588,29 @@ export class MetricsScopesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteMonitoredProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/metrics_scopes.delete_monitored_project.js</caption>
+ * region_tag:monitoring_v1_generated_MetricsScopes_DeleteMonitoredProject_async
  */
+  deleteMonitoredProject(
+      request?: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteMonitoredProject(
+      request: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteMonitoredProject(
+      request: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.monitoring.metricsscope.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteMonitoredProject(
       request?: protos.google.monitoring.metricsscope.v1.IDeleteMonitoredProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -657,11 +654,8 @@ export class MetricsScopesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteMonitoredProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/metrics_scopes.delete_monitored_project.js</caption>
+ * region_tag:monitoring_v1_generated_MetricsScopes_DeleteMonitoredProject_async
  */
   async checkDeleteMonitoredProjectProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.monitoring.metricsscope.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

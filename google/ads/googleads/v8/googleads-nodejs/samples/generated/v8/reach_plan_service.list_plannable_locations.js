@@ -27,7 +27,7 @@ function main() {
   // Instantiates a client
   const googleadsClient = new ReachPlanServiceClient();
 
-  async function listPlannableLocations() {
+  async function callListPlannableLocations() {
     // Construct request
     const request = {
     };
@@ -37,7 +37,7 @@ function main() {
     console.log(response);
   }
 
-  listPlannableLocations();
+  callListPlannableLocations();
   // [END googleads_v8_generated_ReachPlanService_ListPlannableLocations_async]
 }
 

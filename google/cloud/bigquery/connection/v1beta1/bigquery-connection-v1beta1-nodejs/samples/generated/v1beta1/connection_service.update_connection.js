@@ -28,11 +28,11 @@ function main(name, connection, updateMask) {
   /**
    *  Required. Connection containing the updated fields.
    */
-  // const connection = ''
+  // const connection = {}
   /**
    *  Required. Update mask for the connection fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Connection library
   const {ConnectionServiceClient} = require('connection').v1beta1;
@@ -40,7 +40,7 @@ function main(name, connection, updateMask) {
   // Instantiates a client
   const connectionClient = new ConnectionServiceClient();
 
-  async function updateConnection() {
+  async function callUpdateConnection() {
     // Construct request
     const request = {
       name,
@@ -53,7 +53,7 @@ function main(name, connection, updateMask) {
     console.log(response);
   }
 
-  updateConnection();
+  callUpdateConnection();
   // [END bigqueryconnection_v1beta1_generated_ConnectionService_UpdateConnection_async]
 }
 

@@ -21,7 +21,7 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
+   *  Required. IDs of the Photos google.streetview.publish.v1.Photo. HTTP GET
    *  requests require the following syntax for the URL query parameter:
    *  `photoIds=<id1>&photoIds=<id2>&...`.
    */
@@ -30,7 +30,7 @@ function main() {
    *  Specifies if a download URL for the photo bytes should be returned in the
    *  Photo response.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  The BCP-47 language code, such as "en-US" or "sr-Latn". For more
    *  information, see
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function batchGetPhotos() {
+  async function callBatchGetPhotos() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  batchGetPhotos();
+  callBatchGetPhotos();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_BatchGetPhotos_async]
 }
 

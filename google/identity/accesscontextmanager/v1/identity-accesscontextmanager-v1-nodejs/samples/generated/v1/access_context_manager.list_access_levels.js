@@ -21,21 +21,21 @@ function main(parent) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Resource name for the access policy to list [Access Levels]
-   *  [google.identity.accesscontextmanager.v1.AccessLevel] from.
+   *  Required. Resource name for the access policy to list Access Levels 
+   *  google.identity.accesscontextmanager.v1.AccessLevel  from.
    *  Format:
    *  `accessPolicies/{policy_id}`
    */
   // const parent = 'abc123'
   /**
-   *  Number of [Access Levels]
-   *  [google.identity.accesscontextmanager.v1.AccessLevel] to include in
+   *  Number of Access Levels 
+   *  google.identity.accesscontextmanager.v1.AccessLevel  to include in
    *  the list. Default 100.
    */
   // const pageSize = 1234
   /**
-   *  Next page token for the next batch of [Access Level]
-   *  [google.identity.accesscontextmanager.v1.AccessLevel] instances.
+   *  Next page token for the next batch of Access Level 
+   *  google.identity.accesscontextmanager.v1.AccessLevel  instances.
    *  Defaults to the first page of results.
    */
   // const pageToken = 'abc123'
@@ -44,7 +44,7 @@ function main(parent) {
    *  `CustomLevels`, rather than as `BasicLevels`. Defaults to returning
    *  `AccessLevels` in the format they were defined.
    */
-  // const accessLevelFormat = ''
+  // const accessLevelFormat = {}
 
   // Imports the Accesscontextmanager library
   const {AccessContextManagerClient} = require('@google-cloud/access-context-manager').v1;
@@ -52,7 +52,7 @@ function main(parent) {
   // Instantiates a client
   const accesscontextmanagerClient = new AccessContextManagerClient();
 
-  async function listAccessLevels() {
+  async function callListAccessLevels() {
     // Construct request
     const request = {
       parent,
@@ -65,7 +65,7 @@ function main(parent) {
     }
   }
 
-  listAccessLevels();
+  callListAccessLevels();
   // [END accesscontextmanager_v1_generated_AccessContextManager_ListAccessLevels_async]
 }
 

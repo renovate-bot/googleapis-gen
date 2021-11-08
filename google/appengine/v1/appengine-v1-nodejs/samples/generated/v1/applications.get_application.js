@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ApplicationsClient();
 
-  async function getApplication() {
+  async function callGetApplication() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  getApplication();
+  callGetApplication();
   // [END appengine_v1_generated_Applications_GetApplication_async]
 }
 

@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const contactcenterinsightsClient = new ContactCenterInsightsClient();
 
-  async function getPhraseMatcher() {
+  async function callGetPhraseMatcher() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getPhraseMatcher();
+  callGetPhraseMatcher();
   // [END contactcenterinsights_v1_generated_ContactCenterInsights_GetPhraseMatcher_async]
 }
 

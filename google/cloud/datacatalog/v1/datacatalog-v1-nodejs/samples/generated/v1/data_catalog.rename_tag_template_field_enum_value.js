@@ -35,7 +35,7 @@ function main(name, newEnumValueDisplayName) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function renameTagTemplateFieldEnumValue() {
+  async function callRenameTagTemplateFieldEnumValue() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, newEnumValueDisplayName) {
     console.log(response);
   }
 
-  renameTagTemplateFieldEnumValue();
+  callRenameTagTemplateFieldEnumValue();
   // [END datacatalog_v1_generated_DataCatalog_RenameTagTemplateFieldEnumValue_async]
 }
 

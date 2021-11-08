@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function listFunctions() {
+  async function callListFunctions() {
     // Construct request
     const request = {
     };
@@ -59,7 +59,7 @@ function main() {
     }
   }
 
-  listFunctions();
+  callListFunctions();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_ListFunctions_async]
 }
 

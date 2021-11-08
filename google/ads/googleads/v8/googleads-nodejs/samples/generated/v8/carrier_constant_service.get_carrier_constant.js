@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CarrierConstantServiceClient();
 
-  async function getCarrierConstant() {
+  async function callGetCarrierConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCarrierConstant();
+  callGetCarrierConstant();
   // [END googleads_v8_generated_CarrierConstantService_GetCarrierConstant_async]
 }
 

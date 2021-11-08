@@ -197,7 +197,7 @@ describe('v2.ActionsSdkClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretResponse());
             client.innerApiCalls.encryptSecret = stubSimpleCall(expectedResponse);
             const [response] = await client.encryptSecret(request);
@@ -213,7 +213,7 @@ describe('v2.ActionsSdkClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretResponse());
             client.innerApiCalls.encryptSecret = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -240,7 +240,7 @@ describe('v2.ActionsSdkClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.encryptSecret = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.encryptSecret(request), expectedError);
@@ -257,7 +257,7 @@ describe('v2.ActionsSdkClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretResponse());
             client.innerApiCalls.decryptSecret = stubSimpleCall(expectedResponse);
             const [response] = await client.decryptSecret(request);
@@ -273,7 +273,7 @@ describe('v2.ActionsSdkClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretResponse());
             client.innerApiCalls.decryptSecret = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -300,7 +300,7 @@ describe('v2.ActionsSdkClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.decryptSecret = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.decryptSecret(request), expectedError);
@@ -625,7 +625,7 @@ describe('v2.ActionsSdkClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListSampleProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
@@ -645,7 +645,7 @@ describe('v2.ActionsSdkClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListSampleProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
@@ -676,7 +676,7 @@ describe('v2.ActionsSdkClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListSampleProjectsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listSampleProjects = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listSampleProjects(request), expectedError);

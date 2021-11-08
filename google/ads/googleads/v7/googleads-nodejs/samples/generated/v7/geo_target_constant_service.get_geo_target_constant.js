@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new GeoTargetConstantServiceClient();
 
-  async function getGeoTargetConstant() {
+  async function callGetGeoTargetConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getGeoTargetConstant();
+  callGetGeoTargetConstant();
   // [END googleads_v7_generated_GeoTargetConstantService_GetGeoTargetConstant_async]
 }
 

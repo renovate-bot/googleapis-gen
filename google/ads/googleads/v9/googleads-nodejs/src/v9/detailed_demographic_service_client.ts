@@ -727,6 +727,23 @@ export class DetailedDemographicServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested detailed demographic in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. Resource name of the DetailedDemographic to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DetailedDemographic]{@link google.ads.googleads.v9.resources.DetailedDemographic}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v9/detailed_demographic_service.get_detailed_demographic.js</caption>
+ * region_tag:googleads_v9_generated_DetailedDemographicService_GetDetailedDemographic_async
+ */
   getDetailedDemographic(
       request?: protos.google.ads.googleads.v9.services.IGetDetailedDemographicRequest,
       options?: CallOptions):
@@ -747,23 +764,6 @@ export class DetailedDemographicServiceClient {
           protos.google.ads.googleads.v9.resources.IDetailedDemographic,
           protos.google.ads.googleads.v9.services.IGetDetailedDemographicRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested detailed demographic in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. Resource name of the DetailedDemographic to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DetailedDemographic]{@link google.ads.googleads.v9.resources.DetailedDemographic}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDetailedDemographic(request);
- */
   getDetailedDemographic(
       request?: protos.google.ads.googleads.v9.services.IGetDetailedDemographicRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const accessapprovalClient = new AccessApprovalClient();
 
-  async function dismissApprovalRequest() {
+  async function callDismissApprovalRequest() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  dismissApprovalRequest();
+  callDismissApprovalRequest();
   // [END accessapproval_v1_generated_AccessApproval_DismissApprovalRequest_async]
 }
 

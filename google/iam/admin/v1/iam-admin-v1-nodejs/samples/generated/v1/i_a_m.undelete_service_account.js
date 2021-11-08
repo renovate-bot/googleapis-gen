@@ -34,7 +34,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function undeleteServiceAccount() {
+  async function callUndeleteServiceAccount() {
     // Construct request
     const request = {
     };
@@ -44,7 +44,7 @@ function main() {
     console.log(response);
   }
 
-  undeleteServiceAccount();
+  callUndeleteServiceAccount();
   // [END iam_v1_generated_IAM_UndeleteServiceAccount_async]
 }
 

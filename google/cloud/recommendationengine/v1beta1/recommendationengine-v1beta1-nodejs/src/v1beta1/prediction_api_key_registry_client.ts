@@ -301,6 +301,26 @@ export class PredictionApiKeyRegistryClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Register an API key for use with predict method.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent resource path.
+ *   `projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store`.
+ * @param {google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration} request.predictionApiKeyRegistration
+ *   Required. The prediction API key registration.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PredictionApiKeyRegistration]{@link google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.create_prediction_api_key_registration.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_CreatePredictionApiKeyRegistration_async
+ */
   createPredictionApiKeyRegistration(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
       options?: CallOptions):
@@ -321,26 +341,6 @@ export class PredictionApiKeyRegistryClient {
           protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration,
           protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Register an API key for use with predict method.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent resource path.
- *   `projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store`.
- * @param {google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration} request.predictionApiKeyRegistration
- *   Required. The prediction API key registration.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PredictionApiKeyRegistration]{@link google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createPredictionApiKeyRegistration(request);
- */
   createPredictionApiKeyRegistration(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICreatePredictionApiKeyRegistrationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -375,6 +375,24 @@ export class PredictionApiKeyRegistryClient {
     this.initialize();
     return this.innerApiCalls.createPredictionApiKeyRegistration(request, options, callback);
   }
+/**
+ * Unregister an apiKey from using for predict method.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The API key to unregister including full resource path.
+ *   `projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.delete_prediction_api_key_registration.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_DeletePredictionApiKeyRegistration_async
+ */
   deletePredictionApiKeyRegistration(
       request?: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
       options?: CallOptions):
@@ -395,24 +413,6 @@ export class PredictionApiKeyRegistryClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Unregister an apiKey from using for predict method.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The API key to unregister including full resource path.
- *   `projects/* /locations/global/catalogs/default_catalog/eventStores/default_event_store/predictionApiKeyRegistrations/<YOUR_API_KEY>`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deletePredictionApiKeyRegistration(request);
- */
   deletePredictionApiKeyRegistration(
       request?: protos.google.cloud.recommendationengine.v1beta1.IDeletePredictionApiKeyRegistrationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -448,28 +448,7 @@ export class PredictionApiKeyRegistryClient {
     return this.innerApiCalls.deletePredictionApiKeyRegistration(request, options, callback);
   }
 
-  listPredictionApiKeyRegistrations(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration[],
-        protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest|null,
-        protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse
-      ]>;
-  listPredictionApiKeyRegistrations(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration>): void;
-  listPredictionApiKeyRegistrations(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration>): void;
-/**
+ /**
  * List the registered apiKeys for use with predict method.
  *
  * @param {Object} request
@@ -495,6 +474,27 @@ export class PredictionApiKeyRegistryClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPredictionApiKeyRegistrations(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration[],
+        protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest|null,
+        protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse
+      ]>;
+  listPredictionApiKeyRegistrations(
+      request: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration>): void;
+  listPredictionApiKeyRegistrations(
+      request: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.IPredictionApiKeyRegistration>): void;
   listPredictionApiKeyRegistrations(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -602,11 +602,8 @@ export class PredictionApiKeyRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPredictionApiKeyRegistrationsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/prediction_api_key_registry.list_prediction_api_key_registrations.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_ListPredictionApiKeyRegistrations_async
  */
   listPredictionApiKeyRegistrationsAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListPredictionApiKeyRegistrationsRequest,
@@ -621,7 +618,6 @@ export class PredictionApiKeyRegistryClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPredictionApiKeyRegistrations'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

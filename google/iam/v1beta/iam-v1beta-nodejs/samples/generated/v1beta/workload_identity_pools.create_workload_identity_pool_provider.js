@@ -27,11 +27,11 @@ function main(parent, workloadIdentityPoolProvider, workloadIdentityPoolProvider
   /**
    *  Required. The provider to create.
    */
-  // const workloadIdentityPoolProvider = ''
+  // const workloadIdentityPoolProvider = {}
   /**
    *  Required. The ID for the provider, which becomes the
    *  final component of the resource name. This value must be 4-32 characters,
-   *  and may contain the characters [a-z0-9-]. The prefix `gcp-` is
+   *  and may contain the characters a-z0-9-. The prefix `gcp-` is
    *  reserved for use by Google, and may not be specified.
    */
   // const workloadIdentityPoolProviderId = 'abc123'
@@ -42,7 +42,7 @@ function main(parent, workloadIdentityPoolProvider, workloadIdentityPoolProvider
   // Instantiates a client
   const iamClient = new WorkloadIdentityPoolsClient();
 
-  async function createWorkloadIdentityPoolProvider() {
+  async function callCreateWorkloadIdentityPoolProvider() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, workloadIdentityPoolProvider, workloadIdentityPoolProvider
     console.log(response);
   }
 
-  createWorkloadIdentityPoolProvider();
+  callCreateWorkloadIdentityPoolProvider();
   // [END iam_v1beta_generated_WorkloadIdentityPools_CreateWorkloadIdentityPoolProvider_async]
 }
 

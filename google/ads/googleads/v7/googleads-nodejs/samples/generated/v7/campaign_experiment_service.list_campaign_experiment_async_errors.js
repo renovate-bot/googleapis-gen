@@ -45,7 +45,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignExperimentServiceClient();
 
-  async function listCampaignExperimentAsyncErrors() {
+  async function callListCampaignExperimentAsyncErrors() {
     // Construct request
     const request = {
       resourceName,
@@ -58,7 +58,7 @@ function main(resourceName) {
     }
   }
 
-  listCampaignExperimentAsyncErrors();
+  callListCampaignExperimentAsyncErrors();
   // [END googleads_v7_generated_CampaignExperimentService_ListCampaignExperimentAsyncErrors_async]
 }
 

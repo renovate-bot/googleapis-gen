@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlBackupRunsServiceClient();
 
-  async function delete() {
+  async function callDelete() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  delete();
+  callDelete();
   // [END sqladmin_v1beta4_generated_SqlBackupRunsService_Delete_async]
 }
 

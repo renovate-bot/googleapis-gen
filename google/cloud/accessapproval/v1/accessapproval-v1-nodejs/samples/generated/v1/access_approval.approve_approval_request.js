@@ -27,7 +27,7 @@ function main() {
   /**
    *  The expiration time of this approval.
    */
-  // const expireTime = ''
+  // const expireTime = {}
 
   // Imports the Accessapproval library
   const {AccessApprovalClient} = require('@google-cloud/access-approval').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const accessapprovalClient = new AccessApprovalClient();
 
-  async function approveApprovalRequest() {
+  async function callApproveApprovalRequest() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  approveApprovalRequest();
+  callApproveApprovalRequest();
   // [END accessapproval_v1_generated_AccessApproval_ApproveApprovalRequest_async]
 }
 

@@ -287,26 +287,6 @@ export class HomeGraphApiServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  requestSyncDevices(
-      request?: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.graph.v1.IRequestSyncDevicesResponse,
-        protos.google.home.graph.v1.IRequestSyncDevicesRequest|undefined, {}|undefined
-      ]>;
-  requestSyncDevices(
-      request: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.home.graph.v1.IRequestSyncDevicesResponse,
-          protos.google.home.graph.v1.IRequestSyncDevicesRequest|null|undefined,
-          {}|null|undefined>): void;
-  requestSyncDevices(
-      request: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
-      callback: Callback<
-          protos.google.home.graph.v1.IRequestSyncDevicesResponse,
-          protos.google.home.graph.v1.IRequestSyncDevicesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Requests Google to send an `action.devices.SYNC`
  * [intent](https://developers.google.com/assistant/smarthome/reference/intent/sync)
@@ -334,9 +314,29 @@ export class HomeGraphApiServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.requestSyncDevices(request);
+ * @example <caption>include:samples/generated/v1/home_graph_api_service.request_sync_devices.js</caption>
+ * region_tag:homegraph_v1_generated_HomeGraphApiService_RequestSyncDevices_async
  */
+  requestSyncDevices(
+      request?: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.graph.v1.IRequestSyncDevicesResponse,
+        protos.google.home.graph.v1.IRequestSyncDevicesRequest|undefined, {}|undefined
+      ]>;
+  requestSyncDevices(
+      request: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.home.graph.v1.IRequestSyncDevicesResponse,
+          protos.google.home.graph.v1.IRequestSyncDevicesRequest|null|undefined,
+          {}|null|undefined>): void;
+  requestSyncDevices(
+      request: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
+      callback: Callback<
+          protos.google.home.graph.v1.IRequestSyncDevicesResponse,
+          protos.google.home.graph.v1.IRequestSyncDevicesRequest|null|undefined,
+          {}|null|undefined>): void;
   requestSyncDevices(
       request?: protos.google.home.graph.v1.IRequestSyncDevicesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -361,29 +361,11 @@ export class HomeGraphApiServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.requestSyncDevices(request, options, callback);
   }
-  reportStateAndNotification(
-      request?: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.graph.v1.IReportStateAndNotificationResponse,
-        protos.google.home.graph.v1.IReportStateAndNotificationRequest|undefined, {}|undefined
-      ]>;
-  reportStateAndNotification(
-      request: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.home.graph.v1.IReportStateAndNotificationResponse,
-          protos.google.home.graph.v1.IReportStateAndNotificationRequest|null|undefined,
-          {}|null|undefined>): void;
-  reportStateAndNotification(
-      request: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
-      callback: Callback<
-          protos.google.home.graph.v1.IReportStateAndNotificationResponse,
-          protos.google.home.graph.v1.IReportStateAndNotificationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reports device state and optionally sends device notifications.
  * Called by your smart home Action when the state of a third-party device
@@ -426,9 +408,29 @@ export class HomeGraphApiServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.reportStateAndNotification(request);
+ * @example <caption>include:samples/generated/v1/home_graph_api_service.report_state_and_notification.js</caption>
+ * region_tag:homegraph_v1_generated_HomeGraphApiService_ReportStateAndNotification_async
  */
+  reportStateAndNotification(
+      request?: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.graph.v1.IReportStateAndNotificationResponse,
+        protos.google.home.graph.v1.IReportStateAndNotificationRequest|undefined, {}|undefined
+      ]>;
+  reportStateAndNotification(
+      request: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.home.graph.v1.IReportStateAndNotificationResponse,
+          protos.google.home.graph.v1.IReportStateAndNotificationRequest|null|undefined,
+          {}|null|undefined>): void;
+  reportStateAndNotification(
+      request: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
+      callback: Callback<
+          protos.google.home.graph.v1.IReportStateAndNotificationResponse,
+          protos.google.home.graph.v1.IReportStateAndNotificationRequest|null|undefined,
+          {}|null|undefined>): void;
   reportStateAndNotification(
       request?: protos.google.home.graph.v1.IReportStateAndNotificationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -453,29 +455,11 @@ export class HomeGraphApiServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.reportStateAndNotification(request, options, callback);
   }
-  deleteAgentUser(
-      request?: protos.google.home.graph.v1.IDeleteAgentUserRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.home.graph.v1.IDeleteAgentUserRequest|undefined, {}|undefined
-      ]>;
-  deleteAgentUser(
-      request: protos.google.home.graph.v1.IDeleteAgentUserRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.home.graph.v1.IDeleteAgentUserRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteAgentUser(
-      request: protos.google.home.graph.v1.IDeleteAgentUserRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.home.graph.v1.IDeleteAgentUserRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Unlinks the given third-party user from your smart home Action.
  * All data related to this user will be deleted.
@@ -503,9 +487,29 @@ export class HomeGraphApiServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteAgentUser(request);
+ * @example <caption>include:samples/generated/v1/home_graph_api_service.delete_agent_user.js</caption>
+ * region_tag:homegraph_v1_generated_HomeGraphApiService_DeleteAgentUser_async
  */
+  deleteAgentUser(
+      request?: protos.google.home.graph.v1.IDeleteAgentUserRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.home.graph.v1.IDeleteAgentUserRequest|undefined, {}|undefined
+      ]>;
+  deleteAgentUser(
+      request: protos.google.home.graph.v1.IDeleteAgentUserRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.home.graph.v1.IDeleteAgentUserRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteAgentUser(
+      request: protos.google.home.graph.v1.IDeleteAgentUserRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.home.graph.v1.IDeleteAgentUserRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteAgentUser(
       request?: protos.google.home.graph.v1.IDeleteAgentUserRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -540,26 +544,6 @@ export class HomeGraphApiServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteAgentUser(request, options, callback);
   }
-  query(
-      request?: protos.google.home.graph.v1.IQueryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.graph.v1.IQueryResponse,
-        protos.google.home.graph.v1.IQueryRequest|undefined, {}|undefined
-      ]>;
-  query(
-      request: protos.google.home.graph.v1.IQueryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.home.graph.v1.IQueryResponse,
-          protos.google.home.graph.v1.IQueryRequest|null|undefined,
-          {}|null|undefined>): void;
-  query(
-      request: protos.google.home.graph.v1.IQueryRequest,
-      callback: Callback<
-          protos.google.home.graph.v1.IQueryResponse,
-          protos.google.home.graph.v1.IQueryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the current states in Home Graph for the given set of the third-party
  * user's devices.
@@ -585,9 +569,29 @@ export class HomeGraphApiServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.query(request);
+ * @example <caption>include:samples/generated/v1/home_graph_api_service.query.js</caption>
+ * region_tag:homegraph_v1_generated_HomeGraphApiService_Query_async
  */
+  query(
+      request?: protos.google.home.graph.v1.IQueryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.graph.v1.IQueryResponse,
+        protos.google.home.graph.v1.IQueryRequest|undefined, {}|undefined
+      ]>;
+  query(
+      request: protos.google.home.graph.v1.IQueryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.home.graph.v1.IQueryResponse,
+          protos.google.home.graph.v1.IQueryRequest|null|undefined,
+          {}|null|undefined>): void;
+  query(
+      request: protos.google.home.graph.v1.IQueryRequest,
+      callback: Callback<
+          protos.google.home.graph.v1.IQueryResponse,
+          protos.google.home.graph.v1.IQueryRequest|null|undefined,
+          {}|null|undefined>): void;
   query(
       request?: protos.google.home.graph.v1.IQueryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -612,29 +616,11 @@ export class HomeGraphApiServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.query(request, options, callback);
   }
-  sync(
-      request?: protos.google.home.graph.v1.ISyncRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.home.graph.v1.ISyncResponse,
-        protos.google.home.graph.v1.ISyncRequest|undefined, {}|undefined
-      ]>;
-  sync(
-      request: protos.google.home.graph.v1.ISyncRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.home.graph.v1.ISyncResponse,
-          protos.google.home.graph.v1.ISyncRequest|null|undefined,
-          {}|null|undefined>): void;
-  sync(
-      request: protos.google.home.graph.v1.ISyncRequest,
-      callback: Callback<
-          protos.google.home.graph.v1.ISyncResponse,
-          protos.google.home.graph.v1.ISyncRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets all the devices associated with the given third-party user.
  *
@@ -656,9 +642,29 @@ export class HomeGraphApiServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.sync(request);
+ * @example <caption>include:samples/generated/v1/home_graph_api_service.sync.js</caption>
+ * region_tag:homegraph_v1_generated_HomeGraphApiService_Sync_async
  */
+  sync(
+      request?: protos.google.home.graph.v1.ISyncRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.home.graph.v1.ISyncResponse,
+        protos.google.home.graph.v1.ISyncRequest|undefined, {}|undefined
+      ]>;
+  sync(
+      request: protos.google.home.graph.v1.ISyncRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.home.graph.v1.ISyncResponse,
+          protos.google.home.graph.v1.ISyncRequest|null|undefined,
+          {}|null|undefined>): void;
+  sync(
+      request: protos.google.home.graph.v1.ISyncRequest,
+      callback: Callback<
+          protos.google.home.graph.v1.ISyncResponse,
+          protos.google.home.graph.v1.ISyncRequest|null|undefined,
+          {}|null|undefined>): void;
   sync(
       request?: protos.google.home.graph.v1.ISyncRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -683,6 +689,8 @@ export class HomeGraphApiServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.sync(request, options, callback);
   }

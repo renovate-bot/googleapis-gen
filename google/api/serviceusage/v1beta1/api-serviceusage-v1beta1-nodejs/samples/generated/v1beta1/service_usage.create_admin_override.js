@@ -30,7 +30,7 @@ function main() {
   /**
    *  The admin override to create.
    */
-  // const override = ''
+  // const override = {}
   /**
    *  Whether to force the creation of the quota override.
    *  Setting the force parameter to 'true' ignores all quota safety checks that
@@ -51,7 +51,7 @@ function main() {
   // Instantiates a client
   const serviceusageClient = new ServiceUsageClient();
 
-  async function createAdminOverride() {
+  async function callCreateAdminOverride() {
     // Construct request
     const request = {
     };
@@ -62,7 +62,7 @@ function main() {
     console.log(response);
   }
 
-  createAdminOverride();
+  callCreateAdminOverride();
   // [END serviceusage_v1beta1_generated_ServiceUsage_CreateAdminOverride_async]
 }
 

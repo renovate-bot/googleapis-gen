@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function getMembership() {
+  async function callGetMembership() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getMembership();
+  callGetMembership();
   // [END gkehub_v1_generated_GkeHub_GetMembership_async]
 }
 

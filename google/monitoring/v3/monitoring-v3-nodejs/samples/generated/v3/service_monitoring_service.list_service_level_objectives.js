@@ -48,7 +48,7 @@ function main(parent) {
    *  `ServiceLevelObjective` is defined in terms of a `BasicSli`, replace the
    *  `BasicSli` with a `RequestBasedSli` spelling out how the SLI is computed.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Monitoring library
   const {ServiceMonitoringServiceClient} = require('@google-cloud/monitoring').v3;
@@ -56,7 +56,7 @@ function main(parent) {
   // Instantiates a client
   const monitoringClient = new ServiceMonitoringServiceClient();
 
-  async function listServiceLevelObjectives() {
+  async function callListServiceLevelObjectives() {
     // Construct request
     const request = {
       parent,
@@ -69,7 +69,7 @@ function main(parent) {
     }
   }
 
-  listServiceLevelObjectives();
+  callListServiceLevelObjectives();
   // [END monitoring_v3_generated_ServiceMonitoringService_ListServiceLevelObjectives_async]
 }
 

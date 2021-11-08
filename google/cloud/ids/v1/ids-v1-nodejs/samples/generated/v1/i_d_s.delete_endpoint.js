@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const idsClient = new IDSClient();
 
-  async function deleteEndpoint() {
+  async function callDeleteEndpoint() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteEndpoint();
+  callDeleteEndpoint();
   // [END ids_v1_generated_IDS_DeleteEndpoint_async]
 }
 

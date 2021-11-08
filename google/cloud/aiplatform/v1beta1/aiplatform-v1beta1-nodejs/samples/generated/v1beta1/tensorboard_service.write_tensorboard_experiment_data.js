@@ -37,7 +37,7 @@ function main(tensorboardExperiment, writeRunDataRequests) {
   // Instantiates a client
   const aiplatformClient = new TensorboardServiceClient();
 
-  async function writeTensorboardExperimentData() {
+  async function callWriteTensorboardExperimentData() {
     // Construct request
     const request = {
       tensorboardExperiment,
@@ -49,7 +49,7 @@ function main(tensorboardExperiment, writeRunDataRequests) {
     console.log(response);
   }
 
-  writeTensorboardExperimentData();
+  callWriteTensorboardExperimentData();
   // [END aiplatform_v1beta1_generated_TensorboardService_WriteTensorboardExperimentData_async]
 }
 

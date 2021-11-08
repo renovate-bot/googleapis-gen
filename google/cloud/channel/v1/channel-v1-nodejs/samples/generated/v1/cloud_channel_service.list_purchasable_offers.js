@@ -23,11 +23,11 @@ function main(customer) {
   /**
    *  List Offers for CreateEntitlement purchase.
    */
-  // const createEntitlementPurchase = ''
+  // const createEntitlementPurchase = {}
   /**
    *  List Offers for ChangeOffer purchase.
    */
-  // const changeOfferPurchase = ''
+  // const changeOfferPurchase = {}
   /**
    *  Required. The resource name of the customer to list Offers for.
    *  Format: accounts/{account_id}/customers/{customer_id}.
@@ -56,7 +56,7 @@ function main(customer) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function listPurchasableOffers() {
+  async function callListPurchasableOffers() {
     // Construct request
     const request = {
       customer,
@@ -69,7 +69,7 @@ function main(customer) {
     }
   }
 
-  listPurchasableOffers();
+  callListPurchasableOffers();
   // [END cloudchannel_v1_generated_CloudChannelService_ListPurchasableOffers_async]
 }
 

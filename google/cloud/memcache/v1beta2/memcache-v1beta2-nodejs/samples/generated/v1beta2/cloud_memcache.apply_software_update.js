@@ -43,7 +43,7 @@ function main(instance) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function applySoftwareUpdate() {
+  async function callApplySoftwareUpdate() {
     // Construct request
     const request = {
       instance,
@@ -55,7 +55,7 @@ function main(instance) {
     console.log(response);
   }
 
-  applySoftwareUpdate();
+  callApplySoftwareUpdate();
   // [END memcache_v1beta2_generated_CloudMemcache_ApplySoftwareUpdate_async]
 }
 

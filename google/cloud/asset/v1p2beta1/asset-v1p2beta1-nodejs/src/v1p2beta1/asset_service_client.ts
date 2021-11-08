@@ -289,26 +289,6 @@ export class AssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createFeed(
-      request?: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1p2beta1.IFeed,
-        protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest|undefined, {}|undefined
-      ]>;
-  createFeed(
-      request: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1p2beta1.IFeed,
-          protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  createFeed(
-      request: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1p2beta1.IFeed,
-          protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a feed in a parent project/folder/organization to listen to its
  * asset updates.
@@ -337,9 +317,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createFeed(request);
+ * @example <caption>include:samples/generated/v1p2beta1/asset_service.create_feed.js</caption>
+ * region_tag:cloudasset_v1p2beta1_generated_AssetService_CreateFeed_async
  */
+  createFeed(
+      request?: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1p2beta1.IFeed,
+        protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest|undefined, {}|undefined
+      ]>;
+  createFeed(
+      request: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1p2beta1.IFeed,
+          protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  createFeed(
+      request: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1p2beta1.IFeed,
+          protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   createFeed(
       request?: protos.google.cloud.asset.v1p2beta1.ICreateFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -374,6 +374,26 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.createFeed(request, options, callback);
   }
+/**
+ * Gets details about an asset feed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Feed and it must be in the format of:
+ *   projects/project_number/feeds/feed_id
+ *   folders/folder_number/feeds/feed_id
+ *   organizations/organization_number/feeds/feed_id
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Feed]{@link google.cloud.asset.v1p2beta1.Feed}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1p2beta1/asset_service.get_feed.js</caption>
+ * region_tag:cloudasset_v1p2beta1_generated_AssetService_GetFeed_async
+ */
   getFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IGetFeedRequest,
       options?: CallOptions):
@@ -394,26 +414,6 @@ export class AssetServiceClient {
           protos.google.cloud.asset.v1p2beta1.IFeed,
           protos.google.cloud.asset.v1p2beta1.IGetFeedRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details about an asset feed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Feed and it must be in the format of:
- *   projects/project_number/feeds/feed_id
- *   folders/folder_number/feeds/feed_id
- *   organizations/organization_number/feeds/feed_id
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Feed]{@link google.cloud.asset.v1p2beta1.Feed}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getFeed(request);
- */
   getFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IGetFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -448,6 +448,25 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeed(request, options, callback);
   }
+/**
+ * Lists all asset feeds in a parent project/folder/organization.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent project/folder/organization whose feeds are to be
+ *   listed. It can only be using project/folder/organization number (such as
+ *   "folders/12345")", or a project ID (such as "projects/my-project-id").
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListFeedsResponse]{@link google.cloud.asset.v1p2beta1.ListFeedsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1p2beta1/asset_service.list_feeds.js</caption>
+ * region_tag:cloudasset_v1p2beta1_generated_AssetService_ListFeeds_async
+ */
   listFeeds(
       request?: protos.google.cloud.asset.v1p2beta1.IListFeedsRequest,
       options?: CallOptions):
@@ -468,25 +487,6 @@ export class AssetServiceClient {
           protos.google.cloud.asset.v1p2beta1.IListFeedsResponse,
           protos.google.cloud.asset.v1p2beta1.IListFeedsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists all asset feeds in a parent project/folder/organization.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent project/folder/organization whose feeds are to be
- *   listed. It can only be using project/folder/organization number (such as
- *   "folders/12345")", or a project ID (such as "projects/my-project-id").
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListFeedsResponse]{@link google.cloud.asset.v1p2beta1.ListFeedsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listFeeds(request);
- */
   listFeeds(
       request?: protos.google.cloud.asset.v1p2beta1.IListFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -521,26 +521,6 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.listFeeds(request, options, callback);
   }
-  updateFeed(
-      request?: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1p2beta1.IFeed,
-        protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest|undefined, {}|undefined
-      ]>;
-  updateFeed(
-      request: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1p2beta1.IFeed,
-          protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateFeed(
-      request: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1p2beta1.IFeed,
-          protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an asset feed configuration.
  *
@@ -563,9 +543,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateFeed(request);
+ * @example <caption>include:samples/generated/v1p2beta1/asset_service.update_feed.js</caption>
+ * region_tag:cloudasset_v1p2beta1_generated_AssetService_UpdateFeed_async
  */
+  updateFeed(
+      request?: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1p2beta1.IFeed,
+        protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest|undefined, {}|undefined
+      ]>;
+  updateFeed(
+      request: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1p2beta1.IFeed,
+          protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateFeed(
+      request: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1p2beta1.IFeed,
+          protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   updateFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IUpdateFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -600,6 +600,26 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.updateFeed(request, options, callback);
   }
+/**
+ * Deletes an asset feed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the feed and it must be in the format of:
+ *   projects/project_number/feeds/feed_id
+ *   folders/folder_number/feeds/feed_id
+ *   organizations/organization_number/feeds/feed_id
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1p2beta1/asset_service.delete_feed.js</caption>
+ * region_tag:cloudasset_v1p2beta1_generated_AssetService_DeleteFeed_async
+ */
   deleteFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IDeleteFeedRequest,
       options?: CallOptions):
@@ -620,26 +640,6 @@ export class AssetServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.asset.v1p2beta1.IDeleteFeedRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an asset feed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the feed and it must be in the format of:
- *   projects/project_number/feeds/feed_id
- *   folders/folder_number/feeds/feed_id
- *   organizations/organization_number/feeds/feed_id
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteFeed(request);
- */
   deleteFeed(
       request?: protos.google.cloud.asset.v1p2beta1.IDeleteFeedRequest,
       optionsOrCallback?: CallOptions|Callback<

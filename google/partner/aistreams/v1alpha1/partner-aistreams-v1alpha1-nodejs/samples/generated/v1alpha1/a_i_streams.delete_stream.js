@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function deleteStream() {
+  async function callDeleteStream() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteStream();
+  callDeleteStream();
   // [END aistreams_v1alpha1_generated_AIStreams_DeleteStream_async]
 }
 

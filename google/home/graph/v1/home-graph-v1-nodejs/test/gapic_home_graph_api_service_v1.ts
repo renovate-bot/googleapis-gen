@@ -126,7 +126,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesResponse());
             client.innerApiCalls.requestSyncDevices = stubSimpleCall(expectedResponse);
             const [response] = await client.requestSyncDevices(request);
@@ -142,7 +142,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesResponse());
             client.innerApiCalls.requestSyncDevices = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.requestSyncDevices = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.requestSyncDevices(request), expectedError);
@@ -186,7 +186,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationResponse());
             client.innerApiCalls.reportStateAndNotification = stubSimpleCall(expectedResponse);
             const [response] = await client.reportStateAndNotification(request);
@@ -202,7 +202,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationResponse());
             client.innerApiCalls.reportStateAndNotification = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.reportStateAndNotification = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.reportStateAndNotification(request), expectedError);
@@ -330,7 +330,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.QueryRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.QueryResponse());
             client.innerApiCalls.query = stubSimpleCall(expectedResponse);
             const [response] = await client.query(request);
@@ -346,7 +346,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.QueryRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.QueryResponse());
             client.innerApiCalls.query = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -373,7 +373,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.QueryRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.query = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.query(request), expectedError);
@@ -390,7 +390,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.SyncRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.SyncResponse());
             client.innerApiCalls.sync = stubSimpleCall(expectedResponse);
             const [response] = await client.sync(request);
@@ -406,7 +406,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.SyncRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.home.graph.v1.SyncResponse());
             client.innerApiCalls.sync = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -433,7 +433,7 @@ describe('v1.HomeGraphApiServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.SyncRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.sync = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.sync(request), expectedError);

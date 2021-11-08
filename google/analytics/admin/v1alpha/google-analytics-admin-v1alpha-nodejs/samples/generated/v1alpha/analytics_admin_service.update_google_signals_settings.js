@@ -24,13 +24,13 @@ function main(googleSignalsSettings, updateMask) {
    *  Required. The settings to update.
    *  The `name` field is used to identify the settings to be updated.
    */
-  // const googleSignalsSettings = ''
+  // const googleSignalsSettings = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(googleSignalsSettings, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateGoogleSignalsSettings() {
+  async function callUpdateGoogleSignalsSettings() {
     // Construct request
     const request = {
       googleSignalsSettings,
@@ -50,7 +50,7 @@ function main(googleSignalsSettings, updateMask) {
     console.log(response);
   }
 
-  updateGoogleSignalsSettings();
+  callUpdateGoogleSignalsSettings();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateGoogleSignalsSettings_async]
 }
 

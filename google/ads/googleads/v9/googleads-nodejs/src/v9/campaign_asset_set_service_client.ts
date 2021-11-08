@@ -727,26 +727,6 @@ export class CampaignAssetSetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateCampaignAssetSets(
-      request?: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignAssetSets(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignAssetSets(
-      request: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes campaign asset sets. Operation statuses are
  * returned.
@@ -775,9 +755,29 @@ export class CampaignAssetSetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignAssetSets(request);
+ * @example <caption>include:samples/generated/v9/campaign_asset_set_service.mutate_campaign_asset_sets.js</caption>
+ * region_tag:googleads_v9_generated_CampaignAssetSetService_MutateCampaignAssetSets_async
  */
+  mutateCampaignAssetSets(
+      request?: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignAssetSets(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignAssetSets(
+      request: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignAssetSets(
       request?: protos.google.ads.googleads.v9.services.IMutateCampaignAssetSetsRequest,
       optionsOrCallback?: CallOptions|Callback<

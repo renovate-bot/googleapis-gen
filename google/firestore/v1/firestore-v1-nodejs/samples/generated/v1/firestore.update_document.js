@@ -24,7 +24,7 @@ function main(document) {
    *  Required. The updated document.
    *  Creates the document if it does not already exist.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  The fields to update.
    *  None of the field paths in the mask may contain a reserved name.
@@ -33,18 +33,18 @@ function main(document) {
    *  Fields referenced in the mask, but not present in the input document, are
    *  deleted from the document on the server.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  The fields to return. If not set, returns all fields.
    *  If the document has a field that is not present in this mask, that field
    *  will not be returned in the response.
    */
-  // const mask = ''
+  // const mask = {}
   /**
    *  An optional precondition on the document.
    *  The request will fail if this is set and not met by the target document.
    */
-  // const currentDocument = ''
+  // const currentDocument = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('@google-cloud/firestore').v1;
@@ -52,7 +52,7 @@ function main(document) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function updateDocument() {
+  async function callUpdateDocument() {
     // Construct request
     const request = {
       document,
@@ -63,7 +63,7 @@ function main(document) {
     console.log(response);
   }
 
-  updateDocument();
+  callUpdateDocument();
   // [END firestore_v1_generated_Firestore_UpdateDocument_async]
 }
 

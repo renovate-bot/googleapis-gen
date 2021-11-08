@@ -50,7 +50,7 @@ function main(customerId, conversions, partialFailure) {
   // Instantiates a client
   const googleadsClient = new ConversionUploadServiceClient();
 
-  async function uploadCallConversions() {
+  async function callUploadCallConversions() {
     // Construct request
     const request = {
       customerId,
@@ -63,7 +63,7 @@ function main(customerId, conversions, partialFailure) {
     console.log(response);
   }
 
-  uploadCallConversions();
+  callUploadCallConversions();
   // [END googleads_v8_generated_ConversionUploadService_UploadCallConversions_async]
 }
 

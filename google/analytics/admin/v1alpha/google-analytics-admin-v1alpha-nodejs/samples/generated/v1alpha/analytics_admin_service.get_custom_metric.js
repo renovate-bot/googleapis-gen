@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function getCustomMetric() {
+  async function callGetCustomMetric() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getCustomMetric();
+  callGetCustomMetric();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetCustomMetric_async]
 }
 

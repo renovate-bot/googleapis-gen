@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const vpcaccessClient = new VpcAccessServiceClient();
 
-  async function deleteConnector() {
+  async function callDeleteConnector() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteConnector();
+  callDeleteConnector();
   // [END vpcaccess_v1_generated_VpcAccessService_DeleteConnector_async]
 }
 

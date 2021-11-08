@@ -42,7 +42,7 @@ function main(parent, intendedMembership) {
   // Instantiates a client
   const gkehubClient = new GkeHubMembershipServiceClient();
 
-  async function validateExclusivity() {
+  async function callValidateExclusivity() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, intendedMembership) {
     console.log(response);
   }
 
-  validateExclusivity();
+  callValidateExclusivity();
   // [END gkehub_v1beta1_generated_GkeHubMembershipService_ValidateExclusivity_async]
 }
 

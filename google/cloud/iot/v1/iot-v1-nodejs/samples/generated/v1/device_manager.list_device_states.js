@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const iotClient = new DeviceManagerClient();
 
-  async function listDeviceStates() {
+  async function callListDeviceStates() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name) {
     console.log(response);
   }
 
-  listDeviceStates();
+  callListDeviceStates();
   // [END cloudiot_v1_generated_DeviceManager_ListDeviceStates_async]
 }
 

@@ -39,7 +39,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -52,7 +52,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new FeedItemTargetServiceClient();
 
-  async function mutateFeedItemTargets() {
+  async function callMutateFeedItemTargets() {
     // Construct request
     const request = {
       customerId,
@@ -64,7 +64,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateFeedItemTargets();
+  callMutateFeedItemTargets();
   // [END googleads_v7_generated_FeedItemTargetService_MutateFeedItemTargets_async]
 }
 

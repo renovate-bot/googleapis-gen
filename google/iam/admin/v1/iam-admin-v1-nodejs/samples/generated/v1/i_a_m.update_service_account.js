@@ -59,10 +59,6 @@ function main(projectId, uniqueId, email, oauth2ClientId, disabled) {
    */
   // const displayName = 'abc123'
   /**
-   *  Deprecated. Do not use.
-   */
-  // const etag = 'Buffer.from('string')'
-  /**
    *  Optional. A user-specified, human-readable description of the service account. The
    *  maximum length is 256 UTF-8 bytes.
    */
@@ -82,7 +78,7 @@ function main(projectId, uniqueId, email, oauth2ClientId, disabled) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function updateServiceAccount() {
+  async function callUpdateServiceAccount() {
     // Construct request
     const request = {
       projectId,
@@ -97,7 +93,7 @@ function main(projectId, uniqueId, email, oauth2ClientId, disabled) {
     console.log(response);
   }
 
-  updateServiceAccount();
+  callUpdateServiceAccount();
   // [END iam_v1_generated_IAM_UpdateServiceAccount_async]
 }
 

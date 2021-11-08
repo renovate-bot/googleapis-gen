@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const domainsClient = new DomainsClient();
 
-  async function exportRegistration() {
+  async function callExportRegistration() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  exportRegistration();
+  callExportRegistration();
   // [END domains_v1alpha2_generated_Domains_ExportRegistration_async]
 }
 

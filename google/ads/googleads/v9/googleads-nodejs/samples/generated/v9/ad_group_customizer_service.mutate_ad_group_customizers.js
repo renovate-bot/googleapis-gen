@@ -44,7 +44,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {AdGroupCustomizerServiceClient} = require('google-ads').v9;
@@ -52,7 +52,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new AdGroupCustomizerServiceClient();
 
-  async function mutateAdGroupCustomizers() {
+  async function callMutateAdGroupCustomizers() {
     // Construct request
     const request = {
       customerId,
@@ -64,7 +64,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateAdGroupCustomizers();
+  callMutateAdGroupCustomizers();
   // [END googleads_v9_generated_AdGroupCustomizerService_MutateAdGroupCustomizers_async]
 }
 

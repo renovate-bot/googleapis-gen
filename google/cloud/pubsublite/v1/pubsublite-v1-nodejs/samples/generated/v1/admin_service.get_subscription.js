@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function getSubscription() {
+  async function callGetSubscription() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSubscription();
+  callGetSubscription();
   // [END pubsublite_v1_generated_AdminService_GetSubscription_async]
 }
 

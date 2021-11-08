@@ -646,26 +646,6 @@ export class AdGroupLabelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupLabel(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroupLabel,
-        protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupLabel(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupLabel,
-          protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupLabel(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupLabel,
-          protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group label in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupLabel(request);
+ * @example <caption>include:samples/generated/v7/ad_group_label_service.get_ad_group_label.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupLabelService_GetAdGroupLabel_async
  */
+  getAdGroupLabel(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroupLabel,
+        protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupLabel(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupLabel,
+          protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupLabel(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupLabel,
+          protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupLabel(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class AdGroupLabelServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdGroupLabel(request, options, callback);
   }
-  mutateAdGroupLabels(
-      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsResponse,
-        protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates and removes ad group labels.
  * Operation statuses are returned.
@@ -783,9 +763,29 @@ export class AdGroupLabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupLabels(request);
+ * @example <caption>include:samples/generated/v7/ad_group_label_service.mutate_ad_group_labels.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupLabelService_MutateAdGroupLabels_async
  */
+  mutateAdGroupLabels(
+      request?: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsResponse,
+        protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupLabels(
       request?: protos.google.ads.googleads.v7.services.IMutateAdGroupLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<

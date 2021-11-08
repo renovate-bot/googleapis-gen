@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignSharedSetServiceClient();
 
-  async function getCampaignSharedSet() {
+  async function callGetCampaignSharedSet() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCampaignSharedSet();
+  callGetCampaignSharedSet();
   // [END googleads_v8_generated_CampaignSharedSetService_GetCampaignSharedSet_async]
 }
 

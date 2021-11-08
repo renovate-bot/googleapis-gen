@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const resourcemanagerClient = new TagValuesClient();
 
-  async function getTagValue() {
+  async function callGetTagValue() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTagValue();
+  callGetTagValue();
   // [END cloudresourcemanager_v3_generated_TagValues_GetTagValue_async]
 }
 

@@ -31,7 +31,7 @@ function main(resource, policy) {
    *  valid policy but certain Cloud Platform services (such as Projects)
    *  might reject them.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Securitycenter library
   const {SecurityCenterClient} = require('@google-cloud/security-center').v1;
@@ -39,7 +39,7 @@ function main(resource, policy) {
   // Instantiates a client
   const securitycenterClient = new SecurityCenterClient();
 
-  async function setIamPolicy() {
+  async function callSetIamPolicy() {
     // Construct request
     const request = {
       resource,
@@ -51,7 +51,7 @@ function main(resource, policy) {
     console.log(response);
   }
 
-  setIamPolicy();
+  callSetIamPolicy();
   // [END securitycenter_v1_generated_SecurityCenter_SetIamPolicy_async]
 }
 

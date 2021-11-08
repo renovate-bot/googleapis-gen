@@ -39,7 +39,7 @@ function main(contacts, resource, notificationCategory) {
    *  Required. The notification category to send the test message for. All
    *  contacts must be subscribed to this category.
    */
-  // const notificationCategory = ''
+  // const notificationCategory = {}
 
   // Imports the Essentialcontacts library
   const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
@@ -47,7 +47,7 @@ function main(contacts, resource, notificationCategory) {
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function sendTestMessage() {
+  async function callSendTestMessage() {
     // Construct request
     const request = {
       contacts,
@@ -60,7 +60,7 @@ function main(contacts, resource, notificationCategory) {
     console.log(response);
   }
 
-  sendTestMessage();
+  callSendTestMessage();
   // [END essentialcontacts_v1_generated_EssentialContactsService_SendTestMessage_async]
 }
 

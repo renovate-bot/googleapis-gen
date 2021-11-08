@@ -646,26 +646,6 @@ export class ConversionAdjustmentUploadServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  uploadConversionAdjustments(
-      request?: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsResponse,
-        protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest|undefined, {}|undefined
-      ]>;
-  uploadConversionAdjustments(
-      request: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsResponse,
-          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest|null|undefined,
-          {}|null|undefined>): void;
-  uploadConversionAdjustments(
-      request: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsResponse,
-          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Processes the given conversion adjustments.
  *
@@ -702,9 +682,29 @@ export class ConversionAdjustmentUploadServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.uploadConversionAdjustments(request);
+ * @example <caption>include:samples/generated/v7/conversion_adjustment_upload_service.upload_conversion_adjustments.js</caption>
+ * region_tag:googleads_v7_generated_ConversionAdjustmentUploadService_UploadConversionAdjustments_async
  */
+  uploadConversionAdjustments(
+      request?: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsResponse,
+        protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest|undefined, {}|undefined
+      ]>;
+  uploadConversionAdjustments(
+      request: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsResponse,
+          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest|null|undefined,
+          {}|null|undefined>): void;
+  uploadConversionAdjustments(
+      request: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsResponse,
+          protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest|null|undefined,
+          {}|null|undefined>): void;
   uploadConversionAdjustments(
       request?: protos.google.ads.googleads.v7.services.IUploadConversionAdjustmentsRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -52,7 +52,7 @@ function main() {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function listFindings() {
+  async function callListFindings() {
     // Construct request
     const request = {
     };
@@ -64,7 +64,7 @@ function main() {
     }
   }
 
-  listFindings();
+  callListFindings();
   // [END websecurityscanner_v1_generated_WebSecurityScanner_ListFindings_async]
 }
 

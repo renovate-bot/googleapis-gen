@@ -49,7 +49,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new AdGroupExtensionSettingServiceClient();
 
-  async function mutateAdGroupExtensionSettings() {
+  async function callMutateAdGroupExtensionSettings() {
     // Construct request
     const request = {
       customerId,
@@ -61,7 +61,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateAdGroupExtensionSettings();
+  callMutateAdGroupExtensionSettings();
   // [END googleads_v9_generated_AdGroupExtensionSettingService_MutateAdGroupExtensionSettings_async]
 }
 

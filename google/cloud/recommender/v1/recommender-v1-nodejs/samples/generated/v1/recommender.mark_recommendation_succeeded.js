@@ -42,7 +42,7 @@ function main(name, etag) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function markRecommendationSucceeded() {
+  async function callMarkRecommendationSucceeded() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name, etag) {
     console.log(response);
   }
 
-  markRecommendationSucceeded();
+  callMarkRecommendationSucceeded();
   // [END recommender_v1_generated_Recommender_MarkRecommendationSucceeded_async]
 }
 

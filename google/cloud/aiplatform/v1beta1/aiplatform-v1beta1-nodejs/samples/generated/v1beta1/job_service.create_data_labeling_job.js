@@ -28,7 +28,7 @@ function main(parent, dataLabelingJob) {
   /**
    *  Required. The DataLabelingJob to create.
    */
-  // const dataLabelingJob = ''
+  // const dataLabelingJob = {}
 
   // Imports the Aiplatform library
   const {JobServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, dataLabelingJob) {
   // Instantiates a client
   const aiplatformClient = new JobServiceClient();
 
-  async function createDataLabelingJob() {
+  async function callCreateDataLabelingJob() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, dataLabelingJob) {
     console.log(response);
   }
 
-  createDataLabelingJob();
+  callCreateDataLabelingJob();
   // [END aiplatform_v1beta1_generated_JobService_CreateDataLabelingJob_async]
 }
 

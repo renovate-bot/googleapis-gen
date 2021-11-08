@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new FirewallClient();
 
-  async function listIngressRules() {
+  async function callListIngressRules() {
     // Construct request
     const request = {
     };
@@ -58,7 +58,7 @@ function main() {
     }
   }
 
-  listIngressRules();
+  callListIngressRules();
   // [END appengine_v1_generated_Firewall_ListIngressRules_async]
 }
 

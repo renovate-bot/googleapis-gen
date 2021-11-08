@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function uninstallDeployment() {
+  async function callUninstallDeployment() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  uninstallDeployment();
+  callUninstallDeployment();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_UninstallDeployment_async]
 }
 

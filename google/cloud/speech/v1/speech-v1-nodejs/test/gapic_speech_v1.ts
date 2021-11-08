@@ -153,7 +153,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.RecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.speech.v1.RecognizeResponse());
             client.innerApiCalls.recognize = stubSimpleCall(expectedResponse);
             const [response] = await client.recognize(request);
@@ -169,7 +169,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.RecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.speech.v1.RecognizeResponse());
             client.innerApiCalls.recognize = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -196,7 +196,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.RecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.recognize = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.recognize(request), expectedError);
@@ -213,7 +213,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.LongRunningRecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.longRunningRecognize = stubLongRunningCall(expectedResponse);
             const [operation] = await client.longRunningRecognize(request);
@@ -230,7 +230,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.LongRunningRecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.longRunningRecognize = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -260,7 +260,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.LongRunningRecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.longRunningRecognize = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.longRunningRecognize(request), expectedError);
@@ -275,7 +275,7 @@ describe('v1.SpeechClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1.LongRunningRecognizeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.longRunningRecognize = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.longRunningRecognize(request);

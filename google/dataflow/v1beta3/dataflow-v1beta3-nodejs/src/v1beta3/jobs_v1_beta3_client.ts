@@ -290,26 +290,6 @@ export class JobsV1Beta3Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  createJob(
-      request?: protos.google.dataflow.v1beta3.ICreateJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IJob,
-        protos.google.dataflow.v1beta3.ICreateJobRequest|undefined, {}|undefined
-      ]>;
-  createJob(
-      request: protos.google.dataflow.v1beta3.ICreateJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJob,
-          protos.google.dataflow.v1beta3.ICreateJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  createJob(
-      request: protos.google.dataflow.v1beta3.ICreateJobRequest,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJob,
-          protos.google.dataflow.v1beta3.ICreateJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a Cloud Dataflow job.
  *
@@ -340,9 +320,29 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createJob(request);
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.create_job.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_CreateJob_async
  */
+  createJob(
+      request?: protos.google.dataflow.v1beta3.ICreateJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IJob,
+        protos.google.dataflow.v1beta3.ICreateJobRequest|undefined, {}|undefined
+      ]>;
+  createJob(
+      request: protos.google.dataflow.v1beta3.ICreateJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJob,
+          protos.google.dataflow.v1beta3.ICreateJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  createJob(
+      request: protos.google.dataflow.v1beta3.ICreateJobRequest,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJob,
+          protos.google.dataflow.v1beta3.ICreateJobRequest|null|undefined,
+          {}|null|undefined>): void;
   createJob(
       request?: protos.google.dataflow.v1beta3.ICreateJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -367,29 +367,11 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createJob(request, options, callback);
   }
-  getJob(
-      request?: protos.google.dataflow.v1beta3.IGetJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IJob,
-        protos.google.dataflow.v1beta3.IGetJobRequest|undefined, {}|undefined
-      ]>;
-  getJob(
-      request: protos.google.dataflow.v1beta3.IGetJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJob,
-          protos.google.dataflow.v1beta3.IGetJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  getJob(
-      request: protos.google.dataflow.v1beta3.IGetJobRequest,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJob,
-          protos.google.dataflow.v1beta3.IGetJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the state of the specified Cloud Dataflow job.
  *
@@ -418,9 +400,29 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getJob(request);
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.get_job.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_GetJob_async
  */
+  getJob(
+      request?: protos.google.dataflow.v1beta3.IGetJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IJob,
+        protos.google.dataflow.v1beta3.IGetJobRequest|undefined, {}|undefined
+      ]>;
+  getJob(
+      request: protos.google.dataflow.v1beta3.IGetJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJob,
+          protos.google.dataflow.v1beta3.IGetJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  getJob(
+      request: protos.google.dataflow.v1beta3.IGetJobRequest,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJob,
+          protos.google.dataflow.v1beta3.IGetJobRequest|null|undefined,
+          {}|null|undefined>): void;
   getJob(
       request?: protos.google.dataflow.v1beta3.IGetJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -445,29 +447,11 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getJob(request, options, callback);
   }
-  updateJob(
-      request?: protos.google.dataflow.v1beta3.IUpdateJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IJob,
-        protos.google.dataflow.v1beta3.IUpdateJobRequest|undefined, {}|undefined
-      ]>;
-  updateJob(
-      request: protos.google.dataflow.v1beta3.IUpdateJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJob,
-          protos.google.dataflow.v1beta3.IUpdateJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateJob(
-      request: protos.google.dataflow.v1beta3.IUpdateJobRequest,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJob,
-          protos.google.dataflow.v1beta3.IUpdateJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the state of an existing Cloud Dataflow job.
  *
@@ -497,9 +481,29 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateJob(request);
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.update_job.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_UpdateJob_async
  */
+  updateJob(
+      request?: protos.google.dataflow.v1beta3.IUpdateJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IJob,
+        protos.google.dataflow.v1beta3.IUpdateJobRequest|undefined, {}|undefined
+      ]>;
+  updateJob(
+      request: protos.google.dataflow.v1beta3.IUpdateJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJob,
+          protos.google.dataflow.v1beta3.IUpdateJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateJob(
+      request: protos.google.dataflow.v1beta3.IUpdateJobRequest,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJob,
+          protos.google.dataflow.v1beta3.IUpdateJobRequest|null|undefined,
+          {}|null|undefined>): void;
   updateJob(
       request?: protos.google.dataflow.v1beta3.IUpdateJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -524,9 +528,28 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.updateJob(request, options, callback);
   }
+/**
+ * Check for existence of active jobs in the given project across all regions.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   The project which owns the jobs.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CheckActiveJobsResponse]{@link google.dataflow.v1beta3.CheckActiveJobsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.check_active_jobs.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_CheckActiveJobs_async
+ */
   checkActiveJobs(
       request?: protos.google.dataflow.v1beta3.ICheckActiveJobsRequest,
       options?: CallOptions):
@@ -547,23 +570,6 @@ export class JobsV1Beta3Client {
           protos.google.dataflow.v1beta3.ICheckActiveJobsResponse,
           protos.google.dataflow.v1beta3.ICheckActiveJobsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Check for existence of active jobs in the given project across all regions.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   The project which owns the jobs.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CheckActiveJobsResponse]{@link google.dataflow.v1beta3.CheckActiveJobsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.checkActiveJobs(request);
- */
   checkActiveJobs(
       request?: protos.google.dataflow.v1beta3.ICheckActiveJobsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -588,29 +594,11 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.checkActiveJobs(request, options, callback);
   }
-  snapshotJob(
-      request?: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.ISnapshot,
-        protos.google.dataflow.v1beta3.ISnapshotJobRequest|undefined, {}|undefined
-      ]>;
-  snapshotJob(
-      request: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.ISnapshot,
-          protos.google.dataflow.v1beta3.ISnapshotJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  snapshotJob(
-      request: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.ISnapshot,
-          protos.google.dataflow.v1beta3.ISnapshotJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Snapshot the state of a streaming job.
  *
@@ -635,9 +623,29 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.snapshotJob(request);
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.snapshot_job.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_SnapshotJob_async
  */
+  snapshotJob(
+      request?: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.ISnapshot,
+        protos.google.dataflow.v1beta3.ISnapshotJobRequest|undefined, {}|undefined
+      ]>;
+  snapshotJob(
+      request: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.ISnapshot,
+          protos.google.dataflow.v1beta3.ISnapshotJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  snapshotJob(
+      request: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.ISnapshot,
+          protos.google.dataflow.v1beta3.ISnapshotJobRequest|null|undefined,
+          {}|null|undefined>): void;
   snapshotJob(
       request?: protos.google.dataflow.v1beta3.ISnapshotJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -662,32 +670,13 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.snapshotJob(request, options, callback);
   }
 
-  listJobs(
-      request?: protos.google.dataflow.v1beta3.IListJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IJob[],
-        protos.google.dataflow.v1beta3.IListJobsRequest|null,
-        protos.google.dataflow.v1beta3.IListJobsResponse
-      ]>;
-  listJobs(
-      request: protos.google.dataflow.v1beta3.IListJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IListJobsRequest,
-          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
-          protos.google.dataflow.v1beta3.IJob>): void;
-  listJobs(
-      request: protos.google.dataflow.v1beta3.IListJobsRequest,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IListJobsRequest,
-          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
-          protos.google.dataflow.v1beta3.IJob>): void;
-/**
+ /**
  * List the jobs of a project.
  *
  * To list the jobs of a project in a region, we recommend using
@@ -732,6 +721,27 @@ export class JobsV1Beta3Client {
  */
   listJobs(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IJob[],
+        protos.google.dataflow.v1beta3.IListJobsRequest|null,
+        protos.google.dataflow.v1beta3.IListJobsResponse
+      ]>;
+  listJobs(
+      request: protos.google.dataflow.v1beta3.IListJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IListJobsRequest,
+          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
+          protos.google.dataflow.v1beta3.IJob>): void;
+  listJobs(
+      request: protos.google.dataflow.v1beta3.IListJobsRequest,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IListJobsRequest,
+          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
+          protos.google.dataflow.v1beta3.IJob>): void;
+  listJobs(
+      request?: protos.google.dataflow.v1beta3.IListJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.dataflow.v1beta3.IListJobsRequest,
           protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
@@ -755,6 +765,8 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listJobs(request, options, callback);
   }
@@ -799,6 +811,8 @@ export class JobsV1Beta3Client {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -843,11 +857,8 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.list_jobs.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_ListJobs_async
  */
   listJobsAsync(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -855,7 +866,8 @@ export class JobsV1Beta3Client {
     AsyncIterable<protos.google.dataflow.v1beta3.IJob>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -865,28 +877,7 @@ export class JobsV1Beta3Client {
       callSettings
     ) as AsyncIterable<protos.google.dataflow.v1beta3.IJob>;
   }
-  aggregatedListJobs(
-      request?: protos.google.dataflow.v1beta3.IListJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IJob[],
-        protos.google.dataflow.v1beta3.IListJobsRequest|null,
-        protos.google.dataflow.v1beta3.IListJobsResponse
-      ]>;
-  aggregatedListJobs(
-      request: protos.google.dataflow.v1beta3.IListJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IListJobsRequest,
-          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
-          protos.google.dataflow.v1beta3.IJob>): void;
-  aggregatedListJobs(
-      request: protos.google.dataflow.v1beta3.IListJobsRequest,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IListJobsRequest,
-          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
-          protos.google.dataflow.v1beta3.IJob>): void;
-/**
+ /**
  * List the jobs of a project across all regions.
  *
  * @param {Object} request
@@ -924,6 +915,27 @@ export class JobsV1Beta3Client {
  */
   aggregatedListJobs(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IJob[],
+        protos.google.dataflow.v1beta3.IListJobsRequest|null,
+        protos.google.dataflow.v1beta3.IListJobsResponse
+      ]>;
+  aggregatedListJobs(
+      request: protos.google.dataflow.v1beta3.IListJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IListJobsRequest,
+          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
+          protos.google.dataflow.v1beta3.IJob>): void;
+  aggregatedListJobs(
+      request: protos.google.dataflow.v1beta3.IListJobsRequest,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IListJobsRequest,
+          protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
+          protos.google.dataflow.v1beta3.IJob>): void;
+  aggregatedListJobs(
+      request?: protos.google.dataflow.v1beta3.IListJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.dataflow.v1beta3.IListJobsRequest,
           protos.google.dataflow.v1beta3.IListJobsResponse|null|undefined,
@@ -947,6 +959,8 @@ export class JobsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.aggregatedListJobs(request, options, callback);
   }
@@ -991,6 +1005,8 @@ export class JobsV1Beta3Client {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['aggregatedListJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1035,11 +1051,8 @@ export class JobsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.aggregatedListJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta3/jobs_v1_beta3.aggregated_list_jobs.js</caption>
+ * region_tag:dataflow_v1beta3_generated_JobsV1Beta3_AggregatedListJobs_async
  */
   aggregatedListJobsAsync(
       request?: protos.google.dataflow.v1beta3.IListJobsRequest,
@@ -1047,7 +1060,8 @@ export class JobsV1Beta3Client {
     AsyncIterable<protos.google.dataflow.v1beta3.IJob>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['aggregatedListJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

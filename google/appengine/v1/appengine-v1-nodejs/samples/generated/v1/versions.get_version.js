@@ -28,7 +28,7 @@ function main() {
   /**
    *  Controls the set of fields returned in the `Get` response.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Appengine library
   const {VersionsClient} = require('@google-cloud/appengine-admin').v1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new VersionsClient();
 
-  async function getVersion() {
+  async function callGetVersion() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  getVersion();
+  callGetVersion();
   // [END appengine_v1_generated_Versions_GetVersion_async]
 }
 

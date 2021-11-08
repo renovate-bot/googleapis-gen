@@ -23,12 +23,12 @@ function main(guestPolicy) {
   /**
    *  Required. The updated GuestPolicy.
    */
-  // const guestPolicy = ''
+  // const guestPolicy = {}
   /**
    *  Field mask that controls which fields of the guest policy should be
    *  updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Osconfig library
   const {OsConfigServiceClient} = require('osconfig').v1beta;
@@ -36,7 +36,7 @@ function main(guestPolicy) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function updateGuestPolicy() {
+  async function callUpdateGuestPolicy() {
     // Construct request
     const request = {
       guestPolicy,
@@ -47,7 +47,7 @@ function main(guestPolicy) {
     console.log(response);
   }
 
-  updateGuestPolicy();
+  callUpdateGuestPolicy();
   // [END osconfig_v1beta_generated_OsConfigService_UpdateGuestPolicy_async]
 }
 

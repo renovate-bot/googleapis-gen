@@ -28,7 +28,7 @@ function main(parent, index) {
   /**
    *  Required. The composite index to create.
    */
-  // const index = ''
+  // const index = {}
 
   // Imports the Admin library
   const {FirestoreAdminClient} = require('admin').v1;
@@ -36,7 +36,7 @@ function main(parent, index) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function createIndex() {
+  async function callCreateIndex() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, index) {
     console.log(response);
   }
 
-  createIndex();
+  callCreateIndex();
   // [END firestore_v1_generated_FirestoreAdmin_CreateIndex_async]
 }
 

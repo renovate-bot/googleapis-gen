@@ -41,9 +41,9 @@ function main() {
   /**
    *  The runtime environment for the job.
    */
-  // const environment = ''
+  // const environment = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
    *  which to direct the request.
    */
@@ -55,7 +55,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new TemplatesServiceClient();
 
-  async function createJobFromTemplate() {
+  async function callCreateJobFromTemplate() {
     // Construct request
     const request = {
     };
@@ -65,7 +65,7 @@ function main() {
     console.log(response);
   }
 
-  createJobFromTemplate();
+  callCreateJobFromTemplate();
   // [END dataflow_v1beta3_generated_TemplatesService_CreateJobFromTemplate_async]
 }
 

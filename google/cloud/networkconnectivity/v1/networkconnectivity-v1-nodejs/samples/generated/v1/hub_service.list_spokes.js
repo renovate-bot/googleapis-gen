@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function listSpokes() {
+  async function callListSpokes() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listSpokes();
+  callListSpokes();
   // [END networkconnectivity_v1_generated_HubService_ListSpokes_async]
 }
 

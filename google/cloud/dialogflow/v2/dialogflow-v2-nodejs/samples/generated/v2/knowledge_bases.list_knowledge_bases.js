@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const dialogflowClient = new KnowledgeBasesClient();
 
-  async function listKnowledgeBases() {
+  async function callListKnowledgeBases() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listKnowledgeBases();
+  callListKnowledgeBases();
   // [END dialogflow_v2_generated_KnowledgeBases_ListKnowledgeBases_async]
 }
 

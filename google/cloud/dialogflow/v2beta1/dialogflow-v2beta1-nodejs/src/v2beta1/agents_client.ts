@@ -445,6 +445,25 @@ export class AgentsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves the specified agent.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The project that the agent to fetch is associated with.
+ *   Format: `projects/<Project ID>` or
+ *           `projects/<Project ID>/locations/<Location ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Agent]{@link google.cloud.dialogflow.v2beta1.Agent}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/agents.get_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_GetAgent_async
+ */
   getAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest,
       options?: CallOptions):
@@ -465,25 +484,6 @@ export class AgentsClient {
           protos.google.cloud.dialogflow.v2beta1.IAgent,
           protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the specified agent.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The project that the agent to fetch is associated with.
- *   Format: `projects/<Project ID>` or
- *           `projects/<Project ID>/locations/<Location ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Agent]{@link google.cloud.dialogflow.v2beta1.Agent}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAgent(request);
- */
   getAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -518,26 +518,6 @@ export class AgentsClient {
     this.initialize();
     return this.innerApiCalls.getAgent(request, options, callback);
   }
-  setAgent(
-      request?: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IAgent,
-        protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|undefined, {}|undefined
-      ]>;
-  setAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IAgent,
-          protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|null|undefined,
-          {}|null|undefined>): void;
-  setAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IAgent,
-          protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates/updates the specified agent.
  *
@@ -558,9 +538,29 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setAgent(request);
+ * @example <caption>include:samples/generated/v2beta1/agents.set_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_SetAgent_async
  */
+  setAgent(
+      request?: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IAgent,
+        protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|undefined, {}|undefined
+      ]>;
+  setAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IAgent,
+          protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|null|undefined,
+          {}|null|undefined>): void;
+  setAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IAgent,
+          protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest|null|undefined,
+          {}|null|undefined>): void;
   setAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.ISetAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -595,6 +595,25 @@ export class AgentsClient {
     this.initialize();
     return this.innerApiCalls.setAgent(request, options, callback);
   }
+/**
+ * Deletes the specified agent.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The project that the agent to delete is associated with.
+ *   Format: `projects/<Project ID>` or
+ *           `projects/<Project ID>/locations/<Location ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/agents.delete_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_DeleteAgent_async
+ */
   deleteAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest,
       options?: CallOptions):
@@ -615,25 +634,6 @@ export class AgentsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified agent.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The project that the agent to delete is associated with.
- *   Format: `projects/<Project ID>` or
- *           `projects/<Project ID>/locations/<Location ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteAgent(request);
- */
   deleteAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IDeleteAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -668,26 +668,6 @@ export class AgentsClient {
     this.initialize();
     return this.innerApiCalls.deleteAgent(request, options, callback);
   }
-  getValidationResult(
-      request?: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IValidationResult,
-        protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|undefined, {}|undefined
-      ]>;
-  getValidationResult(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IValidationResult,
-          protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|null|undefined,
-          {}|null|undefined>): void;
-  getValidationResult(
-      request: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2beta1.IValidationResult,
-          protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets agent validation result. Agent validation is performed during
  * training time and is updated automatically when training is completed.
@@ -711,9 +691,29 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getValidationResult(request);
+ * @example <caption>include:samples/generated/v2beta1/agents.get_validation_result.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_GetValidationResult_async
  */
+  getValidationResult(
+      request?: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IValidationResult,
+        protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|undefined, {}|undefined
+      ]>;
+  getValidationResult(
+      request: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IValidationResult,
+          protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|null|undefined,
+          {}|null|undefined>): void;
+  getValidationResult(
+      request: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2beta1.IValidationResult,
+          protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest|null|undefined,
+          {}|null|undefined>): void;
   getValidationResult(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetValidationResultRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -749,26 +749,6 @@ export class AgentsClient {
     return this.innerApiCalls.getValidationResult(request, options, callback);
   }
 
-  trainAgent(
-      request?: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  trainAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  trainAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Trains the specified agent.
  *
@@ -800,10 +780,29 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.trainAgent(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2beta1/agents.train_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_TrainAgent_async
  */
+  trainAgent(
+      request?: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  trainAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  trainAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   trainAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.ITrainAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -847,11 +846,8 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkTrainAgentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2beta1/agents.train_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_TrainAgent_async
  */
   async checkTrainAgentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -859,26 +855,6 @@ export class AgentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.trainAgent, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
-  exportAgent(
-      request?: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  exportAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  exportAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Exports the specified agent to a ZIP file.
  *
@@ -911,10 +887,29 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.exportAgent(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2beta1/agents.export_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_ExportAgent_async
  */
+  exportAgent(
+      request?: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  exportAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  exportAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2beta1.IExportAgentResponse, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   exportAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IExportAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -958,11 +953,8 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkExportAgentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2beta1/agents.export_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_ExportAgent_async
  */
   async checkExportAgentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2beta1.ExportAgentResponse, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -970,26 +962,6 @@ export class AgentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.exportAgent, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2beta1.ExportAgentResponse, protos.google.protobuf.Struct>;
   }
-  importAgent(
-      request?: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Imports the specified agent from a ZIP file.
  *
@@ -1037,10 +1009,29 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importAgent(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2beta1/agents.import_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_ImportAgent_async
  */
+  importAgent(
+      request?: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IImportAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1084,11 +1075,8 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportAgentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2beta1/agents.import_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_ImportAgent_async
  */
   async checkImportAgentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1096,26 +1084,6 @@ export class AgentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importAgent, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
-  restoreAgent(
-      request?: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  restoreAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  restoreAgent(
-      request: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Restores the specified agent from a ZIP file.
  *
@@ -1162,10 +1130,29 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.restoreAgent(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2beta1/agents.restore_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_RestoreAgent_async
  */
+  restoreAgent(
+      request?: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  restoreAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  restoreAgent(
+      request: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   restoreAgent(
       request?: protos.google.cloud.dialogflow.v2beta1.IRestoreAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1209,11 +1196,8 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRestoreAgentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2beta1/agents.restore_agent.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_RestoreAgent_async
  */
   async checkRestoreAgentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1221,28 +1205,7 @@ export class AgentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.restoreAgent, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
-  searchAgents(
-      request?: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IAgent[],
-        protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest|null,
-        protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse
-      ]>;
-  searchAgents(
-      request: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
-          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.IAgent>): void;
-  searchAgents(
-      request: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
-          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.IAgent>): void;
-/**
+ /**
  * Returns the list of agents.
  * Since there is at most one conversational agent per project, this method is
  * useful primarily for listing all agents across projects the caller has
@@ -1274,6 +1237,27 @@ export class AgentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchAgents(
+      request?: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IAgent[],
+        protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest|null,
+        protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse
+      ]>;
+  searchAgents(
+      request: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.IAgent>): void;
+  searchAgents(
+      request: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
+          protos.google.cloud.dialogflow.v2beta1.ISearchAgentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.IAgent>): void;
   searchAgents(
       request?: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1383,11 +1367,8 @@ export class AgentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchAgentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2beta1/agents.search_agents.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_Agents_SearchAgents_async
  */
   searchAgentsAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.ISearchAgentsRequest,
@@ -1402,7 +1383,6 @@ export class AgentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchAgents'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -23,11 +23,11 @@ function main(reservation, updateMask) {
   /**
    *  Required. The reservation to update. Its `name` field must be populated.
    */
-  // const reservation = ''
+  // const reservation = {}
   /**
    *  Required. A mask specifying the reservation fields to change.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Pubsublite library
   const {AdminServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -35,7 +35,7 @@ function main(reservation, updateMask) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function updateReservation() {
+  async function callUpdateReservation() {
     // Construct request
     const request = {
       reservation,
@@ -47,7 +47,7 @@ function main(reservation, updateMask) {
     console.log(response);
   }
 
-  updateReservation();
+  callUpdateReservation();
   // [END pubsublite_v1_generated_AdminService_UpdateReservation_async]
 }
 

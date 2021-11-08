@@ -37,7 +37,7 @@ function main(parent, names) {
   // Instantiates a client
   const cxClient = new TestCasesClient();
 
-  async function batchDeleteTestCases() {
+  async function callBatchDeleteTestCases() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, names) {
     console.log(response);
   }
 
-  batchDeleteTestCases();
+  callBatchDeleteTestCases();
   // [END dialogflow_v3_generated_TestCases_BatchDeleteTestCases_async]
 }
 

@@ -646,26 +646,6 @@ export class AdGroupSimulationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupSimulation(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroupSimulation,
-        protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupSimulation(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupSimulation,
-          protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupSimulation(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupSimulation,
-          protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group simulation in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupSimulationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupSimulation(request);
+ * @example <caption>include:samples/generated/v7/ad_group_simulation_service.get_ad_group_simulation.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupSimulationService_GetAdGroupSimulation_async
  */
+  getAdGroupSimulation(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroupSimulation,
+        protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupSimulation(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupSimulation,
+          protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupSimulation(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupSimulation,
+          protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupSimulation(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<

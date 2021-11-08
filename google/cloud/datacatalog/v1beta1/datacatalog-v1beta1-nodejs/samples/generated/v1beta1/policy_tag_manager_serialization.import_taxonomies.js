@@ -28,7 +28,7 @@ function main(parent) {
   /**
    *  Inline source used for taxonomies import
    */
-  // const inlineSource = ''
+  // const inlineSource = {}
 
   // Imports the Datacatalog library
   const {PolicyTagManagerSerializationClient} = require('@google-cloud/datacatalog').v1beta1;
@@ -36,7 +36,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerSerializationClient();
 
-  async function importTaxonomies() {
+  async function callImportTaxonomies() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent) {
     console.log(response);
   }
 
-  importTaxonomies();
+  callImportTaxonomies();
   // [END datacatalog_v1beta1_generated_PolicyTagManagerSerialization_ImportTaxonomies_async]
 }
 

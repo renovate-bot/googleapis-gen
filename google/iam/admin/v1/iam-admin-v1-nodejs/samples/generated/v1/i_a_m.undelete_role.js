@@ -23,17 +23,17 @@ function main() {
   /**
    *  The `name` parameter's value depends on the target resource for the
    *  request, namely
-   *  [`projects`](/iam/reference/rest/v1/projects.roles) or
-   *  [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+   *  `projects` (/iam/reference/rest/v1/projects.roles) or
+   *  `organizations` (/iam/reference/rest/v1/organizations.roles). Each
    *  resource type's `name` value format is described below:
-   *  * [`projects.roles.undelete()`](/iam/reference/rest/v1/projects.roles/undelete):
+   *  * `projects.roles.undelete()` (/iam/reference/rest/v1/projects.roles/undelete):
    *    `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method undeletes
-   *    only [custom roles](/iam/docs/understanding-custom-roles) that have been
+   *    only custom roles (/iam/docs/understanding-custom-roles) that have been
    *    created at the project level. Example request URL:
    *    `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   *  * [`organizations.roles.undelete()`](/iam/reference/rest/v1/organizations.roles/undelete):
+   *  * `organizations.roles.undelete()` (/iam/reference/rest/v1/organizations.roles/undelete):
    *    `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *    undeletes only [custom roles](/iam/docs/understanding-custom-roles) that
+   *    undeletes only custom roles (/iam/docs/understanding-custom-roles) that
    *    have been created at the organization level. Example request URL:
    *    `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    *  Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -51,7 +51,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function undeleteRole() {
+  async function callUndeleteRole() {
     // Construct request
     const request = {
     };
@@ -61,7 +61,7 @@ function main() {
     console.log(response);
   }
 
-  undeleteRole();
+  callUndeleteRole();
   // [END iam_v1_generated_IAM_UndeleteRole_async]
 }
 

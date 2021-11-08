@@ -21,24 +21,6 @@ function main(projectId, zone, clusterId, loggingService) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the cluster to upgrade.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const clusterId = 'abc123'
-  /**
    *  Required. The logging service the cluster should use to write logs.
    *  Currently available options:
    *  * `logging.googleapis.com/kubernetes` - The Cloud Logging
@@ -62,7 +44,7 @@ function main(projectId, zone, clusterId, loggingService) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function setLoggingService() {
+  async function callSetLoggingService() {
     // Construct request
     const request = {
       projectId,
@@ -76,7 +58,7 @@ function main(projectId, zone, clusterId, loggingService) {
     console.log(response);
   }
 
-  setLoggingService();
+  callSetLoggingService();
   // [END container_v1beta1_generated_ClusterManager_SetLoggingService_async]
 }
 

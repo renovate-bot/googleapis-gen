@@ -21,13 +21,13 @@ function main(secret, updateMask) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   *  Required. Secret google.cloud.secretmanager.v1.Secret  with updated field values.
    */
-  // const secret = ''
+  // const secret = {}
   /**
    *  Required. Specifies the fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Secretmanager library
   const {SecretManagerServiceClient} = require('@google-cloud/secret-manager').v1;
@@ -35,7 +35,7 @@ function main(secret, updateMask) {
   // Instantiates a client
   const secretmanagerClient = new SecretManagerServiceClient();
 
-  async function updateSecret() {
+  async function callUpdateSecret() {
     // Construct request
     const request = {
       secret,
@@ -47,7 +47,7 @@ function main(secret, updateMask) {
     console.log(response);
   }
 
-  updateSecret();
+  callUpdateSecret();
   // [END secretmanager_v1_generated_SecretManagerService_UpdateSecret_async]
 }
 

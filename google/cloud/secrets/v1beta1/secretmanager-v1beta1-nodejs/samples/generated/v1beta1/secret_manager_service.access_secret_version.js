@@ -21,7 +21,7 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   *  Required. The resource name of the SecretVersion google.cloud.secrets.v1beta1.SecretVersion  in the format
    *  `projects/* /secrets/* /versions/*`.
    */
   // const name = 'abc123'
@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const secretsClient = new SecretManagerServiceClient();
 
-  async function accessSecretVersion() {
+  async function callAccessSecretVersion() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  accessSecretVersion();
+  callAccessSecretVersion();
   // [END secretmanager_v1beta1_generated_SecretManagerService_AccessSecretVersion_async]
 }
 

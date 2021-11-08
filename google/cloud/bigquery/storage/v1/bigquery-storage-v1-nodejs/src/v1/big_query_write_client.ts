@@ -309,26 +309,6 @@ export class BigQueryWriteClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createWriteStream(
-      request?: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.storage.v1.IWriteStream,
-        protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest|undefined, {}|undefined
-      ]>;
-  createWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1.IWriteStream,
-          protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest|null|undefined,
-          {}|null|undefined>): void;
-  createWriteStream(
-      request: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1.IWriteStream,
-          protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a write stream to the given table.
  * Additionally, every table has a special stream named '_default'
@@ -351,9 +331,29 @@ export class BigQueryWriteClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createWriteStream(request);
+ * @example <caption>include:samples/generated/v1/big_query_write.create_write_stream.js</caption>
+ * region_tag:bigquerystorage_v1_generated_BigQueryWrite_CreateWriteStream_async
  */
+  createWriteStream(
+      request?: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.storage.v1.IWriteStream,
+        protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest|undefined, {}|undefined
+      ]>;
+  createWriteStream(
+      request: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1.IWriteStream,
+          protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest|null|undefined,
+          {}|null|undefined>): void;
+  createWriteStream(
+      request: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1.IWriteStream,
+          protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest|null|undefined,
+          {}|null|undefined>): void;
   createWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1.ICreateWriteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -388,6 +388,24 @@ export class BigQueryWriteClient {
     this.initialize();
     return this.innerApiCalls.createWriteStream(request, options, callback);
   }
+/**
+ * Gets information about a write stream.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the stream to get, in the form of
+ *   `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [WriteStream]{@link google.cloud.bigquery.storage.v1.WriteStream}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/big_query_write.get_write_stream.js</caption>
+ * region_tag:bigquerystorage_v1_generated_BigQueryWrite_GetWriteStream_async
+ */
   getWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1.IGetWriteStreamRequest,
       options?: CallOptions):
@@ -408,24 +426,6 @@ export class BigQueryWriteClient {
           protos.google.cloud.bigquery.storage.v1.IWriteStream,
           protos.google.cloud.bigquery.storage.v1.IGetWriteStreamRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets information about a write stream.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the stream to get, in the form of
- *   `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [WriteStream]{@link google.cloud.bigquery.storage.v1.WriteStream}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getWriteStream(request);
- */
   getWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1.IGetWriteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -460,6 +460,25 @@ export class BigQueryWriteClient {
     this.initialize();
     return this.innerApiCalls.getWriteStream(request, options, callback);
   }
+/**
+ * Finalize a write stream so that no new data can be appended to the
+ * stream. Finalize is not supported on the '_default' stream.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the stream to finalize, in the form of
+ *   `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [FinalizeWriteStreamResponse]{@link google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/big_query_write.finalize_write_stream.js</caption>
+ * region_tag:bigquerystorage_v1_generated_BigQueryWrite_FinalizeWriteStream_async
+ */
   finalizeWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1.IFinalizeWriteStreamRequest,
       options?: CallOptions):
@@ -480,25 +499,6 @@ export class BigQueryWriteClient {
           protos.google.cloud.bigquery.storage.v1.IFinalizeWriteStreamResponse,
           protos.google.cloud.bigquery.storage.v1.IFinalizeWriteStreamRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Finalize a write stream so that no new data can be appended to the
- * stream. Finalize is not supported on the '_default' stream.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the stream to finalize, in the form of
- *   `projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [FinalizeWriteStreamResponse]{@link google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.finalizeWriteStream(request);
- */
   finalizeWriteStream(
       request?: protos.google.cloud.bigquery.storage.v1.IFinalizeWriteStreamRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -533,26 +533,6 @@ export class BigQueryWriteClient {
     this.initialize();
     return this.innerApiCalls.finalizeWriteStream(request, options, callback);
   }
-  batchCommitWriteStreams(
-      request?: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsResponse,
-        protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest|undefined, {}|undefined
-      ]>;
-  batchCommitWriteStreams(
-      request: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsResponse,
-          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchCommitWriteStreams(
-      request: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsResponse,
-          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Atomically commits a group of `PENDING` streams that belong to the same
  * `parent` table.
@@ -575,9 +555,29 @@ export class BigQueryWriteClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchCommitWriteStreams(request);
+ * @example <caption>include:samples/generated/v1/big_query_write.batch_commit_write_streams.js</caption>
+ * region_tag:bigquerystorage_v1_generated_BigQueryWrite_BatchCommitWriteStreams_async
  */
+  batchCommitWriteStreams(
+      request?: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsResponse,
+        protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest|undefined, {}|undefined
+      ]>;
+  batchCommitWriteStreams(
+      request: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsResponse,
+          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchCommitWriteStreams(
+      request: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsResponse,
+          protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest|null|undefined,
+          {}|null|undefined>): void;
   batchCommitWriteStreams(
       request?: protos.google.cloud.bigquery.storage.v1.IBatchCommitWriteStreamsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -612,26 +612,6 @@ export class BigQueryWriteClient {
     this.initialize();
     return this.innerApiCalls.batchCommitWriteStreams(request, options, callback);
   }
-  flushRows(
-      request?: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.storage.v1.IFlushRowsResponse,
-        protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest|undefined, {}|undefined
-      ]>;
-  flushRows(
-      request: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1.IFlushRowsResponse,
-          protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest|null|undefined,
-          {}|null|undefined>): void;
-  flushRows(
-      request: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.storage.v1.IFlushRowsResponse,
-          protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Flushes rows to a BUFFERED stream.
  *
@@ -656,9 +636,29 @@ export class BigQueryWriteClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.flushRows(request);
+ * @example <caption>include:samples/generated/v1/big_query_write.flush_rows.js</caption>
+ * region_tag:bigquerystorage_v1_generated_BigQueryWrite_FlushRows_async
  */
+  flushRows(
+      request?: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.storage.v1.IFlushRowsResponse,
+        protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest|undefined, {}|undefined
+      ]>;
+  flushRows(
+      request: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1.IFlushRowsResponse,
+          protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest|null|undefined,
+          {}|null|undefined>): void;
+  flushRows(
+      request: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.storage.v1.IFlushRowsResponse,
+          protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest|null|undefined,
+          {}|null|undefined>): void;
   flushRows(
       request?: protos.google.cloud.bigquery.storage.v1.IFlushRowsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -736,12 +736,8 @@ export class BigQueryWriteClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.appendRows();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/big_query_write.append_rows.js</caption>
+ * region_tag:bigquerystorage_v1_generated_BigQueryWrite_AppendRows_async
  */
   appendRows(
       options?: CallOptions):

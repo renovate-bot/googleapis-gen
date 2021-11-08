@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new DistanceViewServiceClient();
 
-  async function getDistanceView() {
+  async function callGetDistanceView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getDistanceView();
+  callGetDistanceView();
   // [END googleads_v8_generated_DistanceViewService_GetDistanceView_async]
 }
 

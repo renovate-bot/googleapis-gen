@@ -646,26 +646,6 @@ export class ConversionActionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getConversionAction(
-      request?: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IConversionAction,
-        protos.google.ads.googleads.v7.services.IGetConversionActionRequest|undefined, {}|undefined
-      ]>;
-  getConversionAction(
-      request: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IConversionAction,
-          protos.google.ads.googleads.v7.services.IGetConversionActionRequest|null|undefined,
-          {}|null|undefined>): void;
-  getConversionAction(
-      request: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IConversionAction,
-          protos.google.ads.googleads.v7.services.IGetConversionActionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested conversion action.
  *
@@ -688,9 +668,29 @@ export class ConversionActionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getConversionAction(request);
+ * @example <caption>include:samples/generated/v7/conversion_action_service.get_conversion_action.js</caption>
+ * region_tag:googleads_v7_generated_ConversionActionService_GetConversionAction_async
  */
+  getConversionAction(
+      request?: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IConversionAction,
+        protos.google.ads.googleads.v7.services.IGetConversionActionRequest|undefined, {}|undefined
+      ]>;
+  getConversionAction(
+      request: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IConversionAction,
+          protos.google.ads.googleads.v7.services.IGetConversionActionRequest|null|undefined,
+          {}|null|undefined>): void;
+  getConversionAction(
+      request: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IConversionAction,
+          protos.google.ads.googleads.v7.services.IGetConversionActionRequest|null|undefined,
+          {}|null|undefined>): void;
   getConversionAction(
       request?: protos.google.ads.googleads.v7.services.IGetConversionActionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class ConversionActionServiceClient {
     this.initialize();
     return this.innerApiCalls.getConversionAction(request, options, callback);
   }
-  mutateConversionActions(
-      request?: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateConversionActionsResponse,
-        protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest|undefined, {}|undefined
-      ]>;
-  mutateConversionActions(
-      request: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateConversionActionsResponse,
-          protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateConversionActions(
-      request: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateConversionActionsResponse,
-          protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes conversion actions. Operation statuses are
  * returned.
@@ -791,9 +771,29 @@ export class ConversionActionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateConversionActions(request);
+ * @example <caption>include:samples/generated/v7/conversion_action_service.mutate_conversion_actions.js</caption>
+ * region_tag:googleads_v7_generated_ConversionActionService_MutateConversionActions_async
  */
+  mutateConversionActions(
+      request?: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateConversionActionsResponse,
+        protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest|undefined, {}|undefined
+      ]>;
+  mutateConversionActions(
+      request: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateConversionActionsResponse,
+          protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateConversionActions(
+      request: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateConversionActionsResponse,
+          protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateConversionActions(
       request?: protos.google.ads.googleads.v7.services.IMutateConversionActionsRequest,
       optionsOrCallback?: CallOptions|Callback<

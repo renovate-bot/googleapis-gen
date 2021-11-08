@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const shellClient = new CloudShellServiceClient();
 
-  async function addPublicKey() {
+  async function callAddPublicKey() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  addPublicKey();
+  callAddPublicKey();
   // [END cloudshell_v1_generated_CloudShellService_AddPublicKey_async]
 }
 

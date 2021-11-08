@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function deleteProductSet() {
+  async function callDeleteProductSet() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteProductSet();
+  callDeleteProductSet();
   // [END vision_v1p4beta1_generated_ProductSearch_DeleteProductSet_async]
 }
 

@@ -23,18 +23,18 @@ function main(name, spanId, displayName, startTime, endTime) {
   /**
    *  Required. The resource name of the span in the following format:
    *      projects/[PROJECT_ID]/traces/[TRACE_ID]/spans/[SPAN_ID]
-   *  [TRACE_ID] is a unique identifier for a trace within a project;
+   *  TRACE_ID  is a unique identifier for a trace within a project;
    *  it is a 32-character hexadecimal encoding of a 16-byte array.
-   *  [SPAN_ID] is a unique identifier for a span within a trace; it
+   *  SPAN_ID  is a unique identifier for a span within a trace; it
    *  is a 16-character hexadecimal encoding of an 8-byte array.
    */
   // const name = 'abc123'
   /**
-   *  Required. The [SPAN_ID] portion of the span's resource name.
+   *  Required. The SPAN_ID  portion of the span's resource name.
    */
   // const spanId = 'abc123'
   /**
-   *  The [SPAN_ID] of this span's parent span. If this is a root span,
+   *  The SPAN_ID  of this span's parent span. If this is a root span,
    *  then this field must be empty.
    */
   // const parentSpanId = 'abc123'
@@ -47,59 +47,59 @@ function main(name, spanId, displayName, startTime, endTime) {
    *  the same display name within an application and at the same call point.
    *  This makes it easier to correlate spans in different traces.
    */
-  // const displayName = ''
+  // const displayName = {}
   /**
    *  Required. The start time of the span. On the client side, this is the time kept by
    *  the local machine where the span execution starts. On the server side, this
    *  is the time when the server's application handler starts running.
    */
-  // const startTime = ''
+  // const startTime = {}
   /**
    *  Required. The end time of the span. On the client side, this is the time kept by
    *  the local machine where the span execution ends. On the server side, this
    *  is the time when the server application handler stops running.
    */
-  // const endTime = ''
+  // const endTime = {}
   /**
    *  A set of attributes on the span. You can have up to 32 attributes per
    *  span.
    */
-  // const attributes = ''
+  // const attributes = {}
   /**
    *  Stack trace captured at the start of the span.
    */
-  // const stackTrace = ''
+  // const stackTrace = {}
   /**
    *  A set of time events. You can have up to 32 annotations and 128 message
    *  events per span.
    */
-  // const timeEvents = ''
+  // const timeEvents = {}
   /**
    *  Links associated with the span. You can have up to 128 links per Span.
    */
-  // const links = ''
+  // const links = {}
   /**
    *  Optional. The final status for this span.
    */
-  // const status = ''
+  // const status = {}
   /**
    *  Optional. Set this parameter to indicate whether this span is in
    *  the same process as its parent. If you do not set this parameter,
    *  Stackdriver Trace is unable to take advantage of this helpful
    *  information.
    */
-  // const sameProcessAsParentSpan = ''
+  // const sameProcessAsParentSpan = {}
   /**
    *  Optional. The number of child spans that were generated while this span
    *  was active. If set, allows implementation to detect missing child spans.
    */
-  // const childSpanCount = ''
+  // const childSpanCount = {}
   /**
    *  Optional. Distinguishes between spans generated in a particular context. For example,
    *  two spans with the same name may be distinguished using `CLIENT` (caller)
    *  and `SERVER` (callee) to identify an RPC call.
    */
-  // const spanKind = ''
+  // const spanKind = {}
 
   // Imports the Cloudtrace library
   const {TraceServiceClient} = require('cloudtrace').v2;
@@ -107,7 +107,7 @@ function main(name, spanId, displayName, startTime, endTime) {
   // Instantiates a client
   const cloudtraceClient = new TraceServiceClient();
 
-  async function createSpan() {
+  async function callCreateSpan() {
     // Construct request
     const request = {
       name,
@@ -122,7 +122,7 @@ function main(name, spanId, displayName, startTime, endTime) {
     console.log(response);
   }
 
-  createSpan();
+  callCreateSpan();
   // [END cloudtrace_v2_generated_TraceService_CreateSpan_async]
 }
 

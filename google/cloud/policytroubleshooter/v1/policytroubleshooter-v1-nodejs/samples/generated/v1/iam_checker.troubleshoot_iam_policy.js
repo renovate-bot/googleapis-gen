@@ -24,7 +24,7 @@ function main() {
    *  The information to use for checking whether a member has a permission for a
    *  resource.
    */
-  // const accessTuple = ''
+  // const accessTuple = {}
 
   // Imports the Policytroubleshooter library
   const {IamCheckerClient} = require('@google-cloud/policy-troubleshooter').v1;
@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const policytroubleshooterClient = new IamCheckerClient();
 
-  async function troubleshootIamPolicy() {
+  async function callTroubleshootIamPolicy() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  troubleshootIamPolicy();
+  callTroubleshootIamPolicy();
   // [END policytroubleshooter_v1_generated_IamChecker_TroubleshootIamPolicy_async]
 }
 

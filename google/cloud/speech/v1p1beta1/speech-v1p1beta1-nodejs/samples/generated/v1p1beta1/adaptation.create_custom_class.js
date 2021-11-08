@@ -36,7 +36,7 @@ function main(parent, customClassId, customClass) {
   /**
    *  Required. The custom class to create.
    */
-  // const customClass = ''
+  // const customClass = {}
 
   // Imports the Speech library
   const {AdaptationClient} = require('@google-cloud/speech').v1p1beta1;
@@ -44,7 +44,7 @@ function main(parent, customClassId, customClass) {
   // Instantiates a client
   const speechClient = new AdaptationClient();
 
-  async function createCustomClass() {
+  async function callCreateCustomClass() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent, customClassId, customClass) {
     console.log(response);
   }
 
-  createCustomClass();
+  callCreateCustomClass();
   // [END speech_v1p1beta1_generated_Adaptation_CreateCustomClass_async]
 }
 

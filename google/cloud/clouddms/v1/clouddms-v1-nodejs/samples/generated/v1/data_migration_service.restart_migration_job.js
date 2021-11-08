@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const clouddmsClient = new DataMigrationServiceClient();
 
-  async function restartMigrationJob() {
+  async function callRestartMigrationJob() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  restartMigrationJob();
+  callRestartMigrationJob();
   // [END datamigration_v1_generated_DataMigrationService_RestartMigrationJob_async]
 }
 

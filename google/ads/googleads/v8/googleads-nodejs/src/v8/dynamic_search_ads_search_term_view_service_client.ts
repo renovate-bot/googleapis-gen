@@ -676,26 +676,6 @@ export class DynamicSearchAdsSearchTermViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getDynamicSearchAdsSearchTermView(
-      request?: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IDynamicSearchAdsSearchTermView,
-        protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest|undefined, {}|undefined
-      ]>;
-  getDynamicSearchAdsSearchTermView(
-      request: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IDynamicSearchAdsSearchTermView,
-          protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDynamicSearchAdsSearchTermView(
-      request: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IDynamicSearchAdsSearchTermView,
-          protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested dynamic search ads search term view in full detail.
  *
@@ -718,9 +698,29 @@ export class DynamicSearchAdsSearchTermViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDynamicSearchAdsSearchTermView(request);
+ * @example <caption>include:samples/generated/v8/dynamic_search_ads_search_term_view_service.get_dynamic_search_ads_search_term_view.js</caption>
+ * region_tag:googleads_v8_generated_DynamicSearchAdsSearchTermViewService_GetDynamicSearchAdsSearchTermView_async
  */
+  getDynamicSearchAdsSearchTermView(
+      request?: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IDynamicSearchAdsSearchTermView,
+        protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest|undefined, {}|undefined
+      ]>;
+  getDynamicSearchAdsSearchTermView(
+      request: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IDynamicSearchAdsSearchTermView,
+          protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDynamicSearchAdsSearchTermView(
+      request: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IDynamicSearchAdsSearchTermView,
+          protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getDynamicSearchAdsSearchTermView(
       request?: protos.google.ads.googleads.v8.services.IGetDynamicSearchAdsSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<

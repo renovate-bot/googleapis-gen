@@ -295,28 +295,7 @@ export class PredictionServiceClient {
   // -- Service calls --
   // -------------------
 
-  predict(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult[],
-        protos.google.cloud.recommendationengine.v1beta1.IPredictRequest|null,
-        protos.google.cloud.recommendationengine.v1beta1.IPredictResponse
-      ]>;
-  predict(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IPredictResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult>): void;
-  predict(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IPredictResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult>): void;
-/**
+ /**
  * Makes a recommendation prediction. If using API Key based authentication,
  * the API Key must be registered using the
  * {@link google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry|PredictionApiKeyRegistry}
@@ -426,6 +405,27 @@ export class PredictionServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  predict(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult[],
+        protos.google.cloud.recommendationengine.v1beta1.IPredictRequest|null,
+        protos.google.cloud.recommendationengine.v1beta1.IPredictResponse
+      ]>;
+  predict(
+      request: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IPredictResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult>): void;
+  predict(
+      request: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IPredictResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.PredictResponse.IPredictionResult>): void;
   predict(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -695,11 +695,8 @@ export class PredictionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.predictAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/prediction_service.predict.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_PredictionService_Predict_async
  */
   predictAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPredictRequest,
@@ -714,7 +711,6 @@ export class PredictionServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['predict'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

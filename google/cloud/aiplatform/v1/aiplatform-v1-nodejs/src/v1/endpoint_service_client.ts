@@ -426,6 +426,25 @@ export class EndpointServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets an Endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Endpoint resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/endpoints/{endpoint}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Endpoint]{@link google.cloud.aiplatform.v1.Endpoint}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/endpoint_service.get_endpoint.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_GetEndpoint_async
+ */
   getEndpoint(
       request?: protos.google.cloud.aiplatform.v1.IGetEndpointRequest,
       options?: CallOptions):
@@ -446,25 +465,6 @@ export class EndpointServiceClient {
           protos.google.cloud.aiplatform.v1.IEndpoint,
           protos.google.cloud.aiplatform.v1.IGetEndpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an Endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Endpoint resource.
- *   Format:
- *   `projects/{project}/locations/{location}/endpoints/{endpoint}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Endpoint]{@link google.cloud.aiplatform.v1.Endpoint}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEndpoint(request);
- */
   getEndpoint(
       request?: protos.google.cloud.aiplatform.v1.IGetEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -499,6 +499,25 @@ export class EndpointServiceClient {
     this.initialize();
     return this.innerApiCalls.getEndpoint(request, options, callback);
   }
+/**
+ * Updates an Endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.aiplatform.v1.Endpoint} request.endpoint
+ *   Required. The Endpoint which replaces the resource on the server.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. The update mask applies to the resource. See {@link google.protobuf.FieldMask|google.protobuf.FieldMask}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Endpoint]{@link google.cloud.aiplatform.v1.Endpoint}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/endpoint_service.update_endpoint.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_UpdateEndpoint_async
+ */
   updateEndpoint(
       request?: protos.google.cloud.aiplatform.v1.IUpdateEndpointRequest,
       options?: CallOptions):
@@ -519,25 +538,6 @@ export class EndpointServiceClient {
           protos.google.cloud.aiplatform.v1.IEndpoint,
           protos.google.cloud.aiplatform.v1.IUpdateEndpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an Endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.aiplatform.v1.Endpoint} request.endpoint
- *   Required. The Endpoint which replaces the resource on the server.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. The update mask applies to the resource. See {@link google.protobuf.FieldMask|google.protobuf.FieldMask}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Endpoint]{@link google.cloud.aiplatform.v1.Endpoint}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateEndpoint(request);
- */
   updateEndpoint(
       request?: protos.google.cloud.aiplatform.v1.IUpdateEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -573,6 +573,28 @@ export class EndpointServiceClient {
     return this.innerApiCalls.updateEndpoint(request, options, callback);
   }
 
+/**
+ * Creates an Endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource name of the Location to create the Endpoint in.
+ *   Format: `projects/{project}/locations/{location}`
+ * @param {google.cloud.aiplatform.v1.Endpoint} request.endpoint
+ *   Required. The Endpoint to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/endpoint_service.create_endpoint.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_CreateEndpoint_async
+ */
   createEndpoint(
       request?: protos.google.cloud.aiplatform.v1.ICreateEndpointRequest,
       options?: CallOptions):
@@ -593,29 +615,6 @@ export class EndpointServiceClient {
           LROperation<protos.google.cloud.aiplatform.v1.IEndpoint, protos.google.cloud.aiplatform.v1.ICreateEndpointOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates an Endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource name of the Location to create the Endpoint in.
- *   Format: `projects/{project}/locations/{location}`
- * @param {google.cloud.aiplatform.v1.Endpoint} request.endpoint
- *   Required. The Endpoint to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.createEndpoint(request);
- * const [response] = await operation.promise();
- */
   createEndpoint(
       request?: protos.google.cloud.aiplatform.v1.ICreateEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -659,11 +658,8 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateEndpointProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/endpoint_service.create_endpoint.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_CreateEndpoint_async
  */
   async checkCreateEndpointProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.Endpoint, protos.google.cloud.aiplatform.v1.CreateEndpointOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -671,6 +667,27 @@ export class EndpointServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createEndpoint, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.Endpoint, protos.google.cloud.aiplatform.v1.CreateEndpointOperationMetadata>;
   }
+/**
+ * Deletes an Endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Endpoint resource to be deleted.
+ *   Format:
+ *   `projects/{project}/locations/{location}/endpoints/{endpoint}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/endpoint_service.delete_endpoint.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_DeleteEndpoint_async
+ */
   deleteEndpoint(
       request?: protos.google.cloud.aiplatform.v1.IDeleteEndpointRequest,
       options?: CallOptions):
@@ -691,28 +708,6 @@ export class EndpointServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an Endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Endpoint resource to be deleted.
- *   Format:
- *   `projects/{project}/locations/{location}/endpoints/{endpoint}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteEndpoint(request);
- * const [response] = await operation.promise();
- */
   deleteEndpoint(
       request?: protos.google.cloud.aiplatform.v1.IDeleteEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -756,11 +751,8 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteEndpointProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/endpoint_service.delete_endpoint.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_DeleteEndpoint_async
  */
   async checkDeleteEndpointProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -768,26 +760,6 @@ export class EndpointServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteEndpoint, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1.DeleteOperationMetadata>;
   }
-  deployModel(
-      request?: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1.IDeployModelResponse, protos.google.cloud.aiplatform.v1.IDeployModelOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deployModel(
-      request: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IDeployModelResponse, protos.google.cloud.aiplatform.v1.IDeployModelOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deployModel(
-      request: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IDeployModelResponse, protos.google.cloud.aiplatform.v1.IDeployModelOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deploys a Model into this Endpoint, creating a DeployedModel within it.
  *
@@ -823,10 +795,29 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deployModel(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/endpoint_service.deploy_model.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_DeployModel_async
  */
+  deployModel(
+      request?: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1.IDeployModelResponse, protos.google.cloud.aiplatform.v1.IDeployModelOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deployModel(
+      request: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IDeployModelResponse, protos.google.cloud.aiplatform.v1.IDeployModelOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deployModel(
+      request: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IDeployModelResponse, protos.google.cloud.aiplatform.v1.IDeployModelOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deployModel(
       request?: protos.google.cloud.aiplatform.v1.IDeployModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -870,11 +861,8 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeployModelProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/endpoint_service.deploy_model.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_DeployModel_async
  */
   async checkDeployModelProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.DeployModelResponse, protos.google.cloud.aiplatform.v1.DeployModelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -882,26 +870,6 @@ export class EndpointServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deployModel, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.DeployModelResponse, protos.google.cloud.aiplatform.v1.DeployModelOperationMetadata>;
   }
-  undeployModel(
-      request?: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1.IUndeployModelResponse, protos.google.cloud.aiplatform.v1.IUndeployModelOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  undeployModel(
-      request: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IUndeployModelResponse, protos.google.cloud.aiplatform.v1.IUndeployModelOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  undeployModel(
-      request: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1.IUndeployModelResponse, protos.google.cloud.aiplatform.v1.IUndeployModelOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Undeploys a Model from an Endpoint, removing a DeployedModel from it, and
  * freeing all resources it's using.
@@ -931,10 +899,29 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.undeployModel(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/endpoint_service.undeploy_model.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_UndeployModel_async
  */
+  undeployModel(
+      request?: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1.IUndeployModelResponse, protos.google.cloud.aiplatform.v1.IUndeployModelOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  undeployModel(
+      request: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IUndeployModelResponse, protos.google.cloud.aiplatform.v1.IUndeployModelOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  undeployModel(
+      request: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1.IUndeployModelResponse, protos.google.cloud.aiplatform.v1.IUndeployModelOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   undeployModel(
       request?: protos.google.cloud.aiplatform.v1.IUndeployModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -978,11 +965,8 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUndeployModelProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/endpoint_service.undeploy_model.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_UndeployModel_async
  */
   async checkUndeployModelProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1.UndeployModelResponse, protos.google.cloud.aiplatform.v1.UndeployModelOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -990,28 +974,7 @@ export class EndpointServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.undeployModel, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1.UndeployModelResponse, protos.google.cloud.aiplatform.v1.UndeployModelOperationMetadata>;
   }
-  listEndpoints(
-      request?: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IEndpoint[],
-        protos.google.cloud.aiplatform.v1.IListEndpointsRequest|null,
-        protos.google.cloud.aiplatform.v1.IListEndpointsResponse
-      ]>;
-  listEndpoints(
-      request: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
-          protos.google.cloud.aiplatform.v1.IListEndpointsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IEndpoint>): void;
-  listEndpoints(
-      request: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
-          protos.google.cloud.aiplatform.v1.IListEndpointsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1.IEndpoint>): void;
-/**
+ /**
  * Lists Endpoints in a Location.
  *
  * @param {Object} request
@@ -1066,6 +1029,27 @@ export class EndpointServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEndpoints(
+      request?: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IEndpoint[],
+        protos.google.cloud.aiplatform.v1.IListEndpointsRequest|null,
+        protos.google.cloud.aiplatform.v1.IListEndpointsResponse
+      ]>;
+  listEndpoints(
+      request: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
+          protos.google.cloud.aiplatform.v1.IListEndpointsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IEndpoint>): void;
+  listEndpoints(
+      request: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
+          protos.google.cloud.aiplatform.v1.IListEndpointsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1.IEndpoint>): void;
   listEndpoints(
       request?: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1231,11 +1215,8 @@ export class EndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEndpointsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/endpoint_service.list_endpoints.js</caption>
+ * region_tag:aiplatform_v1_generated_EndpointService_ListEndpoints_async
  */
   listEndpointsAsync(
       request?: protos.google.cloud.aiplatform.v1.IListEndpointsRequest,
@@ -1250,7 +1231,6 @@ export class EndpointServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEndpoints'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

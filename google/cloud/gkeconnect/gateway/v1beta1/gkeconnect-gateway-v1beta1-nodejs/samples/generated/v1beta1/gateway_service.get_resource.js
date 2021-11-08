@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const gatewayClient = new GatewayServiceClient();
 
-  async function getResource() {
+  async function callGetResource() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  getResource();
+  callGetResource();
   // [END connectgateway_v1beta1_generated_GatewayService_GetResource_async]
 }
 

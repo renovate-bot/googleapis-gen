@@ -28,7 +28,7 @@ function main(name, updateMask, resource) {
   /**
    *  Required. Mask of fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. Only fields specified in update_mask are updated.
    *  If you specify a field in the update_mask but don't specify its value here
@@ -39,7 +39,7 @@ function main(name, updateMask, resource) {
    *  If you specify the update_mask to be a special path "*", fully replaces all
    *  user-modifiable fields to match `resource`.
    */
-  // const resource = ''
+  // const resource = {}
 
   // Imports the Gkehub library
   const {GkeHubClient} = require('@google-cloud/gkehub').v1alpha2;
@@ -47,7 +47,7 @@ function main(name, updateMask, resource) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function updateMembership() {
+  async function callUpdateMembership() {
     // Construct request
     const request = {
       name,
@@ -61,7 +61,7 @@ function main(name, updateMask, resource) {
     console.log(response);
   }
 
-  updateMembership();
+  callUpdateMembership();
   // [END gkehub_v1alpha2_generated_GkeHub_UpdateMembership_async]
 }
 

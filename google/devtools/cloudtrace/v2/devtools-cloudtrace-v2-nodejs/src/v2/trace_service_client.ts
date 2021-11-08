@@ -291,6 +291,28 @@ export class TraceServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Sends new spans to new or existing traces. You cannot update
+ * existing spans.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the project where the spans belong. The format is
+ *   `projects/[PROJECT_ID]`.
+ * @param {number[]} request.spans
+ *   Required. A list of new spans. The span names must not match existing
+ *   spans, or the results are undefined.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/trace_service.batch_write_spans.js</caption>
+ * region_tag:cloudtrace_v2_generated_TraceService_BatchWriteSpans_async
+ */
   batchWriteSpans(
       request?: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
       options?: CallOptions):
@@ -311,28 +333,6 @@ export class TraceServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Sends new spans to new or existing traces. You cannot update
- * existing spans.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the project where the spans belong. The format is
- *   `projects/[PROJECT_ID]`.
- * @param {number[]} request.spans
- *   Required. A list of new spans. The span names must not match existing
- *   spans, or the results are undefined.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.batchWriteSpans(request);
- */
   batchWriteSpans(
       request?: protos.google.devtools.cloudtrace.v2.IBatchWriteSpansRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -367,26 +367,6 @@ export class TraceServiceClient {
     this.initialize();
     return this.innerApiCalls.batchWriteSpans(request, options, callback);
   }
-  createSpan(
-      request?: protos.google.devtools.cloudtrace.v2.ISpan,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.cloudtrace.v2.ISpan,
-        protos.google.devtools.cloudtrace.v2.ISpan|undefined, {}|undefined
-      ]>;
-  createSpan(
-      request: protos.google.devtools.cloudtrace.v2.ISpan,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.cloudtrace.v2.ISpan,
-          protos.google.devtools.cloudtrace.v2.ISpan|null|undefined,
-          {}|null|undefined>): void;
-  createSpan(
-      request: protos.google.devtools.cloudtrace.v2.ISpan,
-      callback: Callback<
-          protos.google.devtools.cloudtrace.v2.ISpan,
-          protos.google.devtools.cloudtrace.v2.ISpan|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new span.
  *
@@ -454,9 +434,29 @@ export class TraceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createSpan(request);
+ * @example <caption>include:samples/generated/v2/trace_service.create_span.js</caption>
+ * region_tag:cloudtrace_v2_generated_TraceService_CreateSpan_async
  */
+  createSpan(
+      request?: protos.google.devtools.cloudtrace.v2.ISpan,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.cloudtrace.v2.ISpan,
+        protos.google.devtools.cloudtrace.v2.ISpan|undefined, {}|undefined
+      ]>;
+  createSpan(
+      request: protos.google.devtools.cloudtrace.v2.ISpan,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.cloudtrace.v2.ISpan,
+          protos.google.devtools.cloudtrace.v2.ISpan|null|undefined,
+          {}|null|undefined>): void;
+  createSpan(
+      request: protos.google.devtools.cloudtrace.v2.ISpan,
+      callback: Callback<
+          protos.google.devtools.cloudtrace.v2.ISpan,
+          protos.google.devtools.cloudtrace.v2.ISpan|null|undefined,
+          {}|null|undefined>): void;
   createSpan(
       request?: protos.google.devtools.cloudtrace.v2.ISpan,
       optionsOrCallback?: CallOptions|Callback<

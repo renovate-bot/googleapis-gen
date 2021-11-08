@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  Approval decision and metadata.
    */
-  // const approvalResult = ''
+  // const approvalResult = {}
 
   // Imports the Cloudbuild library
   const {CloudBuildClient} = require('@google-cloud/cloudbuild').v1;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function approveBuild() {
+  async function callApproveBuild() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  approveBuild();
+  callApproveBuild();
   // [END cloudbuild_v1_generated_CloudBuild_ApproveBuild_async]
 }
 

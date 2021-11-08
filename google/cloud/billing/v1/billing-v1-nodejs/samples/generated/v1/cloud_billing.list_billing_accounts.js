@@ -34,7 +34,7 @@ function main() {
   /**
    *  Options for how to filter the returned billing accounts.
    *  Currently this only supports filtering for
-   *  [subaccounts](https://cloud.google.com/billing/docs/concepts) under a
+   *  subaccounts (https://cloud.google.com/billing/docs/concepts) under a
    *  single provided reseller billing account.
    *  (e.g. "master_billing_account=billingAccounts/012345-678901-ABCDEF").
    *  Boolean algebra and other fields are not currently supported.
@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const billingClient = new CloudBillingClient();
 
-  async function listBillingAccounts() {
+  async function callListBillingAccounts() {
     // Construct request
     const request = {
     };
@@ -59,7 +59,7 @@ function main() {
     }
   }
 
-  listBillingAccounts();
+  callListBillingAccounts();
   // [END cloudbilling_v1_generated_CloudBilling_ListBillingAccounts_async]
 }
 

@@ -126,7 +126,7 @@ describe('v1p1beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse());
             client.innerApiCalls.batchAnnotateImages = stubSimpleCall(expectedResponse);
             const [response] = await client.batchAnnotateImages(request);
@@ -142,7 +142,7 @@ describe('v1p1beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse());
             client.innerApiCalls.batchAnnotateImages = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1p1beta1.ImageAnnotatorClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchAnnotateImages = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchAnnotateImages(request), expectedError);

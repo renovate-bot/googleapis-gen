@@ -39,7 +39,7 @@ function main(parent) {
   // Instantiates a client
   const vpcaccessClient = new VpcAccessServiceClient();
 
-  async function listConnectors() {
+  async function callListConnectors() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent) {
     }
   }
 
-  listConnectors();
+  callListConnectors();
   // [END vpcaccess_v1_generated_VpcAccessService_ListConnectors_async]
 }
 

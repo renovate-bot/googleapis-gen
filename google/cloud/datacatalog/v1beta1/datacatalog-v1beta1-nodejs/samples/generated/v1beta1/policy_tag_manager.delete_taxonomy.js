@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function deleteTaxonomy() {
+  async function callDeleteTaxonomy() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteTaxonomy();
+  callDeleteTaxonomy();
   // [END datacatalog_v1beta1_generated_PolicyTagManager_DeleteTaxonomy_async]
 }
 

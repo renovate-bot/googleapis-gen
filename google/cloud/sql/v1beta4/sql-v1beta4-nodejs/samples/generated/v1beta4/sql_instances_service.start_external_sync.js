@@ -31,7 +31,7 @@ function main() {
   /**
    *  External sync mode.
    */
-  // const syncMode = ''
+  // const syncMode = {}
   /**
    *  Whether to skip the verification step (VESS).
    */
@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function startExternalSync() {
+  async function callStartExternalSync() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  startExternalSync();
+  callStartExternalSync();
   // [END sqladmin_v1beta4_generated_SqlInstancesService_StartExternalSync_async]
 }
 

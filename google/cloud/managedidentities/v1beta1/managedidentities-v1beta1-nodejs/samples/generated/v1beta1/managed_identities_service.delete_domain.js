@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const managedidentitiesClient = new ManagedIdentitiesServiceClient();
 
-  async function deleteDomain() {
+  async function callDeleteDomain() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  deleteDomain();
+  callDeleteDomain();
   // [END managedidentities_v1beta1_generated_ManagedIdentitiesService_DeleteDomain_async]
 }
 

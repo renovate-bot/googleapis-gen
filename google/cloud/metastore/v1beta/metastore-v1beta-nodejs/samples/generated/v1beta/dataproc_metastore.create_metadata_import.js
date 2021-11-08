@@ -39,7 +39,7 @@ function main(parent, metadataImportId, metadataImport) {
    *  ID of the created metadata import must be provided in the request's
    *  `metadata_import_id` field.
    */
-  // const metadataImport = ''
+  // const metadataImport = {}
   /**
    *  Optional. A request ID. Specify a unique request ID to allow the server to
    *  ignore the request if it has completed. The server will ignore subsequent
@@ -49,7 +49,7 @@ function main(parent, metadataImportId, metadataImport) {
    *  with the same request ID, the server ignores the second request to prevent
    *  the creation of duplicate commitments.
    *  The request ID must be a valid
-   *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
+   *  UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier#Format)
    *  A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
    */
   // const requestId = 'abc123'
@@ -60,7 +60,7 @@ function main(parent, metadataImportId, metadataImport) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function createMetadataImport() {
+  async function callCreateMetadataImport() {
     // Construct request
     const request = {
       parent,
@@ -74,7 +74,7 @@ function main(parent, metadataImportId, metadataImport) {
     console.log(response);
   }
 
-  createMetadataImport();
+  callCreateMetadataImport();
   // [END metastore_v1beta_generated_DataprocMetastore_CreateMetadataImport_async]
 }
 

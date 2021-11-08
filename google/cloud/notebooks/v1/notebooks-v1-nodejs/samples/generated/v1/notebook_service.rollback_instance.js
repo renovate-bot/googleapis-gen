@@ -37,7 +37,7 @@ function main(name, targetSnapshot) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function rollbackInstance() {
+  async function callRollbackInstance() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name, targetSnapshot) {
     console.log(response);
   }
 
-  rollbackInstance();
+  callRollbackInstance();
   // [END notebooks_v1_generated_NotebookService_RollbackInstance_async]
 }
 

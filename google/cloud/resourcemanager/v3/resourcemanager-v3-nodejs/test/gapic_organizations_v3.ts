@@ -509,7 +509,7 @@ describe('v3.OrganizationsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchOrganizationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Organization()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Organization()),
@@ -529,7 +529,7 @@ describe('v3.OrganizationsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchOrganizationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Organization()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Organization()),
@@ -560,7 +560,7 @@ describe('v3.OrganizationsClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchOrganizationsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.searchOrganizations = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.searchOrganizations(request), expectedError);

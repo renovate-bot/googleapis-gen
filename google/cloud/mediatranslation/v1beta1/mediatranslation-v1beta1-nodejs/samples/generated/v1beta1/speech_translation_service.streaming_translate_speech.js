@@ -25,7 +25,7 @@ function main() {
    *  request. The first `StreamingTranslateSpeechRequest` message must contain
    *  a `streaming_config` message.
    */
-  // const streamingConfig = ''
+  // const streamingConfig = {}
   /**
    *  The audio data to be translated. Sequential chunks of audio data are sent
    *  in sequential `StreamingTranslateSpeechRequest` messages. The first
@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const mediatranslationClient = new SpeechTranslationServiceClient();
 
-  async function streamingTranslateSpeech() {
+  async function callStreamingTranslateSpeech() {
     // Construct request
     const request = {
     };
@@ -58,7 +58,7 @@ function main() {
     stream.end(); 
   }
 
-  streamingTranslateSpeech();
+  callStreamingTranslateSpeech();
   // [END mediatranslation_v1beta1_generated_SpeechTranslationService_StreamingTranslateSpeech_async]
 }
 

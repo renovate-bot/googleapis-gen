@@ -36,7 +36,7 @@ function main(projectId, keys) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function allocateIds() {
+  async function callAllocateIds() {
     // Construct request
     const request = {
       projectId,
@@ -48,7 +48,7 @@ function main(projectId, keys) {
     console.log(response);
   }
 
-  allocateIds();
+  callAllocateIds();
   // [END datastore_v1_generated_Datastore_AllocateIds_async]
 }
 

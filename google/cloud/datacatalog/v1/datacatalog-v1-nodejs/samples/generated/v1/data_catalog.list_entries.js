@@ -41,7 +41,7 @@ function main(parent) {
    *  For example, to return a list of entries with only the `name` field,
    *  set `read_mask` to only one path with the `name` value.
    */
-  // const readMask = ''
+  // const readMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -49,7 +49,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function listEntries() {
+  async function callListEntries() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent) {
     }
   }
 
-  listEntries();
+  callListEntries();
   // [END datacatalog_v1_generated_DataCatalog_ListEntries_async]
 }
 

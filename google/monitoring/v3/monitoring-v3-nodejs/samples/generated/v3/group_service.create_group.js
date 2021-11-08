@@ -21,7 +21,7 @@ function main(name, group) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in
    *  which to create the group. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
@@ -30,7 +30,7 @@ function main(name, group) {
    *  Required. A group definition. It is an error to define the `name` field because
    *  the system assigns the name.
    */
-  // const group = ''
+  // const group = {}
   /**
    *  If true, validate this request but do not create the group.
    */
@@ -42,7 +42,7 @@ function main(name, group) {
   // Instantiates a client
   const monitoringClient = new GroupServiceClient();
 
-  async function createGroup() {
+  async function callCreateGroup() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name, group) {
     console.log(response);
   }
 
-  createGroup();
+  callCreateGroup();
   // [END monitoring_v3_generated_GroupService_CreateGroup_async]
 }
 

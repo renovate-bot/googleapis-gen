@@ -40,7 +40,7 @@ function main(projectId, triggerId) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function deleteBuildTrigger() {
+  async function callDeleteBuildTrigger() {
     // Construct request
     const request = {
       projectId,
@@ -52,7 +52,7 @@ function main(projectId, triggerId) {
     console.log(response);
   }
 
-  deleteBuildTrigger();
+  callDeleteBuildTrigger();
   // [END cloudbuild_v1_generated_CloudBuild_DeleteBuildTrigger_async]
 }
 

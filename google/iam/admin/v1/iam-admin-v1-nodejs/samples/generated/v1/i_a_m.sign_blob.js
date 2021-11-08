@@ -20,22 +20,6 @@ function main(name, bytesToSign) {
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
-  /**
-   *  Required. Deprecated. [Migrate to Service Account Credentials
-   *  API](https://cloud.google.com/iam/help/credentials/migrate-api).
-   *  The resource name of the service account in the following format:
-   *  `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   *  Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   *  the account. The `ACCOUNT` value can be the `email` address or the
-   *  `unique_id` of the service account.
-   */
-  // const name = 'abc123'
-  /**
-   *  Required. Deprecated. [Migrate to Service Account Credentials
-   *  API](https://cloud.google.com/iam/help/credentials/migrate-api).
-   *  The bytes to sign.
-   */
-  // const bytesToSign = 'Buffer.from('string')'
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -43,7 +27,7 @@ function main(name, bytesToSign) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function signBlob() {
+  async function callSignBlob() {
     // Construct request
     const request = {
       name,
@@ -55,7 +39,7 @@ function main(name, bytesToSign) {
     console.log(response);
   }
 
-  signBlob();
+  callSignBlob();
   // [END iam_v1_generated_IAM_SignBlob_async]
 }
 

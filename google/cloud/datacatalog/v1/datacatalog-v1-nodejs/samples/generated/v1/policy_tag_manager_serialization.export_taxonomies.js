@@ -40,7 +40,7 @@ function main(parent, taxonomies) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerSerializationClient();
 
-  async function exportTaxonomies() {
+  async function callExportTaxonomies() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, taxonomies) {
     console.log(response);
   }
 
-  exportTaxonomies();
+  callExportTaxonomies();
   // [END datacatalog_v1_generated_PolicyTagManagerSerialization_ExportTaxonomies_async]
 }
 

@@ -23,7 +23,7 @@ function main(stream) {
   /**
    *  Required. Stream to finalize.
    */
-  // const stream = ''
+  // const stream = {}
 
   // Imports the Storage library
   const {BigQueryStorageClient} = require('@google-cloud/bigquery-storage').v1beta1;
@@ -31,7 +31,7 @@ function main(stream) {
   // Instantiates a client
   const storageClient = new BigQueryStorageClient();
 
-  async function finalizeStream() {
+  async function callFinalizeStream() {
     // Construct request
     const request = {
       stream,
@@ -42,7 +42,7 @@ function main(stream) {
     console.log(response);
   }
 
-  finalizeStream();
+  callFinalizeStream();
   // [END bigquerystorage_v1beta1_generated_BigQueryStorage_FinalizeStream_async]
 }
 

@@ -41,8 +41,8 @@ function main(parent) {
   /**
    *  A token identifying a page of results for the server to return
    *  Typically obtained via
-   *  [ListModelsResponse.next_page_token][google.cloud.automl.v1.ListModelsResponse.next_page_token] of the previous
-   *  [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels] call.
+   *  ListModelsResponse.next_page_token google.cloud.automl.v1.ListModelsResponse.next_page_token  of the previous
+   *  AutoMl.ListModels google.cloud.automl.v1.AutoMl.ListModels  call.
    */
   // const pageToken = 'abc123'
 
@@ -52,7 +52,7 @@ function main(parent) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function listModels() {
+  async function callListModels() {
     // Construct request
     const request = {
       parent,
@@ -65,7 +65,7 @@ function main(parent) {
     }
   }
 
-  listModels();
+  callListModels();
   // [END automl_v1_generated_AutoMl_ListModels_async]
 }
 

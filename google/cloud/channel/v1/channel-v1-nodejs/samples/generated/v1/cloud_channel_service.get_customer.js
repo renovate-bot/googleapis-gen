@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function getCustomer() {
+  async function callGetCustomer() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getCustomer();
+  callGetCustomer();
   // [END cloudchannel_v1_generated_CloudChannelService_GetCustomer_async]
 }
 

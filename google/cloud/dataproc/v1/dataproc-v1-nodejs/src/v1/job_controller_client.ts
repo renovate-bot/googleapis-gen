@@ -330,26 +330,6 @@ export class JobControllerClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  submitJob(
-      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dataproc.v1.IJob,
-        protos.google.cloud.dataproc.v1.ISubmitJobRequest|undefined, {}|undefined
-      ]>;
-  submitJob(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dataproc.v1.IJob,
-          protos.google.cloud.dataproc.v1.ISubmitJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  submitJob(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
-      callback: Callback<
-          protos.google.cloud.dataproc.v1.IJob,
-          protos.google.cloud.dataproc.v1.ISubmitJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Submits a job to a cluster.
  *
@@ -382,9 +362,29 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.submitJob(request);
+ * @example <caption>include:samples/generated/v1/job_controller.submit_job.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_SubmitJob_async
  */
+  submitJob(
+      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dataproc.v1.IJob,
+        protos.google.cloud.dataproc.v1.ISubmitJobRequest|undefined, {}|undefined
+      ]>;
+  submitJob(
+      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dataproc.v1.IJob,
+          protos.google.cloud.dataproc.v1.ISubmitJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  submitJob(
+      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      callback: Callback<
+          protos.google.cloud.dataproc.v1.IJob,
+          protos.google.cloud.dataproc.v1.ISubmitJobRequest|null|undefined,
+          {}|null|undefined>): void;
   submitJob(
       request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -419,6 +419,28 @@ export class JobControllerClient {
     this.initialize();
     return this.innerApiCalls.submitJob(request, options, callback);
   }
+/**
+ * Gets the resource representation for a job in a project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.projectId
+ *   Required. The ID of the Google Cloud Platform project that the job
+ *   belongs to.
+ * @param {string} request.region
+ *   Required. The Dataproc region in which to handle the request.
+ * @param {string} request.jobId
+ *   Required. The job ID.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Job]{@link google.cloud.dataproc.v1.Job}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/job_controller.get_job.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_GetJob_async
+ */
   getJob(
       request?: protos.google.cloud.dataproc.v1.IGetJobRequest,
       options?: CallOptions):
@@ -439,28 +461,6 @@ export class JobControllerClient {
           protos.google.cloud.dataproc.v1.IJob,
           protos.google.cloud.dataproc.v1.IGetJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the resource representation for a job in a project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.projectId
- *   Required. The ID of the Google Cloud Platform project that the job
- *   belongs to.
- * @param {string} request.region
- *   Required. The Dataproc region in which to handle the request.
- * @param {string} request.jobId
- *   Required. The job ID.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Job]{@link google.cloud.dataproc.v1.Job}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getJob(request);
- */
   getJob(
       request?: protos.google.cloud.dataproc.v1.IGetJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -495,26 +495,6 @@ export class JobControllerClient {
     this.initialize();
     return this.innerApiCalls.getJob(request, options, callback);
   }
-  updateJob(
-      request?: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dataproc.v1.IJob,
-        protos.google.cloud.dataproc.v1.IUpdateJobRequest|undefined, {}|undefined
-      ]>;
-  updateJob(
-      request: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dataproc.v1.IJob,
-          protos.google.cloud.dataproc.v1.IUpdateJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateJob(
-      request: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
-      callback: Callback<
-          protos.google.cloud.dataproc.v1.IJob,
-          protos.google.cloud.dataproc.v1.IUpdateJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a job in a project.
  *
@@ -543,9 +523,29 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateJob(request);
+ * @example <caption>include:samples/generated/v1/job_controller.update_job.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_UpdateJob_async
  */
+  updateJob(
+      request?: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dataproc.v1.IJob,
+        protos.google.cloud.dataproc.v1.IUpdateJobRequest|undefined, {}|undefined
+      ]>;
+  updateJob(
+      request: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dataproc.v1.IJob,
+          protos.google.cloud.dataproc.v1.IUpdateJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateJob(
+      request: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
+      callback: Callback<
+          protos.google.cloud.dataproc.v1.IJob,
+          protos.google.cloud.dataproc.v1.IUpdateJobRequest|null|undefined,
+          {}|null|undefined>): void;
   updateJob(
       request?: protos.google.cloud.dataproc.v1.IUpdateJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -580,26 +580,6 @@ export class JobControllerClient {
     this.initialize();
     return this.innerApiCalls.updateJob(request, options, callback);
   }
-  cancelJob(
-      request?: protos.google.cloud.dataproc.v1.ICancelJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dataproc.v1.IJob,
-        protos.google.cloud.dataproc.v1.ICancelJobRequest|undefined, {}|undefined
-      ]>;
-  cancelJob(
-      request: protos.google.cloud.dataproc.v1.ICancelJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dataproc.v1.IJob,
-          protos.google.cloud.dataproc.v1.ICancelJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  cancelJob(
-      request: protos.google.cloud.dataproc.v1.ICancelJobRequest,
-      callback: Callback<
-          protos.google.cloud.dataproc.v1.IJob,
-          protos.google.cloud.dataproc.v1.ICancelJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Starts a job cancellation request. To access the job resource
  * after cancellation, call
@@ -623,9 +603,29 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.cancelJob(request);
+ * @example <caption>include:samples/generated/v1/job_controller.cancel_job.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_CancelJob_async
  */
+  cancelJob(
+      request?: protos.google.cloud.dataproc.v1.ICancelJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dataproc.v1.IJob,
+        protos.google.cloud.dataproc.v1.ICancelJobRequest|undefined, {}|undefined
+      ]>;
+  cancelJob(
+      request: protos.google.cloud.dataproc.v1.ICancelJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dataproc.v1.IJob,
+          protos.google.cloud.dataproc.v1.ICancelJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  cancelJob(
+      request: protos.google.cloud.dataproc.v1.ICancelJobRequest,
+      callback: Callback<
+          protos.google.cloud.dataproc.v1.IJob,
+          protos.google.cloud.dataproc.v1.ICancelJobRequest|null|undefined,
+          {}|null|undefined>): void;
   cancelJob(
       request?: protos.google.cloud.dataproc.v1.ICancelJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -660,26 +660,6 @@ export class JobControllerClient {
     this.initialize();
     return this.innerApiCalls.cancelJob(request, options, callback);
   }
-  deleteJob(
-      request?: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.dataproc.v1.IDeleteJobRequest|undefined, {}|undefined
-      ]>;
-  deleteJob(
-      request: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dataproc.v1.IDeleteJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteJob(
-      request: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dataproc.v1.IDeleteJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the job from the project. If the job is active, the delete fails,
  * and the response returns `FAILED_PRECONDITION`.
@@ -700,9 +680,29 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteJob(request);
+ * @example <caption>include:samples/generated/v1/job_controller.delete_job.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_DeleteJob_async
  */
+  deleteJob(
+      request?: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.dataproc.v1.IDeleteJobRequest|undefined, {}|undefined
+      ]>;
+  deleteJob(
+      request: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dataproc.v1.IDeleteJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteJob(
+      request: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dataproc.v1.IDeleteJobRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteJob(
       request?: protos.google.cloud.dataproc.v1.IDeleteJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -738,26 +738,6 @@ export class JobControllerClient {
     return this.innerApiCalls.deleteJob(request, options, callback);
   }
 
-  submitJobAsOperation(
-      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  submitJobAsOperation(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  submitJobAsOperation(
-      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Submits job to a cluster.
  *
@@ -792,10 +772,29 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.submitJobAsOperation(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/job_controller.submit_job_as_operation.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_SubmitJobAsOperation_async
  */
+  submitJobAsOperation(
+      request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  submitJobAsOperation(
+      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  submitJobAsOperation(
+      request: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dataproc.v1.IJob, protos.google.cloud.dataproc.v1.IJobMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   submitJobAsOperation(
       request?: protos.google.cloud.dataproc.v1.ISubmitJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -839,11 +838,8 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkSubmitJobAsOperationProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/job_controller.submit_job_as_operation.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_SubmitJobAsOperation_async
  */
   async checkSubmitJobAsOperationProgress(name: string): Promise<LROperation<protos.google.cloud.dataproc.v1.Job, protos.google.cloud.dataproc.v1.JobMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -851,28 +847,7 @@ export class JobControllerClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.submitJobAsOperation, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dataproc.v1.Job, protos.google.cloud.dataproc.v1.JobMetadata>;
   }
-  listJobs(
-      request?: protos.google.cloud.dataproc.v1.IListJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dataproc.v1.IJob[],
-        protos.google.cloud.dataproc.v1.IListJobsRequest|null,
-        protos.google.cloud.dataproc.v1.IListJobsResponse
-      ]>;
-  listJobs(
-      request: protos.google.cloud.dataproc.v1.IListJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dataproc.v1.IListJobsRequest,
-          protos.google.cloud.dataproc.v1.IListJobsResponse|null|undefined,
-          protos.google.cloud.dataproc.v1.IJob>): void;
-  listJobs(
-      request: protos.google.cloud.dataproc.v1.IListJobsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dataproc.v1.IListJobsRequest,
-          protos.google.cloud.dataproc.v1.IListJobsResponse|null|undefined,
-          protos.google.cloud.dataproc.v1.IJob>): void;
-/**
+ /**
  * Lists regions/{region}/jobs in a project.
  *
  * @param {Object} request
@@ -923,6 +898,27 @@ export class JobControllerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listJobs(
+      request?: protos.google.cloud.dataproc.v1.IListJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dataproc.v1.IJob[],
+        protos.google.cloud.dataproc.v1.IListJobsRequest|null,
+        protos.google.cloud.dataproc.v1.IListJobsResponse
+      ]>;
+  listJobs(
+      request: protos.google.cloud.dataproc.v1.IListJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dataproc.v1.IListJobsRequest,
+          protos.google.cloud.dataproc.v1.IListJobsResponse|null|undefined,
+          protos.google.cloud.dataproc.v1.IJob>): void;
+  listJobs(
+      request: protos.google.cloud.dataproc.v1.IListJobsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dataproc.v1.IListJobsRequest,
+          protos.google.cloud.dataproc.v1.IListJobsResponse|null|undefined,
+          protos.google.cloud.dataproc.v1.IJob>): void;
   listJobs(
       request?: protos.google.cloud.dataproc.v1.IListJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1080,11 +1076,8 @@ export class JobControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/job_controller.list_jobs.js</caption>
+ * region_tag:dataproc_v1_generated_JobController_ListJobs_async
  */
   listJobsAsync(
       request?: protos.google.cloud.dataproc.v1.IListJobsRequest,
@@ -1099,7 +1092,6 @@ export class JobControllerClient {
     ] = gax.routingHeader.fromParams({
       'project_id': request.projectId || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

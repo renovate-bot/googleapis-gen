@@ -28,7 +28,7 @@ function main(parent, registration, yearlyPrice) {
   /**
    *  Required. The complete `Registration` resource to be created.
    */
-  // const registration = ''
+  // const registration = {}
   /**
    *  The list of domain notices that you acknowledge. Call
    *  `RetrieveRegisterParameters` to see the notices that need acknowledgement.
@@ -45,7 +45,7 @@ function main(parent, registration, yearlyPrice) {
    *  The value that should be put here can be obtained from
    *  RetrieveRegisterParameters or SearchDomains calls.
    */
-  // const yearlyPrice = ''
+  // const yearlyPrice = {}
   /**
    *  When true, only validation is performed, without actually registering
    *  the domain. Follows:
@@ -59,7 +59,7 @@ function main(parent, registration, yearlyPrice) {
   // Instantiates a client
   const domainsClient = new DomainsClient();
 
-  async function registerDomain() {
+  async function callRegisterDomain() {
     // Construct request
     const request = {
       parent,
@@ -73,7 +73,7 @@ function main(parent, registration, yearlyPrice) {
     console.log(response);
   }
 
-  registerDomain();
+  callRegisterDomain();
   // [END domains_v1beta1_generated_Domains_RegisterDomain_async]
 }
 

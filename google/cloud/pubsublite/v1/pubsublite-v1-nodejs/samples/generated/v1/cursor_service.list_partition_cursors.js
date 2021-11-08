@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const pubsubliteClient = new CursorServiceClient();
 
-  async function listPartitionCursors() {
+  async function callListPartitionCursors() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listPartitionCursors();
+  callListPartitionCursors();
   // [END pubsublite_v1_generated_CursorService_ListPartitionCursors_async]
 }
 

@@ -34,7 +34,7 @@ function main() {
    *  Details on how to consolidate related actions that make up the activity. If
    *  not set, then related actions are not consolidated.
    */
-  // const consolidationStrategy = ''
+  // const consolidationStrategy = {}
   /**
    *  The miminum number of activities desired in the response; the server will
    *  attempt to return at least this quanitity. The server may also return fewer
@@ -75,7 +75,7 @@ function main() {
   // Instantiates a client
   const activityClient = new DriveActivityServiceClient();
 
-  async function queryDriveActivity() {
+  async function callQueryDriveActivity() {
     // Construct request
     const request = {
     };
@@ -87,7 +87,7 @@ function main() {
     }
   }
 
-  queryDriveActivity();
+  callQueryDriveActivity();
   // [END driveactivity_v2_generated_DriveActivityService_QueryDriveActivity_async]
 }
 

@@ -42,7 +42,7 @@ function main(serviceName, consumerId) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function enableService() {
+  async function callEnableService() {
     // Construct request
     const request = {
       serviceName,
@@ -55,7 +55,7 @@ function main(serviceName, consumerId) {
     console.log(response);
   }
 
-  enableService();
+  callEnableService();
   // [END servicemanagement_v1_generated_ServiceManager_EnableService_async]
 }
 

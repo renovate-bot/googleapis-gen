@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const recommendationengineClient = new PredictionApiKeyRegistryClient();
 
-  async function listPredictionApiKeyRegistrations() {
+  async function callListPredictionApiKeyRegistrations() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listPredictionApiKeyRegistrations();
+  callListPredictionApiKeyRegistrations();
   // [END recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_ListPredictionApiKeyRegistrations_async]
 }
 

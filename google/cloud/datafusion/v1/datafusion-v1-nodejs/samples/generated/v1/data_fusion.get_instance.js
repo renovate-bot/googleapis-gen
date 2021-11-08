@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const datafusionClient = new DataFusionClient();
 
-  async function getInstance() {
+  async function callGetInstance() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  getInstance();
+  callGetInstance();
   // [END datafusion_v1_generated_DataFusion_GetInstance_async]
 }
 

@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform.
    */
-  // const operation = ''
+  // const operation = {}
 
   // Imports the Googleads library
   const {BillingSetupServiceClient} = require('google-ads').v9;
@@ -35,7 +35,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new BillingSetupServiceClient();
 
-  async function mutateBillingSetup() {
+  async function callMutateBillingSetup() {
     // Construct request
     const request = {
       customerId,
@@ -47,7 +47,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateBillingSetup();
+  callMutateBillingSetup();
   // [END googleads_v9_generated_BillingSetupService_MutateBillingSetup_async]
 }
 

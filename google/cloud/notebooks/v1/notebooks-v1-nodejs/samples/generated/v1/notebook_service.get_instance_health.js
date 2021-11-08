@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function getInstanceHealth() {
+  async function callGetInstanceHealth() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getInstanceHealth();
+  callGetInstanceHealth();
   // [END notebooks_v1_generated_NotebookService_GetInstanceHealth_async]
 }
 

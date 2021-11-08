@@ -31,11 +31,11 @@ function main(vm) {
   /**
    *  The VM creation configuration
    */
-  // const vmCreationConfig = ''
+  // const vmCreationConfig = {}
   /**
    *  The VM selection configuration
    */
-  // const vmSelectionConfig = ''
+  // const vmSelectionConfig = {}
   /**
    *  The port that will be open on the bastion host
    */
@@ -47,7 +47,7 @@ function main(vm) {
   // Instantiates a client
   const clouddmsClient = new DataMigrationServiceClient();
 
-  async function generateSshScript() {
+  async function callGenerateSshScript() {
     // Construct request
     const request = {
       vm,
@@ -58,7 +58,7 @@ function main(vm) {
     console.log(response);
   }
 
-  generateSshScript();
+  callGenerateSshScript();
   // [END datamigration_v1_generated_DataMigrationService_GenerateSshScript_async]
 }
 

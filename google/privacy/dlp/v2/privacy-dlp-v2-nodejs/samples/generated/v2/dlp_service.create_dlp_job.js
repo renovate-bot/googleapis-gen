@@ -22,9 +22,9 @@ function main(parent) {
    */
   /**
    *  Required. Parent resource name.
-   *  The format of this value varies depending on whether you have [specified a
+   *  The format of this value varies depending on whether you have specified a
    *  processing
-   *  location](https://cloud.google.com/dlp/docs/specifying-location):
+   *  location (https://cloud.google.com/dlp/docs/specifying-location):
    *  + Projects scope, location specified:<br/>
    *    `projects/`<var>PROJECT_ID</var>`/locations/`<var>LOCATION_ID</var>
    *  + Projects scope, no location specified (defaults to global):<br/>
@@ -38,11 +38,11 @@ function main(parent) {
   /**
    *  Set to control what and how to inspect.
    */
-  // const inspectJob = ''
+  // const inspectJob = {}
   /**
    *  Set to choose what metric to calculate.
    */
-  // const riskJob = ''
+  // const riskJob = {}
   /**
    *  The job id can contain uppercase and lowercase letters,
    *  numbers, and hyphens; that is, it must match the regular
@@ -50,10 +50,6 @@ function main(parent) {
    *  characters. Can be empty to allow the system to generate one.
    */
   // const jobId = 'abc123'
-  /**
-   *  Deprecated. This field has no effect.
-   */
-  // const locationId = 'abc123'
 
   // Imports the Dlp library
   const {DlpServiceClient} = require('@google-cloud/dlp').v2;
@@ -61,7 +57,7 @@ function main(parent) {
   // Instantiates a client
   const dlpClient = new DlpServiceClient();
 
-  async function createDlpJob() {
+  async function callCreateDlpJob() {
     // Construct request
     const request = {
       parent,
@@ -72,7 +68,7 @@ function main(parent) {
     console.log(response);
   }
 
-  createDlpJob();
+  callCreateDlpJob();
   // [END dlp_v2_generated_DlpService_CreateDlpJob_async]
 }
 

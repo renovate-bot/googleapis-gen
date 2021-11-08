@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CustomAudienceServiceClient();
 
-  async function getCustomAudience() {
+  async function callGetCustomAudience() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCustomAudience();
+  callGetCustomAudience();
   // [END googleads_v7_generated_CustomAudienceService_GetCustomAudience_async]
 }
 

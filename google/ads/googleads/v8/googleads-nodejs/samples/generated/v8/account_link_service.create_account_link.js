@@ -27,7 +27,7 @@ function main(customerId, accountLink) {
   /**
    *  Required. The account link to be created.
    */
-  // const accountLink = ''
+  // const accountLink = {}
 
   // Imports the Googleads library
   const {AccountLinkServiceClient} = require('google-ads').v8;
@@ -35,7 +35,7 @@ function main(customerId, accountLink) {
   // Instantiates a client
   const googleadsClient = new AccountLinkServiceClient();
 
-  async function createAccountLink() {
+  async function callCreateAccountLink() {
     // Construct request
     const request = {
       customerId,
@@ -47,7 +47,7 @@ function main(customerId, accountLink) {
     console.log(response);
   }
 
-  createAccountLink();
+  callCreateAccountLink();
   // [END googleads_v8_generated_AccountLinkService_CreateAccountLink_async]
 }
 

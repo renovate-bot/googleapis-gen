@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on the link.
    */
-  // const operation = ''
+  // const operation = {}
   /**
    *  If true, successful operations will be carried out and invalid
    *  operations will return errors. If false, all operations will be carried
@@ -47,7 +47,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new AccountLinkServiceClient();
 
-  async function mutateAccountLink() {
+  async function callMutateAccountLink() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateAccountLink();
+  callMutateAccountLink();
   // [END googleads_v9_generated_AccountLinkService_MutateAccountLink_async]
 }
 

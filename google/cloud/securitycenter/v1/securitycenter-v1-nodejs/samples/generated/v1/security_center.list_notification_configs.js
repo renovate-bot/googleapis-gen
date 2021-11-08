@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const securitycenterClient = new SecurityCenterClient();
 
-  async function listNotificationConfigs() {
+  async function callListNotificationConfigs() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listNotificationConfigs();
+  callListNotificationConfigs();
   // [END securitycenter_v1_generated_SecurityCenter_ListNotificationConfigs_async]
 }
 

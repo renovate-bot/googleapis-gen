@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const networkservicesClient = new NetworkServicesClient();
 
-  async function deleteEndpointPolicy() {
+  async function callDeleteEndpointPolicy() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteEndpointPolicy();
+  callDeleteEndpointPolicy();
   // [END networkservices_v1beta1_generated_NetworkServices_DeleteEndpointPolicy_async]
 }
 

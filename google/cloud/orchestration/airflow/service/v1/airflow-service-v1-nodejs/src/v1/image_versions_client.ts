@@ -295,28 +295,7 @@ export class ImageVersionsClient {
   // -- Service calls --
   // -------------------
 
-  listImageVersions(
-      request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.orchestration.airflow.service.v1.IImageVersion[],
-        protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest|null,
-        protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsResponse
-      ]>;
-  listImageVersions(
-      request: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
-          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsResponse|null|undefined,
-          protos.google.cloud.orchestration.airflow.service.v1.IImageVersion>): void;
-  listImageVersions(
-      request: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
-          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsResponse|null|undefined,
-          protos.google.cloud.orchestration.airflow.service.v1.IImageVersion>): void;
-/**
+ /**
  * List ImageVersions for provided location.
  *
  * @param {Object} request
@@ -343,6 +322,27 @@ export class ImageVersionsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listImageVersions(
+      request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.orchestration.airflow.service.v1.IImageVersion[],
+        protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest|null,
+        protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsResponse
+      ]>;
+  listImageVersions(
+      request: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
+          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsResponse|null|undefined,
+          protos.google.cloud.orchestration.airflow.service.v1.IImageVersion>): void;
+  listImageVersions(
+      request: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
+          protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsResponse|null|undefined,
+          protos.google.cloud.orchestration.airflow.service.v1.IImageVersion>): void;
   listImageVersions(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -452,11 +452,8 @@ export class ImageVersionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listImageVersionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/image_versions.list_image_versions.js</caption>
+ * region_tag:composer_v1_generated_ImageVersions_ListImageVersions_async
  */
   listImageVersionsAsync(
       request?: protos.google.cloud.orchestration.airflow.service.v1.IListImageVersionsRequest,
@@ -471,7 +468,6 @@ export class ImageVersionsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listImageVersions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

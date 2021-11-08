@@ -21,10 +21,10 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   *  Required. The resource name of the SecretVersion google.cloud.secretmanager.v1.SecretVersion  in the format
    *  `projects/* /secrets/* /versions/*`.
    *  `projects/* /secrets/* /versions/latest` is an alias to the most recently
-   *  created [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   *  created SecretVersion google.cloud.secretmanager.v1.SecretVersion.
    */
   // const name = 'abc123'
 
@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const secretmanagerClient = new SecretManagerServiceClient();
 
-  async function getSecretVersion() {
+  async function callGetSecretVersion() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSecretVersion();
+  callGetSecretVersion();
   // [END secretmanager_v1_generated_SecretManagerService_GetSecretVersion_async]
 }
 

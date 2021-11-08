@@ -31,7 +31,7 @@ function main(parent, connectionProfileId, connectionProfile) {
   /**
    *  Required. The connection profile resource to create.
    */
-  // const connectionProfile = ''
+  // const connectionProfile = {}
   /**
    *  Optional. A request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -53,7 +53,7 @@ function main(parent, connectionProfileId, connectionProfile) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function createConnectionProfile() {
+  async function callCreateConnectionProfile() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent, connectionProfileId, connectionProfile) {
     console.log(response);
   }
 
-  createConnectionProfile();
+  callCreateConnectionProfile();
   // [END datastream_v1alpha1_generated_Datastream_CreateConnectionProfile_async]
 }
 

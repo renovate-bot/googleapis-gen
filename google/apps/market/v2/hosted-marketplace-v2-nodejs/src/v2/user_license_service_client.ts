@@ -272,6 +272,25 @@ export class UserLicenseServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Get the user's licensing status for their permission to use a given app.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.applicationId
+ *   Application Id
+ * @param {string} request.userId
+ *   User Id
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [UserLicense]{@link ccc.hosted.marketplace.v2.UserLicense}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/user_license_service.get.js</caption>
+ * region_tag:appsmarket_v2_generated_UserLicenseService_Get_async
+ */
   get(
       request?: protos.ccc.hosted.marketplace.v2.IUserLicenseGetRequest,
       options?: CallOptions):
@@ -292,25 +311,6 @@ export class UserLicenseServiceClient {
           protos.ccc.hosted.marketplace.v2.IUserLicense,
           protos.ccc.hosted.marketplace.v2.IUserLicenseGetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get the user's licensing status for their permission to use a given app.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.applicationId
- *   Application Id
- * @param {string} request.userId
- *   User Id
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [UserLicense]{@link ccc.hosted.marketplace.v2.UserLicense}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
- */
   get(
       request?: protos.ccc.hosted.marketplace.v2.IUserLicenseGetRequest,
       optionsOrCallback?: CallOptions|Callback<

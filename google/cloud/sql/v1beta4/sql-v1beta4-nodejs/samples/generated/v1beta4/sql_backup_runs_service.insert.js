@@ -30,7 +30,7 @@ function main() {
   // const project = 'my-project'
   /**
    */
-  // const body = ''
+  // const body = {}
 
   // Imports the Sql library
   const {SqlBackupRunsServiceClient} = require('@google-cloud/sql').v1beta4;
@@ -38,7 +38,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlBackupRunsServiceClient();
 
-  async function insert() {
+  async function callInsert() {
     // Construct request
     const request = {
     };
@@ -48,7 +48,7 @@ function main() {
     console.log(response);
   }
 
-  insert();
+  callInsert();
   // [END sqladmin_v1beta4_generated_SqlBackupRunsService_Insert_async]
 }
 

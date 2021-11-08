@@ -33,7 +33,7 @@ function main(buildTarget) {
   // Instantiates a client
   const moblabClient = new BuildServiceClient();
 
-  async function findMostStableBuild() {
+  async function callFindMostStableBuild() {
     // Construct request
     const request = {
       buildTarget,
@@ -44,7 +44,7 @@ function main(buildTarget) {
     console.log(response);
   }
 
-  findMostStableBuild();
+  callFindMostStableBuild();
   // [END chromeosmoblab_v1beta1_generated_BuildService_FindMostStableBuild_async]
 }
 

@@ -727,26 +727,6 @@ export class AssetSetAssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateAssetSetAssets(
-      request?: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsResponse,
-        protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest|undefined, {}|undefined
-      ]>;
-  mutateAssetSetAssets(
-      request: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsResponse,
-          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAssetSetAssets(
-      request: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsResponse,
-          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes asset set assets. Operation statuses are
  * returned.
@@ -775,9 +755,29 @@ export class AssetSetAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAssetSetAssets(request);
+ * @example <caption>include:samples/generated/v9/asset_set_asset_service.mutate_asset_set_assets.js</caption>
+ * region_tag:googleads_v9_generated_AssetSetAssetService_MutateAssetSetAssets_async
  */
+  mutateAssetSetAssets(
+      request?: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsResponse,
+        protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest|undefined, {}|undefined
+      ]>;
+  mutateAssetSetAssets(
+      request: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsResponse,
+          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAssetSetAssets(
+      request: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsResponse,
+          protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAssetSetAssets(
       request?: protos.google.ads.googleads.v9.services.IMutateAssetSetAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<

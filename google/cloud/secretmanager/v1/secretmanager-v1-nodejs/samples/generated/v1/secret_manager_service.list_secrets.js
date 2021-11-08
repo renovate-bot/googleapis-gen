@@ -22,7 +22,7 @@ function main(parent) {
    */
   /**
    *  Required. The resource name of the project associated with the
-   *  [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/*`.
+   *  Secrets google.cloud.secretmanager.v1.Secret, in the format `projects/*`.
    */
   // const parent = 'abc123'
   /**
@@ -33,13 +33,13 @@ function main(parent) {
   // const pageSize = 1234
   /**
    *  Optional. Pagination token, returned earlier via
-   *  [ListSecretsResponse.next_page_token][google.cloud.secretmanager.v1.ListSecretsResponse.next_page_token].
+   *  ListSecretsResponse.next_page_token google.cloud.secretmanager.v1.ListSecretsResponse.next_page_token.
    */
   // const pageToken = 'abc123'
   /**
    *  Optional. Filter string, adhering to the rules in
-   *  [List-operation
-   *  filtering](https://cloud.google.com/secret-manager/docs/filtering). List
+   *  List-operation
+   *  filtering (https://cloud.google.com/secret-manager/docs/filtering). List
    *  only secrets matching the filter. If filter is empty, all secrets are
    *  listed.
    */
@@ -51,7 +51,7 @@ function main(parent) {
   // Instantiates a client
   const secretmanagerClient = new SecretManagerServiceClient();
 
-  async function listSecrets() {
+  async function callListSecrets() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     }
   }
 
-  listSecrets();
+  callListSecrets();
   // [END secretmanager_v1_generated_SecretManagerService_ListSecrets_async]
 }
 

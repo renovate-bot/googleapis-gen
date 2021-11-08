@@ -307,6 +307,27 @@ export class BotsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * CreateBotSession is called when the bot first joins the farm, and
+ * establishes a session ID to ensure that multiple machines do not register
+ * using the same name accidentally.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The farm resource.
+ * @param {google.devtools.remoteworkers.v1test2.BotSession} request.botSession
+ *   Required. The bot session to create. Server-assigned fields like name must be unset.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BotSession]{@link google.devtools.remoteworkers.v1test2.BotSession}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1test2/bots.create_bot_session.js</caption>
+ * region_tag:remoteworkers_v1test2_generated_Bots_CreateBotSession_async
+ */
   createBotSession(
       request?: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
       options?: CallOptions):
@@ -327,27 +348,6 @@ export class BotsClient {
           protos.google.devtools.remoteworkers.v1test2.IBotSession,
           protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * CreateBotSession is called when the bot first joins the farm, and
- * establishes a session ID to ensure that multiple machines do not register
- * using the same name accidentally.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The farm resource.
- * @param {google.devtools.remoteworkers.v1test2.BotSession} request.botSession
- *   Required. The bot session to create. Server-assigned fields like name must be unset.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BotSession]{@link google.devtools.remoteworkers.v1test2.BotSession}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createBotSession(request);
- */
   createBotSession(
       request?: protos.google.devtools.remoteworkers.v1test2.ICreateBotSessionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -382,26 +382,6 @@ export class BotsClient {
     this.initialize();
     return this.innerApiCalls.createBotSession(request, options, callback);
   }
-  updateBotSession(
-      request?: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.remoteworkers.v1test2.IBotSession,
-        protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|undefined, {}|undefined
-      ]>;
-  updateBotSession(
-      request: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.remoteworkers.v1test2.IBotSession,
-          protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateBotSession(
-      request: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
-      callback: Callback<
-          protos.google.devtools.remoteworkers.v1test2.IBotSession,
-          protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * UpdateBotSession must be called periodically by the bot (on a schedule
  * determined by the server) to let the server know about its status, and to
@@ -423,9 +403,29 @@ export class BotsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateBotSession(request);
+ * @example <caption>include:samples/generated/v1test2/bots.update_bot_session.js</caption>
+ * region_tag:remoteworkers_v1test2_generated_Bots_UpdateBotSession_async
  */
+  updateBotSession(
+      request?: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.remoteworkers.v1test2.IBotSession,
+        protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|undefined, {}|undefined
+      ]>;
+  updateBotSession(
+      request: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.remoteworkers.v1test2.IBotSession,
+          protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateBotSession(
+      request: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
+      callback: Callback<
+          protos.google.devtools.remoteworkers.v1test2.IBotSession,
+          protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest|null|undefined,
+          {}|null|undefined>): void;
   updateBotSession(
       request?: protos.google.devtools.remoteworkers.v1test2.IUpdateBotSessionRequest,
       optionsOrCallback?: CallOptions|Callback<

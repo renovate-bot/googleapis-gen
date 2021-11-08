@@ -28,7 +28,7 @@ function main(parent, agent) {
   /**
    *  Required. The agent to create.
    */
-  // const agent = ''
+  // const agent = {}
 
   // Imports the Cx library
   const {AgentsClient} = require('@google-cloud/dialogflow-cx').v3;
@@ -36,7 +36,7 @@ function main(parent, agent) {
   // Instantiates a client
   const cxClient = new AgentsClient();
 
-  async function createAgent() {
+  async function callCreateAgent() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, agent) {
     console.log(response);
   }
 
-  createAgent();
+  callCreateAgent();
   // [END dialogflow_v3_generated_Agents_CreateAgent_async]
 }
 

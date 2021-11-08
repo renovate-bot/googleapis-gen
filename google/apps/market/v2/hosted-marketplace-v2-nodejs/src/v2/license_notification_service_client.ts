@@ -272,6 +272,27 @@ export class LicenseNotificationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Get a list of licensing notifications with regards to a given app.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.applicationId
+ *   Application Id
+ * @param {number} request.maxResults
+ * @param {string} request.startToken
+ * @param {number} request.timestamp
+ *   Timestamp in milliseconds since epoch
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [LicenseNotificationList]{@link ccc.hosted.marketplace.v2.LicenseNotificationList}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/license_notification_service.list.js</caption>
+ * region_tag:appsmarket_v2_generated_LicenseNotificationService_List_async
+ */
   list(
       request?: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,
       options?: CallOptions):
@@ -292,27 +313,6 @@ export class LicenseNotificationServiceClient {
           protos.ccc.hosted.marketplace.v2.ILicenseNotificationList,
           protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get a list of licensing notifications with regards to a given app.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.applicationId
- *   Application Id
- * @param {number} request.maxResults
- * @param {string} request.startToken
- * @param {number} request.timestamp
- *   Timestamp in milliseconds since epoch
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [LicenseNotificationList]{@link ccc.hosted.marketplace.v2.LicenseNotificationList}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
- */
   list(
       request?: protos.ccc.hosted.marketplace.v2.ILicenseNotificationListRequest,
       optionsOrCallback?: CallOptions|Callback<

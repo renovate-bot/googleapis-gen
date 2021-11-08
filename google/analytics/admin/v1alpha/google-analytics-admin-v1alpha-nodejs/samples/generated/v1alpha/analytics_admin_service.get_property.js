@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function getProperty() {
+  async function callGetProperty() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getProperty();
+  callGetProperty();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetProperty_async]
 }
 

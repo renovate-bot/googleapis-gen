@@ -21,7 +21,7 @@ function main(name, alertPolicy) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) in
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in
    *  which to create the alerting policy. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    *  Note that this field names the parent container in which the alerting
@@ -38,7 +38,7 @@ function main(name, alertPolicy) {
    *  policy. The name will be returned in the new policy, including
    *  a new `[ALERT_POLICY_ID]` value.
    */
-  // const alertPolicy = ''
+  // const alertPolicy = {}
 
   // Imports the Monitoring library
   const {AlertPolicyServiceClient} = require('@google-cloud/monitoring').v3;
@@ -46,7 +46,7 @@ function main(name, alertPolicy) {
   // Instantiates a client
   const monitoringClient = new AlertPolicyServiceClient();
 
-  async function createAlertPolicy() {
+  async function callCreateAlertPolicy() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name, alertPolicy) {
     console.log(response);
   }
 
-  createAlertPolicy();
+  callCreateAlertPolicy();
   // [END monitoring_v3_generated_AlertPolicyService_CreateAlertPolicy_async]
 }
 

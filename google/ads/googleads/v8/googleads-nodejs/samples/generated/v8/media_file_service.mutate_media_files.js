@@ -44,7 +44,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {MediaFileServiceClient} = require('google-ads').v8;
@@ -52,7 +52,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new MediaFileServiceClient();
 
-  async function mutateMediaFiles() {
+  async function callMutateMediaFiles() {
     // Construct request
     const request = {
       customerId,
@@ -64,7 +64,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateMediaFiles();
+  callMutateMediaFiles();
   // [END googleads_v8_generated_MediaFileService_MutateMediaFiles_async]
 }
 

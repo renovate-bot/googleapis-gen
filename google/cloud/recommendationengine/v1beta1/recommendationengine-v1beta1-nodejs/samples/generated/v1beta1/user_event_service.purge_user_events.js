@@ -60,7 +60,7 @@ function main(parent, filter) {
   // Instantiates a client
   const recommendationengineClient = new UserEventServiceClient();
 
-  async function purgeUserEvents() {
+  async function callPurgeUserEvents() {
     // Construct request
     const request = {
       parent,
@@ -73,7 +73,7 @@ function main(parent, filter) {
     console.log(response);
   }
 
-  purgeUserEvents();
+  callPurgeUserEvents();
   // [END recommendationengine_v1beta1_generated_UserEventService_PurgeUserEvents_async]
 }
 

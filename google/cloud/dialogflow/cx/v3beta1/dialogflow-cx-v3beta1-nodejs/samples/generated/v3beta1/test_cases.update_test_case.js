@@ -23,13 +23,13 @@ function main(testCase, updateMask) {
   /**
    *  Required. The test case to update.
    */
-  // const testCase = ''
+  // const testCase = {}
   /**
    *  Required. The mask to specify which fields should be updated. The
-   *  [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
-   *  [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
+   *  `creationTime` google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time  and
+   *  `lastTestResult` google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result  cannot be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Cx library
   const {TestCasesClient} = require('@google-cloud/dialogflow-cx').v3beta1;
@@ -37,7 +37,7 @@ function main(testCase, updateMask) {
   // Instantiates a client
   const cxClient = new TestCasesClient();
 
-  async function updateTestCase() {
+  async function callUpdateTestCase() {
     // Construct request
     const request = {
       testCase,
@@ -49,7 +49,7 @@ function main(testCase, updateMask) {
     console.log(response);
   }
 
-  updateTestCase();
+  callUpdateTestCase();
   // [END dialogflow_v3beta1_generated_TestCases_UpdateTestCase_async]
 }
 

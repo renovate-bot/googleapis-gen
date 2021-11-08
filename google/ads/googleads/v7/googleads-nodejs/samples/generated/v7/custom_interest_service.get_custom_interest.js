@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CustomInterestServiceClient();
 
-  async function getCustomInterest() {
+  async function callGetCustomInterest() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCustomInterest();
+  callGetCustomInterest();
   // [END googleads_v7_generated_CustomInterestService_GetCustomInterest_async]
 }
 

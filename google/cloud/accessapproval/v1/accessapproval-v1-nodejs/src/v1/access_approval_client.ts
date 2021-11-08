@@ -316,6 +316,23 @@ export class AccessApprovalClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets an approval request. Returns NOT_FOUND if the request does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the approval request to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ApprovalRequest]{@link google.cloud.accessapproval.v1.ApprovalRequest}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/access_approval.get_approval_request.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_GetApprovalRequest_async
+ */
   getApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IGetApprovalRequestMessage,
       options?: CallOptions):
@@ -336,23 +353,6 @@ export class AccessApprovalClient {
           protos.google.cloud.accessapproval.v1.IApprovalRequest,
           protos.google.cloud.accessapproval.v1.IGetApprovalRequestMessage|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an approval request. Returns NOT_FOUND if the request does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the approval request to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ApprovalRequest]{@link google.cloud.accessapproval.v1.ApprovalRequest}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getApprovalRequest(request);
- */
   getApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IGetApprovalRequestMessage,
       optionsOrCallback?: CallOptions|Callback<
@@ -387,6 +387,28 @@ export class AccessApprovalClient {
     this.initialize();
     return this.innerApiCalls.getApprovalRequest(request, options, callback);
   }
+/**
+ * Approves a request and returns the updated ApprovalRequest.
+ *
+ * Returns NOT_FOUND if the request does not exist. Returns
+ * FAILED_PRECONDITION if the request exists but is not in a pending state.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the approval request to approve.
+ * @param {google.protobuf.Timestamp} request.expireTime
+ *   The expiration time of this approval.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ApprovalRequest]{@link google.cloud.accessapproval.v1.ApprovalRequest}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/access_approval.approve_approval_request.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_ApproveApprovalRequest_async
+ */
   approveApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IApproveApprovalRequestMessage,
       options?: CallOptions):
@@ -407,28 +429,6 @@ export class AccessApprovalClient {
           protos.google.cloud.accessapproval.v1.IApprovalRequest,
           protos.google.cloud.accessapproval.v1.IApproveApprovalRequestMessage|null|undefined,
           {}|null|undefined>): void;
-/**
- * Approves a request and returns the updated ApprovalRequest.
- *
- * Returns NOT_FOUND if the request does not exist. Returns
- * FAILED_PRECONDITION if the request exists but is not in a pending state.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the approval request to approve.
- * @param {google.protobuf.Timestamp} request.expireTime
- *   The expiration time of this approval.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ApprovalRequest]{@link google.cloud.accessapproval.v1.ApprovalRequest}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.approveApprovalRequest(request);
- */
   approveApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IApproveApprovalRequestMessage,
       optionsOrCallback?: CallOptions|Callback<
@@ -463,26 +463,6 @@ export class AccessApprovalClient {
     this.initialize();
     return this.innerApiCalls.approveApprovalRequest(request, options, callback);
   }
-  dismissApprovalRequest(
-      request?: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.accessapproval.v1.IApprovalRequest,
-        protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage|undefined, {}|undefined
-      ]>;
-  dismissApprovalRequest(
-      request: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.accessapproval.v1.IApprovalRequest,
-          protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage|null|undefined,
-          {}|null|undefined>): void;
-  dismissApprovalRequest(
-      request: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
-      callback: Callback<
-          protos.google.cloud.accessapproval.v1.IApprovalRequest,
-          protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Dismisses a request. Returns the updated ApprovalRequest.
  *
@@ -506,9 +486,29 @@ export class AccessApprovalClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.dismissApprovalRequest(request);
+ * @example <caption>include:samples/generated/v1/access_approval.dismiss_approval_request.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_DismissApprovalRequest_async
  */
+  dismissApprovalRequest(
+      request?: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.accessapproval.v1.IApprovalRequest,
+        protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage|undefined, {}|undefined
+      ]>;
+  dismissApprovalRequest(
+      request: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.accessapproval.v1.IApprovalRequest,
+          protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage|null|undefined,
+          {}|null|undefined>): void;
+  dismissApprovalRequest(
+      request: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
+      callback: Callback<
+          protos.google.cloud.accessapproval.v1.IApprovalRequest,
+          protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage|null|undefined,
+          {}|null|undefined>): void;
   dismissApprovalRequest(
       request?: protos.google.cloud.accessapproval.v1.IDismissApprovalRequestMessage,
       optionsOrCallback?: CallOptions|Callback<
@@ -543,6 +543,23 @@ export class AccessApprovalClient {
     this.initialize();
     return this.innerApiCalls.dismissApprovalRequest(request, options, callback);
   }
+/**
+ * Gets the settings associated with a project, folder, or organization.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the AccessApprovalSettings to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AccessApprovalSettings]{@link google.cloud.accessapproval.v1.AccessApprovalSettings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/access_approval.get_access_approval_settings.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_GetAccessApprovalSettings_async
+ */
   getAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IGetAccessApprovalSettingsMessage,
       options?: CallOptions):
@@ -563,23 +580,6 @@ export class AccessApprovalClient {
           protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
           protos.google.cloud.accessapproval.v1.IGetAccessApprovalSettingsMessage|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the settings associated with a project, folder, or organization.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the AccessApprovalSettings to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AccessApprovalSettings]{@link google.cloud.accessapproval.v1.AccessApprovalSettings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAccessApprovalSettings(request);
- */
   getAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IGetAccessApprovalSettingsMessage,
       optionsOrCallback?: CallOptions|Callback<
@@ -614,26 +614,6 @@ export class AccessApprovalClient {
     this.initialize();
     return this.innerApiCalls.getAccessApprovalSettings(request, options, callback);
   }
-  updateAccessApprovalSettings(
-      request?: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
-        protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage|undefined, {}|undefined
-      ]>;
-  updateAccessApprovalSettings(
-      request: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
-          protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage|null|undefined,
-          {}|null|undefined>): void;
-  updateAccessApprovalSettings(
-      request: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
-      callback: Callback<
-          protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
-          protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the settings associated with a project, folder, or organization.
  * Settings to update are determined by the value of field_mask.
@@ -660,9 +640,29 @@ export class AccessApprovalClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateAccessApprovalSettings(request);
+ * @example <caption>include:samples/generated/v1/access_approval.update_access_approval_settings.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_UpdateAccessApprovalSettings_async
  */
+  updateAccessApprovalSettings(
+      request?: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
+        protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage|undefined, {}|undefined
+      ]>;
+  updateAccessApprovalSettings(
+      request: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
+          protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage|null|undefined,
+          {}|null|undefined>): void;
+  updateAccessApprovalSettings(
+      request: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
+      callback: Callback<
+          protos.google.cloud.accessapproval.v1.IAccessApprovalSettings,
+          protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage|null|undefined,
+          {}|null|undefined>): void;
   updateAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IUpdateAccessApprovalSettingsMessage,
       optionsOrCallback?: CallOptions|Callback<
@@ -697,6 +697,28 @@ export class AccessApprovalClient {
     this.initialize();
     return this.innerApiCalls.updateAccessApprovalSettings(request, options, callback);
   }
+/**
+ * Deletes the settings associated with a project, folder, or organization.
+ * This will have the effect of disabling Access Approval for the project,
+ * folder, or organization, but only if all ancestors also have Access
+ * Approval disabled. If Access Approval is enabled at a higher level of the
+ * hierarchy, then Access Approval will still be enabled at this level as
+ * the settings are inherited.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the AccessApprovalSettings to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/access_approval.delete_access_approval_settings.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_DeleteAccessApprovalSettings_async
+ */
   deleteAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IDeleteAccessApprovalSettingsMessage,
       options?: CallOptions):
@@ -717,28 +739,6 @@ export class AccessApprovalClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.accessapproval.v1.IDeleteAccessApprovalSettingsMessage|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the settings associated with a project, folder, or organization.
- * This will have the effect of disabling Access Approval for the project,
- * folder, or organization, but only if all ancestors also have Access
- * Approval disabled. If Access Approval is enabled at a higher level of the
- * hierarchy, then Access Approval will still be enabled at this level as
- * the settings are inherited.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the AccessApprovalSettings to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteAccessApprovalSettings(request);
- */
   deleteAccessApprovalSettings(
       request?: protos.google.cloud.accessapproval.v1.IDeleteAccessApprovalSettingsMessage,
       optionsOrCallback?: CallOptions|Callback<
@@ -774,28 +774,7 @@ export class AccessApprovalClient {
     return this.innerApiCalls.deleteAccessApprovalSettings(request, options, callback);
   }
 
-  listApprovalRequests(
-      request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.accessapproval.v1.IApprovalRequest[],
-        protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage|null,
-        protos.google.cloud.accessapproval.v1.IListApprovalRequestsResponse
-      ]>;
-  listApprovalRequests(
-      request: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
-          protos.google.cloud.accessapproval.v1.IListApprovalRequestsResponse|null|undefined,
-          protos.google.cloud.accessapproval.v1.IApprovalRequest>): void;
-  listApprovalRequests(
-      request: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
-      callback: PaginationCallback<
-          protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
-          protos.google.cloud.accessapproval.v1.IListApprovalRequestsResponse|null|undefined,
-          protos.google.cloud.accessapproval.v1.IApprovalRequest>): void;
-/**
+ /**
  * Lists approval requests associated with a project, folder, or organization.
  * Approval requests can be filtered by state (pending, active, dismissed).
  * The order is reverse chronological.
@@ -832,6 +811,27 @@ export class AccessApprovalClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listApprovalRequests(
+      request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.accessapproval.v1.IApprovalRequest[],
+        protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage|null,
+        protos.google.cloud.accessapproval.v1.IListApprovalRequestsResponse
+      ]>;
+  listApprovalRequests(
+      request: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
+          protos.google.cloud.accessapproval.v1.IListApprovalRequestsResponse|null|undefined,
+          protos.google.cloud.accessapproval.v1.IApprovalRequest>): void;
+  listApprovalRequests(
+      request: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
+      callback: PaginationCallback<
+          protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
+          protos.google.cloud.accessapproval.v1.IListApprovalRequestsResponse|null|undefined,
+          protos.google.cloud.accessapproval.v1.IApprovalRequest>): void;
   listApprovalRequests(
       request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -957,11 +957,8 @@ export class AccessApprovalClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listApprovalRequestsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/access_approval.list_approval_requests.js</caption>
+ * region_tag:accessapproval_v1_generated_AccessApproval_ListApprovalRequests_async
  */
   listApprovalRequestsAsync(
       request?: protos.google.cloud.accessapproval.v1.IListApprovalRequestsMessage,
@@ -976,7 +973,6 @@ export class AccessApprovalClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listApprovalRequests'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

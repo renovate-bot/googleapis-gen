@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const testingClient = new TestExecutionServiceClient();
 
-  async function cancelTestMatrix() {
+  async function callCancelTestMatrix() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  cancelTestMatrix();
+  callCancelTestMatrix();
   // [END testing_v1_generated_TestExecutionService_CancelTestMatrix_async]
 }
 

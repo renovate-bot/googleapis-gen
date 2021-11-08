@@ -348,26 +348,6 @@ export class AssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  batchGetAssetsHistory(
-      request?: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IBatchGetAssetsHistoryResponse,
-        protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest|undefined, {}|undefined
-      ]>;
-  batchGetAssetsHistory(
-      request: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryResponse,
-          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchGetAssetsHistory(
-      request: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryResponse,
-          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Batch gets the update history of assets that overlap a time window.
  * For IAM_POLICY content, this API outputs history when the asset and its
@@ -425,9 +405,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchGetAssetsHistory(request);
+ * @example <caption>include:samples/generated/v1/asset_service.batch_get_assets_history.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_BatchGetAssetsHistory_async
  */
+  batchGetAssetsHistory(
+      request?: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IBatchGetAssetsHistoryResponse,
+        protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest|undefined, {}|undefined
+      ]>;
+  batchGetAssetsHistory(
+      request: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryResponse,
+          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchGetAssetsHistory(
+      request: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryResponse,
+          protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest|null|undefined,
+          {}|null|undefined>): void;
   batchGetAssetsHistory(
       request?: protos.google.cloud.asset.v1.IBatchGetAssetsHistoryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -462,26 +462,6 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.batchGetAssetsHistory(request, options, callback);
   }
-  createFeed(
-      request?: protos.google.cloud.asset.v1.ICreateFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IFeed,
-        protos.google.cloud.asset.v1.ICreateFeedRequest|undefined, {}|undefined
-      ]>;
-  createFeed(
-      request: protos.google.cloud.asset.v1.ICreateFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IFeed,
-          protos.google.cloud.asset.v1.ICreateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  createFeed(
-      request: protos.google.cloud.asset.v1.ICreateFeedRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IFeed,
-          protos.google.cloud.asset.v1.ICreateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a feed in a parent project/folder/organization to listen to its
  * asset updates.
@@ -510,9 +490,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createFeed(request);
+ * @example <caption>include:samples/generated/v1/asset_service.create_feed.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_CreateFeed_async
  */
+  createFeed(
+      request?: protos.google.cloud.asset.v1.ICreateFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IFeed,
+        protos.google.cloud.asset.v1.ICreateFeedRequest|undefined, {}|undefined
+      ]>;
+  createFeed(
+      request: protos.google.cloud.asset.v1.ICreateFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IFeed,
+          protos.google.cloud.asset.v1.ICreateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  createFeed(
+      request: protos.google.cloud.asset.v1.ICreateFeedRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IFeed,
+          protos.google.cloud.asset.v1.ICreateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   createFeed(
       request?: protos.google.cloud.asset.v1.ICreateFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -547,6 +547,26 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.createFeed(request, options, callback);
   }
+/**
+ * Gets details about an asset feed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Feed and it must be in the format of:
+ *   projects/project_number/feeds/feed_id
+ *   folders/folder_number/feeds/feed_id
+ *   organizations/organization_number/feeds/feed_id
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Feed]{@link google.cloud.asset.v1.Feed}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/asset_service.get_feed.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_GetFeed_async
+ */
   getFeed(
       request?: protos.google.cloud.asset.v1.IGetFeedRequest,
       options?: CallOptions):
@@ -567,26 +587,6 @@ export class AssetServiceClient {
           protos.google.cloud.asset.v1.IFeed,
           protos.google.cloud.asset.v1.IGetFeedRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details about an asset feed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Feed and it must be in the format of:
- *   projects/project_number/feeds/feed_id
- *   folders/folder_number/feeds/feed_id
- *   organizations/organization_number/feeds/feed_id
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Feed]{@link google.cloud.asset.v1.Feed}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getFeed(request);
- */
   getFeed(
       request?: protos.google.cloud.asset.v1.IGetFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -621,6 +621,25 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeed(request, options, callback);
   }
+/**
+ * Lists all asset feeds in a parent project/folder/organization.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent project/folder/organization whose feeds are to be
+ *   listed. It can only be using project/folder/organization number (such as
+ *   "folders/12345")", or a project ID (such as "projects/my-project-id").
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListFeedsResponse]{@link google.cloud.asset.v1.ListFeedsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/asset_service.list_feeds.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_ListFeeds_async
+ */
   listFeeds(
       request?: protos.google.cloud.asset.v1.IListFeedsRequest,
       options?: CallOptions):
@@ -641,25 +660,6 @@ export class AssetServiceClient {
           protos.google.cloud.asset.v1.IListFeedsResponse,
           protos.google.cloud.asset.v1.IListFeedsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists all asset feeds in a parent project/folder/organization.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent project/folder/organization whose feeds are to be
- *   listed. It can only be using project/folder/organization number (such as
- *   "folders/12345")", or a project ID (such as "projects/my-project-id").
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListFeedsResponse]{@link google.cloud.asset.v1.ListFeedsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listFeeds(request);
- */
   listFeeds(
       request?: protos.google.cloud.asset.v1.IListFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -694,26 +694,6 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.listFeeds(request, options, callback);
   }
-  updateFeed(
-      request?: protos.google.cloud.asset.v1.IUpdateFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IFeed,
-        protos.google.cloud.asset.v1.IUpdateFeedRequest|undefined, {}|undefined
-      ]>;
-  updateFeed(
-      request: protos.google.cloud.asset.v1.IUpdateFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IFeed,
-          protos.google.cloud.asset.v1.IUpdateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateFeed(
-      request: protos.google.cloud.asset.v1.IUpdateFeedRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IFeed,
-          protos.google.cloud.asset.v1.IUpdateFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an asset feed configuration.
  *
@@ -736,9 +716,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateFeed(request);
+ * @example <caption>include:samples/generated/v1/asset_service.update_feed.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_UpdateFeed_async
  */
+  updateFeed(
+      request?: protos.google.cloud.asset.v1.IUpdateFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IFeed,
+        protos.google.cloud.asset.v1.IUpdateFeedRequest|undefined, {}|undefined
+      ]>;
+  updateFeed(
+      request: protos.google.cloud.asset.v1.IUpdateFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IFeed,
+          protos.google.cloud.asset.v1.IUpdateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateFeed(
+      request: protos.google.cloud.asset.v1.IUpdateFeedRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IFeed,
+          protos.google.cloud.asset.v1.IUpdateFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   updateFeed(
       request?: protos.google.cloud.asset.v1.IUpdateFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -773,6 +773,26 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.updateFeed(request, options, callback);
   }
+/**
+ * Deletes an asset feed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the feed and it must be in the format of:
+ *   projects/project_number/feeds/feed_id
+ *   folders/folder_number/feeds/feed_id
+ *   organizations/organization_number/feeds/feed_id
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/asset_service.delete_feed.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_DeleteFeed_async
+ */
   deleteFeed(
       request?: protos.google.cloud.asset.v1.IDeleteFeedRequest,
       options?: CallOptions):
@@ -793,26 +813,6 @@ export class AssetServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.asset.v1.IDeleteFeedRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an asset feed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the feed and it must be in the format of:
- *   projects/project_number/feeds/feed_id
- *   folders/folder_number/feeds/feed_id
- *   organizations/organization_number/feeds/feed_id
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteFeed(request);
- */
   deleteFeed(
       request?: protos.google.cloud.asset.v1.IDeleteFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -847,26 +847,6 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteFeed(request, options, callback);
   }
-  analyzeIamPolicy(
-      request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IAnalyzeIamPolicyResponse,
-        protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  analyzeIamPolicy(
-      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IAnalyzeIamPolicyResponse,
-          protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  analyzeIamPolicy(
-      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IAnalyzeIamPolicyResponse,
-          protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Analyzes IAM policies to answer which identities have what accesses on
  * which resources.
@@ -893,9 +873,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.analyzeIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/asset_service.analyze_iam_policy.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_AnalyzeIamPolicy_async
  */
+  analyzeIamPolicy(
+      request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IAnalyzeIamPolicyResponse,
+        protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  analyzeIamPolicy(
+      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeIamPolicyResponse,
+          protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  analyzeIamPolicy(
+      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeIamPolicyResponse,
+          protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   analyzeIamPolicy(
       request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -930,26 +930,6 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.analyzeIamPolicy(request, options, callback);
   }
-  analyzeMove(
-      request?: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
-        protos.google.cloud.asset.v1.IAnalyzeMoveRequest|undefined, {}|undefined
-      ]>;
-  analyzeMove(
-      request: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
-          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
-          {}|null|undefined>): void;
-  analyzeMove(
-      request: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
-      callback: Callback<
-          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
-          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Analyze moving a resource to a specified destination without kicking off
  * the actual move. The analysis is best effort depending on the user's
@@ -980,9 +960,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.analyzeMove(request);
+ * @example <caption>include:samples/generated/v1/asset_service.analyze_move.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_AnalyzeMove_async
  */
+  analyzeMove(
+      request?: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+        protos.google.cloud.asset.v1.IAnalyzeMoveRequest|undefined, {}|undefined
+      ]>;
+  analyzeMove(
+      request: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
+          {}|null|undefined>): void;
+  analyzeMove(
+      request: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
+          {}|null|undefined>): void;
   analyzeMove(
       request?: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1018,26 +1018,6 @@ export class AssetServiceClient {
     return this.innerApiCalls.analyzeMove(request, options, callback);
   }
 
-  exportAssets(
-      request?: protos.google.cloud.asset.v1.IExportAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.asset.v1.IExportAssetsResponse, protos.google.cloud.asset.v1.IExportAssetsRequest>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  exportAssets(
-      request: protos.google.cloud.asset.v1.IExportAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.asset.v1.IExportAssetsResponse, protos.google.cloud.asset.v1.IExportAssetsRequest>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  exportAssets(
-      request: protos.google.cloud.asset.v1.IExportAssetsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.asset.v1.IExportAssetsResponse, protos.google.cloud.asset.v1.IExportAssetsRequest>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Exports assets with time and resource types to a given Cloud Storage
  * location/BigQuery table. For Cloud Storage location destinations, the
@@ -1112,10 +1092,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.exportAssets(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/asset_service.export_assets.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_ExportAssets_async
  */
+  exportAssets(
+      request?: protos.google.cloud.asset.v1.IExportAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.asset.v1.IExportAssetsResponse, protos.google.cloud.asset.v1.IExportAssetsRequest>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  exportAssets(
+      request: protos.google.cloud.asset.v1.IExportAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.asset.v1.IExportAssetsResponse, protos.google.cloud.asset.v1.IExportAssetsRequest>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  exportAssets(
+      request: protos.google.cloud.asset.v1.IExportAssetsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.asset.v1.IExportAssetsResponse, protos.google.cloud.asset.v1.IExportAssetsRequest>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   exportAssets(
       request?: protos.google.cloud.asset.v1.IExportAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1159,11 +1158,8 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkExportAssetsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/asset_service.export_assets.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_ExportAssets_async
  */
   async checkExportAssetsProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1.ExportAssetsResponse, protos.google.cloud.asset.v1.ExportAssetsRequest>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1171,26 +1167,6 @@ export class AssetServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.exportAssets, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.asset.v1.ExportAssetsResponse, protos.google.cloud.asset.v1.ExportAssetsRequest>;
   }
-  analyzeIamPolicyLongrunning(
-      request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  analyzeIamPolicyLongrunning(
-      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  analyzeIamPolicyLongrunning(
-      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Analyzes IAM policies asynchronously to answer which identities have what
  * accesses on which resources, and writes the analysis results to a Google
@@ -1217,10 +1193,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.analyzeIamPolicyLongrunning(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/asset_service.analyze_iam_policy_longrunning.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_AnalyzeIamPolicyLongrunning_async
  */
+  analyzeIamPolicyLongrunning(
+      request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  analyzeIamPolicyLongrunning(
+      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  analyzeIamPolicyLongrunning(
+      request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   analyzeIamPolicyLongrunning(
       request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1264,11 +1259,8 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkAnalyzeIamPolicyLongrunningProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/asset_service.analyze_iam_policy_longrunning.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_AnalyzeIamPolicyLongrunning_async
  */
   async checkAnalyzeIamPolicyLongrunningProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1276,28 +1268,7 @@ export class AssetServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.analyzeIamPolicyLongrunning, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata>;
   }
-  listAssets(
-      request?: protos.google.cloud.asset.v1.IListAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IAsset[],
-        protos.google.cloud.asset.v1.IListAssetsRequest|null,
-        protos.google.cloud.asset.v1.IListAssetsResponse
-      ]>;
-  listAssets(
-      request: protos.google.cloud.asset.v1.IListAssetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.asset.v1.IListAssetsRequest,
-          protos.google.cloud.asset.v1.IListAssetsResponse|null|undefined,
-          protos.google.cloud.asset.v1.IAsset>): void;
-  listAssets(
-      request: protos.google.cloud.asset.v1.IListAssetsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.asset.v1.IListAssetsRequest,
-          protos.google.cloud.asset.v1.IListAssetsResponse|null|undefined,
-          protos.google.cloud.asset.v1.IAsset>): void;
-/**
+ /**
  * Lists assets with time and resource types and returns paged results in
  * response.
  *
@@ -1372,6 +1343,27 @@ export class AssetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAssets(
+      request?: protos.google.cloud.asset.v1.IListAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IAsset[],
+        protos.google.cloud.asset.v1.IListAssetsRequest|null,
+        protos.google.cloud.asset.v1.IListAssetsResponse
+      ]>;
+  listAssets(
+      request: protos.google.cloud.asset.v1.IListAssetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.asset.v1.IListAssetsRequest,
+          protos.google.cloud.asset.v1.IListAssetsResponse|null|undefined,
+          protos.google.cloud.asset.v1.IAsset>): void;
+  listAssets(
+      request: protos.google.cloud.asset.v1.IListAssetsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.asset.v1.IListAssetsRequest,
+          protos.google.cloud.asset.v1.IListAssetsResponse|null|undefined,
+          protos.google.cloud.asset.v1.IAsset>): void;
   listAssets(
       request?: protos.google.cloud.asset.v1.IListAssetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1575,11 +1567,8 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAssetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/asset_service.list_assets.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_ListAssets_async
  */
   listAssetsAsync(
       request?: protos.google.cloud.asset.v1.IListAssetsRequest,
@@ -1594,7 +1583,6 @@ export class AssetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAssets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1604,28 +1592,7 @@ export class AssetServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.asset.v1.IAsset>;
   }
-  searchAllResources(
-      request?: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IResourceSearchResult[],
-        protos.google.cloud.asset.v1.ISearchAllResourcesRequest|null,
-        protos.google.cloud.asset.v1.ISearchAllResourcesResponse
-      ]>;
-  searchAllResources(
-      request: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
-          protos.google.cloud.asset.v1.ISearchAllResourcesResponse|null|undefined,
-          protos.google.cloud.asset.v1.IResourceSearchResult>): void;
-  searchAllResources(
-      request: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
-          protos.google.cloud.asset.v1.ISearchAllResourcesResponse|null|undefined,
-          protos.google.cloud.asset.v1.IResourceSearchResult>): void;
-/**
+ /**
  * Searches all Cloud resources within the specified scope, such as a project,
  * folder, or organization. The caller must be granted the
  * `cloudasset.assets.searchAllResources` permission on the desired scope,
@@ -1776,6 +1743,27 @@ export class AssetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchAllResources(
+      request?: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IResourceSearchResult[],
+        protos.google.cloud.asset.v1.ISearchAllResourcesRequest|null,
+        protos.google.cloud.asset.v1.ISearchAllResourcesResponse
+      ]>;
+  searchAllResources(
+      request: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
+          protos.google.cloud.asset.v1.ISearchAllResourcesResponse|null|undefined,
+          protos.google.cloud.asset.v1.IResourceSearchResult>): void;
+  searchAllResources(
+      request: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
+          protos.google.cloud.asset.v1.ISearchAllResourcesResponse|null|undefined,
+          protos.google.cloud.asset.v1.IResourceSearchResult>): void;
   searchAllResources(
       request?: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2127,11 +2115,8 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchAllResourcesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/asset_service.search_all_resources.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_SearchAllResources_async
  */
   searchAllResourcesAsync(
       request?: protos.google.cloud.asset.v1.ISearchAllResourcesRequest,
@@ -2146,7 +2131,6 @@ export class AssetServiceClient {
     ] = gax.routingHeader.fromParams({
       'scope': request.scope || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchAllResources'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2156,28 +2140,7 @@ export class AssetServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.asset.v1.IResourceSearchResult>;
   }
-  searchAllIamPolicies(
-      request?: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.asset.v1.IIamPolicySearchResult[],
-        protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest|null,
-        protos.google.cloud.asset.v1.ISearchAllIamPoliciesResponse
-      ]>;
-  searchAllIamPolicies(
-      request: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
-          protos.google.cloud.asset.v1.ISearchAllIamPoliciesResponse|null|undefined,
-          protos.google.cloud.asset.v1.IIamPolicySearchResult>): void;
-  searchAllIamPolicies(
-      request: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
-          protos.google.cloud.asset.v1.ISearchAllIamPoliciesResponse|null|undefined,
-          protos.google.cloud.asset.v1.IIamPolicySearchResult>): void;
-/**
+ /**
  * Searches all IAM policies within the specified scope, such as a project,
  * folder, or organization. The caller must be granted the
  * `cloudasset.assets.searchAllIamPolicies` permission on the desired scope,
@@ -2292,6 +2255,27 @@ export class AssetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchAllIamPolicies(
+      request?: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IIamPolicySearchResult[],
+        protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest|null,
+        protos.google.cloud.asset.v1.ISearchAllIamPoliciesResponse
+      ]>;
+  searchAllIamPolicies(
+      request: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
+          protos.google.cloud.asset.v1.ISearchAllIamPoliciesResponse|null|undefined,
+          protos.google.cloud.asset.v1.IIamPolicySearchResult>): void;
+  searchAllIamPolicies(
+      request: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
+          protos.google.cloud.asset.v1.ISearchAllIamPoliciesResponse|null|undefined,
+          protos.google.cloud.asset.v1.IIamPolicySearchResult>): void;
   searchAllIamPolicies(
       request?: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2571,11 +2555,8 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchAllIamPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/asset_service.search_all_iam_policies.js</caption>
+ * region_tag:cloudasset_v1_generated_AssetService_SearchAllIamPolicies_async
  */
   searchAllIamPoliciesAsync(
       request?: protos.google.cloud.asset.v1.ISearchAllIamPoliciesRequest,
@@ -2590,7 +2571,6 @@ export class AssetServiceClient {
     ] = gax.routingHeader.fromParams({
       'scope': request.scope || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchAllIamPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

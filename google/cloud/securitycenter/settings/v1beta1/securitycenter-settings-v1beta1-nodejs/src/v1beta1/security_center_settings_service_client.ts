@@ -340,26 +340,6 @@ export class SecurityCenterSettingsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getServiceAccount(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IServiceAccount,
-        protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest|undefined, {}|undefined
-      ]>;
-  getServiceAccount(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IServiceAccount,
-          protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  getServiceAccount(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IServiceAccount,
-          protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves the organizations service account, if it exists, otherwise it
  * creates the organization service account. This API is idempotent and
@@ -385,9 +365,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getServiceAccount(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.get_service_account.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_GetServiceAccount_async
  */
+  getServiceAccount(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IServiceAccount,
+        protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest|undefined, {}|undefined
+      ]>;
+  getServiceAccount(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IServiceAccount,
+          protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  getServiceAccount(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IServiceAccount,
+          protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   getServiceAccount(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetServiceAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -422,26 +422,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.getServiceAccount(request, options, callback);
   }
-  getSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-        protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest|undefined, {}|undefined
-      ]>;
-  getSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the Settings.
  *
@@ -463,9 +443,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.get_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_GetSettings_async
  */
+  getSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+        protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest|undefined, {}|undefined
+      ]>;
+  getSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   getSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,26 +500,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.getSettings(request, options, callback);
   }
-  updateSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-        protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest|undefined, {}|undefined
-      ]>;
-  updateSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the Settings.
  *
@@ -545,9 +525,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.update_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_UpdateSettings_async
  */
+  updateSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+        protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest|undefined, {}|undefined
+      ]>;
+  updateSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   updateSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -582,26 +582,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.updateSettings(request, options, callback);
   }
-  resetSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest|undefined, {}|undefined
-      ]>;
-  resetSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  resetSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reset the organization, folder or project's settings and return
  * the settings of just that resource to the default.
@@ -635,9 +615,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.resetSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.reset_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_ResetSettings_async
  */
+  resetSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest|undefined, {}|undefined
+      ]>;
+  resetSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  resetSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   resetSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -672,26 +672,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.resetSettings(request, options, callback);
   }
-  batchGetSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsResponse,
-        protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest|undefined, {}|undefined
-      ]>;
-  batchGetSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsResponse,
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchGetSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsResponse,
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a list of settings.
  *
@@ -719,9 +699,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchGetSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.batch_get_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_BatchGetSettings_async
  */
+  batchGetSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsResponse,
+        protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest|undefined, {}|undefined
+      ]>;
+  batchGetSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsResponse,
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchGetSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsResponse,
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   batchGetSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchGetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -756,26 +756,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.batchGetSettings(request, options, callback);
   }
-  calculateEffectiveSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-        protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest|undefined, {}|undefined
-      ]>;
-  calculateEffectiveSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  calculateEffectiveSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * CalculateEffectiveSettings looks up all of the Security Center
  * Settings resources in the GCP resource hierarchy, and calculates the
@@ -807,9 +787,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.calculateEffectiveSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.calculate_effective_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_CalculateEffectiveSettings_async
  */
+  calculateEffectiveSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+        protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest|undefined, {}|undefined
+      ]>;
+  calculateEffectiveSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  calculateEffectiveSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.ISettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   calculateEffectiveSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -844,26 +844,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.calculateEffectiveSettings(request, options, callback);
   }
-  batchCalculateEffectiveSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsResponse,
-        protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest|undefined, {}|undefined
-      ]>;
-  batchCalculateEffectiveSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsResponse,
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchCalculateEffectiveSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsResponse,
-          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets a list of effective settings.
  *
@@ -884,9 +864,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchCalculateEffectiveSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.batch_calculate_effective_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_BatchCalculateEffectiveSettings_async
  */
+  batchCalculateEffectiveSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsResponse,
+        protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest|undefined, {}|undefined
+      ]>;
+  batchCalculateEffectiveSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsResponse,
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchCalculateEffectiveSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsResponse,
+          protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   batchCalculateEffectiveSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IBatchCalculateEffectiveSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -921,26 +921,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.batchCalculateEffectiveSettings(request, options, callback);
   }
-  getComponentSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-        protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest|undefined, {}|undefined
-      ]>;
-  getComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  getComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the Component Settings.
  *
@@ -963,9 +943,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getComponentSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.get_component_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_GetComponentSettings_async
  */
+  getComponentSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+        protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest|undefined, {}|undefined
+      ]>;
+  getComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  getComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   getComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IGetComponentSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1000,26 +1000,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.getComponentSettings(request, options, callback);
   }
-  updateComponentSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-        protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest|undefined, {}|undefined
-      ]>;
-  updateComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the Component Settings.
  *
@@ -1045,9 +1025,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateComponentSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.update_component_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_UpdateComponentSettings_async
  */
+  updateComponentSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+        protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest|undefined, {}|undefined
+      ]>;
+  updateComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   updateComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IUpdateComponentSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1082,26 +1082,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.updateComponentSettings(request, options, callback);
   }
-  resetComponentSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest|undefined, {}|undefined
-      ]>;
-  resetComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  resetComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reset the organization, folder or project's component settings and return
  * the settings to the default. Settings are present at the
@@ -1131,9 +1111,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.resetComponentSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.reset_component_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_ResetComponentSettings_async
  */
+  resetComponentSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest|undefined, {}|undefined
+      ]>;
+  resetComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  resetComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   resetComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IResetComponentSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1168,26 +1168,6 @@ export class SecurityCenterSettingsServiceClient {
     this.initialize();
     return this.innerApiCalls.resetComponentSettings(request, options, callback);
   }
-  calculateEffectiveComponentSettings(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-        protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest|undefined, {}|undefined
-      ]>;
-  calculateEffectiveComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  calculateEffectiveComponentSettings(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
-          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the Effective Component Settings.
  *
@@ -1210,9 +1190,29 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.calculateEffectiveComponentSettings(request);
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.calculate_effective_component_settings.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_CalculateEffectiveComponentSettings_async
  */
+  calculateEffectiveComponentSettings(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+        protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest|undefined, {}|undefined
+      ]>;
+  calculateEffectiveComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  calculateEffectiveComponentSettings(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IComponentSettings,
+          protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   calculateEffectiveComponentSettings(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.ICalculateEffectiveComponentSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1248,28 +1248,7 @@ export class SecurityCenterSettingsServiceClient {
     return this.innerApiCalls.calculateEffectiveComponentSettings(request, options, callback);
   }
 
-  listDetectors(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.settings.v1beta1.IDetector[],
-        protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest|null,
-        protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsResponse
-      ]>;
-  listDetectors(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
-          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsResponse|null|undefined,
-          protos.google.cloud.securitycenter.settings.v1beta1.IDetector>): void;
-  listDetectors(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
-          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsResponse|null|undefined,
-          protos.google.cloud.securitycenter.settings.v1beta1.IDetector>): void;
-/**
+ /**
  * Retrieves an unordered list of available detectors.
  *
  * @param {Object} request
@@ -1313,6 +1292,27 @@ export class SecurityCenterSettingsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDetectors(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.settings.v1beta1.IDetector[],
+        protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest|null,
+        protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsResponse
+      ]>;
+  listDetectors(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
+          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsResponse|null|undefined,
+          protos.google.cloud.securitycenter.settings.v1beta1.IDetector>): void;
+  listDetectors(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
+          protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsResponse|null|undefined,
+          protos.google.cloud.securitycenter.settings.v1beta1.IDetector>): void;
   listDetectors(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1456,11 +1456,8 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDetectorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_detectors.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_ListDetectors_async
  */
   listDetectorsAsync(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListDetectorsRequest,
@@ -1475,7 +1472,6 @@ export class SecurityCenterSettingsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDetectors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1485,28 +1481,7 @@ export class SecurityCenterSettingsServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.securitycenter.settings.v1beta1.IDetector>;
   }
-  listComponents(
-      request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
-      options?: CallOptions):
-      Promise<[
-        string[],
-        protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest|null,
-        protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsResponse
-      ]>;
-  listComponents(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
-          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsResponse|null|undefined,
-          string>): void;
-  listComponents(
-      request: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
-          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsResponse|null|undefined,
-          string>): void;
-/**
+ /**
  * Retrieves an unordered list of available SCC components.
  *
  * @param {Object} request
@@ -1538,6 +1513,27 @@ export class SecurityCenterSettingsServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listComponents(
+      request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
+      options?: CallOptions):
+      Promise<[
+        string[],
+        protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest|null,
+        protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsResponse
+      ]>;
+  listComponents(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
+          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsResponse|null|undefined,
+          string>): void;
+  listComponents(
+      request: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
+          protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsResponse|null|undefined,
+          string>): void;
   listComponents(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1657,11 +1653,8 @@ export class SecurityCenterSettingsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listComponentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/security_center_settings_service.list_components.js</caption>
+ * region_tag:securitycenter_v1beta1_generated_SecurityCenterSettingsService_ListComponents_async
  */
   listComponentsAsync(
       request?: protos.google.cloud.securitycenter.settings.v1beta1.IListComponentsRequest,
@@ -1676,7 +1669,6 @@ export class SecurityCenterSettingsServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listComponents'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

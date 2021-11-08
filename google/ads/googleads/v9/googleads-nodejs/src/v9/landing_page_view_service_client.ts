@@ -727,26 +727,6 @@ export class LandingPageViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getLandingPageView(
-      request?: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ILandingPageView,
-        protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest|undefined, {}|undefined
-      ]>;
-  getLandingPageView(
-      request: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ILandingPageView,
-          protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getLandingPageView(
-      request: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ILandingPageView,
-          protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested landing page view in full detail.
  *
@@ -769,9 +749,29 @@ export class LandingPageViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getLandingPageView(request);
+ * @example <caption>include:samples/generated/v9/landing_page_view_service.get_landing_page_view.js</caption>
+ * region_tag:googleads_v9_generated_LandingPageViewService_GetLandingPageView_async
  */
+  getLandingPageView(
+      request?: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ILandingPageView,
+        protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest|undefined, {}|undefined
+      ]>;
+  getLandingPageView(
+      request: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ILandingPageView,
+          protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getLandingPageView(
+      request: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ILandingPageView,
+          protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getLandingPageView(
       request?: protos.google.ads.googleads.v9.services.IGetLandingPageViewRequest,
       optionsOrCallback?: CallOptions|Callback<

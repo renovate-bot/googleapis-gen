@@ -28,7 +28,7 @@ function main(name, payload) {
    *  Required. Payload to perform a prediction on. The payload must match the
    *  problem type that the model was trained to solve.
    */
-  // const payload = ''
+  // const payload = {}
   /**
    *  Additional domain-specific parameters, any string must be up to 25000
    *  characters long.
@@ -56,7 +56,7 @@ function main(name, payload) {
   // Instantiates a client
   const automlClient = new PredictionServiceClient();
 
-  async function predict() {
+  async function callPredict() {
     // Construct request
     const request = {
       name,
@@ -68,7 +68,7 @@ function main(name, payload) {
     console.log(response);
   }
 
-  predict();
+  callPredict();
   // [END automl_v1beta1_generated_PredictionService_Predict_async]
 }
 

@@ -27,7 +27,7 @@ function main() {
   /**
    *  The matrix of tests that the user wants to run.
    */
-  // const testMatrix = ''
+  // const testMatrix = {}
   /**
    *  A string id used to detect duplicated requests.
    *  Ids are automatically scoped to a project, so
@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const testingClient = new TestExecutionServiceClient();
 
-  async function createTestMatrix() {
+  async function callCreateTestMatrix() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  createTestMatrix();
+  callCreateTestMatrix();
   // [END testing_v1_generated_TestExecutionService_CreateTestMatrix_async]
 }
 

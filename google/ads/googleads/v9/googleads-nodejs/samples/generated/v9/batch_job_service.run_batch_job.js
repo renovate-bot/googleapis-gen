@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BatchJobServiceClient();
 
-  async function runBatchJob() {
+  async function callRunBatchJob() {
     // Construct request
     const request = {
       resourceName,
@@ -43,7 +43,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  runBatchJob();
+  callRunBatchJob();
   // [END googleads_v9_generated_BatchJobService_RunBatchJob_async]
 }
 

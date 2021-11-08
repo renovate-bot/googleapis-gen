@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new FirewallClient();
 
-  async function getIngressRule() {
+  async function callGetIngressRule() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  getIngressRule();
+  callGetIngressRule();
   // [END appengine_v1_generated_Firewall_GetIngressRule_async]
 }
 

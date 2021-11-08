@@ -676,26 +676,6 @@ export class CustomerUserAccessServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerUserAccess(
-      request?: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
-        protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|undefined, {}|undefined
-      ]>;
-  getCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
-          protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
-          protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the CustomerUserAccess in full detail.
  *
@@ -718,9 +698,29 @@ export class CustomerUserAccessServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerUserAccess(request);
+ * @example <caption>include:samples/generated/v8/customer_user_access_service.get_customer_user_access.js</caption>
+ * region_tag:googleads_v8_generated_CustomerUserAccessService_GetCustomerUserAccess_async
  */
+  getCustomerUserAccess(
+      request?: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
+        protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|undefined, {}|undefined
+      ]>;
+  getCustomerUserAccess(
+      request: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
+          protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerUserAccess(
+      request: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICustomerUserAccess,
+          protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerUserAccess(
       request?: protos.google.ads.googleads.v8.services.IGetCustomerUserAccessRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class CustomerUserAccessServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerUserAccess(request, options, callback);
   }
-  mutateCustomerUserAccess(
-      request?: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
-        protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
-          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerUserAccess(
-      request: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
-          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates, removes permission of a user on a given customer. Operation
  * statuses are returned.
@@ -803,9 +783,29 @@ export class CustomerUserAccessServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerUserAccess(request);
+ * @example <caption>include:samples/generated/v8/customer_user_access_service.mutate_customer_user_access.js</caption>
+ * region_tag:googleads_v8_generated_CustomerUserAccessService_MutateCustomerUserAccess_async
  */
+  mutateCustomerUserAccess(
+      request?: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
+        protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerUserAccess(
+      request: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
+          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerUserAccess(
+      request: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessResponse,
+          protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerUserAccess(
       request?: protos.google.ads.googleads.v8.services.IMutateCustomerUserAccessRequest,
       optionsOrCallback?: CallOptions|Callback<

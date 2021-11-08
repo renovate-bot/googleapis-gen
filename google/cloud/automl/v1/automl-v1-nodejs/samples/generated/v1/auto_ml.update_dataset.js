@@ -23,11 +23,11 @@ function main(dataset, updateMask) {
   /**
    *  Required. The dataset which replaces the resource on the server.
    */
-  // const dataset = ''
+  // const dataset = {}
   /**
    *  Required. The update mask applies to the resource.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1;
@@ -35,7 +35,7 @@ function main(dataset, updateMask) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function updateDataset() {
+  async function callUpdateDataset() {
     // Construct request
     const request = {
       dataset,
@@ -47,7 +47,7 @@ function main(dataset, updateMask) {
     console.log(response);
   }
 
-  updateDataset();
+  callUpdateDataset();
   // [END automl_v1_generated_AutoMl_UpdateDataset_async]
 }
 

@@ -37,7 +37,7 @@ function main(jobName, projectId) {
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function getTransferJob() {
+  async function callGetTransferJob() {
     // Construct request
     const request = {
       jobName,
@@ -49,7 +49,7 @@ function main(jobName, projectId) {
     console.log(response);
   }
 
-  getTransferJob();
+  callGetTransferJob();
   // [END storagetransfer_v1_generated_StorageTransferService_GetTransferJob_async]
 }
 

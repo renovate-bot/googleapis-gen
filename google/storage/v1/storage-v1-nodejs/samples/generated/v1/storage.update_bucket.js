@@ -28,32 +28,32 @@ function main(bucket) {
    *  Makes the return of the bucket metadata conditional on whether the bucket's
    *  current metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the return of the bucket metadata conditional on whether the bucket's
    *  current metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  Apply a predefined set of access controls to this bucket.
    */
-  // const predefinedAcl = ''
+  // const predefinedAcl = {}
   /**
    *  Apply a predefined set of default object access controls to this bucket.
    */
-  // const predefinedDefaultObjectAcl = ''
+  // const predefinedDefaultObjectAcl = {}
   /**
    *  Set of properties to return. Defaults to `FULL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  The Bucket metadata for updating.
    */
-  // const metadata = ''
+  // const metadata = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -61,7 +61,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function updateBucket() {
+  async function callUpdateBucket() {
     // Construct request
     const request = {
       bucket,
@@ -72,7 +72,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  updateBucket();
+  callUpdateBucket();
   // [END storage_v1_generated_Storage_UpdateBucket_async]
 }
 

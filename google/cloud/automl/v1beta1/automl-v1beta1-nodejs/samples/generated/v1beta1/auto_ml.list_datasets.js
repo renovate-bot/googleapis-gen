@@ -40,8 +40,8 @@ function main(parent) {
   /**
    *  A token identifying a page of results for the server to return
    *  Typically obtained via
-   *  [ListDatasetsResponse.next_page_token][google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token] of the previous
-   *  [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets] call.
+   *  ListDatasetsResponse.next_page_token google.cloud.automl.v1beta1.ListDatasetsResponse.next_page_token  of the previous
+   *  AutoMl.ListDatasets google.cloud.automl.v1beta1.AutoMl.ListDatasets  call.
    */
   // const pageToken = 'abc123'
 
@@ -51,7 +51,7 @@ function main(parent) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function listDatasets() {
+  async function callListDatasets() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     }
   }
 
-  listDatasets();
+  callListDatasets();
   // [END automl_v1beta1_generated_AutoMl_ListDatasets_async]
 }
 

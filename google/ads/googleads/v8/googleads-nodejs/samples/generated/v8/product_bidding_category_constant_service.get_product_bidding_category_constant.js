@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ProductBiddingCategoryConstantServiceClient();
 
-  async function getProductBiddingCategoryConstant() {
+  async function callGetProductBiddingCategoryConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getProductBiddingCategoryConstant();
+  callGetProductBiddingCategoryConstant();
   // [END googleads_v8_generated_ProductBiddingCategoryConstantService_GetProductBiddingCategoryConstant_async]
 }
 

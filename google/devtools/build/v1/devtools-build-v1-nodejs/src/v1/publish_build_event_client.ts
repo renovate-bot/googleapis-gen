@@ -294,26 +294,6 @@ export class PublishBuildEventClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  publishLifecycleEvent(
-      request?: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.devtools.build.v1.IPublishLifecycleEventRequest|undefined, {}|undefined
-      ]>;
-  publishLifecycleEvent(
-      request: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.devtools.build.v1.IPublishLifecycleEventRequest|null|undefined,
-          {}|null|undefined>): void;
-  publishLifecycleEvent(
-      request: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.devtools.build.v1.IPublishLifecycleEventRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Publish a build event stating the new state of a build (typically from the
  * build queue). The BuildEnqueued event must be publishd before all other
@@ -355,9 +335,29 @@ export class PublishBuildEventClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.publishLifecycleEvent(request);
+ * @example <caption>include:samples/generated/v1/publish_build_event.publish_lifecycle_event.js</caption>
+ * region_tag:buildeventservice_v1_generated_PublishBuildEvent_PublishLifecycleEvent_async
  */
+  publishLifecycleEvent(
+      request?: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.devtools.build.v1.IPublishLifecycleEventRequest|undefined, {}|undefined
+      ]>;
+  publishLifecycleEvent(
+      request: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.devtools.build.v1.IPublishLifecycleEventRequest|null|undefined,
+          {}|null|undefined>): void;
+  publishLifecycleEvent(
+      request: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.devtools.build.v1.IPublishLifecycleEventRequest|null|undefined,
+          {}|null|undefined>): void;
   publishLifecycleEvent(
       request?: protos.google.devtools.build.v1.IPublishLifecycleEventRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -406,12 +406,8 @@ export class PublishBuildEventClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.publishBuildToolEventStream();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/publish_build_event.publish_build_tool_event_stream.js</caption>
+ * region_tag:buildeventservice_v1_generated_PublishBuildEvent_PublishBuildToolEventStream_async
  */
   publishBuildToolEventStream(
       options?: CallOptions):

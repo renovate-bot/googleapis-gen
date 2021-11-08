@@ -284,26 +284,6 @@ export class StreetViewPublishServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  startUpload(
-      request?: protos.google.protobuf.IEmpty,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IUploadRef,
-        protos.google.protobuf.IEmpty|undefined, {}|undefined
-      ]>;
-  startUpload(
-      request: protos.google.protobuf.IEmpty,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IUploadRef,
-          protos.google.protobuf.IEmpty|null|undefined,
-          {}|null|undefined>): void;
-  startUpload(
-      request: protos.google.protobuf.IEmpty,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IUploadRef,
-          protos.google.protobuf.IEmpty|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an upload session to start uploading photo bytes. The method uses
  * the upload URL of the returned
@@ -335,9 +315,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.startUpload(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.start_upload.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_StartUpload_async
  */
+  startUpload(
+      request?: protos.google.protobuf.IEmpty,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IUploadRef,
+        protos.google.protobuf.IEmpty|undefined, {}|undefined
+      ]>;
+  startUpload(
+      request: protos.google.protobuf.IEmpty,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IUploadRef,
+          protos.google.protobuf.IEmpty|null|undefined,
+          {}|null|undefined>): void;
+  startUpload(
+      request: protos.google.protobuf.IEmpty,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IUploadRef,
+          protos.google.protobuf.IEmpty|null|undefined,
+          {}|null|undefined>): void;
   startUpload(
       request?: protos.google.protobuf.IEmpty,
       optionsOrCallback?: CallOptions|Callback<
@@ -362,29 +362,11 @@ export class StreetViewPublishServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.startUpload(request, options, callback);
   }
-  createPhoto(
-      request?: protos.google.streetview.publish.v1.ICreatePhotoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IPhoto,
-        protos.google.streetview.publish.v1.ICreatePhotoRequest|undefined, {}|undefined
-      ]>;
-  createPhoto(
-      request: protos.google.streetview.publish.v1.ICreatePhotoRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IPhoto,
-          protos.google.streetview.publish.v1.ICreatePhotoRequest|null|undefined,
-          {}|null|undefined>): void;
-  createPhoto(
-      request: protos.google.streetview.publish.v1.ICreatePhotoRequest,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IPhoto,
-          protos.google.streetview.publish.v1.ICreatePhotoRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * After the client finishes uploading the photo with the returned
  * {@link google.streetview.publish.v1.UploadRef|UploadRef},
@@ -418,9 +400,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createPhoto(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.create_photo.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_CreatePhoto_async
  */
+  createPhoto(
+      request?: protos.google.streetview.publish.v1.ICreatePhotoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IPhoto,
+        protos.google.streetview.publish.v1.ICreatePhotoRequest|undefined, {}|undefined
+      ]>;
+  createPhoto(
+      request: protos.google.streetview.publish.v1.ICreatePhotoRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IPhoto,
+          protos.google.streetview.publish.v1.ICreatePhotoRequest|null|undefined,
+          {}|null|undefined>): void;
+  createPhoto(
+      request: protos.google.streetview.publish.v1.ICreatePhotoRequest,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IPhoto,
+          protos.google.streetview.publish.v1.ICreatePhotoRequest|null|undefined,
+          {}|null|undefined>): void;
   createPhoto(
       request?: protos.google.streetview.publish.v1.ICreatePhotoRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -445,29 +447,11 @@ export class StreetViewPublishServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createPhoto(request, options, callback);
   }
-  getPhoto(
-      request?: protos.google.streetview.publish.v1.IGetPhotoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IPhoto,
-        protos.google.streetview.publish.v1.IGetPhotoRequest|undefined, {}|undefined
-      ]>;
-  getPhoto(
-      request: protos.google.streetview.publish.v1.IGetPhotoRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IPhoto,
-          protos.google.streetview.publish.v1.IGetPhotoRequest|null|undefined,
-          {}|null|undefined>): void;
-  getPhoto(
-      request: protos.google.streetview.publish.v1.IGetPhotoRequest,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IPhoto,
-          protos.google.streetview.publish.v1.IGetPhotoRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the metadata of the specified
  * {@link google.streetview.publish.v1.Photo|Photo}.
@@ -503,9 +487,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getPhoto(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.get_photo.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_GetPhoto_async
  */
+  getPhoto(
+      request?: protos.google.streetview.publish.v1.IGetPhotoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IPhoto,
+        protos.google.streetview.publish.v1.IGetPhotoRequest|undefined, {}|undefined
+      ]>;
+  getPhoto(
+      request: protos.google.streetview.publish.v1.IGetPhotoRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IPhoto,
+          protos.google.streetview.publish.v1.IGetPhotoRequest|null|undefined,
+          {}|null|undefined>): void;
+  getPhoto(
+      request: protos.google.streetview.publish.v1.IGetPhotoRequest,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IPhoto,
+          protos.google.streetview.publish.v1.IGetPhotoRequest|null|undefined,
+          {}|null|undefined>): void;
   getPhoto(
       request?: protos.google.streetview.publish.v1.IGetPhotoRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -540,26 +544,6 @@ export class StreetViewPublishServiceClient {
     this.initialize();
     return this.innerApiCalls.getPhoto(request, options, callback);
   }
-  batchGetPhotos(
-      request?: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IBatchGetPhotosResponse,
-        protos.google.streetview.publish.v1.IBatchGetPhotosRequest|undefined, {}|undefined
-      ]>;
-  batchGetPhotos(
-      request: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IBatchGetPhotosResponse,
-          protos.google.streetview.publish.v1.IBatchGetPhotosRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchGetPhotos(
-      request: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IBatchGetPhotosResponse,
-          protos.google.streetview.publish.v1.IBatchGetPhotosRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the metadata of the specified
  * {@link google.streetview.publish.v1.Photo|Photo} batch.
@@ -600,9 +584,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchGetPhotos(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.batch_get_photos.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_BatchGetPhotos_async
  */
+  batchGetPhotos(
+      request?: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IBatchGetPhotosResponse,
+        protos.google.streetview.publish.v1.IBatchGetPhotosRequest|undefined, {}|undefined
+      ]>;
+  batchGetPhotos(
+      request: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IBatchGetPhotosResponse,
+          protos.google.streetview.publish.v1.IBatchGetPhotosRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchGetPhotos(
+      request: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IBatchGetPhotosResponse,
+          protos.google.streetview.publish.v1.IBatchGetPhotosRequest|null|undefined,
+          {}|null|undefined>): void;
   batchGetPhotos(
       request?: protos.google.streetview.publish.v1.IBatchGetPhotosRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -627,29 +631,11 @@ export class StreetViewPublishServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.batchGetPhotos(request, options, callback);
   }
-  updatePhoto(
-      request?: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IPhoto,
-        protos.google.streetview.publish.v1.IUpdatePhotoRequest|undefined, {}|undefined
-      ]>;
-  updatePhoto(
-      request: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IPhoto,
-          protos.google.streetview.publish.v1.IUpdatePhotoRequest|null|undefined,
-          {}|null|undefined>): void;
-  updatePhoto(
-      request: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IPhoto,
-          protos.google.streetview.publish.v1.IUpdatePhotoRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the metadata of a {@link google.streetview.publish.v1.Photo|Photo}, such
  * as pose, place association, connections, etc. Changing the pixels of a
@@ -711,9 +697,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updatePhoto(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.update_photo.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_UpdatePhoto_async
  */
+  updatePhoto(
+      request?: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IPhoto,
+        protos.google.streetview.publish.v1.IUpdatePhotoRequest|undefined, {}|undefined
+      ]>;
+  updatePhoto(
+      request: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IPhoto,
+          protos.google.streetview.publish.v1.IUpdatePhotoRequest|null|undefined,
+          {}|null|undefined>): void;
+  updatePhoto(
+      request: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IPhoto,
+          protos.google.streetview.publish.v1.IUpdatePhotoRequest|null|undefined,
+          {}|null|undefined>): void;
   updatePhoto(
       request?: protos.google.streetview.publish.v1.IUpdatePhotoRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -748,26 +754,6 @@ export class StreetViewPublishServiceClient {
     this.initialize();
     return this.innerApiCalls.updatePhoto(request, options, callback);
   }
-  batchUpdatePhotos(
-      request?: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IBatchUpdatePhotosResponse,
-        protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest|undefined, {}|undefined
-      ]>;
-  batchUpdatePhotos(
-      request: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IBatchUpdatePhotosResponse,
-          protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchUpdatePhotos(
-      request: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IBatchUpdatePhotosResponse,
-          protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the metadata of {@link google.streetview.publish.v1.Photo|Photos}, such
  * as pose, place association, connections, etc. Changing the pixels of photos
@@ -815,9 +801,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchUpdatePhotos(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.batch_update_photos.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_BatchUpdatePhotos_async
  */
+  batchUpdatePhotos(
+      request?: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IBatchUpdatePhotosResponse,
+        protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest|undefined, {}|undefined
+      ]>;
+  batchUpdatePhotos(
+      request: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IBatchUpdatePhotosResponse,
+          protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchUpdatePhotos(
+      request: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IBatchUpdatePhotosResponse,
+          protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest|null|undefined,
+          {}|null|undefined>): void;
   batchUpdatePhotos(
       request?: protos.google.streetview.publish.v1.IBatchUpdatePhotosRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -842,29 +848,11 @@ export class StreetViewPublishServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.batchUpdatePhotos(request, options, callback);
   }
-  deletePhoto(
-      request?: protos.google.streetview.publish.v1.IDeletePhotoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.streetview.publish.v1.IDeletePhotoRequest|undefined, {}|undefined
-      ]>;
-  deletePhoto(
-      request: protos.google.streetview.publish.v1.IDeletePhotoRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.streetview.publish.v1.IDeletePhotoRequest|null|undefined,
-          {}|null|undefined>): void;
-  deletePhoto(
-      request: protos.google.streetview.publish.v1.IDeletePhotoRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.streetview.publish.v1.IDeletePhotoRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a {@link google.streetview.publish.v1.Photo|Photo} and its metadata.
  *
@@ -886,9 +874,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deletePhoto(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.delete_photo.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_DeletePhoto_async
  */
+  deletePhoto(
+      request?: protos.google.streetview.publish.v1.IDeletePhotoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.streetview.publish.v1.IDeletePhotoRequest|undefined, {}|undefined
+      ]>;
+  deletePhoto(
+      request: protos.google.streetview.publish.v1.IDeletePhotoRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.streetview.publish.v1.IDeletePhotoRequest|null|undefined,
+          {}|null|undefined>): void;
+  deletePhoto(
+      request: protos.google.streetview.publish.v1.IDeletePhotoRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.streetview.publish.v1.IDeletePhotoRequest|null|undefined,
+          {}|null|undefined>): void;
   deletePhoto(
       request?: protos.google.streetview.publish.v1.IDeletePhotoRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -923,26 +931,6 @@ export class StreetViewPublishServiceClient {
     this.initialize();
     return this.innerApiCalls.deletePhoto(request, options, callback);
   }
-  batchDeletePhotos(
-      request?: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IBatchDeletePhotosResponse,
-        protos.google.streetview.publish.v1.IBatchDeletePhotosRequest|undefined, {}|undefined
-      ]>;
-  batchDeletePhotos(
-      request: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IBatchDeletePhotosResponse,
-          protos.google.streetview.publish.v1.IBatchDeletePhotosRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchDeletePhotos(
-      request: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
-      callback: Callback<
-          protos.google.streetview.publish.v1.IBatchDeletePhotosResponse,
-          protos.google.streetview.publish.v1.IBatchDeletePhotosRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a list of {@link google.streetview.publish.v1.Photo|Photos} and their
  * metadata.
@@ -974,9 +962,29 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchDeletePhotos(request);
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.batch_delete_photos.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_BatchDeletePhotos_async
  */
+  batchDeletePhotos(
+      request?: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IBatchDeletePhotosResponse,
+        protos.google.streetview.publish.v1.IBatchDeletePhotosRequest|undefined, {}|undefined
+      ]>;
+  batchDeletePhotos(
+      request: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IBatchDeletePhotosResponse,
+          protos.google.streetview.publish.v1.IBatchDeletePhotosRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchDeletePhotos(
+      request: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
+      callback: Callback<
+          protos.google.streetview.publish.v1.IBatchDeletePhotosResponse,
+          protos.google.streetview.publish.v1.IBatchDeletePhotosRequest|null|undefined,
+          {}|null|undefined>): void;
   batchDeletePhotos(
       request?: protos.google.streetview.publish.v1.IBatchDeletePhotosRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1001,32 +1009,13 @@ export class StreetViewPublishServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.batchDeletePhotos(request, options, callback);
   }
 
-  listPhotos(
-      request?: protos.google.streetview.publish.v1.IListPhotosRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.streetview.publish.v1.IPhoto[],
-        protos.google.streetview.publish.v1.IListPhotosRequest|null,
-        protos.google.streetview.publish.v1.IListPhotosResponse
-      ]>;
-  listPhotos(
-      request: protos.google.streetview.publish.v1.IListPhotosRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.streetview.publish.v1.IListPhotosRequest,
-          protos.google.streetview.publish.v1.IListPhotosResponse|null|undefined,
-          protos.google.streetview.publish.v1.IPhoto>): void;
-  listPhotos(
-      request: protos.google.streetview.publish.v1.IListPhotosRequest,
-      callback: PaginationCallback<
-          protos.google.streetview.publish.v1.IListPhotosRequest,
-          protos.google.streetview.publish.v1.IListPhotosResponse|null|undefined,
-          protos.google.streetview.publish.v1.IPhoto>): void;
-/**
+ /**
  * Lists all the {@link google.streetview.publish.v1.Photo|Photos} that belong to
  * the user.
  *
@@ -1075,6 +1064,27 @@ export class StreetViewPublishServiceClient {
  */
   listPhotos(
       request?: protos.google.streetview.publish.v1.IListPhotosRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.streetview.publish.v1.IPhoto[],
+        protos.google.streetview.publish.v1.IListPhotosRequest|null,
+        protos.google.streetview.publish.v1.IListPhotosResponse
+      ]>;
+  listPhotos(
+      request: protos.google.streetview.publish.v1.IListPhotosRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.streetview.publish.v1.IListPhotosRequest,
+          protos.google.streetview.publish.v1.IListPhotosResponse|null|undefined,
+          protos.google.streetview.publish.v1.IPhoto>): void;
+  listPhotos(
+      request: protos.google.streetview.publish.v1.IListPhotosRequest,
+      callback: PaginationCallback<
+          protos.google.streetview.publish.v1.IListPhotosRequest,
+          protos.google.streetview.publish.v1.IListPhotosResponse|null|undefined,
+          protos.google.streetview.publish.v1.IPhoto>): void;
+  listPhotos(
+      request?: protos.google.streetview.publish.v1.IListPhotosRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.streetview.publish.v1.IListPhotosRequest,
           protos.google.streetview.publish.v1.IListPhotosResponse|null|undefined,
@@ -1098,6 +1108,8 @@ export class StreetViewPublishServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listPhotos(request, options, callback);
   }
@@ -1149,6 +1161,8 @@ export class StreetViewPublishServiceClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listPhotos'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1200,11 +1214,8 @@ export class StreetViewPublishServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPhotosAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/street_view_publish_service.list_photos.js</caption>
+ * region_tag:streetviewpublish_v1_generated_StreetViewPublishService_ListPhotos_async
  */
   listPhotosAsync(
       request?: protos.google.streetview.publish.v1.IListPhotosRequest,
@@ -1212,7 +1223,8 @@ export class StreetViewPublishServiceClient {
     AsyncIterable<protos.google.streetview.publish.v1.IPhoto>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listPhotos'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

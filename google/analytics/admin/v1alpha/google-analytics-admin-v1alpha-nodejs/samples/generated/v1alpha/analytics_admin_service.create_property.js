@@ -24,7 +24,7 @@ function main(property) {
    *  Required. The property to create.
    *  Note: the supplied property must specify its parent.
    */
-  // const property = ''
+  // const property = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -32,7 +32,7 @@ function main(property) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createProperty() {
+  async function callCreateProperty() {
     // Construct request
     const request = {
       property,
@@ -43,7 +43,7 @@ function main(property) {
     console.log(response);
   }
 
-  createProperty();
+  callCreateProperty();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateProperty_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CustomerManagerLinkServiceClient();
 
-  async function getCustomerManagerLink() {
+  async function callGetCustomerManagerLink() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCustomerManagerLink();
+  callGetCustomerManagerLink();
   // [END googleads_v8_generated_CustomerManagerLinkService_GetCustomerManagerLink_async]
 }
 

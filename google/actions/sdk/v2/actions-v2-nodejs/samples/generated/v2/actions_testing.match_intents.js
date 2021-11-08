@@ -43,7 +43,7 @@ function main(project, query, locale) {
   // Instantiates a client
   const sdkClient = new ActionsTestingClient();
 
-  async function matchIntents() {
+  async function callMatchIntents() {
     // Construct request
     const request = {
       project,
@@ -56,7 +56,7 @@ function main(project, query, locale) {
     console.log(response);
   }
 
-  matchIntents();
+  callMatchIntents();
   // [END actions_v2_generated_ActionsTesting_MatchIntents_async]
 }
 

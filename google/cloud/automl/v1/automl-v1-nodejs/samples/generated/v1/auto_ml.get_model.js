@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function getModel() {
+  async function callGetModel() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getModel();
+  callGetModel();
   // [END automl_v1_generated_AutoMl_GetModel_async]
 }
 

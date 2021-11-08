@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new FeedItemSetLinkServiceClient();
 
-  async function getFeedItemSetLink() {
+  async function callGetFeedItemSetLink() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getFeedItemSetLink();
+  callGetFeedItemSetLink();
   // [END googleads_v8_generated_FeedItemSetLinkService_GetFeedItemSetLink_async]
 }
 

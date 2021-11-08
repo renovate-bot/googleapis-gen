@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function getBook() {
+  async function callGetBook() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getBook();
+  callGetBook();
   // [END library-example_v1_generated_LibraryService_GetBook_async]
 }
 

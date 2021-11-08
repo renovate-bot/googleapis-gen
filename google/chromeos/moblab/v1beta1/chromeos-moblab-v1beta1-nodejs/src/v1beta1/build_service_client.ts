@@ -334,26 +334,6 @@ export class BuildServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  checkBuildStageStatus(
-      request?: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
-        protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|undefined, {}|undefined
-      ]>;
-  checkBuildStageStatus(
-      request: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
-          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|null|undefined,
-          {}|null|undefined>): void;
-  checkBuildStageStatus(
-      request: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
-      callback: Callback<
-          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
-          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Checks the stage status for a given build artifact in a partner Google
  * Cloud Storage bucket.
@@ -375,9 +355,29 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.checkBuildStageStatus(request);
+ * @example <caption>include:samples/generated/v1beta1/build_service.check_build_stage_status.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_CheckBuildStageStatus_async
  */
+  checkBuildStageStatus(
+      request?: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
+        protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|undefined, {}|undefined
+      ]>;
+  checkBuildStageStatus(
+      request: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
+          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|null|undefined,
+          {}|null|undefined>): void;
+  checkBuildStageStatus(
+      request: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
+      callback: Callback<
+          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusResponse,
+          protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest|null|undefined,
+          {}|null|undefined>): void;
   checkBuildStageStatus(
       request?: protos.google.chromeos.moblab.v1beta1.ICheckBuildStageStatusRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -412,26 +412,6 @@ export class BuildServiceClient {
     this.initialize();
     return this.innerApiCalls.checkBuildStageStatus(request, options, callback);
   }
-  findMostStableBuild(
-      request?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
-        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|undefined, {}|undefined
-      ]>;
-  findMostStableBuild(
-      request: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
-          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
-          {}|null|undefined>): void;
-  findMostStableBuild(
-      request: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
-      callback: Callback<
-          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
-          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Finds the most stable build for the given build target. The definition of
  * the most stable build is determined by evaluating the following rules in
@@ -459,9 +439,29 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.findMostStableBuild(request);
+ * @example <caption>include:samples/generated/v1beta1/build_service.find_most_stable_build.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_FindMostStableBuild_async
  */
+  findMostStableBuild(
+      request?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|undefined, {}|undefined
+      ]>;
+  findMostStableBuild(
+      request: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
+          {}|null|undefined>): void;
+  findMostStableBuild(
+      request: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      callback: Callback<
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
+          {}|null|undefined>): void;
   findMostStableBuild(
       request?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -497,26 +497,6 @@ export class BuildServiceClient {
     return this.innerApiCalls.findMostStableBuild(request, options, callback);
   }
 
-  stageBuild(
-      request?: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  stageBuild(
-      request: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  stageBuild(
-      request: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
-      callback: Callback<
-          LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Stages a given build artifact from a internal Google Cloud Storage bucket
  * to a partner Google Cloud Storage bucket. If any of objects has already
@@ -543,10 +523,29 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.stageBuild(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/build_service.stage_build.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_StageBuild_async
  */
+  stageBuild(
+      request?: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  stageBuild(
+      request: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  stageBuild(
+      request: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
+      callback: Callback<
+          LROperation<protos.google.chromeos.moblab.v1beta1.IStageBuildResponse, protos.google.chromeos.moblab.v1beta1.IStageBuildMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   stageBuild(
       request?: protos.google.chromeos.moblab.v1beta1.IStageBuildRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -590,11 +589,8 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStageBuildProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/build_service.stage_build.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_StageBuild_async
  */
   async checkStageBuildProgress(name: string): Promise<LROperation<protos.google.chromeos.moblab.v1beta1.StageBuildResponse, protos.google.chromeos.moblab.v1beta1.StageBuildMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -602,28 +598,7 @@ export class BuildServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.stageBuild, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.chromeos.moblab.v1beta1.StageBuildResponse, protos.google.chromeos.moblab.v1beta1.StageBuildMetadata>;
   }
-  listBuildTargets(
-      request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.chromeos.moblab.v1beta1.IBuildTarget[],
-        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest|null,
-        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse
-      ]>;
-  listBuildTargets(
-      request: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
-          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
-          protos.google.chromeos.moblab.v1beta1.IBuildTarget>): void;
-  listBuildTargets(
-      request: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
-      callback: PaginationCallback<
-          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
-          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
-          protos.google.chromeos.moblab.v1beta1.IBuildTarget>): void;
-/**
+ /**
  * Lists all build targets that a user has access to.
  *
  * @param {Object} request
@@ -646,6 +621,27 @@ export class BuildServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listBuildTargets(
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IBuildTarget[],
+        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse
+      ]>;
+  listBuildTargets(
+      request: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuildTarget>): void;
+  listBuildTargets(
+      request: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildTargetsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuildTarget>): void;
   listBuildTargets(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -671,6 +667,8 @@ export class BuildServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listBuildTargets(request, options, callback);
   }
@@ -702,6 +700,8 @@ export class BuildServiceClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listBuildTargets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -733,11 +733,8 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listBuildTargetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_build_targets.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_ListBuildTargets_async
  */
   listBuildTargetsAsync(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildTargetsRequest,
@@ -745,7 +742,8 @@ export class BuildServiceClient {
     AsyncIterable<protos.google.chromeos.moblab.v1beta1.IBuildTarget>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listBuildTargets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -755,28 +753,7 @@ export class BuildServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.chromeos.moblab.v1beta1.IBuildTarget>;
   }
-  listModels(
-      request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.chromeos.moblab.v1beta1.IModel[],
-        protos.google.chromeos.moblab.v1beta1.IListModelsRequest|null,
-        protos.google.chromeos.moblab.v1beta1.IListModelsResponse
-      ]>;
-  listModels(
-      request: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
-          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
-          protos.google.chromeos.moblab.v1beta1.IModel>): void;
-  listModels(
-      request: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
-      callback: PaginationCallback<
-          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
-          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
-          protos.google.chromeos.moblab.v1beta1.IModel>): void;
-/**
+ /**
  * Lists all models for the given build target.
  *
  * @param {Object} request
@@ -801,6 +778,27 @@ export class BuildServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listModels(
+      request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IModel[],
+        protos.google.chromeos.moblab.v1beta1.IListModelsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListModelsResponse
+      ]>;
+  listModels(
+      request: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IModel>): void;
+  listModels(
+      request: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListModelsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IModel>): void;
   listModels(
       request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -906,11 +904,8 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listModelsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_models.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_ListModels_async
  */
   listModelsAsync(
       request?: protos.google.chromeos.moblab.v1beta1.IListModelsRequest,
@@ -925,7 +920,6 @@ export class BuildServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listModels'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -935,28 +929,7 @@ export class BuildServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.chromeos.moblab.v1beta1.IModel>;
   }
-  listBuilds(
-      request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.chromeos.moblab.v1beta1.IBuild[],
-        protos.google.chromeos.moblab.v1beta1.IListBuildsRequest|null,
-        protos.google.chromeos.moblab.v1beta1.IListBuildsResponse
-      ]>;
-  listBuilds(
-      request: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
-          protos.google.chromeos.moblab.v1beta1.IListBuildsResponse|null|undefined,
-          protos.google.chromeos.moblab.v1beta1.IBuild>): void;
-  listBuilds(
-      request: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
-      callback: PaginationCallback<
-          protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
-          protos.google.chromeos.moblab.v1beta1.IListBuildsResponse|null|undefined,
-          protos.google.chromeos.moblab.v1beta1.IBuild>): void;
-/**
+ /**
  * Lists all builds for the given build target and model in descending order
  * for the milestones and build versions.
  *
@@ -1000,6 +973,27 @@ export class BuildServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listBuilds(
+      request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IBuild[],
+        protos.google.chromeos.moblab.v1beta1.IListBuildsRequest|null,
+        protos.google.chromeos.moblab.v1beta1.IListBuildsResponse
+      ]>;
+  listBuilds(
+      request: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuild>): void;
+  listBuilds(
+      request: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+      callback: PaginationCallback<
+          protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
+          protos.google.chromeos.moblab.v1beta1.IListBuildsResponse|null|undefined,
+          protos.google.chromeos.moblab.v1beta1.IBuild>): void;
   listBuilds(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1141,11 +1135,8 @@ export class BuildServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listBuildsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/build_service.list_builds.js</caption>
+ * region_tag:chromeosmoblab_v1beta1_generated_BuildService_ListBuilds_async
  */
   listBuildsAsync(
       request?: protos.google.chromeos.moblab.v1beta1.IListBuildsRequest,
@@ -1160,7 +1151,6 @@ export class BuildServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listBuilds'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

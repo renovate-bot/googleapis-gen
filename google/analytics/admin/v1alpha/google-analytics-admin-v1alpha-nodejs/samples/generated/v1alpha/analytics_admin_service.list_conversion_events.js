@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listConversionEvents() {
+  async function callListConversionEvents() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listConversionEvents();
+  callListConversionEvents();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListConversionEvents_async]
 }
 

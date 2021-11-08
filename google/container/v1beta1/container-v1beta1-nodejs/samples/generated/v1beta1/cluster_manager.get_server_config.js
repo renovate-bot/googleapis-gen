@@ -21,19 +21,6 @@ function main(projectId, zone) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) to return
-   *  operations for. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
    *  The name (project and location) of the server config to get,
    *  specified in the format `projects/* /locations/*`.
    */
@@ -45,7 +32,7 @@ function main(projectId, zone) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function getServerConfig() {
+  async function callGetServerConfig() {
     // Construct request
     const request = {
       projectId,
@@ -57,7 +44,7 @@ function main(projectId, zone) {
     console.log(response);
   }
 
-  getServerConfig();
+  callGetServerConfig();
   // [END container_v1beta1_generated_ClusterManager_GetServerConfig_async]
 }
 

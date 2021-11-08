@@ -23,19 +23,19 @@ function main(buildEvent, projectId) {
   /**
    *  The interactivity of this build.
    */
-  // const serviceLevel = ''
+  // const serviceLevel = {}
   /**
    *  Required. The lifecycle build event. If this is a build tool event, the RPC
    *  will fail with INVALID_REQUEST.
    */
-  // const buildEvent = ''
+  // const buildEvent = {}
   /**
    *  If the next event for this build or invocation (depending on the event
    *  type) hasn't been published after this duration from when {build_event}
    *  is written to BES, consider this stream expired. If this field is not set,
    *  BES backend will use its own default value.
    */
-  // const streamTimeout = ''
+  // const streamTimeout = {}
   /**
    *  Additional information about a build request. These are define by the event
    *  publishers, and the Build Event Service does not validate or interpret
@@ -57,7 +57,7 @@ function main(buildEvent, projectId) {
   // Instantiates a client
   const buildClient = new PublishBuildEventClient();
 
-  async function publishLifecycleEvent() {
+  async function callPublishLifecycleEvent() {
     // Construct request
     const request = {
       buildEvent,
@@ -69,7 +69,7 @@ function main(buildEvent, projectId) {
     console.log(response);
   }
 
-  publishLifecycleEvent();
+  callPublishLifecycleEvent();
   // [END buildeventservice_v1_generated_PublishBuildEvent_PublishLifecycleEvent_async]
 }
 

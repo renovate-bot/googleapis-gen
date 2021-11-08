@@ -34,19 +34,19 @@ function main(name, cmekSettings) {
   // const name = 'abc123'
   /**
    *  Required. The CMEK settings to update.
-   *  See [Enabling CMEK for Logs
-   *  Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+   *  See Enabling CMEK for Logs
+   *  Router (https://cloud.google.com/logging/docs/routing/managed-encryption)
    *  for more information.
    */
-  // const cmekSettings = ''
+  // const cmekSettings = {}
   /**
    *  Optional. Field mask identifying which fields from `cmek_settings` should
    *  be updated. A field will be overwritten if and only if it is in the update
    *  mask. Output only fields cannot be updated.
-   *  See [FieldMask][google.protobuf.FieldMask] for more information.
+   *  See FieldMask google.protobuf.FieldMask  for more information.
    *  Example: `"updateMask=kmsKeyName"`
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -54,7 +54,7 @@ function main(name, cmekSettings) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function updateCmekSettings() {
+  async function callUpdateCmekSettings() {
     // Construct request
     const request = {
       name,
@@ -66,7 +66,7 @@ function main(name, cmekSettings) {
     console.log(response);
   }
 
-  updateCmekSettings();
+  callUpdateCmekSettings();
   // [END logging_v2_generated_ConfigServiceV2_UpdateCmekSettings_async]
 }
 

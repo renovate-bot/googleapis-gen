@@ -21,11 +21,11 @@ function main(name, cryptoKeyVersionId) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+   *  Required. The resource name of the CryptoKey google.cloud.kms.v1.CryptoKey  to update.
    */
   // const name = 'abc123'
   /**
-   *  Required. The id of the child [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use as primary.
+   *  Required. The id of the child CryptoKeyVersion google.cloud.kms.v1.CryptoKeyVersion  to use as primary.
    */
   // const cryptoKeyVersionId = 'abc123'
 
@@ -35,7 +35,7 @@ function main(name, cryptoKeyVersionId) {
   // Instantiates a client
   const kmsClient = new KeyManagementServiceClient();
 
-  async function updateCryptoKeyPrimaryVersion() {
+  async function callUpdateCryptoKeyPrimaryVersion() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, cryptoKeyVersionId) {
     console.log(response);
   }
 
-  updateCryptoKeyPrimaryVersion();
+  callUpdateCryptoKeyPrimaryVersion();
   // [END cloudkms_v1_generated_KeyManagementService_UpdateCryptoKeyPrimaryVersion_async]
 }
 

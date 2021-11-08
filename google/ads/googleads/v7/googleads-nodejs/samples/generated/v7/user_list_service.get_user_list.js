@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new UserListServiceClient();
 
-  async function getUserList() {
+  async function callGetUserList() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getUserList();
+  callGetUserList();
   // [END googleads_v7_generated_UserListService_GetUserList_async]
 }
 

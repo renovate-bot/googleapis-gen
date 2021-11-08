@@ -28,7 +28,7 @@ function main(parent, customer) {
   /**
    *  Required. The customer to create.
    */
-  // const customer = ''
+  // const customer = {}
 
   // Imports the Channel library
   const {CloudChannelServiceClient} = require('@google-cloud/channel').v1;
@@ -36,7 +36,7 @@ function main(parent, customer) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function createCustomer() {
+  async function callCreateCustomer() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, customer) {
     console.log(response);
   }
 
-  createCustomer();
+  callCreateCustomer();
   // [END cloudchannel_v1_generated_CloudChannelService_CreateCustomer_async]
 }
 

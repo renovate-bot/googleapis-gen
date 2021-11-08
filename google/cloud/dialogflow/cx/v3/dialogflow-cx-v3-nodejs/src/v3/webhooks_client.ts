@@ -364,6 +364,25 @@ export class WebhooksClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves the specified webhook.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the webhook.
+ *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+ *   ID>/webhooks/<Webhook ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Webhook]{@link google.cloud.dialogflow.cx.v3.Webhook}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/webhooks.get_webhook.js</caption>
+ * region_tag:dialogflow_v3_generated_Webhooks_GetWebhook_async
+ */
   getWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetWebhookRequest,
       options?: CallOptions):
@@ -384,25 +403,6 @@ export class WebhooksClient {
           protos.google.cloud.dialogflow.cx.v3.IWebhook,
           protos.google.cloud.dialogflow.cx.v3.IGetWebhookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the specified webhook.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the webhook.
- *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
- *   ID>/webhooks/<Webhook ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Webhook]{@link google.cloud.dialogflow.cx.v3.Webhook}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getWebhook(request);
- */
   getWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -437,6 +437,26 @@ export class WebhooksClient {
     this.initialize();
     return this.innerApiCalls.getWebhook(request, options, callback);
   }
+/**
+ * Creates a webhook in the specified agent.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The agent to create a webhook for.
+ *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+ * @param {google.cloud.dialogflow.cx.v3.Webhook} request.webhook
+ *   Required. The webhook to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Webhook]{@link google.cloud.dialogflow.cx.v3.Webhook}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/webhooks.create_webhook.js</caption>
+ * region_tag:dialogflow_v3_generated_Webhooks_CreateWebhook_async
+ */
   createWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateWebhookRequest,
       options?: CallOptions):
@@ -457,26 +477,6 @@ export class WebhooksClient {
           protos.google.cloud.dialogflow.cx.v3.IWebhook,
           protos.google.cloud.dialogflow.cx.v3.ICreateWebhookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a webhook in the specified agent.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The agent to create a webhook for.
- *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
- * @param {google.cloud.dialogflow.cx.v3.Webhook} request.webhook
- *   Required. The webhook to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Webhook]{@link google.cloud.dialogflow.cx.v3.Webhook}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createWebhook(request);
- */
   createWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -511,6 +511,26 @@ export class WebhooksClient {
     this.initialize();
     return this.innerApiCalls.createWebhook(request, options, callback);
   }
+/**
+ * Updates the specified webhook.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.dialogflow.cx.v3.Webhook} request.webhook
+ *   Required. The webhook to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The mask to control which fields get updated. If the mask is not present,
+ *   all fields will be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Webhook]{@link google.cloud.dialogflow.cx.v3.Webhook}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/webhooks.update_webhook.js</caption>
+ * region_tag:dialogflow_v3_generated_Webhooks_UpdateWebhook_async
+ */
   updateWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateWebhookRequest,
       options?: CallOptions):
@@ -531,26 +551,6 @@ export class WebhooksClient {
           protos.google.cloud.dialogflow.cx.v3.IWebhook,
           protos.google.cloud.dialogflow.cx.v3.IUpdateWebhookRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates the specified webhook.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.dialogflow.cx.v3.Webhook} request.webhook
- *   Required. The webhook to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The mask to control which fields get updated. If the mask is not present,
- *   all fields will be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Webhook]{@link google.cloud.dialogflow.cx.v3.Webhook}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateWebhook(request);
- */
   updateWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -585,26 +585,6 @@ export class WebhooksClient {
     this.initialize();
     return this.innerApiCalls.updateWebhook(request, options, callback);
   }
-  deleteWebhook(
-      request?: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest|undefined, {}|undefined
-      ]>;
-  deleteWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteWebhook(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified webhook.
  *
@@ -631,9 +611,29 @@ export class WebhooksClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteWebhook(request);
+ * @example <caption>include:samples/generated/v3/webhooks.delete_webhook.js</caption>
+ * region_tag:dialogflow_v3_generated_Webhooks_DeleteWebhook_async
  */
+  deleteWebhook(
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest|undefined, {}|undefined
+      ]>;
+  deleteWebhook(
+      request: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteWebhook(
+      request: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteWebhook(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteWebhookRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -669,28 +669,7 @@ export class WebhooksClient {
     return this.innerApiCalls.deleteWebhook(request, options, callback);
   }
 
-  listWebhooks(
-      request?: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IWebhook[],
-        protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest|null,
-        protos.google.cloud.dialogflow.cx.v3.IListWebhooksResponse
-      ]>;
-  listWebhooks(
-      request: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListWebhooksResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IWebhook>): void;
-  listWebhooks(
-      request: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListWebhooksResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IWebhook>): void;
-/**
+ /**
  * Returns the list of all webhooks in the specified agent.
  *
  * @param {Object} request
@@ -716,6 +695,27 @@ export class WebhooksClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listWebhooks(
+      request?: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IWebhook[],
+        protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest|null,
+        protos.google.cloud.dialogflow.cx.v3.IListWebhooksResponse
+      ]>;
+  listWebhooks(
+      request: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListWebhooksResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IWebhook>): void;
+  listWebhooks(
+      request: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListWebhooksResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IWebhook>): void;
   listWebhooks(
       request?: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -823,11 +823,8 @@ export class WebhooksClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listWebhooksAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/webhooks.list_webhooks.js</caption>
+ * region_tag:dialogflow_v3_generated_Webhooks_ListWebhooks_async
  */
   listWebhooksAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListWebhooksRequest,
@@ -842,7 +839,6 @@ export class WebhooksClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listWebhooks'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

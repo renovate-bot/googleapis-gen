@@ -126,7 +126,7 @@ describe('v1alpha.AllocationEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.allocationendpoint.v1alpha.AllocationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.gaming.allocationendpoint.v1alpha.AllocationResponse());
             client.innerApiCalls.allocate = stubSimpleCall(expectedResponse);
             const [response] = await client.allocate(request);
@@ -142,7 +142,7 @@ describe('v1alpha.AllocationEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.allocationendpoint.v1alpha.AllocationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.gaming.allocationendpoint.v1alpha.AllocationResponse());
             client.innerApiCalls.allocate = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1alpha.AllocationEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.allocationendpoint.v1alpha.AllocationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.allocate = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.allocate(request), expectedError);

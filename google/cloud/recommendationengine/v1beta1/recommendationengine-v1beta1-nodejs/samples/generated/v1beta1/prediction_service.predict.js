@@ -52,7 +52,7 @@ function main(name, userEvent) {
    *  won't be ingested to userEvent logs. Thus, a separate userEvent write
    *  request is required for event logging.
    */
-  // const userEvent = ''
+  // const userEvent = {}
   /**
    *  Optional. Maximum number of results to return per page. Set this property
    *  to the number of prediction results required. If zero, the service will
@@ -118,7 +118,7 @@ function main(name, userEvent) {
   // Instantiates a client
   const recommendationengineClient = new PredictionServiceClient();
 
-  async function predict() {
+  async function callPredict() {
     // Construct request
     const request = {
       name,
@@ -132,7 +132,7 @@ function main(name, userEvent) {
     }
   }
 
-  predict();
+  callPredict();
   // [END recommendationengine_v1beta1_generated_PredictionService_Predict_async]
 }
 

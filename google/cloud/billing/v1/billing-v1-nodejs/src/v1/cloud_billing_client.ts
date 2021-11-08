@@ -302,6 +302,26 @@ export class CloudBillingClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets information about a billing account. The current authenticated user
+ * must be a [viewer of the billing
+ * account](https://cloud.google.com/billing/docs/how-to/billing-access).
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the billing account to retrieve. For example,
+ *   `billingAccounts/012345-567890-ABCDEF`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BillingAccount]{@link google.cloud.billing.v1.BillingAccount}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cloud_billing.get_billing_account.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_GetBillingAccount_async
+ */
   getBillingAccount(
       request?: protos.google.cloud.billing.v1.IGetBillingAccountRequest,
       options?: CallOptions):
@@ -322,26 +342,6 @@ export class CloudBillingClient {
           protos.google.cloud.billing.v1.IBillingAccount,
           protos.google.cloud.billing.v1.IGetBillingAccountRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets information about a billing account. The current authenticated user
- * must be a [viewer of the billing
- * account](https://cloud.google.com/billing/docs/how-to/billing-access).
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the billing account to retrieve. For example,
- *   `billingAccounts/012345-567890-ABCDEF`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BillingAccount]{@link google.cloud.billing.v1.BillingAccount}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBillingAccount(request);
- */
   getBillingAccount(
       request?: protos.google.cloud.billing.v1.IGetBillingAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -376,26 +376,6 @@ export class CloudBillingClient {
     this.initialize();
     return this.innerApiCalls.getBillingAccount(request, options, callback);
   }
-  updateBillingAccount(
-      request?: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.v1.IBillingAccount,
-        protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|undefined, {}|undefined
-      ]>;
-  updateBillingAccount(
-      request: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.billing.v1.IBillingAccount,
-          protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateBillingAccount(
-      request: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
-      callback: Callback<
-          protos.google.cloud.billing.v1.IBillingAccount,
-          protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a billing account's fields.
  * Currently the only field that can be edited is `display_name`.
@@ -420,9 +400,29 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateBillingAccount(request);
+ * @example <caption>include:samples/generated/v1/cloud_billing.update_billing_account.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_UpdateBillingAccount_async
  */
+  updateBillingAccount(
+      request?: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.v1.IBillingAccount,
+        protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|undefined, {}|undefined
+      ]>;
+  updateBillingAccount(
+      request: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.billing.v1.IBillingAccount,
+          protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateBillingAccount(
+      request: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
+      callback: Callback<
+          protos.google.cloud.billing.v1.IBillingAccount,
+          protos.google.cloud.billing.v1.IUpdateBillingAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   updateBillingAccount(
       request?: protos.google.cloud.billing.v1.IUpdateBillingAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -457,26 +457,6 @@ export class CloudBillingClient {
     this.initialize();
     return this.innerApiCalls.updateBillingAccount(request, options, callback);
   }
-  createBillingAccount(
-      request?: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.v1.IBillingAccount,
-        protos.google.cloud.billing.v1.ICreateBillingAccountRequest|undefined, {}|undefined
-      ]>;
-  createBillingAccount(
-      request: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.billing.v1.IBillingAccount,
-          protos.google.cloud.billing.v1.ICreateBillingAccountRequest|null|undefined,
-          {}|null|undefined>): void;
-  createBillingAccount(
-      request: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
-      callback: Callback<
-          protos.google.cloud.billing.v1.IBillingAccount,
-          protos.google.cloud.billing.v1.ICreateBillingAccountRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a billing account.
  * This method can only be used to create
@@ -503,9 +483,29 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createBillingAccount(request);
+ * @example <caption>include:samples/generated/v1/cloud_billing.create_billing_account.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_CreateBillingAccount_async
  */
+  createBillingAccount(
+      request?: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.v1.IBillingAccount,
+        protos.google.cloud.billing.v1.ICreateBillingAccountRequest|undefined, {}|undefined
+      ]>;
+  createBillingAccount(
+      request: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.billing.v1.IBillingAccount,
+          protos.google.cloud.billing.v1.ICreateBillingAccountRequest|null|undefined,
+          {}|null|undefined>): void;
+  createBillingAccount(
+      request: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
+      callback: Callback<
+          protos.google.cloud.billing.v1.IBillingAccount,
+          protos.google.cloud.billing.v1.ICreateBillingAccountRequest|null|undefined,
+          {}|null|undefined>): void;
   createBillingAccount(
       request?: protos.google.cloud.billing.v1.ICreateBillingAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -530,9 +530,32 @@ export class CloudBillingClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createBillingAccount(request, options, callback);
   }
+/**
+ * Gets the billing information for a project. The current authenticated user
+ * must have [permission to view the
+ * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
+ * ).
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the project for which billing information is
+ *   retrieved. For example, `projects/tokyo-rain-123`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ProjectBillingInfo]{@link google.cloud.billing.v1.ProjectBillingInfo}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cloud_billing.get_project_billing_info.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_async
+ */
   getProjectBillingInfo(
       request?: protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest,
       options?: CallOptions):
@@ -553,27 +576,6 @@ export class CloudBillingClient {
           protos.google.cloud.billing.v1.IProjectBillingInfo,
           protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the billing information for a project. The current authenticated user
- * must have [permission to view the
- * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo
- * ).
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the project for which billing information is
- *   retrieved. For example, `projects/tokyo-rain-123`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ProjectBillingInfo]{@link google.cloud.billing.v1.ProjectBillingInfo}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getProjectBillingInfo(request);
- */
   getProjectBillingInfo(
       request?: protos.google.cloud.billing.v1.IGetProjectBillingInfoRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -608,26 +610,6 @@ export class CloudBillingClient {
     this.initialize();
     return this.innerApiCalls.getProjectBillingInfo(request, options, callback);
   }
-  updateProjectBillingInfo(
-      request?: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.v1.IProjectBillingInfo,
-        protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|undefined, {}|undefined
-      ]>;
-  updateProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.billing.v1.IProjectBillingInfo,
-          protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
-      callback: Callback<
-          protos.google.cloud.billing.v1.IProjectBillingInfo,
-          protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets or updates the billing account associated with a project. You specify
  * the new billing account by setting the `billing_account_name` in the
@@ -676,9 +658,29 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateProjectBillingInfo(request);
+ * @example <caption>include:samples/generated/v1/cloud_billing.update_project_billing_info.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_UpdateProjectBillingInfo_async
  */
+  updateProjectBillingInfo(
+      request?: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.v1.IProjectBillingInfo,
+        protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|undefined, {}|undefined
+      ]>;
+  updateProjectBillingInfo(
+      request: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.billing.v1.IProjectBillingInfo,
+          protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateProjectBillingInfo(
+      request: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
+      callback: Callback<
+          protos.google.cloud.billing.v1.IProjectBillingInfo,
+          protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest|null|undefined,
+          {}|null|undefined>): void;
   updateProjectBillingInfo(
       request?: protos.google.cloud.billing.v1.IUpdateProjectBillingInfoRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -713,26 +715,6 @@ export class CloudBillingClient {
     this.initialize();
     return this.innerApiCalls.updateProjectBillingInfo(request, options, callback);
   }
-  getIamPolicy(
-      request?: protos.google.iam.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the access control policy for a billing account.
  * The caller must have the `billing.accounts.getIamPolicy` permission on the
@@ -754,9 +736,29 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/cloud_billing.get_iam_policy.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_GetIamPolicy_async
  */
+  getIamPolicy(
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -791,26 +793,6 @@ export class CloudBillingClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the access control policy for a billing account. Replaces any existing
  * policy.
@@ -835,9 +817,29 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/cloud_billing.set_iam_policy.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -872,26 +874,6 @@ export class CloudBillingClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Tests the access control policy for a billing account. This method takes
  * the resource and a set of permissions as input and returns the subset of
@@ -914,9 +896,29 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/cloud_billing.test_iam_permissions.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -952,28 +954,7 @@ export class CloudBillingClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
-  listBillingAccounts(
-      request?: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.v1.IBillingAccount[],
-        protos.google.cloud.billing.v1.IListBillingAccountsRequest|null,
-        protos.google.cloud.billing.v1.IListBillingAccountsResponse
-      ]>;
-  listBillingAccounts(
-      request: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.billing.v1.IListBillingAccountsRequest,
-          protos.google.cloud.billing.v1.IListBillingAccountsResponse|null|undefined,
-          protos.google.cloud.billing.v1.IBillingAccount>): void;
-  listBillingAccounts(
-      request: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.billing.v1.IListBillingAccountsRequest,
-          protos.google.cloud.billing.v1.IListBillingAccountsResponse|null|undefined,
-          protos.google.cloud.billing.v1.IBillingAccount>): void;
-/**
+ /**
  * Lists the billing accounts that the current authenticated user has
  * permission to
  * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
@@ -1009,6 +990,27 @@ export class CloudBillingClient {
  */
   listBillingAccounts(
       request?: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.v1.IBillingAccount[],
+        protos.google.cloud.billing.v1.IListBillingAccountsRequest|null,
+        protos.google.cloud.billing.v1.IListBillingAccountsResponse
+      ]>;
+  listBillingAccounts(
+      request: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+          protos.google.cloud.billing.v1.IListBillingAccountsResponse|null|undefined,
+          protos.google.cloud.billing.v1.IBillingAccount>): void;
+  listBillingAccounts(
+      request: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.billing.v1.IListBillingAccountsRequest,
+          protos.google.cloud.billing.v1.IListBillingAccountsResponse|null|undefined,
+          protos.google.cloud.billing.v1.IBillingAccount>): void;
+  listBillingAccounts(
+      request?: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.billing.v1.IListBillingAccountsRequest,
           protos.google.cloud.billing.v1.IListBillingAccountsResponse|null|undefined,
@@ -1032,6 +1034,8 @@ export class CloudBillingClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listBillingAccounts(request, options, callback);
   }
@@ -1072,6 +1076,8 @@ export class CloudBillingClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listBillingAccounts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1112,11 +1118,8 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listBillingAccountsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/cloud_billing.list_billing_accounts.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_ListBillingAccounts_async
  */
   listBillingAccountsAsync(
       request?: protos.google.cloud.billing.v1.IListBillingAccountsRequest,
@@ -1124,7 +1127,8 @@ export class CloudBillingClient {
     AsyncIterable<protos.google.cloud.billing.v1.IBillingAccount>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listBillingAccounts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1134,28 +1138,7 @@ export class CloudBillingClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.billing.v1.IBillingAccount>;
   }
-  listProjectBillingInfo(
-      request?: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.v1.IProjectBillingInfo[],
-        protos.google.cloud.billing.v1.IListProjectBillingInfoRequest|null,
-        protos.google.cloud.billing.v1.IListProjectBillingInfoResponse
-      ]>;
-  listProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
-          protos.google.cloud.billing.v1.IListProjectBillingInfoResponse|null|undefined,
-          protos.google.cloud.billing.v1.IProjectBillingInfo>): void;
-  listProjectBillingInfo(
-      request: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
-          protos.google.cloud.billing.v1.IListProjectBillingInfoResponse|null|undefined,
-          protos.google.cloud.billing.v1.IProjectBillingInfo>): void;
-/**
+ /**
  * Lists the projects associated with a billing account. The current
  * authenticated user must have the `billing.resourceAssociations.list` IAM
  * permission, which is often given to billing account
@@ -1186,6 +1169,27 @@ export class CloudBillingClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listProjectBillingInfo(
+      request?: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.v1.IProjectBillingInfo[],
+        protos.google.cloud.billing.v1.IListProjectBillingInfoRequest|null,
+        protos.google.cloud.billing.v1.IListProjectBillingInfoResponse
+      ]>;
+  listProjectBillingInfo(
+      request: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+          protos.google.cloud.billing.v1.IListProjectBillingInfoResponse|null|undefined,
+          protos.google.cloud.billing.v1.IProjectBillingInfo>): void;
+  listProjectBillingInfo(
+      request: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
+          protos.google.cloud.billing.v1.IListProjectBillingInfoResponse|null|undefined,
+          protos.google.cloud.billing.v1.IProjectBillingInfo>): void;
   listProjectBillingInfo(
       request?: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1297,11 +1301,8 @@ export class CloudBillingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listProjectBillingInfoAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/cloud_billing.list_project_billing_info.js</caption>
+ * region_tag:cloudbilling_v1_generated_CloudBilling_ListProjectBillingInfo_async
  */
   listProjectBillingInfoAsync(
       request?: protos.google.cloud.billing.v1.IListProjectBillingInfoRequest,
@@ -1316,7 +1317,6 @@ export class CloudBillingClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listProjectBillingInfo'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

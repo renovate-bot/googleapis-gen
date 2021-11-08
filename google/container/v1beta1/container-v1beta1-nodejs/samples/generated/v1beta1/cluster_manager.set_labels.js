@@ -21,24 +21,6 @@ function main(projectId, zone, clusterId, resourceLabels, labelFingerprint) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://developers.google.com/console/help/new/#projectnumber).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the cluster.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const clusterId = 'abc123'
-  /**
    *  Required. The labels to set for that cluster.
    */
   // const resourceLabels = 1234
@@ -63,7 +45,7 @@ function main(projectId, zone, clusterId, resourceLabels, labelFingerprint) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function setLabels() {
+  async function callSetLabels() {
     // Construct request
     const request = {
       projectId,
@@ -78,7 +60,7 @@ function main(projectId, zone, clusterId, resourceLabels, labelFingerprint) {
     console.log(response);
   }
 
-  setLabels();
+  callSetLabels();
   // [END container_v1beta1_generated_ClusterManager_SetLabels_async]
 }
 

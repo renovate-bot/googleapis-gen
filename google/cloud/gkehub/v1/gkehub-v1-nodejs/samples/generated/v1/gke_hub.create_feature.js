@@ -32,7 +32,7 @@ function main() {
   /**
    *  The Feature resource to create.
    */
-  // const resource = ''
+  // const resource = {}
   /**
    *  Optional. A request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -54,7 +54,7 @@ function main() {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function createFeature() {
+  async function callCreateFeature() {
     // Construct request
     const request = {
     };
@@ -65,7 +65,7 @@ function main() {
     console.log(response);
   }
 
-  createFeature();
+  callCreateFeature();
   // [END gkehub_v1_generated_GkeHub_CreateFeature_async]
 }
 

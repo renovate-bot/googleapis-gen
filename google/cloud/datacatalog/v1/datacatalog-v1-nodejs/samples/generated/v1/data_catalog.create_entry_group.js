@@ -36,7 +36,7 @@ function main(parent, entryGroupId) {
   /**
    *  The entry group to create. Defaults to empty.
    */
-  // const entryGroup = ''
+  // const entryGroup = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -44,7 +44,7 @@ function main(parent, entryGroupId) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function createEntryGroup() {
+  async function callCreateEntryGroup() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, entryGroupId) {
     console.log(response);
   }
 
-  createEntryGroup();
+  callCreateEntryGroup();
   // [END datacatalog_v1_generated_DataCatalog_CreateEntryGroup_async]
 }
 

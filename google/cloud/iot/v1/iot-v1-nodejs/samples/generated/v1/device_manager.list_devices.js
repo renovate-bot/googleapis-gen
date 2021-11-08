@@ -41,11 +41,11 @@ function main(parent) {
    *  other fields specified in snake_case format, for example:
    *  `last_heartbeat_time`.
    */
-  // const fieldMask = ''
+  // const fieldMask = {}
   /**
    *  Options related to gateways.
    */
-  // const gatewayListOptions = ''
+  // const gatewayListOptions = {}
   /**
    *  The maximum number of devices to return in the response. If this value
    *  is zero, the service will select a default size. A call may return fewer
@@ -66,7 +66,7 @@ function main(parent) {
   // Instantiates a client
   const iotClient = new DeviceManagerClient();
 
-  async function listDevices() {
+  async function callListDevices() {
     // Construct request
     const request = {
       parent,
@@ -79,7 +79,7 @@ function main(parent) {
     }
   }
 
-  listDevices();
+  callListDevices();
   // [END cloudiot_v1_generated_DeviceManager_ListDevices_async]
 }
 

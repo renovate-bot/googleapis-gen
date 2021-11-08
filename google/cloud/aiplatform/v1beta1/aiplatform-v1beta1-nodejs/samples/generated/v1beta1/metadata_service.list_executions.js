@@ -32,7 +32,7 @@ function main(parent) {
    */
   // const pageSize = 1234
   /**
-   *  A page token, received from a previous [MetadataService.ListExecutions][google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions]
+   *  A page token, received from a previous MetadataService.ListExecutions google.cloud.aiplatform.v1beta1.MetadataService.ListExecutions 
    *  call. Provide this to retrieve the subsequent page.
    *  When paginating, all other provided parameters must match the call that
    *  provided the page token. (Otherwise the request will fail with an
@@ -73,7 +73,7 @@ function main(parent) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function listExecutions() {
+  async function callListExecutions() {
     // Construct request
     const request = {
       parent,
@@ -86,7 +86,7 @@ function main(parent) {
     }
   }
 
-  listExecutions();
+  callListExecutions();
   // [END aiplatform_v1beta1_generated_MetadataService_ListExecutions_async]
 }
 

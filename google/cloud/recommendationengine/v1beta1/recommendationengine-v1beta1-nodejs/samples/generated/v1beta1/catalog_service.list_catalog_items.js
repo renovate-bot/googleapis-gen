@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const recommendationengineClient = new CatalogServiceClient();
 
-  async function listCatalogItems() {
+  async function callListCatalogItems() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listCatalogItems();
+  callListCatalogItems();
   // [END recommendationengine_v1beta1_generated_CatalogService_ListCatalogItems_async]
 }
 

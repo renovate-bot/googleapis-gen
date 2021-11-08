@@ -24,13 +24,13 @@ function main(contact) {
    *  Required. The contact resource to replace the existing saved contact. Note:
    *  the email address of the contact cannot be modified.
    */
-  // const contact = ''
+  // const contact = {}
   /**
    *  Optional. The update mask applied to the resource. For the `FieldMask`
    *  definition, see
    *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Essentialcontacts library
   const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
@@ -38,7 +38,7 @@ function main(contact) {
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function updateContact() {
+  async function callUpdateContact() {
     // Construct request
     const request = {
       contact,
@@ -49,7 +49,7 @@ function main(contact) {
     console.log(response);
   }
 
-  updateContact();
+  callUpdateContact();
   // [END essentialcontacts_v1_generated_EssentialContactsService_UpdateContact_async]
 }
 

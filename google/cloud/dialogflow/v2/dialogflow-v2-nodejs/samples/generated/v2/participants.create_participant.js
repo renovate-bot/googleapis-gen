@@ -29,7 +29,7 @@ function main(parent, participant) {
   /**
    *  Required. The participant to create.
    */
-  // const participant = ''
+  // const participant = {}
 
   // Imports the Dialogflow library
   const {ParticipantsClient} = require('@google-cloud/dialogflow').v2;
@@ -37,7 +37,7 @@ function main(parent, participant) {
   // Instantiates a client
   const dialogflowClient = new ParticipantsClient();
 
-  async function createParticipant() {
+  async function callCreateParticipant() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, participant) {
     console.log(response);
   }
 
-  createParticipant();
+  callCreateParticipant();
   // [END dialogflow_v2_generated_Participants_CreateParticipant_async]
 }
 

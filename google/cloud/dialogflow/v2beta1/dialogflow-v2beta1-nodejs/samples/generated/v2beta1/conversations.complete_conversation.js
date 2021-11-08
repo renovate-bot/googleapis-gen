@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new ConversationsClient();
 
-  async function completeConversation() {
+  async function callCompleteConversation() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  completeConversation();
+  callCompleteConversation();
   // [END dialogflow_v2beta1_generated_Conversations_CompleteConversation_async]
 }
 

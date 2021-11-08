@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new SharedCriterionServiceClient();
 
-  async function getSharedCriterion() {
+  async function callGetSharedCriterion() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getSharedCriterion();
+  callGetSharedCriterion();
   // [END googleads_v7_generated_SharedCriterionService_GetSharedCriterion_async]
 }
 

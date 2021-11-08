@@ -27,7 +27,7 @@ function main(parent, issueModel) {
   /**
    *  Required. The issue model to create.
    */
-  // const issueModel = ''
+  // const issueModel = {}
 
   // Imports the Contactcenterinsights library
   const {ContactCenterInsightsClient} = require('@google-cloud/contact-center-insights').v1;
@@ -35,7 +35,7 @@ function main(parent, issueModel) {
   // Instantiates a client
   const contactcenterinsightsClient = new ContactCenterInsightsClient();
 
-  async function createIssueModel() {
+  async function callCreateIssueModel() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, issueModel) {
     console.log(response);
   }
 
-  createIssueModel();
+  callCreateIssueModel();
   // [END contactcenterinsights_v1_generated_ContactCenterInsights_CreateIssueModel_async]
 }
 

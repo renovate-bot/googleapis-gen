@@ -27,7 +27,7 @@ function main(parent, dataset) {
   /**
    *  Required. The dataset to create.
    */
-  // const dataset = ''
+  // const dataset = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
@@ -35,7 +35,7 @@ function main(parent, dataset) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function createDataset() {
+  async function callCreateDataset() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent, dataset) {
     console.log(response);
   }
 
-  createDataset();
+  callCreateDataset();
   // [END automl_v1beta1_generated_AutoMl_CreateDataset_async]
 }
 

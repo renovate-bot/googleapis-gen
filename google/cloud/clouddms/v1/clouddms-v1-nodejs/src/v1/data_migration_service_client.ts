@@ -417,6 +417,23 @@ export class DataMigrationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single migration job.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the migration job resource to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [MigrationJob]{@link google.cloud.clouddms.v1.MigrationJob}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.get_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_GetMigrationJob_async
+ */
   getMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
       options?: CallOptions):
@@ -437,23 +454,6 @@ export class DataMigrationServiceClient {
           protos.google.cloud.clouddms.v1.IMigrationJob,
           protos.google.cloud.clouddms.v1.IGetMigrationJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single migration job.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the migration job resource to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [MigrationJob]{@link google.cloud.clouddms.v1.MigrationJob}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMigrationJob(request);
- */
   getMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IGetMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -488,26 +488,6 @@ export class DataMigrationServiceClient {
     this.initialize();
     return this.innerApiCalls.getMigrationJob(request, options, callback);
   }
-  generateSshScript(
-      request?: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.clouddms.v1.ISshScript,
-        protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|undefined, {}|undefined
-      ]>;
-  generateSshScript(
-      request: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.clouddms.v1.ISshScript,
-          protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateSshScript(
-      request: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
-      callback: Callback<
-          protos.google.cloud.clouddms.v1.ISshScript,
-          protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generate a SSH configuration script to configure the reverse SSH
  * connectivity.
@@ -531,9 +511,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateSshScript(request);
+ * @example <caption>include:samples/generated/v1/data_migration_service.generate_ssh_script.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_GenerateSshScript_async
  */
+  generateSshScript(
+      request?: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.clouddms.v1.ISshScript,
+        protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|undefined, {}|undefined
+      ]>;
+  generateSshScript(
+      request: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.clouddms.v1.ISshScript,
+          protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateSshScript(
+      request: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
+      callback: Callback<
+          protos.google.cloud.clouddms.v1.ISshScript,
+          protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest|null|undefined,
+          {}|null|undefined>): void;
   generateSshScript(
       request?: protos.google.cloud.clouddms.v1.IGenerateSshScriptRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -568,6 +568,23 @@ export class DataMigrationServiceClient {
     this.initialize();
     return this.innerApiCalls.generateSshScript(request, options, callback);
   }
+/**
+ * Gets details of a single connection profile.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the connection profile resource to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ConnectionProfile]{@link google.cloud.clouddms.v1.ConnectionProfile}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.get_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_GetConnectionProfile_async
+ */
   getConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
       options?: CallOptions):
@@ -588,23 +605,6 @@ export class DataMigrationServiceClient {
           protos.google.cloud.clouddms.v1.IConnectionProfile,
           protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single connection profile.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the connection profile resource to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ConnectionProfile]{@link google.cloud.clouddms.v1.ConnectionProfile}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getConnectionProfile(request);
- */
   getConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IGetConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -640,26 +640,6 @@ export class DataMigrationServiceClient {
     return this.innerApiCalls.getConnectionProfile(request, options, callback);
   }
 
-  createMigrationJob(
-      request?: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createMigrationJob(
-      request: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createMigrationJob(
-      request: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new migration job in a given project and location.
  *
@@ -690,10 +670,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createMigrationJob(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_CreateMigrationJob_async
  */
+  createMigrationJob(
+      request?: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createMigrationJob(
+      request: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createMigrationJob(
+      request: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createMigrationJob(
       request?: protos.google.cloud.clouddms.v1.ICreateMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -737,11 +736,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_CreateMigrationJob_async
  */
   async checkCreateMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -749,26 +745,6 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
-  updateMigrationJob(
-      request?: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single migration job.
  *
@@ -796,10 +772,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateMigrationJob(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_UpdateMigrationJob_async
  */
+  updateMigrationJob(
+      request?: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateMigrationJob(
+      request: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateMigrationJob(
+      request: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IUpdateMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -843,11 +838,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_UpdateMigrationJob_async
  */
   async checkUpdateMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -855,26 +847,6 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
-  deleteMigrationJob(
-      request?: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteMigrationJob(
-      request: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single migration job.
  *
@@ -903,10 +875,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteMigrationJob(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_DeleteMigrationJob_async
  */
+  deleteMigrationJob(
+      request?: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteMigrationJob(
+      request: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteMigrationJob(
+      request: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IDeleteMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -950,11 +941,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_DeleteMigrationJob_async
  */
   async checkDeleteMigrationJobProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -962,6 +950,25 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
+/**
+ * Start an already created migration job.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the migration job resource to start.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.start_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_StartMigrationJob_async
+ */
   startMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
       options?: CallOptions):
@@ -982,26 +989,6 @@ export class DataMigrationServiceClient {
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Start an already created migration job.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the migration job resource to start.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.startMigrationJob(request);
- * const [response] = await operation.promise();
- */
   startMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IStartMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1045,11 +1032,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStartMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.start_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_StartMigrationJob_async
  */
   async checkStartMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1057,6 +1041,25 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.startMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
+/**
+ * Stops a running migration job.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the migration job resource to stop.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.stop_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_StopMigrationJob_async
+ */
   stopMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
       options?: CallOptions):
@@ -1077,26 +1080,6 @@ export class DataMigrationServiceClient {
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Stops a running migration job.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the migration job resource to stop.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.stopMigrationJob(request);
- * const [response] = await operation.promise();
- */
   stopMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IStopMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1140,11 +1123,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStopMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.stop_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_StopMigrationJob_async
  */
   async checkStopMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1152,6 +1132,26 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.stopMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
+/**
+ * Resume a migration job that is currently stopped and is resumable (was
+ * stopped during CDC phase).
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the migration job resource to resume.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.resume_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_ResumeMigrationJob_async
+ */
   resumeMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
       options?: CallOptions):
@@ -1172,27 +1172,6 @@ export class DataMigrationServiceClient {
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Resume a migration job that is currently stopped and is resumable (was
- * stopped during CDC phase).
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the migration job resource to resume.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.resumeMigrationJob(request);
- * const [response] = await operation.promise();
- */
   resumeMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IResumeMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1236,11 +1215,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkResumeMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.resume_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_ResumeMigrationJob_async
  */
   async checkResumeMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1248,6 +1224,26 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.resumeMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
+/**
+ * Promote a migration job, stopping replication to the destination and
+ * promoting the destination to be a standalone database.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the migration job resource to promote.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.promote_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_PromoteMigrationJob_async
+ */
   promoteMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
       options?: CallOptions):
@@ -1268,27 +1264,6 @@ export class DataMigrationServiceClient {
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Promote a migration job, stopping replication to the destination and
- * promoting the destination to be a standalone database.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the migration job resource to promote.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.promoteMigrationJob(request);
- * const [response] = await operation.promise();
- */
   promoteMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IPromoteMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1332,11 +1307,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPromoteMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.promote_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_PromoteMigrationJob_async
  */
   async checkPromoteMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1344,6 +1316,26 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.promoteMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
+/**
+ * Verify a migration job, making sure the destination can reach the source
+ * and that all configuration and prerequisites are met.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the migration job resource to verify.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.verify_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_VerifyMigrationJob_async
+ */
   verifyMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
       options?: CallOptions):
@@ -1364,27 +1356,6 @@ export class DataMigrationServiceClient {
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Verify a migration job, making sure the destination can reach the source
- * and that all configuration and prerequisites are met.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the migration job resource to verify.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.verifyMigrationJob(request);
- * const [response] = await operation.promise();
- */
   verifyMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IVerifyMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1428,11 +1399,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkVerifyMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.verify_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_VerifyMigrationJob_async
  */
   async checkVerifyMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1440,6 +1408,27 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.verifyMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
+/**
+ * Restart a stopped or failed migration job, resetting the destination
+ * instance to its original state and starting the migration process from
+ * scratch.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Name of the migration job resource to restart.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/data_migration_service.restart_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_RestartMigrationJob_async
+ */
   restartMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
       options?: CallOptions):
@@ -1460,28 +1449,6 @@ export class DataMigrationServiceClient {
           LROperation<protos.google.cloud.clouddms.v1.IMigrationJob, protos.google.cloud.clouddms.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Restart a stopped or failed migration job, resetting the destination
- * instance to its original state and starting the migration process from
- * scratch.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Name of the migration job resource to restart.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.restartMigrationJob(request);
- * const [response] = await operation.promise();
- */
   restartMigrationJob(
       request?: protos.google.cloud.clouddms.v1.IRestartMigrationJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1525,11 +1492,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRestartMigrationJobProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.restart_migration_job.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_RestartMigrationJob_async
  */
   async checkRestartMigrationJobProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1537,26 +1501,6 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.restartMigrationJob, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.MigrationJob, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
-  createConnectionProfile(
-      request?: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new connection profile in a given project and location.
  *
@@ -1585,10 +1529,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createConnectionProfile(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_async
  */
+  createConnectionProfile(
+      request?: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createConnectionProfile(
+      request: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createConnectionProfile(
+      request: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.ICreateConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1632,11 +1595,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateConnectionProfileProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.create_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_async
  */
   async checkCreateConnectionProfileProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1644,26 +1604,6 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createConnectionProfile, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
-  updateConnectionProfile(
-      request?: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Update the configuration of a single connection profile.
  *
@@ -1691,10 +1631,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateConnectionProfile(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_UpdateConnectionProfile_async
  */
+  updateConnectionProfile(
+      request?: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateConnectionProfile(
+      request: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateConnectionProfile(
+      request: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.clouddms.v1.IConnectionProfile, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IUpdateConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1738,11 +1697,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateConnectionProfileProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.update_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_UpdateConnectionProfile_async
  */
   async checkUpdateConnectionProfileProgress(name: string): Promise<LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1750,26 +1706,6 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateConnectionProfile, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.clouddms.v1.ConnectionProfile, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
-  deleteConnectionProfile(
-      request?: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteConnectionProfile(
-      request: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single Database Migration Service connection profile.
  * A connection profile can only be deleted if it is not in use by any
@@ -1799,10 +1735,29 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteConnectionProfile(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_DeleteConnectionProfile_async
  */
+  deleteConnectionProfile(
+      request?: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteConnectionProfile(
+      request: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteConnectionProfile(
+      request: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.clouddms.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteConnectionProfile(
       request?: protos.google.cloud.clouddms.v1.IDeleteConnectionProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1846,11 +1801,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteConnectionProfileProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/data_migration_service.delete_connection_profile.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_DeleteConnectionProfile_async
  */
   async checkDeleteConnectionProfileProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1858,28 +1810,7 @@ export class DataMigrationServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteConnectionProfile, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.clouddms.v1.OperationMetadata>;
   }
-  listMigrationJobs(
-      request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.clouddms.v1.IMigrationJob[],
-        protos.google.cloud.clouddms.v1.IListMigrationJobsRequest|null,
-        protos.google.cloud.clouddms.v1.IListMigrationJobsResponse
-      ]>;
-  listMigrationJobs(
-      request: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
-          protos.google.cloud.clouddms.v1.IListMigrationJobsResponse|null|undefined,
-          protos.google.cloud.clouddms.v1.IMigrationJob>): void;
-  listMigrationJobs(
-      request: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
-          protos.google.cloud.clouddms.v1.IListMigrationJobsResponse|null|undefined,
-          protos.google.cloud.clouddms.v1.IMigrationJob>): void;
-/**
+ /**
  * Lists migration jobs in a given project and location.
  *
  * @param {Object} request
@@ -1923,6 +1854,27 @@ export class DataMigrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMigrationJobs(
+      request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.clouddms.v1.IMigrationJob[],
+        protos.google.cloud.clouddms.v1.IListMigrationJobsRequest|null,
+        protos.google.cloud.clouddms.v1.IListMigrationJobsResponse
+      ]>;
+  listMigrationJobs(
+      request: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+          protos.google.cloud.clouddms.v1.IListMigrationJobsResponse|null|undefined,
+          protos.google.cloud.clouddms.v1.IMigrationJob>): void;
+  listMigrationJobs(
+      request: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
+          protos.google.cloud.clouddms.v1.IListMigrationJobsResponse|null|undefined,
+          protos.google.cloud.clouddms.v1.IMigrationJob>): void;
   listMigrationJobs(
       request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2066,11 +2018,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMigrationJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_migration_jobs.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_ListMigrationJobs_async
  */
   listMigrationJobsAsync(
       request?: protos.google.cloud.clouddms.v1.IListMigrationJobsRequest,
@@ -2085,7 +2034,6 @@ export class DataMigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMigrationJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2095,28 +2043,7 @@ export class DataMigrationServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.clouddms.v1.IMigrationJob>;
   }
-  listConnectionProfiles(
-      request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.clouddms.v1.IConnectionProfile[],
-        protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest|null,
-        protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse
-      ]>;
-  listConnectionProfiles(
-      request: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
-          protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse|null|undefined,
-          protos.google.cloud.clouddms.v1.IConnectionProfile>): void;
-  listConnectionProfiles(
-      request: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
-          protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse|null|undefined,
-          protos.google.cloud.clouddms.v1.IConnectionProfile>): void;
-/**
+ /**
  * Retrieve a list of all connection profiles in a given project and location.
  *
  * @param {Object} request
@@ -2159,6 +2086,27 @@ export class DataMigrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listConnectionProfiles(
+      request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.clouddms.v1.IConnectionProfile[],
+        protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest|null,
+        protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse
+      ]>;
+  listConnectionProfiles(
+      request: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+          protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse|null|undefined,
+          protos.google.cloud.clouddms.v1.IConnectionProfile>): void;
+  listConnectionProfiles(
+      request: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
+          protos.google.cloud.clouddms.v1.IListConnectionProfilesResponse|null|undefined,
+          protos.google.cloud.clouddms.v1.IConnectionProfile>): void;
   listConnectionProfiles(
       request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2300,11 +2248,8 @@ export class DataMigrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listConnectionProfilesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/data_migration_service.list_connection_profiles.js</caption>
+ * region_tag:datamigration_v1_generated_DataMigrationService_ListConnectionProfiles_async
  */
   listConnectionProfilesAsync(
       request?: protos.google.cloud.clouddms.v1.IListConnectionProfilesRequest,
@@ -2319,7 +2264,6 @@ export class DataMigrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listConnectionProfiles'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

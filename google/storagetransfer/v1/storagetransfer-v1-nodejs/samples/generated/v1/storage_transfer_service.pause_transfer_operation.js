@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function pauseTransferOperation() {
+  async function callPauseTransferOperation() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  pauseTransferOperation();
+  callPauseTransferOperation();
   // [END storagetransfer_v1_generated_StorageTransferService_PauseTransferOperation_async]
 }
 

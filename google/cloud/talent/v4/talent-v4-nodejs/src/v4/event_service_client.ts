@@ -290,26 +290,6 @@ export class EventServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createClientEvent(
-      request?: protos.google.cloud.talent.v4.ICreateClientEventRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4.IClientEvent,
-        protos.google.cloud.talent.v4.ICreateClientEventRequest|undefined, {}|undefined
-      ]>;
-  createClientEvent(
-      request: protos.google.cloud.talent.v4.ICreateClientEventRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4.IClientEvent,
-          protos.google.cloud.talent.v4.ICreateClientEventRequest|null|undefined,
-          {}|null|undefined>): void;
-  createClientEvent(
-      request: protos.google.cloud.talent.v4.ICreateClientEventRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4.IClientEvent,
-          protos.google.cloud.talent.v4.ICreateClientEventRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Report events issued when end user interacts with customer's application
  * that uses Cloud Talent Solution. You may inspect the created events in
@@ -336,9 +316,29 @@ export class EventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createClientEvent(request);
+ * @example <caption>include:samples/generated/v4/event_service.create_client_event.js</caption>
+ * region_tag:jobs_v4_generated_EventService_CreateClientEvent_async
  */
+  createClientEvent(
+      request?: protos.google.cloud.talent.v4.ICreateClientEventRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4.IClientEvent,
+        protos.google.cloud.talent.v4.ICreateClientEventRequest|undefined, {}|undefined
+      ]>;
+  createClientEvent(
+      request: protos.google.cloud.talent.v4.ICreateClientEventRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4.IClientEvent,
+          protos.google.cloud.talent.v4.ICreateClientEventRequest|null|undefined,
+          {}|null|undefined>): void;
+  createClientEvent(
+      request: protos.google.cloud.talent.v4.ICreateClientEventRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4.IClientEvent,
+          protos.google.cloud.talent.v4.ICreateClientEventRequest|null|undefined,
+          {}|null|undefined>): void;
   createClientEvent(
       request?: protos.google.cloud.talent.v4.ICreateClientEventRequest,
       optionsOrCallback?: CallOptions|Callback<

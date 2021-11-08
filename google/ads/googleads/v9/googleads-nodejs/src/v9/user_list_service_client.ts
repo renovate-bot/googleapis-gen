@@ -727,26 +727,6 @@ export class UserListServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getUserList(
-      request?: protos.google.ads.googleads.v9.services.IGetUserListRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IUserList,
-        protos.google.ads.googleads.v9.services.IGetUserListRequest|undefined, {}|undefined
-      ]>;
-  getUserList(
-      request: protos.google.ads.googleads.v9.services.IGetUserListRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IUserList,
-          protos.google.ads.googleads.v9.services.IGetUserListRequest|null|undefined,
-          {}|null|undefined>): void;
-  getUserList(
-      request: protos.google.ads.googleads.v9.services.IGetUserListRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IUserList,
-          protos.google.ads.googleads.v9.services.IGetUserListRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested user list.
  *
@@ -769,9 +749,29 @@ export class UserListServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getUserList(request);
+ * @example <caption>include:samples/generated/v9/user_list_service.get_user_list.js</caption>
+ * region_tag:googleads_v9_generated_UserListService_GetUserList_async
  */
+  getUserList(
+      request?: protos.google.ads.googleads.v9.services.IGetUserListRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IUserList,
+        protos.google.ads.googleads.v9.services.IGetUserListRequest|undefined, {}|undefined
+      ]>;
+  getUserList(
+      request: protos.google.ads.googleads.v9.services.IGetUserListRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IUserList,
+          protos.google.ads.googleads.v9.services.IGetUserListRequest|null|undefined,
+          {}|null|undefined>): void;
+  getUserList(
+      request: protos.google.ads.googleads.v9.services.IGetUserListRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IUserList,
+          protos.google.ads.googleads.v9.services.IGetUserListRequest|null|undefined,
+          {}|null|undefined>): void;
   getUserList(
       request?: protos.google.ads.googleads.v9.services.IGetUserListRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class UserListServiceClient {
     this.initialize();
     return this.innerApiCalls.getUserList(request, options, callback);
   }
-  mutateUserLists(
-      request?: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateUserListsResponse,
-        protos.google.ads.googleads.v9.services.IMutateUserListsRequest|undefined, {}|undefined
-      ]>;
-  mutateUserLists(
-      request: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateUserListsResponse,
-          protos.google.ads.googleads.v9.services.IMutateUserListsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateUserLists(
-      request: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateUserListsResponse,
-          protos.google.ads.googleads.v9.services.IMutateUserListsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or updates user lists. Operation statuses are returned.
  *
@@ -872,9 +852,29 @@ export class UserListServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateUserLists(request);
+ * @example <caption>include:samples/generated/v9/user_list_service.mutate_user_lists.js</caption>
+ * region_tag:googleads_v9_generated_UserListService_MutateUserLists_async
  */
+  mutateUserLists(
+      request?: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateUserListsResponse,
+        protos.google.ads.googleads.v9.services.IMutateUserListsRequest|undefined, {}|undefined
+      ]>;
+  mutateUserLists(
+      request: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateUserListsResponse,
+          protos.google.ads.googleads.v9.services.IMutateUserListsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateUserLists(
+      request: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateUserListsResponse,
+          protos.google.ads.googleads.v9.services.IMutateUserListsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateUserLists(
       request?: protos.google.ads.googleads.v9.services.IMutateUserListsRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -50,13 +50,13 @@ function main(parent) {
    *  ListBuilds will return a list of Builds object with only the milestone
    *  field.
    */
-  // const readMask = ''
+  // const readMask = {}
   /**
    *  Optional. The operation that groups by all the Build fields specified in the read
    *  mask. The group_by field should be the same as the read_mask field in
    *  convention of SQL.
    */
-  // const groupBy = ''
+  // const groupBy = {}
 
   // Imports the Moblab library
   const {BuildServiceClient} = require('@google-cloud/moblab').v1beta1;
@@ -64,7 +64,7 @@ function main(parent) {
   // Instantiates a client
   const moblabClient = new BuildServiceClient();
 
-  async function listBuilds() {
+  async function callListBuilds() {
     // Construct request
     const request = {
       parent,
@@ -77,7 +77,7 @@ function main(parent) {
     }
   }
 
-  listBuilds();
+  callListBuilds();
   // [END chromeosmoblab_v1beta1_generated_BuildService_ListBuilds_async]
 }
 

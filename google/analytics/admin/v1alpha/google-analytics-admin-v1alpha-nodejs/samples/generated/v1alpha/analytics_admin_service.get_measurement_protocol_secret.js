@@ -35,7 +35,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function getMeasurementProtocolSecret() {
+  async function callGetMeasurementProtocolSecret() {
     // Construct request
     const request = {
       name,
@@ -46,7 +46,7 @@ function main(name) {
     console.log(response);
   }
 
-  getMeasurementProtocolSecret();
+  callGetMeasurementProtocolSecret();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_GetMeasurementProtocolSecret_async]
 }
 

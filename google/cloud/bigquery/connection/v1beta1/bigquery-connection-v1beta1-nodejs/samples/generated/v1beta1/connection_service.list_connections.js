@@ -28,7 +28,7 @@ function main(parent, maxResults) {
   /**
    *  Required. Maximum number of results per page.
    */
-  // const maxResults = ''
+  // const maxResults = {}
   /**
    *  Page token.
    */
@@ -40,7 +40,7 @@ function main(parent, maxResults) {
   // Instantiates a client
   const connectionClient = new ConnectionServiceClient();
 
-  async function listConnections() {
+  async function callListConnections() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, maxResults) {
     console.log(response);
   }
 
-  listConnections();
+  callListConnections();
   // [END bigqueryconnection_v1beta1_generated_ConnectionService_ListConnections_async]
 }
 

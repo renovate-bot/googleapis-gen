@@ -650,26 +650,6 @@ export class ReachPlanServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  listPlannableLocations(
-      request?: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IListPlannableLocationsResponse,
-        protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest|undefined, {}|undefined
-      ]>;
-  listPlannableLocations(
-      request: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListPlannableLocationsResponse,
-          protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listPlannableLocations(
-      request: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListPlannableLocationsResponse,
-          protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the list of plannable locations (for example, countries & DMAs).
  *
@@ -690,9 +670,29 @@ export class ReachPlanServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listPlannableLocations(request);
+ * @example <caption>include:samples/generated/v7/reach_plan_service.list_plannable_locations.js</caption>
+ * region_tag:googleads_v7_generated_ReachPlanService_ListPlannableLocations_async
  */
+  listPlannableLocations(
+      request?: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IListPlannableLocationsResponse,
+        protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest|undefined, {}|undefined
+      ]>;
+  listPlannableLocations(
+      request: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListPlannableLocationsResponse,
+          protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listPlannableLocations(
+      request: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListPlannableLocationsResponse,
+          protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest|null|undefined,
+          {}|null|undefined>): void;
   listPlannableLocations(
       request?: protos.google.ads.googleads.v7.services.IListPlannableLocationsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -717,29 +717,11 @@ export class ReachPlanServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listPlannableLocations(request, options, callback);
   }
-  listPlannableProducts(
-      request?: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IListPlannableProductsResponse,
-        protos.google.ads.googleads.v7.services.IListPlannableProductsRequest|undefined, {}|undefined
-      ]>;
-  listPlannableProducts(
-      request: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListPlannableProductsResponse,
-          protos.google.ads.googleads.v7.services.IListPlannableProductsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listPlannableProducts(
-      request: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListPlannableProductsResponse,
-          protos.google.ads.googleads.v7.services.IListPlannableProductsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the list of per-location plannable YouTube ad formats with allowed
  * targeting.
@@ -764,9 +746,29 @@ export class ReachPlanServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listPlannableProducts(request);
+ * @example <caption>include:samples/generated/v7/reach_plan_service.list_plannable_products.js</caption>
+ * region_tag:googleads_v7_generated_ReachPlanService_ListPlannableProducts_async
  */
+  listPlannableProducts(
+      request?: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IListPlannableProductsResponse,
+        protos.google.ads.googleads.v7.services.IListPlannableProductsRequest|undefined, {}|undefined
+      ]>;
+  listPlannableProducts(
+      request: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListPlannableProductsResponse,
+          protos.google.ads.googleads.v7.services.IListPlannableProductsRequest|null|undefined,
+          {}|null|undefined>): void;
+  listPlannableProducts(
+      request: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListPlannableProductsResponse,
+          protos.google.ads.googleads.v7.services.IListPlannableProductsRequest|null|undefined,
+          {}|null|undefined>): void;
   listPlannableProducts(
       request?: protos.google.ads.googleads.v7.services.IListPlannableProductsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -791,29 +793,11 @@ export class ReachPlanServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listPlannableProducts(request, options, callback);
   }
-  generateProductMixIdeas(
-      request?: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasResponse,
-        protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest|undefined, {}|undefined
-      ]>;
-  generateProductMixIdeas(
-      request: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasResponse,
-          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateProductMixIdeas(
-      request: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasResponse,
-          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates a product mix ideas given a set of preferences. This method
  * helps the advertiser to obtain a good mix of ad formats and budget
@@ -852,9 +836,29 @@ export class ReachPlanServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateProductMixIdeas(request);
+ * @example <caption>include:samples/generated/v7/reach_plan_service.generate_product_mix_ideas.js</caption>
+ * region_tag:googleads_v7_generated_ReachPlanService_GenerateProductMixIdeas_async
  */
+  generateProductMixIdeas(
+      request?: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasResponse,
+        protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest|undefined, {}|undefined
+      ]>;
+  generateProductMixIdeas(
+      request: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasResponse,
+          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateProductMixIdeas(
+      request: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasResponse,
+          protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest|null|undefined,
+          {}|null|undefined>): void;
   generateProductMixIdeas(
       request?: protos.google.ads.googleads.v7.services.IGenerateProductMixIdeasRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -889,26 +893,6 @@ export class ReachPlanServiceClient {
     this.initialize();
     return this.innerApiCalls.generateProductMixIdeas(request, options, callback);
   }
-  generateReachForecast(
-      request?: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IGenerateReachForecastResponse,
-        protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest|undefined, {}|undefined
-      ]>;
-  generateReachForecast(
-      request: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IGenerateReachForecastResponse,
-          protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateReachForecast(
-      request: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IGenerateReachForecastResponse,
-          protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates a reach forecast for a given targeting / product mix.
  *
@@ -974,9 +958,29 @@ export class ReachPlanServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateReachForecast(request);
+ * @example <caption>include:samples/generated/v7/reach_plan_service.generate_reach_forecast.js</caption>
+ * region_tag:googleads_v7_generated_ReachPlanService_GenerateReachForecast_async
  */
+  generateReachForecast(
+      request?: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IGenerateReachForecastResponse,
+        protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest|undefined, {}|undefined
+      ]>;
+  generateReachForecast(
+      request: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IGenerateReachForecastResponse,
+          protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateReachForecast(
+      request: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IGenerateReachForecastResponse,
+          protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest|null|undefined,
+          {}|null|undefined>): void;
   generateReachForecast(
       request?: protos.google.ads.googleads.v7.services.IGenerateReachForecastRequest,
       optionsOrCallback?: CallOptions|Callback<

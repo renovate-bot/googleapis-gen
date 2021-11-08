@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new RemarketingActionServiceClient();
 
-  async function getRemarketingAction() {
+  async function callGetRemarketingAction() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getRemarketingAction();
+  callGetRemarketingAction();
   // [END googleads_v8_generated_RemarketingActionService_GetRemarketingAction_async]
 }
 

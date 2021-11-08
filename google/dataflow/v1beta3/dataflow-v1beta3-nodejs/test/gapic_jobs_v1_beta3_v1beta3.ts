@@ -173,7 +173,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Job());
             client.innerApiCalls.createJob = stubSimpleCall(expectedResponse);
             const [response] = await client.createJob(request);
@@ -189,7 +189,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Job());
             client.innerApiCalls.createJob = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -216,7 +216,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createJob = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createJob(request), expectedError);
@@ -233,7 +233,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Job());
             client.innerApiCalls.getJob = stubSimpleCall(expectedResponse);
             const [response] = await client.getJob(request);
@@ -249,7 +249,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Job());
             client.innerApiCalls.getJob = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -276,7 +276,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getJob = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getJob(request), expectedError);
@@ -293,7 +293,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.UpdateJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Job());
             client.innerApiCalls.updateJob = stubSimpleCall(expectedResponse);
             const [response] = await client.updateJob(request);
@@ -309,7 +309,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.UpdateJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Job());
             client.innerApiCalls.updateJob = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -336,7 +336,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.UpdateJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.updateJob = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.updateJob(request), expectedError);
@@ -353,7 +353,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsResponse());
             client.innerApiCalls.checkActiveJobs = stubSimpleCall(expectedResponse);
             const [response] = await client.checkActiveJobs(request);
@@ -369,7 +369,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsResponse());
             client.innerApiCalls.checkActiveJobs = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -396,7 +396,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.checkActiveJobs = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.checkActiveJobs(request), expectedError);
@@ -413,7 +413,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.SnapshotJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Snapshot());
             client.innerApiCalls.snapshotJob = stubSimpleCall(expectedResponse);
             const [response] = await client.snapshotJob(request);
@@ -429,7 +429,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.SnapshotJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.dataflow.v1beta3.Snapshot());
             client.innerApiCalls.snapshotJob = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -456,7 +456,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.SnapshotJobRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.snapshotJob = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.snapshotJob(request), expectedError);
@@ -473,7 +473,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
@@ -493,7 +493,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
@@ -524,7 +524,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listJobs = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listJobs(request), expectedError);
@@ -644,7 +644,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
@@ -664,7 +664,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
@@ -695,7 +695,7 @@ describe('v1beta3.JobsV1Beta3Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.aggregatedListJobs = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.aggregatedListJobs(request), expectedError);

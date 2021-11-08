@@ -24,13 +24,13 @@ function main(account, updateMask) {
    *  Required. The account to update.
    *  The account's `name` field is used to identify the account.
    */
-  // const account = ''
+  // const account = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(account, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateAccount() {
+  async function callUpdateAccount() {
     // Construct request
     const request = {
       account,
@@ -50,7 +50,7 @@ function main(account, updateMask) {
     console.log(response);
   }
 
-  updateAccount();
+  callUpdateAccount();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateAccount_async]
 }
 

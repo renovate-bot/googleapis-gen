@@ -646,26 +646,6 @@ export class AdGroupCriterionSimulationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupCriterionSimulation(
-      request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdGroupCriterionSimulation,
-        protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupCriterionSimulation(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupCriterionSimulation,
-          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupCriterionSimulation(
-      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdGroupCriterionSimulation,
-          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group criterion simulation in full detail.
  *
@@ -688,9 +668,29 @@ export class AdGroupCriterionSimulationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupCriterionSimulation(request);
+ * @example <caption>include:samples/generated/v7/ad_group_criterion_simulation_service.get_ad_group_criterion_simulation.js</caption>
+ * region_tag:googleads_v7_generated_AdGroupCriterionSimulationService_GetAdGroupCriterionSimulation_async
  */
+  getAdGroupCriterionSimulation(
+      request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdGroupCriterionSimulation,
+        protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupCriterionSimulation(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupCriterionSimulation,
+          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupCriterionSimulation(
+      request: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdGroupCriterionSimulation,
+          protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupCriterionSimulation(
       request?: protos.google.ads.googleads.v7.services.IGetAdGroupCriterionSimulationRequest,
       optionsOrCallback?: CallOptions|Callback<

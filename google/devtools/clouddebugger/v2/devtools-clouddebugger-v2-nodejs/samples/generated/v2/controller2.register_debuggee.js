@@ -25,7 +25,7 @@ function main(debuggee) {
    *  The fields `project`, `uniquifier`, `description` and `agent_version`
    *  of the debuggee must be set.
    */
-  // const debuggee = ''
+  // const debuggee = {}
 
   // Imports the Clouddebugger library
   const {Controller2Client} = require('clouddebugger').v2;
@@ -33,7 +33,7 @@ function main(debuggee) {
   // Instantiates a client
   const clouddebuggerClient = new Controller2Client();
 
-  async function registerDebuggee() {
+  async function callRegisterDebuggee() {
     // Construct request
     const request = {
       debuggee,
@@ -44,7 +44,7 @@ function main(debuggee) {
     console.log(response);
   }
 
-  registerDebuggee();
+  callRegisterDebuggee();
   // [END clouddebugger_v2_generated_Controller2_RegisterDebuggee_async]
 }
 

@@ -23,7 +23,7 @@ function main(name) {
   /**
    *  Required. The alerting policy to delete. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
-   *  For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
+   *  For more information, see AlertPolicy google.monitoring.v3.AlertPolicy.
    */
   // const name = 'abc123'
 
@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new AlertPolicyServiceClient();
 
-  async function deleteAlertPolicy() {
+  async function callDeleteAlertPolicy() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteAlertPolicy();
+  callDeleteAlertPolicy();
   // [END monitoring_v3_generated_AlertPolicyService_DeleteAlertPolicy_async]
 }
 

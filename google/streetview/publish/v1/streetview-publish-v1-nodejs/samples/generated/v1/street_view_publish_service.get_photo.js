@@ -21,14 +21,14 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. ID of the [Photo][google.streetview.publish.v1.Photo].
+   *  Required. ID of the Photo google.streetview.publish.v1.Photo.
    */
   // const photoId = 'abc123'
   /**
    *  Specifies if a download URL for the photo bytes should be returned in the
-   *  [Photo][google.streetview.publish.v1.Photo] response.
+   *  Photo google.streetview.publish.v1.Photo  response.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  The BCP-47 language code, such as "en-US" or "sr-Latn". For more
    *  information, see
@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function getPhoto() {
+  async function callGetPhoto() {
     // Construct request
     const request = {
     };
@@ -54,7 +54,7 @@ function main() {
     console.log(response);
   }
 
-  getPhoto();
+  callGetPhoto();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_GetPhoto_async]
 }
 

@@ -38,14 +38,14 @@ function main() {
   /**
    *  Params for launching a dynamic template.
    */
-  // const dynamicTemplate = ''
+  // const dynamicTemplate = {}
   /**
    *  The parameters of the template to launch. This should be part of the
    *  body of the POST request.
    */
-  // const launchParameters = ''
+  // const launchParameters = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
    *  which to direct the request.
    */
@@ -57,7 +57,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new TemplatesServiceClient();
 
-  async function launchTemplate() {
+  async function callLaunchTemplate() {
     // Construct request
     const request = {
     };
@@ -67,7 +67,7 @@ function main() {
     console.log(response);
   }
 
-  launchTemplate();
+  callLaunchTemplate();
   // [END dataflow_v1beta3_generated_TemplatesService_LaunchTemplate_async]
 }
 

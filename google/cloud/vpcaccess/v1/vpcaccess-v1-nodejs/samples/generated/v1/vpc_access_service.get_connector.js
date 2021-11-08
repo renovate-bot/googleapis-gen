@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const vpcaccessClient = new VpcAccessServiceClient();
 
-  async function getConnector() {
+  async function callGetConnector() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getConnector();
+  callGetConnector();
   // [END vpcaccess_v1_generated_VpcAccessService_GetConnector_async]
 }
 

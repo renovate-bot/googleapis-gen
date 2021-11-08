@@ -23,11 +23,11 @@ function main(columnSpec) {
   /**
    *  Required. The column spec which replaces the resource on the server.
    */
-  // const columnSpec = ''
+  // const columnSpec = {}
   /**
    *  The update mask applies to the resource.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
@@ -35,7 +35,7 @@ function main(columnSpec) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function updateColumnSpec() {
+  async function callUpdateColumnSpec() {
     // Construct request
     const request = {
       columnSpec,
@@ -46,7 +46,7 @@ function main(columnSpec) {
     console.log(response);
   }
 
-  updateColumnSpec();
+  callUpdateColumnSpec();
   // [END automl_v1beta1_generated_AutoMl_UpdateColumnSpec_async]
 }
 

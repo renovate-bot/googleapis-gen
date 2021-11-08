@@ -300,26 +300,6 @@ export class DocumentUnderstandingServiceClient {
   // -- Service calls --
   // -------------------
 
-  batchProcessDocuments(
-      request?: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchProcessDocuments(
-      request: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * LRO endpoint to batch process many documents.
  *
@@ -342,10 +322,29 @@ export class DocumentUnderstandingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchProcessDocuments(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/document_understanding_service.batch_process_documents.js</caption>
+ * region_tag:documentai_v1beta1_generated_DocumentUnderstandingService_BatchProcessDocuments_async
  */
+  batchProcessDocuments(
+      request?: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchProcessDocuments(
+      request: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchProcessDocuments(
+      request: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchProcessDocuments(
       request?: protos.google.cloud.documentai.v1beta1.IBatchProcessDocumentsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -389,11 +388,8 @@ export class DocumentUnderstandingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchProcessDocumentsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/document_understanding_service.batch_process_documents.js</caption>
+ * region_tag:documentai_v1beta1_generated_DocumentUnderstandingService_BatchProcessDocuments_async
  */
   async checkBatchProcessDocumentsProgress(name: string): Promise<LROperation<protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse, protos.google.cloud.documentai.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

@@ -287,6 +287,28 @@ export class ConnectionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a new connection.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Parent resource name.
+ *   Must be in the format `projects/{project_id}/locations/{location_id}`
+ * @param {string} [request.connectionId]
+ *   Optional. Connection id that should be assigned to the created connection.
+ * @param {google.cloud.bigquery.connection.v1beta1.Connection} request.connection
+ *   Required. Connection to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Connection]{@link google.cloud.bigquery.connection.v1beta1.Connection}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/connection_service.create_connection.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_CreateConnection_async
+ */
   createConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.ICreateConnectionRequest,
       options?: CallOptions):
@@ -307,28 +329,6 @@ export class ConnectionServiceClient {
           protos.google.cloud.bigquery.connection.v1beta1.IConnection,
           protos.google.cloud.bigquery.connection.v1beta1.ICreateConnectionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new connection.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Parent resource name.
- *   Must be in the format `projects/{project_id}/locations/{location_id}`
- * @param {string} [request.connectionId]
- *   Optional. Connection id that should be assigned to the created connection.
- * @param {google.cloud.bigquery.connection.v1beta1.Connection} request.connection
- *   Required. Connection to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Connection]{@link google.cloud.bigquery.connection.v1beta1.Connection}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createConnection(request);
- */
   createConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.ICreateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -363,6 +363,24 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.createConnection(request, options, callback);
   }
+/**
+ * Returns specified connection.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the requested connection, for example:
+ *   `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Connection]{@link google.cloud.bigquery.connection.v1beta1.Connection}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/connection_service.get_connection.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_GetConnection_async
+ */
   getConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IGetConnectionRequest,
       options?: CallOptions):
@@ -383,24 +401,6 @@ export class ConnectionServiceClient {
           protos.google.cloud.bigquery.connection.v1beta1.IConnection,
           protos.google.cloud.bigquery.connection.v1beta1.IGetConnectionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns specified connection.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the requested connection, for example:
- *   `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Connection]{@link google.cloud.bigquery.connection.v1beta1.Connection}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getConnection(request);
- */
   getConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IGetConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -435,6 +435,28 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.getConnection(request, options, callback);
   }
+/**
+ * Returns a list of connections in the given project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Parent resource name.
+ *   Must be in the form: `projects/{project_id}/locations/{location_id}`
+ * @param {google.protobuf.UInt32Value} request.maxResults
+ *   Required. Maximum number of results per page.
+ * @param {string} request.pageToken
+ *   Page token.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListConnectionsResponse]{@link google.cloud.bigquery.connection.v1beta1.ListConnectionsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/connection_service.list_connections.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_ListConnections_async
+ */
   listConnections(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IListConnectionsRequest,
       options?: CallOptions):
@@ -455,28 +477,6 @@ export class ConnectionServiceClient {
           protos.google.cloud.bigquery.connection.v1beta1.IListConnectionsResponse,
           protos.google.cloud.bigquery.connection.v1beta1.IListConnectionsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns a list of connections in the given project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Parent resource name.
- *   Must be in the form: `projects/{project_id}/locations/{location_id}`
- * @param {google.protobuf.UInt32Value} request.maxResults
- *   Required. Maximum number of results per page.
- * @param {string} request.pageToken
- *   Page token.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListConnectionsResponse]{@link google.cloud.bigquery.connection.v1beta1.ListConnectionsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listConnections(request);
- */
   listConnections(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IListConnectionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -511,26 +511,6 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.listConnections(request, options, callback);
   }
-  updateConnection(
-      request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.bigquery.connection.v1beta1.IConnection,
-        protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest|undefined, {}|undefined
-      ]>;
-  updateConnection(
-      request: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.bigquery.connection.v1beta1.IConnection,
-          protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateConnection(
-      request: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
-      callback: Callback<
-          protos.google.cloud.bigquery.connection.v1beta1.IConnection,
-          protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified connection. For security reasons, also resets
  * credential if connection properties are in the update field mask.
@@ -551,9 +531,29 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateConnection(request);
+ * @example <caption>include:samples/generated/v1beta1/connection_service.update_connection.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_UpdateConnection_async
  */
+  updateConnection(
+      request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.bigquery.connection.v1beta1.IConnection,
+        protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest|undefined, {}|undefined
+      ]>;
+  updateConnection(
+      request: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.bigquery.connection.v1beta1.IConnection,
+          protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateConnection(
+      request: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
+      callback: Callback<
+          protos.google.cloud.bigquery.connection.v1beta1.IConnection,
+          protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest|null|undefined,
+          {}|null|undefined>): void;
   updateConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -588,6 +588,26 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.updateConnection(request, options, callback);
   }
+/**
+ * Sets the credential for the specified connection.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the connection, for example:
+ *   `projects/{project_id}/locations/{location_id}/connections/{connection_id}/credential`
+ * @param {google.cloud.bigquery.connection.v1beta1.ConnectionCredential} request.credential
+ *   Required. Credential to use with the connection.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/connection_service.update_connection_credential.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_UpdateConnectionCredential_async
+ */
   updateConnectionCredential(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionCredentialRequest,
       options?: CallOptions):
@@ -608,26 +628,6 @@ export class ConnectionServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionCredentialRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Sets the credential for the specified connection.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the connection, for example:
- *   `projects/{project_id}/locations/{location_id}/connections/{connection_id}/credential`
- * @param {google.cloud.bigquery.connection.v1beta1.ConnectionCredential} request.credential
- *   Required. Credential to use with the connection.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateConnectionCredential(request);
- */
   updateConnectionCredential(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IUpdateConnectionCredentialRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -662,6 +662,24 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.updateConnectionCredential(request, options, callback);
   }
+/**
+ * Deletes connection and associated credential.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the deleted connection, for example:
+ *   `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/connection_service.delete_connection.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_DeleteConnection_async
+ */
   deleteConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IDeleteConnectionRequest,
       options?: CallOptions):
@@ -682,24 +700,6 @@ export class ConnectionServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.bigquery.connection.v1beta1.IDeleteConnectionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes connection and associated credential.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the deleted connection, for example:
- *   `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteConnection(request);
- */
   deleteConnection(
       request?: protos.google.cloud.bigquery.connection.v1beta1.IDeleteConnectionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -734,26 +734,6 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteConnection(request, options, callback);
   }
-  getIamPolicy(
-      request?: protos.google.iam.v1.IGetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIamPolicy(
-      request: protos.google.iam.v1.IGetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the access control policy for a resource.
  * Returns an empty policy if the resource exists and does not have a policy
@@ -774,9 +754,29 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
+ * @example <caption>include:samples/generated/v1beta1/connection_service.get_iam_policy.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_GetIamPolicy_async
  */
+  getIamPolicy(
+      request?: protos.google.iam.v1.IGetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.IGetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIamPolicy(
+      request: protos.google.iam.v1.IGetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -811,26 +811,6 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the access control policy on the specified resource. Replaces any
  * existing policy.
@@ -854,9 +834,29 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1beta1/connection_service.set_iam_policy.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -891,26 +891,6 @@ export class ConnectionServiceClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns permissions that a caller has on the specified resource.
  * If the resource does not exist, this will return an empty set of
@@ -937,9 +917,29 @@ export class ConnectionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1beta1/connection_service.test_iam_permissions.js</caption>
+ * region_tag:bigqueryconnection_v1beta1_generated_ConnectionService_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<

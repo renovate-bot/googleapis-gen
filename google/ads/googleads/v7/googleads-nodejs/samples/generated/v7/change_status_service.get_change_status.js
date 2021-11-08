@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ChangeStatusServiceClient();
 
-  async function getChangeStatus() {
+  async function callGetChangeStatus() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getChangeStatus();
+  callGetChangeStatus();
   // [END googleads_v7_generated_ChangeStatusService_GetChangeStatus_async]
 }
 

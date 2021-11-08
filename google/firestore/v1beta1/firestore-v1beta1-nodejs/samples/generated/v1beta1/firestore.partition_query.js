@@ -33,7 +33,7 @@ function main(parent) {
    *  ascending. Other filters, order bys, limits, offsets, and start/end
    *  cursors are not supported.
    */
-  // const structuredQuery = ''
+  // const structuredQuery = {}
   /**
    *  The desired maximum number of partition points.
    *  The partitions may be returned across multiple pages of results.
@@ -73,7 +73,7 @@ function main(parent) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function partitionQuery() {
+  async function callPartitionQuery() {
     // Construct request
     const request = {
       parent,
@@ -86,7 +86,7 @@ function main(parent) {
     }
   }
 
-  partitionQuery();
+  callPartitionQuery();
   // [END firestore_v1beta1_generated_Firestore_PartitionQuery_async]
 }
 

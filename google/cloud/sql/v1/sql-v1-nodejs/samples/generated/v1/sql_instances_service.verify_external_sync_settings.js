@@ -35,7 +35,7 @@ function main() {
   /**
    *  External sync mode
    */
-  // const syncMode = ''
+  // const syncMode = {}
   /**
    *  Optional. Flag to verify settings required by replication setup only
    */
@@ -43,7 +43,7 @@ function main() {
   /**
    *  Optional. MySQL-specific settings for start external sync.
    */
-  // const mysqlSyncConfig = ''
+  // const mysqlSyncConfig = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1;
@@ -51,7 +51,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function verifyExternalSyncSettings() {
+  async function callVerifyExternalSyncSettings() {
     // Construct request
     const request = {
     };
@@ -61,7 +61,7 @@ function main() {
     console.log(response);
   }
 
-  verifyExternalSyncSettings();
+  callVerifyExternalSyncSettings();
   // [END sqladmin_v1_generated_SqlInstancesService_VerifyExternalSyncSettings_async]
 }
 

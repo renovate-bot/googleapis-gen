@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function deleteScanConfig() {
+  async function callDeleteScanConfig() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  deleteScanConfig();
+  callDeleteScanConfig();
   // [END websecurityscanner_v1_generated_WebSecurityScanner_DeleteScanConfig_async]
 }
 

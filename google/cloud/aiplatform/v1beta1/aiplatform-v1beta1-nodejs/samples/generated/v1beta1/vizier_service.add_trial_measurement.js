@@ -29,7 +29,7 @@ function main(trialName, measurement) {
   /**
    *  Required. The measurement to be added to a Trial.
    */
-  // const measurement = ''
+  // const measurement = {}
 
   // Imports the Aiplatform library
   const {VizierServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -37,7 +37,7 @@ function main(trialName, measurement) {
   // Instantiates a client
   const aiplatformClient = new VizierServiceClient();
 
-  async function addTrialMeasurement() {
+  async function callAddTrialMeasurement() {
     // Construct request
     const request = {
       trialName,
@@ -49,7 +49,7 @@ function main(trialName, measurement) {
     console.log(response);
   }
 
-  addTrialMeasurement();
+  callAddTrialMeasurement();
   // [END aiplatform_v1beta1_generated_VizierService_AddTrialMeasurement_async]
 }
 

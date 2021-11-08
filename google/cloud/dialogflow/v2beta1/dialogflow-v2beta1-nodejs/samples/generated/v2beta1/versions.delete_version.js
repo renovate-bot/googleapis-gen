@@ -35,7 +35,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new VersionsClient();
 
-  async function deleteVersion() {
+  async function callDeleteVersion() {
     // Construct request
     const request = {
       name,
@@ -46,7 +46,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteVersion();
+  callDeleteVersion();
   // [END dialogflow_v2beta1_generated_Versions_DeleteVersion_async]
 }
 

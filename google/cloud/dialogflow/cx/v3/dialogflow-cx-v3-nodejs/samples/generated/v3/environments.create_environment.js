@@ -21,14 +21,14 @@ function main(parent, environment) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to create an [Environment][google.cloud.dialogflow.cx.v3.Environment] for.
+   *  Required. The Agent google.cloud.dialogflow.cx.v3.Agent  to create an Environment google.cloud.dialogflow.cx.v3.Environment  for.
    *  Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
    */
   // const parent = 'abc123'
   /**
    *  Required. The environment to create.
    */
-  // const environment = ''
+  // const environment = {}
 
   // Imports the Cx library
   const {EnvironmentsClient} = require('@google-cloud/dialogflow-cx').v3;
@@ -36,7 +36,7 @@ function main(parent, environment) {
   // Instantiates a client
   const cxClient = new EnvironmentsClient();
 
-  async function createEnvironment() {
+  async function callCreateEnvironment() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, environment) {
     console.log(response);
   }
 
-  createEnvironment();
+  callCreateEnvironment();
   // [END dialogflow_v3_generated_Environments_CreateEnvironment_async]
 }
 

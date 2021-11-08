@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CampaignAssetServiceClient();
 
-  async function mutateCampaignAssets() {
+  async function callMutateCampaignAssets() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCampaignAssets();
+  callMutateCampaignAssets();
   // [END googleads_v7_generated_CampaignAssetService_MutateCampaignAssets_async]
 }
 

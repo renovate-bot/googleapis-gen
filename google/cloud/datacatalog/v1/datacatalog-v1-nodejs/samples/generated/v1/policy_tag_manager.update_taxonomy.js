@@ -24,14 +24,14 @@ function main() {
    *  The taxonomy to update. You can update only its description, display name,
    *  and activated policy types.
    */
-  // const taxonomy = ''
+  // const taxonomy = {}
   /**
    *  Specifies fields to update. If not set, defaults to all fields you can
    *  update.
-   *  For more information, see [FieldMask]
+   *  For more information, see FieldMask 
    *  (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {PolicyTagManagerClient} = require('@google-cloud/datacatalog').v1;
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function updateTaxonomy() {
+  async function callUpdateTaxonomy() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  updateTaxonomy();
+  callUpdateTaxonomy();
   // [END datacatalog_v1_generated_PolicyTagManager_UpdateTaxonomy_async]
 }
 

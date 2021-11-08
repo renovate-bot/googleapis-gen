@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  The instance configurations to be updated.
    */
-  // const config = ''
+  // const config = {}
 
   // Imports the Notebooks library
   const {NotebookServiceClient} = require('@google-cloud/notebooks').v1;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function updateInstanceConfig() {
+  async function callUpdateInstanceConfig() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  updateInstanceConfig();
+  callUpdateInstanceConfig();
   // [END notebooks_v1_generated_NotebookService_UpdateInstanceConfig_async]
 }
 

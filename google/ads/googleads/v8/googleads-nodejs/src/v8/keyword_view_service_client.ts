@@ -676,26 +676,6 @@ export class KeywordViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getKeywordView(
-      request?: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IKeywordView,
-        protos.google.ads.googleads.v8.services.IGetKeywordViewRequest|undefined, {}|undefined
-      ]>;
-  getKeywordView(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IKeywordView,
-          protos.google.ads.googleads.v8.services.IGetKeywordViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getKeywordView(
-      request: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IKeywordView,
-          protos.google.ads.googleads.v8.services.IGetKeywordViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested keyword view in full detail.
  *
@@ -718,9 +698,29 @@ export class KeywordViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getKeywordView(request);
+ * @example <caption>include:samples/generated/v8/keyword_view_service.get_keyword_view.js</caption>
+ * region_tag:googleads_v8_generated_KeywordViewService_GetKeywordView_async
  */
+  getKeywordView(
+      request?: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IKeywordView,
+        protos.google.ads.googleads.v8.services.IGetKeywordViewRequest|undefined, {}|undefined
+      ]>;
+  getKeywordView(
+      request: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IKeywordView,
+          protos.google.ads.googleads.v8.services.IGetKeywordViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getKeywordView(
+      request: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IKeywordView,
+          protos.google.ads.googleads.v8.services.IGetKeywordViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getKeywordView(
       request?: protos.google.ads.googleads.v8.services.IGetKeywordViewRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -28,7 +28,7 @@ function main(parent, topic, topicId) {
   /**
    *  Required. Configuration of the topic to create. Its `name` field is ignored.
    */
-  // const topic = ''
+  // const topic = {}
   /**
    *  Required. The ID to use for the topic, which will become the final component of
    *  the topic's name.
@@ -42,7 +42,7 @@ function main(parent, topic, topicId) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function createTopic() {
+  async function callCreateTopic() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, topic, topicId) {
     console.log(response);
   }
 
-  createTopic();
+  callCreateTopic();
   // [END pubsublite_v1_generated_AdminService_CreateTopic_async]
 }
 

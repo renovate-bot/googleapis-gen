@@ -27,7 +27,7 @@ function main() {
   /**
    *  SSL certificate data.
    */
-  // const certificate = ''
+  // const certificate = {}
 
   // Imports the Appengine library
   const {AuthorizedCertificatesClient} = require('@google-cloud/appengine-admin').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new AuthorizedCertificatesClient();
 
-  async function createAuthorizedCertificate() {
+  async function callCreateAuthorizedCertificate() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  createAuthorizedCertificate();
+  callCreateAuthorizedCertificate();
   // [END appengine_v1_generated_AuthorizedCertificates_CreateAuthorizedCertificate_async]
 }
 

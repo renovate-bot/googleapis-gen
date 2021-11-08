@@ -21,13 +21,13 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on
    *  which to execute the request. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
   // const name = 'abc123'
   /**
-   *  An optional [filter](https://cloud.google.com/monitoring/api/v3/filters)
+   *  An optional filter (https://cloud.google.com/monitoring/api/v3/filters)
    *  describing the descriptors to be returned.  The filter can reference the
    *  descriptor's type and labels. For example, the following filter returns
    *  only Google Compute Engine descriptors that have an `id` label:
@@ -51,7 +51,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new MetricServiceClient();
 
-  async function listMonitoredResourceDescriptors() {
+  async function callListMonitoredResourceDescriptors() {
     // Construct request
     const request = {
       name,
@@ -64,7 +64,7 @@ function main(name) {
     }
   }
 
-  listMonitoredResourceDescriptors();
+  callListMonitoredResourceDescriptors();
   // [END monitoring_v3_generated_MetricService_ListMonitoredResourceDescriptors_async]
 }
 

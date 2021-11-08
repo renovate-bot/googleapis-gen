@@ -23,7 +23,7 @@ function main(parent) {
   /**
    *  Specify which ProductSet contains the Products to be deleted.
    */
-  // const productSetPurgeConfig = ''
+  // const productSetPurgeConfig = {}
   /**
    *  If delete_orphan_products is true, all Products that are not in any
    *  ProductSet will be deleted.
@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function purgeProducts() {
+  async function callPurgeProducts() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     console.log(response);
   }
 
-  purgeProducts();
+  callPurgeProducts();
   // [END vision_v1p4beta1_generated_ProductSearch_PurgeProducts_async]
 }
 

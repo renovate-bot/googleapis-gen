@@ -28,7 +28,7 @@ function main(parent, userEvent) {
   /**
    *  Required. User event to write.
    */
-  // const userEvent = ''
+  // const userEvent = {}
 
   // Imports the Recommendationengine library
   const {UserEventServiceClient} = require('recommendationengine').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, userEvent) {
   // Instantiates a client
   const recommendationengineClient = new UserEventServiceClient();
 
-  async function writeUserEvent() {
+  async function callWriteUserEvent() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, userEvent) {
     console.log(response);
   }
 
-  writeUserEvent();
+  callWriteUserEvent();
   // [END recommendationengine_v1beta1_generated_UserEventService_WriteUserEvent_async]
 }
 

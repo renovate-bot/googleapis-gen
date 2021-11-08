@@ -21,14 +21,14 @@ function main(name, query) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name) on
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on
    *  which to execute the request. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
   // const name = 'abc123'
   /**
-   *  Required. The query in the [Monitoring Query
-   *  Language](https://cloud.google.com/monitoring/mql/reference) format.
+   *  Required. The query in the Monitoring Query
+   *  Language (https://cloud.google.com/monitoring/mql/reference) format.
    *  The default time zone is in UTC.
    */
   // const query = 'abc123'
@@ -49,7 +49,7 @@ function main(name, query) {
   // Instantiates a client
   const monitoringClient = new QueryServiceClient();
 
-  async function queryTimeSeries() {
+  async function callQueryTimeSeries() {
     // Construct request
     const request = {
       name,
@@ -63,7 +63,7 @@ function main(name, query) {
     }
   }
 
-  queryTimeSeries();
+  callQueryTimeSeries();
   // [END monitoring_v3_generated_QueryService_QueryTimeSeries_async]
 }
 

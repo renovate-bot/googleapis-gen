@@ -314,26 +314,6 @@ export class CompletionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  completeQuery(
-      request?: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.retail.v2alpha.ICompleteQueryResponse,
-        protos.google.cloud.retail.v2alpha.ICompleteQueryRequest|undefined, {}|undefined
-      ]>;
-  completeQuery(
-      request: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.retail.v2alpha.ICompleteQueryResponse,
-          protos.google.cloud.retail.v2alpha.ICompleteQueryRequest|null|undefined,
-          {}|null|undefined>): void;
-  completeQuery(
-      request: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
-      callback: Callback<
-          protos.google.cloud.retail.v2alpha.ICompleteQueryResponse,
-          protos.google.cloud.retail.v2alpha.ICompleteQueryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Completes the specified prefix with keyword suggestions.
  *
@@ -411,9 +391,29 @@ export class CompletionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.completeQuery(request);
+ * @example <caption>include:samples/generated/v2alpha/completion_service.complete_query.js</caption>
+ * region_tag:retail_v2alpha_generated_CompletionService_CompleteQuery_async
  */
+  completeQuery(
+      request?: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.retail.v2alpha.ICompleteQueryResponse,
+        protos.google.cloud.retail.v2alpha.ICompleteQueryRequest|undefined, {}|undefined
+      ]>;
+  completeQuery(
+      request: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.retail.v2alpha.ICompleteQueryResponse,
+          protos.google.cloud.retail.v2alpha.ICompleteQueryRequest|null|undefined,
+          {}|null|undefined>): void;
+  completeQuery(
+      request: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
+      callback: Callback<
+          protos.google.cloud.retail.v2alpha.ICompleteQueryResponse,
+          protos.google.cloud.retail.v2alpha.ICompleteQueryRequest|null|undefined,
+          {}|null|undefined>): void;
   completeQuery(
       request?: protos.google.cloud.retail.v2alpha.ICompleteQueryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -449,26 +449,6 @@ export class CompletionServiceClient {
     return this.innerApiCalls.completeQuery(request, options, callback);
   }
 
-  importCompletionData(
-      request?: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.retail.v2alpha.IImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importCompletionData(
-      request: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2alpha.IImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importCompletionData(
-      request: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.retail.v2alpha.IImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Bulk import of processed completion dataset.
  *
@@ -501,10 +481,29 @@ export class CompletionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importCompletionData(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2alpha/completion_service.import_completion_data.js</caption>
+ * region_tag:retail_v2alpha_generated_CompletionService_ImportCompletionData_async
  */
+  importCompletionData(
+      request?: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.retail.v2alpha.IImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importCompletionData(
+      request: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2alpha.IImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importCompletionData(
+      request: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.retail.v2alpha.IImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importCompletionData(
       request?: protos.google.cloud.retail.v2alpha.IImportCompletionDataRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -548,11 +547,8 @@ export class CompletionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportCompletionDataProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2alpha/completion_service.import_completion_data.js</caption>
+ * region_tag:retail_v2alpha_generated_CompletionService_ImportCompletionData_async
  */
   async checkImportCompletionDataProgress(name: string): Promise<LROperation<protos.google.cloud.retail.v2alpha.ImportCompletionDataResponse, protos.google.cloud.retail.v2alpha.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

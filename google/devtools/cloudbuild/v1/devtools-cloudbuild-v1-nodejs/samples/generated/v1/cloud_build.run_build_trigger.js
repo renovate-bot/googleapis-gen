@@ -36,7 +36,7 @@ function main(projectId, triggerId) {
   /**
    *  Source to build against this trigger.
    */
-  // const source = ''
+  // const source = {}
 
   // Imports the Cloudbuild library
   const {CloudBuildClient} = require('@google-cloud/cloudbuild').v1;
@@ -44,7 +44,7 @@ function main(projectId, triggerId) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function runBuildTrigger() {
+  async function callRunBuildTrigger() {
     // Construct request
     const request = {
       projectId,
@@ -57,7 +57,7 @@ function main(projectId, triggerId) {
     console.log(response);
   }
 
-  runBuildTrigger();
+  callRunBuildTrigger();
   // [END cloudbuild_v1_generated_CloudBuild_RunBuildTrigger_async]
 }
 

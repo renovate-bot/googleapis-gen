@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new InstancesClient();
 
-  async function listInstances() {
+  async function callListInstances() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     }
   }
 
-  listInstances();
+  callListInstances();
   // [END appengine_v1_generated_Instances_ListInstances_async]
 }
 

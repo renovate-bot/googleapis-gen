@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function getExample() {
+  async function callGetExample() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name) {
     console.log(response);
   }
 
-  getExample();
+  callGetExample();
   // [END datalabeling_v1beta1_generated_DataLabelingService_GetExample_async]
 }
 

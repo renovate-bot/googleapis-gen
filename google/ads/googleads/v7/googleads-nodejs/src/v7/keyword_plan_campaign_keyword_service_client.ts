@@ -649,26 +649,6 @@ export class KeywordPlanCampaignKeywordServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getKeywordPlanCampaignKeyword(
-      request?: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IKeywordPlanCampaignKeyword,
-        protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest|undefined, {}|undefined
-      ]>;
-  getKeywordPlanCampaignKeyword(
-      request: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IKeywordPlanCampaignKeyword,
-          protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest|null|undefined,
-          {}|null|undefined>): void;
-  getKeywordPlanCampaignKeyword(
-      request: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IKeywordPlanCampaignKeyword,
-          protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested plan in full detail.
  *
@@ -691,9 +671,29 @@ export class KeywordPlanCampaignKeywordServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getKeywordPlanCampaignKeyword(request);
+ * @example <caption>include:samples/generated/v7/keyword_plan_campaign_keyword_service.get_keyword_plan_campaign_keyword.js</caption>
+ * region_tag:googleads_v7_generated_KeywordPlanCampaignKeywordService_GetKeywordPlanCampaignKeyword_async
  */
+  getKeywordPlanCampaignKeyword(
+      request?: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IKeywordPlanCampaignKeyword,
+        protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest|undefined, {}|undefined
+      ]>;
+  getKeywordPlanCampaignKeyword(
+      request: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IKeywordPlanCampaignKeyword,
+          protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest|null|undefined,
+          {}|null|undefined>): void;
+  getKeywordPlanCampaignKeyword(
+      request: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IKeywordPlanCampaignKeyword,
+          protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest|null|undefined,
+          {}|null|undefined>): void;
   getKeywordPlanCampaignKeyword(
       request?: protos.google.ads.googleads.v7.services.IGetKeywordPlanCampaignKeywordRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -728,26 +728,6 @@ export class KeywordPlanCampaignKeywordServiceClient {
     this.initialize();
     return this.innerApiCalls.getKeywordPlanCampaignKeyword(request, options, callback);
   }
-  mutateKeywordPlanCampaignKeywords(
-      request?: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsResponse,
-        protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest|undefined, {}|undefined
-      ]>;
-  mutateKeywordPlanCampaignKeywords(
-      request: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsResponse,
-          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateKeywordPlanCampaignKeywords(
-      request: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsResponse,
-          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes Keyword Plan campaign keywords. Operation
  * statuses are returned.
@@ -787,9 +767,29 @@ export class KeywordPlanCampaignKeywordServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateKeywordPlanCampaignKeywords(request);
+ * @example <caption>include:samples/generated/v7/keyword_plan_campaign_keyword_service.mutate_keyword_plan_campaign_keywords.js</caption>
+ * region_tag:googleads_v7_generated_KeywordPlanCampaignKeywordService_MutateKeywordPlanCampaignKeywords_async
  */
+  mutateKeywordPlanCampaignKeywords(
+      request?: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsResponse,
+        protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest|undefined, {}|undefined
+      ]>;
+  mutateKeywordPlanCampaignKeywords(
+      request: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsResponse,
+          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateKeywordPlanCampaignKeywords(
+      request: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsResponse,
+          protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateKeywordPlanCampaignKeywords(
       request?: protos.google.ads.googleads.v7.services.IMutateKeywordPlanCampaignKeywordsRequest,
       optionsOrCallback?: CallOptions|Callback<

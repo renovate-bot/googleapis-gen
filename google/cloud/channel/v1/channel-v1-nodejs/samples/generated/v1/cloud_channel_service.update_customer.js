@@ -23,12 +23,12 @@ function main(customer) {
   /**
    *  Required. New contents of the customer.
    */
-  // const customer = ''
+  // const customer = {}
   /**
    *  The update mask that applies to the resource.
    *  Optional.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Channel library
   const {CloudChannelServiceClient} = require('@google-cloud/channel').v1;
@@ -36,7 +36,7 @@ function main(customer) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function updateCustomer() {
+  async function callUpdateCustomer() {
     // Construct request
     const request = {
       customer,
@@ -47,7 +47,7 @@ function main(customer) {
     console.log(response);
   }
 
-  updateCustomer();
+  callUpdateCustomer();
   // [END cloudchannel_v1_generated_CloudChannelService_UpdateCustomer_async]
 }
 

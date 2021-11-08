@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on the access invitation
    */
-  // const operation = ''
+  // const operation = {}
 
   // Imports the Googleads library
   const {CustomerUserAccessInvitationServiceClient} = require('google-ads').v8;
@@ -35,7 +35,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new CustomerUserAccessInvitationServiceClient();
 
-  async function mutateCustomerUserAccessInvitation() {
+  async function callMutateCustomerUserAccessInvitation() {
     // Construct request
     const request = {
       customerId,
@@ -47,7 +47,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateCustomerUserAccessInvitation();
+  callMutateCustomerUserAccessInvitation();
   // [END googleads_v8_generated_CustomerUserAccessInvitationService_MutateCustomerUserAccessInvitation_async]
 }
 

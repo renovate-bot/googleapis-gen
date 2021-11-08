@@ -30,7 +30,7 @@ function main(customerId, suggestionInfo) {
    *  Optional but recommended fields to improve the quality of the suggestion:
    *  business_setting and geo_target.
    */
-  // const suggestionInfo = ''
+  // const suggestionInfo = {}
 
   // Imports the Googleads library
   const {SmartCampaignSuggestServiceClient} = require('google-ads').v9;
@@ -38,7 +38,7 @@ function main(customerId, suggestionInfo) {
   // Instantiates a client
   const googleadsClient = new SmartCampaignSuggestServiceClient();
 
-  async function suggestSmartCampaignAd() {
+  async function callSuggestSmartCampaignAd() {
     // Construct request
     const request = {
       customerId,
@@ -50,7 +50,7 @@ function main(customerId, suggestionInfo) {
     console.log(response);
   }
 
-  suggestSmartCampaignAd();
+  callSuggestSmartCampaignAd();
   // [END googleads_v9_generated_SmartCampaignSuggestService_SuggestSmartCampaignAd_async]
 }
 

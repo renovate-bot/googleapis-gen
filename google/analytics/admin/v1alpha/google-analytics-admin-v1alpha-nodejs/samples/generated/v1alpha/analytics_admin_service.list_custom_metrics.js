@@ -44,7 +44,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listCustomMetrics() {
+  async function callListCustomMetrics() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     }
   }
 
-  listCustomMetrics();
+  callListCustomMetrics();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListCustomMetrics_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new LabelServiceClient();
 
-  async function getLabel() {
+  async function callGetLabel() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getLabel();
+  callGetLabel();
   // [END googleads_v8_generated_LabelService_GetLabel_async]
 }
 

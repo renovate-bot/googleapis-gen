@@ -33,10 +33,10 @@ function main() {
   // const alertId = 'abc123'
   /**
    *  Optional. A query string for filtering alert feedback results.
-   *  For more details, see [Query
-   *  filters](https://developers.google.com/admin-sdk/alertcenter/guides/query-filters) and [Supported
+   *  For more details, see Query
+   *  filters (https://developers.google.com/admin-sdk/alertcenter/guides/query-filters) and Supported
    *  query filter
-   *  fields](https://developers.google.com/admin-sdk/alertcenter/reference/filter-fields#alerts.feedback.list).
+   *  fields (https://developers.google.com/admin-sdk/alertcenter/reference/filter-fields#alerts.feedback.list).
    */
   // const filter = 'abc123'
 
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function listAlertFeedback() {
+  async function callListAlertFeedback() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  listAlertFeedback();
+  callListAlertFeedback();
   // [END alertcenter_v1beta1_generated_AlertCenterService_ListAlertFeedback_async]
 }
 

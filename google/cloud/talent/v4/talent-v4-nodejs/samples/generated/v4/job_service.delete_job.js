@@ -34,7 +34,7 @@ function main(name) {
   // Instantiates a client
   const talentClient = new JobServiceClient();
 
-  async function deleteJob() {
+  async function callDeleteJob() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteJob();
+  callDeleteJob();
   // [END jobs_v4_generated_JobService_DeleteJob_async]
 }
 

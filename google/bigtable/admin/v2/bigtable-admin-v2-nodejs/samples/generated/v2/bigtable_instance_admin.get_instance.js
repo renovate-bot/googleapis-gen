@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new BigtableInstanceAdminClient();
 
-  async function getInstance() {
+  async function callGetInstance() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getInstance();
+  callGetInstance();
   // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_GetInstance_async]
 }
 

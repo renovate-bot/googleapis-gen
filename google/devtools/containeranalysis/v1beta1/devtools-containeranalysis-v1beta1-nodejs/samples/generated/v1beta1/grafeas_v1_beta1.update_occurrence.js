@@ -28,11 +28,11 @@ function main() {
   /**
    *  The updated occurrence.
    */
-  // const occurrence = ''
+  // const occurrence = {}
   /**
    *  The fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Containeranalysis library
   const {GrafeasV1Beta1Client} = require('@google-cloud/containeranalysis').v1beta1;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const containeranalysisClient = new GrafeasV1Beta1Client();
 
-  async function updateOccurrence() {
+  async function callUpdateOccurrence() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  updateOccurrence();
+  callUpdateOccurrence();
   // [END containeranalysis_v1beta1_generated_GrafeasV1Beta1_UpdateOccurrence_async]
 }
 

@@ -38,7 +38,7 @@ function main() {
   // const project = 'my-project'
   /**
    */
-  // const body = ''
+  // const body = {}
 
   // Imports the Sql library
   const {SqlUsersServiceClient} = require('@google-cloud/sql').v1beta4;
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlUsersServiceClient();
 
-  async function update() {
+  async function callUpdate() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     console.log(response);
   }
 
-  update();
+  callUpdate();
   // [END sqladmin_v1beta4_generated_SqlUsersService_Update_async]
 }
 

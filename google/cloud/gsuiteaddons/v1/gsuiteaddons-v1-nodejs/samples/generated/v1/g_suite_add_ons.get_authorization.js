@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function getAuthorization() {
+  async function callGetAuthorization() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getAuthorization();
+  callGetAuthorization();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_GetAuthorization_async]
 }
 

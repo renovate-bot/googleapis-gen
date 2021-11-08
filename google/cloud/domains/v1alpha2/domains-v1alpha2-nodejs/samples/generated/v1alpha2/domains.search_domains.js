@@ -35,7 +35,7 @@ function main(query, location) {
   // Instantiates a client
   const domainsClient = new DomainsClient();
 
-  async function searchDomains() {
+  async function callSearchDomains() {
     // Construct request
     const request = {
       query,
@@ -47,7 +47,7 @@ function main(query, location) {
     console.log(response);
   }
 
-  searchDomains();
+  callSearchDomains();
   // [END domains_v1alpha2_generated_Domains_SearchDomains_async]
 }
 

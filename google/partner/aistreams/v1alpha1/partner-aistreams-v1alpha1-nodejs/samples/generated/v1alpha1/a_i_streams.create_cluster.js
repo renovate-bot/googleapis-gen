@@ -31,7 +31,7 @@ function main(parent, clusterId, cluster) {
   /**
    *  Required. The cluster resource to create.
    */
-  // const cluster = ''
+  // const cluster = {}
   /**
    *  Optional. An optional request ID to identify requests. Specify a unique
    *  request ID so that if you must retry your request, the server will know to
@@ -53,7 +53,7 @@ function main(parent, clusterId, cluster) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function createCluster() {
+  async function callCreateCluster() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent, clusterId, cluster) {
     console.log(response);
   }
 
-  createCluster();
+  callCreateCluster();
   // [END aistreams_v1alpha1_generated_AIStreams_CreateCluster_async]
 }
 

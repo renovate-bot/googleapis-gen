@@ -28,11 +28,11 @@ function main(clientTlsPolicy) {
    *  mask. If the user does not provide a mask then all fields will be
    *  overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. Updated ClientTlsPolicy resource.
    */
-  // const clientTlsPolicy = ''
+  // const clientTlsPolicy = {}
 
   // Imports the Networksecurity library
   const {NetworkSecurityClient} = require('@google-cloud/network-security').v1beta1;
@@ -40,7 +40,7 @@ function main(clientTlsPolicy) {
   // Instantiates a client
   const networksecurityClient = new NetworkSecurityClient();
 
-  async function updateClientTlsPolicy() {
+  async function callUpdateClientTlsPolicy() {
     // Construct request
     const request = {
       clientTlsPolicy,
@@ -52,7 +52,7 @@ function main(clientTlsPolicy) {
     console.log(response);
   }
 
-  updateClientTlsPolicy();
+  callUpdateClientTlsPolicy();
   // [END networksecurity_v1beta1_generated_NetworkSecurity_UpdateClientTlsPolicy_async]
 }
 

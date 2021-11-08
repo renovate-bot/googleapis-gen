@@ -727,26 +727,6 @@ export class CustomerClientLinkServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerClientLink(
-      request?: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICustomerClientLink,
-        protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest|undefined, {}|undefined
-      ]>;
-  getCustomerClientLink(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerClientLink,
-          protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerClientLink(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerClientLink,
-          protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested CustomerClientLink in full detail.
  *
@@ -769,9 +749,29 @@ export class CustomerClientLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerClientLink(request);
+ * @example <caption>include:samples/generated/v9/customer_client_link_service.get_customer_client_link.js</caption>
+ * region_tag:googleads_v9_generated_CustomerClientLinkService_GetCustomerClientLink_async
  */
+  getCustomerClientLink(
+      request?: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICustomerClientLink,
+        protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest|undefined, {}|undefined
+      ]>;
+  getCustomerClientLink(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerClientLink,
+          protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerClientLink(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerClientLink,
+          protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerClientLink(
       request?: protos.google.ads.googleads.v9.services.IGetCustomerClientLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class CustomerClientLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerClientLink(request, options, callback);
   }
-  mutateCustomerClientLink(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerClientLink(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerClientLink(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or updates a customer client link. Operation statuses are returned.
  *
@@ -859,9 +839,29 @@ export class CustomerClientLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerClientLink(request);
+ * @example <caption>include:samples/generated/v9/customer_client_link_service.mutate_customer_client_link.js</caption>
+ * region_tag:googleads_v9_generated_CustomerClientLinkService_MutateCustomerClientLink_async
  */
+  mutateCustomerClientLink(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerClientLink(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerClientLink(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerClientLink(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomerClientLinkRequest,
       optionsOrCallback?: CallOptions|Callback<

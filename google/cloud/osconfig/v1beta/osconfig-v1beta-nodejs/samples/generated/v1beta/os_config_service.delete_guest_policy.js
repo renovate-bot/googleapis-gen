@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function deleteGuestPolicy() {
+  async function callDeleteGuestPolicy() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteGuestPolicy();
+  callDeleteGuestPolicy();
   // [END osconfig_v1beta_generated_OsConfigService_DeleteGuestPolicy_async]
 }
 

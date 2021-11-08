@@ -46,11 +46,11 @@ function main(account) {
   /**
    *  Optional. If set, only return changes made after this time (inclusive).
    */
-  // const earliestChangeTime = ''
+  // const earliestChangeTime = {}
   /**
    *  Optional. If set, only return changes made before this time (inclusive).
    */
-  // const latestChangeTime = ''
+  // const latestChangeTime = {}
   /**
    *  Optional. The maximum number of ChangeHistoryEvent items to return.
    *  The service may return fewer than this value, even if there are additional
@@ -72,7 +72,7 @@ function main(account) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function searchChangeHistoryEvents() {
+  async function callSearchChangeHistoryEvents() {
     // Construct request
     const request = {
       account,
@@ -85,7 +85,7 @@ function main(account) {
     }
   }
 
-  searchChangeHistoryEvents();
+  callSearchChangeHistoryEvents();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_SearchChangeHistoryEvents_async]
 }
 

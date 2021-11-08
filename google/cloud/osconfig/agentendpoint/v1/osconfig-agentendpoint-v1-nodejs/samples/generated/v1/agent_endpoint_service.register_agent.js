@@ -63,7 +63,7 @@ function main(instanceIdToken, agentVersion, supportedCapabilities) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function registerAgent() {
+  async function callRegisterAgent() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -76,7 +76,7 @@ function main(instanceIdToken, agentVersion, supportedCapabilities) {
     console.log(response);
   }
 
-  registerAgent();
+  callRegisterAgent();
   // [END osconfig_v1_generated_AgentEndpointService_RegisterAgent_async]
 }
 

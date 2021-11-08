@@ -63,7 +63,7 @@ function main(parent) {
   // Instantiates a client
   const gkehubClient = new GkeHubMembershipServiceClient();
 
-  async function listMemberships() {
+  async function callListMemberships() {
     // Construct request
     const request = {
       parent,
@@ -76,7 +76,7 @@ function main(parent) {
     }
   }
 
-  listMemberships();
+  callListMemberships();
   // [END gkehub_v1beta1_generated_GkeHubMembershipService_ListMemberships_async]
 }
 

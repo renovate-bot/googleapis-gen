@@ -43,7 +43,7 @@ function main(parent, gatewayId, deviceId) {
   // Instantiates a client
   const iotClient = new DeviceManagerClient();
 
-  async function unbindDeviceFromGateway() {
+  async function callUnbindDeviceFromGateway() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent, gatewayId, deviceId) {
     console.log(response);
   }
 
-  unbindDeviceFromGateway();
+  callUnbindDeviceFromGateway();
   // [END cloudiot_v1_generated_DeviceManager_UnbindDeviceFromGateway_async]
 }
 

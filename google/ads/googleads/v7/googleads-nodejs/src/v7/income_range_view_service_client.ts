@@ -646,26 +646,6 @@ export class IncomeRangeViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getIncomeRangeView(
-      request?: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IIncomeRangeView,
-        protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest|undefined, {}|undefined
-      ]>;
-  getIncomeRangeView(
-      request: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IIncomeRangeView,
-          protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIncomeRangeView(
-      request: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IIncomeRangeView,
-          protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested income range view in full detail.
  *
@@ -688,9 +668,29 @@ export class IncomeRangeViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIncomeRangeView(request);
+ * @example <caption>include:samples/generated/v7/income_range_view_service.get_income_range_view.js</caption>
+ * region_tag:googleads_v7_generated_IncomeRangeViewService_GetIncomeRangeView_async
  */
+  getIncomeRangeView(
+      request?: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IIncomeRangeView,
+        protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest|undefined, {}|undefined
+      ]>;
+  getIncomeRangeView(
+      request: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IIncomeRangeView,
+          protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIncomeRangeView(
+      request: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IIncomeRangeView,
+          protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getIncomeRangeView(
       request?: protos.google.ads.googleads.v7.services.IGetIncomeRangeViewRequest,
       optionsOrCallback?: CallOptions|Callback<

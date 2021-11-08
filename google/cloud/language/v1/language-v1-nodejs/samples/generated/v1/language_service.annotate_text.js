@@ -23,15 +23,15 @@ function main(document, features) {
   /**
    *  Input document.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  The enabled features.
    */
-  // const features = ''
+  // const features = {}
   /**
    *  The encoding type used by the API to calculate offsets.
    */
-  // const encodingType = ''
+  // const encodingType = {}
 
   // Imports the Language library
   const {LanguageServiceClient} = require('@google-cloud/language').v1;
@@ -39,7 +39,7 @@ function main(document, features) {
   // Instantiates a client
   const languageClient = new LanguageServiceClient();
 
-  async function annotateText() {
+  async function callAnnotateText() {
     // Construct request
     const request = {
       document,
@@ -51,7 +51,7 @@ function main(document, features) {
     console.log(response);
   }
 
-  annotateText();
+  callAnnotateText();
   // [END language_v1_generated_LanguageService_AnnotateText_async]
 }
 

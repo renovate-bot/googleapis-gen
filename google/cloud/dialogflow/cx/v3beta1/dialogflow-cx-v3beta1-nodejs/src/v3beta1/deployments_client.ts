@@ -358,6 +358,25 @@ export class DeploymentsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves the specified {@link google.cloud.dialogflow.cx.v3beta1.Deployment|Deployment}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the {@link google.cloud.dialogflow.cx.v3beta1.Deployment|Deployment}.
+ *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+ *   ID>/environments/<Environment ID>/deployments/<Deployment ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Deployment]{@link google.cloud.dialogflow.cx.v3beta1.Deployment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3beta1/deployments.get_deployment.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_Deployments_GetDeployment_async
+ */
   getDeployment(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetDeploymentRequest,
       options?: CallOptions):
@@ -378,25 +397,6 @@ export class DeploymentsClient {
           protos.google.cloud.dialogflow.cx.v3beta1.IDeployment,
           protos.google.cloud.dialogflow.cx.v3beta1.IGetDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the specified {@link google.cloud.dialogflow.cx.v3beta1.Deployment|Deployment}.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the {@link google.cloud.dialogflow.cx.v3beta1.Deployment|Deployment}.
- *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
- *   ID>/environments/<Environment ID>/deployments/<Deployment ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Deployment]{@link google.cloud.dialogflow.cx.v3beta1.Deployment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getDeployment(request);
- */
   getDeployment(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -432,28 +432,7 @@ export class DeploymentsClient {
     return this.innerApiCalls.getDeployment(request, options, callback);
   }
 
-  listDeployments(
-      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3beta1.IDeployment[],
-        protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest|null,
-        protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsResponse
-      ]>;
-  listDeployments(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
-          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3beta1.IDeployment>): void;
-  listDeployments(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
-          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3beta1.IDeployment>): void;
-/**
+ /**
  * Returns the list of all deployments in the specified {@link google.cloud.dialogflow.cx.v3beta1.Environment|Environment}.
  *
  * @param {Object} request
@@ -480,6 +459,27 @@ export class DeploymentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDeployments(
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3beta1.IDeployment[],
+        protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest|null,
+        protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsResponse
+      ]>;
+  listDeployments(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
+          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3beta1.IDeployment>): void;
+  listDeployments(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
+          protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3beta1.IDeployment>): void;
   listDeployments(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -589,11 +589,8 @@ export class DeploymentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDeploymentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3beta1/deployments.list_deployments.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_Deployments_ListDeployments_async
  */
   listDeploymentsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListDeploymentsRequest,
@@ -608,7 +605,6 @@ export class DeploymentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDeployments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

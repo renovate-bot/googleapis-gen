@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new InstancesClient();
 
-  async function deleteInstance() {
+  async function callDeleteInstance() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  deleteInstance();
+  callDeleteInstance();
   // [END appengine_v1_generated_Instances_DeleteInstance_async]
 }
 

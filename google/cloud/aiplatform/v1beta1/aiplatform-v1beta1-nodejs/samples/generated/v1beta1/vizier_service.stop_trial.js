@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new VizierServiceClient();
 
-  async function stopTrial() {
+  async function callStopTrial() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  stopTrial();
+  callStopTrial();
   // [END aiplatform_v1beta1_generated_VizierService_StopTrial_async]
 }
 

@@ -23,7 +23,7 @@ function main(name) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format "providers/{provider}/trips/{trip}".
    *  The provider must be the Project ID (for example, sample-cloud-project)
@@ -34,27 +34,27 @@ function main(name) {
   /**
    *  The subset of Trip fields that should be returned and their interpretation.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Indicates the minimum timestamp (exclusive) for which Trip.route or
    *  Trip.current_route_segment data is retrieved. If route data is unchanged
    *  since this timestamp, the route field is not set in the response. If a
    *  minimum is unspecified, the route data is always retrieved.
    */
-  // const currentRouteSegmentVersion = ''
+  // const currentRouteSegmentVersion = {}
   /**
    *  Indicates the minimum timestamp (exclusive) for which
    *  Trip.remaining_waypoints are retrieved. If they are unchanged since this
    *  timestamp, the remaining_waypoints are not set in the response. If this
    *  field is unspecified, remaining_waypoints is always retrieved.
    */
-  // const remainingWaypointsVersion = ''
+  // const remainingWaypointsVersion = {}
   /**
    *  The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
    *  ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
    *  The default is LAT_LNG_LIST_TYPE.
    */
-  // const routeFormatType = ''
+  // const routeFormatType = {}
 
   // Imports the Fleetengine library
   const {TripServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -62,7 +62,7 @@ function main(name) {
   // Instantiates a client
   const fleetengineClient = new TripServiceClient();
 
-  async function getTrip() {
+  async function callGetTrip() {
     // Construct request
     const request = {
       name,
@@ -73,7 +73,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTrip();
+  callGetTrip();
   // [END fleetengine_v1_generated_TripService_GetTrip_async]
 }
 

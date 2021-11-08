@@ -278,6 +278,25 @@ export class AgentEndpointServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Signals the start of a task execution and returns the task info.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instanceIdToken
+ *   Required. This is the Compute Engine instance identity token described in
+ *   https://cloud.google.com/compute/docs/instances/verifying-instance-identity
+ *   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [StartNextTaskResponse]{@link google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.start_next_task.js</caption>
+ * region_tag:osconfig_v1beta_generated_AgentEndpointService_StartNextTask_async
+ */
   startNextTask(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
       options?: CallOptions):
@@ -298,25 +317,6 @@ export class AgentEndpointServiceClient {
           protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskResponse,
           protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Signals the start of a task execution and returns the task info.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instanceIdToken
- *   Required. This is the Compute Engine instance identity token described in
- *   https://cloud.google.com/compute/docs/instances/verifying-instance-identity
- *   where the audience is 'osconfig.googleapis.com' and the format is 'full'.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [StartNextTaskResponse]{@link google.cloud.osconfig.agentendpoint.v1beta.StartNextTaskResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.startNextTask(request);
- */
   startNextTask(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IStartNextTaskRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -341,29 +341,11 @@ export class AgentEndpointServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.startNextTask(request, options, callback);
   }
-  reportTaskProgress(
-      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|undefined, {}|undefined
-      ]>;
-  reportTaskProgress(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|null|undefined,
-          {}|null|undefined>): void;
-  reportTaskProgress(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Signals an intermediary progress checkpoint in task execution.
  *
@@ -393,9 +375,29 @@ export class AgentEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.reportTaskProgress(request);
+ * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.report_task_progress.js</caption>
+ * region_tag:osconfig_v1beta_generated_AgentEndpointService_ReportTaskProgress_async
  */
+  reportTaskProgress(
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|undefined, {}|undefined
+      ]>;
+  reportTaskProgress(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|null|undefined,
+          {}|null|undefined>): void;
+  reportTaskProgress(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressResponse,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest|null|undefined,
+          {}|null|undefined>): void;
   reportTaskProgress(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskProgressRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -420,29 +422,11 @@ export class AgentEndpointServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.reportTaskProgress(request, options, callback);
   }
-  reportTaskComplete(
-      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|undefined, {}|undefined
-      ]>;
-  reportTaskComplete(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|null|undefined,
-          {}|null|undefined>): void;
-  reportTaskComplete(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Signals that the task execution is complete and optionally returns the next
  * task.
@@ -475,9 +459,29 @@ export class AgentEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.reportTaskComplete(request);
+ * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.report_task_complete.js</caption>
+ * region_tag:osconfig_v1beta_generated_AgentEndpointService_ReportTaskComplete_async
  */
+  reportTaskComplete(
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|undefined, {}|undefined
+      ]>;
+  reportTaskComplete(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|null|undefined,
+          {}|null|undefined>): void;
+  reportTaskComplete(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteResponse,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest|null|undefined,
+          {}|null|undefined>): void;
   reportTaskComplete(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReportTaskCompleteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -502,29 +506,11 @@ export class AgentEndpointServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.reportTaskComplete(request, options, callback);
   }
-  lookupEffectiveGuestPolicy(
-      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
-        protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|undefined, {}|undefined
-      ]>;
-  lookupEffectiveGuestPolicy(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  lookupEffectiveGuestPolicy(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lookup the effective guest policy that applies to a VM instance. This
  * lookup merges all policies that are assigned to the instance ancestry.
@@ -554,9 +540,29 @@ export class AgentEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.lookupEffectiveGuestPolicy(request);
+ * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.lookup_effective_guest_policy.js</caption>
+ * region_tag:osconfig_v1beta_generated_AgentEndpointService_LookupEffectiveGuestPolicy_async
  */
+  lookupEffectiveGuestPolicy(
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
+        protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|undefined, {}|undefined
+      ]>;
+  lookupEffectiveGuestPolicy(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  lookupEffectiveGuestPolicy(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IEffectiveGuestPolicy,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   lookupEffectiveGuestPolicy(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.ILookupEffectiveGuestPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -581,29 +587,11 @@ export class AgentEndpointServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.lookupEffectiveGuestPolicy(request, options, callback);
   }
-  registerAgent(
-      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
-        protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|undefined, {}|undefined
-      ]>;
-  registerAgent(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|null|undefined,
-          {}|null|undefined>): void;
-  registerAgent(
-      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
-          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Registers the agent running on the VM.
  *
@@ -626,9 +614,29 @@ export class AgentEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.registerAgent(request);
+ * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.register_agent.js</caption>
+ * region_tag:osconfig_v1beta_generated_AgentEndpointService_RegisterAgent_async
  */
+  registerAgent(
+      request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
+        protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|undefined, {}|undefined
+      ]>;
+  registerAgent(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|null|undefined,
+          {}|null|undefined>): void;
+  registerAgent(
+      request: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentResponse,
+          protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest|null|undefined,
+          {}|null|undefined>): void;
   registerAgent(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IRegisterAgentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -653,6 +661,8 @@ export class AgentEndpointServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.registerAgent(request, options, callback);
   }
@@ -675,10 +685,8 @@ export class AgentEndpointServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.receiveTaskNotification(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1beta/agent_endpoint_service.receive_task_notification.js</caption>
+ * region_tag:osconfig_v1beta_generated_AgentEndpointService_ReceiveTaskNotification_async
  */
   receiveTaskNotification(
       request?: protos.google.cloud.osconfig.agentendpoint.v1beta.IReceiveTaskNotificationRequest,
@@ -686,6 +694,8 @@ export class AgentEndpointServiceClient {
     gax.CancellableStream{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.receiveTaskNotification(request, options);
   }

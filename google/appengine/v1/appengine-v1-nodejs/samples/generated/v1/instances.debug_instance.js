@@ -30,7 +30,7 @@ function main() {
    *  * `[USERNAME]:ssh-rsa [KEY_VALUE] [USERNAME]`
    *  * `[USERNAME]:ssh-rsa [KEY_VALUE] google-ssh {"userName":"[USERNAME]","expireOn":"[EXPIRE_TIME]"}`
    *  For more information, see
-   *  [Adding and Removing SSH Keys](https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
+   *  Adding and Removing SSH Keys (https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys).
    */
   // const sshKey = 'abc123'
 
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new InstancesClient();
 
-  async function debugInstance() {
+  async function callDebugInstance() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  debugInstance();
+  callDebugInstance();
   // [END appengine_v1_generated_Instances_DebugInstance_async]
 }
 

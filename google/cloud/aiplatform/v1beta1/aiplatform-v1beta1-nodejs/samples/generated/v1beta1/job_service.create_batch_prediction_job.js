@@ -28,7 +28,7 @@ function main(parent, batchPredictionJob) {
   /**
    *  Required. The BatchPredictionJob to create.
    */
-  // const batchPredictionJob = ''
+  // const batchPredictionJob = {}
 
   // Imports the Aiplatform library
   const {JobServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, batchPredictionJob) {
   // Instantiates a client
   const aiplatformClient = new JobServiceClient();
 
-  async function createBatchPredictionJob() {
+  async function callCreateBatchPredictionJob() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, batchPredictionJob) {
     console.log(response);
   }
 
-  createBatchPredictionJob();
+  callCreateBatchPredictionJob();
   // [END aiplatform_v1beta1_generated_JobService_CreateBatchPredictionJob_async]
 }
 

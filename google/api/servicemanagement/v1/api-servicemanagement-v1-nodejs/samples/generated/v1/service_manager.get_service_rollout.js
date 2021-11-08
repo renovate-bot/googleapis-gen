@@ -21,7 +21,7 @@ function main(serviceName, rolloutId) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   *  Required. The name of the service.  See the overview (https://cloud.google.com/service-management/overview)
    *  for naming requirements.  For example: `example.googleapis.com`.
    */
   // const serviceName = 'abc123'
@@ -36,7 +36,7 @@ function main(serviceName, rolloutId) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function getServiceRollout() {
+  async function callGetServiceRollout() {
     // Construct request
     const request = {
       serviceName,
@@ -48,7 +48,7 @@ function main(serviceName, rolloutId) {
     console.log(response);
   }
 
-  getServiceRollout();
+  callGetServiceRollout();
   // [END servicemanagement_v1_generated_ServiceManager_GetServiceRollout_async]
 }
 

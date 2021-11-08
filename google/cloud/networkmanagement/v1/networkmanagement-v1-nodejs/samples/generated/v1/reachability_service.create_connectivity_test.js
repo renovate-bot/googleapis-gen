@@ -38,7 +38,7 @@ function main(parent, testId, resource) {
   /**
    *  Required. A `ConnectivityTest` resource
    */
-  // const resource = ''
+  // const resource = {}
 
   // Imports the Networkmanagement library
   const {ReachabilityServiceClient} = require('@google-cloud/network-management').v1;
@@ -46,7 +46,7 @@ function main(parent, testId, resource) {
   // Instantiates a client
   const networkmanagementClient = new ReachabilityServiceClient();
 
-  async function createConnectivityTest() {
+  async function callCreateConnectivityTest() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent, testId, resource) {
     console.log(response);
   }
 
-  createConnectivityTest();
+  callCreateConnectivityTest();
   // [END networkmanagement_v1_generated_ReachabilityService_CreateConnectivityTest_async]
 }
 

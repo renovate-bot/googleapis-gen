@@ -290,26 +290,6 @@ export class MetricsV1Beta3Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  getJobMetrics(
-      request?: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IJobMetrics,
-        protos.google.dataflow.v1beta3.IGetJobMetricsRequest|undefined, {}|undefined
-      ]>;
-  getJobMetrics(
-      request: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJobMetrics,
-          protos.google.dataflow.v1beta3.IGetJobMetricsRequest|null|undefined,
-          {}|null|undefined>): void;
-  getJobMetrics(
-      request: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
-      callback: Callback<
-          protos.google.dataflow.v1beta3.IJobMetrics,
-          protos.google.dataflow.v1beta3.IGetJobMetricsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Request the job status.
  *
@@ -339,9 +319,29 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getJobMetrics(request);
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_job_metrics.js</caption>
+ * region_tag:dataflow_v1beta3_generated_MetricsV1Beta3_GetJobMetrics_async
  */
+  getJobMetrics(
+      request?: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IJobMetrics,
+        protos.google.dataflow.v1beta3.IGetJobMetricsRequest|undefined, {}|undefined
+      ]>;
+  getJobMetrics(
+      request: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJobMetrics,
+          protos.google.dataflow.v1beta3.IGetJobMetricsRequest|null|undefined,
+          {}|null|undefined>): void;
+  getJobMetrics(
+      request: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
+      callback: Callback<
+          protos.google.dataflow.v1beta3.IJobMetrics,
+          protos.google.dataflow.v1beta3.IGetJobMetricsRequest|null|undefined,
+          {}|null|undefined>): void;
   getJobMetrics(
       request?: protos.google.dataflow.v1beta3.IGetJobMetricsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -366,32 +366,13 @@ export class MetricsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getJobMetrics(request, options, callback);
   }
 
-  getJobExecutionDetails(
-      request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IStageSummary[],
-        protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest|null,
-        protos.google.dataflow.v1beta3.IJobExecutionDetails
-      ]>;
-  getJobExecutionDetails(
-      request: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
-          protos.google.dataflow.v1beta3.IJobExecutionDetails|null|undefined,
-          protos.google.dataflow.v1beta3.IStageSummary>): void;
-  getJobExecutionDetails(
-      request: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
-          protos.google.dataflow.v1beta3.IJobExecutionDetails|null|undefined,
-          protos.google.dataflow.v1beta3.IStageSummary>): void;
-/**
+ /**
  * Request detailed information about the execution status of the job.
  *
  * EXPERIMENTAL.  This API is subject to change or removal without notice.
@@ -429,6 +410,27 @@ export class MetricsV1Beta3Client {
  */
   getJobExecutionDetails(
       request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IStageSummary[],
+        protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest|null,
+        protos.google.dataflow.v1beta3.IJobExecutionDetails
+      ]>;
+  getJobExecutionDetails(
+      request: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
+          protos.google.dataflow.v1beta3.IJobExecutionDetails|null|undefined,
+          protos.google.dataflow.v1beta3.IStageSummary>): void;
+  getJobExecutionDetails(
+      request: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
+          protos.google.dataflow.v1beta3.IJobExecutionDetails|null|undefined,
+          protos.google.dataflow.v1beta3.IStageSummary>): void;
+  getJobExecutionDetails(
+      request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
           protos.google.dataflow.v1beta3.IJobExecutionDetails|null|undefined,
@@ -452,6 +454,8 @@ export class MetricsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getJobExecutionDetails(request, options, callback);
   }
@@ -494,6 +498,8 @@ export class MetricsV1Beta3Client {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['getJobExecutionDetails'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -536,11 +542,8 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.getJobExecutionDetailsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_job_execution_details.js</caption>
+ * region_tag:dataflow_v1beta3_generated_MetricsV1Beta3_GetJobExecutionDetails_async
  */
   getJobExecutionDetailsAsync(
       request?: protos.google.dataflow.v1beta3.IGetJobExecutionDetailsRequest,
@@ -548,7 +551,8 @@ export class MetricsV1Beta3Client {
     AsyncIterable<protos.google.dataflow.v1beta3.IStageSummary>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['getJobExecutionDetails'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -558,28 +562,7 @@ export class MetricsV1Beta3Client {
       callSettings
     ) as AsyncIterable<protos.google.dataflow.v1beta3.IStageSummary>;
   }
-  getStageExecutionDetails(
-      request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.dataflow.v1beta3.IWorkerDetails[],
-        protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest|null,
-        protos.google.dataflow.v1beta3.IStageExecutionDetails
-      ]>;
-  getStageExecutionDetails(
-      request: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
-          protos.google.dataflow.v1beta3.IStageExecutionDetails|null|undefined,
-          protos.google.dataflow.v1beta3.IWorkerDetails>): void;
-  getStageExecutionDetails(
-      request: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
-      callback: PaginationCallback<
-          protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
-          protos.google.dataflow.v1beta3.IStageExecutionDetails|null|undefined,
-          protos.google.dataflow.v1beta3.IWorkerDetails>): void;
-/**
+ /**
  * Request detailed information about the execution status of a stage of the
  * job.
  *
@@ -624,6 +607,27 @@ export class MetricsV1Beta3Client {
  */
   getStageExecutionDetails(
       request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.dataflow.v1beta3.IWorkerDetails[],
+        protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest|null,
+        protos.google.dataflow.v1beta3.IStageExecutionDetails
+      ]>;
+  getStageExecutionDetails(
+      request: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
+          protos.google.dataflow.v1beta3.IStageExecutionDetails|null|undefined,
+          protos.google.dataflow.v1beta3.IWorkerDetails>): void;
+  getStageExecutionDetails(
+      request: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
+      callback: PaginationCallback<
+          protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
+          protos.google.dataflow.v1beta3.IStageExecutionDetails|null|undefined,
+          protos.google.dataflow.v1beta3.IWorkerDetails>): void;
+  getStageExecutionDetails(
+      request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
           protos.google.dataflow.v1beta3.IStageExecutionDetails|null|undefined,
@@ -647,6 +651,8 @@ export class MetricsV1Beta3Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.getStageExecutionDetails(request, options, callback);
   }
@@ -695,6 +701,8 @@ export class MetricsV1Beta3Client {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['getStageExecutionDetails'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -743,11 +751,8 @@ export class MetricsV1Beta3Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.getStageExecutionDetailsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta3/metrics_v1_beta3.get_stage_execution_details.js</caption>
+ * region_tag:dataflow_v1beta3_generated_MetricsV1Beta3_GetStageExecutionDetails_async
  */
   getStageExecutionDetailsAsync(
       request?: protos.google.dataflow.v1beta3.IGetStageExecutionDetailsRequest,
@@ -755,7 +760,8 @@ export class MetricsV1Beta3Client {
     AsyncIterable<protos.google.dataflow.v1beta3.IWorkerDetails>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['getStageExecutionDetails'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

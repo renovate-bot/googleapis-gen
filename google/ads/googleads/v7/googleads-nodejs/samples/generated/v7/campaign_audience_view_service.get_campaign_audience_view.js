@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignAudienceViewServiceClient();
 
-  async function getCampaignAudienceView() {
+  async function callGetCampaignAudienceView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCampaignAudienceView();
+  callGetCampaignAudienceView();
   // [END googleads_v7_generated_CampaignAudienceViewService_GetCampaignAudienceView_async]
 }
 

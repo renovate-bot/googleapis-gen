@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function getStream() {
+  async function callGetStream() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getStream();
+  callGetStream();
   // [END datastream_v1alpha1_generated_Datastream_GetStream_async]
 }
 

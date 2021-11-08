@@ -676,26 +676,6 @@ export class GroupPlacementViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getGroupPlacementView(
-      request?: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IGroupPlacementView,
-        protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest|undefined, {}|undefined
-      ]>;
-  getGroupPlacementView(
-      request: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IGroupPlacementView,
-          protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getGroupPlacementView(
-      request: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IGroupPlacementView,
-          protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Group Placement view in full detail.
  *
@@ -718,9 +698,29 @@ export class GroupPlacementViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getGroupPlacementView(request);
+ * @example <caption>include:samples/generated/v8/group_placement_view_service.get_group_placement_view.js</caption>
+ * region_tag:googleads_v8_generated_GroupPlacementViewService_GetGroupPlacementView_async
  */
+  getGroupPlacementView(
+      request?: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IGroupPlacementView,
+        protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest|undefined, {}|undefined
+      ]>;
+  getGroupPlacementView(
+      request: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IGroupPlacementView,
+          protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getGroupPlacementView(
+      request: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IGroupPlacementView,
+          protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getGroupPlacementView(
       request?: protos.google.ads.googleads.v8.services.IGetGroupPlacementViewRequest,
       optionsOrCallback?: CallOptions|Callback<

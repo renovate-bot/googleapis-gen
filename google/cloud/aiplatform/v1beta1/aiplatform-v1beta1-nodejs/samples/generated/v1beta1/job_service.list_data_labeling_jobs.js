@@ -51,7 +51,7 @@ function main(parent) {
    *  "name" here is a field in DataLabelingJob.
    *  If this field is not set, all fields of the DataLabelingJob are returned.
    */
-  // const readMask = ''
+  // const readMask = {}
   /**
    *  A comma-separated list of fields to order by, sorted in ascending order by
    *  default.
@@ -65,7 +65,7 @@ function main(parent) {
   // Instantiates a client
   const aiplatformClient = new JobServiceClient();
 
-  async function listDataLabelingJobs() {
+  async function callListDataLabelingJobs() {
     // Construct request
     const request = {
       parent,
@@ -78,7 +78,7 @@ function main(parent) {
     }
   }
 
-  listDataLabelingJobs();
+  callListDataLabelingJobs();
   // [END aiplatform_v1beta1_generated_JobService_ListDataLabelingJobs_async]
 }
 

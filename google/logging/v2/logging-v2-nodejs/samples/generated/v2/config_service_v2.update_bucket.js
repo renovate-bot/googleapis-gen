@@ -35,7 +35,7 @@ function main(name, bucket, updateMask) {
   /**
    *  Required. The updated bucket.
    */
-  // const bucket = ''
+  // const bucket = {}
   /**
    *  Required. Field mask that specifies the fields in `bucket` that need an update. A
    *  bucket field will be overwritten if, and only if, it is in the update
@@ -44,7 +44,7 @@ function main(name, bucket, updateMask) {
    *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *  Example: `updateMask=retention_days`.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -52,7 +52,7 @@ function main(name, bucket, updateMask) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function updateBucket() {
+  async function callUpdateBucket() {
     // Construct request
     const request = {
       name,
@@ -65,7 +65,7 @@ function main(name, bucket, updateMask) {
     console.log(response);
   }
 
-  updateBucket();
+  callUpdateBucket();
   // [END logging_v2_generated_ConfigServiceV2_UpdateBucket_async]
 }
 

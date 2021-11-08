@@ -26,7 +26,7 @@ function main(uptimeCheckConfig) {
    *  field is empty, then the current configuration is completely replaced with
    *  the new configuration.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. If an `updateMask` has been specified, this field gives
    *  the values for the set of fields mentioned in the `updateMask`. If an
@@ -39,7 +39,7 @@ function main(uptimeCheckConfig) {
    *  `http_check`, `tcp_check`, `timeout`, `content_matchers`, and
    *  `selected_regions`.
    */
-  // const uptimeCheckConfig = ''
+  // const uptimeCheckConfig = {}
 
   // Imports the Monitoring library
   const {UptimeCheckServiceClient} = require('@google-cloud/monitoring').v3;
@@ -47,7 +47,7 @@ function main(uptimeCheckConfig) {
   // Instantiates a client
   const monitoringClient = new UptimeCheckServiceClient();
 
-  async function updateUptimeCheckConfig() {
+  async function callUpdateUptimeCheckConfig() {
     // Construct request
     const request = {
       uptimeCheckConfig,
@@ -58,7 +58,7 @@ function main(uptimeCheckConfig) {
     console.log(response);
   }
 
-  updateUptimeCheckConfig();
+  callUpdateUptimeCheckConfig();
   // [END monitoring_v3_generated_UptimeCheckService_UpdateUptimeCheckConfig_async]
 }
 

@@ -32,13 +32,13 @@ function main(parent, backupId, backup) {
    *  the full backup name, of the form:
    *  `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup_id}`.
    *  This string must be between 1 and 50 characters in length and match the
-   *  regex [_a-zA-Z0-9][-_.a-zA-Z0-9]*.
+   *  regex _a-zA-Z0-9 -_.a-zA-Z0-9 *.
    */
   // const backupId = 'abc123'
   /**
    *  Required. The backup to create.
    */
-  // const backup = ''
+  // const backup = {}
 
   // Imports the Admin library
   const {BigtableTableAdminClient} = require('@google-cloud/bigtable').v2;
@@ -46,7 +46,7 @@ function main(parent, backupId, backup) {
   // Instantiates a client
   const adminClient = new BigtableTableAdminClient();
 
-  async function createBackup() {
+  async function callCreateBackup() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent, backupId, backup) {
     console.log(response);
   }
 
-  createBackup();
+  callCreateBackup();
   // [END bigtableadmin_v2_generated_BigtableTableAdmin_CreateBackup_async]
 }
 

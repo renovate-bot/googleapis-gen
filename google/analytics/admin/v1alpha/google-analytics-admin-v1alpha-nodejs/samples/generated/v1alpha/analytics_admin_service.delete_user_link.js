@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function deleteUserLink() {
+  async function callDeleteUserLink() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteUserLink();
+  callDeleteUserLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_DeleteUserLink_async]
 }
 

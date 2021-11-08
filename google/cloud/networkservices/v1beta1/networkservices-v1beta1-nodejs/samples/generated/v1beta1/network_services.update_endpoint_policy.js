@@ -27,11 +27,11 @@ function main(endpointPolicy) {
    *  the full request. A field will be overwritten if it is in the mask. If the
    *  user does not provide a mask then all fields will be overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. Updated EndpointPolicy resource.
    */
-  // const endpointPolicy = ''
+  // const endpointPolicy = {}
 
   // Imports the Networkservices library
   const {NetworkServicesClient} = require('@google-cloud/networkservices').v1beta1;
@@ -39,7 +39,7 @@ function main(endpointPolicy) {
   // Instantiates a client
   const networkservicesClient = new NetworkServicesClient();
 
-  async function updateEndpointPolicy() {
+  async function callUpdateEndpointPolicy() {
     // Construct request
     const request = {
       endpointPolicy,
@@ -51,7 +51,7 @@ function main(endpointPolicy) {
     console.log(response);
   }
 
-  updateEndpointPolicy();
+  callUpdateEndpointPolicy();
   // [END networkservices_v1beta1_generated_NetworkServices_UpdateEndpointPolicy_async]
 }
 

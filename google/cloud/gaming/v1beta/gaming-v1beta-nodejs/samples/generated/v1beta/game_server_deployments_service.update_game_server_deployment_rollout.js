@@ -24,7 +24,7 @@ function main(rollout, updateMask) {
    *  Required. The game server delpoyment rollout to be updated.
    *  Only fields specified in update_mask are updated.
    */
-  // const rollout = ''
+  // const rollout = {}
   /**
    *  Required. Mask of fields to update. At least one path must be supplied in
    *  this field. For the `FieldMask` definition, see
@@ -32,7 +32,7 @@ function main(rollout, updateMask) {
    *  //developers.google.com/protocol-buffers
    *  // /docs/reference/google.protobuf#fieldmask
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Gaming library
   const {GameServerDeploymentsServiceClient} = require('@google-cloud/game-servers').v1beta;
@@ -40,7 +40,7 @@ function main(rollout, updateMask) {
   // Instantiates a client
   const gamingClient = new GameServerDeploymentsServiceClient();
 
-  async function updateGameServerDeploymentRollout() {
+  async function callUpdateGameServerDeploymentRollout() {
     // Construct request
     const request = {
       rollout,
@@ -53,7 +53,7 @@ function main(rollout, updateMask) {
     console.log(response);
   }
 
-  updateGameServerDeploymentRollout();
+  callUpdateGameServerDeploymentRollout();
   // [END gameservices_v1beta_generated_GameServerDeploymentsService_UpdateGameServerDeploymentRollout_async]
 }
 

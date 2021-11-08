@@ -21,7 +21,7 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   *  Required. The resource name of the CryptoKeyVersion google.cloud.kms.v1.CryptoKeyVersion  to destroy.
    */
   // const name = 'abc123'
 
@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const kmsClient = new KeyManagementServiceClient();
 
-  async function destroyCryptoKeyVersion() {
+  async function callDestroyCryptoKeyVersion() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  destroyCryptoKeyVersion();
+  callDestroyCryptoKeyVersion();
   // [END cloudkms_v1_generated_KeyManagementService_DestroyCryptoKeyVersion_async]
 }
 

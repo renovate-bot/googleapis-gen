@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function batchUndeleteAlerts() {
+  async function callBatchUndeleteAlerts() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  batchUndeleteAlerts();
+  callBatchUndeleteAlerts();
   // [END alertcenter_v1beta1_generated_AlertCenterService_BatchUndeleteAlerts_async]
 }
 

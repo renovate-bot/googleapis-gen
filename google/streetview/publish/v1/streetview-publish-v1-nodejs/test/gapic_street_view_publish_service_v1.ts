@@ -173,7 +173,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.protobuf.Empty());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.UploadRef());
             client.innerApiCalls.startUpload = stubSimpleCall(expectedResponse);
             const [response] = await client.startUpload(request);
@@ -189,7 +189,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.protobuf.Empty());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.UploadRef());
             client.innerApiCalls.startUpload = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -216,7 +216,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.protobuf.Empty());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.startUpload = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.startUpload(request), expectedError);
@@ -233,7 +233,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.CreatePhotoRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.Photo());
             client.innerApiCalls.createPhoto = stubSimpleCall(expectedResponse);
             const [response] = await client.createPhoto(request);
@@ -249,7 +249,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.CreatePhotoRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.Photo());
             client.innerApiCalls.createPhoto = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -276,7 +276,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.CreatePhotoRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createPhoto = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createPhoto(request), expectedError);
@@ -377,7 +377,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosResponse());
             client.innerApiCalls.batchGetPhotos = stubSimpleCall(expectedResponse);
             const [response] = await client.batchGetPhotos(request);
@@ -393,7 +393,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosResponse());
             client.innerApiCalls.batchGetPhotos = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -420,7 +420,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchGetPhotos = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchGetPhotos(request), expectedError);
@@ -527,7 +527,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosResponse());
             client.innerApiCalls.batchUpdatePhotos = stubSimpleCall(expectedResponse);
             const [response] = await client.batchUpdatePhotos(request);
@@ -543,7 +543,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosResponse());
             client.innerApiCalls.batchUpdatePhotos = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -570,7 +570,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchUpdatePhotos = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchUpdatePhotos(request), expectedError);
@@ -671,7 +671,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosResponse());
             client.innerApiCalls.batchDeletePhotos = stubSimpleCall(expectedResponse);
             const [response] = await client.batchDeletePhotos(request);
@@ -687,7 +687,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosResponse());
             client.innerApiCalls.batchDeletePhotos = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -714,7 +714,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.batchDeletePhotos = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.batchDeletePhotos(request), expectedError);
@@ -731,7 +731,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.ListPhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),
@@ -751,7 +751,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.ListPhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),
@@ -782,7 +782,7 @@ describe('v1.StreetViewPublishServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.ListPhotosRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listPhotos = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listPhotos(request), expectedError);

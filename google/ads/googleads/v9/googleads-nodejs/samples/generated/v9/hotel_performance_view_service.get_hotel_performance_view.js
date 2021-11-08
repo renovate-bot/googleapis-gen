@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new HotelPerformanceViewServiceClient();
 
-  async function getHotelPerformanceView() {
+  async function callGetHotelPerformanceView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getHotelPerformanceView();
+  callGetHotelPerformanceView();
   // [END googleads_v9_generated_HotelPerformanceViewService_GetHotelPerformanceView_async]
 }
 

@@ -31,7 +31,7 @@ function main(resource, policy) {
    *  valid policy but certain Cloud Platform services (such as Projects)
    *  might reject them.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Functions library
   const {CloudFunctionsServiceClient} = require('@google-cloud/functions').v1;
@@ -39,7 +39,7 @@ function main(resource, policy) {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function setIamPolicy() {
+  async function callSetIamPolicy() {
     // Construct request
     const request = {
       resource,
@@ -51,7 +51,7 @@ function main(resource, policy) {
     console.log(response);
   }
 
-  setIamPolicy();
+  callSetIamPolicy();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_SetIamPolicy_async]
 }
 

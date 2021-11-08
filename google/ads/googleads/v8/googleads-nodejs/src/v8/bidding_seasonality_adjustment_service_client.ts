@@ -676,6 +676,23 @@ export class BiddingSeasonalityAdjustmentServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested seasonality adjustment in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the seasonality adjustment to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BiddingSeasonalityAdjustment]{@link google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v8/bidding_seasonality_adjustment_service.get_bidding_seasonality_adjustment.js</caption>
+ * region_tag:googleads_v8_generated_BiddingSeasonalityAdjustmentService_GetBiddingSeasonalityAdjustment_async
+ */
   getBiddingSeasonalityAdjustment(
       request?: protos.google.ads.googleads.v8.services.IGetBiddingSeasonalityAdjustmentRequest,
       options?: CallOptions):
@@ -696,23 +713,6 @@ export class BiddingSeasonalityAdjustmentServiceClient {
           protos.google.ads.googleads.v8.resources.IBiddingSeasonalityAdjustment,
           protos.google.ads.googleads.v8.services.IGetBiddingSeasonalityAdjustmentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested seasonality adjustment in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the seasonality adjustment to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BiddingSeasonalityAdjustment]{@link google.ads.googleads.v8.resources.BiddingSeasonalityAdjustment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getBiddingSeasonalityAdjustment(request);
- */
   getBiddingSeasonalityAdjustment(
       request?: protos.google.ads.googleads.v8.services.IGetBiddingSeasonalityAdjustmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -747,26 +747,6 @@ export class BiddingSeasonalityAdjustmentServiceClient {
     this.initialize();
     return this.innerApiCalls.getBiddingSeasonalityAdjustment(request, options, callback);
   }
-  mutateBiddingSeasonalityAdjustments(
-      request?: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsResponse,
-        protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest|undefined, {}|undefined
-      ]>;
-  mutateBiddingSeasonalityAdjustments(
-      request: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsResponse,
-          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateBiddingSeasonalityAdjustments(
-      request: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsResponse,
-          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes seasonality adjustments.
  * Operation statuses are returned.
@@ -795,9 +775,29 @@ export class BiddingSeasonalityAdjustmentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateBiddingSeasonalityAdjustments(request);
+ * @example <caption>include:samples/generated/v8/bidding_seasonality_adjustment_service.mutate_bidding_seasonality_adjustments.js</caption>
+ * region_tag:googleads_v8_generated_BiddingSeasonalityAdjustmentService_MutateBiddingSeasonalityAdjustments_async
  */
+  mutateBiddingSeasonalityAdjustments(
+      request?: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsResponse,
+        protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest|undefined, {}|undefined
+      ]>;
+  mutateBiddingSeasonalityAdjustments(
+      request: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsResponse,
+          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateBiddingSeasonalityAdjustments(
+      request: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsResponse,
+          protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateBiddingSeasonalityAdjustments(
       request?: protos.google.ads.googleads.v8.services.IMutateBiddingSeasonalityAdjustmentsRequest,
       optionsOrCallback?: CallOptions|Callback<

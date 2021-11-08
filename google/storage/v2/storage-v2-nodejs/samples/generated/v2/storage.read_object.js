@@ -79,11 +79,11 @@ function main() {
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
   /**
    *  Mask specifying which fields to read.
    *  The checksummed_data field and its children will always be present.
@@ -91,7 +91,7 @@ function main() {
    *  and metadata.acl.
    *  * may be used to mean "all fields".
    */
-  // const readMask = ''
+  // const readMask = {}
 
   // Imports the Storage library
   const {StorageClient} = require('@google-cloud/storage').v2;
@@ -99,7 +99,7 @@ function main() {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function readObject() {
+  async function callReadObject() {
     // Construct request
     const request = {
     };
@@ -111,7 +111,7 @@ function main() {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  readObject();
+  callReadObject();
   // [END storage_v2_generated_Storage_ReadObject_async]
 }
 

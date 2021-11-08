@@ -676,26 +676,6 @@ export class AdScheduleViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdScheduleView(
-      request?: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAdScheduleView,
-        protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest|undefined, {}|undefined
-      ]>;
-  getAdScheduleView(
-      request: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAdScheduleView,
-          protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdScheduleView(
-      request: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAdScheduleView,
-          protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad schedule view in full detail.
  *
@@ -718,9 +698,29 @@ export class AdScheduleViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdScheduleView(request);
+ * @example <caption>include:samples/generated/v8/ad_schedule_view_service.get_ad_schedule_view.js</caption>
+ * region_tag:googleads_v8_generated_AdScheduleViewService_GetAdScheduleView_async
  */
+  getAdScheduleView(
+      request?: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAdScheduleView,
+        protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest|undefined, {}|undefined
+      ]>;
+  getAdScheduleView(
+      request: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAdScheduleView,
+          protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdScheduleView(
+      request: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAdScheduleView,
+          protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdScheduleView(
       request?: protos.google.ads.googleads.v8.services.IGetAdScheduleViewRequest,
       optionsOrCallback?: CallOptions|Callback<

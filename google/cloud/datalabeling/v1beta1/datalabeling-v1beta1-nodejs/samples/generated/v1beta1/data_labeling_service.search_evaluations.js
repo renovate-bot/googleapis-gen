@@ -28,21 +28,21 @@ function main(parent) {
   /**
    *  Optional. To search evaluations, you can filter by the following:
    *  * evaluation<span>_</span>job.evaluation_job_id (the last part of
-   *    [EvaluationJob.name][google.cloud.datalabeling.v1beta1.EvaluationJob.name])
+   *    EvaluationJob.name google.cloud.datalabeling.v1beta1.EvaluationJob.name)
    *  * evaluation<span>_</span>job.model_id (the <var>{model_name}</var> portion
-   *    of [EvaluationJob.modelVersion][google.cloud.datalabeling.v1beta1.EvaluationJob.model_version])
+   *    of EvaluationJob.modelVersion google.cloud.datalabeling.v1beta1.EvaluationJob.model_version)
    *  * evaluation<span>_</span>job.evaluation_job_run_time_start (Minimum
    *    threshold for the
-   *    [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time] that created
+   *    evaluationJobRunTime google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time  that created
    *    the evaluation)
    *  * evaluation<span>_</span>job.evaluation_job_run_time_end (Maximum
    *    threshold for the
-   *    [evaluationJobRunTime][google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time] that created
+   *    evaluationJobRunTime google.cloud.datalabeling.v1beta1.Evaluation.evaluation_job_run_time  that created
    *    the evaluation)
-   *  * evaluation<span>_</span>job.job_state ([EvaluationJob.state][google.cloud.datalabeling.v1beta1.EvaluationJob.state])
+   *  * evaluation<span>_</span>job.job_state (EvaluationJob.state google.cloud.datalabeling.v1beta1.EvaluationJob.state)
    *  * annotation<span>_</span>spec.display_name (the Evaluation contains a
    *    metric for the annotation spec with this
-   *    [displayName][google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name])
+   *    displayName google.cloud.datalabeling.v1beta1.AnnotationSpec.display_name)
    *  To filter by multiple critiera, use the `AND` operator or the `OR`
    *  operator. The following examples shows a string that filters by several
    *  critiera:
@@ -64,7 +64,7 @@ function main(parent) {
   /**
    *  Optional. A token identifying a page of results for the server to return.
    *  Typically obtained by the
-   *  [nextPageToken][google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token] of the response
+   *  nextPageToken google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse.next_page_token  of the response
    *  to a previous search request.
    *  If you don't specify this field, the API call requests the first page of
    *  the search.
@@ -77,7 +77,7 @@ function main(parent) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function searchEvaluations() {
+  async function callSearchEvaluations() {
     // Construct request
     const request = {
       parent,
@@ -90,7 +90,7 @@ function main(parent) {
     }
   }
 
-  searchEvaluations();
+  callSearchEvaluations();
   // [END datalabeling_v1beta1_generated_DataLabelingService_SearchEvaluations_async]
 }
 

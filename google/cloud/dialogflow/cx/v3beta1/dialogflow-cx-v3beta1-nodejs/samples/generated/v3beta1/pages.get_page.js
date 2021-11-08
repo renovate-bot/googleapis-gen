@@ -42,8 +42,8 @@ function main(name) {
    *  *  `Page.transition_routes.trigger_fulfillment.messages`
    *  *  `Page.transition_routes.trigger_fulfillment.conditional_cases`
    *  If not specified, the agent's default language is used.
-   *  [Many
-   *  languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   *  Many
+   *  languages (https://cloud.google.com/dialogflow/cx/docs/reference/language)
    *  are supported.
    *  Note: languages must be enabled in the agent before they can be used.
    */
@@ -55,7 +55,7 @@ function main(name) {
   // Instantiates a client
   const cxClient = new PagesClient();
 
-  async function getPage() {
+  async function callGetPage() {
     // Construct request
     const request = {
       name,
@@ -66,7 +66,7 @@ function main(name) {
     console.log(response);
   }
 
-  getPage();
+  callGetPage();
   // [END dialogflow_v3beta1_generated_Pages_GetPage_async]
 }
 

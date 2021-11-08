@@ -676,26 +676,6 @@ export class CampaignAssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignAsset(
-      request?: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ICampaignAsset,
-        protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest|undefined, {}|undefined
-      ]>;
-  getCampaignAsset(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICampaignAsset,
-          protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignAsset(
-      request: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICampaignAsset,
-          protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign asset in full detail.
  *
@@ -718,9 +698,29 @@ export class CampaignAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignAsset(request);
+ * @example <caption>include:samples/generated/v8/campaign_asset_service.get_campaign_asset.js</caption>
+ * region_tag:googleads_v8_generated_CampaignAssetService_GetCampaignAsset_async
  */
+  getCampaignAsset(
+      request?: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ICampaignAsset,
+        protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest|undefined, {}|undefined
+      ]>;
+  getCampaignAsset(
+      request: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICampaignAsset,
+          protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignAsset(
+      request: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICampaignAsset,
+          protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignAsset(
       request?: protos.google.ads.googleads.v8.services.IGetCampaignAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -755,26 +755,6 @@ export class CampaignAssetServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignAsset(request, options, callback);
   }
-  mutateCampaignAssets(
-      request?: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateCampaignAssetsResponse,
-        protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsResponse,
-          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignAssets(
-      request: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsResponse,
-          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes campaign assets. Operation statuses are
  * returned.
@@ -817,9 +797,29 @@ export class CampaignAssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignAssets(request);
+ * @example <caption>include:samples/generated/v8/campaign_asset_service.mutate_campaign_assets.js</caption>
+ * region_tag:googleads_v8_generated_CampaignAssetService_MutateCampaignAssets_async
  */
+  mutateCampaignAssets(
+      request?: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateCampaignAssetsResponse,
+        protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignAssets(
+      request: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsResponse,
+          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignAssets(
+      request: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsResponse,
+          protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignAssets(
       request?: protos.google.ads.googleads.v8.services.IMutateCampaignAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -37,7 +37,7 @@ function main() {
   /**
    *  The type of travel being tracked. This will constrain the paths we snap to.
    */
-  // const travelMode = ''
+  // const travelMode = {}
 
   // Imports the Roads library
   const {RoadsServiceClient} = require('roads').v1op;
@@ -45,7 +45,7 @@ function main() {
   // Instantiates a client
   const roadsClient = new RoadsServiceClient();
 
-  async function snapToRoads() {
+  async function callSnapToRoads() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     console.log(response);
   }
 
-  snapToRoads();
+  callSnapToRoads();
   // [END roads_v1op_generated_RoadsService_SnapToRoads_async]
 }
 

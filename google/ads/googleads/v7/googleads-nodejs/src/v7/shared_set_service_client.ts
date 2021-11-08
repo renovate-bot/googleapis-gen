@@ -646,26 +646,6 @@ export class SharedSetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getSharedSet(
-      request?: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ISharedSet,
-        protos.google.ads.googleads.v7.services.IGetSharedSetRequest|undefined, {}|undefined
-      ]>;
-  getSharedSet(
-      request: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ISharedSet,
-          protos.google.ads.googleads.v7.services.IGetSharedSetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSharedSet(
-      request: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ISharedSet,
-          protos.google.ads.googleads.v7.services.IGetSharedSetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested shared set in full detail.
  *
@@ -688,9 +668,29 @@ export class SharedSetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSharedSet(request);
+ * @example <caption>include:samples/generated/v7/shared_set_service.get_shared_set.js</caption>
+ * region_tag:googleads_v7_generated_SharedSetService_GetSharedSet_async
  */
+  getSharedSet(
+      request?: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ISharedSet,
+        protos.google.ads.googleads.v7.services.IGetSharedSetRequest|undefined, {}|undefined
+      ]>;
+  getSharedSet(
+      request: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ISharedSet,
+          protos.google.ads.googleads.v7.services.IGetSharedSetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSharedSet(
+      request: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ISharedSet,
+          protos.google.ads.googleads.v7.services.IGetSharedSetRequest|null|undefined,
+          {}|null|undefined>): void;
   getSharedSet(
       request?: protos.google.ads.googleads.v7.services.IGetSharedSetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class SharedSetServiceClient {
     this.initialize();
     return this.innerApiCalls.getSharedSet(request, options, callback);
   }
-  mutateSharedSets(
-      request?: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateSharedSetsResponse,
-        protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest|undefined, {}|undefined
-      ]>;
-  mutateSharedSets(
-      request: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateSharedSetsResponse,
-          protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateSharedSets(
-      request: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateSharedSetsResponse,
-          protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes shared sets. Operation statuses are returned.
  *
@@ -797,9 +777,29 @@ export class SharedSetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateSharedSets(request);
+ * @example <caption>include:samples/generated/v7/shared_set_service.mutate_shared_sets.js</caption>
+ * region_tag:googleads_v7_generated_SharedSetService_MutateSharedSets_async
  */
+  mutateSharedSets(
+      request?: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateSharedSetsResponse,
+        protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest|undefined, {}|undefined
+      ]>;
+  mutateSharedSets(
+      request: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateSharedSetsResponse,
+          protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateSharedSets(
+      request: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateSharedSetsResponse,
+          protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateSharedSets(
       request?: protos.google.ads.googleads.v7.services.IMutateSharedSetsRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const marketplaceClient = new UserLicenseServiceClient();
 
-  async function get() {
+  async function callGet() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  get();
+  callGet();
   // [END appsmarket_v2_generated_UserLicenseService_Get_async]
 }
 

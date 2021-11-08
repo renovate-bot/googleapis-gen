@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function deleteAnnotatedDataset() {
+  async function callDeleteAnnotatedDataset() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteAnnotatedDataset();
+  callDeleteAnnotatedDataset();
   // [END datalabeling_v1beta1_generated_DataLabelingService_DeleteAnnotatedDataset_async]
 }
 

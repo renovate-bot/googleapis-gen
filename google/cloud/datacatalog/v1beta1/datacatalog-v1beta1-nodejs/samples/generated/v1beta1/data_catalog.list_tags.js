@@ -22,8 +22,8 @@ function main(parent) {
    */
   /**
    *  Required. The name of the Data Catalog resource to list the tags of. The resource
-   *  could be an [Entry][google.cloud.datacatalog.v1beta1.Entry] or an
-   *  [EntryGroup][google.cloud.datacatalog.v1beta1.EntryGroup].
+   *  could be an Entry google.cloud.datacatalog.v1beta1.Entry  or an
+   *  EntryGroup google.cloud.datacatalog.v1beta1.EntryGroup.
    *  Examples:
    *  * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
    *  * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function listTags() {
+  async function callListTags() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listTags();
+  callListTags();
   // [END datacatalog_v1beta1_generated_DataCatalog_ListTags_async]
 }
 

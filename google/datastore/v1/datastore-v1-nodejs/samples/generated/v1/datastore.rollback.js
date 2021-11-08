@@ -26,7 +26,7 @@ function main(projectId, transaction) {
   // const projectId = 'abc123'
   /**
    *  Required. The transaction identifier, returned by a call to
-   *  [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].
+   *  Datastore.BeginTransaction google.datastore.v1.Datastore.BeginTransaction.
    */
   // const transaction = 'Buffer.from('string')'
 
@@ -36,7 +36,7 @@ function main(projectId, transaction) {
   // Instantiates a client
   const datastoreClient = new DatastoreClient();
 
-  async function rollback() {
+  async function callRollback() {
     // Construct request
     const request = {
       projectId,
@@ -48,7 +48,7 @@ function main(projectId, transaction) {
     console.log(response);
   }
 
-  rollback();
+  callRollback();
   // [END datastore_v1_generated_Datastore_Rollback_async]
 }
 

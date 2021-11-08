@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function getFeature() {
+  async function callGetFeature() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  getFeature();
+  callGetFeature();
   // [END gkehub_v1beta_generated_GkeHub_GetFeature_async]
 }
 

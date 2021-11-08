@@ -23,7 +23,7 @@ function main() {
   /**
    *  Required. Photo to create.
    */
-  // const photo = ''
+  // const photo = {}
 
   // Imports the Publish library
   const {StreetViewPublishServiceClient} = require('publish').v1;
@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function createPhoto() {
+  async function callCreatePhoto() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  createPhoto();
+  callCreatePhoto();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_CreatePhoto_async]
 }
 

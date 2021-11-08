@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new AdGroupCriterionLabelServiceClient();
 
-  async function mutateAdGroupCriterionLabels() {
+  async function callMutateAdGroupCriterionLabels() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateAdGroupCriterionLabels();
+  callMutateAdGroupCriterionLabels();
   // [END googleads_v8_generated_AdGroupCriterionLabelService_MutateAdGroupCriterionLabels_async]
 }
 

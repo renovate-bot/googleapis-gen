@@ -23,14 +23,14 @@ function main(tagTemplate) {
   /**
    *  Required. The template to update. The "name" field must be set.
    */
-  // const tagTemplate = ''
+  // const tagTemplate = {}
   /**
    *  The field mask specifies the parts of the template to overwrite.
    *  Allowed fields:
    *    * `display_name`
    *  If absent or empty, all of the allowed fields above will be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1beta1;
@@ -38,7 +38,7 @@ function main(tagTemplate) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function updateTagTemplate() {
+  async function callUpdateTagTemplate() {
     // Construct request
     const request = {
       tagTemplate,
@@ -49,7 +49,7 @@ function main(tagTemplate) {
     console.log(response);
   }
 
-  updateTagTemplate();
+  callUpdateTagTemplate();
   // [END datacatalog_v1beta1_generated_DataCatalog_UpdateTagTemplate_async]
 }
 

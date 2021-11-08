@@ -36,7 +36,7 @@ function main(name, state, serveNodes, encryptionConfig) {
   /**
    *  The current state of the cluster.
    */
-  // const state = ''
+  // const state = {}
   /**
    *  Required. The number of nodes allocated to this cluster. More nodes enable
    *  higher throughput and more consistent performance.
@@ -47,11 +47,11 @@ function main(name, state, serveNodes, encryptionConfig) {
    *  The type of storage used by this cluster to serve its
    *  parent instance's tables, unless explicitly overridden.
    */
-  // const defaultStorageType = ''
+  // const defaultStorageType = {}
   /**
    *  Immutable. The encryption configuration for CMEK-protected clusters.
    */
-  // const encryptionConfig = ''
+  // const encryptionConfig = {}
 
   // Imports the Admin library
   const {BigtableInstanceAdminClient} = require('@google-cloud/bigtable').v2;
@@ -59,7 +59,7 @@ function main(name, state, serveNodes, encryptionConfig) {
   // Instantiates a client
   const adminClient = new BigtableInstanceAdminClient();
 
-  async function updateCluster() {
+  async function callUpdateCluster() {
     // Construct request
     const request = {
       name,
@@ -74,7 +74,7 @@ function main(name, state, serveNodes, encryptionConfig) {
     console.log(response);
   }
 
-  updateCluster();
+  callUpdateCluster();
   // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateCluster_async]
 }
 

@@ -29,7 +29,7 @@ function main(parent, document) {
   /**
    *  Required. The document to create.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  Whether to import custom metadata from Google Cloud Storage.
    *  Only valid when the document source is Google Cloud Storage URI.
@@ -42,7 +42,7 @@ function main(parent, document) {
   // Instantiates a client
   const dialogflowClient = new DocumentsClient();
 
-  async function createDocument() {
+  async function callCreateDocument() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, document) {
     console.log(response);
   }
 
-  createDocument();
+  callCreateDocument();
   // [END dialogflow_v2beta1_generated_Documents_CreateDocument_async]
 }
 

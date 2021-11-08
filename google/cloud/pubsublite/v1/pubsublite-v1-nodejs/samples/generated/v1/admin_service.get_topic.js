@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function getTopic() {
+  async function callGetTopic() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTopic();
+  callGetTopic();
   // [END pubsublite_v1_generated_AdminService_GetTopic_async]
 }
 

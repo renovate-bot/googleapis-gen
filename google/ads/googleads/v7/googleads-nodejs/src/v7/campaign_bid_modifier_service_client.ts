@@ -646,26 +646,6 @@ export class CampaignBidModifierServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaignBidModifier(
-      request?: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICampaignBidModifier,
-        protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest|undefined, {}|undefined
-      ]>;
-  getCampaignBidModifier(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICampaignBidModifier,
-          protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaignBidModifier(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICampaignBidModifier,
-          protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign bid modifier in full detail.
  *
@@ -688,9 +668,29 @@ export class CampaignBidModifierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaignBidModifier(request);
+ * @example <caption>include:samples/generated/v7/campaign_bid_modifier_service.get_campaign_bid_modifier.js</caption>
+ * region_tag:googleads_v7_generated_CampaignBidModifierService_GetCampaignBidModifier_async
  */
+  getCampaignBidModifier(
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICampaignBidModifier,
+        protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest|undefined, {}|undefined
+      ]>;
+  getCampaignBidModifier(
+      request: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICampaignBidModifier,
+          protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaignBidModifier(
+      request: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICampaignBidModifier,
+          protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaignBidModifier(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignBidModifierRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class CampaignBidModifierServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaignBidModifier(request, options, callback);
   }
-  mutateCampaignBidModifiers(
-      request?: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersResponse,
-        protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaignBidModifiers(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersResponse,
-          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaignBidModifiers(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersResponse,
-          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes campaign bid modifiers.
  * Operation statuses are returned.
@@ -797,9 +777,29 @@ export class CampaignBidModifierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaignBidModifiers(request);
+ * @example <caption>include:samples/generated/v7/campaign_bid_modifier_service.mutate_campaign_bid_modifiers.js</caption>
+ * region_tag:googleads_v7_generated_CampaignBidModifierService_MutateCampaignBidModifiers_async
  */
+  mutateCampaignBidModifiers(
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersResponse,
+        protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaignBidModifiers(
+      request: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersResponse,
+          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaignBidModifiers(
+      request: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersResponse,
+          protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaignBidModifiers(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignBidModifiersRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -321,26 +321,6 @@ export class RegistrationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createNamespace(
-      request?: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.servicedirectory.v1.INamespace,
-        protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest|undefined, {}|undefined
-      ]>;
-  createNamespace(
-      request: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.servicedirectory.v1.INamespace,
-          protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest|null|undefined,
-          {}|null|undefined>): void;
-  createNamespace(
-      request: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
-      callback: Callback<
-          protos.google.cloud.servicedirectory.v1.INamespace,
-          protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a namespace, and returns the new Namespace.
  *
@@ -366,9 +346,29 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createNamespace(request);
+ * @example <caption>include:samples/generated/v1/registration_service.create_namespace.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_CreateNamespace_async
  */
+  createNamespace(
+      request?: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.servicedirectory.v1.INamespace,
+        protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest|undefined, {}|undefined
+      ]>;
+  createNamespace(
+      request: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.servicedirectory.v1.INamespace,
+          protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest|null|undefined,
+          {}|null|undefined>): void;
+  createNamespace(
+      request: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
+      callback: Callback<
+          protos.google.cloud.servicedirectory.v1.INamespace,
+          protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest|null|undefined,
+          {}|null|undefined>): void;
   createNamespace(
       request?: protos.google.cloud.servicedirectory.v1.ICreateNamespaceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -403,6 +403,23 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.createNamespace(request, options, callback);
   }
+/**
+ * Gets a namespace.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the namespace to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Namespace]{@link google.cloud.servicedirectory.v1.Namespace}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.get_namespace.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_GetNamespace_async
+ */
   getNamespace(
       request?: protos.google.cloud.servicedirectory.v1.IGetNamespaceRequest,
       options?: CallOptions):
@@ -423,23 +440,6 @@ export class RegistrationServiceClient {
           protos.google.cloud.servicedirectory.v1.INamespace,
           protos.google.cloud.servicedirectory.v1.IGetNamespaceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a namespace.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the namespace to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Namespace]{@link google.cloud.servicedirectory.v1.Namespace}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getNamespace(request);
- */
   getNamespace(
       request?: protos.google.cloud.servicedirectory.v1.IGetNamespaceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -474,6 +474,25 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.getNamespace(request, options, callback);
   }
+/**
+ * Updates a namespace.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.servicedirectory.v1.Namespace} request.namespace
+ *   Required. The updated namespace.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. List of fields to be updated in this request.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Namespace]{@link google.cloud.servicedirectory.v1.Namespace}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.update_namespace.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_UpdateNamespace_async
+ */
   updateNamespace(
       request?: protos.google.cloud.servicedirectory.v1.IUpdateNamespaceRequest,
       options?: CallOptions):
@@ -494,25 +513,6 @@ export class RegistrationServiceClient {
           protos.google.cloud.servicedirectory.v1.INamespace,
           protos.google.cloud.servicedirectory.v1.IUpdateNamespaceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a namespace.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.servicedirectory.v1.Namespace} request.namespace
- *   Required. The updated namespace.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. List of fields to be updated in this request.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Namespace]{@link google.cloud.servicedirectory.v1.Namespace}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateNamespace(request);
- */
   updateNamespace(
       request?: protos.google.cloud.servicedirectory.v1.IUpdateNamespaceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -547,6 +547,24 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.updateNamespace(request, options, callback);
   }
+/**
+ * Deletes a namespace. This also deletes all services and endpoints in
+ * the namespace.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the namespace to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.delete_namespace.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_DeleteNamespace_async
+ */
   deleteNamespace(
       request?: protos.google.cloud.servicedirectory.v1.IDeleteNamespaceRequest,
       options?: CallOptions):
@@ -567,24 +585,6 @@ export class RegistrationServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.servicedirectory.v1.IDeleteNamespaceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a namespace. This also deletes all services and endpoints in
- * the namespace.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the namespace to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteNamespace(request);
- */
   deleteNamespace(
       request?: protos.google.cloud.servicedirectory.v1.IDeleteNamespaceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -619,26 +619,6 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteNamespace(request, options, callback);
   }
-  createService(
-      request?: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.servicedirectory.v1.IService,
-        protos.google.cloud.servicedirectory.v1.ICreateServiceRequest|undefined, {}|undefined
-      ]>;
-  createService(
-      request: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.servicedirectory.v1.IService,
-          protos.google.cloud.servicedirectory.v1.ICreateServiceRequest|null|undefined,
-          {}|null|undefined>): void;
-  createService(
-      request: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
-      callback: Callback<
-          protos.google.cloud.servicedirectory.v1.IService,
-          protos.google.cloud.servicedirectory.v1.ICreateServiceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a service, and returns the new Service.
  *
@@ -663,9 +643,29 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createService(request);
+ * @example <caption>include:samples/generated/v1/registration_service.create_service.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_CreateService_async
  */
+  createService(
+      request?: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.servicedirectory.v1.IService,
+        protos.google.cloud.servicedirectory.v1.ICreateServiceRequest|undefined, {}|undefined
+      ]>;
+  createService(
+      request: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.servicedirectory.v1.IService,
+          protos.google.cloud.servicedirectory.v1.ICreateServiceRequest|null|undefined,
+          {}|null|undefined>): void;
+  createService(
+      request: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
+      callback: Callback<
+          protos.google.cloud.servicedirectory.v1.IService,
+          protos.google.cloud.servicedirectory.v1.ICreateServiceRequest|null|undefined,
+          {}|null|undefined>): void;
   createService(
       request?: protos.google.cloud.servicedirectory.v1.ICreateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -700,6 +700,23 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.createService(request, options, callback);
   }
+/**
+ * Gets a service.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the service to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Service]{@link google.cloud.servicedirectory.v1.Service}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.get_service.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_GetService_async
+ */
   getService(
       request?: protos.google.cloud.servicedirectory.v1.IGetServiceRequest,
       options?: CallOptions):
@@ -720,23 +737,6 @@ export class RegistrationServiceClient {
           protos.google.cloud.servicedirectory.v1.IService,
           protos.google.cloud.servicedirectory.v1.IGetServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a service.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the service to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Service]{@link google.cloud.servicedirectory.v1.Service}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getService(request);
- */
   getService(
       request?: protos.google.cloud.servicedirectory.v1.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -771,6 +771,25 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.getService(request, options, callback);
   }
+/**
+ * Updates a service.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.servicedirectory.v1.Service} request.service
+ *   Required. The updated service.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. List of fields to be updated in this request.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Service]{@link google.cloud.servicedirectory.v1.Service}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.update_service.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_UpdateService_async
+ */
   updateService(
       request?: protos.google.cloud.servicedirectory.v1.IUpdateServiceRequest,
       options?: CallOptions):
@@ -791,25 +810,6 @@ export class RegistrationServiceClient {
           protos.google.cloud.servicedirectory.v1.IService,
           protos.google.cloud.servicedirectory.v1.IUpdateServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a service.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.servicedirectory.v1.Service} request.service
- *   Required. The updated service.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. List of fields to be updated in this request.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Service]{@link google.cloud.servicedirectory.v1.Service}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateService(request);
- */
   updateService(
       request?: protos.google.cloud.servicedirectory.v1.IUpdateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -844,6 +844,24 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.updateService(request, options, callback);
   }
+/**
+ * Deletes a service. This also deletes all endpoints associated with
+ * the service.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the service to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.delete_service.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_DeleteService_async
+ */
   deleteService(
       request?: protos.google.cloud.servicedirectory.v1.IDeleteServiceRequest,
       options?: CallOptions):
@@ -864,24 +882,6 @@ export class RegistrationServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.servicedirectory.v1.IDeleteServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a service. This also deletes all endpoints associated with
- * the service.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the service to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteService(request);
- */
   deleteService(
       request?: protos.google.cloud.servicedirectory.v1.IDeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -916,26 +916,6 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteService(request, options, callback);
   }
-  createEndpoint(
-      request?: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.servicedirectory.v1.IEndpoint,
-        protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest|undefined, {}|undefined
-      ]>;
-  createEndpoint(
-      request: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.servicedirectory.v1.IEndpoint,
-          protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest|null|undefined,
-          {}|null|undefined>): void;
-  createEndpoint(
-      request: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
-      callback: Callback<
-          protos.google.cloud.servicedirectory.v1.IEndpoint,
-          protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a endpoint, and returns the new Endpoint.
  *
@@ -960,9 +940,29 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createEndpoint(request);
+ * @example <caption>include:samples/generated/v1/registration_service.create_endpoint.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_CreateEndpoint_async
  */
+  createEndpoint(
+      request?: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.servicedirectory.v1.IEndpoint,
+        protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest|undefined, {}|undefined
+      ]>;
+  createEndpoint(
+      request: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.servicedirectory.v1.IEndpoint,
+          protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest|null|undefined,
+          {}|null|undefined>): void;
+  createEndpoint(
+      request: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
+      callback: Callback<
+          protos.google.cloud.servicedirectory.v1.IEndpoint,
+          protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest|null|undefined,
+          {}|null|undefined>): void;
   createEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.ICreateEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -997,6 +997,23 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.createEndpoint(request, options, callback);
   }
+/**
+ * Gets a endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the endpoint to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Endpoint]{@link google.cloud.servicedirectory.v1.Endpoint}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.get_endpoint.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_GetEndpoint_async
+ */
   getEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.IGetEndpointRequest,
       options?: CallOptions):
@@ -1017,23 +1034,6 @@ export class RegistrationServiceClient {
           protos.google.cloud.servicedirectory.v1.IEndpoint,
           protos.google.cloud.servicedirectory.v1.IGetEndpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the endpoint to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Endpoint]{@link google.cloud.servicedirectory.v1.Endpoint}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEndpoint(request);
- */
   getEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.IGetEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1068,6 +1068,25 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.getEndpoint(request, options, callback);
   }
+/**
+ * Updates a endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.servicedirectory.v1.Endpoint} request.endpoint
+ *   Required. The updated endpoint.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. List of fields to be updated in this request.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Endpoint]{@link google.cloud.servicedirectory.v1.Endpoint}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.update_endpoint.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_UpdateEndpoint_async
+ */
   updateEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.IUpdateEndpointRequest,
       options?: CallOptions):
@@ -1088,25 +1107,6 @@ export class RegistrationServiceClient {
           protos.google.cloud.servicedirectory.v1.IEndpoint,
           protos.google.cloud.servicedirectory.v1.IUpdateEndpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.servicedirectory.v1.Endpoint} request.endpoint
- *   Required. The updated endpoint.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. List of fields to be updated in this request.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Endpoint]{@link google.cloud.servicedirectory.v1.Endpoint}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateEndpoint(request);
- */
   updateEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.IUpdateEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1141,6 +1141,23 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.updateEndpoint(request, options, callback);
   }
+/**
+ * Deletes a endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the endpoint to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.delete_endpoint.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_DeleteEndpoint_async
+ */
   deleteEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.IDeleteEndpointRequest,
       options?: CallOptions):
@@ -1161,23 +1178,6 @@ export class RegistrationServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.servicedirectory.v1.IDeleteEndpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the endpoint to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteEndpoint(request);
- */
   deleteEndpoint(
       request?: protos.google.cloud.servicedirectory.v1.IDeleteEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1212,6 +1212,27 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteEndpoint(request, options, callback);
   }
+/**
+ * Gets the IAM Policy for a resource (namespace or service only).
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resource
+ *   REQUIRED: The resource for which the policy is being requested.
+ *   See the operation documentation for the appropriate value for this field.
+ * @param {google.iam.v1.GetPolicyOptions} request.options
+ *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
+ *   `GetIamPolicy`. This field is only used by Cloud IAM.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/registration_service.get_iam_policy.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_GetIamPolicy_async
+ */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
@@ -1232,27 +1253,6 @@ export class RegistrationServiceClient {
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the IAM Policy for a resource (namespace or service only).
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {google.iam.v1.GetPolicyOptions} request.options
- *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
- *   `GetIamPolicy`. This field is only used by Cloud IAM.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
- */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1287,26 +1287,6 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the IAM Policy for a resource (namespace or service only).
  *
@@ -1327,9 +1307,29 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/registration_service.set_iam_policy.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1364,26 +1364,6 @@ export class RegistrationServiceClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Tests IAM permissions for a resource (namespace or service only).
  *
@@ -1404,9 +1384,29 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/registration_service.test_iam_permissions.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1442,28 +1442,7 @@ export class RegistrationServiceClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
-  listNamespaces(
-      request?: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.servicedirectory.v1.INamespace[],
-        protos.google.cloud.servicedirectory.v1.IListNamespacesRequest|null,
-        protos.google.cloud.servicedirectory.v1.IListNamespacesResponse
-      ]>;
-  listNamespaces(
-      request: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
-          protos.google.cloud.servicedirectory.v1.IListNamespacesResponse|null|undefined,
-          protos.google.cloud.servicedirectory.v1.INamespace>): void;
-  listNamespaces(
-      request: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
-          protos.google.cloud.servicedirectory.v1.IListNamespacesResponse|null|undefined,
-          protos.google.cloud.servicedirectory.v1.INamespace>): void;
-/**
+ /**
  * Lists all namespaces.
  *
  * @param {Object} request
@@ -1523,6 +1502,27 @@ export class RegistrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listNamespaces(
+      request?: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.servicedirectory.v1.INamespace[],
+        protos.google.cloud.servicedirectory.v1.IListNamespacesRequest|null,
+        protos.google.cloud.servicedirectory.v1.IListNamespacesResponse
+      ]>;
+  listNamespaces(
+      request: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
+          protos.google.cloud.servicedirectory.v1.IListNamespacesResponse|null|undefined,
+          protos.google.cloud.servicedirectory.v1.INamespace>): void;
+  listNamespaces(
+      request: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
+          protos.google.cloud.servicedirectory.v1.IListNamespacesResponse|null|undefined,
+          protos.google.cloud.servicedirectory.v1.INamespace>): void;
   listNamespaces(
       request?: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1698,11 +1698,8 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listNamespacesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/registration_service.list_namespaces.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_ListNamespaces_async
  */
   listNamespacesAsync(
       request?: protos.google.cloud.servicedirectory.v1.IListNamespacesRequest,
@@ -1717,7 +1714,6 @@ export class RegistrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listNamespaces'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1727,28 +1723,7 @@ export class RegistrationServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.servicedirectory.v1.INamespace>;
   }
-  listServices(
-      request?: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.servicedirectory.v1.IService[],
-        protos.google.cloud.servicedirectory.v1.IListServicesRequest|null,
-        protos.google.cloud.servicedirectory.v1.IListServicesResponse
-      ]>;
-  listServices(
-      request: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.servicedirectory.v1.IListServicesRequest,
-          protos.google.cloud.servicedirectory.v1.IListServicesResponse|null|undefined,
-          protos.google.cloud.servicedirectory.v1.IService>): void;
-  listServices(
-      request: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.servicedirectory.v1.IListServicesRequest,
-          protos.google.cloud.servicedirectory.v1.IListServicesResponse|null|undefined,
-          protos.google.cloud.servicedirectory.v1.IService>): void;
-/**
+ /**
  * Lists all services belonging to a namespace.
  *
  * @param {Object} request
@@ -1800,6 +1775,27 @@ export class RegistrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServices(
+      request?: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.servicedirectory.v1.IService[],
+        protos.google.cloud.servicedirectory.v1.IListServicesRequest|null,
+        protos.google.cloud.servicedirectory.v1.IListServicesResponse
+      ]>;
+  listServices(
+      request: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.servicedirectory.v1.IListServicesRequest,
+          protos.google.cloud.servicedirectory.v1.IListServicesResponse|null|undefined,
+          protos.google.cloud.servicedirectory.v1.IService>): void;
+  listServices(
+      request: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.servicedirectory.v1.IListServicesRequest,
+          protos.google.cloud.servicedirectory.v1.IListServicesResponse|null|undefined,
+          protos.google.cloud.servicedirectory.v1.IService>): void;
   listServices(
       request?: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1959,11 +1955,8 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/registration_service.list_services.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_ListServices_async
  */
   listServicesAsync(
       request?: protos.google.cloud.servicedirectory.v1.IListServicesRequest,
@@ -1978,7 +1971,6 @@ export class RegistrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1988,28 +1980,7 @@ export class RegistrationServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.servicedirectory.v1.IService>;
   }
-  listEndpoints(
-      request?: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.servicedirectory.v1.IEndpoint[],
-        protos.google.cloud.servicedirectory.v1.IListEndpointsRequest|null,
-        protos.google.cloud.servicedirectory.v1.IListEndpointsResponse
-      ]>;
-  listEndpoints(
-      request: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
-          protos.google.cloud.servicedirectory.v1.IListEndpointsResponse|null|undefined,
-          protos.google.cloud.servicedirectory.v1.IEndpoint>): void;
-  listEndpoints(
-      request: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
-          protos.google.cloud.servicedirectory.v1.IListEndpointsResponse|null|undefined,
-          protos.google.cloud.servicedirectory.v1.IEndpoint>): void;
-/**
+ /**
  * Lists all endpoints.
  *
  * @param {Object} request
@@ -2063,6 +2034,27 @@ export class RegistrationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEndpoints(
+      request?: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.servicedirectory.v1.IEndpoint[],
+        protos.google.cloud.servicedirectory.v1.IListEndpointsRequest|null,
+        protos.google.cloud.servicedirectory.v1.IListEndpointsResponse
+      ]>;
+  listEndpoints(
+      request: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
+          protos.google.cloud.servicedirectory.v1.IListEndpointsResponse|null|undefined,
+          protos.google.cloud.servicedirectory.v1.IEndpoint>): void;
+  listEndpoints(
+      request: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
+          protos.google.cloud.servicedirectory.v1.IListEndpointsResponse|null|undefined,
+          protos.google.cloud.servicedirectory.v1.IEndpoint>): void;
   listEndpoints(
       request?: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2226,11 +2218,8 @@ export class RegistrationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEndpointsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/registration_service.list_endpoints.js</caption>
+ * region_tag:servicedirectory_v1_generated_RegistrationService_ListEndpoints_async
  */
   listEndpointsAsync(
       request?: protos.google.cloud.servicedirectory.v1.IListEndpointsRequest,
@@ -2245,7 +2234,6 @@ export class RegistrationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEndpoints'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

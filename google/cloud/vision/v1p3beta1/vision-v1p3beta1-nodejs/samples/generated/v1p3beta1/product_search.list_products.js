@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function listProducts() {
+  async function callListProducts() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listProducts();
+  callListProducts();
   // [END vision_v1p3beta1_generated_ProductSearch_ListProducts_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new KeywordThemeConstantServiceClient();
 
-  async function getKeywordThemeConstant() {
+  async function callGetKeywordThemeConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getKeywordThemeConstant();
+  callGetKeywordThemeConstant();
   // [END googleads_v8_generated_KeywordThemeConstantService_GetKeywordThemeConstant_async]
 }
 

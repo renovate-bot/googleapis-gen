@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const metricsscopeClient = new MetricsScopesClient();
 
-  async function getMetricsScope() {
+  async function callGetMetricsScope() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getMetricsScope();
+  callGetMetricsScope();
   // [END monitoring_v1_generated_MetricsScopes_GetMetricsScope_async]
 }
 

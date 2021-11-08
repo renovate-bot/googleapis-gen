@@ -39,7 +39,7 @@ function main(projectId, datasetId, modelId) {
   // Instantiates a client
   const bigqueryClient = new ModelServiceClient();
 
-  async function deleteModel() {
+  async function callDeleteModel() {
     // Construct request
     const request = {
       projectId,
@@ -52,7 +52,7 @@ function main(projectId, datasetId, modelId) {
     console.log(response);
   }
 
-  deleteModel();
+  callDeleteModel();
   // [END bigquery_v2_generated_ModelService_DeleteModel_async]
 }
 

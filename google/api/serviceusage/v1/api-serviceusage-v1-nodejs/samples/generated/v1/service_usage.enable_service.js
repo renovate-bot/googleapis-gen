@@ -38,7 +38,7 @@ function main() {
   // Instantiates a client
   const serviceusageClient = new ServiceUsageClient();
 
-  async function enableService() {
+  async function callEnableService() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  enableService();
+  callEnableService();
   // [END serviceusage_v1_generated_ServiceUsage_EnableService_async]
 }
 

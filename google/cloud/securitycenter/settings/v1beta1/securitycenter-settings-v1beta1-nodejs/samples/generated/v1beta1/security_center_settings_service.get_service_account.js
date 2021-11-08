@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function getServiceAccount() {
+  async function callGetServiceAccount() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getServiceAccount();
+  callGetServiceAccount();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_GetServiceAccount_async]
 }
 

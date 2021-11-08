@@ -57,7 +57,7 @@ function main(parent) {
   // Instantiates a client
   const workflowsClient = new WorkflowsClient();
 
-  async function listWorkflows() {
+  async function callListWorkflows() {
     // Construct request
     const request = {
       parent,
@@ -70,7 +70,7 @@ function main(parent) {
     }
   }
 
-  listWorkflows();
+  callListWorkflows();
   // [END workflows_v1_generated_Workflows_ListWorkflows_async]
 }
 

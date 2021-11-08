@@ -384,6 +384,25 @@ export class ManagedNotebookServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single Runtime. The location must be a regional endpoint
+ * rather than zonal.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Format:
+ *   `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Runtime]{@link google.cloud.notebooks.v1.Runtime}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.get_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_GetRuntime_async
+ */
   getRuntime(
       request?: protos.google.cloud.notebooks.v1.IGetRuntimeRequest,
       options?: CallOptions):
@@ -404,25 +423,6 @@ export class ManagedNotebookServiceClient {
           protos.google.cloud.notebooks.v1.IRuntime,
           protos.google.cloud.notebooks.v1.IGetRuntimeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Runtime. The location must be a regional endpoint
- * rather than zonal.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Format:
- *   `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Runtime]{@link google.cloud.notebooks.v1.Runtime}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getRuntime(request);
- */
   getRuntime(
       request?: protos.google.cloud.notebooks.v1.IGetRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -458,26 +458,6 @@ export class ManagedNotebookServiceClient {
     return this.innerApiCalls.getRuntime(request, options, callback);
   }
 
-  createRuntime(
-      request?: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createRuntime(
-      request: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createRuntime(
-      request: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Runtime in a given project and location.
  *
@@ -499,10 +479,29 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createRuntime(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.create_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_CreateRuntime_async
  */
+  createRuntime(
+      request?: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createRuntime(
+      request: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createRuntime(
+      request: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createRuntime(
       request?: protos.google.cloud.notebooks.v1.ICreateRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -546,11 +545,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateRuntimeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.create_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_CreateRuntime_async
  */
   async checkCreateRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -558,6 +554,26 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createRuntime, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
+/**
+ * Deletes a single Runtime.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Format:
+ *   `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.delete_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_DeleteRuntime_async
+ */
   deleteRuntime(
       request?: protos.google.cloud.notebooks.v1.IDeleteRuntimeRequest,
       options?: CallOptions):
@@ -578,27 +594,6 @@ export class ManagedNotebookServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.notebooks.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single Runtime.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Format:
- *   `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteRuntime(request);
- * const [response] = await operation.promise();
- */
   deleteRuntime(
       request?: protos.google.cloud.notebooks.v1.IDeleteRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -642,11 +637,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteRuntimeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.delete_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_DeleteRuntime_async
  */
   async checkDeleteRuntimeProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -654,26 +646,6 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteRuntime, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
-  startRuntime(
-      request?: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  startRuntime(
-      request: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  startRuntime(
-      request: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Starts a Managed Notebook Runtime.
  * Perform "Start" on GPU instances; "Resume" on CPU instances
@@ -695,10 +667,29 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.startRuntime(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.start_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_StartRuntime_async
  */
+  startRuntime(
+      request?: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  startRuntime(
+      request: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  startRuntime(
+      request: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   startRuntime(
       request?: protos.google.cloud.notebooks.v1.IStartRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -742,11 +733,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStartRuntimeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.start_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_StartRuntime_async
  */
   async checkStartRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -754,26 +742,6 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.startRuntime, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
-  stopRuntime(
-      request?: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  stopRuntime(
-      request: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  stopRuntime(
-      request: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Stops a Managed Notebook Runtime.
  * Perform "Stop" on GPU instances; "Suspend" on CPU instances
@@ -795,10 +763,29 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.stopRuntime(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.stop_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_StopRuntime_async
  */
+  stopRuntime(
+      request?: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  stopRuntime(
+      request: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  stopRuntime(
+      request: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   stopRuntime(
       request?: protos.google.cloud.notebooks.v1.IStopRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -842,11 +829,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkStopRuntimeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.stop_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_StopRuntime_async
  */
   async checkStopRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -854,26 +838,6 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.stopRuntime, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
-  switchRuntime(
-      request?: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  switchRuntime(
-      request: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  switchRuntime(
-      request: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Switch a Managed Notebook Runtime.
  *
@@ -895,10 +859,29 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.switchRuntime(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.switch_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_SwitchRuntime_async
  */
+  switchRuntime(
+      request?: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  switchRuntime(
+      request: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  switchRuntime(
+      request: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   switchRuntime(
       request?: protos.google.cloud.notebooks.v1.ISwitchRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -942,11 +925,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkSwitchRuntimeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.switch_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_SwitchRuntime_async
  */
   async checkSwitchRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -954,6 +934,26 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.switchRuntime, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
+/**
+ * Resets a Managed Notebook Runtime.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Format:
+ *   `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.reset_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_ResetRuntime_async
+ */
   resetRuntime(
       request?: protos.google.cloud.notebooks.v1.IResetRuntimeRequest,
       options?: CallOptions):
@@ -974,27 +974,6 @@ export class ManagedNotebookServiceClient {
           LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Resets a Managed Notebook Runtime.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Format:
- *   `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.resetRuntime(request);
- * const [response] = await operation.promise();
- */
   resetRuntime(
       request?: protos.google.cloud.notebooks.v1.IResetRuntimeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1038,11 +1017,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkResetRuntimeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.reset_runtime.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_ResetRuntime_async
  */
   async checkResetRuntimeProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1050,26 +1026,6 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.resetRuntime, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
-  reportRuntimeEvent(
-      request?: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  reportRuntimeEvent(
-      request: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  reportRuntimeEvent(
-      request: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Report and process a runtime event.
  *
@@ -1092,10 +1048,29 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.reportRuntimeEvent(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.report_runtime_event.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_ReportRuntimeEvent_async
  */
+  reportRuntimeEvent(
+      request?: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  reportRuntimeEvent(
+      request: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  reportRuntimeEvent(
+      request: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.notebooks.v1.IRuntime, protos.google.cloud.notebooks.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   reportRuntimeEvent(
       request?: protos.google.cloud.notebooks.v1.IReportRuntimeEventRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1139,11 +1114,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkReportRuntimeEventProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.report_runtime_event.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_ReportRuntimeEvent_async
  */
   async checkReportRuntimeEventProgress(name: string): Promise<LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1151,28 +1123,7 @@ export class ManagedNotebookServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.reportRuntimeEvent, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.notebooks.v1.Runtime, protos.google.cloud.notebooks.v1.OperationMetadata>;
   }
-  listRuntimes(
-      request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.notebooks.v1.IRuntime[],
-        protos.google.cloud.notebooks.v1.IListRuntimesRequest|null,
-        protos.google.cloud.notebooks.v1.IListRuntimesResponse
-      ]>;
-  listRuntimes(
-      request: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.notebooks.v1.IListRuntimesRequest,
-          protos.google.cloud.notebooks.v1.IListRuntimesResponse|null|undefined,
-          protos.google.cloud.notebooks.v1.IRuntime>): void;
-  listRuntimes(
-      request: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.notebooks.v1.IListRuntimesRequest,
-          protos.google.cloud.notebooks.v1.IListRuntimesResponse|null|undefined,
-          protos.google.cloud.notebooks.v1.IRuntime>): void;
-/**
+ /**
  * Lists Runtimes in a given project and location.
  *
  * @param {Object} request
@@ -1198,6 +1149,27 @@ export class ManagedNotebookServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listRuntimes(
+      request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.notebooks.v1.IRuntime[],
+        protos.google.cloud.notebooks.v1.IListRuntimesRequest|null,
+        protos.google.cloud.notebooks.v1.IListRuntimesResponse
+      ]>;
+  listRuntimes(
+      request: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.notebooks.v1.IListRuntimesRequest,
+          protos.google.cloud.notebooks.v1.IListRuntimesResponse|null|undefined,
+          protos.google.cloud.notebooks.v1.IRuntime>): void;
+  listRuntimes(
+      request: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.notebooks.v1.IListRuntimesRequest,
+          protos.google.cloud.notebooks.v1.IListRuntimesResponse|null|undefined,
+          protos.google.cloud.notebooks.v1.IRuntime>): void;
   listRuntimes(
       request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1305,11 +1277,8 @@ export class ManagedNotebookServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listRuntimesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/managed_notebook_service.list_runtimes.js</caption>
+ * region_tag:notebooks_v1_generated_ManagedNotebookService_ListRuntimes_async
  */
   listRuntimesAsync(
       request?: protos.google.cloud.notebooks.v1.IListRuntimesRequest,
@@ -1324,7 +1293,6 @@ export class ManagedNotebookServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listRuntimes'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

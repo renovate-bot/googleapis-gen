@@ -59,7 +59,7 @@ function main() {
   /**
    *  Targeting network.
    */
-  // const keywordPlanNetwork = ''
+  // const keywordPlanNetwork = {}
   /**
    *  The keyword annotations to include in response.
    */
@@ -67,28 +67,28 @@ function main() {
   /**
    *  The aggregate fields to include in response.
    */
-  // const aggregateMetrics = ''
+  // const aggregateMetrics = {}
   /**
    *  The options for historical metrics data.
    */
-  // const historicalMetricsOptions = ''
+  // const historicalMetricsOptions = {}
   /**
    *  A Keyword and a specific Url to generate ideas from
    *  e.g. cars, www.example.com/cars.
    */
-  // const keywordAndUrlSeed = ''
+  // const keywordAndUrlSeed = {}
   /**
    *  A Keyword or phrase to generate ideas from, e.g. cars.
    */
-  // const keywordSeed = ''
+  // const keywordSeed = {}
   /**
    *  A specific url to generate ideas from, e.g. www.example.com/cars.
    */
-  // const urlSeed = ''
+  // const urlSeed = {}
   /**
    *  The site to generate ideas from, e.g. www.example.com.
    */
-  // const siteSeed = ''
+  // const siteSeed = {}
 
   // Imports the Googleads library
   const {KeywordPlanIdeaServiceClient} = require('google-ads').v9;
@@ -96,7 +96,7 @@ function main() {
   // Instantiates a client
   const googleadsClient = new KeywordPlanIdeaServiceClient();
 
-  async function generateKeywordIdeas() {
+  async function callGenerateKeywordIdeas() {
     // Construct request
     const request = {
     };
@@ -108,7 +108,7 @@ function main() {
     }
   }
 
-  generateKeywordIdeas();
+  callGenerateKeywordIdeas();
   // [END googleads_v9_generated_KeywordPlanIdeaService_GenerateKeywordIdeas_async]
 }
 

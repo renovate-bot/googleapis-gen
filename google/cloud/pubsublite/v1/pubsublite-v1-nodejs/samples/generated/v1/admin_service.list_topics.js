@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const pubsubliteClient = new AdminServiceClient();
 
-  async function listTopics() {
+  async function callListTopics() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listTopics();
+  callListTopics();
   // [END pubsublite_v1_generated_AdminService_ListTopics_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BiddingSeasonalityAdjustmentServiceClient();
 
-  async function getBiddingSeasonalityAdjustment() {
+  async function callGetBiddingSeasonalityAdjustment() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getBiddingSeasonalityAdjustment();
+  callGetBiddingSeasonalityAdjustment();
   // [END googleads_v9_generated_BiddingSeasonalityAdjustmentService_GetBiddingSeasonalityAdjustment_async]
 }
 

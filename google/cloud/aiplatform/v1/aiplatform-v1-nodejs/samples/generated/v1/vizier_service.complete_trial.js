@@ -31,7 +31,7 @@ function main(name) {
    *  final_measurement; Otherwise, the service will auto-select a
    *  previously reported measurement as the final-measurement
    */
-  // const finalMeasurement = ''
+  // const finalMeasurement = {}
   /**
    *  Optional. True if the Trial cannot be run with the given Parameter, and
    *  final_measurement will be ignored.
@@ -49,7 +49,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new VizierServiceClient();
 
-  async function completeTrial() {
+  async function callCompleteTrial() {
     // Construct request
     const request = {
       name,
@@ -60,7 +60,7 @@ function main(name) {
     console.log(response);
   }
 
-  completeTrial();
+  callCompleteTrial();
   // [END aiplatform_v1_generated_VizierService_CompleteTrial_async]
 }
 

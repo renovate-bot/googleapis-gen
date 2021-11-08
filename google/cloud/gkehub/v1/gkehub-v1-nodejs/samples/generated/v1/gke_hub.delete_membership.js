@@ -46,7 +46,7 @@ function main(name) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function deleteMembership() {
+  async function callDeleteMembership() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteMembership();
+  callDeleteMembership();
   // [END gkehub_v1_generated_GkeHub_DeleteMembership_async]
 }
 

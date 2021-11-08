@@ -35,7 +35,7 @@ function main(projectId, traceId) {
   // Instantiates a client
   const cloudtraceClient = new TraceServiceClient();
 
-  async function getTrace() {
+  async function callGetTrace() {
     // Construct request
     const request = {
       projectId,
@@ -47,7 +47,7 @@ function main(projectId, traceId) {
     console.log(response);
   }
 
-  getTrace();
+  callGetTrace();
   // [END cloudtrace_v1_generated_TraceService_GetTrace_async]
 }
 

@@ -31,7 +31,7 @@ function main() {
   /**
    *  Filter to only get messages with importance >= level
    */
-  // const minimumImportance = ''
+  // const minimumImportance = {}
   /**
    *  If specified, determines the maximum number of messages to
    *  return.  If unspecified, the service may choose an appropriate
@@ -48,14 +48,14 @@ function main() {
    *  If specified, return only messages with timestamps >= start_time.
    *  The default is the job creation time (i.e. beginning of messages).
    */
-  // const startTime = ''
+  // const startTime = {}
   /**
    *  Return only messages with timestamps < end_time. The default is now
    *  (i.e. return up to the latest messages available).
    */
-  // const endTime = ''
+  // const endTime = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains the job specified by job_id.
    */
@@ -67,7 +67,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new MessagesV1Beta3Client();
 
-  async function listJobMessages() {
+  async function callListJobMessages() {
     // Construct request
     const request = {
     };
@@ -79,7 +79,7 @@ function main() {
     }
   }
 
-  listJobMessages();
+  callListJobMessages();
   // [END dataflow_v1beta3_generated_MessagesV1Beta3_ListJobMessages_async]
 }
 

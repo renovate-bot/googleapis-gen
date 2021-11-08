@@ -326,6 +326,26 @@ export class UserEventServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Writes a single user event.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent eventStore resource name, such as
+ *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
+ * @param {google.cloud.recommendationengine.v1beta1.UserEvent} request.userEvent
+ *   Required. User event to write.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [UserEvent]{@link google.cloud.recommendationengine.v1beta1.UserEvent}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.write_user_event.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_WriteUserEvent_async
+ */
   writeUserEvent(
       request?: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
       options?: CallOptions):
@@ -346,26 +366,6 @@ export class UserEventServiceClient {
           protos.google.cloud.recommendationengine.v1beta1.IUserEvent,
           protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Writes a single user event.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent eventStore resource name, such as
- *   `projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store`.
- * @param {google.cloud.recommendationengine.v1beta1.UserEvent} request.userEvent
- *   Required. User event to write.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [UserEvent]{@link google.cloud.recommendationengine.v1beta1.UserEvent}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.writeUserEvent(request);
- */
   writeUserEvent(
       request?: protos.google.cloud.recommendationengine.v1beta1.IWriteUserEventRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -400,26 +400,6 @@ export class UserEventServiceClient {
     this.initialize();
     return this.innerApiCalls.writeUserEvent(request, options, callback);
   }
-  collectUserEvent(
-      request?: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IHttpBody,
-        protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|undefined, {}|undefined
-      ]>;
-  collectUserEvent(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.IHttpBody,
-          protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|null|undefined,
-          {}|null|undefined>): void;
-  collectUserEvent(
-      request: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
-      callback: Callback<
-          protos.google.api.IHttpBody,
-          protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Writes a single user event from the browser. This uses a GET request to
  * due to browser restriction of POST-ing to a 3rd party domain.
@@ -450,9 +430,29 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.collectUserEvent(request);
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.collect_user_event.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_CollectUserEvent_async
  */
+  collectUserEvent(
+      request?: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IHttpBody,
+        protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|undefined, {}|undefined
+      ]>;
+  collectUserEvent(
+      request: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.IHttpBody,
+          protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|null|undefined,
+          {}|null|undefined>): void;
+  collectUserEvent(
+      request: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
+      callback: Callback<
+          protos.google.api.IHttpBody,
+          protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest|null|undefined,
+          {}|null|undefined>): void;
   collectUserEvent(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICollectUserEventRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -488,26 +488,6 @@ export class UserEventServiceClient {
     return this.innerApiCalls.collectUserEvent(request, options, callback);
   }
 
-  purgeUserEvents(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  purgeUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  purgeUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes permanently all user events specified by the filter provided.
  * Depending on the number of events specified by the filter, this operation
@@ -552,10 +532,29 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.purgeUserEvents(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.purge_user_events.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_PurgeUserEvents_async
  */
+  purgeUserEvents(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  purgeUserEvents(
+      request: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  purgeUserEvents(
+      request: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   purgeUserEvents(
       request?: protos.google.cloud.recommendationengine.v1beta1.IPurgeUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -599,11 +598,8 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkPurgeUserEventsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.purge_user_events.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_PurgeUserEvents_async
  */
   async checkPurgeUserEventsProgress(name: string): Promise<LROperation<protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -611,26 +607,6 @@ export class UserEventServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.purgeUserEvents, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsMetadata>;
   }
-  importUserEvents(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Bulk import of User events. Request processing might be
  * synchronous. Events that already exist are skipped.
@@ -665,10 +641,29 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importUserEvents(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.import_user_events.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_ImportUserEvents_async
  */
+  importUserEvents(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importUserEvents(
+      request: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importUserEvents(
+      request: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importUserEvents(
       request?: protos.google.cloud.recommendationengine.v1beta1.IImportUserEventsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -712,11 +707,8 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportUserEventsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.import_user_events.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_ImportUserEvents_async
  */
   async checkImportUserEventsProgress(name: string): Promise<LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -724,28 +716,7 @@ export class UserEventServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importUserEvents, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>;
   }
-  listUserEvents(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommendationengine.v1beta1.IUserEvent[],
-        protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest|null,
-        protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse
-      ]>;
-  listUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.IUserEvent>): void;
-  listUserEvents(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.IUserEvent>): void;
-/**
+ /**
  * Gets a list of user events within a time range, with potential filtering.
  *
  * @param {Object} request
@@ -804,6 +775,27 @@ export class UserEventServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listUserEvents(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommendationengine.v1beta1.IUserEvent[],
+        protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest|null,
+        protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse
+      ]>;
+  listUserEvents(
+      request: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.IUserEvent>): void;
+  listUserEvents(
+      request: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IListUserEventsResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.IUserEvent>): void;
   listUserEvents(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -977,11 +969,8 @@ export class UserEventServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listUserEventsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/user_event_service.list_user_events.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_UserEventService_ListUserEvents_async
  */
   listUserEventsAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListUserEventsRequest,
@@ -996,7 +985,6 @@ export class UserEventServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listUserEvents'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

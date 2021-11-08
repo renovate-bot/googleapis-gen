@@ -51,7 +51,7 @@ function main(instanceIdToken) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function lookupEffectiveGuestPolicy() {
+  async function callLookupEffectiveGuestPolicy() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -62,7 +62,7 @@ function main(instanceIdToken) {
     console.log(response);
   }
 
-  lookupEffectiveGuestPolicy();
+  callLookupEffectiveGuestPolicy();
   // [END osconfig_v1beta_generated_AgentEndpointService_LookupEffectiveGuestPolicy_async]
 }
 

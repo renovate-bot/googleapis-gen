@@ -35,7 +35,7 @@ function main(agentUserId) {
   // Instantiates a client
   const graphClient = new HomeGraphApiServiceClient();
 
-  async function sync() {
+  async function callSync() {
     // Construct request
     const request = {
       agentUserId,
@@ -46,7 +46,7 @@ function main(agentUserId) {
     console.log(response);
   }
 
-  sync();
+  callSync();
   // [END homegraph_v1_generated_HomeGraphApiService_Sync_async]
 }
 

@@ -24,13 +24,13 @@ function main(androidAppDataStream, updateMask) {
    *  Required. The android app stream to update.
    *  The `name` field is used to identify the android app stream to be updated.
    */
-  // const androidAppDataStream = ''
+  // const androidAppDataStream = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(androidAppDataStream, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateAndroidAppDataStream() {
+  async function callUpdateAndroidAppDataStream() {
     // Construct request
     const request = {
       androidAppDataStream,
@@ -50,7 +50,7 @@ function main(androidAppDataStream, updateMask) {
     console.log(response);
   }
 
-  updateAndroidAppDataStream();
+  callUpdateAndroidAppDataStream();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateAndroidAppDataStream_async]
 }
 

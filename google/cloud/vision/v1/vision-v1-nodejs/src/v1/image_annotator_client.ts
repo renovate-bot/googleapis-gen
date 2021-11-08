@@ -324,26 +324,6 @@ export class ImageAnnotatorClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  batchAnnotateImages(
-      request?: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1.IBatchAnnotateImagesResponse,
-        protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest|undefined, {}|undefined
-      ]>;
-  batchAnnotateImages(
-      request: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1.IBatchAnnotateImagesResponse,
-          protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchAnnotateImages(
-      request: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1.IBatchAnnotateImagesResponse,
-          protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Run image detection and annotation for a batch of images.
  *
@@ -371,9 +351,29 @@ export class ImageAnnotatorClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchAnnotateImages(request);
+ * @example <caption>include:samples/generated/v1/image_annotator.batch_annotate_images.js</caption>
+ * region_tag:vision_v1_generated_ImageAnnotator_BatchAnnotateImages_async
  */
+  batchAnnotateImages(
+      request?: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1.IBatchAnnotateImagesResponse,
+        protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest|undefined, {}|undefined
+      ]>;
+  batchAnnotateImages(
+      request: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1.IBatchAnnotateImagesResponse,
+          protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchAnnotateImages(
+      request: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1.IBatchAnnotateImagesResponse,
+          protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest|null|undefined,
+          {}|null|undefined>): void;
   batchAnnotateImages(
       request?: protos.google.cloud.vision.v1.IBatchAnnotateImagesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -408,26 +408,6 @@ export class ImageAnnotatorClient {
     this.initialize();
     return this.innerApiCalls.batchAnnotateImages(request, options, callback);
   }
-  batchAnnotateFiles(
-      request?: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.vision.v1.IBatchAnnotateFilesResponse,
-        protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest|undefined, {}|undefined
-      ]>;
-  batchAnnotateFiles(
-      request: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.vision.v1.IBatchAnnotateFilesResponse,
-          protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest|null|undefined,
-          {}|null|undefined>): void;
-  batchAnnotateFiles(
-      request: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
-      callback: Callback<
-          protos.google.cloud.vision.v1.IBatchAnnotateFilesResponse,
-          protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Service that performs image detection and annotation for a batch of files.
  * Now only "application/pdf", "image/tiff" and "image/gif" are supported.
@@ -462,9 +442,29 @@ export class ImageAnnotatorClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.batchAnnotateFiles(request);
+ * @example <caption>include:samples/generated/v1/image_annotator.batch_annotate_files.js</caption>
+ * region_tag:vision_v1_generated_ImageAnnotator_BatchAnnotateFiles_async
  */
+  batchAnnotateFiles(
+      request?: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.vision.v1.IBatchAnnotateFilesResponse,
+        protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest|undefined, {}|undefined
+      ]>;
+  batchAnnotateFiles(
+      request: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.vision.v1.IBatchAnnotateFilesResponse,
+          protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest|null|undefined,
+          {}|null|undefined>): void;
+  batchAnnotateFiles(
+      request: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
+      callback: Callback<
+          protos.google.cloud.vision.v1.IBatchAnnotateFilesResponse,
+          protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest|null|undefined,
+          {}|null|undefined>): void;
   batchAnnotateFiles(
       request?: protos.google.cloud.vision.v1.IBatchAnnotateFilesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,26 +500,6 @@ export class ImageAnnotatorClient {
     return this.innerApiCalls.batchAnnotateFiles(request, options, callback);
   }
 
-  asyncBatchAnnotateImages(
-      request?: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  asyncBatchAnnotateImages(
-      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  asyncBatchAnnotateImages(
-      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Run asynchronous image detection and annotation for a list of images.
  *
@@ -559,10 +539,29 @@ export class ImageAnnotatorClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.asyncBatchAnnotateImages(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/image_annotator.async_batch_annotate_images.js</caption>
+ * region_tag:vision_v1_generated_ImageAnnotator_AsyncBatchAnnotateImages_async
  */
+  asyncBatchAnnotateImages(
+      request?: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  asyncBatchAnnotateImages(
+      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  asyncBatchAnnotateImages(
+      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   asyncBatchAnnotateImages(
       request?: protos.google.cloud.vision.v1.IAsyncBatchAnnotateImagesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -606,11 +605,8 @@ export class ImageAnnotatorClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkAsyncBatchAnnotateImagesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/image_annotator.async_batch_annotate_images.js</caption>
+ * region_tag:vision_v1_generated_ImageAnnotator_AsyncBatchAnnotateImages_async
  */
   async checkAsyncBatchAnnotateImagesProgress(name: string): Promise<LROperation<protos.google.cloud.vision.v1.AsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -618,26 +614,6 @@ export class ImageAnnotatorClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.asyncBatchAnnotateImages, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.vision.v1.AsyncBatchAnnotateImagesResponse, protos.google.cloud.vision.v1.OperationMetadata>;
   }
-  asyncBatchAnnotateFiles(
-      request?: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  asyncBatchAnnotateFiles(
-      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  asyncBatchAnnotateFiles(
-      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Run asynchronous image detection and annotation for a list of generic
  * files, such as PDF files, which may contain multiple pages and multiple
@@ -672,10 +648,29 @@ export class ImageAnnotatorClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.asyncBatchAnnotateFiles(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/image_annotator.async_batch_annotate_files.js</caption>
+ * region_tag:vision_v1_generated_ImageAnnotator_AsyncBatchAnnotateFiles_async
  */
+  asyncBatchAnnotateFiles(
+      request?: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  asyncBatchAnnotateFiles(
+      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  asyncBatchAnnotateFiles(
+      request: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   asyncBatchAnnotateFiles(
       request?: protos.google.cloud.vision.v1.IAsyncBatchAnnotateFilesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -719,11 +714,8 @@ export class ImageAnnotatorClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkAsyncBatchAnnotateFilesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/image_annotator.async_batch_annotate_files.js</caption>
+ * region_tag:vision_v1_generated_ImageAnnotator_AsyncBatchAnnotateFiles_async
  */
   async checkAsyncBatchAnnotateFilesProgress(name: string): Promise<LROperation<protos.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse, protos.google.cloud.vision.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});

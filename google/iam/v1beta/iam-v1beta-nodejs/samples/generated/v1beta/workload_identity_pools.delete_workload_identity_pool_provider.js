@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const iamClient = new WorkloadIdentityPoolsClient();
 
-  async function deleteWorkloadIdentityPoolProvider() {
+  async function callDeleteWorkloadIdentityPoolProvider() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteWorkloadIdentityPoolProvider();
+  callDeleteWorkloadIdentityPoolProvider();
   // [END iam_v1beta_generated_WorkloadIdentityPools_DeleteWorkloadIdentityPoolProvider_async]
 }
 

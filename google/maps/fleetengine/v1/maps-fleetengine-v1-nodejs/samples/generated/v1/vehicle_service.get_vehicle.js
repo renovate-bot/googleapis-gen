@@ -23,7 +23,7 @@ function main(name) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format
    *  "providers/{provider}/vehicles/{vehicle}".
@@ -39,14 +39,14 @@ function main(name) {
    *  field is not set in the response. If a minimum is unspecified, the
    *  current_route_segment is always retrieved.
    */
-  // const currentRouteSegmentVersion = ''
+  // const currentRouteSegmentVersion = {}
   /**
    *  Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
    *  data is retrieved. If data is unchanged since this timestamp, the
    *  vehicle.waypoints data is not set in the response. If this field is
    *  unspecified, vehicle.waypoints is always retrieved.
    */
-  // const waypointsVersion = ''
+  // const waypointsVersion = {}
 
   // Imports the Fleetengine library
   const {VehicleServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -54,7 +54,7 @@ function main(name) {
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function getVehicle() {
+  async function callGetVehicle() {
     // Construct request
     const request = {
       name,
@@ -65,7 +65,7 @@ function main(name) {
     console.log(response);
   }
 
-  getVehicle();
+  callGetVehicle();
   // [END fleetengine_v1_generated_VehicleService_GetVehicle_async]
 }
 

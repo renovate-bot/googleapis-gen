@@ -38,7 +38,7 @@ function main(name) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function calculateEffectiveSettings() {
+  async function callCalculateEffectiveSettings() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name) {
     console.log(response);
   }
 
-  calculateEffectiveSettings();
+  callCalculateEffectiveSettings();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_CalculateEffectiveSettings_async]
 }
 

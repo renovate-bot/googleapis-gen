@@ -35,7 +35,7 @@ function main(parent, instanceId, instance, clusters) {
    *  Required. The instance to create.
    *  Fields marked `OutputOnly` must be left blank.
    */
-  // const instance = ''
+  // const instance = {}
   /**
    *  Required. The clusters to be created within the instance, mapped by desired
    *  cluster ID, e.g., just `mycluster` rather than
@@ -51,7 +51,7 @@ function main(parent, instanceId, instance, clusters) {
   // Instantiates a client
   const adminClient = new BigtableInstanceAdminClient();
 
-  async function createInstance() {
+  async function callCreateInstance() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent, instanceId, instance, clusters) {
     console.log(response);
   }
 
-  createInstance();
+  callCreateInstance();
   // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_CreateInstance_async]
 }
 

@@ -727,26 +727,6 @@ export class RemarketingActionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getRemarketingAction(
-      request?: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IRemarketingAction,
-        protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest|undefined, {}|undefined
-      ]>;
-  getRemarketingAction(
-      request: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IRemarketingAction,
-          protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest|null|undefined,
-          {}|null|undefined>): void;
-  getRemarketingAction(
-      request: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IRemarketingAction,
-          protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested remarketing action in full detail.
  *
@@ -769,9 +749,29 @@ export class RemarketingActionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getRemarketingAction(request);
+ * @example <caption>include:samples/generated/v9/remarketing_action_service.get_remarketing_action.js</caption>
+ * region_tag:googleads_v9_generated_RemarketingActionService_GetRemarketingAction_async
  */
+  getRemarketingAction(
+      request?: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IRemarketingAction,
+        protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest|undefined, {}|undefined
+      ]>;
+  getRemarketingAction(
+      request: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IRemarketingAction,
+          protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest|null|undefined,
+          {}|null|undefined>): void;
+  getRemarketingAction(
+      request: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IRemarketingAction,
+          protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest|null|undefined,
+          {}|null|undefined>): void;
   getRemarketingAction(
       request?: protos.google.ads.googleads.v9.services.IGetRemarketingActionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class RemarketingActionServiceClient {
     this.initialize();
     return this.innerApiCalls.getRemarketingAction(request, options, callback);
   }
-  mutateRemarketingActions(
-      request?: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateRemarketingActionsResponse,
-        protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest|undefined, {}|undefined
-      ]>;
-  mutateRemarketingActions(
-      request: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsResponse,
-          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateRemarketingActions(
-      request: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsResponse,
-          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or updates remarketing actions. Operation statuses are returned.
  *
@@ -859,9 +839,29 @@ export class RemarketingActionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateRemarketingActions(request);
+ * @example <caption>include:samples/generated/v9/remarketing_action_service.mutate_remarketing_actions.js</caption>
+ * region_tag:googleads_v9_generated_RemarketingActionService_MutateRemarketingActions_async
  */
+  mutateRemarketingActions(
+      request?: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateRemarketingActionsResponse,
+        protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest|undefined, {}|undefined
+      ]>;
+  mutateRemarketingActions(
+      request: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsResponse,
+          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateRemarketingActions(
+      request: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsResponse,
+          protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateRemarketingActions(
       request?: protos.google.ads.googleads.v9.services.IMutateRemarketingActionsRequest,
       optionsOrCallback?: CallOptions|Callback<

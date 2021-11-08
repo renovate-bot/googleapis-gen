@@ -53,7 +53,7 @@ function main(parent) {
   // Instantiates a client
   const deployClient = new CloudDeployClient();
 
-  async function listReleases() {
+  async function callListReleases() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent) {
     }
   }
 
-  listReleases();
+  callListReleases();
   // [END clouddeploy_v1_generated_CloudDeploy_ListReleases_async]
 }
 

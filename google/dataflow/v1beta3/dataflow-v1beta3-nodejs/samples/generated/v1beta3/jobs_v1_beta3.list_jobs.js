@@ -23,16 +23,11 @@ function main() {
   /**
    *  The kind of filter to use.
    */
-  // const filter = ''
+  // const filter = {}
   /**
    *  The project which owns the jobs.
    */
   // const projectId = 'abc123'
-  /**
-   *  Deprecated. ListJobs always returns summaries now.
-   *  Use GetJob for other JobViews.
-   */
-  // const view = ''
   /**
    *  If there are many jobs, limit response to at most this many.
    *  The actual number of jobs returned will be the lesser of max_responses
@@ -45,7 +40,7 @@ function main() {
    */
   // const pageToken = 'abc123'
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains this job.
    */
@@ -57,7 +52,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new JobsV1Beta3Client();
 
-  async function listJobs() {
+  async function callListJobs() {
     // Construct request
     const request = {
     };
@@ -69,7 +64,7 @@ function main() {
     }
   }
 
-  listJobs();
+  callListJobs();
   // [END dataflow_v1beta3_generated_JobsV1Beta3_ListJobs_async]
 }
 

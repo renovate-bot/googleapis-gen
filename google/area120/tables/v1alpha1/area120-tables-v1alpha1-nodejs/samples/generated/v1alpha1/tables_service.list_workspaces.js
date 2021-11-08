@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const tablesClient = new TablesServiceClient();
 
-  async function listWorkspaces() {
+  async function callListWorkspaces() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     }
   }
 
-  listWorkspaces();
+  callListWorkspaces();
   // [END area120tables_v1alpha1_generated_TablesService_ListWorkspaces_async]
 }
 

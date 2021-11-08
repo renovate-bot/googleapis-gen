@@ -41,7 +41,7 @@ function main(name) {
   // Instantiates a client
   const osconfigClient = new OsConfigZonalServiceClient();
 
-  async function listOSPolicyAssignmentRevisions() {
+  async function callListOSPolicyAssignmentRevisions() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     }
   }
 
-  listOSPolicyAssignmentRevisions();
+  callListOSPolicyAssignmentRevisions();
   // [END osconfig_v1alpha_generated_OsConfigZonalService_ListOSPolicyAssignmentRevisions_async]
 }
 

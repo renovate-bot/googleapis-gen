@@ -402,26 +402,6 @@ export class LoggingServiceV2Client {
   // -------------------
   // -- Service calls --
   // -------------------
-  deleteLog(
-      request?: protos.google.logging.v2.IDeleteLogRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.logging.v2.IDeleteLogRequest|undefined, {}|undefined
-      ]>;
-  deleteLog(
-      request: protos.google.logging.v2.IDeleteLogRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.logging.v2.IDeleteLogRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteLog(
-      request: protos.google.logging.v2.IDeleteLogRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.logging.v2.IDeleteLogRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes all the log entries in a log. The log reappears if it receives new
  * entries. Log entries written shortly before the delete operation might not
@@ -450,9 +430,29 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteLog(request);
+ * @example <caption>include:samples/generated/v2/logging_service_v2.delete_log.js</caption>
+ * region_tag:logging_v2_generated_LoggingServiceV2_DeleteLog_async
  */
+  deleteLog(
+      request?: protos.google.logging.v2.IDeleteLogRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.logging.v2.IDeleteLogRequest|undefined, {}|undefined
+      ]>;
+  deleteLog(
+      request: protos.google.logging.v2.IDeleteLogRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.logging.v2.IDeleteLogRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteLog(
+      request: protos.google.logging.v2.IDeleteLogRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.logging.v2.IDeleteLogRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteLog(
       request?: protos.google.logging.v2.IDeleteLogRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -487,26 +487,6 @@ export class LoggingServiceV2Client {
     this.initialize();
     return this.innerApiCalls.deleteLog(request, options, callback);
   }
-  writeLogEntries(
-      request?: protos.google.logging.v2.IWriteLogEntriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.logging.v2.IWriteLogEntriesResponse,
-        protos.google.logging.v2.IWriteLogEntriesRequest|undefined, {}|undefined
-      ]>;
-  writeLogEntries(
-      request: protos.google.logging.v2.IWriteLogEntriesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.logging.v2.IWriteLogEntriesResponse,
-          protos.google.logging.v2.IWriteLogEntriesRequest|null|undefined,
-          {}|null|undefined>): void;
-  writeLogEntries(
-      request: protos.google.logging.v2.IWriteLogEntriesRequest,
-      callback: Callback<
-          protos.google.logging.v2.IWriteLogEntriesResponse,
-          protos.google.logging.v2.IWriteLogEntriesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Writes log entries to Logging. This API method is the
  * only way to send log entries to Logging. This method
@@ -592,9 +572,29 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.writeLogEntries(request);
+ * @example <caption>include:samples/generated/v2/logging_service_v2.write_log_entries.js</caption>
+ * region_tag:logging_v2_generated_LoggingServiceV2_WriteLogEntries_async
  */
+  writeLogEntries(
+      request?: protos.google.logging.v2.IWriteLogEntriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.logging.v2.IWriteLogEntriesResponse,
+        protos.google.logging.v2.IWriteLogEntriesRequest|undefined, {}|undefined
+      ]>;
+  writeLogEntries(
+      request: protos.google.logging.v2.IWriteLogEntriesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.logging.v2.IWriteLogEntriesResponse,
+          protos.google.logging.v2.IWriteLogEntriesRequest|null|undefined,
+          {}|null|undefined>): void;
+  writeLogEntries(
+      request: protos.google.logging.v2.IWriteLogEntriesRequest,
+      callback: Callback<
+          protos.google.logging.v2.IWriteLogEntriesResponse,
+          protos.google.logging.v2.IWriteLogEntriesRequest|null|undefined,
+          {}|null|undefined>): void;
   writeLogEntries(
       request?: protos.google.logging.v2.IWriteLogEntriesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -619,6 +619,8 @@ export class LoggingServiceV2Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.writeLogEntries(request, options, callback);
   }
@@ -636,12 +638,8 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.tailLogEntries();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v2/logging_service_v2.tail_log_entries.js</caption>
+ * region_tag:logging_v2_generated_LoggingServiceV2_TailLogEntries_async
  */
   tailLogEntries(
       options?: CallOptions):
@@ -650,28 +648,7 @@ export class LoggingServiceV2Client {
     return this.innerApiCalls.tailLogEntries(options);
   }
 
-  listLogEntries(
-      request?: protos.google.logging.v2.IListLogEntriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.logging.v2.ILogEntry[],
-        protos.google.logging.v2.IListLogEntriesRequest|null,
-        protos.google.logging.v2.IListLogEntriesResponse
-      ]>;
-  listLogEntries(
-      request: protos.google.logging.v2.IListLogEntriesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.logging.v2.IListLogEntriesRequest,
-          protos.google.logging.v2.IListLogEntriesResponse|null|undefined,
-          protos.google.logging.v2.ILogEntry>): void;
-  listLogEntries(
-      request: protos.google.logging.v2.IListLogEntriesRequest,
-      callback: PaginationCallback<
-          protos.google.logging.v2.IListLogEntriesRequest,
-          protos.google.logging.v2.IListLogEntriesResponse|null|undefined,
-          protos.google.logging.v2.ILogEntry>): void;
-/**
+ /**
  * Lists log entries.  Use this method to retrieve log entries that originated
  * from a project/folder/organization/billing account.  For ways to export log
  * entries, see [Exporting
@@ -735,6 +712,27 @@ export class LoggingServiceV2Client {
  */
   listLogEntries(
       request?: protos.google.logging.v2.IListLogEntriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.logging.v2.ILogEntry[],
+        protos.google.logging.v2.IListLogEntriesRequest|null,
+        protos.google.logging.v2.IListLogEntriesResponse
+      ]>;
+  listLogEntries(
+      request: protos.google.logging.v2.IListLogEntriesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.logging.v2.IListLogEntriesRequest,
+          protos.google.logging.v2.IListLogEntriesResponse|null|undefined,
+          protos.google.logging.v2.ILogEntry>): void;
+  listLogEntries(
+      request: protos.google.logging.v2.IListLogEntriesRequest,
+      callback: PaginationCallback<
+          protos.google.logging.v2.IListLogEntriesRequest,
+          protos.google.logging.v2.IListLogEntriesResponse|null|undefined,
+          protos.google.logging.v2.ILogEntry>): void;
+  listLogEntries(
+      request?: protos.google.logging.v2.IListLogEntriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.logging.v2.IListLogEntriesRequest,
           protos.google.logging.v2.IListLogEntriesResponse|null|undefined,
@@ -758,6 +756,8 @@ export class LoggingServiceV2Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listLogEntries(request, options, callback);
   }
@@ -825,6 +825,8 @@ export class LoggingServiceV2Client {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listLogEntries'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -892,11 +894,8 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listLogEntriesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_log_entries.js</caption>
+ * region_tag:logging_v2_generated_LoggingServiceV2_ListLogEntries_async
  */
   listLogEntriesAsync(
       request?: protos.google.logging.v2.IListLogEntriesRequest,
@@ -904,7 +903,8 @@ export class LoggingServiceV2Client {
     AsyncIterable<protos.google.logging.v2.ILogEntry>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listLogEntries'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -914,28 +914,7 @@ export class LoggingServiceV2Client {
       callSettings
     ) as AsyncIterable<protos.google.logging.v2.ILogEntry>;
   }
-  listMonitoredResourceDescriptors(
-      request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IMonitoredResourceDescriptor[],
-        protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest|null,
-        protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse
-      ]>;
-  listMonitoredResourceDescriptors(
-      request: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
-          protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse|null|undefined,
-          protos.google.api.IMonitoredResourceDescriptor>): void;
-  listMonitoredResourceDescriptors(
-      request: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
-      callback: PaginationCallback<
-          protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
-          protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse|null|undefined,
-          protos.google.api.IMonitoredResourceDescriptor>): void;
-/**
+ /**
  * Lists the descriptors for monitored resource types used by Logging.
  *
  * @param {Object} request
@@ -964,6 +943,27 @@ export class LoggingServiceV2Client {
  */
   listMonitoredResourceDescriptors(
       request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IMonitoredResourceDescriptor[],
+        protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest|null,
+        protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse
+      ]>;
+  listMonitoredResourceDescriptors(
+      request: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
+          protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse|null|undefined,
+          protos.google.api.IMonitoredResourceDescriptor>): void;
+  listMonitoredResourceDescriptors(
+      request: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
+      callback: PaginationCallback<
+          protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
+          protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse|null|undefined,
+          protos.google.api.IMonitoredResourceDescriptor>): void;
+  listMonitoredResourceDescriptors(
+      request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
           protos.google.logging.v2.IListMonitoredResourceDescriptorsResponse|null|undefined,
@@ -987,6 +987,8 @@ export class LoggingServiceV2Client {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listMonitoredResourceDescriptors(request, options, callback);
   }
@@ -1022,6 +1024,8 @@ export class LoggingServiceV2Client {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1057,11 +1061,8 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMonitoredResourceDescriptorsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_monitored_resource_descriptors.js</caption>
+ * region_tag:logging_v2_generated_LoggingServiceV2_ListMonitoredResourceDescriptors_async
  */
   listMonitoredResourceDescriptorsAsync(
       request?: protos.google.logging.v2.IListMonitoredResourceDescriptorsRequest,
@@ -1069,7 +1070,8 @@ export class LoggingServiceV2Client {
     AsyncIterable<protos.google.api.IMonitoredResourceDescriptor>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listMonitoredResourceDescriptors'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1079,28 +1081,7 @@ export class LoggingServiceV2Client {
       callSettings
     ) as AsyncIterable<protos.google.api.IMonitoredResourceDescriptor>;
   }
-  listLogs(
-      request?: protos.google.logging.v2.IListLogsRequest,
-      options?: CallOptions):
-      Promise<[
-        string[],
-        protos.google.logging.v2.IListLogsRequest|null,
-        protos.google.logging.v2.IListLogsResponse
-      ]>;
-  listLogs(
-      request: protos.google.logging.v2.IListLogsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.logging.v2.IListLogsRequest,
-          protos.google.logging.v2.IListLogsResponse|null|undefined,
-          string>): void;
-  listLogs(
-      request: protos.google.logging.v2.IListLogsRequest,
-      callback: PaginationCallback<
-          protos.google.logging.v2.IListLogsRequest,
-          protos.google.logging.v2.IListLogsResponse|null|undefined,
-          string>): void;
-/**
+ /**
  * Lists the logs in projects, organizations, folders, or billing accounts.
  * Only logs that have entries are listed.
  *
@@ -1147,6 +1128,27 @@ export class LoggingServiceV2Client {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listLogs(
+      request?: protos.google.logging.v2.IListLogsRequest,
+      options?: CallOptions):
+      Promise<[
+        string[],
+        protos.google.logging.v2.IListLogsRequest|null,
+        protos.google.logging.v2.IListLogsResponse
+      ]>;
+  listLogs(
+      request: protos.google.logging.v2.IListLogsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.logging.v2.IListLogsRequest,
+          protos.google.logging.v2.IListLogsResponse|null|undefined,
+          string>): void;
+  listLogs(
+      request: protos.google.logging.v2.IListLogsRequest,
+      callback: PaginationCallback<
+          protos.google.logging.v2.IListLogsRequest,
+          protos.google.logging.v2.IListLogsResponse|null|undefined,
+          string>): void;
   listLogs(
       request?: protos.google.logging.v2.IListLogsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1294,11 +1296,8 @@ export class LoggingServiceV2Client {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listLogsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/logging_service_v2.list_logs.js</caption>
+ * region_tag:logging_v2_generated_LoggingServiceV2_ListLogs_async
  */
   listLogsAsync(
       request?: protos.google.logging.v2.IListLogsRequest,
@@ -1313,7 +1312,6 @@ export class LoggingServiceV2Client {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listLogs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

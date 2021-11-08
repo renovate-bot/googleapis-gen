@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new DynamicSearchAdsSearchTermViewServiceClient();
 
-  async function getDynamicSearchAdsSearchTermView() {
+  async function callGetDynamicSearchAdsSearchTermView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getDynamicSearchAdsSearchTermView();
+  callGetDynamicSearchAdsSearchTermView();
   // [END googleads_v9_generated_DynamicSearchAdsSearchTermViewService_GetDynamicSearchAdsSearchTermView_async]
 }
 

@@ -27,7 +27,7 @@ function main(parent) {
   /**
    *  The taxonomy to create.
    */
-  // const taxonomy = ''
+  // const taxonomy = {}
 
   // Imports the Datacatalog library
   const {PolicyTagManagerClient} = require('@google-cloud/datacatalog').v1;
@@ -35,7 +35,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function createTaxonomy() {
+  async function callCreateTaxonomy() {
     // Construct request
     const request = {
       parent,
@@ -46,7 +46,7 @@ function main(parent) {
     console.log(response);
   }
 
-  createTaxonomy();
+  callCreateTaxonomy();
   // [END datacatalog_v1_generated_PolicyTagManager_CreateTaxonomy_async]
 }
 

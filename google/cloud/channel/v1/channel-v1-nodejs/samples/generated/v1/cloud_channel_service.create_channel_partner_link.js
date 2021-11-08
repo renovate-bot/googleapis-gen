@@ -31,7 +31,7 @@ function main(parent, channelPartnerLink) {
    *  Either channel_partner_link.reseller_cloud_identity_id or domain can be
    *  used to create a link.
    */
-  // const channelPartnerLink = ''
+  // const channelPartnerLink = {}
 
   // Imports the Channel library
   const {CloudChannelServiceClient} = require('@google-cloud/channel').v1;
@@ -39,7 +39,7 @@ function main(parent, channelPartnerLink) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function createChannelPartnerLink() {
+  async function callCreateChannelPartnerLink() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, channelPartnerLink) {
     console.log(response);
   }
 
-  createChannelPartnerLink();
+  callCreateChannelPartnerLink();
   // [END cloudchannel_v1_generated_CloudChannelService_CreateChannelPartnerLink_async]
 }
 

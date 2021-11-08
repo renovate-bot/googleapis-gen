@@ -30,7 +30,7 @@ function main(parent, measurementProtocolSecret) {
   /**
    *  Required. The measurement protocol secret to create.
    */
-  // const measurementProtocolSecret = ''
+  // const measurementProtocolSecret = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(parent, measurementProtocolSecret) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createMeasurementProtocolSecret() {
+  async function callCreateMeasurementProtocolSecret() {
     // Construct request
     const request = {
       parent,
@@ -50,7 +50,7 @@ function main(parent, measurementProtocolSecret) {
     console.log(response);
   }
 
-  createMeasurementProtocolSecret();
+  callCreateMeasurementProtocolSecret();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateMeasurementProtocolSecret_async]
 }
 

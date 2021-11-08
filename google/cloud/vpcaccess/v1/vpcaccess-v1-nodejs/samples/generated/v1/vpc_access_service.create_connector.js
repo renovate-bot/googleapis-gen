@@ -32,7 +32,7 @@ function main(parent, connectorId, connector) {
   /**
    *  Required. Resource to create.
    */
-  // const connector = ''
+  // const connector = {}
 
   // Imports the Vpcaccess library
   const {VpcAccessServiceClient} = require('@google-cloud/vpc-access').v1;
@@ -40,7 +40,7 @@ function main(parent, connectorId, connector) {
   // Instantiates a client
   const vpcaccessClient = new VpcAccessServiceClient();
 
-  async function createConnector() {
+  async function callCreateConnector() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, connectorId, connector) {
     console.log(response);
   }
 
-  createConnector();
+  callCreateConnector();
   // [END vpcaccess_v1_generated_VpcAccessService_CreateConnector_async]
 }
 

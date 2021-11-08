@@ -316,12 +316,8 @@ export class PartitionAssignmentServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.assignPartitions();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/partition_assignment_service.assign_partitions.js</caption>
+ * region_tag:pubsublite_v1_generated_PartitionAssignmentService_AssignPartitions_async
  */
   assignPartitions(
       options?: CallOptions):

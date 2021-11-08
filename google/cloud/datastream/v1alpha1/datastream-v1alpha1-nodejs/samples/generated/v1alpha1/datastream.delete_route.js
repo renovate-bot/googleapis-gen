@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function deleteRoute() {
+  async function callDeleteRoute() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteRoute();
+  callDeleteRoute();
   // [END datastream_v1alpha1_generated_Datastream_DeleteRoute_async]
 }
 

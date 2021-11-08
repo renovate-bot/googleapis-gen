@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const accessapprovalClient = new AccessApprovalClient();
 
-  async function getAccessApprovalSettings() {
+  async function callGetAccessApprovalSettings() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  getAccessApprovalSettings();
+  callGetAccessApprovalSettings();
   // [END accessapproval_v1_generated_AccessApproval_GetAccessApprovalSettings_async]
 }
 

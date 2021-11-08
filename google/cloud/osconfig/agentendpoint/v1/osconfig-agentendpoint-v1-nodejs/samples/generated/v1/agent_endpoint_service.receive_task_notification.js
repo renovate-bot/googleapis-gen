@@ -37,7 +37,7 @@ function main(instanceIdToken, agentVersion) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function receiveTaskNotification() {
+  async function callReceiveTaskNotification() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -51,7 +51,7 @@ function main(instanceIdToken, agentVersion) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  receiveTaskNotification();
+  callReceiveTaskNotification();
   // [END osconfig_v1_generated_AgentEndpointService_ReceiveTaskNotification_async]
 }
 

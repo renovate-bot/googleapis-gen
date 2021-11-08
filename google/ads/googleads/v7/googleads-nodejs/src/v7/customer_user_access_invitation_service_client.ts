@@ -647,26 +647,6 @@ export class CustomerUserAccessInvitationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerUserAccessInvitation(
-      request?: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICustomerUserAccessInvitation,
-        protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest|undefined, {}|undefined
-      ]>;
-  getCustomerUserAccessInvitation(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerUserAccessInvitation,
-          protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerUserAccessInvitation(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerUserAccessInvitation,
-          protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested access invitation in full detail.
  *
@@ -689,9 +669,29 @@ export class CustomerUserAccessInvitationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerUserAccessInvitation(request);
+ * @example <caption>include:samples/generated/v7/customer_user_access_invitation_service.get_customer_user_access_invitation.js</caption>
+ * region_tag:googleads_v7_generated_CustomerUserAccessInvitationService_GetCustomerUserAccessInvitation_async
  */
+  getCustomerUserAccessInvitation(
+      request?: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICustomerUserAccessInvitation,
+        protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest|undefined, {}|undefined
+      ]>;
+  getCustomerUserAccessInvitation(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerUserAccessInvitation,
+          protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerUserAccessInvitation(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerUserAccessInvitation,
+          protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerUserAccessInvitation(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerUserAccessInvitationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -726,26 +726,6 @@ export class CustomerUserAccessInvitationServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerUserAccessInvitation(request, options, callback);
   }
-  mutateCustomerUserAccessInvitation(
-      request?: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationResponse,
-        protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerUserAccessInvitation(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerUserAccessInvitation(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or removes an access invitation.
  *
@@ -771,9 +751,29 @@ export class CustomerUserAccessInvitationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerUserAccessInvitation(request);
+ * @example <caption>include:samples/generated/v7/customer_user_access_invitation_service.mutate_customer_user_access_invitation.js</caption>
+ * region_tag:googleads_v7_generated_CustomerUserAccessInvitationService_MutateCustomerUserAccessInvitation_async
  */
+  mutateCustomerUserAccessInvitation(
+      request?: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationResponse,
+        protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerUserAccessInvitation(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerUserAccessInvitation(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerUserAccessInvitation(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerUserAccessInvitationRequest,
       optionsOrCallback?: CallOptions|Callback<

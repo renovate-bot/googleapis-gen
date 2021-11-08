@@ -37,7 +37,7 @@ function main(instanceIdToken, taskId, taskType) {
    *  APPLY_PATCHES = ApplyPatchesTaskOutput
    *  EXEC_STEP = ExecStepTaskOutput
    */
-  // const taskType = ''
+  // const taskType = {}
   /**
    *  Descriptive error message if the task execution ended in error.
    */
@@ -45,11 +45,11 @@ function main(instanceIdToken, taskId, taskType) {
   /**
    *  Final output details of the apply patches task;
    */
-  // const applyPatchesTaskOutput = ''
+  // const applyPatchesTaskOutput = {}
   /**
    *  Final output details of the exec step task;
    */
-  // const execStepTaskOutput = ''
+  // const execStepTaskOutput = {}
 
   // Imports the Agentendpoint library
   const {AgentEndpointServiceClient} = require('agentendpoint').v1beta;
@@ -57,7 +57,7 @@ function main(instanceIdToken, taskId, taskType) {
   // Instantiates a client
   const agentendpointClient = new AgentEndpointServiceClient();
 
-  async function reportTaskComplete() {
+  async function callReportTaskComplete() {
     // Construct request
     const request = {
       instanceIdToken,
@@ -70,7 +70,7 @@ function main(instanceIdToken, taskId, taskType) {
     console.log(response);
   }
 
-  reportTaskComplete();
+  callReportTaskComplete();
   // [END osconfig_v1beta_generated_AgentEndpointService_ReportTaskComplete_async]
 }
 

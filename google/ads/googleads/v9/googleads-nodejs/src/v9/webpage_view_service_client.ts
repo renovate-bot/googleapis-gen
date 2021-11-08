@@ -727,6 +727,23 @@ export class WebpageViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested webpage view in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the webpage view to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [WebpageView]{@link google.ads.googleads.v9.resources.WebpageView}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v9/webpage_view_service.get_webpage_view.js</caption>
+ * region_tag:googleads_v9_generated_WebpageViewService_GetWebpageView_async
+ */
   getWebpageView(
       request?: protos.google.ads.googleads.v9.services.IGetWebpageViewRequest,
       options?: CallOptions):
@@ -747,23 +764,6 @@ export class WebpageViewServiceClient {
           protos.google.ads.googleads.v9.resources.IWebpageView,
           protos.google.ads.googleads.v9.services.IGetWebpageViewRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested webpage view in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the webpage view to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [WebpageView]{@link google.ads.googleads.v9.resources.WebpageView}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getWebpageView(request);
- */
   getWebpageView(
       request?: protos.google.ads.googleads.v9.services.IGetWebpageViewRequest,
       optionsOrCallback?: CallOptions|Callback<

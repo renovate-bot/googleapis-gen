@@ -295,26 +295,6 @@ export class VehicleServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createVehicle(
-      request?: protos.maps.fleetengine.v1.ICreateVehicleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.IVehicle,
-        protos.maps.fleetengine.v1.ICreateVehicleRequest|undefined, {}|undefined
-      ]>;
-  createVehicle(
-      request: protos.maps.fleetengine.v1.ICreateVehicleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicle,
-          protos.maps.fleetengine.v1.ICreateVehicleRequest|null|undefined,
-          {}|null|undefined>): void;
-  createVehicle(
-      request: protos.maps.fleetengine.v1.ICreateVehicleRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicle,
-          protos.maps.fleetengine.v1.ICreateVehicleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * CreateVehicle instantiates a new vehicle associated with a rideshare
  * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
@@ -384,9 +364,29 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createVehicle(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.create_vehicle.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_CreateVehicle_async
  */
+  createVehicle(
+      request?: protos.maps.fleetengine.v1.ICreateVehicleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.IVehicle,
+        protos.maps.fleetengine.v1.ICreateVehicleRequest|undefined, {}|undefined
+      ]>;
+  createVehicle(
+      request: protos.maps.fleetengine.v1.ICreateVehicleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicle,
+          protos.maps.fleetengine.v1.ICreateVehicleRequest|null|undefined,
+          {}|null|undefined>): void;
+  createVehicle(
+      request: protos.maps.fleetengine.v1.ICreateVehicleRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicle,
+          protos.maps.fleetengine.v1.ICreateVehicleRequest|null|undefined,
+          {}|null|undefined>): void;
   createVehicle(
       request?: protos.maps.fleetengine.v1.ICreateVehicleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -421,26 +421,6 @@ export class VehicleServiceClient {
     this.initialize();
     return this.innerApiCalls.createVehicle(request, options, callback);
   }
-  getVehicle(
-      request?: protos.maps.fleetengine.v1.IGetVehicleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.IVehicle,
-        protos.maps.fleetengine.v1.IGetVehicleRequest|undefined, {}|undefined
-      ]>;
-  getVehicle(
-      request: protos.maps.fleetengine.v1.IGetVehicleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicle,
-          protos.maps.fleetengine.v1.IGetVehicleRequest|null|undefined,
-          {}|null|undefined>): void;
-  getVehicle(
-      request: protos.maps.fleetengine.v1.IGetVehicleRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicle,
-          protos.maps.fleetengine.v1.IGetVehicleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * GetVehicle returns a vehicle from the Fleet Engine.
  *
@@ -472,9 +452,29 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getVehicle(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.get_vehicle.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_GetVehicle_async
  */
+  getVehicle(
+      request?: protos.maps.fleetengine.v1.IGetVehicleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.IVehicle,
+        protos.maps.fleetengine.v1.IGetVehicleRequest|undefined, {}|undefined
+      ]>;
+  getVehicle(
+      request: protos.maps.fleetengine.v1.IGetVehicleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicle,
+          protos.maps.fleetengine.v1.IGetVehicleRequest|null|undefined,
+          {}|null|undefined>): void;
+  getVehicle(
+      request: protos.maps.fleetengine.v1.IGetVehicleRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicle,
+          protos.maps.fleetengine.v1.IGetVehicleRequest|null|undefined,
+          {}|null|undefined>): void;
   getVehicle(
       request?: protos.maps.fleetengine.v1.IGetVehicleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -509,26 +509,6 @@ export class VehicleServiceClient {
     this.initialize();
     return this.innerApiCalls.getVehicle(request, options, callback);
   }
-  updateVehicle(
-      request?: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.IVehicle,
-        protos.maps.fleetengine.v1.IUpdateVehicleRequest|undefined, {}|undefined
-      ]>;
-  updateVehicle(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicle,
-          protos.maps.fleetengine.v1.IUpdateVehicleRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateVehicle(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicle,
-          protos.maps.fleetengine.v1.IUpdateVehicleRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * UpdateVehicle writes updated vehicle data to the Fleet Engine.
  *
@@ -578,9 +558,29 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateVehicle(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.update_vehicle.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_UpdateVehicle_async
  */
+  updateVehicle(
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.IVehicle,
+        protos.maps.fleetengine.v1.IUpdateVehicleRequest|undefined, {}|undefined
+      ]>;
+  updateVehicle(
+      request: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicle,
+          protos.maps.fleetengine.v1.IUpdateVehicleRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateVehicle(
+      request: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicle,
+          protos.maps.fleetengine.v1.IUpdateVehicleRequest|null|undefined,
+          {}|null|undefined>): void;
   updateVehicle(
       request?: protos.maps.fleetengine.v1.IUpdateVehicleRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -615,26 +615,6 @@ export class VehicleServiceClient {
     this.initialize();
     return this.innerApiCalls.updateVehicle(request, options, callback);
   }
-  updateVehicleLocation(
-      request?: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.IVehicleLocation,
-        protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|undefined, {}|undefined
-      ]>;
-  updateVehicleLocation(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicleLocation,
-          protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateVehicleLocation(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IVehicleLocation,
-          protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * UpdateVehicleLocation updates the location of the vehicle.
  * This method is deprecated. Use UpdateVehicle method instead.
@@ -662,10 +642,30 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateVehicleLocation(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.update_vehicle_location.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_UpdateVehicleLocation_async
  * @deprecated UpdateVehicleLocation is deprecated and may be removed in a future version.
  */
+  updateVehicleLocation(
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.IVehicleLocation,
+        protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|undefined, {}|undefined
+      ]>;
+  updateVehicleLocation(
+      request: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicleLocation,
+          protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateVehicleLocation(
+      request: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IVehicleLocation,
+          protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest|null|undefined,
+          {}|null|undefined>): void;
   updateVehicleLocation(
       request?: protos.maps.fleetengine.v1.IUpdateVehicleLocationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -701,26 +701,6 @@ export class VehicleServiceClient {
     this.warn('DEP$VehicleService-$UpdateVehicleLocation','UpdateVehicleLocation is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.updateVehicleLocation(request, options, callback);
   }
-  updateVehicleAttributes(
-      request?: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
-        protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|undefined, {}|undefined
-      ]>;
-  updateVehicleAttributes(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
-          protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateVehicleAttributes(
-      request: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
-          protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * UpdateVehicleAttributes partially updates a vehicle's attributes.
  * Only the attributes mentioned in the request will be updated, other
@@ -750,9 +730,29 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateVehicleAttributes(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.update_vehicle_attributes.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_UpdateVehicleAttributes_async
  */
+  updateVehicleAttributes(
+      request?: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
+        protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|undefined, {}|undefined
+      ]>;
+  updateVehicleAttributes(
+      request: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
+          protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateVehicleAttributes(
+      request: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.IUpdateVehicleAttributesResponse,
+          protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest|null|undefined,
+          {}|null|undefined>): void;
   updateVehicleAttributes(
       request?: protos.maps.fleetengine.v1.IUpdateVehicleAttributesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -787,26 +787,6 @@ export class VehicleServiceClient {
     this.initialize();
     return this.innerApiCalls.updateVehicleAttributes(request, options, callback);
   }
-  searchVehicles(
-      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.ISearchVehiclesResponse,
-        protos.maps.fleetengine.v1.ISearchVehiclesRequest|undefined, {}|undefined
-      ]>;
-  searchVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
-          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
-          {}|null|undefined>): void;
-  searchVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
-          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * SearchVehicles returns a list of vehicles that match the request options.
  *
@@ -897,9 +877,29 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.searchVehicles(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.search_vehicles.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_SearchVehicles_async
  */
+  searchVehicles(
+      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.ISearchVehiclesResponse,
+        protos.maps.fleetengine.v1.ISearchVehiclesRequest|undefined, {}|undefined
+      ]>;
+  searchVehicles(
+      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
+          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
+          {}|null|undefined>): void;
+  searchVehicles(
+      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
+          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
+          {}|null|undefined>): void;
   searchVehicles(
       request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -934,26 +934,6 @@ export class VehicleServiceClient {
     this.initialize();
     return this.innerApiCalls.searchVehicles(request, options, callback);
   }
-  searchFuzzedVehicles(
-      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.ISearchVehiclesResponse,
-        protos.maps.fleetengine.v1.ISearchVehiclesRequest|undefined, {}|undefined
-      ]>;
-  searchFuzzedVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
-          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
-          {}|null|undefined>): void;
-  searchFuzzedVehicles(
-      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
-      callback: Callback<
-          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
-          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * SearchFuzzedVehicles returns a list of vehicles that match the request
  * options with their locations fuzzed.
@@ -1049,9 +1029,29 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.searchFuzzedVehicles(request);
+ * @example <caption>include:samples/generated/v1/vehicle_service.search_fuzzed_vehicles.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_SearchFuzzedVehicles_async
  */
+  searchFuzzedVehicles(
+      request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.ISearchVehiclesResponse,
+        protos.maps.fleetengine.v1.ISearchVehiclesRequest|undefined, {}|undefined
+      ]>;
+  searchFuzzedVehicles(
+      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
+          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
+          {}|null|undefined>): void;
+  searchFuzzedVehicles(
+      request: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
+      callback: Callback<
+          protos.maps.fleetengine.v1.ISearchVehiclesResponse,
+          protos.maps.fleetengine.v1.ISearchVehiclesRequest|null|undefined,
+          {}|null|undefined>): void;
   searchFuzzedVehicles(
       request?: protos.maps.fleetengine.v1.ISearchVehiclesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1087,28 +1087,7 @@ export class VehicleServiceClient {
     return this.innerApiCalls.searchFuzzedVehicles(request, options, callback);
   }
 
-  listVehicles(
-      request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.maps.fleetengine.v1.IVehicle[],
-        protos.maps.fleetengine.v1.IListVehiclesRequest|null,
-        protos.maps.fleetengine.v1.IListVehiclesResponse
-      ]>;
-  listVehicles(
-      request: protos.maps.fleetengine.v1.IListVehiclesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.maps.fleetengine.v1.IListVehiclesRequest,
-          protos.maps.fleetengine.v1.IListVehiclesResponse|null|undefined,
-          protos.maps.fleetengine.v1.IVehicle>): void;
-  listVehicles(
-      request: protos.maps.fleetengine.v1.IListVehiclesRequest,
-      callback: PaginationCallback<
-          protos.maps.fleetengine.v1.IListVehiclesRequest,
-          protos.maps.fleetengine.v1.IListVehiclesResponse|null|undefined,
-          protos.maps.fleetengine.v1.IVehicle>): void;
-/**
+ /**
  * ListVehicles returns a paginated list of vehicles associated with
  * a provider that match the request options.
  *
@@ -1192,6 +1171,27 @@ export class VehicleServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listVehicles(
+      request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.maps.fleetengine.v1.IVehicle[],
+        protos.maps.fleetengine.v1.IListVehiclesRequest|null,
+        protos.maps.fleetengine.v1.IListVehiclesResponse
+      ]>;
+  listVehicles(
+      request: protos.maps.fleetengine.v1.IListVehiclesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.maps.fleetengine.v1.IListVehiclesRequest,
+          protos.maps.fleetengine.v1.IListVehiclesResponse|null|undefined,
+          protos.maps.fleetengine.v1.IVehicle>): void;
+  listVehicles(
+      request: protos.maps.fleetengine.v1.IListVehiclesRequest,
+      callback: PaginationCallback<
+          protos.maps.fleetengine.v1.IListVehiclesRequest,
+          protos.maps.fleetengine.v1.IListVehiclesResponse|null|undefined,
+          protos.maps.fleetengine.v1.IVehicle>): void;
   listVehicles(
       request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1413,11 +1413,8 @@ export class VehicleServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listVehiclesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/vehicle_service.list_vehicles.js</caption>
+ * region_tag:fleetengine_v1_generated_VehicleService_ListVehicles_async
  */
   listVehiclesAsync(
       request?: protos.maps.fleetengine.v1.IListVehiclesRequest,
@@ -1432,7 +1429,6 @@ export class VehicleServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listVehicles'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

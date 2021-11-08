@@ -38,7 +38,7 @@ function main(name, force) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function deleteTagTemplateField() {
+  async function callDeleteTagTemplateField() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name, force) {
     console.log(response);
   }
 
-  deleteTagTemplateField();
+  callDeleteTagTemplateField();
   // [END datacatalog_v1beta1_generated_DataCatalog_DeleteTagTemplateField_async]
 }
 

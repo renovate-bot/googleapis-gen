@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const sdmClient = new SmartDeviceManagementServiceClient();
 
-  async function listRooms() {
+  async function callListRooms() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     }
   }
 
-  listRooms();
+  callListRooms();
   // [END smartdevicemanagement_v1_generated_SmartDeviceManagementService_ListRooms_async]
 }
 

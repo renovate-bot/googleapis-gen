@@ -27,7 +27,7 @@ function main(projectId) {
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -35,7 +35,7 @@ function main(projectId) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function getServiceAccount() {
+  async function callGetServiceAccount() {
     // Construct request
     const request = {
       projectId,
@@ -46,7 +46,7 @@ function main(projectId) {
     console.log(response);
   }
 
-  getServiceAccount();
+  callGetServiceAccount();
   // [END storage_v1_generated_Storage_GetServiceAccount_async]
 }
 

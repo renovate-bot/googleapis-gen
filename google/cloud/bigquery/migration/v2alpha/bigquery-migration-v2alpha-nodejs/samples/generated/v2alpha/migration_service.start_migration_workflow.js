@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const migrationClient = new MigrationServiceClient();
 
-  async function startMigrationWorkflow() {
+  async function callStartMigrationWorkflow() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  startMigrationWorkflow();
+  callStartMigrationWorkflow();
   // [END bigquerymigration_v2alpha_generated_MigrationService_StartMigrationWorkflow_async]
 }
 

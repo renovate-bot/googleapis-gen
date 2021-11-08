@@ -46,7 +46,7 @@ function main(bucket, entity, object) {
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -54,7 +54,7 @@ function main(bucket, entity, object) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function deleteObjectAccessControl() {
+  async function callDeleteObjectAccessControl() {
     // Construct request
     const request = {
       bucket,
@@ -67,7 +67,7 @@ function main(bucket, entity, object) {
     console.log(response);
   }
 
-  deleteObjectAccessControl();
+  callDeleteObjectAccessControl();
   // [END storage_v1_generated_Storage_DeleteObjectAccessControl_async]
 }
 

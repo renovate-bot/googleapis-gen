@@ -312,6 +312,23 @@ export class ArtifactRegistryClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a repository.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the repository to retrieve.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Repository]{@link google.devtools.artifactregistry.v1.Repository}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/artifact_registry.get_repository.js</caption>
+ * region_tag:artifactregistry_v1_generated_ArtifactRegistry_GetRepository_async
+ */
   getRepository(
       request?: protos.google.devtools.artifactregistry.v1.IGetRepositoryRequest,
       options?: CallOptions):
@@ -332,23 +349,6 @@ export class ArtifactRegistryClient {
           protos.google.devtools.artifactregistry.v1.IRepository,
           protos.google.devtools.artifactregistry.v1.IGetRepositoryRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a repository.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the repository to retrieve.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Repository]{@link google.devtools.artifactregistry.v1.Repository}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getRepository(request);
- */
   getRepository(
       request?: protos.google.devtools.artifactregistry.v1.IGetRepositoryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -384,28 +384,7 @@ export class ArtifactRegistryClient {
     return this.innerApiCalls.getRepository(request, options, callback);
   }
 
-  listDockerImages(
-      request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.artifactregistry.v1.IDockerImage[],
-        protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest|null,
-        protos.google.devtools.artifactregistry.v1.IListDockerImagesResponse
-      ]>;
-  listDockerImages(
-      request: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
-          protos.google.devtools.artifactregistry.v1.IListDockerImagesResponse|null|undefined,
-          protos.google.devtools.artifactregistry.v1.IDockerImage>): void;
-  listDockerImages(
-      request: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
-      callback: PaginationCallback<
-          protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
-          protos.google.devtools.artifactregistry.v1.IListDockerImagesResponse|null|undefined,
-          protos.google.devtools.artifactregistry.v1.IDockerImage>): void;
-/**
+ /**
  * Lists docker images.
  *
  * @param {Object} request
@@ -429,6 +408,27 @@ export class ArtifactRegistryClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listDockerImages(
+      request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.artifactregistry.v1.IDockerImage[],
+        protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest|null,
+        protos.google.devtools.artifactregistry.v1.IListDockerImagesResponse
+      ]>;
+  listDockerImages(
+      request: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
+          protos.google.devtools.artifactregistry.v1.IListDockerImagesResponse|null|undefined,
+          protos.google.devtools.artifactregistry.v1.IDockerImage>): void;
+  listDockerImages(
+      request: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
+      callback: PaginationCallback<
+          protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
+          protos.google.devtools.artifactregistry.v1.IListDockerImagesResponse|null|undefined,
+          protos.google.devtools.artifactregistry.v1.IDockerImage>): void;
   listDockerImages(
       request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -532,11 +532,8 @@ export class ArtifactRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listDockerImagesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/artifact_registry.list_docker_images.js</caption>
+ * region_tag:artifactregistry_v1_generated_ArtifactRegistry_ListDockerImages_async
  */
   listDockerImagesAsync(
       request?: protos.google.devtools.artifactregistry.v1.IListDockerImagesRequest,
@@ -551,7 +548,6 @@ export class ArtifactRegistryClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listDockerImages'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -561,28 +557,7 @@ export class ArtifactRegistryClient {
       callSettings
     ) as AsyncIterable<protos.google.devtools.artifactregistry.v1.IDockerImage>;
   }
-  listRepositories(
-      request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.artifactregistry.v1.IRepository[],
-        protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest|null,
-        protos.google.devtools.artifactregistry.v1.IListRepositoriesResponse
-      ]>;
-  listRepositories(
-      request: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
-          protos.google.devtools.artifactregistry.v1.IListRepositoriesResponse|null|undefined,
-          protos.google.devtools.artifactregistry.v1.IRepository>): void;
-  listRepositories(
-      request: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
-      callback: PaginationCallback<
-          protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
-          protos.google.devtools.artifactregistry.v1.IListRepositoriesResponse|null|undefined,
-          protos.google.devtools.artifactregistry.v1.IRepository>): void;
-/**
+ /**
  * Lists repositories.
  *
  * @param {Object} request
@@ -606,6 +581,27 @@ export class ArtifactRegistryClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listRepositories(
+      request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.artifactregistry.v1.IRepository[],
+        protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest|null,
+        protos.google.devtools.artifactregistry.v1.IListRepositoriesResponse
+      ]>;
+  listRepositories(
+      request: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
+          protos.google.devtools.artifactregistry.v1.IListRepositoriesResponse|null|undefined,
+          protos.google.devtools.artifactregistry.v1.IRepository>): void;
+  listRepositories(
+      request: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
+      callback: PaginationCallback<
+          protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
+          protos.google.devtools.artifactregistry.v1.IListRepositoriesResponse|null|undefined,
+          protos.google.devtools.artifactregistry.v1.IRepository>): void;
   listRepositories(
       request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -709,11 +705,8 @@ export class ArtifactRegistryClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listRepositoriesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/artifact_registry.list_repositories.js</caption>
+ * region_tag:artifactregistry_v1_generated_ArtifactRegistry_ListRepositories_async
  */
   listRepositoriesAsync(
       request?: protos.google.devtools.artifactregistry.v1.IListRepositoriesRequest,
@@ -728,7 +721,6 @@ export class ArtifactRegistryClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listRepositories'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

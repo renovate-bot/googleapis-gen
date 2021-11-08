@@ -354,26 +354,6 @@ export class OsConfigZonalServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getOSPolicyAssignment(
-      request?: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
-        protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|undefined, {}|undefined
-      ]>;
-  getOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
-          protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|null|undefined,
-          {}|null|undefined>): void;
-  getOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
-          protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieve an existing OS policy assignment.
  *
@@ -395,9 +375,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getOSPolicyAssignment(request);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_GetOSPolicyAssignment_async
  */
+  getOSPolicyAssignment(
+      request?: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
+        protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|undefined, {}|undefined
+      ]>;
+  getOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
+          protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|null|undefined,
+          {}|null|undefined>): void;
+  getOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment,
+          protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest|null|undefined,
+          {}|null|undefined>): void;
   getOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.IGetOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -432,26 +432,6 @@ export class OsConfigZonalServiceClient {
     this.initialize();
     return this.innerApiCalls.getOSPolicyAssignment(request, options, callback);
   }
-  getInstanceOSPoliciesCompliance(
-      request?: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
-        protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|undefined, {}|undefined
-      ]>;
-  getInstanceOSPoliciesCompliance(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
-          protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|null|undefined,
-          {}|null|undefined>): void;
-  getInstanceOSPoliciesCompliance(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
-          protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Get OS policies compliance data for the specified Compute Engine VM
  * instance.
@@ -475,9 +455,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getInstanceOSPoliciesCompliance(request);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_instance_o_s_policies_compliance.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_GetInstanceOSPoliciesCompliance_async
  */
+  getInstanceOSPoliciesCompliance(
+      request?: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
+        protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|undefined, {}|undefined
+      ]>;
+  getInstanceOSPoliciesCompliance(
+      request: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
+          protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|null|undefined,
+          {}|null|undefined>): void;
+  getInstanceOSPoliciesCompliance(
+      request: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance,
+          protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest|null|undefined,
+          {}|null|undefined>): void;
   getInstanceOSPoliciesCompliance(
       request?: protos.google.cloud.osconfig.v1alpha.IGetInstanceOSPoliciesComplianceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -512,26 +512,6 @@ export class OsConfigZonalServiceClient {
     this.initialize();
     return this.innerApiCalls.getInstanceOSPoliciesCompliance(request, options, callback);
   }
-  getInventory(
-      request?: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IInventory,
-        protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|undefined, {}|undefined
-      ]>;
-  getInventory(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IInventory,
-          protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|null|undefined,
-          {}|null|undefined>): void;
-  getInventory(
-      request: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IInventory,
-          protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Get inventory data for the specified VM instance. If the VM has no
  * associated inventory, the message `NOT_FOUND` is returned.
@@ -557,9 +537,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getInventory(request);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_inventory.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_GetInventory_async
  */
+  getInventory(
+      request?: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IInventory,
+        protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|undefined, {}|undefined
+      ]>;
+  getInventory(
+      request: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IInventory,
+          protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|null|undefined,
+          {}|null|undefined>): void;
+  getInventory(
+      request: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IInventory,
+          protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest|null|undefined,
+          {}|null|undefined>): void;
   getInventory(
       request?: protos.google.cloud.osconfig.v1alpha.IGetInventoryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -594,26 +594,6 @@ export class OsConfigZonalServiceClient {
     this.initialize();
     return this.innerApiCalls.getInventory(request, options, callback);
   }
-  getVulnerabilityReport(
-      request?: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
-        protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|undefined, {}|undefined
-      ]>;
-  getVulnerabilityReport(
-      request: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
-          protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|null|undefined,
-          {}|null|undefined>): void;
-  getVulnerabilityReport(
-      request: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
-          protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Gets the vulnerability report for the specified VM instance. Only VMs with
  * inventory data have vulnerability reports associated with them.
@@ -636,9 +616,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getVulnerabilityReport(request);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.get_vulnerability_report.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_GetVulnerabilityReport_async
  */
+  getVulnerabilityReport(
+      request?: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
+        protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|undefined, {}|undefined
+      ]>;
+  getVulnerabilityReport(
+      request: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
+          protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|null|undefined,
+          {}|null|undefined>): void;
+  getVulnerabilityReport(
+      request: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport,
+          protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest|null|undefined,
+          {}|null|undefined>): void;
   getVulnerabilityReport(
       request?: protos.google.cloud.osconfig.v1alpha.IGetVulnerabilityReportRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -674,26 +674,6 @@ export class OsConfigZonalServiceClient {
     return this.innerApiCalls.getVulnerabilityReport(request, options, callback);
   }
 
-  createOSPolicyAssignment(
-      request?: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Create an OS policy assignment.
  *
@@ -730,10 +710,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createOSPolicyAssignment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.create_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_CreateOSPolicyAssignment_async
  */
+  createOSPolicyAssignment(
+      request?: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.ICreateOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -777,11 +776,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateOSPolicyAssignmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.create_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_CreateOSPolicyAssignment_async
  */
   async checkCreateOSPolicyAssignmentProgress(name: string): Promise<LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -789,26 +785,6 @@ export class OsConfigZonalServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createOSPolicyAssignment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>;
   }
-  updateOSPolicyAssignment(
-      request?: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Update an existing OS policy assignment.
  *
@@ -835,10 +811,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateOSPolicyAssignment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.update_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_UpdateOSPolicyAssignment_async
  */
+  updateOSPolicyAssignment(
+      request?: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.IUpdateOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -882,11 +877,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateOSPolicyAssignmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.update_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_UpdateOSPolicyAssignment_async
  */
   async checkUpdateOSPolicyAssignmentProgress(name: string): Promise<LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -894,26 +886,6 @@ export class OsConfigZonalServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateOSPolicyAssignment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>;
   }
-  deleteOSPolicyAssignment(
-      request?: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteOSPolicyAssignment(
-      request: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Delete the OS policy assignment.
  *
@@ -941,10 +913,29 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteOSPolicyAssignment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.delete_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_DeleteOSPolicyAssignment_async
  */
+  deleteOSPolicyAssignment(
+      request?: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteOSPolicyAssignment(
+      request: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignmentOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteOSPolicyAssignment(
       request?: protos.google.cloud.osconfig.v1alpha.IDeleteOSPolicyAssignmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -988,11 +979,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteOSPolicyAssignmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.delete_o_s_policy_assignment.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_DeleteOSPolicyAssignment_async
  */
   async checkDeleteOSPolicyAssignmentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1000,28 +988,7 @@ export class OsConfigZonalServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteOSPolicyAssignment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata>;
   }
-  listOSPolicyAssignments(
-      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment[],
-        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest|null,
-        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse
-      ]>;
-  listOSPolicyAssignments(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
-  listOSPolicyAssignments(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
-/**
+ /**
  * List the OS policy assignments under the parent resource.
  *
  * For each OS policy assignment, the latest revision is returned.
@@ -1049,6 +1016,27 @@ export class OsConfigZonalServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listOSPolicyAssignments(
+      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment[],
+        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest|null,
+        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse
+      ]>;
+  listOSPolicyAssignments(
+      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
+  listOSPolicyAssignments(
+      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
   listOSPolicyAssignments(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1156,11 +1144,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listOSPolicyAssignmentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignments.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_ListOSPolicyAssignments_async
  */
   listOSPolicyAssignmentsAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentsRequest,
@@ -1175,7 +1160,6 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listOSPolicyAssignments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1185,28 +1169,7 @@ export class OsConfigZonalServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>;
   }
-  listOSPolicyAssignmentRevisions(
-      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment[],
-        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest|null,
-        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse
-      ]>;
-  listOSPolicyAssignmentRevisions(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
-  listOSPolicyAssignmentRevisions(
-      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
-          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
-/**
+ /**
  * List the OS policy assignment revisions for a given OS policy assignment.
  *
  * @param {Object} request
@@ -1232,6 +1195,27 @@ export class OsConfigZonalServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listOSPolicyAssignmentRevisions(
+      request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment[],
+        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest|null,
+        protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse
+      ]>;
+  listOSPolicyAssignmentRevisions(
+      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
+  listOSPolicyAssignmentRevisions(
+      request: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
+          protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>): void;
   listOSPolicyAssignmentRevisions(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1339,11 +1323,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listOSPolicyAssignmentRevisionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_o_s_policy_assignment_revisions.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_ListOSPolicyAssignmentRevisions_async
  */
   listOSPolicyAssignmentRevisionsAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListOSPolicyAssignmentRevisionsRequest,
@@ -1358,7 +1339,6 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listOSPolicyAssignmentRevisions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1368,28 +1348,7 @@ export class OsConfigZonalServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IOSPolicyAssignment>;
   }
-  listInstanceOSPoliciesCompliances(
-      request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance[],
-        protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest|null,
-        protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse
-      ]>;
-  listInstanceOSPoliciesCompliances(
-      request: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
-          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance>): void;
-  listInstanceOSPoliciesCompliances(
-      request: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
-          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance>): void;
-/**
+ /**
  * List OS policies compliance data for all Compute Engine VM instances in the
  * specified zone.
  *
@@ -1424,6 +1383,27 @@ export class OsConfigZonalServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listInstanceOSPoliciesCompliances(
+      request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance[],
+        protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest|null,
+        protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse
+      ]>;
+  listInstanceOSPoliciesCompliances(
+      request: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance>): void;
+  listInstanceOSPoliciesCompliances(
+      request: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
+          protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance>): void;
   listInstanceOSPoliciesCompliances(
       request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1547,11 +1527,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listInstanceOSPoliciesCompliancesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_instance_o_s_policies_compliances.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_ListInstanceOSPoliciesCompliances_async
  */
   listInstanceOSPoliciesCompliancesAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListInstanceOSPoliciesCompliancesRequest,
@@ -1566,7 +1543,6 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listInstanceOSPoliciesCompliances'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1576,28 +1552,7 @@ export class OsConfigZonalServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IInstanceOSPoliciesCompliance>;
   }
-  listInventories(
-      request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IInventory[],
-        protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest|null,
-        protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse
-      ]>;
-  listInventories(
-      request: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
-          protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IInventory>): void;
-  listInventories(
-      request: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
-          protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IInventory>): void;
-/**
+ /**
  * List inventory data for all VM instances in the specified zone.
  *
  * @param {Object} request
@@ -1635,6 +1590,27 @@ export class OsConfigZonalServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listInventories(
+      request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IInventory[],
+        protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest|null,
+        protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse
+      ]>;
+  listInventories(
+      request: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+          protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IInventory>): void;
+  listInventories(
+      request: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
+          protos.google.cloud.osconfig.v1alpha.IListInventoriesResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IInventory>): void;
   listInventories(
       request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1766,11 +1742,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listInventoriesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_inventories.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_ListInventories_async
  */
   listInventoriesAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListInventoriesRequest,
@@ -1785,7 +1758,6 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listInventories'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1795,28 +1767,7 @@ export class OsConfigZonalServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.osconfig.v1alpha.IInventory>;
   }
-  listVulnerabilityReports(
-      request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport[],
-        protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest|null,
-        protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse
-      ]>;
-  listVulnerabilityReports(
-      request: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
-          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport>): void;
-  listVulnerabilityReports(
-      request: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
-          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport>): void;
-/**
+ /**
  * List vulnerability reports for all VM instances in the specified zone.
  *
  * @param {Object} request
@@ -1851,6 +1802,27 @@ export class OsConfigZonalServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listVulnerabilityReports(
+      request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport[],
+        protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest|null,
+        protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse
+      ]>;
+  listVulnerabilityReports(
+      request: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport>): void;
+  listVulnerabilityReports(
+      request: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
+          protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1alpha.IVulnerabilityReport>): void;
   listVulnerabilityReports(
       request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1976,11 +1948,8 @@ export class OsConfigZonalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listVulnerabilityReportsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1alpha/os_config_zonal_service.list_vulnerability_reports.js</caption>
+ * region_tag:osconfig_v1alpha_generated_OsConfigZonalService_ListVulnerabilityReports_async
  */
   listVulnerabilityReportsAsync(
       request?: protos.google.cloud.osconfig.v1alpha.IListVulnerabilityReportsRequest,
@@ -1995,7 +1964,6 @@ export class OsConfigZonalServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listVulnerabilityReports'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

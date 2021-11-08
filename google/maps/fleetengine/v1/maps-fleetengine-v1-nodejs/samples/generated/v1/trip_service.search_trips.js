@@ -23,7 +23,7 @@ function main(parent) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format "providers/*"
    *  The provider must be the Project ID (for example, sample-cloud-project)
@@ -59,7 +59,7 @@ function main(parent) {
    *  If specified, returns the trips that have not been updated after
    *  the time (current - minimum_staleness).
    */
-  // const minimumStaleness = ''
+  // const minimumStaleness = {}
 
   // Imports the Fleetengine library
   const {TripServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -67,7 +67,7 @@ function main(parent) {
   // Instantiates a client
   const fleetengineClient = new TripServiceClient();
 
-  async function searchTrips() {
+  async function callSearchTrips() {
     // Construct request
     const request = {
       parent,
@@ -80,7 +80,7 @@ function main(parent) {
     }
   }
 
-  searchTrips();
+  callSearchTrips();
   // [END fleetengine_v1_generated_TripService_SearchTrips_async]
 }
 

@@ -316,26 +316,6 @@ export class CompanyServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createCompany(
-      request?: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.ICompany,
-        protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|undefined, {}|undefined
-      ]>;
-  createCompany(
-      request: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.ICompany,
-          protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
-  createCompany(
-      request: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.ICompany,
-          protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new company entity.
  *
@@ -356,9 +336,29 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createCompany(request);
+ * @example <caption>include:samples/generated/v4beta1/company_service.create_company.js</caption>
+ * region_tag:jobs_v4beta1_generated_CompanyService_CreateCompany_async
  */
+  createCompany(
+      request?: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.ICompany,
+        protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|undefined, {}|undefined
+      ]>;
+  createCompany(
+      request: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.ICompany,
+          protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
+  createCompany(
+      request: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.ICompany,
+          protos.google.cloud.talent.v4beta1.ICreateCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
   createCompany(
       request?: protos.google.cloud.talent.v4beta1.ICreateCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -393,26 +393,6 @@ export class CompanyServiceClient {
     this.initialize();
     return this.innerApiCalls.createCompany(request, options, callback);
   }
-  getCompany(
-      request?: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.ICompany,
-        protos.google.cloud.talent.v4beta1.IGetCompanyRequest|undefined, {}|undefined
-      ]>;
-  getCompany(
-      request: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.ICompany,
-          protos.google.cloud.talent.v4beta1.IGetCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCompany(
-      request: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.ICompany,
-          protos.google.cloud.talent.v4beta1.IGetCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves specified company.
  *
@@ -434,9 +414,29 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCompany(request);
+ * @example <caption>include:samples/generated/v4beta1/company_service.get_company.js</caption>
+ * region_tag:jobs_v4beta1_generated_CompanyService_GetCompany_async
  */
+  getCompany(
+      request?: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.ICompany,
+        protos.google.cloud.talent.v4beta1.IGetCompanyRequest|undefined, {}|undefined
+      ]>;
+  getCompany(
+      request: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.ICompany,
+          protos.google.cloud.talent.v4beta1.IGetCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCompany(
+      request: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.ICompany,
+          protos.google.cloud.talent.v4beta1.IGetCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
   getCompany(
       request?: protos.google.cloud.talent.v4beta1.IGetCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -471,26 +471,6 @@ export class CompanyServiceClient {
     this.initialize();
     return this.innerApiCalls.getCompany(request, options, callback);
   }
-  updateCompany(
-      request?: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.ICompany,
-        protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|undefined, {}|undefined
-      ]>;
-  updateCompany(
-      request: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.ICompany,
-          protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateCompany(
-      request: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.ICompany,
-          protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates specified company.
  *
@@ -513,9 +493,29 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateCompany(request);
+ * @example <caption>include:samples/generated/v4beta1/company_service.update_company.js</caption>
+ * region_tag:jobs_v4beta1_generated_CompanyService_UpdateCompany_async
  */
+  updateCompany(
+      request?: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.ICompany,
+        protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|undefined, {}|undefined
+      ]>;
+  updateCompany(
+      request: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.ICompany,
+          protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateCompany(
+      request: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.ICompany,
+          protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
   updateCompany(
       request?: protos.google.cloud.talent.v4beta1.IUpdateCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -550,26 +550,6 @@ export class CompanyServiceClient {
     this.initialize();
     return this.innerApiCalls.updateCompany(request, options, callback);
   }
-  deleteCompany(
-      request?: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|undefined, {}|undefined
-      ]>;
-  deleteCompany(
-      request: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteCompany(
-      request: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes specified company.
  * Prerequisite: The company has no jobs associated with it.
@@ -592,9 +572,29 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteCompany(request);
+ * @example <caption>include:samples/generated/v4beta1/company_service.delete_company.js</caption>
+ * region_tag:jobs_v4beta1_generated_CompanyService_DeleteCompany_async
  */
+  deleteCompany(
+      request?: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|undefined, {}|undefined
+      ]>;
+  deleteCompany(
+      request: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteCompany(
+      request: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteCompany(
       request?: protos.google.cloud.talent.v4beta1.IDeleteCompanyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -630,28 +630,7 @@ export class CompanyServiceClient {
     return this.innerApiCalls.deleteCompany(request, options, callback);
   }
 
-  listCompanies(
-      request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.ICompany[],
-        protos.google.cloud.talent.v4beta1.IListCompaniesRequest|null,
-        protos.google.cloud.talent.v4beta1.IListCompaniesResponse
-      ]>;
-  listCompanies(
-      request: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
-          protos.google.cloud.talent.v4beta1.IListCompaniesResponse|null|undefined,
-          protos.google.cloud.talent.v4beta1.ICompany>): void;
-  listCompanies(
-      request: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
-          protos.google.cloud.talent.v4beta1.IListCompaniesResponse|null|undefined,
-          protos.google.cloud.talent.v4beta1.ICompany>): void;
-/**
+ /**
  * Lists all companies associated with the project.
  *
  * @param {Object} request
@@ -689,6 +668,27 @@ export class CompanyServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listCompanies(
+      request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.ICompany[],
+        protos.google.cloud.talent.v4beta1.IListCompaniesRequest|null,
+        protos.google.cloud.talent.v4beta1.IListCompaniesResponse
+      ]>;
+  listCompanies(
+      request: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+          protos.google.cloud.talent.v4beta1.IListCompaniesResponse|null|undefined,
+          protos.google.cloud.talent.v4beta1.ICompany>): void;
+  listCompanies(
+      request: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
+          protos.google.cloud.talent.v4beta1.IListCompaniesResponse|null|undefined,
+          protos.google.cloud.talent.v4beta1.ICompany>): void;
   listCompanies(
       request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -820,11 +820,8 @@ export class CompanyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listCompaniesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v4beta1/company_service.list_companies.js</caption>
+ * region_tag:jobs_v4beta1_generated_CompanyService_ListCompanies_async
  */
   listCompaniesAsync(
       request?: protos.google.cloud.talent.v4beta1.IListCompaniesRequest,
@@ -839,7 +836,6 @@ export class CompanyServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listCompanies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

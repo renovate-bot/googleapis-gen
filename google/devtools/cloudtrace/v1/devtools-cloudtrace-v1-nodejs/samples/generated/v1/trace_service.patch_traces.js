@@ -27,7 +27,7 @@ function main(projectId, traces) {
   /**
    *  Required. The body of the message.
    */
-  // const traces = ''
+  // const traces = {}
 
   // Imports the Cloudtrace library
   const {TraceServiceClient} = require('cloudtrace').v1;
@@ -35,7 +35,7 @@ function main(projectId, traces) {
   // Instantiates a client
   const cloudtraceClient = new TraceServiceClient();
 
-  async function patchTraces() {
+  async function callPatchTraces() {
     // Construct request
     const request = {
       projectId,
@@ -47,7 +47,7 @@ function main(projectId, traces) {
     console.log(response);
   }
 
-  patchTraces();
+  callPatchTraces();
   // [END cloudtrace_v1_generated_TraceService_PatchTraces_async]
 }
 

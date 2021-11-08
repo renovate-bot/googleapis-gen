@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function deleteSpoke() {
+  async function callDeleteSpoke() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteSpoke();
+  callDeleteSpoke();
   // [END networkconnectivity_v1alpha1_generated_HubService_DeleteSpoke_async]
 }
 

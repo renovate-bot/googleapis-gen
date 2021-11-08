@@ -35,7 +35,7 @@ function main(uri, threatTypes) {
   // Instantiates a client
   const webriskClient = new WebRiskServiceClient();
 
-  async function searchUris() {
+  async function callSearchUris() {
     // Construct request
     const request = {
       uri,
@@ -47,7 +47,7 @@ function main(uri, threatTypes) {
     console.log(response);
   }
 
-  searchUris();
+  callSearchUris();
   // [END webrisk_v1_generated_WebRiskService_SearchUris_async]
 }
 

@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const marketplaceClient = new LicenseNotificationServiceClient();
 
-  async function list() {
+  async function callList() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  list();
+  callList();
   // [END appsmarket_v2_generated_LicenseNotificationService_List_async]
 }
 

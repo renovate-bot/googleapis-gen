@@ -39,7 +39,7 @@ function main(parent) {
    *  information associated with a namespace gets returned
    *  (e.g. IAM policy set on the namespace)
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Datafusion library
   const {DataFusionClient} = require('@google-cloud/data-fusion').v1beta1;
@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const datafusionClient = new DataFusionClient();
 
-  async function listNamespaces() {
+  async function callListNamespaces() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listNamespaces();
+  callListNamespaces();
   // [END datafusion_v1beta1_generated_DataFusion_ListNamespaces_async]
 }
 

@@ -727,26 +727,6 @@ export class MediaFileServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getMediaFile(
-      request?: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IMediaFile,
-        protos.google.ads.googleads.v9.services.IGetMediaFileRequest|undefined, {}|undefined
-      ]>;
-  getMediaFile(
-      request: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IMediaFile,
-          protos.google.ads.googleads.v9.services.IGetMediaFileRequest|null|undefined,
-          {}|null|undefined>): void;
-  getMediaFile(
-      request: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IMediaFile,
-          protos.google.ads.googleads.v9.services.IGetMediaFileRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested media file in full detail.
  *
@@ -769,9 +749,29 @@ export class MediaFileServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getMediaFile(request);
+ * @example <caption>include:samples/generated/v9/media_file_service.get_media_file.js</caption>
+ * region_tag:googleads_v9_generated_MediaFileService_GetMediaFile_async
  */
+  getMediaFile(
+      request?: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IMediaFile,
+        protos.google.ads.googleads.v9.services.IGetMediaFileRequest|undefined, {}|undefined
+      ]>;
+  getMediaFile(
+      request: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IMediaFile,
+          protos.google.ads.googleads.v9.services.IGetMediaFileRequest|null|undefined,
+          {}|null|undefined>): void;
+  getMediaFile(
+      request: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IMediaFile,
+          protos.google.ads.googleads.v9.services.IGetMediaFileRequest|null|undefined,
+          {}|null|undefined>): void;
   getMediaFile(
       request?: protos.google.ads.googleads.v9.services.IGetMediaFileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class MediaFileServiceClient {
     this.initialize();
     return this.innerApiCalls.getMediaFile(request, options, callback);
   }
-  mutateMediaFiles(
-      request?: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateMediaFilesResponse,
-        protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest|undefined, {}|undefined
-      ]>;
-  mutateMediaFiles(
-      request: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateMediaFilesResponse,
-          protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateMediaFiles(
-      request: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateMediaFilesResponse,
-          protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates media files. Operation statuses are returned.
  *
@@ -876,9 +856,29 @@ export class MediaFileServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateMediaFiles(request);
+ * @example <caption>include:samples/generated/v9/media_file_service.mutate_media_files.js</caption>
+ * region_tag:googleads_v9_generated_MediaFileService_MutateMediaFiles_async
  */
+  mutateMediaFiles(
+      request?: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateMediaFilesResponse,
+        protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest|undefined, {}|undefined
+      ]>;
+  mutateMediaFiles(
+      request: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateMediaFilesResponse,
+          protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateMediaFiles(
+      request: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateMediaFilesResponse,
+          protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateMediaFiles(
       request?: protos.google.ads.googleads.v9.services.IMutateMediaFilesRequest,
       optionsOrCallback?: CallOptions|Callback<

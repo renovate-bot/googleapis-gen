@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const containeranalysisClient = new GrafeasClient();
 
-  async function listNotes() {
+  async function callListNotes() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listNotes();
+  callListNotes();
   // [END containeranalysis_v1_generated_Grafeas_ListNotes_async]
 }
 

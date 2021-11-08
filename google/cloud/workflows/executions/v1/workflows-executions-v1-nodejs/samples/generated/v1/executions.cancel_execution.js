@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const executionsClient = new ExecutionsClient();
 
-  async function cancelExecution() {
+  async function callCancelExecution() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  cancelExecution();
+  callCancelExecution();
   // [END workflowexecutions_v1_generated_Executions_CancelExecution_async]
 }
 

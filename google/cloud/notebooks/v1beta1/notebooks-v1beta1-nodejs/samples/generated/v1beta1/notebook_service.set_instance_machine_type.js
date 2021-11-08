@@ -26,8 +26,8 @@ function main(name, machineType) {
    */
   // const name = 'abc123'
   /**
-   *  Required. The [Compute Engine machine
-   *  type](https://cloud.google.com/compute/docs/machine-types).
+   *  Required. The Compute Engine machine
+   *  type (https://cloud.google.com/compute/docs/machine-types).
    */
   // const machineType = 'abc123'
 
@@ -37,7 +37,7 @@ function main(name, machineType) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function setInstanceMachineType() {
+  async function callSetInstanceMachineType() {
     // Construct request
     const request = {
       name,
@@ -50,7 +50,7 @@ function main(name, machineType) {
     console.log(response);
   }
 
-  setInstanceMachineType();
+  callSetInstanceMachineType();
   // [END notebooks_v1beta1_generated_NotebookService_SetInstanceMachineType_async]
 }
 

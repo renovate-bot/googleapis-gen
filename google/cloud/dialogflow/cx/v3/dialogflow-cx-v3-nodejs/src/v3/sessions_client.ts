@@ -356,26 +356,6 @@ export class SessionsClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  detectIntent(
-      request?: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IDetectIntentResponse,
-        protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest|undefined, {}|undefined
-      ]>;
-  detectIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IDetectIntentResponse,
-          protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  detectIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IDetectIntentResponse,
-          protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Processes a natural language query and returns structured, actionable data
  * as a result. This method is not idempotent, because it may cause session
@@ -418,9 +398,29 @@ export class SessionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.detectIntent(request);
+ * @example <caption>include:samples/generated/v3/sessions.detect_intent.js</caption>
+ * region_tag:dialogflow_v3_generated_Sessions_DetectIntent_async
  */
+  detectIntent(
+      request?: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IDetectIntentResponse,
+        protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest|undefined, {}|undefined
+      ]>;
+  detectIntent(
+      request: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IDetectIntentResponse,
+          protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  detectIntent(
+      request: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IDetectIntentResponse,
+          protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   detectIntent(
       request?: protos.google.cloud.dialogflow.cx.v3.IDetectIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -455,26 +455,6 @@ export class SessionsClient {
     this.initialize();
     return this.innerApiCalls.detectIntent(request, options, callback);
   }
-  matchIntent(
-      request?: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IMatchIntentResponse,
-        protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest|undefined, {}|undefined
-      ]>;
-  matchIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IMatchIntentResponse,
-          protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  matchIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IMatchIntentResponse,
-          protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns preliminary intent match results, doesn't change the session
  * status.
@@ -505,9 +485,29 @@ export class SessionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.matchIntent(request);
+ * @example <caption>include:samples/generated/v3/sessions.match_intent.js</caption>
+ * region_tag:dialogflow_v3_generated_Sessions_MatchIntent_async
  */
+  matchIntent(
+      request?: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IMatchIntentResponse,
+        protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest|undefined, {}|undefined
+      ]>;
+  matchIntent(
+      request: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IMatchIntentResponse,
+          protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  matchIntent(
+      request: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IMatchIntentResponse,
+          protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   matchIntent(
       request?: protos.google.cloud.dialogflow.cx.v3.IMatchIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -542,26 +542,6 @@ export class SessionsClient {
     this.initialize();
     return this.innerApiCalls.matchIntent(request, options, callback);
   }
-  fulfillIntent(
-      request?: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IFulfillIntentResponse,
-        protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest|undefined, {}|undefined
-      ]>;
-  fulfillIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentResponse,
-          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  fulfillIntent(
-      request: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentResponse,
-          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Fulfills a matched intent returned by {@link google.cloud.dialogflow.cx.v3.Sessions.MatchIntent|MatchIntent}.
  * Must be called after {@link google.cloud.dialogflow.cx.v3.Sessions.MatchIntent|MatchIntent}, with input from
@@ -583,9 +563,29 @@ export class SessionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.fulfillIntent(request);
+ * @example <caption>include:samples/generated/v3/sessions.fulfill_intent.js</caption>
+ * region_tag:dialogflow_v3_generated_Sessions_FulfillIntent_async
  */
+  fulfillIntent(
+      request?: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IFulfillIntentResponse,
+        protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest|undefined, {}|undefined
+      ]>;
+  fulfillIntent(
+      request: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentResponse,
+          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  fulfillIntent(
+      request: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentResponse,
+          protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   fulfillIntent(
       request?: protos.google.cloud.dialogflow.cx.v3.IFulfillIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -639,12 +639,8 @@ export class SessionsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.streamingDetectIntent();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v3/sessions.streaming_detect_intent.js</caption>
+ * region_tag:dialogflow_v3_generated_Sessions_StreamingDetectIntent_async
  */
   streamingDetectIntent(
       options?: CallOptions):

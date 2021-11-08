@@ -126,7 +126,7 @@ describe('v1op.RoadsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.roads.v1op.SnapToRoadsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.roads.v1op.SnapToRoadsResponse());
             client.innerApiCalls.snapToRoads = stubSimpleCall(expectedResponse);
             const [response] = await client.snapToRoads(request);
@@ -142,7 +142,7 @@ describe('v1op.RoadsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.roads.v1op.SnapToRoadsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.roads.v1op.SnapToRoadsResponse());
             client.innerApiCalls.snapToRoads = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1op.RoadsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.roads.v1op.SnapToRoadsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.snapToRoads = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.snapToRoads(request), expectedError);
@@ -186,7 +186,7 @@ describe('v1op.RoadsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.roads.v1op.ListNearestRoadsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.roads.v1op.ListNearestRoadsResponse());
             client.innerApiCalls.listNearestRoads = stubSimpleCall(expectedResponse);
             const [response] = await client.listNearestRoads(request);
@@ -202,7 +202,7 @@ describe('v1op.RoadsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.roads.v1op.ListNearestRoadsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.maps.roads.v1op.ListNearestRoadsResponse());
             client.innerApiCalls.listNearestRoads = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v1op.RoadsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.roads.v1op.ListNearestRoadsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listNearestRoads = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listNearestRoads(request), expectedError);

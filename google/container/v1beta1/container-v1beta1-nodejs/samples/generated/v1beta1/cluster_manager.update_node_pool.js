@@ -21,29 +21,6 @@ function main(projectId, zone, clusterId, nodePoolId, nodeVersion, imageType) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the cluster to upgrade.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const clusterId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the node pool to upgrade.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const nodePoolId = 'abc123'
-  /**
    *  Required. The Kubernetes version to change the nodes to (typically an
    *  upgrade).
    *  Users may specify either explicit versions offered by Kubernetes Engine or
@@ -61,7 +38,7 @@ function main(projectId, zone, clusterId, nodePoolId, nodeVersion, imageType) {
   // const imageType = 'abc123'
   /**
    *  The desired list of Google Compute Engine
-   *  [zones](https://cloud.google.com/compute/docs/zones#available) in which the
+   *  zones (https://cloud.google.com/compute/docs/zones#available) in which the
    *  node pool's nodes should be located. Changing the locations for a node pool
    *  will result in nodes being either created or removed from the node pool,
    *  depending on whether locations are being added or removed.
@@ -70,7 +47,7 @@ function main(projectId, zone, clusterId, nodePoolId, nodeVersion, imageType) {
   /**
    *  The desired workload metadata config for the node pool.
    */
-  // const workloadMetadataConfig = ''
+  // const workloadMetadataConfig = {}
   /**
    *  The name (project, location, cluster, node pool) of the node pool to
    *  update. Specified in the format
@@ -80,37 +57,37 @@ function main(projectId, zone, clusterId, nodePoolId, nodeVersion, imageType) {
   /**
    *  Upgrade settings control disruption and speed of the upgrade.
    */
-  // const upgradeSettings = ''
+  // const upgradeSettings = {}
   /**
    *  The desired network tags to be applied to all nodes in the node pool.
    *  If this field is not present, the tags will not be changed. Otherwise,
    *  the existing network tags will be *replaced* with the provided tags.
    */
-  // const tags = ''
+  // const tags = {}
   /**
    *  The desired node taints to be applied to all nodes in the node pool.
    *  If this field is not present, the taints will not be changed. Otherwise,
    *  the existing node taints will be *replaced* with the provided taints.
    */
-  // const taints = ''
+  // const taints = {}
   /**
    *  The desired node labels to be applied to all nodes in the node pool.
    *  If this field is not present, the labels will not be changed. Otherwise,
    *  the existing node labels will be *replaced* with the provided labels.
    */
-  // const labels = ''
+  // const labels = {}
   /**
    *  Parameters that can be configured on Linux nodes.
    */
-  // const linuxNodeConfig = ''
+  // const linuxNodeConfig = {}
   /**
    *  Node kubelet configs.
    */
-  // const kubeletConfig = ''
+  // const kubeletConfig = {}
   /**
    *  Enable or disable gvnic on the node pool.
    */
-  // const gvnic = ''
+  // const gvnic = {}
 
   // Imports the Container library
   const {ClusterManagerClient} = require('container').v1beta1;
@@ -118,7 +95,7 @@ function main(projectId, zone, clusterId, nodePoolId, nodeVersion, imageType) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function updateNodePool() {
+  async function callUpdateNodePool() {
     // Construct request
     const request = {
       projectId,
@@ -134,7 +111,7 @@ function main(projectId, zone, clusterId, nodePoolId, nodeVersion, imageType) {
     console.log(response);
   }
 
-  updateNodePool();
+  callUpdateNodePool();
   // [END container_v1beta1_generated_ClusterManager_UpdateNodePool_async]
 }
 

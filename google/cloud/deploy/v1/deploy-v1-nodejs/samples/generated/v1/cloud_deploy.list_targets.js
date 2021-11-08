@@ -54,7 +54,7 @@ function main(parent) {
   // Instantiates a client
   const deployClient = new CloudDeployClient();
 
-  async function listTargets() {
+  async function callListTargets() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent) {
     }
   }
 
-  listTargets();
+  callListTargets();
   // [END clouddeploy_v1_generated_CloudDeploy_ListTargets_async]
 }
 

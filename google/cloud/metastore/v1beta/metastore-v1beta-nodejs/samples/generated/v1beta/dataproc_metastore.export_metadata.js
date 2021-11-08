@@ -41,7 +41,7 @@ function main(service) {
    *  with the same request ID, the server ignores the second request to prevent
    *  the creation of duplicate commitments.
    *  The request ID must be a valid
-   *  [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
+   *  UUID (https://en.wikipedia.org/wiki/Universally_unique_identifier#Format).
    *  A zero UUID (00000000-0000-0000-0000-000000000000) is not supported.
    */
   // const requestId = 'abc123'
@@ -49,7 +49,7 @@ function main(service) {
    *  Optional. The type of the database dump. If unspecified, defaults to
    *  `MYSQL`.
    */
-  // const databaseDumpType = ''
+  // const databaseDumpType = {}
 
   // Imports the Metastore library
   const {DataprocMetastoreClient} = require('@google-cloud/dataproc-metastore').v1beta;
@@ -57,7 +57,7 @@ function main(service) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function exportMetadata() {
+  async function callExportMetadata() {
     // Construct request
     const request = {
       service,
@@ -69,7 +69,7 @@ function main(service) {
     console.log(response);
   }
 
-  exportMetadata();
+  callExportMetadata();
   // [END metastore_v1beta_generated_DataprocMetastore_ExportMetadata_async]
 }
 

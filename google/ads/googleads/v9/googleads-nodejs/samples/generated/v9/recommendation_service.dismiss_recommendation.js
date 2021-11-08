@@ -44,7 +44,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new RecommendationServiceClient();
 
-  async function dismissRecommendation() {
+  async function callDismissRecommendation() {
     // Construct request
     const request = {
       customerId,
@@ -56,7 +56,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  dismissRecommendation();
+  callDismissRecommendation();
   // [END googleads_v9_generated_RecommendationService_DismissRecommendation_async]
 }
 

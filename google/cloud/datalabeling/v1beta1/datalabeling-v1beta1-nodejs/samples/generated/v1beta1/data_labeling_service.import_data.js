@@ -28,7 +28,7 @@ function main(name, inputConfig) {
   /**
    *  Required. Specify the input source of the data.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
   /**
    *  Email of the user who started the import task and should be notified by
    *  email. If empty no notification will be sent.
@@ -41,7 +41,7 @@ function main(name, inputConfig) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function importData() {
+  async function callImportData() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name, inputConfig) {
     console.log(response);
   }
 
-  importData();
+  callImportData();
   // [END datalabeling_v1beta1_generated_DataLabelingService_ImportData_async]
 }
 

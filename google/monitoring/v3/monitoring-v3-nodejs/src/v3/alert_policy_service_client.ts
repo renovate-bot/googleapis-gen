@@ -376,6 +376,25 @@ export class AlertPolicyServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a single alerting policy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The alerting policy to retrieve. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AlertPolicy]{@link google.monitoring.v3.AlertPolicy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/alert_policy_service.get_alert_policy.js</caption>
+ * region_tag:monitoring_v3_generated_AlertPolicyService_GetAlertPolicy_async
+ */
   getAlertPolicy(
       request?: protos.google.monitoring.v3.IGetAlertPolicyRequest,
       options?: CallOptions):
@@ -396,25 +415,6 @@ export class AlertPolicyServiceClient {
           protos.google.monitoring.v3.IAlertPolicy,
           protos.google.monitoring.v3.IGetAlertPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a single alerting policy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The alerting policy to retrieve. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AlertPolicy]{@link google.monitoring.v3.AlertPolicy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAlertPolicy(request);
- */
   getAlertPolicy(
       request?: protos.google.monitoring.v3.IGetAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -449,26 +449,6 @@ export class AlertPolicyServiceClient {
     this.initialize();
     return this.innerApiCalls.getAlertPolicy(request, options, callback);
   }
-  createAlertPolicy(
-      request?: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IAlertPolicy,
-        protos.google.monitoring.v3.ICreateAlertPolicyRequest|undefined, {}|undefined
-      ]>;
-  createAlertPolicy(
-      request: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IAlertPolicy,
-          protos.google.monitoring.v3.ICreateAlertPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  createAlertPolicy(
-      request: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IAlertPolicy,
-          protos.google.monitoring.v3.ICreateAlertPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new alerting policy.
  *
@@ -498,9 +478,29 @@ export class AlertPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createAlertPolicy(request);
+ * @example <caption>include:samples/generated/v3/alert_policy_service.create_alert_policy.js</caption>
+ * region_tag:monitoring_v3_generated_AlertPolicyService_CreateAlertPolicy_async
  */
+  createAlertPolicy(
+      request?: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IAlertPolicy,
+        protos.google.monitoring.v3.ICreateAlertPolicyRequest|undefined, {}|undefined
+      ]>;
+  createAlertPolicy(
+      request: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IAlertPolicy,
+          protos.google.monitoring.v3.ICreateAlertPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  createAlertPolicy(
+      request: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IAlertPolicy,
+          protos.google.monitoring.v3.ICreateAlertPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   createAlertPolicy(
       request?: protos.google.monitoring.v3.ICreateAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -535,6 +535,27 @@ export class AlertPolicyServiceClient {
     this.initialize();
     return this.innerApiCalls.createAlertPolicy(request, options, callback);
   }
+/**
+ * Deletes an alerting policy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The alerting policy to delete. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
+ *
+ *   For more information, see {@link google.monitoring.v3.AlertPolicy|AlertPolicy}.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/alert_policy_service.delete_alert_policy.js</caption>
+ * region_tag:monitoring_v3_generated_AlertPolicyService_DeleteAlertPolicy_async
+ */
   deleteAlertPolicy(
       request?: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
       options?: CallOptions):
@@ -555,27 +576,6 @@ export class AlertPolicyServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteAlertPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an alerting policy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The alerting policy to delete. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
- *
- *   For more information, see {@link google.monitoring.v3.AlertPolicy|AlertPolicy}.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteAlertPolicy(request);
- */
   deleteAlertPolicy(
       request?: protos.google.monitoring.v3.IDeleteAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -610,26 +610,6 @@ export class AlertPolicyServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteAlertPolicy(request, options, callback);
   }
-  updateAlertPolicy(
-      request?: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IAlertPolicy,
-        protos.google.monitoring.v3.IUpdateAlertPolicyRequest|undefined, {}|undefined
-      ]>;
-  updateAlertPolicy(
-      request: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IAlertPolicy,
-          protos.google.monitoring.v3.IUpdateAlertPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateAlertPolicy(
-      request: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IAlertPolicy,
-          protos.google.monitoring.v3.IUpdateAlertPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an alerting policy. You can either replace the entire policy with
  * a new one or replace only certain fields in the current alerting policy by
@@ -672,9 +652,29 @@ export class AlertPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateAlertPolicy(request);
+ * @example <caption>include:samples/generated/v3/alert_policy_service.update_alert_policy.js</caption>
+ * region_tag:monitoring_v3_generated_AlertPolicyService_UpdateAlertPolicy_async
  */
+  updateAlertPolicy(
+      request?: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IAlertPolicy,
+        protos.google.monitoring.v3.IUpdateAlertPolicyRequest|undefined, {}|undefined
+      ]>;
+  updateAlertPolicy(
+      request: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IAlertPolicy,
+          protos.google.monitoring.v3.IUpdateAlertPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateAlertPolicy(
+      request: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IAlertPolicy,
+          protos.google.monitoring.v3.IUpdateAlertPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   updateAlertPolicy(
       request?: protos.google.monitoring.v3.IUpdateAlertPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -710,28 +710,7 @@ export class AlertPolicyServiceClient {
     return this.innerApiCalls.updateAlertPolicy(request, options, callback);
   }
 
-  listAlertPolicies(
-      request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IAlertPolicy[],
-        protos.google.monitoring.v3.IListAlertPoliciesRequest|null,
-        protos.google.monitoring.v3.IListAlertPoliciesResponse
-      ]>;
-  listAlertPolicies(
-      request: protos.google.monitoring.v3.IListAlertPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListAlertPoliciesRequest,
-          protos.google.monitoring.v3.IListAlertPoliciesResponse|null|undefined,
-          protos.google.monitoring.v3.IAlertPolicy>): void;
-  listAlertPolicies(
-      request: protos.google.monitoring.v3.IListAlertPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListAlertPoliciesRequest,
-          protos.google.monitoring.v3.IListAlertPoliciesResponse|null|undefined,
-          protos.google.monitoring.v3.IAlertPolicy>): void;
-/**
+ /**
  * Lists the existing alerting policies for the workspace.
  *
  * @param {Object} request
@@ -779,6 +758,27 @@ export class AlertPolicyServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAlertPolicies(
+      request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IAlertPolicy[],
+        protos.google.monitoring.v3.IListAlertPoliciesRequest|null,
+        protos.google.monitoring.v3.IListAlertPoliciesResponse
+      ]>;
+  listAlertPolicies(
+      request: protos.google.monitoring.v3.IListAlertPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListAlertPoliciesRequest,
+          protos.google.monitoring.v3.IListAlertPoliciesResponse|null|undefined,
+          protos.google.monitoring.v3.IAlertPolicy>): void;
+  listAlertPolicies(
+      request: protos.google.monitoring.v3.IListAlertPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListAlertPoliciesRequest,
+          protos.google.monitoring.v3.IListAlertPoliciesResponse|null|undefined,
+          protos.google.monitoring.v3.IAlertPolicy>): void;
   listAlertPolicies(
       request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -930,11 +930,8 @@ export class AlertPolicyServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAlertPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/alert_policy_service.list_alert_policies.js</caption>
+ * region_tag:monitoring_v3_generated_AlertPolicyService_ListAlertPolicies_async
  */
   listAlertPoliciesAsync(
       request?: protos.google.monitoring.v3.IListAlertPoliciesRequest,
@@ -949,7 +946,6 @@ export class AlertPolicyServiceClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAlertPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

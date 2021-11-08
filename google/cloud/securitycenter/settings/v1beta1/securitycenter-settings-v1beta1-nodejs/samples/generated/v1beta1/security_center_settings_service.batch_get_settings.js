@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function batchGetSettings() {
+  async function callBatchGetSettings() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     console.log(response);
   }
 
-  batchGetSettings();
+  callBatchGetSettings();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_BatchGetSettings_async]
 }
 

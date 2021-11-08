@@ -27,7 +27,7 @@ function main(parent, botSession) {
   /**
    *  Required. The bot session to create. Server-assigned fields like name must be unset.
    */
-  // const botSession = ''
+  // const botSession = {}
 
   // Imports the Remoteworkers library
   const {BotsClient} = require('remoteworkers').v1test2;
@@ -35,7 +35,7 @@ function main(parent, botSession) {
   // Instantiates a client
   const remoteworkersClient = new BotsClient();
 
-  async function createBotSession() {
+  async function callCreateBotSession() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent, botSession) {
     console.log(response);
   }
 
-  createBotSession();
+  callCreateBotSession();
   // [END remoteworkers_v1test2_generated_Bots_CreateBotSession_async]
 }
 

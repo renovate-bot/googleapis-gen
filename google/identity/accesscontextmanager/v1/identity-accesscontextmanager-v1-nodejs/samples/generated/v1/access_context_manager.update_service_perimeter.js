@@ -24,11 +24,11 @@ function main(servicePerimeter, updateMask) {
    *  Required. The updated `ServicePerimeter`. Syntactic correctness of the
    *  `ServicePerimeter` is a precondition for creation.
    */
-  // const servicePerimeter = ''
+  // const servicePerimeter = {}
   /**
    *  Required. Mask to control which fields get updated. Must be non-empty.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Accesscontextmanager library
   const {AccessContextManagerClient} = require('@google-cloud/access-context-manager').v1;
@@ -36,7 +36,7 @@ function main(servicePerimeter, updateMask) {
   // Instantiates a client
   const accesscontextmanagerClient = new AccessContextManagerClient();
 
-  async function updateServicePerimeter() {
+  async function callUpdateServicePerimeter() {
     // Construct request
     const request = {
       servicePerimeter,
@@ -49,7 +49,7 @@ function main(servicePerimeter, updateMask) {
     console.log(response);
   }
 
-  updateServicePerimeter();
+  callUpdateServicePerimeter();
   // [END accesscontextmanager_v1_generated_AccessContextManager_UpdateServicePerimeter_async]
 }
 

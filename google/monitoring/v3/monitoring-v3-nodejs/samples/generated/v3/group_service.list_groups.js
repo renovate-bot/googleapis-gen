@@ -21,7 +21,7 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
+   *  Required. The project (https://cloud.google.com/monitoring/api/v3#project_name)
    *  whose groups are to be listed. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
@@ -67,7 +67,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new GroupServiceClient();
 
-  async function listGroups() {
+  async function callListGroups() {
     // Construct request
     const request = {
       name,
@@ -80,7 +80,7 @@ function main(name) {
     }
   }
 
-  listGroups();
+  callListGroups();
   // [END monitoring_v3_generated_GroupService_ListGroups_async]
 }
 

@@ -646,26 +646,6 @@ export class CustomerClientServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerClient(
-      request?: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICustomerClient,
-        protos.google.ads.googleads.v7.services.IGetCustomerClientRequest|undefined, {}|undefined
-      ]>;
-  getCustomerClient(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerClient,
-          protos.google.ads.googleads.v7.services.IGetCustomerClientRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerClient(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerClient,
-          protos.google.ads.googleads.v7.services.IGetCustomerClientRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested client in full detail.
  *
@@ -688,9 +668,29 @@ export class CustomerClientServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerClient(request);
+ * @example <caption>include:samples/generated/v7/customer_client_service.get_customer_client.js</caption>
+ * region_tag:googleads_v7_generated_CustomerClientService_GetCustomerClient_async
  */
+  getCustomerClient(
+      request?: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICustomerClient,
+        protos.google.ads.googleads.v7.services.IGetCustomerClientRequest|undefined, {}|undefined
+      ]>;
+  getCustomerClient(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerClient,
+          protos.google.ads.googleads.v7.services.IGetCustomerClientRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerClient(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerClient,
+          protos.google.ads.googleads.v7.services.IGetCustomerClientRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerClient(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerClientRequest,
       optionsOrCallback?: CallOptions|Callback<

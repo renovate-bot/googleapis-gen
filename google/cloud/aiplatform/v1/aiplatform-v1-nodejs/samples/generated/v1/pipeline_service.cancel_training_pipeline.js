@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new PipelineServiceClient();
 
-  async function cancelTrainingPipeline() {
+  async function callCancelTrainingPipeline() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  cancelTrainingPipeline();
+  callCancelTrainingPipeline();
   // [END aiplatform_v1_generated_PipelineService_CancelTrainingPipeline_async]
 }
 

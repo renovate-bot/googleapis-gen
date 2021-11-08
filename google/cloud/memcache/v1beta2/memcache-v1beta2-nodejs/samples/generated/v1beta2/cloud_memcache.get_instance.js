@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function getInstance() {
+  async function callGetInstance() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getInstance();
+  callGetInstance();
   // [END memcache_v1beta2_generated_CloudMemcache_GetInstance_async]
 }
 

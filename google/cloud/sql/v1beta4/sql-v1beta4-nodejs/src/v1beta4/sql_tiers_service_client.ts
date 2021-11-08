@@ -274,6 +274,25 @@ export class SqlTiersServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Lists all available machine types (tiers) for Cloud SQL, for example,
+ * db-custom-1-3840. For related information, see <a
+ * href="/sql/pricing">Pricing</a>.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.project
+ *   Project ID of the project for which to list tiers.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [TiersListResponse]{@link google.cloud.sql.v1beta4.TiersListResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta4/sql_tiers_service.list.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlTiersService_List_async
+ */
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlTiersListRequest,
       options?: CallOptions):
@@ -294,25 +313,6 @@ export class SqlTiersServiceClient {
           protos.google.cloud.sql.v1beta4.ITiersListResponse,
           protos.google.cloud.sql.v1beta4.ISqlTiersListRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists all available machine types (tiers) for Cloud SQL, for example,
- * db-custom-1-3840. For related information, see <a
- * href="/sql/pricing">Pricing</a>.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.project
- *   Project ID of the project for which to list tiers.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TiersListResponse]{@link google.cloud.sql.v1beta4.TiersListResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
- */
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlTiersListRequest,
       optionsOrCallback?: CallOptions|Callback<

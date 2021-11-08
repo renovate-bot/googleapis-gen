@@ -26,7 +26,7 @@ function main(parent) {
    */
   // const parent = 'abc123'
   /**
-   *  The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   *  The Google Cloud Storage (https://cloud.google.com/storage/docs/) URI to
    *  export the test cases to. The format of this URI must be
    *  `gs://<bucket-name>/<object-name>`. If unspecified, the serialized test
    *  cases is returned inline.
@@ -36,12 +36,12 @@ function main(parent) {
    *  The data format of the exported test cases. If not specified, `BLOB` is
    *  assumed.
    */
-  // const dataFormat = ''
+  // const dataFormat = {}
   /**
    *  The filter expression used to filter exported test cases, see
-   *  [API Filtering](https://aip.dev/160). The expression is case insensitive
+   *  API Filtering (https://aip.dev/160). The expression is case insensitive
    *  and supports the following syntax:
-   *    name = <value> [OR name = <value>] ...
+   *    name = <value> OR name = <value>  ...
    *  For example:
    *  *   "name = t1 OR name = t2" matches the test case with the exact resource
    *      name "t1" or "t2".
@@ -54,7 +54,7 @@ function main(parent) {
   // Instantiates a client
   const cxClient = new TestCasesClient();
 
-  async function exportTestCases() {
+  async function callExportTestCases() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent) {
     console.log(response);
   }
 
-  exportTestCases();
+  callExportTestCases();
   // [END dialogflow_v3beta1_generated_TestCases_ExportTestCases_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdGroupBidModifierServiceClient();
 
-  async function getAdGroupBidModifier() {
+  async function callGetAdGroupBidModifier() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdGroupBidModifier();
+  callGetAdGroupBidModifier();
   // [END googleads_v9_generated_AdGroupBidModifierService_GetAdGroupBidModifier_async]
 }
 

@@ -23,19 +23,19 @@ function main(name) {
   /**
    *  An inline document proto.
    */
-  // const inlineDocument = ''
+  // const inlineDocument = {}
   /**
    *  A raw document content (bytes).
    */
-  // const rawDocument = ''
+  // const rawDocument = {}
   /**
    *  Required. The processor resource name.
    */
   // const name = 'abc123'
   /**
-   *  The document payload, the [content] and [mime_type] fields must be set.
+   *  The document payload, the content  and mime_type  fields must be set.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  Whether Human Review feature should be skipped for this request. Default to
    *  false.
@@ -48,7 +48,7 @@ function main(name) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function processDocument() {
+  async function callProcessDocument() {
     // Construct request
     const request = {
       name,
@@ -59,7 +59,7 @@ function main(name) {
     console.log(response);
   }
 
-  processDocument();
+  callProcessDocument();
   // [END documentai_v1beta3_generated_DocumentProcessorService_ProcessDocument_async]
 }
 

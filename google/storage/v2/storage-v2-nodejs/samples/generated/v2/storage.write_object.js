@@ -29,7 +29,7 @@ function main(writeOffset) {
    *  For non-resumable uploads. Describes the overall upload, including the
    *  destination bucket and object name, preconditions, etc.
    */
-  // const writeObjectSpec = ''
+  // const writeObjectSpec = {}
   /**
    *  Required. The offset from the beginning of the object at which the data should be
    *  written.
@@ -47,14 +47,14 @@ function main(writeOffset) {
    *  The data to insert. If a crc32c checksum is provided that doesn't match
    *  the checksum computed by the service, the request will fail.
    */
-  // const checksummedData = ''
+  // const checksummedData = {}
   /**
    *  Checksums for the complete object. If the checksums computed by the service
    *  don't match the specifified checksums the call will fail. May only be
    *  provided in the first or last request (either with first_message, or
    *  finish_write set).
    */
-  // const objectChecksums = ''
+  // const objectChecksums = {}
   /**
    *  If `true`, this indicates that the write is complete. Sending any
    *  `WriteObjectRequest`s subsequent to one in which `finish_write` is `true`
@@ -67,11 +67,11 @@ function main(writeOffset) {
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('@google-cloud/storage').v2;
@@ -79,7 +79,7 @@ function main(writeOffset) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function writeObject() {
+  async function callWriteObject() {
     // Construct request
     const request = {
       writeOffset,
@@ -91,7 +91,7 @@ function main(writeOffset) {
     stream.end();
   }
 
-  writeObject();
+  callWriteObject();
   // [END storage_v2_generated_Storage_WriteObject_async]
 }
 

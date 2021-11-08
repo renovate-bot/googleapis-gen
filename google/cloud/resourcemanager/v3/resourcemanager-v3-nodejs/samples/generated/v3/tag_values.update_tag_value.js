@@ -26,11 +26,11 @@ function main(tagValue) {
    *  must match the `etag` field of the existing ControlGroup. Otherwise,
    *  `FAILED_PRECONDITION` will be returned.
    */
-  // const tagValue = ''
+  // const tagValue = {}
   /**
    *  Optional. Fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Optional. True to perform validations necessary for updating the resource, but not
    *  actually perform the action.
@@ -43,7 +43,7 @@ function main(tagValue) {
   // Instantiates a client
   const resourcemanagerClient = new TagValuesClient();
 
-  async function updateTagValue() {
+  async function callUpdateTagValue() {
     // Construct request
     const request = {
       tagValue,
@@ -55,7 +55,7 @@ function main(tagValue) {
     console.log(response);
   }
 
-  updateTagValue();
+  callUpdateTagValue();
   // [END cloudresourcemanager_v3_generated_TagValues_UpdateTagValue_async]
 }
 

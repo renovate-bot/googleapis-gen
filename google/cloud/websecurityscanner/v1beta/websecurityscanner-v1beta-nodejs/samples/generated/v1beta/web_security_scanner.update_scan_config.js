@@ -25,13 +25,13 @@ function main(scanConfig, updateMask) {
    *  resource to be updated. The values of fields not covered by the mask
    *  will be ignored.
    */
-  // const scanConfig = ''
+  // const scanConfig = {}
   /**
    *  Required. The update mask applies to the resource. For the `FieldMask` definition,
    *  see
    *  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Websecurityscanner library
   const {WebSecurityScannerClient} = require('@google-cloud/web-security-scanner').v1beta;
@@ -39,7 +39,7 @@ function main(scanConfig, updateMask) {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function updateScanConfig() {
+  async function callUpdateScanConfig() {
     // Construct request
     const request = {
       scanConfig,
@@ -51,7 +51,7 @@ function main(scanConfig, updateMask) {
     console.log(response);
   }
 
-  updateScanConfig();
+  callUpdateScanConfig();
   // [END websecurityscanner_v1beta_generated_WebSecurityScanner_UpdateScanConfig_async]
 }
 

@@ -40,7 +40,7 @@ function main(projectId, id) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function retryBuild() {
+  async function callRetryBuild() {
     // Construct request
     const request = {
       projectId,
@@ -53,7 +53,7 @@ function main(projectId, id) {
     console.log(response);
   }
 
-  retryBuild();
+  callRetryBuild();
   // [END cloudbuild_v1_generated_CloudBuild_RetryBuild_async]
 }
 

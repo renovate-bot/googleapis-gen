@@ -23,7 +23,7 @@ function main(shelf) {
   /**
    *  The shelf to create.
    */
-  // const shelf = ''
+  // const shelf = {}
 
   // Imports the Library library
   const {LibraryServiceClient} = require('@google-cloud/library').v1;
@@ -31,7 +31,7 @@ function main(shelf) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function createShelf() {
+  async function callCreateShelf() {
     // Construct request
     const request = {
       shelf,
@@ -42,7 +42,7 @@ function main(shelf) {
     console.log(response);
   }
 
-  createShelf();
+  callCreateShelf();
   // [END library-example_v1_generated_LibraryService_CreateShelf_async]
 }
 

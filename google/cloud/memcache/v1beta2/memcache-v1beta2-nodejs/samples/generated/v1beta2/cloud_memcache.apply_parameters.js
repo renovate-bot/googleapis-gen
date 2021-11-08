@@ -42,7 +42,7 @@ function main(name) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function applyParameters() {
+  async function callApplyParameters() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     console.log(response);
   }
 
-  applyParameters();
+  callApplyParameters();
   // [END memcache_v1beta2_generated_CloudMemcache_ApplyParameters_async]
 }
 

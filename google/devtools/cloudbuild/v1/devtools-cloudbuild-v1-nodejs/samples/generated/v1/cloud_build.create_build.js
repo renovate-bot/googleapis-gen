@@ -32,7 +32,7 @@ function main(projectId, build) {
   /**
    *  Required. Build resource to create.
    */
-  // const build = ''
+  // const build = {}
 
   // Imports the Cloudbuild library
   const {CloudBuildClient} = require('@google-cloud/cloudbuild').v1;
@@ -40,7 +40,7 @@ function main(projectId, build) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function createBuild() {
+  async function callCreateBuild() {
     // Construct request
     const request = {
       projectId,
@@ -53,7 +53,7 @@ function main(projectId, build) {
     console.log(response);
   }
 
-  createBuild();
+  callCreateBuild();
   // [END cloudbuild_v1_generated_CloudBuild_CreateBuild_async]
 }
 

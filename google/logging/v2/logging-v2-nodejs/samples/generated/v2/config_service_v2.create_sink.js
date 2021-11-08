@@ -33,7 +33,7 @@ function main(parent, sink) {
    *  Required. The new sink, whose `name` parameter is a sink identifier that
    *  is not already in use.
    */
-  // const sink = ''
+  // const sink = {}
   /**
    *  Optional. Determines the kind of IAM identity returned as `writer_identity`
    *  in the new sink. If this value is omitted or set to false, and if the
@@ -44,7 +44,7 @@ function main(parent, sink) {
    *  If this field is set to true, or if the sink is owned by a non-project
    *  resource such as an organization, then the value of `writer_identity` will
    *  be a unique service account used only for exports from the new sink. For
-   *  more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
+   *  more information, see `writer_identity` in LogSink google.logging.v2.LogSink.
    */
   // const uniqueWriterIdentity = true
 
@@ -54,7 +54,7 @@ function main(parent, sink) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function createSink() {
+  async function callCreateSink() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent, sink) {
     console.log(response);
   }
 
-  createSink();
+  callCreateSink();
   // [END logging_v2_generated_ConfigServiceV2_CreateSink_async]
 }
 

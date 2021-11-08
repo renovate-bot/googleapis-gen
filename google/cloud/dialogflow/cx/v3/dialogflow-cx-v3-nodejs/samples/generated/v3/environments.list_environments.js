@@ -21,7 +21,7 @@ function main(parent) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [Agent][google.cloud.dialogflow.cx.v3.Agent] to list all environments for.
+   *  Required. The Agent google.cloud.dialogflow.cx.v3.Agent  to list all environments for.
    *  Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
    */
   // const parent = 'abc123'
@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const cxClient = new EnvironmentsClient();
 
-  async function listEnvironments() {
+  async function callListEnvironments() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listEnvironments();
+  callListEnvironments();
   // [END dialogflow_v3_generated_Environments_ListEnvironments_async]
 }
 

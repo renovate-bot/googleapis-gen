@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new GeographicViewServiceClient();
 
-  async function getGeographicView() {
+  async function callGetGeographicView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getGeographicView();
+  callGetGeographicView();
   // [END googleads_v8_generated_GeographicViewService_GetGeographicView_async]
 }
 

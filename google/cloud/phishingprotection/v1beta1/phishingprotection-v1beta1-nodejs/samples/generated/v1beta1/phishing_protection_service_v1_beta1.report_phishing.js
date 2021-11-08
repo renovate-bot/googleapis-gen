@@ -36,7 +36,7 @@ function main(parent, uri) {
   // Instantiates a client
   const phishingprotectionClient = new PhishingProtectionServiceV1Beta1Client();
 
-  async function reportPhishing() {
+  async function callReportPhishing() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, uri) {
     console.log(response);
   }
 
-  reportPhishing();
+  callReportPhishing();
   // [END phishingprotection_v1beta1_generated_PhishingProtectionServiceV1Beta1_ReportPhishing_async]
 }
 

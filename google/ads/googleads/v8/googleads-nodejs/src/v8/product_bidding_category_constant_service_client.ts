@@ -676,26 +676,6 @@ export class ProductBiddingCategoryConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getProductBiddingCategoryConstant(
-      request?: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
-        protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|undefined, {}|undefined
-      ]>;
-  getProductBiddingCategoryConstant(
-      request: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
-          protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getProductBiddingCategoryConstant(
-      request: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
-          protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested Product Bidding Category in full detail.
  *
@@ -718,9 +698,29 @@ export class ProductBiddingCategoryConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getProductBiddingCategoryConstant(request);
+ * @example <caption>include:samples/generated/v8/product_bidding_category_constant_service.get_product_bidding_category_constant.js</caption>
+ * region_tag:googleads_v8_generated_ProductBiddingCategoryConstantService_GetProductBiddingCategoryConstant_async
  */
+  getProductBiddingCategoryConstant(
+      request?: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
+        protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|undefined, {}|undefined
+      ]>;
+  getProductBiddingCategoryConstant(
+      request: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
+          protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getProductBiddingCategoryConstant(
+      request: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IProductBiddingCategoryConstant,
+          protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getProductBiddingCategoryConstant(
       request?: protos.google.ads.googleads.v8.services.IGetProductBiddingCategoryConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

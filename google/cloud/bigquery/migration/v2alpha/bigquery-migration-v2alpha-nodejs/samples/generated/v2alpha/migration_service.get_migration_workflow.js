@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  The list of fields to be retrieved.
    */
-  // const readMask = ''
+  // const readMask = {}
 
   // Imports the Migration library
   const {MigrationServiceClient} = require('@google-cloud/migration').v2alpha;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const migrationClient = new MigrationServiceClient();
 
-  async function getMigrationWorkflow() {
+  async function callGetMigrationWorkflow() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  getMigrationWorkflow();
+  callGetMigrationWorkflow();
   // [END bigquerymigration_v2alpha_generated_MigrationService_GetMigrationWorkflow_async]
 }
 

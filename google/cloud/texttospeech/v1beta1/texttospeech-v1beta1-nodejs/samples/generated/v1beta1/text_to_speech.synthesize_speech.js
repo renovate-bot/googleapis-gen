@@ -23,15 +23,15 @@ function main(input, voice, audioConfig) {
   /**
    *  Required. The Synthesizer requires either plain text or SSML as input.
    */
-  // const input = ''
+  // const input = {}
   /**
    *  Required. The desired voice of the synthesized audio.
    */
-  // const voice = ''
+  // const voice = {}
   /**
    *  Required. The configuration of the synthesized audio.
    */
-  // const audioConfig = ''
+  // const audioConfig = {}
   /**
    *  Whether and what timepoints are returned in the response.
    */
@@ -43,7 +43,7 @@ function main(input, voice, audioConfig) {
   // Instantiates a client
   const texttospeechClient = new TextToSpeechClient();
 
-  async function synthesizeSpeech() {
+  async function callSynthesizeSpeech() {
     // Construct request
     const request = {
       input,
@@ -56,7 +56,7 @@ function main(input, voice, audioConfig) {
     console.log(response);
   }
 
-  synthesizeSpeech();
+  callSynthesizeSpeech();
   // [END texttospeech_v1beta1_generated_TextToSpeech_SynthesizeSpeech_async]
 }
 

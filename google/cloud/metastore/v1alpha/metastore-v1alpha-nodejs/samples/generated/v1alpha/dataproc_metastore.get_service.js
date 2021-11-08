@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
 
-  async function getService() {
+  async function callGetService() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getService();
+  callGetService();
   // [END metastore_v1alpha_generated_DataprocMetastore_GetService_async]
 }
 

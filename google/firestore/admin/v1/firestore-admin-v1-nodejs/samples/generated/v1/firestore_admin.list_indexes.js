@@ -35,7 +35,7 @@ function main(parent) {
   // const pageSize = 1234
   /**
    *  A page token, returned from a previous call to
-   *  [FirestoreAdmin.ListIndexes][google.firestore.admin.v1.FirestoreAdmin.ListIndexes], that may be used to get the next
+   *  FirestoreAdmin.ListIndexes google.firestore.admin.v1.FirestoreAdmin.ListIndexes, that may be used to get the next
    *  page of results.
    */
   // const pageToken = 'abc123'
@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function listIndexes() {
+  async function callListIndexes() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listIndexes();
+  callListIndexes();
   // [END firestore_v1_generated_FirestoreAdmin_ListIndexes_async]
 }
 

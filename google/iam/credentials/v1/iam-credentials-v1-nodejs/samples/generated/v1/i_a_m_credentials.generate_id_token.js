@@ -56,7 +56,7 @@ function main(name, audience) {
   // Instantiates a client
   const credentialsClient = new IAMCredentialsClient();
 
-  async function generateIdToken() {
+  async function callGenerateIdToken() {
     // Construct request
     const request = {
       name,
@@ -68,7 +68,7 @@ function main(name, audience) {
     console.log(response);
   }
 
-  generateIdToken();
+  callGenerateIdToken();
   // [END iamcredentials_v1_generated_IAMCredentials_GenerateIdToken_async]
 }
 

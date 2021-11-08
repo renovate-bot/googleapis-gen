@@ -37,7 +37,7 @@ function main(timeSeries) {
   // Instantiates a client
   const aiplatformClient = new TensorboardServiceClient();
 
-  async function readTensorboardBlobData() {
+  async function callReadTensorboardBlobData() {
     // Construct request
     const request = {
       timeSeries,
@@ -50,7 +50,7 @@ function main(timeSeries) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  readTensorboardBlobData();
+  callReadTensorboardBlobData();
   // [END aiplatform_v1beta1_generated_TensorboardService_ReadTensorboardBlobData_async]
 }
 

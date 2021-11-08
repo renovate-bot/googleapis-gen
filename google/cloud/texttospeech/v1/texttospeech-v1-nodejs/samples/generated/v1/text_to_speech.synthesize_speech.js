@@ -23,15 +23,15 @@ function main(input, voice, audioConfig) {
   /**
    *  Required. The Synthesizer requires either plain text or SSML as input.
    */
-  // const input = ''
+  // const input = {}
   /**
    *  Required. The desired voice of the synthesized audio.
    */
-  // const voice = ''
+  // const voice = {}
   /**
    *  Required. The configuration of the synthesized audio.
    */
-  // const audioConfig = ''
+  // const audioConfig = {}
 
   // Imports the Texttospeech library
   const {TextToSpeechClient} = require('@google-cloud/text-to-speech').v1;
@@ -39,7 +39,7 @@ function main(input, voice, audioConfig) {
   // Instantiates a client
   const texttospeechClient = new TextToSpeechClient();
 
-  async function synthesizeSpeech() {
+  async function callSynthesizeSpeech() {
     // Construct request
     const request = {
       input,
@@ -52,7 +52,7 @@ function main(input, voice, audioConfig) {
     console.log(response);
   }
 
-  synthesizeSpeech();
+  callSynthesizeSpeech();
   // [END texttospeech_v1_generated_TextToSpeech_SynthesizeSpeech_async]
 }
 

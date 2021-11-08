@@ -727,26 +727,6 @@ export class AssetGroupListingGroupFilterServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateAssetGroupListingGroupFilters(
-      request?: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersResponse,
-        protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest|undefined, {}|undefined
-      ]>;
-  mutateAssetGroupListingGroupFilters(
-      request: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersResponse,
-          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAssetGroupListingGroupFilters(
-      request: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersResponse,
-          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes asset group listing group filters. Operation
  * statuses are returned.
@@ -772,9 +752,29 @@ export class AssetGroupListingGroupFilterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAssetGroupListingGroupFilters(request);
+ * @example <caption>include:samples/generated/v9/asset_group_listing_group_filter_service.mutate_asset_group_listing_group_filters.js</caption>
+ * region_tag:googleads_v9_generated_AssetGroupListingGroupFilterService_MutateAssetGroupListingGroupFilters_async
  */
+  mutateAssetGroupListingGroupFilters(
+      request?: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersResponse,
+        protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest|undefined, {}|undefined
+      ]>;
+  mutateAssetGroupListingGroupFilters(
+      request: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersResponse,
+          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAssetGroupListingGroupFilters(
+      request: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersResponse,
+          protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAssetGroupListingGroupFilters(
       request?: protos.google.ads.googleads.v9.services.IMutateAssetGroupListingGroupFiltersRequest,
       optionsOrCallback?: CallOptions|Callback<

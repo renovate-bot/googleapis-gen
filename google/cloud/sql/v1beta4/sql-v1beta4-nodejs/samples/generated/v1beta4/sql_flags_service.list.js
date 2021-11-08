@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlFlagsServiceClient();
 
-  async function list() {
+  async function callList() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  list();
+  callList();
   // [END sqladmin_v1beta4_generated_SqlFlagsService_List_async]
 }
 

@@ -40,7 +40,7 @@ function main(parent, feedId, feed) {
    *  folders/folder_number/feeds/feed_id
    *  organizations/organization_number/feeds/feed_id
    */
-  // const feed = ''
+  // const feed = {}
 
   // Imports the Asset library
   const {AssetServiceClient} = require('@google-cloud/asset').v1;
@@ -48,7 +48,7 @@ function main(parent, feedId, feed) {
   // Instantiates a client
   const assetClient = new AssetServiceClient();
 
-  async function createFeed() {
+  async function callCreateFeed() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent, feedId, feed) {
     console.log(response);
   }
 
-  createFeed();
+  callCreateFeed();
   // [END cloudasset_v1_generated_AssetService_CreateFeed_async]
 }
 

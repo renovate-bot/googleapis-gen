@@ -38,7 +38,7 @@ function main() {
    *  The time when the credentials expire. If not set, defaults to one hour from
    *  when the server received the request.
    */
-  // const expireTime = ''
+  // const expireTime = {}
 
   // Imports the Shell library
   const {CloudShellServiceClient} = require('@google-cloud/shell').v1;
@@ -46,7 +46,7 @@ function main() {
   // Instantiates a client
   const shellClient = new CloudShellServiceClient();
 
-  async function authorizeEnvironment() {
+  async function callAuthorizeEnvironment() {
     // Construct request
     const request = {
     };
@@ -57,7 +57,7 @@ function main() {
     console.log(response);
   }
 
-  authorizeEnvironment();
+  callAuthorizeEnvironment();
   // [END cloudshell_v1_generated_CloudShellService_AuthorizeEnvironment_async]
 }
 

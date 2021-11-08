@@ -23,12 +23,12 @@ function main(model, updateMask) {
   /**
    *  Required. The Model which replaces the resource on the server.
    */
-  // const model = ''
+  // const model = {}
   /**
    *  Required. The update mask applies to the resource.
-   *  For the `FieldMask` definition, see [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   *  For the `FieldMask` definition, see google.protobuf.FieldMask google.protobuf.FieldMask.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Aiplatform library
   const {ModelServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -36,7 +36,7 @@ function main(model, updateMask) {
   // Instantiates a client
   const aiplatformClient = new ModelServiceClient();
 
-  async function updateModel() {
+  async function callUpdateModel() {
     // Construct request
     const request = {
       model,
@@ -48,7 +48,7 @@ function main(model, updateMask) {
     console.log(response);
   }
 
-  updateModel();
+  callUpdateModel();
   // [END aiplatform_v1beta1_generated_ModelService_UpdateModel_async]
 }
 

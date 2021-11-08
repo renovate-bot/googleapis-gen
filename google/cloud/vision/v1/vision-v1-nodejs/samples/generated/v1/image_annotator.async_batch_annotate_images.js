@@ -27,7 +27,7 @@ function main(requests, outputConfig) {
   /**
    *  Required. The desired output location and metadata (e.g. format).
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
   /**
    *  Optional. Target project and location to make a call.
    *  Format: `projects/{project-id}/locations/{location-id}`.
@@ -46,7 +46,7 @@ function main(requests, outputConfig) {
   // Instantiates a client
   const visionClient = new ImageAnnotatorClient();
 
-  async function asyncBatchAnnotateImages() {
+  async function callAsyncBatchAnnotateImages() {
     // Construct request
     const request = {
       requests,
@@ -59,7 +59,7 @@ function main(requests, outputConfig) {
     console.log(response);
   }
 
-  asyncBatchAnnotateImages();
+  callAsyncBatchAnnotateImages();
   // [END vision_v1_generated_ImageAnnotator_AsyncBatchAnnotateImages_async]
 }
 

@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ServicesClient();
 
-  async function listServices() {
+  async function callListServices() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     }
   }
 
-  listServices();
+  callListServices();
   // [END appengine_v1_generated_Services_ListServices_async]
 }
 

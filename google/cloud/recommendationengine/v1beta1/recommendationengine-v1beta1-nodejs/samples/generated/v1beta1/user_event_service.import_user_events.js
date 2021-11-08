@@ -37,11 +37,11 @@ function main(parent, inputConfig) {
   /**
    *  Required. The desired input location of the data.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
   /**
    *  Optional. The desired location of errors incurred during the Import.
    */
-  // const errorsConfig = ''
+  // const errorsConfig = {}
 
   // Imports the Recommendationengine library
   const {UserEventServiceClient} = require('recommendationengine').v1beta1;
@@ -49,7 +49,7 @@ function main(parent, inputConfig) {
   // Instantiates a client
   const recommendationengineClient = new UserEventServiceClient();
 
-  async function importUserEvents() {
+  async function callImportUserEvents() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent, inputConfig) {
     console.log(response);
   }
 
-  importUserEvents();
+  callImportUserEvents();
   // [END recommendationengine_v1beta1_generated_UserEventService_ImportUserEvents_async]
 }
 

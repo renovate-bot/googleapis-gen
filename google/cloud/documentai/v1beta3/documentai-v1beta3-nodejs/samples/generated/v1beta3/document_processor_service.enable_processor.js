@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function enableProcessor() {
+  async function callEnableProcessor() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  enableProcessor();
+  callEnableProcessor();
   // [END documentai_v1beta3_generated_DocumentProcessorService_EnableProcessor_async]
 }
 

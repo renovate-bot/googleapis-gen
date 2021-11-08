@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function getAnnotationSpec() {
+  async function callGetAnnotationSpec() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getAnnotationSpec();
+  callGetAnnotationSpec();
   // [END automl_v1beta1_generated_AutoMl_GetAnnotationSpec_async]
 }
 

@@ -428,6 +428,27 @@ export class VizierServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a Study. A resource name will be generated after creation of the
+ * Study.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource name of the Location to create the CustomJob in.
+ *   Format: `projects/{project}/locations/{location}`
+ * @param {google.cloud.aiplatform.v1beta1.Study} request.study
+ *   Required. The Study configuration used to create the Study.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Study]{@link google.cloud.aiplatform.v1beta1.Study}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.create_study.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_CreateStudy_async
+ */
   createStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateStudyRequest,
       options?: CallOptions):
@@ -448,27 +469,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IStudy,
           protos.google.cloud.aiplatform.v1beta1.ICreateStudyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a Study. A resource name will be generated after creation of the
- * Study.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource name of the Location to create the CustomJob in.
- *   Format: `projects/{project}/locations/{location}`
- * @param {google.cloud.aiplatform.v1beta1.Study} request.study
- *   Required. The Study configuration used to create the Study.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Study]{@link google.cloud.aiplatform.v1beta1.Study}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createStudy(request);
- */
   createStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateStudyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -503,6 +503,24 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.createStudy(request, options, callback);
   }
+/**
+ * Gets a Study by name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Study resource.
+ *   Format: `projects/{project}/locations/{location}/studies/{study}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Study]{@link google.cloud.aiplatform.v1beta1.Study}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.get_study.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_GetStudy_async
+ */
   getStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetStudyRequest,
       options?: CallOptions):
@@ -523,24 +541,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IStudy,
           protos.google.cloud.aiplatform.v1beta1.IGetStudyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a Study by name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Study resource.
- *   Format: `projects/{project}/locations/{location}/studies/{study}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Study]{@link google.cloud.aiplatform.v1beta1.Study}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getStudy(request);
- */
   getStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetStudyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -575,6 +575,24 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.getStudy(request, options, callback);
   }
+/**
+ * Deletes a Study.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Study resource to be deleted.
+ *   Format: `projects/{project}/locations/{location}/studies/{study}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.delete_study.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_DeleteStudy_async
+ */
   deleteStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteStudyRequest,
       options?: CallOptions):
@@ -595,24 +613,6 @@ export class VizierServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.aiplatform.v1beta1.IDeleteStudyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a Study.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Study resource to be deleted.
- *   Format: `projects/{project}/locations/{location}/studies/{study}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteStudy(request);
- */
   deleteStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteStudyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -647,6 +647,27 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteStudy(request, options, callback);
   }
+/**
+ * Looks a study up using the user-defined display_name field instead of the
+ * fully qualified resource name.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource name of the Location to get the Study from.
+ *   Format: `projects/{project}/locations/{location}`
+ * @param {string} request.displayName
+ *   Required. The user-defined display name of the Study
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Study]{@link google.cloud.aiplatform.v1beta1.Study}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.lookup_study.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_LookupStudy_async
+ */
   lookupStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.ILookupStudyRequest,
       options?: CallOptions):
@@ -667,27 +688,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IStudy,
           protos.google.cloud.aiplatform.v1beta1.ILookupStudyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Looks a study up using the user-defined display_name field instead of the
- * fully qualified resource name.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource name of the Location to get the Study from.
- *   Format: `projects/{project}/locations/{location}`
- * @param {string} request.displayName
- *   Required. The user-defined display name of the Study
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Study]{@link google.cloud.aiplatform.v1beta1.Study}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.lookupStudy(request);
- */
   lookupStudy(
       request?: protos.google.cloud.aiplatform.v1beta1.ILookupStudyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -722,6 +722,26 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.lookupStudy(request, options, callback);
   }
+/**
+ * Adds a user provided Trial to a Study.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The resource name of the Study to create the Trial in.
+ *   Format: `projects/{project}/locations/{location}/studies/{study}`
+ * @param {google.cloud.aiplatform.v1beta1.Trial} request.trial
+ *   Required. The Trial to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.create_trial.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_CreateTrial_async
+ */
   createTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateTrialRequest,
       options?: CallOptions):
@@ -742,26 +762,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.ITrial,
           protos.google.cloud.aiplatform.v1beta1.ICreateTrialRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Adds a user provided Trial to a Study.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The resource name of the Study to create the Trial in.
- *   Format: `projects/{project}/locations/{location}/studies/{study}`
- * @param {google.cloud.aiplatform.v1beta1.Trial} request.trial
- *   Required. The Trial to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createTrial(request);
- */
   createTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateTrialRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -796,6 +796,25 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.createTrial(request, options, callback);
   }
+/**
+ * Gets a Trial.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Trial resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.get_trial.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_GetTrial_async
+ */
   getTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetTrialRequest,
       options?: CallOptions):
@@ -816,25 +835,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.ITrial,
           protos.google.cloud.aiplatform.v1beta1.IGetTrialRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a Trial.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Trial resource.
- *   Format:
- *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTrial(request);
- */
   getTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetTrialRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -869,6 +869,28 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.getTrial(request, options, callback);
   }
+/**
+ * Adds a measurement of the objective metrics to a Trial. This measurement
+ * is assumed to have been taken before the Trial is complete.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.trialName
+ *   Required. The name of the trial to add measurement.
+ *   Format:
+ *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
+ * @param {google.cloud.aiplatform.v1beta1.Measurement} request.measurement
+ *   Required. The measurement to be added to a Trial.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.add_trial_measurement.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_AddTrialMeasurement_async
+ */
   addTrialMeasurement(
       request?: protos.google.cloud.aiplatform.v1beta1.IAddTrialMeasurementRequest,
       options?: CallOptions):
@@ -889,28 +911,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.ITrial,
           protos.google.cloud.aiplatform.v1beta1.IAddTrialMeasurementRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Adds a measurement of the objective metrics to a Trial. This measurement
- * is assumed to have been taken before the Trial is complete.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.trialName
- *   Required. The name of the trial to add measurement.
- *   Format:
- *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
- * @param {google.cloud.aiplatform.v1beta1.Measurement} request.measurement
- *   Required. The measurement to be added to a Trial.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.addTrialMeasurement(request);
- */
   addTrialMeasurement(
       request?: protos.google.cloud.aiplatform.v1beta1.IAddTrialMeasurementRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -945,26 +945,6 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.addTrialMeasurement(request, options, callback);
   }
-  completeTrial(
-      request?: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.ITrial,
-        protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest|undefined, {}|undefined
-      ]>;
-  completeTrial(
-      request: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.ITrial,
-          protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest|null|undefined,
-          {}|null|undefined>): void;
-  completeTrial(
-      request: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.ITrial,
-          protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks a Trial as complete.
  *
@@ -991,9 +971,29 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.completeTrial(request);
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.complete_trial.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_CompleteTrial_async
  */
+  completeTrial(
+      request?: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.ITrial,
+        protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest|undefined, {}|undefined
+      ]>;
+  completeTrial(
+      request: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.ITrial,
+          protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest|null|undefined,
+          {}|null|undefined>): void;
+  completeTrial(
+      request: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.ITrial,
+          protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest|null|undefined,
+          {}|null|undefined>): void;
   completeTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.ICompleteTrialRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1028,6 +1028,25 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.completeTrial(request, options, callback);
   }
+/**
+ * Deletes a Trial.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The Trial's name.
+ *   Format:
+ *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.delete_trial.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_DeleteTrial_async
+ */
   deleteTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteTrialRequest,
       options?: CallOptions):
@@ -1048,25 +1067,6 @@ export class VizierServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.aiplatform.v1beta1.IDeleteTrialRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a Trial.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The Trial's name.
- *   Format:
- *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteTrial(request);
- */
   deleteTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteTrialRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1101,6 +1101,25 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteTrial(request, options, callback);
   }
+/**
+ * Stops a Trial.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The Trial's name.
+ *   Format:
+ *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.stop_trial.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_StopTrial_async
+ */
   stopTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.IStopTrialRequest,
       options?: CallOptions):
@@ -1121,25 +1140,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.ITrial,
           protos.google.cloud.aiplatform.v1beta1.IStopTrialRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Stops a Trial.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The Trial's name.
- *   Format:
- *   `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Trial]{@link google.cloud.aiplatform.v1beta1.Trial}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.stopTrial(request);
- */
   stopTrial(
       request?: protos.google.cloud.aiplatform.v1beta1.IStopTrialRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1174,6 +1174,26 @@ export class VizierServiceClient {
     this.initialize();
     return this.innerApiCalls.stopTrial(request, options, callback);
   }
+/**
+ * Lists the pareto-optimal Trials for multi-objective Study or the
+ * optimal Trials for single-objective Study. The definition of
+ * pareto-optimal can be checked in wiki page.
+ * https://en.wikipedia.org/wiki/Pareto_efficiency
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The name of the Study that the optimal Trial belongs to.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListOptimalTrialsResponse]{@link google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.list_optimal_trials.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_ListOptimalTrials_async
+ */
   listOptimalTrials(
       request?: protos.google.cloud.aiplatform.v1beta1.IListOptimalTrialsRequest,
       options?: CallOptions):
@@ -1194,26 +1214,6 @@ export class VizierServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IListOptimalTrialsResponse,
           protos.google.cloud.aiplatform.v1beta1.IListOptimalTrialsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists the pareto-optimal Trials for multi-objective Study or the
- * optimal Trials for single-objective Study. The definition of
- * pareto-optimal can be checked in wiki page.
- * https://en.wikipedia.org/wiki/Pareto_efficiency
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The name of the Study that the optimal Trial belongs to.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListOptimalTrialsResponse]{@link google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listOptimalTrials(request);
- */
   listOptimalTrials(
       request?: protos.google.cloud.aiplatform.v1beta1.IListOptimalTrialsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1249,26 +1249,6 @@ export class VizierServiceClient {
     return this.innerApiCalls.listOptimalTrials(request, options, callback);
   }
 
-  suggestTrials(
-      request?: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  suggestTrials(
-      request: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  suggestTrials(
-      request: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Adds one or more Trials to a Study, with parameter values
  * suggested by Vertex Vizier. Returns a long-running
@@ -1298,10 +1278,29 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.suggestTrials(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.suggest_trials.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_SuggestTrials_async
  */
+  suggestTrials(
+      request?: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  suggestTrials(
+      request: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  suggestTrials(
+      request: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   suggestTrials(
       request?: protos.google.cloud.aiplatform.v1beta1.ISuggestTrialsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1345,11 +1344,8 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkSuggestTrialsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.suggest_trials.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_SuggestTrials_async
  */
   async checkSuggestTrialsProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.SuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.SuggestTrialsMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1357,26 +1353,6 @@ export class VizierServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.suggestTrials, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.SuggestTrialsResponse, protos.google.cloud.aiplatform.v1beta1.SuggestTrialsMetadata>;
   }
-  checkTrialEarlyStoppingState(
-      request?: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateMetatdata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  checkTrialEarlyStoppingState(
-      request: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateMetatdata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  checkTrialEarlyStoppingState(
-      request: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateMetatdata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Checks  whether a Trial should stop or not. Returns a
  * long-running operation. When the operation is successful,
@@ -1398,10 +1374,29 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.checkTrialEarlyStoppingState(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.check_trial_early_stopping_state.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_CheckTrialEarlyStoppingState_async
  */
+  checkTrialEarlyStoppingState(
+      request?: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateMetatdata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  checkTrialEarlyStoppingState(
+      request: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateMetatdata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  checkTrialEarlyStoppingState(
+      request: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateMetatdata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   checkTrialEarlyStoppingState(
       request?: protos.google.cloud.aiplatform.v1beta1.ICheckTrialEarlyStoppingStateRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1445,11 +1440,8 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCheckTrialEarlyStoppingStateProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.check_trial_early_stopping_state.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_CheckTrialEarlyStoppingState_async
  */
   async checkCheckTrialEarlyStoppingStateProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateMetatdata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1457,28 +1449,7 @@ export class VizierServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.checkTrialEarlyStoppingState, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateResponse, protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateMetatdata>;
   }
-  listStudies(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IStudy[],
-        protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListStudiesResponse
-      ]>;
-  listStudies(
-      request: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListStudiesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IStudy>): void;
-  listStudies(
-      request: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListStudiesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IStudy>): void;
-/**
+ /**
  * Lists all the studies in a region for an associated project.
  *
  * @param {Object} request
@@ -1505,6 +1476,27 @@ export class VizierServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listStudies(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IStudy[],
+        protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListStudiesResponse
+      ]>;
+  listStudies(
+      request: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListStudiesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IStudy>): void;
+  listStudies(
+      request: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListStudiesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IStudy>): void;
   listStudies(
       request?: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1614,11 +1606,8 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listStudiesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.list_studies.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_ListStudies_async
  */
   listStudiesAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListStudiesRequest,
@@ -1633,7 +1622,6 @@ export class VizierServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listStudies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1643,28 +1631,7 @@ export class VizierServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IStudy>;
   }
-  listTrials(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.ITrial[],
-        protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListTrialsResponse
-      ]>;
-  listTrials(
-      request: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListTrialsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.ITrial>): void;
-  listTrials(
-      request: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListTrialsResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.ITrial>): void;
-/**
+ /**
  * Lists the Trials associated with a Study.
  *
  * @param {Object} request
@@ -1691,6 +1658,27 @@ export class VizierServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTrials(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.ITrial[],
+        protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListTrialsResponse
+      ]>;
+  listTrials(
+      request: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListTrialsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.ITrial>): void;
+  listTrials(
+      request: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListTrialsResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.ITrial>): void;
   listTrials(
       request?: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1800,11 +1788,8 @@ export class VizierServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTrialsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/vizier_service.list_trials.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_VizierService_ListTrials_async
  */
   listTrialsAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListTrialsRequest,
@@ -1819,7 +1804,6 @@ export class VizierServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTrials'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

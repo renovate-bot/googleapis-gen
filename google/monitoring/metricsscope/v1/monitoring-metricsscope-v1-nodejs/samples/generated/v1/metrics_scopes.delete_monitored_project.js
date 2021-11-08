@@ -24,8 +24,8 @@ function main(name) {
    *  Required. The resource name of the `MonitoredProject`.
    *  Example:
    *  `locations/global/metricsScopes/{SCOPING_PROJECT_ID_OR_NUMBER}/projects/{MONITORED_PROJECT_ID_OR_NUMBER}`
-   *  Authorization requires the following [Google
-   *  IAM](https://cloud.google.com/iam) permissions on both the `Metrics Scope`
+   *  Authorization requires the following Google
+   *  IAM (https://cloud.google.com/iam) permissions on both the `Metrics Scope`
    *  and on the `MonitoredProject`: `monitoring.metricsScopes.link`
    */
   // const name = 'abc123'
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const metricsscopeClient = new MetricsScopesClient();
 
-  async function deleteMonitoredProject() {
+  async function callDeleteMonitoredProject() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteMonitoredProject();
+  callDeleteMonitoredProject();
   // [END monitoring_v1_generated_MetricsScopes_DeleteMonitoredProject_async]
 }
 

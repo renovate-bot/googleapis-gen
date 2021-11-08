@@ -31,7 +31,7 @@ function main(parent) {
   // Instantiates a client
   const aiplatformClient = new VizierServiceClient();
 
-  async function listOptimalTrials() {
+  async function callListOptimalTrials() {
     // Construct request
     const request = {
       parent,
@@ -42,7 +42,7 @@ function main(parent) {
     console.log(response);
   }
 
-  listOptimalTrials();
+  callListOptimalTrials();
   // [END aiplatform_v1beta1_generated_VizierService_ListOptimalTrials_async]
 }
 

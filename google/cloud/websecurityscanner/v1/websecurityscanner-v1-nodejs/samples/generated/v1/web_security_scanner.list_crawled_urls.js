@@ -45,7 +45,7 @@ function main() {
   // Instantiates a client
   const websecurityscannerClient = new WebSecurityScannerClient();
 
-  async function listCrawledUrls() {
+  async function callListCrawledUrls() {
     // Construct request
     const request = {
     };
@@ -57,7 +57,7 @@ function main() {
     }
   }
 
-  listCrawledUrls();
+  callListCrawledUrls();
   // [END websecurityscanner_v1_generated_WebSecurityScanner_ListCrawledUrls_async]
 }
 

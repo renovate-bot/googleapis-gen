@@ -31,7 +31,7 @@ function main(parent, clientEvent) {
    *  Required. Events issued when end user interacts with customer's application that
    *  uses Cloud Talent Solution.
    */
-  // const clientEvent = ''
+  // const clientEvent = {}
 
   // Imports the Talent library
   const {EventServiceClient} = require('@google-cloud/talent').v4beta1;
@@ -39,7 +39,7 @@ function main(parent, clientEvent) {
   // Instantiates a client
   const talentClient = new EventServiceClient();
 
-  async function createClientEvent() {
+  async function callCreateClientEvent() {
     // Construct request
     const request = {
       parent,
@@ -51,7 +51,7 @@ function main(parent, clientEvent) {
     console.log(response);
   }
 
-  createClientEvent();
+  callCreateClientEvent();
   // [END jobs_v4beta1_generated_EventService_CreateClientEvent_async]
 }
 

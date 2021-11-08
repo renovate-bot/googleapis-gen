@@ -35,7 +35,7 @@ function main(parent, authorizationPolicyId, authorizationPolicy) {
   /**
    *  Required. AuthorizationPolicy resource to be created.
    */
-  // const authorizationPolicy = ''
+  // const authorizationPolicy = {}
 
   // Imports the Networksecurity library
   const {NetworkSecurityClient} = require('@google-cloud/network-security').v1beta1;
@@ -43,7 +43,7 @@ function main(parent, authorizationPolicyId, authorizationPolicy) {
   // Instantiates a client
   const networksecurityClient = new NetworkSecurityClient();
 
-  async function createAuthorizationPolicy() {
+  async function callCreateAuthorizationPolicy() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent, authorizationPolicyId, authorizationPolicy) {
     console.log(response);
   }
 
-  createAuthorizationPolicy();
+  callCreateAuthorizationPolicy();
   // [END networksecurity_v1beta1_generated_NetworkSecurity_CreateAuthorizationPolicy_async]
 }
 

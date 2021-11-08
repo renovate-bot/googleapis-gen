@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const cxClient = new WebhooksClient();
 
-  async function listWebhooks() {
+  async function callListWebhooks() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listWebhooks();
+  callListWebhooks();
   // [END dialogflow_v3_generated_Webhooks_ListWebhooks_async]
 }
 

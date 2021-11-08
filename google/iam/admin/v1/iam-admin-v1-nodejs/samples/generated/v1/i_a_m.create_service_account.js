@@ -33,11 +33,11 @@ function main(name, accountId) {
    */
   // const accountId = 'abc123'
   /**
-   *  The [ServiceAccount][google.iam.admin.v1.ServiceAccount] resource to
+   *  The ServiceAccount google.iam.admin.v1.ServiceAccount  resource to
    *  create. Currently, only the following values are user assignable:
    *  `display_name` and `description`.
    */
-  // const serviceAccount = ''
+  // const serviceAccount = {}
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -45,7 +45,7 @@ function main(name, accountId) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function createServiceAccount() {
+  async function callCreateServiceAccount() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name, accountId) {
     console.log(response);
   }
 
-  createServiceAccount();
+  callCreateServiceAccount();
   // [END iam_v1_generated_IAM_CreateServiceAccount_async]
 }
 

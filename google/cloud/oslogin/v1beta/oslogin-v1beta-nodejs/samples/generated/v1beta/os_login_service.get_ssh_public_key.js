@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const osloginClient = new OsLoginServiceClient();
 
-  async function getSshPublicKey() {
+  async function callGetSshPublicKey() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getSshPublicKey();
+  callGetSshPublicKey();
   // [END oslogin_v1beta_generated_OsLoginService_GetSshPublicKey_async]
 }
 

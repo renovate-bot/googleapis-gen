@@ -37,7 +37,7 @@ function main(bucket, entity) {
   /**
    *  The BucketAccessControl for updating.
    */
-  // const bucketAccessControl = ''
+  // const bucketAccessControl = {}
   /**
    *  List of fields to be updated.
    *  To specify ALL fields, equivalent to the JSON API's "update" function,
@@ -46,11 +46,11 @@ function main(bucket, entity) {
    *  Not specifying a field while setting that field to a non-default value is
    *  an error.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -58,7 +58,7 @@ function main(bucket, entity) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function patchBucketAccessControl() {
+  async function callPatchBucketAccessControl() {
     // Construct request
     const request = {
       bucket,
@@ -70,7 +70,7 @@ function main(bucket, entity) {
     console.log(response);
   }
 
-  patchBucketAccessControl();
+  callPatchBucketAccessControl();
   // [END storage_v1_generated_Storage_PatchBucketAccessControl_async]
 }
 

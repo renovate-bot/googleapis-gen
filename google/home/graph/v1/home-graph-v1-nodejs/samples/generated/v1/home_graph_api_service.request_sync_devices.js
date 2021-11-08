@@ -37,7 +37,7 @@ function main(agentUserId) {
   // Instantiates a client
   const graphClient = new HomeGraphApiServiceClient();
 
-  async function requestSyncDevices() {
+  async function callRequestSyncDevices() {
     // Construct request
     const request = {
       agentUserId,
@@ -48,7 +48,7 @@ function main(agentUserId) {
     console.log(response);
   }
 
-  requestSyncDevices();
+  callRequestSyncDevices();
   // [END homegraph_v1_generated_HomeGraphApiService_RequestSyncDevices_async]
 }
 

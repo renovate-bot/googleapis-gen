@@ -364,26 +364,6 @@ export class PredictionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  predict(
-      request?: protos.google.cloud.aiplatform.v1.IPredictRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IPredictResponse,
-        protos.google.cloud.aiplatform.v1.IPredictRequest|undefined, {}|undefined
-      ]>;
-  predict(
-      request: protos.google.cloud.aiplatform.v1.IPredictRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IPredictResponse,
-          protos.google.cloud.aiplatform.v1.IPredictRequest|null|undefined,
-          {}|null|undefined>): void;
-  predict(
-      request: protos.google.cloud.aiplatform.v1.IPredictRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IPredictResponse,
-          protos.google.cloud.aiplatform.v1.IPredictRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Perform an online prediction.
  *
@@ -415,9 +395,29 @@ export class PredictionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.predict(request);
+ * @example <caption>include:samples/generated/v1/prediction_service.predict.js</caption>
+ * region_tag:aiplatform_v1_generated_PredictionService_Predict_async
  */
+  predict(
+      request?: protos.google.cloud.aiplatform.v1.IPredictRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IPredictResponse,
+        protos.google.cloud.aiplatform.v1.IPredictRequest|undefined, {}|undefined
+      ]>;
+  predict(
+      request: protos.google.cloud.aiplatform.v1.IPredictRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IPredictResponse,
+          protos.google.cloud.aiplatform.v1.IPredictRequest|null|undefined,
+          {}|null|undefined>): void;
+  predict(
+      request: protos.google.cloud.aiplatform.v1.IPredictRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IPredictResponse,
+          protos.google.cloud.aiplatform.v1.IPredictRequest|null|undefined,
+          {}|null|undefined>): void;
   predict(
       request?: protos.google.cloud.aiplatform.v1.IPredictRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -452,26 +452,6 @@ export class PredictionServiceClient {
     this.initialize();
     return this.innerApiCalls.predict(request, options, callback);
   }
-  rawPredict(
-      request?: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.IHttpBody,
-        protos.google.cloud.aiplatform.v1.IRawPredictRequest|undefined, {}|undefined
-      ]>;
-  rawPredict(
-      request: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.IHttpBody,
-          protos.google.cloud.aiplatform.v1.IRawPredictRequest|null|undefined,
-          {}|null|undefined>): void;
-  rawPredict(
-      request: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
-      callback: Callback<
-          protos.google.api.IHttpBody,
-          protos.google.cloud.aiplatform.v1.IRawPredictRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Perform an online prediction with an arbitrary HTTP payload.
  *
@@ -510,9 +490,29 @@ export class PredictionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.rawPredict(request);
+ * @example <caption>include:samples/generated/v1/prediction_service.raw_predict.js</caption>
+ * region_tag:aiplatform_v1_generated_PredictionService_RawPredict_async
  */
+  rawPredict(
+      request?: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.IHttpBody,
+        protos.google.cloud.aiplatform.v1.IRawPredictRequest|undefined, {}|undefined
+      ]>;
+  rawPredict(
+      request: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.IHttpBody,
+          protos.google.cloud.aiplatform.v1.IRawPredictRequest|null|undefined,
+          {}|null|undefined>): void;
+  rawPredict(
+      request: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
+      callback: Callback<
+          protos.google.api.IHttpBody,
+          protos.google.cloud.aiplatform.v1.IRawPredictRequest|null|undefined,
+          {}|null|undefined>): void;
   rawPredict(
       request?: protos.google.cloud.aiplatform.v1.IRawPredictRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -547,26 +547,6 @@ export class PredictionServiceClient {
     this.initialize();
     return this.innerApiCalls.rawPredict(request, options, callback);
   }
-  explain(
-      request?: protos.google.cloud.aiplatform.v1.IExplainRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IExplainResponse,
-        protos.google.cloud.aiplatform.v1.IExplainRequest|undefined, {}|undefined
-      ]>;
-  explain(
-      request: protos.google.cloud.aiplatform.v1.IExplainRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IExplainResponse,
-          protos.google.cloud.aiplatform.v1.IExplainRequest|null|undefined,
-          {}|null|undefined>): void;
-  explain(
-      request: protos.google.cloud.aiplatform.v1.IExplainRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IExplainResponse,
-          protos.google.cloud.aiplatform.v1.IExplainRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Perform an online explanation.
  *
@@ -619,9 +599,29 @@ export class PredictionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.explain(request);
+ * @example <caption>include:samples/generated/v1/prediction_service.explain.js</caption>
+ * region_tag:aiplatform_v1_generated_PredictionService_Explain_async
  */
+  explain(
+      request?: protos.google.cloud.aiplatform.v1.IExplainRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IExplainResponse,
+        protos.google.cloud.aiplatform.v1.IExplainRequest|undefined, {}|undefined
+      ]>;
+  explain(
+      request: protos.google.cloud.aiplatform.v1.IExplainRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IExplainResponse,
+          protos.google.cloud.aiplatform.v1.IExplainRequest|null|undefined,
+          {}|null|undefined>): void;
+  explain(
+      request: protos.google.cloud.aiplatform.v1.IExplainRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IExplainResponse,
+          protos.google.cloud.aiplatform.v1.IExplainRequest|null|undefined,
+          {}|null|undefined>): void;
   explain(
       request?: protos.google.cloud.aiplatform.v1.IExplainRequest,
       optionsOrCallback?: CallOptions|Callback<

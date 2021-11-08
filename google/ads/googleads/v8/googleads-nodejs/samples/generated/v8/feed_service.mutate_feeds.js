@@ -44,7 +44,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {FeedServiceClient} = require('google-ads').v8;
@@ -52,7 +52,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new FeedServiceClient();
 
-  async function mutateFeeds() {
+  async function callMutateFeeds() {
     // Construct request
     const request = {
       customerId,
@@ -64,7 +64,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateFeeds();
+  callMutateFeeds();
   // [END googleads_v8_generated_FeedService_MutateFeeds_async]
 }
 

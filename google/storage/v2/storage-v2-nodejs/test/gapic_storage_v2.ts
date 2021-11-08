@@ -152,7 +152,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.StartResumableWriteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v2.StartResumableWriteResponse());
             client.innerApiCalls.startResumableWrite = stubSimpleCall(expectedResponse);
             const [response] = await client.startResumableWrite(request);
@@ -168,7 +168,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.StartResumableWriteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v2.StartResumableWriteResponse());
             client.innerApiCalls.startResumableWrite = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -195,7 +195,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.StartResumableWriteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.startResumableWrite = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.startResumableWrite(request), expectedError);
@@ -212,7 +212,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.QueryWriteStatusRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v2.QueryWriteStatusResponse());
             client.innerApiCalls.queryWriteStatus = stubSimpleCall(expectedResponse);
             const [response] = await client.queryWriteStatus(request);
@@ -228,7 +228,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.QueryWriteStatusRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v2.QueryWriteStatusResponse());
             client.innerApiCalls.queryWriteStatus = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -255,7 +255,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.QueryWriteStatusRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.queryWriteStatus = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.queryWriteStatus(request), expectedError);
@@ -272,7 +272,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.ReadObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.storage.v2.ReadObjectResponse());
             client.innerApiCalls.readObject = stubServerStreamingCall(expectedResponse);
             const stream = client.readObject(request);
@@ -297,7 +297,7 @@ describe('v2.StorageClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v2.ReadObjectRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.readObject = stubServerStreamingCall(undefined, expectedError);
             const stream = client.readObject(request);

@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function getAlertMetadata() {
+  async function callGetAlertMetadata() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  getAlertMetadata();
+  callGetAlertMetadata();
   // [END alertcenter_v1beta1_generated_AlertCenterService_GetAlertMetadata_async]
 }
 

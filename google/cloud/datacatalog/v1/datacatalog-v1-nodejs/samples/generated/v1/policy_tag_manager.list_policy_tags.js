@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function listPolicyTags() {
+  async function callListPolicyTags() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listPolicyTags();
+  callListPolicyTags();
   // [END datacatalog_v1_generated_PolicyTagManager_ListPolicyTags_async]
 }
 

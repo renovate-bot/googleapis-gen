@@ -42,7 +42,7 @@ function main(parent) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function listWorkerPools() {
+  async function callListWorkerPools() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent) {
     }
   }
 
-  listWorkerPools();
+  callListWorkerPools();
   // [END cloudbuild_v1_generated_CloudBuild_ListWorkerPools_async]
 }
 

@@ -27,7 +27,7 @@ function main(parent) {
    *      "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]"
    *      "folders/[FOLDER_ID]/locations/[LOCATION_ID]"
    *  Note: The locations portion of the resource must be specified, but
-   *  supplying the character `-` in place of [LOCATION_ID] will return all
+   *  supplying the character `-` in place of LOCATION_ID  will return all
    *  buckets.
    */
   // const parent = 'abc123'
@@ -51,7 +51,7 @@ function main(parent) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function listBuckets() {
+  async function callListBuckets() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     }
   }
 
-  listBuckets();
+  callListBuckets();
   // [END logging_v2_generated_ConfigServiceV2_ListBuckets_async]
 }
 

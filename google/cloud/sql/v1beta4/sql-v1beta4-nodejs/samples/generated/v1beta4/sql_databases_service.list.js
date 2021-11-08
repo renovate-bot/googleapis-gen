@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlDatabasesServiceClient();
 
-  async function list() {
+  async function callList() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  list();
+  callList();
   // [END sqladmin_v1beta4_generated_SqlDatabasesService_List_async]
 }
 

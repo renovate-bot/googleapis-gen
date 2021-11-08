@@ -24,11 +24,11 @@ function main(service) {
    *  Required. The `Service` to draw updates from.
    *  The given `name` specifies the resource to update.
    */
-  // const service = ''
+  // const service = {}
   /**
    *  A set of field paths defining which fields to use for the update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Monitoring library
   const {ServiceMonitoringServiceClient} = require('@google-cloud/monitoring').v3;
@@ -36,7 +36,7 @@ function main(service) {
   // Instantiates a client
   const monitoringClient = new ServiceMonitoringServiceClient();
 
-  async function updateService() {
+  async function callUpdateService() {
     // Construct request
     const request = {
       service,
@@ -47,7 +47,7 @@ function main(service) {
     console.log(response);
   }
 
-  updateService();
+  callUpdateService();
   // [END monitoring_v3_generated_ServiceMonitoringService_UpdateService_async]
 }
 

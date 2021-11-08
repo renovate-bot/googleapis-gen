@@ -126,7 +126,7 @@ describe('v1.SqlFlagsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1.SqlFlagsListRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.sql.v1.FlagsListResponse());
             client.innerApiCalls.list = stubSimpleCall(expectedResponse);
             const [response] = await client.list(request);
@@ -142,7 +142,7 @@ describe('v1.SqlFlagsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1.SqlFlagsListRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.sql.v1.FlagsListResponse());
             client.innerApiCalls.list = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1.SqlFlagsServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1.SqlFlagsListRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.list = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.list(request), expectedError);

@@ -676,26 +676,6 @@ export class ParentalStatusViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getParentalStatusView(
-      request?: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IParentalStatusView,
-        protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest|undefined, {}|undefined
-      ]>;
-  getParentalStatusView(
-      request: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IParentalStatusView,
-          protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getParentalStatusView(
-      request: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IParentalStatusView,
-          protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested parental status view in full detail.
  *
@@ -718,9 +698,29 @@ export class ParentalStatusViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getParentalStatusView(request);
+ * @example <caption>include:samples/generated/v8/parental_status_view_service.get_parental_status_view.js</caption>
+ * region_tag:googleads_v8_generated_ParentalStatusViewService_GetParentalStatusView_async
  */
+  getParentalStatusView(
+      request?: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IParentalStatusView,
+        protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest|undefined, {}|undefined
+      ]>;
+  getParentalStatusView(
+      request: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IParentalStatusView,
+          protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getParentalStatusView(
+      request: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IParentalStatusView,
+          protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getParentalStatusView(
       request?: protos.google.ads.googleads.v8.services.IGetParentalStatusViewRequest,
       optionsOrCallback?: CallOptions|Callback<

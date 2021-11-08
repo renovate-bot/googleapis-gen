@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const recommendationengineClient = new CatalogServiceClient();
 
-  async function getCatalogItem() {
+  async function callGetCatalogItem() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getCatalogItem();
+  callGetCatalogItem();
   // [END recommendationengine_v1beta1_generated_CatalogService_GetCatalogItem_async]
 }
 

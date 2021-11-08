@@ -316,26 +316,6 @@ export class OsConfigServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  executePatchJob(
-      request?: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1.IPatchJob,
-        protos.google.cloud.osconfig.v1.IExecutePatchJobRequest|undefined, {}|undefined
-      ]>;
-  executePatchJob(
-      request: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1.IPatchJob,
-          protos.google.cloud.osconfig.v1.IExecutePatchJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  executePatchJob(
-      request: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1.IPatchJob,
-          protos.google.cloud.osconfig.v1.IExecutePatchJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Patch VM instances by creating and running a patch job.
  *
@@ -369,9 +349,29 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.executePatchJob(request);
+ * @example <caption>include:samples/generated/v1/os_config_service.execute_patch_job.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_ExecutePatchJob_async
  */
+  executePatchJob(
+      request?: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1.IPatchJob,
+        protos.google.cloud.osconfig.v1.IExecutePatchJobRequest|undefined, {}|undefined
+      ]>;
+  executePatchJob(
+      request: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1.IPatchJob,
+          protos.google.cloud.osconfig.v1.IExecutePatchJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  executePatchJob(
+      request: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1.IPatchJob,
+          protos.google.cloud.osconfig.v1.IExecutePatchJobRequest|null|undefined,
+          {}|null|undefined>): void;
   executePatchJob(
       request?: protos.google.cloud.osconfig.v1.IExecutePatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -406,6 +406,24 @@ export class OsConfigServiceClient {
     this.initialize();
     return this.innerApiCalls.executePatchJob(request, options, callback);
   }
+/**
+ * Get the patch job. This can be used to track the progress of an
+ * ongoing patch job or review the details of completed jobs.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the patch in the form `projects/* /patchJobs/*`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PatchJob]{@link google.cloud.osconfig.v1.PatchJob}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/os_config_service.get_patch_job.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_GetPatchJob_async
+ */
   getPatchJob(
       request?: protos.google.cloud.osconfig.v1.IGetPatchJobRequest,
       options?: CallOptions):
@@ -426,24 +444,6 @@ export class OsConfigServiceClient {
           protos.google.cloud.osconfig.v1.IPatchJob,
           protos.google.cloud.osconfig.v1.IGetPatchJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get the patch job. This can be used to track the progress of an
- * ongoing patch job or review the details of completed jobs.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the patch in the form `projects/* /patchJobs/*`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PatchJob]{@link google.cloud.osconfig.v1.PatchJob}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPatchJob(request);
- */
   getPatchJob(
       request?: protos.google.cloud.osconfig.v1.IGetPatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -478,6 +478,24 @@ export class OsConfigServiceClient {
     this.initialize();
     return this.innerApiCalls.getPatchJob(request, options, callback);
   }
+/**
+ * Cancel a patch job. The patch job must be active. Canceled patch jobs
+ * cannot be restarted.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the patch in the form `projects/* /patchJobs/*`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PatchJob]{@link google.cloud.osconfig.v1.PatchJob}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/os_config_service.cancel_patch_job.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_CancelPatchJob_async
+ */
   cancelPatchJob(
       request?: protos.google.cloud.osconfig.v1.ICancelPatchJobRequest,
       options?: CallOptions):
@@ -498,24 +516,6 @@ export class OsConfigServiceClient {
           protos.google.cloud.osconfig.v1.IPatchJob,
           protos.google.cloud.osconfig.v1.ICancelPatchJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Cancel a patch job. The patch job must be active. Canceled patch jobs
- * cannot be restarted.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the patch in the form `projects/* /patchJobs/*`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PatchJob]{@link google.cloud.osconfig.v1.PatchJob}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.cancelPatchJob(request);
- */
   cancelPatchJob(
       request?: protos.google.cloud.osconfig.v1.ICancelPatchJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -550,26 +550,6 @@ export class OsConfigServiceClient {
     this.initialize();
     return this.innerApiCalls.cancelPatchJob(request, options, callback);
   }
-  createPatchDeployment(
-      request?: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1.IPatchDeployment,
-        protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest|undefined, {}|undefined
-      ]>;
-  createPatchDeployment(
-      request: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1.IPatchDeployment,
-          protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest|null|undefined,
-          {}|null|undefined>): void;
-  createPatchDeployment(
-      request: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
-      callback: Callback<
-          protos.google.cloud.osconfig.v1.IPatchDeployment,
-          protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Create an OS Config patch deployment.
  *
@@ -595,9 +575,29 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createPatchDeployment(request);
+ * @example <caption>include:samples/generated/v1/os_config_service.create_patch_deployment.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_CreatePatchDeployment_async
  */
+  createPatchDeployment(
+      request?: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1.IPatchDeployment,
+        protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest|undefined, {}|undefined
+      ]>;
+  createPatchDeployment(
+      request: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1.IPatchDeployment,
+          protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest|null|undefined,
+          {}|null|undefined>): void;
+  createPatchDeployment(
+      request: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
+      callback: Callback<
+          protos.google.cloud.osconfig.v1.IPatchDeployment,
+          protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest|null|undefined,
+          {}|null|undefined>): void;
   createPatchDeployment(
       request?: protos.google.cloud.osconfig.v1.ICreatePatchDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -632,6 +632,24 @@ export class OsConfigServiceClient {
     this.initialize();
     return this.innerApiCalls.createPatchDeployment(request, options, callback);
   }
+/**
+ * Get an OS Config patch deployment.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the patch deployment in the form
+ *   `projects/* /patchDeployments/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PatchDeployment]{@link google.cloud.osconfig.v1.PatchDeployment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/os_config_service.get_patch_deployment.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_GetPatchDeployment_async
+ */
   getPatchDeployment(
       request?: protos.google.cloud.osconfig.v1.IGetPatchDeploymentRequest,
       options?: CallOptions):
@@ -652,24 +670,6 @@ export class OsConfigServiceClient {
           protos.google.cloud.osconfig.v1.IPatchDeployment,
           protos.google.cloud.osconfig.v1.IGetPatchDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get an OS Config patch deployment.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the patch deployment in the form
- *   `projects/* /patchDeployments/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PatchDeployment]{@link google.cloud.osconfig.v1.PatchDeployment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPatchDeployment(request);
- */
   getPatchDeployment(
       request?: protos.google.cloud.osconfig.v1.IGetPatchDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -704,6 +704,24 @@ export class OsConfigServiceClient {
     this.initialize();
     return this.innerApiCalls.getPatchDeployment(request, options, callback);
   }
+/**
+ * Delete an OS Config patch deployment.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the patch deployment in the form
+ *   `projects/* /patchDeployments/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/os_config_service.delete_patch_deployment.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_DeletePatchDeployment_async
+ */
   deletePatchDeployment(
       request?: protos.google.cloud.osconfig.v1.IDeletePatchDeploymentRequest,
       options?: CallOptions):
@@ -724,24 +742,6 @@ export class OsConfigServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.osconfig.v1.IDeletePatchDeploymentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Delete an OS Config patch deployment.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the patch deployment in the form
- *   `projects/* /patchDeployments/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deletePatchDeployment(request);
- */
   deletePatchDeployment(
       request?: protos.google.cloud.osconfig.v1.IDeletePatchDeploymentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -777,28 +777,7 @@ export class OsConfigServiceClient {
     return this.innerApiCalls.deletePatchDeployment(request, options, callback);
   }
 
-  listPatchJobs(
-      request?: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1.IPatchJob[],
-        protos.google.cloud.osconfig.v1.IListPatchJobsRequest|null,
-        protos.google.cloud.osconfig.v1.IListPatchJobsResponse
-      ]>;
-  listPatchJobs(
-      request: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
-          protos.google.cloud.osconfig.v1.IListPatchJobsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1.IPatchJob>): void;
-  listPatchJobs(
-      request: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
-          protos.google.cloud.osconfig.v1.IListPatchJobsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1.IPatchJob>): void;
-/**
+ /**
  * Get a list of patch jobs.
  *
  * @param {Object} request
@@ -827,6 +806,27 @@ export class OsConfigServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPatchJobs(
+      request?: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1.IPatchJob[],
+        protos.google.cloud.osconfig.v1.IListPatchJobsRequest|null,
+        protos.google.cloud.osconfig.v1.IListPatchJobsResponse
+      ]>;
+  listPatchJobs(
+      request: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
+          protos.google.cloud.osconfig.v1.IListPatchJobsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1.IPatchJob>): void;
+  listPatchJobs(
+      request: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
+          protos.google.cloud.osconfig.v1.IListPatchJobsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1.IPatchJob>): void;
   listPatchJobs(
       request?: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -940,11 +940,8 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPatchJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/os_config_service.list_patch_jobs.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_ListPatchJobs_async
  */
   listPatchJobsAsync(
       request?: protos.google.cloud.osconfig.v1.IListPatchJobsRequest,
@@ -959,7 +956,6 @@ export class OsConfigServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPatchJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -969,28 +965,7 @@ export class OsConfigServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.osconfig.v1.IPatchJob>;
   }
-  listPatchJobInstanceDetails(
-      request?: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails[],
-        protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest|null,
-        protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsResponse
-      ]>;
-  listPatchJobInstanceDetails(
-      request: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
-          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails>): void;
-  listPatchJobInstanceDetails(
-      request: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
-          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails>): void;
-/**
+ /**
  * Get a list of instance details for a given patch job.
  *
  * @param {Object} request
@@ -1020,6 +995,27 @@ export class OsConfigServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPatchJobInstanceDetails(
+      request?: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails[],
+        protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest|null,
+        protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsResponse
+      ]>;
+  listPatchJobInstanceDetails(
+      request: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
+          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails>): void;
+  listPatchJobInstanceDetails(
+      request: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
+          protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails>): void;
   listPatchJobInstanceDetails(
       request?: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1135,11 +1131,8 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPatchJobInstanceDetailsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/os_config_service.list_patch_job_instance_details.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_ListPatchJobInstanceDetails_async
  */
   listPatchJobInstanceDetailsAsync(
       request?: protos.google.cloud.osconfig.v1.IListPatchJobInstanceDetailsRequest,
@@ -1154,7 +1147,6 @@ export class OsConfigServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPatchJobInstanceDetails'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1164,28 +1156,7 @@ export class OsConfigServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.osconfig.v1.IPatchJobInstanceDetails>;
   }
-  listPatchDeployments(
-      request?: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.osconfig.v1.IPatchDeployment[],
-        protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest|null,
-        protos.google.cloud.osconfig.v1.IListPatchDeploymentsResponse
-      ]>;
-  listPatchDeployments(
-      request: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
-          protos.google.cloud.osconfig.v1.IListPatchDeploymentsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1.IPatchDeployment>): void;
-  listPatchDeployments(
-      request: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
-          protos.google.cloud.osconfig.v1.IListPatchDeploymentsResponse|null|undefined,
-          protos.google.cloud.osconfig.v1.IPatchDeployment>): void;
-/**
+ /**
  * Get a page of OS Config patch deployments.
  *
  * @param {Object} request
@@ -1212,6 +1183,27 @@ export class OsConfigServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPatchDeployments(
+      request?: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.osconfig.v1.IPatchDeployment[],
+        protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest|null,
+        protos.google.cloud.osconfig.v1.IListPatchDeploymentsResponse
+      ]>;
+  listPatchDeployments(
+      request: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
+          protos.google.cloud.osconfig.v1.IListPatchDeploymentsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1.IPatchDeployment>): void;
+  listPatchDeployments(
+      request: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
+          protos.google.cloud.osconfig.v1.IListPatchDeploymentsResponse|null|undefined,
+          protos.google.cloud.osconfig.v1.IPatchDeployment>): void;
   listPatchDeployments(
       request?: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1321,11 +1313,8 @@ export class OsConfigServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPatchDeploymentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/os_config_service.list_patch_deployments.js</caption>
+ * region_tag:osconfig_v1_generated_OsConfigService_ListPatchDeployments_async
  */
   listPatchDeploymentsAsync(
       request?: protos.google.cloud.osconfig.v1.IListPatchDeploymentsRequest,
@@ -1340,7 +1329,6 @@ export class OsConfigServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPatchDeployments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

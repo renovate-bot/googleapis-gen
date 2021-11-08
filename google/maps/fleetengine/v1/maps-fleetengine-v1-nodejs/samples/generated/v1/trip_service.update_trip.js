@@ -23,7 +23,7 @@ function main(name, trip, updateMask) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format
    *  `providers/{provider}/trips/{trip}`. The provider must
@@ -63,12 +63,12 @@ function main(name, trip, updateMask) {
    *  `Trip.intermediate_destinations_version` passed must be consistent with
    *  Fleet Engine's version. If it isn't, the request fails.
    */
-  // const trip = ''
+  // const trip = {}
   /**
    *  Required. The field mask indicating which fields in Trip to update.
    *  The update_mask must contain at least one field.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Fleetengine library
   const {TripServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -76,7 +76,7 @@ function main(name, trip, updateMask) {
   // Instantiates a client
   const fleetengineClient = new TripServiceClient();
 
-  async function updateTrip() {
+  async function callUpdateTrip() {
     // Construct request
     const request = {
       name,
@@ -89,7 +89,7 @@ function main(name, trip, updateMask) {
     console.log(response);
   }
 
-  updateTrip();
+  callUpdateTrip();
   // [END fleetengine_v1_generated_TripService_UpdateTrip_async]
 }
 

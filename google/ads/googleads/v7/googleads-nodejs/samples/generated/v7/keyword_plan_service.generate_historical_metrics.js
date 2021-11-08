@@ -28,11 +28,11 @@ function main(keywordPlan) {
   /**
    *  The aggregate fields to include in response.
    */
-  // const aggregateMetrics = ''
+  // const aggregateMetrics = {}
   /**
    *  The options for historical metrics data.
    */
-  // const historicalMetricsOptions = ''
+  // const historicalMetricsOptions = {}
 
   // Imports the Googleads library
   const {KeywordPlanServiceClient} = require('google-ads').v7;
@@ -40,7 +40,7 @@ function main(keywordPlan) {
   // Instantiates a client
   const googleadsClient = new KeywordPlanServiceClient();
 
-  async function generateHistoricalMetrics() {
+  async function callGenerateHistoricalMetrics() {
     // Construct request
     const request = {
       keywordPlan,
@@ -51,7 +51,7 @@ function main(keywordPlan) {
     console.log(response);
   }
 
-  generateHistoricalMetrics();
+  callGenerateHistoricalMetrics();
   // [END googleads_v7_generated_KeywordPlanService_GenerateHistoricalMetrics_async]
 }
 

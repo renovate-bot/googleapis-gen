@@ -321,6 +321,26 @@ export class CatalogServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a catalog item.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent catalog resource name, such as
+ *   `projects/* /locations/global/catalogs/default_catalog`.
+ * @param {google.cloud.recommendationengine.v1beta1.CatalogItem} request.catalogItem
+ *   Required. The catalog item to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CatalogItem]{@link google.cloud.recommendationengine.v1beta1.CatalogItem}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.create_catalog_item.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_CreateCatalogItem_async
+ */
   createCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
       options?: CallOptions):
@@ -341,26 +361,6 @@ export class CatalogServiceClient {
           protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
           protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a catalog item.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent catalog resource name, such as
- *   `projects/* /locations/global/catalogs/default_catalog`.
- * @param {google.cloud.recommendationengine.v1beta1.CatalogItem} request.catalogItem
- *   Required. The catalog item to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CatalogItem]{@link google.cloud.recommendationengine.v1beta1.CatalogItem}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createCatalogItem(request);
- */
   createCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.ICreateCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -395,6 +395,24 @@ export class CatalogServiceClient {
     this.initialize();
     return this.innerApiCalls.createCatalogItem(request, options, callback);
   }
+/**
+ * Gets a specific catalog item.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Full resource name of catalog item, such as
+ *   `projects/* /locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CatalogItem]{@link google.cloud.recommendationengine.v1beta1.CatalogItem}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.get_catalog_item.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_GetCatalogItem_async
+ */
   getCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
       options?: CallOptions):
@@ -415,24 +433,6 @@ export class CatalogServiceClient {
           protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
           protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a specific catalog item.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Full resource name of catalog item, such as
- *   `projects/* /locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CatalogItem]{@link google.cloud.recommendationengine.v1beta1.CatalogItem}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getCatalogItem(request);
- */
   getCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IGetCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -467,26 +467,6 @@ export class CatalogServiceClient {
     this.initialize();
     return this.innerApiCalls.getCatalogItem(request, options, callback);
   }
-  updateCatalogItem(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
-        protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|undefined, {}|undefined
-      ]>;
-  updateCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
-          protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateCatalogItem(
-      request: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
-      callback: Callback<
-          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
-          protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a catalog item. Partial updating is supported. Non-existing
  * items will be created.
@@ -509,9 +489,29 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateCatalogItem(request);
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.update_catalog_item.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_UpdateCatalogItem_async
  */
+  updateCatalogItem(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
+        protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|undefined, {}|undefined
+      ]>;
+  updateCatalogItem(
+      request: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
+          protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateCatalogItem(
+      request: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
+      callback: Callback<
+          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem,
+          protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest|null|undefined,
+          {}|null|undefined>): void;
   updateCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IUpdateCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -546,6 +546,24 @@ export class CatalogServiceClient {
     this.initialize();
     return this.innerApiCalls.updateCatalogItem(request, options, callback);
   }
+/**
+ * Deletes a catalog item.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Full resource name of catalog item, such as
+ *   `projects/* /locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.delete_catalog_item.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_DeleteCatalogItem_async
+ */
   deleteCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
       options?: CallOptions):
@@ -566,24 +584,6 @@ export class CatalogServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a catalog item.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Full resource name of catalog item, such as
- *   `projects/* /locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteCatalogItem(request);
- */
   deleteCatalogItem(
       request?: protos.google.cloud.recommendationengine.v1beta1.IDeleteCatalogItemRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -619,26 +619,6 @@ export class CatalogServiceClient {
     return this.innerApiCalls.deleteCatalogItem(request, options, callback);
   }
 
-  importCatalogItems(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Bulk import of multiple catalog items. Request processing may be
  * synchronous. No partial updating supported. Non-existing items will be
@@ -669,10 +649,29 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importCatalogItems(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.import_catalog_items.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_ImportCatalogItems_async
  */
+  importCatalogItems(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importCatalogItems(
+      request: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importCatalogItems(
+      request: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.IImportMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importCatalogItems(
       request?: protos.google.cloud.recommendationengine.v1beta1.IImportCatalogItemsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -716,11 +715,8 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportCatalogItemsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.import_catalog_items.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_ImportCatalogItems_async
  */
   async checkImportCatalogItemsProgress(name: string): Promise<LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -728,28 +724,7 @@ export class CatalogServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importCatalogItems, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse, protos.google.cloud.recommendationengine.v1beta1.ImportMetadata>;
   }
-  listCatalogItems(
-      request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.recommendationengine.v1beta1.ICatalogItem[],
-        protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest|null,
-        protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse
-      ]>;
-  listCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem>): void;
-  listCatalogItems(
-      request: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
-          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse|null|undefined,
-          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem>): void;
-/**
+ /**
  * Gets a list of catalog items.
  *
  * @param {Object} request
@@ -777,6 +752,27 @@ export class CatalogServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listCatalogItems(
+      request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.recommendationengine.v1beta1.ICatalogItem[],
+        protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest|null,
+        protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse
+      ]>;
+  listCatalogItems(
+      request: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem>): void;
+  listCatalogItems(
+      request: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
+          protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsResponse|null|undefined,
+          protos.google.cloud.recommendationengine.v1beta1.ICatalogItem>): void;
   listCatalogItems(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -888,11 +884,8 @@ export class CatalogServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listCatalogItemsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/catalog_service.list_catalog_items.js</caption>
+ * region_tag:recommendationengine_v1beta1_generated_CatalogService_ListCatalogItems_async
  */
   listCatalogItemsAsync(
       request?: protos.google.cloud.recommendationengine.v1beta1.IListCatalogItemsRequest,
@@ -907,7 +900,6 @@ export class CatalogServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listCatalogItems'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

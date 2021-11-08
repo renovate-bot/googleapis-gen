@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on the customer
    */
-  // const operation = ''
+  // const operation = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -37,7 +37,7 @@ function main(customerId, operation) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {CustomerServiceClient} = require('google-ads').v8;
@@ -45,7 +45,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new CustomerServiceClient();
 
-  async function mutateCustomer() {
+  async function callMutateCustomer() {
     // Construct request
     const request = {
       customerId,
@@ -57,7 +57,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateCustomer();
+  callMutateCustomer();
   // [END googleads_v8_generated_CustomerService_MutateCustomer_async]
 }
 

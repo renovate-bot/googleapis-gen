@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const admobClient = new AdMobApiClient();
 
-  async function listPublisherAccounts() {
+  async function callListPublisherAccounts() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     }
   }
 
-  listPublisherAccounts();
+  callListPublisherAccounts();
   // [END admob_v1_generated_AdMobApi_ListPublisherAccounts_async]
 }
 

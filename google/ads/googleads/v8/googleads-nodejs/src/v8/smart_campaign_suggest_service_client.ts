@@ -676,6 +676,27 @@ export class SmartCampaignSuggestServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns BudgetOption suggestions.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customerId
+ *   Required. The ID of the customer whose budget options are to be suggested.
+ * @param {string} request.campaign
+ *   Required. The resource name of the campaign to get suggestion for.
+ * @param {google.ads.googleads.v8.services.SmartCampaignSuggestionInfo} request.suggestionInfo
+ *   Required. Information needed to get budget options
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [SuggestSmartCampaignBudgetOptionsResponse]{@link google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v8/smart_campaign_suggest_service.suggest_smart_campaign_budget_options.js</caption>
+ * region_tag:googleads_v8_generated_SmartCampaignSuggestService_SuggestSmartCampaignBudgetOptions_async
+ */
   suggestSmartCampaignBudgetOptions(
       request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
       options?: CallOptions):
@@ -696,27 +717,6 @@ export class SmartCampaignSuggestServiceClient {
           protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsResponse,
           protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns BudgetOption suggestions.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.customerId
- *   Required. The ID of the customer whose budget options are to be suggested.
- * @param {string} request.campaign
- *   Required. The resource name of the campaign to get suggestion for.
- * @param {google.ads.googleads.v8.services.SmartCampaignSuggestionInfo} request.suggestionInfo
- *   Required. Information needed to get budget options
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [SuggestSmartCampaignBudgetOptionsResponse]{@link google.ads.googleads.v8.services.SuggestSmartCampaignBudgetOptionsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.suggestSmartCampaignBudgetOptions(request);
- */
   suggestSmartCampaignBudgetOptions(
       request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignBudgetOptionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -751,26 +751,6 @@ export class SmartCampaignSuggestServiceClient {
     this.initialize();
     return this.innerApiCalls.suggestSmartCampaignBudgetOptions(request, options, callback);
   }
-  suggestSmartCampaignAd(
-      request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
-        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|undefined, {}|undefined
-      ]>;
-  suggestSmartCampaignAd(
-      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
-          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
-          {}|null|undefined>): void;
-  suggestSmartCampaignAd(
-      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
-          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Suggests a Smart campaign ad compatible with the Ad family of resources,
  * based on data points such as targeting and the business to advertise.
@@ -791,9 +771,29 @@ export class SmartCampaignSuggestServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.suggestSmartCampaignAd(request);
+ * @example <caption>include:samples/generated/v8/smart_campaign_suggest_service.suggest_smart_campaign_ad.js</caption>
+ * region_tag:googleads_v8_generated_SmartCampaignSuggestService_SuggestSmartCampaignAd_async
  */
+  suggestSmartCampaignAd(
+      request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+        protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|undefined, {}|undefined
+      ]>;
+  suggestSmartCampaignAd(
+      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestSmartCampaignAd(
+      request: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdResponse,
+          protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest|null|undefined,
+          {}|null|undefined>): void;
   suggestSmartCampaignAd(
       request?: protos.google.ads.googleads.v8.services.ISuggestSmartCampaignAdRequest,
       optionsOrCallback?: CallOptions|Callback<

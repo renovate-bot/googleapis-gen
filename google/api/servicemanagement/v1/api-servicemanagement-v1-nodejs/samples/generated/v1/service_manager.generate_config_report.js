@@ -23,19 +23,19 @@ function main(newConfig) {
   /**
    *  Required. Service configuration for which we want to generate the report.
    *  For this version of API, the supported types are
-   *  [google.api.servicemanagement.v1.ConfigRef][google.api.servicemanagement.v1.ConfigRef],
-   *  [google.api.servicemanagement.v1.ConfigSource][google.api.servicemanagement.v1.ConfigSource],
-   *  and [google.api.Service][google.api.Service]
+   *  google.api.servicemanagement.v1.ConfigRef google.api.servicemanagement.v1.ConfigRef,
+   *  google.api.servicemanagement.v1.ConfigSource google.api.servicemanagement.v1.ConfigSource,
+   *  and google.api.Service google.api.Service 
    */
-  // const newConfig = ''
+  // const newConfig = {}
   /**
    *  Optional. Service configuration against which the comparison will be done.
    *  For this version of API, the supported types are
-   *  [google.api.servicemanagement.v1.ConfigRef][google.api.servicemanagement.v1.ConfigRef],
-   *  [google.api.servicemanagement.v1.ConfigSource][google.api.servicemanagement.v1.ConfigSource],
-   *  and [google.api.Service][google.api.Service]
+   *  google.api.servicemanagement.v1.ConfigRef google.api.servicemanagement.v1.ConfigRef,
+   *  google.api.servicemanagement.v1.ConfigSource google.api.servicemanagement.v1.ConfigSource,
+   *  and google.api.Service google.api.Service 
    */
-  // const oldConfig = ''
+  // const oldConfig = {}
 
   // Imports the Servicemanagement library
   const {ServiceManagerClient} = require('@google-cloud/service-management').v1;
@@ -43,7 +43,7 @@ function main(newConfig) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function generateConfigReport() {
+  async function callGenerateConfigReport() {
     // Construct request
     const request = {
       newConfig,
@@ -54,7 +54,7 @@ function main(newConfig) {
     console.log(response);
   }
 
-  generateConfigReport();
+  callGenerateConfigReport();
   // [END servicemanagement_v1_generated_ServiceManager_GenerateConfigReport_async]
 }
 

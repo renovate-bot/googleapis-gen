@@ -43,7 +43,7 @@ function main(query) {
   // Instantiates a client
   const googleadsClient = new GoogleAdsFieldServiceClient();
 
-  async function searchGoogleAdsFields() {
+  async function callSearchGoogleAdsFields() {
     // Construct request
     const request = {
       query,
@@ -56,7 +56,7 @@ function main(query) {
     }
   }
 
-  searchGoogleAdsFields();
+  callSearchGoogleAdsFields();
   // [END googleads_v7_generated_GoogleAdsFieldService_SearchGoogleAdsFields_async]
 }
 

@@ -33,9 +33,9 @@ function main() {
   /**
    *  The view to retrieve. Defaults to METADATA_ONLY.
    */
-  // const view = ''
+  // const view = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) to
    *  which to direct the request.
    */
@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new TemplatesServiceClient();
 
-  async function getTemplate() {
+  async function callGetTemplate() {
     // Construct request
     const request = {
     };
@@ -57,7 +57,7 @@ function main() {
     console.log(response);
   }
 
-  getTemplate();
+  callGetTemplate();
   // [END dataflow_v1beta3_generated_TemplatesService_GetTemplate_async]
 }
 

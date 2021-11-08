@@ -32,7 +32,7 @@ function main(parent, executionId, execution) {
   /**
    *  Required. The execution to be created.
    */
-  // const execution = ''
+  // const execution = {}
 
   // Imports the Notebooks library
   const {NotebookServiceClient} = require('@google-cloud/notebooks').v1;
@@ -40,7 +40,7 @@ function main(parent, executionId, execution) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function createExecution() {
+  async function callCreateExecution() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, executionId, execution) {
     console.log(response);
   }
 
-  createExecution();
+  callCreateExecution();
   // [END notebooks_v1_generated_NotebookService_CreateExecution_async]
 }
 

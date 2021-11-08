@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function deleteCluster() {
+  async function callDeleteCluster() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteCluster();
+  callDeleteCluster();
   // [END aistreams_v1alpha1_generated_AIStreams_DeleteCluster_async]
 }
 

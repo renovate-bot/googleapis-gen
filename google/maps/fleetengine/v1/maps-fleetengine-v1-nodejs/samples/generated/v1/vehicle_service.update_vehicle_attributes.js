@@ -23,7 +23,7 @@ function main(name, attributes) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format
    *  "providers/{provider}/vehicles/{vehicle}.
@@ -46,7 +46,7 @@ function main(name, attributes) {
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function updateVehicleAttributes() {
+  async function callUpdateVehicleAttributes() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name, attributes) {
     console.log(response);
   }
 
-  updateVehicleAttributes();
+  callUpdateVehicleAttributes();
   // [END fleetengine_v1_generated_VehicleService_UpdateVehicleAttributes_async]
 }
 

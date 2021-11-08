@@ -28,11 +28,11 @@ function main() {
   /**
    *  A FirewallRule containing the updated resource
    */
-  // const rule = ''
+  // const rule = {}
   /**
    *  Standard field mask for the set of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Appengine library
   const {FirewallClient} = require('@google-cloud/appengine-admin').v1;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new FirewallClient();
 
-  async function updateIngressRule() {
+  async function callUpdateIngressRule() {
     // Construct request
     const request = {
     };
@@ -50,7 +50,7 @@ function main() {
     console.log(response);
   }
 
-  updateIngressRule();
+  callUpdateIngressRule();
   // [END appengine_v1_generated_Firewall_UpdateIngressRule_async]
 }
 

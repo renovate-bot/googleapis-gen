@@ -373,26 +373,6 @@ export class ServiceMonitoringServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createService(
-      request?: protos.google.monitoring.v3.ICreateServiceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IService,
-        protos.google.monitoring.v3.ICreateServiceRequest|undefined, {}|undefined
-      ]>;
-  createService(
-      request: protos.google.monitoring.v3.ICreateServiceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IService,
-          protos.google.monitoring.v3.ICreateServiceRequest|null|undefined,
-          {}|null|undefined>): void;
-  createService(
-      request: protos.google.monitoring.v3.ICreateServiceRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IService,
-          protos.google.monitoring.v3.ICreateServiceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Create a `Service`.
  *
@@ -415,9 +395,29 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createService(request);
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.create_service.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_CreateService_async
  */
+  createService(
+      request?: protos.google.monitoring.v3.ICreateServiceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IService,
+        protos.google.monitoring.v3.ICreateServiceRequest|undefined, {}|undefined
+      ]>;
+  createService(
+      request: protos.google.monitoring.v3.ICreateServiceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IService,
+          protos.google.monitoring.v3.ICreateServiceRequest|null|undefined,
+          {}|null|undefined>): void;
+  createService(
+      request: protos.google.monitoring.v3.ICreateServiceRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IService,
+          protos.google.monitoring.v3.ICreateServiceRequest|null|undefined,
+          {}|null|undefined>): void;
   createService(
       request?: protos.google.monitoring.v3.ICreateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -452,6 +452,25 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.createService(request, options, callback);
   }
+/**
+ * Get the named `Service`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the `Service`. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Service]{@link google.monitoring.v3.Service}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.get_service.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_GetService_async
+ */
   getService(
       request?: protos.google.monitoring.v3.IGetServiceRequest,
       options?: CallOptions):
@@ -472,25 +491,6 @@ export class ServiceMonitoringServiceClient {
           protos.google.monitoring.v3.IService,
           protos.google.monitoring.v3.IGetServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get the named `Service`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the `Service`. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Service]{@link google.monitoring.v3.Service}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getService(request);
- */
   getService(
       request?: protos.google.monitoring.v3.IGetServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -525,6 +525,26 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.getService(request, options, callback);
   }
+/**
+ * Update this `Service`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.monitoring.v3.Service} request.service
+ *   Required. The `Service` to draw updates from.
+ *   The given `name` specifies the resource to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   A set of field paths defining which fields to use for the update.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Service]{@link google.monitoring.v3.Service}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.update_service.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_UpdateService_async
+ */
   updateService(
       request?: protos.google.monitoring.v3.IUpdateServiceRequest,
       options?: CallOptions):
@@ -545,26 +565,6 @@ export class ServiceMonitoringServiceClient {
           protos.google.monitoring.v3.IService,
           protos.google.monitoring.v3.IUpdateServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Update this `Service`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.monitoring.v3.Service} request.service
- *   Required. The `Service` to draw updates from.
- *   The given `name` specifies the resource to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   A set of field paths defining which fields to use for the update.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Service]{@link google.monitoring.v3.Service}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateService(request);
- */
   updateService(
       request?: protos.google.monitoring.v3.IUpdateServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -599,6 +599,25 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.updateService(request, options, callback);
   }
+/**
+ * Soft delete this `Service`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the `Service` to delete. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.delete_service.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_DeleteService_async
+ */
   deleteService(
       request?: protos.google.monitoring.v3.IDeleteServiceRequest,
       options?: CallOptions):
@@ -619,25 +638,6 @@ export class ServiceMonitoringServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteServiceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Soft delete this `Service`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the `Service` to delete. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteService(request);
- */
   deleteService(
       request?: protos.google.monitoring.v3.IDeleteServiceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -672,26 +672,6 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.deleteService(request, options, callback);
   }
-  createServiceLevelObjective(
-      request?: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IServiceLevelObjective,
-        protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|undefined, {}|undefined
-      ]>;
-  createServiceLevelObjective(
-      request: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IServiceLevelObjective,
-          protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|null|undefined,
-          {}|null|undefined>): void;
-  createServiceLevelObjective(
-      request: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IServiceLevelObjective,
-          protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Create a `ServiceLevelObjective` for the given `Service`.
  *
@@ -716,9 +696,29 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createServiceLevelObjective(request);
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.create_service_level_objective.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_CreateServiceLevelObjective_async
  */
+  createServiceLevelObjective(
+      request?: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IServiceLevelObjective,
+        protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|undefined, {}|undefined
+      ]>;
+  createServiceLevelObjective(
+      request: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IServiceLevelObjective,
+          protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|null|undefined,
+          {}|null|undefined>): void;
+  createServiceLevelObjective(
+      request: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IServiceLevelObjective,
+          protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest|null|undefined,
+          {}|null|undefined>): void;
   createServiceLevelObjective(
       request?: protos.google.monitoring.v3.ICreateServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -753,26 +753,6 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.createServiceLevelObjective(request, options, callback);
   }
-  getServiceLevelObjective(
-      request?: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IServiceLevelObjective,
-        protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|undefined, {}|undefined
-      ]>;
-  getServiceLevelObjective(
-      request: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.monitoring.v3.IServiceLevelObjective,
-          protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|null|undefined,
-          {}|null|undefined>): void;
-  getServiceLevelObjective(
-      request: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
-      callback: Callback<
-          protos.google.monitoring.v3.IServiceLevelObjective,
-          protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Get a `ServiceLevelObjective` by name.
  *
@@ -794,9 +774,29 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getServiceLevelObjective(request);
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.get_service_level_objective.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_GetServiceLevelObjective_async
  */
+  getServiceLevelObjective(
+      request?: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IServiceLevelObjective,
+        protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|undefined, {}|undefined
+      ]>;
+  getServiceLevelObjective(
+      request: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.monitoring.v3.IServiceLevelObjective,
+          protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|null|undefined,
+          {}|null|undefined>): void;
+  getServiceLevelObjective(
+      request: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
+      callback: Callback<
+          protos.google.monitoring.v3.IServiceLevelObjective,
+          protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest|null|undefined,
+          {}|null|undefined>): void;
   getServiceLevelObjective(
       request?: protos.google.monitoring.v3.IGetServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -831,6 +831,26 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.getServiceLevelObjective(request, options, callback);
   }
+/**
+ * Update the given `ServiceLevelObjective`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.monitoring.v3.ServiceLevelObjective} request.serviceLevelObjective
+ *   Required. The `ServiceLevelObjective` to draw updates from.
+ *   The given `name` specifies the resource to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   A set of field paths defining which fields to use for the update.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServiceLevelObjective]{@link google.monitoring.v3.ServiceLevelObjective}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.update_service_level_objective.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_UpdateServiceLevelObjective_async
+ */
   updateServiceLevelObjective(
       request?: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
       options?: CallOptions):
@@ -851,26 +871,6 @@ export class ServiceMonitoringServiceClient {
           protos.google.monitoring.v3.IServiceLevelObjective,
           protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Update the given `ServiceLevelObjective`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.monitoring.v3.ServiceLevelObjective} request.serviceLevelObjective
- *   Required. The `ServiceLevelObjective` to draw updates from.
- *   The given `name` specifies the resource to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   A set of field paths defining which fields to use for the update.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ServiceLevelObjective]{@link google.monitoring.v3.ServiceLevelObjective}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateServiceLevelObjective(request);
- */
   updateServiceLevelObjective(
       request?: protos.google.monitoring.v3.IUpdateServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -905,6 +905,25 @@ export class ServiceMonitoringServiceClient {
     this.initialize();
     return this.innerApiCalls.updateServiceLevelObjective(request, options, callback);
   }
+/**
+ * Delete the given `ServiceLevelObjective`.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
+ *
+ *       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.delete_service_level_objective.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_DeleteServiceLevelObjective_async
+ */
   deleteServiceLevelObjective(
       request?: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
       options?: CallOptions):
@@ -925,25 +944,6 @@ export class ServiceMonitoringServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Delete the given `ServiceLevelObjective`.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
- *
- *       projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteServiceLevelObjective(request);
- */
   deleteServiceLevelObjective(
       request?: protos.google.monitoring.v3.IDeleteServiceLevelObjectiveRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -979,28 +979,7 @@ export class ServiceMonitoringServiceClient {
     return this.innerApiCalls.deleteServiceLevelObjective(request, options, callback);
   }
 
-  listServices(
-      request?: protos.google.monitoring.v3.IListServicesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IService[],
-        protos.google.monitoring.v3.IListServicesRequest|null,
-        protos.google.monitoring.v3.IListServicesResponse
-      ]>;
-  listServices(
-      request: protos.google.monitoring.v3.IListServicesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListServicesRequest,
-          protos.google.monitoring.v3.IListServicesResponse|null|undefined,
-          protos.google.monitoring.v3.IService>): void;
-  listServices(
-      request: protos.google.monitoring.v3.IListServicesRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListServicesRequest,
-          protos.google.monitoring.v3.IListServicesResponse|null|undefined,
-          protos.google.monitoring.v3.IService>): void;
-/**
+ /**
  * List `Service`s for this workspace.
  *
  * @param {Object} request
@@ -1052,6 +1031,27 @@ export class ServiceMonitoringServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServices(
+      request?: protos.google.monitoring.v3.IListServicesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IService[],
+        protos.google.monitoring.v3.IListServicesRequest|null,
+        protos.google.monitoring.v3.IListServicesResponse
+      ]>;
+  listServices(
+      request: protos.google.monitoring.v3.IListServicesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListServicesRequest,
+          protos.google.monitoring.v3.IListServicesResponse|null|undefined,
+          protos.google.monitoring.v3.IService>): void;
+  listServices(
+      request: protos.google.monitoring.v3.IListServicesRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListServicesRequest,
+          protos.google.monitoring.v3.IListServicesResponse|null|undefined,
+          protos.google.monitoring.v3.IService>): void;
   listServices(
       request?: protos.google.monitoring.v3.IListServicesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1211,11 +1211,8 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServicesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.list_services.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_ListServices_async
  */
   listServicesAsync(
       request?: protos.google.monitoring.v3.IListServicesRequest,
@@ -1230,7 +1227,6 @@ export class ServiceMonitoringServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServices'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1240,28 +1236,7 @@ export class ServiceMonitoringServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.monitoring.v3.IService>;
   }
-  listServiceLevelObjectives(
-      request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.monitoring.v3.IServiceLevelObjective[],
-        protos.google.monitoring.v3.IListServiceLevelObjectivesRequest|null,
-        protos.google.monitoring.v3.IListServiceLevelObjectivesResponse
-      ]>;
-  listServiceLevelObjectives(
-      request: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
-          protos.google.monitoring.v3.IListServiceLevelObjectivesResponse|null|undefined,
-          protos.google.monitoring.v3.IServiceLevelObjective>): void;
-  listServiceLevelObjectives(
-      request: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
-      callback: PaginationCallback<
-          protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
-          protos.google.monitoring.v3.IListServiceLevelObjectivesResponse|null|undefined,
-          protos.google.monitoring.v3.IServiceLevelObjective>): void;
-/**
+ /**
  * List the `ServiceLevelObjective`s for the given `Service`.
  *
  * @param {Object} request
@@ -1299,6 +1274,27 @@ export class ServiceMonitoringServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServiceLevelObjectives(
+      request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.monitoring.v3.IServiceLevelObjective[],
+        protos.google.monitoring.v3.IListServiceLevelObjectivesRequest|null,
+        protos.google.monitoring.v3.IListServiceLevelObjectivesResponse
+      ]>;
+  listServiceLevelObjectives(
+      request: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+          protos.google.monitoring.v3.IListServiceLevelObjectivesResponse|null|undefined,
+          protos.google.monitoring.v3.IServiceLevelObjective>): void;
+  listServiceLevelObjectives(
+      request: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+      callback: PaginationCallback<
+          protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
+          protos.google.monitoring.v3.IListServiceLevelObjectivesResponse|null|undefined,
+          protos.google.monitoring.v3.IServiceLevelObjective>): void;
   listServiceLevelObjectives(
       request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1430,11 +1426,8 @@ export class ServiceMonitoringServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServiceLevelObjectivesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/service_monitoring_service.list_service_level_objectives.js</caption>
+ * region_tag:monitoring_v3_generated_ServiceMonitoringService_ListServiceLevelObjectives_async
  */
   listServiceLevelObjectivesAsync(
       request?: protos.google.monitoring.v3.IListServiceLevelObjectivesRequest,
@@ -1449,7 +1442,6 @@ export class ServiceMonitoringServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServiceLevelObjectives'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

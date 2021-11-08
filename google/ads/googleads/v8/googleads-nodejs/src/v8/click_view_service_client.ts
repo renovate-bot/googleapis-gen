@@ -676,26 +676,6 @@ export class ClickViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getClickView(
-      request?: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IClickView,
-        protos.google.ads.googleads.v8.services.IGetClickViewRequest|undefined, {}|undefined
-      ]>;
-  getClickView(
-      request: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IClickView,
-          protos.google.ads.googleads.v8.services.IGetClickViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getClickView(
-      request: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IClickView,
-          protos.google.ads.googleads.v8.services.IGetClickViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested click view in full detail.
  *
@@ -718,9 +698,29 @@ export class ClickViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getClickView(request);
+ * @example <caption>include:samples/generated/v8/click_view_service.get_click_view.js</caption>
+ * region_tag:googleads_v8_generated_ClickViewService_GetClickView_async
  */
+  getClickView(
+      request?: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IClickView,
+        protos.google.ads.googleads.v8.services.IGetClickViewRequest|undefined, {}|undefined
+      ]>;
+  getClickView(
+      request: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IClickView,
+          protos.google.ads.googleads.v8.services.IGetClickViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getClickView(
+      request: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IClickView,
+          protos.google.ads.googleads.v8.services.IGetClickViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getClickView(
       request?: protos.google.ads.googleads.v8.services.IGetClickViewRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -646,26 +646,6 @@ export class DomainCategoryServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getDomainCategory(
-      request?: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IDomainCategory,
-        protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest|undefined, {}|undefined
-      ]>;
-  getDomainCategory(
-      request: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IDomainCategory,
-          protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDomainCategory(
-      request: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IDomainCategory,
-          protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested domain category.
  *
@@ -688,9 +668,29 @@ export class DomainCategoryServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDomainCategory(request);
+ * @example <caption>include:samples/generated/v7/domain_category_service.get_domain_category.js</caption>
+ * region_tag:googleads_v7_generated_DomainCategoryService_GetDomainCategory_async
  */
+  getDomainCategory(
+      request?: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IDomainCategory,
+        protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest|undefined, {}|undefined
+      ]>;
+  getDomainCategory(
+      request: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IDomainCategory,
+          protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDomainCategory(
+      request: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IDomainCategory,
+          protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest|null|undefined,
+          {}|null|undefined>): void;
   getDomainCategory(
       request?: protos.google.ads.googleads.v7.services.IGetDomainCategoryRequest,
       optionsOrCallback?: CallOptions|Callback<

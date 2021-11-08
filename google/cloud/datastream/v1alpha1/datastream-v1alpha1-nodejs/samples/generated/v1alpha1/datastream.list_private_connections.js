@@ -54,7 +54,7 @@ function main(parent) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function listPrivateConnections() {
+  async function callListPrivateConnections() {
     // Construct request
     const request = {
       parent,
@@ -67,7 +67,7 @@ function main(parent) {
     }
   }
 
-  listPrivateConnections();
+  callListPrivateConnections();
   // [END datastream_v1alpha1_generated_Datastream_ListPrivateConnections_async]
 }
 

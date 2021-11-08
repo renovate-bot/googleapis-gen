@@ -23,13 +23,13 @@ function main(intent) {
   /**
    *  Required. The intent to update.
    */
-  // const intent = ''
+  // const intent = {}
   /**
    *  The language of the following fields in `intent`:
    *  *   `Intent.training_phrases.parts.text`
    *  If not specified, the agent's default language is used.
-   *  [Many
-   *  languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
+   *  Many
+   *  languages (https://cloud.google.com/dialogflow/cx/docs/reference/language)
    *  are supported.
    *  Note: languages must be enabled in the agent before they can be used.
    */
@@ -38,7 +38,7 @@ function main(intent) {
    *  The mask to control which fields get updated. If the mask is not present,
    *  all fields will be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Cx library
   const {IntentsClient} = require('@google-cloud/dialogflow-cx').v3;
@@ -46,7 +46,7 @@ function main(intent) {
   // Instantiates a client
   const cxClient = new IntentsClient();
 
-  async function updateIntent() {
+  async function callUpdateIntent() {
     // Construct request
     const request = {
       intent,
@@ -57,7 +57,7 @@ function main(intent) {
     console.log(response);
   }
 
-  updateIntent();
+  callUpdateIntent();
   // [END dialogflow_v3_generated_Intents_UpdateIntent_async]
 }
 

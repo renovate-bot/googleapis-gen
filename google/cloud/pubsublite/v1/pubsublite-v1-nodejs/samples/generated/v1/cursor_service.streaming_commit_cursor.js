@@ -23,11 +23,11 @@ function main() {
   /**
    *  Initial request on the stream.
    */
-  // const initial = ''
+  // const initial = {}
   /**
    *  Request to commit a new cursor value.
    */
-  // const commit = ''
+  // const commit = {}
 
   // Imports the Pubsublite library
   const {CursorServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const pubsubliteClient = new CursorServiceClient();
 
-  async function streamingCommitCursor() {
+  async function callStreamingCommitCursor() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     stream.end(); 
   }
 
-  streamingCommitCursor();
+  callStreamingCommitCursor();
   // [END pubsublite_v1_generated_CursorService_StreamingCommitCursor_async]
 }
 

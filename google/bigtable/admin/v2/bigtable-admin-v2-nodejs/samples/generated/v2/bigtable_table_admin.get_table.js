@@ -30,7 +30,7 @@ function main(name) {
    *  The view to be applied to the returned table's fields.
    *  Defaults to `SCHEMA_VIEW` if unspecified.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Admin library
   const {BigtableTableAdminClient} = require('@google-cloud/bigtable').v2;
@@ -38,7 +38,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new BigtableTableAdminClient();
 
-  async function getTable() {
+  async function callGetTable() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTable();
+  callGetTable();
   // [END bigtableadmin_v2_generated_BigtableTableAdmin_GetTable_async]
 }
 

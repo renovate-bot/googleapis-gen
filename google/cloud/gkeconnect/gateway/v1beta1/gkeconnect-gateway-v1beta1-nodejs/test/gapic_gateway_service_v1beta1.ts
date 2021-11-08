@@ -126,7 +126,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.getResource = stubSimpleCall(expectedResponse);
             const [response] = await client.getResource(request);
@@ -142,7 +142,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.getResource = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.getResource = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getResource(request), expectedError);
@@ -186,7 +186,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.postResource = stubSimpleCall(expectedResponse);
             const [response] = await client.postResource(request);
@@ -202,7 +202,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.postResource = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +229,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.postResource = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.postResource(request), expectedError);
@@ -246,7 +246,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.deleteResource = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteResource(request);
@@ -262,7 +262,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.deleteResource = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -289,7 +289,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteResource = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteResource(request), expectedError);
@@ -306,7 +306,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.putResource = stubSimpleCall(expectedResponse);
             const [response] = await client.putResource(request);
@@ -322,7 +322,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.putResource = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -349,7 +349,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.putResource = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.putResource(request), expectedError);
@@ -366,7 +366,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.patchResource = stubSimpleCall(expectedResponse);
             const [response] = await client.patchResource(request);
@@ -382,7 +382,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.api.HttpBody());
             client.innerApiCalls.patchResource = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -409,7 +409,7 @@ describe('v1beta1.GatewayServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.patchResource = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchResource(request), expectedError);

@@ -646,26 +646,6 @@ export class CustomerServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomer(
-      request?: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICustomer,
-        protos.google.ads.googleads.v7.services.IGetCustomerRequest|undefined, {}|undefined
-      ]>;
-  getCustomer(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomer,
-          protos.google.ads.googleads.v7.services.IGetCustomerRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomer(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomer,
-          protos.google.ads.googleads.v7.services.IGetCustomerRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested customer in full detail.
  *
@@ -688,9 +668,29 @@ export class CustomerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomer(request);
+ * @example <caption>include:samples/generated/v7/customer_service.get_customer.js</caption>
+ * region_tag:googleads_v7_generated_CustomerService_GetCustomer_async
  */
+  getCustomer(
+      request?: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICustomer,
+        protos.google.ads.googleads.v7.services.IGetCustomerRequest|undefined, {}|undefined
+      ]>;
+  getCustomer(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomer,
+          protos.google.ads.googleads.v7.services.IGetCustomerRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomer(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomer,
+          protos.google.ads.googleads.v7.services.IGetCustomerRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomer(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class CustomerServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomer(request, options, callback);
   }
-  mutateCustomer(
-      request?: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateCustomerResponse,
-        protos.google.ads.googleads.v7.services.IMutateCustomerRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomer(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomer(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a customer. Operation statuses are returned.
  *
@@ -778,9 +758,29 @@ export class CustomerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomer(request);
+ * @example <caption>include:samples/generated/v7/customer_service.mutate_customer.js</caption>
+ * region_tag:googleads_v7_generated_CustomerService_MutateCustomer_async
  */
+  mutateCustomer(
+      request?: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateCustomerResponse,
+        protos.google.ads.googleads.v7.services.IMutateCustomerRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomer(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomer(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomer(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -815,26 +815,6 @@ export class CustomerServiceClient {
     this.initialize();
     return this.innerApiCalls.mutateCustomer(request, options, callback);
   }
-  listAccessibleCustomers(
-      request?: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IListAccessibleCustomersResponse,
-        protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest|undefined, {}|undefined
-      ]>;
-  listAccessibleCustomers(
-      request: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListAccessibleCustomersResponse,
-          protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest|null|undefined,
-          {}|null|undefined>): void;
-  listAccessibleCustomers(
-      request: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IListAccessibleCustomersResponse,
-          protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns resource names of customers directly accessible by the
  * user authenticating the call.
@@ -856,9 +836,29 @@ export class CustomerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.listAccessibleCustomers(request);
+ * @example <caption>include:samples/generated/v7/customer_service.list_accessible_customers.js</caption>
+ * region_tag:googleads_v7_generated_CustomerService_ListAccessibleCustomers_async
  */
+  listAccessibleCustomers(
+      request?: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IListAccessibleCustomersResponse,
+        protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest|undefined, {}|undefined
+      ]>;
+  listAccessibleCustomers(
+      request: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListAccessibleCustomersResponse,
+          protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest|null|undefined,
+          {}|null|undefined>): void;
+  listAccessibleCustomers(
+      request: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IListAccessibleCustomersResponse,
+          protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest|null|undefined,
+          {}|null|undefined>): void;
   listAccessibleCustomers(
       request?: protos.google.ads.googleads.v7.services.IListAccessibleCustomersRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -883,29 +883,11 @@ export class CustomerServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listAccessibleCustomers(request, options, callback);
   }
-  createCustomerClient(
-      request?: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.ICreateCustomerClientResponse,
-        protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest|undefined, {}|undefined
-      ]>;
-  createCustomerClient(
-      request: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.ICreateCustomerClientResponse,
-          protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest|null|undefined,
-          {}|null|undefined>): void;
-  createCustomerClient(
-      request: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.ICreateCustomerClientResponse,
-          protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new client under manager. The new client customer is returned.
  *
@@ -945,9 +927,29 @@ export class CustomerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createCustomerClient(request);
+ * @example <caption>include:samples/generated/v7/customer_service.create_customer_client.js</caption>
+ * region_tag:googleads_v7_generated_CustomerService_CreateCustomerClient_async
  */
+  createCustomerClient(
+      request?: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.ICreateCustomerClientResponse,
+        protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest|undefined, {}|undefined
+      ]>;
+  createCustomerClient(
+      request: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.ICreateCustomerClientResponse,
+          protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest|null|undefined,
+          {}|null|undefined>): void;
+  createCustomerClient(
+      request: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.ICreateCustomerClientResponse,
+          protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest|null|undefined,
+          {}|null|undefined>): void;
   createCustomerClient(
       request?: protos.google.ads.googleads.v7.services.ICreateCustomerClientRequest,
       optionsOrCallback?: CallOptions|Callback<

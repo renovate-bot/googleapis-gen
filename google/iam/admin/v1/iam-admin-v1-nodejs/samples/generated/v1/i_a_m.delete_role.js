@@ -23,17 +23,17 @@ function main() {
   /**
    *  The `name` parameter's value depends on the target resource for the
    *  request, namely
-   *  [`projects`](/iam/reference/rest/v1/projects.roles) or
-   *  [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+   *  `projects` (/iam/reference/rest/v1/projects.roles) or
+   *  `organizations` (/iam/reference/rest/v1/organizations.roles). Each
    *  resource type's `name` value format is described below:
-   *  * [`projects.roles.delete()`](/iam/reference/rest/v1/projects.roles/delete):
+   *  * `projects.roles.delete()` (/iam/reference/rest/v1/projects.roles/delete):
    *    `projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`. This method deletes only
-   *    [custom roles](/iam/docs/understanding-custom-roles) that have been
+   *    custom roles (/iam/docs/understanding-custom-roles) that have been
    *    created at the project level. Example request URL:
    *    `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles/{CUSTOM_ROLE_ID}`
-   *  * [`organizations.roles.delete()`](/iam/reference/rest/v1/organizations.roles/delete):
+   *  * `organizations.roles.delete()` (/iam/reference/rest/v1/organizations.roles/delete):
    *    `organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`. This method
-   *    deletes only [custom roles](/iam/docs/understanding-custom-roles) that
+   *    deletes only custom roles (/iam/docs/understanding-custom-roles) that
    *    have been created at the organization level. Example request URL:
    *    `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles/{CUSTOM_ROLE_ID}`
    *  Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -51,7 +51,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function deleteRole() {
+  async function callDeleteRole() {
     // Construct request
     const request = {
     };
@@ -61,7 +61,7 @@ function main() {
     console.log(response);
   }
 
-  deleteRole();
+  callDeleteRole();
   // [END iam_v1_generated_IAM_DeleteRole_async]
 }
 

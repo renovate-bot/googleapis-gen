@@ -314,26 +314,6 @@ export class ApplicationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createApplication(
-      request?: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.IApplication,
-        protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|undefined, {}|undefined
-      ]>;
-  createApplication(
-      request: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.IApplication,
-          protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|null|undefined,
-          {}|null|undefined>): void;
-  createApplication(
-      request: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.IApplication,
-          protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new application entity.
  *
@@ -354,9 +334,29 @@ export class ApplicationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createApplication(request);
+ * @example <caption>include:samples/generated/v4beta1/application_service.create_application.js</caption>
+ * region_tag:jobs_v4beta1_generated_ApplicationService_CreateApplication_async
  */
+  createApplication(
+      request?: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.IApplication,
+        protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|undefined, {}|undefined
+      ]>;
+  createApplication(
+      request: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.IApplication,
+          protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|null|undefined,
+          {}|null|undefined>): void;
+  createApplication(
+      request: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.IApplication,
+          protos.google.cloud.talent.v4beta1.ICreateApplicationRequest|null|undefined,
+          {}|null|undefined>): void;
   createApplication(
       request?: protos.google.cloud.talent.v4beta1.ICreateApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -391,6 +391,27 @@ export class ApplicationServiceClient {
     this.initialize();
     return this.innerApiCalls.createApplication(request, options, callback);
   }
+/**
+ * Retrieves specified application.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the application to be retrieved.
+ *
+ *   The format is
+ *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+ *   For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Application]{@link google.cloud.talent.v4beta1.Application}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v4beta1/application_service.get_application.js</caption>
+ * region_tag:jobs_v4beta1_generated_ApplicationService_GetApplication_async
+ */
   getApplication(
       request?: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
       options?: CallOptions):
@@ -411,27 +432,6 @@ export class ApplicationServiceClient {
           protos.google.cloud.talent.v4beta1.IApplication,
           protos.google.cloud.talent.v4beta1.IGetApplicationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves specified application.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the application to be retrieved.
- *
- *   The format is
- *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
- *   For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Application]{@link google.cloud.talent.v4beta1.Application}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getApplication(request);
- */
   getApplication(
       request?: protos.google.cloud.talent.v4beta1.IGetApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -466,26 +466,6 @@ export class ApplicationServiceClient {
     this.initialize();
     return this.innerApiCalls.getApplication(request, options, callback);
   }
-  updateApplication(
-      request?: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.IApplication,
-        protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|undefined, {}|undefined
-      ]>;
-  updateApplication(
-      request: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.IApplication,
-          protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateApplication(
-      request: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4beta1.IApplication,
-          protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates specified application.
  *
@@ -508,9 +488,29 @@ export class ApplicationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateApplication(request);
+ * @example <caption>include:samples/generated/v4beta1/application_service.update_application.js</caption>
+ * region_tag:jobs_v4beta1_generated_ApplicationService_UpdateApplication_async
  */
+  updateApplication(
+      request?: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.IApplication,
+        protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|undefined, {}|undefined
+      ]>;
+  updateApplication(
+      request: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.IApplication,
+          protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateApplication(
+      request: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4beta1.IApplication,
+          protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest|null|undefined,
+          {}|null|undefined>): void;
   updateApplication(
       request?: protos.google.cloud.talent.v4beta1.IUpdateApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -545,6 +545,27 @@ export class ApplicationServiceClient {
     this.initialize();
     return this.innerApiCalls.updateApplication(request, options, callback);
   }
+/**
+ * Deletes specified application.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the application to be deleted.
+ *
+ *   The format is
+ *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
+ *   For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v4beta1/application_service.delete_application.js</caption>
+ * region_tag:jobs_v4beta1_generated_ApplicationService_DeleteApplication_async
+ */
   deleteApplication(
       request?: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
       options?: CallOptions):
@@ -565,27 +586,6 @@ export class ApplicationServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes specified application.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the application to be deleted.
- *
- *   The format is
- *   "projects/{project_id}/tenants/{tenant_id}/profiles/{profile_id}/applications/{application_id}".
- *   For example, "projects/foo/tenants/bar/profiles/baz/applications/qux".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteApplication(request);
- */
   deleteApplication(
       request?: protos.google.cloud.talent.v4beta1.IDeleteApplicationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -621,28 +621,7 @@ export class ApplicationServiceClient {
     return this.innerApiCalls.deleteApplication(request, options, callback);
   }
 
-  listApplications(
-      request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4beta1.IApplication[],
-        protos.google.cloud.talent.v4beta1.IListApplicationsRequest|null,
-        protos.google.cloud.talent.v4beta1.IListApplicationsResponse
-      ]>;
-  listApplications(
-      request: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
-          protos.google.cloud.talent.v4beta1.IListApplicationsResponse|null|undefined,
-          protos.google.cloud.talent.v4beta1.IApplication>): void;
-  listApplications(
-      request: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
-          protos.google.cloud.talent.v4beta1.IListApplicationsResponse|null|undefined,
-          protos.google.cloud.talent.v4beta1.IApplication>): void;
-/**
+ /**
  * Lists all applications associated with the profile.
  *
  * @param {Object} request
@@ -671,6 +650,27 @@ export class ApplicationServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listApplications(
+      request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4beta1.IApplication[],
+        protos.google.cloud.talent.v4beta1.IListApplicationsRequest|null,
+        protos.google.cloud.talent.v4beta1.IListApplicationsResponse
+      ]>;
+  listApplications(
+      request: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+          protos.google.cloud.talent.v4beta1.IListApplicationsResponse|null|undefined,
+          protos.google.cloud.talent.v4beta1.IApplication>): void;
+  listApplications(
+      request: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
+          protos.google.cloud.talent.v4beta1.IListApplicationsResponse|null|undefined,
+          protos.google.cloud.talent.v4beta1.IApplication>): void;
   listApplications(
       request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -784,11 +784,8 @@ export class ApplicationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listApplicationsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v4beta1/application_service.list_applications.js</caption>
+ * region_tag:jobs_v4beta1_generated_ApplicationService_ListApplications_async
  */
   listApplicationsAsync(
       request?: protos.google.cloud.talent.v4beta1.IListApplicationsRequest,
@@ -803,7 +800,6 @@ export class ApplicationServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listApplications'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

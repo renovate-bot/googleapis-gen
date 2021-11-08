@@ -39,7 +39,7 @@ function main(parent, instanceId) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function registerInstance() {
+  async function callRegisterInstance() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent, instanceId) {
     console.log(response);
   }
 
-  registerInstance();
+  callRegisterInstance();
   // [END notebooks_v1_generated_NotebookService_RegisterInstance_async]
 }
 

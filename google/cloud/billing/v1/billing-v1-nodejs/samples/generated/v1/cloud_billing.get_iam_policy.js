@@ -29,7 +29,7 @@ function main(resource) {
    *  OPTIONAL: A `GetPolicyOptions` object for specifying options to
    *  `GetIamPolicy`. This field is only used by Cloud IAM.
    */
-  // const options = ''
+  // const options = {}
 
   // Imports the Billing library
   const {CloudBillingClient} = require('@google-cloud/billing').v1;
@@ -37,7 +37,7 @@ function main(resource) {
   // Instantiates a client
   const billingClient = new CloudBillingClient();
 
-  async function getIamPolicy() {
+  async function callGetIamPolicy() {
     // Construct request
     const request = {
       resource,
@@ -48,7 +48,7 @@ function main(resource) {
     console.log(response);
   }
 
-  getIamPolicy();
+  callGetIamPolicy();
   // [END cloudbilling_v1_generated_CloudBilling_GetIamPolicy_async]
 }
 

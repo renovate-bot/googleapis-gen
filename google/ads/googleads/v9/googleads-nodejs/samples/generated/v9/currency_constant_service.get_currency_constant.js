@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CurrencyConstantServiceClient();
 
-  async function getCurrencyConstant() {
+  async function callGetCurrencyConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCurrencyConstant();
+  callGetCurrencyConstant();
   // [END googleads_v9_generated_CurrencyConstantService_GetCurrencyConstant_async]
 }
 

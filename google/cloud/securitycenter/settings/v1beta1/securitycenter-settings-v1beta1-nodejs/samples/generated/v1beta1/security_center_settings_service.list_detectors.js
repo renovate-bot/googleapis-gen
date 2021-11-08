@@ -58,7 +58,7 @@ function main(parent) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function listDetectors() {
+  async function callListDetectors() {
     // Construct request
     const request = {
       parent,
@@ -71,7 +71,7 @@ function main(parent) {
     }
   }
 
-  listDetectors();
+  callListDetectors();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_ListDetectors_async]
 }
 

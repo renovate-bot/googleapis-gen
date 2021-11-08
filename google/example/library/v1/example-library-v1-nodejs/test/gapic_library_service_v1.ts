@@ -173,7 +173,7 @@ describe('v1.LibraryServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateShelfRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.example.library.v1.Shelf());
             client.innerApiCalls.createShelf = stubSimpleCall(expectedResponse);
             const [response] = await client.createShelf(request);
@@ -189,7 +189,7 @@ describe('v1.LibraryServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateShelfRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.example.library.v1.Shelf());
             client.innerApiCalls.createShelf = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -216,7 +216,7 @@ describe('v1.LibraryServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateShelfRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createShelf = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createShelf(request), expectedError);
@@ -908,7 +908,7 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListShelvesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
@@ -928,7 +928,7 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListShelvesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
@@ -959,7 +959,7 @@ describe('v1.LibraryServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListShelvesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listShelves = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listShelves(request), expectedError);

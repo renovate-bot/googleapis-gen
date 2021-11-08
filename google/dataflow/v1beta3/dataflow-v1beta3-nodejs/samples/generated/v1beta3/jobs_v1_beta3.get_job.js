@@ -31,9 +31,9 @@ function main() {
   /**
    *  The level of information requested in response.
    */
-  // const view = ''
+  // const view = {}
   /**
-   *  The [regional endpoint]
+   *  The regional endpoint 
    *  (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    *  contains this job.
    */
@@ -45,7 +45,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new JobsV1Beta3Client();
 
-  async function getJob() {
+  async function callGetJob() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     console.log(response);
   }
 
-  getJob();
+  callGetJob();
   // [END dataflow_v1beta3_generated_JobsV1Beta3_GetJob_async]
 }
 

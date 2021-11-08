@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new IncomeRangeViewServiceClient();
 
-  async function getIncomeRangeView() {
+  async function callGetIncomeRangeView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getIncomeRangeView();
+  callGetIncomeRangeView();
   // [END googleads_v7_generated_IncomeRangeViewService_GetIncomeRangeView_async]
 }
 

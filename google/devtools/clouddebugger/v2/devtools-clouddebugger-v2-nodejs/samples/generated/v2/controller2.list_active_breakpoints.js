@@ -46,7 +46,7 @@ function main(debuggeeId) {
   // Instantiates a client
   const clouddebuggerClient = new Controller2Client();
 
-  async function listActiveBreakpoints() {
+  async function callListActiveBreakpoints() {
     // Construct request
     const request = {
       debuggeeId,
@@ -57,7 +57,7 @@ function main(debuggeeId) {
     console.log(response);
   }
 
-  listActiveBreakpoints();
+  callListActiveBreakpoints();
   // [END clouddebugger_v2_generated_Controller2_ListActiveBreakpoints_async]
 }
 

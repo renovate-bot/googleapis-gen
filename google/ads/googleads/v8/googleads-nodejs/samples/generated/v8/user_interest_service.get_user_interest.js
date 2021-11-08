@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new UserInterestServiceClient();
 
-  async function getUserInterest() {
+  async function callGetUserInterest() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getUserInterest();
+  callGetUserInterest();
   // [END googleads_v8_generated_UserInterestService_GetUserInterest_async]
 }
 

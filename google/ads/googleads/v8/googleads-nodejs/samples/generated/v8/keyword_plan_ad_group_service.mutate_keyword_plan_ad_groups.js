@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new KeywordPlanAdGroupServiceClient();
 
-  async function mutateKeywordPlanAdGroups() {
+  async function callMutateKeywordPlanAdGroups() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateKeywordPlanAdGroups();
+  callMutateKeywordPlanAdGroups();
   // [END googleads_v8_generated_KeywordPlanAdGroupService_MutateKeywordPlanAdGroups_async]
 }
 

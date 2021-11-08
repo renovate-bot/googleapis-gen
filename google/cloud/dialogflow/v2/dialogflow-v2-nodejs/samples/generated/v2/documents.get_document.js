@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new DocumentsClient();
 
-  async function getDocument() {
+  async function callGetDocument() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDocument();
+  callGetDocument();
   // [END dialogflow_v2_generated_Documents_GetDocument_async]
 }
 

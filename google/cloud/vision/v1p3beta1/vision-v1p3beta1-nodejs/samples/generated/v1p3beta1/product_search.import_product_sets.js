@@ -28,7 +28,7 @@ function main(parent, inputConfig) {
   /**
    *  Required. The input content for the list of requests.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
 
   // Imports the Vision library
   const {ProductSearchClient} = require('@google-cloud/vision').v1p3beta1;
@@ -36,7 +36,7 @@ function main(parent, inputConfig) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function importProductSets() {
+  async function callImportProductSets() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, inputConfig) {
     console.log(response);
   }
 
-  importProductSets();
+  callImportProductSets();
   // [END vision_v1p3beta1_generated_ProductSearch_ImportProductSets_async]
 }
 

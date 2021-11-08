@@ -40,7 +40,7 @@ function main(parent, instanceId, instance) {
   /**
    *  Required. A Memcached Instance
    */
-  // const instance = ''
+  // const instance = {}
 
   // Imports the Memcache library
   const {CloudMemcacheClient} = require('@google-cloud/memcache').v1;
@@ -48,7 +48,7 @@ function main(parent, instanceId, instance) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function createInstance() {
+  async function callCreateInstance() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent, instanceId, instance) {
     console.log(response);
   }
 
-  createInstance();
+  callCreateInstance();
   // [END memcache_v1_generated_CloudMemcache_CreateInstance_async]
 }
 

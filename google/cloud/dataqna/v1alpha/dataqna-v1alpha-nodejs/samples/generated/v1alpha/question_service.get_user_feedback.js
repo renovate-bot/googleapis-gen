@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const dataqnaClient = new QuestionServiceClient();
 
-  async function getUserFeedback() {
+  async function callGetUserFeedback() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getUserFeedback();
+  callGetUserFeedback();
   // [END dataqna_v1alpha_generated_QuestionService_GetUserFeedback_async]
 }
 

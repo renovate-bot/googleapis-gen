@@ -28,7 +28,7 @@ function main(name, credential) {
   /**
    *  Required. Credential to use with the connection.
    */
-  // const credential = ''
+  // const credential = {}
 
   // Imports the Connection library
   const {ConnectionServiceClient} = require('connection').v1beta1;
@@ -36,7 +36,7 @@ function main(name, credential) {
   // Instantiates a client
   const connectionClient = new ConnectionServiceClient();
 
-  async function updateConnectionCredential() {
+  async function callUpdateConnectionCredential() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name, credential) {
     console.log(response);
   }
 
-  updateConnectionCredential();
+  callUpdateConnectionCredential();
   // [END bigqueryconnection_v1beta1_generated_ConnectionService_UpdateConnectionCredential_async]
 }
 

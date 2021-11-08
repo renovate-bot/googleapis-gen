@@ -50,7 +50,7 @@ function main(parent) {
   // Instantiates a client
   const aistreamsClient = new AIStreamsClient();
 
-  async function listStreams() {
+  async function callListStreams() {
     // Construct request
     const request = {
       parent,
@@ -63,7 +63,7 @@ function main(parent) {
     }
   }
 
-  listStreams();
+  callListStreams();
   // [END aistreams_v1alpha1_generated_AIStreams_ListStreams_async]
 }
 

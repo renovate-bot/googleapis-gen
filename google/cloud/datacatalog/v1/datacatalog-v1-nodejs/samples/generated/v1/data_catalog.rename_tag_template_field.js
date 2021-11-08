@@ -35,7 +35,7 @@ function main(name, newTagTemplateFieldId) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function renameTagTemplateField() {
+  async function callRenameTagTemplateField() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, newTagTemplateFieldId) {
     console.log(response);
   }
 
-  renameTagTemplateField();
+  callRenameTagTemplateField();
   // [END datacatalog_v1_generated_DataCatalog_RenameTagTemplateField_async]
 }
 

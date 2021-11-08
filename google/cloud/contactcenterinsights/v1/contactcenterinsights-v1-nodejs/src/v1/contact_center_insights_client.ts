@@ -380,26 +380,6 @@ export class ContactCenterInsightsClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createConversation(
-      request?: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.contactcenterinsights.v1.IConversation,
-        protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|undefined, {}|undefined
-      ]>;
-  createConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.contactcenterinsights.v1.IConversation,
-          protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|null|undefined,
-          {}|null|undefined>): void;
-  createConversation(
-      request: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
-      callback: Callback<
-          protos.google.cloud.contactcenterinsights.v1.IConversation,
-          protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a conversation.
  *
@@ -423,9 +403,29 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createConversation(request);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.create_conversation.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CreateConversation_async
  */
+  createConversation(
+      request?: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.contactcenterinsights.v1.IConversation,
+        protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|undefined, {}|undefined
+      ]>;
+  createConversation(
+      request: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.contactcenterinsights.v1.IConversation,
+          protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|null|undefined,
+          {}|null|undefined>): void;
+  createConversation(
+      request: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
+      callback: Callback<
+          protos.google.cloud.contactcenterinsights.v1.IConversation,
+          protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest|null|undefined,
+          {}|null|undefined>): void;
   createConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -460,6 +460,25 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.createConversation(request, options, callback);
   }
+/**
+ * Updates a conversation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.contactcenterinsights.v1.Conversation} request.conversation
+ *   Required. The new values for the conversation.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The list of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Conversation]{@link google.cloud.contactcenterinsights.v1.Conversation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.update_conversation.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UpdateConversation_async
+ */
   updateConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
       options?: CallOptions):
@@ -480,25 +499,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IConversation,
           protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a conversation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.contactcenterinsights.v1.Conversation} request.conversation
- *   Required. The new values for the conversation.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The list of fields to be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Conversation]{@link google.cloud.contactcenterinsights.v1.Conversation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateConversation(request);
- */
   updateConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -533,6 +533,25 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.updateConversation(request, options, callback);
   }
+/**
+ * Gets a conversation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the conversation to get.
+ * @param {google.cloud.contactcenterinsights.v1.ConversationView} request.view
+ *   The level of details of the conversation. Default is `FULL`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Conversation]{@link google.cloud.contactcenterinsights.v1.Conversation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.get_conversation.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_GetConversation_async
+ */
   getConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
       options?: CallOptions):
@@ -553,25 +572,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IConversation,
           protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a conversation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the conversation to get.
- * @param {google.cloud.contactcenterinsights.v1.ConversationView} request.view
- *   The level of details of the conversation. Default is `FULL`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Conversation]{@link google.cloud.contactcenterinsights.v1.Conversation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getConversation(request);
- */
   getConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -606,6 +606,27 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.getConversation(request, options, callback);
   }
+/**
+ * Deletes a conversation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the conversation to delete.
+ * @param {boolean} request.force
+ *   If set to true, all of this conversation's analyses will also be deleted.
+ *   Otherwise, the request will only succeed if the conversation has no
+ *   analyses.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.delete_conversation.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeleteConversation_async
+ */
   deleteConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
       options?: CallOptions):
@@ -626,27 +647,6 @@ export class ContactCenterInsightsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a conversation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the conversation to delete.
- * @param {boolean} request.force
- *   If set to true, all of this conversation's analyses will also be deleted.
- *   Otherwise, the request will only succeed if the conversation has no
- *   analyses.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteConversation(request);
- */
   deleteConversation(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteConversationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -681,6 +681,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.deleteConversation(request, options, callback);
   }
+/**
+ * Gets an analysis.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the analysis to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Analysis]{@link google.cloud.contactcenterinsights.v1.Analysis}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.get_analysis.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_GetAnalysis_async
+ */
   getAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
       options?: CallOptions):
@@ -701,23 +718,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IAnalysis,
           protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an analysis.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the analysis to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Analysis]{@link google.cloud.contactcenterinsights.v1.Analysis}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAnalysis(request);
- */
   getAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -752,6 +752,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.getAnalysis(request, options, callback);
   }
+/**
+ * Deletes an analysis.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the analysis to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.delete_analysis.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeleteAnalysis_async
+ */
   deleteAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
       options?: CallOptions):
@@ -772,23 +789,6 @@ export class ContactCenterInsightsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an analysis.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the analysis to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteAnalysis(request);
- */
   deleteAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -823,6 +823,25 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.deleteAnalysis(request, options, callback);
   }
+/**
+ * Updates an issue model.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.contactcenterinsights.v1.IssueModel} request.issueModel
+ *   Required. The new values for the issue model.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The list of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [IssueModel]{@link google.cloud.contactcenterinsights.v1.IssueModel}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.update_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UpdateIssueModel_async
+ */
   updateIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateIssueModelRequest,
       options?: CallOptions):
@@ -843,25 +862,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IIssueModel,
           protos.google.cloud.contactcenterinsights.v1.IUpdateIssueModelRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an issue model.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.contactcenterinsights.v1.IssueModel} request.issueModel
- *   Required. The new values for the issue model.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The list of fields to be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [IssueModel]{@link google.cloud.contactcenterinsights.v1.IssueModel}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateIssueModel(request);
- */
   updateIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -896,6 +896,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.updateIssueModel(request, options, callback);
   }
+/**
+ * Gets an issue model.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the issue model to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [IssueModel]{@link google.cloud.contactcenterinsights.v1.IssueModel}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.get_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_GetIssueModel_async
+ */
   getIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
       options?: CallOptions):
@@ -916,23 +933,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IIssueModel,
           protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an issue model.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the issue model to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [IssueModel]{@link google.cloud.contactcenterinsights.v1.IssueModel}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIssueModel(request);
- */
   getIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -967,6 +967,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.getIssueModel(request, options, callback);
   }
+/**
+ * Lists issue models.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent resource of the issue model.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListIssueModelsResponse]{@link google.cloud.contactcenterinsights.v1.ListIssueModelsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.list_issue_models.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ListIssueModels_async
+ */
   listIssueModels(
       request?: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
       options?: CallOptions):
@@ -987,23 +1004,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IListIssueModelsResponse,
           protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists issue models.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent resource of the issue model.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListIssueModelsResponse]{@link google.cloud.contactcenterinsights.v1.ListIssueModelsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listIssueModels(request);
- */
   listIssueModels(
       request?: protos.google.cloud.contactcenterinsights.v1.IListIssueModelsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1038,6 +1038,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.listIssueModels(request, options, callback);
   }
+/**
+ * Gets an issue.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the issue to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Issue]{@link google.cloud.contactcenterinsights.v1.Issue}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.get_issue.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_GetIssue_async
+ */
   getIssue(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
       options?: CallOptions):
@@ -1058,23 +1075,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IIssue,
           protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an issue.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the issue to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Issue]{@link google.cloud.contactcenterinsights.v1.Issue}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIssue(request);
- */
   getIssue(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetIssueRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1109,6 +1109,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.getIssue(request, options, callback);
   }
+/**
+ * Lists issues.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent resource of the issue.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ListIssuesResponse]{@link google.cloud.contactcenterinsights.v1.ListIssuesResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.list_issues.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ListIssues_async
+ */
   listIssues(
       request?: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
       options?: CallOptions):
@@ -1129,23 +1146,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IListIssuesResponse,
           protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists issues.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent resource of the issue.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ListIssuesResponse]{@link google.cloud.contactcenterinsights.v1.ListIssuesResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.listIssues(request);
- */
   listIssues(
       request?: protos.google.cloud.contactcenterinsights.v1.IListIssuesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1180,6 +1180,25 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.listIssues(request, options, callback);
   }
+/**
+ * Updates an issue.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.contactcenterinsights.v1.Issue} request.issue
+ *   Required. The new values for the issue.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The list of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Issue]{@link google.cloud.contactcenterinsights.v1.Issue}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.update_issue.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UpdateIssue_async
+ */
   updateIssue(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateIssueRequest,
       options?: CallOptions):
@@ -1200,25 +1219,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IIssue,
           protos.google.cloud.contactcenterinsights.v1.IUpdateIssueRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an issue.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.contactcenterinsights.v1.Issue} request.issue
- *   Required. The new values for the issue.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The list of fields to be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Issue]{@link google.cloud.contactcenterinsights.v1.Issue}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateIssue(request);
- */
   updateIssue(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateIssueRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1253,6 +1253,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.updateIssue(request, options, callback);
   }
+/**
+ * Gets an issue model's statistics.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.issueModel
+ *   Required. The resource name of the issue model to query against.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CalculateIssueModelStatsResponse]{@link google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.calculate_issue_model_stats.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CalculateIssueModelStats_async
+ */
   calculateIssueModelStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
       options?: CallOptions):
@@ -1273,23 +1290,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsResponse,
           protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets an issue model's statistics.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.issueModel
- *   Required. The resource name of the issue model to query against.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CalculateIssueModelStatsResponse]{@link google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.calculateIssueModelStats(request);
- */
   calculateIssueModelStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateIssueModelStatsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1324,6 +1324,28 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.calculateIssueModelStats(request, options, callback);
   }
+/**
+ * Creates a phrase matcher.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent resource of the phrase matcher. Required. The location
+ *   to create a phrase matcher for. Format: `projects/<Project
+ *   ID>/locations/<Location ID>` or `projects/<Project
+ *   Number>/locations/<Location ID>`
+ * @param {google.cloud.contactcenterinsights.v1.PhraseMatcher} request.phraseMatcher
+ *   Required. The phrase matcher resource to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.create_phrase_matcher.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CreatePhraseMatcher_async
+ */
   createPhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
       options?: CallOptions):
@@ -1344,28 +1366,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
           protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a phrase matcher.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent resource of the phrase matcher. Required. The location
- *   to create a phrase matcher for. Format: `projects/<Project
- *   ID>/locations/<Location ID>` or `projects/<Project
- *   Number>/locations/<Location ID>`
- * @param {google.cloud.contactcenterinsights.v1.PhraseMatcher} request.phraseMatcher
- *   Required. The phrase matcher resource to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createPhraseMatcher(request);
- */
   createPhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreatePhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1400,6 +1400,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.createPhraseMatcher(request, options, callback);
   }
+/**
+ * Gets a phrase matcher.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the phrase matcher to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.get_phrase_matcher.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_GetPhraseMatcher_async
+ */
   getPhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
       options?: CallOptions):
@@ -1420,23 +1437,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
           protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a phrase matcher.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the phrase matcher to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPhraseMatcher(request);
- */
   getPhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetPhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1471,6 +1471,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.getPhraseMatcher(request, options, callback);
   }
+/**
+ * Deletes a phrase matcher.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the phrase matcher to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.delete_phrase_matcher.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeletePhraseMatcher_async
+ */
   deletePhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
       options?: CallOptions):
@@ -1491,23 +1508,6 @@ export class ContactCenterInsightsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a phrase matcher.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the phrase matcher to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deletePhraseMatcher(request);
- */
   deletePhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeletePhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1542,6 +1542,25 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.deletePhraseMatcher(request, options, callback);
   }
+/**
+ * Updates a phrase matcher.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.contactcenterinsights.v1.PhraseMatcher} request.phraseMatcher
+ *   Required. The new values for the phrase matcher.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The list of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.update_phrase_matcher.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UpdatePhraseMatcher_async
+ */
   updatePhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest,
       options?: CallOptions):
@@ -1562,25 +1581,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher,
           protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a phrase matcher.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.contactcenterinsights.v1.PhraseMatcher} request.phraseMatcher
- *   Required. The new values for the phrase matcher.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The list of fields to be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PhraseMatcher]{@link google.cloud.contactcenterinsights.v1.PhraseMatcher}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updatePhraseMatcher(request);
- */
   updatePhraseMatcher(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdatePhraseMatcherRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1615,6 +1615,26 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.updatePhraseMatcher(request, options, callback);
   }
+/**
+ * Gets conversation statistics.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.location
+ *   Required. The location of the conversations.
+ * @param {string} request.filter
+ *   A filter to reduce results to a specific subset. This field is useful for
+ *   getting statistics about conversations with specific properties.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [CalculateStatsResponse]{@link google.cloud.contactcenterinsights.v1.CalculateStatsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.calculate_stats.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CalculateStats_async
+ */
   calculateStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
       options?: CallOptions):
@@ -1635,26 +1655,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.ICalculateStatsResponse,
           protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets conversation statistics.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.location
- *   Required. The location of the conversations.
- * @param {string} request.filter
- *   A filter to reduce results to a specific subset. This field is useful for
- *   getting statistics about conversations with specific properties.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [CalculateStatsResponse]{@link google.cloud.contactcenterinsights.v1.CalculateStatsResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.calculateStats(request);
- */
   calculateStats(
       request?: protos.google.cloud.contactcenterinsights.v1.ICalculateStatsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1689,6 +1689,23 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.calculateStats(request, options, callback);
   }
+/**
+ * Gets project-level settings.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the settings resource to get.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Settings]{@link google.cloud.contactcenterinsights.v1.Settings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.get_settings.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_GetSettings_async
+ */
   getSettings(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
       options?: CallOptions):
@@ -1709,23 +1726,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.ISettings,
           protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets project-level settings.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the settings resource to get.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Settings]{@link google.cloud.contactcenterinsights.v1.Settings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSettings(request);
- */
   getSettings(
       request?: protos.google.cloud.contactcenterinsights.v1.IGetSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1760,6 +1760,25 @@ export class ContactCenterInsightsClient {
     this.initialize();
     return this.innerApiCalls.getSettings(request, options, callback);
   }
+/**
+ * Updates project-level settings.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.contactcenterinsights.v1.Settings} request.settings
+ *   Required. The new settings values.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. The list of fields to be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Settings]{@link google.cloud.contactcenterinsights.v1.Settings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.update_settings.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UpdateSettings_async
+ */
   updateSettings(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
       options?: CallOptions):
@@ -1780,25 +1799,6 @@ export class ContactCenterInsightsClient {
           protos.google.cloud.contactcenterinsights.v1.ISettings,
           protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates project-level settings.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.contactcenterinsights.v1.Settings} request.settings
- *   Required. The new settings values.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. The list of fields to be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Settings]{@link google.cloud.contactcenterinsights.v1.Settings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateSettings(request);
- */
   updateSettings(
       request?: protos.google.cloud.contactcenterinsights.v1.IUpdateSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1834,6 +1834,28 @@ export class ContactCenterInsightsClient {
     return this.innerApiCalls.updateSettings(request, options, callback);
   }
 
+/**
+ * Creates an analysis. The long running operation is done when the analysis
+ * has completed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent resource of the analysis.
+ * @param {google.cloud.contactcenterinsights.v1.Analysis} request.analysis
+ *   Required. The analysis to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.create_analysis.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CreateAnalysis_async
+ */
   createAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
       options?: CallOptions):
@@ -1854,29 +1876,6 @@ export class ContactCenterInsightsClient {
           LROperation<protos.google.cloud.contactcenterinsights.v1.IAnalysis, protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates an analysis. The long running operation is done when the analysis
- * has completed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent resource of the analysis.
- * @param {google.cloud.contactcenterinsights.v1.Analysis} request.analysis
- *   Required. The analysis to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.createAnalysis(request);
- * const [response] = await operation.promise();
- */
   createAnalysis(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateAnalysisRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1920,11 +1919,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateAnalysisProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.create_analysis.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CreateAnalysis_async
  */
   async checkCreateAnalysisProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.Analysis, protos.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1932,26 +1928,6 @@ export class ContactCenterInsightsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createAnalysis, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.Analysis, protos.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata>;
   }
-  exportInsightsData(
-      request?: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  exportInsightsData(
-      request: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  exportInsightsData(
-      request: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Export insights data to a destination defined in the request body.
  *
@@ -1977,10 +1953,29 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.exportInsightsData(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/contact_center_insights.export_insights_data.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ExportInsightsData_async
  */
+  exportInsightsData(
+      request?: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  exportInsightsData(
+      request: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  exportInsightsData(
+      request: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   exportInsightsData(
       request?: protos.google.cloud.contactcenterinsights.v1.IExportInsightsDataRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2024,11 +2019,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkExportInsightsDataProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.export_insights_data.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ExportInsightsData_async
  */
   async checkExportInsightsDataProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2036,6 +2028,27 @@ export class ContactCenterInsightsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.exportInsightsData, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse, protos.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata>;
   }
+/**
+ * Creates an issue model.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The parent resource of the issue model.
+ * @param {google.cloud.contactcenterinsights.v1.IssueModel} request.issueModel
+ *   Required. The issue model to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.create_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CreateIssueModel_async
+ */
   createIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateIssueModelRequest,
       options?: CallOptions):
@@ -2056,28 +2069,6 @@ export class ContactCenterInsightsClient {
           LROperation<protos.google.cloud.contactcenterinsights.v1.IIssueModel, protos.google.cloud.contactcenterinsights.v1.ICreateIssueModelMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates an issue model.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The parent resource of the issue model.
- * @param {google.cloud.contactcenterinsights.v1.IssueModel} request.issueModel
- *   Required. The issue model to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.createIssueModel(request);
- * const [response] = await operation.promise();
- */
   createIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.ICreateIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2121,11 +2112,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateIssueModelProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.create_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_CreateIssueModel_async
  */
   async checkCreateIssueModelProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.IssueModel, protos.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2133,6 +2121,25 @@ export class ContactCenterInsightsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createIssueModel, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.IssueModel, protos.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata>;
   }
+/**
+ * Deletes an issue model.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the issue model to delete.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.delete_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeleteIssueModel_async
+ */
   deleteIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteIssueModelRequest,
       options?: CallOptions):
@@ -2153,26 +2160,6 @@ export class ContactCenterInsightsClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.contactcenterinsights.v1.IDeleteIssueModelMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes an issue model.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the issue model to delete.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteIssueModel(request);
- * const [response] = await operation.promise();
- */
   deleteIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeleteIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2216,11 +2203,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteIssueModelProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.delete_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeleteIssueModel_async
  */
   async checkDeleteIssueModelProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2228,6 +2212,26 @@ export class ContactCenterInsightsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteIssueModel, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata>;
   }
+/**
+ * Deploys an issue model. Returns an error if a model is already deployed.
+ * An issue model can only be used in analysis after it has been deployed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The issue model to deploy.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.deploy_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeployIssueModel_async
+ */
   deployIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeployIssueModelRequest,
       options?: CallOptions):
@@ -2248,27 +2252,6 @@ export class ContactCenterInsightsClient {
           LROperation<protos.google.cloud.contactcenterinsights.v1.IDeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.IDeployIssueModelMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deploys an issue model. Returns an error if a model is already deployed.
- * An issue model can only be used in analysis after it has been deployed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The issue model to deploy.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deployIssueModel(request);
- * const [response] = await operation.promise();
- */
   deployIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IDeployIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2312,11 +2295,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeployIssueModelProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.deploy_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_DeployIssueModel_async
  */
   async checkDeployIssueModelProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2324,6 +2304,26 @@ export class ContactCenterInsightsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deployIssueModel, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata>;
   }
+/**
+ * Undeploys an issue model.
+ * An issue model can not be used in analysis after it has been undeployed.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The issue model to undeploy.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/contact_center_insights.undeploy_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UndeployIssueModel_async
+ */
   undeployIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IUndeployIssueModelRequest,
       options?: CallOptions):
@@ -2344,27 +2344,6 @@ export class ContactCenterInsightsClient {
           LROperation<protos.google.cloud.contactcenterinsights.v1.IUndeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.IUndeployIssueModelMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Undeploys an issue model.
- * An issue model can not be used in analysis after it has been undeployed.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The issue model to undeploy.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.undeployIssueModel(request);
- * const [response] = await operation.promise();
- */
   undeployIssueModel(
       request?: protos.google.cloud.contactcenterinsights.v1.IUndeployIssueModelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2408,11 +2387,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUndeployIssueModelProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/contact_center_insights.undeploy_issue_model.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_UndeployIssueModel_async
  */
   async checkUndeployIssueModelProgress(name: string): Promise<LROperation<protos.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2420,28 +2396,7 @@ export class ContactCenterInsightsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.undeployIssueModel, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse, protos.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata>;
   }
-  listConversations(
-      request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.contactcenterinsights.v1.IConversation[],
-        protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest|null,
-        protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse
-      ]>;
-  listConversations(
-      request: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
-          protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse|null|undefined,
-          protos.google.cloud.contactcenterinsights.v1.IConversation>): void;
-  listConversations(
-      request: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
-          protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse|null|undefined,
-          protos.google.cloud.contactcenterinsights.v1.IConversation>): void;
-/**
+ /**
  * Lists conversations.
  *
  * @param {Object} request
@@ -2475,6 +2430,27 @@ export class ContactCenterInsightsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listConversations(
+      request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.contactcenterinsights.v1.IConversation[],
+        protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest|null,
+        protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse
+      ]>;
+  listConversations(
+      request: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+          protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse|null|undefined,
+          protos.google.cloud.contactcenterinsights.v1.IConversation>): void;
+  listConversations(
+      request: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
+          protos.google.cloud.contactcenterinsights.v1.IListConversationsResponse|null|undefined,
+          protos.google.cloud.contactcenterinsights.v1.IConversation>): void;
   listConversations(
       request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2598,11 +2574,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listConversationsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/contact_center_insights.list_conversations.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ListConversations_async
  */
   listConversationsAsync(
       request?: protos.google.cloud.contactcenterinsights.v1.IListConversationsRequest,
@@ -2617,7 +2590,6 @@ export class ContactCenterInsightsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listConversations'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2627,28 +2599,7 @@ export class ContactCenterInsightsClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.contactcenterinsights.v1.IConversation>;
   }
-  listAnalyses(
-      request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.contactcenterinsights.v1.IAnalysis[],
-        protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest|null,
-        protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse
-      ]>;
-  listAnalyses(
-      request: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
-          protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse|null|undefined,
-          protos.google.cloud.contactcenterinsights.v1.IAnalysis>): void;
-  listAnalyses(
-      request: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
-          protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse|null|undefined,
-          protos.google.cloud.contactcenterinsights.v1.IAnalysis>): void;
-/**
+ /**
  * Lists analyses.
  *
  * @param {Object} request
@@ -2680,6 +2631,27 @@ export class ContactCenterInsightsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAnalyses(
+      request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.contactcenterinsights.v1.IAnalysis[],
+        protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest|null,
+        protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse
+      ]>;
+  listAnalyses(
+      request: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+          protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse|null|undefined,
+          protos.google.cloud.contactcenterinsights.v1.IAnalysis>): void;
+  listAnalyses(
+      request: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
+          protos.google.cloud.contactcenterinsights.v1.IListAnalysesResponse|null|undefined,
+          protos.google.cloud.contactcenterinsights.v1.IAnalysis>): void;
   listAnalyses(
       request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2799,11 +2771,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAnalysesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/contact_center_insights.list_analyses.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ListAnalyses_async
  */
   listAnalysesAsync(
       request?: protos.google.cloud.contactcenterinsights.v1.IListAnalysesRequest,
@@ -2818,7 +2787,6 @@ export class ContactCenterInsightsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAnalyses'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2828,28 +2796,7 @@ export class ContactCenterInsightsClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.contactcenterinsights.v1.IAnalysis>;
   }
-  listPhraseMatchers(
-      request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher[],
-        protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest|null,
-        protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse
-      ]>;
-  listPhraseMatchers(
-      request: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
-          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse|null|undefined,
-          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher>): void;
-  listPhraseMatchers(
-      request: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
-          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse|null|undefined,
-          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher>): void;
-/**
+ /**
  * Lists phrase matchers.
  *
  * @param {Object} request
@@ -2881,6 +2828,27 @@ export class ContactCenterInsightsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPhraseMatchers(
+      request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher[],
+        protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest|null,
+        protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse
+      ]>;
+  listPhraseMatchers(
+      request: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse|null|undefined,
+          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher>): void;
+  listPhraseMatchers(
+      request: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
+          protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersResponse|null|undefined,
+          protos.google.cloud.contactcenterinsights.v1.IPhraseMatcher>): void;
   listPhraseMatchers(
       request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3000,11 +2968,8 @@ export class ContactCenterInsightsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPhraseMatchersAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/contact_center_insights.list_phrase_matchers.js</caption>
+ * region_tag:contactcenterinsights_v1_generated_ContactCenterInsights_ListPhraseMatchers_async
  */
   listPhraseMatchersAsync(
       request?: protos.google.cloud.contactcenterinsights.v1.IListPhraseMatchersRequest,
@@ -3019,7 +2984,6 @@ export class ContactCenterInsightsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPhraseMatchers'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

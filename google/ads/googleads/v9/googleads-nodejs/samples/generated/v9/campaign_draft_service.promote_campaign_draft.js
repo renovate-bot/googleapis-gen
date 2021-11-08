@@ -36,7 +36,7 @@ function main(campaignDraft) {
   // Instantiates a client
   const googleadsClient = new CampaignDraftServiceClient();
 
-  async function promoteCampaignDraft() {
+  async function callPromoteCampaignDraft() {
     // Construct request
     const request = {
       campaignDraft,
@@ -48,7 +48,7 @@ function main(campaignDraft) {
     console.log(response);
   }
 
-  promoteCampaignDraft();
+  callPromoteCampaignDraft();
   // [END googleads_v9_generated_CampaignDraftService_PromoteCampaignDraft_async]
 }
 

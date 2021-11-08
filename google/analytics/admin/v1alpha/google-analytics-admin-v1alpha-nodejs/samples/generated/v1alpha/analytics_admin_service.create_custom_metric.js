@@ -27,7 +27,7 @@ function main(parent, customMetric) {
   /**
    *  Required. The CustomMetric to create.
    */
-  // const customMetric = ''
+  // const customMetric = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -35,7 +35,7 @@ function main(parent, customMetric) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createCustomMetric() {
+  async function callCreateCustomMetric() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent, customMetric) {
     console.log(response);
   }
 
-  createCustomMetric();
+  callCreateCustomMetric();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateCustomMetric_async]
 }
 

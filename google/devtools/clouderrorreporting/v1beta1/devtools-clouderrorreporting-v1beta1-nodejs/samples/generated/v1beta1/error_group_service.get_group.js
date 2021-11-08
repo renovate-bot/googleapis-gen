@@ -23,7 +23,7 @@ function main(groupName) {
   /**
    *  Required. The group resource name. Written as
    *  `projects/{projectID}/groups/{group_name}`. Call
-   *  [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
+   *  `groupStats.list` (https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
    *  to return a list of groups belonging to this project.
    *  Example: `projects/my-project-123/groups/my-group`
    */
@@ -35,7 +35,7 @@ function main(groupName) {
   // Instantiates a client
   const clouderrorreportingClient = new ErrorGroupServiceClient();
 
-  async function getGroup() {
+  async function callGetGroup() {
     // Construct request
     const request = {
       groupName,
@@ -46,7 +46,7 @@ function main(groupName) {
     console.log(response);
   }
 
-  getGroup();
+  callGetGroup();
   // [END clouderrorreporting_v1beta1_generated_ErrorGroupService_GetGroup_async]
 }
 

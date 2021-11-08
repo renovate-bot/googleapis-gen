@@ -293,26 +293,6 @@ export class ActionsTestingClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  sendInteraction(
-      request?: protos.google.actions.sdk.v2.ISendInteractionRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.actions.sdk.v2.ISendInteractionResponse,
-        protos.google.actions.sdk.v2.ISendInteractionRequest|undefined, {}|undefined
-      ]>;
-  sendInteraction(
-      request: protos.google.actions.sdk.v2.ISendInteractionRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.actions.sdk.v2.ISendInteractionResponse,
-          protos.google.actions.sdk.v2.ISendInteractionRequest|null|undefined,
-          {}|null|undefined>): void;
-  sendInteraction(
-      request: protos.google.actions.sdk.v2.ISendInteractionRequest,
-      callback: Callback<
-          protos.google.actions.sdk.v2.ISendInteractionResponse,
-          protos.google.actions.sdk.v2.ISendInteractionRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Plays one round of the conversation.
  *
@@ -337,9 +317,29 @@ export class ActionsTestingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.sendInteraction(request);
+ * @example <caption>include:samples/generated/v2/actions_testing.send_interaction.js</caption>
+ * region_tag:actions_v2_generated_ActionsTesting_SendInteraction_async
  */
+  sendInteraction(
+      request?: protos.google.actions.sdk.v2.ISendInteractionRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.ISendInteractionResponse,
+        protos.google.actions.sdk.v2.ISendInteractionRequest|undefined, {}|undefined
+      ]>;
+  sendInteraction(
+      request: protos.google.actions.sdk.v2.ISendInteractionRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.actions.sdk.v2.ISendInteractionResponse,
+          protos.google.actions.sdk.v2.ISendInteractionRequest|null|undefined,
+          {}|null|undefined>): void;
+  sendInteraction(
+      request: protos.google.actions.sdk.v2.ISendInteractionRequest,
+      callback: Callback<
+          protos.google.actions.sdk.v2.ISendInteractionResponse,
+          protos.google.actions.sdk.v2.ISendInteractionRequest|null|undefined,
+          {}|null|undefined>): void;
   sendInteraction(
       request?: protos.google.actions.sdk.v2.ISendInteractionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -374,26 +374,6 @@ export class ActionsTestingClient {
     this.initialize();
     return this.innerApiCalls.sendInteraction(request, options, callback);
   }
-  matchIntents(
-      request?: protos.google.actions.sdk.v2.IMatchIntentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.actions.sdk.v2.IMatchIntentsResponse,
-        protos.google.actions.sdk.v2.IMatchIntentsRequest|undefined, {}|undefined
-      ]>;
-  matchIntents(
-      request: protos.google.actions.sdk.v2.IMatchIntentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.actions.sdk.v2.IMatchIntentsResponse,
-          protos.google.actions.sdk.v2.IMatchIntentsRequest|null|undefined,
-          {}|null|undefined>): void;
-  matchIntents(
-      request: protos.google.actions.sdk.v2.IMatchIntentsRequest,
-      callback: Callback<
-          protos.google.actions.sdk.v2.IMatchIntentsResponse,
-          protos.google.actions.sdk.v2.IMatchIntentsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Finds the intents that match a given query.
  *
@@ -416,9 +396,29 @@ export class ActionsTestingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.matchIntents(request);
+ * @example <caption>include:samples/generated/v2/actions_testing.match_intents.js</caption>
+ * region_tag:actions_v2_generated_ActionsTesting_MatchIntents_async
  */
+  matchIntents(
+      request?: protos.google.actions.sdk.v2.IMatchIntentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.IMatchIntentsResponse,
+        protos.google.actions.sdk.v2.IMatchIntentsRequest|undefined, {}|undefined
+      ]>;
+  matchIntents(
+      request: protos.google.actions.sdk.v2.IMatchIntentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.actions.sdk.v2.IMatchIntentsResponse,
+          protos.google.actions.sdk.v2.IMatchIntentsRequest|null|undefined,
+          {}|null|undefined>): void;
+  matchIntents(
+      request: protos.google.actions.sdk.v2.IMatchIntentsRequest,
+      callback: Callback<
+          protos.google.actions.sdk.v2.IMatchIntentsResponse,
+          protos.google.actions.sdk.v2.IMatchIntentsRequest|null|undefined,
+          {}|null|undefined>): void;
   matchIntents(
       request?: protos.google.actions.sdk.v2.IMatchIntentsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -453,26 +453,6 @@ export class ActionsTestingClient {
     this.initialize();
     return this.innerApiCalls.matchIntents(request, options, callback);
   }
-  setWebAndAppActivityControl(
-      request?: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|undefined, {}|undefined
-      ]>;
-  setWebAndAppActivityControl(
-      request: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|null|undefined,
-          {}|null|undefined>): void;
-  setWebAndAppActivityControl(
-      request: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the Web & App Activity control on a service account.
  *
@@ -497,9 +477,29 @@ export class ActionsTestingClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setWebAndAppActivityControl(request);
+ * @example <caption>include:samples/generated/v2/actions_testing.set_web_and_app_activity_control.js</caption>
+ * region_tag:actions_v2_generated_ActionsTesting_SetWebAndAppActivityControl_async
  */
+  setWebAndAppActivityControl(
+      request?: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|undefined, {}|undefined
+      ]>;
+  setWebAndAppActivityControl(
+      request: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|null|undefined,
+          {}|null|undefined>): void;
+  setWebAndAppActivityControl(
+      request: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest|null|undefined,
+          {}|null|undefined>): void;
   setWebAndAppActivityControl(
       request?: protos.google.actions.sdk.v2.ISetWebAndAppActivityControlRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -524,6 +524,8 @@ export class ActionsTestingClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.setWebAndAppActivityControl(request, options, callback);
   }

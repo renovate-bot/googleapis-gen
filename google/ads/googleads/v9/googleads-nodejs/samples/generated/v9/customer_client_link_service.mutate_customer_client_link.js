@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on the individual CustomerClientLink.
    */
-  // const operation = ''
+  // const operation = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -40,7 +40,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new CustomerClientLinkServiceClient();
 
-  async function mutateCustomerClientLink() {
+  async function callMutateCustomerClientLink() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateCustomerClientLink();
+  callMutateCustomerClientLink();
   // [END googleads_v9_generated_CustomerClientLinkService_MutateCustomerClientLink_async]
 }
 

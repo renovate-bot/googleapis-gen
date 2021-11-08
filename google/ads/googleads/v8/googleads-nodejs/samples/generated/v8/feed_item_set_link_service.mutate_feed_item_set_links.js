@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new FeedItemSetLinkServiceClient();
 
-  async function mutateFeedItemSetLinks() {
+  async function callMutateFeedItemSetLinks() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateFeedItemSetLinks();
+  callMutateFeedItemSetLinks();
   // [END googleads_v8_generated_FeedItemSetLinkService_MutateFeedItemSetLinks_async]
 }
 

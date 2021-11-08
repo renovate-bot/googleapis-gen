@@ -25,10 +25,10 @@ function main(name) {
    *  the notification channel descriptors. The expected syntax is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    *  Note that this
-   *  [names](https://cloud.google.com/monitoring/api/v3#project_name) the parent
+   *  names (https://cloud.google.com/monitoring/api/v3#project_name) the parent
    *  container in which to look for the descriptors; to retrieve a single
    *  descriptor by name, use the
-   *  [GetNotificationChannelDescriptor][google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor]
+   *  GetNotificationChannelDescriptor google.monitoring.v3.NotificationChannelService.GetNotificationChannelDescriptor 
    *  operation, instead.
    */
   // const name = 'abc123'
@@ -51,7 +51,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new NotificationChannelServiceClient();
 
-  async function listNotificationChannelDescriptors() {
+  async function callListNotificationChannelDescriptors() {
     // Construct request
     const request = {
       name,
@@ -64,7 +64,7 @@ function main(name) {
     }
   }
 
-  listNotificationChannelDescriptors();
+  callListNotificationChannelDescriptors();
   // [END monitoring_v3_generated_NotificationChannelService_ListNotificationChannelDescriptors_async]
 }
 

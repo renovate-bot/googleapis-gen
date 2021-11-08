@@ -22,10 +22,10 @@ function main() {
    */
   /**
    */
-  // const serviceAccount = ''
+  // const serviceAccount = {}
   /**
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -33,7 +33,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function patchServiceAccount() {
+  async function callPatchServiceAccount() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  patchServiceAccount();
+  callPatchServiceAccount();
   // [END iam_v1_generated_IAM_PatchServiceAccount_async]
 }
 

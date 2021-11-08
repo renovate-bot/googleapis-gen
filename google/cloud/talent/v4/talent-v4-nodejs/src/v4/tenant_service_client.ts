@@ -304,6 +304,28 @@ export class TenantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a new tenant entity.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Resource name of the project under which the tenant is created.
+ *
+ *   The format is "projects/{project_id}", for example,
+ *   "projects/foo".
+ * @param {google.cloud.talent.v4.Tenant} request.tenant
+ *   Required. The tenant to be created.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Tenant]{@link google.cloud.talent.v4.Tenant}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v4/tenant_service.create_tenant.js</caption>
+ * region_tag:jobs_v4_generated_TenantService_CreateTenant_async
+ */
   createTenant(
       request?: protos.google.cloud.talent.v4.ICreateTenantRequest,
       options?: CallOptions):
@@ -324,28 +346,6 @@ export class TenantServiceClient {
           protos.google.cloud.talent.v4.ITenant,
           protos.google.cloud.talent.v4.ICreateTenantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new tenant entity.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Resource name of the project under which the tenant is created.
- *
- *   The format is "projects/{project_id}", for example,
- *   "projects/foo".
- * @param {google.cloud.talent.v4.Tenant} request.tenant
- *   Required. The tenant to be created.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Tenant]{@link google.cloud.talent.v4.Tenant}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createTenant(request);
- */
   createTenant(
       request?: protos.google.cloud.talent.v4.ICreateTenantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -380,6 +380,26 @@ export class TenantServiceClient {
     this.initialize();
     return this.innerApiCalls.createTenant(request, options, callback);
   }
+/**
+ * Retrieves specified tenant.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the tenant to be retrieved.
+ *
+ *   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+ *   "projects/foo/tenants/bar".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Tenant]{@link google.cloud.talent.v4.Tenant}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v4/tenant_service.get_tenant.js</caption>
+ * region_tag:jobs_v4_generated_TenantService_GetTenant_async
+ */
   getTenant(
       request?: protos.google.cloud.talent.v4.IGetTenantRequest,
       options?: CallOptions):
@@ -400,26 +420,6 @@ export class TenantServiceClient {
           protos.google.cloud.talent.v4.ITenant,
           protos.google.cloud.talent.v4.IGetTenantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves specified tenant.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the tenant to be retrieved.
- *
- *   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
- *   "projects/foo/tenants/bar".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Tenant]{@link google.cloud.talent.v4.Tenant}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getTenant(request);
- */
   getTenant(
       request?: protos.google.cloud.talent.v4.IGetTenantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -454,26 +454,6 @@ export class TenantServiceClient {
     this.initialize();
     return this.innerApiCalls.getTenant(request, options, callback);
   }
-  updateTenant(
-      request?: protos.google.cloud.talent.v4.IUpdateTenantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4.ITenant,
-        protos.google.cloud.talent.v4.IUpdateTenantRequest|undefined, {}|undefined
-      ]>;
-  updateTenant(
-      request: protos.google.cloud.talent.v4.IUpdateTenantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.talent.v4.ITenant,
-          protos.google.cloud.talent.v4.IUpdateTenantRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateTenant(
-      request: protos.google.cloud.talent.v4.IUpdateTenantRequest,
-      callback: Callback<
-          protos.google.cloud.talent.v4.ITenant,
-          protos.google.cloud.talent.v4.IUpdateTenantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates specified tenant.
  *
@@ -496,9 +476,29 @@ export class TenantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateTenant(request);
+ * @example <caption>include:samples/generated/v4/tenant_service.update_tenant.js</caption>
+ * region_tag:jobs_v4_generated_TenantService_UpdateTenant_async
  */
+  updateTenant(
+      request?: protos.google.cloud.talent.v4.IUpdateTenantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4.ITenant,
+        protos.google.cloud.talent.v4.IUpdateTenantRequest|undefined, {}|undefined
+      ]>;
+  updateTenant(
+      request: protos.google.cloud.talent.v4.IUpdateTenantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.talent.v4.ITenant,
+          protos.google.cloud.talent.v4.IUpdateTenantRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateTenant(
+      request: protos.google.cloud.talent.v4.IUpdateTenantRequest,
+      callback: Callback<
+          protos.google.cloud.talent.v4.ITenant,
+          protos.google.cloud.talent.v4.IUpdateTenantRequest|null|undefined,
+          {}|null|undefined>): void;
   updateTenant(
       request?: protos.google.cloud.talent.v4.IUpdateTenantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -533,6 +533,26 @@ export class TenantServiceClient {
     this.initialize();
     return this.innerApiCalls.updateTenant(request, options, callback);
   }
+/**
+ * Deletes specified tenant.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The resource name of the tenant to be deleted.
+ *
+ *   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
+ *   "projects/foo/tenants/bar".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v4/tenant_service.delete_tenant.js</caption>
+ * region_tag:jobs_v4_generated_TenantService_DeleteTenant_async
+ */
   deleteTenant(
       request?: protos.google.cloud.talent.v4.IDeleteTenantRequest,
       options?: CallOptions):
@@ -553,26 +573,6 @@ export class TenantServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.talent.v4.IDeleteTenantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes specified tenant.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The resource name of the tenant to be deleted.
- *
- *   The format is "projects/{project_id}/tenants/{tenant_id}", for example,
- *   "projects/foo/tenants/bar".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteTenant(request);
- */
   deleteTenant(
       request?: protos.google.cloud.talent.v4.IDeleteTenantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -608,28 +608,7 @@ export class TenantServiceClient {
     return this.innerApiCalls.deleteTenant(request, options, callback);
   }
 
-  listTenants(
-      request?: protos.google.cloud.talent.v4.IListTenantsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.talent.v4.ITenant[],
-        protos.google.cloud.talent.v4.IListTenantsRequest|null,
-        protos.google.cloud.talent.v4.IListTenantsResponse
-      ]>;
-  listTenants(
-      request: protos.google.cloud.talent.v4.IListTenantsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.talent.v4.IListTenantsRequest,
-          protos.google.cloud.talent.v4.IListTenantsResponse|null|undefined,
-          protos.google.cloud.talent.v4.ITenant>): void;
-  listTenants(
-      request: protos.google.cloud.talent.v4.IListTenantsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.talent.v4.IListTenantsRequest,
-          protos.google.cloud.talent.v4.IListTenantsResponse|null|undefined,
-          protos.google.cloud.talent.v4.ITenant>): void;
-/**
+ /**
  * Lists all tenants associated with the project.
  *
  * @param {Object} request
@@ -657,6 +636,27 @@ export class TenantServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listTenants(
+      request?: protos.google.cloud.talent.v4.IListTenantsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.talent.v4.ITenant[],
+        protos.google.cloud.talent.v4.IListTenantsRequest|null,
+        protos.google.cloud.talent.v4.IListTenantsResponse
+      ]>;
+  listTenants(
+      request: protos.google.cloud.talent.v4.IListTenantsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.talent.v4.IListTenantsRequest,
+          protos.google.cloud.talent.v4.IListTenantsResponse|null|undefined,
+          protos.google.cloud.talent.v4.ITenant>): void;
+  listTenants(
+      request: protos.google.cloud.talent.v4.IListTenantsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.talent.v4.IListTenantsRequest,
+          protos.google.cloud.talent.v4.IListTenantsResponse|null|undefined,
+          protos.google.cloud.talent.v4.ITenant>): void;
   listTenants(
       request?: protos.google.cloud.talent.v4.IListTenantsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -768,11 +768,8 @@ export class TenantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listTenantsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v4/tenant_service.list_tenants.js</caption>
+ * region_tag:jobs_v4_generated_TenantService_ListTenants_async
  */
   listTenantsAsync(
       request?: protos.google.cloud.talent.v4.IListTenantsRequest,
@@ -787,7 +784,6 @@ export class TenantServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listTenants'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

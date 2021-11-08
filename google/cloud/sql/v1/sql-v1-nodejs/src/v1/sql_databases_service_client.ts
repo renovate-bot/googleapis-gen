@@ -274,6 +274,27 @@ export class SqlDatabasesServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Deletes a database from a Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.database
+ *   Name of the database to be deleted in the instance.
+ * @param {string} request.instance
+ *   Database instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_databases_service.delete.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlDatabasesService_Delete_async
+ */
   delete(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesDeleteRequest,
       options?: CallOptions):
@@ -294,27 +315,6 @@ export class SqlDatabasesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlDatabasesDeleteRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a database from a Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.database
- *   Name of the database to be deleted in the instance.
- * @param {string} request.instance
- *   Database instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.delete(request);
- */
   delete(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -349,6 +349,28 @@ export class SqlDatabasesServiceClient {
     this.initialize();
     return this.innerApiCalls.delete(request, options, callback);
   }
+/**
+ * Retrieves a resource containing information about a database inside a Cloud
+ * SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.database
+ *   Name of the database in the instance.
+ * @param {string} request.instance
+ *   Database instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Database]{@link google.cloud.sql.v1.Database}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_databases_service.get.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlDatabasesService_Get_async
+ */
   get(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesGetRequest,
       options?: CallOptions):
@@ -369,28 +391,6 @@ export class SqlDatabasesServiceClient {
           protos.google.cloud.sql.v1.IDatabase,
           protos.google.cloud.sql.v1.ISqlDatabasesGetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a resource containing information about a database inside a Cloud
- * SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.database
- *   Name of the database in the instance.
- * @param {string} request.instance
- *   Database instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Database]{@link google.cloud.sql.v1.Database}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
- */
   get(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesGetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -425,6 +425,27 @@ export class SqlDatabasesServiceClient {
     this.initialize();
     return this.innerApiCalls.get(request, options, callback);
   }
+/**
+ * Inserts a resource containing information about a database inside a Cloud
+ * SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Database instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.Database} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_databases_service.insert.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlDatabasesService_Insert_async
+ */
   insert(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesInsertRequest,
       options?: CallOptions):
@@ -445,27 +466,6 @@ export class SqlDatabasesServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlDatabasesInsertRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Inserts a resource containing information about a database inside a Cloud
- * SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Database instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.Database} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.insert(request);
- */
   insert(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,6 +500,25 @@ export class SqlDatabasesServiceClient {
     this.initialize();
     return this.innerApiCalls.insert(request, options, callback);
   }
+/**
+ * Lists databases in the specified Cloud SQL instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DatabasesListResponse]{@link google.cloud.sql.v1.DatabasesListResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_databases_service.list.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlDatabasesService_List_async
+ */
   list(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesListRequest,
       options?: CallOptions):
@@ -520,25 +539,6 @@ export class SqlDatabasesServiceClient {
           protos.google.cloud.sql.v1.IDatabasesListResponse,
           protos.google.cloud.sql.v1.ISqlDatabasesListRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists databases in the specified Cloud SQL instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DatabasesListResponse]{@link google.cloud.sql.v1.DatabasesListResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
- */
   list(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesListRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -573,26 +573,6 @@ export class SqlDatabasesServiceClient {
     this.initialize();
     return this.innerApiCalls.list(request, options, callback);
   }
-  patch(
-      request?: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IOperation,
-        protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|undefined, {}|undefined
-      ]>;
-  patch(
-      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
-          {}|null|undefined>): void;
-  patch(
-      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Partially updates a resource containing information about a database inside
  * a Cloud SQL instance. This method supports patch semantics.
@@ -613,9 +593,29 @@ export class SqlDatabasesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.patch(request);
+ * @example <caption>include:samples/generated/v1/sql_databases_service.patch.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlDatabasesService_Patch_async
  */
+  patch(
+      request?: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IOperation,
+        protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|undefined, {}|undefined
+      ]>;
+  patch(
+      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
+          {}|null|undefined>): void;
+  patch(
+      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
+          {}|null|undefined>): void;
   patch(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -650,26 +650,6 @@ export class SqlDatabasesServiceClient {
     this.initialize();
     return this.innerApiCalls.patch(request, options, callback);
   }
-  update(
-      request?: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.IOperation,
-        protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|undefined, {}|undefined
-      ]>;
-  update(
-      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
-          {}|null|undefined>): void;
-  update(
-      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.IOperation,
-          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a resource containing information about a database inside a Cloud
  * SQL instance.
@@ -690,9 +670,29 @@ export class SqlDatabasesServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.update(request);
+ * @example <caption>include:samples/generated/v1/sql_databases_service.update.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlDatabasesService_Update_async
  */
+  update(
+      request?: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.IOperation,
+        protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|undefined, {}|undefined
+      ]>;
+  update(
+      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
+          {}|null|undefined>): void;
+  update(
+      request: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.IOperation,
+          protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest|null|undefined,
+          {}|null|undefined>): void;
   update(
       request?: protos.google.cloud.sql.v1.ISqlDatabasesUpdateRequest,
       optionsOrCallback?: CallOptions|Callback<

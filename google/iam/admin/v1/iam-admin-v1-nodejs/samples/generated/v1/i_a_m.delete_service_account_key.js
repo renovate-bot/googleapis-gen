@@ -35,7 +35,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function deleteServiceAccountKey() {
+  async function callDeleteServiceAccountKey() {
     // Construct request
     const request = {
       name,
@@ -46,7 +46,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteServiceAccountKey();
+  callDeleteServiceAccountKey();
   // [END iam_v1_generated_IAM_DeleteServiceAccountKey_async]
 }
 

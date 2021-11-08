@@ -42,7 +42,7 @@ function main(parent) {
   // Instantiates a client
   const dialogflowClient = new DocumentsClient();
 
-  async function listDocuments() {
+  async function callListDocuments() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent) {
     }
   }
 
-  listDocuments();
+  callListDocuments();
   // [END dialogflow_v2_generated_Documents_ListDocuments_async]
 }
 

@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new ManagedNotebookServiceClient();
 
-  async function deleteRuntime() {
+  async function callDeleteRuntime() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteRuntime();
+  callDeleteRuntime();
   // [END notebooks_v1_generated_ManagedNotebookService_DeleteRuntime_async]
 }
 

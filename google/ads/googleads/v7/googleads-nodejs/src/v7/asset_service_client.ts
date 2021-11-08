@@ -648,26 +648,6 @@ export class AssetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAsset(
-      request?: protos.google.ads.googleads.v7.services.IGetAssetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAsset,
-        protos.google.ads.googleads.v7.services.IGetAssetRequest|undefined, {}|undefined
-      ]>;
-  getAsset(
-      request: protos.google.ads.googleads.v7.services.IGetAssetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAsset,
-          protos.google.ads.googleads.v7.services.IGetAssetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAsset(
-      request: protos.google.ads.googleads.v7.services.IGetAssetRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAsset,
-          protos.google.ads.googleads.v7.services.IGetAssetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested asset in full detail.
  *
@@ -690,9 +670,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAsset(request);
+ * @example <caption>include:samples/generated/v7/asset_service.get_asset.js</caption>
+ * region_tag:googleads_v7_generated_AssetService_GetAsset_async
  */
+  getAsset(
+      request?: protos.google.ads.googleads.v7.services.IGetAssetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAsset,
+        protos.google.ads.googleads.v7.services.IGetAssetRequest|undefined, {}|undefined
+      ]>;
+  getAsset(
+      request: protos.google.ads.googleads.v7.services.IGetAssetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAsset,
+          protos.google.ads.googleads.v7.services.IGetAssetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAsset(
+      request: protos.google.ads.googleads.v7.services.IGetAssetRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAsset,
+          protos.google.ads.googleads.v7.services.IGetAssetRequest|null|undefined,
+          {}|null|undefined>): void;
   getAsset(
       request?: protos.google.ads.googleads.v7.services.IGetAssetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -727,26 +727,6 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.getAsset(request, options, callback);
   }
-  mutateAssets(
-      request?: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAssetsResponse,
-        protos.google.ads.googleads.v7.services.IMutateAssetsRequest|undefined, {}|undefined
-      ]>;
-  mutateAssets(
-      request: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAssetsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAssets(
-      request: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAssetsResponse,
-          protos.google.ads.googleads.v7.services.IMutateAssetsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates assets. Operation statuses are returned.
  *
@@ -803,9 +783,29 @@ export class AssetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAssets(request);
+ * @example <caption>include:samples/generated/v7/asset_service.mutate_assets.js</caption>
+ * region_tag:googleads_v7_generated_AssetService_MutateAssets_async
  */
+  mutateAssets(
+      request?: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAssetsResponse,
+        protos.google.ads.googleads.v7.services.IMutateAssetsRequest|undefined, {}|undefined
+      ]>;
+  mutateAssets(
+      request: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAssetsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAssets(
+      request: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAssetsResponse,
+          protos.google.ads.googleads.v7.services.IMutateAssetsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAssets(
       request?: protos.google.ads.googleads.v7.services.IMutateAssetsRequest,
       optionsOrCallback?: CallOptions|Callback<

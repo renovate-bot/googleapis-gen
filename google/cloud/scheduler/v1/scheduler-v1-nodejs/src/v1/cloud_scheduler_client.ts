@@ -301,6 +301,24 @@ export class CloudSchedulerClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a job.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The job name. For example:
+ *   `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Job]{@link google.cloud.scheduler.v1.Job}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.get_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_GetJob_async
+ */
   getJob(
       request?: protos.google.cloud.scheduler.v1.IGetJobRequest,
       options?: CallOptions):
@@ -321,24 +339,6 @@ export class CloudSchedulerClient {
           protos.google.cloud.scheduler.v1.IJob,
           protos.google.cloud.scheduler.v1.IGetJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a job.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The job name. For example:
- *   `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Job]{@link google.cloud.scheduler.v1.Job}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getJob(request);
- */
   getJob(
       request?: protos.google.cloud.scheduler.v1.IGetJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -373,26 +373,6 @@ export class CloudSchedulerClient {
     this.initialize();
     return this.innerApiCalls.getJob(request, options, callback);
   }
-  createJob(
-      request?: protos.google.cloud.scheduler.v1.ICreateJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.scheduler.v1.IJob,
-        protos.google.cloud.scheduler.v1.ICreateJobRequest|undefined, {}|undefined
-      ]>;
-  createJob(
-      request: protos.google.cloud.scheduler.v1.ICreateJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.ICreateJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  createJob(
-      request: protos.google.cloud.scheduler.v1.ICreateJobRequest,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.ICreateJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a job.
  *
@@ -414,9 +394,29 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createJob(request);
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.create_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_CreateJob_async
  */
+  createJob(
+      request?: protos.google.cloud.scheduler.v1.ICreateJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.scheduler.v1.IJob,
+        protos.google.cloud.scheduler.v1.ICreateJobRequest|undefined, {}|undefined
+      ]>;
+  createJob(
+      request: protos.google.cloud.scheduler.v1.ICreateJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.ICreateJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  createJob(
+      request: protos.google.cloud.scheduler.v1.ICreateJobRequest,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.ICreateJobRequest|null|undefined,
+          {}|null|undefined>): void;
   createJob(
       request?: protos.google.cloud.scheduler.v1.ICreateJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -451,26 +451,6 @@ export class CloudSchedulerClient {
     this.initialize();
     return this.innerApiCalls.createJob(request, options, callback);
   }
-  updateJob(
-      request?: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.scheduler.v1.IJob,
-        protos.google.cloud.scheduler.v1.IUpdateJobRequest|undefined, {}|undefined
-      ]>;
-  updateJob(
-      request: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.IUpdateJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateJob(
-      request: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.IUpdateJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a job.
  *
@@ -498,9 +478,29 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateJob(request);
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.update_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_UpdateJob_async
  */
+  updateJob(
+      request?: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.scheduler.v1.IJob,
+        protos.google.cloud.scheduler.v1.IUpdateJobRequest|undefined, {}|undefined
+      ]>;
+  updateJob(
+      request: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.IUpdateJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateJob(
+      request: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.IUpdateJobRequest|null|undefined,
+          {}|null|undefined>): void;
   updateJob(
       request?: protos.google.cloud.scheduler.v1.IUpdateJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -535,6 +535,24 @@ export class CloudSchedulerClient {
     this.initialize();
     return this.innerApiCalls.updateJob(request, options, callback);
   }
+/**
+ * Deletes a job.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The job name. For example:
+ *   `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.delete_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_DeleteJob_async
+ */
   deleteJob(
       request?: protos.google.cloud.scheduler.v1.IDeleteJobRequest,
       options?: CallOptions):
@@ -555,24 +573,6 @@ export class CloudSchedulerClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.scheduler.v1.IDeleteJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a job.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The job name. For example:
- *   `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteJob(request);
- */
   deleteJob(
       request?: protos.google.cloud.scheduler.v1.IDeleteJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -607,26 +607,6 @@ export class CloudSchedulerClient {
     this.initialize();
     return this.innerApiCalls.deleteJob(request, options, callback);
   }
-  pauseJob(
-      request?: protos.google.cloud.scheduler.v1.IPauseJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.scheduler.v1.IJob,
-        protos.google.cloud.scheduler.v1.IPauseJobRequest|undefined, {}|undefined
-      ]>;
-  pauseJob(
-      request: protos.google.cloud.scheduler.v1.IPauseJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.IPauseJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  pauseJob(
-      request: protos.google.cloud.scheduler.v1.IPauseJobRequest,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.IPauseJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Pauses a job.
  *
@@ -648,9 +628,29 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.pauseJob(request);
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.pause_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_PauseJob_async
  */
+  pauseJob(
+      request?: protos.google.cloud.scheduler.v1.IPauseJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.scheduler.v1.IJob,
+        protos.google.cloud.scheduler.v1.IPauseJobRequest|undefined, {}|undefined
+      ]>;
+  pauseJob(
+      request: protos.google.cloud.scheduler.v1.IPauseJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.IPauseJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  pauseJob(
+      request: protos.google.cloud.scheduler.v1.IPauseJobRequest,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.IPauseJobRequest|null|undefined,
+          {}|null|undefined>): void;
   pauseJob(
       request?: protos.google.cloud.scheduler.v1.IPauseJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -685,26 +685,6 @@ export class CloudSchedulerClient {
     this.initialize();
     return this.innerApiCalls.pauseJob(request, options, callback);
   }
-  resumeJob(
-      request?: protos.google.cloud.scheduler.v1.IResumeJobRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.scheduler.v1.IJob,
-        protos.google.cloud.scheduler.v1.IResumeJobRequest|undefined, {}|undefined
-      ]>;
-  resumeJob(
-      request: protos.google.cloud.scheduler.v1.IResumeJobRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.IResumeJobRequest|null|undefined,
-          {}|null|undefined>): void;
-  resumeJob(
-      request: protos.google.cloud.scheduler.v1.IResumeJobRequest,
-      callback: Callback<
-          protos.google.cloud.scheduler.v1.IJob,
-          protos.google.cloud.scheduler.v1.IResumeJobRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Resume a job.
  *
@@ -725,9 +705,29 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.resumeJob(request);
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.resume_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_ResumeJob_async
  */
+  resumeJob(
+      request?: protos.google.cloud.scheduler.v1.IResumeJobRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.scheduler.v1.IJob,
+        protos.google.cloud.scheduler.v1.IResumeJobRequest|undefined, {}|undefined
+      ]>;
+  resumeJob(
+      request: protos.google.cloud.scheduler.v1.IResumeJobRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.IResumeJobRequest|null|undefined,
+          {}|null|undefined>): void;
+  resumeJob(
+      request: protos.google.cloud.scheduler.v1.IResumeJobRequest,
+      callback: Callback<
+          protos.google.cloud.scheduler.v1.IJob,
+          protos.google.cloud.scheduler.v1.IResumeJobRequest|null|undefined,
+          {}|null|undefined>): void;
   resumeJob(
       request?: protos.google.cloud.scheduler.v1.IResumeJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -762,6 +762,27 @@ export class CloudSchedulerClient {
     this.initialize();
     return this.innerApiCalls.resumeJob(request, options, callback);
   }
+/**
+ * Forces a job to run now.
+ *
+ * When this method is called, Cloud Scheduler will dispatch the job, even
+ * if the job is already running.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The job name. For example:
+ *   `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Job]{@link google.cloud.scheduler.v1.Job}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.run_job.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_RunJob_async
+ */
   runJob(
       request?: protos.google.cloud.scheduler.v1.IRunJobRequest,
       options?: CallOptions):
@@ -782,27 +803,6 @@ export class CloudSchedulerClient {
           protos.google.cloud.scheduler.v1.IJob,
           protos.google.cloud.scheduler.v1.IRunJobRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Forces a job to run now.
- *
- * When this method is called, Cloud Scheduler will dispatch the job, even
- * if the job is already running.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The job name. For example:
- *   `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Job]{@link google.cloud.scheduler.v1.Job}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.runJob(request);
- */
   runJob(
       request?: protos.google.cloud.scheduler.v1.IRunJobRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -838,28 +838,7 @@ export class CloudSchedulerClient {
     return this.innerApiCalls.runJob(request, options, callback);
   }
 
-  listJobs(
-      request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.scheduler.v1.IJob[],
-        protos.google.cloud.scheduler.v1.IListJobsRequest|null,
-        protos.google.cloud.scheduler.v1.IListJobsResponse
-      ]>;
-  listJobs(
-      request: protos.google.cloud.scheduler.v1.IListJobsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.scheduler.v1.IListJobsRequest,
-          protos.google.cloud.scheduler.v1.IListJobsResponse|null|undefined,
-          protos.google.cloud.scheduler.v1.IJob>): void;
-  listJobs(
-      request: protos.google.cloud.scheduler.v1.IListJobsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.scheduler.v1.IListJobsRequest,
-          protos.google.cloud.scheduler.v1.IListJobsResponse|null|undefined,
-          protos.google.cloud.scheduler.v1.IJob>): void;
-/**
+ /**
  * Lists jobs.
  *
  * @param {Object} request
@@ -895,6 +874,27 @@ export class CloudSchedulerClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listJobs(
+      request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.scheduler.v1.IJob[],
+        protos.google.cloud.scheduler.v1.IListJobsRequest|null,
+        protos.google.cloud.scheduler.v1.IListJobsResponse
+      ]>;
+  listJobs(
+      request: protos.google.cloud.scheduler.v1.IListJobsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.scheduler.v1.IListJobsRequest,
+          protos.google.cloud.scheduler.v1.IListJobsResponse|null|undefined,
+          protos.google.cloud.scheduler.v1.IJob>): void;
+  listJobs(
+      request: protos.google.cloud.scheduler.v1.IListJobsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.scheduler.v1.IListJobsRequest,
+          protos.google.cloud.scheduler.v1.IListJobsResponse|null|undefined,
+          protos.google.cloud.scheduler.v1.IJob>): void;
   listJobs(
       request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1022,11 +1022,8 @@ export class CloudSchedulerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listJobsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/cloud_scheduler.list_jobs.js</caption>
+ * region_tag:cloudscheduler_v1_generated_CloudScheduler_ListJobs_async
  */
   listJobsAsync(
       request?: protos.google.cloud.scheduler.v1.IListJobsRequest,
@@ -1041,7 +1038,6 @@ export class CloudSchedulerClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listJobs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -56,7 +56,7 @@ function main(customerId, query) {
    *  is not returned. If requested, the summary row will be sent in a response
    *  by itself after all other query results are returned.
    */
-  // const summaryRowSetting = ''
+  // const summaryRowSetting = {}
 
   // Imports the Googleads library
   const {GoogleAdsServiceClient} = require('google-ads').v9;
@@ -64,7 +64,7 @@ function main(customerId, query) {
   // Instantiates a client
   const googleadsClient = new GoogleAdsServiceClient();
 
-  async function search() {
+  async function callSearch() {
     // Construct request
     const request = {
       customerId,
@@ -78,7 +78,7 @@ function main(customerId, query) {
     }
   }
 
-  search();
+  callSearch();
   // [END googleads_v9_generated_GoogleAdsService_Search_async]
 }
 

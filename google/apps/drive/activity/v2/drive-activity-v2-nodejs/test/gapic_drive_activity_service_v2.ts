@@ -173,7 +173,7 @@ describe('v2.DriveActivityServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.drive.activity.v2.QueryDriveActivityRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.apps.drive.activity.v2.DriveActivity()),
               generateSampleMessage(new protos.google.apps.drive.activity.v2.DriveActivity()),
@@ -193,7 +193,7 @@ describe('v2.DriveActivityServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.drive.activity.v2.QueryDriveActivityRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.apps.drive.activity.v2.DriveActivity()),
               generateSampleMessage(new protos.google.apps.drive.activity.v2.DriveActivity()),
@@ -224,7 +224,7 @@ describe('v2.DriveActivityServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.drive.activity.v2.QueryDriveActivityRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.queryDriveActivity = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.queryDriveActivity(request), expectedError);

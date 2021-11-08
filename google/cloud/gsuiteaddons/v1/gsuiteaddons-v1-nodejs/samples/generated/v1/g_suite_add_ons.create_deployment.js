@@ -33,7 +33,7 @@ function main(parent, deploymentId, deployment) {
   /**
    *  Required. The deployment to create (deployment.name cannot be set).
    */
-  // const deployment = ''
+  // const deployment = {}
 
   // Imports the Gsuiteaddons library
   const {GSuiteAddOnsClient} = require('@google-cloud/gsuiteaddons').v1;
@@ -41,7 +41,7 @@ function main(parent, deploymentId, deployment) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function createDeployment() {
+  async function callCreateDeployment() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, deploymentId, deployment) {
     console.log(response);
   }
 
-  createDeployment();
+  callCreateDeployment();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_CreateDeployment_async]
 }
 

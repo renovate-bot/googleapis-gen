@@ -646,26 +646,6 @@ export class GenderViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getGenderView(
-      request?: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IGenderView,
-        protos.google.ads.googleads.v7.services.IGetGenderViewRequest|undefined, {}|undefined
-      ]>;
-  getGenderView(
-      request: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IGenderView,
-          protos.google.ads.googleads.v7.services.IGetGenderViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getGenderView(
-      request: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IGenderView,
-          protos.google.ads.googleads.v7.services.IGetGenderViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested gender view in full detail.
  *
@@ -688,9 +668,29 @@ export class GenderViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getGenderView(request);
+ * @example <caption>include:samples/generated/v7/gender_view_service.get_gender_view.js</caption>
+ * region_tag:googleads_v7_generated_GenderViewService_GetGenderView_async
  */
+  getGenderView(
+      request?: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IGenderView,
+        protos.google.ads.googleads.v7.services.IGetGenderViewRequest|undefined, {}|undefined
+      ]>;
+  getGenderView(
+      request: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IGenderView,
+          protos.google.ads.googleads.v7.services.IGetGenderViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getGenderView(
+      request: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IGenderView,
+          protos.google.ads.googleads.v7.services.IGetGenderViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getGenderView(
       request?: protos.google.ads.googleads.v7.services.IGetGenderViewRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -27,11 +27,11 @@ function main(api) {
    *  the full request. A field will be overwritten if it is in the mask. If the
    *  user does not provide a mask then all fields will be overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. API resource.
    */
-  // const api = ''
+  // const api = {}
 
   // Imports the Apigateway library
   const {ApiGatewayServiceClient} = require('@google-cloud/api-gateway').v1;
@@ -39,7 +39,7 @@ function main(api) {
   // Instantiates a client
   const apigatewayClient = new ApiGatewayServiceClient();
 
-  async function updateApi() {
+  async function callUpdateApi() {
     // Construct request
     const request = {
       api,
@@ -51,7 +51,7 @@ function main(api) {
     console.log(response);
   }
 
-  updateApi();
+  callUpdateApi();
   // [END apigateway_v1_generated_ApiGatewayService_UpdateApi_async]
 }
 

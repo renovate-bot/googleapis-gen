@@ -40,7 +40,7 @@ function main(agentUserId, inputs) {
   // Instantiates a client
   const graphClient = new HomeGraphApiServiceClient();
 
-  async function query() {
+  async function callQuery() {
     // Construct request
     const request = {
       agentUserId,
@@ -52,7 +52,7 @@ function main(agentUserId, inputs) {
     console.log(response);
   }
 
-  query();
+  callQuery();
   // [END homegraph_v1_generated_HomeGraphApiService_Query_async]
 }
 

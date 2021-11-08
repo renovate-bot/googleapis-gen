@@ -45,7 +45,7 @@ function main(parent) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function listReleaseChannels() {
+  async function callListReleaseChannels() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent) {
     }
   }
 
-  listReleaseChannels();
+  callListReleaseChannels();
   // [END actions_v2_generated_ActionsSdk_ListReleaseChannels_async]
 }
 

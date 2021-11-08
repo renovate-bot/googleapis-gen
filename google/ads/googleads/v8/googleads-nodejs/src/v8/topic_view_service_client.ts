@@ -676,26 +676,6 @@ export class TopicViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getTopicView(
-      request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ITopicView,
-        protos.google.ads.googleads.v8.services.IGetTopicViewRequest|undefined, {}|undefined
-      ]>;
-  getTopicView(
-      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ITopicView,
-          protos.google.ads.googleads.v8.services.IGetTopicViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getTopicView(
-      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ITopicView,
-          protos.google.ads.googleads.v8.services.IGetTopicViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested topic view in full detail.
  *
@@ -718,9 +698,29 @@ export class TopicViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getTopicView(request);
+ * @example <caption>include:samples/generated/v8/topic_view_service.get_topic_view.js</caption>
+ * region_tag:googleads_v8_generated_TopicViewService_GetTopicView_async
  */
+  getTopicView(
+      request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ITopicView,
+        protos.google.ads.googleads.v8.services.IGetTopicViewRequest|undefined, {}|undefined
+      ]>;
+  getTopicView(
+      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ITopicView,
+          protos.google.ads.googleads.v8.services.IGetTopicViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getTopicView(
+      request: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ITopicView,
+          protos.google.ads.googleads.v8.services.IGetTopicViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getTopicView(
       request?: protos.google.ads.googleads.v8.services.IGetTopicViewRequest,
       optionsOrCallback?: CallOptions|Callback<

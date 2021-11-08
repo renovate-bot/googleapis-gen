@@ -28,11 +28,11 @@ function main(name, updateMask) {
   /**
    *  Required. Mask of fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  The parameters to apply to the instance.
    */
-  // const parameters = ''
+  // const parameters = {}
 
   // Imports the Memcache library
   const {CloudMemcacheClient} = require('@google-cloud/memcache').v1beta2;
@@ -40,7 +40,7 @@ function main(name, updateMask) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function updateParameters() {
+  async function callUpdateParameters() {
     // Construct request
     const request = {
       name,
@@ -53,7 +53,7 @@ function main(name, updateMask) {
     console.log(response);
   }
 
-  updateParameters();
+  callUpdateParameters();
   // [END memcache_v1beta2_generated_CloudMemcache_UpdateParameters_async]
 }
 

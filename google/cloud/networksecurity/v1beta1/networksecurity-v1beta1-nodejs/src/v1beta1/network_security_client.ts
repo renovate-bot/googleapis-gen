@@ -391,6 +391,24 @@ export class NetworkSecurityClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single AuthorizationPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the AuthorizationPolicy to get. Must be in the format
+ *   `projects/{project}/locations/{location}/authorizationPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AuthorizationPolicy]{@link google.cloud.networksecurity.v1beta1.AuthorizationPolicy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_security.get_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_GetAuthorizationPolicy_async
+ */
   getAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetAuthorizationPolicyRequest,
       options?: CallOptions):
@@ -411,24 +429,6 @@ export class NetworkSecurityClient {
           protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy,
           protos.google.cloud.networksecurity.v1beta1.IGetAuthorizationPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single AuthorizationPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the AuthorizationPolicy to get. Must be in the format
- *   `projects/{project}/locations/{location}/authorizationPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AuthorizationPolicy]{@link google.cloud.networksecurity.v1beta1.AuthorizationPolicy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAuthorizationPolicy(request);
- */
   getAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetAuthorizationPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -463,6 +463,24 @@ export class NetworkSecurityClient {
     this.initialize();
     return this.innerApiCalls.getAuthorizationPolicy(request, options, callback);
   }
+/**
+ * Gets details of a single ServerTlsPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the ServerTlsPolicy to get. Must be in the format
+ *   `projects/* /locations/{location}/serverTlsPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ServerTlsPolicy]{@link google.cloud.networksecurity.v1beta1.ServerTlsPolicy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_security.get_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_GetServerTlsPolicy_async
+ */
   getServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetServerTlsPolicyRequest,
       options?: CallOptions):
@@ -483,24 +501,6 @@ export class NetworkSecurityClient {
           protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy,
           protos.google.cloud.networksecurity.v1beta1.IGetServerTlsPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single ServerTlsPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the ServerTlsPolicy to get. Must be in the format
- *   `projects/* /locations/{location}/serverTlsPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ServerTlsPolicy]{@link google.cloud.networksecurity.v1beta1.ServerTlsPolicy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getServerTlsPolicy(request);
- */
   getServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetServerTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -535,6 +535,24 @@ export class NetworkSecurityClient {
     this.initialize();
     return this.innerApiCalls.getServerTlsPolicy(request, options, callback);
   }
+/**
+ * Gets details of a single ClientTlsPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the ClientTlsPolicy to get. Must be in the format
+ *   `projects/* /locations/{location}/clientTlsPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ClientTlsPolicy]{@link google.cloud.networksecurity.v1beta1.ClientTlsPolicy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_security.get_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_GetClientTlsPolicy_async
+ */
   getClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetClientTlsPolicyRequest,
       options?: CallOptions):
@@ -555,24 +573,6 @@ export class NetworkSecurityClient {
           protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy,
           protos.google.cloud.networksecurity.v1beta1.IGetClientTlsPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single ClientTlsPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the ClientTlsPolicy to get. Must be in the format
- *   `projects/* /locations/{location}/clientTlsPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ClientTlsPolicy]{@link google.cloud.networksecurity.v1beta1.ClientTlsPolicy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getClientTlsPolicy(request);
- */
   getClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IGetClientTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -608,26 +608,6 @@ export class NetworkSecurityClient {
     return this.innerApiCalls.getClientTlsPolicy(request, options, callback);
   }
 
-  createAuthorizationPolicy(
-      request?: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createAuthorizationPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createAuthorizationPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new AuthorizationPolicy in a given project and location.
  *
@@ -652,10 +632,29 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createAuthorizationPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_security.create_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_CreateAuthorizationPolicy_async
  */
+  createAuthorizationPolicy(
+      request?: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createAuthorizationPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createAuthorizationPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.ICreateAuthorizationPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -699,11 +698,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateAuthorizationPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.create_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_CreateAuthorizationPolicy_async
  */
   async checkCreateAuthorizationPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.AuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -711,26 +707,6 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createAuthorizationPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networksecurity.v1beta1.AuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
-  updateAuthorizationPolicy(
-      request?: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateAuthorizationPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateAuthorizationPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single AuthorizationPolicy.
  *
@@ -753,10 +729,29 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateAuthorizationPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_security.update_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_UpdateAuthorizationPolicy_async
  */
+  updateAuthorizationPolicy(
+      request?: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateAuthorizationPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateAuthorizationPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IUpdateAuthorizationPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -800,11 +795,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateAuthorizationPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.update_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_UpdateAuthorizationPolicy_async
  */
   async checkUpdateAuthorizationPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.AuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -812,6 +804,26 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateAuthorizationPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networksecurity.v1beta1.AuthorizationPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
+/**
+ * Deletes a single AuthorizationPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the AuthorizationPolicy to delete. Must be in the format
+ *   `projects/{project}/locations/{location}/authorizationPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_security.delete_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_DeleteAuthorizationPolicy_async
+ */
   deleteAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteAuthorizationPolicyRequest,
       options?: CallOptions):
@@ -832,27 +844,6 @@ export class NetworkSecurityClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single AuthorizationPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the AuthorizationPolicy to delete. Must be in the format
- *   `projects/{project}/locations/{location}/authorizationPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteAuthorizationPolicy(request);
- * const [response] = await operation.promise();
- */
   deleteAuthorizationPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteAuthorizationPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -896,11 +887,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteAuthorizationPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.delete_authorization_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_DeleteAuthorizationPolicy_async
  */
   async checkDeleteAuthorizationPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -908,26 +896,6 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteAuthorizationPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
-  createServerTlsPolicy(
-      request?: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createServerTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createServerTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new ServerTlsPolicy in a given project and location.
  *
@@ -951,10 +919,29 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createServerTlsPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_security.create_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_CreateServerTlsPolicy_async
  */
+  createServerTlsPolicy(
+      request?: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createServerTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createServerTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.ICreateServerTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -998,11 +985,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateServerTlsPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.create_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_CreateServerTlsPolicy_async
  */
   async checkCreateServerTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1010,26 +994,6 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createServerTlsPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networksecurity.v1beta1.ServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
-  updateServerTlsPolicy(
-      request?: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateServerTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateServerTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single ServerTlsPolicy.
  *
@@ -1053,10 +1017,29 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateServerTlsPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_security.update_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_UpdateServerTlsPolicy_async
  */
+  updateServerTlsPolicy(
+      request?: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateServerTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateServerTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IUpdateServerTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1100,11 +1083,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateServerTlsPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.update_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_UpdateServerTlsPolicy_async
  */
   async checkUpdateServerTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1112,6 +1092,26 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateServerTlsPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networksecurity.v1beta1.ServerTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
+/**
+ * Deletes a single ServerTlsPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the ServerTlsPolicy to delete. Must be in
+ *   the format `projects/* /locations/{location}/serverTlsPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_security.delete_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_DeleteServerTlsPolicy_async
+ */
   deleteServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteServerTlsPolicyRequest,
       options?: CallOptions):
@@ -1132,27 +1132,6 @@ export class NetworkSecurityClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single ServerTlsPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the ServerTlsPolicy to delete. Must be in
- *   the format `projects/* /locations/{location}/serverTlsPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteServerTlsPolicy(request);
- * const [response] = await operation.promise();
- */
   deleteServerTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteServerTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1196,11 +1175,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteServerTlsPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.delete_server_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_DeleteServerTlsPolicy_async
  */
   async checkDeleteServerTlsPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1208,26 +1184,6 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteServerTlsPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
-  createClientTlsPolicy(
-      request?: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createClientTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createClientTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new ClientTlsPolicy in a given project and location.
  *
@@ -1251,10 +1207,29 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createClientTlsPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_security.create_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_CreateClientTlsPolicy_async
  */
+  createClientTlsPolicy(
+      request?: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createClientTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createClientTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.ICreateClientTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1298,11 +1273,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateClientTlsPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.create_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_CreateClientTlsPolicy_async
  */
   async checkCreateClientTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1310,26 +1282,6 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createClientTlsPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networksecurity.v1beta1.ClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
-  updateClientTlsPolicy(
-      request?: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateClientTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateClientTlsPolicy(
-      request: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single ClientTlsPolicy.
  *
@@ -1353,10 +1305,29 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateClientTlsPolicy(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/network_security.update_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_UpdateClientTlsPolicy_async
  */
+  updateClientTlsPolicy(
+      request?: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateClientTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateClientTlsPolicy(
+      request: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IUpdateClientTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1400,11 +1371,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateClientTlsPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.update_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_UpdateClientTlsPolicy_async
  */
   async checkUpdateClientTlsPolicyProgress(name: string): Promise<LROperation<protos.google.cloud.networksecurity.v1beta1.ClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1412,6 +1380,26 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateClientTlsPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.networksecurity.v1beta1.ClientTlsPolicy, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
+/**
+ * Deletes a single ClientTlsPolicy.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. A name of the ClientTlsPolicy to delete. Must be in
+ *   the format `projects/* /locations/{location}/clientTlsPolicies/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/network_security.delete_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_DeleteClientTlsPolicy_async
+ */
   deleteClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteClientTlsPolicyRequest,
       options?: CallOptions):
@@ -1432,27 +1420,6 @@ export class NetworkSecurityClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.networksecurity.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single ClientTlsPolicy.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. A name of the ClientTlsPolicy to delete. Must be in
- *   the format `projects/* /locations/{location}/clientTlsPolicies/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteClientTlsPolicy(request);
- * const [response] = await operation.promise();
- */
   deleteClientTlsPolicy(
       request?: protos.google.cloud.networksecurity.v1beta1.IDeleteClientTlsPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1496,11 +1463,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteClientTlsPolicyProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/network_security.delete_client_tls_policy.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_DeleteClientTlsPolicy_async
  */
   async checkDeleteClientTlsPolicyProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1508,28 +1472,7 @@ export class NetworkSecurityClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteClientTlsPolicy, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.networksecurity.v1beta1.OperationMetadata>;
   }
-  listAuthorizationPolicies(
-      request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy[],
-        protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest|null,
-        protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesResponse
-      ]>;
-  listAuthorizationPolicies(
-      request: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
-          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesResponse|null|undefined,
-          protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy>): void;
-  listAuthorizationPolicies(
-      request: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
-          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesResponse|null|undefined,
-          protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy>): void;
-/**
+ /**
  * Lists AuthorizationPolicies in a given project and location.
  *
  * @param {Object} request
@@ -1558,6 +1501,27 @@ export class NetworkSecurityClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAuthorizationPolicies(
+      request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy[],
+        protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest|null,
+        protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesResponse
+      ]>;
+  listAuthorizationPolicies(
+      request: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
+          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesResponse|null|undefined,
+          protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy>): void;
+  listAuthorizationPolicies(
+      request: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
+          protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesResponse|null|undefined,
+          protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy>): void;
   listAuthorizationPolicies(
       request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1671,11 +1635,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAuthorizationPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/network_security.list_authorization_policies.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_ListAuthorizationPolicies_async
  */
   listAuthorizationPoliciesAsync(
       request?: protos.google.cloud.networksecurity.v1beta1.IListAuthorizationPoliciesRequest,
@@ -1690,7 +1651,6 @@ export class NetworkSecurityClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAuthorizationPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1700,28 +1660,7 @@ export class NetworkSecurityClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.networksecurity.v1beta1.IAuthorizationPolicy>;
   }
-  listServerTlsPolicies(
-      request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy[],
-        protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest|null,
-        protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesResponse
-      ]>;
-  listServerTlsPolicies(
-      request: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
-          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesResponse|null|undefined,
-          protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy>): void;
-  listServerTlsPolicies(
-      request: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
-          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesResponse|null|undefined,
-          protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy>): void;
-/**
+ /**
  * Lists ServerTlsPolicies in a given project and location.
  *
  * @param {Object} request
@@ -1749,6 +1688,27 @@ export class NetworkSecurityClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listServerTlsPolicies(
+      request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy[],
+        protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest|null,
+        protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesResponse
+      ]>;
+  listServerTlsPolicies(
+      request: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
+          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesResponse|null|undefined,
+          protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy>): void;
+  listServerTlsPolicies(
+      request: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
+          protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesResponse|null|undefined,
+          protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy>): void;
   listServerTlsPolicies(
       request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1860,11 +1820,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listServerTlsPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/network_security.list_server_tls_policies.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_ListServerTlsPolicies_async
  */
   listServerTlsPoliciesAsync(
       request?: protos.google.cloud.networksecurity.v1beta1.IListServerTlsPoliciesRequest,
@@ -1879,7 +1836,6 @@ export class NetworkSecurityClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listServerTlsPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1889,28 +1845,7 @@ export class NetworkSecurityClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.networksecurity.v1beta1.IServerTlsPolicy>;
   }
-  listClientTlsPolicies(
-      request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy[],
-        protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest|null,
-        protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesResponse
-      ]>;
-  listClientTlsPolicies(
-      request: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
-          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesResponse|null|undefined,
-          protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy>): void;
-  listClientTlsPolicies(
-      request: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
-          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesResponse|null|undefined,
-          protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy>): void;
-/**
+ /**
  * Lists ClientTlsPolicies in a given project and location.
  *
  * @param {Object} request
@@ -1938,6 +1873,27 @@ export class NetworkSecurityClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listClientTlsPolicies(
+      request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy[],
+        protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest|null,
+        protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesResponse
+      ]>;
+  listClientTlsPolicies(
+      request: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
+          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesResponse|null|undefined,
+          protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy>): void;
+  listClientTlsPolicies(
+      request: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
+          protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesResponse|null|undefined,
+          protos.google.cloud.networksecurity.v1beta1.IClientTlsPolicy>): void;
   listClientTlsPolicies(
       request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2049,11 +2005,8 @@ export class NetworkSecurityClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listClientTlsPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/network_security.list_client_tls_policies.js</caption>
+ * region_tag:networksecurity_v1beta1_generated_NetworkSecurity_ListClientTlsPolicies_async
  */
   listClientTlsPoliciesAsync(
       request?: protos.google.cloud.networksecurity.v1beta1.IListClientTlsPoliciesRequest,
@@ -2068,7 +2021,6 @@ export class NetworkSecurityClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listClientTlsPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

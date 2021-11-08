@@ -30,7 +30,7 @@ function main(parent, version) {
   /**
    *  Required. The version to create.
    */
-  // const version = ''
+  // const version = {}
 
   // Imports the Dialogflow library
   const {VersionsClient} = require('@google-cloud/dialogflow').v2;
@@ -38,7 +38,7 @@ function main(parent, version) {
   // Instantiates a client
   const dialogflowClient = new VersionsClient();
 
-  async function createVersion() {
+  async function callCreateVersion() {
     // Construct request
     const request = {
       parent,
@@ -50,7 +50,7 @@ function main(parent, version) {
     console.log(response);
   }
 
-  createVersion();
+  callCreateVersion();
   // [END dialogflow_v2_generated_Versions_CreateVersion_async]
 }
 

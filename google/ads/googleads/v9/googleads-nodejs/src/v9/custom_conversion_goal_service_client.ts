@@ -727,26 +727,6 @@ export class CustomConversionGoalServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateCustomConversionGoals(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomConversionGoals(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomConversionGoals(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes custom conversion goals. Operation statuses
  * are returned.
@@ -770,9 +750,29 @@ export class CustomConversionGoalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomConversionGoals(request);
+ * @example <caption>include:samples/generated/v9/custom_conversion_goal_service.mutate_custom_conversion_goals.js</caption>
+ * region_tag:googleads_v9_generated_CustomConversionGoalService_MutateCustomConversionGoals_async
  */
+  mutateCustomConversionGoals(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomConversionGoals(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomConversionGoals(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomConversionGoals(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomConversionGoalsRequest,
       optionsOrCallback?: CallOptions|Callback<

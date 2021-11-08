@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function deleteAccount() {
+  async function callDeleteAccount() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteAccount();
+  callDeleteAccount();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_DeleteAccount_async]
 }
 

@@ -325,28 +325,7 @@ export class PrivateCatalogClient {
   // -- Service calls --
   // -------------------
 
-  searchCatalogs(
-      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.privatecatalog.v1beta1.ICatalog[],
-        protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest|null,
-        protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse
-      ]>;
-  searchCatalogs(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
-          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse|null|undefined,
-          protos.google.cloud.privatecatalog.v1beta1.ICatalog>): void;
-  searchCatalogs(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
-          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse|null|undefined,
-          protos.google.cloud.privatecatalog.v1beta1.ICatalog>): void;
-/**
+ /**
  * Search {@link google.cloud.privatecatalog.v1beta1.Catalog|Catalog} resources that consumers have access to, within the
  * scope of the consumer cloud resource hierarchy context.
  *
@@ -380,6 +359,27 @@ export class PrivateCatalogClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchCatalogs(
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.privatecatalog.v1beta1.ICatalog[],
+        protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest|null,
+        protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse
+      ]>;
+  searchCatalogs(
+      request: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse|null|undefined,
+          protos.google.cloud.privatecatalog.v1beta1.ICatalog>): void;
+  searchCatalogs(
+      request: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
+          protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsResponse|null|undefined,
+          protos.google.cloud.privatecatalog.v1beta1.ICatalog>): void;
   searchCatalogs(
       request?: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -501,11 +501,8 @@ export class PrivateCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchCatalogsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/private_catalog.search_catalogs.js</caption>
+ * region_tag:cloudprivatecatalog_v1beta1_generated_PrivateCatalog_SearchCatalogs_async
  */
   searchCatalogsAsync(
       request?: protos.google.cloud.privatecatalog.v1beta1.ISearchCatalogsRequest,
@@ -520,7 +517,6 @@ export class PrivateCatalogClient {
     ] = gax.routingHeader.fromParams({
       'resource': request.resource || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchCatalogs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -530,28 +526,7 @@ export class PrivateCatalogClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.privatecatalog.v1beta1.ICatalog>;
   }
-  searchProducts(
-      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.privatecatalog.v1beta1.IProduct[],
-        protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest|null,
-        protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse
-      ]>;
-  searchProducts(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
-          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse|null|undefined,
-          protos.google.cloud.privatecatalog.v1beta1.IProduct>): void;
-  searchProducts(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
-          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse|null|undefined,
-          protos.google.cloud.privatecatalog.v1beta1.IProduct>): void;
-/**
+ /**
  * Search {@link google.cloud.privatecatalog.v1beta1.Product|Product} resources that consumers have access to, within the
  * scope of the consumer cloud resource hierarchy context.
  *
@@ -586,6 +561,27 @@ export class PrivateCatalogClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchProducts(
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.privatecatalog.v1beta1.IProduct[],
+        protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest|null,
+        protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse
+      ]>;
+  searchProducts(
+      request: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse|null|undefined,
+          protos.google.cloud.privatecatalog.v1beta1.IProduct>): void;
+  searchProducts(
+      request: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
+          protos.google.cloud.privatecatalog.v1beta1.ISearchProductsResponse|null|undefined,
+          protos.google.cloud.privatecatalog.v1beta1.IProduct>): void;
   searchProducts(
       request?: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -709,11 +705,8 @@ export class PrivateCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchProductsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/private_catalog.search_products.js</caption>
+ * region_tag:cloudprivatecatalog_v1beta1_generated_PrivateCatalog_SearchProducts_async
  */
   searchProductsAsync(
       request?: protos.google.cloud.privatecatalog.v1beta1.ISearchProductsRequest,
@@ -728,7 +721,6 @@ export class PrivateCatalogClient {
     ] = gax.routingHeader.fromParams({
       'resource': request.resource || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchProducts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -738,28 +730,7 @@ export class PrivateCatalogClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.privatecatalog.v1beta1.IProduct>;
   }
-  searchVersions(
-      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.privatecatalog.v1beta1.IVersion[],
-        protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest|null,
-        protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse
-      ]>;
-  searchVersions(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
-          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse|null|undefined,
-          protos.google.cloud.privatecatalog.v1beta1.IVersion>): void;
-  searchVersions(
-      request: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
-          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse|null|undefined,
-          protos.google.cloud.privatecatalog.v1beta1.IVersion>): void;
-/**
+ /**
  * Search {@link google.cloud.privatecatalog.v1beta1.Version|Version} resources that consumers have access to, within the
  * scope of the consumer cloud resource hierarchy context.
  *
@@ -794,6 +765,27 @@ export class PrivateCatalogClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchVersions(
+      request?: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.privatecatalog.v1beta1.IVersion[],
+        protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest|null,
+        protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse
+      ]>;
+  searchVersions(
+      request: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse|null|undefined,
+          protos.google.cloud.privatecatalog.v1beta1.IVersion>): void;
+  searchVersions(
+      request: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
+          protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsResponse|null|undefined,
+          protos.google.cloud.privatecatalog.v1beta1.IVersion>): void;
   searchVersions(
       request?: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -917,11 +909,8 @@ export class PrivateCatalogClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchVersionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/private_catalog.search_versions.js</caption>
+ * region_tag:cloudprivatecatalog_v1beta1_generated_PrivateCatalog_SearchVersions_async
  */
   searchVersionsAsync(
       request?: protos.google.cloud.privatecatalog.v1beta1.ISearchVersionsRequest,
@@ -936,7 +925,6 @@ export class PrivateCatalogClient {
     ] = gax.routingHeader.fromParams({
       'resource': request.resource || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchVersions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

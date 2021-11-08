@@ -350,6 +350,24 @@ export class EnvironmentsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Get an existing environment.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name of the environment to get, in the form:
+ *   "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Environment]{@link google.cloud.orchestration.airflow.service.v1beta1.Environment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/environments.get_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_GetEnvironment_async
+ */
   getEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IGetEnvironmentRequest,
       options?: CallOptions):
@@ -370,24 +388,6 @@ export class EnvironmentsClient {
           protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment,
           protos.google.cloud.orchestration.airflow.service.v1beta1.IGetEnvironmentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get an existing environment.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The resource name of the environment to get, in the form:
- *   "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Environment]{@link google.cloud.orchestration.airflow.service.v1beta1.Environment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEnvironment(request);
- */
   getEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IGetEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -423,6 +423,28 @@ export class EnvironmentsClient {
     return this.innerApiCalls.getEnvironment(request, options, callback);
   }
 
+/**
+ * Create a new environment.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   The parent must be of the form
+ *   "projects/{projectId}/locations/{locationId}".
+ * @param {google.cloud.orchestration.airflow.service.v1beta1.Environment} request.environment
+ *   The environment to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/environments.create_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_CreateEnvironment_async
+ */
   createEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.ICreateEnvironmentRequest,
       options?: CallOptions):
@@ -443,29 +465,6 @@ export class EnvironmentsClient {
           LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Create a new environment.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   The parent must be of the form
- *   "projects/{projectId}/locations/{locationId}".
- * @param {google.cloud.orchestration.airflow.service.v1beta1.Environment} request.environment
- *   The environment to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.createEnvironment(request);
- * const [response] = await operation.promise();
- */
   createEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.ICreateEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -509,11 +508,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateEnvironmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/environments.create_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_CreateEnvironment_async
  */
   async checkCreateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.Environment, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -521,26 +517,6 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createEnvironment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.Environment, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>;
   }
-  updateEnvironment(
-      request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateEnvironment(
-      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateEnvironment(
-      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Update an environment.
  *
@@ -691,10 +667,29 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateEnvironment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/environments.update_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_UpdateEnvironment_async
  */
+  updateEnvironment(
+      request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateEnvironment(
+      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateEnvironment(
+      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IUpdateEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -738,11 +733,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateEnvironmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/environments.update_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_UpdateEnvironment_async
  */
   async checkUpdateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.Environment, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -750,6 +742,26 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateEnvironment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.Environment, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>;
   }
+/**
+ * Delete an environment.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The environment to delete, in the form:
+ *   "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/environments.delete_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_DeleteEnvironment_async
+ */
   deleteEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IDeleteEnvironmentRequest,
       options?: CallOptions):
@@ -770,27 +782,6 @@ export class EnvironmentsClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Delete an environment.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The environment to delete, in the form:
- *   "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteEnvironment(request);
- * const [response] = await operation.promise();
- */
   deleteEnvironment(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IDeleteEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -834,11 +825,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteEnvironmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/environments.delete_environment.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_DeleteEnvironment_async
  */
   async checkDeleteEnvironmentProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -846,6 +834,27 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteEnvironment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>;
   }
+/**
+ * Restart Airflow web server.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   The resource name of the environment to restart the web server for, in the
+ *   form:
+ *   "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/environments.restart_web_server.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_RestartWebServer_async
+ */
   restartWebServer(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IRestartWebServerRequest,
       options?: CallOptions):
@@ -866,28 +875,6 @@ export class EnvironmentsClient {
           LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Restart Airflow web server.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   The resource name of the environment to restart the web server for, in the
- *   form:
- *   "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.restartWebServer(request);
- * const [response] = await operation.promise();
- */
   restartWebServer(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IRestartWebServerRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -931,11 +918,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRestartWebServerProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/environments.restart_web_server.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_RestartWebServer_async
  */
   async checkRestartWebServerProgress(name: string): Promise<LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.Environment, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -943,26 +927,6 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.restartWebServer, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.Environment, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>;
   }
-  checkUpgrade(
-      request?: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  checkUpgrade(
-      request: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  checkUpgrade(
-      request: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Check if an upgrade operation on the environment will succeed.
  *
@@ -1004,10 +968,29 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.checkUpgrade(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/environments.check_upgrade.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_CheckUpgrade_async
  */
+  checkUpgrade(
+      request?: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  checkUpgrade(
+      request: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  checkUpgrade(
+      request: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   checkUpgrade(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.ICheckUpgradeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1051,11 +1034,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCheckUpgradeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/environments.check_upgrade.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_CheckUpgrade_async
  */
   async checkCheckUpgradeProgress(name: string): Promise<LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1063,28 +1043,7 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.checkUpgrade, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse, protos.google.cloud.orchestration.airflow.service.v1beta1.OperationMetadata>;
   }
-  listEnvironments(
-      request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment[],
-        protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest|null,
-        protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsResponse
-      ]>;
-  listEnvironments(
-      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
-          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsResponse|null|undefined,
-          protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment>): void;
-  listEnvironments(
-      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
-          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsResponse|null|undefined,
-          protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment>): void;
-/**
+ /**
  * List environments.
  *
  * @param {Object} request
@@ -1109,6 +1068,27 @@ export class EnvironmentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEnvironments(
+      request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment[],
+        protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest|null,
+        protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsResponse
+      ]>;
+  listEnvironments(
+      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
+          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsResponse|null|undefined,
+          protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment>): void;
+  listEnvironments(
+      request: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
+          protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsResponse|null|undefined,
+          protos.google.cloud.orchestration.airflow.service.v1beta1.IEnvironment>): void;
   listEnvironments(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1214,11 +1194,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEnvironmentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/environments.list_environments.js</caption>
+ * region_tag:composer_v1beta1_generated_Environments_ListEnvironments_async
  */
   listEnvironmentsAsync(
       request?: protos.google.cloud.orchestration.airflow.service.v1beta1.IListEnvironmentsRequest,
@@ -1233,7 +1210,6 @@ export class EnvironmentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEnvironments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

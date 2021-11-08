@@ -646,26 +646,6 @@ export class CustomerManagerLinkServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerManagerLink(
-      request?: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICustomerManagerLink,
-        protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest|undefined, {}|undefined
-      ]>;
-  getCustomerManagerLink(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerManagerLink,
-          protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerManagerLink(
-      request: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICustomerManagerLink,
-          protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested CustomerManagerLink in full detail.
  *
@@ -688,9 +668,29 @@ export class CustomerManagerLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerManagerLink(request);
+ * @example <caption>include:samples/generated/v7/customer_manager_link_service.get_customer_manager_link.js</caption>
+ * region_tag:googleads_v7_generated_CustomerManagerLinkService_GetCustomerManagerLink_async
  */
+  getCustomerManagerLink(
+      request?: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICustomerManagerLink,
+        protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest|undefined, {}|undefined
+      ]>;
+  getCustomerManagerLink(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerManagerLink,
+          protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerManagerLink(
+      request: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICustomerManagerLink,
+          protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerManagerLink(
       request?: protos.google.ads.googleads.v7.services.IGetCustomerManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class CustomerManagerLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerManagerLink(request, options, callback);
   }
-  mutateCustomerManagerLink(
-      request?: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkResponse,
-        protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerManagerLink(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerManagerLink(
-      request: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkResponse,
-          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or updates customer manager links. Operation statuses are returned.
  *
@@ -777,9 +757,29 @@ export class CustomerManagerLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerManagerLink(request);
+ * @example <caption>include:samples/generated/v7/customer_manager_link_service.mutate_customer_manager_link.js</caption>
+ * region_tag:googleads_v7_generated_CustomerManagerLinkService_MutateCustomerManagerLink_async
  */
+  mutateCustomerManagerLink(
+      request?: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkResponse,
+        protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerManagerLink(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerManagerLink(
+      request: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkResponse,
+          protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerManagerLink(
       request?: protos.google.ads.googleads.v7.services.IMutateCustomerManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -814,26 +814,6 @@ export class CustomerManagerLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.mutateCustomerManagerLink(request, options, callback);
   }
-  moveManagerLink(
-      request?: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMoveManagerLinkResponse,
-        protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest|undefined, {}|undefined
-      ]>;
-  moveManagerLink(
-      request: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMoveManagerLinkResponse,
-          protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  moveManagerLink(
-      request: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMoveManagerLinkResponse,
-          protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Moves a client customer to a new manager customer.
  * This simplifies the complex request that requires two operations to move
@@ -873,9 +853,29 @@ export class CustomerManagerLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.moveManagerLink(request);
+ * @example <caption>include:samples/generated/v7/customer_manager_link_service.move_manager_link.js</caption>
+ * region_tag:googleads_v7_generated_CustomerManagerLinkService_MoveManagerLink_async
  */
+  moveManagerLink(
+      request?: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMoveManagerLinkResponse,
+        protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest|undefined, {}|undefined
+      ]>;
+  moveManagerLink(
+      request: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMoveManagerLinkResponse,
+          protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  moveManagerLink(
+      request: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMoveManagerLinkResponse,
+          protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   moveManagerLink(
       request?: protos.google.ads.googleads.v7.services.IMoveManagerLinkRequest,
       optionsOrCallback?: CallOptions|Callback<

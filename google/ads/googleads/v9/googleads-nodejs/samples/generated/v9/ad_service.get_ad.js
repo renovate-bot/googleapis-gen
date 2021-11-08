@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdServiceClient();
 
-  async function getAd() {
+  async function callGetAd() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAd();
+  callGetAd();
   // [END googleads_v9_generated_AdService_GetAd_async]
 }
 

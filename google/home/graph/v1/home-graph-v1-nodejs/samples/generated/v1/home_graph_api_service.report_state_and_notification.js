@@ -33,17 +33,9 @@ function main(agentUserId, payload) {
    */
   // const agentUserId = 'abc123'
   /**
-   *  Deprecated.
-   *  (-- Token to maintain state in the follow up notification response. See the
-   *  notifications guide at
-   *  https://developers.google.com/assistant/smarthome/develop/notifications for
-   *  details on implementing follow up notifications --)
-   */
-  // const followUpToken = 'abc123'
-  /**
    *  Required. State of devices to update and notification metadata for devices.
    */
-  // const payload = ''
+  // const payload = {}
 
   // Imports the Graph library
   const {HomeGraphApiServiceClient} = require('graph').v1;
@@ -51,7 +43,7 @@ function main(agentUserId, payload) {
   // Instantiates a client
   const graphClient = new HomeGraphApiServiceClient();
 
-  async function reportStateAndNotification() {
+  async function callReportStateAndNotification() {
     // Construct request
     const request = {
       agentUserId,
@@ -63,7 +55,7 @@ function main(agentUserId, payload) {
     console.log(response);
   }
 
-  reportStateAndNotification();
+  callReportStateAndNotification();
   // [END homegraph_v1_generated_HomeGraphApiService_ReportStateAndNotification_async]
 }
 

@@ -33,7 +33,7 @@ function main() {
   /**
    *  Required. The new alert feedback to create.
    */
-  // const feedback = ''
+  // const feedback = {}
 
   // Imports the Alertcenter library
   const {AlertCenterServiceClient} = require('@google-cloud/alertcenter').v1beta1;
@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function createAlertFeedback() {
+  async function callCreateAlertFeedback() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  createAlertFeedback();
+  callCreateAlertFeedback();
   // [END alertcenter_v1beta1_generated_AlertCenterService_CreateAlertFeedback_async]
 }
 

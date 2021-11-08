@@ -33,11 +33,11 @@ function main(parent, documentTemplate) {
    *  `gs://<bucket-name>/<object-name>`.
    *  `gs://<bucket-name>/<object-path>/*.<extension>`.
    */
-  // const gcsSource = ''
+  // const gcsSource = {}
   /**
    *  Required. Document template used for importing all the documents.
    */
-  // const documentTemplate = ''
+  // const documentTemplate = {}
   /**
    *  Whether to import custom metadata from Google Cloud Storage.
    *  Only valid when the document source is Google Cloud Storage URI.
@@ -50,7 +50,7 @@ function main(parent, documentTemplate) {
   // Instantiates a client
   const dialogflowClient = new DocumentsClient();
 
-  async function importDocuments() {
+  async function callImportDocuments() {
     // Construct request
     const request = {
       parent,
@@ -63,7 +63,7 @@ function main(parent, documentTemplate) {
     console.log(response);
   }
 
-  importDocuments();
+  callImportDocuments();
   // [END dialogflow_v2beta1_generated_Documents_ImportDocuments_async]
 }
 

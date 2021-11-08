@@ -43,7 +43,7 @@ function main(name) {
   // Instantiates a client
   const settingsClient = new SecurityCenterSettingsServiceClient();
 
-  async function resetComponentSettings() {
+  async function callResetComponentSettings() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     console.log(response);
   }
 
-  resetComponentSettings();
+  callResetComponentSettings();
   // [END securitycenter_v1beta1_generated_SecurityCenterSettingsService_ResetComponentSettings_async]
 }
 

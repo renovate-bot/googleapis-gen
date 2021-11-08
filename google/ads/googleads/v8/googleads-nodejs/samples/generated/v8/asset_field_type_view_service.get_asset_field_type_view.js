@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AssetFieldTypeViewServiceClient();
 
-  async function getAssetFieldTypeView() {
+  async function callGetAssetFieldTypeView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAssetFieldTypeView();
+  callGetAssetFieldTypeView();
   // [END googleads_v8_generated_AssetFieldTypeViewService_GetAssetFieldTypeView_async]
 }
 

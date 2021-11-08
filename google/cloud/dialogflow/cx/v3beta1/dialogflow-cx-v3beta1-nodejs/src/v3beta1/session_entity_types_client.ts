@@ -361,26 +361,6 @@ export class SessionEntityTypesClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getSessionEntityType(
-      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-        protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest|undefined, {}|undefined
-      ]>;
-  getSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-          protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-          protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves the specified session entity type.
  *
@@ -401,9 +381,29 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSessionEntityType(request);
+ * @example <caption>include:samples/generated/v3beta1/session_entity_types.get_session_entity_type.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_SessionEntityTypes_GetSessionEntityType_async
  */
+  getSessionEntityType(
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+        protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest|undefined, {}|undefined
+      ]>;
+  getSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+          protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+          protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
   getSessionEntityType(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IGetSessionEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -438,26 +438,6 @@ export class SessionEntityTypesClient {
     this.initialize();
     return this.innerApiCalls.getSessionEntityType(request, options, callback);
   }
-  createSessionEntityType(
-      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-        protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest|undefined, {}|undefined
-      ]>;
-  createSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-          protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
-  createSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-          protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a session entity type.
  *
@@ -479,9 +459,29 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createSessionEntityType(request);
+ * @example <caption>include:samples/generated/v3beta1/session_entity_types.create_session_entity_type.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_SessionEntityTypes_CreateSessionEntityType_async
  */
+  createSessionEntityType(
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+        protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest|undefined, {}|undefined
+      ]>;
+  createSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+          protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
+  createSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+          protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
   createSessionEntityType(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.ICreateSessionEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -516,26 +516,6 @@ export class SessionEntityTypesClient {
     this.initialize();
     return this.innerApiCalls.createSessionEntityType(request, options, callback);
   }
-  updateSessionEntityType(
-      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-        protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest|undefined, {}|undefined
-      ]>;
-  updateSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-          protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
-          protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified session entity type.
  *
@@ -558,9 +538,29 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateSessionEntityType(request);
+ * @example <caption>include:samples/generated/v3beta1/session_entity_types.update_session_entity_type.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_SessionEntityTypes_UpdateSessionEntityType_async
  */
+  updateSessionEntityType(
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+        protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest|undefined, {}|undefined
+      ]>;
+  updateSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+          protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType,
+          protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
   updateSessionEntityType(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IUpdateSessionEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -595,26 +595,6 @@ export class SessionEntityTypesClient {
     this.initialize();
     return this.innerApiCalls.updateSessionEntityType(request, options, callback);
   }
-  deleteSessionEntityType(
-      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest|undefined, {}|undefined
-      ]>;
-  deleteSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteSessionEntityType(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified session entity type.
  *
@@ -635,9 +615,29 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteSessionEntityType(request);
+ * @example <caption>include:samples/generated/v3beta1/session_entity_types.delete_session_entity_type.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_SessionEntityTypes_DeleteSessionEntityType_async
  */
+  deleteSessionEntityType(
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest|undefined, {}|undefined
+      ]>;
+  deleteSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteSessionEntityType(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteSessionEntityType(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IDeleteSessionEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -673,28 +673,7 @@ export class SessionEntityTypesClient {
     return this.innerApiCalls.deleteSessionEntityType(request, options, callback);
   }
 
-  listSessionEntityTypes(
-      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType[],
-        protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest|null,
-        protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesResponse
-      ]>;
-  listSessionEntityTypes(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
-          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType>): void;
-  listSessionEntityTypes(
-      request: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
-          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType>): void;
-/**
+ /**
  * Returns the list of all session entity types in the specified session.
  *
  * @param {Object} request
@@ -724,6 +703,27 @@ export class SessionEntityTypesClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listSessionEntityTypes(
+      request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType[],
+        protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest|null,
+        protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesResponse
+      ]>;
+  listSessionEntityTypes(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
+          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType>): void;
+  listSessionEntityTypes(
+      request: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
+          protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3beta1.ISessionEntityType>): void;
   listSessionEntityTypes(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -839,11 +839,8 @@ export class SessionEntityTypesClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSessionEntityTypesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3beta1/session_entity_types.list_session_entity_types.js</caption>
+ * region_tag:dialogflow_v3beta1_generated_SessionEntityTypes_ListSessionEntityTypes_async
  */
   listSessionEntityTypesAsync(
       request?: protos.google.cloud.dialogflow.cx.v3beta1.IListSessionEntityTypesRequest,
@@ -858,7 +855,6 @@ export class SessionEntityTypesClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSessionEntityTypes'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

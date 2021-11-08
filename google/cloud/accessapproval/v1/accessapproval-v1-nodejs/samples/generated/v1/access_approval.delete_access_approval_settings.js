@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const accessapprovalClient = new AccessApprovalClient();
 
-  async function deleteAccessApprovalSettings() {
+  async function callDeleteAccessApprovalSettings() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  deleteAccessApprovalSettings();
+  callDeleteAccessApprovalSettings();
   // [END accessapproval_v1_generated_AccessApproval_DeleteAccessApprovalSettings_async]
 }
 

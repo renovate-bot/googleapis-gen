@@ -689,26 +689,6 @@ export class AccountBudgetProposalServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAccountBudgetProposal(
-      request?: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAccountBudgetProposal,
-        protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest|undefined, {}|undefined
-      ]>;
-  getAccountBudgetProposal(
-      request: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAccountBudgetProposal,
-          protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAccountBudgetProposal(
-      request: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAccountBudgetProposal,
-          protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns an account-level budget proposal in full detail.
  *
@@ -731,9 +711,29 @@ export class AccountBudgetProposalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAccountBudgetProposal(request);
+ * @example <caption>include:samples/generated/v8/account_budget_proposal_service.get_account_budget_proposal.js</caption>
+ * region_tag:googleads_v8_generated_AccountBudgetProposalService_GetAccountBudgetProposal_async
  */
+  getAccountBudgetProposal(
+      request?: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAccountBudgetProposal,
+        protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest|undefined, {}|undefined
+      ]>;
+  getAccountBudgetProposal(
+      request: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAccountBudgetProposal,
+          protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAccountBudgetProposal(
+      request: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAccountBudgetProposal,
+          protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest|null|undefined,
+          {}|null|undefined>): void;
   getAccountBudgetProposal(
       request?: protos.google.ads.googleads.v8.services.IGetAccountBudgetProposalRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -768,26 +768,6 @@ export class AccountBudgetProposalServiceClient {
     this.initialize();
     return this.innerApiCalls.getAccountBudgetProposal(request, options, callback);
   }
-  mutateAccountBudgetProposal(
-      request?: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalResponse,
-        protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest|undefined, {}|undefined
-      ]>;
-  mutateAccountBudgetProposal(
-      request: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalResponse,
-          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAccountBudgetProposal(
-      request: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalResponse,
-          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes account budget proposals.  Operation statuses
  * are returned.
@@ -823,9 +803,29 @@ export class AccountBudgetProposalServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAccountBudgetProposal(request);
+ * @example <caption>include:samples/generated/v8/account_budget_proposal_service.mutate_account_budget_proposal.js</caption>
+ * region_tag:googleads_v8_generated_AccountBudgetProposalService_MutateAccountBudgetProposal_async
  */
+  mutateAccountBudgetProposal(
+      request?: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalResponse,
+        protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest|undefined, {}|undefined
+      ]>;
+  mutateAccountBudgetProposal(
+      request: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalResponse,
+          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAccountBudgetProposal(
+      request: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalResponse,
+          protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAccountBudgetProposal(
       request?: protos.google.ads.googleads.v8.services.IMutateAccountBudgetProposalRequest,
       optionsOrCallback?: CallOptions|Callback<

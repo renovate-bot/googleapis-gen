@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ConversionCustomVariableServiceClient();
 
-  async function getConversionCustomVariable() {
+  async function callGetConversionCustomVariable() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getConversionCustomVariable();
+  callGetConversionCustomVariable();
   // [END googleads_v7_generated_ConversionCustomVariableService_GetConversionCustomVariable_async]
 }
 

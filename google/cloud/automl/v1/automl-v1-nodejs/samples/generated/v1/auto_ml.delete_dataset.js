@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function deleteDataset() {
+  async function callDeleteDataset() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteDataset();
+  callDeleteDataset();
   // [END automl_v1_generated_AutoMl_DeleteDataset_async]
 }
 

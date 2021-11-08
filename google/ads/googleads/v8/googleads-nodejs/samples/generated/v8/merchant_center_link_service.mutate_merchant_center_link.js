@@ -27,7 +27,7 @@ function main(customerId, operation) {
   /**
    *  Required. The operation to perform on the link
    */
-  // const operation = ''
+  // const operation = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -40,7 +40,7 @@ function main(customerId, operation) {
   // Instantiates a client
   const googleadsClient = new MerchantCenterLinkServiceClient();
 
-  async function mutateMerchantCenterLink() {
+  async function callMutateMerchantCenterLink() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operation) {
     console.log(response);
   }
 
-  mutateMerchantCenterLink();
+  callMutateMerchantCenterLink();
   // [END googleads_v8_generated_MerchantCenterLinkService_MutateMerchantCenterLink_async]
 }
 

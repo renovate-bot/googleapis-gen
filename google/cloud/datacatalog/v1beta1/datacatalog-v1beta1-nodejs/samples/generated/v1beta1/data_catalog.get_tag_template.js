@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function getTagTemplate() {
+  async function callGetTagTemplate() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTagTemplate();
+  callGetTagTemplate();
   // [END datacatalog_v1beta1_generated_DataCatalog_GetTagTemplate_async]
 }
 

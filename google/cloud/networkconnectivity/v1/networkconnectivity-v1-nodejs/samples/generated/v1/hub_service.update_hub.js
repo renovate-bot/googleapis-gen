@@ -27,11 +27,11 @@ function main(hub) {
    *  it is in the mask. If the user does not provide a mask, then all fields are
    *  overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. The state that the hub should be in after the update.
    */
-  // const hub = ''
+  // const hub = {}
   /**
    *  Optional. A unique request ID (optional). If you specify this ID, you can use it
    *  in cases when you need to retry your request. When you need to retry, this
@@ -54,7 +54,7 @@ function main(hub) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function updateHub() {
+  async function callUpdateHub() {
     // Construct request
     const request = {
       hub,
@@ -66,7 +66,7 @@ function main(hub) {
     console.log(response);
   }
 
-  updateHub();
+  callUpdateHub();
   // [END networkconnectivity_v1_generated_HubService_UpdateHub_async]
 }
 

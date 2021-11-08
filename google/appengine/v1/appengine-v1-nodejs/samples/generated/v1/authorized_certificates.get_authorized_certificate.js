@@ -28,7 +28,7 @@ function main() {
   /**
    *  Controls the set of fields returned in the `GET` response.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Appengine library
   const {AuthorizedCertificatesClient} = require('@google-cloud/appengine-admin').v1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new AuthorizedCertificatesClient();
 
-  async function getAuthorizedCertificate() {
+  async function callGetAuthorizedCertificate() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  getAuthorizedCertificate();
+  callGetAuthorizedCertificate();
   // [END appengine_v1_generated_AuthorizedCertificates_GetAuthorizedCertificate_async]
 }
 

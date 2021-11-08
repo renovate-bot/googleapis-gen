@@ -646,26 +646,6 @@ export class LabelServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getLabel(
-      request?: protos.google.ads.googleads.v7.services.IGetLabelRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ILabel,
-        protos.google.ads.googleads.v7.services.IGetLabelRequest|undefined, {}|undefined
-      ]>;
-  getLabel(
-      request: protos.google.ads.googleads.v7.services.IGetLabelRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ILabel,
-          protos.google.ads.googleads.v7.services.IGetLabelRequest|null|undefined,
-          {}|null|undefined>): void;
-  getLabel(
-      request: protos.google.ads.googleads.v7.services.IGetLabelRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ILabel,
-          protos.google.ads.googleads.v7.services.IGetLabelRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested label in full detail.
  *
@@ -688,9 +668,29 @@ export class LabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getLabel(request);
+ * @example <caption>include:samples/generated/v7/label_service.get_label.js</caption>
+ * region_tag:googleads_v7_generated_LabelService_GetLabel_async
  */
+  getLabel(
+      request?: protos.google.ads.googleads.v7.services.IGetLabelRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ILabel,
+        protos.google.ads.googleads.v7.services.IGetLabelRequest|undefined, {}|undefined
+      ]>;
+  getLabel(
+      request: protos.google.ads.googleads.v7.services.IGetLabelRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ILabel,
+          protos.google.ads.googleads.v7.services.IGetLabelRequest|null|undefined,
+          {}|null|undefined>): void;
+  getLabel(
+      request: protos.google.ads.googleads.v7.services.IGetLabelRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ILabel,
+          protos.google.ads.googleads.v7.services.IGetLabelRequest|null|undefined,
+          {}|null|undefined>): void;
   getLabel(
       request?: protos.google.ads.googleads.v7.services.IGetLabelRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class LabelServiceClient {
     this.initialize();
     return this.innerApiCalls.getLabel(request, options, callback);
   }
-  mutateLabels(
-      request?: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateLabelsResponse,
-        protos.google.ads.googleads.v7.services.IMutateLabelsRequest|undefined, {}|undefined
-      ]>;
-  mutateLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateLabels(
-      request: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateLabelsResponse,
-          protos.google.ads.googleads.v7.services.IMutateLabelsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes labels. Operation statuses are returned.
  *
@@ -797,9 +777,29 @@ export class LabelServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateLabels(request);
+ * @example <caption>include:samples/generated/v7/label_service.mutate_labels.js</caption>
+ * region_tag:googleads_v7_generated_LabelService_MutateLabels_async
  */
+  mutateLabels(
+      request?: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateLabelsResponse,
+        protos.google.ads.googleads.v7.services.IMutateLabelsRequest|undefined, {}|undefined
+      ]>;
+  mutateLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateLabels(
+      request: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateLabelsResponse,
+          protos.google.ads.googleads.v7.services.IMutateLabelsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateLabels(
       request?: protos.google.ads.googleads.v7.services.IMutateLabelsRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -274,6 +274,28 @@ export class SqlSslCertsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Deletes the SSL certificate. For First Generation instances, the
+ * certificate remains valid until the instance is restarted.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {string} request.sha1Fingerprint
+ *   Sha1 FingerPrint.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_ssl_certs_service.delete.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlSslCertsService_Delete_async
+ */
   delete(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsDeleteRequest,
       options?: CallOptions):
@@ -294,28 +316,6 @@ export class SqlSslCertsServiceClient {
           protos.google.cloud.sql.v1.IOperation,
           protos.google.cloud.sql.v1.ISqlSslCertsDeleteRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the SSL certificate. For First Generation instances, the
- * certificate remains valid until the instance is restarted.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {string} request.sha1Fingerprint
- *   Sha1 FingerPrint.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.delete(request);
- */
   delete(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -350,26 +350,6 @@ export class SqlSslCertsServiceClient {
     this.initialize();
     return this.innerApiCalls.delete(request, options, callback);
   }
-  get(
-      request?: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1.ISslCert,
-        protos.google.cloud.sql.v1.ISqlSslCertsGetRequest|undefined, {}|undefined
-      ]>;
-  get(
-      request: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1.ISslCert,
-          protos.google.cloud.sql.v1.ISqlSslCertsGetRequest|null|undefined,
-          {}|null|undefined>): void;
-  get(
-      request: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1.ISslCert,
-          protos.google.cloud.sql.v1.ISqlSslCertsGetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves a particular SSL certificate.  Does not include the private key
  * (required for usage).  The private key must be saved from the response to
@@ -390,9 +370,29 @@ export class SqlSslCertsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
+ * @example <caption>include:samples/generated/v1/sql_ssl_certs_service.get.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlSslCertsService_Get_async
  */
+  get(
+      request?: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1.ISslCert,
+        protos.google.cloud.sql.v1.ISqlSslCertsGetRequest|undefined, {}|undefined
+      ]>;
+  get(
+      request: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1.ISslCert,
+          protos.google.cloud.sql.v1.ISqlSslCertsGetRequest|null|undefined,
+          {}|null|undefined>): void;
+  get(
+      request: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1.ISslCert,
+          protos.google.cloud.sql.v1.ISqlSslCertsGetRequest|null|undefined,
+          {}|null|undefined>): void;
   get(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsGetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -427,6 +427,28 @@ export class SqlSslCertsServiceClient {
     this.initialize();
     return this.innerApiCalls.get(request, options, callback);
   }
+/**
+ * Creates an SSL certificate and returns it along with the private key and
+ * server certificate authority.  The new certificate will not be usable until
+ * the instance is restarted.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1.SslCertsInsertRequest} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [SslCertsInsertResponse]{@link google.cloud.sql.v1.SslCertsInsertResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_ssl_certs_service.insert.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlSslCertsService_Insert_async
+ */
   insert(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsInsertRequest,
       options?: CallOptions):
@@ -447,28 +469,6 @@ export class SqlSslCertsServiceClient {
           protos.google.cloud.sql.v1.ISslCertsInsertResponse,
           protos.google.cloud.sql.v1.ISqlSslCertsInsertRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates an SSL certificate and returns it along with the private key and
- * server certificate authority.  The new certificate will not be usable until
- * the instance is restarted.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1.SslCertsInsertRequest} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [SslCertsInsertResponse]{@link google.cloud.sql.v1.SslCertsInsertResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.insert(request);
- */
   insert(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -503,6 +503,25 @@ export class SqlSslCertsServiceClient {
     this.initialize();
     return this.innerApiCalls.insert(request, options, callback);
   }
+/**
+ * Lists all of the current SSL certificates for the instance.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [SslCertsListResponse]{@link google.cloud.sql.v1.SslCertsListResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/sql_ssl_certs_service.list.js</caption>
+ * region_tag:sqladmin_v1_generated_SqlSslCertsService_List_async
+ */
   list(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsListRequest,
       options?: CallOptions):
@@ -523,25 +542,6 @@ export class SqlSslCertsServiceClient {
           protos.google.cloud.sql.v1.ISslCertsListResponse,
           protos.google.cloud.sql.v1.ISqlSslCertsListRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Lists all of the current SSL certificates for the instance.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [SslCertsListResponse]{@link google.cloud.sql.v1.SslCertsListResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
- */
   list(
       request?: protos.google.cloud.sql.v1.ISqlSslCertsListRequest,
       optionsOrCallback?: CallOptions|Callback<

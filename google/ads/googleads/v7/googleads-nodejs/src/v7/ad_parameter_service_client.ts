@@ -646,26 +646,6 @@ export class AdParameterServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdParameter(
-      request?: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IAdParameter,
-        protos.google.ads.googleads.v7.services.IGetAdParameterRequest|undefined, {}|undefined
-      ]>;
-  getAdParameter(
-      request: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdParameter,
-          protos.google.ads.googleads.v7.services.IGetAdParameterRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdParameter(
-      request: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IAdParameter,
-          protos.google.ads.googleads.v7.services.IGetAdParameterRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad parameter in full detail.
  *
@@ -688,9 +668,29 @@ export class AdParameterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdParameter(request);
+ * @example <caption>include:samples/generated/v7/ad_parameter_service.get_ad_parameter.js</caption>
+ * region_tag:googleads_v7_generated_AdParameterService_GetAdParameter_async
  */
+  getAdParameter(
+      request?: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IAdParameter,
+        protos.google.ads.googleads.v7.services.IGetAdParameterRequest|undefined, {}|undefined
+      ]>;
+  getAdParameter(
+      request: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdParameter,
+          protos.google.ads.googleads.v7.services.IGetAdParameterRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdParameter(
+      request: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IAdParameter,
+          protos.google.ads.googleads.v7.services.IGetAdParameterRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdParameter(
       request?: protos.google.ads.googleads.v7.services.IGetAdParameterRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class AdParameterServiceClient {
     this.initialize();
     return this.innerApiCalls.getAdParameter(request, options, callback);
   }
-  mutateAdParameters(
-      request?: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
-        protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|undefined, {}|undefined
-      ]>;
-  mutateAdParameters(
-      request: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdParameters(
-      request: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
-          protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes ad parameters. Operation statuses are
  * returned.
@@ -787,9 +767,29 @@ export class AdParameterServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdParameters(request);
+ * @example <caption>include:samples/generated/v7/ad_parameter_service.mutate_ad_parameters.js</caption>
+ * region_tag:googleads_v7_generated_AdParameterService_MutateAdParameters_async
  */
+  mutateAdParameters(
+      request?: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
+        protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|undefined, {}|undefined
+      ]>;
+  mutateAdParameters(
+      request: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdParameters(
+      request: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateAdParametersResponse,
+          protos.google.ads.googleads.v7.services.IMutateAdParametersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdParameters(
       request?: protos.google.ads.googleads.v7.services.IMutateAdParametersRequest,
       optionsOrCallback?: CallOptions|Callback<

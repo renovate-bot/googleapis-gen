@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlInstancesServiceClient();
 
-  async function resetSslConfig() {
+  async function callResetSslConfig() {
     // Construct request
     const request = {
     };
@@ -45,7 +45,7 @@ function main() {
     console.log(response);
   }
 
-  resetSslConfig();
+  callResetSslConfig();
   // [END sqladmin_v1beta4_generated_SqlInstancesService_ResetSslConfig_async]
 }
 

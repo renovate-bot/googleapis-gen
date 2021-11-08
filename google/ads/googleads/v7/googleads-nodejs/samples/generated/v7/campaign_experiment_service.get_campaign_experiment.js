@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignExperimentServiceClient();
 
-  async function getCampaignExperiment() {
+  async function callGetCampaignExperiment() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCampaignExperiment();
+  callGetCampaignExperiment();
   // [END googleads_v7_generated_CampaignExperimentService_GetCampaignExperiment_async]
 }
 

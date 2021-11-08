@@ -40,7 +40,7 @@ function main(name, etag) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function markInsightAccepted() {
+  async function callMarkInsightAccepted() {
     // Construct request
     const request = {
       name,
@@ -52,7 +52,7 @@ function main(name, etag) {
     console.log(response);
   }
 
-  markInsightAccepted();
+  callMarkInsightAccepted();
   // [END recommender_v1beta1_generated_Recommender_MarkInsightAccepted_async]
 }
 

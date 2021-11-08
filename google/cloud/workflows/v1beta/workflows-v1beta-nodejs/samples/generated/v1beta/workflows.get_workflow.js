@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const workflowsClient = new WorkflowsClient();
 
-  async function getWorkflow() {
+  async function callGetWorkflow() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  getWorkflow();
+  callGetWorkflow();
   // [END workflows_v1beta_generated_Workflows_GetWorkflow_async]
 }
 

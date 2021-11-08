@@ -462,7 +462,7 @@ describe('v2.Debugger2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesResponse());
             client.innerApiCalls.listDebuggees = stubSimpleCall(expectedResponse);
             const [response] = await client.listDebuggees(request);
@@ -478,7 +478,7 @@ describe('v2.Debugger2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesResponse());
             client.innerApiCalls.listDebuggees = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -505,7 +505,7 @@ describe('v2.Debugger2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listDebuggees = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listDebuggees(request), expectedError);

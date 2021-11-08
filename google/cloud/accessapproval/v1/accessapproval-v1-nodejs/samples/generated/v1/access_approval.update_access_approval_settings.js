@@ -23,7 +23,7 @@ function main() {
   /**
    *  The new AccessApprovalSettings.
    */
-  // const settings = ''
+  // const settings = {}
   /**
    *  The update mask applies to the settings. Only the top level fields of
    *  AccessApprovalSettings (notification_emails & enrolled_services) are
@@ -35,7 +35,7 @@ function main() {
    *  If this field is left unset, only the notification_emails field will be
    *  updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Accessapproval library
   const {AccessApprovalClient} = require('@google-cloud/access-approval').v1;
@@ -43,7 +43,7 @@ function main() {
   // Instantiates a client
   const accessapprovalClient = new AccessApprovalClient();
 
-  async function updateAccessApprovalSettings() {
+  async function callUpdateAccessApprovalSettings() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  updateAccessApprovalSettings();
+  callUpdateAccessApprovalSettings();
   // [END accessapproval_v1_generated_AccessApproval_UpdateAccessApprovalSettings_async]
 }
 

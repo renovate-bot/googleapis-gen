@@ -24,7 +24,7 @@ function main(template) {
    *  Required. The updated workflow template.
    *  The `template.version` field must match the current version.
    */
-  // const template = ''
+  // const template = {}
 
   // Imports the Dataproc library
   const {WorkflowTemplateServiceClient} = require('@google-cloud/dataproc').v1;
@@ -32,7 +32,7 @@ function main(template) {
   // Instantiates a client
   const dataprocClient = new WorkflowTemplateServiceClient();
 
-  async function updateWorkflowTemplate() {
+  async function callUpdateWorkflowTemplate() {
     // Construct request
     const request = {
       template,
@@ -43,7 +43,7 @@ function main(template) {
     console.log(response);
   }
 
-  updateWorkflowTemplate();
+  callUpdateWorkflowTemplate();
   // [END dataproc_v1_generated_WorkflowTemplateService_UpdateWorkflowTemplate_async]
 }
 

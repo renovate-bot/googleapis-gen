@@ -25,13 +25,13 @@ function main(property, updateMask) {
    *  The property's `name` field is used to identify the property to be
    *  updated.
    */
-  // const property = ''
+  // const property = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -39,7 +39,7 @@ function main(property, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateProperty() {
+  async function callUpdateProperty() {
     // Construct request
     const request = {
       property,
@@ -51,7 +51,7 @@ function main(property, updateMask) {
     console.log(response);
   }
 
-  updateProperty();
+  callUpdateProperty();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateProperty_async]
 }
 

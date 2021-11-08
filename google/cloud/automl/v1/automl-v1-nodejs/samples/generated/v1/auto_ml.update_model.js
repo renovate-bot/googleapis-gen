@@ -23,11 +23,11 @@ function main(model, updateMask) {
   /**
    *  Required. The model which replaces the resource on the server.
    */
-  // const model = ''
+  // const model = {}
   /**
    *  Required. The update mask applies to the resource.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1;
@@ -35,7 +35,7 @@ function main(model, updateMask) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function updateModel() {
+  async function callUpdateModel() {
     // Construct request
     const request = {
       model,
@@ -47,7 +47,7 @@ function main(model, updateMask) {
     console.log(response);
   }
 
-  updateModel();
+  callUpdateModel();
   // [END automl_v1_generated_AutoMl_UpdateModel_async]
 }
 

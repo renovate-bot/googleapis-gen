@@ -40,7 +40,7 @@ function main(parent) {
   // Instantiates a client
   const reservationClient = new ReservationServiceClient();
 
-  async function listCapacityCommitments() {
+  async function callListCapacityCommitments() {
     // Construct request
     const request = {
       parent,
@@ -53,7 +53,7 @@ function main(parent) {
     }
   }
 
-  listCapacityCommitments();
+  callListCapacityCommitments();
   // [END bigqueryreservation_v1beta1_generated_ReservationService_ListCapacityCommitments_async]
 }
 

@@ -23,7 +23,7 @@ function main(tag) {
   /**
    *  Required. The updated tag. The "name" field must be set.
    */
-  // const tag = ''
+  // const tag = {}
   /**
    *  Names of fields whose values to overwrite on a tag. Currently, a tag has
    *  the only modifiable field with the name `fields`.
@@ -31,7 +31,7 @@ function main(tag) {
    *  are overwritten. If such fields are non-required and omitted in the
    *  request body, their values are emptied.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -39,7 +39,7 @@ function main(tag) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function updateTag() {
+  async function callUpdateTag() {
     // Construct request
     const request = {
       tag,
@@ -50,7 +50,7 @@ function main(tag) {
     console.log(response);
   }
 
-  updateTag();
+  callUpdateTag();
   // [END datacatalog_v1_generated_DataCatalog_UpdateTag_async]
 }
 

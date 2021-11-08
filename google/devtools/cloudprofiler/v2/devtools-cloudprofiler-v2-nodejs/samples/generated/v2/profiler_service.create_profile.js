@@ -27,7 +27,7 @@ function main() {
   /**
    *  Deployment details.
    */
-  // const deployment = ''
+  // const deployment = {}
   /**
    *  One or more profile types that the agent is capable of providing.
    */
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const cloudprofilerClient = new ProfilerServiceClient();
 
-  async function createProfile() {
+  async function callCreateProfile() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     console.log(response);
   }
 
-  createProfile();
+  callCreateProfile();
   // [END cloudprofiler_v2_generated_ProfilerService_CreateProfile_async]
 }
 

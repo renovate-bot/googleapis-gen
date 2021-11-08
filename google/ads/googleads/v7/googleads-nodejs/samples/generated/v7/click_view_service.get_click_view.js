@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ClickViewServiceClient();
 
-  async function getClickView() {
+  async function callGetClickView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getClickView();
+  callGetClickView();
   // [END googleads_v7_generated_ClickViewService_GetClickView_async]
 }
 

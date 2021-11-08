@@ -28,7 +28,7 @@ function main() {
   /**
    *  Controls the set of fields returned in the `List` response.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Maximum results to return per page.
    */
@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new VersionsClient();
 
-  async function listVersions() {
+  async function callListVersions() {
     // Construct request
     const request = {
     };
@@ -56,7 +56,7 @@ function main() {
     }
   }
 
-  listVersions();
+  callListVersions();
   // [END appengine_v1_generated_Versions_ListVersions_async]
 }
 

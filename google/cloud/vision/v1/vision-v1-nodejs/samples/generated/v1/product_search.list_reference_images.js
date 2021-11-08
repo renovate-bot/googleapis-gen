@@ -43,7 +43,7 @@ function main(parent) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function listReferenceImages() {
+  async function callListReferenceImages() {
     // Construct request
     const request = {
       parent,
@@ -56,7 +56,7 @@ function main(parent) {
     }
   }
 
-  listReferenceImages();
+  callListReferenceImages();
   // [END vision_v1_generated_ProductSearch_ListReferenceImages_async]
 }
 

@@ -332,6 +332,24 @@ export class IDSClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single Endpoint.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the endpoint to retrieve.
+ *   Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Endpoint]{@link google.cloud.ids.v1.Endpoint}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/i_d_s.get_endpoint.js</caption>
+ * region_tag:ids_v1_generated_IDS_GetEndpoint_async
+ */
   getEndpoint(
       request?: protos.google.cloud.ids.v1.IGetEndpointRequest,
       options?: CallOptions):
@@ -352,24 +370,6 @@ export class IDSClient {
           protos.google.cloud.ids.v1.IEndpoint,
           protos.google.cloud.ids.v1.IGetEndpointRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Endpoint.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the endpoint to retrieve.
- *   Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Endpoint]{@link google.cloud.ids.v1.Endpoint}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEndpoint(request);
- */
   getEndpoint(
       request?: protos.google.cloud.ids.v1.IGetEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -405,26 +405,6 @@ export class IDSClient {
     return this.innerApiCalls.getEndpoint(request, options, callback);
   }
 
-  createEndpoint(
-      request?: protos.google.cloud.ids.v1.ICreateEndpointRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.ids.v1.IEndpoint, protos.google.cloud.ids.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createEndpoint(
-      request: protos.google.cloud.ids.v1.ICreateEndpointRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.ids.v1.IEndpoint, protos.google.cloud.ids.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createEndpoint(
-      request: protos.google.cloud.ids.v1.ICreateEndpointRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.ids.v1.IEndpoint, protos.google.cloud.ids.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Endpoint in a given project and location.
  *
@@ -464,10 +444,29 @@ export class IDSClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createEndpoint(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/i_d_s.create_endpoint.js</caption>
+ * region_tag:ids_v1_generated_IDS_CreateEndpoint_async
  */
+  createEndpoint(
+      request?: protos.google.cloud.ids.v1.ICreateEndpointRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.ids.v1.IEndpoint, protos.google.cloud.ids.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createEndpoint(
+      request: protos.google.cloud.ids.v1.ICreateEndpointRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.ids.v1.IEndpoint, protos.google.cloud.ids.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createEndpoint(
+      request: protos.google.cloud.ids.v1.ICreateEndpointRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.ids.v1.IEndpoint, protos.google.cloud.ids.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createEndpoint(
       request?: protos.google.cloud.ids.v1.ICreateEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -511,11 +510,8 @@ export class IDSClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateEndpointProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/i_d_s.create_endpoint.js</caption>
+ * region_tag:ids_v1_generated_IDS_CreateEndpoint_async
  */
   async checkCreateEndpointProgress(name: string): Promise<LROperation<protos.google.cloud.ids.v1.Endpoint, protos.google.cloud.ids.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -523,26 +519,6 @@ export class IDSClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createEndpoint, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.ids.v1.Endpoint, protos.google.cloud.ids.v1.OperationMetadata>;
   }
-  deleteEndpoint(
-      request?: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.ids.v1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteEndpoint(
-      request: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.ids.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteEndpoint(
-      request: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.ids.v1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single Endpoint.
  *
@@ -573,10 +549,29 @@ export class IDSClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteEndpoint(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/i_d_s.delete_endpoint.js</caption>
+ * region_tag:ids_v1_generated_IDS_DeleteEndpoint_async
  */
+  deleteEndpoint(
+      request?: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.ids.v1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteEndpoint(
+      request: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.ids.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteEndpoint(
+      request: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.ids.v1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteEndpoint(
       request?: protos.google.cloud.ids.v1.IDeleteEndpointRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -620,11 +615,8 @@ export class IDSClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteEndpointProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/i_d_s.delete_endpoint.js</caption>
+ * region_tag:ids_v1_generated_IDS_DeleteEndpoint_async
  */
   async checkDeleteEndpointProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.ids.v1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -632,28 +624,7 @@ export class IDSClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteEndpoint, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.ids.v1.OperationMetadata>;
   }
-  listEndpoints(
-      request?: protos.google.cloud.ids.v1.IListEndpointsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.ids.v1.IEndpoint[],
-        protos.google.cloud.ids.v1.IListEndpointsRequest|null,
-        protos.google.cloud.ids.v1.IListEndpointsResponse
-      ]>;
-  listEndpoints(
-      request: protos.google.cloud.ids.v1.IListEndpointsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.ids.v1.IListEndpointsRequest,
-          protos.google.cloud.ids.v1.IListEndpointsResponse|null|undefined,
-          protos.google.cloud.ids.v1.IEndpoint>): void;
-  listEndpoints(
-      request: protos.google.cloud.ids.v1.IListEndpointsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.ids.v1.IListEndpointsRequest,
-          protos.google.cloud.ids.v1.IListEndpointsResponse|null|undefined,
-          protos.google.cloud.ids.v1.IEndpoint>): void;
-/**
+ /**
  * Lists Endpoints in a given project and location.
  *
  * @param {Object} request
@@ -688,6 +659,27 @@ export class IDSClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEndpoints(
+      request?: protos.google.cloud.ids.v1.IListEndpointsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.ids.v1.IEndpoint[],
+        protos.google.cloud.ids.v1.IListEndpointsRequest|null,
+        protos.google.cloud.ids.v1.IListEndpointsResponse
+      ]>;
+  listEndpoints(
+      request: protos.google.cloud.ids.v1.IListEndpointsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.ids.v1.IListEndpointsRequest,
+          protos.google.cloud.ids.v1.IListEndpointsResponse|null|undefined,
+          protos.google.cloud.ids.v1.IEndpoint>): void;
+  listEndpoints(
+      request: protos.google.cloud.ids.v1.IListEndpointsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.ids.v1.IListEndpointsRequest,
+          protos.google.cloud.ids.v1.IListEndpointsResponse|null|undefined,
+          protos.google.cloud.ids.v1.IEndpoint>): void;
   listEndpoints(
       request?: protos.google.cloud.ids.v1.IListEndpointsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -813,11 +805,8 @@ export class IDSClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEndpointsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/i_d_s.list_endpoints.js</caption>
+ * region_tag:ids_v1_generated_IDS_ListEndpoints_async
  */
   listEndpointsAsync(
       request?: protos.google.cloud.ids.v1.IListEndpointsRequest,
@@ -832,7 +821,6 @@ export class IDSClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEndpoints'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

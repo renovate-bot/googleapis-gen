@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new IndexServiceClient();
 
-  async function getIndex() {
+  async function callGetIndex() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getIndex();
+  callGetIndex();
   // [END aiplatform_v1beta1_generated_IndexService_GetIndex_async]
 }
 

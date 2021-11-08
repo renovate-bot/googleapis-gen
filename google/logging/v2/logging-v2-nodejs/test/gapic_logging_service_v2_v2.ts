@@ -266,7 +266,7 @@ describe('v2.LoggingServiceV2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesResponse());
             client.innerApiCalls.writeLogEntries = stubSimpleCall(expectedResponse);
             const [response] = await client.writeLogEntries(request);
@@ -282,7 +282,7 @@ describe('v2.LoggingServiceV2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesResponse());
             client.innerApiCalls.writeLogEntries = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -309,7 +309,7 @@ describe('v2.LoggingServiceV2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.writeLogEntries = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.writeLogEntries(request), expectedError);
@@ -382,7 +382,7 @@ describe('v2.LoggingServiceV2Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListLogEntriesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
@@ -402,7 +402,7 @@ describe('v2.LoggingServiceV2Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListLogEntriesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
@@ -433,7 +433,7 @@ describe('v2.LoggingServiceV2Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListLogEntriesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listLogEntries = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listLogEntries(request), expectedError);
@@ -553,7 +553,7 @@ describe('v2.LoggingServiceV2Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListMonitoredResourceDescriptorsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
@@ -573,7 +573,7 @@ describe('v2.LoggingServiceV2Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListMonitoredResourceDescriptorsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
@@ -604,7 +604,7 @@ describe('v2.LoggingServiceV2Client', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListMonitoredResourceDescriptorsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listMonitoredResourceDescriptors = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listMonitoredResourceDescriptors(request), expectedError);

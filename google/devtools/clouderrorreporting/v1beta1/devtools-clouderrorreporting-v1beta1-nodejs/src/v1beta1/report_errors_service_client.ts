@@ -286,26 +286,6 @@ export class ReportErrorsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  reportErrorEvent(
-      request?: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
-        protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|undefined, {}|undefined
-      ]>;
-  reportErrorEvent(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
-          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|null|undefined,
-          {}|null|undefined>): void;
-  reportErrorEvent(
-      request: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
-      callback: Callback<
-          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
-          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Report an individual error event and record the event to a log.
  *
@@ -343,9 +323,29 @@ export class ReportErrorsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.reportErrorEvent(request);
+ * @example <caption>include:samples/generated/v1beta1/report_errors_service.report_error_event.js</caption>
+ * region_tag:clouderrorreporting_v1beta1_generated_ReportErrorsService_ReportErrorEvent_async
  */
+  reportErrorEvent(
+      request?: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
+        protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|undefined, {}|undefined
+      ]>;
+  reportErrorEvent(
+      request: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
+          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|null|undefined,
+          {}|null|undefined>): void;
+  reportErrorEvent(
+      request: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
+      callback: Callback<
+          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventResponse,
+          protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest|null|undefined,
+          {}|null|undefined>): void;
   reportErrorEvent(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IReportErrorEventRequest,
       optionsOrCallback?: CallOptions|Callback<

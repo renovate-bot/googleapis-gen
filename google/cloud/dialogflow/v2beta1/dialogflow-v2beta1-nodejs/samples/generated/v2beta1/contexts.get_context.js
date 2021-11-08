@@ -43,7 +43,7 @@ function main(name) {
   // Instantiates a client
   const dialogflowClient = new ContextsClient();
 
-  async function getContext() {
+  async function callGetContext() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     console.log(response);
   }
 
-  getContext();
+  callGetContext();
   // [END dialogflow_v2beta1_generated_Contexts_GetContext_async]
 }
 

@@ -21,7 +21,7 @@ function main(parent, service) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Resource [name](https://cloud.google.com/monitoring/api/v3#project_name) of
+   *  Required. Resource name (https://cloud.google.com/monitoring/api/v3#project_name) of
    *  the parent workspace. The format is:
    *      projects/[PROJECT_ID_OR_NUMBER]
    */
@@ -34,7 +34,7 @@ function main(parent, service) {
   /**
    *  Required. The `Service` to create.
    */
-  // const service = ''
+  // const service = {}
 
   // Imports the Monitoring library
   const {ServiceMonitoringServiceClient} = require('@google-cloud/monitoring').v3;
@@ -42,7 +42,7 @@ function main(parent, service) {
   // Instantiates a client
   const monitoringClient = new ServiceMonitoringServiceClient();
 
-  async function createService() {
+  async function callCreateService() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent, service) {
     console.log(response);
   }
 
-  createService();
+  callCreateService();
   // [END monitoring_v3_generated_ServiceMonitoringService_CreateService_async]
 }
 

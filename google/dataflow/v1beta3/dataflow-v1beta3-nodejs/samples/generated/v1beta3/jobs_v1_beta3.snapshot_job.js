@@ -31,7 +31,7 @@ function main() {
   /**
    *  TTL for the snapshot.
    */
-  // const ttl = ''
+  // const ttl = {}
   /**
    *  The location that contains this job.
    */
@@ -51,7 +51,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new JobsV1Beta3Client();
 
-  async function snapshotJob() {
+  async function callSnapshotJob() {
     // Construct request
     const request = {
     };
@@ -61,7 +61,7 @@ function main() {
     console.log(response);
   }
 
-  snapshotJob();
+  callSnapshotJob();
   // [END dataflow_v1beta3_generated_JobsV1Beta3_SnapshotJob_async]
 }
 

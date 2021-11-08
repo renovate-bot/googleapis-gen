@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const workflowsClient = new WorkflowsClient();
 
-  async function deleteWorkflow() {
+  async function callDeleteWorkflow() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteWorkflow();
+  callDeleteWorkflow();
   // [END workflows_v1_generated_Workflows_DeleteWorkflow_async]
 }
 

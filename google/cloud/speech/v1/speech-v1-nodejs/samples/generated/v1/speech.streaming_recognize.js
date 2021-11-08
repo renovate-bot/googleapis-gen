@@ -25,7 +25,7 @@ function main() {
    *  request. The first `StreamingRecognizeRequest` message must contain a
    *  `streaming_config`  message.
    */
-  // const streamingConfig = ''
+  // const streamingConfig = {}
   /**
    *  The audio data to be recognized. Sequential chunks of audio data are sent
    *  in sequential `StreamingRecognizeRequest` messages. The first
@@ -34,7 +34,7 @@ function main() {
    *  `audio_content` data. The audio bytes must be encoded as specified in
    *  `RecognitionConfig`. Note: as with all bytes fields, proto buffers use a
    *  pure binary representation (not base64). See
-   *  [content limits](https://cloud.google.com/speech-to-text/quotas#content).
+   *  content limits (https://cloud.google.com/speech-to-text/quotas#content).
    */
   // const audioContent = 'Buffer.from('string')'
 
@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const speechClient = new SpeechClient();
 
-  async function streamingRecognize() {
+  async function callStreamingRecognize() {
     // Construct request
     const request = {
     };
@@ -58,7 +58,7 @@ function main() {
     stream.end(); 
   }
 
-  streamingRecognize();
+  callStreamingRecognize();
   // [END speech_v1_generated_Speech_StreamingRecognize_async]
 }
 

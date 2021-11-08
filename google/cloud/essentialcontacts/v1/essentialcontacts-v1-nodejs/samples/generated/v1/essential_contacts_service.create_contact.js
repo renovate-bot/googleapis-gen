@@ -30,7 +30,7 @@ function main(parent, contact) {
    *  Required. The contact to create. Must specify an email address and language
    *  tag.
    */
-  // const contact = ''
+  // const contact = {}
 
   // Imports the Essentialcontacts library
   const {EssentialContactsServiceClient} = require('@google-cloud/essential-contacts').v1;
@@ -38,7 +38,7 @@ function main(parent, contact) {
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function createContact() {
+  async function callCreateContact() {
     // Construct request
     const request = {
       parent,
@@ -50,7 +50,7 @@ function main(parent, contact) {
     console.log(response);
   }
 
-  createContact();
+  callCreateContact();
   // [END essentialcontacts_v1_generated_EssentialContactsService_CreateContact_async]
 }
 

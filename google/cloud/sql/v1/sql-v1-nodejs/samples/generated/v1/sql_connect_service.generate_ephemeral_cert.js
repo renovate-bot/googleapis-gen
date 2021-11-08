@@ -39,7 +39,7 @@ function main() {
   /**
    *  Optional. Optional snapshot read timestamp to trade freshness for performance.
    */
-  // const readTime = ''
+  // const readTime = {}
 
   // Imports the Sql library
   const {SqlConnectServiceClient} = require('@google-cloud/sql').v1;
@@ -47,7 +47,7 @@ function main() {
   // Instantiates a client
   const sqlClient = new SqlConnectServiceClient();
 
-  async function generateEphemeralCert() {
+  async function callGenerateEphemeralCert() {
     // Construct request
     const request = {
     };
@@ -57,7 +57,7 @@ function main() {
     console.log(response);
   }
 
-  generateEphemeralCert();
+  callGenerateEphemeralCert();
   // [END sqladmin_v1_generated_SqlConnectService_GenerateEphemeralCert_async]
 }
 

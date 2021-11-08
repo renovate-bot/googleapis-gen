@@ -35,56 +35,56 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   /**
    *  Apply a predefined set of access controls to the destination object.
    */
-  // const destinationPredefinedAcl = ''
+  // const destinationPredefinedAcl = {}
   /**
    *  Makes the operation conditional on whether the destination object's current
    *  generation matches the given value. Setting to 0 makes the operation
    *  succeed only if there are no live versions of the object.
    */
-  // const ifGenerationMatch = ''
+  // const ifGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the destination object's current
    *  generation does not match the given value. If no live object exists, the
    *  precondition fails. Setting to 0 makes the operation succeed only if there
    *  is a live version of the object.
    */
-  // const ifGenerationNotMatch = ''
+  // const ifGenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the destination object's current
    *  metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the destination object's current
    *  metageneration does not match the given value.
    */
-  // const ifMetagenerationNotMatch = ''
+  // const ifMetagenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  generation matches the given value.
    */
-  // const ifSourceGenerationMatch = ''
+  // const ifSourceGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  generation does not match the given value.
    */
-  // const ifSourceGenerationNotMatch = ''
+  // const ifSourceGenerationNotMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  metageneration matches the given value.
    */
-  // const ifSourceMetagenerationMatch = ''
+  // const ifSourceMetagenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the source object's current
    *  metageneration does not match the given value.
    */
-  // const ifSourceMetagenerationNotMatch = ''
+  // const ifSourceMetagenerationNotMatch = {}
   /**
    *  Set of properties to return. Defaults to `NO_ACL`, unless the
    *  object resource specifies the `acl` property, when it defaults
    *  to `full`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  Required. Name of the bucket in which to find the source object.
    */
@@ -102,7 +102,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
    *  Properties of the resulting object. If not set, duplicate properties of
    *  source object.
    */
-  // const destination = ''
+  // const destination = {}
   /**
    *  Resource name of the Cloud KMS key, of the form
    *  `projects/my-project/locations/my-location/keyRings/my-kr/cryptoKeys/my-key`,
@@ -113,11 +113,11 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -125,7 +125,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function copyObject() {
+  async function callCopyObject() {
     // Construct request
     const request = {
       destinationBucket,
@@ -139,7 +139,7 @@ function main(destinationBucket, destinationObject, sourceBucket, sourceObject) 
     console.log(response);
   }
 
-  copyObject();
+  callCopyObject();
   // [END storage_v1_generated_Storage_CopyObject_async]
 }
 

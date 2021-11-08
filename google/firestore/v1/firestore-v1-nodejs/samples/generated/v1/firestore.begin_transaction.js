@@ -29,7 +29,7 @@ function main(database) {
    *  The options for the transaction.
    *  Defaults to a read-write transaction.
    */
-  // const options = ''
+  // const options = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('@google-cloud/firestore').v1;
@@ -37,7 +37,7 @@ function main(database) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function beginTransaction() {
+  async function callBeginTransaction() {
     // Construct request
     const request = {
       database,
@@ -48,7 +48,7 @@ function main(database) {
     console.log(response);
   }
 
-  beginTransaction();
+  callBeginTransaction();
   // [END firestore_v1_generated_Firestore_BeginTransaction_async]
 }
 

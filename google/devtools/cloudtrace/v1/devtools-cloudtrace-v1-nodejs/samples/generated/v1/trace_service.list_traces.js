@@ -28,7 +28,7 @@ function main(projectId) {
    *  Optional. Type of data returned for traces in the list. Default is
    *  `MINIMAL`.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  Optional. Maximum number of traces to return. If not specified or <= 0, the
    *  implementation selects a reasonable value.  The implementation may
@@ -44,12 +44,12 @@ function main(projectId) {
    *  Start of the time interval (inclusive) during which the trace data was
    *  collected from the application.
    */
-  // const startTime = ''
+  // const startTime = {}
   /**
    *  End of the time interval (inclusive) during which the trace data was
    *  collected from the application.
    */
-  // const endTime = ''
+  // const endTime = {}
   /**
    *  Optional. A filter against labels for the request.
    *  By default, searches use prefix matching. To specify exact match, prepend
@@ -101,7 +101,7 @@ function main(projectId) {
   // Instantiates a client
   const cloudtraceClient = new TraceServiceClient();
 
-  async function listTraces() {
+  async function callListTraces() {
     // Construct request
     const request = {
       projectId,
@@ -114,7 +114,7 @@ function main(projectId) {
     }
   }
 
-  listTraces();
+  callListTraces();
   // [END cloudtrace_v1_generated_TraceService_ListTraces_async]
 }
 

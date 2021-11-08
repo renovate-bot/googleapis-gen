@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new MobileAppCategoryConstantServiceClient();
 
-  async function getMobileAppCategoryConstant() {
+  async function callGetMobileAppCategoryConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getMobileAppCategoryConstant();
+  callGetMobileAppCategoryConstant();
   // [END googleads_v9_generated_MobileAppCategoryConstantService_GetMobileAppCategoryConstant_async]
 }
 

@@ -34,7 +34,7 @@ function main(parent, files) {
    *  4. The webhook ConfigFile corresponding to inline cloud function must be
    *     streamed before the DataFile corresponding to its source code.
    */
-  // const files = ''
+  // const files = {}
   /**
    *  Optional. The release channel to deploy the version, if specified. The supported
    *  built in release channels are actions.channels.Production,
@@ -49,7 +49,7 @@ function main(parent, files) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function createVersion() {
+  async function callCreateVersion() {
     // Construct request
     const request = {
       parent,
@@ -62,7 +62,7 @@ function main(parent, files) {
     stream.end();
   }
 
-  createVersion();
+  callCreateVersion();
   // [END actions_v2_generated_ActionsSdk_CreateVersion_async]
 }
 

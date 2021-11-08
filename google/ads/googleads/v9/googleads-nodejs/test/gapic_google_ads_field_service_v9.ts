@@ -257,7 +257,7 @@ describe('v9.GoogleAdsFieldServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.SearchGoogleAdsFieldsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.ads.googleads.v9.resources.GoogleAdsField()),
               generateSampleMessage(new protos.google.ads.googleads.v9.resources.GoogleAdsField()),
@@ -277,7 +277,7 @@ describe('v9.GoogleAdsFieldServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.SearchGoogleAdsFieldsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.ads.googleads.v9.resources.GoogleAdsField()),
               generateSampleMessage(new protos.google.ads.googleads.v9.resources.GoogleAdsField()),
@@ -308,7 +308,7 @@ describe('v9.GoogleAdsFieldServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v9.services.SearchGoogleAdsFieldsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.searchGoogleAdsFields = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.searchGoogleAdsFields(request), expectedError);

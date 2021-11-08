@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const iamClient = new WorkloadIdentityPoolsClient();
 
-  async function listWorkloadIdentityPoolProviders() {
+  async function callListWorkloadIdentityPoolProviders() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listWorkloadIdentityPoolProviders();
+  callListWorkloadIdentityPoolProviders();
   // [END iam_v1beta_generated_WorkloadIdentityPools_ListWorkloadIdentityPoolProviders_async]
 }
 

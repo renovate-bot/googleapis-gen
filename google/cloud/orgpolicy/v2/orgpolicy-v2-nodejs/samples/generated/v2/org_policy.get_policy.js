@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const orgpolicyClient = new OrgPolicyClient();
 
-  async function getPolicy() {
+  async function callGetPolicy() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getPolicy();
+  callGetPolicy();
   // [END orgpolicy_v2_generated_OrgPolicy_GetPolicy_async]
 }
 

@@ -41,7 +41,7 @@ function main(resourceName) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {BatchJobServiceClient} = require('google-ads').v7;
@@ -49,7 +49,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BatchJobServiceClient();
 
-  async function listBatchJobResults() {
+  async function callListBatchJobResults() {
     // Construct request
     const request = {
       resourceName,
@@ -62,7 +62,7 @@ function main(resourceName) {
     }
   }
 
-  listBatchJobResults();
+  callListBatchJobResults();
   // [END googleads_v7_generated_BatchJobService_ListBatchJobResults_async]
 }
 

@@ -503,6 +503,23 @@ export class FeaturestoreServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets details of a single Featurestore.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Featurestore resource.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Featurestore]{@link google.cloud.aiplatform.v1beta1.Featurestore}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.get_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_GetFeaturestore_async
+ */
   getFeaturestore(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest,
       options?: CallOptions):
@@ -523,23 +540,6 @@ export class FeaturestoreServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IFeaturestore,
           protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Featurestore.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Featurestore resource.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Featurestore]{@link google.cloud.aiplatform.v1beta1.Featurestore}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getFeaturestore(request);
- */
   getFeaturestore(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -574,6 +574,25 @@ export class FeaturestoreServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeaturestore(request, options, callback);
   }
+/**
+ * Gets details of a single EntityType.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the EntityType resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [EntityType]{@link google.cloud.aiplatform.v1beta1.EntityType}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.get_entity_type.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_GetEntityType_async
+ */
   getEntityType(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest,
       options?: CallOptions):
@@ -594,25 +613,6 @@ export class FeaturestoreServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IEntityType,
           protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single EntityType.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the EntityType resource.
- *   Format:
- *   `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [EntityType]{@link google.cloud.aiplatform.v1beta1.EntityType}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEntityType(request);
- */
   getEntityType(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -647,26 +647,6 @@ export class FeaturestoreServiceClient {
     this.initialize();
     return this.innerApiCalls.getEntityType(request, options, callback);
   }
-  updateEntityType(
-      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IEntityType,
-        protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|undefined, {}|undefined
-      ]>;
-  updateEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.IEntityType,
-          protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.IEntityType,
-          protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single EntityType.
  *
@@ -699,9 +679,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateEntityType(request);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.update_entity_type.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_UpdateEntityType_async
  */
+  updateEntityType(
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IEntityType,
+        protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|undefined, {}|undefined
+      ]>;
+  updateEntityType(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.IEntityType,
+          protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateEntityType(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.IEntityType,
+          protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest|null|undefined,
+          {}|null|undefined>): void;
   updateEntityType(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -736,6 +736,25 @@ export class FeaturestoreServiceClient {
     this.initialize();
     return this.innerApiCalls.updateEntityType(request, options, callback);
   }
+/**
+ * Gets details of a single Feature.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Feature resource.
+ *   Format:
+ *   `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Feature]{@link google.cloud.aiplatform.v1beta1.Feature}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.get_feature.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_GetFeature_async
+ */
   getFeature(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest,
       options?: CallOptions):
@@ -756,25 +775,6 @@ export class FeaturestoreServiceClient {
           protos.google.cloud.aiplatform.v1beta1.IFeature,
           protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets details of a single Feature.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Feature resource.
- *   Format:
- *   `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Feature]{@link google.cloud.aiplatform.v1beta1.Feature}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getFeature(request);
- */
   getFeature(
       request?: protos.google.cloud.aiplatform.v1beta1.IGetFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -809,26 +809,6 @@ export class FeaturestoreServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeature(request, options, callback);
   }
-  updateFeature(
-      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IFeature,
-        protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|undefined, {}|undefined
-      ]>;
-  updateFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.IFeature,
-          protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1beta1.IFeature,
-          protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single Feature.
  *
@@ -861,9 +841,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateFeature(request);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.update_feature.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_UpdateFeature_async
  */
+  updateFeature(
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IFeature,
+        protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|undefined, {}|undefined
+      ]>;
+  updateFeature(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.IFeature,
+          protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateFeature(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1beta1.IFeature,
+          protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest|null|undefined,
+          {}|null|undefined>): void;
   updateFeature(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -899,26 +899,6 @@ export class FeaturestoreServiceClient {
     return this.innerApiCalls.updateFeature(request, options, callback);
   }
 
-  createFeaturestore(
-      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Featurestore in a given project and location.
  *
@@ -947,10 +927,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createFeaturestore(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.create_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_CreateFeaturestore_async
  */
+  createFeaturestore(
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createFeaturestore(
+      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createFeaturestore(
+      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createFeaturestore(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -994,11 +993,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateFeaturestoreProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.create_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_CreateFeaturestore_async
  */
   async checkCreateFeaturestoreProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.Featurestore, protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1006,26 +1002,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createFeaturestore, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Featurestore, protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreOperationMetadata>;
   }
-  updateFeaturestore(
-      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the parameters of a single Featurestore.
  *
@@ -1058,10 +1034,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateFeaturestore(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.update_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_UpdateFeaturestore_async
  */
+  updateFeaturestore(
+      request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateFeaturestore(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateFeaturestore(
+      request: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeaturestore, protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateFeaturestore(
       request?: protos.google.cloud.aiplatform.v1beta1.IUpdateFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1105,11 +1100,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateFeaturestoreProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.update_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_UpdateFeaturestore_async
  */
   async checkUpdateFeaturestoreProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.Featurestore, protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1117,26 +1109,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateFeaturestore, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Featurestore, protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreOperationMetadata>;
   }
-  deleteFeaturestore(
-      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteFeaturestore(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single Featurestore. The Featurestore must not contain any
  * EntityTypes or `force` must be set to true for the request to succeed.
@@ -1160,10 +1132,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteFeaturestore(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.delete_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_DeleteFeaturestore_async
  */
+  deleteFeaturestore(
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteFeaturestore(
+      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteFeaturestore(
+      request: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteFeaturestore(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeaturestoreRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1207,11 +1198,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteFeaturestoreProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.delete_featurestore.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_DeleteFeaturestore_async
  */
   async checkDeleteFeaturestoreProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1219,26 +1207,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteFeaturestore, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
-  createEntityType(
-      request?: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new EntityType in a given Featurestore.
  *
@@ -1267,10 +1235,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createEntityType(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.create_entity_type.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_CreateEntityType_async
  */
+  createEntityType(
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createEntityType(
+      request: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createEntityType(
+      request: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IEntityType, protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createEntityType(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1314,11 +1301,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateEntityTypeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.create_entity_type.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_CreateEntityType_async
  */
   async checkCreateEntityTypeProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.EntityType, protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1326,26 +1310,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createEntityType, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.EntityType, protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeOperationMetadata>;
   }
-  deleteEntityType(
-      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteEntityType(
-      request: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes a single EntityType. The EntityType must not have any Features
  * or `force` must be set to true for the request to succeed.
@@ -1368,10 +1332,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteEntityType(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.delete_entity_type.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_DeleteEntityType_async
  */
+  deleteEntityType(
+      request?: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteEntityType(
+      request: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteEntityType(
+      request: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteEntityType(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteEntityTypeRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1415,11 +1398,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteEntityTypeProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.delete_entity_type.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_DeleteEntityType_async
  */
   async checkDeleteEntityTypeProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1427,26 +1407,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteEntityType, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
-  createFeature(
-      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createFeature(
-      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Feature in a given EntityType.
  *
@@ -1475,10 +1435,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createFeature(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.create_feature.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_CreateFeature_async
  */
+  createFeature(
+      request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createFeature(
+      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createFeature(
+      request: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IFeature, protos.google.cloud.aiplatform.v1beta1.ICreateFeatureOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createFeature(
       request?: protos.google.cloud.aiplatform.v1beta1.ICreateFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1522,11 +1501,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateFeatureProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.create_feature.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_CreateFeature_async
  */
   async checkCreateFeatureProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.Feature, protos.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1534,26 +1510,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createFeature, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.Feature, protos.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata>;
   }
-  batchCreateFeatures(
-      request?: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchCreateFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchCreateFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a batch of Features in a given EntityType.
  *
@@ -1577,10 +1533,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchCreateFeatures(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.batch_create_features.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_BatchCreateFeatures_async
  */
+  batchCreateFeatures(
+      request?: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchCreateFeatures(
+      request: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchCreateFeatures(
+      request: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchCreateFeatures(
       request?: protos.google.cloud.aiplatform.v1beta1.IBatchCreateFeaturesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1624,11 +1599,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchCreateFeaturesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.batch_create_features.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_BatchCreateFeatures_async
  */
   async checkBatchCreateFeaturesProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1636,6 +1608,27 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.batchCreateFeatures, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse, protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata>;
   }
+/**
+ * Deletes a single Feature.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the Features to be deleted.
+ *   Format:
+ *   `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.delete_feature.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_DeleteFeature_async
+ */
   deleteFeature(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeatureRequest,
       options?: CallOptions):
@@ -1656,28 +1649,6 @@ export class FeaturestoreServiceClient {
           LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.aiplatform.v1beta1.IDeleteOperationMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a single Feature.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the Features to be deleted.
- *   Format:
- *   `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing
- *   a long running operation. Its `promise()` method returns a promise
- *   you can `await` for.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
- *   for more details and examples.
- * @example
- * const [operation] = await client.deleteFeature(request);
- * const [response] = await operation.promise();
- */
   deleteFeature(
       request?: protos.google.cloud.aiplatform.v1beta1.IDeleteFeatureRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1721,11 +1692,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteFeatureProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.delete_feature.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_DeleteFeature_async
  */
   async checkDeleteFeatureProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1733,26 +1701,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteFeature, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata>;
   }
-  importFeatureValues(
-      request?: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  importFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  importFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Imports Feature values into the Featurestore from a source storage.
  *
@@ -1817,10 +1765,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.importFeatureValues(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.import_feature_values.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ImportFeatureValues_async
  */
+  importFeatureValues(
+      request?: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  importFeatureValues(
+      request: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  importFeatureValues(
+      request: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   importFeatureValues(
       request?: protos.google.cloud.aiplatform.v1beta1.IImportFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1864,11 +1831,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkImportFeatureValuesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.import_feature_values.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ImportFeatureValues_async
  */
   async checkImportFeatureValuesProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1876,26 +1840,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.importFeatureValues, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata>;
   }
-  batchReadFeatureValues(
-      request?: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchReadFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchReadFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Batch reads Feature values from a Featurestore.
  *
@@ -1962,10 +1906,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchReadFeatureValues(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.batch_read_feature_values.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_BatchReadFeatureValues_async
  */
+  batchReadFeatureValues(
+      request?: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchReadFeatureValues(
+      request: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchReadFeatureValues(
+      request: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchReadFeatureValues(
       request?: protos.google.cloud.aiplatform.v1beta1.IBatchReadFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2009,11 +1972,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchReadFeatureValuesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.batch_read_feature_values.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_BatchReadFeatureValues_async
  */
   async checkBatchReadFeatureValuesProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2021,26 +1981,6 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.batchReadFeatureValues, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesOperationMetadata>;
   }
-  exportFeatureValues(
-      request?: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  exportFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  exportFeatureValues(
-      request: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Exports Feature values from all the entities of a target EntityType.
  *
@@ -2068,10 +2008,29 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.exportFeatureValues(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.export_feature_values.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ExportFeatureValues_async
  */
+  exportFeatureValues(
+      request?: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  exportFeatureValues(
+      request: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  exportFeatureValues(
+      request: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   exportFeatureValues(
       request?: protos.google.cloud.aiplatform.v1beta1.IExportFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -2115,11 +2074,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkExportFeatureValuesProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.export_feature_values.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ExportFeatureValues_async
  */
   async checkExportFeatureValuesProgress(name: string): Promise<LROperation<protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesOperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -2127,28 +2083,7 @@ export class FeaturestoreServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.exportFeatureValues, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesResponse, protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesOperationMetadata>;
   }
-  listFeaturestores(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IFeaturestore[],
-        protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse
-      ]>;
-  listFeaturestores(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IFeaturestore>): void;
-  listFeaturestores(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IFeaturestore>): void;
-/**
+ /**
  * Lists Featurestores in a given project and location.
  *
  * @param {Object} request
@@ -2213,6 +2148,27 @@ export class FeaturestoreServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listFeaturestores(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IFeaturestore[],
+        protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse
+      ]>;
+  listFeaturestores(
+      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IFeaturestore>): void;
+  listFeaturestores(
+      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IFeaturestore>): void;
   listFeaturestores(
       request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2398,11 +2354,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listFeaturestoresAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.list_featurestores.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ListFeaturestores_async
  */
   listFeaturestoresAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturestoresRequest,
@@ -2417,7 +2370,6 @@ export class FeaturestoreServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listFeaturestores'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2427,28 +2379,7 @@ export class FeaturestoreServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IFeaturestore>;
   }
-  listEntityTypes(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IEntityType[],
-        protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse
-      ]>;
-  listEntityTypes(
-      request: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IEntityType>): void;
-  listEntityTypes(
-      request: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IEntityType>): void;
-/**
+ /**
  * Lists EntityTypes in a given Featurestore.
  *
  * @param {Object} request
@@ -2513,6 +2444,27 @@ export class FeaturestoreServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEntityTypes(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IEntityType[],
+        protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse
+      ]>;
+  listEntityTypes(
+      request: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IEntityType>): void;
+  listEntityTypes(
+      request: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListEntityTypesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IEntityType>): void;
   listEntityTypes(
       request?: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2698,11 +2650,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEntityTypesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.list_entity_types.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ListEntityTypes_async
  */
   listEntityTypesAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListEntityTypesRequest,
@@ -2717,7 +2666,6 @@ export class FeaturestoreServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEntityTypes'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2727,28 +2675,7 @@ export class FeaturestoreServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IEntityType>;
   }
-  listFeatures(
-      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IFeature[],
-        protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse
-      ]>;
-  listFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
-  listFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
-          protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
-/**
+ /**
  * Lists Features in a given EntityType.
  *
  * @param {Object} request
@@ -2820,6 +2747,27 @@ export class FeaturestoreServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listFeatures(
+      request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IFeature[],
+        protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse
+      ]>;
+  listFeatures(
+      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
+  listFeatures(
+      request: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
+          protos.google.cloud.aiplatform.v1beta1.IListFeaturesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
   listFeatures(
       request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3019,11 +2967,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listFeaturesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.list_features.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_ListFeatures_async
  */
   listFeaturesAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.IListFeaturesRequest,
@@ -3038,7 +2983,6 @@ export class FeaturestoreServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listFeatures'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3048,28 +2992,7 @@ export class FeaturestoreServiceClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.aiplatform.v1beta1.IFeature>;
   }
-  searchFeatures(
-      request?: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1beta1.IFeature[],
-        protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest|null,
-        protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse
-      ]>;
-  searchFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
-          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
-  searchFeatures(
-      request: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
-          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse|null|undefined,
-          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
-/**
+ /**
  * Searches Features matching a query in a given project.
  *
  * @param {Object} request
@@ -3164,6 +3087,27 @@ export class FeaturestoreServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  searchFeatures(
+      request?: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1beta1.IFeature[],
+        protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest|null,
+        protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse
+      ]>;
+  searchFeatures(
+      request: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
+  searchFeatures(
+      request: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
+          protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesResponse|null|undefined,
+          protos.google.cloud.aiplatform.v1beta1.IFeature>): void;
   searchFeatures(
       request?: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3409,11 +3353,8 @@ export class FeaturestoreServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchFeaturesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/featurestore_service.search_features.js</caption>
+ * region_tag:aiplatform_v1beta1_generated_FeaturestoreService_SearchFeatures_async
  */
   searchFeaturesAsync(
       request?: protos.google.cloud.aiplatform.v1beta1.ISearchFeaturesRequest,
@@ -3428,7 +3369,6 @@ export class FeaturestoreServiceClient {
     ] = gax.routingHeader.fromParams({
       'location': request.location || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['searchFeatures'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

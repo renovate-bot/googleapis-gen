@@ -410,6 +410,25 @@ export class EnvironmentsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
+ *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+ *   ID>/environments/<Environment ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Environment]{@link google.cloud.dialogflow.cx.v3.Environment}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/environments.get_environment.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_GetEnvironment_async
+ */
   getEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetEnvironmentRequest,
       options?: CallOptions):
@@ -430,25 +449,6 @@ export class EnvironmentsClient {
           protos.google.cloud.dialogflow.cx.v3.IEnvironment,
           protos.google.cloud.dialogflow.cx.v3.IGetEnvironmentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
- *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
- *   ID>/environments/<Environment ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Environment]{@link google.cloud.dialogflow.cx.v3.Environment}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEnvironment(request);
- */
   getEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IGetEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -483,6 +483,25 @@ export class EnvironmentsClient {
     this.initialize();
     return this.innerApiCalls.getEnvironment(request, options, callback);
   }
+/**
+ * Deletes the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the {@link google.cloud.dialogflow.cx.v3.Environment|Environment} to delete.
+ *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+ *   ID>/environments/<Environment ID>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/environments.delete_environment.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_DeleteEnvironment_async
+ */
   deleteEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteEnvironmentRequest,
       options?: CallOptions):
@@ -503,25 +522,6 @@ export class EnvironmentsClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.dialogflow.cx.v3.IDeleteEnvironmentRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the {@link google.cloud.dialogflow.cx.v3.Environment|Environment} to delete.
- *   Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
- *   ID>/environments/<Environment ID>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteEnvironment(request);
- */
   deleteEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeleteEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -557,26 +557,6 @@ export class EnvironmentsClient {
     return this.innerApiCalls.deleteEnvironment(request, options, callback);
   }
 
-  createEnvironment(
-      request?: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createEnvironment(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createEnvironment(
-      request: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an {@link google.cloud.dialogflow.cx.v3.Environment|Environment} in the specified {@link google.cloud.dialogflow.cx.v3.Agent|Agent}.
  *
@@ -604,10 +584,29 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createEnvironment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/environments.create_environment.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_CreateEnvironment_async
  */
+  createEnvironment(
+      request?: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createEnvironment(
+      request: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createEnvironment(
+      request: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.ICreateEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -651,11 +650,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateEnvironmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/environments.create_environment.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_CreateEnvironment_async
  */
   async checkCreateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.Environment, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -663,26 +659,6 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createEnvironment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.Environment, protos.google.protobuf.Struct>;
   }
-  updateEnvironment(
-      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateEnvironment(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateEnvironment(
-      request: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
  *
@@ -709,10 +685,29 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateEnvironment(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/environments.update_environment.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_UpdateEnvironment_async
  */
+  updateEnvironment(
+      request?: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateEnvironment(
+      request: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateEnvironment(
+      request: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IEnvironment, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateEnvironment(
       request?: protos.google.cloud.dialogflow.cx.v3.IUpdateEnvironmentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -756,11 +751,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateEnvironmentProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/environments.update_environment.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_UpdateEnvironment_async
  */
   async checkUpdateEnvironmentProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.Environment, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -768,26 +760,6 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateEnvironment, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.Environment, protos.google.protobuf.Struct>;
   }
-  runContinuousTest(
-      request?: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  runContinuousTest(
-      request: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  runContinuousTest(
-      request: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Kicks off a continuous test under the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
  *
@@ -812,10 +784,29 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.runContinuousTest(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/environments.run_continuous_test.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_RunContinuousTest_async
  */
+  runContinuousTest(
+      request?: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  runContinuousTest(
+      request: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  runContinuousTest(
+      request: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   runContinuousTest(
       request?: protos.google.cloud.dialogflow.cx.v3.IRunContinuousTestRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -859,11 +850,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRunContinuousTestProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/environments.run_continuous_test.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_RunContinuousTest_async
  */
   async checkRunContinuousTestProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.RunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -871,26 +859,6 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.runContinuousTest, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.RunContinuousTestResponse, protos.google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata>;
   }
-  deployFlow(
-      request?: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.cx.v3.IDeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.IDeployFlowMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deployFlow(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IDeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.IDeployFlowMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deployFlow(
-      request: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.cx.v3.IDeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.IDeployFlowMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deploys a flow to the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
  *
@@ -920,10 +888,29 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deployFlow(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/environments.deploy_flow.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_DeployFlow_async
  */
+  deployFlow(
+      request?: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.cx.v3.IDeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.IDeployFlowMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deployFlow(
+      request: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IDeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.IDeployFlowMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deployFlow(
+      request: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.cx.v3.IDeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.IDeployFlowMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deployFlow(
       request?: protos.google.cloud.dialogflow.cx.v3.IDeployFlowRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -967,11 +954,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeployFlowProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/environments.deploy_flow.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_DeployFlow_async
  */
   async checkDeployFlowProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.cx.v3.DeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.DeployFlowMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -979,28 +963,7 @@ export class EnvironmentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deployFlow, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.cx.v3.DeployFlowResponse, protos.google.cloud.dialogflow.cx.v3.DeployFlowMetadata>;
   }
-  listEnvironments(
-      request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IEnvironment[],
-        protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest|null,
-        protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsResponse
-      ]>;
-  listEnvironments(
-      request: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
-  listEnvironments(
-      request: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
-/**
+ /**
  * Returns the list of all environments in the specified {@link google.cloud.dialogflow.cx.v3.Agent|Agent}.
  *
  * @param {Object} request
@@ -1026,6 +989,27 @@ export class EnvironmentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listEnvironments(
+      request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IEnvironment[],
+        protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest|null,
+        protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsResponse
+      ]>;
+  listEnvironments(
+      request: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
+  listEnvironments(
+      request: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
   listEnvironments(
       request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1133,11 +1117,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listEnvironmentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/environments.list_environments.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_ListEnvironments_async
  */
   listEnvironmentsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListEnvironmentsRequest,
@@ -1152,7 +1133,6 @@ export class EnvironmentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listEnvironments'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1162,28 +1142,7 @@ export class EnvironmentsClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.dialogflow.cx.v3.IEnvironment>;
   }
-  lookupEnvironmentHistory(
-      request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IEnvironment[],
-        protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest|null,
-        protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryResponse
-      ]>;
-  lookupEnvironmentHistory(
-      request: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
-          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
-  lookupEnvironmentHistory(
-      request: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
-          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
-/**
+ /**
  * Looks up the history of the specified {@link google.cloud.dialogflow.cx.v3.Environment|Environment}.
  *
  * @param {Object} request
@@ -1210,6 +1169,27 @@ export class EnvironmentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  lookupEnvironmentHistory(
+      request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IEnvironment[],
+        protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest|null,
+        protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryResponse
+      ]>;
+  lookupEnvironmentHistory(
+      request: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
+          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
+  lookupEnvironmentHistory(
+      request: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
+          protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IEnvironment>): void;
   lookupEnvironmentHistory(
       request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1319,11 +1299,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.lookupEnvironmentHistoryAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/environments.lookup_environment_history.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_LookupEnvironmentHistory_async
  */
   lookupEnvironmentHistoryAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.ILookupEnvironmentHistoryRequest,
@@ -1338,7 +1315,6 @@ export class EnvironmentsClient {
     ] = gax.routingHeader.fromParams({
       'name': request.name || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['lookupEnvironmentHistory'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1348,28 +1324,7 @@ export class EnvironmentsClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.dialogflow.cx.v3.IEnvironment>;
   }
-  listContinuousTestResults(
-      request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.cx.v3.IContinuousTestResult[],
-        protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest|null,
-        protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsResponse
-      ]>;
-  listContinuousTestResults(
-      request: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IContinuousTestResult>): void;
-  listContinuousTestResults(
-      request: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
-          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsResponse|null|undefined,
-          protos.google.cloud.dialogflow.cx.v3.IContinuousTestResult>): void;
-/**
+ /**
  * Fetches a list of continuous test results for a given environment.
  *
  * @param {Object} request
@@ -1396,6 +1351,27 @@ export class EnvironmentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listContinuousTestResults(
+      request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.cx.v3.IContinuousTestResult[],
+        protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest|null,
+        protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsResponse
+      ]>;
+  listContinuousTestResults(
+      request: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IContinuousTestResult>): void;
+  listContinuousTestResults(
+      request: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
+          protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsResponse|null|undefined,
+          protos.google.cloud.dialogflow.cx.v3.IContinuousTestResult>): void;
   listContinuousTestResults(
       request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1505,11 +1481,8 @@ export class EnvironmentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listContinuousTestResultsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/environments.list_continuous_test_results.js</caption>
+ * region_tag:dialogflow_v3_generated_Environments_ListContinuousTestResults_async
  */
   listContinuousTestResultsAsync(
       request?: protos.google.cloud.dialogflow.cx.v3.IListContinuousTestResultsRequest,
@@ -1524,7 +1497,6 @@ export class EnvironmentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listContinuousTestResults'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

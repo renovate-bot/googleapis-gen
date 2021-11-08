@@ -38,7 +38,7 @@ function main(parent, membershipId, resource) {
   /**
    *  Required. The membership to create.
    */
-  // const resource = ''
+  // const resource = {}
 
   // Imports the Gkehub library
   const {GkeHubClient} = require('@google-cloud/gkehub').v1alpha2;
@@ -46,7 +46,7 @@ function main(parent, membershipId, resource) {
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
 
-  async function createMembership() {
+  async function callCreateMembership() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent, membershipId, resource) {
     console.log(response);
   }
 
-  createMembership();
+  callCreateMembership();
   // [END gkehub_v1alpha2_generated_GkeHub_CreateMembership_async]
 }
 

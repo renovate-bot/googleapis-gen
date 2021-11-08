@@ -27,12 +27,12 @@ function main(name, inputConfig, outputConfig) {
   /**
    *  Required. The input configuration for batch prediction.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
   /**
    *  Required. The Configuration specifying where output predictions should
    *  be written.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
   /**
    *  Additional domain-specific parameters for the predictions, any string must
    *  be up to 25000 characters long.
@@ -108,7 +108,7 @@ function main(name, inputConfig, outputConfig) {
   // Instantiates a client
   const automlClient = new PredictionServiceClient();
 
-  async function batchPredict() {
+  async function callBatchPredict() {
     // Construct request
     const request = {
       name,
@@ -122,7 +122,7 @@ function main(name, inputConfig, outputConfig) {
     console.log(response);
   }
 
-  batchPredict();
+  callBatchPredict();
   // [END automl_v1_generated_PredictionService_BatchPredict_async]
 }
 

@@ -37,11 +37,11 @@ function main(bucket, entity) {
   /**
    *  The BucketAccessControl for updating.
    */
-  // const bucketAccessControl = ''
+  // const bucketAccessControl = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -49,7 +49,7 @@ function main(bucket, entity) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function updateBucketAccessControl() {
+  async function callUpdateBucketAccessControl() {
     // Construct request
     const request = {
       bucket,
@@ -61,7 +61,7 @@ function main(bucket, entity) {
     console.log(response);
   }
 
-  updateBucketAccessControl();
+  callUpdateBucketAccessControl();
   // [END storage_v1_generated_Storage_UpdateBucketAccessControl_async]
 }
 

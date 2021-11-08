@@ -31,9 +31,9 @@ function main() {
    */
   // const fullResourceName = 'abc123'
   /**
-   *  [google.iam.v1.Binding.condition] [google.iam.v1.Binding.condition] object to be linted.
+   *  google.iam.v1.Binding.condition  google.iam.v1.Binding.condition  object to be linted.
    */
-  // const condition = ''
+  // const condition = {}
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -41,7 +41,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function lintPolicy() {
+  async function callLintPolicy() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  lintPolicy();
+  callLintPolicy();
   // [END iam_v1_generated_IAM_LintPolicy_async]
 }
 

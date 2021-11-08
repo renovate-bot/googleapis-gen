@@ -31,7 +31,7 @@ function main(parent, spoke) {
   /**
    *  Required. Initial values for a new Hub.
    */
-  // const spoke = ''
+  // const spoke = {}
   /**
    *  Optional. An optional request ID to identify requests. Specify a unique request ID
    *  so that if you must retry your request, the server will know to ignore
@@ -53,7 +53,7 @@ function main(parent, spoke) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function createSpoke() {
+  async function callCreateSpoke() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent, spoke) {
     console.log(response);
   }
 
-  createSpoke();
+  callCreateSpoke();
   // [END networkconnectivity_v1alpha1_generated_HubService_CreateSpoke_async]
 }
 

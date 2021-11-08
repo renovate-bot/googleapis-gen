@@ -727,26 +727,6 @@ export class AdGroupCustomizerServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  mutateAdGroupCustomizers(
-      request?: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersResponse,
-        protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest|undefined, {}|undefined
-      ]>;
-  mutateAdGroupCustomizers(
-      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersResponse,
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateAdGroupCustomizers(
-      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersResponse,
-          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates or removes ad group customizers. Operation statuses are
  * returned.
@@ -775,9 +755,29 @@ export class AdGroupCustomizerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateAdGroupCustomizers(request);
+ * @example <caption>include:samples/generated/v9/ad_group_customizer_service.mutate_ad_group_customizers.js</caption>
+ * region_tag:googleads_v9_generated_AdGroupCustomizerService_MutateAdGroupCustomizers_async
  */
+  mutateAdGroupCustomizers(
+      request?: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersResponse,
+        protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest|undefined, {}|undefined
+      ]>;
+  mutateAdGroupCustomizers(
+      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersResponse,
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateAdGroupCustomizers(
+      request: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersResponse,
+          protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateAdGroupCustomizers(
       request?: protos.google.ads.googleads.v9.services.IMutateAdGroupCustomizersRequest,
       optionsOrCallback?: CallOptions|Callback<

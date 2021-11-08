@@ -27,12 +27,12 @@ function main() {
   /**
    *  Domain mapping configuration.
    */
-  // const domainMapping = ''
+  // const domainMapping = {}
   /**
    *  Whether the domain creation should override any existing mappings for this
    *  domain. By default, overrides are rejected.
    */
-  // const overrideStrategy = ''
+  // const overrideStrategy = {}
 
   // Imports the Appengine library
   const {DomainMappingsClient} = require('@google-cloud/appengine-admin').v1;
@@ -40,7 +40,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new DomainMappingsClient();
 
-  async function createDomainMapping() {
+  async function callCreateDomainMapping() {
     // Construct request
     const request = {
     };
@@ -51,7 +51,7 @@ function main() {
     console.log(response);
   }
 
-  createDomainMapping();
+  callCreateDomainMapping();
   // [END appengine_v1_generated_DomainMappings_CreateDomainMapping_async]
 }
 

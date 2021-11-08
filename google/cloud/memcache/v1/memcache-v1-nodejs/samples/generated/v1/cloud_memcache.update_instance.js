@@ -24,12 +24,12 @@ function main(updateMask, instance) {
    *  Required. Mask of fields to update.
    *   *   `displayName`
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. A Memcached Instance.
    *  Only fields specified in update_mask are updated.
    */
-  // const instance = ''
+  // const instance = {}
 
   // Imports the Memcache library
   const {CloudMemcacheClient} = require('@google-cloud/memcache').v1;
@@ -37,7 +37,7 @@ function main(updateMask, instance) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function updateInstance() {
+  async function callUpdateInstance() {
     // Construct request
     const request = {
       updateMask,
@@ -50,7 +50,7 @@ function main(updateMask, instance) {
     console.log(response);
   }
 
-  updateInstance();
+  callUpdateInstance();
   // [END memcache_v1_generated_CloudMemcache_UpdateInstance_async]
 }
 

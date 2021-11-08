@@ -727,26 +727,6 @@ export class LanguageConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getLanguageConstant(
-      request?: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ILanguageConstant,
-        protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest|undefined, {}|undefined
-      ]>;
-  getLanguageConstant(
-      request: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ILanguageConstant,
-          protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getLanguageConstant(
-      request: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ILanguageConstant,
-          protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested language constant.
  *
@@ -769,9 +749,29 @@ export class LanguageConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getLanguageConstant(request);
+ * @example <caption>include:samples/generated/v9/language_constant_service.get_language_constant.js</caption>
+ * region_tag:googleads_v9_generated_LanguageConstantService_GetLanguageConstant_async
  */
+  getLanguageConstant(
+      request?: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ILanguageConstant,
+        protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest|undefined, {}|undefined
+      ]>;
+  getLanguageConstant(
+      request: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ILanguageConstant,
+          protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getLanguageConstant(
+      request: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ILanguageConstant,
+          protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getLanguageConstant(
       request?: protos.google.ads.googleads.v9.services.IGetLanguageConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

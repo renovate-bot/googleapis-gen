@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const memcacheClient = new CloudMemcacheClient();
 
-  async function deleteInstance() {
+  async function callDeleteInstance() {
     // Construct request
     const request = {
       name,
@@ -45,7 +45,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteInstance();
+  callDeleteInstance();
   // [END memcache_v1beta2_generated_CloudMemcache_DeleteInstance_async]
 }
 

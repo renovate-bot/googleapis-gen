@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new ConversionActionServiceClient();
 
-  async function getConversionAction() {
+  async function callGetConversionAction() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getConversionAction();
+  callGetConversionAction();
   // [END googleads_v8_generated_ConversionActionService_GetConversionAction_async]
 }
 

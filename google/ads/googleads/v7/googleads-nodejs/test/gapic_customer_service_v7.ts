@@ -294,7 +294,7 @@ describe('v7.CustomerServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListAccessibleCustomersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListAccessibleCustomersResponse());
             client.innerApiCalls.listAccessibleCustomers = stubSimpleCall(expectedResponse);
             const [response] = await client.listAccessibleCustomers(request);
@@ -310,7 +310,7 @@ describe('v7.CustomerServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListAccessibleCustomersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListAccessibleCustomersResponse());
             client.innerApiCalls.listAccessibleCustomers = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -337,7 +337,7 @@ describe('v7.CustomerServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListAccessibleCustomersRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listAccessibleCustomers = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listAccessibleCustomers(request), expectedError);

@@ -23,7 +23,7 @@ function main(document) {
   /**
    *  Required. Input document.
    */
-  // const document = ''
+  // const document = {}
 
   // Imports the Language library
   const {LanguageServiceClient} = require('@google-cloud/language').v1beta2;
@@ -31,7 +31,7 @@ function main(document) {
   // Instantiates a client
   const languageClient = new LanguageServiceClient();
 
-  async function classifyText() {
+  async function callClassifyText() {
     // Construct request
     const request = {
       document,
@@ -42,7 +42,7 @@ function main(document) {
     console.log(response);
   }
 
-  classifyText();
+  callClassifyText();
   // [END language_v1beta2_generated_LanguageService_ClassifyText_async]
 }
 

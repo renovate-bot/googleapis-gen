@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function getDataset() {
+  async function callGetDataset() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDataset();
+  callGetDataset();
   // [END automl_v1beta1_generated_AutoMl_GetDataset_async]
 }
 

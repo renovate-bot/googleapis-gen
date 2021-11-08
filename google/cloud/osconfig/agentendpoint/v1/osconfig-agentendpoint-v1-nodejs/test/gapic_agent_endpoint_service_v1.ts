@@ -140,7 +140,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskResponse());
             client.innerApiCalls.startNextTask = stubSimpleCall(expectedResponse);
             const [response] = await client.startNextTask(request);
@@ -156,7 +156,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskResponse());
             client.innerApiCalls.startNextTask = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -183,7 +183,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.startNextTask = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.startNextTask(request), expectedError);
@@ -200,7 +200,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressResponse());
             client.innerApiCalls.reportTaskProgress = stubSimpleCall(expectedResponse);
             const [response] = await client.reportTaskProgress(request);
@@ -216,7 +216,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressResponse());
             client.innerApiCalls.reportTaskProgress = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -243,7 +243,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.reportTaskProgress = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.reportTaskProgress(request), expectedError);
@@ -260,7 +260,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteResponse());
             client.innerApiCalls.reportTaskComplete = stubSimpleCall(expectedResponse);
             const [response] = await client.reportTaskComplete(request);
@@ -276,7 +276,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteResponse());
             client.innerApiCalls.reportTaskComplete = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -303,7 +303,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.reportTaskComplete = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.reportTaskComplete(request), expectedError);
@@ -320,7 +320,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentResponse());
             client.innerApiCalls.registerAgent = stubSimpleCall(expectedResponse);
             const [response] = await client.registerAgent(request);
@@ -336,7 +336,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentResponse());
             client.innerApiCalls.registerAgent = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -363,7 +363,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.registerAgent = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.registerAgent(request), expectedError);
@@ -380,7 +380,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryResponse());
             client.innerApiCalls.reportInventory = stubSimpleCall(expectedResponse);
             const [response] = await client.reportInventory(request);
@@ -396,7 +396,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryResponse());
             client.innerApiCalls.reportInventory = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -423,7 +423,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.reportInventory = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.reportInventory(request), expectedError);
@@ -440,7 +440,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationResponse());
             client.innerApiCalls.receiveTaskNotification = stubServerStreamingCall(expectedResponse);
             const stream = client.receiveTaskNotification(request);
@@ -465,7 +465,7 @@ describe('v1.AgentEndpointServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.receiveTaskNotification = stubServerStreamingCall(undefined, expectedError);
             const stream = client.receiveTaskNotification(request);

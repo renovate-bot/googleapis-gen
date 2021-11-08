@@ -28,7 +28,7 @@ function main() {
   /**
    *  HTTP request body.
    */
-  // const body = ''
+  // const body = {}
   /**
    *  Project in which the specified trigger lives
    */
@@ -48,7 +48,7 @@ function main() {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function receiveTriggerWebhook() {
+  async function callReceiveTriggerWebhook() {
     // Construct request
     const request = {
     };
@@ -58,7 +58,7 @@ function main() {
     console.log(response);
   }
 
-  receiveTriggerWebhook();
+  callReceiveTriggerWebhook();
   // [END cloudbuild_v1_generated_CloudBuild_ReceiveTriggerWebhook_async]
 }
 

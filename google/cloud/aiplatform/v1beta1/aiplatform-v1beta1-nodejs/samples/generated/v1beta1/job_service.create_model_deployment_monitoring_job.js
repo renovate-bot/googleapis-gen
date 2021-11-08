@@ -28,7 +28,7 @@ function main(parent, modelDeploymentMonitoringJob) {
   /**
    *  Required. The ModelDeploymentMonitoringJob to create
    */
-  // const modelDeploymentMonitoringJob = ''
+  // const modelDeploymentMonitoringJob = {}
 
   // Imports the Aiplatform library
   const {JobServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, modelDeploymentMonitoringJob) {
   // Instantiates a client
   const aiplatformClient = new JobServiceClient();
 
-  async function createModelDeploymentMonitoringJob() {
+  async function callCreateModelDeploymentMonitoringJob() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, modelDeploymentMonitoringJob) {
     console.log(response);
   }
 
-  createModelDeploymentMonitoringJob();
+  callCreateModelDeploymentMonitoringJob();
   // [END aiplatform_v1beta1_generated_JobService_CreateModelDeploymentMonitoringJob_async]
 }
 

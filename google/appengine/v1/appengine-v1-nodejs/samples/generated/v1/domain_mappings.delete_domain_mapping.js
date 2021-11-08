@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new DomainMappingsClient();
 
-  async function deleteDomainMapping() {
+  async function callDeleteDomainMapping() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  deleteDomainMapping();
+  callDeleteDomainMapping();
   // [END appengine_v1_generated_DomainMappings_DeleteDomainMapping_async]
 }
 

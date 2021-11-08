@@ -333,6 +333,27 @@ export class OrgPolicyClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a `Policy` on a resource.
+ *
+ * If no `Policy` is set on the resource, NOT_FOUND is returned. The
+ * `etag` value can be used with `UpdatePolicy()` to update a
+ * `Policy` during read-modify-write.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Resource name of the policy. See `Policy` for naming requirements.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.cloud.orgpolicy.v2.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/org_policy.get_policy.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_GetPolicy_async
+ */
   getPolicy(
       request?: protos.google.cloud.orgpolicy.v2.IGetPolicyRequest,
       options?: CallOptions):
@@ -353,27 +374,6 @@ export class OrgPolicyClient {
           protos.google.cloud.orgpolicy.v2.IPolicy,
           protos.google.cloud.orgpolicy.v2.IGetPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a `Policy` on a resource.
- *
- * If no `Policy` is set on the resource, NOT_FOUND is returned. The
- * `etag` value can be used with `UpdatePolicy()` to update a
- * `Policy` during read-modify-write.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Resource name of the policy. See `Policy` for naming requirements.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.cloud.orgpolicy.v2.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPolicy(request);
- */
   getPolicy(
       request?: protos.google.cloud.orgpolicy.v2.IGetPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -408,6 +408,28 @@ export class OrgPolicyClient {
     this.initialize();
     return this.innerApiCalls.getPolicy(request, options, callback);
   }
+/**
+ * Gets the effective `Policy` on a resource. This is the result of merging
+ * `Policies` in the resource hierarchy and evaluating conditions. The
+ * returned `Policy` will not have an `etag` or `condition` set because it is
+ * a computed `Policy` across multiple resources.
+ * Subtrees of Resource Manager resource hierarchy with 'under:' prefix will
+ * not be expanded.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The effective policy to compute. See `Policy` for naming rules.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.cloud.orgpolicy.v2.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/org_policy.get_effective_policy.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_GetEffectivePolicy_async
+ */
   getEffectivePolicy(
       request?: protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest,
       options?: CallOptions):
@@ -428,28 +450,6 @@ export class OrgPolicyClient {
           protos.google.cloud.orgpolicy.v2.IPolicy,
           protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the effective `Policy` on a resource. This is the result of merging
- * `Policies` in the resource hierarchy and evaluating conditions. The
- * returned `Policy` will not have an `etag` or `condition` set because it is
- * a computed `Policy` across multiple resources.
- * Subtrees of Resource Manager resource hierarchy with 'under:' prefix will
- * not be expanded.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The effective policy to compute. See `Policy` for naming rules.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.cloud.orgpolicy.v2.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getEffectivePolicy(request);
- */
   getEffectivePolicy(
       request?: protos.google.cloud.orgpolicy.v2.IGetEffectivePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -484,26 +484,6 @@ export class OrgPolicyClient {
     this.initialize();
     return this.innerApiCalls.getEffectivePolicy(request, options, callback);
   }
-  createPolicy(
-      request?: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.orgpolicy.v2.IPolicy,
-        protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|undefined, {}|undefined
-      ]>;
-  createPolicy(
-      request: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.orgpolicy.v2.IPolicy,
-          protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  createPolicy(
-      request: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
-      callback: Callback<
-          protos.google.cloud.orgpolicy.v2.IPolicy,
-          protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a Policy.
  *
@@ -530,9 +510,29 @@ export class OrgPolicyClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createPolicy(request);
+ * @example <caption>include:samples/generated/v2/org_policy.create_policy.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_CreatePolicy_async
  */
+  createPolicy(
+      request?: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.orgpolicy.v2.IPolicy,
+        protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|undefined, {}|undefined
+      ]>;
+  createPolicy(
+      request: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.orgpolicy.v2.IPolicy,
+          protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  createPolicy(
+      request: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
+      callback: Callback<
+          protos.google.cloud.orgpolicy.v2.IPolicy,
+          protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   createPolicy(
       request?: protos.google.cloud.orgpolicy.v2.ICreatePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -567,26 +567,6 @@ export class OrgPolicyClient {
     this.initialize();
     return this.innerApiCalls.createPolicy(request, options, callback);
   }
-  updatePolicy(
-      request?: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.orgpolicy.v2.IPolicy,
-        protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|undefined, {}|undefined
-      ]>;
-  updatePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.orgpolicy.v2.IPolicy,
-          protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  updatePolicy(
-      request: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
-      callback: Callback<
-          protos.google.cloud.orgpolicy.v2.IPolicy,
-          protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a Policy.
  *
@@ -609,9 +589,29 @@ export class OrgPolicyClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updatePolicy(request);
+ * @example <caption>include:samples/generated/v2/org_policy.update_policy.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_UpdatePolicy_async
  */
+  updatePolicy(
+      request?: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.orgpolicy.v2.IPolicy,
+        protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|undefined, {}|undefined
+      ]>;
+  updatePolicy(
+      request: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.orgpolicy.v2.IPolicy,
+          protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  updatePolicy(
+      request: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
+      callback: Callback<
+          protos.google.cloud.orgpolicy.v2.IPolicy,
+          protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   updatePolicy(
       request?: protos.google.cloud.orgpolicy.v2.IUpdatePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -646,6 +646,27 @@ export class OrgPolicyClient {
     this.initialize();
     return this.innerApiCalls.updatePolicy(request, options, callback);
   }
+/**
+ * Deletes a Policy.
+ *
+ * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+ * constraint or Org Policy does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the policy to delete.
+ *   See `Policy` for naming rules.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/org_policy.delete_policy.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_DeletePolicy_async
+ */
   deletePolicy(
       request?: protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest,
       options?: CallOptions):
@@ -666,27 +687,6 @@ export class OrgPolicyClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a Policy.
- *
- * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
- * constraint or Org Policy does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the policy to delete.
- *   See `Policy` for naming rules.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deletePolicy(request);
- */
   deletePolicy(
       request?: protos.google.cloud.orgpolicy.v2.IDeletePolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -722,28 +722,7 @@ export class OrgPolicyClient {
     return this.innerApiCalls.deletePolicy(request, options, callback);
   }
 
-  listConstraints(
-      request?: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.orgpolicy.v2.IConstraint[],
-        protos.google.cloud.orgpolicy.v2.IListConstraintsRequest|null,
-        protos.google.cloud.orgpolicy.v2.IListConstraintsResponse
-      ]>;
-  listConstraints(
-      request: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
-          protos.google.cloud.orgpolicy.v2.IListConstraintsResponse|null|undefined,
-          protos.google.cloud.orgpolicy.v2.IConstraint>): void;
-  listConstraints(
-      request: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
-          protos.google.cloud.orgpolicy.v2.IListConstraintsResponse|null|undefined,
-          protos.google.cloud.orgpolicy.v2.IConstraint>): void;
-/**
+ /**
  * Lists `Constraints` that could be applied on the specified resource.
  *
  * @param {Object} request
@@ -775,6 +754,27 @@ export class OrgPolicyClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listConstraints(
+      request?: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.orgpolicy.v2.IConstraint[],
+        protos.google.cloud.orgpolicy.v2.IListConstraintsRequest|null,
+        protos.google.cloud.orgpolicy.v2.IListConstraintsResponse
+      ]>;
+  listConstraints(
+      request: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+          protos.google.cloud.orgpolicy.v2.IListConstraintsResponse|null|undefined,
+          protos.google.cloud.orgpolicy.v2.IConstraint>): void;
+  listConstraints(
+      request: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
+          protos.google.cloud.orgpolicy.v2.IListConstraintsResponse|null|undefined,
+          protos.google.cloud.orgpolicy.v2.IConstraint>): void;
   listConstraints(
       request?: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -894,11 +894,8 @@ export class OrgPolicyClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listConstraintsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/org_policy.list_constraints.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_ListConstraints_async
  */
   listConstraintsAsync(
       request?: protos.google.cloud.orgpolicy.v2.IListConstraintsRequest,
@@ -913,7 +910,6 @@ export class OrgPolicyClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listConstraints'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -923,28 +919,7 @@ export class OrgPolicyClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.orgpolicy.v2.IConstraint>;
   }
-  listPolicies(
-      request?: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.orgpolicy.v2.IPolicy[],
-        protos.google.cloud.orgpolicy.v2.IListPoliciesRequest|null,
-        protos.google.cloud.orgpolicy.v2.IListPoliciesResponse
-      ]>;
-  listPolicies(
-      request: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
-          protos.google.cloud.orgpolicy.v2.IListPoliciesResponse|null|undefined,
-          protos.google.cloud.orgpolicy.v2.IPolicy>): void;
-  listPolicies(
-      request: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
-          protos.google.cloud.orgpolicy.v2.IListPoliciesResponse|null|undefined,
-          protos.google.cloud.orgpolicy.v2.IPolicy>): void;
-/**
+ /**
  * Retrieves all of the `Policies` that exist on a particular resource.
  *
  * @param {Object} request
@@ -977,6 +952,27 @@ export class OrgPolicyClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listPolicies(
+      request?: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.orgpolicy.v2.IPolicy[],
+        protos.google.cloud.orgpolicy.v2.IListPoliciesRequest|null,
+        protos.google.cloud.orgpolicy.v2.IListPoliciesResponse
+      ]>;
+  listPolicies(
+      request: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+          protos.google.cloud.orgpolicy.v2.IListPoliciesResponse|null|undefined,
+          protos.google.cloud.orgpolicy.v2.IPolicy>): void;
+  listPolicies(
+      request: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
+          protos.google.cloud.orgpolicy.v2.IListPoliciesResponse|null|undefined,
+          protos.google.cloud.orgpolicy.v2.IPolicy>): void;
   listPolicies(
       request?: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1098,11 +1094,8 @@ export class OrgPolicyClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPoliciesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/org_policy.list_policies.js</caption>
+ * region_tag:orgpolicy_v2_generated_OrgPolicy_ListPolicies_async
  */
   listPoliciesAsync(
       request?: protos.google.cloud.orgpolicy.v2.IListPoliciesRequest,
@@ -1117,7 +1110,6 @@ export class OrgPolicyClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listPolicies'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

@@ -21,19 +21,6 @@ function main(projectId, zone) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the parent field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Required. Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides, or "-" for all zones. This field has been deprecated and
-   *  replaced by the parent field.
-   */
-  // const zone = 'abc123'
-  /**
    *  The parent (project and location) where the clusters will be listed.
    *  Specified in the format `projects/* /locations/*`.
    *  Location "-" matches all zones and all regions.
@@ -46,7 +33,7 @@ function main(projectId, zone) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function listClusters() {
+  async function callListClusters() {
     // Construct request
     const request = {
       projectId,
@@ -58,7 +45,7 @@ function main(projectId, zone) {
     console.log(response);
   }
 
-  listClusters();
+  callListClusters();
   // [END container_v1beta1_generated_ClusterManager_ListClusters_async]
 }
 

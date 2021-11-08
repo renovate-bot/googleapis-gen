@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const billingClient = new CloudCatalogClient();
 
-  async function listServices() {
+  async function callListServices() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     }
   }
 
-  listServices();
+  callListServices();
   // [END cloudbilling_v1_generated_CloudCatalog_ListServices_async]
 }
 

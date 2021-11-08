@@ -27,8 +27,8 @@ function main() {
   /**
    *  If `true`, lists all versions of an object as distinct results.
    *  The default is `false`. For more information, see
-   *  [Object
-   *  Versioning](https://cloud.google.com/storage/docs/object-versioning).
+   *  Object
+   *  Versioning (https://cloud.google.com/storage/docs/object-versioning).
    */
   // const versions = true
   /**
@@ -65,15 +65,15 @@ function main() {
   /**
    *  Set of properties to return. Defaults to `NO_ACL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  Properties of the channel to be inserted.
    */
-  // const channel = ''
+  // const channel = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -81,7 +81,7 @@ function main() {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function watchAllObjects() {
+  async function callWatchAllObjects() {
     // Construct request
     const request = {
     };
@@ -91,7 +91,7 @@ function main() {
     console.log(response);
   }
 
-  watchAllObjects();
+  callWatchAllObjects();
   // [END storage_v1_generated_Storage_WatchAllObjects_async]
 }
 

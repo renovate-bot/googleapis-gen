@@ -23,7 +23,7 @@ function main(entry) {
   /**
    *  Required. Updates for the entry. The `name` field must be set.
    */
-  // const entry = ''
+  // const entry = {}
   /**
    *  Names of fields whose values to overwrite on an entry.
    *  If this parameter is absent or empty, all modifiable fields
@@ -47,7 +47,7 @@ function main(entry) {
    *  * `linked_resource`
    *  * `source_system_timestamps`
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -55,7 +55,7 @@ function main(entry) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function updateEntry() {
+  async function callUpdateEntry() {
     // Construct request
     const request = {
       entry,
@@ -66,7 +66,7 @@ function main(entry) {
     console.log(response);
   }
 
-  updateEntry();
+  callUpdateEntry();
   // [END datacatalog_v1_generated_DataCatalog_UpdateEntry_async]
 }
 

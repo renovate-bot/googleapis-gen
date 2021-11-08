@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function getEntry() {
+  async function callGetEntry() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEntry();
+  callGetEntry();
   // [END datacatalog_v1_generated_DataCatalog_GetEntry_async]
 }
 

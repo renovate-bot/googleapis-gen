@@ -28,7 +28,7 @@ function main() {
   /**
    *  The environment to create.
    */
-  // const environment = ''
+  // const environment = {}
 
   // Imports the Service library
   const {EnvironmentsClient} = require('@google-cloud/orchestration-airflow').v1beta1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const serviceClient = new EnvironmentsClient();
 
-  async function createEnvironment() {
+  async function callCreateEnvironment() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  createEnvironment();
+  callCreateEnvironment();
   // [END composer_v1beta1_generated_Environments_CreateEnvironment_async]
 }
 

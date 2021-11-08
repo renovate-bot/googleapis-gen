@@ -23,15 +23,15 @@ function main(projectName, event) {
   /**
    *  Required. The resource name of the Google Cloud Platform project. Written
    *  as `projects/{projectId}`, where `{projectId}` is the
-   *  [Google Cloud Platform project
-   *  ID](https://support.google.com/cloud/answer/6158840).
+   *  Google Cloud Platform project
+   *  ID (https://support.google.com/cloud/answer/6158840).
    *  Example: // `projects/my-project-123`.
    */
   // const projectName = 'abc123'
   /**
    *  Required. The error event to be reported.
    */
-  // const event = ''
+  // const event = {}
 
   // Imports the Clouderrorreporting library
   const {ReportErrorsServiceClient} = require('@google-cloud/clouderrorreporting').v1beta1;
@@ -39,7 +39,7 @@ function main(projectName, event) {
   // Instantiates a client
   const clouderrorreportingClient = new ReportErrorsServiceClient();
 
-  async function reportErrorEvent() {
+  async function callReportErrorEvent() {
     // Construct request
     const request = {
       projectName,
@@ -51,7 +51,7 @@ function main(projectName, event) {
     console.log(response);
   }
 
-  reportErrorEvent();
+  callReportErrorEvent();
   // [END clouderrorreporting_v1beta1_generated_ReportErrorsService_ReportErrorEvent_async]
 }
 

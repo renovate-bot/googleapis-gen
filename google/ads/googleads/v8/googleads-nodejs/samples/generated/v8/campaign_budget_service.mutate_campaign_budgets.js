@@ -44,7 +44,7 @@ function main(customerId, operations) {
    *  The response content type setting. Determines whether the mutable resource
    *  or just the resource name should be returned post mutation.
    */
-  // const responseContentType = ''
+  // const responseContentType = {}
 
   // Imports the Googleads library
   const {CampaignBudgetServiceClient} = require('google-ads').v8;
@@ -52,7 +52,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CampaignBudgetServiceClient();
 
-  async function mutateCampaignBudgets() {
+  async function callMutateCampaignBudgets() {
     // Construct request
     const request = {
       customerId,
@@ -64,7 +64,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCampaignBudgets();
+  callMutateCampaignBudgets();
   // [END googleads_v8_generated_CampaignBudgetService_MutateCampaignBudgets_async]
 }
 

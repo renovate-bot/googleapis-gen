@@ -35,7 +35,7 @@ function main(tenant, query, pageSize) {
    *  The list of languages of the query. This is
    *  the BCP-47 language code, such as "en-US" or "sr-Latn".
    *  For more information, see
-   *  [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47).
+   *  Tags for Identifying Languages (https://tools.ietf.org/html/bcp47).
    *  The maximum number of allowed characters is 255.
    */
   // const languageCodes = 'abc123'
@@ -52,13 +52,13 @@ function main(tenant, query, pageSize) {
    */
   // const company = 'abc123'
   /**
-   *  The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+   *  The scope of the completion. The defaults is CompletionScope.PUBLIC google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC.
    */
-  // const scope = ''
+  // const scope = {}
   /**
-   *  The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+   *  The completion topic. The default is CompletionType.COMBINED google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED.
    */
-  // const type = ''
+  // const type = {}
 
   // Imports the Talent library
   const {CompletionClient} = require('@google-cloud/talent').v4;
@@ -66,7 +66,7 @@ function main(tenant, query, pageSize) {
   // Instantiates a client
   const talentClient = new CompletionClient();
 
-  async function completeQuery() {
+  async function callCompleteQuery() {
     // Construct request
     const request = {
       tenant,
@@ -79,7 +79,7 @@ function main(tenant, query, pageSize) {
     console.log(response);
   }
 
-  completeQuery();
+  callCompleteQuery();
   // [END jobs_v4_generated_Completion_CompleteQuery_async]
 }
 

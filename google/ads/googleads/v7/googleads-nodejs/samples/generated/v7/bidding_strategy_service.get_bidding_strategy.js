@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new BiddingStrategyServiceClient();
 
-  async function getBiddingStrategy() {
+  async function callGetBiddingStrategy() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getBiddingStrategy();
+  callGetBiddingStrategy();
   // [END googleads_v7_generated_BiddingStrategyService_GetBiddingStrategy_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new DetailPlacementViewServiceClient();
 
-  async function getDetailPlacementView() {
+  async function callGetDetailPlacementView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getDetailPlacementView();
+  callGetDetailPlacementView();
   // [END googleads_v7_generated_DetailPlacementViewService_GetDetailPlacementView_async]
 }
 

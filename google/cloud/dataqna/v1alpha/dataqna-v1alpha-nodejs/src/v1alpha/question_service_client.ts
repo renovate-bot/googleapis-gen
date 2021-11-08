@@ -303,6 +303,26 @@ export class QuestionServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets a previously created question.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the question.
+ *   Example: `projects/foo/locations/bar/questions/1234`
+ * @param {google.protobuf.FieldMask} request.readMask
+ *   The list of fields to be retrieved.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Question]{@link google.cloud.dataqna.v1alpha.Question}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1alpha/question_service.get_question.js</caption>
+ * region_tag:dataqna_v1alpha_generated_QuestionService_GetQuestion_async
+ */
   getQuestion(
       request?: protos.google.cloud.dataqna.v1alpha.IGetQuestionRequest,
       options?: CallOptions):
@@ -323,26 +343,6 @@ export class QuestionServiceClient {
           protos.google.cloud.dataqna.v1alpha.IQuestion,
           protos.google.cloud.dataqna.v1alpha.IGetQuestionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a previously created question.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the question.
- *   Example: `projects/foo/locations/bar/questions/1234`
- * @param {google.protobuf.FieldMask} request.readMask
- *   The list of fields to be retrieved.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Question]{@link google.cloud.dataqna.v1alpha.Question}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getQuestion(request);
- */
   getQuestion(
       request?: protos.google.cloud.dataqna.v1alpha.IGetQuestionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -377,6 +377,26 @@ export class QuestionServiceClient {
     this.initialize();
     return this.innerApiCalls.getQuestion(request, options, callback);
   }
+/**
+ * Creates a question.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The name of the project this data source reference belongs to.
+ *   Example: `projects/foo/locations/bar`
+ * @param {google.cloud.dataqna.v1alpha.Question} request.question
+ *   Required. The question to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Question]{@link google.cloud.dataqna.v1alpha.Question}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1alpha/question_service.create_question.js</caption>
+ * region_tag:dataqna_v1alpha_generated_QuestionService_CreateQuestion_async
+ */
   createQuestion(
       request?: protos.google.cloud.dataqna.v1alpha.ICreateQuestionRequest,
       options?: CallOptions):
@@ -397,26 +417,6 @@ export class QuestionServiceClient {
           protos.google.cloud.dataqna.v1alpha.IQuestion,
           protos.google.cloud.dataqna.v1alpha.ICreateQuestionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a question.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The name of the project this data source reference belongs to.
- *   Example: `projects/foo/locations/bar`
- * @param {google.cloud.dataqna.v1alpha.Question} request.question
- *   Required. The question to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Question]{@link google.cloud.dataqna.v1alpha.Question}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createQuestion(request);
- */
   createQuestion(
       request?: protos.google.cloud.dataqna.v1alpha.ICreateQuestionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -451,6 +451,26 @@ export class QuestionServiceClient {
     this.initialize();
     return this.innerApiCalls.createQuestion(request, options, callback);
   }
+/**
+ * Executes an interpretation.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the question.
+ *   Example: `projects/foo/locations/bar/questions/1234`
+ * @param {number} request.interpretationIndex
+ *   Required. Index of the interpretation to execute.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Question]{@link google.cloud.dataqna.v1alpha.Question}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1alpha/question_service.execute_question.js</caption>
+ * region_tag:dataqna_v1alpha_generated_QuestionService_ExecuteQuestion_async
+ */
   executeQuestion(
       request?: protos.google.cloud.dataqna.v1alpha.IExecuteQuestionRequest,
       options?: CallOptions):
@@ -471,26 +491,6 @@ export class QuestionServiceClient {
           protos.google.cloud.dataqna.v1alpha.IQuestion,
           protos.google.cloud.dataqna.v1alpha.IExecuteQuestionRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Executes an interpretation.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the question.
- *   Example: `projects/foo/locations/bar/questions/1234`
- * @param {number} request.interpretationIndex
- *   Required. Index of the interpretation to execute.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Question]{@link google.cloud.dataqna.v1alpha.Question}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.executeQuestion(request);
- */
   executeQuestion(
       request?: protos.google.cloud.dataqna.v1alpha.IExecuteQuestionRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -525,6 +525,25 @@ export class QuestionServiceClient {
     this.initialize();
     return this.innerApiCalls.executeQuestion(request, options, callback);
   }
+/**
+ * Gets previously created user feedback.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The unique identifier for the user feedback.
+ *   User feedback is a singleton resource on a Question.
+ *   Example: `projects/foo/locations/bar/questions/1234/userFeedback`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [UserFeedback]{@link google.cloud.dataqna.v1alpha.UserFeedback}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1alpha/question_service.get_user_feedback.js</caption>
+ * region_tag:dataqna_v1alpha_generated_QuestionService_GetUserFeedback_async
+ */
   getUserFeedback(
       request?: protos.google.cloud.dataqna.v1alpha.IGetUserFeedbackRequest,
       options?: CallOptions):
@@ -545,25 +564,6 @@ export class QuestionServiceClient {
           protos.google.cloud.dataqna.v1alpha.IUserFeedback,
           protos.google.cloud.dataqna.v1alpha.IGetUserFeedbackRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets previously created user feedback.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The unique identifier for the user feedback.
- *   User feedback is a singleton resource on a Question.
- *   Example: `projects/foo/locations/bar/questions/1234/userFeedback`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [UserFeedback]{@link google.cloud.dataqna.v1alpha.UserFeedback}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getUserFeedback(request);
- */
   getUserFeedback(
       request?: protos.google.cloud.dataqna.v1alpha.IGetUserFeedbackRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -598,26 +598,6 @@ export class QuestionServiceClient {
     this.initialize();
     return this.innerApiCalls.getUserFeedback(request, options, callback);
   }
-  updateUserFeedback(
-      request?: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dataqna.v1alpha.IUserFeedback,
-        protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest|undefined, {}|undefined
-      ]>;
-  updateUserFeedback(
-      request: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dataqna.v1alpha.IUserFeedback,
-          protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateUserFeedback(
-      request: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
-      callback: Callback<
-          protos.google.cloud.dataqna.v1alpha.IUserFeedback,
-          protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates user feedback. This creates user feedback if there was none before
  * (upsert).
@@ -638,9 +618,29 @@ export class QuestionServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateUserFeedback(request);
+ * @example <caption>include:samples/generated/v1alpha/question_service.update_user_feedback.js</caption>
+ * region_tag:dataqna_v1alpha_generated_QuestionService_UpdateUserFeedback_async
  */
+  updateUserFeedback(
+      request?: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dataqna.v1alpha.IUserFeedback,
+        protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest|undefined, {}|undefined
+      ]>;
+  updateUserFeedback(
+      request: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dataqna.v1alpha.IUserFeedback,
+          protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateUserFeedback(
+      request: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
+      callback: Callback<
+          protos.google.cloud.dataqna.v1alpha.IUserFeedback,
+          protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest|null|undefined,
+          {}|null|undefined>): void;
   updateUserFeedback(
       request?: protos.google.cloud.dataqna.v1alpha.IUpdateUserFeedbackRequest,
       optionsOrCallback?: CallOptions|Callback<

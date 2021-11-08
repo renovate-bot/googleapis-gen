@@ -33,7 +33,7 @@ function main(parent, apiId, api) {
   /**
    *  Required. API resource.
    */
-  // const api = ''
+  // const api = {}
 
   // Imports the Apigateway library
   const {ApiGatewayServiceClient} = require('@google-cloud/api-gateway').v1;
@@ -41,7 +41,7 @@ function main(parent, apiId, api) {
   // Instantiates a client
   const apigatewayClient = new ApiGatewayServiceClient();
 
-  async function createApi() {
+  async function callCreateApi() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent, apiId, api) {
     console.log(response);
   }
 
-  createApi();
+  callCreateApi();
   // [END apigateway_v1_generated_ApiGatewayService_CreateApi_async]
 }
 

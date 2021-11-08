@@ -20,29 +20,6 @@ function main(name, payload) {
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
-  /**
-   *  Required. Deprecated. [Migrate to Service Account Credentials
-   *  API](https://cloud.google.com/iam/help/credentials/migrate-api).
-   *  The resource name of the service account in the following format:
-   *  `projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}`.
-   *  Using `-` as a wildcard for the `PROJECT_ID` will infer the project from
-   *  the account. The `ACCOUNT` value can be the `email` address or the
-   *  `unique_id` of the service account.
-   */
-  // const name = 'abc123'
-  /**
-   *  Required. Deprecated. [Migrate to Service Account Credentials
-   *  API](https://cloud.google.com/iam/help/credentials/migrate-api).
-   *  The JWT payload to sign. Must be a serialized JSON object that contains a
-   *  JWT Claims Set. For example: `{"sub": "user@example.com", "iat": 313435}`
-   *  If the JWT Claims Set contains an expiration time (`exp`) claim, it must be
-   *  an integer timestamp that is not in the past and no more than 1 hour in the
-   *  future.
-   *  If the JWT Claims Set does not contain an expiration time (`exp`) claim,
-   *  this claim is added automatically, with a timestamp that is 1 hour in the
-   *  future.
-   */
-  // const payload = 'abc123'
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -50,7 +27,7 @@ function main(name, payload) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function signJwt() {
+  async function callSignJwt() {
     // Construct request
     const request = {
       name,
@@ -62,7 +39,7 @@ function main(name, payload) {
     console.log(response);
   }
 
-  signJwt();
+  callSignJwt();
   // [END iam_v1_generated_IAM_SignJwt_async]
 }
 

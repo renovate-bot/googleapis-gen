@@ -27,7 +27,7 @@ function main(mfaPendingCredential) {
   /**
    *  Proof of completion of the SMS based MFA challenge.
    */
-  // const phoneVerificationInfo = ''
+  // const phoneVerificationInfo = {}
   /**
    *  The ID of the Identity Platform tenant the user is signing in to. If not
    *  set, the user will sign in to the default Identity Platform project.
@@ -40,7 +40,7 @@ function main(mfaPendingCredential) {
   // Instantiates a client
   const identitytoolkitClient = new AuthenticationServiceClient();
 
-  async function finalizeMfaSignIn() {
+  async function callFinalizeMfaSignIn() {
     // Construct request
     const request = {
       mfaPendingCredential,
@@ -51,7 +51,7 @@ function main(mfaPendingCredential) {
     console.log(response);
   }
 
-  finalizeMfaSignIn();
+  callFinalizeMfaSignIn();
   // [END identitytoolkit_v2_generated_AuthenticationService_FinalizeMfaSignIn_async]
 }
 

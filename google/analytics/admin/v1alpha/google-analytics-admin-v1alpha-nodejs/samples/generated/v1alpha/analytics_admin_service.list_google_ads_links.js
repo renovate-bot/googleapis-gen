@@ -44,7 +44,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listGoogleAdsLinks() {
+  async function callListGoogleAdsLinks() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     }
   }
 
-  listGoogleAdsLinks();
+  callListGoogleAdsLinks();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListGoogleAdsLinks_async]
 }
 

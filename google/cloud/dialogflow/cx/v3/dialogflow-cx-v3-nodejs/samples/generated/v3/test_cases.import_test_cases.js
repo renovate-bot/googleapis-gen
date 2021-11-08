@@ -26,7 +26,7 @@ function main(parent) {
    */
   // const parent = 'abc123'
   /**
-   *  The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+   *  The Google Cloud Storage (https://cloud.google.com/storage/docs/) URI
    *  to import test cases from. The format of this URI must be
    *  `gs://<bucket-name>/<object-name>`.
    */
@@ -42,7 +42,7 @@ function main(parent) {
   // Instantiates a client
   const cxClient = new TestCasesClient();
 
-  async function importTestCases() {
+  async function callImportTestCases() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     console.log(response);
   }
 
-  importTestCases();
+  callImportTestCases();
   // [END dialogflow_v3_generated_TestCases_ImportTestCases_async]
 }
 

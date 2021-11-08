@@ -31,7 +31,7 @@ function main(bucket, notification) {
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -39,7 +39,7 @@ function main(bucket, notification) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function deleteNotification() {
+  async function callDeleteNotification() {
     // Construct request
     const request = {
       bucket,
@@ -51,7 +51,7 @@ function main(bucket, notification) {
     console.log(response);
   }
 
-  deleteNotification();
+  callDeleteNotification();
   // [END storage_v1_generated_Storage_DeleteNotification_async]
 }
 

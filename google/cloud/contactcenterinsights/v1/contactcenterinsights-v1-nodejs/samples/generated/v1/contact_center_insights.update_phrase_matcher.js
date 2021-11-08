@@ -23,11 +23,11 @@ function main(phraseMatcher) {
   /**
    *  Required. The new values for the phrase matcher.
    */
-  // const phraseMatcher = ''
+  // const phraseMatcher = {}
   /**
    *  The list of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Contactcenterinsights library
   const {ContactCenterInsightsClient} = require('@google-cloud/contact-center-insights').v1;
@@ -35,7 +35,7 @@ function main(phraseMatcher) {
   // Instantiates a client
   const contactcenterinsightsClient = new ContactCenterInsightsClient();
 
-  async function updatePhraseMatcher() {
+  async function callUpdatePhraseMatcher() {
     // Construct request
     const request = {
       phraseMatcher,
@@ -46,7 +46,7 @@ function main(phraseMatcher) {
     console.log(response);
   }
 
-  updatePhraseMatcher();
+  callUpdatePhraseMatcher();
   // [END contactcenterinsights_v1_generated_ContactCenterInsights_UpdatePhraseMatcher_async]
 }
 

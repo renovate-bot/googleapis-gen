@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new CampaignExtensionSettingServiceClient();
 
-  async function getCampaignExtensionSetting() {
+  async function callGetCampaignExtensionSetting() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getCampaignExtensionSetting();
+  callGetCampaignExtensionSetting();
   // [END googleads_v9_generated_CampaignExtensionSettingService_GetCampaignExtensionSetting_async]
 }
 

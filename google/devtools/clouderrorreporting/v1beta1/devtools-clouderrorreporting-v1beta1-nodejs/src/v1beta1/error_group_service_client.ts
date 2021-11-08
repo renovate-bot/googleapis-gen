@@ -283,6 +283,28 @@ export class ErrorGroupServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Get the specified group.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.groupName
+ *   Required. The group resource name. Written as
+ *   `projects/{projectID}/groups/{group_name}`. Call
+ *   [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
+ *   to return a list of groups belonging to this project.
+ *
+ *   Example: `projects/my-project-123/groups/my-group`
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ErrorGroup]{@link google.devtools.clouderrorreporting.v1beta1.ErrorGroup}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/error_group_service.get_group.js</caption>
+ * region_tag:clouderrorreporting_v1beta1_generated_ErrorGroupService_GetGroup_async
+ */
   getGroup(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
       options?: CallOptions):
@@ -303,28 +325,6 @@ export class ErrorGroupServiceClient {
           protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroup,
           protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Get the specified group.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.groupName
- *   Required. The group resource name. Written as
- *   `projects/{projectID}/groups/{group_name}`. Call
- *   [`groupStats.list`](https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.groupStats/list)
- *   to return a list of groups belonging to this project.
- *
- *   Example: `projects/my-project-123/groups/my-group`
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ErrorGroup]{@link google.devtools.clouderrorreporting.v1beta1.ErrorGroup}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getGroup(request);
- */
   getGroup(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IGetGroupRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -359,6 +359,24 @@ export class ErrorGroupServiceClient {
     this.initialize();
     return this.innerApiCalls.getGroup(request, options, callback);
   }
+/**
+ * Replace the data for the specified group.
+ * Fails if the group does not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.devtools.clouderrorreporting.v1beta1.ErrorGroup} request.group
+ *   Required. The group which replaces the resource on the server.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [ErrorGroup]{@link google.devtools.clouderrorreporting.v1beta1.ErrorGroup}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/error_group_service.update_group.js</caption>
+ * region_tag:clouderrorreporting_v1beta1_generated_ErrorGroupService_UpdateGroup_async
+ */
   updateGroup(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,
       options?: CallOptions):
@@ -379,24 +397,6 @@ export class ErrorGroupServiceClient {
           protos.google.devtools.clouderrorreporting.v1beta1.IErrorGroup,
           protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Replace the data for the specified group.
- * Fails if the group does not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.devtools.clouderrorreporting.v1beta1.ErrorGroup} request.group
- *   Required. The group which replaces the resource on the server.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ErrorGroup]{@link google.devtools.clouderrorreporting.v1beta1.ErrorGroup}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateGroup(request);
- */
   updateGroup(
       request?: protos.google.devtools.clouderrorreporting.v1beta1.IUpdateGroupRequest,
       optionsOrCallback?: CallOptions|Callback<

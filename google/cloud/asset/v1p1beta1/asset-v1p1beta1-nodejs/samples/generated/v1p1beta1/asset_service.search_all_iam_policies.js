@@ -57,7 +57,7 @@ function main(scope) {
   // Instantiates a client
   const assetClient = new AssetServiceClient();
 
-  async function searchAllIamPolicies() {
+  async function callSearchAllIamPolicies() {
     // Construct request
     const request = {
       scope,
@@ -70,7 +70,7 @@ function main(scope) {
     }
   }
 
-  searchAllIamPolicies();
+  callSearchAllIamPolicies();
   // [END cloudasset_v1p1beta1_generated_AssetService_SearchAllIamPolicies_async]
 }
 

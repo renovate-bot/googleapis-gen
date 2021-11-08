@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const serviceusageClient = new ServiceUsageClient();
 
-  async function disableService() {
+  async function callDisableService() {
     // Construct request
     const request = {
     };
@@ -46,7 +46,7 @@ function main() {
     console.log(response);
   }
 
-  disableService();
+  callDisableService();
   // [END serviceusage_v1beta1_generated_ServiceUsage_DisableService_async]
 }
 

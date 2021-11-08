@@ -397,6 +397,27 @@ export class AnswerRecordsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Deprecated.
+ * Retrieves a specific answer record.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the answer record to retrieve.
+ *   Format: `projects/<Project ID>/locations/<Location
+ *   ID>/answerRecords/<Answer Record Id>`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AnswerRecord]{@link google.cloud.dialogflow.v2beta1.AnswerRecord}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/answer_records.get_answer_record.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_AnswerRecords_GetAnswerRecord_async
+ * @deprecated GetAnswerRecord is deprecated and may be removed in a future version.
+ */
   getAnswerRecord(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest,
       options?: CallOptions):
@@ -417,27 +438,6 @@ export class AnswerRecordsClient {
           protos.google.cloud.dialogflow.v2beta1.IAnswerRecord,
           protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deprecated.
- * Retrieves a specific answer record.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the answer record to retrieve.
- *   Format: `projects/<Project ID>/locations/<Location
- *   ID>/answerRecords/<Answer Record Id>`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AnswerRecord]{@link google.cloud.dialogflow.v2beta1.AnswerRecord}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getAnswerRecord(request);
- * @deprecated GetAnswerRecord is deprecated and may be removed in a future version.
- */
   getAnswerRecord(
       request?: protos.google.cloud.dialogflow.v2beta1.IGetAnswerRecordRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -473,6 +473,25 @@ export class AnswerRecordsClient {
     this.warn('DEP$AnswerRecords-$GetAnswerRecord','GetAnswerRecord is deprecated and may be removed in a future version.', 'DeprecationWarning');
     return this.innerApiCalls.getAnswerRecord(request, options, callback);
   }
+/**
+ * Updates the specified answer record.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.dialogflow.v2beta1.AnswerRecord} request.answerRecord
+ *   Required. Answer record to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. The mask to control which fields get updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AnswerRecord]{@link google.cloud.dialogflow.v2beta1.AnswerRecord}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2beta1/answer_records.update_answer_record.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_AnswerRecords_UpdateAnswerRecord_async
+ */
   updateAnswerRecord(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest,
       options?: CallOptions):
@@ -493,25 +512,6 @@ export class AnswerRecordsClient {
           protos.google.cloud.dialogflow.v2beta1.IAnswerRecord,
           protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates the specified answer record.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.dialogflow.v2beta1.AnswerRecord} request.answerRecord
- *   Required. Answer record to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   Required. The mask to control which fields get updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [AnswerRecord]{@link google.cloud.dialogflow.v2beta1.AnswerRecord}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateAnswerRecord(request);
- */
   updateAnswerRecord(
       request?: protos.google.cloud.dialogflow.v2beta1.IUpdateAnswerRecordRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -547,28 +547,7 @@ export class AnswerRecordsClient {
     return this.innerApiCalls.updateAnswerRecord(request, options, callback);
   }
 
-  listAnswerRecords(
-      request?: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2beta1.IAnswerRecord[],
-        protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest|null,
-        protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse
-      ]>;
-  listAnswerRecords(
-      request: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
-          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.IAnswerRecord>): void;
-  listAnswerRecords(
-      request: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
-          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2beta1.IAnswerRecord>): void;
-/**
+ /**
  * Returns the list of all answer records in the specified project in reverse
  * chronological order.
  *
@@ -600,6 +579,27 @@ export class AnswerRecordsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAnswerRecords(
+      request?: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2beta1.IAnswerRecord[],
+        protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest|null,
+        protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse
+      ]>;
+  listAnswerRecords(
+      request: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.IAnswerRecord>): void;
+  listAnswerRecords(
+      request: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
+          protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2beta1.IAnswerRecord>): void;
   listAnswerRecords(
       request?: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -717,11 +717,8 @@ export class AnswerRecordsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAnswerRecordsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2beta1/answer_records.list_answer_records.js</caption>
+ * region_tag:dialogflow_v2beta1_generated_AnswerRecords_ListAnswerRecords_async
  */
   listAnswerRecordsAsync(
       request?: protos.google.cloud.dialogflow.v2beta1.IListAnswerRecordsRequest,
@@ -736,7 +733,6 @@ export class AnswerRecordsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAnswerRecords'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

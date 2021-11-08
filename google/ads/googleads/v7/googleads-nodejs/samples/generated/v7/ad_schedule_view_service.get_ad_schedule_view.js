@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdScheduleViewServiceClient();
 
-  async function getAdScheduleView() {
+  async function callGetAdScheduleView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdScheduleView();
+  callGetAdScheduleView();
   // [END googleads_v7_generated_AdScheduleViewService_GetAdScheduleView_async]
 }
 

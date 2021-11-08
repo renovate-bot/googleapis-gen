@@ -23,11 +23,11 @@ function main() {
   /**
    *  Initial request on the stream.
    */
-  // const initial = ''
+  // const initial = {}
   /**
    *  Acknowledgement of a partition assignment.
    */
-  // const ack = ''
+  // const ack = {}
 
   // Imports the Pubsublite library
   const {PartitionAssignmentServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -35,7 +35,7 @@ function main() {
   // Instantiates a client
   const pubsubliteClient = new PartitionAssignmentServiceClient();
 
-  async function assignPartitions() {
+  async function callAssignPartitions() {
     // Construct request
     const request = {
     };
@@ -49,7 +49,7 @@ function main() {
     stream.end(); 
   }
 
-  assignPartitions();
+  callAssignPartitions();
   // [END pubsublite_v1_generated_PartitionAssignmentService_AssignPartitions_async]
 }
 

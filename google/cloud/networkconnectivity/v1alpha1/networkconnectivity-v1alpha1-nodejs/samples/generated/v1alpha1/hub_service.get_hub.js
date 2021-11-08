@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
 
-  async function getHub() {
+  async function callGetHub() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getHub();
+  callGetHub();
   // [END networkconnectivity_v1alpha1_generated_HubService_GetHub_async]
 }
 

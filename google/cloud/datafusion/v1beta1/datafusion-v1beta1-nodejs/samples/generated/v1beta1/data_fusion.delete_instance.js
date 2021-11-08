@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const datafusionClient = new DataFusionClient();
 
-  async function deleteInstance() {
+  async function callDeleteInstance() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  deleteInstance();
+  callDeleteInstance();
   // [END datafusion_v1beta1_generated_DataFusion_DeleteInstance_async]
 }
 

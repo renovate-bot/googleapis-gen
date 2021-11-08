@@ -41,7 +41,7 @@ function main(idToken, mfaEnrollmentId) {
   // Instantiates a client
   const identitytoolkitClient = new AccountManagementServiceClient();
 
-  async function withdrawMfa() {
+  async function callWithdrawMfa() {
     // Construct request
     const request = {
       idToken,
@@ -53,7 +53,7 @@ function main(idToken, mfaEnrollmentId) {
     console.log(response);
   }
 
-  withdrawMfa();
+  callWithdrawMfa();
   // [END identitytoolkit_v2_generated_AccountManagementService_WithdrawMfa_async]
 }
 

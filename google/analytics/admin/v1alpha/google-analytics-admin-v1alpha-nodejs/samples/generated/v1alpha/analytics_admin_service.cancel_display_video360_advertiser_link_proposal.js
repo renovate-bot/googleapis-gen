@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function cancelDisplayVideo360AdvertiserLinkProposal() {
+  async function callCancelDisplayVideo360AdvertiserLinkProposal() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  cancelDisplayVideo360AdvertiserLinkProposal();
+  callCancelDisplayVideo360AdvertiserLinkProposal();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CancelDisplayVideo360AdvertiserLinkProposal_async]
 }
 

@@ -32,11 +32,11 @@ function main(destinationBucket, destinationObject) {
   /**
    *  Apply a predefined set of access controls to the destination object.
    */
-  // const destinationPredefinedAcl = ''
+  // const destinationPredefinedAcl = {}
   /**
    *  Properties of the resulting object.
    */
-  // const destination = ''
+  // const destination = {}
   /**
    *  The list of source objects that will be concatenated into a single object.
    */
@@ -46,12 +46,12 @@ function main(destinationBucket, destinationObject) {
    *  matches the given value. Setting to 0 makes the operation succeed only if
    *  there are no live versions of the object.
    */
-  // const ifGenerationMatch = ''
+  // const ifGenerationMatch = {}
   /**
    *  Makes the operation conditional on whether the object's current
    *  metageneration matches the given value.
    */
-  // const ifMetagenerationMatch = ''
+  // const ifMetagenerationMatch = {}
   /**
    *  Resource name of the Cloud KMS key, of the form
    *  `projects/my-project/locations/my-location/keyRings/my-kr/cryptoKeys/my-key`,
@@ -62,11 +62,11 @@ function main(destinationBucket, destinationObject) {
   /**
    *  A set of parameters common to Storage API requests concerning an object.
    */
-  // const commonObjectRequestParams = ''
+  // const commonObjectRequestParams = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -74,7 +74,7 @@ function main(destinationBucket, destinationObject) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function composeObject() {
+  async function callComposeObject() {
     // Construct request
     const request = {
       destinationBucket,
@@ -86,7 +86,7 @@ function main(destinationBucket, destinationObject) {
     console.log(response);
   }
 
-  composeObject();
+  callComposeObject();
   // [END storage_v1_generated_Storage_ComposeObject_async]
 }
 

@@ -44,7 +44,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listCustomDimensions() {
+  async function callListCustomDimensions() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent) {
     }
   }
 
-  listCustomDimensions();
+  callListCustomDimensions();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListCustomDimensions_async]
 }
 

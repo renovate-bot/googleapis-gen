@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new DomainMappingsClient();
 
-  async function getDomainMapping() {
+  async function callGetDomainMapping() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  getDomainMapping();
+  callGetDomainMapping();
   // [END appengine_v1_generated_DomainMappings_GetDomainMapping_async]
 }
 

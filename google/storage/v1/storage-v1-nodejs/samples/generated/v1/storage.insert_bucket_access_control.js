@@ -27,11 +27,11 @@ function main(bucket) {
   /**
    *  Properties of the new bucket access control being inserted.
    */
-  // const bucketAccessControl = ''
+  // const bucketAccessControl = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -39,7 +39,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function insertBucketAccessControl() {
+  async function callInsertBucketAccessControl() {
     // Construct request
     const request = {
       bucket,
@@ -50,7 +50,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  insertBucketAccessControl();
+  callInsertBucketAccessControl();
   // [END storage_v1_generated_Storage_InsertBucketAccessControl_async]
 }
 

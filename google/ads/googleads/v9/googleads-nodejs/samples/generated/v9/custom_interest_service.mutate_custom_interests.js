@@ -40,7 +40,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CustomInterestServiceClient();
 
-  async function mutateCustomInterests() {
+  async function callMutateCustomInterests() {
     // Construct request
     const request = {
       customerId,
@@ -52,7 +52,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCustomInterests();
+  callMutateCustomInterests();
   // [END googleads_v9_generated_CustomInterestService_MutateCustomInterests_async]
 }
 

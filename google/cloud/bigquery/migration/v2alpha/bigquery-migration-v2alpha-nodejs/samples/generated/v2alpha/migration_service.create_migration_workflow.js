@@ -28,7 +28,7 @@ function main(parent, migrationWorkflow) {
   /**
    *  Required. The migration workflow to create.
    */
-  // const migrationWorkflow = ''
+  // const migrationWorkflow = {}
 
   // Imports the Migration library
   const {MigrationServiceClient} = require('@google-cloud/migration').v2alpha;
@@ -36,7 +36,7 @@ function main(parent, migrationWorkflow) {
   // Instantiates a client
   const migrationClient = new MigrationServiceClient();
 
-  async function createMigrationWorkflow() {
+  async function callCreateMigrationWorkflow() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, migrationWorkflow) {
     console.log(response);
   }
 
-  createMigrationWorkflow();
+  callCreateMigrationWorkflow();
   // [END bigquerymigration_v2alpha_generated_MigrationService_CreateMigrationWorkflow_async]
 }
 

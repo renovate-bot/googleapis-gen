@@ -280,26 +280,6 @@ export class ProfilerServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  createProfile(
-      request?: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.cloudprofiler.v2.IProfile,
-        protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|undefined, {}|undefined
-      ]>;
-  createProfile(
-      request: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.cloudprofiler.v2.IProfile,
-          protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|null|undefined,
-          {}|null|undefined>): void;
-  createProfile(
-      request: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
-      callback: Callback<
-          protos.google.devtools.cloudprofiler.v2.IProfile,
-          protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * CreateProfile creates a new profile resource in the online mode.
  *
@@ -330,9 +310,29 @@ export class ProfilerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createProfile(request);
+ * @example <caption>include:samples/generated/v2/profiler_service.create_profile.js</caption>
+ * region_tag:cloudprofiler_v2_generated_ProfilerService_CreateProfile_async
  */
+  createProfile(
+      request?: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.cloudprofiler.v2.IProfile,
+        protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|undefined, {}|undefined
+      ]>;
+  createProfile(
+      request: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.cloudprofiler.v2.IProfile,
+          protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|null|undefined,
+          {}|null|undefined>): void;
+  createProfile(
+      request: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
+      callback: Callback<
+          protos.google.devtools.cloudprofiler.v2.IProfile,
+          protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest|null|undefined,
+          {}|null|undefined>): void;
   createProfile(
       request?: protos.google.devtools.cloudprofiler.v2.ICreateProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -367,6 +367,27 @@ export class ProfilerServiceClient {
     this.initialize();
     return this.innerApiCalls.createProfile(request, options, callback);
   }
+/**
+ * CreateOfflineProfile creates a new profile resource in the offline mode.
+ * The client provides the profile to create along with the profile bytes, the
+ * server records it.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Parent project to create the profile in.
+ * @param {google.devtools.cloudprofiler.v2.Profile} request.profile
+ *   Contents of the profile to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Profile]{@link google.devtools.cloudprofiler.v2.Profile}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/profiler_service.create_offline_profile.js</caption>
+ * region_tag:cloudprofiler_v2_generated_ProfilerService_CreateOfflineProfile_async
+ */
   createOfflineProfile(
       request?: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
       options?: CallOptions):
@@ -387,27 +408,6 @@ export class ProfilerServiceClient {
           protos.google.devtools.cloudprofiler.v2.IProfile,
           protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * CreateOfflineProfile creates a new profile resource in the offline mode.
- * The client provides the profile to create along with the profile bytes, the
- * server records it.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Parent project to create the profile in.
- * @param {google.devtools.cloudprofiler.v2.Profile} request.profile
- *   Contents of the profile to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Profile]{@link google.devtools.cloudprofiler.v2.Profile}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createOfflineProfile(request);
- */
   createOfflineProfile(
       request?: protos.google.devtools.cloudprofiler.v2.ICreateOfflineProfileRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -442,26 +442,6 @@ export class ProfilerServiceClient {
     this.initialize();
     return this.innerApiCalls.createOfflineProfile(request, options, callback);
   }
-  updateProfile(
-      request?: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.devtools.cloudprofiler.v2.IProfile,
-        protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|undefined, {}|undefined
-      ]>;
-  updateProfile(
-      request: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.devtools.cloudprofiler.v2.IProfile,
-          protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateProfile(
-      request: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
-      callback: Callback<
-          protos.google.devtools.cloudprofiler.v2.IProfile,
-          protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * UpdateProfile updates the profile bytes and labels on the profile resource
  * created in the online mode. Updating the bytes for profiles created in the
@@ -484,9 +464,29 @@ export class ProfilerServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateProfile(request);
+ * @example <caption>include:samples/generated/v2/profiler_service.update_profile.js</caption>
+ * region_tag:cloudprofiler_v2_generated_ProfilerService_UpdateProfile_async
  */
+  updateProfile(
+      request?: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.devtools.cloudprofiler.v2.IProfile,
+        protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|undefined, {}|undefined
+      ]>;
+  updateProfile(
+      request: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.devtools.cloudprofiler.v2.IProfile,
+          protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateProfile(
+      request: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
+      callback: Callback<
+          protos.google.devtools.cloudprofiler.v2.IProfile,
+          protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest|null|undefined,
+          {}|null|undefined>): void;
   updateProfile(
       request?: protos.google.devtools.cloudprofiler.v2.IUpdateProfileRequest,
       optionsOrCallback?: CallOptions|Callback<

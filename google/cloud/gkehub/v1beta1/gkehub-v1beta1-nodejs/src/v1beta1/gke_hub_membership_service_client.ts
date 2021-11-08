@@ -341,6 +341,24 @@ export class GkeHubMembershipServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets the details of a Membership.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The Membership resource name in the format
+ *   `projects/* /locations/* /memberships/*`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Membership]{@link google.cloud.gkehub.v1beta1.Membership}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.get_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_GetMembership_async
+ */
   getMembership(
       request?: protos.google.cloud.gkehub.v1beta1.IGetMembershipRequest,
       options?: CallOptions):
@@ -361,24 +379,6 @@ export class GkeHubMembershipServiceClient {
           protos.google.cloud.gkehub.v1beta1.IMembership,
           protos.google.cloud.gkehub.v1beta1.IGetMembershipRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the details of a Membership.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The Membership resource name in the format
- *   `projects/* /locations/* /memberships/*`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Membership]{@link google.cloud.gkehub.v1beta1.Membership}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getMembership(request);
- */
   getMembership(
       request?: protos.google.cloud.gkehub.v1beta1.IGetMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -413,26 +413,6 @@ export class GkeHubMembershipServiceClient {
     this.initialize();
     return this.innerApiCalls.getMembership(request, options, callback);
   }
-  generateConnectManifest(
-      request?: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestResponse,
-        protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest|undefined, {}|undefined
-      ]>;
-  generateConnectManifest(
-      request: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestResponse,
-          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateConnectManifest(
-      request: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestResponse,
-          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Generates the manifest for deployment of the GKE connect agent.
  *
@@ -463,9 +443,29 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateConnectManifest(request);
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.generate_connect_manifest.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_GenerateConnectManifest_async
  */
+  generateConnectManifest(
+      request?: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestResponse,
+        protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest|undefined, {}|undefined
+      ]>;
+  generateConnectManifest(
+      request: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestResponse,
+          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateConnectManifest(
+      request: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestResponse,
+          protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest|null|undefined,
+          {}|null|undefined>): void;
   generateConnectManifest(
       request?: protos.google.cloud.gkehub.v1beta1.IGenerateConnectManifestRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,26 +500,6 @@ export class GkeHubMembershipServiceClient {
     this.initialize();
     return this.innerApiCalls.generateConnectManifest(request, options, callback);
   }
-  validateExclusivity(
-      request?: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1beta1.IValidateExclusivityResponse,
-        protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest|undefined, {}|undefined
-      ]>;
-  validateExclusivity(
-      request: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityResponse,
-          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest|null|undefined,
-          {}|null|undefined>): void;
-  validateExclusivity(
-      request: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityResponse,
-          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * ValidateExclusivity validates the state of exclusivity in the cluster.
  * The validation does not depend on an existing Hub membership resource.
@@ -542,9 +522,29 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.validateExclusivity(request);
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.validate_exclusivity.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_ValidateExclusivity_async
  */
+  validateExclusivity(
+      request?: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1beta1.IValidateExclusivityResponse,
+        protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest|undefined, {}|undefined
+      ]>;
+  validateExclusivity(
+      request: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityResponse,
+          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest|null|undefined,
+          {}|null|undefined>): void;
+  validateExclusivity(
+      request: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityResponse,
+          protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest|null|undefined,
+          {}|null|undefined>): void;
   validateExclusivity(
       request?: protos.google.cloud.gkehub.v1beta1.IValidateExclusivityRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -579,26 +579,6 @@ export class GkeHubMembershipServiceClient {
     this.initialize();
     return this.innerApiCalls.validateExclusivity(request, options, callback);
   }
-  generateExclusivityManifest(
-      request?: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestResponse,
-        protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest|undefined, {}|undefined
-      ]>;
-  generateExclusivityManifest(
-      request: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestResponse,
-          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest|null|undefined,
-          {}|null|undefined>): void;
-  generateExclusivityManifest(
-      request: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
-      callback: Callback<
-          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestResponse,
-          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * GenerateExclusivityManifest generates the manifests to update the
  * exclusivity artifacts in the cluster if needed.
@@ -633,9 +613,29 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.generateExclusivityManifest(request);
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.generate_exclusivity_manifest.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_GenerateExclusivityManifest_async
  */
+  generateExclusivityManifest(
+      request?: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestResponse,
+        protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest|undefined, {}|undefined
+      ]>;
+  generateExclusivityManifest(
+      request: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestResponse,
+          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateExclusivityManifest(
+      request: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
+      callback: Callback<
+          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestResponse,
+          protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest|null|undefined,
+          {}|null|undefined>): void;
   generateExclusivityManifest(
       request?: protos.google.cloud.gkehub.v1beta1.IGenerateExclusivityManifestRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -671,26 +671,6 @@ export class GkeHubMembershipServiceClient {
     return this.innerApiCalls.generateExclusivityManifest(request, options, callback);
   }
 
-  createMembership(
-      request?: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createMembership(
-      request: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createMembership(
-      request: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a new Membership.
  *
@@ -738,10 +718,29 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createMembership(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.create_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_CreateMembership_async
  */
+  createMembership(
+      request?: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createMembership(
+      request: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createMembership(
+      request: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createMembership(
       request?: protos.google.cloud.gkehub.v1beta1.ICreateMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -785,11 +784,8 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateMembershipProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.create_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_CreateMembership_async
  */
   async checkCreateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1beta1.Membership, protos.google.cloud.gkehub.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -797,26 +793,6 @@ export class GkeHubMembershipServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createMembership, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gkehub.v1beta1.Membership, protos.google.cloud.gkehub.v1beta1.OperationMetadata>;
   }
-  deleteMembership(
-      request?: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteMembership(
-      request: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteMembership(
-      request: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Removes a Membership.
  *
@@ -852,10 +828,29 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteMembership(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.delete_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_DeleteMembership_async
  */
+  deleteMembership(
+      request?: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteMembership(
+      request: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteMembership(
+      request: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteMembership(
       request?: protos.google.cloud.gkehub.v1beta1.IDeleteMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -899,11 +894,8 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteMembershipProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.delete_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_DeleteMembership_async
  */
   async checkDeleteMembershipProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -911,26 +903,6 @@ export class GkeHubMembershipServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteMembership, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.cloud.gkehub.v1beta1.OperationMetadata>;
   }
-  updateMembership(
-      request?: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateMembership(
-      request: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateMembership(
-      request: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates an existing Membership.
  *
@@ -974,10 +946,29 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateMembership(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.update_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_UpdateMembership_async
  */
+  updateMembership(
+      request?: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateMembership(
+      request: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateMembership(
+      request: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.gkehub.v1beta1.IMembership, protos.google.cloud.gkehub.v1beta1.IOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateMembership(
       request?: protos.google.cloud.gkehub.v1beta1.IUpdateMembershipRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1021,11 +1012,8 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateMembershipProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.update_membership.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_UpdateMembership_async
  */
   async checkUpdateMembershipProgress(name: string): Promise<LROperation<protos.google.cloud.gkehub.v1beta1.Membership, protos.google.cloud.gkehub.v1beta1.OperationMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1033,28 +1021,7 @@ export class GkeHubMembershipServiceClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateMembership, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.gkehub.v1beta1.Membership, protos.google.cloud.gkehub.v1beta1.OperationMetadata>;
   }
-  listMemberships(
-      request?: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.gkehub.v1beta1.IMembership[],
-        protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest|null,
-        protos.google.cloud.gkehub.v1beta1.IListMembershipsResponse
-      ]>;
-  listMemberships(
-      request: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
-          protos.google.cloud.gkehub.v1beta1.IListMembershipsResponse|null|undefined,
-          protos.google.cloud.gkehub.v1beta1.IMembership>): void;
-  listMemberships(
-      request: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
-          protos.google.cloud.gkehub.v1beta1.IListMembershipsResponse|null|undefined,
-          protos.google.cloud.gkehub.v1beta1.IMembership>): void;
-/**
+ /**
  * Lists Memberships in a given project and location.
  *
  * @param {Object} request
@@ -1107,6 +1074,27 @@ export class GkeHubMembershipServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listMemberships(
+      request?: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.gkehub.v1beta1.IMembership[],
+        protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest|null,
+        protos.google.cloud.gkehub.v1beta1.IListMembershipsResponse
+      ]>;
+  listMemberships(
+      request: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
+          protos.google.cloud.gkehub.v1beta1.IListMembershipsResponse|null|undefined,
+          protos.google.cloud.gkehub.v1beta1.IMembership>): void;
+  listMemberships(
+      request: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
+          protos.google.cloud.gkehub.v1beta1.IListMembershipsResponse|null|undefined,
+          protos.google.cloud.gkehub.v1beta1.IMembership>): void;
   listMemberships(
       request?: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1268,11 +1256,8 @@ export class GkeHubMembershipServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listMembershipsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1beta1/gke_hub_membership_service.list_memberships.js</caption>
+ * region_tag:gkehub_v1beta1_generated_GkeHubMembershipService_ListMemberships_async
  */
   listMembershipsAsync(
       request?: protos.google.cloud.gkehub.v1beta1.IListMembershipsRequest,
@@ -1287,7 +1272,6 @@ export class GkeHubMembershipServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listMemberships'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

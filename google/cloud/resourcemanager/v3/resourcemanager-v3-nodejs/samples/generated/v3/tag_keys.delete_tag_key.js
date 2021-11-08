@@ -43,7 +43,7 @@ function main(name) {
   // Instantiates a client
   const resourcemanagerClient = new TagKeysClient();
 
-  async function deleteTagKey() {
+  async function callDeleteTagKey() {
     // Construct request
     const request = {
       name,
@@ -55,7 +55,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteTagKey();
+  callDeleteTagKey();
   // [END cloudresourcemanager_v3_generated_TagKeys_DeleteTagKey_async]
 }
 

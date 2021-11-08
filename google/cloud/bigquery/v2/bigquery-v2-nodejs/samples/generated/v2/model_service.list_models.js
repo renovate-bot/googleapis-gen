@@ -32,7 +32,7 @@ function main(projectId, datasetId) {
    *  The maximum number of results to return in a single response page.
    *  Leverage the page tokens to iterate through the entire collection.
    */
-  // const maxResults = ''
+  // const maxResults = {}
   /**
    *  Page token, returned by a previous call to request the next page of
    *  results
@@ -45,7 +45,7 @@ function main(projectId, datasetId) {
   // Instantiates a client
   const bigqueryClient = new ModelServiceClient();
 
-  async function listModels() {
+  async function callListModels() {
     // Construct request
     const request = {
       projectId,
@@ -57,7 +57,7 @@ function main(projectId, datasetId) {
     console.log(response);
   }
 
-  listModels();
+  callListModels();
   // [END bigquery_v2_generated_ModelService_ListModels_async]
 }
 

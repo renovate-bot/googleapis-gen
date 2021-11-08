@@ -32,7 +32,7 @@ function main(parent) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function fetchProcessorTypes() {
+  async function callFetchProcessorTypes() {
     // Construct request
     const request = {
       parent,
@@ -43,7 +43,7 @@ function main(parent) {
     console.log(response);
   }
 
-  fetchProcessorTypes();
+  callFetchProcessorTypes();
   // [END documentai_v1beta3_generated_DocumentProcessorService_FetchProcessorTypes_async]
 }
 

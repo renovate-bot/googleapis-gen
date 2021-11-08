@@ -28,7 +28,7 @@ function main(debuggeeId, breakpoint, clientVersion) {
    *  Required. Breakpoint specification to set.
    *  The field `location` of the breakpoint must be set.
    */
-  // const breakpoint = ''
+  // const breakpoint = {}
   /**
    *  Required. The client version making the call.
    *  Schema: `domain/type/version` (e.g., `google.com/intellij/v1`).
@@ -41,7 +41,7 @@ function main(debuggeeId, breakpoint, clientVersion) {
   // Instantiates a client
   const clouddebuggerClient = new Debugger2Client();
 
-  async function setBreakpoint() {
+  async function callSetBreakpoint() {
     // Construct request
     const request = {
       debuggeeId,
@@ -54,7 +54,7 @@ function main(debuggeeId, breakpoint, clientVersion) {
     console.log(response);
   }
 
-  setBreakpoint();
+  callSetBreakpoint();
   // [END clouddebugger_v2_generated_Debugger2_SetBreakpoint_async]
 }
 

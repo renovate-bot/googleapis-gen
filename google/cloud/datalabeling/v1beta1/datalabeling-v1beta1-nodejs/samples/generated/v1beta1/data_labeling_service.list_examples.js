@@ -39,8 +39,8 @@ function main(parent) {
   /**
    *  Optional. A token identifying a page of results for the server to return.
    *  Typically obtained by
-   *  [ListExamplesResponse.next_page_token][google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token] of the previous
-   *  [DataLabelingService.ListExamples] call.
+   *  ListExamplesResponse.next_page_token google.cloud.datalabeling.v1beta1.ListExamplesResponse.next_page_token  of the previous
+   *  DataLabelingService.ListExamples  call.
    *  Return first page if empty.
    */
   // const pageToken = 'abc123'
@@ -51,7 +51,7 @@ function main(parent) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function listExamples() {
+  async function callListExamples() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     }
   }
 
-  listExamples();
+  callListExamples();
   // [END datalabeling_v1beta1_generated_DataLabelingService_ListExamples_async]
 }
 

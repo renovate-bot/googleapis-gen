@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function getContext() {
+  async function callGetContext() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getContext();
+  callGetContext();
   // [END aiplatform_v1_generated_MetadataService_GetContext_async]
 }
 

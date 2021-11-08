@@ -23,12 +23,12 @@ function main(field) {
   /**
    *  Required. The field to be updated.
    */
-  // const field = ''
+  // const field = {}
   /**
    *  A mask, relative to the field. If specified, only configuration specified
    *  by this field_mask will be updated in the field.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {FirestoreAdminClient} = require('admin').v1;
@@ -36,7 +36,7 @@ function main(field) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function updateField() {
+  async function callUpdateField() {
     // Construct request
     const request = {
       field,
@@ -48,7 +48,7 @@ function main(field) {
     console.log(response);
   }
 
-  updateField();
+  callUpdateField();
   // [END firestore_v1_generated_FirestoreAdmin_UpdateField_async]
 }
 

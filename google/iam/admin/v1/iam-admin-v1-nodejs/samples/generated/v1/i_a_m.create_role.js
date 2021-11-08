@@ -23,17 +23,17 @@ function main() {
   /**
    *  The `parent` parameter's value depends on the target resource for the
    *  request, namely
-   *  [`projects`](/iam/reference/rest/v1/projects.roles) or
-   *  [`organizations`](/iam/reference/rest/v1/organizations.roles). Each
+   *  `projects` (/iam/reference/rest/v1/projects.roles) or
+   *  `organizations` (/iam/reference/rest/v1/organizations.roles). Each
    *  resource type's `parent` value format is described below:
-   *  * [`projects.roles.create()`](/iam/reference/rest/v1/projects.roles/create):
+   *  * `projects.roles.create()` (/iam/reference/rest/v1/projects.roles/create):
    *    `projects/{PROJECT_ID}`. This method creates project-level
-   *    [custom roles](/iam/docs/understanding-custom-roles).
+   *    custom roles (/iam/docs/understanding-custom-roles).
    *    Example request URL:
    *    `https://iam.googleapis.com/v1/projects/{PROJECT_ID}/roles`
-   *  * [`organizations.roles.create()`](/iam/reference/rest/v1/organizations.roles/create):
+   *  * `organizations.roles.create()` (/iam/reference/rest/v1/organizations.roles/create):
    *    `organizations/{ORGANIZATION_ID}`. This method creates organization-level
-   *    [custom roles](/iam/docs/understanding-custom-roles). Example request
+   *    custom roles (/iam/docs/understanding-custom-roles). Example request
    *    URL:
    *    `https://iam.googleapis.com/v1/organizations/{ORGANIZATION_ID}/roles`
    *  Note: Wildcard (*) values are invalid; you must specify a complete project
@@ -50,7 +50,7 @@ function main() {
   /**
    *  The Role resource to create.
    */
-  // const role = ''
+  // const role = {}
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -58,7 +58,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function createRole() {
+  async function callCreateRole() {
     // Construct request
     const request = {
     };
@@ -68,7 +68,7 @@ function main() {
     console.log(response);
   }
 
-  createRole();
+  callCreateRole();
   // [END iam_v1_generated_IAM_CreateRole_async]
 }
 

@@ -646,26 +646,6 @@ export class FeedItemSetLinkServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getFeedItemSetLink(
-      request?: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IFeedItemSetLink,
-        protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest|undefined, {}|undefined
-      ]>;
-  getFeedItemSetLink(
-      request: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IFeedItemSetLink,
-          protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest|null|undefined,
-          {}|null|undefined>): void;
-  getFeedItemSetLink(
-      request: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IFeedItemSetLink,
-          protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested feed item set link in full detail.
  *
@@ -688,9 +668,29 @@ export class FeedItemSetLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getFeedItemSetLink(request);
+ * @example <caption>include:samples/generated/v7/feed_item_set_link_service.get_feed_item_set_link.js</caption>
+ * region_tag:googleads_v7_generated_FeedItemSetLinkService_GetFeedItemSetLink_async
  */
+  getFeedItemSetLink(
+      request?: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IFeedItemSetLink,
+        protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest|undefined, {}|undefined
+      ]>;
+  getFeedItemSetLink(
+      request: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IFeedItemSetLink,
+          protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest|null|undefined,
+          {}|null|undefined>): void;
+  getFeedItemSetLink(
+      request: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IFeedItemSetLink,
+          protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest|null|undefined,
+          {}|null|undefined>): void;
   getFeedItemSetLink(
       request?: protos.google.ads.googleads.v7.services.IGetFeedItemSetLinkRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class FeedItemSetLinkServiceClient {
     this.initialize();
     return this.innerApiCalls.getFeedItemSetLink(request, options, callback);
   }
-  mutateFeedItemSetLinks(
-      request?: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksResponse,
-        protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest|undefined, {}|undefined
-      ]>;
-  mutateFeedItemSetLinks(
-      request: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksResponse,
-          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateFeedItemSetLinks(
-      request: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksResponse,
-          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes feed item set links.
  *
@@ -777,9 +757,29 @@ export class FeedItemSetLinkServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateFeedItemSetLinks(request);
+ * @example <caption>include:samples/generated/v7/feed_item_set_link_service.mutate_feed_item_set_links.js</caption>
+ * region_tag:googleads_v7_generated_FeedItemSetLinkService_MutateFeedItemSetLinks_async
  */
+  mutateFeedItemSetLinks(
+      request?: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksResponse,
+        protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest|undefined, {}|undefined
+      ]>;
+  mutateFeedItemSetLinks(
+      request: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksResponse,
+          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateFeedItemSetLinks(
+      request: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksResponse,
+          protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateFeedItemSetLinks(
       request?: protos.google.ads.googleads.v7.services.IMutateFeedItemSetLinksRequest,
       optionsOrCallback?: CallOptions|Callback<

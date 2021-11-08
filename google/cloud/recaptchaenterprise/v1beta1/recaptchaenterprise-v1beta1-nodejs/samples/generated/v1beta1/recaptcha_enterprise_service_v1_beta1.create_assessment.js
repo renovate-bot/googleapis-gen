@@ -28,7 +28,7 @@ function main(parent, assessment) {
   /**
    *  Required. The assessment details.
    */
-  // const assessment = ''
+  // const assessment = {}
 
   // Imports the Recaptchaenterprise library
   const {RecaptchaEnterpriseServiceV1Beta1Client} = require('@google-cloud/recaptcha-enterprise').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, assessment) {
   // Instantiates a client
   const recaptchaenterpriseClient = new RecaptchaEnterpriseServiceV1Beta1Client();
 
-  async function createAssessment() {
+  async function callCreateAssessment() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, assessment) {
     console.log(response);
   }
 
-  createAssessment();
+  callCreateAssessment();
   // [END recaptchaenterprise_v1beta1_generated_RecaptchaEnterpriseServiceV1Beta1_CreateAssessment_async]
 }
 

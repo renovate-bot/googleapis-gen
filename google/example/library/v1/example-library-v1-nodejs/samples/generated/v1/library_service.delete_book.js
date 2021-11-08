@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const libraryClient = new LibraryServiceClient();
 
-  async function deleteBook() {
+  async function callDeleteBook() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteBook();
+  callDeleteBook();
   // [END library-example_v1_generated_LibraryService_DeleteBook_async]
 }
 

@@ -28,11 +28,11 @@ function main(customer) {
   /**
    *  CloudIdentity-specific customer information.
    */
-  // const cloudIdentityInfo = ''
+  // const cloudIdentityInfo = {}
   /**
    *  Admin user information.
    */
-  // const user = ''
+  // const user = {}
   /**
    *  Validate the request and preview the review, but do not post it.
    */
@@ -44,7 +44,7 @@ function main(customer) {
   // Instantiates a client
   const channelClient = new CloudChannelServiceClient();
 
-  async function provisionCloudIdentity() {
+  async function callProvisionCloudIdentity() {
     // Construct request
     const request = {
       customer,
@@ -56,7 +56,7 @@ function main(customer) {
     console.log(response);
   }
 
-  provisionCloudIdentity();
+  callProvisionCloudIdentity();
   // [END cloudchannel_v1_generated_CloudChannelService_ProvisionCloudIdentity_async]
 }
 

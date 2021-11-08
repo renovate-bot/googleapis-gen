@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function triggerSchedule() {
+  async function callTriggerSchedule() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  triggerSchedule();
+  callTriggerSchedule();
   // [END notebooks_v1_generated_NotebookService_TriggerSchedule_async]
 }
 

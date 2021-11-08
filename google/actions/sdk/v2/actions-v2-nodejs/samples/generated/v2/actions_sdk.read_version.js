@@ -41,7 +41,7 @@ function main(name) {
   // Instantiates a client
   const sdkClient = new ActionsSdkClient();
 
-  async function readVersion() {
+  async function callReadVersion() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name) {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  readVersion();
+  callReadVersion();
   // [END actions_v2_generated_ActionsSdk_ReadVersion_async]
 }
 

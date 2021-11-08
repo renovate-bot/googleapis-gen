@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const visionClient = new ProductSearchClient();
 
-  async function getProduct() {
+  async function callGetProduct() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  getProduct();
+  callGetProduct();
   // [END vision_v1_generated_ProductSearch_GetProduct_async]
 }
 

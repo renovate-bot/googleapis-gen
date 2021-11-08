@@ -28,7 +28,7 @@ function main(parent, model) {
   /**
    *  Required. The Model to create.
    */
-  // const model = ''
+  // const model = {}
 
   // Imports the Aiplatform library
   const {ModelServiceClient} = require('@google-cloud/aiplatform').v1;
@@ -36,7 +36,7 @@ function main(parent, model) {
   // Instantiates a client
   const aiplatformClient = new ModelServiceClient();
 
-  async function uploadModel() {
+  async function callUploadModel() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, model) {
     console.log(response);
   }
 
-  uploadModel();
+  callUploadModel();
   // [END aiplatform_v1_generated_ModelService_UploadModel_async]
 }
 

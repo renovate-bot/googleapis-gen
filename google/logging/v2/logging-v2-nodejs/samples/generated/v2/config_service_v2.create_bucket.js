@@ -37,7 +37,7 @@ function main(parent, bucketId, bucket) {
    *  with any Location Restriction Org Policy. The name field in the bucket is
    *  ignored.
    */
-  // const bucket = ''
+  // const bucket = {}
 
   // Imports the Logging library
   const {ConfigServiceV2Client} = require('@google-cloud/logging').v2;
@@ -45,7 +45,7 @@ function main(parent, bucketId, bucket) {
   // Instantiates a client
   const loggingClient = new ConfigServiceV2Client();
 
-  async function createBucket() {
+  async function callCreateBucket() {
     // Construct request
     const request = {
       parent,
@@ -58,7 +58,7 @@ function main(parent, bucketId, bucket) {
     console.log(response);
   }
 
-  createBucket();
+  callCreateBucket();
   // [END logging_v2_generated_ConfigServiceV2_CreateBucket_async]
 }
 

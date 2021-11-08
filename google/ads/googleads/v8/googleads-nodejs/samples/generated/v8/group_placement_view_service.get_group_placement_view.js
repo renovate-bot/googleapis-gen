@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new GroupPlacementViewServiceClient();
 
-  async function getGroupPlacementView() {
+  async function callGetGroupPlacementView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getGroupPlacementView();
+  callGetGroupPlacementView();
   // [END googleads_v8_generated_GroupPlacementViewService_GetGroupPlacementView_async]
 }
 

@@ -428,7 +428,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse());
             client.innerApiCalls.provisionAccountTicket = stubSimpleCall(expectedResponse);
             const [response] = await client.provisionAccountTicket(request);
@@ -444,7 +444,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse());
             client.innerApiCalls.provisionAccountTicket = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -471,7 +471,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.provisionAccountTicket = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.provisionAccountTicket(request), expectedError);
@@ -572,7 +572,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.CreatePropertyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.analytics.admin.v1alpha.Property());
             client.innerApiCalls.createProperty = stubSimpleCall(expectedResponse);
             const [response] = await client.createProperty(request);
@@ -588,7 +588,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.CreatePropertyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.analytics.admin.v1alpha.Property());
             client.innerApiCalls.createProperty = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -615,7 +615,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.CreatePropertyRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createProperty = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createProperty(request), expectedError);
@@ -4103,8 +4103,8 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest());
-            request.displayVideo360AdvertiserLink = {};
-            request.displayVideo360AdvertiserLink.name = '';
+            request.displayVideo_360AdvertiserLink = {};
+            request.displayVideo_360AdvertiserLink.name = '';
             const expectedHeaderRequestParams = "display_video_360_advertiser_link.name=";
             const expectedOptions = {
                 otherArgs: {
@@ -4128,8 +4128,8 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest());
-            request.displayVideo360AdvertiserLink = {};
-            request.displayVideo360AdvertiserLink.name = '';
+            request.displayVideo_360AdvertiserLink = {};
+            request.displayVideo_360AdvertiserLink.name = '';
             const expectedHeaderRequestParams = "display_video_360_advertiser_link.name=";
             const expectedOptions = {
                 otherArgs: {
@@ -4164,8 +4164,8 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest());
-            request.displayVideo360AdvertiserLink = {};
-            request.displayVideo360AdvertiserLink.name = '';
+            request.displayVideo_360AdvertiserLink = {};
+            request.displayVideo_360AdvertiserLink.name = '';
             const expectedHeaderRequestParams = "display_video_360_advertiser_link.name=";
             const expectedOptions = {
                 otherArgs: {
@@ -5459,7 +5459,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Account()),
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Account()),
@@ -5479,7 +5479,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Account()),
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Account()),
@@ -5510,7 +5510,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listAccounts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listAccounts(request), expectedError);
@@ -5630,7 +5630,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListAccountSummariesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.AccountSummary()),
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.AccountSummary()),
@@ -5650,7 +5650,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListAccountSummariesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.AccountSummary()),
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.AccountSummary()),
@@ -5681,7 +5681,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListAccountSummariesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listAccountSummaries = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listAccountSummaries(request), expectedError);
@@ -5801,7 +5801,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListPropertiesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Property()),
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Property()),
@@ -5821,7 +5821,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListPropertiesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Property()),
               generateSampleMessage(new protos.google.analytics.admin.v1alpha.Property()),
@@ -5852,7 +5852,7 @@ describe('v1alpha.AnalyticsAdminServiceClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.admin.v1alpha.ListPropertiesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listProperties = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listProperties(request), expectedError);

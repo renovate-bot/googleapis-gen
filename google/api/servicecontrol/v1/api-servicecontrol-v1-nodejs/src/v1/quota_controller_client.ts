@@ -277,26 +277,6 @@ export class QuotaControllerClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  allocateQuota(
-      request?: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
-        protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|undefined, {}|undefined
-      ]>;
-  allocateQuota(
-      request: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
-          protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|null|undefined,
-          {}|null|undefined>): void;
-  allocateQuota(
-      request: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
-      callback: Callback<
-          protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
-          protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Attempts to allocate quota for the specified consumer. It should be called
  * before the operation is executed.
@@ -330,9 +310,29 @@ export class QuotaControllerClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.allocateQuota(request);
+ * @example <caption>include:samples/generated/v1/quota_controller.allocate_quota.js</caption>
+ * region_tag:servicecontrol_v1_generated_QuotaController_AllocateQuota_async
  */
+  allocateQuota(
+      request?: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
+        protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|undefined, {}|undefined
+      ]>;
+  allocateQuota(
+      request: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
+          protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|null|undefined,
+          {}|null|undefined>): void;
+  allocateQuota(
+      request: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
+      callback: Callback<
+          protos.google.api.servicecontrol.v1.IAllocateQuotaResponse,
+          protos.google.api.servicecontrol.v1.IAllocateQuotaRequest|null|undefined,
+          {}|null|undefined>): void;
   allocateQuota(
       request?: protos.google.api.servicecontrol.v1.IAllocateQuotaRequest,
       optionsOrCallback?: CallOptions|Callback<

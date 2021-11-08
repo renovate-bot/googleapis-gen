@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function undeployModel() {
+  async function callUndeployModel() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  undeployModel();
+  callUndeployModel();
   // [END automl_v1_generated_AutoMl_UndeployModel_async]
 }
 

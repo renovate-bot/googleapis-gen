@@ -23,7 +23,7 @@ function main(humanReviewConfig) {
   /**
    *  An inline document proto.
    */
-  // const inlineDocument = ''
+  // const inlineDocument = {}
   /**
    *  Required. The resource name of the HumanReviewConfig that the document will be
    *  reviewed with.
@@ -32,7 +32,7 @@ function main(humanReviewConfig) {
   /**
    *  The document that needs human review.
    */
-  // const document = ''
+  // const document = {}
   /**
    *  Whether the validation should be performed on the ad-hoc review request.
    */
@@ -40,7 +40,7 @@ function main(humanReviewConfig) {
   /**
    *  The priority of the human review task.
    */
-  // const priority = ''
+  // const priority = {}
 
   // Imports the Documentai library
   const {DocumentProcessorServiceClient} = require('@google-cloud/documentai').v1beta3;
@@ -48,7 +48,7 @@ function main(humanReviewConfig) {
   // Instantiates a client
   const documentaiClient = new DocumentProcessorServiceClient();
 
-  async function reviewDocument() {
+  async function callReviewDocument() {
     // Construct request
     const request = {
       humanReviewConfig,
@@ -60,7 +60,7 @@ function main(humanReviewConfig) {
     console.log(response);
   }
 
-  reviewDocument();
+  callReviewDocument();
   // [END documentai_v1beta3_generated_DocumentProcessorService_ReviewDocument_async]
 }
 

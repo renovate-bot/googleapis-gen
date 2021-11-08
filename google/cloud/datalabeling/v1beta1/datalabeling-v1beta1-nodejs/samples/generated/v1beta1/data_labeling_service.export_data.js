@@ -40,7 +40,7 @@ function main(name, annotatedDataset, outputConfig) {
   /**
    *  Required. Specify the output destination.
    */
-  // const outputConfig = ''
+  // const outputConfig = {}
   /**
    *  Email of the user who started the export task and should be notified by
    *  email. If empty no notification will be sent.
@@ -53,7 +53,7 @@ function main(name, annotatedDataset, outputConfig) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function exportData() {
+  async function callExportData() {
     // Construct request
     const request = {
       name,
@@ -67,7 +67,7 @@ function main(name, annotatedDataset, outputConfig) {
     console.log(response);
   }
 
-  exportData();
+  callExportData();
   // [END datalabeling_v1beta1_generated_DataLabelingService_ExportData_async]
 }
 

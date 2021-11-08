@@ -23,12 +23,12 @@ function main(osPolicyAssignment) {
   /**
    *  Required. The updated OS policy assignment.
    */
-  // const osPolicyAssignment = ''
+  // const osPolicyAssignment = {}
   /**
    *  Optional. Field mask that controls which fields of the assignment should be
    *  updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Osconfig library
   const {OsConfigZonalServiceClient} = require('@google-cloud/os-config').v1;
@@ -36,7 +36,7 @@ function main(osPolicyAssignment) {
   // Instantiates a client
   const osconfigClient = new OsConfigZonalServiceClient();
 
-  async function updateOSPolicyAssignment() {
+  async function callUpdateOSPolicyAssignment() {
     // Construct request
     const request = {
       osPolicyAssignment,
@@ -48,7 +48,7 @@ function main(osPolicyAssignment) {
     console.log(response);
   }
 
-  updateOSPolicyAssignment();
+  callUpdateOSPolicyAssignment();
   // [END osconfig_v1_generated_OsConfigZonalService_UpdateOSPolicyAssignment_async]
 }
 

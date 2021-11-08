@@ -41,7 +41,7 @@ function main(parent) {
   // Instantiates a client
   const notebooksClient = new ManagedNotebookServiceClient();
 
-  async function listRuntimes() {
+  async function callListRuntimes() {
     // Construct request
     const request = {
       parent,
@@ -54,7 +54,7 @@ function main(parent) {
     }
   }
 
-  listRuntimes();
+  callListRuntimes();
   // [END notebooks_v1_generated_ManagedNotebookService_ListRuntimes_async]
 }
 

@@ -33,13 +33,13 @@ function main(name) {
    *  `TYPE_GOOGLE_CREDENTIALS_FILE`, which is the Google Credentials File
    *  format.
    */
-  // const privateKeyType = ''
+  // const privateKeyType = {}
   /**
    *  Which type of key and algorithm to use for the key.
    *  The default is currently a 2K RSA key.  However this may change in the
    *  future.
    */
-  // const keyAlgorithm = ''
+  // const keyAlgorithm = {}
 
   // Imports the Admin library
   const {IAMClient} = require('@google-cloud/admin').v1;
@@ -47,7 +47,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function createServiceAccountKey() {
+  async function callCreateServiceAccountKey() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name) {
     console.log(response);
   }
 
-  createServiceAccountKey();
+  callCreateServiceAccountKey();
   // [END iam_v1_generated_IAM_CreateServiceAccountKey_async]
 }
 

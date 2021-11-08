@@ -21,7 +21,7 @@ function main(parent) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The [Environment][google.cloud.dialogflow.cx.v3.Environment] to list all environments for.
+   *  Required. The Environment google.cloud.dialogflow.cx.v3.Environment  to list all environments for.
    *  Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
    *  ID>/environments/<Environment ID>`.
    */
@@ -42,7 +42,7 @@ function main(parent) {
   // Instantiates a client
   const cxClient = new ExperimentsClient();
 
-  async function listExperiments() {
+  async function callListExperiments() {
     // Construct request
     const request = {
       parent,
@@ -55,7 +55,7 @@ function main(parent) {
     }
   }
 
-  listExperiments();
+  callListExperiments();
   // [END dialogflow_v3_generated_Experiments_ListExperiments_async]
 }
 

@@ -368,6 +368,27 @@ export class ProjectsClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Retrieves the project identified by the specified `name` (for example,
+ * `projects/415104041262`).
+ *
+ * The caller must have `resourcemanager.projects.get` permission
+ * for this project.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. The name of the project (for example, `projects/415104041262`).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Project]{@link google.cloud.resourcemanager.v3.Project}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/projects.get_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_GetProject_async
+ */
   getProject(
       request?: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
       options?: CallOptions):
@@ -388,27 +409,6 @@ export class ProjectsClient {
           protos.google.cloud.resourcemanager.v3.IProject,
           protos.google.cloud.resourcemanager.v3.IGetProjectRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves the project identified by the specified `name` (for example,
- * `projects/415104041262`).
- *
- * The caller must have `resourcemanager.projects.get` permission
- * for this project.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. The name of the project (for example, `projects/415104041262`).
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Project]{@link google.cloud.resourcemanager.v3.Project}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getProject(request);
- */
   getProject(
       request?: protos.google.cloud.resourcemanager.v3.IGetProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -443,6 +443,28 @@ export class ProjectsClient {
     this.initialize();
     return this.innerApiCalls.getProject(request, options, callback);
   }
+/**
+ * Returns the IAM access control policy for the specified project.
+ * Permission is denied if the policy or the resource do not exist.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resource
+ *   REQUIRED: The resource for which the policy is being requested.
+ *   See the operation documentation for the appropriate value for this field.
+ * @param {google.iam.v1.GetPolicyOptions} request.options
+ *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
+ *   `GetIamPolicy`. This field is only used by Cloud IAM.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v3/projects.get_iam_policy.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_GetIamPolicy_async
+ */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
@@ -463,28 +485,6 @@ export class ProjectsClient {
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the IAM access control policy for the specified project.
- * Permission is denied if the policy or the resource do not exist.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {google.iam.v1.GetPolicyOptions} request.options
- *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
- *   `GetIamPolicy`. This field is only used by Cloud IAM.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
- */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -519,26 +519,6 @@ export class ProjectsClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the IAM access control policy for the specified project.
  *
@@ -602,9 +582,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v3/projects.set_iam_policy.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -639,26 +639,6 @@ export class ProjectsClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns permissions that a caller has on the specified project.
  *
@@ -679,9 +659,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v3/projects.test_iam_permissions.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -717,26 +717,6 @@ export class ProjectsClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
-  createProject(
-      request?: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  createProject(
-      request: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  createProject(
-      request: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Request that a new project be created. The result is an `Operation` which
  * can be used to track the creation process. This process usually takes a few
@@ -765,10 +745,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.createProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/projects.create_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_CreateProject_async
  */
+  createProject(
+      request?: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  createProject(
+      request: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  createProject(
+      request: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.ICreateProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   createProject(
       request?: protos.google.cloud.resourcemanager.v3.ICreateProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -793,6 +792,8 @@ export class ProjectsClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.createProject(request, options, callback);
   }
@@ -805,11 +806,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkCreateProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/projects.create_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_CreateProject_async
  */
   async checkCreateProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.CreateProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -817,26 +815,6 @@ export class ProjectsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.createProject, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.CreateProjectMetadata>;
   }
-  updateProject(
-      request?: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  updateProject(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  updateProject(
-      request: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the `display_name` and labels of the project identified by the
  * specified `name` (for example, `projects/415104041262`). Deleting all
@@ -860,10 +838,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.updateProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/projects.update_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_UpdateProject_async
  */
+  updateProject(
+      request?: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  updateProject(
+      request: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  updateProject(
+      request: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUpdateProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   updateProject(
       request?: protos.google.cloud.resourcemanager.v3.IUpdateProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -907,11 +904,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUpdateProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/projects.update_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_UpdateProject_async
  */
   async checkUpdateProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UpdateProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -919,26 +913,6 @@ export class ProjectsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateProject, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UpdateProjectMetadata>;
   }
-  moveProject(
-      request?: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  moveProject(
-      request: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  moveProject(
-      request: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Move a project to another place in your resource hierarchy, under a new
  * resource parent.
@@ -969,10 +943,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.moveProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/projects.move_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_MoveProject_async
  */
+  moveProject(
+      request?: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  moveProject(
+      request: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  moveProject(
+      request: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IMoveProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   moveProject(
       request?: protos.google.cloud.resourcemanager.v3.IMoveProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1016,11 +1009,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkMoveProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/projects.move_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_MoveProject_async
  */
   async checkMoveProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.MoveProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1028,26 +1018,6 @@ export class ProjectsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.moveProject, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.MoveProjectMetadata>;
   }
-  deleteProject(
-      request?: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  deleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  deleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Marks the project identified by the specified
  * `name` (for example, `projects/415104041262`) for deletion.
@@ -1095,10 +1065,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.deleteProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/projects.delete_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_DeleteProject_async
  */
+  deleteProject(
+      request?: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  deleteProject(
+      request: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  deleteProject(
+      request: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IDeleteProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   deleteProject(
       request?: protos.google.cloud.resourcemanager.v3.IDeleteProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1142,11 +1131,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkDeleteProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/projects.delete_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_DeleteProject_async
  */
   async checkDeleteProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.DeleteProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1154,26 +1140,6 @@ export class ProjectsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.deleteProject, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.DeleteProjectMetadata>;
   }
-  undeleteProject(
-      request?: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  undeleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  undeleteProject(
-      request: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Restores the project identified by the specified
  * `name` (for example, `projects/415104041262`).
@@ -1200,10 +1166,29 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.undeleteProject(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v3/projects.undelete_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_UndeleteProject_async
  */
+  undeleteProject(
+      request?: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  undeleteProject(
+      request: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  undeleteProject(
+      request: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.resourcemanager.v3.IProject, protos.google.cloud.resourcemanager.v3.IUndeleteProjectMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   undeleteProject(
       request?: protos.google.cloud.resourcemanager.v3.IUndeleteProjectRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1247,11 +1232,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkUndeleteProjectProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v3/projects.undelete_project.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_UndeleteProject_async
  */
   async checkUndeleteProjectProgress(name: string): Promise<LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UndeleteProjectMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1259,28 +1241,7 @@ export class ProjectsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.undeleteProject, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.resourcemanager.v3.Project, protos.google.cloud.resourcemanager.v3.UndeleteProjectMetadata>;
   }
-  listProjects(
-      request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.resourcemanager.v3.IProject[],
-        protos.google.cloud.resourcemanager.v3.IListProjectsRequest|null,
-        protos.google.cloud.resourcemanager.v3.IListProjectsResponse
-      ]>;
-  listProjects(
-      request: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
-          protos.google.cloud.resourcemanager.v3.IListProjectsResponse|null|undefined,
-          protos.google.cloud.resourcemanager.v3.IProject>): void;
-  listProjects(
-      request: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
-          protos.google.cloud.resourcemanager.v3.IListProjectsResponse|null|undefined,
-          protos.google.cloud.resourcemanager.v3.IProject>): void;
-/**
+ /**
  * Lists projects that are direct children of the specified folder or
  * organization resource. `list()` provides a strongly consistent view of the
  * projects underneath the specified parent resource. `list()` returns
@@ -1321,6 +1282,27 @@ export class ProjectsClient {
  */
   listProjects(
       request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.resourcemanager.v3.IProject[],
+        protos.google.cloud.resourcemanager.v3.IListProjectsRequest|null,
+        protos.google.cloud.resourcemanager.v3.IListProjectsResponse
+      ]>;
+  listProjects(
+      request: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+          protos.google.cloud.resourcemanager.v3.IListProjectsResponse|null|undefined,
+          protos.google.cloud.resourcemanager.v3.IProject>): void;
+  listProjects(
+      request: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
+          protos.google.cloud.resourcemanager.v3.IListProjectsResponse|null|undefined,
+          protos.google.cloud.resourcemanager.v3.IProject>): void;
+  listProjects(
+      request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
           protos.google.cloud.resourcemanager.v3.IListProjectsResponse|null|undefined,
@@ -1344,6 +1326,8 @@ export class ProjectsClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listProjects(request, options, callback);
   }
@@ -1386,6 +1370,8 @@ export class ProjectsClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listProjects'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1428,11 +1414,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listProjectsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/projects.list_projects.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_ListProjects_async
  */
   listProjectsAsync(
       request?: protos.google.cloud.resourcemanager.v3.IListProjectsRequest,
@@ -1440,7 +1423,8 @@ export class ProjectsClient {
     AsyncIterable<protos.google.cloud.resourcemanager.v3.IProject>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listProjects'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1450,28 +1434,7 @@ export class ProjectsClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.resourcemanager.v3.IProject>;
   }
-  searchProjects(
-      request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.resourcemanager.v3.IProject[],
-        protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest|null,
-        protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse
-      ]>;
-  searchProjects(
-      request: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
-          protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse|null|undefined,
-          protos.google.cloud.resourcemanager.v3.IProject>): void;
-  searchProjects(
-      request: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
-          protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse|null|undefined,
-          protos.google.cloud.resourcemanager.v3.IProject>): void;
-/**
+ /**
  * Search for projects that the caller has both `resourcemanager.projects.get`
  * permission on, and also satisfy the specified query.
  *
@@ -1546,6 +1509,27 @@ export class ProjectsClient {
  */
   searchProjects(
       request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.resourcemanager.v3.IProject[],
+        protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest|null,
+        protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse
+      ]>;
+  searchProjects(
+      request: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+          protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse|null|undefined,
+          protos.google.cloud.resourcemanager.v3.IProject>): void;
+  searchProjects(
+      request: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
+          protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse|null|undefined,
+          protos.google.cloud.resourcemanager.v3.IProject>): void;
+  searchProjects(
+      request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
           protos.google.cloud.resourcemanager.v3.ISearchProjectsResponse|null|undefined,
@@ -1569,6 +1553,8 @@ export class ProjectsClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.searchProjects(request, options, callback);
   }
@@ -1641,6 +1627,8 @@ export class ProjectsClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchProjects'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1713,11 +1701,8 @@ export class ProjectsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.searchProjectsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v3/projects.search_projects.js</caption>
+ * region_tag:cloudresourcemanager_v3_generated_Projects_SearchProjects_async
  */
   searchProjectsAsync(
       request?: protos.google.cloud.resourcemanager.v3.ISearchProjectsRequest,
@@ -1725,7 +1710,8 @@ export class ProjectsClient {
     AsyncIterable<protos.google.cloud.resourcemanager.v3.IProject>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['searchProjects'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

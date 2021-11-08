@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AssetServiceClient();
 
-  async function getAsset() {
+  async function callGetAsset() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAsset();
+  callGetAsset();
   // [END googleads_v7_generated_AssetService_GetAsset_async]
 }
 

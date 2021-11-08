@@ -25,13 +25,13 @@ function main(parent, basicConfig, feature) {
    *  One of text_classification_config and text_entity_extraction_config
    *  is required.
    */
-  // const textClassificationConfig = ''
+  // const textClassificationConfig = {}
   /**
    *  Configuration for entity extraction task.
    *  One of text_classification_config and text_entity_extraction_config
    *  is required.
    */
-  // const textEntityExtractionConfig = ''
+  // const textEntityExtractionConfig = {}
   /**
    *  Required. Name of the data set to request labeling task, format:
    *  projects/{project_id}/datasets/{dataset_id}
@@ -40,11 +40,11 @@ function main(parent, basicConfig, feature) {
   /**
    *  Required. Basic human annotation config.
    */
-  // const basicConfig = ''
+  // const basicConfig = {}
   /**
    *  Required. The type of text labeling task.
    */
-  // const feature = ''
+  // const feature = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -52,7 +52,7 @@ function main(parent, basicConfig, feature) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function labelText() {
+  async function callLabelText() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent, basicConfig, feature) {
     console.log(response);
   }
 
-  labelText();
+  callLabelText();
   // [END datalabeling_v1beta1_generated_DataLabelingService_LabelText_async]
 }
 

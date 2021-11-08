@@ -31,7 +31,7 @@ function main(keywordPlan) {
   // Instantiates a client
   const googleadsClient = new KeywordPlanServiceClient();
 
-  async function generateForecastCurve() {
+  async function callGenerateForecastCurve() {
     // Construct request
     const request = {
       keywordPlan,
@@ -42,7 +42,7 @@ function main(keywordPlan) {
     console.log(response);
   }
 
-  generateForecastCurve();
+  callGenerateForecastCurve();
   // [END googleads_v7_generated_KeywordPlanService_GenerateForecastCurve_async]
 }
 

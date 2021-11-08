@@ -25,7 +25,7 @@ function main() {
    *  Data Fusion only allows replacing labels, options, and stack driver
    *  settings. All other fields will be ignored.
    */
-  // const instance = ''
+  // const instance = {}
   /**
    *  Field mask is used to specify the fields that the update will overwrite
    *  in an instance resource. The fields specified in the update_mask are
@@ -34,7 +34,7 @@ function main() {
    *  If the user does not provide a mask, all the supported fields (labels,
    *  options, and version currently) will be overwritten.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datafusion library
   const {DataFusionClient} = require('@google-cloud/data-fusion').v1;
@@ -42,7 +42,7 @@ function main() {
   // Instantiates a client
   const datafusionClient = new DataFusionClient();
 
-  async function updateInstance() {
+  async function callUpdateInstance() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     console.log(response);
   }
 
-  updateInstance();
+  callUpdateInstance();
   // [END datafusion_v1_generated_DataFusion_UpdateInstance_async]
 }
 

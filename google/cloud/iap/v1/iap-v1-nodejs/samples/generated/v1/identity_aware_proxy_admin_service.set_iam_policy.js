@@ -31,7 +31,7 @@ function main(resource, policy) {
    *  valid policy but certain Cloud Platform services (such as Projects)
    *  might reject them.
    */
-  // const policy = ''
+  // const policy = {}
 
   // Imports the Iap library
   const {IdentityAwareProxyAdminServiceClient} = require('@google-cloud/iap').v1;
@@ -39,7 +39,7 @@ function main(resource, policy) {
   // Instantiates a client
   const iapClient = new IdentityAwareProxyAdminServiceClient();
 
-  async function setIamPolicy() {
+  async function callSetIamPolicy() {
     // Construct request
     const request = {
       resource,
@@ -51,7 +51,7 @@ function main(resource, policy) {
     console.log(response);
   }
 
-  setIamPolicy();
+  callSetIamPolicy();
   // [END iap_v1_generated_IdentityAwareProxyAdminService_SetIamPolicy_async]
 }
 

@@ -37,7 +37,7 @@ function main(requests) {
   // Instantiates a client
   const documentaiClient = new DocumentUnderstandingServiceClient();
 
-  async function batchProcessDocuments() {
+  async function callBatchProcessDocuments() {
     // Construct request
     const request = {
       requests,
@@ -49,7 +49,7 @@ function main(requests) {
     console.log(response);
   }
 
-  batchProcessDocuments();
+  callBatchProcessDocuments();
   // [END documentai_v1beta1_generated_DocumentUnderstandingService_BatchProcessDocuments_async]
 }
 

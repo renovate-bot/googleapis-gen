@@ -727,26 +727,6 @@ export class CustomerFeedServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCustomerFeed(
-      request?: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ICustomerFeed,
-        protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest|undefined, {}|undefined
-      ]>;
-  getCustomerFeed(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerFeed,
-          protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCustomerFeed(
-      request: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ICustomerFeed,
-          protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested customer feed in full detail.
  *
@@ -769,9 +749,29 @@ export class CustomerFeedServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCustomerFeed(request);
+ * @example <caption>include:samples/generated/v9/customer_feed_service.get_customer_feed.js</caption>
+ * region_tag:googleads_v9_generated_CustomerFeedService_GetCustomerFeed_async
  */
+  getCustomerFeed(
+      request?: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ICustomerFeed,
+        protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest|undefined, {}|undefined
+      ]>;
+  getCustomerFeed(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerFeed,
+          protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCustomerFeed(
+      request: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ICustomerFeed,
+          protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest|null|undefined,
+          {}|null|undefined>): void;
   getCustomerFeed(
       request?: protos.google.ads.googleads.v9.services.IGetCustomerFeedRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -806,26 +806,6 @@ export class CustomerFeedServiceClient {
     this.initialize();
     return this.innerApiCalls.getCustomerFeed(request, options, callback);
   }
-  mutateCustomerFeeds(
-      request?: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.IMutateCustomerFeedsResponse,
-        protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest|undefined, {}|undefined
-      ]>;
-  mutateCustomerFeeds(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCustomerFeeds(
-      request: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsResponse,
-          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes customer feeds. Operation statuses are
  * returned.
@@ -878,9 +858,29 @@ export class CustomerFeedServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCustomerFeeds(request);
+ * @example <caption>include:samples/generated/v9/customer_feed_service.mutate_customer_feeds.js</caption>
+ * region_tag:googleads_v9_generated_CustomerFeedService_MutateCustomerFeeds_async
  */
+  mutateCustomerFeeds(
+      request?: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.IMutateCustomerFeedsResponse,
+        protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest|undefined, {}|undefined
+      ]>;
+  mutateCustomerFeeds(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCustomerFeeds(
+      request: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsResponse,
+          protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCustomerFeeds(
       request?: protos.google.ads.googleads.v9.services.IMutateCustomerFeedsRequest,
       optionsOrCallback?: CallOptions|Callback<

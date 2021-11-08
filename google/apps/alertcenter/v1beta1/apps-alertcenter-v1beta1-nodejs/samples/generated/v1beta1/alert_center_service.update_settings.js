@@ -29,7 +29,7 @@ function main() {
   /**
    *  The customer settings to update.
    */
-  // const settings = ''
+  // const settings = {}
 
   // Imports the Alertcenter library
   const {AlertCenterServiceClient} = require('@google-cloud/alertcenter').v1beta1;
@@ -37,7 +37,7 @@ function main() {
   // Instantiates a client
   const alertcenterClient = new AlertCenterServiceClient();
 
-  async function updateSettings() {
+  async function callUpdateSettings() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  updateSettings();
+  callUpdateSettings();
   // [END alertcenter_v1beta1_generated_AlertCenterService_UpdateSettings_async]
 }
 

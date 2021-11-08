@@ -23,7 +23,7 @@ function main(group) {
   /**
    *  Required. The group which replaces the resource on the server.
    */
-  // const group = ''
+  // const group = {}
 
   // Imports the Clouderrorreporting library
   const {ErrorGroupServiceClient} = require('@google-cloud/clouderrorreporting').v1beta1;
@@ -31,7 +31,7 @@ function main(group) {
   // Instantiates a client
   const clouderrorreportingClient = new ErrorGroupServiceClient();
 
-  async function updateGroup() {
+  async function callUpdateGroup() {
     // Construct request
     const request = {
       group,
@@ -42,7 +42,7 @@ function main(group) {
     console.log(response);
   }
 
-  updateGroup();
+  callUpdateGroup();
   // [END clouderrorreporting_v1beta1_generated_ErrorGroupService_UpdateGroup_async]
 }
 

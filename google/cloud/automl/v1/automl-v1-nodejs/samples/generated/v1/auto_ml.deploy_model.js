@@ -23,11 +23,11 @@ function main(name) {
   /**
    *  Model deployment metadata specific to Image Object Detection.
    */
-  // const imageObjectDetectionModelDeploymentMetadata = ''
+  // const imageObjectDetectionModelDeploymentMetadata = {}
   /**
    *  Model deployment metadata specific to Image Classification.
    */
-  // const imageClassificationModelDeploymentMetadata = ''
+  // const imageClassificationModelDeploymentMetadata = {}
   /**
    *  Required. Resource name of the model to deploy.
    */
@@ -39,7 +39,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function deployModel() {
+  async function callDeployModel() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name) {
     console.log(response);
   }
 
-  deployModel();
+  callDeployModel();
   // [END automl_v1_generated_AutoMl_DeployModel_async]
 }
 

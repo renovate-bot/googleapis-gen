@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const dataflowClient = new JobsV1Beta3Client();
 
-  async function checkActiveJobs() {
+  async function callCheckActiveJobs() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  checkActiveJobs();
+  callCheckActiveJobs();
   // [END dataflow_v1beta3_generated_JobsV1Beta3_CheckActiveJobs_async]
 }
 

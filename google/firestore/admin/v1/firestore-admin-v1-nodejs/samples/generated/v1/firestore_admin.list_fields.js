@@ -27,9 +27,9 @@ function main(parent) {
   // const parent = 'abc123'
   /**
    *  The filter to apply to list results. Currently,
-   *  [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
+   *  FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListFields  only supports listing fields
    *  that have been explicitly overridden. To issue this query, call
-   *  [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
+   *  FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListFields  with the filter set to
    *  `indexConfig.usesAncestorConfig:false`.
    */
   // const filter = 'abc123'
@@ -39,7 +39,7 @@ function main(parent) {
   // const pageSize = 1234
   /**
    *  A page token, returned from a previous call to
-   *  [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields], that may be used to get the next
+   *  FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListFields, that may be used to get the next
    *  page of results.
    */
   // const pageToken = 'abc123'
@@ -50,7 +50,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function listFields() {
+  async function callListFields() {
     // Construct request
     const request = {
       parent,
@@ -63,7 +63,7 @@ function main(parent) {
     }
   }
 
-  listFields();
+  callListFields();
   // [END firestore_v1_generated_FirestoreAdmin_ListFields_async]
 }
 

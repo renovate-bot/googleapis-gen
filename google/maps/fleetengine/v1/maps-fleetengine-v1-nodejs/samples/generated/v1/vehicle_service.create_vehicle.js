@@ -23,7 +23,7 @@ function main(parent, vehicleId, vehicle) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format "providers/{provider}".
    *  The provider must be the Project ID (for example, sample-cloud-project)
@@ -57,7 +57,7 @@ function main(parent, vehicleId, vehicle) {
    *  * navigation_status
    *  All other fields will be used if provided.
    */
-  // const vehicle = ''
+  // const vehicle = {}
 
   // Imports the Fleetengine library
   const {VehicleServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -65,7 +65,7 @@ function main(parent, vehicleId, vehicle) {
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function createVehicle() {
+  async function callCreateVehicle() {
     // Construct request
     const request = {
       parent,
@@ -78,7 +78,7 @@ function main(parent, vehicleId, vehicle) {
     console.log(response);
   }
 
-  createVehicle();
+  callCreateVehicle();
   // [END fleetengine_v1_generated_VehicleService_CreateVehicle_async]
 }
 

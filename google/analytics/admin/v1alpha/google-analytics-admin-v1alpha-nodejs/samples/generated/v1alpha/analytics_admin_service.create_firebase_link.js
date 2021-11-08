@@ -28,7 +28,7 @@ function main(parent, firebaseLink) {
   /**
    *  Required. The Firebase link to create.
    */
-  // const firebaseLink = ''
+  // const firebaseLink = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -36,7 +36,7 @@ function main(parent, firebaseLink) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createFirebaseLink() {
+  async function callCreateFirebaseLink() {
     // Construct request
     const request = {
       parent,
@@ -48,7 +48,7 @@ function main(parent, firebaseLink) {
     console.log(response);
   }
 
-  createFirebaseLink();
+  callCreateFirebaseLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateFirebaseLink_async]
 }
 

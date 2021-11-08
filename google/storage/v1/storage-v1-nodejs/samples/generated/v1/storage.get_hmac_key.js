@@ -31,7 +31,7 @@ function main(accessId, projectId) {
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -39,7 +39,7 @@ function main(accessId, projectId) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function getHmacKey() {
+  async function callGetHmacKey() {
     // Construct request
     const request = {
       accessId,
@@ -51,7 +51,7 @@ function main(accessId, projectId) {
     console.log(response);
   }
 
-  getHmacKey();
+  callGetHmacKey();
   // [END storage_v1_generated_Storage_GetHmacKey_async]
 }
 

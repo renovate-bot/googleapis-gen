@@ -51,7 +51,7 @@ function main(parent) {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function listUsableSubnetworks() {
+  async function callListUsableSubnetworks() {
     // Construct request
     const request = {
       parent,
@@ -64,7 +64,7 @@ function main(parent) {
     }
   }
 
-  listUsableSubnetworks();
+  callListUsableSubnetworks();
   // [END container_v1beta1_generated_ClusterManager_ListUsableSubnetworks_async]
 }
 

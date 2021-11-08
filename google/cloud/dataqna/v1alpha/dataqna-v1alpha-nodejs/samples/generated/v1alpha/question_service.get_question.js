@@ -28,7 +28,7 @@ function main(name) {
   /**
    *  The list of fields to be retrieved.
    */
-  // const readMask = ''
+  // const readMask = {}
 
   // Imports the Dataqna library
   const {QuestionServiceClient} = require('@google-cloud/data-qna').v1alpha;
@@ -36,7 +36,7 @@ function main(name) {
   // Instantiates a client
   const dataqnaClient = new QuestionServiceClient();
 
-  async function getQuestion() {
+  async function callGetQuestion() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name) {
     console.log(response);
   }
 
-  getQuestion();
+  callGetQuestion();
   // [END dataqna_v1alpha_generated_QuestionService_GetQuestion_async]
 }
 

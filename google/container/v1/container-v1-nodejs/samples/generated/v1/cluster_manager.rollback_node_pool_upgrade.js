@@ -21,29 +21,6 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Deprecated. The Google Developers Console [project ID or project
-   *  number](https://support.google.com/cloud/answer/6158840).
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const projectId = 'abc123'
-  /**
-   *  Deprecated. The name of the Google Compute Engine
-   *  [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   *  cluster resides. This field has been deprecated and replaced by the name
-   *  field.
-   */
-  // const zone = 'abc123'
-  /**
-   *  Deprecated. The name of the cluster to rollback.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const clusterId = 'abc123'
-  /**
-   *  Deprecated. The name of the node pool to rollback.
-   *  This field has been deprecated and replaced by the name field.
-   */
-  // const nodePoolId = 'abc123'
-  /**
    *  The name (project, location, cluster, node pool id) of the node poll to
    *  rollback upgrade.
    *  Specified in the format `projects/* /locations/* /clusters/* /nodePools/*`.
@@ -56,7 +33,7 @@ function main() {
   // Instantiates a client
   const containerClient = new ClusterManagerClient();
 
-  async function rollbackNodePoolUpgrade() {
+  async function callRollbackNodePoolUpgrade() {
     // Construct request
     const request = {
     };
@@ -66,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  rollbackNodePoolUpgrade();
+  callRollbackNodePoolUpgrade();
   // [END container_v1_generated_ClusterManager_RollbackNodePoolUpgrade_async]
 }
 

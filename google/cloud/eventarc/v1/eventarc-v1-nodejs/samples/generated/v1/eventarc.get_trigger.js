@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const eventarcClient = new EventarcClient();
 
-  async function getTrigger() {
+  async function callGetTrigger() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTrigger();
+  callGetTrigger();
   // [END eventarc_v1_generated_Eventarc_GetTrigger_async]
 }
 

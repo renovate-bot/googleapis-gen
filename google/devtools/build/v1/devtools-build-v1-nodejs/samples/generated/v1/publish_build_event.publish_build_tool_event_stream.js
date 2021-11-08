@@ -24,7 +24,7 @@ function main(orderedBuildEvent, projectId) {
    *  Required. The build event with position info.
    *  New publishing clients should use this field rather than the 3 above.
    */
-  // const orderedBuildEvent = ''
+  // const orderedBuildEvent = {}
   /**
    *  The keywords to be attached to the notification which notifies the start
    *  of a new build event stream. BES only reads this field when sequence_number
@@ -45,7 +45,7 @@ function main(orderedBuildEvent, projectId) {
   // Instantiates a client
   const buildClient = new PublishBuildEventClient();
 
-  async function publishBuildToolEventStream() {
+  async function callPublishBuildToolEventStream() {
     // Construct request
     const request = {
       orderedBuildEvent,
@@ -61,7 +61,7 @@ function main(orderedBuildEvent, projectId) {
     stream.end(); 
   }
 
-  publishBuildToolEventStream();
+  callPublishBuildToolEventStream();
   // [END buildeventservice_v1_generated_PublishBuildEvent_PublishBuildToolEventStream_async]
 }
 

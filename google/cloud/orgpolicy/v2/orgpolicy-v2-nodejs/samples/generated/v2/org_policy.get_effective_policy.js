@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const orgpolicyClient = new OrgPolicyClient();
 
-  async function getEffectivePolicy() {
+  async function callGetEffectivePolicy() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  getEffectivePolicy();
+  callGetEffectivePolicy();
   // [END orgpolicy_v2_generated_OrgPolicy_GetEffectivePolicy_async]
 }
 

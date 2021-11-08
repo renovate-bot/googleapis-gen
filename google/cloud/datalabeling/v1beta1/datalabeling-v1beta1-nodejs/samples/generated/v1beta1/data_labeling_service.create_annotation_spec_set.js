@@ -30,7 +30,7 @@ function main(parent, annotationSpecSet) {
    *  Only one annotation spec will be accepted for annotation specs with same
    *  display_name.
    */
-  // const annotationSpecSet = ''
+  // const annotationSpecSet = {}
 
   // Imports the Datalabeling library
   const {DataLabelingServiceClient} = require('@google-cloud/datalabeling').v1beta1;
@@ -38,7 +38,7 @@ function main(parent, annotationSpecSet) {
   // Instantiates a client
   const datalabelingClient = new DataLabelingServiceClient();
 
-  async function createAnnotationSpecSet() {
+  async function callCreateAnnotationSpecSet() {
     // Construct request
     const request = {
       parent,
@@ -50,7 +50,7 @@ function main(parent, annotationSpecSet) {
     console.log(response);
   }
 
-  createAnnotationSpecSet();
+  callCreateAnnotationSpecSet();
   // [END datalabeling_v1beta1_generated_DataLabelingService_CreateAnnotationSpecSet_async]
 }
 

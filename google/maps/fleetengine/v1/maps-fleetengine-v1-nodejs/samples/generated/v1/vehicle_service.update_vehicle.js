@@ -23,7 +23,7 @@ function main(name, vehicle, updateMask) {
   /**
    *  The standard Fleet Engine request header.
    */
-  // const header = ''
+  // const header = {}
   /**
    *  Required. Must be in the format
    *  "providers/{provider}/vehicles/{vehicle}".
@@ -45,12 +45,12 @@ function main(name, vehicle, updateMask) {
    *    waypoints_version
    *  Furthermore, the name of the vehicle cannot be updated.
    */
-  // const vehicle = ''
+  // const vehicle = {}
   /**
    *  Required. A field mask indicating which fields of the Vehicle to update.
    *  The update_mask must contain at least one field.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Fleetengine library
   const {VehicleServiceClient} = require('@googlemaps/fleetengine').v1;
@@ -58,7 +58,7 @@ function main(name, vehicle, updateMask) {
   // Instantiates a client
   const fleetengineClient = new VehicleServiceClient();
 
-  async function updateVehicle() {
+  async function callUpdateVehicle() {
     // Construct request
     const request = {
       name,
@@ -71,7 +71,7 @@ function main(name, vehicle, updateMask) {
     console.log(response);
   }
 
-  updateVehicle();
+  callUpdateVehicle();
   // [END fleetengine_v1_generated_VehicleService_UpdateVehicle_async]
 }
 

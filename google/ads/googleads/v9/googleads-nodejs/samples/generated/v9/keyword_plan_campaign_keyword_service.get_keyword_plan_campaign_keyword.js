@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new KeywordPlanCampaignKeywordServiceClient();
 
-  async function getKeywordPlanCampaignKeyword() {
+  async function callGetKeywordPlanCampaignKeyword() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getKeywordPlanCampaignKeyword();
+  callGetKeywordPlanCampaignKeyword();
   // [END googleads_v9_generated_KeywordPlanCampaignKeywordService_GetKeywordPlanCampaignKeyword_async]
 }
 

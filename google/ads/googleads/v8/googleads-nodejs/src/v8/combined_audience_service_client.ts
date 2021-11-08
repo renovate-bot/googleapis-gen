@@ -678,26 +678,6 @@ export class CombinedAudienceServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCombinedAudience(
-      request?: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.ICombinedAudience,
-        protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|undefined, {}|undefined
-      ]>;
-  getCombinedAudience(
-      request: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICombinedAudience,
-          protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCombinedAudience(
-      request: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.ICombinedAudience,
-          protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested combined audience in full detail.
  *
@@ -720,9 +700,29 @@ export class CombinedAudienceServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCombinedAudience(request);
+ * @example <caption>include:samples/generated/v8/combined_audience_service.get_combined_audience.js</caption>
+ * region_tag:googleads_v8_generated_CombinedAudienceService_GetCombinedAudience_async
  */
+  getCombinedAudience(
+      request?: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.ICombinedAudience,
+        protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|undefined, {}|undefined
+      ]>;
+  getCombinedAudience(
+      request: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICombinedAudience,
+          protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCombinedAudience(
+      request: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.ICombinedAudience,
+          protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest|null|undefined,
+          {}|null|undefined>): void;
   getCombinedAudience(
       request?: protos.google.ads.googleads.v8.services.IGetCombinedAudienceRequest,
       optionsOrCallback?: CallOptions|Callback<

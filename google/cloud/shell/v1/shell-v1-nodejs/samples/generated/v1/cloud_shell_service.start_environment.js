@@ -44,7 +44,7 @@ function main() {
   // Instantiates a client
   const shellClient = new CloudShellServiceClient();
 
-  async function startEnvironment() {
+  async function callStartEnvironment() {
     // Construct request
     const request = {
     };
@@ -55,7 +55,7 @@ function main() {
     console.log(response);
   }
 
-  startEnvironment();
+  callStartEnvironment();
   // [END cloudshell_v1_generated_CloudShellService_StartEnvironment_async]
 }
 

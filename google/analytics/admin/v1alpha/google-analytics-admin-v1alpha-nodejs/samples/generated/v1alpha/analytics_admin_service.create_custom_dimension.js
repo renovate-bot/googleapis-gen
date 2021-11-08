@@ -27,7 +27,7 @@ function main(parent, customDimension) {
   /**
    *  Required. The CustomDimension to create.
    */
-  // const customDimension = ''
+  // const customDimension = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -35,7 +35,7 @@ function main(parent, customDimension) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createCustomDimension() {
+  async function callCreateCustomDimension() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent, customDimension) {
     console.log(response);
   }
 
-  createCustomDimension();
+  callCreateCustomDimension();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateCustomDimension_async]
 }
 

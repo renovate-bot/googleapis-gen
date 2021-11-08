@@ -44,7 +44,7 @@ function main(customerId, plannableLocationId, currencyCode, budgetMicros) {
    *  An unset preference is interpreted as all possible values are allowed,
    *  unless explicitly specified.
    */
-  // const preferences = ''
+  // const preferences = {}
 
   // Imports the Googleads library
   const {ReachPlanServiceClient} = require('google-ads').v8;
@@ -52,7 +52,7 @@ function main(customerId, plannableLocationId, currencyCode, budgetMicros) {
   // Instantiates a client
   const googleadsClient = new ReachPlanServiceClient();
 
-  async function generateProductMixIdeas() {
+  async function callGenerateProductMixIdeas() {
     // Construct request
     const request = {
       customerId,
@@ -66,7 +66,7 @@ function main(customerId, plannableLocationId, currencyCode, budgetMicros) {
     console.log(response);
   }
 
-  generateProductMixIdeas();
+  callGenerateProductMixIdeas();
   // [END googleads_v8_generated_ReachPlanService_GenerateProductMixIdeas_async]
 }
 

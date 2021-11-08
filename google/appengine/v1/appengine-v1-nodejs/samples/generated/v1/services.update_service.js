@@ -28,24 +28,24 @@ function main() {
    *  A Service resource containing the updated service. Only fields set in the
    *  field mask will be updated.
    */
-  // const service = ''
+  // const service = {}
   /**
    *  Standard field mask for the set of fields to be updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Set to `true` to gradually shift traffic to one or more versions that you
    *  specify. By default, traffic is shifted immediately.
    *  For gradual traffic migration, the target versions
    *  must be located within instances that are configured for both
-   *  [warmup requests](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#InboundServiceType)
+   *  warmup requests (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#InboundServiceType)
    *  and
-   *  [automatic scaling](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#AutomaticScaling).
+   *  automatic scaling (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#AutomaticScaling).
    *  You must specify the
-   *  [`shardBy`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#ShardBy)
+   *  `shardBy` (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services#ShardBy)
    *  field in the Service resource. Gradual traffic migration is not
    *  supported in the App Engine flexible environment. For examples, see
-   *  [Migrating and Splitting Traffic](https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
+   *  Migrating and Splitting Traffic (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic).
    */
   // const migrateTraffic = true
 
@@ -55,7 +55,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ServicesClient();
 
-  async function updateService() {
+  async function callUpdateService() {
     // Construct request
     const request = {
     };
@@ -66,7 +66,7 @@ function main() {
     console.log(response);
   }
 
-  updateService();
+  callUpdateService();
   // [END appengine_v1_generated_Services_UpdateService_async]
 }
 

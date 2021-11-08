@@ -676,6 +676,23 @@ export class SmartCampaignSettingServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested Smart campaign setting in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the Smart campaign setting to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [SmartCampaignSetting]{@link google.ads.googleads.v8.resources.SmartCampaignSetting}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v8/smart_campaign_setting_service.get_smart_campaign_setting.js</caption>
+ * region_tag:googleads_v8_generated_SmartCampaignSettingService_GetSmartCampaignSetting_async
+ */
   getSmartCampaignSetting(
       request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
       options?: CallOptions):
@@ -696,23 +713,6 @@ export class SmartCampaignSettingServiceClient {
           protos.google.ads.googleads.v8.resources.ISmartCampaignSetting,
           protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested Smart campaign setting in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the Smart campaign setting to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [SmartCampaignSetting]{@link google.ads.googleads.v8.resources.SmartCampaignSetting}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSmartCampaignSetting(request);
- */
   getSmartCampaignSetting(
       request?: protos.google.ads.googleads.v8.services.IGetSmartCampaignSettingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -747,26 +747,6 @@ export class SmartCampaignSettingServiceClient {
     this.initialize();
     return this.innerApiCalls.getSmartCampaignSetting(request, options, callback);
   }
-  mutateSmartCampaignSettings(
-      request?: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
-        protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|undefined, {}|undefined
-      ]>;
-  mutateSmartCampaignSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateSmartCampaignSettings(
-      request: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
-          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates Smart campaign settings for campaigns.
  *
@@ -794,9 +774,29 @@ export class SmartCampaignSettingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateSmartCampaignSettings(request);
+ * @example <caption>include:samples/generated/v8/smart_campaign_setting_service.mutate_smart_campaign_settings.js</caption>
+ * region_tag:googleads_v8_generated_SmartCampaignSettingService_MutateSmartCampaignSettings_async
  */
+  mutateSmartCampaignSettings(
+      request?: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
+        protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|undefined, {}|undefined
+      ]>;
+  mutateSmartCampaignSettings(
+      request: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateSmartCampaignSettings(
+      request: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsResponse,
+          protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateSmartCampaignSettings(
       request?: protos.google.ads.googleads.v8.services.IMutateSmartCampaignSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<

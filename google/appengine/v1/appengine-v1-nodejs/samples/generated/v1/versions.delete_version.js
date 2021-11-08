@@ -32,7 +32,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new VersionsClient();
 
-  async function deleteVersion() {
+  async function callDeleteVersion() {
     // Construct request
     const request = {
     };
@@ -43,7 +43,7 @@ function main() {
     console.log(response);
   }
 
-  deleteVersion();
+  callDeleteVersion();
   // [END appengine_v1_generated_Versions_DeleteVersion_async]
 }
 

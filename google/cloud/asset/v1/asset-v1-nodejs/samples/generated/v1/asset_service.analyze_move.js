@@ -39,7 +39,7 @@ function main(resource, destinationParent) {
    *  Analysis view indicating what information should be included in the
    *  analysis response. If unspecified, the default view is FULL.
    */
-  // const view = ''
+  // const view = {}
 
   // Imports the Asset library
   const {AssetServiceClient} = require('@google-cloud/asset').v1;
@@ -47,7 +47,7 @@ function main(resource, destinationParent) {
   // Instantiates a client
   const assetClient = new AssetServiceClient();
 
-  async function analyzeMove() {
+  async function callAnalyzeMove() {
     // Construct request
     const request = {
       resource,
@@ -59,7 +59,7 @@ function main(resource, destinationParent) {
     console.log(response);
   }
 
-  analyzeMove();
+  callAnalyzeMove();
   // [END cloudasset_v1_generated_AssetService_AnalyzeMove_async]
 }
 

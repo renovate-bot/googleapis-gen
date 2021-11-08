@@ -52,7 +52,7 @@ function main(parent) {
   // Instantiates a client
   const datastreamClient = new DatastreamClient();
 
-  async function listConnectionProfiles() {
+  async function callListConnectionProfiles() {
     // Construct request
     const request = {
       parent,
@@ -65,7 +65,7 @@ function main(parent) {
     }
   }
 
-  listConnectionProfiles();
+  callListConnectionProfiles();
   // [END datastream_v1alpha1_generated_Datastream_ListConnectionProfiles_async]
 }
 

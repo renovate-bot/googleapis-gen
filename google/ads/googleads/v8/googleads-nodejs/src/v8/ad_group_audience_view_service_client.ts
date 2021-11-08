@@ -676,26 +676,6 @@ export class AdGroupAudienceViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupAudienceView(
-      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAdGroupAudienceView,
-        protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupAudienceView(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAdGroupAudienceView,
-          protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupAudienceView(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAdGroupAudienceView,
-          protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group audience view in full detail.
  *
@@ -718,9 +698,29 @@ export class AdGroupAudienceViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupAudienceView(request);
+ * @example <caption>include:samples/generated/v8/ad_group_audience_view_service.get_ad_group_audience_view.js</caption>
+ * region_tag:googleads_v8_generated_AdGroupAudienceViewService_GetAdGroupAudienceView_async
  */
+  getAdGroupAudienceView(
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAdGroupAudienceView,
+        protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupAudienceView(
+      request: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAdGroupAudienceView,
+          protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupAudienceView(
+      request: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAdGroupAudienceView,
+          protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupAudienceView(
       request?: protos.google.ads.googleads.v8.services.IGetAdGroupAudienceViewRequest,
       optionsOrCallback?: CallOptions|Callback<

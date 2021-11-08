@@ -22,7 +22,7 @@ function main(parent, tagTemplateFieldId, tagTemplateField) {
    */
   /**
    *  Required. The name of the project and the template location
-   *  [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
+   *  region (https://cloud.google.com/data-catalog/docs/concepts/regions).
    *  Example:
    *  * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
    */
@@ -38,7 +38,7 @@ function main(parent, tagTemplateFieldId, tagTemplateField) {
   /**
    *  Required. The tag template field to create.
    */
-  // const tagTemplateField = ''
+  // const tagTemplateField = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1beta1;
@@ -46,7 +46,7 @@ function main(parent, tagTemplateFieldId, tagTemplateField) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function createTagTemplateField() {
+  async function callCreateTagTemplateField() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent, tagTemplateFieldId, tagTemplateField) {
     console.log(response);
   }
 
-  createTagTemplateField();
+  callCreateTagTemplateField();
   // [END datacatalog_v1beta1_generated_DataCatalog_CreateTagTemplateField_async]
 }
 

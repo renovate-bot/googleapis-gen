@@ -31,7 +31,7 @@ function main(name) {
   // Instantiates a client
   const storagetransferClient = new StorageTransferServiceClient();
 
-  async function resumeTransferOperation() {
+  async function callResumeTransferOperation() {
     // Construct request
     const request = {
       name,
@@ -42,7 +42,7 @@ function main(name) {
     console.log(response);
   }
 
-  resumeTransferOperation();
+  callResumeTransferOperation();
   // [END storagetransfer_v1_generated_StorageTransferService_ResumeTransferOperation_async]
 }
 

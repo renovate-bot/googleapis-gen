@@ -46,7 +46,7 @@ function main(parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function listIosAppDataStreams() {
+  async function callListIosAppDataStreams() {
     // Construct request
     const request = {
       parent,
@@ -59,7 +59,7 @@ function main(parent) {
     }
   }
 
-  listIosAppDataStreams();
+  callListIosAppDataStreams();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_ListIosAppDataStreams_async]
 }
 

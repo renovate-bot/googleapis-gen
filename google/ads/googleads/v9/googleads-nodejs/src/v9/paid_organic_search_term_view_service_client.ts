@@ -727,26 +727,6 @@ export class PaidOrganicSearchTermViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getPaidOrganicSearchTermView(
-      request?: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IPaidOrganicSearchTermView,
-        protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest|undefined, {}|undefined
-      ]>;
-  getPaidOrganicSearchTermView(
-      request: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IPaidOrganicSearchTermView,
-          protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getPaidOrganicSearchTermView(
-      request: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IPaidOrganicSearchTermView,
-          protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested paid organic search term view in full detail.
  *
@@ -769,9 +749,29 @@ export class PaidOrganicSearchTermViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getPaidOrganicSearchTermView(request);
+ * @example <caption>include:samples/generated/v9/paid_organic_search_term_view_service.get_paid_organic_search_term_view.js</caption>
+ * region_tag:googleads_v9_generated_PaidOrganicSearchTermViewService_GetPaidOrganicSearchTermView_async
  */
+  getPaidOrganicSearchTermView(
+      request?: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IPaidOrganicSearchTermView,
+        protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest|undefined, {}|undefined
+      ]>;
+  getPaidOrganicSearchTermView(
+      request: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IPaidOrganicSearchTermView,
+          protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getPaidOrganicSearchTermView(
+      request: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IPaidOrganicSearchTermView,
+          protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getPaidOrganicSearchTermView(
       request?: protos.google.ads.googleads.v9.services.IGetPaidOrganicSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<

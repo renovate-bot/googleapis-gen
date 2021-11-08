@@ -32,7 +32,7 @@ function main(idToken) {
   /**
    *  Verification info to authorize sending an SMS for phone verification.
    */
-  // const phoneVerificationInfo = ''
+  // const phoneVerificationInfo = {}
   /**
    *  The ID of the Identity Platform tenant that the user enrolling MFA belongs
    *  to. If not set, the user belongs to the default Identity Platform project.
@@ -45,7 +45,7 @@ function main(idToken) {
   // Instantiates a client
   const identitytoolkitClient = new AccountManagementServiceClient();
 
-  async function finalizeMfaEnrollment() {
+  async function callFinalizeMfaEnrollment() {
     // Construct request
     const request = {
       idToken,
@@ -56,7 +56,7 @@ function main(idToken) {
     console.log(response);
   }
 
-  finalizeMfaEnrollment();
+  callFinalizeMfaEnrollment();
   // [END identitytoolkit_v2_generated_AccountManagementService_FinalizeMfaEnrollment_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new KeywordViewServiceClient();
 
-  async function getKeywordView() {
+  async function callGetKeywordView() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getKeywordView();
+  callGetKeywordView();
   // [END googleads_v9_generated_KeywordViewService_GetKeywordView_async]
 }
 

@@ -37,7 +37,7 @@ function main(name, consistencyToken) {
   // Instantiates a client
   const adminClient = new BigtableTableAdminClient();
 
-  async function checkConsistency() {
+  async function callCheckConsistency() {
     // Construct request
     const request = {
       name,
@@ -49,7 +49,7 @@ function main(name, consistencyToken) {
     console.log(response);
   }
 
-  checkConsistency();
+  callCheckConsistency();
   // [END bigtableadmin_v2_generated_BigtableTableAdmin_CheckConsistency_async]
 }
 

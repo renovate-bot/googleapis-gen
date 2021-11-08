@@ -28,7 +28,7 @@ function main(parent, dataset) {
   /**
    *  Required. The Dataset to create.
    */
-  // const dataset = ''
+  // const dataset = {}
 
   // Imports the Aiplatform library
   const {DatasetServiceClient} = require('@google-cloud/aiplatform').v1beta1;
@@ -36,7 +36,7 @@ function main(parent, dataset) {
   // Instantiates a client
   const aiplatformClient = new DatasetServiceClient();
 
-  async function createDataset() {
+  async function callCreateDataset() {
     // Construct request
     const request = {
       parent,
@@ -49,7 +49,7 @@ function main(parent, dataset) {
     console.log(response);
   }
 
-  createDataset();
+  callCreateDataset();
   // [END aiplatform_v1beta1_generated_DatasetService_CreateDataset_async]
 }
 

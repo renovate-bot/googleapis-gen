@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new ApplicationsClient();
 
-  async function repairApplication() {
+  async function callRepairApplication() {
     // Construct request
     const request = {
     };
@@ -42,7 +42,7 @@ function main() {
     console.log(response);
   }
 
-  repairApplication();
+  callRepairApplication();
   // [END appengine_v1_generated_Applications_RepairApplication_async]
 }
 

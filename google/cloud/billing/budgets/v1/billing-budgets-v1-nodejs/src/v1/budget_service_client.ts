@@ -299,6 +299,28 @@ export class BudgetServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a new budget. See
+ * [Quotas and limits](https://cloud.google.com/billing/quotas)
+ * for more information on the limits of the number of budgets you can create.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. The name of the billing account to create the budget in. Values
+ *   are of the form `billingAccounts/{billingAccountId}`.
+ * @param {google.cloud.billing.budgets.v1.Budget} request.budget
+ *   Required. Budget to create.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Budget]{@link google.cloud.billing.budgets.v1.Budget}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/budget_service.create_budget.js</caption>
+ * region_tag:billingbudgets_v1_generated_BudgetService_CreateBudget_async
+ */
   createBudget(
       request?: protos.google.cloud.billing.budgets.v1.ICreateBudgetRequest,
       options?: CallOptions):
@@ -319,28 +341,6 @@ export class BudgetServiceClient {
           protos.google.cloud.billing.budgets.v1.IBudget,
           protos.google.cloud.billing.budgets.v1.ICreateBudgetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new budget. See
- * [Quotas and limits](https://cloud.google.com/billing/quotas)
- * for more information on the limits of the number of budgets you can create.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. The name of the billing account to create the budget in. Values
- *   are of the form `billingAccounts/{billingAccountId}`.
- * @param {google.cloud.billing.budgets.v1.Budget} request.budget
- *   Required. Budget to create.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Budget]{@link google.cloud.billing.budgets.v1.Budget}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createBudget(request);
- */
   createBudget(
       request?: protos.google.cloud.billing.budgets.v1.ICreateBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -375,26 +375,6 @@ export class BudgetServiceClient {
     this.initialize();
     return this.innerApiCalls.createBudget(request, options, callback);
   }
-  updateBudget(
-      request?: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.budgets.v1.IBudget,
-        protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest|undefined, {}|undefined
-      ]>;
-  updateBudget(
-      request: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.billing.budgets.v1.IBudget,
-          protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateBudget(
-      request: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
-      callback: Callback<
-          protos.google.cloud.billing.budgets.v1.IBudget,
-          protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates a budget and returns the updated budget.
  *
@@ -421,9 +401,29 @@ export class BudgetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateBudget(request);
+ * @example <caption>include:samples/generated/v1/budget_service.update_budget.js</caption>
+ * region_tag:billingbudgets_v1_generated_BudgetService_UpdateBudget_async
  */
+  updateBudget(
+      request?: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.budgets.v1.IBudget,
+        protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest|undefined, {}|undefined
+      ]>;
+  updateBudget(
+      request: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.billing.budgets.v1.IBudget,
+          protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateBudget(
+      request: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
+      callback: Callback<
+          protos.google.cloud.billing.budgets.v1.IBudget,
+          protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest|null|undefined,
+          {}|null|undefined>): void;
   updateBudget(
       request?: protos.google.cloud.billing.budgets.v1.IUpdateBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -458,26 +458,6 @@ export class BudgetServiceClient {
     this.initialize();
     return this.innerApiCalls.updateBudget(request, options, callback);
   }
-  getBudget(
-      request?: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.budgets.v1.IBudget,
-        protos.google.cloud.billing.budgets.v1.IGetBudgetRequest|undefined, {}|undefined
-      ]>;
-  getBudget(
-      request: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.billing.budgets.v1.IBudget,
-          protos.google.cloud.billing.budgets.v1.IGetBudgetRequest|null|undefined,
-          {}|null|undefined>): void;
-  getBudget(
-      request: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
-      callback: Callback<
-          protos.google.cloud.billing.budgets.v1.IBudget,
-          protos.google.cloud.billing.budgets.v1.IGetBudgetRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns a budget.
  *
@@ -498,9 +478,29 @@ export class BudgetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getBudget(request);
+ * @example <caption>include:samples/generated/v1/budget_service.get_budget.js</caption>
+ * region_tag:billingbudgets_v1_generated_BudgetService_GetBudget_async
  */
+  getBudget(
+      request?: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.budgets.v1.IBudget,
+        protos.google.cloud.billing.budgets.v1.IGetBudgetRequest|undefined, {}|undefined
+      ]>;
+  getBudget(
+      request: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.billing.budgets.v1.IBudget,
+          protos.google.cloud.billing.budgets.v1.IGetBudgetRequest|null|undefined,
+          {}|null|undefined>): void;
+  getBudget(
+      request: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
+      callback: Callback<
+          protos.google.cloud.billing.budgets.v1.IBudget,
+          protos.google.cloud.billing.budgets.v1.IGetBudgetRequest|null|undefined,
+          {}|null|undefined>): void;
   getBudget(
       request?: protos.google.cloud.billing.budgets.v1.IGetBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -535,6 +535,24 @@ export class BudgetServiceClient {
     this.initialize();
     return this.innerApiCalls.getBudget(request, options, callback);
   }
+/**
+ * Deletes a budget. Returns successfully if already deleted.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the budget to delete. Values are of the form
+ *   `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/budget_service.delete_budget.js</caption>
+ * region_tag:billingbudgets_v1_generated_BudgetService_DeleteBudget_async
+ */
   deleteBudget(
       request?: protos.google.cloud.billing.budgets.v1.IDeleteBudgetRequest,
       options?: CallOptions):
@@ -555,24 +573,6 @@ export class BudgetServiceClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.billing.budgets.v1.IDeleteBudgetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a budget. Returns successfully if already deleted.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the budget to delete. Values are of the form
- *   `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteBudget(request);
- */
   deleteBudget(
       request?: protos.google.cloud.billing.budgets.v1.IDeleteBudgetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -608,28 +608,7 @@ export class BudgetServiceClient {
     return this.innerApiCalls.deleteBudget(request, options, callback);
   }
 
-  listBudgets(
-      request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.billing.budgets.v1.IBudget[],
-        protos.google.cloud.billing.budgets.v1.IListBudgetsRequest|null,
-        protos.google.cloud.billing.budgets.v1.IListBudgetsResponse
-      ]>;
-  listBudgets(
-      request: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
-          protos.google.cloud.billing.budgets.v1.IListBudgetsResponse|null|undefined,
-          protos.google.cloud.billing.budgets.v1.IBudget>): void;
-  listBudgets(
-      request: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
-          protos.google.cloud.billing.budgets.v1.IListBudgetsResponse|null|undefined,
-          protos.google.cloud.billing.budgets.v1.IBudget>): void;
-/**
+ /**
  * Returns a list of budgets for a billing account.
  *
  * WARNING: There are some fields exposed on the Google Cloud Console that
@@ -662,6 +641,27 @@ export class BudgetServiceClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listBudgets(
+      request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.billing.budgets.v1.IBudget[],
+        protos.google.cloud.billing.budgets.v1.IListBudgetsRequest|null,
+        protos.google.cloud.billing.budgets.v1.IListBudgetsResponse
+      ]>;
+  listBudgets(
+      request: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
+          protos.google.cloud.billing.budgets.v1.IListBudgetsResponse|null|undefined,
+          protos.google.cloud.billing.budgets.v1.IBudget>): void;
+  listBudgets(
+      request: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
+          protos.google.cloud.billing.budgets.v1.IListBudgetsResponse|null|undefined,
+          protos.google.cloud.billing.budgets.v1.IBudget>): void;
   listBudgets(
       request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -773,11 +773,8 @@ export class BudgetServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listBudgetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/budget_service.list_budgets.js</caption>
+ * region_tag:billingbudgets_v1_generated_BudgetService_ListBudgets_async
  */
   listBudgetsAsync(
       request?: protos.google.cloud.billing.budgets.v1.IListBudgetsRequest,
@@ -792,7 +789,6 @@ export class BudgetServiceClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listBudgets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

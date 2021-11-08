@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AdGroupFeedServiceClient();
 
-  async function getAdGroupFeed() {
+  async function callGetAdGroupFeed() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAdGroupFeed();
+  callGetAdGroupFeed();
   // [END googleads_v9_generated_AdGroupFeedService_GetAdGroupFeed_async]
 }
 

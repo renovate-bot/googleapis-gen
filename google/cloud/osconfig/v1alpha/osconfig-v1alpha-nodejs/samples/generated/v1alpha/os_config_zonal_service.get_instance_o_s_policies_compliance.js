@@ -37,7 +37,7 @@ function main(name) {
   // Instantiates a client
   const osconfigClient = new OsConfigZonalServiceClient();
 
-  async function getInstanceOSPoliciesCompliance() {
+  async function callGetInstanceOSPoliciesCompliance() {
     // Construct request
     const request = {
       name,
@@ -48,7 +48,7 @@ function main(name) {
     console.log(response);
   }
 
-  getInstanceOSPoliciesCompliance();
+  callGetInstanceOSPoliciesCompliance();
   // [END osconfig_v1alpha_generated_OsConfigZonalService_GetInstanceOSPoliciesCompliance_async]
 }
 

@@ -23,14 +23,14 @@ function main(notificationChannel) {
   /**
    *  The fields to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. A description of the changes to be applied to the specified
    *  notification channel. The description must provide a definition for
    *  fields to be updated; the names of these fields should also be
    *  included in the `update_mask`.
    */
-  // const notificationChannel = ''
+  // const notificationChannel = {}
 
   // Imports the Monitoring library
   const {NotificationChannelServiceClient} = require('@google-cloud/monitoring').v3;
@@ -38,7 +38,7 @@ function main(notificationChannel) {
   // Instantiates a client
   const monitoringClient = new NotificationChannelServiceClient();
 
-  async function updateNotificationChannel() {
+  async function callUpdateNotificationChannel() {
     // Construct request
     const request = {
       notificationChannel,
@@ -49,7 +49,7 @@ function main(notificationChannel) {
     console.log(response);
   }
 
-  updateNotificationChannel();
+  callUpdateNotificationChannel();
   // [END monitoring_v3_generated_NotificationChannelService_UpdateNotificationChannel_async]
 }
 

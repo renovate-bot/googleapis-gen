@@ -38,7 +38,7 @@ function main(playerReports, requestId, clientInfo) {
    *  Required. Information about the client device (for example, device model
    *  and operating system).
    */
-  // const clientInfo = ''
+  // const clientInfo = {}
 
   // Imports the Playablelocations library
   const {PlayableLocationsClient} = require('playablelocations').v3;
@@ -46,7 +46,7 @@ function main(playerReports, requestId, clientInfo) {
   // Instantiates a client
   const playablelocationsClient = new PlayableLocationsClient();
 
-  async function logPlayerReports() {
+  async function callLogPlayerReports() {
     // Construct request
     const request = {
       playerReports,
@@ -59,7 +59,7 @@ function main(playerReports, requestId, clientInfo) {
     console.log(response);
   }
 
-  logPlayerReports();
+  callLogPlayerReports();
   // [END playablelocations_v3_generated_PlayableLocations_LogPlayerReports_async]
 }
 

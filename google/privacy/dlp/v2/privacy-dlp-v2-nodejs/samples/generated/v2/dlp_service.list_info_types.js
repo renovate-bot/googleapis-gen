@@ -37,10 +37,6 @@ function main() {
    *  API. Defaults to supported_by=INSPECT.
    */
   // const filter = 'abc123'
-  /**
-   *  Deprecated. This field has no effect.
-   */
-  // const locationId = 'abc123'
 
   // Imports the Dlp library
   const {DlpServiceClient} = require('@google-cloud/dlp').v2;
@@ -48,7 +44,7 @@ function main() {
   // Instantiates a client
   const dlpClient = new DlpServiceClient();
 
-  async function listInfoTypes() {
+  async function callListInfoTypes() {
     // Construct request
     const request = {
     };
@@ -58,7 +54,7 @@ function main() {
     console.log(response);
   }
 
-  listInfoTypes();
+  callListInfoTypes();
   // [END dlp_v2_generated_DlpService_ListInfoTypes_async]
 }
 

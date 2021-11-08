@@ -44,7 +44,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new RecommendationServiceClient();
 
-  async function applyRecommendation() {
+  async function callApplyRecommendation() {
     // Construct request
     const request = {
       customerId,
@@ -56,7 +56,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  applyRecommendation();
+  callApplyRecommendation();
   // [END googleads_v7_generated_RecommendationService_ApplyRecommendation_async]
 }
 

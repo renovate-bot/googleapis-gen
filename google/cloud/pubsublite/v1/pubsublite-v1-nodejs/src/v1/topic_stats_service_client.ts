@@ -289,26 +289,6 @@ export class TopicStatsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  computeMessageStats(
-      request?: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.IComputeMessageStatsResponse,
-        protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest|undefined, {}|undefined
-      ]>;
-  computeMessageStats(
-      request: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IComputeMessageStatsResponse,
-          protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest|null|undefined,
-          {}|null|undefined>): void;
-  computeMessageStats(
-      request: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IComputeMessageStatsResponse,
-          protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Compute statistics about a range of messages in a given topic and
  * partition.
@@ -332,9 +312,29 @@ export class TopicStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.computeMessageStats(request);
+ * @example <caption>include:samples/generated/v1/topic_stats_service.compute_message_stats.js</caption>
+ * region_tag:pubsublite_v1_generated_TopicStatsService_ComputeMessageStats_async
  */
+  computeMessageStats(
+      request?: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IComputeMessageStatsResponse,
+        protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest|undefined, {}|undefined
+      ]>;
+  computeMessageStats(
+      request: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeMessageStatsResponse,
+          protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest|null|undefined,
+          {}|null|undefined>): void;
+  computeMessageStats(
+      request: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeMessageStatsResponse,
+          protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest|null|undefined,
+          {}|null|undefined>): void;
   computeMessageStats(
       request?: protos.google.cloud.pubsublite.v1.IComputeMessageStatsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -369,26 +369,6 @@ export class TopicStatsServiceClient {
     this.initialize();
     return this.innerApiCalls.computeMessageStats(request, options, callback);
   }
-  computeHeadCursor(
-      request?: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.IComputeHeadCursorResponse,
-        protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest|undefined, {}|undefined
-      ]>;
-  computeHeadCursor(
-      request: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IComputeHeadCursorResponse,
-          protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest|null|undefined,
-          {}|null|undefined>): void;
-  computeHeadCursor(
-      request: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IComputeHeadCursorResponse,
-          protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Compute the head cursor for the partition.
  * The head cursor's offset is guaranteed to be less than or equal to all
@@ -410,9 +390,29 @@ export class TopicStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.computeHeadCursor(request);
+ * @example <caption>include:samples/generated/v1/topic_stats_service.compute_head_cursor.js</caption>
+ * region_tag:pubsublite_v1_generated_TopicStatsService_ComputeHeadCursor_async
  */
+  computeHeadCursor(
+      request?: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IComputeHeadCursorResponse,
+        protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest|undefined, {}|undefined
+      ]>;
+  computeHeadCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeHeadCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest|null|undefined,
+          {}|null|undefined>): void;
+  computeHeadCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeHeadCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest|null|undefined,
+          {}|null|undefined>): void;
   computeHeadCursor(
       request?: protos.google.cloud.pubsublite.v1.IComputeHeadCursorRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -447,26 +447,6 @@ export class TopicStatsServiceClient {
     this.initialize();
     return this.innerApiCalls.computeHeadCursor(request, options, callback);
   }
-  computeTimeCursor(
-      request?: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
-        protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|undefined, {}|undefined
-      ]>;
-  computeTimeCursor(
-      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
-          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
-          {}|null|undefined>): void;
-  computeTimeCursor(
-      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
-      callback: Callback<
-          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
-          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Compute the corresponding cursor for a publish or event time in a topic
  * partition.
@@ -487,9 +467,29 @@ export class TopicStatsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.computeTimeCursor(request);
+ * @example <caption>include:samples/generated/v1/topic_stats_service.compute_time_cursor.js</caption>
+ * region_tag:pubsublite_v1_generated_TopicStatsService_ComputeTimeCursor_async
  */
+  computeTimeCursor(
+      request?: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+        protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|undefined, {}|undefined
+      ]>;
+  computeTimeCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
+          {}|null|undefined>): void;
+  computeTimeCursor(
+      request: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
+      callback: Callback<
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorResponse,
+          protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest|null|undefined,
+          {}|null|undefined>): void;
   computeTimeCursor(
       request?: protos.google.cloud.pubsublite.v1.IComputeTimeCursorRequest,
       optionsOrCallback?: CallOptions|Callback<

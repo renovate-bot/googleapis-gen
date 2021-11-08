@@ -646,26 +646,6 @@ export class ExtensionFeedItemServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getExtensionFeedItem(
-      request?: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
-        protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|undefined, {}|undefined
-      ]>;
-  getExtensionFeedItem(
-      request: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
-          protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|null|undefined,
-          {}|null|undefined>): void;
-  getExtensionFeedItem(
-      request: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
-          protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested extension feed item in full detail.
  *
@@ -688,9 +668,29 @@ export class ExtensionFeedItemServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getExtensionFeedItem(request);
+ * @example <caption>include:samples/generated/v7/extension_feed_item_service.get_extension_feed_item.js</caption>
+ * region_tag:googleads_v7_generated_ExtensionFeedItemService_GetExtensionFeedItem_async
  */
+  getExtensionFeedItem(
+      request?: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
+        protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|undefined, {}|undefined
+      ]>;
+  getExtensionFeedItem(
+      request: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
+          protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|null|undefined,
+          {}|null|undefined>): void;
+  getExtensionFeedItem(
+      request: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IExtensionFeedItem,
+          protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest|null|undefined,
+          {}|null|undefined>): void;
   getExtensionFeedItem(
       request?: protos.google.ads.googleads.v7.services.IGetExtensionFeedItemRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class ExtensionFeedItemServiceClient {
     this.initialize();
     return this.innerApiCalls.getExtensionFeedItem(request, options, callback);
   }
-  mutateExtensionFeedItems(
-      request?: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
-        protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|undefined, {}|undefined
-      ]>;
-  mutateExtensionFeedItems(
-      request: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
-          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateExtensionFeedItems(
-      request: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
-          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes extension feed items. Operation
  * statuses are returned.
@@ -799,9 +779,29 @@ export class ExtensionFeedItemServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateExtensionFeedItems(request);
+ * @example <caption>include:samples/generated/v7/extension_feed_item_service.mutate_extension_feed_items.js</caption>
+ * region_tag:googleads_v7_generated_ExtensionFeedItemService_MutateExtensionFeedItems_async
  */
+  mutateExtensionFeedItems(
+      request?: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
+        protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|undefined, {}|undefined
+      ]>;
+  mutateExtensionFeedItems(
+      request: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
+          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateExtensionFeedItems(
+      request: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsResponse,
+          protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateExtensionFeedItems(
       request?: protos.google.ads.googleads.v7.services.IMutateExtensionFeedItemsRequest,
       optionsOrCallback?: CallOptions|Callback<

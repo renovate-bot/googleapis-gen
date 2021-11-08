@@ -49,7 +49,7 @@ function main(tableName, rowKey, rules) {
   // Instantiates a client
   const bigtableClient = new BigtableClient();
 
-  async function readModifyWriteRow() {
+  async function callReadModifyWriteRow() {
     // Construct request
     const request = {
       tableName,
@@ -62,7 +62,7 @@ function main(tableName, rowKey, rules) {
     console.log(response);
   }
 
-  readModifyWriteRow();
+  callReadModifyWriteRow();
   // [END bigtable_v2_generated_Bigtable_ReadModifyWriteRow_async]
 }
 

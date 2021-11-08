@@ -48,7 +48,7 @@ function main(parent) {
   // Instantiates a client
   const apigatewayClient = new ApiGatewayServiceClient();
 
-  async function listGateways() {
+  async function callListGateways() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent) {
     }
   }
 
-  listGateways();
+  callListGateways();
   // [END apigateway_v1_generated_ApiGatewayService_ListGateways_async]
 }
 

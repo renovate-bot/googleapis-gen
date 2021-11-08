@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const shellClient = new CloudShellServiceClient();
 
-  async function removePublicKey() {
+  async function callRemovePublicKey() {
     // Construct request
     const request = {
     };
@@ -47,7 +47,7 @@ function main() {
     console.log(response);
   }
 
-  removePublicKey();
+  callRemovePublicKey();
   // [END cloudshell_v1_generated_CloudShellService_RemovePublicKey_async]
 }
 

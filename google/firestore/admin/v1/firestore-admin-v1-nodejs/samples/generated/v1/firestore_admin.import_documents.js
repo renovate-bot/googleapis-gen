@@ -35,7 +35,7 @@ function main(name) {
    *  This must match the output_uri_prefix of an ExportDocumentsResponse from
    *  an export that has completed successfully.
    *  See:
-   *  [google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix][google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix].
+   *  google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix google.firestore.admin.v1.ExportDocumentsResponse.output_uri_prefix.
    */
   // const inputUriPrefix = 'abc123'
 
@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();
 
-  async function importDocuments() {
+  async function callImportDocuments() {
     // Construct request
     const request = {
       name,
@@ -57,7 +57,7 @@ function main(name) {
     console.log(response);
   }
 
-  importDocuments();
+  callImportDocuments();
   // [END firestore_v1_generated_FirestoreAdmin_ImportDocuments_async]
 }
 

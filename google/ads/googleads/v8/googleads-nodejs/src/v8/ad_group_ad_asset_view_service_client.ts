@@ -676,26 +676,6 @@ export class AdGroupAdAssetViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getAdGroupAdAssetView(
-      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
-        protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|undefined, {}|undefined
-      ]>;
-  getAdGroupAdAssetView(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
-          protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getAdGroupAdAssetView(
-      request: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
-          protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested ad group ad asset view in full detail.
  *
@@ -718,9 +698,29 @@ export class AdGroupAdAssetViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getAdGroupAdAssetView(request);
+ * @example <caption>include:samples/generated/v8/ad_group_ad_asset_view_service.get_ad_group_ad_asset_view.js</caption>
+ * region_tag:googleads_v8_generated_AdGroupAdAssetViewService_GetAdGroupAdAssetView_async
  */
+  getAdGroupAdAssetView(
+      request?: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
+        protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|undefined, {}|undefined
+      ]>;
+  getAdGroupAdAssetView(
+      request: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
+          protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getAdGroupAdAssetView(
+      request: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IAdGroupAdAssetView,
+          protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getAdGroupAdAssetView(
       request?: protos.google.ads.googleads.v8.services.IGetAdGroupAdAssetViewRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -23,7 +23,7 @@ function main(areaFilter, criteria) {
   /**
    *  Required. Specifies the area to search within for playable locations.
    */
-  // const areaFilter = ''
+  // const areaFilter = {}
   /**
    *  Required. Specifies one or more (up to 5) criteria for filtering the
    *  returned playable locations.
@@ -36,7 +36,7 @@ function main(areaFilter, criteria) {
   // Instantiates a client
   const playablelocationsClient = new PlayableLocationsClient();
 
-  async function samplePlayableLocations() {
+  async function callSamplePlayableLocations() {
     // Construct request
     const request = {
       areaFilter,
@@ -48,7 +48,7 @@ function main(areaFilter, criteria) {
     console.log(response);
   }
 
-  samplePlayableLocations();
+  callSamplePlayableLocations();
   // [END playablelocations_v3_generated_PlayableLocations_SamplePlayableLocations_async]
 }
 

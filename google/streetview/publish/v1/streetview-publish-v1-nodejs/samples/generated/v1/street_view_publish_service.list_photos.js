@@ -24,7 +24,7 @@ function main() {
    *  Specifies if a download URL for the photos bytes should be returned in the
    *  Photos response.
    */
-  // const view = ''
+  // const view = {}
   /**
    *  The maximum number of photos to return.
    *  `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
@@ -35,9 +35,9 @@ function main() {
   // const pageSize = 1234
   /**
    *  The
-   *  [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
+   *  nextPageToken google.streetview.publish.v1.ListPhotosResponse.next_page_token 
    *  value returned from a previous
-   *  [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
+   *  ListPhotos google.streetview.publish.v1.StreetViewPublishService.ListPhotos 
    *  request, if any.
    */
   // const pageToken = 'abc123'
@@ -61,7 +61,7 @@ function main() {
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
 
-  async function listPhotos() {
+  async function callListPhotos() {
     // Construct request
     const request = {
     };
@@ -73,7 +73,7 @@ function main() {
     }
   }
 
-  listPhotos();
+  callListPhotos();
   // [END streetviewpublish_v1_generated_StreetViewPublishService_ListPhotos_async]
 }
 

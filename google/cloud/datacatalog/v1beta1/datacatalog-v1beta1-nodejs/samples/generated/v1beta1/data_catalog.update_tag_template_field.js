@@ -28,7 +28,7 @@ function main(name, tagTemplateField) {
   /**
    *  Required. The template to update.
    */
-  // const tagTemplateField = ''
+  // const tagTemplateField = {}
   /**
    *  Optional. The field mask specifies the parts of the template to be updated.
    *  Allowed fields:
@@ -42,7 +42,7 @@ function main(name, tagTemplateField) {
    *  values cannot be deleted nor renamed. Updating a template field from
    *  optional to required is NOT allowed.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1beta1;
@@ -50,7 +50,7 @@ function main(name, tagTemplateField) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function updateTagTemplateField() {
+  async function callUpdateTagTemplateField() {
     // Construct request
     const request = {
       name,
@@ -62,7 +62,7 @@ function main(name, tagTemplateField) {
     console.log(response);
   }
 
-  updateTagTemplateField();
+  callUpdateTagTemplateField();
   // [END datacatalog_v1beta1_generated_DataCatalog_UpdateTagTemplateField_async]
 }
 

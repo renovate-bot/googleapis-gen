@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const recommendationengineClient = new PredictionApiKeyRegistryClient();
 
-  async function deletePredictionApiKeyRegistration() {
+  async function callDeletePredictionApiKeyRegistration() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deletePredictionApiKeyRegistration();
+  callDeletePredictionApiKeyRegistration();
   // [END recommendationengine_v1beta1_generated_PredictionApiKeyRegistry_DeletePredictionApiKeyRegistration_async]
 }
 

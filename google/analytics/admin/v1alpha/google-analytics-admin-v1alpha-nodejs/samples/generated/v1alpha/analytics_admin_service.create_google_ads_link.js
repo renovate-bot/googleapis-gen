@@ -27,7 +27,7 @@ function main(parent, googleAdsLink) {
   /**
    *  Required. The GoogleAdsLink to create.
    */
-  // const googleAdsLink = ''
+  // const googleAdsLink = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -35,7 +35,7 @@ function main(parent, googleAdsLink) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createGoogleAdsLink() {
+  async function callCreateGoogleAdsLink() {
     // Construct request
     const request = {
       parent,
@@ -47,7 +47,7 @@ function main(parent, googleAdsLink) {
     console.log(response);
   }
 
-  createGoogleAdsLink();
+  callCreateGoogleAdsLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateGoogleAdsLink_async]
 }
 

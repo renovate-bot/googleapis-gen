@@ -727,6 +727,23 @@ export class KeywordThemeConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns the requested keyword theme constant in full detail.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resourceName
+ *   Required. The resource name of the keyword theme constant to fetch.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [KeywordThemeConstant]{@link google.ads.googleads.v9.resources.KeywordThemeConstant}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v9/keyword_theme_constant_service.get_keyword_theme_constant.js</caption>
+ * region_tag:googleads_v9_generated_KeywordThemeConstantService_GetKeywordThemeConstant_async
+ */
   getKeywordThemeConstant(
       request?: protos.google.ads.googleads.v9.services.IGetKeywordThemeConstantRequest,
       options?: CallOptions):
@@ -747,23 +764,6 @@ export class KeywordThemeConstantServiceClient {
           protos.google.ads.googleads.v9.resources.IKeywordThemeConstant,
           protos.google.ads.googleads.v9.services.IGetKeywordThemeConstantRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Returns the requested keyword theme constant in full detail.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resourceName
- *   Required. The resource name of the keyword theme constant to fetch.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [KeywordThemeConstant]{@link google.ads.googleads.v9.resources.KeywordThemeConstant}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getKeywordThemeConstant(request);
- */
   getKeywordThemeConstant(
       request?: protos.google.ads.googleads.v9.services.IGetKeywordThemeConstantRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -798,26 +798,6 @@ export class KeywordThemeConstantServiceClient {
     this.initialize();
     return this.innerApiCalls.getKeywordThemeConstant(request, options, callback);
   }
-  suggestKeywordThemeConstants(
-      request?: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsResponse,
-        protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest|undefined, {}|undefined
-      ]>;
-  suggestKeywordThemeConstants(
-      request: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsResponse,
-          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest|null|undefined,
-          {}|null|undefined>): void;
-  suggestKeywordThemeConstants(
-      request: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsResponse,
-          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns KeywordThemeConstant suggestions by keyword themes.
  *
@@ -847,9 +827,29 @@ export class KeywordThemeConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.suggestKeywordThemeConstants(request);
+ * @example <caption>include:samples/generated/v9/keyword_theme_constant_service.suggest_keyword_theme_constants.js</caption>
+ * region_tag:googleads_v9_generated_KeywordThemeConstantService_SuggestKeywordThemeConstants_async
  */
+  suggestKeywordThemeConstants(
+      request?: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsResponse,
+        protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest|undefined, {}|undefined
+      ]>;
+  suggestKeywordThemeConstants(
+      request: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsResponse,
+          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest|null|undefined,
+          {}|null|undefined>): void;
+  suggestKeywordThemeConstants(
+      request: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsResponse,
+          protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest|null|undefined,
+          {}|null|undefined>): void;
   suggestKeywordThemeConstants(
       request?: protos.google.ads.googleads.v9.services.ISuggestKeywordThemeConstantsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -874,6 +874,8 @@ export class KeywordThemeConstantServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.suggestKeywordThemeConstants(request, options, callback);
   }

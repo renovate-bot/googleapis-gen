@@ -33,7 +33,7 @@ function main(name) {
   // Instantiates a client
   const iotClient = new DeviceManagerClient();
 
-  async function deleteDevice() {
+  async function callDeleteDevice() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteDevice();
+  callDeleteDevice();
   // [END cloudiot_v1_generated_DeviceManager_DeleteDevice_async]
 }
 

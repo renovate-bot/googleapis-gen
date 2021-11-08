@@ -126,7 +126,7 @@ describe('v2.Controller2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse());
             client.innerApiCalls.registerDebuggee = stubSimpleCall(expectedResponse);
             const [response] = await client.registerDebuggee(request);
@@ -142,7 +142,7 @@ describe('v2.Controller2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse());
             client.innerApiCalls.registerDebuggee = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +169,7 @@ describe('v2.Controller2Client', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.registerDebuggee = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.registerDebuggee(request), expectedError);

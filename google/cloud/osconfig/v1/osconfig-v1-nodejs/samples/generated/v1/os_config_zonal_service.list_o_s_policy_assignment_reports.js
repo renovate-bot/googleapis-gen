@@ -63,7 +63,7 @@ function main(parent) {
   // Instantiates a client
   const osconfigClient = new OsConfigZonalServiceClient();
 
-  async function listOSPolicyAssignmentReports() {
+  async function callListOSPolicyAssignmentReports() {
     // Construct request
     const request = {
       parent,
@@ -76,7 +76,7 @@ function main(parent) {
     }
   }
 
-  listOSPolicyAssignmentReports();
+  callListOSPolicyAssignmentReports();
   // [END osconfig_v1_generated_OsConfigZonalService_ListOSPolicyAssignmentReports_async]
 }
 

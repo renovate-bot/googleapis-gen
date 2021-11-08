@@ -33,7 +33,7 @@ function main(name, vmId, event) {
   /**
    *  Required. The Event to be reported.
    */
-  // const event = ''
+  // const event = {}
 
   // Imports the Notebooks library
   const {ManagedNotebookServiceClient} = require('@google-cloud/notebooks').v1;
@@ -41,7 +41,7 @@ function main(name, vmId, event) {
   // Instantiates a client
   const notebooksClient = new ManagedNotebookServiceClient();
 
-  async function reportRuntimeEvent() {
+  async function callReportRuntimeEvent() {
     // Construct request
     const request = {
       name,
@@ -55,7 +55,7 @@ function main(name, vmId, event) {
     console.log(response);
   }
 
-  reportRuntimeEvent();
+  callReportRuntimeEvent();
   // [END notebooks_v1_generated_ManagedNotebookService_ReportRuntimeEvent_async]
 }
 

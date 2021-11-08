@@ -29,12 +29,12 @@ function main() {
    *  An `AuthorizedCertificate` containing the updated resource. Only fields set
    *  in the field mask will be updated.
    */
-  // const certificate = ''
+  // const certificate = {}
   /**
    *  Standard field mask for the set of fields to be updated. Updates are only
    *  supported on the `certificate_raw_data` and `display_name` fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Appengine library
   const {AuthorizedCertificatesClient} = require('@google-cloud/appengine-admin').v1;
@@ -42,7 +42,7 @@ function main() {
   // Instantiates a client
   const appengineClient = new AuthorizedCertificatesClient();
 
-  async function updateAuthorizedCertificate() {
+  async function callUpdateAuthorizedCertificate() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  updateAuthorizedCertificate();
+  callUpdateAuthorizedCertificate();
   // [END appengine_v1_generated_AuthorizedCertificates_UpdateAuthorizedCertificate_async]
 }
 

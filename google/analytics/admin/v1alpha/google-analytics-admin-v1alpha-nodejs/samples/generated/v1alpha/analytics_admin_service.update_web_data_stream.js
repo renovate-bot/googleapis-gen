@@ -24,13 +24,13 @@ function main(webDataStream, updateMask) {
    *  Required. The web stream to update.
    *  The `name` field is used to identify the web stream to be updated.
    */
-  // const webDataStream = ''
+  // const webDataStream = {}
   /**
    *  Required. The list of fields to be updated. Field names must be in snake case
    *  (e.g., "field_to_update"). Omitted fields will not be updated. To replace
    *  the entire entity, use one path with the string "*" to match all fields.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -38,7 +38,7 @@ function main(webDataStream, updateMask) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function updateWebDataStream() {
+  async function callUpdateWebDataStream() {
     // Construct request
     const request = {
       webDataStream,
@@ -50,7 +50,7 @@ function main(webDataStream, updateMask) {
     console.log(response);
   }
 
-  updateWebDataStream();
+  callUpdateWebDataStream();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_UpdateWebDataStream_async]
 }
 

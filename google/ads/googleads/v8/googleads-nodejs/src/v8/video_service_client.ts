@@ -676,26 +676,6 @@ export class VideoServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getVideo(
-      request?: protos.google.ads.googleads.v8.services.IGetVideoRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IVideo,
-        protos.google.ads.googleads.v8.services.IGetVideoRequest|undefined, {}|undefined
-      ]>;
-  getVideo(
-      request: protos.google.ads.googleads.v8.services.IGetVideoRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IVideo,
-          protos.google.ads.googleads.v8.services.IGetVideoRequest|null|undefined,
-          {}|null|undefined>): void;
-  getVideo(
-      request: protos.google.ads.googleads.v8.services.IGetVideoRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IVideo,
-          protos.google.ads.googleads.v8.services.IGetVideoRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested video in full detail.
  *
@@ -718,9 +698,29 @@ export class VideoServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getVideo(request);
+ * @example <caption>include:samples/generated/v8/video_service.get_video.js</caption>
+ * region_tag:googleads_v8_generated_VideoService_GetVideo_async
  */
+  getVideo(
+      request?: protos.google.ads.googleads.v8.services.IGetVideoRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IVideo,
+        protos.google.ads.googleads.v8.services.IGetVideoRequest|undefined, {}|undefined
+      ]>;
+  getVideo(
+      request: protos.google.ads.googleads.v8.services.IGetVideoRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IVideo,
+          protos.google.ads.googleads.v8.services.IGetVideoRequest|null|undefined,
+          {}|null|undefined>): void;
+  getVideo(
+      request: protos.google.ads.googleads.v8.services.IGetVideoRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IVideo,
+          protos.google.ads.googleads.v8.services.IGetVideoRequest|null|undefined,
+          {}|null|undefined>): void;
   getVideo(
       request?: protos.google.ads.googleads.v8.services.IGetVideoRequest,
       optionsOrCallback?: CallOptions|Callback<

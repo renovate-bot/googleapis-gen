@@ -525,7 +525,7 @@ describe('v3.TagValuesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createTagValue = stubLongRunningCall(expectedResponse);
             const [operation] = await client.createTagValue(request);
@@ -542,7 +542,7 @@ describe('v3.TagValuesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.longrunning.Operation());
             client.innerApiCalls.createTagValue = stubLongRunningCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -572,7 +572,7 @@ describe('v3.TagValuesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createTagValue = stubLongRunningCall(undefined, expectedError);
             await assert.rejects(client.createTagValue(request), expectedError);
@@ -587,7 +587,7 @@ describe('v3.TagValuesClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createTagValue = stubLongRunningCall(undefined, undefined, expectedError);
             const [operation] = await client.createTagValue(request);
@@ -929,7 +929,7 @@ describe('v3.TagValuesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagValuesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),
@@ -949,7 +949,7 @@ describe('v3.TagValuesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagValuesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),
@@ -980,7 +980,7 @@ describe('v3.TagValuesClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagValuesRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listTagValues = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listTagValues(request), expectedError);

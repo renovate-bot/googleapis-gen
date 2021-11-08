@@ -273,26 +273,6 @@ export class SqlBackupRunsServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  delete(
-      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1beta4.IOperation,
-        protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|undefined, {}|undefined
-      ]>;
-  delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IOperation,
-          protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|null|undefined,
-          {}|null|undefined>): void;
-  delete(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IOperation,
-          protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the backup taken by a backup run.
  *
@@ -313,9 +293,29 @@ export class SqlBackupRunsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.delete(request);
+ * @example <caption>include:samples/generated/v1beta4/sql_backup_runs_service.delete.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlBackupRunsService_Delete_async
  */
+  delete(
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1beta4.IOperation,
+        protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|undefined, {}|undefined
+      ]>;
+  delete(
+      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IOperation,
+          protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|null|undefined,
+          {}|null|undefined>): void;
+  delete(
+      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IOperation,
+          protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest|null|undefined,
+          {}|null|undefined>): void;
   delete(
       request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsDeleteRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -350,6 +350,27 @@ export class SqlBackupRunsServiceClient {
     this.initialize();
     return this.innerApiCalls.delete(request, options, callback);
   }
+/**
+ * Retrieves a resource containing information about a backup run.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {number} request.id
+ *   The ID of this Backup Run.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [BackupRun]{@link google.cloud.sql.v1beta4.BackupRun}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta4/sql_backup_runs_service.get.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlBackupRunsService_Get_async
+ */
   get(
       request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest,
       options?: CallOptions):
@@ -370,27 +391,6 @@ export class SqlBackupRunsServiceClient {
           protos.google.cloud.sql.v1beta4.IBackupRun,
           protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Retrieves a resource containing information about a backup run.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {number} request.id
- *   The ID of this Backup Run.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [BackupRun]{@link google.cloud.sql.v1beta4.BackupRun}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.get(request);
- */
   get(
       request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsGetRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -425,6 +425,27 @@ export class SqlBackupRunsServiceClient {
     this.initialize();
     return this.innerApiCalls.get(request, options, callback);
   }
+/**
+ * Creates a new backup run on demand. This method is applicable only to
+ * Second Generation instances.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.instance
+ *   Cloud SQL instance ID. This does not include the project ID.
+ * @param {string} request.project
+ *   Project ID of the project that contains the instance.
+ * @param {google.cloud.sql.v1beta4.BackupRun} request.body
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1beta4.Operation}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1beta4/sql_backup_runs_service.insert.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlBackupRunsService_Insert_async
+ */
   insert(
       request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest,
       options?: CallOptions):
@@ -445,27 +466,6 @@ export class SqlBackupRunsServiceClient {
           protos.google.cloud.sql.v1beta4.IOperation,
           protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a new backup run on demand. This method is applicable only to
- * Second Generation instances.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
- * @param {string} request.project
- *   Project ID of the project that contains the instance.
- * @param {google.cloud.sql.v1beta4.BackupRun} request.body
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.sql.v1beta4.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.insert(request);
- */
   insert(
       request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsInsertRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -500,26 +500,6 @@ export class SqlBackupRunsServiceClient {
     this.initialize();
     return this.innerApiCalls.insert(request, options, callback);
   }
-  list(
-      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
-        protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|undefined, {}|undefined
-      ]>;
-  list(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
-          protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
-      callback: Callback<
-          protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
-          protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Lists all backup runs associated with a given instance and configuration in
  * the reverse chronological order of the backup initiation time.
@@ -542,9 +522,29 @@ export class SqlBackupRunsServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.list(request);
+ * @example <caption>include:samples/generated/v1beta4/sql_backup_runs_service.list.js</caption>
+ * region_tag:sqladmin_v1beta4_generated_SqlBackupRunsService_List_async
  */
+  list(
+      request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
+        protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|undefined, {}|undefined
+      ]>;
+  list(
+      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
+          protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|null|undefined,
+          {}|null|undefined>): void;
+  list(
+      request: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
+      callback: Callback<
+          protos.google.cloud.sql.v1beta4.IBackupRunsListResponse,
+          protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest|null|undefined,
+          {}|null|undefined>): void;
   list(
       request?: protos.google.cloud.sql.v1beta4.ISqlBackupRunsListRequest,
       optionsOrCallback?: CallOptions|Callback<

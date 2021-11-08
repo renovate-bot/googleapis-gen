@@ -37,7 +37,7 @@ function main(name) {
    *  code's lifetime over omitting an expiration, even though the API does
    *  impose an upper limit on the maximum expiration that is permitted).
    */
-  // const expireTime = ''
+  // const expireTime = {}
 
   // Imports the Monitoring library
   const {NotificationChannelServiceClient} = require('@google-cloud/monitoring').v3;
@@ -45,7 +45,7 @@ function main(name) {
   // Instantiates a client
   const monitoringClient = new NotificationChannelServiceClient();
 
-  async function getNotificationChannelVerificationCode() {
+  async function callGetNotificationChannelVerificationCode() {
     // Construct request
     const request = {
       name,
@@ -56,7 +56,7 @@ function main(name) {
     console.log(response);
   }
 
-  getNotificationChannelVerificationCode();
+  callGetNotificationChannelVerificationCode();
   // [END monitoring_v3_generated_NotificationChannelService_GetNotificationChannelVerificationCode_async]
 }
 

@@ -294,7 +294,7 @@ describe('v2.ActionsTestingClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SetWebAndAppActivityControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.setWebAndAppActivityControl = stubSimpleCall(expectedResponse);
             const [response] = await client.setWebAndAppActivityControl(request);
@@ -310,7 +310,7 @@ describe('v2.ActionsTestingClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SetWebAndAppActivityControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.setWebAndAppActivityControl = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -337,7 +337,7 @@ describe('v2.ActionsTestingClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SetWebAndAppActivityControlRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.setWebAndAppActivityControl = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.setWebAndAppActivityControl(request), expectedError);

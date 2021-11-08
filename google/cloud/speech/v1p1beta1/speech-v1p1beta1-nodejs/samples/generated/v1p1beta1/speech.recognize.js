@@ -24,11 +24,11 @@ function main(config, audio) {
    *  Required. Provides information to the recognizer that specifies how to
    *  process the request.
    */
-  // const config = ''
+  // const config = {}
   /**
    *  Required. The audio data to be recognized.
    */
-  // const audio = ''
+  // const audio = {}
 
   // Imports the Speech library
   const {SpeechClient} = require('@google-cloud/speech').v1p1beta1;
@@ -36,7 +36,7 @@ function main(config, audio) {
   // Instantiates a client
   const speechClient = new SpeechClient();
 
-  async function recognize() {
+  async function callRecognize() {
     // Construct request
     const request = {
       config,
@@ -48,7 +48,7 @@ function main(config, audio) {
     console.log(response);
   }
 
-  recognize();
+  callRecognize();
   // [END speech_v1p1beta1_generated_Speech_Recognize_async]
 }
 

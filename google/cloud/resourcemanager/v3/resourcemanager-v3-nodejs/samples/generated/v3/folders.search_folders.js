@@ -66,7 +66,7 @@ function main() {
   // Instantiates a client
   const resourcemanagerClient = new FoldersClient();
 
-  async function searchFolders() {
+  async function callSearchFolders() {
     // Construct request
     const request = {
     };
@@ -78,7 +78,7 @@ function main() {
     }
   }
 
-  searchFolders();
+  callSearchFolders();
   // [END cloudresourcemanager_v3_generated_Folders_SearchFolders_async]
 }
 

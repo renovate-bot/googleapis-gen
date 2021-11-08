@@ -371,26 +371,6 @@ export class FeaturestoreOnlineServingServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  readFeatureValues(
-      request?: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.aiplatform.v1.IReadFeatureValuesResponse,
-        protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest|undefined, {}|undefined
-      ]>;
-  readFeatureValues(
-      request: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IReadFeatureValuesResponse,
-          protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest|null|undefined,
-          {}|null|undefined>): void;
-  readFeatureValues(
-      request: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
-      callback: Callback<
-          protos.google.cloud.aiplatform.v1.IReadFeatureValuesResponse,
-          protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Reads Feature values of a specific entity of an EntityType. For reading
  * feature values of multiple entities of an EntityType, please use
@@ -417,9 +397,29 @@ export class FeaturestoreOnlineServingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.readFeatureValues(request);
+ * @example <caption>include:samples/generated/v1/featurestore_online_serving_service.read_feature_values.js</caption>
+ * region_tag:aiplatform_v1_generated_FeaturestoreOnlineServingService_ReadFeatureValues_async
  */
+  readFeatureValues(
+      request?: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.aiplatform.v1.IReadFeatureValuesResponse,
+        protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest|undefined, {}|undefined
+      ]>;
+  readFeatureValues(
+      request: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IReadFeatureValuesResponse,
+          protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest|null|undefined,
+          {}|null|undefined>): void;
+  readFeatureValues(
+      request: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
+      callback: Callback<
+          protos.google.cloud.aiplatform.v1.IReadFeatureValuesResponse,
+          protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest|null|undefined,
+          {}|null|undefined>): void;
   readFeatureValues(
       request?: protos.google.cloud.aiplatform.v1.IReadFeatureValuesRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -483,10 +483,8 @@ export class FeaturestoreOnlineServingServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.streamingReadFeatureValues(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1/featurestore_online_serving_service.streaming_read_feature_values.js</caption>
+ * region_tag:aiplatform_v1_generated_FeaturestoreOnlineServingService_StreamingReadFeatureValues_async
  */
   streamingReadFeatureValues(
       request?: protos.google.cloud.aiplatform.v1.IStreamingReadFeatureValuesRequest,

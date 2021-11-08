@@ -27,12 +27,12 @@ function main(parent, inputConfig) {
   /**
    *  Required. The desired input location of the data.
    */
-  // const inputConfig = ''
+  // const inputConfig = {}
   /**
    *  The desired location of errors incurred during the Import. Cannot be set
    *  for inline user event imports.
    */
-  // const errorsConfig = ''
+  // const errorsConfig = {}
 
   // Imports the Retail library
   const {UserEventServiceClient} = require('@google-cloud/retail').v2;
@@ -40,7 +40,7 @@ function main(parent, inputConfig) {
   // Instantiates a client
   const retailClient = new UserEventServiceClient();
 
-  async function importUserEvents() {
+  async function callImportUserEvents() {
     // Construct request
     const request = {
       parent,
@@ -53,7 +53,7 @@ function main(parent, inputConfig) {
     console.log(response);
   }
 
-  importUserEvents();
+  callImportUserEvents();
   // [END retail_v2_generated_UserEventService_ImportUserEvents_async]
 }
 

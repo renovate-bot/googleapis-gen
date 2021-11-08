@@ -30,7 +30,7 @@ function main(parent, metadataSchema) {
   /**
    *  Required. The MetadataSchema to create.
    */
-  // const metadataSchema = ''
+  // const metadataSchema = {}
   /**
    *  The {metadata_schema} portion of the resource name with the format:
    *  `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
@@ -49,7 +49,7 @@ function main(parent, metadataSchema) {
   // Instantiates a client
   const aiplatformClient = new MetadataServiceClient();
 
-  async function createMetadataSchema() {
+  async function callCreateMetadataSchema() {
     // Construct request
     const request = {
       parent,
@@ -61,7 +61,7 @@ function main(parent, metadataSchema) {
     console.log(response);
   }
 
-  createMetadataSchema();
+  callCreateMetadataSchema();
   // [END aiplatform_v1beta1_generated_MetadataService_CreateMetadataSchema_async]
 }
 

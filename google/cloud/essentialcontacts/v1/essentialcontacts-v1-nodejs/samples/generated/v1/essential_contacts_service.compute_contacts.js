@@ -53,7 +53,7 @@ function main(parent) {
   // Instantiates a client
   const essentialcontactsClient = new EssentialContactsServiceClient();
 
-  async function computeContacts() {
+  async function callComputeContacts() {
     // Construct request
     const request = {
       parent,
@@ -66,7 +66,7 @@ function main(parent) {
     }
   }
 
-  computeContacts();
+  callComputeContacts();
   // [END essentialcontacts_v1_generated_EssentialContactsService_ComputeContacts_async]
 }
 

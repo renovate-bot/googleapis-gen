@@ -28,7 +28,7 @@ function main(customerId, customerClient) {
    *  Required. The new client customer to create. The resource name on this customer
    *  will be ignored.
    */
-  // const customerClient = ''
+  // const customerClient = {}
   /**
    *  Email address of the user who should be invited on the created client
    *  customer. Accessible only to customers on the allow-list.
@@ -38,7 +38,7 @@ function main(customerId, customerClient) {
    *  The proposed role of user on the created client customer.
    *  Accessible only to customers on the allow-list.
    */
-  // const accessRole = ''
+  // const accessRole = {}
   /**
    *  If true, the request is validated but not executed. Only errors are
    *  returned, not results.
@@ -51,7 +51,7 @@ function main(customerId, customerClient) {
   // Instantiates a client
   const googleadsClient = new CustomerServiceClient();
 
-  async function createCustomerClient() {
+  async function callCreateCustomerClient() {
     // Construct request
     const request = {
       customerId,
@@ -63,7 +63,7 @@ function main(customerId, customerClient) {
     console.log(response);
   }
 
-  createCustomerClient();
+  callCreateCustomerClient();
   // [END googleads_v8_generated_CustomerService_CreateCustomerClient_async]
 }
 

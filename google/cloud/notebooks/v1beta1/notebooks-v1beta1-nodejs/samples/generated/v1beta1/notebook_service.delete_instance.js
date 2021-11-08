@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const notebooksClient = new NotebookServiceClient();
 
-  async function deleteInstance() {
+  async function callDeleteInstance() {
     // Construct request
     const request = {
       name,
@@ -44,7 +44,7 @@ function main(name) {
     console.log(response);
   }
 
-  deleteInstance();
+  callDeleteInstance();
   // [END notebooks_v1beta1_generated_NotebookService_DeleteInstance_async]
 }
 

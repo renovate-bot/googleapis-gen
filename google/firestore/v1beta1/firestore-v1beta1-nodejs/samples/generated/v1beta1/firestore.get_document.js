@@ -30,7 +30,7 @@ function main(name) {
    *  If the document has a field that is not present in this mask, that field
    *  will not be returned in the response.
    */
-  // const mask = ''
+  // const mask = {}
   /**
    *  Reads the document in a transaction.
    */
@@ -39,7 +39,7 @@ function main(name) {
    *  Reads the version of the document at the given time.
    *  This may not be older than 270 seconds.
    */
-  // const readTime = ''
+  // const readTime = {}
 
   // Imports the Firestore library
   const {FirestoreClient} = require('firestore').v1beta1;
@@ -47,7 +47,7 @@ function main(name) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function getDocument() {
+  async function callGetDocument() {
     // Construct request
     const request = {
       name,
@@ -58,7 +58,7 @@ function main(name) {
     console.log(response);
   }
 
-  getDocument();
+  callGetDocument();
   // [END firestore_v1beta1_generated_Firestore_GetDocument_async]
 }
 

@@ -341,7 +341,7 @@ describe('v1.CloudBillingClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.CreateBillingAccountRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount());
             client.innerApiCalls.createBillingAccount = stubSimpleCall(expectedResponse);
             const [response] = await client.createBillingAccount(request);
@@ -357,7 +357,7 @@ describe('v1.CloudBillingClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.CreateBillingAccountRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount());
             client.innerApiCalls.createBillingAccount = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -384,7 +384,7 @@ describe('v1.CloudBillingClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.CreateBillingAccountRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.createBillingAccount = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.createBillingAccount(request), expectedError);
@@ -821,7 +821,7 @@ describe('v1.CloudBillingClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListBillingAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
@@ -841,7 +841,7 @@ describe('v1.CloudBillingClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListBillingAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
@@ -872,7 +872,7 @@ describe('v1.CloudBillingClient', () => {
             });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListBillingAccountsRequest());
-            const expectedOptions = {};
+            const expectedOptions = {otherArgs: {headers: {}}};;
             const expectedError = new Error('expected');
             client.innerApiCalls.listBillingAccounts = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listBillingAccounts(request), expectedError);

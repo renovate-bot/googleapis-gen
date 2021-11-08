@@ -70,7 +70,7 @@ function main(parent) {
   // Instantiates a client
   const recommendationengineClient = new UserEventServiceClient();
 
-  async function listUserEvents() {
+  async function callListUserEvents() {
     // Construct request
     const request = {
       parent,
@@ -83,7 +83,7 @@ function main(parent) {
     }
   }
 
-  listUserEvents();
+  callListUserEvents();
   // [END recommendationengine_v1beta1_generated_UserEventService_ListUserEvents_async]
 }
 

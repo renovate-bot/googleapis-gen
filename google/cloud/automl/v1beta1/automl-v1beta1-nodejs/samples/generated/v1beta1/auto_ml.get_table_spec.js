@@ -27,7 +27,7 @@ function main(name) {
   /**
    *  Mask specifying which fields to read.
    */
-  // const fieldMask = ''
+  // const fieldMask = {}
 
   // Imports the Automl library
   const {AutoMlClient} = require('@google-cloud/automl').v1beta1;
@@ -35,7 +35,7 @@ function main(name) {
   // Instantiates a client
   const automlClient = new AutoMlClient();
 
-  async function getTableSpec() {
+  async function callGetTableSpec() {
     // Construct request
     const request = {
       name,
@@ -46,7 +46,7 @@ function main(name) {
     console.log(response);
   }
 
-  getTableSpec();
+  callGetTableSpec();
   // [END automl_v1beta1_generated_AutoMl_GetTableSpec_async]
 }
 

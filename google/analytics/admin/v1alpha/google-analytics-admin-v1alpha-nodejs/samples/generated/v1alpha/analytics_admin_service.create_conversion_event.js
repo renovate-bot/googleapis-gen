@@ -23,7 +23,7 @@ function main(conversionEvent, parent) {
   /**
    *  Required. The conversion event to create.
    */
-  // const conversionEvent = ''
+  // const conversionEvent = {}
   /**
    *  Required. The resource name of the parent property where this conversion event will
    *  be created. Format: properties/123
@@ -36,7 +36,7 @@ function main(conversionEvent, parent) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createConversionEvent() {
+  async function callCreateConversionEvent() {
     // Construct request
     const request = {
       conversionEvent,
@@ -48,7 +48,7 @@ function main(conversionEvent, parent) {
     console.log(response);
   }
 
-  createConversionEvent();
+  callCreateConversionEvent();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateConversionEvent_async]
 }
 

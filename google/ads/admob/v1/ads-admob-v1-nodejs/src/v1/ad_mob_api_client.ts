@@ -303,6 +303,24 @@ export class AdMobApiClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Gets information about the specified AdMob publisher account.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Resource name of the publisher account to retrieve.
+ *   Example: accounts/pub-9876543210987654
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [PublisherAccount]{@link google.ads.admob.v1.PublisherAccount}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/ad_mob_api.get_publisher_account.js</caption>
+ * region_tag:admob_v1_generated_AdMobApi_GetPublisherAccount_async
+ */
   getPublisherAccount(
       request?: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
       options?: CallOptions):
@@ -323,24 +341,6 @@ export class AdMobApiClient {
           protos.google.ads.admob.v1.IPublisherAccount,
           protos.google.ads.admob.v1.IGetPublisherAccountRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets information about the specified AdMob publisher account.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Resource name of the publisher account to retrieve.
- *   Example: accounts/pub-9876543210987654
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [PublisherAccount]{@link google.ads.admob.v1.PublisherAccount}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getPublisherAccount(request);
- */
   getPublisherAccount(
       request?: protos.google.ads.admob.v1.IGetPublisherAccountRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -394,10 +394,8 @@ export class AdMobApiClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.generateNetworkReport(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1/ad_mob_api.generate_network_report.js</caption>
+ * region_tag:admob_v1_generated_AdMobApi_GenerateNetworkReport_async
  */
   generateNetworkReport(
       request?: protos.google.ads.admob.v1.IGenerateNetworkReportRequest,
@@ -434,10 +432,8 @@ export class AdMobApiClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.generateMediationReport(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v1/ad_mob_api.generate_mediation_report.js</caption>
+ * region_tag:admob_v1_generated_AdMobApi_GenerateMediationReport_async
  */
   generateMediationReport(
       request?: protos.google.ads.admob.v1.IGenerateMediationReportRequest,
@@ -456,28 +452,7 @@ export class AdMobApiClient {
     return this.innerApiCalls.generateMediationReport(request, options);
   }
 
-  listPublisherAccounts(
-      request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.admob.v1.IPublisherAccount[],
-        protos.google.ads.admob.v1.IListPublisherAccountsRequest|null,
-        protos.google.ads.admob.v1.IListPublisherAccountsResponse
-      ]>;
-  listPublisherAccounts(
-      request: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.ads.admob.v1.IListPublisherAccountsRequest,
-          protos.google.ads.admob.v1.IListPublisherAccountsResponse|null|undefined,
-          protos.google.ads.admob.v1.IPublisherAccount>): void;
-  listPublisherAccounts(
-      request: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
-      callback: PaginationCallback<
-          protos.google.ads.admob.v1.IListPublisherAccountsRequest,
-          protos.google.ads.admob.v1.IListPublisherAccountsResponse|null|undefined,
-          protos.google.ads.admob.v1.IPublisherAccount>): void;
-/**
+ /**
  * Lists the AdMob publisher account accessible with the client credential.
  * Currently, all credentials have access to at most one AdMob account.
  *
@@ -504,6 +479,27 @@ export class AdMobApiClient {
  */
   listPublisherAccounts(
       request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.admob.v1.IPublisherAccount[],
+        protos.google.ads.admob.v1.IListPublisherAccountsRequest|null,
+        protos.google.ads.admob.v1.IListPublisherAccountsResponse
+      ]>;
+  listPublisherAccounts(
+      request: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+          protos.google.ads.admob.v1.IListPublisherAccountsResponse|null|undefined,
+          protos.google.ads.admob.v1.IPublisherAccount>): void;
+  listPublisherAccounts(
+      request: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+      callback: PaginationCallback<
+          protos.google.ads.admob.v1.IListPublisherAccountsRequest,
+          protos.google.ads.admob.v1.IListPublisherAccountsResponse|null|undefined,
+          protos.google.ads.admob.v1.IPublisherAccount>): void;
+  listPublisherAccounts(
+      request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.ads.admob.v1.IListPublisherAccountsRequest,
           protos.google.ads.admob.v1.IListPublisherAccountsResponse|null|undefined,
@@ -527,6 +523,8 @@ export class AdMobApiClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listPublisherAccounts(request, options, callback);
   }
@@ -559,6 +557,8 @@ export class AdMobApiClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listPublisherAccounts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -591,11 +591,8 @@ export class AdMobApiClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listPublisherAccountsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/ad_mob_api.list_publisher_accounts.js</caption>
+ * region_tag:admob_v1_generated_AdMobApi_ListPublisherAccounts_async
  */
   listPublisherAccountsAsync(
       request?: protos.google.ads.admob.v1.IListPublisherAccountsRequest,
@@ -603,7 +600,8 @@ export class AdMobApiClient {
     AsyncIterable<protos.google.ads.admob.v1.IPublisherAccount>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listPublisherAccounts'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

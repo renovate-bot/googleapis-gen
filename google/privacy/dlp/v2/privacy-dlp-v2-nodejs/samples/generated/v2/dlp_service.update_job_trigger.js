@@ -28,11 +28,11 @@ function main(name) {
   /**
    *  New JobTrigger value.
    */
-  // const jobTrigger = ''
+  // const jobTrigger = {}
   /**
    *  Mask to control which fields get updated.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Dlp library
   const {DlpServiceClient} = require('@google-cloud/dlp').v2;
@@ -40,7 +40,7 @@ function main(name) {
   // Instantiates a client
   const dlpClient = new DlpServiceClient();
 
-  async function updateJobTrigger() {
+  async function callUpdateJobTrigger() {
     // Construct request
     const request = {
       name,
@@ -51,7 +51,7 @@ function main(name) {
     console.log(response);
   }
 
-  updateJobTrigger();
+  callUpdateJobTrigger();
   // [END dlp_v2_generated_DlpService_UpdateJobTrigger_async]
 }
 

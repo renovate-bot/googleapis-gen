@@ -33,17 +33,17 @@ function main(parent, instanceFilter) {
    *  Required. Instances to patch, either explicitly or filtered by some criteria such
    *  as zone or labels.
    */
-  // const instanceFilter = ''
+  // const instanceFilter = {}
   /**
    *  Patch configuration being applied. If omitted, instances are
    *  patched using the default configurations.
    */
-  // const patchConfig = ''
+  // const patchConfig = {}
   /**
    *  Duration of the patch job. After the duration ends, the patch job
    *  times out.
    */
-  // const duration = ''
+  // const duration = {}
   /**
    *  If this patch is a dry-run only, instances are contacted but
    *  will do nothing.
@@ -60,7 +60,7 @@ function main(parent, instanceFilter) {
   // Instantiates a client
   const osconfigClient = new OsConfigServiceClient();
 
-  async function executePatchJob() {
+  async function callExecutePatchJob() {
     // Construct request
     const request = {
       parent,
@@ -72,7 +72,7 @@ function main(parent, instanceFilter) {
     console.log(response);
   }
 
-  executePatchJob();
+  callExecutePatchJob();
   // [END osconfig_v1beta_generated_OsConfigService_ExecutePatchJob_async]
 }
 

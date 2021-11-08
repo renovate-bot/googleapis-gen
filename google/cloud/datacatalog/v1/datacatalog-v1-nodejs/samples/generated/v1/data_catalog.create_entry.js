@@ -36,7 +36,7 @@ function main(parent, entryId, entry) {
   /**
    *  Required. The entry to create.
    */
-  // const entry = ''
+  // const entry = {}
 
   // Imports the Datacatalog library
   const {DataCatalogClient} = require('@google-cloud/datacatalog').v1;
@@ -44,7 +44,7 @@ function main(parent, entryId, entry) {
   // Instantiates a client
   const datacatalogClient = new DataCatalogClient();
 
-  async function createEntry() {
+  async function callCreateEntry() {
     // Construct request
     const request = {
       parent,
@@ -57,7 +57,7 @@ function main(parent, entryId, entry) {
     console.log(response);
   }
 
-  createEntry();
+  callCreateEntry();
   // [END datacatalog_v1_generated_DataCatalog_CreateEntry_async]
 }
 

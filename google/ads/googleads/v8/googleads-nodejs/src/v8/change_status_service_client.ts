@@ -676,26 +676,6 @@ export class ChangeStatusServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getChangeStatus(
-      request?: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v8.resources.IChangeStatus,
-        protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|undefined, {}|undefined
-      ]>;
-  getChangeStatus(
-      request: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IChangeStatus,
-          protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|null|undefined,
-          {}|null|undefined>): void;
-  getChangeStatus(
-      request: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v8.resources.IChangeStatus,
-          protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested change status in full detail.
  *
@@ -718,9 +698,29 @@ export class ChangeStatusServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getChangeStatus(request);
+ * @example <caption>include:samples/generated/v8/change_status_service.get_change_status.js</caption>
+ * region_tag:googleads_v8_generated_ChangeStatusService_GetChangeStatus_async
  */
+  getChangeStatus(
+      request?: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v8.resources.IChangeStatus,
+        protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|undefined, {}|undefined
+      ]>;
+  getChangeStatus(
+      request: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IChangeStatus,
+          protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|null|undefined,
+          {}|null|undefined>): void;
+  getChangeStatus(
+      request: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v8.resources.IChangeStatus,
+          protos.google.ads.googleads.v8.services.IGetChangeStatusRequest|null|undefined,
+          {}|null|undefined>): void;
   getChangeStatus(
       request?: protos.google.ads.googleads.v8.services.IGetChangeStatusRequest,
       optionsOrCallback?: CallOptions|Callback<

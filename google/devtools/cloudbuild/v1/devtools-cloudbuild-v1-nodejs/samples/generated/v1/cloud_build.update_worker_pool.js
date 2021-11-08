@@ -25,11 +25,11 @@ function main(workerPool) {
    *  The `name` field is used to identify the `WorkerPool` to update.
    *  Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    */
-  // const workerPool = ''
+  // const workerPool = {}
   /**
    *  A mask specifying which fields in `worker_pool` to update.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  If set, validate the request and preview the response, but do not actually
    *  post it.
@@ -42,7 +42,7 @@ function main(workerPool) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function updateWorkerPool() {
+  async function callUpdateWorkerPool() {
     // Construct request
     const request = {
       workerPool,
@@ -54,7 +54,7 @@ function main(workerPool) {
     console.log(response);
   }
 
-  updateWorkerPool();
+  callUpdateWorkerPool();
   // [END cloudbuild_v1_generated_CloudBuild_UpdateWorkerPool_async]
 }
 

@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new MediaFileServiceClient();
 
-  async function getMediaFile() {
+  async function callGetMediaFile() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getMediaFile();
+  callGetMediaFile();
   // [END googleads_v8_generated_MediaFileService_GetMediaFile_async]
 }
 

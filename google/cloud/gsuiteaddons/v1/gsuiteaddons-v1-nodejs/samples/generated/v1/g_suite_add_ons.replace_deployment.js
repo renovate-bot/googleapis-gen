@@ -23,7 +23,7 @@ function main(deployment) {
   /**
    *  Required. The deployment to create or replace.
    */
-  // const deployment = ''
+  // const deployment = {}
 
   // Imports the Gsuiteaddons library
   const {GSuiteAddOnsClient} = require('@google-cloud/gsuiteaddons').v1;
@@ -31,7 +31,7 @@ function main(deployment) {
   // Instantiates a client
   const gsuiteaddonsClient = new GSuiteAddOnsClient();
 
-  async function replaceDeployment() {
+  async function callReplaceDeployment() {
     // Construct request
     const request = {
       deployment,
@@ -42,7 +42,7 @@ function main(deployment) {
     console.log(response);
   }
 
-  replaceDeployment();
+  callReplaceDeployment();
   // [END gsuiteaddons_v1_generated_GSuiteAddOns_ReplaceDeployment_async]
 }
 

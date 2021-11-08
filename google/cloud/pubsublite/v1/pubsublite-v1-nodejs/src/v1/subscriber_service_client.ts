@@ -310,12 +310,8 @@ export class SubscriberServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#bi-directional-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.subscribe();
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
- * stream.write(request);
- * stream.end();
+ * @example <caption>include:samples/generated/v1/subscriber_service.subscribe.js</caption>
+ * region_tag:pubsublite_v1_generated_SubscriberService_Subscribe_async
  */
   subscribe(
       options?: CallOptions):

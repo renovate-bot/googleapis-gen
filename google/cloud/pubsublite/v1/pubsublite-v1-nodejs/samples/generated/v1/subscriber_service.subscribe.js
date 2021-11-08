@@ -23,15 +23,15 @@ function main() {
   /**
    *  Initial request on the stream.
    */
-  // const initial = ''
+  // const initial = {}
   /**
    *  Request to update the stream's delivery cursor.
    */
-  // const seek = ''
+  // const seek = {}
   /**
    *  Request to grant tokens to the server,
    */
-  // const flowControl = ''
+  // const flowControl = {}
 
   // Imports the Pubsublite library
   const {SubscriberServiceClient} = require('@google-cloud/pubsublite').v1;
@@ -39,7 +39,7 @@ function main() {
   // Instantiates a client
   const pubsubliteClient = new SubscriberServiceClient();
 
-  async function subscribe() {
+  async function callSubscribe() {
     // Construct request
     const request = {
     };
@@ -53,7 +53,7 @@ function main() {
     stream.end(); 
   }
 
-  subscribe();
+  callSubscribe();
   // [END pubsublite_v1_generated_SubscriberService_Subscribe_async]
 }
 

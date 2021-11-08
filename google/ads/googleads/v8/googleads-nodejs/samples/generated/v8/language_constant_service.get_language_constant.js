@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new LanguageConstantServiceClient();
 
-  async function getLanguageConstant() {
+  async function callGetLanguageConstant() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getLanguageConstant();
+  callGetLanguageConstant();
   // [END googleads_v8_generated_LanguageConstantService_GetLanguageConstant_async]
 }
 

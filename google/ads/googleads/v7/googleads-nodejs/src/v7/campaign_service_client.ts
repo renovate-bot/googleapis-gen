@@ -646,26 +646,6 @@ export class CampaignServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getCampaign(
-      request?: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.ICampaign,
-        protos.google.ads.googleads.v7.services.IGetCampaignRequest|undefined, {}|undefined
-      ]>;
-  getCampaign(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICampaign,
-          protos.google.ads.googleads.v7.services.IGetCampaignRequest|null|undefined,
-          {}|null|undefined>): void;
-  getCampaign(
-      request: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.ICampaign,
-          protos.google.ads.googleads.v7.services.IGetCampaignRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested campaign in full detail.
  *
@@ -688,9 +668,29 @@ export class CampaignServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getCampaign(request);
+ * @example <caption>include:samples/generated/v7/campaign_service.get_campaign.js</caption>
+ * region_tag:googleads_v7_generated_CampaignService_GetCampaign_async
  */
+  getCampaign(
+      request?: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.ICampaign,
+        protos.google.ads.googleads.v7.services.IGetCampaignRequest|undefined, {}|undefined
+      ]>;
+  getCampaign(
+      request: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICampaign,
+          protos.google.ads.googleads.v7.services.IGetCampaignRequest|null|undefined,
+          {}|null|undefined>): void;
+  getCampaign(
+      request: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.ICampaign,
+          protos.google.ads.googleads.v7.services.IGetCampaignRequest|null|undefined,
+          {}|null|undefined>): void;
   getCampaign(
       request?: protos.google.ads.googleads.v7.services.IGetCampaignRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class CampaignServiceClient {
     this.initialize();
     return this.innerApiCalls.getCampaign(request, options, callback);
   }
-  mutateCampaigns(
-      request?: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IMutateCampaignsResponse,
-        protos.google.ads.googleads.v7.services.IMutateCampaignsRequest|undefined, {}|undefined
-      ]>;
-  mutateCampaigns(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCampaignsResponse,
-          protos.google.ads.googleads.v7.services.IMutateCampaignsRequest|null|undefined,
-          {}|null|undefined>): void;
-  mutateCampaigns(
-      request: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IMutateCampaignsResponse,
-          protos.google.ads.googleads.v7.services.IMutateCampaignsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates, updates, or removes campaigns. Operation statuses are returned.
  *
@@ -809,9 +789,29 @@ export class CampaignServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.mutateCampaigns(request);
+ * @example <caption>include:samples/generated/v7/campaign_service.mutate_campaigns.js</caption>
+ * region_tag:googleads_v7_generated_CampaignService_MutateCampaigns_async
  */
+  mutateCampaigns(
+      request?: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IMutateCampaignsResponse,
+        protos.google.ads.googleads.v7.services.IMutateCampaignsRequest|undefined, {}|undefined
+      ]>;
+  mutateCampaigns(
+      request: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCampaignsResponse,
+          protos.google.ads.googleads.v7.services.IMutateCampaignsRequest|null|undefined,
+          {}|null|undefined>): void;
+  mutateCampaigns(
+      request: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IMutateCampaignsResponse,
+          protos.google.ads.googleads.v7.services.IMutateCampaignsRequest|null|undefined,
+          {}|null|undefined>): void;
   mutateCampaigns(
       request?: protos.google.ads.googleads.v7.services.IMutateCampaignsRequest,
       optionsOrCallback?: CallOptions|Callback<

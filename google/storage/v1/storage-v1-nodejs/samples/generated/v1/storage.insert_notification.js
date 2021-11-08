@@ -27,11 +27,11 @@ function main(bucket) {
   /**
    *  Properties of the notification to be inserted.
    */
-  // const notification = ''
+  // const notification = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -39,7 +39,7 @@ function main(bucket) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function insertNotification() {
+  async function callInsertNotification() {
     // Construct request
     const request = {
       bucket,
@@ -50,7 +50,7 @@ function main(bucket) {
     console.log(response);
   }
 
-  insertNotification();
+  callInsertNotification();
   // [END storage_v1_generated_Storage_InsertNotification_async]
 }
 

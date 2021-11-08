@@ -23,11 +23,11 @@ function main(organizationSettings) {
   /**
    *  Required. The organization settings resource to update.
    */
-  // const organizationSettings = ''
+  // const organizationSettings = {}
   /**
    *  The FieldMask to use when updating the settings resource.
    */
-  // const updateMask = ''
+  // const updateMask = {}
 
   // Imports the Securitycenter library
   const {SecurityCenterClient} = require('@google-cloud/security-center').v1beta1;
@@ -35,7 +35,7 @@ function main(organizationSettings) {
   // Instantiates a client
   const securitycenterClient = new SecurityCenterClient();
 
-  async function updateOrganizationSettings() {
+  async function callUpdateOrganizationSettings() {
     // Construct request
     const request = {
       organizationSettings,
@@ -46,7 +46,7 @@ function main(organizationSettings) {
     console.log(response);
   }
 
-  updateOrganizationSettings();
+  callUpdateOrganizationSettings();
   // [END securitycenter_v1beta1_generated_SecurityCenter_UpdateOrganizationSettings_async]
 }
 

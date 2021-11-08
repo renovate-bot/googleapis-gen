@@ -41,11 +41,11 @@ function main(project) {
   /**
    *  Set of properties to return. Defaults to `NO_ACL`.
    */
-  // const projection = ''
+  // const projection = {}
   /**
    *  A set of parameters common to all Storage API requests.
    */
-  // const commonRequestParams = ''
+  // const commonRequestParams = {}
 
   // Imports the Storage library
   const {StorageClient} = require('storage').v1;
@@ -53,7 +53,7 @@ function main(project) {
   // Instantiates a client
   const storageClient = new StorageClient();
 
-  async function listBuckets() {
+  async function callListBuckets() {
     // Construct request
     const request = {
       project,
@@ -64,7 +64,7 @@ function main(project) {
     console.log(response);
   }
 
-  listBuckets();
+  callListBuckets();
   // [END storage_v1_generated_Storage_ListBuckets_async]
 }
 

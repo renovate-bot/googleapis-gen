@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new FeedMappingServiceClient();
 
-  async function getFeedMapping() {
+  async function callGetFeedMapping() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getFeedMapping();
+  callGetFeedMapping();
   // [END googleads_v8_generated_FeedMappingService_GetFeedMapping_async]
 }
 

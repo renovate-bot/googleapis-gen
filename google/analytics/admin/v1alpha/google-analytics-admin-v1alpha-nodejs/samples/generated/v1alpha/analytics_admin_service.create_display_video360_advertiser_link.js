@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main(parent, displayVideo360AdvertiserLink) {
+function main(parent, displayVideo_360AdvertiserLink) {
   // [START analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateDisplayVideo360AdvertiserLink_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -27,7 +27,7 @@ function main(parent, displayVideo360AdvertiserLink) {
   /**
    *  Required. The DisplayVideo360AdvertiserLink to create.
    */
-  // const displayVideo360AdvertiserLink = ''
+  // const displayVideo_360AdvertiserLink = {}
 
   // Imports the Admin library
   const {AnalyticsAdminServiceClient} = require('@google-analytics/admin').v1alpha;
@@ -35,11 +35,11 @@ function main(parent, displayVideo360AdvertiserLink) {
   // Instantiates a client
   const adminClient = new AnalyticsAdminServiceClient();
 
-  async function createDisplayVideo360AdvertiserLink() {
+  async function callCreateDisplayVideo360AdvertiserLink() {
     // Construct request
     const request = {
       parent,
-      displayVideo360AdvertiserLink,
+      displayVideo_360AdvertiserLink,
     };
 
     // Run request
@@ -47,7 +47,7 @@ function main(parent, displayVideo360AdvertiserLink) {
     console.log(response);
   }
 
-  createDisplayVideo360AdvertiserLink();
+  callCreateDisplayVideo360AdvertiserLink();
   // [END analyticsadmin_v1alpha_generated_AnalyticsAdminService_CreateDisplayVideo360AdvertiserLink_async]
 }
 

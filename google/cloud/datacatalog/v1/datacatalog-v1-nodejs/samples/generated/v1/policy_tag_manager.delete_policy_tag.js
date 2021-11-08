@@ -32,7 +32,7 @@ function main(name) {
   // Instantiates a client
   const datacatalogClient = new PolicyTagManagerClient();
 
-  async function deletePolicyTag() {
+  async function callDeletePolicyTag() {
     // Construct request
     const request = {
       name,
@@ -43,7 +43,7 @@ function main(name) {
     console.log(response);
   }
 
-  deletePolicyTag();
+  callDeletePolicyTag();
   // [END datacatalog_v1_generated_PolicyTagManager_DeletePolicyTag_async]
 }
 

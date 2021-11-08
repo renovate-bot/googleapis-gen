@@ -40,14 +40,14 @@ function main(alertPolicy) {
    *      `[CONDITION_ID]`. If the supplied condition omits the `name` field,
    *      then a new `[CONDITION_ID]` is created.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  Required. The updated alerting policy or the updated values for the
    *  fields listed in `update_mask`.
    *  If `update_mask` is not empty, any fields in this policy that are
    *  not in `update_mask` are ignored.
    */
-  // const alertPolicy = ''
+  // const alertPolicy = {}
 
   // Imports the Monitoring library
   const {AlertPolicyServiceClient} = require('@google-cloud/monitoring').v3;
@@ -55,7 +55,7 @@ function main(alertPolicy) {
   // Instantiates a client
   const monitoringClient = new AlertPolicyServiceClient();
 
-  async function updateAlertPolicy() {
+  async function callUpdateAlertPolicy() {
     // Construct request
     const request = {
       alertPolicy,
@@ -66,7 +66,7 @@ function main(alertPolicy) {
     console.log(response);
   }
 
-  updateAlertPolicy();
+  callUpdateAlertPolicy();
   // [END monitoring_v3_generated_AlertPolicyService_UpdateAlertPolicy_async]
 }
 

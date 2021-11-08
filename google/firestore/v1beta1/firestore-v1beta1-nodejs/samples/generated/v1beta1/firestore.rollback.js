@@ -36,7 +36,7 @@ function main(database, transaction) {
   // Instantiates a client
   const firestoreClient = new FirestoreClient();
 
-  async function rollback() {
+  async function callRollback() {
     // Construct request
     const request = {
       database,
@@ -48,7 +48,7 @@ function main(database, transaction) {
     console.log(response);
   }
 
-  rollback();
+  callRollback();
   // [END firestore_v1beta1_generated_Firestore_Rollback_async]
 }
 

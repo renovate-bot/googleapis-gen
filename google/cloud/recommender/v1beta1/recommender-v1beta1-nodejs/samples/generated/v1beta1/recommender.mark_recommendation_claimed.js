@@ -42,7 +42,7 @@ function main(name, etag) {
   // Instantiates a client
   const recommenderClient = new RecommenderClient();
 
-  async function markRecommendationClaimed() {
+  async function callMarkRecommendationClaimed() {
     // Construct request
     const request = {
       name,
@@ -54,7 +54,7 @@ function main(name, etag) {
     console.log(response);
   }
 
-  markRecommendationClaimed();
+  callMarkRecommendationClaimed();
   // [END recommender_v1beta1_generated_Recommender_MarkRecommendationClaimed_async]
 }
 

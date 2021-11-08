@@ -21,14 +21,14 @@ function main(serviceName, configSource) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the service.  See the [overview](https://cloud.google.com/service-management/overview)
+   *  Required. The name of the service.  See the overview (https://cloud.google.com/service-management/overview)
    *  for naming requirements.  For example: `example.googleapis.com`.
    */
   // const serviceName = 'abc123'
   /**
    *  Required. The source configuration for the service.
    */
-  // const configSource = ''
+  // const configSource = {}
   /**
    *  Optional. If set, this will result in the generation of a
    *  `google.api.Service` configuration based on the `ConfigSource` provided,
@@ -42,7 +42,7 @@ function main(serviceName, configSource) {
   // Instantiates a client
   const servicemanagementClient = new ServiceManagerClient();
 
-  async function submitConfigSource() {
+  async function callSubmitConfigSource() {
     // Construct request
     const request = {
       serviceName,
@@ -55,7 +55,7 @@ function main(serviceName, configSource) {
     console.log(response);
   }
 
-  submitConfigSource();
+  callSubmitConfigSource();
   // [END servicemanagement_v1_generated_ServiceManager_SubmitConfigSource_async]
 }
 

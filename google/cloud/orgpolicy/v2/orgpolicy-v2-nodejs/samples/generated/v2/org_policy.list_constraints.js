@@ -47,7 +47,7 @@ function main(parent) {
   // Instantiates a client
   const orgpolicyClient = new OrgPolicyClient();
 
-  async function listConstraints() {
+  async function callListConstraints() {
     // Construct request
     const request = {
       parent,
@@ -60,7 +60,7 @@ function main(parent) {
     }
   }
 
-  listConstraints();
+  callListConstraints();
   // [END orgpolicy_v2_generated_OrgPolicy_ListConstraints_async]
 }
 

@@ -727,26 +727,6 @@ export class DistanceViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getDistanceView(
-      request?: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.IDistanceView,
-        protos.google.ads.googleads.v9.services.IGetDistanceViewRequest|undefined, {}|undefined
-      ]>;
-  getDistanceView(
-      request: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IDistanceView,
-          protos.google.ads.googleads.v9.services.IGetDistanceViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getDistanceView(
-      request: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.IDistanceView,
-          protos.google.ads.googleads.v9.services.IGetDistanceViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the attributes of the requested distance view.
  *
@@ -769,9 +749,29 @@ export class DistanceViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getDistanceView(request);
+ * @example <caption>include:samples/generated/v9/distance_view_service.get_distance_view.js</caption>
+ * region_tag:googleads_v9_generated_DistanceViewService_GetDistanceView_async
  */
+  getDistanceView(
+      request?: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.IDistanceView,
+        protos.google.ads.googleads.v9.services.IGetDistanceViewRequest|undefined, {}|undefined
+      ]>;
+  getDistanceView(
+      request: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IDistanceView,
+          protos.google.ads.googleads.v9.services.IGetDistanceViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getDistanceView(
+      request: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.IDistanceView,
+          protos.google.ads.googleads.v9.services.IGetDistanceViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getDistanceView(
       request?: protos.google.ads.googleads.v9.services.IGetDistanceViewRequest,
       optionsOrCallback?: CallOptions|Callback<

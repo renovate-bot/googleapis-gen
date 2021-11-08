@@ -727,26 +727,6 @@ export class SmartCampaignSearchTermViewServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getSmartCampaignSearchTermView(
-      request?: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v9.resources.ISmartCampaignSearchTermView,
-        protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest|undefined, {}|undefined
-      ]>;
-  getSmartCampaignSearchTermView(
-      request: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ISmartCampaignSearchTermView,
-          protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
-  getSmartCampaignSearchTermView(
-      request: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v9.resources.ISmartCampaignSearchTermView,
-          protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the attributes of the requested Smart campaign search term view.
  *
@@ -769,9 +749,29 @@ export class SmartCampaignSearchTermViewServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getSmartCampaignSearchTermView(request);
+ * @example <caption>include:samples/generated/v9/smart_campaign_search_term_view_service.get_smart_campaign_search_term_view.js</caption>
+ * region_tag:googleads_v9_generated_SmartCampaignSearchTermViewService_GetSmartCampaignSearchTermView_async
  */
+  getSmartCampaignSearchTermView(
+      request?: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v9.resources.ISmartCampaignSearchTermView,
+        protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest|undefined, {}|undefined
+      ]>;
+  getSmartCampaignSearchTermView(
+      request: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ISmartCampaignSearchTermView,
+          protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
+  getSmartCampaignSearchTermView(
+      request: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v9.resources.ISmartCampaignSearchTermView,
+          protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest|null|undefined,
+          {}|null|undefined>): void;
   getSmartCampaignSearchTermView(
       request?: protos.google.ads.googleads.v9.services.IGetSmartCampaignSearchTermViewRequest,
       optionsOrCallback?: CallOptions|Callback<

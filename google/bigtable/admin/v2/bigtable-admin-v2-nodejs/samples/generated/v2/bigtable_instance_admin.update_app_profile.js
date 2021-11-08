@@ -23,12 +23,12 @@ function main(appProfile, updateMask) {
   /**
    *  Required. The app profile which will (partially) replace the current value.
    */
-  // const appProfile = ''
+  // const appProfile = {}
   /**
    *  Required. The subset of app profile fields which should be replaced.
    *  If unset, all fields will be replaced.
    */
-  // const updateMask = ''
+  // const updateMask = {}
   /**
    *  If true, ignore safety checks when updating the app profile.
    */
@@ -40,7 +40,7 @@ function main(appProfile, updateMask) {
   // Instantiates a client
   const adminClient = new BigtableInstanceAdminClient();
 
-  async function updateAppProfile() {
+  async function callUpdateAppProfile() {
     // Construct request
     const request = {
       appProfile,
@@ -53,7 +53,7 @@ function main(appProfile, updateMask) {
     console.log(response);
   }
 
-  updateAppProfile();
+  callUpdateAppProfile();
   // [END bigtableadmin_v2_generated_BigtableInstanceAdmin_UpdateAppProfile_async]
 }
 

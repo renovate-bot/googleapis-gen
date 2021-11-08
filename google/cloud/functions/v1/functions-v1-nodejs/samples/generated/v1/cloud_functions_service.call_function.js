@@ -35,7 +35,7 @@ function main(name, data) {
   // Instantiates a client
   const functionsClient = new CloudFunctionsServiceClient();
 
-  async function callFunction() {
+  async function callCallFunction() {
     // Construct request
     const request = {
       name,
@@ -47,7 +47,7 @@ function main(name, data) {
     console.log(response);
   }
 
-  callFunction();
+  callCallFunction();
   // [END cloudfunctions_v1_generated_CloudFunctionsService_CallFunction_async]
 }
 

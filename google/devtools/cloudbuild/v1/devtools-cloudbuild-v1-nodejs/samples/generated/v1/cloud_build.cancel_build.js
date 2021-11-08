@@ -40,7 +40,7 @@ function main(projectId, id) {
   // Instantiates a client
   const cloudbuildClient = new CloudBuildClient();
 
-  async function cancelBuild() {
+  async function callCancelBuild() {
     // Construct request
     const request = {
       projectId,
@@ -52,7 +52,7 @@ function main(projectId, id) {
     console.log(response);
   }
 
-  cancelBuild();
+  callCancelBuild();
   // [END cloudbuild_v1_generated_CloudBuild_CancelBuild_async]
 }
 

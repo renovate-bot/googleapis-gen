@@ -39,7 +39,7 @@ function main(parent) {
   // Instantiates a client
   const tpuClient = new TpuClient();
 
-  async function listNodes() {
+  async function callListNodes() {
     // Construct request
     const request = {
       parent,
@@ -52,7 +52,7 @@ function main(parent) {
     }
   }
 
-  listNodes();
+  callListNodes();
   // [END tpu_v1_generated_Tpu_ListNodes_async]
 }
 

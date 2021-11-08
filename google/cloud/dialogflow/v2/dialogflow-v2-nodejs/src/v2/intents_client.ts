@@ -429,26 +429,6 @@ export class IntentsClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getIntent(
-      request?: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2.IIntent,
-        protos.google.cloud.dialogflow.v2.IGetIntentRequest|undefined, {}|undefined
-      ]>;
-  getIntent(
-      request: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2.IIntent,
-          protos.google.cloud.dialogflow.v2.IGetIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  getIntent(
-      request: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2.IIntent,
-          protos.google.cloud.dialogflow.v2.IGetIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Retrieves the specified intent.
  *
@@ -472,9 +452,29 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getIntent(request);
+ * @example <caption>include:samples/generated/v2/intents.get_intent.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_GetIntent_async
  */
+  getIntent(
+      request?: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2.IIntent,
+        protos.google.cloud.dialogflow.v2.IGetIntentRequest|undefined, {}|undefined
+      ]>;
+  getIntent(
+      request: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2.IIntent,
+          protos.google.cloud.dialogflow.v2.IGetIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  getIntent(
+      request: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2.IIntent,
+          protos.google.cloud.dialogflow.v2.IGetIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   getIntent(
       request?: protos.google.cloud.dialogflow.v2.IGetIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -509,26 +509,6 @@ export class IntentsClient {
     this.initialize();
     return this.innerApiCalls.getIntent(request, options, callback);
   }
-  createIntent(
-      request?: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2.IIntent,
-        protos.google.cloud.dialogflow.v2.ICreateIntentRequest|undefined, {}|undefined
-      ]>;
-  createIntent(
-      request: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2.IIntent,
-          protos.google.cloud.dialogflow.v2.ICreateIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  createIntent(
-      request: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2.IIntent,
-          protos.google.cloud.dialogflow.v2.ICreateIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates an intent in the specified agent.
  *
@@ -558,9 +538,29 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createIntent(request);
+ * @example <caption>include:samples/generated/v2/intents.create_intent.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_CreateIntent_async
  */
+  createIntent(
+      request?: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2.IIntent,
+        protos.google.cloud.dialogflow.v2.ICreateIntentRequest|undefined, {}|undefined
+      ]>;
+  createIntent(
+      request: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2.IIntent,
+          protos.google.cloud.dialogflow.v2.ICreateIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  createIntent(
+      request: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2.IIntent,
+          protos.google.cloud.dialogflow.v2.ICreateIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   createIntent(
       request?: protos.google.cloud.dialogflow.v2.ICreateIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -595,26 +595,6 @@ export class IntentsClient {
     this.initialize();
     return this.innerApiCalls.createIntent(request, options, callback);
   }
-  updateIntent(
-      request?: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2.IIntent,
-        protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|undefined, {}|undefined
-      ]>;
-  updateIntent(
-      request: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2.IIntent,
-          protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateIntent(
-      request: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
-      callback: Callback<
-          protos.google.cloud.dialogflow.v2.IIntent,
-          protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the specified intent.
  *
@@ -643,9 +623,29 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateIntent(request);
+ * @example <caption>include:samples/generated/v2/intents.update_intent.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_UpdateIntent_async
  */
+  updateIntent(
+      request?: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2.IIntent,
+        protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|undefined, {}|undefined
+      ]>;
+  updateIntent(
+      request: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2.IIntent,
+          protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateIntent(
+      request: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
+      callback: Callback<
+          protos.google.cloud.dialogflow.v2.IIntent,
+          protos.google.cloud.dialogflow.v2.IUpdateIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   updateIntent(
       request?: protos.google.cloud.dialogflow.v2.IUpdateIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -680,26 +680,6 @@ export class IntentsClient {
     this.initialize();
     return this.innerApiCalls.updateIntent(request, options, callback);
   }
-  deleteIntent(
-      request?: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.protobuf.IEmpty,
-        protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|undefined, {}|undefined
-      ]>;
-  deleteIntent(
-      request: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|null|undefined,
-          {}|null|undefined>): void;
-  deleteIntent(
-      request: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
-      callback: Callback<
-          protos.google.protobuf.IEmpty,
-          protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes the specified intent and its direct or indirect followup intents.
  *
@@ -720,9 +700,29 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.deleteIntent(request);
+ * @example <caption>include:samples/generated/v2/intents.delete_intent.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_DeleteIntent_async
  */
+  deleteIntent(
+      request?: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.protobuf.IEmpty,
+        protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|undefined, {}|undefined
+      ]>;
+  deleteIntent(
+      request: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|null|undefined,
+          {}|null|undefined>): void;
+  deleteIntent(
+      request: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
+      callback: Callback<
+          protos.google.protobuf.IEmpty,
+          protos.google.cloud.dialogflow.v2.IDeleteIntentRequest|null|undefined,
+          {}|null|undefined>): void;
   deleteIntent(
       request?: protos.google.cloud.dialogflow.v2.IDeleteIntentRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -758,26 +758,6 @@ export class IntentsClient {
     return this.innerApiCalls.deleteIntent(request, options, callback);
   }
 
-  batchUpdateIntents(
-      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchUpdateIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchUpdateIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates/Creates multiple intents in the specified agent.
  *
@@ -823,10 +803,29 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchUpdateIntents(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/intents.batch_update_intents.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_BatchUpdateIntents_async
  */
+  batchUpdateIntents(
+      request?: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchUpdateIntents(
+      request: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchUpdateIntents(
+      request: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsResponse, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchUpdateIntents(
       request?: protos.google.cloud.dialogflow.v2.IBatchUpdateIntentsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -870,11 +869,8 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchUpdateIntentsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/intents.batch_update_intents.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_BatchUpdateIntents_async
  */
   async checkBatchUpdateIntentsProgress(name: string): Promise<LROperation<protos.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -882,26 +878,6 @@ export class IntentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.batchUpdateIntents, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.dialogflow.v2.BatchUpdateIntentsResponse, protos.google.protobuf.Struct>;
   }
-  batchDeleteIntents(
-      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  batchDeleteIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  batchDeleteIntents(
-      request: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
-      callback: Callback<
-          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Deletes intents in the specified agent.
  *
@@ -935,10 +911,29 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.batchDeleteIntents(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v2/intents.batch_delete_intents.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_BatchDeleteIntents_async
  */
+  batchDeleteIntents(
+      request?: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  batchDeleteIntents(
+      request: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  batchDeleteIntents(
+      request: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
+      callback: Callback<
+          LROperation<protos.google.protobuf.IEmpty, protos.google.protobuf.IStruct>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   batchDeleteIntents(
       request?: protos.google.cloud.dialogflow.v2.IBatchDeleteIntentsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -982,11 +977,8 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkBatchDeleteIntentsProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v2/intents.batch_delete_intents.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_BatchDeleteIntents_async
  */
   async checkBatchDeleteIntentsProgress(name: string): Promise<LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -994,28 +986,7 @@ export class IntentsClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.batchDeleteIntents, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.protobuf.Empty, protos.google.protobuf.Struct>;
   }
-  listIntents(
-      request?: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.dialogflow.v2.IIntent[],
-        protos.google.cloud.dialogflow.v2.IListIntentsRequest|null,
-        protos.google.cloud.dialogflow.v2.IListIntentsResponse
-      ]>;
-  listIntents(
-      request: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2.IListIntentsRequest,
-          protos.google.cloud.dialogflow.v2.IListIntentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2.IIntent>): void;
-  listIntents(
-      request: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.dialogflow.v2.IListIntentsRequest,
-          protos.google.cloud.dialogflow.v2.IListIntentsResponse|null|undefined,
-          protos.google.cloud.dialogflow.v2.IIntent>): void;
-/**
+ /**
  * Returns the list of all intents in the specified agent.
  *
  * @param {Object} request
@@ -1057,6 +1028,27 @@ export class IntentsClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listIntents(
+      request?: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.dialogflow.v2.IIntent[],
+        protos.google.cloud.dialogflow.v2.IListIntentsRequest|null,
+        protos.google.cloud.dialogflow.v2.IListIntentsResponse
+      ]>;
+  listIntents(
+      request: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+          protos.google.cloud.dialogflow.v2.IListIntentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2.IIntent>): void;
+  listIntents(
+      request: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.dialogflow.v2.IListIntentsRequest,
+          protos.google.cloud.dialogflow.v2.IListIntentsResponse|null|undefined,
+          protos.google.cloud.dialogflow.v2.IIntent>): void;
   listIntents(
       request?: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1196,11 +1188,8 @@ export class IntentsClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listIntentsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/intents.list_intents.js</caption>
+ * region_tag:dialogflow_v2_generated_Intents_ListIntents_async
  */
   listIntentsAsync(
       request?: protos.google.cloud.dialogflow.v2.IListIntentsRequest,
@@ -1215,7 +1204,6 @@ export class IntentsClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listIntents'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

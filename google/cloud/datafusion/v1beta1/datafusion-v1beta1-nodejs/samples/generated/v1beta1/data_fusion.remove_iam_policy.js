@@ -31,7 +31,7 @@ function main() {
   // Instantiates a client
   const datafusionClient = new DataFusionClient();
 
-  async function removeIamPolicy() {
+  async function callRemoveIamPolicy() {
     // Construct request
     const request = {
     };
@@ -41,7 +41,7 @@ function main() {
     console.log(response);
   }
 
-  removeIamPolicy();
+  callRemoveIamPolicy();
   // [END datafusion_v1beta1_generated_DataFusion_RemoveIamPolicy_async]
 }
 

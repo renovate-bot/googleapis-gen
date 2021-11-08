@@ -379,6 +379,27 @@ export class SecurityCenterClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Creates a source.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.parent
+ *   Required. Resource name of the new source's parent. Its format should be
+ *   "organizations/[organization_id]".
+ * @param {google.cloud.securitycenter.v1.Source} request.source
+ *   Required. The Source being created, only the display_name and description will be
+ *   used. All other fields will be ignored.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.create_source.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_CreateSource_async
+ */
   createSource(
       request?: protos.google.cloud.securitycenter.v1.ICreateSourceRequest,
       options?: CallOptions):
@@ -399,27 +420,6 @@ export class SecurityCenterClient {
           protos.google.cloud.securitycenter.v1.ISource,
           protos.google.cloud.securitycenter.v1.ICreateSourceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Creates a source.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.parent
- *   Required. Resource name of the new source's parent. Its format should be
- *   "organizations/[organization_id]".
- * @param {google.cloud.securitycenter.v1.Source} request.source
- *   Required. The Source being created, only the display_name and description will be
- *   used. All other fields will be ignored.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.createSource(request);
- */
   createSource(
       request?: protos.google.cloud.securitycenter.v1.ICreateSourceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -454,26 +454,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.createSource(request, options, callback);
   }
-  createFinding(
-      request?: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.IFinding,
-        protos.google.cloud.securitycenter.v1.ICreateFindingRequest|undefined, {}|undefined
-      ]>;
-  createFinding(
-      request: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.IFinding,
-          protos.google.cloud.securitycenter.v1.ICreateFindingRequest|null|undefined,
-          {}|null|undefined>): void;
-  createFinding(
-      request: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.IFinding,
-          protos.google.cloud.securitycenter.v1.ICreateFindingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a finding. The corresponding source must exist for finding creation
  * to succeed.
@@ -497,9 +477,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createFinding(request);
+ * @example <caption>include:samples/generated/v1/security_center.create_finding.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_CreateFinding_async
  */
+  createFinding(
+      request?: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.IFinding,
+        protos.google.cloud.securitycenter.v1.ICreateFindingRequest|undefined, {}|undefined
+      ]>;
+  createFinding(
+      request: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.IFinding,
+          protos.google.cloud.securitycenter.v1.ICreateFindingRequest|null|undefined,
+          {}|null|undefined>): void;
+  createFinding(
+      request: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.IFinding,
+          protos.google.cloud.securitycenter.v1.ICreateFindingRequest|null|undefined,
+          {}|null|undefined>): void;
   createFinding(
       request?: protos.google.cloud.securitycenter.v1.ICreateFindingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -534,26 +534,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.createFinding(request, options, callback);
   }
-  createNotificationConfig(
-      request?: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.INotificationConfig,
-        protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest|undefined, {}|undefined
-      ]>;
-  createNotificationConfig(
-      request: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.INotificationConfig,
-          protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest|null|undefined,
-          {}|null|undefined>): void;
-  createNotificationConfig(
-      request: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.INotificationConfig,
-          protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates a notification config.
  *
@@ -577,9 +557,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.createNotificationConfig(request);
+ * @example <caption>include:samples/generated/v1/security_center.create_notification_config.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_CreateNotificationConfig_async
  */
+  createNotificationConfig(
+      request?: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.INotificationConfig,
+        protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest|undefined, {}|undefined
+      ]>;
+  createNotificationConfig(
+      request: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.INotificationConfig,
+          protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest|null|undefined,
+          {}|null|undefined>): void;
+  createNotificationConfig(
+      request: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.INotificationConfig,
+          protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest|null|undefined,
+          {}|null|undefined>): void;
   createNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.ICreateNotificationConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -614,6 +614,24 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.createNotificationConfig(request, options, callback);
   }
+/**
+ * Deletes a notification config.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the notification config to delete. Its format is
+ *   "organizations/[organization_id]/notificationConfigs/[config_id]".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.delete_notification_config.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_DeleteNotificationConfig_async
+ */
   deleteNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IDeleteNotificationConfigRequest,
       options?: CallOptions):
@@ -634,24 +652,6 @@ export class SecurityCenterClient {
           protos.google.protobuf.IEmpty,
           protos.google.cloud.securitycenter.v1.IDeleteNotificationConfigRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Deletes a notification config.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the notification config to delete. Its format is
- *   "organizations/[organization_id]/notificationConfigs/[config_id]".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Empty]{@link google.protobuf.Empty}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.deleteNotificationConfig(request);
- */
   deleteNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IDeleteNotificationConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -686,6 +686,27 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.deleteNotificationConfig(request, options, callback);
   }
+/**
+ * Gets the access control policy on the specified Source.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resource
+ *   REQUIRED: The resource for which the policy is being requested.
+ *   See the operation documentation for the appropriate value for this field.
+ * @param {google.iam.v1.GetPolicyOptions} request.options
+ *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
+ *   `GetIamPolicy`. This field is only used by Cloud IAM.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.get_iam_policy.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_GetIamPolicy_async
+ */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       options?: CallOptions):
@@ -706,27 +727,6 @@ export class SecurityCenterClient {
           protos.google.iam.v1.IPolicy,
           protos.google.iam.v1.IGetIamPolicyRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the access control policy on the specified Source.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {google.iam.v1.GetPolicyOptions} request.options
- *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
- *   `GetIamPolicy`. This field is only used by Cloud IAM.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getIamPolicy(request);
- */
   getIamPolicy(
       request?: protos.google.iam.v1.IGetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -761,6 +761,24 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.getIamPolicy(request, options, callback);
   }
+/**
+ * Gets a notification config.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the notification config to get. Its format is
+ *   "organizations/[organization_id]/notificationConfigs/[config_id]".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.get_notification_config.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_GetNotificationConfig_async
+ */
   getNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IGetNotificationConfigRequest,
       options?: CallOptions):
@@ -781,24 +799,6 @@ export class SecurityCenterClient {
           protos.google.cloud.securitycenter.v1.INotificationConfig,
           protos.google.cloud.securitycenter.v1.IGetNotificationConfigRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a notification config.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the notification config to get. Its format is
- *   "organizations/[organization_id]/notificationConfigs/[config_id]".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [NotificationConfig]{@link google.cloud.securitycenter.v1.NotificationConfig}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getNotificationConfig(request);
- */
   getNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IGetNotificationConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -833,6 +833,24 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.getNotificationConfig(request, options, callback);
   }
+/**
+ * Gets the settings for an organization.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the organization to get organization settings for. Its format is
+ *   "organizations/[organization_id]/organizationSettings".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.get_organization_settings.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_GetOrganizationSettings_async
+ */
   getOrganizationSettings(
       request?: protos.google.cloud.securitycenter.v1.IGetOrganizationSettingsRequest,
       options?: CallOptions):
@@ -853,24 +871,6 @@ export class SecurityCenterClient {
           protos.google.cloud.securitycenter.v1.IOrganizationSettings,
           protos.google.cloud.securitycenter.v1.IGetOrganizationSettingsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets the settings for an organization.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Name of the organization to get organization settings for. Its format is
- *   "organizations/[organization_id]/organizationSettings".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getOrganizationSettings(request);
- */
   getOrganizationSettings(
       request?: protos.google.cloud.securitycenter.v1.IGetOrganizationSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -905,6 +905,24 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.getOrganizationSettings(request, options, callback);
   }
+/**
+ * Gets a source.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Relative resource name of the source. Its format is
+ *   "organizations/[organization_id]/source/[source_id]".
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.get_source.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_GetSource_async
+ */
   getSource(
       request?: protos.google.cloud.securitycenter.v1.IGetSourceRequest,
       options?: CallOptions):
@@ -925,24 +943,6 @@ export class SecurityCenterClient {
           protos.google.cloud.securitycenter.v1.ISource,
           protos.google.cloud.securitycenter.v1.IGetSourceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Gets a source.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.name
- *   Required. Relative resource name of the source. Its format is
- *   "organizations/[organization_id]/source/[source_id]".
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.getSource(request);
- */
   getSource(
       request?: protos.google.cloud.securitycenter.v1.IGetSourceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -977,26 +977,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.getSource(request, options, callback);
   }
-  setFindingState(
-      request?: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.IFinding,
-        protos.google.cloud.securitycenter.v1.ISetFindingStateRequest|undefined, {}|undefined
-      ]>;
-  setFindingState(
-      request: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.IFinding,
-          protos.google.cloud.securitycenter.v1.ISetFindingStateRequest|null|undefined,
-          {}|null|undefined>): void;
-  setFindingState(
-      request: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.IFinding,
-          protos.google.cloud.securitycenter.v1.ISetFindingStateRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates the state of a finding.
  *
@@ -1018,9 +998,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setFindingState(request);
+ * @example <caption>include:samples/generated/v1/security_center.set_finding_state.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_SetFindingState_async
  */
+  setFindingState(
+      request?: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.IFinding,
+        protos.google.cloud.securitycenter.v1.ISetFindingStateRequest|undefined, {}|undefined
+      ]>;
+  setFindingState(
+      request: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.IFinding,
+          protos.google.cloud.securitycenter.v1.ISetFindingStateRequest|null|undefined,
+          {}|null|undefined>): void;
+  setFindingState(
+      request: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.IFinding,
+          protos.google.cloud.securitycenter.v1.ISetFindingStateRequest|null|undefined,
+          {}|null|undefined>): void;
   setFindingState(
       request?: protos.google.cloud.securitycenter.v1.ISetFindingStateRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1055,26 +1055,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.setFindingState(request, options, callback);
   }
-  setIamPolicy(
-      request?: protos.google.iam.v1.ISetIamPolicyRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.IPolicy,
-        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
-      ]>;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
-  setIamPolicy(
-      request: protos.google.iam.v1.ISetIamPolicyRequest,
-      callback: Callback<
-          protos.google.iam.v1.IPolicy,
-          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Sets the access control policy on the specified Source.
  *
@@ -1095,9 +1075,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.setIamPolicy(request);
+ * @example <caption>include:samples/generated/v1/security_center.set_iam_policy.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_SetIamPolicy_async
  */
+  setIamPolicy(
+      request?: protos.google.iam.v1.ISetIamPolicyRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.IPolicy,
+        protos.google.iam.v1.ISetIamPolicyRequest|undefined, {}|undefined
+      ]>;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
+  setIamPolicy(
+      request: protos.google.iam.v1.ISetIamPolicyRequest,
+      callback: Callback<
+          protos.google.iam.v1.IPolicy,
+          protos.google.iam.v1.ISetIamPolicyRequest|null|undefined,
+          {}|null|undefined>): void;
   setIamPolicy(
       request?: protos.google.iam.v1.ISetIamPolicyRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1132,26 +1132,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.setIamPolicy(request, options, callback);
   }
-  testIamPermissions(
-      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.iam.v1.ITestIamPermissionsResponse,
-        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
-      ]>;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
-  testIamPermissions(
-      request: protos.google.iam.v1.ITestIamPermissionsRequest,
-      callback: Callback<
-          protos.google.iam.v1.ITestIamPermissionsResponse,
-          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the permissions that a caller has on the specified source.
  *
@@ -1172,9 +1152,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.testIamPermissions(request);
+ * @example <caption>include:samples/generated/v1/security_center.test_iam_permissions.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_TestIamPermissions_async
  */
+  testIamPermissions(
+      request?: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.iam.v1.ITestIamPermissionsResponse,
+        protos.google.iam.v1.ITestIamPermissionsRequest|undefined, {}|undefined
+      ]>;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
+  testIamPermissions(
+      request: protos.google.iam.v1.ITestIamPermissionsRequest,
+      callback: Callback<
+          protos.google.iam.v1.ITestIamPermissionsResponse,
+          protos.google.iam.v1.ITestIamPermissionsRequest|null|undefined,
+          {}|null|undefined>): void;
   testIamPermissions(
       request?: protos.google.iam.v1.ITestIamPermissionsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1209,26 +1209,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
-  updateFinding(
-      request?: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.IFinding,
-        protos.google.cloud.securitycenter.v1.IUpdateFindingRequest|undefined, {}|undefined
-      ]>;
-  updateFinding(
-      request: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.IFinding,
-          protos.google.cloud.securitycenter.v1.IUpdateFindingRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateFinding(
-      request: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.IFinding,
-          protos.google.cloud.securitycenter.v1.IUpdateFindingRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Creates or updates a finding. The corresponding source must exist for a
  * finding creation to succeed.
@@ -1257,9 +1237,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateFinding(request);
+ * @example <caption>include:samples/generated/v1/security_center.update_finding.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_UpdateFinding_async
  */
+  updateFinding(
+      request?: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.IFinding,
+        protos.google.cloud.securitycenter.v1.IUpdateFindingRequest|undefined, {}|undefined
+      ]>;
+  updateFinding(
+      request: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.IFinding,
+          protos.google.cloud.securitycenter.v1.IUpdateFindingRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateFinding(
+      request: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.IFinding,
+          protos.google.cloud.securitycenter.v1.IUpdateFindingRequest|null|undefined,
+          {}|null|undefined>): void;
   updateFinding(
       request?: protos.google.cloud.securitycenter.v1.IUpdateFindingRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1294,26 +1294,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.updateFinding(request, options, callback);
   }
-  updateNotificationConfig(
-      request?: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.INotificationConfig,
-        protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest|undefined, {}|undefined
-      ]>;
-  updateNotificationConfig(
-      request: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.INotificationConfig,
-          protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateNotificationConfig(
-      request: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.INotificationConfig,
-          protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  *
  * Updates a notification config. The following update
@@ -1334,9 +1314,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateNotificationConfig(request);
+ * @example <caption>include:samples/generated/v1/security_center.update_notification_config.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_UpdateNotificationConfig_async
  */
+  updateNotificationConfig(
+      request?: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.INotificationConfig,
+        protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest|undefined, {}|undefined
+      ]>;
+  updateNotificationConfig(
+      request: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.INotificationConfig,
+          protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateNotificationConfig(
+      request: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.INotificationConfig,
+          protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest|null|undefined,
+          {}|null|undefined>): void;
   updateNotificationConfig(
       request?: protos.google.cloud.securitycenter.v1.IUpdateNotificationConfigRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1371,6 +1371,27 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.updateNotificationConfig(request, options, callback);
   }
+/**
+ * Updates an organization's settings.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.securitycenter.v1.OrganizationSettings} request.organizationSettings
+ *   Required. The organization settings resource to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The FieldMask to use when updating the settings resource.
+ *
+ *   If empty all mutable fields will be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.update_organization_settings.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_UpdateOrganizationSettings_async
+ */
   updateOrganizationSettings(
       request?: protos.google.cloud.securitycenter.v1.IUpdateOrganizationSettingsRequest,
       options?: CallOptions):
@@ -1391,27 +1412,6 @@ export class SecurityCenterClient {
           protos.google.cloud.securitycenter.v1.IOrganizationSettings,
           protos.google.cloud.securitycenter.v1.IUpdateOrganizationSettingsRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates an organization's settings.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.securitycenter.v1.OrganizationSettings} request.organizationSettings
- *   Required. The organization settings resource to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The FieldMask to use when updating the settings resource.
- *
- *   If empty all mutable fields will be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [OrganizationSettings]{@link google.cloud.securitycenter.v1.OrganizationSettings}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateOrganizationSettings(request);
- */
   updateOrganizationSettings(
       request?: protos.google.cloud.securitycenter.v1.IUpdateOrganizationSettingsRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1446,6 +1446,27 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.updateOrganizationSettings(request, options, callback);
   }
+/**
+ * Updates a source.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.securitycenter.v1.Source} request.source
+ *   Required. The source resource to update.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   The FieldMask to use when updating the source resource.
+ *
+ *   If empty all mutable fields will be updated.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/security_center.update_source.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_UpdateSource_async
+ */
   updateSource(
       request?: protos.google.cloud.securitycenter.v1.IUpdateSourceRequest,
       options?: CallOptions):
@@ -1466,27 +1487,6 @@ export class SecurityCenterClient {
           protos.google.cloud.securitycenter.v1.ISource,
           protos.google.cloud.securitycenter.v1.IUpdateSourceRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Updates a source.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.securitycenter.v1.Source} request.source
- *   Required. The source resource to update.
- * @param {google.protobuf.FieldMask} request.updateMask
- *   The FieldMask to use when updating the source resource.
- *
- *   If empty all mutable fields will be updated.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Source]{@link google.cloud.securitycenter.v1.Source}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.updateSource(request);
- */
   updateSource(
       request?: protos.google.cloud.securitycenter.v1.IUpdateSourceRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1521,26 +1521,6 @@ export class SecurityCenterClient {
     this.initialize();
     return this.innerApiCalls.updateSource(request, options, callback);
   }
-  updateSecurityMarks(
-      request?: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.ISecurityMarks,
-        protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest|undefined, {}|undefined
-      ]>;
-  updateSecurityMarks(
-      request: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.ISecurityMarks,
-          protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest|null|undefined,
-          {}|null|undefined>): void;
-  updateSecurityMarks(
-      request: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
-      callback: Callback<
-          protos.google.cloud.securitycenter.v1.ISecurityMarks,
-          protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Updates security marks.
  *
@@ -1565,9 +1545,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.updateSecurityMarks(request);
+ * @example <caption>include:samples/generated/v1/security_center.update_security_marks.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_UpdateSecurityMarks_async
  */
+  updateSecurityMarks(
+      request?: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.ISecurityMarks,
+        protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest|undefined, {}|undefined
+      ]>;
+  updateSecurityMarks(
+      request: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.ISecurityMarks,
+          protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest|null|undefined,
+          {}|null|undefined>): void;
+  updateSecurityMarks(
+      request: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
+      callback: Callback<
+          protos.google.cloud.securitycenter.v1.ISecurityMarks,
+          protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest|null|undefined,
+          {}|null|undefined>): void;
   updateSecurityMarks(
       request?: protos.google.cloud.securitycenter.v1.IUpdateSecurityMarksRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1603,26 +1603,6 @@ export class SecurityCenterClient {
     return this.innerApiCalls.updateSecurityMarks(request, options, callback);
   }
 
-  runAssetDiscovery(
-      request?: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
-      options?: CallOptions):
-      Promise<[
-        LROperation<protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, protos.google.protobuf.IEmpty>,
-        protos.google.longrunning.IOperation|undefined, {}|undefined
-      ]>;
-  runAssetDiscovery(
-      request: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
-      options: CallOptions,
-      callback: Callback<
-          LROperation<protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, protos.google.protobuf.IEmpty>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
-  runAssetDiscovery(
-      request: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
-      callback: Callback<
-          LROperation<protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, protos.google.protobuf.IEmpty>,
-          protos.google.longrunning.IOperation|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Runs asset discovery. The discovery is tracked with a long-running
  * operation.
@@ -1645,10 +1625,29 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const [operation] = await client.runAssetDiscovery(request);
- * const [response] = await operation.promise();
+ * @example <caption>include:samples/generated/v1/security_center.run_asset_discovery.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_RunAssetDiscovery_async
  */
+  runAssetDiscovery(
+      request?: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, protos.google.protobuf.IEmpty>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  runAssetDiscovery(
+      request: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, protos.google.protobuf.IEmpty>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  runAssetDiscovery(
+      request: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
+      callback: Callback<
+          LROperation<protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryResponse, protos.google.protobuf.IEmpty>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
   runAssetDiscovery(
       request?: protos.google.cloud.securitycenter.v1.IRunAssetDiscoveryRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -1692,11 +1691,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
- * @example
- * const decodedOperation = await checkRunAssetDiscoveryProgress(name);
- * console.log(decodedOperation.result);
- * console.log(decodedOperation.done);
- * console.log(decodedOperation.metadata);
+ * @example <caption>include:samples/generated/v1/security_center.run_asset_discovery.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_RunAssetDiscovery_async
  */
   async checkRunAssetDiscoveryProgress(name: string): Promise<LROperation<protos.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse, protos.google.protobuf.Empty>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
@@ -1704,28 +1700,7 @@ export class SecurityCenterClient {
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.runAssetDiscovery, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse, protos.google.protobuf.Empty>;
   }
-  groupAssets(
-      request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.IGroupResult[],
-        protos.google.cloud.securitycenter.v1.IGroupAssetsRequest|null,
-        protos.google.cloud.securitycenter.v1.IGroupAssetsResponse
-      ]>;
-  groupAssets(
-      request: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
-          protos.google.cloud.securitycenter.v1.IGroupAssetsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
-  groupAssets(
-      request: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
-          protos.google.cloud.securitycenter.v1.IGroupAssetsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
-/**
+ /**
  * Filters an organization's assets and  groups them by their specified
  * properties.
  *
@@ -1870,6 +1845,27 @@ export class SecurityCenterClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  groupAssets(
+      request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.IGroupResult[],
+        protos.google.cloud.securitycenter.v1.IGroupAssetsRequest|null,
+        protos.google.cloud.securitycenter.v1.IGroupAssetsResponse
+      ]>;
+  groupAssets(
+      request: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
+          protos.google.cloud.securitycenter.v1.IGroupAssetsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
+  groupAssets(
+      request: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
+          protos.google.cloud.securitycenter.v1.IGroupAssetsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
   groupAssets(
       request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2213,11 +2209,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.groupAssetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/security_center.group_assets.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_GroupAssets_async
  */
   groupAssetsAsync(
       request?: protos.google.cloud.securitycenter.v1.IGroupAssetsRequest,
@@ -2232,7 +2225,6 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['groupAssets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2242,28 +2234,7 @@ export class SecurityCenterClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.securitycenter.v1.IGroupResult>;
   }
-  groupFindings(
-      request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.IGroupResult[],
-        protos.google.cloud.securitycenter.v1.IGroupFindingsRequest|null,
-        protos.google.cloud.securitycenter.v1.IGroupFindingsResponse
-      ]>;
-  groupFindings(
-      request: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
-          protos.google.cloud.securitycenter.v1.IGroupFindingsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
-  groupFindings(
-      request: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
-          protos.google.cloud.securitycenter.v1.IGroupFindingsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
-/**
+ /**
  * Filters an organization or source's findings and  groups them by their
  * specified properties.
  *
@@ -2416,6 +2387,27 @@ export class SecurityCenterClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  groupFindings(
+      request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.IGroupResult[],
+        protos.google.cloud.securitycenter.v1.IGroupFindingsRequest|null,
+        protos.google.cloud.securitycenter.v1.IGroupFindingsResponse
+      ]>;
+  groupFindings(
+      request: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
+          protos.google.cloud.securitycenter.v1.IGroupFindingsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
+  groupFindings(
+      request: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
+          protos.google.cloud.securitycenter.v1.IGroupFindingsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.IGroupResult>): void;
   groupFindings(
       request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -2765,11 +2757,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.groupFindingsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/security_center.group_findings.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_GroupFindings_async
  */
   groupFindingsAsync(
       request?: protos.google.cloud.securitycenter.v1.IGroupFindingsRequest,
@@ -2784,7 +2773,6 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['groupFindings'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -2794,28 +2782,7 @@ export class SecurityCenterClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.securitycenter.v1.IGroupResult>;
   }
-  listAssets(
-      request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult[],
-        protos.google.cloud.securitycenter.v1.IListAssetsRequest|null,
-        protos.google.cloud.securitycenter.v1.IListAssetsResponse
-      ]>;
-  listAssets(
-      request: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListAssetsRequest,
-          protos.google.cloud.securitycenter.v1.IListAssetsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult>): void;
-  listAssets(
-      request: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListAssetsRequest,
-          protos.google.cloud.securitycenter.v1.IListAssetsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult>): void;
-/**
+ /**
  * Lists an organization's assets.
  *
  * @param {Object} request
@@ -2963,6 +2930,27 @@ export class SecurityCenterClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listAssets(
+      request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult[],
+        protos.google.cloud.securitycenter.v1.IListAssetsRequest|null,
+        protos.google.cloud.securitycenter.v1.IListAssetsResponse
+      ]>;
+  listAssets(
+      request: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListAssetsRequest,
+          protos.google.cloud.securitycenter.v1.IListAssetsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult>): void;
+  listAssets(
+      request: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListAssetsRequest,
+          protos.google.cloud.securitycenter.v1.IListAssetsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult>): void;
   listAssets(
       request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3314,11 +3302,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listAssetsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/security_center.list_assets.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_ListAssets_async
  */
   listAssetsAsync(
       request?: protos.google.cloud.securitycenter.v1.IListAssetsRequest,
@@ -3333,7 +3318,6 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listAssets'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3343,28 +3327,7 @@ export class SecurityCenterClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.securitycenter.v1.ListAssetsResponse.IListAssetsResult>;
   }
-  listFindings(
-      request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult[],
-        protos.google.cloud.securitycenter.v1.IListFindingsRequest|null,
-        protos.google.cloud.securitycenter.v1.IListFindingsResponse
-      ]>;
-  listFindings(
-      request: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListFindingsRequest,
-          protos.google.cloud.securitycenter.v1.IListFindingsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult>): void;
-  listFindings(
-      request: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListFindingsRequest,
-          protos.google.cloud.securitycenter.v1.IListFindingsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult>): void;
-/**
+ /**
  * Lists an organization or source's findings.
  *
  * To list across all sources provide a `-` as the source id.
@@ -3520,6 +3483,27 @@ export class SecurityCenterClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listFindings(
+      request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult[],
+        protos.google.cloud.securitycenter.v1.IListFindingsRequest|null,
+        protos.google.cloud.securitycenter.v1.IListFindingsResponse
+      ]>;
+  listFindings(
+      request: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListFindingsRequest,
+          protos.google.cloud.securitycenter.v1.IListFindingsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult>): void;
+  listFindings(
+      request: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListFindingsRequest,
+          protos.google.cloud.securitycenter.v1.IListFindingsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult>): void;
   listFindings(
       request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -3881,11 +3865,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listFindingsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/security_center.list_findings.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_ListFindings_async
  */
   listFindingsAsync(
       request?: protos.google.cloud.securitycenter.v1.IListFindingsRequest,
@@ -3900,7 +3881,6 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listFindings'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -3910,28 +3890,7 @@ export class SecurityCenterClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.securitycenter.v1.ListFindingsResponse.IListFindingsResult>;
   }
-  listNotificationConfigs(
-      request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.INotificationConfig[],
-        protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest|null,
-        protos.google.cloud.securitycenter.v1.IListNotificationConfigsResponse
-      ]>;
-  listNotificationConfigs(
-      request: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
-          protos.google.cloud.securitycenter.v1.IListNotificationConfigsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.INotificationConfig>): void;
-  listNotificationConfigs(
-      request: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
-          protos.google.cloud.securitycenter.v1.IListNotificationConfigsResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.INotificationConfig>): void;
-/**
+ /**
  * Lists notification configs.
  *
  * @param {Object} request
@@ -3959,6 +3918,27 @@ export class SecurityCenterClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listNotificationConfigs(
+      request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.INotificationConfig[],
+        protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest|null,
+        protos.google.cloud.securitycenter.v1.IListNotificationConfigsResponse
+      ]>;
+  listNotificationConfigs(
+      request: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
+          protos.google.cloud.securitycenter.v1.IListNotificationConfigsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.INotificationConfig>): void;
+  listNotificationConfigs(
+      request: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
+          protos.google.cloud.securitycenter.v1.IListNotificationConfigsResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.INotificationConfig>): void;
   listNotificationConfigs(
       request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -4070,11 +4050,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listNotificationConfigsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/security_center.list_notification_configs.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_ListNotificationConfigs_async
  */
   listNotificationConfigsAsync(
       request?: protos.google.cloud.securitycenter.v1.IListNotificationConfigsRequest,
@@ -4089,7 +4066,6 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listNotificationConfigs'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -4099,28 +4075,7 @@ export class SecurityCenterClient {
       callSettings
     ) as AsyncIterable<protos.google.cloud.securitycenter.v1.INotificationConfig>;
   }
-  listSources(
-      request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.securitycenter.v1.ISource[],
-        protos.google.cloud.securitycenter.v1.IListSourcesRequest|null,
-        protos.google.cloud.securitycenter.v1.IListSourcesResponse
-      ]>;
-  listSources(
-      request: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListSourcesRequest,
-          protos.google.cloud.securitycenter.v1.IListSourcesResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.ISource>): void;
-  listSources(
-      request: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
-      callback: PaginationCallback<
-          protos.google.cloud.securitycenter.v1.IListSourcesRequest,
-          protos.google.cloud.securitycenter.v1.IListSourcesResponse|null|undefined,
-          protos.google.cloud.securitycenter.v1.ISource>): void;
-/**
+ /**
  * Lists all sources belonging to an organization.
  *
  * @param {Object} request
@@ -4149,6 +4104,27 @@ export class SecurityCenterClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listSources(
+      request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.securitycenter.v1.ISource[],
+        protos.google.cloud.securitycenter.v1.IListSourcesRequest|null,
+        protos.google.cloud.securitycenter.v1.IListSourcesResponse
+      ]>;
+  listSources(
+      request: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListSourcesRequest,
+          protos.google.cloud.securitycenter.v1.IListSourcesResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.ISource>): void;
+  listSources(
+      request: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.securitycenter.v1.IListSourcesRequest,
+          protos.google.cloud.securitycenter.v1.IListSourcesResponse|null|undefined,
+          protos.google.cloud.securitycenter.v1.ISource>): void;
   listSources(
       request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -4262,11 +4238,8 @@ export class SecurityCenterClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSourcesAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v1/security_center.list_sources.js</caption>
+ * region_tag:securitycenter_v1_generated_SecurityCenter_ListSources_async
  */
   listSourcesAsync(
       request?: protos.google.cloud.securitycenter.v1.IListSourcesRequest,
@@ -4281,7 +4254,6 @@ export class SecurityCenterClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listSources'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

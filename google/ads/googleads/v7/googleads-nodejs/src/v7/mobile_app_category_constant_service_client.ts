@@ -646,26 +646,6 @@ export class MobileAppCategoryConstantServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getMobileAppCategoryConstant(
-      request?: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
-        protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|undefined, {}|undefined
-      ]>;
-  getMobileAppCategoryConstant(
-      request: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
-          protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|null|undefined,
-          {}|null|undefined>): void;
-  getMobileAppCategoryConstant(
-      request: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
-          protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested mobile app category constant.
  *
@@ -688,9 +668,29 @@ export class MobileAppCategoryConstantServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getMobileAppCategoryConstant(request);
+ * @example <caption>include:samples/generated/v7/mobile_app_category_constant_service.get_mobile_app_category_constant.js</caption>
+ * region_tag:googleads_v7_generated_MobileAppCategoryConstantService_GetMobileAppCategoryConstant_async
  */
+  getMobileAppCategoryConstant(
+      request?: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
+        protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|undefined, {}|undefined
+      ]>;
+  getMobileAppCategoryConstant(
+      request: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
+          protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|null|undefined,
+          {}|null|undefined>): void;
+  getMobileAppCategoryConstant(
+      request: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IMobileAppCategoryConstant,
+          protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest|null|undefined,
+          {}|null|undefined>): void;
   getMobileAppCategoryConstant(
       request?: protos.google.ads.googleads.v7.services.IGetMobileAppCategoryConstantRequest,
       optionsOrCallback?: CallOptions|Callback<

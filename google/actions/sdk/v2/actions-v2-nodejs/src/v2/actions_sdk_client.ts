@@ -322,26 +322,6 @@ export class ActionsSdkClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  encryptSecret(
-      request?: protos.google.actions.sdk.v2.IEncryptSecretRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.actions.sdk.v2.IEncryptSecretResponse,
-        protos.google.actions.sdk.v2.IEncryptSecretRequest|undefined, {}|undefined
-      ]>;
-  encryptSecret(
-      request: protos.google.actions.sdk.v2.IEncryptSecretRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.actions.sdk.v2.IEncryptSecretResponse,
-          protos.google.actions.sdk.v2.IEncryptSecretRequest|null|undefined,
-          {}|null|undefined>): void;
-  encryptSecret(
-      request: protos.google.actions.sdk.v2.IEncryptSecretRequest,
-      callback: Callback<
-          protos.google.actions.sdk.v2.IEncryptSecretResponse,
-          protos.google.actions.sdk.v2.IEncryptSecretRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Encrypts the OAuth client secret used in account linking flows.
  * This can be used to encrypt the client secret for the first time (e.g.
@@ -360,9 +340,29 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.encryptSecret(request);
+ * @example <caption>include:samples/generated/v2/actions_sdk.encrypt_secret.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_EncryptSecret_async
  */
+  encryptSecret(
+      request?: protos.google.actions.sdk.v2.IEncryptSecretRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.IEncryptSecretResponse,
+        protos.google.actions.sdk.v2.IEncryptSecretRequest|undefined, {}|undefined
+      ]>;
+  encryptSecret(
+      request: protos.google.actions.sdk.v2.IEncryptSecretRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.actions.sdk.v2.IEncryptSecretResponse,
+          protos.google.actions.sdk.v2.IEncryptSecretRequest|null|undefined,
+          {}|null|undefined>): void;
+  encryptSecret(
+      request: protos.google.actions.sdk.v2.IEncryptSecretRequest,
+      callback: Callback<
+          protos.google.actions.sdk.v2.IEncryptSecretResponse,
+          protos.google.actions.sdk.v2.IEncryptSecretRequest|null|undefined,
+          {}|null|undefined>): void;
   encryptSecret(
       request?: protos.google.actions.sdk.v2.IEncryptSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -387,9 +387,29 @@ export class ActionsSdkClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.encryptSecret(request, options, callback);
   }
+/**
+ * Decrypts the OAuth client secret used in account linking flows.
+ * This can be used to view the client secret (e.g. after pulling a project).
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {Buffer} request.encryptedClientSecret
+ *   Required. The account linking client secret ciphertext.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [DecryptSecretResponse]{@link google.actions.sdk.v2.DecryptSecretResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/actions_sdk.decrypt_secret.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_DecryptSecret_async
+ */
   decryptSecret(
       request?: protos.google.actions.sdk.v2.IDecryptSecretRequest,
       options?: CallOptions):
@@ -410,24 +430,6 @@ export class ActionsSdkClient {
           protos.google.actions.sdk.v2.IDecryptSecretResponse,
           protos.google.actions.sdk.v2.IDecryptSecretRequest|null|undefined,
           {}|null|undefined>): void;
-/**
- * Decrypts the OAuth client secret used in account linking flows.
- * This can be used to view the client secret (e.g. after pulling a project).
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {Buffer} request.encryptedClientSecret
- *   Required. The account linking client secret ciphertext.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [DecryptSecretResponse]{@link google.actions.sdk.v2.DecryptSecretResponse}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example
- * const [response] = await client.decryptSecret(request);
- */
   decryptSecret(
       request?: protos.google.actions.sdk.v2.IDecryptSecretRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -452,10 +454,25 @@ export class ActionsSdkClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.decryptSecret(request, options, callback);
   }
 
+/**
+ * Updates the project draft based on the model.
+ *
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream} - A writable stream which accepts objects representing
+ * [WriteDraftRequest]{@link google.actions.sdk.v2.WriteDraftRequest}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/actions_sdk.write_draft.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_WriteDraft_async
+ */
   writeDraft(
       options?: CallOptions,
       callback?: Callback<
@@ -469,21 +486,6 @@ export class ActionsSdkClient {
         protos.google.actions.sdk.v2.IWriteDraftRequest|null|undefined,
         {}|null|undefined>):
     gax.CancellableStream;
-/**
- * Updates the project draft based on the model.
- *
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Stream} - A writable stream which accepts objects representing
- * [WriteDraftRequest]{@link google.actions.sdk.v2.WriteDraftRequest}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
- *   for more details and examples.
- * @example
- * const stream = client.writeDraft(callback);
- * stream.write(request);
- * stream.end();
- */
   writeDraft(
       optionsOrCallback?: CallOptions|Callback<
         protos.google.actions.sdk.v2.IDraft,
@@ -503,6 +505,19 @@ export class ActionsSdkClient {
     return this.innerApiCalls.writeDraft(null, options, callback);
   }
 
+/**
+ * Updates the user's project preview based on the model.
+ *
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream} - A writable stream which accepts objects representing
+ * [WritePreviewRequest]{@link google.actions.sdk.v2.WritePreviewRequest}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/actions_sdk.write_preview.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_WritePreview_async
+ */
   writePreview(
       options?: CallOptions,
       callback?: Callback<
@@ -516,21 +531,6 @@ export class ActionsSdkClient {
         protos.google.actions.sdk.v2.IWritePreviewRequest|null|undefined,
         {}|null|undefined>):
     gax.CancellableStream;
-/**
- * Updates the user's project preview based on the model.
- *
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Stream} - A writable stream which accepts objects representing
- * [WritePreviewRequest]{@link google.actions.sdk.v2.WritePreviewRequest}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
- *   for more details and examples.
- * @example
- * const stream = client.writePreview(callback);
- * stream.write(request);
- * stream.end();
- */
   writePreview(
       optionsOrCallback?: CallOptions|Callback<
         protos.google.actions.sdk.v2.IPreview,
@@ -550,6 +550,20 @@ export class ActionsSdkClient {
     return this.innerApiCalls.writePreview(null, options, callback);
   }
 
+/**
+ * Creates a project version based on the model and triggers deployment to the
+ * specified release channel, if specified.
+ *
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream} - A writable stream which accepts objects representing
+ * [CreateVersionRequest]{@link google.actions.sdk.v2.CreateVersionRequest}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/actions_sdk.create_version.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_CreateVersion_async
+ */
   createVersion(
       options?: CallOptions,
       callback?: Callback<
@@ -563,22 +577,6 @@ export class ActionsSdkClient {
         protos.google.actions.sdk.v2.ICreateVersionRequest|null|undefined,
         {}|null|undefined>):
     gax.CancellableStream;
-/**
- * Creates a project version based on the model and triggers deployment to the
- * specified release channel, if specified.
- *
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Stream} - A writable stream which accepts objects representing
- * [CreateVersionRequest]{@link google.actions.sdk.v2.CreateVersionRequest}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#client-streaming)
- *   for more details and examples.
- * @example
- * const stream = client.createVersion(callback);
- * stream.write(request);
- * stream.end();
- */
   createVersion(
       optionsOrCallback?: CallOptions|Callback<
         protos.google.actions.sdk.v2.IVersion,
@@ -618,10 +616,8 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.readDraft(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v2/actions_sdk.read_draft.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_ReadDraft_async
  */
   readDraft(
       request?: protos.google.actions.sdk.v2.IReadDraftRequest,
@@ -662,10 +658,8 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#server-streaming)
  *   for more details and examples.
- * @example
- * const stream = client.readVersion(request);
- * stream.on('data', (response) => { ... });
- * stream.on('end', () => { ... });
+ * @example <caption>include:samples/generated/v2/actions_sdk.read_version.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_ReadVersion_async
  */
   readVersion(
       request?: protos.google.actions.sdk.v2.IReadVersionRequest,
@@ -684,28 +678,7 @@ export class ActionsSdkClient {
     return this.innerApiCalls.readVersion(request, options);
   }
 
-  listSampleProjects(
-      request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.actions.sdk.v2.ISampleProject[],
-        protos.google.actions.sdk.v2.IListSampleProjectsRequest|null,
-        protos.google.actions.sdk.v2.IListSampleProjectsResponse
-      ]>;
-  listSampleProjects(
-      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
-          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
-          protos.google.actions.sdk.v2.ISampleProject>): void;
-  listSampleProjects(
-      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
-      callback: PaginationCallback<
-          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
-          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
-          protos.google.actions.sdk.v2.ISampleProject>): void;
-/**
+ /**
  * Lists all the sample projects supported by the gactions CLI.
  *
  * @param {Object} request
@@ -733,6 +706,27 @@ export class ActionsSdkClient {
  */
   listSampleProjects(
       request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.ISampleProject[],
+        protos.google.actions.sdk.v2.IListSampleProjectsRequest|null,
+        protos.google.actions.sdk.v2.IListSampleProjectsResponse
+      ]>;
+  listSampleProjects(
+      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
+          protos.google.actions.sdk.v2.ISampleProject>): void;
+  listSampleProjects(
+      request: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListSampleProjectsRequest,
+          protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
+          protos.google.actions.sdk.v2.ISampleProject>): void;
+  listSampleProjects(
+      request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
           protos.google.actions.sdk.v2.IListSampleProjectsRequest,
           protos.google.actions.sdk.v2.IListSampleProjectsResponse|null|undefined,
@@ -756,6 +750,8 @@ export class ActionsSdkClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
     return this.innerApiCalls.listSampleProjects(request, options, callback);
   }
@@ -790,6 +786,8 @@ export class ActionsSdkClient {
     Transform{
     request = request || {};
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listSampleProjects'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -824,11 +822,8 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listSampleProjectsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_sample_projects.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_ListSampleProjects_async
  */
   listSampleProjectsAsync(
       request?: protos.google.actions.sdk.v2.IListSampleProjectsRequest,
@@ -836,7 +831,8 @@ export class ActionsSdkClient {
     AsyncIterable<protos.google.actions.sdk.v2.ISampleProject>{
     request = request || {};
     options = options || {};
-    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
     const defaultCallSettings = this._defaults['listSampleProjects'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -846,28 +842,7 @@ export class ActionsSdkClient {
       callSettings
     ) as AsyncIterable<protos.google.actions.sdk.v2.ISampleProject>;
   }
-  listReleaseChannels(
-      request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.actions.sdk.v2.IReleaseChannel[],
-        protos.google.actions.sdk.v2.IListReleaseChannelsRequest|null,
-        protos.google.actions.sdk.v2.IListReleaseChannelsResponse
-      ]>;
-  listReleaseChannels(
-      request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
-          protos.google.actions.sdk.v2.IListReleaseChannelsResponse|null|undefined,
-          protos.google.actions.sdk.v2.IReleaseChannel>): void;
-  listReleaseChannels(
-      request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
-      callback: PaginationCallback<
-          protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
-          protos.google.actions.sdk.v2.IListReleaseChannelsResponse|null|undefined,
-          protos.google.actions.sdk.v2.IReleaseChannel>): void;
-/**
+ /**
  * Lists all release channels and corresponding versions, if any.
  *
  * @param {Object} request
@@ -897,6 +872,27 @@ export class ActionsSdkClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listReleaseChannels(
+      request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.IReleaseChannel[],
+        protos.google.actions.sdk.v2.IListReleaseChannelsRequest|null,
+        protos.google.actions.sdk.v2.IListReleaseChannelsResponse
+      ]>;
+  listReleaseChannels(
+      request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+          protos.google.actions.sdk.v2.IListReleaseChannelsResponse|null|undefined,
+          protos.google.actions.sdk.v2.IReleaseChannel>): void;
+  listReleaseChannels(
+      request: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
+          protos.google.actions.sdk.v2.IListReleaseChannelsResponse|null|undefined,
+          protos.google.actions.sdk.v2.IReleaseChannel>): void;
   listReleaseChannels(
       request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1012,11 +1008,8 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listReleaseChannelsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_release_channels.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_ListReleaseChannels_async
  */
   listReleaseChannelsAsync(
       request?: protos.google.actions.sdk.v2.IListReleaseChannelsRequest,
@@ -1031,7 +1024,6 @@ export class ActionsSdkClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listReleaseChannels'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();
@@ -1041,28 +1033,7 @@ export class ActionsSdkClient {
       callSettings
     ) as AsyncIterable<protos.google.actions.sdk.v2.IReleaseChannel>;
   }
-  listVersions(
-      request?: protos.google.actions.sdk.v2.IListVersionsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.actions.sdk.v2.IVersion[],
-        protos.google.actions.sdk.v2.IListVersionsRequest|null,
-        protos.google.actions.sdk.v2.IListVersionsResponse
-      ]>;
-  listVersions(
-      request: protos.google.actions.sdk.v2.IListVersionsRequest,
-      options: CallOptions,
-      callback: PaginationCallback<
-          protos.google.actions.sdk.v2.IListVersionsRequest,
-          protos.google.actions.sdk.v2.IListVersionsResponse|null|undefined,
-          protos.google.actions.sdk.v2.IVersion>): void;
-  listVersions(
-      request: protos.google.actions.sdk.v2.IListVersionsRequest,
-      callback: PaginationCallback<
-          protos.google.actions.sdk.v2.IListVersionsRequest,
-          protos.google.actions.sdk.v2.IListVersionsResponse|null|undefined,
-          protos.google.actions.sdk.v2.IVersion>): void;
-/**
+ /**
  * Lists all versions and their current states.
  *
  * @param {Object} request
@@ -1092,6 +1063,27 @@ export class ActionsSdkClient {
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
  */
+  listVersions(
+      request?: protos.google.actions.sdk.v2.IListVersionsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.actions.sdk.v2.IVersion[],
+        protos.google.actions.sdk.v2.IListVersionsRequest|null,
+        protos.google.actions.sdk.v2.IListVersionsResponse
+      ]>;
+  listVersions(
+      request: protos.google.actions.sdk.v2.IListVersionsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListVersionsRequest,
+          protos.google.actions.sdk.v2.IListVersionsResponse|null|undefined,
+          protos.google.actions.sdk.v2.IVersion>): void;
+  listVersions(
+      request: protos.google.actions.sdk.v2.IListVersionsRequest,
+      callback: PaginationCallback<
+          protos.google.actions.sdk.v2.IListVersionsRequest,
+          protos.google.actions.sdk.v2.IListVersionsResponse|null|undefined,
+          protos.google.actions.sdk.v2.IVersion>): void;
   listVersions(
       request?: protos.google.actions.sdk.v2.IListVersionsRequest,
       optionsOrCallback?: CallOptions|PaginationCallback<
@@ -1207,11 +1199,8 @@ export class ActionsSdkClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example
- * const iterable = client.listVersionsAsync(request);
- * for await (const response of iterable) {
- *   // process response
- * }
+ * @example <caption>include:samples/generated/v2/actions_sdk.list_versions.js</caption>
+ * region_tag:actions_v2_generated_ActionsSdk_ListVersions_async
  */
   listVersionsAsync(
       request?: protos.google.actions.sdk.v2.IListVersionsRequest,
@@ -1226,7 +1215,6 @@ export class ActionsSdkClient {
     ] = gax.routingHeader.fromParams({
       'parent': request.parent || '',
     });
-    options = options || {};
     const defaultCallSettings = this._defaults['listVersions'];
     const callSettings = defaultCallSettings.merge(options);
     this.initialize();

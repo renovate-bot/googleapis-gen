@@ -28,7 +28,7 @@ function main() {
   /**
    *  Network report specification.
    */
-  // const reportSpec = ''
+  // const reportSpec = {}
 
   // Imports the Admob library
   const {AdMobApiClient} = require('admob').v1;
@@ -36,7 +36,7 @@ function main() {
   // Instantiates a client
   const admobClient = new AdMobApiClient();
 
-  async function generateMediationReport() {
+  async function callGenerateMediationReport() {
     // Construct request
     const request = {
     };
@@ -48,7 +48,7 @@ function main() {
     stream.on('end', () => { /* API call completed */ });
   }
 
-  generateMediationReport();
+  callGenerateMediationReport();
   // [END admob_v1_generated_AdMobApi_GenerateMediationReport_async]
 }
 

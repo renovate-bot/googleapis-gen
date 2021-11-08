@@ -646,26 +646,6 @@ export class RecommendationServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
-  getRecommendation(
-      request?: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.resources.IRecommendation,
-        protos.google.ads.googleads.v7.services.IGetRecommendationRequest|undefined, {}|undefined
-      ]>;
-  getRecommendation(
-      request: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IRecommendation,
-          protos.google.ads.googleads.v7.services.IGetRecommendationRequest|null|undefined,
-          {}|null|undefined>): void;
-  getRecommendation(
-      request: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.resources.IRecommendation,
-          protos.google.ads.googleads.v7.services.IGetRecommendationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Returns the requested recommendation in full detail.
  *
@@ -688,9 +668,29 @@ export class RecommendationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.getRecommendation(request);
+ * @example <caption>include:samples/generated/v7/recommendation_service.get_recommendation.js</caption>
+ * region_tag:googleads_v7_generated_RecommendationService_GetRecommendation_async
  */
+  getRecommendation(
+      request?: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.resources.IRecommendation,
+        protos.google.ads.googleads.v7.services.IGetRecommendationRequest|undefined, {}|undefined
+      ]>;
+  getRecommendation(
+      request: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IRecommendation,
+          protos.google.ads.googleads.v7.services.IGetRecommendationRequest|null|undefined,
+          {}|null|undefined>): void;
+  getRecommendation(
+      request: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.resources.IRecommendation,
+          protos.google.ads.googleads.v7.services.IGetRecommendationRequest|null|undefined,
+          {}|null|undefined>): void;
   getRecommendation(
       request?: protos.google.ads.googleads.v7.services.IGetRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -725,26 +725,6 @@ export class RecommendationServiceClient {
     this.initialize();
     return this.innerApiCalls.getRecommendation(request, options, callback);
   }
-  applyRecommendation(
-      request?: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IApplyRecommendationResponse,
-        protos.google.ads.googleads.v7.services.IApplyRecommendationRequest|undefined, {}|undefined
-      ]>;
-  applyRecommendation(
-      request: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IApplyRecommendationResponse,
-          protos.google.ads.googleads.v7.services.IApplyRecommendationRequest|null|undefined,
-          {}|null|undefined>): void;
-  applyRecommendation(
-      request: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IApplyRecommendationResponse,
-          protos.google.ads.googleads.v7.services.IApplyRecommendationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Applies given recommendations with corresponding apply parameters.
  *
@@ -781,9 +761,29 @@ export class RecommendationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.applyRecommendation(request);
+ * @example <caption>include:samples/generated/v7/recommendation_service.apply_recommendation.js</caption>
+ * region_tag:googleads_v7_generated_RecommendationService_ApplyRecommendation_async
  */
+  applyRecommendation(
+      request?: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IApplyRecommendationResponse,
+        protos.google.ads.googleads.v7.services.IApplyRecommendationRequest|undefined, {}|undefined
+      ]>;
+  applyRecommendation(
+      request: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IApplyRecommendationResponse,
+          protos.google.ads.googleads.v7.services.IApplyRecommendationRequest|null|undefined,
+          {}|null|undefined>): void;
+  applyRecommendation(
+      request: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IApplyRecommendationResponse,
+          protos.google.ads.googleads.v7.services.IApplyRecommendationRequest|null|undefined,
+          {}|null|undefined>): void;
   applyRecommendation(
       request?: protos.google.ads.googleads.v7.services.IApplyRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<
@@ -818,26 +818,6 @@ export class RecommendationServiceClient {
     this.initialize();
     return this.innerApiCalls.applyRecommendation(request, options, callback);
   }
-  dismissRecommendation(
-      request?: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.ads.googleads.v7.services.IDismissRecommendationResponse,
-        protos.google.ads.googleads.v7.services.IDismissRecommendationRequest|undefined, {}|undefined
-      ]>;
-  dismissRecommendation(
-      request: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IDismissRecommendationResponse,
-          protos.google.ads.googleads.v7.services.IDismissRecommendationRequest|null|undefined,
-          {}|null|undefined>): void;
-  dismissRecommendation(
-      request: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
-      callback: Callback<
-          protos.google.ads.googleads.v7.services.IDismissRecommendationResponse,
-          protos.google.ads.googleads.v7.services.IDismissRecommendationRequest|null|undefined,
-          {}|null|undefined>): void;
 /**
  * Dismisses given recommendations.
  *
@@ -870,9 +850,29 @@ export class RecommendationServiceClient {
  *   Please see the
  *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
  *   for more details and examples.
- * @example
- * const [response] = await client.dismissRecommendation(request);
+ * @example <caption>include:samples/generated/v7/recommendation_service.dismiss_recommendation.js</caption>
+ * region_tag:googleads_v7_generated_RecommendationService_DismissRecommendation_async
  */
+  dismissRecommendation(
+      request?: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v7.services.IDismissRecommendationResponse,
+        protos.google.ads.googleads.v7.services.IDismissRecommendationRequest|undefined, {}|undefined
+      ]>;
+  dismissRecommendation(
+      request: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IDismissRecommendationResponse,
+          protos.google.ads.googleads.v7.services.IDismissRecommendationRequest|null|undefined,
+          {}|null|undefined>): void;
+  dismissRecommendation(
+      request: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v7.services.IDismissRecommendationResponse,
+          protos.google.ads.googleads.v7.services.IDismissRecommendationRequest|null|undefined,
+          {}|null|undefined>): void;
   dismissRecommendation(
       request?: protos.google.ads.googleads.v7.services.IDismissRecommendationRequest,
       optionsOrCallback?: CallOptions|Callback<

@@ -42,7 +42,7 @@ function main() {
   // Instantiates a client
   const adminClient = new IAMClient();
 
-  async function uploadServiceAccountKey() {
+  async function callUploadServiceAccountKey() {
     // Construct request
     const request = {
     };
@@ -52,7 +52,7 @@ function main() {
     console.log(response);
   }
 
-  uploadServiceAccountKey();
+  callUploadServiceAccountKey();
   // [END iam_v1_generated_IAM_UploadServiceAccountKey_async]
 }
 

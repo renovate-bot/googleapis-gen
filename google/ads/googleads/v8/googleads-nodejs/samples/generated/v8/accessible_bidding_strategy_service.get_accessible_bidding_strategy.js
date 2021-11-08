@@ -31,7 +31,7 @@ function main(resourceName) {
   // Instantiates a client
   const googleadsClient = new AccessibleBiddingStrategyServiceClient();
 
-  async function getAccessibleBiddingStrategy() {
+  async function callGetAccessibleBiddingStrategy() {
     // Construct request
     const request = {
       resourceName,
@@ -42,7 +42,7 @@ function main(resourceName) {
     console.log(response);
   }
 
-  getAccessibleBiddingStrategy();
+  callGetAccessibleBiddingStrategy();
   // [END googleads_v8_generated_AccessibleBiddingStrategyService_GetAccessibleBiddingStrategy_async]
 }
 

@@ -47,7 +47,7 @@ function main(customerId, operations) {
   // Instantiates a client
   const googleadsClient = new CampaignLabelServiceClient();
 
-  async function mutateCampaignLabels() {
+  async function callMutateCampaignLabels() {
     // Construct request
     const request = {
       customerId,
@@ -59,7 +59,7 @@ function main(customerId, operations) {
     console.log(response);
   }
 
-  mutateCampaignLabels();
+  callMutateCampaignLabels();
   // [END googleads_v7_generated_CampaignLabelService_MutateCampaignLabels_async]
 }
 

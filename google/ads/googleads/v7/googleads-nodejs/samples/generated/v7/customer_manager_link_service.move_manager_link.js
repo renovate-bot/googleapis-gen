@@ -47,7 +47,7 @@ function main(customerId, previousCustomerManagerLink, newManager) {
   // Instantiates a client
   const googleadsClient = new CustomerManagerLinkServiceClient();
 
-  async function moveManagerLink() {
+  async function callMoveManagerLink() {
     // Construct request
     const request = {
       customerId,
@@ -60,7 +60,7 @@ function main(customerId, previousCustomerManagerLink, newManager) {
     console.log(response);
   }
 
-  moveManagerLink();
+  callMoveManagerLink();
   // [END googleads_v7_generated_CustomerManagerLinkService_MoveManagerLink_async]
 }
 
