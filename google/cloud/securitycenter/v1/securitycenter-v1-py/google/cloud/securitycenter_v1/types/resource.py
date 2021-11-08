@@ -51,6 +51,8 @@ class Resource(proto.Message):
             folder is the deepest nested folder, and the
             last folder is the folder directly under the
             Organization.
+        display_name (str):
+            The human readable name of the resource.
     """
 
     name = proto.Field(
@@ -81,6 +83,10 @@ class Resource(proto.Message):
         proto.MESSAGE,
         number=7,
         message=folder.Folder,
+    )
+    display_name = proto.Field(
+        proto.STRING,
+        number=8,
     )
 
 

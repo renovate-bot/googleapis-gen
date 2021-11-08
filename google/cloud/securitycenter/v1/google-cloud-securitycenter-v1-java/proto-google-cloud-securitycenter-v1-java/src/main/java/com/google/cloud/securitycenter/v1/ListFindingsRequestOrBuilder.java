@@ -87,6 +87,7 @@ public interface ListFindingsRequestOrBuilder extends
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -141,6 +142,7 @@ public interface ListFindingsRequestOrBuilder extends
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>

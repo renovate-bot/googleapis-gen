@@ -3441,6 +3441,7 @@ export class SecurityCenterClient {
  *     * resource.project_display_name: `=`, `:`
  *     * resource.type: `=`, `:`
  *     * resource.folders.resource_folder: `=`, `:`
+ *     * resource.display_name: `=`, `:`
  * @param {string} request.orderBy
  *   Expression that defines what fields and order to use for sorting. The
  *   string value should follow SQL syntax: comma separated list of fields. For
@@ -3628,6 +3629,7 @@ export class SecurityCenterClient {
  *     * resource.project_display_name: `=`, `:`
  *     * resource.type: `=`, `:`
  *     * resource.folders.resource_folder: `=`, `:`
+ *     * resource.display_name: `=`, `:`
  * @param {string} request.orderBy
  *   Expression that defines what fields and order to use for sorting. The
  *   string value should follow SQL syntax: comma separated list of fields. For
@@ -3803,6 +3805,7 @@ export class SecurityCenterClient {
  *     * resource.project_display_name: `=`, `:`
  *     * resource.type: `=`, `:`
  *     * resource.folders.resource_folder: `=`, `:`
+ *     * resource.display_name: `=`, `:`
  * @param {string} request.orderBy
  *   Expression that defines what fields and order to use for sorting. The
  *   string value should follow SQL syntax: comma separated list of fields. For

@@ -77,6 +77,7 @@ function main(parent) {
    *    * resource.project_display_name: `=`, `:`
    *    * resource.type: `=`, `:`
    *    * resource.folders.resource_folder: `=`, `:`
+   *    * resource.display_name: `=`, `:`
    */
   // const filter = 'abc123'
   /**

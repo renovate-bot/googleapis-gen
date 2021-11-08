@@ -264,6 +264,7 @@ private static final long serialVersionUID = 0L;
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -330,6 +331,7 @@ private static final long serialVersionUID = 0L;
    *   * resource.project_display_name: `=`, `:`
    *   * resource.type: `=`, `:`
    *   * resource.folders.resource_folder: `=`, `:`
+   *   * resource.display_name: `=`, `:`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -1334,6 +1336,7 @@ private static final long serialVersionUID = 0L;
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1399,6 +1402,7 @@ private static final long serialVersionUID = 0L;
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1465,6 +1469,7 @@ private static final long serialVersionUID = 0L;
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1529,6 +1534,7 @@ private static final long serialVersionUID = 0L;
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1588,6 +1594,7 @@ private static final long serialVersionUID = 0L;
      *   * resource.project_display_name: `=`, `:`
      *   * resource.type: `=`, `:`
      *   * resource.folders.resource_folder: `=`, `:`
+     *   * resource.display_name: `=`, `:`
      * </pre>
      *
      * <code>string filter = 2;</code>
