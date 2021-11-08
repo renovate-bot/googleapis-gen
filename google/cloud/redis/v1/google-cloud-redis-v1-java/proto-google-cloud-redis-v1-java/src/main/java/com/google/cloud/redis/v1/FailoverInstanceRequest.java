@@ -120,7 +120,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Instance failover will be protected with data loss control. More
      * specifically, the failover will only be performed if the current
-     * replication offset diff between master and replica is under a certain
+     * replication offset diff between primary and replica is under a certain
      * threshold.
      * </pre>
      *
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Instance failover will be protected with data loss control. More
      * specifically, the failover will only be performed if the current
-     * replication offset diff between master and replica is under a certain
+     * replication offset diff between primary and replica is under a certain
      * threshold.
      * </pre>
      *

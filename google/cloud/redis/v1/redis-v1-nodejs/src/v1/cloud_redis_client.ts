@@ -614,6 +614,7 @@ export class CloudRedisClient {
  *    *   `labels`
  *    *   `memorySizeGb`
  *    *   `redisConfig`
+ *    *   `replica_count`
  * @param {google.cloud.redis.v1.Instance} request.instance
  *   Required. Update description.
  *   Only fields specified in update_mask are updated.
@@ -1016,7 +1017,7 @@ export class CloudRedisClient {
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
- * Initiates a failover of the master node to current replica node for a
+ * Initiates a failover of the primary node to current replica node for a
  * specific STANDARD tier Cloud Memorystore for Redis instance.
  *
  * @param {Object} request

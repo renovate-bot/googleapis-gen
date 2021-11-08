@@ -121,6 +121,7 @@ private static final long serialVersionUID = 0L;
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -139,6 +140,7 @@ private static final long serialVersionUID = 0L;
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -157,6 +159,7 @@ private static final long serialVersionUID = 0L;
    *  *   `labels`
    *  *   `memorySizeGb`
    *  *   `redisConfig`
+   *  *   `replica_count`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -568,6 +571,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -585,6 +589,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -606,6 +611,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -632,6 +638,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -656,6 +663,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -684,6 +692,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -708,6 +717,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -726,6 +736,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -747,6 +758,7 @@ private static final long serialVersionUID = 0L;
      *  *   `labels`
      *  *   `memorySizeGb`
      *  *   `redisConfig`
+     *  *   `replica_count`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
