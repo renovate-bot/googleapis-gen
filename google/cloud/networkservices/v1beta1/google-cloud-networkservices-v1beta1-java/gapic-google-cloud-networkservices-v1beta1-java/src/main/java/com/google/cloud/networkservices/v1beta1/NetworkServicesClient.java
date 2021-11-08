@@ -202,8 +202,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
-   *   String parent =
-   *       EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (EndpointPolicy element :
    *       networkServicesClient.listEndpointPolicies(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -231,8 +230,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   ListEndpointPoliciesRequest request =
    *       ListEndpointPoliciesRequest.newBuilder()
-   *           .setParent(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -261,8 +259,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   ListEndpointPoliciesRequest request =
    *       ListEndpointPoliciesRequest.newBuilder()
-   *           .setParent(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -290,8 +287,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   ListEndpointPoliciesRequest request =
    *       ListEndpointPoliciesRequest.newBuilder()
-   *           .setParent(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -457,8 +453,7 @@ public class NetworkServicesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
-   *   String parent =
-   *       EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   EndpointPolicy endpointPolicy = EndpointPolicy.newBuilder().build();
    *   String endpointPolicyId = "endpointPolicyId-509458782";
    *   EndpointPolicy response =
@@ -496,8 +491,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   CreateEndpointPolicyRequest request =
    *       CreateEndpointPolicyRequest.newBuilder()
-   *           .setParent(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpointPolicyId("endpointPolicyId-509458782")
    *           .setEndpointPolicy(EndpointPolicy.newBuilder().build())
    *           .build();
@@ -523,8 +517,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   CreateEndpointPolicyRequest request =
    *       CreateEndpointPolicyRequest.newBuilder()
-   *           .setParent(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpointPolicyId("endpointPolicyId-509458782")
    *           .setEndpointPolicy(EndpointPolicy.newBuilder().build())
    *           .build();
@@ -550,8 +543,7 @@ public class NetworkServicesClient implements BackgroundResource {
    * try (NetworkServicesClient networkServicesClient = NetworkServicesClient.create()) {
    *   CreateEndpointPolicyRequest request =
    *       CreateEndpointPolicyRequest.newBuilder()
-   *           .setParent(
-   *               EndpointPolicyName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT_POLICY]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpointPolicyId("endpointPolicyId-509458782")
    *           .setEndpointPolicy(EndpointPolicy.newBuilder().build())
    *           .build();

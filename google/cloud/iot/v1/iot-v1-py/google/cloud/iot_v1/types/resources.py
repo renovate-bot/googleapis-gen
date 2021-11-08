@@ -527,6 +527,7 @@ class RegistryCredential(proto.Message):
         public_key_certificate (google.cloud.iot_v1.types.PublicKeyCertificate):
             A public key certificate used to verify the
             device credentials.
+
             This field is a member of `oneof`_ ``credential``.
     """
 
@@ -638,6 +639,7 @@ class DeviceCredential(proto.Message):
             keys will be accepted. New device credentials
             must be different from every registry-level
             certificate.
+
             This field is a member of `oneof`_ ``credential``.
         expiration_time (google.protobuf.timestamp_pb2.Timestamp):
             [Optional] The time at which this credential becomes

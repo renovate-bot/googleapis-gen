@@ -48,10 +48,12 @@ class CampaignCriterion(proto.Message):
         campaign (str):
             Immutable. The campaign to which the
             criterion belongs.
+
             This field is a member of `oneof`_ ``_campaign``.
         criterion_id (int):
             Output only. The ID of the criterion.
             This field is ignored during mutate.
+
             This field is a member of `oneof`_ ``_criterion_id``.
         display_name (str):
             Output only. The display name of the
@@ -62,10 +64,12 @@ class CampaignCriterion(proto.Message):
             matches. The modifier must be in the range: 0.1
             - 10.0. Most targetable criteria types support
             modifiers. Use 0 to opt out of a Device type.
+
             This field is a member of `oneof`_ ``_bid_modifier``.
         negative (bool):
             Immutable. Whether to target (``false``) or exclude
             (``true``) the criterion.
+
             This field is a member of `oneof`_ ``_negative``.
         type_ (google.ads.googleads.v7.enums.types.CriterionTypeEnum.CriterionType):
             Output only. The type of the criterion.
@@ -73,90 +77,119 @@ class CampaignCriterion(proto.Message):
             The status of the criterion.
         keyword (google.ads.googleads.v7.common.types.KeywordInfo):
             Immutable. Keyword.
+
             This field is a member of `oneof`_ ``criterion``.
         placement (google.ads.googleads.v7.common.types.PlacementInfo):
             Immutable. Placement.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_app_category (google.ads.googleads.v7.common.types.MobileAppCategoryInfo):
             Immutable. Mobile app category.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_application (google.ads.googleads.v7.common.types.MobileApplicationInfo):
             Immutable. Mobile application.
+
             This field is a member of `oneof`_ ``criterion``.
         location (google.ads.googleads.v7.common.types.LocationInfo):
             Immutable. Location.
+
             This field is a member of `oneof`_ ``criterion``.
         device (google.ads.googleads.v7.common.types.DeviceInfo):
             Immutable. Device.
+
             This field is a member of `oneof`_ ``criterion``.
         ad_schedule (google.ads.googleads.v7.common.types.AdScheduleInfo):
             Immutable. Ad Schedule.
+
             This field is a member of `oneof`_ ``criterion``.
         age_range (google.ads.googleads.v7.common.types.AgeRangeInfo):
             Immutable. Age range.
+
             This field is a member of `oneof`_ ``criterion``.
         gender (google.ads.googleads.v7.common.types.GenderInfo):
             Immutable. Gender.
+
             This field is a member of `oneof`_ ``criterion``.
         income_range (google.ads.googleads.v7.common.types.IncomeRangeInfo):
             Immutable. Income range.
+
             This field is a member of `oneof`_ ``criterion``.
         parental_status (google.ads.googleads.v7.common.types.ParentalStatusInfo):
             Immutable. Parental status.
+
             This field is a member of `oneof`_ ``criterion``.
         user_list (google.ads.googleads.v7.common.types.UserListInfo):
             Immutable. User List.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_video (google.ads.googleads.v7.common.types.YouTubeVideoInfo):
             Immutable. YouTube Video.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_channel (google.ads.googleads.v7.common.types.YouTubeChannelInfo):
             Immutable. YouTube Channel.
+
             This field is a member of `oneof`_ ``criterion``.
         proximity (google.ads.googleads.v7.common.types.ProximityInfo):
             Immutable. Proximity.
+
             This field is a member of `oneof`_ ``criterion``.
         topic (google.ads.googleads.v7.common.types.TopicInfo):
             Immutable. Topic.
+
             This field is a member of `oneof`_ ``criterion``.
         listing_scope (google.ads.googleads.v7.common.types.ListingScopeInfo):
             Immutable. Listing scope.
+
             This field is a member of `oneof`_ ``criterion``.
         language (google.ads.googleads.v7.common.types.LanguageInfo):
             Immutable. Language.
+
             This field is a member of `oneof`_ ``criterion``.
         ip_block (google.ads.googleads.v7.common.types.IpBlockInfo):
             Immutable. IpBlock.
+
             This field is a member of `oneof`_ ``criterion``.
         content_label (google.ads.googleads.v7.common.types.ContentLabelInfo):
             Immutable. ContentLabel.
+
             This field is a member of `oneof`_ ``criterion``.
         carrier (google.ads.googleads.v7.common.types.CarrierInfo):
             Immutable. Carrier.
+
             This field is a member of `oneof`_ ``criterion``.
         user_interest (google.ads.googleads.v7.common.types.UserInterestInfo):
             Immutable. User Interest.
+
             This field is a member of `oneof`_ ``criterion``.
         webpage (google.ads.googleads.v7.common.types.WebpageInfo):
             Immutable. Webpage.
+
             This field is a member of `oneof`_ ``criterion``.
         operating_system_version (google.ads.googleads.v7.common.types.OperatingSystemVersionInfo):
             Immutable. Operating system version.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_device (google.ads.googleads.v7.common.types.MobileDeviceInfo):
             Immutable. Mobile Device.
+
             This field is a member of `oneof`_ ``criterion``.
         location_group (google.ads.googleads.v7.common.types.LocationGroupInfo):
             Immutable. Location Group
+
             This field is a member of `oneof`_ ``criterion``.
         custom_affinity (google.ads.googleads.v7.common.types.CustomAffinityInfo):
             Immutable. Custom Affinity.
+
             This field is a member of `oneof`_ ``criterion``.
         custom_audience (google.ads.googleads.v7.common.types.CustomAudienceInfo):
             Immutable. Custom Audience
+
             This field is a member of `oneof`_ ``criterion``.
         combined_audience (google.ads.googleads.v7.common.types.CombinedAudienceInfo):
             Immutable. Combined Audience.
+
             This field is a member of `oneof`_ ``criterion``.
     """
 

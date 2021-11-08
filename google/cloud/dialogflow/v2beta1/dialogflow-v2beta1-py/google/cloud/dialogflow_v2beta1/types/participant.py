@@ -369,6 +369,7 @@ class AutomatedAgentReply(proto.Message):
             Response of the Dialogflow
             [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
             call.
+
             This field is a member of `oneof`_ ``response``.
         response_messages (Sequence[google.cloud.dialogflow_v2beta1.types.ResponseMessage]):
             Response messages from the automated agent.
@@ -378,10 +379,12 @@ class AutomatedAgentReply(proto.Message):
             ``projects/<Project ID>/locations/ <Location ID>/agent/intents/<Intent ID>``.
             For a V3 query, the value format is
             ``projects/<Project ID>/locations/ <Location ID>/agents/<Agent ID>/intents/<Intent ID>``.
+
             This field is a member of `oneof`_ ``match``.
         event (str):
             Event name if an event is triggered for the
             query.
+
             This field is a member of `oneof`_ ``match``.
         match_confidence (float):
             The confidence of the match. Values range
@@ -503,9 +506,11 @@ class AnalyzeContentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/conversations/<Conversation ID>/participants/<Participant ID>``.
         text_input (google.cloud.dialogflow_v2beta1.types.TextInput):
             The natural language text to be processed.
+
             This field is a member of `oneof`_ ``input``.
         event_input (google.cloud.dialogflow_v2beta1.types.EventInput):
             An input event to send to Dialogflow.
+
             This field is a member of `oneof`_ ``input``.
         reply_audio_config (google.cloud.dialogflow_v2beta1.types.OutputAudioConfig):
             Speech synthesis configuration.
@@ -894,16 +899,20 @@ class SuggestionResult(proto.Message):
     Attributes:
         error (google.rpc.status_pb2.Status):
             Error status if the request failed.
+
             This field is a member of `oneof`_ ``suggestion_response``.
         suggest_articles_response (google.cloud.dialogflow_v2beta1.types.SuggestArticlesResponse):
             SuggestArticlesResponse if request is for
             ARTICLE_SUGGESTION.
+
             This field is a member of `oneof`_ ``suggestion_response``.
         suggest_faq_answers_response (google.cloud.dialogflow_v2beta1.types.SuggestFaqAnswersResponse):
             SuggestFaqAnswersResponse if request is for FAQ_ANSWER.
+
             This field is a member of `oneof`_ ``suggestion_response``.
         suggest_smart_replies_response (google.cloud.dialogflow_v2beta1.types.SuggestSmartRepliesResponse):
             SuggestSmartRepliesResponse if request is for SMART_REPLY.
+
             This field is a member of `oneof`_ ``suggestion_response``.
     """
 
@@ -1481,22 +1490,27 @@ class ResponseMessage(proto.Message):
     Attributes:
         text (google.cloud.dialogflow_v2beta1.types.ResponseMessage.Text):
             Returns a text response.
+
             This field is a member of `oneof`_ ``message``.
         payload (google.protobuf.struct_pb2.Struct):
             Returns a response containing a custom,
             platform-specific payload.
+
             This field is a member of `oneof`_ ``message``.
         live_agent_handoff (google.cloud.dialogflow_v2beta1.types.ResponseMessage.LiveAgentHandoff):
             Hands off conversation to a live agent.
+
             This field is a member of `oneof`_ ``message``.
         end_interaction (google.cloud.dialogflow_v2beta1.types.ResponseMessage.EndInteraction):
             A signal that indicates the interaction with
             the Dialogflow agent has ended.
+
             This field is a member of `oneof`_ ``message``.
         telephony_transfer_call (google.cloud.dialogflow_v2beta1.types.ResponseMessage.TelephonyTransferCall):
             A signal that the client should transfer the
             phone call connected to this agent to a third-
             party endpoint.
+
             This field is a member of `oneof`_ ``message``.
     """
 
@@ -1561,9 +1575,11 @@ class ResponseMessage(proto.Message):
             phone_number (str):
                 Transfer the call to a phone number in `E.164
                 format <https://en.wikipedia.org/wiki/E.164>`__.
+
                 This field is a member of `oneof`_ ``endpoint``.
             sip_uri (str):
                 Transfer the call to a SIP endpoint.
+
                 This field is a member of `oneof`_ ``endpoint``.
         """
 

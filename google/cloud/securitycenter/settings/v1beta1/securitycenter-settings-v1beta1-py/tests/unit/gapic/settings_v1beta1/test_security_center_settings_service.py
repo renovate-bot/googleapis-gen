@@ -558,7 +558,9 @@ def test_get_service_account_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_service_account_flattened_error():
@@ -599,7 +601,9 @@ async def test_get_service_account_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -801,7 +805,9 @@ def test_get_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_settings_flattened_error():
@@ -842,7 +848,9 @@ async def test_get_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1045,8 +1053,12 @@ def test_update_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].settings == gcss_settings.Settings(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].settings
+        mock_val = gcss_settings.Settings(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_settings_flattened_error():
@@ -1089,8 +1101,12 @@ async def test_update_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].settings == gcss_settings.Settings(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].settings
+        mock_val = gcss_settings.Settings(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1585,7 +1601,9 @@ def test_calculate_effective_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_calculate_effective_settings_flattened_error():
@@ -1626,7 +1644,9 @@ async def test_calculate_effective_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1976,7 +1996,9 @@ def test_get_component_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_component_settings_flattened_error():
@@ -2017,7 +2039,9 @@ async def test_get_component_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2221,8 +2245,12 @@ def test_update_component_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].component_settings == gcss_component_settings.ComponentSettings(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].component_settings
+        mock_val = gcss_component_settings.ComponentSettings(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_component_settings_flattened_error():
@@ -2265,8 +2293,12 @@ async def test_update_component_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].component_settings == gcss_component_settings.ComponentSettings(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].component_settings
+        mock_val = gcss_component_settings.ComponentSettings(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2615,7 +2647,9 @@ def test_calculate_effective_component_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_calculate_effective_component_settings_flattened_error():
@@ -2656,7 +2690,9 @@ async def test_calculate_effective_component_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2846,7 +2882,9 @@ def test_list_detectors_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_detectors_flattened_error():
@@ -2887,7 +2925,9 @@ async def test_list_detectors_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3267,7 +3307,9 @@ def test_list_components_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_components_flattened_error():
@@ -3308,7 +3350,9 @@ async def test_list_components_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -125,12 +125,14 @@ class CampaignExperimentOperation(proto.Message):
         update (google.ads.googleads.v8.resources.types.CampaignExperiment):
             Update operation: The campaign experiment is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: The campaign experiment is expected to
             have a valid resource name, in this format:
 
             ``customers/{customer_id}/campaignExperiments/{campaign_experiment_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

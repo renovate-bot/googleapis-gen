@@ -44,11 +44,13 @@ class Mutation(proto.Message):
             Insert new rows in a table. If any of the rows already
             exist, the write or transaction fails with error
             ``ALREADY_EXISTS``.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.cloud.spanner_v1.types.Mutation.Write):
             Update existing rows in a table. If any of the rows does not
             already exist, the transaction fails with error
             ``NOT_FOUND``.
+
             This field is a member of `oneof`_ ``operation``.
         insert_or_update (google.cloud.spanner_v1.types.Mutation.Write):
             Like [insert][google.spanner.v1.Mutation.insert], except
@@ -63,6 +65,7 @@ class Mutation(proto.Message):
             ``NOT NULL`` columns in the table must be given a value.
             This holds true even when the row already exists and will
             therefore actually be updated.
+
             This field is a member of `oneof`_ ``operation``.
         replace (google.cloud.spanner_v1.types.Mutation.Write):
             Like [insert][google.spanner.v1.Mutation.insert], except
@@ -76,10 +79,12 @@ class Mutation(proto.Message):
             the ``ON DELETE CASCADE`` annotation, then replacing a
             parent row also deletes the child rows. Otherwise, you must
             delete the child rows before you replace the parent row.
+
             This field is a member of `oneof`_ ``operation``.
         delete (google.cloud.spanner_v1.types.Mutation.Delete):
             Delete rows from a table. Succeeds whether or
             not the named rows were present.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

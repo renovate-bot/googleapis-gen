@@ -36,17 +36,21 @@ class Video(proto.Message):
             ``customers/{customer_id}/videos/{video_id}``
         id (str):
             Output only. The ID of the video.
+
             This field is a member of `oneof`_ ``_id``.
         channel_id (str):
             Output only. The owner channel id of the
             video.
+
             This field is a member of `oneof`_ ``_channel_id``.
         duration_millis (int):
             Output only. The duration of the video in
             milliseconds.
+
             This field is a member of `oneof`_ ``_duration_millis``.
         title (str):
             Output only. The title of the video.
+
             This field is a member of `oneof`_ ``_title``.
     """
 

@@ -117,16 +117,19 @@ class CampaignOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.Campaign):
             Create operation: No resource name is
             expected for the new campaign.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v9.resources.types.Campaign):
             Update operation: The campaign is expected to
             have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             is expected, in this format:
 
             ``customers/{customer_id}/campaigns/{campaign_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

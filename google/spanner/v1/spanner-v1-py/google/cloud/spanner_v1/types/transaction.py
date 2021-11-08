@@ -345,6 +345,7 @@ class TransactionOptions(proto.Message):
             Authorization to begin a read-write transaction requires
             ``spanner.databases.beginOrRollbackReadWriteTransaction``
             permission on the ``session`` resource.
+
             This field is a member of `oneof`_ ``mode``.
         partitioned_dml (google.cloud.spanner_v1.types.TransactionOptions.PartitionedDml):
             Partitioned DML transaction.
@@ -353,6 +354,7 @@ class TransactionOptions(proto.Message):
             requires
             ``spanner.databases.beginPartitionedDmlTransaction``
             permission on the ``session`` resource.
+
             This field is a member of `oneof`_ ``mode``.
         read_only (google.cloud.spanner_v1.types.TransactionOptions.ReadOnly):
             Transaction will not write.
@@ -360,6 +362,7 @@ class TransactionOptions(proto.Message):
             Authorization to begin a read-only transaction requires
             ``spanner.databases.beginReadOnlyTransaction`` permission on
             the ``session`` resource.
+
             This field is a member of `oneof`_ ``mode``.
     """
 
@@ -387,6 +390,7 @@ class TransactionOptions(proto.Message):
             strong (bool):
                 Read at a timestamp where all previously
                 committed transactions are visible.
+
                 This field is a member of `oneof`_ ``timestamp_bound``.
             min_read_timestamp (google.protobuf.timestamp_pb2.Timestamp):
                 Executes all reads at a timestamp >= ``min_read_timestamp``.
@@ -401,6 +405,7 @@ class TransactionOptions(proto.Message):
 
                 A timestamp in RFC3339 UTC "Zulu" format, accurate to
                 nanoseconds. Example: ``"2014-10-02T15:01:23.045123456Z"``.
+
                 This field is a member of `oneof`_ ``timestamp_bound``.
             max_staleness (google.protobuf.duration_pb2.Duration):
                 Read data at a timestamp >= ``NOW - max_staleness`` seconds.
@@ -416,6 +421,7 @@ class TransactionOptions(proto.Message):
 
                 Note that this option can only be used in single-use
                 transactions.
+
                 This field is a member of `oneof`_ ``timestamp_bound``.
             read_timestamp (google.protobuf.timestamp_pb2.Timestamp):
                 Executes all reads at the given timestamp. Unlike other
@@ -430,6 +436,7 @@ class TransactionOptions(proto.Message):
 
                 A timestamp in RFC3339 UTC "Zulu" format, accurate to
                 nanoseconds. Example: ``"2014-10-02T15:01:23.045123456Z"``.
+
                 This field is a member of `oneof`_ ``timestamp_bound``.
             exact_staleness (google.protobuf.duration_pb2.Duration):
                 Executes all reads at a timestamp that is
@@ -445,6 +452,7 @@ class TransactionOptions(proto.Message):
                 Useful for reading at nearby replicas without the
                 distributed timestamp negotiation overhead of
                 ``max_staleness``.
+
                 This field is a member of `oneof`_ ``timestamp_bound``.
             return_read_timestamp (bool):
                 If true, the Cloud Spanner-selected read timestamp is
@@ -560,10 +568,12 @@ class TransactionSelector(proto.Message):
             transaction. This is the most efficient way to
             execute a transaction that consists of a single
             SQL query.
+
             This field is a member of `oneof`_ ``selector``.
         id (bytes):
             Execute the read or SQL query in a
             previously-started transaction.
+
             This field is a member of `oneof`_ ``selector``.
         begin (google.cloud.spanner_v1.types.TransactionOptions):
             Begin a new transaction and execute this read or SQL query
@@ -571,6 +581,7 @@ class TransactionSelector(proto.Message):
             in
             [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction],
             which is a [Transaction][google.spanner.v1.Transaction].
+
             This field is a member of `oneof`_ ``selector``.
     """
 

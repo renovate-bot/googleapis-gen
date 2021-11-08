@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.37.0'
-  compile 'io.grpc:grpc-protobuf:1.37.0'
+  compile 'io.grpc:grpc-stub:1.41.0'
+  compile 'io.grpc:grpc-protobuf:1.41.0'
   compile project(':proto-google-cloud-asset-v1p1beta1-java')
   compile 'com.google.api.grpc:proto-google-iam-v1:1.0.9'
 }

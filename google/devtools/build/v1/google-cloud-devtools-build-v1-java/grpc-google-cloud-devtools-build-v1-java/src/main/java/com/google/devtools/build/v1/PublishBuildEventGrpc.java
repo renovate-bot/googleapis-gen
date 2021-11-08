@@ -22,6 +22,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/devtools/build/v1/publish_build_event.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class PublishBuildEventGrpc {
 
   private PublishBuildEventGrpc() {}

@@ -67,6 +67,7 @@ class Campaign(proto.Message):
             ``customers/{customer_id}/campaigns/{campaign_id}``
         id (int):
             Output only. The ID of the campaign.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the campaign.
@@ -76,6 +77,7 @@ class Campaign(proto.Message):
             It must not contain any null (code point 0x0),
             NL line feed (code point 0xA) or carriage return
             (code point 0xD) characters.
+
             This field is a member of `oneof`_ ``_name``.
         status (google.ads.googleads.v9.enums.types.CampaignStatusEnum.CampaignStatus):
             The status of the campaign.
@@ -107,6 +109,7 @@ class Campaign(proto.Message):
         tracking_url_template (str):
             The URL template for constructing a tracking
             URL.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v9.common.types.CustomParameter]):
             The list of mappings used to substitute custom parameter
@@ -147,9 +150,11 @@ class Campaign(proto.Message):
             equal to ``resource_name``.
 
             This field is read-only.
+
             This field is a member of `oneof`_ ``_base_campaign``.
         campaign_budget (str):
             The budget of the campaign.
+
             This field is a member of `oneof`_ ``_campaign_budget``.
         bidding_strategy_type (google.ads.googleads.v9.enums.types.BiddingStrategyTypeEnum.BiddingStrategyType):
             Output only. The type of bidding strategy.
@@ -174,14 +179,17 @@ class Campaign(proto.Message):
             BiddingStrategy resource.
         start_date (str):
             The date when campaign started.
+
             This field is a member of `oneof`_ ``_start_date``.
         end_date (str):
             The last day of the campaign.
+
             This field is a member of `oneof`_ ``_end_date``.
         final_url_suffix (str):
             Suffix used to append query parameters to
             landing pages that are served with parallel
             tracking.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
         frequency_caps (Sequence[google.ads.googleads.v9.common.types.FrequencyCapEntry]):
             A list that limits how often each user will
@@ -217,6 +225,7 @@ class Campaign(proto.Message):
             https://support.google.com/google-
             ads/answer/9061546.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_optimization_score``.
         excluded_parent_asset_field_types (Sequence[google.ads.googleads.v9.enums.types.AssetFieldTypeEnum.AssetFieldType]):
             The asset field types that should be excluded
@@ -233,68 +242,82 @@ class Campaign(proto.Message):
             targeted. This field can only be set for
             Performance Max campaigns, where the default
             value is false.
+
             This field is a member of `oneof`_ ``_url_expansion_opt_out``.
         bidding_strategy (str):
             Portfolio bidding strategy used by campaign.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         commission (google.ads.googleads.v9.common.types.Commission):
             Commission is an automatic bidding strategy
             in which the advertiser pays a certain portion
             of the conversion value.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         manual_cpc (google.ads.googleads.v9.common.types.ManualCpc):
             Standard Manual CPC bidding strategy.
             Manual click-based bidding where user pays per
             click.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         manual_cpm (google.ads.googleads.v9.common.types.ManualCpm):
             Standard Manual CPM bidding strategy.
             Manual impression-based bidding where user pays
             per thousand impressions.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         manual_cpv (google.ads.googleads.v9.common.types.ManualCpv):
             Output only. A bidding strategy that pays a
             configurable amount per video view.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         maximize_conversions (google.ads.googleads.v9.common.types.MaximizeConversions):
             Standard Maximize Conversions bidding
             strategy that automatically maximizes number of
             conversions while spending your budget.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         maximize_conversion_value (google.ads.googleads.v9.common.types.MaximizeConversionValue):
             Standard Maximize Conversion Value bidding
             strategy that automatically sets bids to
             maximize revenue while spending your budget.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         target_cpa (google.ads.googleads.v9.common.types.TargetCpa):
             Standard Target CPA bidding strategy that
             automatically sets bids to help get as many
             conversions as possible at the target cost-per-
             acquisition (CPA) you set.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         target_impression_share (google.ads.googleads.v9.common.types.TargetImpressionShare):
             Target Impression Share bidding strategy. An
             automated bidding strategy that sets bids to
             achieve a desired percentage of impressions.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         target_roas (google.ads.googleads.v9.common.types.TargetRoas):
             Standard Target ROAS bidding strategy that
             automatically maximizes revenue while averaging
             a specific target return on ad spend (ROAS).
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         target_spend (google.ads.googleads.v9.common.types.TargetSpend):
             Standard Target Spend bidding strategy that
             automatically sets your bids to help get as many
             clicks as possible within your budget.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         percent_cpc (google.ads.googleads.v9.common.types.PercentCpc):
             Standard Percent Cpc bidding strategy where
             bids are a fraction of the advertised price for
             some good or service.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
         target_cpm (google.ads.googleads.v9.common.types.TargetCpm):
             A bidding strategy that automatically
             optimizes cost per thousand impressions.
+
             This field is a member of `oneof`_ ``campaign_bidding_strategy``.
     """
 
@@ -305,22 +328,26 @@ class Campaign(proto.Message):
             target_google_search (bool):
                 Whether ads will be served with google.com
                 search results.
+
                 This field is a member of `oneof`_ ``_target_google_search``.
             target_search_network (bool):
                 Whether ads will be served on partner sites in the Google
                 Search Network (requires ``target_google_search`` to also be
                 ``true``).
+
                 This field is a member of `oneof`_ ``_target_search_network``.
             target_content_network (bool):
                 Whether ads will be served on specified
                 placements in the Google Display Network.
                 Placements are specified using the Placement
                 criterion.
+
                 This field is a member of `oneof`_ ``_target_content_network``.
             target_partner_search_network (bool):
                 Whether ads will be served on the Google
                 Partner Network. This is available only to some
                 select Google partner accounts.
+
                 This field is a member of `oneof`_ ``_target_partner_search_network``.
         """
 
@@ -351,6 +378,7 @@ class Campaign(proto.Message):
         Attributes:
             hotel_center_id (int):
                 Immutable. The linked Hotel Center account.
+
                 This field is a member of `oneof`_ ``_hotel_center_id``.
         """
 
@@ -367,6 +395,7 @@ class Campaign(proto.Message):
             tracking_url (str):
                 Output only. The url used for dynamic
                 tracking.
+
                 This field is a member of `oneof`_ ``_tracking_url``.
         """
 
@@ -414,6 +443,7 @@ class Campaign(proto.Message):
             use_supplied_urls_only (bool):
                 Whether the campaign uses advertiser supplied
                 URLs exclusively.
+
                 This field is a member of `oneof`_ ``_use_supplied_urls_only``.
             feeds (Sequence[str]):
                 The list of page feeds associated with the
@@ -464,6 +494,7 @@ class Campaign(proto.Message):
                 Immutable. ID of the Merchant Center account.
                 This field is required for create operations.
                 This field is immutable for Shopping campaigns.
+
                 This field is a member of `oneof`_ ``_merchant_id``.
             sales_country (str):
                 Immutable. Sales country of products to
@@ -471,6 +502,7 @@ class Campaign(proto.Message):
                 for Shopping campaigns. This field is immutable.
                 This field is optional for non-Shopping
                 campaigns, but it must be equal to 'ZZ' if set.
+
                 This field is a member of `oneof`_ ``_sales_country``.
             campaign_priority (int):
                 Priority of the campaign. Campaigns with
@@ -480,9 +512,11 @@ class Campaign(proto.Message):
                 between 0 and 2, inclusive.
                 This field is optional for Smart Shopping
                 campaigns, but must be equal to 3 if set.
+
                 This field is a member of `oneof`_ ``_campaign_priority``.
             enable_local (bool):
                 Whether to include local products.
+
                 This field is a member of `oneof`_ ``_enable_local``.
         """
 
@@ -572,6 +606,7 @@ class Campaign(proto.Message):
             app_id (str):
                 Immutable. A string that uniquely identifies
                 a mobile application.
+
                 This field is a member of `oneof`_ ``_app_id``.
             app_store (google.ads.googleads.v9.enums.types.AppCampaignAppStoreEnum.AppCampaignAppStore):
                 Immutable. The application store that

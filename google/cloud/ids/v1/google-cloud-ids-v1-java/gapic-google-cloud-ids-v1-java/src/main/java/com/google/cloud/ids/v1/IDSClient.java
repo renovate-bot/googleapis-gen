@@ -193,7 +193,7 @@ public class IDSClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IDSClient iDSClient = IDSClient.create()) {
-   *   String parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Endpoint element : iDSClient.listEndpoints(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -218,7 +218,7 @@ public class IDSClient implements BackgroundResource {
    * try (IDSClient iDSClient = IDSClient.create()) {
    *   ListEndpointsRequest request =
    *       ListEndpointsRequest.newBuilder()
-   *           .setParent(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -247,7 +247,7 @@ public class IDSClient implements BackgroundResource {
    * try (IDSClient iDSClient = IDSClient.create()) {
    *   ListEndpointsRequest request =
    *       ListEndpointsRequest.newBuilder()
-   *           .setParent(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -276,7 +276,7 @@ public class IDSClient implements BackgroundResource {
    * try (IDSClient iDSClient = IDSClient.create()) {
    *   ListEndpointsRequest request =
    *       ListEndpointsRequest.newBuilder()
-   *           .setParent(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -433,7 +433,7 @@ public class IDSClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (IDSClient iDSClient = IDSClient.create()) {
-   *   String parent = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Endpoint endpoint = Endpoint.newBuilder().build();
    *   String endpointId = "endpointId-1837754992";
    *   Endpoint response = iDSClient.createEndpointAsync(parent, endpoint, endpointId).get();
@@ -469,7 +469,7 @@ public class IDSClient implements BackgroundResource {
    * try (IDSClient iDSClient = IDSClient.create()) {
    *   CreateEndpointRequest request =
    *       CreateEndpointRequest.newBuilder()
-   *           .setParent(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpointId("endpointId-1837754992")
    *           .setEndpoint(Endpoint.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -496,7 +496,7 @@ public class IDSClient implements BackgroundResource {
    * try (IDSClient iDSClient = IDSClient.create()) {
    *   CreateEndpointRequest request =
    *       CreateEndpointRequest.newBuilder()
-   *           .setParent(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpointId("endpointId-1837754992")
    *           .setEndpoint(Endpoint.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -523,7 +523,7 @@ public class IDSClient implements BackgroundResource {
    * try (IDSClient iDSClient = IDSClient.create()) {
    *   CreateEndpointRequest request =
    *       CreateEndpointRequest.newBuilder()
-   *           .setParent(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEndpointId("endpointId-1837754992")
    *           .setEndpoint(Endpoint.newBuilder().build())
    *           .setRequestId("requestId693933066")

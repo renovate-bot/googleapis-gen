@@ -118,16 +118,19 @@ class CustomerFeedOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CustomerFeed):
             Create operation: No resource name is
             expected for the new customer feed.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.CustomerFeed):
             Update operation: The customer feed is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed customer
             feed is expected, in this format:
 
             ``customers/{customer_id}/customerFeeds/{feed_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

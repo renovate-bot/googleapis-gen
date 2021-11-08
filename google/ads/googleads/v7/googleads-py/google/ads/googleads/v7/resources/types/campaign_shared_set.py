@@ -40,6 +40,7 @@ class CampaignSharedSet(proto.Message):
         campaign (str):
             Immutable. The campaign to which the campaign
             shared set belongs.
+
             This field is a member of `oneof`_ ``_campaign``.
         shared_set (str):
             Immutable. The shared set associated with the
@@ -51,6 +52,7 @@ class CampaignSharedSet(proto.Message):
             sets can be associated with Shopping campaigns.
             Only negative placement shared sets can be
             associated with Display mobile app campaigns.
+
             This field is a member of `oneof`_ ``_shared_set``.
         status (google.ads.googleads.v7.enums.types.CampaignSharedSetStatusEnum.CampaignSharedSetStatus):
             Output only. The status of this campaign

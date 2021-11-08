@@ -42,11 +42,13 @@ class KeywordPlan(proto.Message):
             ``customers/{customer_id}/keywordPlans/{kp_plan_id}``
         id (int):
             Output only. The ID of the keyword plan.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the keyword plan.
             This field is required and should not be empty
             when creating new keyword plans.
+
             This field is a member of `oneof`_ ``_name``.
         forecast_period (google.ads.googleads.v7.resources.types.KeywordPlanForecastPeriod):
             The date period used for forecasting the
@@ -88,6 +90,7 @@ class KeywordPlanForecastPeriod(proto.Message):
         date_interval (google.ads.googleads.v7.enums.types.KeywordPlanForecastIntervalEnum.KeywordPlanForecastInterval):
             A future date range relative to the current
             date used for forecasting.
+
             This field is a member of `oneof`_ ``interval``.
         date_range (google.ads.googleads.v7.common.types.DateRange):
             The custom date range used for forecasting.
@@ -95,6 +98,7 @@ class KeywordPlanForecastPeriod(proto.Message):
             Otherwise, an error will be returned when the
             forecasting action is performed. The start and
             end dates are inclusive.
+
             This field is a member of `oneof`_ ``interval``.
     """
 

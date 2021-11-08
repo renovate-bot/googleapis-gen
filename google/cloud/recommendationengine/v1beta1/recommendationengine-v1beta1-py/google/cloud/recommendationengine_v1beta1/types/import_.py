@@ -107,6 +107,7 @@ class ImportErrorsConfig(proto.Message):
             empty, existing Cloud Storage bucket. Import errors will be
             written to a file in this bucket, one per line, as a
             JSON-encoded ``google.rpc.Status`` message.
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -217,14 +218,17 @@ class InputConfig(proto.Message):
         catalog_inline_source (google.cloud.recommendationengine_v1beta1.types.CatalogInlineSource):
             The Inline source for the input content for
             Catalog items.
+
             This field is a member of `oneof`_ ``source``.
         gcs_source (google.cloud.recommendationengine_v1beta1.types.GcsSource):
             Google Cloud Storage location for the input
             content.
+
             This field is a member of `oneof`_ ``source``.
         user_event_inline_source (google.cloud.recommendationengine_v1beta1.types.UserEventInlineSource):
             The Inline source for the input content for
             UserEvents.
+
             This field is a member of `oneof`_ ``source``.
     """
 

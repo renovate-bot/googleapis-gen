@@ -332,6 +332,7 @@ class Settings(proto.Message):
         Attributes:
             cloud_pubsub_topic (google.apps.alertcenter_v1beta1.types.Settings.Notification.CloudPubsubTopic):
                 A Google Cloud Pub/sub topic destination.
+
                 This field is a member of `oneof`_ ``destination``.
         """
         class PayloadFormat(proto.Enum):

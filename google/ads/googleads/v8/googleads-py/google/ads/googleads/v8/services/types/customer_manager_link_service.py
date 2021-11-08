@@ -138,6 +138,7 @@ class CustomerManagerLinkOperation(proto.Message):
         update (google.ads.googleads.v8.resources.types.CustomerManagerLink):
             Update operation: The link is expected to
             have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

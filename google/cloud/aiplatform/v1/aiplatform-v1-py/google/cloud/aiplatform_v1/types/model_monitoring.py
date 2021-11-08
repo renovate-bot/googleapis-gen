@@ -62,14 +62,17 @@ class ModelMonitoringObjectiveConfig(proto.Message):
             dataset (str):
                 The resource name of the Dataset used to
                 train this Model.
+
                 This field is a member of `oneof`_ ``data_source``.
             gcs_source (google.cloud.aiplatform_v1.types.GcsSource):
                 The Google Cloud Storage uri of the unmanaged
                 Dataset used to train this Model.
+
                 This field is a member of `oneof`_ ``data_source``.
             bigquery_source (google.cloud.aiplatform_v1.types.BigQuerySource):
                 The BigQuery table of the unmanaged Dataset
                 used to train this Model.
+
                 This field is a member of `oneof`_ ``data_source``.
             data_format (str):
                 Data format of the dataset, only applicable
@@ -219,9 +222,11 @@ class ModelMonitoringObjectiveConfig(proto.Message):
                 gcs (google.cloud.aiplatform_v1.types.GcsDestination):
                     Cloud Storage location for BatchExplain
                     output.
+
                     This field is a member of `oneof`_ ``destination``.
                 bigquery (google.cloud.aiplatform_v1.types.BigQueryDestination):
                     BigQuery location for BatchExplain output.
+
                     This field is a member of `oneof`_ ``destination``.
                 prediction_format (google.cloud.aiplatform_v1.types.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat):
                     The storage format of the predictions
@@ -293,6 +298,7 @@ class ModelMonitoringAlertConfig(proto.Message):
     Attributes:
         email_alert_config (google.cloud.aiplatform_v1.types.ModelMonitoringAlertConfig.EmailAlertConfig):
             Email alert config.
+
             This field is a member of `oneof`_ ``alert``.
     """
 
@@ -337,6 +343,7 @@ class ThresholdConfig(proto.Message):
             Each feature must have a non-zero threshold if
             they need to be monitored. Otherwise no alert
             will be triggered for that feature.
+
             This field is a member of `oneof`_ ``threshold``.
     """
 

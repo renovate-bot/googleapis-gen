@@ -118,16 +118,19 @@ class BiddingDataExclusionOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.BiddingDataExclusion):
             Create operation: No resource name is
             expected for the new data exclusion.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.BiddingDataExclusion):
             Update operation: The data exclusion is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed data
             exclusion is expected, in this format:
 
             ``customers/{customer_id}/biddingDataExclusions/{data_exclusion_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

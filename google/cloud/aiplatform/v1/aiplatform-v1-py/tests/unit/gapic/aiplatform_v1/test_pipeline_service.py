@@ -584,8 +584,12 @@ def test_create_training_pipeline_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].training_pipeline == gca_training_pipeline.TrainingPipeline(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].training_pipeline
+        mock_val = gca_training_pipeline.TrainingPipeline(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_training_pipeline_flattened_error():
@@ -628,8 +632,12 @@ async def test_create_training_pipeline_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].training_pipeline == gca_training_pipeline.TrainingPipeline(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].training_pipeline
+        mock_val = gca_training_pipeline.TrainingPipeline(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -832,7 +840,9 @@ def test_get_training_pipeline_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_training_pipeline_flattened_error():
@@ -873,7 +883,9 @@ async def test_get_training_pipeline_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1063,7 +1075,9 @@ def test_list_training_pipelines_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_training_pipelines_flattened_error():
@@ -1104,7 +1118,9 @@ async def test_list_training_pipelines_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1476,7 +1492,9 @@ def test_delete_training_pipeline_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_training_pipeline_flattened_error():
@@ -1519,7 +1537,9 @@ async def test_delete_training_pipeline_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1703,7 +1723,9 @@ def test_cancel_training_pipeline_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_cancel_training_pipeline_flattened_error():
@@ -1744,7 +1766,9 @@ async def test_cancel_training_pipeline_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1952,9 +1976,15 @@ def test_create_pipeline_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].pipeline_job == gca_pipeline_job.PipelineJob(name='name_value')
-        assert args[0].pipeline_job_id == 'pipeline_job_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].pipeline_job
+        mock_val = gca_pipeline_job.PipelineJob(name='name_value')
+        assert arg == mock_val
+        arg = args[0].pipeline_job_id
+        mock_val = 'pipeline_job_id_value'
+        assert arg == mock_val
 
 
 def test_create_pipeline_job_flattened_error():
@@ -1999,9 +2029,15 @@ async def test_create_pipeline_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].pipeline_job == gca_pipeline_job.PipelineJob(name='name_value')
-        assert args[0].pipeline_job_id == 'pipeline_job_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].pipeline_job
+        mock_val = gca_pipeline_job.PipelineJob(name='name_value')
+        assert arg == mock_val
+        arg = args[0].pipeline_job_id
+        mock_val = 'pipeline_job_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2209,7 +2245,9 @@ def test_get_pipeline_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_pipeline_job_flattened_error():
@@ -2250,7 +2288,9 @@ async def test_get_pipeline_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2440,7 +2480,9 @@ def test_list_pipeline_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_pipeline_jobs_flattened_error():
@@ -2481,7 +2523,9 @@ async def test_list_pipeline_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2853,7 +2897,9 @@ def test_delete_pipeline_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_pipeline_job_flattened_error():
@@ -2896,7 +2942,9 @@ async def test_delete_pipeline_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3080,7 +3128,9 @@ def test_cancel_pipeline_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_cancel_pipeline_job_flattened_error():
@@ -3121,7 +3171,9 @@ async def test_cancel_pipeline_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -41,6 +41,7 @@ class PolicyViolationKey(proto.Message):
     Attributes:
         policy_name (str):
             Unique ID of the violated policy.
+
             This field is a member of `oneof`_ ``_policy_name``.
         violating_text (str):
             The text that violates the policy if
@@ -49,6 +50,7 @@ class PolicyViolationKey(proto.Message):
             the whole policy). If not specified for
             criterion exemptions, the whole policy is
             implied. Must be specified for ad exemptions.
+
             This field is a member of `oneof`_ ``_violating_text``.
     """
 
@@ -119,6 +121,7 @@ class PolicyTopicEntry(proto.Message):
             "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The
             set of possible policy topics is not fixed for a particular
             API version and may change at any time.
+
             This field is a member of `oneof`_ ``_topic``.
         type_ (google.ads.googleads.v9.enums.types.PolicyTopicEntryTypeEnum.PolicyTopicEntryType):
             Describes the negative or positive effect
@@ -167,28 +170,34 @@ class PolicyTopicEvidence(proto.Message):
     Attributes:
         website_list (google.ads.googleads.v9.common.types.PolicyTopicEvidence.WebsiteList):
             List of websites linked with this resource.
+
             This field is a member of `oneof`_ ``value``.
         text_list (google.ads.googleads.v9.common.types.PolicyTopicEvidence.TextList):
             List of evidence found in the text of a
             resource.
+
             This field is a member of `oneof`_ ``value``.
         language_code (str):
             The language the resource was detected to be
             written in. This is an IETF language tag such as
             "en-US".
+
             This field is a member of `oneof`_ ``value``.
         destination_text_list (google.ads.googleads.v9.common.types.PolicyTopicEvidence.DestinationTextList):
             The text in the destination of the resource
             that is causing a policy finding.
+
             This field is a member of `oneof`_ ``value``.
         destination_mismatch (google.ads.googleads.v9.common.types.PolicyTopicEvidence.DestinationMismatch):
             Mismatch between the destinations of a
             resource's URLs.
+
             This field is a member of `oneof`_ ``value``.
         destination_not_working (google.ads.googleads.v9.common.types.PolicyTopicEvidence.DestinationNotWorking):
             Details when the destination is returning an
             HTTP error code or isn't functional in all
             locations for commonly used devices.
+
             This field is a member of `oneof`_ ``value``.
     """
 
@@ -267,6 +276,7 @@ class PolicyTopicEvidence(proto.Message):
         Attributes:
             expanded_url (str):
                 The full URL that didn't work.
+
                 This field is a member of `oneof`_ ``_expanded_url``.
             device (google.ads.googleads.v9.enums.types.PolicyTopicEvidenceDestinationNotWorkingDeviceEnum.PolicyTopicEvidenceDestinationNotWorkingDevice):
                 The type of device that failed to load the
@@ -276,12 +286,15 @@ class PolicyTopicEvidence(proto.Message):
                 The format is "YYYY-MM-DD HH:MM:SS".
                 Examples: "2018-03-05 09:15:00" or "2018-02-01
                 14:34:30".
+
                 This field is a member of `oneof`_ ``_last_checked_date_time``.
             dns_error_type (google.ads.googleads.v9.enums.types.PolicyTopicEvidenceDestinationNotWorkingDnsErrorTypeEnum.PolicyTopicEvidenceDestinationNotWorkingDnsErrorType):
                 The type of DNS error.
+
                 This field is a member of `oneof`_ ``reason``.
             http_error_code (int):
                 The HTTP error code.
+
                 This field is a member of `oneof`_ ``reason``.
         """
 
@@ -363,17 +376,21 @@ class PolicyTopicConstraint(proto.Message):
     Attributes:
         country_constraint_list (google.ads.googleads.v9.common.types.PolicyTopicConstraint.CountryConstraintList):
             Countries where the resource cannot serve.
+
             This field is a member of `oneof`_ ``value``.
         reseller_constraint (google.ads.googleads.v9.common.types.PolicyTopicConstraint.ResellerConstraint):
             Reseller constraint.
+
             This field is a member of `oneof`_ ``value``.
         certificate_missing_in_country_list (google.ads.googleads.v9.common.types.PolicyTopicConstraint.CountryConstraintList):
             Countries where a certificate is required for
             serving.
+
             This field is a member of `oneof`_ ``value``.
         certificate_domain_mismatch_in_country_list (google.ads.googleads.v9.common.types.PolicyTopicConstraint.CountryConstraintList):
             Countries where the resource's domain is not
             covered by the certificates associated with it.
+
             This field is a member of `oneof`_ ``value``.
     """
 
@@ -385,6 +402,7 @@ class PolicyTopicConstraint(proto.Message):
             total_targeted_countries (int):
                 Total number of countries targeted by the
                 resource.
+
                 This field is a member of `oneof`_ ``_total_targeted_countries``.
             countries (Sequence[google.ads.googleads.v9.common.types.PolicyTopicConstraint.CountryConstraint]):
                 Countries in which serving is restricted.
@@ -415,6 +433,7 @@ class PolicyTopicConstraint(proto.Message):
             country_criterion (str):
                 Geo target constant resource name of the
                 country in which serving is constrained.
+
                 This field is a member of `oneof`_ ``_country_criterion``.
         """
 

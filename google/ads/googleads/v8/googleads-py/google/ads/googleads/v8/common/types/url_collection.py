@@ -32,6 +32,7 @@ class UrlCollection(proto.Message):
         url_collection_id (str):
             Unique identifier for this UrlCollection
             instance.
+
             This field is a member of `oneof`_ ``_url_collection_id``.
         final_urls (Sequence[str]):
             A list of possible final URLs.
@@ -39,6 +40,7 @@ class UrlCollection(proto.Message):
             A list of possible final mobile URLs.
         tracking_url_template (str):
             URL template for constructing a tracking URL.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
     """
 

@@ -118,16 +118,19 @@ class AdGroupFeedOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.AdGroupFeed):
             Create operation: No resource name is
             expected for the new ad group feed.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.AdGroupFeed):
             Update operation: The ad group feed is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed ad group
             feed is expected, in this format:
 
             ``customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

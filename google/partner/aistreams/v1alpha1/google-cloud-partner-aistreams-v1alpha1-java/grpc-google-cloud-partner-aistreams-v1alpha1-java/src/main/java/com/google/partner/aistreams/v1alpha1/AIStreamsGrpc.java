@@ -10,6 +10,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/partner/aistreams/v1alpha1/aistreams.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AIStreamsGrpc {
 
   private AIStreamsGrpc() {}

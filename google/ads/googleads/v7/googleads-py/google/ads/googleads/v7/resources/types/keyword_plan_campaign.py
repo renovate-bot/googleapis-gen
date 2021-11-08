@@ -40,15 +40,18 @@ class KeywordPlanCampaign(proto.Message):
             ``customers/{customer_id}/keywordPlanCampaigns/{kp_campaign_id}``
         keyword_plan (str):
             The keyword plan this campaign belongs to.
+
             This field is a member of `oneof`_ ``_keyword_plan``.
         id (int):
             Output only. The ID of the Keyword Plan
             campaign.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the Keyword Plan campaign.
             This field is required and should not be empty
             when creating Keyword Plan campaigns.
+
             This field is a member of `oneof`_ ``_name``.
         language_constants (Sequence[str]):
             The languages targeted for the Keyword Plan
@@ -63,6 +66,7 @@ class KeywordPlanCampaign(proto.Message):
             campaign.
             This field is required and should not be empty
             when creating Keyword Plan campaigns.
+
             This field is a member of `oneof`_ ``_cpc_bid_micros``.
         geo_targets (Sequence[google.ads.googleads.v7.resources.types.KeywordPlanGeoTarget]):
             The geo targets.
@@ -116,6 +120,7 @@ class KeywordPlanGeoTarget(proto.Message):
         geo_target_constant (str):
             Required. The resource name of the geo
             target.
+
             This field is a member of `oneof`_ ``_geo_target_constant``.
     """
 

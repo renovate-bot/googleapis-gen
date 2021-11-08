@@ -102,12 +102,14 @@ class FeedItemSetLinkOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.FeedItemSetLink):
             Create operation: No resource name is
             expected for the new feed item set link.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed feed item
             set link is expected, in this format:
 
             ``customers/{customer_id}/feedItemSetLinks/{feed_id}_{feed_item_set_id}_{feed_item_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -97,15 +97,18 @@ class AssetGroupOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.AssetGroup):
             Create operation: No resource name is
             expected for the new asset group
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v9.resources.types.AssetGroup):
             Update operation: The asset group is expected
             to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed asset
             group is expected, in this format:
             ``customers/{customer_id}/assetGroups/{asset_group_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

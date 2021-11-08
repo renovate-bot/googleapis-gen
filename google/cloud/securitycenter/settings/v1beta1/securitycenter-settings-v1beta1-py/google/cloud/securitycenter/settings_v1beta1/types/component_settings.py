@@ -86,18 +86,22 @@ class ComponentSettings(proto.Message):
         container_threat_detection_settings (google.cloud.securitycenter.settings_v1beta1.types.ContainerThreatDetectionSettings):
             Container Threate Detection specific settings For component,
             expect CONTAINER_THREAT_DETECTION
+
             This field is a member of `oneof`_ ``specific_settings``.
         event_threat_detection_settings (google.cloud.securitycenter.settings_v1beta1.types.EventThreatDetectionSettings):
             Event Threat Detection specific settings For component,
             expect EVENT_THREAT_DETECTION
+
             This field is a member of `oneof`_ ``specific_settings``.
         security_health_analytics_settings (google.cloud.securitycenter.settings_v1beta1.types.SecurityHealthAnalyticsSettings):
             Security Health Analytics specific settings For component,
             expect SECURITY_HEALTH_ANALYTICS
+
             This field is a member of `oneof`_ ``specific_settings``.
         web_security_scanner_settings (google.cloud.securitycenter.settings_v1beta1.types.WebSecurityScanner):
             Web Security Scanner specific settings For component, expect
             WEB_SECURITY_SCANNER
+
             This field is a member of `oneof`_ ``specific_settings``.
     """
 

@@ -93,9 +93,11 @@ class DriveActivity(proto.Message):
             after the actions occurred.
         timestamp (google.protobuf.timestamp_pb2.Timestamp):
             The activity occurred at this specific time.
+
             This field is a member of `oneof`_ ``time``.
         time_range (google.apps.drive.activity_v2.types.TimeRange):
             The activity occurred over this time range.
+
             This field is a member of `oneof`_ ``time``.
     """
 

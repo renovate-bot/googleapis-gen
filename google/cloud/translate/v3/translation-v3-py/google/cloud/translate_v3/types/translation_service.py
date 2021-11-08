@@ -313,6 +313,7 @@ class DetectLanguageRequest(proto.Message):
             If not specified, the default model is used.
         content (str):
             The content of the input stored as a string.
+
             This field is a member of `oneof`_ ``source``.
         mime_type (str):
             Optional. The format of the source text, for
@@ -553,6 +554,7 @@ class InputConfig(proto.Message):
 
             The other supported file extensions are ``.txt`` or
             ``.html``, which is treated as a single large chunk of text.
+
             This field is a member of `oneof`_ ``source``.
     """
 
@@ -670,6 +672,7 @@ class OutputConfig(proto.Message):
             glossary_error_file will be generated that contains error
             details. glossary_error_file has format of
             gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -695,10 +698,12 @@ class DocumentInputConfig(proto.Message):
         content (bytes):
             Document's content represented as a stream of
             bytes.
+
             This field is a member of `oneof`_ ``source``.
         gcs_source (google.cloud.translate_v3.types.GcsSource):
             Google Cloud Storage location. This must be a single file.
             For example: gs://example_bucket/example_file.pdf
+
             This field is a member of `oneof`_ ``source``.
         mime_type (str):
             Specifies the input document's mime_type.
@@ -787,6 +792,7 @@ class DocumentOutputConfig(proto.Message):
             Callers should expect no partial outputs. If there is any
             error during document translation, no output will be stored
             in the Cloud Storage bucket.
+
             This field is a member of `oneof`_ ``destination``.
         mime_type (str):
             Optional. Specifies the translated document's mime_type. If
@@ -1244,6 +1250,7 @@ class GlossaryInputConfig(proto.Message):
                glossary terms in multiple languages. See documentation
                for more information -
                `glossaries <https://cloud.google.com/translate/docs/advanced/glossary>`__.
+
             This field is a member of `oneof`_ ``source``.
     """
 
@@ -1272,9 +1279,11 @@ class Glossary(proto.Message):
             ``projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}``.
         language_pair (google.cloud.translate_v3.types.Glossary.LanguageCodePair):
             Used with unidirectional glossaries.
+
             This field is a member of `oneof`_ ``languages``.
         language_codes_set (google.cloud.translate_v3.types.Glossary.LanguageCodesSet):
             Used with equivalent term set glossaries.
+
             This field is a member of `oneof`_ ``languages``.
         input_config (google.cloud.translate_v3.types.GlossaryInputConfig):
             Required. Provides examples to build the
@@ -1763,6 +1772,7 @@ class BatchDocumentInputConfig(proto.Message):
             ``.xlsx`` is 100MB. The max file size to support for
             ``.pdf`` is 1GB and the max page limit is 1000 pages. The
             max file size to support for all input documents is 1GB.
+
             This field is a member of `oneof`_ ``source``.
     """
 
@@ -1833,6 +1843,7 @@ class BatchDocumentOutputConfig(proto.Message):
             ``glossary_error_output``:
             gs://translation_test/a_b_c*\ [trg]_glossary_translation.txt
             The error output is a txt file containing error details.
+
             This field is a member of `oneof`_ ``destination``.
     """
 

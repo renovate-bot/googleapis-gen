@@ -51,6 +51,7 @@ class AccountLink(proto.Message):
         account_link_id (int):
             Output only. The ID of the link.
             This field is read only.
+
             This field is a member of `oneof`_ ``_account_link_id``.
         status (google.ads.googleads.v7.enums.types.AccountLinkStatusEnum.AccountLinkStatus):
             The status of the link.
@@ -58,12 +59,15 @@ class AccountLink(proto.Message):
             Output only. The type of the linked account.
         third_party_app_analytics (google.ads.googleads.v7.resources.types.ThirdPartyAppAnalyticsLinkIdentifier):
             Immutable. A third party app analytics link.
+
             This field is a member of `oneof`_ ``linked_account``.
         data_partner (google.ads.googleads.v7.resources.types.DataPartnerLinkIdentifier):
             Output only. Data partner link.
+
             This field is a member of `oneof`_ ``linked_account``.
         google_ads (google.ads.googleads.v7.resources.types.GoogleAdsLinkIdentifier):
             Output only. Google Ads link.
+
             This field is a member of `oneof`_ ``linked_account``.
     """
 
@@ -116,6 +120,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
             creating a new third party app analytics link.
             It is unable to be modified after the creation
             of the link.
+
             This field is a member of `oneof`_ ``_app_analytics_provider_id``.
         app_id (str):
             Immutable. A string that uniquely identifies
@@ -133,6 +138,7 @@ class ThirdPartyAppAnalyticsLinkIdentifier(proto.Message):
             This field should not be empty when creating a
             new third party app analytics link. It is unable
             to be modified after the creation of the link.
+
             This field is a member of `oneof`_ ``_app_id``.
         app_vendor (google.ads.googleads.v7.enums.types.MobileAppVendorEnum.MobileAppVendor):
             Immutable. The vendor of the app.
@@ -168,6 +174,7 @@ class DataPartnerLinkIdentifier(proto.Message):
             should not be empty when creating a new data
             partner link. It is unable to be modified after
             the creation of the link.
+
             This field is a member of `oneof`_ ``_data_partner_id``.
     """
 
@@ -188,6 +195,7 @@ class GoogleAdsLinkIdentifier(proto.Message):
             not be empty when creating a new Google Ads
             link. It is unable to be modified after the
             creation of the link.
+
             This field is a member of `oneof`_ ``_customer``.
     """
 

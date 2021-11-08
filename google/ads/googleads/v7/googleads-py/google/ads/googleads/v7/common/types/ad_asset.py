@@ -38,6 +38,7 @@ class AdTextAsset(proto.Message):
     Attributes:
         text (str):
             Asset text.
+
             This field is a member of `oneof`_ ``_text``.
         pinned_field (google.ads.googleads.v7.enums.types.ServedAssetFieldTypeEnum.ServedAssetFieldType):
             The pinned field of the asset. This restricts
@@ -80,6 +81,7 @@ class AdImageAsset(proto.Message):
     Attributes:
         asset (str):
             The Asset resource name of this image.
+
             This field is a member of `oneof`_ ``_asset``.
     """
 
@@ -96,6 +98,7 @@ class AdVideoAsset(proto.Message):
     Attributes:
         asset (str):
             The Asset resource name of this video.
+
             This field is a member of `oneof`_ ``_asset``.
     """
 
@@ -112,6 +115,7 @@ class AdMediaBundleAsset(proto.Message):
     Attributes:
         asset (str):
             The Asset resource name of this media bundle.
+
             This field is a member of `oneof`_ ``_asset``.
     """
 

@@ -379,24 +379,31 @@ class TestSpecification(proto.Message):
         test_setup (google.devtools.testing_v1.types.TestSetup):
             Test setup requirements for Android e.g.
             files to install, bootstrap scripts.
+
             This field is a member of `oneof`_ ``setup``.
         ios_test_setup (google.devtools.testing_v1.types.IosTestSetup):
             Test setup requirements for iOS.
+
             This field is a member of `oneof`_ ``setup``.
         android_instrumentation_test (google.devtools.testing_v1.types.AndroidInstrumentationTest):
             An Android instrumentation test.
+
             This field is a member of `oneof`_ ``test``.
         android_robo_test (google.devtools.testing_v1.types.AndroidRoboTest):
             An Android robo test.
+
             This field is a member of `oneof`_ ``test``.
         android_test_loop (google.devtools.testing_v1.types.AndroidTestLoop):
             An Android Application with a Test Loop.
+
             This field is a member of `oneof`_ ``test``.
         ios_xc_test (google.devtools.testing_v1.types.IosXcTest):
             An iOS XCTest, via an .xctestrun file.
+
             This field is a member of `oneof`_ ``test``.
         ios_test_loop (google.devtools.testing_v1.types.IosTestLoop):
             An iOS application with a test loop.
+
             This field is a member of `oneof`_ ``test``.
         disable_video_recording (bool):
             Disables video recording. May reduce test
@@ -640,6 +647,7 @@ class Account(proto.Message):
     Attributes:
         google_auto (google.devtools.testing_v1.types.GoogleAuto):
             An automatic google login account.
+
             This field is a member of `oneof`_ ``account_type``.
     """
 
@@ -701,6 +709,7 @@ class AppBundle(proto.Message):
         bundle_location (google.devtools.testing_v1.types.FileReference):
             .aab file representing the app bundle under
             test.
+
             This field is a member of `oneof`_ ``bundle``.
     """
 
@@ -725,9 +734,11 @@ class DeviceFile(proto.Message):
     Attributes:
         obb_file (google.devtools.testing_v1.types.ObbFile):
             A reference to an opaque binary blob file.
+
             This field is a member of `oneof`_ ``device_file``.
         regular_file (google.devtools.testing_v1.types.RegularFile):
             A reference to a regular file.
+
             This field is a member of `oneof`_ ``device_file``.
     """
 
@@ -865,10 +876,12 @@ class AndroidTestLoop(proto.Message):
     Attributes:
         app_apk (google.devtools.testing_v1.types.FileReference):
             The APK for the application under test.
+
             This field is a member of `oneof`_ ``app_under_test``.
         app_bundle (google.devtools.testing_v1.types.AppBundle):
             A multi-apk app bundle for the application
             under test.
+
             This field is a member of `oneof`_ ``app_under_test``.
         app_package_id (str):
             The java package for the application under
@@ -1033,10 +1046,12 @@ class AndroidInstrumentationTest(proto.Message):
     Attributes:
         app_apk (google.devtools.testing_v1.types.FileReference):
             The APK for the application under test.
+
             This field is a member of `oneof`_ ``app_under_test``.
         app_bundle (google.devtools.testing_v1.types.AppBundle):
             A multi-apk app bundle for the application
             under test.
+
             This field is a member of `oneof`_ ``app_under_test``.
         test_apk (google.devtools.testing_v1.types.FileReference):
             Required. The APK containing the test code to
@@ -1143,10 +1158,12 @@ class AndroidRoboTest(proto.Message):
     Attributes:
         app_apk (google.devtools.testing_v1.types.FileReference):
             The APK for the application under test.
+
             This field is a member of `oneof`_ ``app_under_test``.
         app_bundle (google.devtools.testing_v1.types.AppBundle):
             A multi-apk app bundle for the application
             under test.
+
             This field is a member of `oneof`_ ``app_under_test``.
         app_package_id (str):
             The java package for the application under
@@ -1278,10 +1295,12 @@ class RoboStartingIntent(proto.Message):
         launcher_activity (google.devtools.testing_v1.types.LauncherActivityIntent):
             An intent that starts the main launcher
             activity.
+
             This field is a member of `oneof`_ ``starting_intent``.
         start_activity (google.devtools.testing_v1.types.StartActivityIntent):
             An intent that starts an activity with
             specific details.
+
             This field is a member of `oneof`_ ``starting_intent``.
         timeout (google.protobuf.duration_pb2.Duration):
             Timeout in seconds for each intent.
@@ -1352,13 +1371,16 @@ class EnvironmentMatrix(proto.Message):
     Attributes:
         android_matrix (google.devtools.testing_v1.types.AndroidMatrix):
             A matrix of Android devices.
+
             This field is a member of `oneof`_ ``environment_matrix``.
         android_device_list (google.devtools.testing_v1.types.AndroidDeviceList):
             A list of Android devices; the test will be
             run only on the specified devices.
+
             This field is a member of `oneof`_ ``environment_matrix``.
         ios_device_list (google.devtools.testing_v1.types.IosDeviceList):
             A list of iOS devices.
+
             This field is a member of `oneof`_ ``environment_matrix``.
     """
 
@@ -1662,6 +1684,7 @@ class FileReference(proto.Message):
             app-1414623860166/app%40debug-unaligned.apk
             These paths are expected to be url encoded
             (percent encoding)
+
             This field is a member of `oneof`_ ``file``.
     """
 
@@ -1686,10 +1709,12 @@ class Environment(proto.Message):
         android_device (google.devtools.testing_v1.types.AndroidDevice):
             An Android device which must be used with an
             Android test.
+
             This field is a member of `oneof`_ ``environment``.
         ios_device (google.devtools.testing_v1.types.IosDevice):
             An iOS device which must be used with an iOS
             test.
+
             This field is a member of `oneof`_ ``environment``.
     """
 
@@ -1854,10 +1879,12 @@ class ShardingOption(proto.Message):
         uniform_sharding (google.devtools.testing_v1.types.UniformSharding):
             Uniformly shards test cases given a total
             number of shards.
+
             This field is a member of `oneof`_ ``option``.
         manual_sharding (google.devtools.testing_v1.types.ManualSharding):
             Shards test cases into the specified groups
             of packages, classes, and/or methods.
+
             This field is a member of `oneof`_ ``option``.
     """
 

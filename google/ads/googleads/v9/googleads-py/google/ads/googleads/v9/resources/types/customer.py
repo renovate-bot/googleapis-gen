@@ -41,31 +41,38 @@ class Customer(proto.Message):
             ``customers/{customer_id}``
         id (int):
             Output only. The ID of the customer.
+
             This field is a member of `oneof`_ ``_id``.
         descriptive_name (str):
             Optional, non-unique descriptive name of the
             customer.
+
             This field is a member of `oneof`_ ``_descriptive_name``.
         currency_code (str):
             Immutable. The currency in which the account
             operates. A subset of the currency codes from
             the ISO 4217 standard is supported.
+
             This field is a member of `oneof`_ ``_currency_code``.
         time_zone (str):
             Immutable. The local timezone ID of the
             customer.
+
             This field is a member of `oneof`_ ``_time_zone``.
         tracking_url_template (str):
             The URL template for constructing a tracking
             URL out of parameters.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         final_url_suffix (str):
             The URL template for appending params to the
             final URL
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
         auto_tagging_enabled (bool):
             Whether auto-tagging is enabled for the
             customer.
+
             This field is a member of `oneof`_ ``_auto_tagging_enabled``.
         has_partners_badge (bool):
             Output only. Whether the Customer has a
@@ -73,14 +80,17 @@ class Customer(proto.Message):
             associated with the Partners program, this will
             be false. For more information, see
             https://support.google.com/partners/answer/3125774.
+
             This field is a member of `oneof`_ ``_has_partners_badge``.
         manager (bool):
             Output only. Whether the customer is a
             manager.
+
             This field is a member of `oneof`_ ``_manager``.
         test_account (bool):
             Output only. Whether the customer is a test
             account.
+
             This field is a member of `oneof`_ ``_test_account``.
         call_reporting_setting (google.ads.googleads.v9.resources.types.CallReportingSetting):
             Call reporting setting for a customer.
@@ -107,6 +117,7 @@ class Customer(proto.Message):
             https://support.google.com/google-
             ads/answer/9061546.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_optimization_score``.
         optimization_score_weight (float):
             Output only. Optimization score weight of the customer.
@@ -214,15 +225,18 @@ class CallReportingSetting(proto.Message):
         call_reporting_enabled (bool):
             Enable reporting of phone call events by
             redirecting them via Google System.
+
             This field is a member of `oneof`_ ``_call_reporting_enabled``.
         call_conversion_reporting_enabled (bool):
             Whether to enable call conversion reporting.
+
             This field is a member of `oneof`_ ``_call_conversion_reporting_enabled``.
         call_conversion_action (str):
             Customer-level call conversion action to attribute a call
             conversion to. If not set a default conversion action is
             used. Only in effect when call_conversion_reporting_enabled
             is set to true.
+
             This field is a member of `oneof`_ ``_call_conversion_action``.
     """
 
@@ -254,6 +268,7 @@ class ConversionTrackingSetting(proto.Message):
             assigned after any conversion tracking feature
             is used. If the customer doesn't use conversion
             tracking, this is 0. This field is read-only.
+
             This field is a member of `oneof`_ ``_conversion_tracking_id``.
         cross_account_conversion_tracking_id (int):
             Output only. The conversion tracking id of the customer's
@@ -261,6 +276,7 @@ class ConversionTrackingSetting(proto.Message):
             account conversion tracking, and it overrides
             conversion_tracking_id. This field can only be managed
             through the Google Ads UI. This field is read-only.
+
             This field is a member of `oneof`_ ``_cross_account_conversion_tracking_id``.
     """
 
@@ -282,6 +298,7 @@ class RemarketingSetting(proto.Message):
     Attributes:
         google_global_site_tag (str):
             Output only. The Google global site tag.
+
             This field is a member of `oneof`_ ``_google_global_site_tag``.
     """
 

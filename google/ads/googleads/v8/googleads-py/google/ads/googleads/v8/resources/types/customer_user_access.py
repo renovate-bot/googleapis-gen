@@ -42,6 +42,7 @@ class CustomerUserAccess(proto.Message):
         email_address (str):
             Output only. Email address of the user.
             Read only field
+
             This field is a member of `oneof`_ ``_email_address``.
         access_role (google.ads.googleads.v8.enums.types.AccessRoleEnum.AccessRole):
             Access role of the user.
@@ -51,10 +52,12 @@ class CustomerUserAccess(proto.Message):
             The format is "YYYY-MM-DD HH:MM:SS".
             Examples: "2018-03-05 09:15:00" or "2018-02-01
             14:34:30".
+
             This field is a member of `oneof`_ ``_access_creation_date_time``.
         inviter_user_email_address (str):
             Output only. The email address of the inviter
             user. Read only field
+
             This field is a member of `oneof`_ ``_inviter_user_email_address``.
     """
 

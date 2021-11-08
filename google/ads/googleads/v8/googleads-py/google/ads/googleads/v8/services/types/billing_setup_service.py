@@ -84,12 +84,14 @@ class BillingSetupOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.BillingSetup):
             Creates a billing setup. No resource name is
             expected for the new billing setup.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Resource name of the billing setup to remove. A setup cannot
             be removed unless it is in a pending state or its scheduled
             start time is in the future. The resource name looks like
             ``customers/{customer_id}/billingSetups/{billing_id}``.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

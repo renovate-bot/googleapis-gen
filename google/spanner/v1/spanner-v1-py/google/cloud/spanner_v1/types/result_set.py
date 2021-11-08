@@ -283,11 +283,13 @@ class ResultSetStats(proto.Message):
         row_count_exact (int):
             Standard DML returns an exact count of rows
             that were modified.
+
             This field is a member of `oneof`_ ``row_count``.
         row_count_lower_bound (int):
             Partitioned DML does not offer exactly-once
             semantics, so it returns a lower bound of the
             rows modified.
+
             This field is a member of `oneof`_ ``row_count``.
     """
 

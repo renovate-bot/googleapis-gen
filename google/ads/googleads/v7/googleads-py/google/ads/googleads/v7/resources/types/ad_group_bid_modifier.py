@@ -47,11 +47,13 @@ class AdGroupBidModifier(proto.Message):
         ad_group (str):
             Immutable. The ad group to which this
             criterion belongs.
+
             This field is a member of `oneof`_ ``_ad_group``.
         criterion_id (int):
             Output only. The ID of the criterion to bid
             modify.
             This field is ignored for mutates.
+
             This field is a member of `oneof`_ ``_criterion_id``.
         bid_modifier (float):
             The modifier for the bid when the criterion
@@ -59,6 +61,7 @@ class AdGroupBidModifier(proto.Message):
             - 10.0. The range is 1.0 - 6.0 for
             PreferredContent. Use 0 to opt out of a Device
             type.
+
             This field is a member of `oneof`_ ``_bid_modifier``.
         base_ad_group (str):
             Output only. The base ad group from which this draft/trial
@@ -67,34 +70,42 @@ class AdGroupBidModifier(proto.Message):
             group was created in the draft or trial and has no
             corresponding base ad group, then this field will be null.
             This field is readonly.
+
             This field is a member of `oneof`_ ``_base_ad_group``.
         bid_modifier_source (google.ads.googleads.v7.enums.types.BidModifierSourceEnum.BidModifierSource):
             Output only. Bid modifier source.
         hotel_date_selection_type (google.ads.googleads.v7.common.types.HotelDateSelectionTypeInfo):
             Immutable. Criterion for hotel date selection
             (default dates vs. user selected).
+
             This field is a member of `oneof`_ ``criterion``.
         hotel_advance_booking_window (google.ads.googleads.v7.common.types.HotelAdvanceBookingWindowInfo):
             Immutable. Criterion for number of days prior
             to the stay the booking is being made.
+
             This field is a member of `oneof`_ ``criterion``.
         hotel_length_of_stay (google.ads.googleads.v7.common.types.HotelLengthOfStayInfo):
             Immutable. Criterion for length of hotel stay
             in nights.
+
             This field is a member of `oneof`_ ``criterion``.
         hotel_check_in_day (google.ads.googleads.v7.common.types.HotelCheckInDayInfo):
             Immutable. Criterion for day of the week the
             booking is for.
+
             This field is a member of `oneof`_ ``criterion``.
         device (google.ads.googleads.v7.common.types.DeviceInfo):
             Immutable. A device criterion.
+
             This field is a member of `oneof`_ ``criterion``.
         preferred_content (google.ads.googleads.v7.common.types.PreferredContentInfo):
             Immutable. A preferred content criterion.
+
             This field is a member of `oneof`_ ``criterion``.
         hotel_check_in_date_range (google.ads.googleads.v7.common.types.HotelCheckInDateRangeInfo):
             Immutable. Criterion for a hotel check-in
             date range.
+
             This field is a member of `oneof`_ ``criterion``.
     """
 

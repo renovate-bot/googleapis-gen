@@ -593,8 +593,12 @@ def test_create_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].dataset
+        mock_val = gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        assert arg == mock_val
 
 
 def test_create_dataset_flattened_error():
@@ -637,8 +641,12 @@ async def test_create_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].dataset
+        mock_val = gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -846,7 +854,9 @@ def test_get_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_dataset_flattened_error():
@@ -887,7 +897,9 @@ async def test_get_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1077,7 +1089,9 @@ def test_list_datasets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_datasets_flattened_error():
@@ -1118,7 +1132,9 @@ async def test_list_datasets_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1511,7 +1527,9 @@ def test_update_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        arg = args[0].dataset
+        mock_val = gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        assert arg == mock_val
 
 
 def test_update_dataset_flattened_error():
@@ -1552,7 +1570,9 @@ async def test_update_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].dataset == gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        arg = args[0].dataset
+        mock_val = gca_dataset.Dataset(translation_dataset_metadata=translation.TranslationDatasetMetadata(source_language_code='source_language_code_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1738,7 +1758,9 @@ def test_delete_dataset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_dataset_flattened_error():
@@ -1781,7 +1803,9 @@ async def test_delete_dataset_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1968,8 +1992,12 @@ def test_import_data_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].input_config == io.InputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].input_config
+        mock_val = io.InputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
+        assert arg == mock_val
 
 
 def test_import_data_flattened_error():
@@ -2014,8 +2042,12 @@ async def test_import_data_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].input_config == io.InputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].input_config
+        mock_val = io.InputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2203,8 +2235,12 @@ def test_export_data_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].output_config == io.OutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.OutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        assert arg == mock_val
 
 
 def test_export_data_flattened_error():
@@ -2249,8 +2285,12 @@ async def test_export_data_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].output_config == io.OutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.OutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2449,7 +2489,9 @@ def test_get_annotation_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_annotation_spec_flattened_error():
@@ -2490,7 +2532,9 @@ async def test_get_annotation_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2700,7 +2744,9 @@ def test_get_table_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_table_spec_flattened_error():
@@ -2741,7 +2787,9 @@ async def test_get_table_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2931,7 +2979,9 @@ def test_list_table_specs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_table_specs_flattened_error():
@@ -2972,7 +3022,9 @@ async def test_list_table_specs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3368,7 +3420,9 @@ def test_update_table_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].table_spec == gca_table_spec.TableSpec(name='name_value')
+        arg = args[0].table_spec
+        mock_val = gca_table_spec.TableSpec(name='name_value')
+        assert arg == mock_val
 
 
 def test_update_table_spec_flattened_error():
@@ -3409,7 +3463,9 @@ async def test_update_table_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].table_spec == gca_table_spec.TableSpec(name='name_value')
+        arg = args[0].table_spec
+        mock_val = gca_table_spec.TableSpec(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3607,7 +3663,9 @@ def test_get_column_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_column_spec_flattened_error():
@@ -3648,7 +3706,9 @@ async def test_get_column_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3838,7 +3898,9 @@ def test_list_column_specs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_column_specs_flattened_error():
@@ -3879,7 +3941,9 @@ async def test_list_column_specs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4263,7 +4327,9 @@ def test_update_column_spec_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].column_spec == gca_column_spec.ColumnSpec(name='name_value')
+        arg = args[0].column_spec
+        mock_val = gca_column_spec.ColumnSpec(name='name_value')
+        assert arg == mock_val
 
 
 def test_update_column_spec_flattened_error():
@@ -4304,7 +4370,9 @@ async def test_update_column_spec_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].column_spec == gca_column_spec.ColumnSpec(name='name_value')
+        arg = args[0].column_spec
+        mock_val = gca_column_spec.ColumnSpec(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4491,8 +4559,12 @@ def test_create_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].model == gca_model.Model(translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'))
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].model
+        mock_val = gca_model.Model(translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'))
+        assert arg == mock_val
 
 
 def test_create_model_flattened_error():
@@ -4537,8 +4609,12 @@ async def test_create_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].model == gca_model.Model(translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'))
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].model
+        mock_val = gca_model.Model(translation_model_metadata=translation.TranslationModelMetadata(base_model='base_model_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4742,7 +4818,9 @@ def test_get_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_model_flattened_error():
@@ -4783,7 +4861,9 @@ async def test_get_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4973,7 +5053,9 @@ def test_list_models_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_models_flattened_error():
@@ -5014,7 +5096,9 @@ async def test_list_models_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5386,7 +5470,9 @@ def test_delete_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_model_flattened_error():
@@ -5429,7 +5515,9 @@ async def test_delete_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5615,7 +5703,9 @@ def test_deploy_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_deploy_model_flattened_error():
@@ -5658,7 +5748,9 @@ async def test_deploy_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5844,7 +5936,9 @@ def test_undeploy_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_undeploy_model_flattened_error():
@@ -5887,7 +5981,9 @@ async def test_undeploy_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6074,8 +6170,12 @@ def test_export_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].output_config == io.ModelExportOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.ModelExportOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        assert arg == mock_val
 
 
 def test_export_model_flattened_error():
@@ -6120,8 +6220,12 @@ async def test_export_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].output_config == io.ModelExportOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.ModelExportOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6309,8 +6413,12 @@ def test_export_evaluated_examples_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].output_config == io.ExportEvaluatedExamplesOutputConfig(bigquery_destination=io.BigQueryDestination(output_uri='output_uri_value'))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.ExportEvaluatedExamplesOutputConfig(bigquery_destination=io.BigQueryDestination(output_uri='output_uri_value'))
+        assert arg == mock_val
 
 
 def test_export_evaluated_examples_flattened_error():
@@ -6355,8 +6463,12 @@ async def test_export_evaluated_examples_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].output_config == io.ExportEvaluatedExamplesOutputConfig(bigquery_destination=io.BigQueryDestination(output_uri='output_uri_value'))
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.ExportEvaluatedExamplesOutputConfig(bigquery_destination=io.BigQueryDestination(output_uri='output_uri_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6560,7 +6672,9 @@ def test_get_model_evaluation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_model_evaluation_flattened_error():
@@ -6601,7 +6715,9 @@ async def test_get_model_evaluation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6791,7 +6907,9 @@ def test_list_model_evaluations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_model_evaluations_flattened_error():
@@ -6832,7 +6950,9 @@ async def test_list_model_evaluations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

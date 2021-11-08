@@ -589,9 +589,15 @@ def test_get_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].model_id == 'model_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].model_id
+        mock_val = 'model_id_value'
+        assert arg == mock_val
 
 
 def test_get_model_flattened_error():
@@ -636,9 +642,15 @@ async def test_get_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].model_id == 'model_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].model_id
+        mock_val = 'model_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -835,9 +847,15 @@ def test_list_models_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].max_results == wrappers_pb2.UInt32Value(value=541)
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].max_results
+        mock_val = wrappers_pb2.UInt32Value(value=541)
+        assert arg == mock_val
 
 
 def test_list_models_flattened_error():
@@ -882,9 +900,15 @@ async def test_list_models_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].max_results == wrappers_pb2.UInt32Value(value=541)
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].max_results
+        mock_val = wrappers_pb2.UInt32Value(value=541)
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1115,10 +1139,18 @@ def test_patch_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].model_id == 'model_id_value'
-        assert args[0].model == gcb_model.Model(etag='etag_value')
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].model_id
+        mock_val = 'model_id_value'
+        assert arg == mock_val
+        arg = args[0].model
+        mock_val = gcb_model.Model(etag='etag_value')
+        assert arg == mock_val
 
 
 def test_patch_model_flattened_error():
@@ -1165,10 +1197,18 @@ async def test_patch_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].model_id == 'model_id_value'
-        assert args[0].model == gcb_model.Model(etag='etag_value')
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].model_id
+        mock_val = 'model_id_value'
+        assert arg == mock_val
+        arg = args[0].model
+        mock_val = gcb_model.Model(etag='etag_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1361,9 +1401,15 @@ def test_delete_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].model_id == 'model_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].model_id
+        mock_val = 'model_id_value'
+        assert arg == mock_val
 
 
 def test_delete_model_flattened_error():
@@ -1408,9 +1454,15 @@ async def test_delete_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].dataset_id == 'dataset_id_value'
-        assert args[0].model_id == 'model_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].dataset_id
+        mock_val = 'dataset_id_value'
+        assert arg == mock_val
+        arg = args[0].model_id
+        mock_val = 'model_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -362,6 +362,7 @@ class InputConfig(proto.Message):
         gcs_source (google.cloud.documentai_v1beta1.types.GcsSource):
             The Google Cloud Storage location to read the
             input from. This must be a single file.
+
             This field is a member of `oneof`_ ``source``.
         mime_type (str):
             Required. Mimetype of the input. Current
@@ -390,6 +391,7 @@ class OutputConfig(proto.Message):
         gcs_destination (google.cloud.documentai_v1beta1.types.GcsDestination):
             The Google Cloud Storage location to write
             the output to.
+
             This field is a member of `oneof`_ ``destination``.
         pages_per_shard (int):
             The max number of pages to include into each output Document

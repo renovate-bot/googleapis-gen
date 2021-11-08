@@ -106,6 +106,7 @@ class AccountBudgetProposalOperation(proto.Message):
             budget scheduled to start in the future.
             No resource name is expected for the new
             proposal.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed proposal
@@ -113,6 +114,7 @@ class AccountBudgetProposalOperation(proto.Message):
 
             ``customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}``
             A request may be cancelled iff it is pending.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -13,6 +13,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/api/serviceusage/v1/serviceusage.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceUsageGrpc {
 
   private ServiceUsageGrpc() {}

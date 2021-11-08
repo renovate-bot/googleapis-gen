@@ -378,6 +378,7 @@ class GatewayListOptions(proto.Message):
             ``NON_GATEWAY`` is specified, only non-gateway devices are
             returned. If ``GATEWAY_TYPE_UNSPECIFIED`` is specified, all
             devices are returned.
+
             This field is a member of `oneof`_ ``filter``.
         associations_gateway_id (str):
             If set, only devices associated with the specified gateway
@@ -385,6 +386,7 @@ class GatewayListOptions(proto.Message):
             the user-defined string (``id``). For example, if ``123`` is
             specified, only devices bound to the gateway with ``num_id``
             123 are returned.
+
             This field is a member of `oneof`_ ``filter``.
         associations_device_id (str):
             If set, returns only the gateways with which the specified
@@ -392,6 +394,7 @@ class GatewayListOptions(proto.Message):
             (``num_id``) or the user-defined string (``id``). For
             example, if ``456`` is specified, returns only the gateways
             to which the device with ``num_id`` 456 is bound.
+
             This field is a member of `oneof`_ ``filter``.
     """
 

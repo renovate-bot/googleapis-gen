@@ -1182,6 +1182,7 @@ class CommitRequest(proto.Message):
             transaction to be committed is running.
         transaction_id (bytes):
             Commit a previously-started transaction.
+
             This field is a member of `oneof`_ ``transaction``.
         single_use_transaction (google.cloud.spanner_v1.types.TransactionOptions):
             Execute mutations in a temporary transaction. Note that
@@ -1193,6 +1194,7 @@ class CommitRequest(proto.Message):
             are executed more than once. If this is undesirable, use
             [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction]
             and [Commit][google.spanner.v1.Spanner.Commit] instead.
+
             This field is a member of `oneof`_ ``transaction``.
         mutations (Sequence[google.cloud.spanner_v1.types.Mutation]):
             The mutations to be executed when this

@@ -558,7 +558,9 @@ def test_list_authorization_policies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_authorization_policies_flattened_error():
@@ -599,7 +601,9 @@ async def test_list_authorization_policies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -983,7 +987,9 @@ def test_get_authorization_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_authorization_policy_flattened_error():
@@ -1024,7 +1030,9 @@ async def test_get_authorization_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1212,9 +1220,15 @@ def test_create_authorization_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].authorization_policy == gcn_authorization_policy.AuthorizationPolicy(name='name_value')
-        assert args[0].authorization_policy_id == 'authorization_policy_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].authorization_policy
+        mock_val = gcn_authorization_policy.AuthorizationPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].authorization_policy_id
+        mock_val = 'authorization_policy_id_value'
+        assert arg == mock_val
 
 
 def test_create_authorization_policy_flattened_error():
@@ -1261,9 +1275,15 @@ async def test_create_authorization_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].authorization_policy == gcn_authorization_policy.AuthorizationPolicy(name='name_value')
-        assert args[0].authorization_policy_id == 'authorization_policy_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].authorization_policy
+        mock_val = gcn_authorization_policy.AuthorizationPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].authorization_policy_id
+        mock_val = 'authorization_policy_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1452,8 +1472,12 @@ def test_update_authorization_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].authorization_policy == gcn_authorization_policy.AuthorizationPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].authorization_policy
+        mock_val = gcn_authorization_policy.AuthorizationPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_authorization_policy_flattened_error():
@@ -1498,8 +1522,12 @@ async def test_update_authorization_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].authorization_policy == gcn_authorization_policy.AuthorizationPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].authorization_policy
+        mock_val = gcn_authorization_policy.AuthorizationPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1686,7 +1714,9 @@ def test_delete_authorization_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_authorization_policy_flattened_error():
@@ -1729,7 +1759,9 @@ async def test_delete_authorization_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1919,7 +1951,9 @@ def test_list_server_tls_policies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_server_tls_policies_flattened_error():
@@ -1960,7 +1994,9 @@ async def test_list_server_tls_policies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2344,7 +2380,9 @@ def test_get_server_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_server_tls_policy_flattened_error():
@@ -2385,7 +2423,9 @@ async def test_get_server_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2573,9 +2613,15 @@ def test_create_server_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].server_tls_policy == gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
-        assert args[0].server_tls_policy_id == 'server_tls_policy_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].server_tls_policy
+        mock_val = gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].server_tls_policy_id
+        mock_val = 'server_tls_policy_id_value'
+        assert arg == mock_val
 
 
 def test_create_server_tls_policy_flattened_error():
@@ -2622,9 +2668,15 @@ async def test_create_server_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].server_tls_policy == gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
-        assert args[0].server_tls_policy_id == 'server_tls_policy_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].server_tls_policy
+        mock_val = gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].server_tls_policy_id
+        mock_val = 'server_tls_policy_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2813,8 +2865,12 @@ def test_update_server_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].server_tls_policy == gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].server_tls_policy
+        mock_val = gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_server_tls_policy_flattened_error():
@@ -2859,8 +2915,12 @@ async def test_update_server_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].server_tls_policy == gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].server_tls_policy
+        mock_val = gcn_server_tls_policy.ServerTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3047,7 +3107,9 @@ def test_delete_server_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_server_tls_policy_flattened_error():
@@ -3090,7 +3152,9 @@ async def test_delete_server_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3280,7 +3344,9 @@ def test_list_client_tls_policies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_client_tls_policies_flattened_error():
@@ -3321,7 +3387,9 @@ async def test_list_client_tls_policies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3705,7 +3773,9 @@ def test_get_client_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_client_tls_policy_flattened_error():
@@ -3746,7 +3816,9 @@ async def test_get_client_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3934,9 +4006,15 @@ def test_create_client_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].client_tls_policy == gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
-        assert args[0].client_tls_policy_id == 'client_tls_policy_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].client_tls_policy
+        mock_val = gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].client_tls_policy_id
+        mock_val = 'client_tls_policy_id_value'
+        assert arg == mock_val
 
 
 def test_create_client_tls_policy_flattened_error():
@@ -3983,9 +4061,15 @@ async def test_create_client_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].client_tls_policy == gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
-        assert args[0].client_tls_policy_id == 'client_tls_policy_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].client_tls_policy
+        mock_val = gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].client_tls_policy_id
+        mock_val = 'client_tls_policy_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4174,8 +4258,12 @@ def test_update_client_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].client_tls_policy == gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].client_tls_policy
+        mock_val = gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_client_tls_policy_flattened_error():
@@ -4220,8 +4308,12 @@ async def test_update_client_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].client_tls_policy == gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].client_tls_policy
+        mock_val = gcn_client_tls_policy.ClientTlsPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4408,7 +4500,9 @@ def test_delete_client_tls_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_client_tls_policy_flattened_error():
@@ -4451,7 +4545,9 @@ async def test_delete_client_tls_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -1083,7 +1083,9 @@ def test_list_info_types_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_info_types_flattened_error():
@@ -1124,7 +1126,9 @@ async def test_list_info_types_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1323,8 +1327,12 @@ def test_create_inspect_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].inspect_template == dlp.InspectTemplate(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].inspect_template
+        mock_val = dlp.InspectTemplate(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_inspect_template_flattened_error():
@@ -1367,8 +1375,12 @@ async def test_create_inspect_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].inspect_template == dlp.InspectTemplate(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].inspect_template
+        mock_val = dlp.InspectTemplate(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1569,9 +1581,15 @@ def test_update_inspect_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].inspect_template == dlp.InspectTemplate(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].inspect_template
+        mock_val = dlp.InspectTemplate(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_inspect_template_flattened_error():
@@ -1616,9 +1634,15 @@ async def test_update_inspect_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].inspect_template == dlp.InspectTemplate(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].inspect_template
+        mock_val = dlp.InspectTemplate(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1818,7 +1842,9 @@ def test_get_inspect_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_inspect_template_flattened_error():
@@ -1859,7 +1885,9 @@ async def test_get_inspect_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2049,7 +2077,9 @@ def test_list_inspect_templates_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_inspect_templates_flattened_error():
@@ -2090,7 +2120,9 @@ async def test_list_inspect_templates_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2460,7 +2492,9 @@ def test_delete_inspect_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_inspect_template_flattened_error():
@@ -2501,7 +2535,9 @@ async def test_delete_inspect_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2700,8 +2736,12 @@ def test_create_deidentify_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].deidentify_template == dlp.DeidentifyTemplate(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].deidentify_template
+        mock_val = dlp.DeidentifyTemplate(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_deidentify_template_flattened_error():
@@ -2744,8 +2784,12 @@ async def test_create_deidentify_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].deidentify_template == dlp.DeidentifyTemplate(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].deidentify_template
+        mock_val = dlp.DeidentifyTemplate(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2946,9 +2990,15 @@ def test_update_deidentify_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].deidentify_template == dlp.DeidentifyTemplate(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].deidentify_template
+        mock_val = dlp.DeidentifyTemplate(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_deidentify_template_flattened_error():
@@ -2993,9 +3043,15 @@ async def test_update_deidentify_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].deidentify_template == dlp.DeidentifyTemplate(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].deidentify_template
+        mock_val = dlp.DeidentifyTemplate(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3195,7 +3251,9 @@ def test_get_deidentify_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_deidentify_template_flattened_error():
@@ -3236,7 +3294,9 @@ async def test_get_deidentify_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3426,7 +3486,9 @@ def test_list_deidentify_templates_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_deidentify_templates_flattened_error():
@@ -3467,7 +3529,9 @@ async def test_list_deidentify_templates_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3837,7 +3901,9 @@ def test_delete_deidentify_template_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_deidentify_template_flattened_error():
@@ -3878,7 +3944,9 @@ async def test_delete_deidentify_template_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4082,8 +4150,12 @@ def test_create_job_trigger_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].job_trigger == dlp.JobTrigger(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].job_trigger
+        mock_val = dlp.JobTrigger(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_job_trigger_flattened_error():
@@ -4126,8 +4198,12 @@ async def test_create_job_trigger_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].job_trigger == dlp.JobTrigger(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].job_trigger
+        mock_val = dlp.JobTrigger(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4333,9 +4409,15 @@ def test_update_job_trigger_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].job_trigger == dlp.JobTrigger(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].job_trigger
+        mock_val = dlp.JobTrigger(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_job_trigger_flattened_error():
@@ -4380,9 +4462,15 @@ async def test_update_job_trigger_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].job_trigger == dlp.JobTrigger(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].job_trigger
+        mock_val = dlp.JobTrigger(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4570,7 +4658,9 @@ def test_hybrid_inspect_job_trigger_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_hybrid_inspect_job_trigger_flattened_error():
@@ -4611,7 +4701,9 @@ async def test_hybrid_inspect_job_trigger_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4814,7 +4906,9 @@ def test_get_job_trigger_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_job_trigger_flattened_error():
@@ -4855,7 +4949,9 @@ async def test_get_job_trigger_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5045,7 +5141,9 @@ def test_list_job_triggers_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_job_triggers_flattened_error():
@@ -5086,7 +5184,9 @@ async def test_list_job_triggers_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5456,7 +5556,9 @@ def test_delete_job_trigger_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_job_trigger_flattened_error():
@@ -5497,7 +5599,9 @@ async def test_delete_job_trigger_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5866,7 +5970,9 @@ def test_create_dlp_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
         assert args[0].risk_job == dlp.RiskAnalysisJobConfig(privacy_metric=dlp.PrivacyMetric(numerical_stats_config=dlp.PrivacyMetric.NumericalStatsConfig(field=storage.FieldId(name='name_value'))))
 
 
@@ -5912,7 +6018,9 @@ async def test_create_dlp_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
         assert args[0].risk_job == dlp.RiskAnalysisJobConfig(privacy_metric=dlp.PrivacyMetric(numerical_stats_config=dlp.PrivacyMetric.NumericalStatsConfig(field=storage.FieldId(name='name_value'))))
 
 
@@ -6105,7 +6213,9 @@ def test_list_dlp_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_dlp_jobs_flattened_error():
@@ -6146,7 +6256,9 @@ async def test_list_dlp_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6535,7 +6647,9 @@ def test_get_dlp_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_dlp_job_flattened_error():
@@ -6576,7 +6690,9 @@ async def test_get_dlp_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6760,7 +6876,9 @@ def test_delete_dlp_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_dlp_job_flattened_error():
@@ -6801,7 +6919,9 @@ async def test_delete_dlp_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -7137,8 +7257,12 @@ def test_create_stored_info_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].config == dlp.StoredInfoTypeConfig(display_name='display_name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].config
+        mock_val = dlp.StoredInfoTypeConfig(display_name='display_name_value')
+        assert arg == mock_val
 
 
 def test_create_stored_info_type_flattened_error():
@@ -7181,8 +7305,12 @@ async def test_create_stored_info_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].config == dlp.StoredInfoTypeConfig(display_name='display_name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].config
+        mock_val = dlp.StoredInfoTypeConfig(display_name='display_name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -7375,9 +7503,15 @@ def test_update_stored_info_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].config == dlp.StoredInfoTypeConfig(display_name='display_name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].config
+        mock_val = dlp.StoredInfoTypeConfig(display_name='display_name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_stored_info_type_flattened_error():
@@ -7422,9 +7556,15 @@ async def test_update_stored_info_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].config == dlp.StoredInfoTypeConfig(display_name='display_name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].config
+        mock_val = dlp.StoredInfoTypeConfig(display_name='display_name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -7616,7 +7756,9 @@ def test_get_stored_info_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_stored_info_type_flattened_error():
@@ -7657,7 +7799,9 @@ async def test_get_stored_info_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -7847,7 +7991,9 @@ def test_list_stored_info_types_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_stored_info_types_flattened_error():
@@ -7888,7 +8034,9 @@ async def test_list_stored_info_types_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -8258,7 +8406,9 @@ def test_delete_stored_info_type_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_stored_info_type_flattened_error():
@@ -8299,7 +8449,9 @@ async def test_delete_stored_info_type_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -8485,7 +8637,9 @@ def test_hybrid_inspect_dlp_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_hybrid_inspect_dlp_job_flattened_error():
@@ -8526,7 +8680,9 @@ async def test_hybrid_inspect_dlp_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -117,16 +117,19 @@ class FeedOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.Feed):
             Create operation: No resource name is
             expected for the new feed.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.Feed):
             Update operation: The feed is expected to
             have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed feed is
             expected, in this format:
 
             ``customers/{customer_id}/feeds/{feed_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -118,16 +118,19 @@ class BiddingStrategyOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.BiddingStrategy):
             Create operation: No resource name is
             expected for the new bidding strategy.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.BiddingStrategy):
             Update operation: The bidding strategy is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed bidding
             strategy is expected, in this format:
 
             ``customers/{customer_id}/biddingStrategies/{bidding_strategy_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

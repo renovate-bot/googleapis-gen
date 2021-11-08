@@ -695,6 +695,7 @@ class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
         mysql_sync_config (google.cloud.sql_v1.types.MySqlSyncConfig):
             Optional. MySQL-specific settings for start
             external sync.
+
             This field is a member of `oneof`_ ``sync_config``.
     """
     class ExternalSyncMode(proto.Enum):
@@ -750,6 +751,7 @@ class SqlInstancesStartExternalSyncRequest(proto.Message):
         mysql_sync_config (google.cloud.sql_v1.types.MySqlSyncConfig):
             MySQL-specific settings for start external
             sync.
+
             This field is a member of `oneof`_ ``sync_config``.
     """
 
@@ -1274,6 +1276,7 @@ class DatabaseInstance(proto.Message):
             -  the proactive database wellness job for OOD.
             -  Readers:
             -  the proactive database wellness job
+
             This field is a member of `oneof`_ ``_out_of_disk_report``.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time when the instance was created in `RFC
@@ -1333,6 +1336,7 @@ class DatabaseInstance(proto.Message):
             schedule_deadline_time (google.protobuf.timestamp_pb2.Timestamp):
                 Maintenance cannot be rescheduled to start
                 beyond this deadline.
+
                 This field is a member of `oneof`_ ``_schedule_deadline_time``.
         """
 
@@ -1369,6 +1373,7 @@ class DatabaseInstance(proto.Message):
                 -  the proactive database wellness job for OOD.
                 -  Readers:
                 -  the proactive database wellness job
+
                 This field is a member of `oneof`_ ``_sql_out_of_disk_state``.
             sql_min_recommended_increase_size_gb (int):
                 The minimum recommended increase size in GigaBytes This
@@ -1377,6 +1382,7 @@ class DatabaseInstance(proto.Message):
                 -  Writers:
                 -  the proactive database wellness job for OOD.
                 -  Readers:
+
                 This field is a member of `oneof`_ ``_sql_min_recommended_increase_size_gb``.
         """
         class SqlOutOfDiskState(proto.Enum):

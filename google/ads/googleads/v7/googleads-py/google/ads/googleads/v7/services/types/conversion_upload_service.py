@@ -199,6 +199,7 @@ class ClickConversion(proto.Message):
         gclid (str):
             The Google click ID (gclid) associated with
             this conversion.
+
             This field is a member of `oneof`_ ``_gclid``.
         conversion_action (str):
             Resource name of the conversion action
@@ -207,26 +208,31 @@ class ClickConversion(proto.Message):
             a conversion action id, validation will ignore
             the customer id and use the conversion action id
             as the sole identifier of the conversion action.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         conversion_date_time (str):
             The date time at which the conversion occurred. Must be
             after the click time. The timezone must be specified. The
             format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01
             12:32:45-08:00”.
+
             This field is a member of `oneof`_ ``_conversion_date_time``.
         conversion_value (float):
             The value of the conversion for the
             advertiser.
+
             This field is a member of `oneof`_ ``_conversion_value``.
         currency_code (str):
             Currency associated with the conversion
             value. This is the ISO 4217 3-character currency
             code. For example: USD, EUR.
+
             This field is a member of `oneof`_ ``_currency_code``.
         order_id (str):
             The order ID associated with the conversion.
             An order id can only be used for one conversion
             per conversion action.
+
             This field is a member of `oneof`_ ``_order_id``.
         external_attribution_data (google.ads.googleads.v7.services.types.ExternalAttributionData):
             Additional data about externally attributed
@@ -290,11 +296,13 @@ class CallConversion(proto.Message):
             placed. Caller id is expected to be in E.164
             format with preceding '+' sign. e.g.
             "+16502531234".
+
             This field is a member of `oneof`_ ``_caller_id``.
         call_start_date_time (str):
             The date time at which the call occurred. The timezone must
             be specified. The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm",
             e.g. "2019-01-01 12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_call_start_date_time``.
         conversion_action (str):
             Resource name of the conversion action
@@ -303,21 +311,25 @@ class CallConversion(proto.Message):
             a conversion action id, validation will ignore
             the customer id and use the conversion action id
             as the sole identifier of the conversion action.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         conversion_date_time (str):
             The date time at which the conversion occurred. Must be
             after the call time. The timezone must be specified. The
             format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_conversion_date_time``.
         conversion_value (float):
             The value of the conversion for the
             advertiser.
+
             This field is a member of `oneof`_ ``_conversion_value``.
         currency_code (str):
             Currency associated with the conversion
             value. This is the ISO 4217 3-character currency
             code. For example: USD, EUR.
+
             This field is a member of `oneof`_ ``_currency_code``.
         custom_variables (Sequence[google.ads.googleads.v7.services.types.CustomVariable]):
             The custom variables associated with this
@@ -369,9 +381,11 @@ class ExternalAttributionData(proto.Message):
         external_attribution_credit (float):
             Represents the fraction of the conversion
             that is attributed to the Google Ads click.
+
             This field is a member of `oneof`_ ``_external_attribution_credit``.
         external_attribution_model (str):
             Specifies the attribution model name.
+
             This field is a member of `oneof`_ ``_external_attribution_model``.
     """
 
@@ -395,15 +409,18 @@ class ClickConversionResult(proto.Message):
         gclid (str):
             The Google Click ID (gclid) associated with
             this conversion.
+
             This field is a member of `oneof`_ ``_gclid``.
         conversion_action (str):
             Resource name of the conversion action
             associated with this conversion.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         conversion_date_time (str):
             The date time at which the conversion occurred. The format
             is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01
             12:32:45-08:00”.
+
             This field is a member of `oneof`_ ``_conversion_date_time``.
     """
 
@@ -433,20 +450,24 @@ class CallConversionResult(proto.Message):
             The caller id from which this call was
             placed. Caller id is expected to be in E.164
             format with preceding '+' sign.
+
             This field is a member of `oneof`_ ``_caller_id``.
         call_start_date_time (str):
             The date time at which the call occurred. The format is
             "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_call_start_date_time``.
         conversion_action (str):
             Resource name of the conversion action
             associated with this conversion.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         conversion_date_time (str):
             The date time at which the conversion occurred. The format
             is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_conversion_date_time``.
     """
 

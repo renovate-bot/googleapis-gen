@@ -103,12 +103,14 @@ class AdGroupAdLabelOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.AdGroupAdLabel):
             Create operation: No resource name is
             expected for the new ad group ad label.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the ad group ad label
             being removed, in this format:
 
             ``customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id} _{label_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

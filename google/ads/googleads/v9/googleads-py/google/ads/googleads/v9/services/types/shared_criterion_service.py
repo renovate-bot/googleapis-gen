@@ -113,12 +113,14 @@ class SharedCriterionOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.SharedCriterion):
             Create operation: No resource name is
             expected for the new shared criterion.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed shared
             criterion is expected, in this format:
 
             ``customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

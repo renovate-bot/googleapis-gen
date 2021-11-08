@@ -132,12 +132,14 @@ class ConversionAdjustment(proto.Message):
             validation will ignore the customer id and use
             the conversion action id as the sole identifier
             of the conversion action.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         adjustment_date_time (str):
             The date time at which the adjustment occurred. Must be
             after the conversion_date_time. The timezone must be
             specified. The format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g.
             "2019-01-01 12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_adjustment_date_time``.
         adjustment_type (google.ads.googleads.v8.enums.types.ConversionAdjustmentTypeEnum.ConversionAdjustmentType):
             The adjustment type.
@@ -163,10 +165,12 @@ class ConversionAdjustment(proto.Message):
             convert on your web page. Example, "Mozilla/5.0 (iPhone; CPU
             iPhone OS 12_2 like Mac OS X)". User agent can only be
             specified in enhancements with user identifiers.
+
             This field is a member of `oneof`_ ``_user_agent``.
         gclid_date_time_pair (google.ads.googleads.v8.services.types.GclidDateTimePair):
             Uniquely identifies a conversion that was
             reported without an order ID specified.
+
             This field is a member of `oneof`_ ``conversion_identifier``.
         order_id (str):
             The order ID of the conversion to be
@@ -174,6 +178,7 @@ class ConversionAdjustment(proto.Message):
             order ID specified, that order ID must be used
             as the identifier here. The order ID is required
             for enhancements.
+
             This field is a member of `oneof`_ ``conversion_identifier``.
     """
 
@@ -235,6 +240,7 @@ class RestatementValue(proto.Message):
             adjustment occurrence time. Otherwise, it will
             be treated as a duplicate of the previous
             restatement and ignored.
+
             This field is a member of `oneof`_ ``_adjusted_value``.
         currency_code (str):
             The currency of the restated value. If not
@@ -243,6 +249,7 @@ class RestatementValue(proto.Message):
             set then the account currency is used. This is
             the ISO 4217 3-character currency code e.g. USD
             or EUR.
+
             This field is a member of `oneof`_ ``_currency_code``.
     """
 
@@ -266,12 +273,14 @@ class GclidDateTimePair(proto.Message):
         gclid (str):
             Google click ID (gclid) associated with the
             original conversion for this adjustment.
+
             This field is a member of `oneof`_ ``_gclid``.
         conversion_date_time (str):
             The date time at which the original conversion for this
             adjustment occurred. The timezone must be specified. The
             format is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_conversion_date_time``.
     """
 
@@ -302,21 +311,25 @@ class ConversionAdjustmentResult(proto.Message):
         conversion_action (str):
             Resource name of the conversion action
             associated with this conversion adjustment.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         adjustment_date_time (str):
             The date time at which the adjustment occurred. The format
             is "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_adjustment_date_time``.
         adjustment_type (google.ads.googleads.v8.enums.types.ConversionAdjustmentTypeEnum.ConversionAdjustmentType):
             The adjustment type.
         gclid_date_time_pair (google.ads.googleads.v8.services.types.GclidDateTimePair):
             Uniquely identifies a conversion that was
             reported without an order ID specified.
+
             This field is a member of `oneof`_ ``conversion_identifier``.
         order_id (str):
             The order ID of the conversion that was
             adjusted.
+
             This field is a member of `oneof`_ ``conversion_identifier``.
     """
 

@@ -117,16 +117,19 @@ class LabelOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.Label):
             Create operation: No resource name is
             expected for the new label.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.Label):
             Update operation: The label is expected to
             have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the label being
             removed, in this format:
 
             ``customers/{customer_id}/labels/{label_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

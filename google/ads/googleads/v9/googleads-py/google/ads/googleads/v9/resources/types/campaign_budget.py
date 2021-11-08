@@ -47,6 +47,7 @@ class CampaignBudget(proto.Message):
             across different campaigns; the system will then
             allocate the campaign budget among different
             campaigns to get optimum results.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the campaign budget.
@@ -59,6 +60,7 @@ class CampaignBudget(proto.Message):
 
             The length of this string must be between 1 and
             255, inclusive, in UTF-8 bytes, (trimmed).
+
             This field is a member of `oneof`_ ``_name``.
         amount_micros (int):
             The amount of the budget, in the local
@@ -66,12 +68,14 @@ class CampaignBudget(proto.Message):
             micros, where one million is equivalent to one
             currency unit. Monthly spend is capped at 30.4
             times this amount.
+
             This field is a member of `oneof`_ ``_amount_micros``.
         total_amount_micros (int):
             The lifetime amount of the budget, in the
             local currency for the account. Amount is
             specified in micros, where one million is
             equivalent to one currency unit.
+
             This field is a member of `oneof`_ ``_total_amount_micros``.
         status (google.ads.googleads.v9.enums.types.BudgetStatusEnum.BudgetStatus):
             Output only. The status of this campaign
@@ -102,16 +106,19 @@ class CampaignBudget(proto.Message):
 
             A shared campaign budget can never become non-
             shared.
+
             This field is a member of `oneof`_ ``_explicitly_shared``.
         reference_count (int):
             Output only. The number of campaigns actively
             using the budget.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_reference_count``.
         has_recommended_budget (bool):
             Output only. Indicates whether there is a
             recommended budget for this campaign budget.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_has_recommended_budget``.
         recommended_budget_amount_micros (int):
             Output only. The recommended budget amount.
@@ -121,6 +128,7 @@ class CampaignBudget(proto.Message):
             currency unit.
 
             This field is read-only.
+
             This field is a member of `oneof`_ ``_recommended_budget_amount_micros``.
         period (google.ads.googleads.v9.enums.types.BudgetPeriodEnum.BudgetPeriod):
             Immutable. Period over which to spend the
@@ -129,6 +137,7 @@ class CampaignBudget(proto.Message):
             Output only. The estimated change in weekly
             clicks if the recommended budget is applied.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_recommended_budget_estimated_change_weekly_clicks``.
         recommended_budget_estimated_change_weekly_cost_micros (int):
             Output only. The estimated change in weekly
@@ -136,17 +145,20 @@ class CampaignBudget(proto.Message):
             applied. One million is equivalent to one
             currency unit.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_recommended_budget_estimated_change_weekly_cost_micros``.
         recommended_budget_estimated_change_weekly_interactions (int):
             Output only. The estimated change in weekly
             interactions if the recommended budget is
             applied.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_recommended_budget_estimated_change_weekly_interactions``.
         recommended_budget_estimated_change_weekly_views (int):
             Output only. The estimated change in weekly
             views if the recommended budget is applied.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_recommended_budget_estimated_change_weekly_views``.
         type_ (google.ads.googleads.v9.enums.types.BudgetTypeEnum.BudgetType):
             Immutable. The type of the campaign budget.

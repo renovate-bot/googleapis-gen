@@ -146,12 +146,14 @@ class AccountLinkOperation(proto.Message):
         update (google.ads.googleads.v7.resources.types.AccountLink):
             Update operation: The account link is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the account link to
             remove is expected, in this format:
 
             ``customers/{customer_id}/accountLinks/{account_link_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

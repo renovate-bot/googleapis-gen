@@ -86,12 +86,14 @@ class CustomerUserAccessInvitationOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.CustomerUserAccessInvitation):
             Create operation: No resource name is
             expected for the new access invitation.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the revoke invitation
             is expected, in this format:
 
             ``customers/{customer_id}/customerUserAccessInvitations/{invitation_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

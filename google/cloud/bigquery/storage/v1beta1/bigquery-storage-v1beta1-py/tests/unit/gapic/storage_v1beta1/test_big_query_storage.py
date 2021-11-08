@@ -557,9 +557,15 @@ def test_create_read_session_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].table_reference == gcbs_table_reference.TableReference(project_id='project_id_value')
-        assert args[0].parent == 'parent_value'
-        assert args[0].requested_streams == 1840
+        arg = args[0].table_reference
+        mock_val = gcbs_table_reference.TableReference(project_id='project_id_value')
+        assert arg == mock_val
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].requested_streams
+        mock_val = 1840
+        assert arg == mock_val
 
 
 def test_create_read_session_flattened_error():
@@ -604,9 +610,15 @@ async def test_create_read_session_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].table_reference == gcbs_table_reference.TableReference(project_id='project_id_value')
-        assert args[0].parent == 'parent_value'
-        assert args[0].requested_streams == 1840
+        arg = args[0].table_reference
+        mock_val = gcbs_table_reference.TableReference(project_id='project_id_value')
+        assert arg == mock_val
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].requested_streams
+        mock_val = 1840
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -796,7 +808,9 @@ def test_read_rows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].read_position == storage.StreamPosition(stream=storage.Stream(name='name_value'))
+        arg = args[0].read_position
+        mock_val = storage.StreamPosition(stream=storage.Stream(name='name_value'))
+        assert arg == mock_val
 
 
 def test_read_rows_flattened_error():
@@ -837,7 +851,9 @@ async def test_read_rows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].read_position == storage.StreamPosition(stream=storage.Stream(name='name_value'))
+        arg = args[0].read_position
+        mock_val = storage.StreamPosition(stream=storage.Stream(name='name_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1024,8 +1040,12 @@ def test_batch_create_read_session_streams_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == storage.ReadSession(name='name_value')
-        assert args[0].requested_streams == 1840
+        arg = args[0].session
+        mock_val = storage.ReadSession(name='name_value')
+        assert arg == mock_val
+        arg = args[0].requested_streams
+        mock_val = 1840
+        assert arg == mock_val
 
 
 def test_batch_create_read_session_streams_flattened_error():
@@ -1068,8 +1088,12 @@ async def test_batch_create_read_session_streams_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == storage.ReadSession(name='name_value')
-        assert args[0].requested_streams == 1840
+        arg = args[0].session
+        mock_val = storage.ReadSession(name='name_value')
+        assert arg == mock_val
+        arg = args[0].requested_streams
+        mock_val = 1840
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1254,7 +1278,9 @@ def test_finalize_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].stream == storage.Stream(name='name_value')
+        arg = args[0].stream
+        mock_val = storage.Stream(name='name_value')
+        assert arg == mock_val
 
 
 def test_finalize_stream_flattened_error():
@@ -1295,7 +1321,9 @@ async def test_finalize_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].stream == storage.Stream(name='name_value')
+        arg = args[0].stream
+        mock_val = storage.Stream(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1481,7 +1509,9 @@ def test_split_read_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].original_stream == storage.Stream(name='name_value')
+        arg = args[0].original_stream
+        mock_val = storage.Stream(name='name_value')
+        assert arg == mock_val
 
 
 def test_split_read_stream_flattened_error():
@@ -1522,7 +1552,9 @@ async def test_split_read_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].original_stream == storage.Stream(name='name_value')
+        arg = args[0].original_stream
+        mock_val = storage.Stream(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

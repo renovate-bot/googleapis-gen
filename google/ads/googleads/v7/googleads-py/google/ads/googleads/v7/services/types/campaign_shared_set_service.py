@@ -114,12 +114,14 @@ class CampaignSharedSetOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CampaignSharedSet):
             Create operation: No resource name is
             expected for the new campaign shared set.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             shared set is expected, in this format:
 
             ``customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

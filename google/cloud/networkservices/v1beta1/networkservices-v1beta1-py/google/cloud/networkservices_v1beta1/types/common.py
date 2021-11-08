@@ -118,6 +118,7 @@ class EndpointMatcher(proto.Message):
         metadata_label_matcher (google.cloud.networkservices_v1beta1.types.EndpointMatcher.MetadataLabelMatcher):
             The matcher is based on node metadata
             presented by xDS clients.
+
             This field is a member of `oneof`_ ``matcher_type``.
     """
 

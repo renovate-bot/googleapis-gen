@@ -57,9 +57,11 @@ class AdGroupCriterionSimulation(proto.Message):
             ``customers/{customer_id}/adGroupCriterionSimulations/{ad_group_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}``
         ad_group_id (int):
             Output only. AdGroup ID of the simulation.
+
             This field is a member of `oneof`_ ``_ad_group_id``.
         criterion_id (int):
             Output only. Criterion ID of the simulation.
+
             This field is a member of `oneof`_ ``_criterion_id``.
         type_ (google.ads.googleads.v7.enums.types.SimulationTypeEnum.SimulationType):
             Output only. The field that the simulation
@@ -70,18 +72,22 @@ class AdGroupCriterionSimulation(proto.Message):
         start_date (str):
             Output only. First day on which the
             simulation is based, in YYYY-MM-DD format.
+
             This field is a member of `oneof`_ ``_start_date``.
         end_date (str):
             Output only. Last day on which the simulation
             is based, in YYYY-MM-DD format.
+
             This field is a member of `oneof`_ ``_end_date``.
         cpc_bid_point_list (google.ads.googleads.v7.common.types.CpcBidSimulationPointList):
             Output only. Simulation points if the simulation type is
             CPC_BID.
+
             This field is a member of `oneof`_ ``point_list``.
         percent_cpc_bid_point_list (google.ads.googleads.v7.common.types.PercentCpcBidSimulationPointList):
             Output only. Simulation points if the simulation type is
             PERCENT_CPC_BID.
+
             This field is a member of `oneof`_ ``point_list``.
     """
 

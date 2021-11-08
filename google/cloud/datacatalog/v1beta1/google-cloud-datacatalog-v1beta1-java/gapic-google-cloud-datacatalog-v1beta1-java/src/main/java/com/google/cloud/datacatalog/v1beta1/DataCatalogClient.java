@@ -393,7 +393,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String entryGroupId = "entryGroupId1228924712";
    *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
    *   EntryGroup response = dataCatalogClient.createEntryGroup(parent, entryGroupId, entryGroup);
@@ -437,7 +437,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateEntryGroupRequest request =
    *       CreateEntryGroupRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEntryGroupId("entryGroupId1228924712")
    *           .setEntryGroup(EntryGroup.newBuilder().build())
    *           .build();
@@ -466,7 +466,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateEntryGroupRequest request =
    *       CreateEntryGroupRequest.newBuilder()
-   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setEntryGroupId("entryGroupId1228924712")
    *           .setEntryGroup(EntryGroup.newBuilder().build())
    *           .build();
@@ -1697,7 +1697,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String parent = TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   String tagTemplateId = "tagTemplateId-1438776721";
    *   TagTemplate tagTemplate = TagTemplate.newBuilder().build();
    *   TagTemplate response =
@@ -1740,7 +1740,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateTagTemplateRequest request =
    *       CreateTagTemplateRequest.newBuilder()
-   *           .setParent(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTagTemplateId("tagTemplateId-1438776721")
    *           .setTagTemplate(TagTemplate.newBuilder().build())
    *           .build();
@@ -1768,7 +1768,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   CreateTagTemplateRequest request =
    *       CreateTagTemplateRequest.newBuilder()
-   *           .setParent(TagTemplateName.of("[PROJECT]", "[LOCATION]", "[TAG_TEMPLATE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTagTemplateId("tagTemplateId-1438776721")
    *           .setTagTemplate(TagTemplate.newBuilder().build())
    *           .build();
@@ -3024,8 +3024,7 @@ public class DataCatalogClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   String name =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *   String name = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   dataCatalogClient.deleteTag(name);
    * }
    * }</pre>
@@ -3054,8 +3053,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   DeleteTagRequest request =
    *       DeleteTagRequest.newBuilder()
    *           .setName(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .build();
    *   dataCatalogClient.deleteTag(request);
    * }
@@ -3079,8 +3077,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   DeleteTagRequest request =
    *       DeleteTagRequest.newBuilder()
    *           .setName(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .build();
    *   ApiFuture<Empty> future = dataCatalogClient.deleteTagCallable().futureCall(request);
    *   // Do something.
@@ -3134,7 +3131,7 @@ public class DataCatalogClient implements BackgroundResource {
    * <pre>{@code
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   String parent =
-   *       TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]").toString();
+   *       EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString();
    *   for (Tag element : dataCatalogClient.listTags(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -3169,8 +3166,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3198,8 +3194,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -3226,8 +3221,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   ListTagsRequest request =
    *       ListTagsRequest.newBuilder()
    *           .setParent(
-   *               TagName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]", "[TAG]")
-   *                   .toString())
+   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

@@ -193,7 +193,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Queue element : cloudTasksClient.listQueues(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -221,7 +221,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   ListQueuesRequest request =
    *       ListQueuesRequest.newBuilder()
-   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -252,7 +252,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   ListQueuesRequest request =
    *       ListQueuesRequest.newBuilder()
-   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -282,7 +282,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   ListQueuesRequest request =
    *       ListQueuesRequest.newBuilder()
-   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -453,7 +453,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Queue queue = Queue.newBuilder().build();
    *   Queue response = cloudTasksClient.createQueue(parent, queue);
    * }
@@ -491,7 +491,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   CreateQueueRequest request =
    *       CreateQueueRequest.newBuilder()
-   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setQueue(Queue.newBuilder().build())
    *           .build();
    *   Queue response = cloudTasksClient.createQueue(request);
@@ -522,7 +522,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   CreateQueueRequest request =
    *       CreateQueueRequest.newBuilder()
-   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setQueue(Queue.newBuilder().build())
    *           .build();
    *   ApiFuture<Queue> future = cloudTasksClient.createQueueCallable().futureCall(request);
@@ -1572,7 +1572,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String parent = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
    *   for (Task element : cloudTasksClient.listTasks(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1605,7 +1605,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   ListTasksRequest request =
    *       ListTasksRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1639,7 +1639,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   ListTasksRequest request =
    *       ListTasksRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1672,7 +1672,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   ListTasksRequest request =
    *       ListTasksRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1860,7 +1860,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String parent = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
    *   Task task = Task.newBuilder().build();
    *   Task response = cloudTasksClient.createTask(parent, task);
    * }
@@ -1918,7 +1918,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   CreateTaskRequest request =
    *       CreateTaskRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setTask(Task.newBuilder().build())
    *           .build();
    *   Task response = cloudTasksClient.createTask(request);
@@ -1950,7 +1950,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   CreateTaskRequest request =
    *       CreateTaskRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setTask(Task.newBuilder().build())
    *           .build();
    *   ApiFuture<Task> future = cloudTasksClient.createTaskCallable().futureCall(request);
@@ -2151,7 +2151,7 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String parent = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
    *   Duration leaseDuration = Duration.newBuilder().build();
    *   LeaseTasksResponse response = cloudTasksClient.leaseTasks(parent, leaseDuration);
    * }
@@ -2210,7 +2210,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   LeaseTasksRequest request =
    *       LeaseTasksRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setMaxTasks(-233969421)
    *           .setLeaseDuration(Duration.newBuilder().build())
    *           .setFilter("filter-1274492040")
@@ -2254,7 +2254,7 @@ public class CloudTasksClient implements BackgroundResource {
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
    *   LeaseTasksRequest request =
    *       LeaseTasksRequest.newBuilder()
-   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
    *           .setMaxTasks(-233969421)
    *           .setLeaseDuration(Duration.newBuilder().build())
    *           .setFilter("filter-1274492040")

@@ -939,6 +939,7 @@ class DatabaseInstance(proto.Message):
                -- the proactive database wellness job for
             OOD. Readers:
                -- the proactive database wellness job
+
             This field is a member of `oneof`_ ``_out_of_disk_report``.
     """
     class SqlInstanceState(proto.Enum):
@@ -1019,6 +1020,7 @@ class DatabaseInstance(proto.Message):
                    -- the proactive database wellness job for
                 OOD. Readers:
                    -- the proactive database wellness job
+
                 This field is a member of `oneof`_ ``_sql_out_of_disk_state``.
             sql_min_recommended_increase_size_gb (int):
                 The minimum recommended increase size in
@@ -1026,6 +1028,7 @@ class DatabaseInstance(proto.Message):
                 Writers:
                    -- the proactive database wellness job for
                 OOD.
+
                 This field is a member of `oneof`_ ``_sql_min_recommended_increase_size_gb``.
         """
         class SqlOutOfDiskState(proto.Enum):

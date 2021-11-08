@@ -677,6 +677,7 @@ class IPAllocationPolicy(proto.Message):
 
             This field is applicable only when ``use_ip_aliases`` is
             true.
+
             This field is a member of `oneof`_ ``cluster_ip_allocation``.
         cluster_ipv4_cidr_block (str):
             Optional. The IP address range used to allocate IP addresses
@@ -696,6 +697,7 @@ class IPAllocationPolicy(proto.Message):
             notation (e.g. ``10.96.0.0/14``) from the RFC-1918 private
             networks (e.g. ``10.0.0.0/8``, ``172.16.0.0/12``,
             ``192.168.0.0/16``) to pick a specific range to use.
+
             This field is a member of `oneof`_ ``cluster_ip_allocation``.
         services_secondary_range_name (str):
             Optional. The name of the services' secondary range used to
@@ -703,6 +705,7 @@ class IPAllocationPolicy(proto.Message):
 
             This field is applicable only when ``use_ip_aliases`` is
             true.
+
             This field is a member of `oneof`_ ``services_ip_allocation``.
         services_ipv4_cidr_block (str):
             Optional. The IP address range of the services IP addresses
@@ -722,6 +725,7 @@ class IPAllocationPolicy(proto.Message):
             notation (e.g. ``10.96.0.0/14``) from the RFC-1918 private
             networks (e.g. ``10.0.0.0/8``, ``172.16.0.0/12``,
             ``192.168.0.0/16``) to pick a specific range to use.
+
             This field is a member of `oneof`_ ``services_ip_allocation``.
     """
 

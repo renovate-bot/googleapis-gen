@@ -187,6 +187,7 @@ class WorkflowTemplatePlacement(proto.Message):
     Attributes:
         managed_cluster (google.cloud.dataproc_v1.types.ManagedCluster):
             A cluster that is managed by the workflow.
+
             This field is a member of `oneof`_ ``placement``.
         cluster_selector (google.cloud.dataproc_v1.types.ClusterSelector):
             Optional. A selector that chooses target
@@ -194,6 +195,7 @@ class WorkflowTemplatePlacement(proto.Message):
 
             The selector is evaluated at the time each job
             is submitted.
+
             This field is a member of `oneof`_ ``placement``.
     """
 
@@ -310,27 +312,35 @@ class OrderedJob(proto.Message):
             characters.
         hadoop_job (google.cloud.dataproc_v1.types.HadoopJob):
             Optional. Job is a Hadoop job.
+
             This field is a member of `oneof`_ ``job_type``.
         spark_job (google.cloud.dataproc_v1.types.SparkJob):
             Optional. Job is a Spark job.
+
             This field is a member of `oneof`_ ``job_type``.
         pyspark_job (google.cloud.dataproc_v1.types.PySparkJob):
             Optional. Job is a PySpark job.
+
             This field is a member of `oneof`_ ``job_type``.
         hive_job (google.cloud.dataproc_v1.types.HiveJob):
             Optional. Job is a Hive job.
+
             This field is a member of `oneof`_ ``job_type``.
         pig_job (google.cloud.dataproc_v1.types.PigJob):
             Optional. Job is a Pig job.
+
             This field is a member of `oneof`_ ``job_type``.
         spark_r_job (google.cloud.dataproc_v1.types.SparkRJob):
             Optional. Job is a SparkR job.
+
             This field is a member of `oneof`_ ``job_type``.
         spark_sql_job (google.cloud.dataproc_v1.types.SparkSqlJob):
             Optional. Job is a SparkSql job.
+
             This field is a member of `oneof`_ ``job_type``.
         presto_job (google.cloud.dataproc_v1.types.PrestoJob):
             Optional. Job is a Presto job.
+
             This field is a member of `oneof`_ ``job_type``.
         labels (Sequence[google.cloud.dataproc_v1.types.OrderedJob.LabelsEntry]):
             Optional. The labels to associate with this job.
@@ -531,9 +541,11 @@ class ParameterValidation(proto.Message):
     Attributes:
         regex (google.cloud.dataproc_v1.types.RegexValidation):
             Validation based on regular expressions.
+
             This field is a member of `oneof`_ ``validation_type``.
         values (google.cloud.dataproc_v1.types.ValueValidation):
             Validation based on a list of allowed values.
+
             This field is a member of `oneof`_ ``validation_type``.
     """
 

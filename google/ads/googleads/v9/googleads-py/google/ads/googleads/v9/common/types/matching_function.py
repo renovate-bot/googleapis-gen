@@ -55,6 +55,7 @@ class MatchingFunction(proto.Message):
             underlying function (whitespace and single versus double
             quotation marks, for example), the value returned may not be
             identical to the string sent in a mutate request.
+
             This field is a member of `oneof`_ ``_function_string``.
         operator (google.ads.googleads.v9.enums.types.MatchingFunctionOperatorEnum.MatchingFunctionOperator):
             Operator for a function.
@@ -102,18 +103,22 @@ class Operand(proto.Message):
     Attributes:
         constant_operand (google.ads.googleads.v9.common.types.Operand.ConstantOperand):
             A constant operand in a matching function.
+
             This field is a member of `oneof`_ ``function_argument_operand``.
         feed_attribute_operand (google.ads.googleads.v9.common.types.Operand.FeedAttributeOperand):
             This operand specifies a feed attribute in
             feed.
+
             This field is a member of `oneof`_ ``function_argument_operand``.
         function_operand (google.ads.googleads.v9.common.types.Operand.FunctionOperand):
             A function operand in a matching function.
             Used to represent nested functions.
+
             This field is a member of `oneof`_ ``function_argument_operand``.
         request_context_operand (google.ads.googleads.v9.common.types.Operand.RequestContextOperand):
             An operand in a function referring to a value
             in the request context.
+
             This field is a member of `oneof`_ ``function_argument_operand``.
     """
 
@@ -131,18 +136,22 @@ class Operand(proto.Message):
             string_value (str):
                 String value of the operand if it is a string
                 type.
+
                 This field is a member of `oneof`_ ``constant_operand_value``.
             long_value (int):
                 Int64 value of the operand if it is a int64
                 type.
+
                 This field is a member of `oneof`_ ``constant_operand_value``.
             boolean_value (bool):
                 Boolean value of the operand if it is a
                 boolean type.
+
                 This field is a member of `oneof`_ ``constant_operand_value``.
             double_value (float):
                 Double value of the operand if it is a double
                 type.
+
                 This field is a member of `oneof`_ ``constant_operand_value``.
         """
 
@@ -174,10 +183,12 @@ class Operand(proto.Message):
         Attributes:
             feed_id (int):
                 The associated feed. Required.
+
                 This field is a member of `oneof`_ ``_feed_id``.
             feed_attribute_id (int):
                 Id of the referenced feed attribute.
                 Required.
+
                 This field is a member of `oneof`_ ``_feed_attribute_id``.
         """
 

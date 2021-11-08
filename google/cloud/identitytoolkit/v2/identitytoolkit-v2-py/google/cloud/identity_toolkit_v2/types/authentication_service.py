@@ -41,6 +41,7 @@ class FinalizeMfaSignInRequest(proto.Message):
         phone_verification_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneRequestInfo):
             Proof of completion of the SMS based MFA
             challenge.
+
             This field is a member of `oneof`_ ``verification_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant the
@@ -78,6 +79,7 @@ class FinalizeMfaSignInResponse(proto.Message):
         phone_auth_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneResponseInfo):
             Extra phone auth info, including android
             verification proof.
+
             This field is a member of `oneof`_ ``auxiliary_auth_info``.
     """
 
@@ -114,6 +116,7 @@ class StartMfaSignInRequest(proto.Message):
         phone_sign_in_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneRequestInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+
             This field is a member of `oneof`_ ``sign_in_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant the
@@ -155,6 +158,7 @@ class StartMfaSignInResponse(proto.Message):
             the contents of this session information should
             be passed to FinalizeMfaSignIn to complete the
             sign in.
+
             This field is a member of `oneof`_ ``response_info``.
     """
 

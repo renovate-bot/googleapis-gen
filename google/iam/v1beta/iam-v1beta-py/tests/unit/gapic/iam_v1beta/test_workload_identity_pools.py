@@ -551,7 +551,9 @@ def test_list_workload_identity_pools_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_workload_identity_pools_flattened_error():
@@ -592,7 +594,9 @@ async def test_list_workload_identity_pools_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -984,7 +988,9 @@ def test_get_workload_identity_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_workload_identity_pool_flattened_error():
@@ -1025,7 +1031,9 @@ async def test_get_workload_identity_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1213,9 +1221,15 @@ def test_create_workload_identity_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].workload_identity_pool == gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
-        assert args[0].workload_identity_pool_id == 'workload_identity_pool_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool
+        mock_val = gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool_id
+        mock_val = 'workload_identity_pool_id_value'
+        assert arg == mock_val
 
 
 def test_create_workload_identity_pool_flattened_error():
@@ -1262,9 +1276,15 @@ async def test_create_workload_identity_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].workload_identity_pool == gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
-        assert args[0].workload_identity_pool_id == 'workload_identity_pool_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool
+        mock_val = gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool_id
+        mock_val = 'workload_identity_pool_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1453,8 +1473,12 @@ def test_update_workload_identity_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].workload_identity_pool == gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].workload_identity_pool
+        mock_val = gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_workload_identity_pool_flattened_error():
@@ -1499,8 +1523,12 @@ async def test_update_workload_identity_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].workload_identity_pool == gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].workload_identity_pool
+        mock_val = gi_workload_identity_pool.WorkloadIdentityPool(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1687,7 +1715,9 @@ def test_delete_workload_identity_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_workload_identity_pool_flattened_error():
@@ -1730,7 +1760,9 @@ async def test_delete_workload_identity_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1916,7 +1948,9 @@ def test_undelete_workload_identity_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_undelete_workload_identity_pool_flattened_error():
@@ -1959,7 +1993,9 @@ async def test_undelete_workload_identity_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2149,7 +2185,9 @@ def test_list_workload_identity_pool_providers_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_workload_identity_pool_providers_flattened_error():
@@ -2190,7 +2228,9 @@ async def test_list_workload_identity_pool_providers_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2587,7 +2627,9 @@ def test_get_workload_identity_pool_provider_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_workload_identity_pool_provider_flattened_error():
@@ -2628,7 +2670,9 @@ async def test_get_workload_identity_pool_provider_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2816,9 +2860,15 @@ def test_create_workload_identity_pool_provider_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].workload_identity_pool_provider == workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
-        assert args[0].workload_identity_pool_provider_id == 'workload_identity_pool_provider_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool_provider
+        mock_val = workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool_provider_id
+        mock_val = 'workload_identity_pool_provider_id_value'
+        assert arg == mock_val
 
 
 def test_create_workload_identity_pool_provider_flattened_error():
@@ -2865,9 +2915,15 @@ async def test_create_workload_identity_pool_provider_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].workload_identity_pool_provider == workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
-        assert args[0].workload_identity_pool_provider_id == 'workload_identity_pool_provider_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool_provider
+        mock_val = workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
+        assert arg == mock_val
+        arg = args[0].workload_identity_pool_provider_id
+        mock_val = 'workload_identity_pool_provider_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3056,8 +3112,12 @@ def test_update_workload_identity_pool_provider_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].workload_identity_pool_provider == workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].workload_identity_pool_provider
+        mock_val = workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_workload_identity_pool_provider_flattened_error():
@@ -3102,8 +3162,12 @@ async def test_update_workload_identity_pool_provider_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].workload_identity_pool_provider == workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].workload_identity_pool_provider
+        mock_val = workload_identity_pool.WorkloadIdentityPoolProvider(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3290,7 +3354,9 @@ def test_delete_workload_identity_pool_provider_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_workload_identity_pool_provider_flattened_error():
@@ -3333,7 +3399,9 @@ async def test_delete_workload_identity_pool_provider_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3519,7 +3587,9 @@ def test_undelete_workload_identity_pool_provider_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_undelete_workload_identity_pool_provider_flattened_error():
@@ -3562,7 +3632,9 @@ async def test_undelete_workload_identity_pool_provider_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -46,6 +46,7 @@ class DistanceView(proto.Message):
         metric_system (bool):
             Output only. True if the DistanceBucket is
             using the metric system, false otherwise.
+
             This field is a member of `oneof`_ ``_metric_system``.
     """
 

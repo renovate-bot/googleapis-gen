@@ -96,11 +96,13 @@ class CampaignAssetSetOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.CampaignAssetSet):
             Create operation: No resource name is
             expected for the new campaign asset set.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             asset set is expected, in this format:
             ``customers/{customer_id}/campaignAssetSets/{campaign_id}~{asset_set_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

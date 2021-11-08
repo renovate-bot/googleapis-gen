@@ -72,9 +72,11 @@ class Task(proto.Message):
         apply_patches_task (google.cloud.osconfig.agentendpoint_v1beta.types.ApplyPatchesTask):
             Details about the apply patches task to
             perform.
+
             This field is a member of `oneof`_ ``task_details``.
         exec_step_task (google.cloud.osconfig.agentendpoint_v1beta.types.ExecStepTask):
             Details about the exec step task to perform.
+
             This field is a member of `oneof`_ ``task_details``.
         service_labels (Sequence[google.cloud.osconfig.agentendpoint_v1beta.types.Task.ServiceLabelsEntry]):
             Labels describing the task.  Used for logging

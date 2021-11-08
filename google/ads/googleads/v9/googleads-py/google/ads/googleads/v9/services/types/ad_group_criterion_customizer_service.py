@@ -98,12 +98,14 @@ class AdGroupCriterionCustomizerOperation(proto.Message):
             Create operation: No resource name is
             expected for the new ad group criterion
             customizer.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed ad group
             criterion customizer is expected, in this format:
 
             ``customers/{customer_id}/adGroupCriterionCustomizers/{ad_group_id}~{criterion_id}~{customizer_attribute_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

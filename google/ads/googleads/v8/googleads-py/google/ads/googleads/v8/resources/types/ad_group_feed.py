@@ -41,10 +41,12 @@ class AdGroupFeed(proto.Message):
         feed (str):
             Immutable. The feed being linked to the ad
             group.
+
             This field is a member of `oneof`_ ``_feed``.
         ad_group (str):
             Immutable. The ad group being linked to the
             feed.
+
             This field is a member of `oneof`_ ``_ad_group``.
         placeholder_types (Sequence[google.ads.googleads.v8.enums.types.PlaceholderTypeEnum.PlaceholderType]):
             Indicates which placeholder types the feed

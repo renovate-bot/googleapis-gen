@@ -114,12 +114,14 @@ class CustomerNegativeCriterionOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CustomerNegativeCriterion):
             Create operation: No resource name is
             expected for the new criterion.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed criterion
             is expected, in this format:
 
             ``customers/{customer_id}/customerNegativeCriteria/{criterion_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

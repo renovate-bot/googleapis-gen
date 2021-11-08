@@ -56,6 +56,7 @@ class YoutubeVideoAsset(proto.Message):
         youtube_video_id (str):
             YouTube video id. This is the 11 character
             string value used in the YouTube video URL.
+
             This field is a member of `oneof`_ ``_youtube_video_id``.
         youtube_video_title (str):
             YouTube video title.
@@ -83,6 +84,7 @@ class MediaBundleAsset(proto.Message):
             information on the format, see the documentation
             of the ad field where you plan on using the
             MediaBundleAsset. This field is mutate only.
+
             This field is a member of `oneof`_ ``_data``.
     """
 
@@ -100,9 +102,11 @@ class ImageAsset(proto.Message):
         data (bytes):
             The raw bytes data of an image. This field is
             mutate only.
+
             This field is a member of `oneof`_ ``_data``.
         file_size (int):
             File size of the image asset in bytes.
+
             This field is a member of `oneof`_ ``_file_size``.
         mime_type (google.ads.googleads.v8.enums.types.MimeTypeEnum.MimeType):
             MIME type of the image asset.
@@ -139,13 +143,16 @@ class ImageDimension(proto.Message):
     Attributes:
         height_pixels (int):
             Height of the image.
+
             This field is a member of `oneof`_ ``_height_pixels``.
         width_pixels (int):
             Width of the image.
+
             This field is a member of `oneof`_ ``_width_pixels``.
         url (str):
             A URL that returns the image with this height
             and width.
+
             This field is a member of `oneof`_ ``_url``.
     """
 
@@ -172,6 +179,7 @@ class TextAsset(proto.Message):
     Attributes:
         text (str):
             Text content of the text asset.
+
             This field is a member of `oneof`_ ``_text``.
     """
 
@@ -212,11 +220,13 @@ class LeadFormAsset(proto.Message):
             Headline of text shown after form submission
             that describes how the advertiser will follow up
             with the user.
+
             This field is a member of `oneof`_ ``_post_submit_headline``.
         post_submit_description (str):
             Detailed description shown after form
             submission that describes how the advertiser
             will follow up with the user.
+
             This field is a member of `oneof`_ ``_post_submit_description``.
         fields (Sequence[google.ads.googleads.v8.common.types.LeadFormField]):
             Ordered list of input fields.
@@ -231,6 +241,7 @@ class LeadFormAsset(proto.Message):
             Asset resource name of the background image.
             The minimum size is 600x314 and the aspect ratio
             must be 1.91:1 (+-1%).
+
             This field is a member of `oneof`_ ``_background_image_asset``.
         desired_intent (google.ads.googleads.v8.enums.types.LeadFormDesiredIntentEnum.LeadFormDesiredIntent):
             Desired intent for the lead form, e.g. more
@@ -239,6 +250,7 @@ class LeadFormAsset(proto.Message):
             Custom disclosure shown along with Google
             disclaimer on the lead form. Accessible to
             allowed customers only.
+
             This field is a member of `oneof`_ ``_custom_disclosure``.
     """
 
@@ -324,6 +336,7 @@ class LeadFormField(proto.Message):
             question. Can be set only for pre-vetted
             question fields. Minimum of 2 answers required
             and maximum of 12 allowed.
+
             This field is a member of `oneof`_ ``answers``.
     """
 
@@ -365,6 +378,7 @@ class LeadFormDeliveryMethod(proto.Message):
     Attributes:
         webhook (google.ads.googleads.v8.common.types.WebhookDelivery):
             Webhook method of delivery.
+
             This field is a member of `oneof`_ ``delivery_details``.
     """
 
@@ -386,14 +400,17 @@ class WebhookDelivery(proto.Message):
         advertiser_webhook_url (str):
             Webhook url specified by advertiser to send
             the lead.
+
             This field is a member of `oneof`_ ``_advertiser_webhook_url``.
         google_secret (str):
             Anti-spoofing secret set by the advertiser as
             part of the webhook payload.
+
             This field is a member of `oneof`_ ``_google_secret``.
         payload_schema_version (int):
             The schema version that this delivery
             instance will use.
+
             This field is a member of `oneof`_ ``_payload_schema_version``.
     """
 
@@ -466,18 +483,22 @@ class PromotionAsset(proto.Message):
         percent_off (int):
             Percentage off discount in the promotion. 1,000,000 = 100%.
             Either this or money_amount_off is required.
+
             This field is a member of `oneof`_ ``discount_type``.
         money_amount_off (google.ads.googleads.v8.common.types.Money):
             Money amount off for discount in the promotion. Either this
             or percent_off is required.
+
             This field is a member of `oneof`_ ``discount_type``.
         promotion_code (str):
             A code the user should use in order to be
             eligible for the promotion.
+
             This field is a member of `oneof`_ ``promotion_trigger``.
         orders_over_amount (google.ads.googleads.v8.common.types.Money):
             The amount the total order needs to be for
             the user to be eligible for the promotion.
+
             This field is a member of `oneof`_ ``promotion_trigger``.
     """
 

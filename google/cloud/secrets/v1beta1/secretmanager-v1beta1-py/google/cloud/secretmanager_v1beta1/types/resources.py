@@ -161,10 +161,12 @@ class Replication(proto.Message):
         automatic (google.cloud.secretmanager_v1beta1.types.Replication.Automatic):
             The [Secret][google.cloud.secrets.v1beta1.Secret] will
             automatically be replicated without any restrictions.
+
             This field is a member of `oneof`_ ``replication``.
         user_managed (google.cloud.secretmanager_v1beta1.types.Replication.UserManaged):
             The [Secret][google.cloud.secrets.v1beta1.Secret] will only
             be replicated into the locations specified.
+
             This field is a member of `oneof`_ ``replication``.
     """
 

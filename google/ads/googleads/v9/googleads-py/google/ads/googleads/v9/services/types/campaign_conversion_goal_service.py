@@ -74,6 +74,7 @@ class CampaignConversionGoalOperation(proto.Message):
         update (google.ads.googleads.v9.resources.types.CampaignConversionGoal):
             Update operation: The customer conversion
             goal is expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

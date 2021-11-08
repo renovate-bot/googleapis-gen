@@ -559,9 +559,19 @@ def test_predict_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].endpoint == 'endpoint_value'
-        assert args[0].instances == [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
-        assert args[0].parameters == struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
+        arg = args[0].endpoint
+        mock_val = 'endpoint_value'
+        assert arg == mock_val
+        arg = args[0].instances
+        mock_val = [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
+        assert arg == mock_val
+        arg = args[0].parameters
+        mock_val = struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
+        from proto.marshal import Marshal
+        from proto.marshal.rules.struct import ValueRule
+        rule = ValueRule(marshal=Marshal(name="Test"))
+        mock_val = rule.to_python(mock_val)
+        assert arg == mock_val
 
 
 def test_predict_flattened_error():
@@ -606,9 +616,19 @@ async def test_predict_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].endpoint == 'endpoint_value'
-        assert args[0].instances == [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
-        assert args[0].parameters == struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
+        arg = args[0].endpoint
+        mock_val = 'endpoint_value'
+        assert arg == mock_val
+        arg = args[0].instances
+        mock_val = [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
+        assert arg == mock_val
+        arg = args[0].parameters
+        mock_val = struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
+        from proto.marshal import Marshal
+        from proto.marshal.rules.struct import ValueRule
+        rule = ValueRule(marshal=Marshal(name="Test"))
+        mock_val = rule.to_python(mock_val)
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -805,8 +825,12 @@ def test_raw_predict_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].endpoint == 'endpoint_value'
-        assert args[0].http_body == httpbody_pb2.HttpBody(content_type='content_type_value')
+        arg = args[0].endpoint
+        mock_val = 'endpoint_value'
+        assert arg == mock_val
+        arg = args[0].http_body
+        mock_val = httpbody_pb2.HttpBody(content_type='content_type_value')
+        assert arg == mock_val
 
 
 def test_raw_predict_flattened_error():
@@ -849,8 +873,12 @@ async def test_raw_predict_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].endpoint == 'endpoint_value'
-        assert args[0].http_body == httpbody_pb2.HttpBody(content_type='content_type_value')
+        arg = args[0].endpoint
+        mock_val = 'endpoint_value'
+        assert arg == mock_val
+        arg = args[0].http_body
+        mock_val = httpbody_pb2.HttpBody(content_type='content_type_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1044,10 +1072,22 @@ def test_explain_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].endpoint == 'endpoint_value'
-        assert args[0].instances == [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
-        assert args[0].parameters == struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
-        assert args[0].deployed_model_id == 'deployed_model_id_value'
+        arg = args[0].endpoint
+        mock_val = 'endpoint_value'
+        assert arg == mock_val
+        arg = args[0].instances
+        mock_val = [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
+        assert arg == mock_val
+        arg = args[0].parameters
+        mock_val = struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
+        from proto.marshal import Marshal
+        from proto.marshal.rules.struct import ValueRule
+        rule = ValueRule(marshal=Marshal(name="Test"))
+        mock_val = rule.to_python(mock_val)
+        assert arg == mock_val
+        arg = args[0].deployed_model_id
+        mock_val = 'deployed_model_id_value'
+        assert arg == mock_val
 
 
 def test_explain_flattened_error():
@@ -1094,10 +1134,22 @@ async def test_explain_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].endpoint == 'endpoint_value'
-        assert args[0].instances == [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
-        assert args[0].parameters == struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
-        assert args[0].deployed_model_id == 'deployed_model_id_value'
+        arg = args[0].endpoint
+        mock_val = 'endpoint_value'
+        assert arg == mock_val
+        arg = args[0].instances
+        mock_val = [struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)]
+        assert arg == mock_val
+        arg = args[0].parameters
+        mock_val = struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)
+        from proto.marshal import Marshal
+        from proto.marshal.rules.struct import ValueRule
+        rule = ValueRule(marshal=Marshal(name="Test"))
+        mock_val = rule.to_python(mock_val)
+        assert arg == mock_val
+        arg = args[0].deployed_model_id
+        mock_val = 'deployed_model_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

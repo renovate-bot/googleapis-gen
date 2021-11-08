@@ -47,6 +47,7 @@ class AdGroupExtensionSetting(proto.Message):
             resource names have the form:
 
             ``customers/{customer_id}/adGroups/{ad_group_id}``
+
             This field is a member of `oneof`_ ``_ad_group``.
         extension_feed_items (Sequence[str]):
             The resource names of the extension feed items to serve

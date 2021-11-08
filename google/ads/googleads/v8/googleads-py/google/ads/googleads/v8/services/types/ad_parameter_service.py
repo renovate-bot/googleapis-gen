@@ -117,16 +117,19 @@ class AdParameterOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.AdParameter):
             Create operation: No resource name is
             expected for the new ad parameter.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.AdParameter):
             Update operation: The ad parameter is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the ad parameter to
             remove is expected in this format:
 
             ``customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

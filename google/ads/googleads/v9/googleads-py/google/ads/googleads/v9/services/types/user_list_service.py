@@ -107,16 +107,19 @@ class UserListOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.UserList):
             Create operation: No resource name is
             expected for the new user list.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v9.resources.types.UserList):
             Update operation: The user list is expected
             to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed user list
             is expected, in this format:
 
             ``customers/{customer_id}/userLists/{user_list_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

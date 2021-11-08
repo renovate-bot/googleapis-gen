@@ -141,20 +141,25 @@ class TestEnvironmentCatalog(proto.Message):
     Attributes:
         android_device_catalog (google.devtools.testing_v1.types.AndroidDeviceCatalog):
             Supported Android devices.
+
             This field is a member of `oneof`_ ``environment_catalog``.
         ios_device_catalog (google.devtools.testing_v1.types.IosDeviceCatalog):
             Supported iOS devices.
+
             This field is a member of `oneof`_ ``environment_catalog``.
         network_configuration_catalog (google.devtools.testing_v1.types.NetworkConfigurationCatalog):
             Supported network configurations.
+
             This field is a member of `oneof`_ ``environment_catalog``.
         software_catalog (google.devtools.testing_v1.types.ProvidedSoftwareCatalog):
             The software test environment provided by
             TestExecutionService.
+
             This field is a member of `oneof`_ ``environment_catalog``.
         device_ip_block_catalog (google.devtools.testing_v1.types.DeviceIpBlockCatalog):
             The IP blocks used by devices in the test
             environment.
+
             This field is a member of `oneof`_ ``environment_catalog``.
     """
 

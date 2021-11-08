@@ -874,10 +874,12 @@ class ExecStepConfig(proto.Message):
     Attributes:
         local_path (str):
             An absolute path to the executable on the VM.
+
             This field is a member of `oneof`_ ``executable``.
         gcs_object (google.cloud.osconfig_v1beta.types.GcsObject):
             A Google Cloud Storage object containing the
             executable.
+
             This field is a member of `oneof`_ ``executable``.
         allowed_success_codes (Sequence[int]):
             Defaults to [0]. A list of possible return values that the

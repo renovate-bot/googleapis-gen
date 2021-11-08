@@ -412,11 +412,13 @@ class TransitionCoverage(proto.Message):
                 Indicates a transition to a
                 [Page][google.cloud.dialogflow.cx.v3beta1.Page]. Only some
                 fields such as name and displayname will be set.
+
                 This field is a member of `oneof`_ ``kind``.
             flow (google.cloud.dialogflowcx_v3beta1.types.Flow):
                 Indicates a transition to a
                 [Flow][google.cloud.dialogflow.cx.v3beta1.Flow]. Only some
                 fields such as name and displayname will be set.
+
                 This field is a member of `oneof`_ ``kind``.
         """
 
@@ -456,9 +458,11 @@ class TransitionCoverage(proto.Message):
                 at least one of the agent's test cases.
             transition_route (google.cloud.dialogflowcx_v3beta1.types.TransitionRoute):
                 Intent route or condition route.
+
                 This field is a member of `oneof`_ ``detail``.
             event_handler (google.cloud.dialogflowcx_v3beta1.types.EventHandler):
                 Event handler.
+
                 This field is a member of `oneof`_ ``detail``.
         """
 
@@ -671,13 +675,16 @@ class CalculateCoverageResponse(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>``.
         intent_coverage (google.cloud.dialogflowcx_v3beta1.types.IntentCoverage):
             Intent coverage.
+
             This field is a member of `oneof`_ ``coverage_type``.
         transition_coverage (google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage):
             Transition (excluding transition route
             groups) coverage.
+
             This field is a member of `oneof`_ ``coverage_type``.
         route_group_coverage (google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroupCoverage):
             Transition route group coverage.
+
             This field is a member of `oneof`_ ``coverage_type``.
     """
 
@@ -1033,9 +1040,11 @@ class ImportTestCasesRequest(proto.Message):
             Storage <https://cloud.google.com/storage/docs/>`__ URI to
             import test cases from. The format of this URI must be
             ``gs://<bucket-name>/<object-name>``.
+
             This field is a member of `oneof`_ ``source``.
         content (bytes):
             Uncompressed raw byte content for test cases.
+
             This field is a member of `oneof`_ ``source``.
     """
 
@@ -1127,6 +1136,7 @@ class ExportTestCasesRequest(proto.Message):
             export the test cases to. The format of this URI must be
             ``gs://<bucket-name>/<object-name>``. If unspecified, the
             serialized test cases is returned inline.
+
             This field is a member of `oneof`_ ``destination``.
         data_format (google.cloud.dialogflowcx_v3beta1.types.ExportTestCasesRequest.DataFormat):
             The data format of the exported test cases. If not
@@ -1185,9 +1195,11 @@ class ExportTestCasesResponse(proto.Message):
             The URI to a file containing the exported test cases. This
             field is populated only if ``gcs_uri`` is specified in
             [ExportTestCasesRequest][google.cloud.dialogflow.cx.v3beta1.ExportTestCasesRequest].
+
             This field is a member of `oneof`_ ``destination``.
         content (bytes):
             Uncompressed raw byte content for test cases.
+
             This field is a member of `oneof`_ ``destination``.
     """
 

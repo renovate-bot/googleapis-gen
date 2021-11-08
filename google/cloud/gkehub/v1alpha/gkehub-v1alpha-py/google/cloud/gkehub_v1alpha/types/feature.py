@@ -233,9 +233,11 @@ class CommonFeatureSpec(proto.Message):
     Attributes:
         multiclusteringress (google.cloud.gkehub.multiclusteringress.v1alpha.multiclusteringress_pb2.FeatureSpec):
             Multicluster Ingress-specific spec.
+
             This field is a member of `oneof`_ ``feature_spec``.
         cloudauditlogging (google.cloud.gkehub.cloudauditlogging.v1alpha.cloudauditlogging_pb2.FeatureSpec):
             Cloud Audit Logging-specific spec.
+
             This field is a member of `oneof`_ ``feature_spec``.
     """
 
@@ -263,6 +265,7 @@ class CommonFeatureState(proto.Message):
     Attributes:
         servicemesh (google.cloud.gkehub.servicemesh.v1alpha.servicemesh_pb2.FeatureState):
             Service Mesh-specific state.
+
             This field is a member of `oneof`_ ``feature_state``.
         state (google.cloud.gkehub_v1alpha.types.FeatureState):
             Output only. The "running state" of the
@@ -292,6 +295,7 @@ class MembershipFeatureSpec(proto.Message):
     Attributes:
         configmanagement (google.cloud.gkehub.configmanagement.v1alpha.configmanagement_pb2.MembershipSpec):
             Config Management-specific spec.
+
             This field is a member of `oneof`_ ``feature_spec``.
     """
 
@@ -317,12 +321,15 @@ class MembershipFeatureState(proto.Message):
     Attributes:
         servicemesh (google.cloud.gkehub.servicemesh.v1alpha.servicemesh_pb2.MembershipState):
             Service Mesh-specific state.
+
             This field is a member of `oneof`_ ``feature_state``.
         metering (google.cloud.gkehub.metering.v1alpha.metering_pb2.MembershipState):
             Metering-specific spec.
+
             This field is a member of `oneof`_ ``feature_state``.
         configmanagement (google.cloud.gkehub.configmanagement.v1alpha.configmanagement_pb2.MembershipState):
             Config Management-specific state.
+
             This field is a member of `oneof`_ ``feature_state``.
         state (google.cloud.gkehub_v1alpha.types.FeatureState):
             The high-level state of this Feature for a

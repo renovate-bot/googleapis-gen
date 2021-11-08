@@ -64,6 +64,7 @@ class RestoreInfo(proto.Message):
         backup_info (google.cloud.spanner_admin_database_v1.types.BackupInfo):
             Information about the backup used to restore
             the database. The backup may no longer exist.
+
             This field is a member of `oneof`_ ``source_info``.
     """
 
@@ -649,6 +650,7 @@ class RestoreDatabaseRequest(proto.Message):
             Name of the backup from which to restore. Values are of the
             form
             ``projects/<project>/instances/<instance>/backups/<backup>``.
+
             This field is a member of `oneof`_ ``source``.
         encryption_config (google.cloud.spanner_admin_database_v1.types.RestoreDatabaseEncryptionConfig):
             Optional. An encryption configuration describing the
@@ -729,6 +731,7 @@ class RestoreDatabaseMetadata(proto.Message):
         backup_info (google.cloud.spanner_admin_database_v1.types.BackupInfo):
             Information about the backup used to restore
             the database.
+
             This field is a member of `oneof`_ ``source_info``.
         progress (google.cloud.spanner_admin_database_v1.types.OperationProgress):
             The progress of the

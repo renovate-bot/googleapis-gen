@@ -503,9 +503,15 @@ def test_submit_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job == jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job
+        mock_val = jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        assert arg == mock_val
 
 
 def test_submit_job_flattened_error():
@@ -550,9 +556,15 @@ async def test_submit_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job == jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job
+        mock_val = jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -679,9 +691,15 @@ def test_submit_job_as_operation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job == jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job
+        mock_val = jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        assert arg == mock_val
 
 
 def test_submit_job_as_operation_flattened_error():
@@ -728,9 +746,15 @@ async def test_submit_job_as_operation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job == jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job
+        mock_val = jobs.Job(reference=jobs.JobReference(project_id='project_id_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -874,9 +898,15 @@ def test_get_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job_id == 'job_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job_id
+        mock_val = 'job_id_value'
+        assert arg == mock_val
 
 
 def test_get_job_flattened_error():
@@ -921,9 +951,15 @@ async def test_get_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job_id == 'job_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job_id
+        mock_val = 'job_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1054,9 +1090,15 @@ def test_list_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 def test_list_jobs_flattened_error():
@@ -1101,9 +1143,15 @@ async def test_list_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1529,9 +1577,15 @@ def test_cancel_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job_id == 'job_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job_id
+        mock_val = 'job_id_value'
+        assert arg == mock_val
 
 
 def test_cancel_job_flattened_error():
@@ -1576,9 +1630,15 @@ async def test_cancel_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job_id == 'job_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job_id
+        mock_val = 'job_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1703,9 +1763,15 @@ def test_delete_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job_id == 'job_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job_id
+        mock_val = 'job_id_value'
+        assert arg == mock_val
 
 
 def test_delete_job_flattened_error():
@@ -1750,9 +1816,15 @@ async def test_delete_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].job_id == 'job_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].job_id
+        mock_val = 'job_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

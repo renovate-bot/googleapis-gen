@@ -564,7 +564,9 @@ def test_get_authorization_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_authorization_flattened_error():
@@ -605,7 +607,9 @@ async def test_get_authorization_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -805,9 +809,15 @@ def test_create_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
-        assert args[0].deployment_id == 'deployment_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].deployment
+        mock_val = gsuiteaddons.Deployment(name='name_value')
+        assert arg == mock_val
+        arg = args[0].deployment_id
+        mock_val = 'deployment_id_value'
+        assert arg == mock_val
 
 
 def test_create_deployment_flattened_error():
@@ -852,9 +862,15 @@ async def test_create_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
-        assert args[0].deployment_id == 'deployment_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].deployment
+        mock_val = gsuiteaddons.Deployment(name='name_value')
+        assert arg == mock_val
+        arg = args[0].deployment_id
+        mock_val = 'deployment_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1054,7 +1070,9 @@ def test_replace_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
+        arg = args[0].deployment
+        mock_val = gsuiteaddons.Deployment(name='name_value')
+        assert arg == mock_val
 
 
 def test_replace_deployment_flattened_error():
@@ -1095,7 +1113,9 @@ async def test_replace_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
+        arg = args[0].deployment
+        mock_val = gsuiteaddons.Deployment(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1293,7 +1313,9 @@ def test_get_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_deployment_flattened_error():
@@ -1334,7 +1356,9 @@ async def test_get_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1524,7 +1548,9 @@ def test_list_deployments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_deployments_flattened_error():
@@ -1565,7 +1591,9 @@ async def test_list_deployments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1935,7 +1963,9 @@ def test_delete_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_deployment_flattened_error():
@@ -1976,7 +2006,9 @@ async def test_delete_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2160,7 +2192,9 @@ def test_install_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_install_deployment_flattened_error():
@@ -2201,7 +2235,9 @@ async def test_install_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2385,7 +2421,9 @@ def test_uninstall_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_uninstall_deployment_flattened_error():
@@ -2426,7 +2464,9 @@ async def test_uninstall_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2616,7 +2656,9 @@ def test_get_install_status_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_install_status_flattened_error():
@@ -2657,7 +2699,9 @@ async def test_get_install_status_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

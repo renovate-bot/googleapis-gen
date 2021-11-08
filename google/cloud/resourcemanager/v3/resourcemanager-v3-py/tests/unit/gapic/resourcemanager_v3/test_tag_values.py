@@ -492,7 +492,9 @@ def test_list_tag_values_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_tag_values_flattened_error():
@@ -533,7 +535,9 @@ async def test_list_tag_values_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -924,7 +928,9 @@ def test_get_tag_value_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_tag_value_flattened_error():
@@ -965,7 +971,9 @@ async def test_get_tag_value_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1088,7 +1096,9 @@ def test_create_tag_value_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].tag_value == tag_values.TagValue(name='name_value')
+        arg = args[0].tag_value
+        mock_val = tag_values.TagValue(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_tag_value_flattened_error():
@@ -1131,7 +1141,9 @@ async def test_create_tag_value_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].tag_value == tag_values.TagValue(name='name_value')
+        arg = args[0].tag_value
+        mock_val = tag_values.TagValue(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1318,8 +1330,12 @@ def test_update_tag_value_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].tag_value == tag_values.TagValue(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].tag_value
+        mock_val = tag_values.TagValue(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_tag_value_flattened_error():
@@ -1364,8 +1380,12 @@ async def test_update_tag_value_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].tag_value == tag_values.TagValue(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].tag_value
+        mock_val = tag_values.TagValue(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1552,7 +1572,9 @@ def test_delete_tag_value_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_tag_value_flattened_error():
@@ -1595,7 +1617,9 @@ async def test_delete_tag_value_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1806,7 +1830,9 @@ def test_get_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 def test_get_iam_policy_flattened_error():
@@ -1847,7 +1873,9 @@ async def test_get_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2058,7 +2086,9 @@ def test_set_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 def test_set_iam_policy_flattened_error():
@@ -2099,7 +2129,9 @@ async def test_set_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2307,8 +2339,12 @@ def test_test_iam_permissions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
-        assert args[0].permissions == ['permissions_value']
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
+        arg = args[0].permissions
+        mock_val = ['permissions_value']
+        assert arg == mock_val
 
 
 def test_test_iam_permissions_flattened_error():
@@ -2351,8 +2387,12 @@ async def test_test_iam_permissions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
-        assert args[0].permissions == ['permissions_value']
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
+        arg = args[0].permissions
+        mock_val = ['permissions_value']
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

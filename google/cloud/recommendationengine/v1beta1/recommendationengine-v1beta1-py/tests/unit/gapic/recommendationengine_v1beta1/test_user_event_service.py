@@ -562,8 +562,12 @@ def test_write_user_event_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].user_event == gcr_user_event.UserEvent(event_type='event_type_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].user_event
+        mock_val = gcr_user_event.UserEvent(event_type='event_type_value')
+        assert arg == mock_val
 
 
 def test_write_user_event_flattened_error():
@@ -606,8 +610,12 @@ async def test_write_user_event_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].user_event == gcr_user_event.UserEvent(event_type='event_type_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].user_event
+        mock_val = gcr_user_event.UserEvent(event_type='event_type_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -805,10 +813,18 @@ def test_collect_user_event_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].user_event == 'user_event_value'
-        assert args[0].uri == 'uri_value'
-        assert args[0].ets == 332
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].user_event
+        mock_val = 'user_event_value'
+        assert arg == mock_val
+        arg = args[0].uri
+        mock_val = 'uri_value'
+        assert arg == mock_val
+        arg = args[0].ets
+        mock_val = 332
+        assert arg == mock_val
 
 
 def test_collect_user_event_flattened_error():
@@ -855,10 +871,18 @@ async def test_collect_user_event_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].user_event == 'user_event_value'
-        assert args[0].uri == 'uri_value'
-        assert args[0].ets == 332
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].user_event
+        mock_val = 'user_event_value'
+        assert arg == mock_val
+        arg = args[0].uri
+        mock_val = 'uri_value'
+        assert arg == mock_val
+        arg = args[0].ets
+        mock_val = 332
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1052,8 +1076,12 @@ def test_list_user_events_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 def test_list_user_events_flattened_error():
@@ -1096,8 +1124,12 @@ async def test_list_user_events_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1472,9 +1504,15 @@ def test_purge_user_events_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].filter == 'filter_value'
-        assert args[0].force == True
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
+        arg = args[0].force
+        mock_val = True
+        assert arg == mock_val
 
 
 def test_purge_user_events_flattened_error():
@@ -1521,9 +1559,15 @@ async def test_purge_user_events_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].filter == 'filter_value'
-        assert args[0].force == True
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
+        arg = args[0].force
+        mock_val = True
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1714,10 +1758,18 @@ def test_import_user_events_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].input_config == import_.InputConfig(catalog_inline_source=import_.CatalogInlineSource(catalog_items=[catalog.CatalogItem(id='id_value')]))
-        assert args[0].errors_config == import_.ImportErrorsConfig(gcs_prefix='gcs_prefix_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].input_config
+        mock_val = import_.InputConfig(catalog_inline_source=import_.CatalogInlineSource(catalog_items=[catalog.CatalogItem(id='id_value')]))
+        assert arg == mock_val
+        arg = args[0].errors_config
+        mock_val = import_.ImportErrorsConfig(gcs_prefix='gcs_prefix_value')
+        assert arg == mock_val
 
 
 def test_import_user_events_flattened_error():
@@ -1766,10 +1818,18 @@ async def test_import_user_events_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].input_config == import_.InputConfig(catalog_inline_source=import_.CatalogInlineSource(catalog_items=[catalog.CatalogItem(id='id_value')]))
-        assert args[0].errors_config == import_.ImportErrorsConfig(gcs_prefix='gcs_prefix_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].input_config
+        mock_val = import_.InputConfig(catalog_inline_source=import_.CatalogInlineSource(catalog_items=[catalog.CatalogItem(id='id_value')]))
+        assert arg == mock_val
+        arg = args[0].errors_config
+        mock_val = import_.ImportErrorsConfig(gcs_prefix='gcs_prefix_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

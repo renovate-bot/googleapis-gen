@@ -50,6 +50,7 @@ class Commission(proto.Message):
             should be passed into this field as (x \* 1,000,000). For
             example, 106,000 represents a commission rate of 0.106
             (10.6%).
+
             This field is a member of `oneof`_ ``_commission_rate_micros``.
     """
 
@@ -75,6 +76,7 @@ class ManualCpc(proto.Message):
         enhanced_cpc_enabled (bool):
             Whether bids are to be enhanced based on
             conversion optimizer data.
+
             This field is a member of `oneof`_ ``_enhanced_cpc_enabled``.
     """
 
@@ -152,18 +154,21 @@ class TargetCpa(proto.Message):
             This target should be greater than or equal to
             minimum billable unit based on the currency for
             the account.
+
             This field is a member of `oneof`_ ``_target_cpa_micros``.
         cpc_bid_ceiling_micros (int):
             Maximum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
             managed by the strategy. This should only be set
             for portfolio bid strategies.
+
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         cpc_bid_floor_micros (int):
             Minimum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
             managed by the strategy. This should only be set
             for portfolio bid strategies.
+
             This field is a member of `oneof`_ ``_cpc_bid_floor_micros``.
     """
 
@@ -205,12 +210,14 @@ class TargetImpressionShare(proto.Message):
             The desired fraction of ads to be shown in
             the targeted location in micros. E.g. 1% equals
             10,000.
+
             This field is a member of `oneof`_ ``_location_fraction_micros``.
         cpc_bid_ceiling_micros (int):
             The highest CPC bid the automated bidding
             system is permitted to specify. This is a
             required field entered by the advertiser that
             sets the ceiling and specified in local micros.
+
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
     """
 
@@ -240,18 +247,21 @@ class TargetRoas(proto.Message):
             Required. The desired revenue (based on
             conversion data) per unit of spend. Value must
             be between 0.01 and 1000.0, inclusive.
+
             This field is a member of `oneof`_ ``_target_roas``.
         cpc_bid_ceiling_micros (int):
             Maximum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
             managed by the strategy. This should only be set
             for portfolio bid strategies.
+
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         cpc_bid_floor_micros (int):
             Minimum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
             managed by the strategy. This should only be set
             for portfolio bid strategies.
+
             This field is a member of `oneof`_ ``_cpc_bid_floor_micros``.
     """
 
@@ -287,11 +297,13 @@ class TargetSpend(proto.Message):
             should no longer be used. See https://ads-
             developers.googleblog.com/2020/05/reminder-
             about-sunset-creation-of.html for details.
+
             This field is a member of `oneof`_ ``_target_spend_micros``.
         cpc_bid_ceiling_micros (int):
             Maximum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
             managed by the strategy.
+
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
     """
 
@@ -317,12 +329,14 @@ class PercentCpc(proto.Message):
             is an optional field entered by the advertiser and specified
             in local micros. Note: A zero value is interpreted in the
             same way as having bid_ceiling undefined.
+
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         enhanced_cpc_enabled (bool):
             Adjusts the bid for each auction upward or downward,
             depending on the likelihood of a conversion. Individual bids
             may exceed cpc_bid_ceiling_micros, but the average bid
             amount for a campaign should not.
+
             This field is a member of `oneof`_ ``_enhanced_cpc_enabled``.
     """
 

@@ -615,9 +615,15 @@ def test_publish_build_tool_event_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].ordered_build_event == publish_build_event.OrderedBuildEvent(stream_id=build_events.StreamId(build_id='build_id_value'))
-        assert args[0].notification_keywords == ['notification_keywords_value']
-        assert args[0].project_id == 'project_id_value'
+        arg = args[0].ordered_build_event
+        mock_val = publish_build_event.OrderedBuildEvent(stream_id=build_events.StreamId(build_id='build_id_value'))
+        assert arg == mock_val
+        arg = args[0].notification_keywords
+        mock_val = ['notification_keywords_value']
+        assert arg == mock_val
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
 
 
 def test_publish_build_tool_event_stream_flattened_error():
@@ -662,9 +668,15 @@ async def test_publish_build_tool_event_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].ordered_build_event == publish_build_event.OrderedBuildEvent(stream_id=build_events.StreamId(build_id='build_id_value'))
-        assert args[0].notification_keywords == ['notification_keywords_value']
-        assert args[0].project_id == 'project_id_value'
+        arg = args[0].ordered_build_event
+        mock_val = publish_build_event.OrderedBuildEvent(stream_id=build_events.StreamId(build_id='build_id_value'))
+        assert arg == mock_val
+        arg = args[0].notification_keywords
+        mock_val = ['notification_keywords_value']
+        assert arg == mock_val
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

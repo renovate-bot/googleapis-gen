@@ -611,7 +611,9 @@ def test_create_photo_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo == resources.Photo(photo_id=resources.PhotoId(id='id_value'))
+        arg = args[0].photo
+        mock_val = resources.Photo(photo_id=resources.PhotoId(id='id_value'))
+        assert arg == mock_val
 
 
 def test_create_photo_flattened_error():
@@ -652,7 +654,9 @@ async def test_create_photo_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo == resources.Photo(photo_id=resources.PhotoId(id='id_value'))
+        arg = args[0].photo
+        mock_val = resources.Photo(photo_id=resources.PhotoId(id='id_value'))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -800,8 +804,12 @@ def test_get_photo_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_id == 'photo_id_value'
-        assert args[0].view == rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        arg = args[0].photo_id
+        mock_val = 'photo_id_value'
+        assert arg == mock_val
+        arg = args[0].view
+        mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
 
 
 def test_get_photo_flattened_error():
@@ -844,8 +852,12 @@ async def test_get_photo_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_id == 'photo_id_value'
-        assert args[0].view == rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        arg = args[0].photo_id
+        mock_val = 'photo_id_value'
+        assert arg == mock_val
+        arg = args[0].view
+        mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -970,8 +982,12 @@ def test_batch_get_photos_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_ids == ['photo_ids_value']
-        assert args[0].view == rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        arg = args[0].photo_ids
+        mock_val = ['photo_ids_value']
+        assert arg == mock_val
+        arg = args[0].view
+        mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
 
 
 def test_batch_get_photos_flattened_error():
@@ -1014,8 +1030,12 @@ async def test_batch_get_photos_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_ids == ['photo_ids_value']
-        assert args[0].view == rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        arg = args[0].photo_ids
+        mock_val = ['photo_ids_value']
+        assert arg == mock_val
+        arg = args[0].view
+        mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1144,8 +1164,12 @@ def test_list_photos_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].view == rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
-        assert args[0].filter == 'filter_value'
+        arg = args[0].view
+        mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 def test_list_photos_flattened_error():
@@ -1188,8 +1212,12 @@ async def test_list_photos_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].view == rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
-        assert args[0].filter == 'filter_value'
+        arg = args[0].view
+        mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1519,8 +1547,12 @@ def test_update_photo_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo == resources.Photo(photo_id=resources.PhotoId(id='id_value'))
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].photo
+        mock_val = resources.Photo(photo_id=resources.PhotoId(id='id_value'))
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_photo_flattened_error():
@@ -1563,8 +1595,12 @@ async def test_update_photo_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo == resources.Photo(photo_id=resources.PhotoId(id='id_value'))
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].photo
+        mock_val = resources.Photo(photo_id=resources.PhotoId(id='id_value'))
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1688,7 +1724,9 @@ def test_batch_update_photos_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].update_photo_requests == [rpcmessages.UpdatePhotoRequest(photo=resources.Photo(photo_id=resources.PhotoId(id='id_value')))]
+        arg = args[0].update_photo_requests
+        mock_val = [rpcmessages.UpdatePhotoRequest(photo=resources.Photo(photo_id=resources.PhotoId(id='id_value')))]
+        assert arg == mock_val
 
 
 def test_batch_update_photos_flattened_error():
@@ -1729,7 +1767,9 @@ async def test_batch_update_photos_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].update_photo_requests == [rpcmessages.UpdatePhotoRequest(photo=resources.Photo(photo_id=resources.PhotoId(id='id_value')))]
+        arg = args[0].update_photo_requests
+        mock_val = [rpcmessages.UpdatePhotoRequest(photo=resources.Photo(photo_id=resources.PhotoId(id='id_value')))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1850,7 +1890,9 @@ def test_delete_photo_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_id == 'photo_id_value'
+        arg = args[0].photo_id
+        mock_val = 'photo_id_value'
+        assert arg == mock_val
 
 
 def test_delete_photo_flattened_error():
@@ -1891,7 +1933,9 @@ async def test_delete_photo_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_id == 'photo_id_value'
+        arg = args[0].photo_id
+        mock_val = 'photo_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2014,7 +2058,9 @@ def test_batch_delete_photos_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_ids == ['photo_ids_value']
+        arg = args[0].photo_ids
+        mock_val = ['photo_ids_value']
+        assert arg == mock_val
 
 
 def test_batch_delete_photos_flattened_error():
@@ -2055,7 +2101,9 @@ async def test_batch_delete_photos_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].photo_ids == ['photo_ids_value']
+        arg = args[0].photo_ids
+        mock_val = ['photo_ids_value']
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

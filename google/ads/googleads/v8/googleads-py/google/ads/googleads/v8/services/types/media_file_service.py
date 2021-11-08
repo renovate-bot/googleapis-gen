@@ -108,6 +108,7 @@ class MediaFileOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.MediaFile):
             Create operation: No resource name is
             expected for the new media file.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

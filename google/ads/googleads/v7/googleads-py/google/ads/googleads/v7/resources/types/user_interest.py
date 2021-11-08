@@ -43,16 +43,20 @@ class UserInterest(proto.Message):
             interest.
         user_interest_id (int):
             Output only. The ID of the user interest.
+
             This field is a member of `oneof`_ ``_user_interest_id``.
         name (str):
             Output only. The name of the user interest.
+
             This field is a member of `oneof`_ ``_name``.
         user_interest_parent (str):
             Output only. The parent of the user interest.
+
             This field is a member of `oneof`_ ``_user_interest_parent``.
         launched_to_all (bool):
             Output only. True if the user interest is
             launched to all channels and locales.
+
             This field is a member of `oneof`_ ``_launched_to_all``.
         availabilities (Sequence[google.ads.googleads.v7.common.types.CriterionCategoryAvailability]):
             Output only. Availability information of the

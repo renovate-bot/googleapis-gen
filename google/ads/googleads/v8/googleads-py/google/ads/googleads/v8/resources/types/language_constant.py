@@ -36,18 +36,22 @@ class LanguageConstant(proto.Message):
             ``languageConstants/{criterion_id}``
         id (int):
             Output only. The ID of the language constant.
+
             This field is a member of `oneof`_ ``_id``.
         code (str):
             Output only. The language code, e.g. "en_US", "en_AU", "es",
             "fr", etc.
+
             This field is a member of `oneof`_ ``_code``.
         name (str):
             Output only. The full name of the language in
             English, e.g., "English (US)", "Spanish", etc.
+
             This field is a member of `oneof`_ ``_name``.
         targetable (bool):
             Output only. Whether the language is
             targetable.
+
             This field is a member of `oneof`_ ``_targetable``.
     """
 

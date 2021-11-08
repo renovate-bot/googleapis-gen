@@ -97,11 +97,13 @@ class CampaignCustomizerOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.CampaignCustomizer):
             Create operation: No resource name is
             expected for the new campaign customizer
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             customizer is expected, in this format:
             ``customers/{customer_id}/campaignCustomizers/{campaign_id}~{customizer_attribute_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -105,12 +105,14 @@ class CampaignLabelOperation(proto.Message):
             Create operation: No resource name is
             expected for the new campaign-label
             relationship.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the campaign-label
             relationship being removed, in this format:
 
             ``customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -237,9 +237,11 @@ class WorkloadIdentityPoolProvider(proto.Message):
                "'admins' in google.groups".
         aws (google.iam_v1beta.types.WorkloadIdentityPoolProvider.Aws):
             An Amazon Web Services identity provider.
+
             This field is a member of `oneof`_ ``provider_config``.
         oidc (google.iam_v1beta.types.WorkloadIdentityPoolProvider.Oidc):
             An OpenId Connect 1.0 identity provider.
+
             This field is a member of `oneof`_ ``provider_config``.
     """
     class State(proto.Enum):

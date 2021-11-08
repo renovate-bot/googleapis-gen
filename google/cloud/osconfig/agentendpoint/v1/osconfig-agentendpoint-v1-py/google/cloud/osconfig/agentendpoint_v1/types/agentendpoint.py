@@ -140,14 +140,17 @@ class ReportTaskProgressRequest(proto.Message):
         apply_patches_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ApplyPatchesTaskProgress):
             Details about the progress of the apply
             patches task.
+
             This field is a member of `oneof`_ ``progress``.
         exec_step_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ExecStepTaskProgress):
             Details about the progress of the exec step
             task.
+
             This field is a member of `oneof`_ ``progress``.
         apply_config_task_progress (google.cloud.osconfig.agentendpoint_v1.types.ApplyConfigTaskProgress):
             Details about the progress of the apply
             config task.
+
             This field is a member of `oneof`_ ``progress``.
     """
 
@@ -235,13 +238,16 @@ class ReportTaskCompleteRequest(proto.Message):
         apply_patches_task_output (google.cloud.osconfig.agentendpoint_v1.types.ApplyPatchesTaskOutput):
             Final output details of the apply patches
             task;
+
             This field is a member of `oneof`_ ``output``.
         exec_step_task_output (google.cloud.osconfig.agentendpoint_v1.types.ExecStepTaskOutput):
             Final output details of the exec step task;
+
             This field is a member of `oneof`_ ``output``.
         apply_config_task_output (google.cloud.osconfig.agentendpoint_v1.types.ApplyConfigTaskOutput):
             Final output details of the apply config
             task;
+
             This field is a member of `oneof`_ ``output``.
     """
 

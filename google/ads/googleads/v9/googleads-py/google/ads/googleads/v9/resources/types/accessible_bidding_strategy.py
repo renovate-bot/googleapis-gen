@@ -69,32 +69,38 @@ class AccessibleBiddingStrategy(proto.Message):
             Output only. An automated bidding strategy to
             help get the most conversion value for your
             campaigns while spending your budget.
+
             This field is a member of `oneof`_ ``scheme``.
         maximize_conversions (google.ads.googleads.v9.resources.types.AccessibleBiddingStrategy.MaximizeConversions):
             Output only. An automated bidding strategy to
             help get the most conversions for your campaigns
             while spending your budget.
+
             This field is a member of `oneof`_ ``scheme``.
         target_cpa (google.ads.googleads.v9.resources.types.AccessibleBiddingStrategy.TargetCpa):
             Output only. A bidding strategy that sets
             bids to help get as many conversions as possible
             at the target cost-per-acquisition (CPA) you
             set.
+
             This field is a member of `oneof`_ ``scheme``.
         target_impression_share (google.ads.googleads.v9.resources.types.AccessibleBiddingStrategy.TargetImpressionShare):
             Output only. A bidding strategy that
             automatically optimizes towards a desired
             percentage of impressions.
+
             This field is a member of `oneof`_ ``scheme``.
         target_roas (google.ads.googleads.v9.resources.types.AccessibleBiddingStrategy.TargetRoas):
             Output only. A bidding strategy that helps
             you maximize revenue while averaging a specific
             target Return On Ad Spend (ROAS).
+
             This field is a member of `oneof`_ ``scheme``.
         target_spend (google.ads.googleads.v9.resources.types.AccessibleBiddingStrategy.TargetSpend):
             Output only. A bid strategy that sets your
             bids to help get as many clicks as possible
             within your budget.
+
             This field is a member of `oneof`_ ``scheme``.
     """
 
@@ -143,6 +149,7 @@ class AccessibleBiddingStrategy(proto.Message):
             target_roas (float):
                 Output only. The desired revenue (based on
                 conversion data) per unit of spend.
+
                 This field is a member of `oneof`_ ``_target_roas``.
         """
 
@@ -167,11 +174,13 @@ class AccessibleBiddingStrategy(proto.Message):
                 should no longer be used. See https://ads-
                 developers.googleblog.com/2020/05/reminder-
                 about-sunset-creation-of.html for details.
+
                 This field is a member of `oneof`_ ``_target_spend_micros``.
             cpc_bid_ceiling_micros (int):
                 Output only. Maximum bid limit that can be
                 set by the bid strategy. The limit applies to
                 all keywords managed by the strategy.
+
                 This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         """
 
@@ -197,6 +206,7 @@ class AccessibleBiddingStrategy(proto.Message):
                 This target should be greater than or equal to
                 minimum billable unit based on the currency for
                 the account.
+
                 This field is a member of `oneof`_ ``_target_cpa_micros``.
         """
 
@@ -219,6 +229,7 @@ class AccessibleBiddingStrategy(proto.Message):
                 The desired fraction of ads to be shown in
                 the targeted location in micros. E.g. 1% equals
                 10,000.
+
                 This field is a member of `oneof`_ ``_location_fraction_micros``.
             cpc_bid_ceiling_micros (int):
                 Output only. The highest CPC bid the
@@ -226,6 +237,7 @@ class AccessibleBiddingStrategy(proto.Message):
                 specify. This is a required field entered by the
                 advertiser that sets the ceiling and specified
                 in local micros.
+
                 This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         """
 

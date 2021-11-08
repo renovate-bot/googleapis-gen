@@ -66,6 +66,7 @@ class AccountBudget(proto.Message):
         id (int):
             Output only. The ID of the account-level
             budget.
+
             This field is a member of `oneof`_ ``_id``.
         billing_setup (str):
             Output only. The resource name of the billing setup
@@ -73,6 +74,7 @@ class AccountBudget(proto.Message):
             resource names have the form:
 
             ``customers/{customer_id}/billingSetups/{billing_setup_id}``
+
             This field is a member of `oneof`_ ``_billing_setup``.
         status (google.ads.googleads.v9.enums.types.AccountBudgetStatusEnum.AccountBudgetStatus):
             Output only. The status of this account-level
@@ -80,12 +82,14 @@ class AccountBudget(proto.Message):
         name (str):
             Output only. The name of the account-level
             budget.
+
             This field is a member of `oneof`_ ``_name``.
         proposed_start_date_time (str):
             Output only. The proposed start time of the
             account-level budget in yyyy-MM-dd HH:mm:ss
             format.  If a start time type of NOW was
             proposed, this is the time of request.
+
             This field is a member of `oneof`_ ``_proposed_start_date_time``.
         approved_start_date_time (str):
             Output only. The approved start time of the
@@ -94,6 +98,7 @@ class AccountBudget(proto.Message):
             For example, if a new budget is approved after
             the proposed start time, the approved start time
             is the time of approval.
+
             This field is a member of `oneof`_ ``_approved_start_date_time``.
         total_adjustments_micros (int):
             Output only. The total adjustments amount.
@@ -109,10 +114,12 @@ class AccountBudget(proto.Message):
             Output only. A purchase order number is a
             value that helps users reference this budget in
             their monthly invoices.
+
             This field is a member of `oneof`_ ``_purchase_order_number``.
         notes (str):
             Output only. Notes associated with the
             budget.
+
             This field is a member of `oneof`_ ``_notes``.
         pending_proposal (google.ads.googleads.v9.resources.types.AccountBudget.PendingAccountBudgetProposal):
             Output only. The pending proposal to modify
@@ -120,26 +127,32 @@ class AccountBudget(proto.Message):
         proposed_end_date_time (str):
             Output only. The proposed end time in yyyy-
             M-dd HH:mm:ss format.
+
             This field is a member of `oneof`_ ``proposed_end_time``.
         proposed_end_time_type (google.ads.googleads.v9.enums.types.TimeTypeEnum.TimeType):
             Output only. The proposed end time as a well-
             efined type, e.g. FOREVER.
+
             This field is a member of `oneof`_ ``proposed_end_time``.
         approved_end_date_time (str):
             Output only. The approved end time in yyyy-
             M-dd HH:mm:ss format.
+
             This field is a member of `oneof`_ ``approved_end_time``.
         approved_end_time_type (google.ads.googleads.v9.enums.types.TimeTypeEnum.TimeType):
             Output only. The approved end time as a well-
             efined type, e.g. FOREVER.
+
             This field is a member of `oneof`_ ``approved_end_time``.
         proposed_spending_limit_micros (int):
             Output only. The proposed spending limit in
             micros.  One million is equivalent to one unit.
+
             This field is a member of `oneof`_ ``proposed_spending_limit``.
         proposed_spending_limit_type (google.ads.googleads.v9.enums.types.SpendingLimitTypeEnum.SpendingLimitType):
             Output only. The proposed spending limit as a
             well-defined type, e.g. INFINITE.
+
             This field is a member of `oneof`_ ``proposed_spending_limit``.
         approved_spending_limit_micros (int):
             Output only. The approved spending limit in
@@ -148,12 +161,14 @@ class AccountBudget(proto.Message):
             spending limit is finite, and will always be
             greater than or equal to the proposed spending
             limit.
+
             This field is a member of `oneof`_ ``approved_spending_limit``.
         approved_spending_limit_type (google.ads.googleads.v9.enums.types.SpendingLimitTypeEnum.SpendingLimitType):
             Output only. The approved spending limit as a
             well-defined type, e.g. INFINITE.  This will
             only be populated if the approved spending limit
             is INFINITE.
+
             This field is a member of `oneof`_ ``approved_spending_limit``.
         adjusted_spending_limit_micros (int):
             Output only. The adjusted spending limit in
@@ -168,6 +183,7 @@ class AccountBudget(proto.Message):
             ads/answer/1704323
             For example, a debit adjustment reduces how much
             the account is allowed to spend.
+
             This field is a member of `oneof`_ ``adjusted_spending_limit``.
         adjusted_spending_limit_type (google.ads.googleads.v9.enums.types.SpendingLimitTypeEnum.SpendingLimitType):
             Output only. The adjusted spending limit as a
@@ -175,6 +191,7 @@ class AccountBudget(proto.Message):
             be populated if the adjusted spending limit is
             INFINITE, which is guaranteed to be true if the
             approved spending limit is INFINITE.
+
             This field is a member of `oneof`_ ``adjusted_spending_limit``.
     """
 
@@ -195,6 +212,7 @@ class AccountBudget(proto.Message):
                 AccountBudgetProposal resource names have the form:
 
                 ``customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}``
+
                 This field is a member of `oneof`_ ``_account_budget_proposal``.
             proposal_type (google.ads.googleads.v9.enums.types.AccountBudgetProposalTypeEnum.AccountBudgetProposalType):
                 Output only. The type of this proposal, e.g.
@@ -203,40 +221,49 @@ class AccountBudget(proto.Message):
             name (str):
                 Output only. The name to assign to the
                 account-level budget.
+
                 This field is a member of `oneof`_ ``_name``.
             start_date_time (str):
                 Output only. The start time in yyyy-MM-dd
                 HH:mm:ss format.
+
                 This field is a member of `oneof`_ ``_start_date_time``.
             purchase_order_number (str):
                 Output only. A purchase order number is a
                 value that helps users reference this budget in
                 their monthly invoices.
+
                 This field is a member of `oneof`_ ``_purchase_order_number``.
             notes (str):
                 Output only. Notes associated with this
                 budget.
+
                 This field is a member of `oneof`_ ``_notes``.
             creation_date_time (str):
                 Output only. The time when this account-level
                 budget proposal was created. Formatted as yyyy-
                 MM-dd HH:mm:ss.
+
                 This field is a member of `oneof`_ ``_creation_date_time``.
             end_date_time (str):
                 Output only. The end time in yyyy-MM-dd
                 HH:mm:ss format.
+
                 This field is a member of `oneof`_ ``end_time``.
             end_time_type (google.ads.googleads.v9.enums.types.TimeTypeEnum.TimeType):
                 Output only. The end time as a well-defined
                 type, e.g. FOREVER.
+
                 This field is a member of `oneof`_ ``end_time``.
             spending_limit_micros (int):
                 Output only. The spending limit in micros.
                 One million is equivalent to one unit.
+
                 This field is a member of `oneof`_ ``spending_limit``.
             spending_limit_type (google.ads.googleads.v9.enums.types.SpendingLimitTypeEnum.SpendingLimitType):
                 Output only. The spending limit as a well-
                 efined type, e.g. INFINITE.
+
                 This field is a member of `oneof`_ ``spending_limit``.
         """
 

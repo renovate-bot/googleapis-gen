@@ -170,6 +170,7 @@ class CustomAttribute(proto.Message):
             Only set if type
             [text][google.cloud.retail.v2beta.CustomAttribute.text] is
             set. Otherwise, a INVALID_ARGUMENT error is returned.
+
             This field is a member of `oneof`_ ``_searchable``.
         indexable (bool):
             If true, custom attribute values are indexed, so that it can
@@ -185,6 +186,7 @@ class CustomAttribute(proto.Message):
             and
             [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
             for more details.
+
             This field is a member of `oneof`_ ``_indexable``.
     """
 
@@ -312,15 +314,19 @@ class Interval(proto.Message):
     Attributes:
         minimum (float):
             Inclusive lower bound.
+
             This field is a member of `oneof`_ ``min``.
         exclusive_minimum (float):
             Exclusive lower bound.
+
             This field is a member of `oneof`_ ``min``.
         maximum (float):
             Inclusive upper bound.
+
             This field is a member of `oneof`_ ``max``.
         exclusive_maximum (float):
             Exclusive upper bound.
+
             This field is a member of `oneof`_ ``max``.
     """
 

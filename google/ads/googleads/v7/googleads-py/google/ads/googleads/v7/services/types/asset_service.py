@@ -119,12 +119,14 @@ class AssetOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.Asset):
             Create operation: No resource name is
             expected for the new asset.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.Asset):
             Update operation: The asset is expected to have a valid
             resource name in this format:
 
             ``customers/{customer_id}/assets/{asset_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

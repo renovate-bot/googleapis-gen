@@ -155,9 +155,11 @@ class ImportTaxonomiesRequest(proto.Message):
             imported taxonomies will belong to.
         inline_source (google.cloud.datacatalog_v1.types.InlineSource):
             Inline source taxonomy to import.
+
             This field is a member of `oneof`_ ``source``.
         cross_regional_source (google.cloud.datacatalog_v1.types.CrossRegionalSource):
             Cross-regional source taxonomy to import.
+
             This field is a member of `oneof`_ ``source``.
     """
 
@@ -243,6 +245,7 @@ class ExportTaxonomiesRequest(proto.Message):
         serialized_taxonomies (bool):
             Serialized export taxonomies that contain all
             the policy tags as nested protocol buffers.
+
             This field is a member of `oneof`_ ``destination``.
     """
 

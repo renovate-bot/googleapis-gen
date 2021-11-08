@@ -483,8 +483,12 @@ def test_annotate_video_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].input_uri == 'input_uri_value'
-        assert args[0].features == [video_intelligence.Feature.LABEL_DETECTION]
+        arg = args[0].input_uri
+        mock_val = 'input_uri_value'
+        assert arg == mock_val
+        arg = args[0].features
+        mock_val = [video_intelligence.Feature.LABEL_DETECTION]
+        assert arg == mock_val
 
 
 def test_annotate_video_flattened_error():
@@ -529,8 +533,12 @@ async def test_annotate_video_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].input_uri == 'input_uri_value'
-        assert args[0].features == [video_intelligence.Feature.LABEL_DETECTION]
+        arg = args[0].input_uri
+        mock_val = 'input_uri_value'
+        assert arg == mock_val
+        arg = args[0].features
+        mock_val = [video_intelligence.Feature.LABEL_DETECTION]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

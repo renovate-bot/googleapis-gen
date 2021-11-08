@@ -14,6 +14,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/devtools/cloudprofiler/v2/profiler.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ProfilerServiceGrpc {
 
   private ProfilerServiceGrpc() {}

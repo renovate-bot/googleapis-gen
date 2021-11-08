@@ -550,7 +550,9 @@ def test_search_migratable_resources_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_search_migratable_resources_flattened_error():
@@ -591,7 +593,9 @@ async def test_search_migratable_resources_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -964,8 +968,12 @@ def test_batch_migrate_resources_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].migrate_resource_requests == [migration_service.MigrateResourceRequest(migrate_ml_engine_model_version_config=migration_service.MigrateResourceRequest.MigrateMlEngineModelVersionConfig(endpoint='endpoint_value'))]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].migrate_resource_requests
+        mock_val = [migration_service.MigrateResourceRequest(migrate_ml_engine_model_version_config=migration_service.MigrateResourceRequest.MigrateMlEngineModelVersionConfig(endpoint='endpoint_value'))]
+        assert arg == mock_val
 
 
 def test_batch_migrate_resources_flattened_error():
@@ -1010,8 +1018,12 @@ async def test_batch_migrate_resources_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].migrate_resource_requests == [migration_service.MigrateResourceRequest(migrate_ml_engine_model_version_config=migration_service.MigrateResourceRequest.MigrateMlEngineModelVersionConfig(endpoint='endpoint_value'))]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].migrate_resource_requests
+        mock_val = [migration_service.MigrateResourceRequest(migrate_ml_engine_model_version_config=migration_service.MigrateResourceRequest.MigrateMlEngineModelVersionConfig(endpoint='endpoint_value'))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1485,18 +1497,16 @@ def test_parse_dataset_path():
 
 def test_dataset_path():
     project = "squid"
-    location = "clam"
-    dataset = "whelk"
-    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, location, dataset)
+    dataset = "clam"
+    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "dataset": "nudibranch",
+        "project": "whelk",
+        "dataset": "octopus",
     }
     path = MigrationServiceClient.dataset_path(**expected)
 
@@ -1505,16 +1515,18 @@ def test_parse_dataset_path():
     assert expected == actual
 
 def test_dataset_path():
-    project = "cuttlefish"
-    dataset = "mussel"
-    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, dataset)
+    project = "oyster"
+    location = "nudibranch"
+    dataset = "cuttlefish"
+    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, location, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "winkle",
+        "project": "mussel",
+        "location": "winkle",
         "dataset": "nautilus",
     }
     path = MigrationServiceClient.dataset_path(**expected)

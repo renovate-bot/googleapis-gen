@@ -56,6 +56,7 @@ class DataType(proto.Message):
             [type_code][google.cloud.automl.v1beta1.DataType.type_code]
             == [ARRAY][google.cloud.automl.v1beta1.TypeCode.ARRAY], then
             ``list_element_type`` is the type of the elements.
+
             This field is a member of `oneof`_ ``details``.
         struct_type (google.cloud.automl_v1beta1.types.StructType):
             If
@@ -63,6 +64,7 @@ class DataType(proto.Message):
             == [STRUCT][google.cloud.automl.v1beta1.TypeCode.STRUCT],
             then ``struct_type`` provides type information for the
             struct's fields.
+
             This field is a member of `oneof`_ ``details``.
         time_format (str):
             If
@@ -80,6 +82,7 @@ class DataType(proto.Message):
                the Unix epoch); or be written in ``strftime`` syntax. If
                time_format is not set, then the default format as
                described on the type_code is used.
+
             This field is a member of `oneof`_ ``details``.
         type_code (google.cloud.automl_v1beta1.types.TypeCode):
             Required. The

@@ -46,6 +46,7 @@ class FinalizeMfaEnrollmentRequest(proto.Message):
         phone_verification_info (google.cloud.identity_toolkit_v2.types.FinalizeMfaPhoneRequestInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+
             This field is a member of `oneof`_ ``verification_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant that
@@ -117,6 +118,7 @@ class StartMfaEnrollmentRequest(proto.Message):
         phone_enrollment_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneRequestInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+
             This field is a member of `oneof`_ ``enrollment_info``.
         tenant_id (str):
             The ID of the Identity Platform tenant that
@@ -150,6 +152,7 @@ class StartMfaEnrollmentResponse(proto.Message):
         phone_session_info (google.cloud.identity_toolkit_v2.types.StartMfaPhoneResponseInfo):
             Verification info to authorize sending an SMS
             for phone verification.
+
             This field is a member of `oneof`_ ``enrollment_response``.
     """
 

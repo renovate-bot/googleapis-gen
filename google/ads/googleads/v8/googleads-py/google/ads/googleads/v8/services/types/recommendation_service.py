@@ -106,42 +106,52 @@ class ApplyRecommendationOperation(proto.Message):
         campaign_budget (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.CampaignBudgetParameters):
             Optional parameters to use when applying a
             campaign budget recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         text_ad (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.TextAdParameters):
             Optional parameters to use when applying a
             text ad recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         keyword (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.KeywordParameters):
             Optional parameters to use when applying
             keyword recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         target_cpa_opt_in (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.TargetCpaOptInParameters):
             Optional parameters to use when applying
             target CPA opt-in recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         target_roas_opt_in (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.TargetRoasOptInParameters):
             Optional parameters to use when applying
             target ROAS opt-in recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         callout_extension (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.CalloutExtensionParameters):
             Parameters to use when applying callout
             extension recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         call_extension (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.CallExtensionParameters):
             Parameters to use when applying call
             extension recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         sitelink_extension (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.SitelinkExtensionParameters):
             Parameters to use when applying sitelink
             extension recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         move_unused_budget (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.MoveUnusedBudgetParameters):
             Parameters to use when applying move unused
             budget recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
         responsive_search_ad (google.ads.googleads.v8.services.types.ApplyRecommendationOperation.ResponsiveSearchAdParameters):
             Parameters to use when applying a responsive
             search ad recommendation.
+
             This field is a member of `oneof`_ ``apply_parameters``.
     """
 
@@ -153,6 +163,7 @@ class ApplyRecommendationOperation(proto.Message):
             new_budget_amount_micros (int):
                 New budget amount to set for target budget
                 resource. This is a required field.
+
                 This field is a member of `oneof`_ ``_new_budget_amount_micros``.
         """
 
@@ -185,6 +196,7 @@ class ApplyRecommendationOperation(proto.Message):
             ad_group (str):
                 The ad group resource to add keyword to. This
                 is a required field.
+
                 This field is a member of `oneof`_ ``_ad_group``.
             match_type (google.ads.googleads.v8.enums.types.KeywordMatchTypeEnum.KeywordMatchType):
                 The match type of the keyword. This is a
@@ -193,6 +205,7 @@ class ApplyRecommendationOperation(proto.Message):
                 Optional, CPC bid to set for the keyword. If
                 not set, keyword will use bid based on bidding
                 strategy used by target ad group.
+
                 This field is a member of `oneof`_ ``_cpc_bid_micros``.
         """
 
@@ -219,10 +232,12 @@ class ApplyRecommendationOperation(proto.Message):
             target_cpa_micros (int):
                 Average CPA to use for Target CPA bidding
                 strategy. This is a required field.
+
                 This field is a member of `oneof`_ ``_target_cpa_micros``.
             new_campaign_budget_amount_micros (int):
                 Optional, budget amount to set for the
                 campaign.
+
                 This field is a member of `oneof`_ ``_new_campaign_budget_amount_micros``.
         """
 
@@ -247,10 +262,12 @@ class ApplyRecommendationOperation(proto.Message):
                 ROAS bidding strategy. The value is between 0.01 and 1000.0,
                 inclusive. This is a required field, unless
                 new_campaign_budget_amount_micros is set.
+
                 This field is a member of `oneof`_ ``_target_roas``.
             new_campaign_budget_amount_micros (int):
                 Optional, budget amount to set for the
                 campaign.
+
                 This field is a member of `oneof`_ ``_new_campaign_budget_amount_micros``.
         """
 
@@ -321,6 +338,7 @@ class ApplyRecommendationOperation(proto.Message):
             budget_micros_to_move (int):
                 Budget amount to move from excess budget to
                 constrained budget. This is a required field.
+
                 This field is a member of `oneof`_ ``_budget_micros_to_move``.
         """
 

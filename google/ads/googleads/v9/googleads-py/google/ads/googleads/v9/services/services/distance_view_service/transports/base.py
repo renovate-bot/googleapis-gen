@@ -18,8 +18,8 @@ import typing
 import pkg_resources
 
 import google.auth  # type: ignore
-from google.api_core import gapic_v1    # type: ignore
-from google.api_core import retry as retries  # type: ignore
+from google.api_core import gapic_v1
+from google.api_core import retry as retries
 from google.auth import credentials as ga_credentials  # type: ignore
 
 from google.ads.googleads.v9.resources.types import distance_view

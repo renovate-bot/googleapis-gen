@@ -49,12 +49,15 @@ class Target(proto.Message):
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItem):
             The target is a Drive item.
+
             This field is a member of `oneof`_ ``object``.
         drive (google.apps.drive.activity_v2.types.Drive):
             The target is a shared drive.
+
             This field is a member of `oneof`_ ``object``.
         file_comment (google.apps.drive.activity_v2.types.FileComment):
             The target is a comment on a Drive file.
+
             This field is a member of `oneof`_ ``object``.
         team_drive (google.apps.drive.activity_v2.types.TeamDrive):
             This field is deprecated; please use the ``drive`` field
@@ -99,9 +102,11 @@ class TargetReference(proto.Message):
     Attributes:
         drive_item (google.apps.drive.activity_v2.types.DriveItemReference):
             The target is a Drive item.
+
             This field is a member of `oneof`_ ``object``.
         drive (google.apps.drive.activity_v2.types.DriveReference):
             The target is a shared drive.
+
             This field is a member of `oneof`_ ``object``.
         team_drive (google.apps.drive.activity_v2.types.TeamDriveReference):
             This field is deprecated; please use the ``drive`` field
@@ -192,10 +197,12 @@ class DriveItem(proto.Message):
             field instead.
         drive_file (google.apps.drive.activity_v2.types.DriveItem.DriveFile):
             The Drive item is a file.
+
             This field is a member of `oneof`_ ``item_type``.
         drive_folder (google.apps.drive.activity_v2.types.DriveItem.DriveFolder):
             The Drive item is a folder. Includes
             information about the type of folder.
+
             This field is a member of `oneof`_ ``item_type``.
         mime_type (str):
             The MIME type of the Drive item.  See
@@ -310,9 +317,11 @@ class Owner(proto.Message):
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             The user that owns the Drive item.
+
             This field is a member of `oneof`_ ``owner``.
         drive (google.apps.drive.activity_v2.types.DriveReference):
             The drive that owns the item.
+
             This field is a member of `oneof`_ ``owner``.
         team_drive (google.apps.drive.activity_v2.types.TeamDriveReference):
             This field is deprecated; please use the ``drive`` field
@@ -426,10 +435,12 @@ class DriveItemReference(proto.Message):
             field instead.
         drive_file (google.apps.drive.activity_v2.types.DriveItem.DriveFile):
             The Drive item is a file.
+
             This field is a member of `oneof`_ ``item_type``.
         drive_folder (google.apps.drive.activity_v2.types.DriveItem.DriveFolder):
             The Drive item is a folder. Includes
             information about the type of folder.
+
             This field is a member of `oneof`_ ``item_type``.
     """
 

@@ -118,16 +118,19 @@ class CampaignFeedOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.CampaignFeed):
             Create operation: No resource name is
             expected for the new campaign feed.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.CampaignFeed):
             Update operation: The campaign feed is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             feed is expected, in this format:
 
             ``customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -1389,161 +1389,212 @@ class MutateOperation(proto.Message):
     Attributes:
         ad_group_ad_label_operation (google.ads.googleads.v7.services.types.AdGroupAdLabelOperation):
             An ad group ad label mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_ad_operation (google.ads.googleads.v7.services.types.AdGroupAdOperation):
             An ad group ad mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_asset_operation (google.ads.googleads.v7.services.types.AdGroupAssetOperation):
             An ad group asset mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_bid_modifier_operation (google.ads.googleads.v7.services.types.AdGroupBidModifierOperation):
             An ad group bid modifier mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_criterion_label_operation (google.ads.googleads.v7.services.types.AdGroupCriterionLabelOperation):
             An ad group criterion label mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_criterion_operation (google.ads.googleads.v7.services.types.AdGroupCriterionOperation):
             An ad group criterion mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_extension_setting_operation (google.ads.googleads.v7.services.types.AdGroupExtensionSettingOperation):
             An ad group extension setting mutate
             operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_feed_operation (google.ads.googleads.v7.services.types.AdGroupFeedOperation):
             An ad group feed mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_label_operation (google.ads.googleads.v7.services.types.AdGroupLabelOperation):
             An ad group label mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_group_operation (google.ads.googleads.v7.services.types.AdGroupOperation):
             An ad group mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_operation (google.ads.googleads.v7.services.types.AdOperation):
             An ad mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         ad_parameter_operation (google.ads.googleads.v7.services.types.AdParameterOperation):
             An ad parameter mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         asset_operation (google.ads.googleads.v7.services.types.AssetOperation):
             An asset mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         bidding_strategy_operation (google.ads.googleads.v7.services.types.BiddingStrategyOperation):
             A bidding strategy mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_asset_operation (google.ads.googleads.v7.services.types.CampaignAssetOperation):
             A campaign asset mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_bid_modifier_operation (google.ads.googleads.v7.services.types.CampaignBidModifierOperation):
             A campaign bid modifier mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_budget_operation (google.ads.googleads.v7.services.types.CampaignBudgetOperation):
             A campaign budget mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_criterion_operation (google.ads.googleads.v7.services.types.CampaignCriterionOperation):
             A campaign criterion mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_draft_operation (google.ads.googleads.v7.services.types.CampaignDraftOperation):
             A campaign draft mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_experiment_operation (google.ads.googleads.v7.services.types.CampaignExperimentOperation):
             A campaign experiment mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_extension_setting_operation (google.ads.googleads.v7.services.types.CampaignExtensionSettingOperation):
             A campaign extension setting mutate
             operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_feed_operation (google.ads.googleads.v7.services.types.CampaignFeedOperation):
             A campaign feed mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_label_operation (google.ads.googleads.v7.services.types.CampaignLabelOperation):
             A campaign label mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_operation (google.ads.googleads.v7.services.types.CampaignOperation):
             A campaign mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         campaign_shared_set_operation (google.ads.googleads.v7.services.types.CampaignSharedSetOperation):
             A campaign shared set mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         conversion_action_operation (google.ads.googleads.v7.services.types.ConversionActionOperation):
             A conversion action mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         conversion_custom_variable_operation (google.ads.googleads.v7.services.types.ConversionCustomVariableOperation):
             A conversion custom variable mutate
             operation.
+
             This field is a member of `oneof`_ ``operation``.
         customer_asset_operation (google.ads.googleads.v7.services.types.CustomerAssetOperation):
             A customer asset mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         customer_extension_setting_operation (google.ads.googleads.v7.services.types.CustomerExtensionSettingOperation):
             A customer extension setting mutate
             operation.
+
             This field is a member of `oneof`_ ``operation``.
         customer_feed_operation (google.ads.googleads.v7.services.types.CustomerFeedOperation):
             A customer feed mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         customer_label_operation (google.ads.googleads.v7.services.types.CustomerLabelOperation):
             A customer label mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         customer_negative_criterion_operation (google.ads.googleads.v7.services.types.CustomerNegativeCriterionOperation):
             A customer negative criterion mutate
             operation.
+
             This field is a member of `oneof`_ ``operation``.
         customer_operation (google.ads.googleads.v7.services.types.CustomerOperation):
             A customer mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         extension_feed_item_operation (google.ads.googleads.v7.services.types.ExtensionFeedItemOperation):
             An extension feed item mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         feed_item_operation (google.ads.googleads.v7.services.types.FeedItemOperation):
             A feed item mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         feed_item_set_operation (google.ads.googleads.v7.services.types.FeedItemSetOperation):
             A feed item set mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         feed_item_set_link_operation (google.ads.googleads.v7.services.types.FeedItemSetLinkOperation):
             A feed item set link mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         feed_item_target_operation (google.ads.googleads.v7.services.types.FeedItemTargetOperation):
             A feed item target mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         feed_mapping_operation (google.ads.googleads.v7.services.types.FeedMappingOperation):
             A feed mapping mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         feed_operation (google.ads.googleads.v7.services.types.FeedOperation):
             A feed mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         keyword_plan_ad_group_operation (google.ads.googleads.v7.services.types.KeywordPlanAdGroupOperation):
             A keyword plan ad group operation.
+
             This field is a member of `oneof`_ ``operation``.
         keyword_plan_ad_group_keyword_operation (google.ads.googleads.v7.services.types.KeywordPlanAdGroupKeywordOperation):
             A keyword plan ad group keyword operation.
+
             This field is a member of `oneof`_ ``operation``.
         keyword_plan_campaign_keyword_operation (google.ads.googleads.v7.services.types.KeywordPlanCampaignKeywordOperation):
             A keyword plan campaign keyword operation.
+
             This field is a member of `oneof`_ ``operation``.
         keyword_plan_campaign_operation (google.ads.googleads.v7.services.types.KeywordPlanCampaignOperation):
             A keyword plan campaign operation.
+
             This field is a member of `oneof`_ ``operation``.
         keyword_plan_operation (google.ads.googleads.v7.services.types.KeywordPlanOperation):
             A keyword plan operation.
+
             This field is a member of `oneof`_ ``operation``.
         label_operation (google.ads.googleads.v7.services.types.LabelOperation):
             A label mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         media_file_operation (google.ads.googleads.v7.services.types.MediaFileOperation):
             A media file mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         remarketing_action_operation (google.ads.googleads.v7.services.types.RemarketingActionOperation):
             A remarketing action mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         shared_criterion_operation (google.ads.googleads.v7.services.types.SharedCriterionOperation):
             A shared criterion mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         shared_set_operation (google.ads.googleads.v7.services.types.SharedSetOperation):
             A shared set mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
         user_list_operation (google.ads.googleads.v7.services.types.UserListOperation):
             A user list mutate operation.
+
             This field is a member of `oneof`_ ``operation``.
     """
 
@@ -1868,171 +1919,222 @@ class MutateOperationResponse(proto.Message):
     Attributes:
         ad_group_ad_label_result (google.ads.googleads.v7.services.types.MutateAdGroupAdLabelResult):
             The result for the ad group ad label mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_ad_result (google.ads.googleads.v7.services.types.MutateAdGroupAdResult):
             The result for the ad group ad mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_asset_result (google.ads.googleads.v7.services.types.MutateAdGroupAssetResult):
             The result for the ad group asset mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_bid_modifier_result (google.ads.googleads.v7.services.types.MutateAdGroupBidModifierResult):
             The result for the ad group bid modifier
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_criterion_label_result (google.ads.googleads.v7.services.types.MutateAdGroupCriterionLabelResult):
             The result for the ad group criterion label
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_criterion_result (google.ads.googleads.v7.services.types.MutateAdGroupCriterionResult):
             The result for the ad group criterion mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_extension_setting_result (google.ads.googleads.v7.services.types.MutateAdGroupExtensionSettingResult):
             The result for the ad group extension setting
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_feed_result (google.ads.googleads.v7.services.types.MutateAdGroupFeedResult):
             The result for the ad group feed mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_label_result (google.ads.googleads.v7.services.types.MutateAdGroupLabelResult):
             The result for the ad group label mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_group_result (google.ads.googleads.v7.services.types.MutateAdGroupResult):
             The result for the ad group mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_parameter_result (google.ads.googleads.v7.services.types.MutateAdParameterResult):
             The result for the ad parameter mutate.
+
             This field is a member of `oneof`_ ``response``.
         ad_result (google.ads.googleads.v7.services.types.MutateAdResult):
             The result for the ad mutate.
+
             This field is a member of `oneof`_ ``response``.
         asset_result (google.ads.googleads.v7.services.types.MutateAssetResult):
             The result for the asset mutate.
+
             This field is a member of `oneof`_ ``response``.
         bidding_strategy_result (google.ads.googleads.v7.services.types.MutateBiddingStrategyResult):
             The result for the bidding strategy mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_asset_result (google.ads.googleads.v7.services.types.MutateCampaignAssetResult):
             The result for the campaign asset mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_bid_modifier_result (google.ads.googleads.v7.services.types.MutateCampaignBidModifierResult):
             The result for the campaign bid modifier
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_budget_result (google.ads.googleads.v7.services.types.MutateCampaignBudgetResult):
             The result for the campaign budget mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_criterion_result (google.ads.googleads.v7.services.types.MutateCampaignCriterionResult):
             The result for the campaign criterion mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_draft_result (google.ads.googleads.v7.services.types.MutateCampaignDraftResult):
             The result for the campaign draft mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_experiment_result (google.ads.googleads.v7.services.types.MutateCampaignExperimentResult):
             The result for the campaign experiment
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_extension_setting_result (google.ads.googleads.v7.services.types.MutateCampaignExtensionSettingResult):
             The result for the campaign extension setting
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_feed_result (google.ads.googleads.v7.services.types.MutateCampaignFeedResult):
             The result for the campaign feed mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_label_result (google.ads.googleads.v7.services.types.MutateCampaignLabelResult):
             The result for the campaign label mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_result (google.ads.googleads.v7.services.types.MutateCampaignResult):
             The result for the campaign mutate.
+
             This field is a member of `oneof`_ ``response``.
         campaign_shared_set_result (google.ads.googleads.v7.services.types.MutateCampaignSharedSetResult):
             The result for the campaign shared set
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         conversion_action_result (google.ads.googleads.v7.services.types.MutateConversionActionResult):
             The result for the conversion action mutate.
+
             This field is a member of `oneof`_ ``response``.
         conversion_custom_variable_result (google.ads.googleads.v7.services.types.MutateConversionCustomVariableResult):
             The result for the conversion custom variable
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         customer_asset_result (google.ads.googleads.v7.services.types.MutateCustomerAssetResult):
             The result for the customer asset mutate.
+
             This field is a member of `oneof`_ ``response``.
         customer_extension_setting_result (google.ads.googleads.v7.services.types.MutateCustomerExtensionSettingResult):
             The result for the customer extension setting
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         customer_feed_result (google.ads.googleads.v7.services.types.MutateCustomerFeedResult):
             The result for the customer feed mutate.
+
             This field is a member of `oneof`_ ``response``.
         customer_label_result (google.ads.googleads.v7.services.types.MutateCustomerLabelResult):
             The result for the customer label mutate.
+
             This field is a member of `oneof`_ ``response``.
         customer_negative_criterion_result (google.ads.googleads.v7.services.types.MutateCustomerNegativeCriteriaResult):
             The result for the customer negative
             criterion mutate.
+
             This field is a member of `oneof`_ ``response``.
         customer_result (google.ads.googleads.v7.services.types.MutateCustomerResult):
             The result for the customer mutate.
+
             This field is a member of `oneof`_ ``response``.
         extension_feed_item_result (google.ads.googleads.v7.services.types.MutateExtensionFeedItemResult):
             The result for the extension feed item
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         feed_item_result (google.ads.googleads.v7.services.types.MutateFeedItemResult):
             The result for the feed item mutate.
+
             This field is a member of `oneof`_ ``response``.
         feed_item_set_result (google.ads.googleads.v7.services.types.MutateFeedItemSetResult):
             The result for the feed item set mutate.
+
             This field is a member of `oneof`_ ``response``.
         feed_item_set_link_result (google.ads.googleads.v7.services.types.MutateFeedItemSetLinkResult):
             The result for the feed item set link mutate.
+
             This field is a member of `oneof`_ ``response``.
         feed_item_target_result (google.ads.googleads.v7.services.types.MutateFeedItemTargetResult):
             The result for the feed item target mutate.
+
             This field is a member of `oneof`_ ``response``.
         feed_mapping_result (google.ads.googleads.v7.services.types.MutateFeedMappingResult):
             The result for the feed mapping mutate.
+
             This field is a member of `oneof`_ ``response``.
         feed_result (google.ads.googleads.v7.services.types.MutateFeedResult):
             The result for the feed mutate.
+
             This field is a member of `oneof`_ ``response``.
         keyword_plan_ad_group_result (google.ads.googleads.v7.services.types.MutateKeywordPlanAdGroupResult):
             The result for the keyword plan ad group
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         keyword_plan_campaign_result (google.ads.googleads.v7.services.types.MutateKeywordPlanCampaignResult):
             The result for the keyword plan campaign
             mutate.
+
             This field is a member of `oneof`_ ``response``.
         keyword_plan_ad_group_keyword_result (google.ads.googleads.v7.services.types.MutateKeywordPlanAdGroupKeywordResult):
             The result for the keyword plan ad group
             keyword mutate.
+
             This field is a member of `oneof`_ ``response``.
         keyword_plan_campaign_keyword_result (google.ads.googleads.v7.services.types.MutateKeywordPlanCampaignKeywordResult):
             The result for the keyword plan campaign
             keyword mutate.
+
             This field is a member of `oneof`_ ``response``.
         keyword_plan_result (google.ads.googleads.v7.services.types.MutateKeywordPlansResult):
             The result for the keyword plan mutate.
+
             This field is a member of `oneof`_ ``response``.
         label_result (google.ads.googleads.v7.services.types.MutateLabelResult):
             The result for the label mutate.
+
             This field is a member of `oneof`_ ``response``.
         media_file_result (google.ads.googleads.v7.services.types.MutateMediaFileResult):
             The result for the media file mutate.
+
             This field is a member of `oneof`_ ``response``.
         remarketing_action_result (google.ads.googleads.v7.services.types.MutateRemarketingActionResult):
             The result for the remarketing action mutate.
+
             This field is a member of `oneof`_ ``response``.
         shared_criterion_result (google.ads.googleads.v7.services.types.MutateSharedCriterionResult):
             The result for the shared criterion mutate.
+
             This field is a member of `oneof`_ ``response``.
         shared_set_result (google.ads.googleads.v7.services.types.MutateSharedSetResult):
             The result for the shared set mutate.
+
             This field is a member of `oneof`_ ``response``.
         user_list_result (google.ads.googleads.v7.services.types.MutateUserListResult):
             The result for the user list mutate.
+
             This field is a member of `oneof`_ ``response``.
     """
 

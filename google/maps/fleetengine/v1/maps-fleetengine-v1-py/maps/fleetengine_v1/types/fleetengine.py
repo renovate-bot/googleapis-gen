@@ -96,9 +96,11 @@ class TerminalPointId(proto.Message):
     Attributes:
         place_id (str):
             Deprecated.
+
             This field is a member of `oneof`_ ``Id``.
         generated_id (str):
             Deprecated.
+
             This field is a member of `oneof`_ ``Id``.
         value (str):
             Unique ID of the terminal point.

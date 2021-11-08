@@ -38,21 +38,25 @@ class KeywordPlanAdGroup(proto.Message):
         keyword_plan_campaign (str):
             The keyword plan campaign to which this ad
             group belongs.
+
             This field is a member of `oneof`_ ``_keyword_plan_campaign``.
         id (int):
             Output only. The ID of the keyword plan ad
             group.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the keyword plan ad group.
             This field is required and should not be empty
             when creating keyword plan ad group.
+
             This field is a member of `oneof`_ ``_name``.
         cpc_bid_micros (int):
             A default ad group max cpc bid in micros in
             account currency for all biddable keywords under
             the keyword plan ad group. If not set, will
             inherit from parent campaign.
+
             This field is a member of `oneof`_ ``_cpc_bid_micros``.
     """
 

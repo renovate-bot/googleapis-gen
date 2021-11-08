@@ -129,16 +129,19 @@ class AdGroupCriterionOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.AdGroupCriterion):
             Create operation: No resource name is
             expected for the new criterion.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.AdGroupCriterion):
             Update operation: The criterion is expected
             to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed criterion
             is expected, in this format:
 
             ``customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -39,10 +39,12 @@ class CampaignDraft(proto.Message):
         draft_id (int):
             Output only. The ID of the draft.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_draft_id``.
         base_campaign (str):
             Immutable. The base campaign to which the
             draft belongs.
+
             This field is a member of `oneof`_ ``_base_campaign``.
         name (str):
             The name of the campaign draft.
@@ -52,12 +54,14 @@ class CampaignDraft(proto.Message):
             It must not contain any null (code point 0x0),
             NL line feed (code point 0xA) or carriage return
             (code point 0xD) characters.
+
             This field is a member of `oneof`_ ``_name``.
         draft_campaign (str):
             Output only. Resource name of the Campaign
             that results from overlaying the draft changes
             onto the base campaign.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_draft_campaign``.
         status (google.ads.googleads.v9.enums.types.CampaignDraftStatusEnum.CampaignDraftStatus):
             Output only. The status of the campaign
@@ -67,6 +71,7 @@ class CampaignDraft(proto.Message):
         has_experiment_running (bool):
             Output only. Whether there is an experiment
             based on this draft currently serving.
+
             This field is a member of `oneof`_ ``_has_experiment_running``.
         long_running_operation (str):
             Output only. The resource name of the long-
@@ -74,6 +79,7 @@ class CampaignDraft(proto.Message):
             completion of draft promotion. This is only set
             if the draft promotion is in progress or
             finished.
+
             This field is a member of `oneof`_ ``_long_running_operation``.
     """
 

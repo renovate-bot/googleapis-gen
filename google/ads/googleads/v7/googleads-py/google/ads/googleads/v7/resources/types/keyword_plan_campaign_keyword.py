@@ -41,13 +41,16 @@ class KeywordPlanCampaignKeyword(proto.Message):
         keyword_plan_campaign (str):
             The Keyword Plan campaign to which this
             negative keyword belongs.
+
             This field is a member of `oneof`_ ``_keyword_plan_campaign``.
         id (int):
             Output only. The ID of the Keyword Plan
             negative keyword.
+
             This field is a member of `oneof`_ ``_id``.
         text (str):
             The keyword text.
+
             This field is a member of `oneof`_ ``_text``.
         match_type (google.ads.googleads.v7.enums.types.KeywordMatchTypeEnum.KeywordMatchType):
             The keyword match type.
@@ -55,6 +58,7 @@ class KeywordPlanCampaignKeyword(proto.Message):
             Immutable. If true, the keyword is negative.
             Must be set to true. Only negative campaign
             keywords are supported.
+
             This field is a member of `oneof`_ ``_negative``.
     """
 

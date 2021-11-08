@@ -117,16 +117,19 @@ class SharedSetOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.SharedSet):
             Create operation: No resource name is
             expected for the new shared set.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.SharedSet):
             Update operation: The shared set is expected
             to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed shared set
             is expected, in this format:
 
             ``customers/{customer_id}/sharedSets/{shared_set_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

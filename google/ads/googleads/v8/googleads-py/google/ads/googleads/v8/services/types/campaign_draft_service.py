@@ -145,16 +145,19 @@ class CampaignDraftOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.CampaignDraft):
             Create operation: No resource name is
             expected for the new campaign draft.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.CampaignDraft):
             Update operation: The campaign draft is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: The campaign draft is expected to have a
             valid resource name, in this format:
 
             ``customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

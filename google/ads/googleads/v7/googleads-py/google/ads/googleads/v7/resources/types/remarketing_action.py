@@ -41,11 +41,13 @@ class RemarketingAction(proto.Message):
             ``customers/{customer_id}/remarketingActions/{remarketing_action_id}``
         id (int):
             Output only. Id of the remarketing action.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the remarketing action.
             This field is required and should not be empty
             when creating new remarketing actions.
+
             This field is a member of `oneof`_ ``_name``.
         tag_snippets (Sequence[google.ads.googleads.v7.common.types.TagSnippet]):
             Output only. The snippets used for tracking

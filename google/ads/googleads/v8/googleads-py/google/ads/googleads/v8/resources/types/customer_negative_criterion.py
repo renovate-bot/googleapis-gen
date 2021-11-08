@@ -47,26 +47,33 @@ class CustomerNegativeCriterion(proto.Message):
             ``customers/{customer_id}/customerNegativeCriteria/{criterion_id}``
         id (int):
             Output only. The ID of the criterion.
+
             This field is a member of `oneof`_ ``_id``.
         type_ (google.ads.googleads.v8.enums.types.CriterionTypeEnum.CriterionType):
             Output only. The type of the criterion.
         content_label (google.ads.googleads.v8.common.types.ContentLabelInfo):
             Immutable. ContentLabel.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_application (google.ads.googleads.v8.common.types.MobileApplicationInfo):
             Immutable. MobileApplication.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_app_category (google.ads.googleads.v8.common.types.MobileAppCategoryInfo):
             Immutable. MobileAppCategory.
+
             This field is a member of `oneof`_ ``criterion``.
         placement (google.ads.googleads.v8.common.types.PlacementInfo):
             Immutable. Placement.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_video (google.ads.googleads.v8.common.types.YouTubeVideoInfo):
             Immutable. YouTube Video.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_channel (google.ads.googleads.v8.common.types.YouTubeChannelInfo):
             Immutable. YouTube Channel.
+
             This field is a member of `oneof`_ ``criterion``.
     """
 

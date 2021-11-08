@@ -41,6 +41,7 @@ class CustomerFeed(proto.Message):
         feed (str):
             Immutable. The feed being linked to the
             customer.
+
             This field is a member of `oneof`_ ``_feed``.
         placeholder_types (Sequence[google.ads.googleads.v9.enums.types.PlaceholderTypeEnum.PlaceholderType]):
             Indicates which placeholder types the feed

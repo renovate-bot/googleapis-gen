@@ -56,10 +56,12 @@ class AppFeedItem(proto.Message):
             rendered in an ad. This string must not be
             empty, and the length of this string should be
             between 1 and 25, inclusive.
+
             This field is a member of `oneof`_ ``_link_text``.
         app_id (str):
             The store-specific ID for the target
             application. This string must not be empty.
+
             This field is a member of `oneof`_ ``_app_id``.
         app_store (google.ads.googleads.v8.enums.types.AppStoreEnum.AppStore):
             The application store that the target
@@ -73,6 +75,7 @@ class AppFeedItem(proto.Message):
         tracking_url_template (str):
             URL template for constructing a tracking URL.
             Default value is "{lpurl}".
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v8.common.types.CustomParameter]):
             A list of mappings to be used for substituting URL custom
@@ -81,6 +84,7 @@ class AppFeedItem(proto.Message):
         final_url_suffix (str):
             URL template for appending params to landing
             page URLs served with parallel tracking.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
     """
 
@@ -131,26 +135,31 @@ class CallFeedItem(proto.Message):
         phone_number (str):
             The advertiser's phone number to append to
             the ad. This string must not be empty.
+
             This field is a member of `oneof`_ ``_phone_number``.
         country_code (str):
             Uppercase two-letter country code of the
             advertiser's phone number. This string must not
             be empty.
+
             This field is a member of `oneof`_ ``_country_code``.
         call_tracking_enabled (bool):
             Indicates whether call tracking is enabled.
             By default, call tracking is not enabled.
+
             This field is a member of `oneof`_ ``_call_tracking_enabled``.
         call_conversion_action (str):
             The conversion action to attribute a call conversion to. If
             not set a default conversion action is used. This field only
             has effect if call_tracking_enabled is set to true.
             Otherwise this field is ignored.
+
             This field is a member of `oneof`_ ``_call_conversion_action``.
         call_conversion_tracking_disabled (bool):
             If true, disable call conversion tracking.
             call_conversion_action should not be set if this is true.
             Optional.
+
             This field is a member of `oneof`_ ``_call_conversion_tracking_disabled``.
         call_conversion_reporting_state (google.ads.googleads.v8.enums.types.CallConversionReportingStateEnum.CallConversionReportingState):
             Enum value that indicates whether this call
@@ -199,6 +208,7 @@ class CalloutFeedItem(proto.Message):
             The callout text.
             The length of this string should be between 1
             and 25, inclusive.
+
             This field is a member of `oneof`_ ``_callout_text``.
     """
 
@@ -215,27 +225,35 @@ class LocationFeedItem(proto.Message):
     Attributes:
         business_name (str):
             The name of the business.
+
             This field is a member of `oneof`_ ``_business_name``.
         address_line_1 (str):
             Line 1 of the business address.
+
             This field is a member of `oneof`_ ``_address_line_1``.
         address_line_2 (str):
             Line 2 of the business address.
+
             This field is a member of `oneof`_ ``_address_line_2``.
         city (str):
             City of the business address.
+
             This field is a member of `oneof`_ ``_city``.
         province (str):
             Province of the business address.
+
             This field is a member of `oneof`_ ``_province``.
         postal_code (str):
             Postal code of the business address.
+
             This field is a member of `oneof`_ ``_postal_code``.
         country_code (str):
             Country code of the business address.
+
             This field is a member of `oneof`_ ``_country_code``.
         phone_number (str):
             Phone number of the business.
+
             This field is a member of `oneof`_ ``_phone_number``.
     """
 
@@ -287,34 +305,44 @@ class AffiliateLocationFeedItem(proto.Message):
     Attributes:
         business_name (str):
             The name of the business.
+
             This field is a member of `oneof`_ ``_business_name``.
         address_line_1 (str):
             Line 1 of the business address.
+
             This field is a member of `oneof`_ ``_address_line_1``.
         address_line_2 (str):
             Line 2 of the business address.
+
             This field is a member of `oneof`_ ``_address_line_2``.
         city (str):
             City of the business address.
+
             This field is a member of `oneof`_ ``_city``.
         province (str):
             Province of the business address.
+
             This field is a member of `oneof`_ ``_province``.
         postal_code (str):
             Postal code of the business address.
+
             This field is a member of `oneof`_ ``_postal_code``.
         country_code (str):
             Country code of the business address.
+
             This field is a member of `oneof`_ ``_country_code``.
         phone_number (str):
             Phone number of the business.
+
             This field is a member of `oneof`_ ``_phone_number``.
         chain_id (int):
             Id of the retail chain that is advertised as
             a seller of your product.
+
             This field is a member of `oneof`_ ``_chain_id``.
         chain_name (str):
             Name of chain.
+
             This field is a member of `oneof`_ ``_chain_name``.
     """
 
@@ -378,22 +406,27 @@ class TextMessageFeedItem(proto.Message):
         business_name (str):
             The business name to prepend to the message
             text. This field is required.
+
             This field is a member of `oneof`_ ``_business_name``.
         country_code (str):
             Uppercase two-letter country code of the
             advertiser's phone number. This field is
             required.
+
             This field is a member of `oneof`_ ``_country_code``.
         phone_number (str):
             The advertiser's phone number the message
             will be sent to. Required.
+
             This field is a member of `oneof`_ ``_phone_number``.
         text (str):
             The text to show in the ad.
             This field is required.
+
             This field is a member of `oneof`_ ``_text``.
         extension_text (str):
             The message extension_text populated in the messaging app.
+
             This field is a member of `oneof`_ ``_extension_text``.
     """
 
@@ -436,16 +469,19 @@ class PriceFeedItem(proto.Message):
         tracking_url_template (str):
             Tracking URL template for all offers of this
             price extension.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         language_code (str):
             The code of the language used for this price
             extension.
+
             This field is a member of `oneof`_ ``_language_code``.
         price_offerings (Sequence[google.ads.googleads.v8.common.types.PriceOffer]):
             The price offerings in this price extension.
         final_url_suffix (str):
             Tracking URL template for all offers of this
             price extension.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
     """
 
@@ -487,9 +523,11 @@ class PriceOffer(proto.Message):
     Attributes:
         header (str):
             Header text of this offer.
+
             This field is a member of `oneof`_ ``_header``.
         description (str):
             Description text of this offer.
+
             This field is a member of `oneof`_ ``_description``.
         price (google.ads.googleads.v8.common.types.Money):
             Price value of this offer.
@@ -547,6 +585,7 @@ class PromotionFeedItem(proto.Message):
         promotion_target (str):
             A freeform description of what the promotion
             is targeting. This field is required.
+
             This field is a member of `oneof`_ ``_promotion_target``.
         discount_modifier (google.ads.googleads.v8.enums.types.PromotionExtensionDiscountModifierEnum.PromotionExtensionDiscountModifier):
             Enum that modifies the qualification of the
@@ -554,10 +593,12 @@ class PromotionFeedItem(proto.Message):
         promotion_start_date (str):
             Start date of when the promotion is eligible
             to be redeemed.
+
             This field is a member of `oneof`_ ``_promotion_start_date``.
         promotion_end_date (str):
             Last date when the promotion is eligible to
             be redeemed.
+
             This field is a member of `oneof`_ ``_promotion_end_date``.
         occasion (google.ads.googleads.v8.enums.types.PromotionExtensionOccasionEnum.PromotionExtensionOccasion):
             The occasion the promotion was intended for.
@@ -572,6 +613,7 @@ class PromotionFeedItem(proto.Message):
             all cross domain redirects.
         tracking_url_template (str):
             URL template for constructing a tracking URL.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v8.common.types.CustomParameter]):
             A list of mappings to be used for substituting URL custom
@@ -580,27 +622,33 @@ class PromotionFeedItem(proto.Message):
         final_url_suffix (str):
             URL template for appending params to landing
             page URLs served with parallel tracking.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
         language_code (str):
             The language of the promotion.
             Represented as BCP 47 language tag.
+
             This field is a member of `oneof`_ ``_language_code``.
         percent_off (int):
             Percentage off discount in the promotion in micros. One
             million is equivalent to one percent. Either this or
             money_off_amount is required.
+
             This field is a member of `oneof`_ ``discount_type``.
         money_amount_off (google.ads.googleads.v8.common.types.Money):
             Money amount off for discount in the promotion. Either this
             or percent_off is required.
+
             This field is a member of `oneof`_ ``discount_type``.
         promotion_code (str):
             A code the user should use in order to be
             eligible for the promotion.
+
             This field is a member of `oneof`_ ``promotion_trigger``.
         orders_over_amount (google.ads.googleads.v8.common.types.Money):
             The amount the total order needs to be for
             the user to be eligible for the promotion.
+
             This field is a member of `oneof`_ ``promotion_trigger``.
     """
 
@@ -688,6 +736,7 @@ class StructuredSnippetFeedItem(proto.Message):
         header (str):
             The header of the snippet.
             This string must not be empty.
+
             This field is a member of `oneof`_ ``_header``.
         values (Sequence[str]):
             The values in the snippet.
@@ -713,18 +762,21 @@ class SitelinkFeedItem(proto.Message):
             URL display text for the sitelink.
             The length of this string should be between 1
             and 25, inclusive.
+
             This field is a member of `oneof`_ ``_link_text``.
         line1 (str):
             First line of the description for the
             sitelink. If this value is set, line2 must also
             be set. The length of this string should be
             between 0 and 35, inclusive.
+
             This field is a member of `oneof`_ ``_line1``.
         line2 (str):
             Second line of the description for the
             sitelink. If this value is set, line1 must also
             be set. The length of this string should be
             between 0 and 35, inclusive.
+
             This field is a member of `oneof`_ ``_line2``.
         final_urls (Sequence[str]):
             A list of possible final URLs after all cross
@@ -734,6 +786,7 @@ class SitelinkFeedItem(proto.Message):
             all cross domain redirects.
         tracking_url_template (str):
             URL template for constructing a tracking URL.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v8.common.types.CustomParameter]):
             A list of mappings to be used for substituting URL custom
@@ -742,6 +795,7 @@ class SitelinkFeedItem(proto.Message):
         final_url_suffix (str):
             Final URL suffix to be appended to landing
             page URLs served with parallel tracking.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
     """
 
@@ -793,10 +847,12 @@ class HotelCalloutFeedItem(proto.Message):
             The callout text.
             The length of this string should be between 1
             and 25, inclusive.
+
             This field is a member of `oneof`_ ``_text``.
         language_code (str):
             The language of the hotel callout text.
             IETF BCP 47 compliant language code.
+
             This field is a member of `oneof`_ ``_language_code``.
     """
 

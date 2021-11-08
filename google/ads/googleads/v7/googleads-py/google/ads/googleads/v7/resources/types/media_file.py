@@ -50,6 +50,7 @@ class MediaFile(proto.Message):
             ``customers/{customer_id}/mediaFiles/{media_file_id}``
         id (int):
             Output only. The ID of the media file.
+
             This field is a member of `oneof`_ ``_id``.
         type_ (google.ads.googleads.v7.enums.types.MediaTypeEnum.MediaType):
             Immutable. Type of the media file.
@@ -59,28 +60,35 @@ class MediaFile(proto.Message):
             Immutable. The URL of where the original
             media file was downloaded from (or a file name).
             Only used for media of type AUDIO and IMAGE.
+
             This field is a member of `oneof`_ ``_source_url``.
         name (str):
             Immutable. The name of the media file. The
             name can be used by clients to help identify
             previously uploaded media.
+
             This field is a member of `oneof`_ ``_name``.
         file_size (int):
             Output only. The size of the media file in
             bytes.
+
             This field is a member of `oneof`_ ``_file_size``.
         image (google.ads.googleads.v7.resources.types.MediaImage):
             Immutable. Encapsulates an Image.
+
             This field is a member of `oneof`_ ``mediatype``.
         media_bundle (google.ads.googleads.v7.resources.types.MediaBundle):
             Immutable. A ZIP archive media the content of
             which contains HTML5 assets.
+
             This field is a member of `oneof`_ ``mediatype``.
         audio (google.ads.googleads.v7.resources.types.MediaAudio):
             Output only. Encapsulates an Audio.
+
             This field is a member of `oneof`_ ``mediatype``.
         video (google.ads.googleads.v7.resources.types.MediaVideo):
             Immutable. Encapsulates a Video.
+
             This field is a member of `oneof`_ ``mediatype``.
     """
 
@@ -150,14 +158,17 @@ class MediaImage(proto.Message):
     Attributes:
         data (bytes):
             Immutable. Raw image data.
+
             This field is a member of `oneof`_ ``_data``.
         full_size_image_url (str):
             Output only. The url to the full size version
             of the image.
+
             This field is a member of `oneof`_ ``_full_size_image_url``.
         preview_size_image_url (str):
             Output only. The url to the preview size
             version of the image.
+
             This field is a member of `oneof`_ ``_preview_size_image_url``.
     """
 
@@ -185,12 +196,14 @@ class MediaBundle(proto.Message):
     Attributes:
         data (bytes):
             Immutable. Raw zipped data.
+
             This field is a member of `oneof`_ ``_data``.
         url (str):
             Output only. The url to access the uploaded
             zipped data. E.g.
             https://tpc.googlesyndication.com/simgad/123
             This field is read-only.
+
             This field is a member of `oneof`_ ``_url``.
     """
 
@@ -213,6 +226,7 @@ class MediaAudio(proto.Message):
         ad_duration_millis (int):
             Output only. The duration of the Audio in
             milliseconds.
+
             This field is a member of `oneof`_ ``_ad_duration_millis``.
     """
 
@@ -230,6 +244,7 @@ class MediaVideo(proto.Message):
         ad_duration_millis (int):
             Output only. The duration of the Video in
             milliseconds.
+
             This field is a member of `oneof`_ ``_ad_duration_millis``.
         youtube_video_id (str):
             Immutable. The YouTube video ID (as seen in
@@ -237,6 +252,7 @@ class MediaVideo(proto.Message):
             "https://www.youtube.com/watch?v=" to this ID
             will get the YouTube streaming URL for this
             video.
+
             This field is a member of `oneof`_ ``_youtube_video_id``.
         advertising_id_code (str):
             Output only. The Advertising Digital
@@ -244,11 +260,13 @@ class MediaVideo(proto.Message):
             by the American Association of Advertising
             Agencies, used mainly for television
             commercials.
+
             This field is a member of `oneof`_ ``_advertising_id_code``.
         isci_code (str):
             Output only. The Industry Standard Commercial
             Identifier code for this video, used mainly for
             television commercials.
+
             This field is a member of `oneof`_ ``_isci_code``.
     """
 

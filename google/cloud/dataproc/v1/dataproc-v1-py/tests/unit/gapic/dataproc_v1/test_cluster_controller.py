@@ -489,9 +489,15 @@ def test_create_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster == clusters.Cluster(project_id='project_id_value')
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster
+        mock_val = clusters.Cluster(project_id='project_id_value')
+        assert arg == mock_val
 
 
 def test_create_cluster_flattened_error():
@@ -538,9 +544,15 @@ async def test_create_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster == clusters.Cluster(project_id='project_id_value')
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster
+        mock_val = clusters.Cluster(project_id='project_id_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -669,11 +681,21 @@ def test_update_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
-        assert args[0].cluster == clusters.Cluster(project_id='project_id_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
+        arg = args[0].cluster
+        mock_val = clusters.Cluster(project_id='project_id_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_cluster_flattened_error():
@@ -724,11 +746,21 @@ async def test_update_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
-        assert args[0].cluster == clusters.Cluster(project_id='project_id_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
+        arg = args[0].cluster
+        mock_val = clusters.Cluster(project_id='project_id_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1025,9 +1057,15 @@ def test_delete_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
 
 
 def test_delete_cluster_flattened_error():
@@ -1074,9 +1112,15 @@ async def test_delete_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1215,9 +1259,15 @@ def test_get_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
 
 
 def test_get_cluster_flattened_error():
@@ -1262,9 +1312,15 @@ async def test_get_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1395,9 +1451,15 @@ def test_list_clusters_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 def test_list_clusters_flattened_error():
@@ -1442,9 +1504,15 @@ async def test_list_clusters_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1752,9 +1820,15 @@ def test_diagnose_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
 
 
 def test_diagnose_cluster_flattened_error():
@@ -1801,9 +1875,15 @@ async def test_diagnose_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].region == 'region_value'
-        assert args[0].cluster_name == 'cluster_name_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].region
+        mock_val = 'region_value'
+        assert arg == mock_val
+        arg = args[0].cluster_name
+        mock_val = 'cluster_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

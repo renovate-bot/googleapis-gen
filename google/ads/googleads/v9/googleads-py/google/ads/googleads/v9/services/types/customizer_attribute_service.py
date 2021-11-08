@@ -101,11 +101,13 @@ class CustomizerAttributeOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.CustomizerAttribute):
             Create operation: No resource name is
             expected for the new customizer attribute
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed customizer
             attribute is expected, in this format:
             ``customers/{customer_id}/customizerAttributes/{customizer_attribute_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

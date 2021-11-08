@@ -841,7 +841,9 @@ def test_get_access_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_access_policy_flattened_error():
@@ -882,7 +884,9 @@ async def test_get_access_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1153,8 +1157,12 @@ def test_update_access_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].policy == access_policy.AccessPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].policy
+        mock_val = access_policy.AccessPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_access_policy_flattened_error():
@@ -1199,8 +1207,12 @@ async def test_update_access_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].policy == access_policy.AccessPolicy(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].policy
+        mock_val = access_policy.AccessPolicy(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1387,7 +1399,9 @@ def test_delete_access_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_access_policy_flattened_error():
@@ -1430,7 +1444,9 @@ async def test_delete_access_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1620,7 +1636,9 @@ def test_list_access_levels_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_access_levels_flattened_error():
@@ -1661,7 +1679,9 @@ async def test_list_access_levels_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2046,7 +2066,9 @@ def test_get_access_level_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_access_level_flattened_error():
@@ -2087,7 +2109,9 @@ async def test_get_access_level_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2274,8 +2298,12 @@ def test_create_access_level_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].access_level == gia_access_level.AccessLevel(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].access_level
+        mock_val = gia_access_level.AccessLevel(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_access_level_flattened_error():
@@ -2320,8 +2348,12 @@ async def test_create_access_level_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].access_level == gia_access_level.AccessLevel(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].access_level
+        mock_val = gia_access_level.AccessLevel(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2509,8 +2541,12 @@ def test_update_access_level_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].access_level == gia_access_level.AccessLevel(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].access_level
+        mock_val = gia_access_level.AccessLevel(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_access_level_flattened_error():
@@ -2555,8 +2591,12 @@ async def test_update_access_level_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].access_level == gia_access_level.AccessLevel(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].access_level
+        mock_val = gia_access_level.AccessLevel(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2743,7 +2783,9 @@ def test_delete_access_level_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_access_level_flattened_error():
@@ -2786,7 +2828,9 @@ async def test_delete_access_level_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3123,7 +3167,9 @@ def test_list_service_perimeters_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_service_perimeters_flattened_error():
@@ -3164,7 +3210,9 @@ async def test_list_service_perimeters_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3556,7 +3604,9 @@ def test_get_service_perimeter_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_service_perimeter_flattened_error():
@@ -3597,7 +3647,9 @@ async def test_get_service_perimeter_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3784,8 +3836,12 @@ def test_create_service_perimeter_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].service_perimeter == gia_service_perimeter.ServicePerimeter(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].service_perimeter
+        mock_val = gia_service_perimeter.ServicePerimeter(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_service_perimeter_flattened_error():
@@ -3830,8 +3886,12 @@ async def test_create_service_perimeter_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].service_perimeter == gia_service_perimeter.ServicePerimeter(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].service_perimeter
+        mock_val = gia_service_perimeter.ServicePerimeter(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4019,8 +4079,12 @@ def test_update_service_perimeter_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_perimeter == gia_service_perimeter.ServicePerimeter(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].service_perimeter
+        mock_val = gia_service_perimeter.ServicePerimeter(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_service_perimeter_flattened_error():
@@ -4065,8 +4129,12 @@ async def test_update_service_perimeter_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_perimeter == gia_service_perimeter.ServicePerimeter(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].service_perimeter
+        mock_val = gia_service_perimeter.ServicePerimeter(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4253,7 +4321,9 @@ def test_delete_service_perimeter_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_service_perimeter_flattened_error():
@@ -4296,7 +4366,9 @@ async def test_delete_service_perimeter_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4780,7 +4852,9 @@ def test_list_gcp_user_access_bindings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_gcp_user_access_bindings_flattened_error():
@@ -4821,7 +4895,9 @@ async def test_list_gcp_user_access_bindings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5205,7 +5281,9 @@ def test_get_gcp_user_access_binding_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_gcp_user_access_binding_flattened_error():
@@ -5246,7 +5324,9 @@ async def test_get_gcp_user_access_binding_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5433,8 +5513,12 @@ def test_create_gcp_user_access_binding_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].gcp_user_access_binding == gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].gcp_user_access_binding
+        mock_val = gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_gcp_user_access_binding_flattened_error():
@@ -5479,8 +5563,12 @@ async def test_create_gcp_user_access_binding_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].gcp_user_access_binding == gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].gcp_user_access_binding
+        mock_val = gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5668,8 +5756,12 @@ def test_update_gcp_user_access_binding_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].gcp_user_access_binding == gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].gcp_user_access_binding
+        mock_val = gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_gcp_user_access_binding_flattened_error():
@@ -5714,8 +5806,12 @@ async def test_update_gcp_user_access_binding_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].gcp_user_access_binding == gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].gcp_user_access_binding
+        mock_val = gia_gcp_user_access_binding.GcpUserAccessBinding(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5902,7 +5998,9 @@ def test_delete_gcp_user_access_binding_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_gcp_user_access_binding_flattened_error():
@@ -5945,7 +6043,9 @@ async def test_delete_gcp_user_access_binding_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

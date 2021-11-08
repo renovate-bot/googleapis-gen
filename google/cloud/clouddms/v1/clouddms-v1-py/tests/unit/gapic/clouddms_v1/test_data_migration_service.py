@@ -560,7 +560,9 @@ def test_list_migration_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_migration_jobs_flattened_error():
@@ -601,7 +603,9 @@ async def test_list_migration_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1006,7 +1010,9 @@ def test_get_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_migration_job_flattened_error():
@@ -1047,7 +1053,9 @@ async def test_get_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1235,9 +1243,15 @@ def test_create_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
-        assert args[0].migration_job_id == 'migration_job_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].migration_job
+        mock_val = clouddms_resources.MigrationJob(name='name_value')
+        assert arg == mock_val
+        arg = args[0].migration_job_id
+        mock_val = 'migration_job_id_value'
+        assert arg == mock_val
 
 
 def test_create_migration_job_flattened_error():
@@ -1284,9 +1298,15 @@ async def test_create_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
-        assert args[0].migration_job_id == 'migration_job_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].migration_job
+        mock_val = clouddms_resources.MigrationJob(name='name_value')
+        assert arg == mock_val
+        arg = args[0].migration_job_id
+        mock_val = 'migration_job_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1475,8 +1495,12 @@ def test_update_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].migration_job
+        mock_val = clouddms_resources.MigrationJob(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_migration_job_flattened_error():
@@ -1521,8 +1545,12 @@ async def test_update_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].migration_job
+        mock_val = clouddms_resources.MigrationJob(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1709,7 +1737,9 @@ def test_delete_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_migration_job_flattened_error():
@@ -1752,7 +1782,9 @@ async def test_delete_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2979,7 +3011,9 @@ def test_list_connection_profiles_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_connection_profiles_flattened_error():
@@ -3020,7 +3054,9 @@ async def test_list_connection_profiles_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3409,7 +3445,9 @@ def test_get_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_connection_profile_flattened_error():
@@ -3450,7 +3488,9 @@ async def test_get_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3638,9 +3678,15 @@ def test_create_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
-        assert args[0].connection_profile_id == 'connection_profile_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].connection_profile
+        mock_val = clouddms_resources.ConnectionProfile(name='name_value')
+        assert arg == mock_val
+        arg = args[0].connection_profile_id
+        mock_val = 'connection_profile_id_value'
+        assert arg == mock_val
 
 
 def test_create_connection_profile_flattened_error():
@@ -3687,9 +3733,15 @@ async def test_create_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
-        assert args[0].connection_profile_id == 'connection_profile_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].connection_profile
+        mock_val = clouddms_resources.ConnectionProfile(name='name_value')
+        assert arg == mock_val
+        arg = args[0].connection_profile_id
+        mock_val = 'connection_profile_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3878,8 +3930,12 @@ def test_update_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].connection_profile
+        mock_val = clouddms_resources.ConnectionProfile(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_connection_profile_flattened_error():
@@ -3924,8 +3980,12 @@ async def test_update_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].connection_profile
+        mock_val = clouddms_resources.ConnectionProfile(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4112,7 +4172,9 @@ def test_delete_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_connection_profile_flattened_error():
@@ -4155,7 +4217,9 @@ async def test_delete_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

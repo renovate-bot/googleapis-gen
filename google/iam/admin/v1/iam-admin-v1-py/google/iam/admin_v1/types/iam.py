@@ -1567,6 +1567,7 @@ class LintPolicyRequest(proto.Message):
         condition (google.type.expr_pb2.Expr):
             [google.iam.v1.Binding.condition]
             [google.iam.v1.Binding.condition] object to be linted.
+
             This field is a member of `oneof`_ ``lint_object``.
     """
 

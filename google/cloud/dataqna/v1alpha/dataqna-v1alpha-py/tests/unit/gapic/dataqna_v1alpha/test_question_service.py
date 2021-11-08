@@ -569,7 +569,9 @@ def test_get_question_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_question_flattened_error():
@@ -610,7 +612,9 @@ async def test_get_question_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -817,8 +821,12 @@ def test_create_question_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].question == gcd_question.Question(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].question
+        mock_val = gcd_question.Question(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_question_flattened_error():
@@ -861,8 +869,12 @@ async def test_create_question_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].question == gcd_question.Question(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].question
+        mock_val = gcd_question.Question(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1070,8 +1082,12 @@ def test_execute_question_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].interpretation_index == 2159
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].interpretation_index
+        mock_val = 2159
+        assert arg == mock_val
 
 
 def test_execute_question_flattened_error():
@@ -1114,8 +1130,12 @@ async def test_execute_question_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].interpretation_index == 2159
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].interpretation_index
+        mock_val = 2159
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1314,7 +1334,9 @@ def test_get_user_feedback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_user_feedback_flattened_error():
@@ -1355,7 +1377,9 @@ async def test_get_user_feedback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1554,8 +1578,12 @@ def test_update_user_feedback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].user_feedback == gcd_user_feedback.UserFeedback(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].user_feedback
+        mock_val = gcd_user_feedback.UserFeedback(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_user_feedback_flattened_error():
@@ -1598,8 +1626,12 @@ async def test_update_user_feedback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].user_feedback == gcd_user_feedback.UserFeedback(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].user_feedback
+        mock_val = gcd_user_feedback.UserFeedback(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

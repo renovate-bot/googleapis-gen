@@ -346,10 +346,12 @@ class EventHandler(proto.Message):
         target_page (str):
             The target page to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>``.
+
             This field is a member of `oneof`_ ``target``.
         target_flow (str):
             The target flow to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
+
             This field is a member of `oneof`_ ``target``.
     """
 
@@ -437,10 +439,12 @@ class TransitionRoute(proto.Message):
         target_page (str):
             The target page to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page ID>``.
+
             This field is a member of `oneof`_ ``target``.
         target_flow (str):
             The target flow to transition to. Format:
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
+
             This field is a member of `oneof`_ ``target``.
     """
 

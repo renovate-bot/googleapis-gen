@@ -1044,8 +1044,12 @@ def test_update_document_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].document == gf_document.Document(name='name_value')
-        assert args[0].update_mask == common.DocumentMask(field_paths=['field_paths_value'])
+        arg = args[0].document
+        mock_val = gf_document.Document(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = common.DocumentMask(field_paths=['field_paths_value'])
+        assert arg == mock_val
 
 
 def test_update_document_flattened_error():
@@ -1088,8 +1092,12 @@ async def test_update_document_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].document == gf_document.Document(name='name_value')
-        assert args[0].update_mask == common.DocumentMask(field_paths=['field_paths_value'])
+        arg = args[0].document
+        mock_val = gf_document.Document(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = common.DocumentMask(field_paths=['field_paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1274,7 +1282,9 @@ def test_delete_document_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_document_flattened_error():
@@ -1315,7 +1325,9 @@ async def test_delete_document_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1654,7 +1666,9 @@ def test_begin_transaction_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
 
 
 def test_begin_transaction_flattened_error():
@@ -1695,7 +1709,9 @@ async def test_begin_transaction_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1882,8 +1898,12 @@ def test_commit_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
-        assert args[0].writes == [gf_write.Write(update=document.Document(name='name_value'))]
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
+        arg = args[0].writes
+        mock_val = [gf_write.Write(update=document.Document(name='name_value'))]
+        assert arg == mock_val
 
 
 def test_commit_flattened_error():
@@ -1926,8 +1946,12 @@ async def test_commit_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
-        assert args[0].writes == [gf_write.Write(update=document.Document(name='name_value'))]
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
+        arg = args[0].writes
+        mock_val = [gf_write.Write(update=document.Document(name='name_value'))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2113,8 +2137,12 @@ def test_rollback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
-        assert args[0].transaction == b'transaction_blob'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
+        arg = args[0].transaction
+        mock_val = b'transaction_blob'
+        assert arg == mock_val
 
 
 def test_rollback_flattened_error():
@@ -2157,8 +2185,12 @@ async def test_rollback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
-        assert args[0].transaction == b'transaction_blob'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
+        arg = args[0].transaction
+        mock_val = b'transaction_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2977,7 +3009,9 @@ def test_list_collection_ids_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_collection_ids_flattened_error():
@@ -3018,7 +3052,9 @@ async def test_list_collection_ids_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

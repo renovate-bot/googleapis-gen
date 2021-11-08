@@ -118,17 +118,20 @@ class CampaignExtensionSettingOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CampaignExtensionSetting):
             Create operation: No resource name is
             expected for the new campaign extension setting.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.CampaignExtensionSetting):
             Update operation: The campaign extension
             setting is expected to have a valid resource
             name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed campaign
             extension setting is expected, in this format:
 
             ``customers/{customer_id}/campaignExtensionSettings/{campaign_id}~{extension_type}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

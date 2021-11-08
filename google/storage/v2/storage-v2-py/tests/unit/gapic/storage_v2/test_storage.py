@@ -482,9 +482,15 @@ def test_read_object_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].bucket == 'bucket_value'
-        assert args[0].object_ == 'object__value'
-        assert args[0].generation == 1068
+        arg = args[0].bucket
+        mock_val = 'bucket_value'
+        assert arg == mock_val
+        arg = args[0].object_
+        mock_val = 'object__value'
+        assert arg == mock_val
+        arg = args[0].generation
+        mock_val = 1068
+        assert arg == mock_val
 
 
 def test_read_object_flattened_error():
@@ -529,9 +535,15 @@ async def test_read_object_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].bucket == 'bucket_value'
-        assert args[0].object_ == 'object__value'
-        assert args[0].generation == 1068
+        arg = args[0].bucket
+        mock_val = 'bucket_value'
+        assert arg == mock_val
+        arg = args[0].object_
+        mock_val = 'object__value'
+        assert arg == mock_val
+        arg = args[0].generation
+        mock_val = 1068
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -814,7 +826,9 @@ def test_query_write_status_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].upload_id == 'upload_id_value'
+        arg = args[0].upload_id
+        mock_val = 'upload_id_value'
+        assert arg == mock_val
 
 
 def test_query_write_status_flattened_error():
@@ -855,7 +869,9 @@ async def test_query_write_status_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].upload_id == 'upload_id_value'
+        arg = args[0].upload_id
+        mock_val = 'upload_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

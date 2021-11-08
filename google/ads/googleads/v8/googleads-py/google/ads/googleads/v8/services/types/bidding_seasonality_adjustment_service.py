@@ -118,16 +118,19 @@ class BiddingSeasonalityAdjustmentOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.BiddingSeasonalityAdjustment):
             Create operation: No resource name is
             expected for the new seasonality adjustment.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.BiddingSeasonalityAdjustment):
             Update operation: The seasonality adjustment
             is expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed
             seasonality adjustment is expected, in this format:
 
             ``customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_adjustment_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

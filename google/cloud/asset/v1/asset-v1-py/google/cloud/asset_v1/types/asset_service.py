@@ -610,11 +610,13 @@ class OutputConfig(proto.Message):
     Attributes:
         gcs_destination (google.cloud.asset_v1.types.GcsDestination):
             Destination on Cloud Storage.
+
             This field is a member of `oneof`_ ``destination``.
         bigquery_destination (google.cloud.asset_v1.types.BigQueryDestination):
             Destination on BigQuery. The output table
             stores the fields in asset proto as columns in
             BigQuery.
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -640,6 +642,7 @@ class OutputResult(proto.Message):
     Attributes:
         gcs_result (google.cloud.asset_v1.types.GcsOutputResult):
             Export result on Cloud Storage.
+
             This field is a member of `oneof`_ ``result``.
     """
 
@@ -688,6 +691,7 @@ class GcsDestination(proto.Message):
             there is no
             `hold <https://cloud.google.com/storage/docs/object-holds>`__,
             it will be overwritten with the exported result.
+
             This field is a member of `oneof`_ ``object_uri``.
         uri_prefix (str):
             The uri prefix of all generated Cloud Storage objects.
@@ -699,6 +703,7 @@ class GcsDestination(proto.Message):
             compute.googleapis.com/Disk assets. An INVALID_ARGUMENT
             error will be returned if file with the same name
             "gs://bucket_name/object_name_prefix" already exists.
+
             This field is a member of `oneof`_ ``object_uri``.
     """
 
@@ -865,6 +870,7 @@ class FeedOutputConfig(proto.Message):
     Attributes:
         pubsub_destination (google.cloud.asset_v1.types.PubsubDestination):
             Destination on Pub/Sub.
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -1600,6 +1606,7 @@ class IamPolicyAnalysisQuery(proto.Message):
                 conditions. Note that this value must not be earlier than
                 the current time; otherwise, an INVALID_ARGUMENT error will
                 be returned.
+
                 This field is a member of `oneof`_ ``TimeContext``.
         """
 
@@ -1765,9 +1772,11 @@ class IamPolicyAnalysisOutputConfig(proto.Message):
     Attributes:
         gcs_destination (google.cloud.asset_v1.types.IamPolicyAnalysisOutputConfig.GcsDestination):
             Destination on Cloud Storage.
+
             This field is a member of `oneof`_ ``destination``.
         bigquery_destination (google.cloud.asset_v1.types.IamPolicyAnalysisOutputConfig.BigQueryDestination):
             Destination on BigQuery.
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -1989,10 +1998,12 @@ class MoveAnalysis(proto.Message):
         analysis (google.cloud.asset_v1.types.MoveAnalysisResult):
             Analysis result of moving the target
             resource.
+
             This field is a member of `oneof`_ ``result``.
         error (google.rpc.status_pb2.Status):
             Description of error encountered when
             performing the analysis.
+
             This field is a member of `oneof`_ ``result``.
     """
 

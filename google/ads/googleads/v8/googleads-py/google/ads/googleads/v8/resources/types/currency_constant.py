@@ -37,19 +37,23 @@ class CurrencyConstant(proto.Message):
         code (str):
             Output only. ISO 4217 three-letter currency
             code, e.g. "USD".
+
             This field is a member of `oneof`_ ``_code``.
         name (str):
             Output only. Full English name of the
             currency.
+
             This field is a member of `oneof`_ ``_name``.
         symbol (str):
             Output only. Standard symbol for describing
             this currency, e.g. '$' for US Dollars.
+
             This field is a member of `oneof`_ ``_symbol``.
         billable_unit_micros (int):
             Output only. The billable unit for this
             currency. Billed amounts should be multiples of
             this value.
+
             This field is a member of `oneof`_ ``_billable_unit_micros``.
     """
 

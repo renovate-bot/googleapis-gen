@@ -38,10 +38,12 @@ class TopicConstant(proto.Message):
             ``topicConstants/{topic_id}``
         id (int):
             Output only. The ID of the topic.
+
             This field is a member of `oneof`_ ``_id``.
         topic_constant_parent (str):
             Output only. Resource name of parent of the
             topic constant.
+
             This field is a member of `oneof`_ ``_topic_constant_parent``.
         path (Sequence[str]):
             Output only. The category to target or

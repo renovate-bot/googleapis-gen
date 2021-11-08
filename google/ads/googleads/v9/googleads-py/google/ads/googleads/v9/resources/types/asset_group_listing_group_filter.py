@@ -114,24 +114,31 @@ class ListingGroupFilterDimension(proto.Message):
     Attributes:
         product_bidding_category (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductBiddingCategory):
             Bidding category of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_brand (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductBrand):
             Brand of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_channel (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductChannel):
             Locality of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_condition (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductCondition):
             Condition of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_custom_attribute (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductCustomAttribute):
             Custom attribute of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_item_id (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductItemId):
             Item id of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_type (google.ads.googleads.v9.resources.types.ListingGroupFilterDimension.ProductType):
             Type of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
     """
 
@@ -150,6 +157,7 @@ class ListingGroupFilterDimension(proto.Message):
                 This ID is equivalent to the google_product_category ID as
                 described in this article:
                 https://support.google.com/merchants/answer/6324436
+
                 This field is a member of `oneof`_ ``_id``.
             level (google.ads.googleads.v9.enums.types.ListingGroupFilterBiddingCategoryLevelEnum.ListingGroupFilterBiddingCategoryLevel):
                 Indicates the level of the category in the
@@ -173,6 +181,7 @@ class ListingGroupFilterDimension(proto.Message):
         Attributes:
             value (str):
                 String value of the product brand.
+
                 This field is a member of `oneof`_ ``_value``.
         """
 
@@ -216,6 +225,7 @@ class ListingGroupFilterDimension(proto.Message):
         Attributes:
             value (str):
                 String value of the product custom attribute.
+
                 This field is a member of `oneof`_ ``_value``.
             index (google.ads.googleads.v9.enums.types.ListingGroupFilterCustomAttributeIndexEnum.ListingGroupFilterCustomAttributeIndex):
                 Indicates the index of the custom attribute.
@@ -238,6 +248,7 @@ class ListingGroupFilterDimension(proto.Message):
         Attributes:
             value (str):
                 Value of the id.
+
                 This field is a member of `oneof`_ ``_value``.
         """
 
@@ -253,6 +264,7 @@ class ListingGroupFilterDimension(proto.Message):
         Attributes:
             value (str):
                 Value of the type.
+
                 This field is a member of `oneof`_ ``_value``.
             level (google.ads.googleads.v9.enums.types.ListingGroupFilterProductTypeLevelEnum.ListingGroupFilterProductTypeLevel):
                 Level of the type.

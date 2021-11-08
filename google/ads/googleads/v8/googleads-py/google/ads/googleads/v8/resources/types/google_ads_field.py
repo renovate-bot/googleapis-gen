@@ -39,20 +39,24 @@ class GoogleAdsField(proto.Message):
             ``googleAdsFields/{name}``
         name (str):
             Output only. The name of the artifact.
+
             This field is a member of `oneof`_ ``_name``.
         category (google.ads.googleads.v8.enums.types.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory):
             Output only. The category of the artifact.
         selectable (bool):
             Output only. Whether the artifact can be used
             in a SELECT clause in search queries.
+
             This field is a member of `oneof`_ ``_selectable``.
         filterable (bool):
             Output only. Whether the artifact can be used
             in a WHERE clause in search queries.
+
             This field is a member of `oneof`_ ``_filterable``.
         sortable (bool):
             Output only. Whether the artifact can be used
             in a ORDER BY clause in search queries.
+
             This field is a member of `oneof`_ ``_sortable``.
         selectable_with (Sequence[str]):
             Output only. The names of all resources,
@@ -101,10 +105,12 @@ class GoogleAdsField(proto.Message):
         type_url (str):
             Output only. The URL of proto describing the
             artifact's data type.
+
             This field is a member of `oneof`_ ``_type_url``.
         is_repeated (bool):
             Output only. Whether the field artifact is
             repeated.
+
             This field is a member of `oneof`_ ``_is_repeated``.
     """
 

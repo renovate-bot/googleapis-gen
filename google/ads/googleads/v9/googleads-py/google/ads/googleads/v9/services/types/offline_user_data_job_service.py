@@ -139,6 +139,7 @@ class AddOfflineUserDataJobOperationsRequest(proto.Message):
         enable_partial_failure (bool):
             True to enable partial failure for the
             offline user data job.
+
             This field is a member of `oneof`_ ``_enable_partial_failure``.
         enable_warnings (bool):
             True to enable warnings for the offline user
@@ -146,6 +147,7 @@ class AddOfflineUserDataJobOperationsRequest(proto.Message):
             the OfflineUserDataJobOperation, and will also
             return warning messages about malformed field
             values.
+
             This field is a member of `oneof`_ ``_enable_warnings``.
         operations (Sequence[google.ads.googleads.v9.services.types.OfflineUserDataJobOperation]):
             Required. The list of operations to be done.
@@ -194,15 +196,18 @@ class OfflineUserDataJobOperation(proto.Message):
         create (google.ads.googleads.v9.common.types.UserData):
             Add the provided data to the transaction.
             Data cannot be retrieved after being uploaded.
+
             This field is a member of `oneof`_ ``operation``.
         remove (google.ads.googleads.v9.common.types.UserData):
             Remove the provided data from the
             transaction. Data cannot be retrieved after
             being uploaded.
+
             This field is a member of `oneof`_ ``operation``.
         remove_all (bool):
             Remove all previously provided data. This is
             only supported for Customer Match.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

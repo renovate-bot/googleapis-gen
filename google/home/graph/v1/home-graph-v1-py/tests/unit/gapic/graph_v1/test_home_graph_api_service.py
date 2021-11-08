@@ -478,7 +478,9 @@ def test_request_sync_devices_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].agent_user_id == 'agent_user_id_value'
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
 
 
 def test_request_sync_devices_flattened_error():
@@ -519,7 +521,9 @@ async def test_request_sync_devices_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].agent_user_id == 'agent_user_id_value'
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -649,10 +653,18 @@ def test_report_state_and_notification_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].event_id == 'event_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
-        assert args[0].payload == homegraph.StateAndNotificationPayload(devices=homegraph.ReportStateAndNotificationDevice(states=struct_pb2.Struct(fields={'key_value': struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)})))
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].event_id
+        mock_val = 'event_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
+        arg = args[0].payload
+        mock_val = homegraph.StateAndNotificationPayload(devices=homegraph.ReportStateAndNotificationDevice(states=struct_pb2.Struct(fields={'key_value': struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)})))
+        assert arg == mock_val
 
 
 def test_report_state_and_notification_flattened_error():
@@ -699,10 +711,18 @@ async def test_report_state_and_notification_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].event_id == 'event_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
-        assert args[0].payload == homegraph.StateAndNotificationPayload(devices=homegraph.ReportStateAndNotificationDevice(states=struct_pb2.Struct(fields={'key_value': struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)})))
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].event_id
+        mock_val = 'event_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
+        arg = args[0].payload
+        mock_val = homegraph.StateAndNotificationPayload(devices=homegraph.ReportStateAndNotificationDevice(states=struct_pb2.Struct(fields={'key_value': struct_pb2.Value(null_value=struct_pb2.NullValue.NULL_VALUE)})))
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -890,8 +910,12 @@ def test_delete_agent_user_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
 
 
 def test_delete_agent_user_flattened_error():
@@ -934,8 +958,12 @@ async def test_delete_agent_user_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1065,9 +1093,15 @@ def test_query_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
-        assert args[0].inputs == [homegraph.QueryRequestInput(payload=homegraph.QueryRequestPayload(devices=[homegraph.AgentDeviceId(id='id_value')]))]
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
+        arg = args[0].inputs
+        mock_val = [homegraph.QueryRequestInput(payload=homegraph.QueryRequestPayload(devices=[homegraph.AgentDeviceId(id='id_value')]))]
+        assert arg == mock_val
 
 
 def test_query_flattened_error():
@@ -1112,9 +1146,15 @@ async def test_query_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
-        assert args[0].inputs == [homegraph.QueryRequestInput(payload=homegraph.QueryRequestPayload(devices=[homegraph.AgentDeviceId(id='id_value')]))]
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
+        arg = args[0].inputs
+        mock_val = [homegraph.QueryRequestInput(payload=homegraph.QueryRequestPayload(devices=[homegraph.AgentDeviceId(id='id_value')]))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1244,8 +1284,12 @@ def test_sync_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
 
 
 def test_sync_flattened_error():
@@ -1288,8 +1332,12 @@ async def test_sync_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].request_id == 'request_id_value'
-        assert args[0].agent_user_id == 'agent_user_id_value'
+        arg = args[0].request_id
+        mock_val = 'request_id_value'
+        assert arg == mock_val
+        arg = args[0].agent_user_id
+        mock_val = 'agent_user_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

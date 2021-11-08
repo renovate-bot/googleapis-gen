@@ -53,6 +53,7 @@ class AdGroupCriterion(proto.Message):
         criterion_id (int):
             Output only. The ID of the criterion.
             This field is ignored for mutates.
+
             This field is a member of `oneof`_ ``_criterion_id``.
         display_name (str):
             Output only. The display name of the
@@ -78,6 +79,7 @@ class AdGroupCriterion(proto.Message):
         ad_group (str):
             Immutable. The ad group to which the
             criterion belongs.
+
             This field is a member of `oneof`_ ``_ad_group``.
         type_ (google.ads.googleads.v8.enums.types.CriterionTypeEnum.CriterionType):
             Output only. The type of the criterion.
@@ -87,6 +89,7 @@ class AdGroupCriterion(proto.Message):
 
             This field is immutable. To switch a criterion from positive
             to negative, remove then re-add it.
+
             This field is a member of `oneof`_ ``_negative``.
         system_serving_status (google.ads.googleads.v8.enums.types.CriterionSystemServingStatusEnum.CriterionSystemServingStatus):
             Output only. Serving status of the criterion.
@@ -108,38 +111,47 @@ class AdGroupCriterion(proto.Message):
             matches. The modifier must be in the range: 0.1
             - 10.0. Most targetable criteria types support
             modifiers.
+
             This field is a member of `oneof`_ ``_bid_modifier``.
         cpc_bid_micros (int):
             The CPC (cost-per-click) bid.
+
             This field is a member of `oneof`_ ``_cpc_bid_micros``.
         cpm_bid_micros (int):
             The CPM (cost-per-thousand viewable
             impressions) bid.
+
             This field is a member of `oneof`_ ``_cpm_bid_micros``.
         cpv_bid_micros (int):
             The CPV (cost-per-view) bid.
+
             This field is a member of `oneof`_ ``_cpv_bid_micros``.
         percent_cpc_bid_micros (int):
             The CPC bid amount, expressed as a fraction of the
             advertised price for some good or service. The valid range
             for the fraction is [0,1) and the value stored here is
             1,000,000 \* [fraction].
+
             This field is a member of `oneof`_ ``_percent_cpc_bid_micros``.
         effective_cpc_bid_micros (int):
             Output only. The effective CPC (cost-per-
             lick) bid.
+
             This field is a member of `oneof`_ ``_effective_cpc_bid_micros``.
         effective_cpm_bid_micros (int):
             Output only. The effective CPM (cost-per-
             housand viewable impressions) bid.
+
             This field is a member of `oneof`_ ``_effective_cpm_bid_micros``.
         effective_cpv_bid_micros (int):
             Output only. The effective CPV (cost-per-
             iew) bid.
+
             This field is a member of `oneof`_ ``_effective_cpv_bid_micros``.
         effective_percent_cpc_bid_micros (int):
             Output only. The effective Percent CPC bid
             amount.
+
             This field is a member of `oneof`_ ``_effective_percent_cpc_bid_micros``.
         effective_cpc_bid_source (google.ads.googleads.v8.enums.types.BiddingSourceEnum.BiddingSource):
             Output only. Source of the effective CPC bid.
@@ -162,10 +174,12 @@ class AdGroupCriterion(proto.Message):
         final_url_suffix (str):
             URL template for appending params to final
             URL.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
         tracking_url_template (str):
             The URL template for constructing a tracking
             URL.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v8.common.types.CustomParameter]):
             The list of mappings used to substitute custom parameter
@@ -173,63 +187,83 @@ class AdGroupCriterion(proto.Message):
             ``mobile_final_urls``.
         keyword (google.ads.googleads.v8.common.types.KeywordInfo):
             Immutable. Keyword.
+
             This field is a member of `oneof`_ ``criterion``.
         placement (google.ads.googleads.v8.common.types.PlacementInfo):
             Immutable. Placement.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_app_category (google.ads.googleads.v8.common.types.MobileAppCategoryInfo):
             Immutable. Mobile app category.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_application (google.ads.googleads.v8.common.types.MobileApplicationInfo):
             Immutable. Mobile application.
+
             This field is a member of `oneof`_ ``criterion``.
         listing_group (google.ads.googleads.v8.common.types.ListingGroupInfo):
             Immutable. Listing group.
+
             This field is a member of `oneof`_ ``criterion``.
         age_range (google.ads.googleads.v8.common.types.AgeRangeInfo):
             Immutable. Age range.
+
             This field is a member of `oneof`_ ``criterion``.
         gender (google.ads.googleads.v8.common.types.GenderInfo):
             Immutable. Gender.
+
             This field is a member of `oneof`_ ``criterion``.
         income_range (google.ads.googleads.v8.common.types.IncomeRangeInfo):
             Immutable. Income range.
+
             This field is a member of `oneof`_ ``criterion``.
         parental_status (google.ads.googleads.v8.common.types.ParentalStatusInfo):
             Immutable. Parental status.
+
             This field is a member of `oneof`_ ``criterion``.
         user_list (google.ads.googleads.v8.common.types.UserListInfo):
             Immutable. User List.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_video (google.ads.googleads.v8.common.types.YouTubeVideoInfo):
             Immutable. YouTube Video.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_channel (google.ads.googleads.v8.common.types.YouTubeChannelInfo):
             Immutable. YouTube Channel.
+
             This field is a member of `oneof`_ ``criterion``.
         topic (google.ads.googleads.v8.common.types.TopicInfo):
             Immutable. Topic.
+
             This field is a member of `oneof`_ ``criterion``.
         user_interest (google.ads.googleads.v8.common.types.UserInterestInfo):
             Immutable. User Interest.
+
             This field is a member of `oneof`_ ``criterion``.
         webpage (google.ads.googleads.v8.common.types.WebpageInfo):
             Immutable. Webpage
+
             This field is a member of `oneof`_ ``criterion``.
         app_payment_model (google.ads.googleads.v8.common.types.AppPaymentModelInfo):
             Immutable. App Payment Model.
+
             This field is a member of `oneof`_ ``criterion``.
         custom_affinity (google.ads.googleads.v8.common.types.CustomAffinityInfo):
             Immutable. Custom Affinity.
+
             This field is a member of `oneof`_ ``criterion``.
         custom_intent (google.ads.googleads.v8.common.types.CustomIntentInfo):
             Immutable. Custom Intent.
+
             This field is a member of `oneof`_ ``criterion``.
         custom_audience (google.ads.googleads.v8.common.types.CustomAudienceInfo):
             Immutable. Custom Audience.
+
             This field is a member of `oneof`_ ``criterion``.
         combined_audience (google.ads.googleads.v8.common.types.CombinedAudienceInfo):
             Immutable. Combined Audience.
+
             This field is a member of `oneof`_ ``criterion``.
     """
 
@@ -242,6 +276,7 @@ class AdGroupCriterion(proto.Message):
                 This field may not be populated if Google does
                 not have enough information to determine a
                 value.
+
                 This field is a member of `oneof`_ ``_quality_score``.
             creative_quality_score (google.ads.googleads.v8.enums.types.QualityScoreBucketEnum.QualityScoreBucket):
                 Output only. The performance of the ad
@@ -283,27 +318,32 @@ class AdGroupCriterion(proto.Message):
                 Output only. The estimate of the CPC bid
                 required for ad to be shown on first page of
                 search results.
+
                 This field is a member of `oneof`_ ``_first_page_cpc_micros``.
             first_position_cpc_micros (int):
                 Output only. The estimate of the CPC bid
                 required for ad to be displayed in first
                 position, at the top of the first page of search
                 results.
+
                 This field is a member of `oneof`_ ``_first_position_cpc_micros``.
             top_of_page_cpc_micros (int):
                 Output only. The estimate of the CPC bid
                 required for ad to be displayed at the top of
                 the first page of search results.
+
                 This field is a member of `oneof`_ ``_top_of_page_cpc_micros``.
             estimated_add_clicks_at_first_position_cpc (int):
                 Output only. Estimate of how many clicks per week you might
                 get by changing your keyword bid to the value in
                 first_position_cpc_micros.
+
                 This field is a member of `oneof`_ ``_estimated_add_clicks_at_first_position_cpc``.
             estimated_add_cost_at_first_position_cpc (int):
                 Output only. Estimate of how your cost per week might change
                 when changing your keyword bid to the value in
                 first_position_cpc_micros.
+
                 This field is a member of `oneof`_ ``_estimated_add_cost_at_first_position_cpc``.
         """
 

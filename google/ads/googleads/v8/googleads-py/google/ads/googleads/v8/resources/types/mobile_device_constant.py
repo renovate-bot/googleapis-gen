@@ -40,17 +40,21 @@ class MobileDeviceConstant(proto.Message):
         id (int):
             Output only. The ID of the mobile device
             constant.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             Output only. The name of the mobile device.
+
             This field is a member of `oneof`_ ``_name``.
         manufacturer_name (str):
             Output only. The manufacturer of the mobile
             device.
+
             This field is a member of `oneof`_ ``_manufacturer_name``.
         operating_system_name (str):
             Output only. The operating system of the
             mobile device.
+
             This field is a member of `oneof`_ ``_operating_system_name``.
         type_ (google.ads.googleads.v8.enums.types.MobileDeviceTypeEnum.MobileDeviceType):
             Output only. The type of mobile device.

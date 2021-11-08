@@ -60,6 +60,7 @@ class SimilarUserListInfo(proto.Message):
         seed_user_list (str):
             Seed UserList from which this list is
             derived.
+
             This field is a member of `oneof`_ ``_seed_user_list``.
     """
 
@@ -89,6 +90,7 @@ class CrmBasedUserListInfo(proto.Message):
             https://play.google.com/store/apps/details?id=com.labpixies.colordrips).
             Required when creating CrmBasedUserList for
             uploading mobile advertising IDs.
+
             This field is a member of `oneof`_ ``_app_id``.
         upload_key_type (google.ads.googleads.v8.enums.types.CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType):
             Matching key type of the list.
@@ -185,18 +187,22 @@ class UserListRuleItemInfo(proto.Message):
             two built-in variable URL (name = 'url__') and referrer URL
             (name = 'ref_url__'). This field must be populated when
             creating a new rule item.
+
             This field is a member of `oneof`_ ``_name``.
         number_rule_item (google.ads.googleads.v8.common.types.UserListNumberRuleItemInfo):
             An atomic rule item composed of a number
             operation.
+
             This field is a member of `oneof`_ ``rule_item``.
         string_rule_item (google.ads.googleads.v8.common.types.UserListStringRuleItemInfo):
             An atomic rule item composed of a string
             operation.
+
             This field is a member of `oneof`_ ``rule_item``.
         date_rule_item (google.ads.googleads.v8.common.types.UserListDateRuleItemInfo):
             An atomic rule item composed of a date
             operation.
+
             This field is a member of `oneof`_ ``rule_item``.
     """
 
@@ -238,12 +244,14 @@ class UserListDateRuleItemInfo(proto.Message):
             with the rule variable. Supported date format is
             YYYY-MM-DD. Times are reported in the customer's
             time zone.
+
             This field is a member of `oneof`_ ``_value``.
         offset_in_days (int):
             The relative date value of the right hand
             side denoted by number of days offset from now.
             The value field will override this field when
             both are present.
+
             This field is a member of `oneof`_ ``_offset_in_days``.
     """
 
@@ -276,6 +284,7 @@ class UserListNumberRuleItemInfo(proto.Message):
             Number value to be compared with the
             variable. This field is required and must be
             populated when creating a new number rule item.
+
             This field is a member of `oneof`_ ``_value``.
     """
 
@@ -306,6 +315,7 @@ class UserListStringRuleItemInfo(proto.Message):
             quotes, tabs, or parentheses. This field is
             required and must be populated when creating a
             new string rule item.
+
             This field is a member of `oneof`_ ``_value``.
     """
 
@@ -372,6 +382,7 @@ class DateSpecificRuleUserListInfo(proto.Message):
             should be YYYY-MM-DD.
 
             Required for creating a data specific rule user list.
+
             This field is a member of `oneof`_ ``_start_date``.
         end_date (str):
             Last date of users visit. If set to 2037-12-30, then the
@@ -379,6 +390,7 @@ class DateSpecificRuleUserListInfo(proto.Message):
             should be YYYY-MM-DD.
 
             Required for creating a data specific rule user list.
+
             This field is a member of `oneof`_ ``_end_date``.
     """
 
@@ -450,6 +462,7 @@ class RuleBasedUserListInfo(proto.Message):
             operators: AND, where the left and right operands have to be
             true; AND_NOT where left operand is true but right operand
             is false.
+
             This field is a member of `oneof`_ ``rule_based_user_list``.
         date_specific_rule_user_list (google.ads.googleads.v8.common.types.DateSpecificRuleUserListInfo):
             Visitors of a page during specific dates. The visiting
@@ -457,10 +470,12 @@ class RuleBasedUserListInfo(proto.Message):
             (inclusive) and end_date (inclusive); Before end_date
             (exclusive) with start_date = 2000-01-01; After start_date
             (exclusive) with end_date = 2037-12-30.
+
             This field is a member of `oneof`_ ``rule_based_user_list``.
         expression_rule_user_list (google.ads.googleads.v8.common.types.ExpressionRuleUserListInfo):
             Visitors of a page. The page visit is defined
             by one boolean rule expression.
+
             This field is a member of `oneof`_ ``rule_based_user_list``.
     """
 
@@ -540,6 +555,7 @@ class LogicalUserListOperandInfo(proto.Message):
     Attributes:
         user_list (str):
             Resource name of a user list as an operand.
+
             This field is a member of `oneof`_ ``_user_list``.
     """
 
@@ -581,9 +597,11 @@ class UserListActionInfo(proto.Message):
         conversion_action (str):
             A conversion action that's not generated from
             remarketing.
+
             This field is a member of `oneof`_ ``user_list_action``.
         remarketing_action (str):
             A remarketing action.
+
             This field is a member of `oneof`_ ``user_list_action``.
     """
 

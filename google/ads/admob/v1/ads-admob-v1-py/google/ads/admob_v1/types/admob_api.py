@@ -174,13 +174,16 @@ class GenerateMediationReportResponse(proto.Message):
             Report generation settings that describes the
             report contents, such as the report date range
             and localization settings.
+
             This field is a member of `oneof`_ ``payload``.
         row (google.ads.admob_v1.types.ReportRow):
             Actual report data.
+
             This field is a member of `oneof`_ ``payload``.
         footer (google.ads.admob_v1.types.ReportFooter):
             Additional information about the generated
             report, such as warnings about the data.
+
             This field is a member of `oneof`_ ``payload``.
     """
 
@@ -278,13 +281,16 @@ class GenerateNetworkReportResponse(proto.Message):
             Report generation settings that describes the
             report contents, such as the report date range
             and localization settings.
+
             This field is a member of `oneof`_ ``payload``.
         row (google.ads.admob_v1.types.ReportRow):
             Actual report data.
+
             This field is a member of `oneof`_ ``payload``.
         footer (google.ads.admob_v1.types.ReportFooter):
             Additional information about the generated
             report, such as warnings about the data.
+
             This field is a member of `oneof`_ ``payload``.
     """
 

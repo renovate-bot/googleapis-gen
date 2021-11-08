@@ -552,9 +552,15 @@ def test_predict_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].payload == data_items.ExamplePayload(image=data_items.Image(image_bytes=b'image_bytes_blob'))
-        assert args[0].params == {'key_value': 'value_value'}
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].payload
+        mock_val = data_items.ExamplePayload(image=data_items.Image(image_bytes=b'image_bytes_blob'))
+        assert arg == mock_val
+        arg = args[0].params
+        mock_val = {'key_value': 'value_value'}
+        assert arg == mock_val
 
 
 def test_predict_flattened_error():
@@ -599,9 +605,15 @@ async def test_predict_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].payload == data_items.ExamplePayload(image=data_items.Image(image_bytes=b'image_bytes_blob'))
-        assert args[0].params == {'key_value': 'value_value'}
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].payload
+        mock_val = data_items.ExamplePayload(image=data_items.Image(image_bytes=b'image_bytes_blob'))
+        assert arg == mock_val
+        arg = args[0].params
+        mock_val = {'key_value': 'value_value'}
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -792,10 +804,18 @@ def test_batch_predict_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].input_config == io.BatchPredictInputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
-        assert args[0].output_config == io.BatchPredictOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
-        assert args[0].params == {'key_value': 'value_value'}
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].input_config
+        mock_val = io.BatchPredictInputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.BatchPredictOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        assert arg == mock_val
+        arg = args[0].params
+        mock_val = {'key_value': 'value_value'}
+        assert arg == mock_val
 
 
 def test_batch_predict_flattened_error():
@@ -844,10 +864,18 @@ async def test_batch_predict_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].input_config == io.BatchPredictInputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
-        assert args[0].output_config == io.BatchPredictOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
-        assert args[0].params == {'key_value': 'value_value'}
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].input_config
+        mock_val = io.BatchPredictInputConfig(gcs_source=io.GcsSource(input_uris=['input_uris_value']))
+        assert arg == mock_val
+        arg = args[0].output_config
+        mock_val = io.BatchPredictOutputConfig(gcs_destination=io.GcsDestination(output_uri_prefix='output_uri_prefix_value'))
+        assert arg == mock_val
+        arg = args[0].params
+        mock_val = {'key_value': 'value_value'}
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

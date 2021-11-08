@@ -47,6 +47,7 @@ class BiddingStrategy(proto.Message):
             ``customers/{customer_id}/biddingStrategies/{bidding_strategy_id}``
         id (int):
             Output only. The ID of the bidding strategy.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the bidding strategy.
@@ -54,6 +55,7 @@ class BiddingStrategy(proto.Message):
             named distinctly.
             The length of this string should be between 1
             and 255, inclusive, in UTF-8 bytes, (trimmed).
+
             This field is a member of `oneof`_ ``_name``.
         status (google.ads.googleads.v9.enums.types.BiddingStrategyStatusEnum.BiddingStrategyStatus):
             Output only. The status of the bidding
@@ -86,52 +88,62 @@ class BiddingStrategy(proto.Message):
             Bidding strategy metrics are reported in this currency.
 
             This field is read-only.
+
             This field is a member of `oneof`_ ``_effective_currency_code``.
         campaign_count (int):
             Output only. The number of campaigns attached
             to this bidding strategy.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_campaign_count``.
         non_removed_campaign_count (int):
             Output only. The number of non-removed
             campaigns attached to this bidding strategy.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_non_removed_campaign_count``.
         enhanced_cpc (google.ads.googleads.v9.common.types.EnhancedCpc):
             A bidding strategy that raises bids for
             clicks that seem more likely to lead to a
             conversion and lowers them for clicks where they
             seem less likely.
+
             This field is a member of `oneof`_ ``scheme``.
         maximize_conversion_value (google.ads.googleads.v9.common.types.MaximizeConversionValue):
             An automated bidding strategy to help get the
             most conversion value for your campaigns while
             spending your budget.
+
             This field is a member of `oneof`_ ``scheme``.
         maximize_conversions (google.ads.googleads.v9.common.types.MaximizeConversions):
             An automated bidding strategy to help get the
             most conversions for your campaigns while
             spending your budget.
+
             This field is a member of `oneof`_ ``scheme``.
         target_cpa (google.ads.googleads.v9.common.types.TargetCpa):
             A bidding strategy that sets bids to help get
             as many conversions as possible at the target
             cost-per-acquisition (CPA) you set.
+
             This field is a member of `oneof`_ ``scheme``.
         target_impression_share (google.ads.googleads.v9.common.types.TargetImpressionShare):
             A bidding strategy that automatically
             optimizes towards a desired percentage of
             impressions.
+
             This field is a member of `oneof`_ ``scheme``.
         target_roas (google.ads.googleads.v9.common.types.TargetRoas):
             A bidding strategy that helps you maximize
             revenue while averaging a specific target Return
             On Ad Spend (ROAS).
+
             This field is a member of `oneof`_ ``scheme``.
         target_spend (google.ads.googleads.v9.common.types.TargetSpend):
             A bid strategy that sets your bids to help
             get as many clicks as possible within your
             budget.
+
             This field is a member of `oneof`_ ``scheme``.
     """
 

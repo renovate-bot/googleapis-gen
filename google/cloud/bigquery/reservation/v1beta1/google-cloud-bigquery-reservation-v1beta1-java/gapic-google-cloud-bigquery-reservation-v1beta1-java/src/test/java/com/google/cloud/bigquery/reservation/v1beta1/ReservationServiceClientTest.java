@@ -563,9 +563,7 @@ public class ReservationServiceClientTest {
 
     ListCapacityCommitmentsRequest request =
         ListCapacityCommitmentsRequest.newBuilder()
-            .setParent(
-                CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-                    .toString())
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .build();
@@ -600,9 +598,7 @@ public class ReservationServiceClientTest {
     try {
       ListCapacityCommitmentsRequest request =
           ListCapacityCommitmentsRequest.newBuilder()
-              .setParent(
-                  CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

@@ -108,16 +108,19 @@ class CustomerAssetOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.CustomerAsset):
             Create operation: No resource name is
             expected for the new customer asset.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.CustomerAsset):
             Update operation: The customer asset is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed customer
             asset is expected, in this format:
 
             ``customers/{customer_id}/customerAssets/{asset_id}~{field_type}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

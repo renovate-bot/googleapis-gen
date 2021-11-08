@@ -200,8 +200,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
-   *   String parent =
-   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (DeliveryPipeline element :
    *       cloudDeployClient.listDeliveryPipelines(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -229,9 +228,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   ListDeliveryPipelinesRequest request =
    *       ListDeliveryPipelinesRequest.newBuilder()
-   *           .setParent(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -262,9 +259,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   ListDeliveryPipelinesRequest request =
    *       ListDeliveryPipelinesRequest.newBuilder()
-   *           .setParent(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -294,9 +289,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   ListDeliveryPipelinesRequest request =
    *       ListDeliveryPipelinesRequest.newBuilder()
-   *           .setParent(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -467,8 +460,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
-   *   String parent =
-   *       DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   DeliveryPipeline deliveryPipeline = DeliveryPipeline.newBuilder().build();
    *   String deliveryPipelineId = "deliveryPipelineId-632411535";
    *   DeliveryPipeline response =
@@ -505,9 +497,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   CreateDeliveryPipelineRequest request =
    *       CreateDeliveryPipelineRequest.newBuilder()
-   *           .setParent(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDeliveryPipelineId("deliveryPipelineId-632411535")
    *           .setDeliveryPipeline(DeliveryPipeline.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -535,9 +525,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   CreateDeliveryPipelineRequest request =
    *       CreateDeliveryPipelineRequest.newBuilder()
-   *           .setParent(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDeliveryPipelineId("deliveryPipelineId-632411535")
    *           .setDeliveryPipeline(DeliveryPipeline.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -565,9 +553,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   CreateDeliveryPipelineRequest request =
    *       CreateDeliveryPipelineRequest.newBuilder()
-   *           .setParent(
-   *               DeliveryPipelineName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDeliveryPipelineId("deliveryPipelineId-632411535")
    *           .setDeliveryPipeline(DeliveryPipeline.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -880,7 +866,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
-   *   String parent = TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Target element : cloudDeployClient.listTargets(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -906,7 +892,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   ListTargetsRequest request =
    *       ListTargetsRequest.newBuilder()
-   *           .setParent(TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -935,7 +921,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   ListTargetsRequest request =
    *       ListTargetsRequest.newBuilder()
-   *           .setParent(TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -964,7 +950,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   ListTargetsRequest request =
    *       ListTargetsRequest.newBuilder()
-   *           .setParent(TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -1119,7 +1105,7 @@ public class CloudDeployClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
-   *   String parent = TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Target target = Target.newBuilder().build();
    *   String targetId = "targetId-441951604";
    *   Target response = cloudDeployClient.createTargetAsync(parent, target, targetId).get();
@@ -1153,7 +1139,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   CreateTargetRequest request =
    *       CreateTargetRequest.newBuilder()
-   *           .setParent(TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTargetId("targetId-441951604")
    *           .setTarget(Target.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1181,7 +1167,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   CreateTargetRequest request =
    *       CreateTargetRequest.newBuilder()
-   *           .setParent(TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTargetId("targetId-441951604")
    *           .setTarget(Target.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -1209,7 +1195,7 @@ public class CloudDeployClient implements BackgroundResource {
    * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
    *   CreateTargetRequest request =
    *       CreateTargetRequest.newBuilder()
-   *           .setParent(TargetName.of("[PROJECT]", "[LOCATION]", "[TARGET]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setTargetId("targetId-441951604")
    *           .setTarget(Target.newBuilder().build())
    *           .setRequestId("requestId693933066")

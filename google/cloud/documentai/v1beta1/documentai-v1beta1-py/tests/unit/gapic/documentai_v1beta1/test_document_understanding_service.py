@@ -545,7 +545,9 @@ def test_batch_process_documents_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].requests == [document_understanding.ProcessDocumentRequest(input_config=document_understanding.InputConfig(gcs_source=document_understanding.GcsSource(uri='uri_value')))]
+        arg = args[0].requests
+        mock_val = [document_understanding.ProcessDocumentRequest(input_config=document_understanding.InputConfig(gcs_source=document_understanding.GcsSource(uri='uri_value')))]
+        assert arg == mock_val
 
 
 def test_batch_process_documents_flattened_error():
@@ -588,7 +590,9 @@ async def test_batch_process_documents_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].requests == [document_understanding.ProcessDocumentRequest(input_config=document_understanding.InputConfig(gcs_source=document_understanding.GcsSource(uri='uri_value')))]
+        arg = args[0].requests
+        mock_val = [document_understanding.ProcessDocumentRequest(input_config=document_understanding.InputConfig(gcs_source=document_understanding.GcsSource(uri='uri_value')))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

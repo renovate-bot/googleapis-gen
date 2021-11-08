@@ -208,7 +208,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   String parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Reservation reservation = Reservation.newBuilder().build();
    *   String reservationId = "reservationId1116965383";
    *   Reservation response =
@@ -243,7 +243,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   CreateReservationRequest request =
    *       CreateReservationRequest.newBuilder()
-   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setReservationId("reservationId1116965383")
    *           .setReservation(Reservation.newBuilder().build())
    *           .build();
@@ -268,7 +268,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   CreateReservationRequest request =
    *       CreateReservationRequest.newBuilder()
-   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setReservationId("reservationId1116965383")
    *           .setReservation(Reservation.newBuilder().build())
    *           .build();
@@ -318,7 +318,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   String parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Reservation element : reservationServiceClient.listReservations(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -345,7 +345,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListReservationsRequest request =
    *       ListReservationsRequest.newBuilder()
-   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -373,7 +373,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListReservationsRequest request =
    *       ListReservationsRequest.newBuilder()
-   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -402,7 +402,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListReservationsRequest request =
    *       ListReservationsRequest.newBuilder()
-   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -729,8 +729,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   String parent =
-   *       CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   CapacityCommitment capacityCommitment = CapacityCommitment.newBuilder().build();
    *   CapacityCommitment response =
    *       reservationServiceClient.createCapacityCommitment(parent, capacityCommitment);
@@ -762,9 +761,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   CreateCapacityCommitmentRequest request =
    *       CreateCapacityCommitmentRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setCapacityCommitment(CapacityCommitment.newBuilder().build())
    *           .setEnforceSingleAdminProjectPerOrg(true)
    *           .build();
@@ -790,9 +787,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   CreateCapacityCommitmentRequest request =
    *       CreateCapacityCommitmentRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setCapacityCommitment(CapacityCommitment.newBuilder().build())
    *           .setEnforceSingleAdminProjectPerOrg(true)
    *           .build();
@@ -818,9 +813,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListCapacityCommitmentsRequest request =
    *       ListCapacityCommitmentsRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -849,9 +842,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListCapacityCommitmentsRequest request =
    *       ListCapacityCommitmentsRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -879,9 +870,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListCapacityCommitmentsRequest request =
    *       ListCapacityCommitmentsRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1398,8 +1387,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   String parent =
-   *       CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   List<String> capacityCommitmentIds = new ArrayList<>();
    *   CapacityCommitment response =
    *       reservationServiceClient.mergeCapacityCommitments(parent, capacityCommitmentIds);
@@ -1438,9 +1426,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   MergeCapacityCommitmentsRequest request =
    *       MergeCapacityCommitmentsRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllCapacityCommitmentIds(new ArrayList<String>())
    *           .build();
    *   CapacityCommitment response = reservationServiceClient.mergeCapacityCommitments(request);
@@ -1471,9 +1457,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   MergeCapacityCommitmentsRequest request =
    *       MergeCapacityCommitmentsRequest.newBuilder()
-   *           .setParent(
-   *               CapacityCommitmentName.of("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllCapacityCommitmentIds(new ArrayList<String>())
    *           .build();
    *   ApiFuture<CapacityCommitment> future =
@@ -1576,8 +1560,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   String parent =
-   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
+   *   String parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString();
    *   Assignment assignment = Assignment.newBuilder().build();
    *   Assignment response = reservationServiceClient.createAssignment(parent, assignment);
    * }
@@ -1630,9 +1613,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   CreateAssignmentRequest request =
    *       CreateAssignmentRequest.newBuilder()
-   *           .setParent(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .setAssignment(Assignment.newBuilder().build())
    *           .build();
    *   Assignment response = reservationServiceClient.createAssignment(request);
@@ -1682,9 +1663,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   CreateAssignmentRequest request =
    *       CreateAssignmentRequest.newBuilder()
-   *           .setParent(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .setAssignment(Assignment.newBuilder().build())
    *           .build();
    *   ApiFuture<Assignment> future =
@@ -1773,8 +1752,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
-   *   String parent =
-   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
+   *   String parent = ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString();
    *   for (Assignment element : reservationServiceClient.listAssignments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1821,9 +1799,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListAssignmentsRequest request =
    *       ListAssignmentsRequest.newBuilder()
-   *           .setParent(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1869,9 +1845,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListAssignmentsRequest request =
    *       ListAssignmentsRequest.newBuilder()
-   *           .setParent(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -1918,9 +1892,7 @@ public class ReservationServiceClient implements BackgroundResource {
    * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
    *   ListAssignmentsRequest request =
    *       ListAssignmentsRequest.newBuilder()
-   *           .setParent(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *           .setParent(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -2403,7 +2375,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   AssignmentName name =
    *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
    *   String destinationId =
-   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
+   *       ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString();
    *   Assignment response = reservationServiceClient.moveAssignment(name, destinationId);
    * }
    * }</pre>
@@ -2471,7 +2443,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   String name =
    *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
    *   String destinationId =
-   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
+   *       ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString();
    *   Assignment response = reservationServiceClient.moveAssignment(name, destinationId);
    * }
    * }</pre>
@@ -2505,8 +2477,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
    *                   .toString())
    *           .setDestinationId(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *               ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .build();
    *   Assignment response = reservationServiceClient.moveAssignment(request);
    * }
@@ -2536,8 +2507,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
    *                   .toString())
    *           .setDestinationId(
-   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
-   *                   .toString())
+   *               ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
    *           .build();
    *   ApiFuture<Assignment> future =
    *       reservationServiceClient.moveAssignmentCallable().futureCall(request);

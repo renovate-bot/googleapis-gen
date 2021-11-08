@@ -63,18 +63,22 @@ class SuggestGeoTargetConstantsRequest(proto.Message):
             translated using this locale. If not, en is used
             by default. This is also used as a hint for
             returned geo targets.
+
             This field is a member of `oneof`_ ``_locale``.
         country_code (str):
             Returned geo targets are restricted to this
             country code.
+
             This field is a member of `oneof`_ ``_country_code``.
         location_names (google.ads.googleads.v7.services.types.SuggestGeoTargetConstantsRequest.LocationNames):
             The location names to search by. At most 25
             names can be set.
+
             This field is a member of `oneof`_ ``query``.
         geo_targets (google.ads.googleads.v7.services.types.SuggestGeoTargetConstantsRequest.GeoTargets):
             The geo target constant resource names to
             filter by.
+
             This field is a member of `oneof`_ ``query``.
     """
 
@@ -156,15 +160,18 @@ class GeoTargetConstantSuggestion(proto.Message):
             The default locale will be returned if no
             translation exists for the locale in the
             request.
+
             This field is a member of `oneof`_ ``_locale``.
         reach (int):
             Approximate user population that will be
             targeted, rounded to the nearest 100.
+
             This field is a member of `oneof`_ ``_reach``.
         search_term (str):
             If the request searched by location name,
             this is the location name that matched the geo
             target.
+
             This field is a member of `oneof`_ ``_search_term``.
         geo_target_constant (google.ads.googleads.v7.resources.types.GeoTargetConstant):
             The GeoTargetConstant result.

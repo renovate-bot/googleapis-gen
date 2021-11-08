@@ -10,6 +10,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/iam/v1beta/workload_identity_pool.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class WorkloadIdentityPoolsGrpc {
 
   private WorkloadIdentityPoolsGrpc() {}

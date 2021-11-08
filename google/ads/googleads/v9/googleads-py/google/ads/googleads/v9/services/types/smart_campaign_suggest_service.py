@@ -53,10 +53,12 @@ class SuggestSmartCampaignBudgetOptionsRequest(proto.Message):
         campaign (str):
             Required. The resource name of the campaign
             to get suggestion for.
+
             This field is a member of `oneof`_ ``suggestion_data``.
         suggestion_info (google.ads.googleads.v9.services.types.SmartCampaignSuggestionInfo):
             Required. Information needed to get budget
             options
+
             This field is a member of `oneof`_ ``suggestion_data``.
     """
 
@@ -105,6 +107,7 @@ class SmartCampaignSuggestionInfo(proto.Message):
         business_context (google.ads.googleads.v9.services.types.SmartCampaignSuggestionInfo.BusinessContext):
             Optional. Context describing the business to
             advertise.
+
             This field is a member of `oneof`_ ``business_setting``.
         business_location_id (int):
             Optional. The ID of the Google My Business (GMB) Location.
@@ -113,14 +116,17 @@ class SmartCampaignSuggestionInfo(proto.Message):
             {locationId} component from the GMB API represents the
             business_location_id. See the [Google My Business API]
             (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
+
             This field is a member of `oneof`_ ``business_setting``.
         location_list (google.ads.googleads.v9.services.types.SmartCampaignSuggestionInfo.LocationList):
             Optional. The targeting geo location by
             locations.
+
             This field is a member of `oneof`_ ``geo_target``.
         proximity (google.ads.googleads.v9.common.types.ProximityInfo):
             Optional. The targeting geo location by
             proximity.
+
             This field is a member of `oneof`_ ``geo_target``.
     """
 
@@ -203,12 +209,15 @@ class SuggestSmartCampaignBudgetOptionsResponse(proto.Message):
     Attributes:
         low (google.ads.googleads.v9.services.types.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption):
             Optional. The lowest budget option.
+
             This field is a member of `oneof`_ ``_low``.
         recommended (google.ads.googleads.v9.services.types.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption):
             Optional. The recommended budget option.
+
             This field is a member of `oneof`_ ``_recommended``.
         high (google.ads.googleads.v9.services.types.SuggestSmartCampaignBudgetOptionsResponse.BudgetOption):
             Optional. The highest budget option.
+
             This field is a member of `oneof`_ ``_high``.
     """
 

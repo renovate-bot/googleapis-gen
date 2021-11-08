@@ -10,6 +10,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/identitytoolkit/v2/account_management_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AccountManagementServiceGrpc {
 
   private AccountManagementServiceGrpc() {}

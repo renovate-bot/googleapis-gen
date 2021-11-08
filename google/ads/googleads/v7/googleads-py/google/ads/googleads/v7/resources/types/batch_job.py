@@ -41,11 +41,13 @@ class BatchJob(proto.Message):
             ``customers/{customer_id}/batchJobs/{batch_job_id}``
         id (int):
             Output only. ID of this batch job.
+
             This field is a member of `oneof`_ ``_id``.
         next_add_sequence_token (str):
             Output only. The next sequence token to use
             when adding operations. Only set when the batch
             job status is PENDING.
+
             This field is a member of `oneof`_ ``_next_add_sequence_token``.
         metadata (google.ads.googleads.v7.resources.types.BatchJob.BatchJobMetadata):
             Output only. Contains additional information
@@ -57,6 +59,7 @@ class BatchJob(proto.Message):
             unning operation that can be used to poll for
             completion. Only set when the batch job status
             is RUNNING or DONE.
+
             This field is a member of `oneof`_ ``_long_running_operation``.
     """
 
@@ -70,30 +73,36 @@ class BatchJob(proto.Message):
                 Output only. The time when this batch job was
                 created. Formatted as yyyy-mm-dd hh:mm:ss.
                 Example: "2018-03-05 09:15:00".
+
                 This field is a member of `oneof`_ ``_creation_date_time``.
             start_date_time (str):
                 Output only. The time when this batch job
                 started running. Formatted as yyyy-mm-dd
                 hh:mm:ss. Example: "2018-03-05 09:15:30".
+
                 This field is a member of `oneof`_ ``_start_date_time``.
             completion_date_time (str):
                 Output only. The time when this batch job was
                 completed. Formatted as yyyy-MM-dd HH:mm:ss.
                 Example: "2018-03-05 09:16:00".
+
                 This field is a member of `oneof`_ ``_completion_date_time``.
             estimated_completion_ratio (float):
                 Output only. The fraction (between 0.0 and
                 1.0) of mutates that have been processed. This
                 is empty if the job hasn't started running yet.
+
                 This field is a member of `oneof`_ ``_estimated_completion_ratio``.
             operation_count (int):
                 Output only. The number of mutate operations
                 in the batch job.
+
                 This field is a member of `oneof`_ ``_operation_count``.
             executed_operation_count (int):
                 Output only. The number of mutate operations
                 executed by the batch job. Present only if the
                 job has started running.
+
                 This field is a member of `oneof`_ ``_executed_operation_count``.
         """
 

@@ -43,6 +43,7 @@ class FrequencyCapEntry(proto.Message):
         cap (int):
             Maximum number of events allowed during the
             time range by this cap.
+
             This field is a member of `oneof`_ ``_cap``.
     """
 
@@ -75,6 +76,7 @@ class FrequencyCapKey(proto.Message):
             week).
         time_length (int):
             Number of time units the cap lasts.
+
             This field is a member of `oneof`_ ``_time_length``.
     """
 

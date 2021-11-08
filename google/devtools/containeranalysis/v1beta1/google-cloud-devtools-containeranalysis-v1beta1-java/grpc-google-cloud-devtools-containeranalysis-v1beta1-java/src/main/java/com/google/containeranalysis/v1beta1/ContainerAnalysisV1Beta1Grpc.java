@@ -20,6 +20,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/devtools/containeranalysis/v1beta1/containeranalysis.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class ContainerAnalysisV1Beta1Grpc {
 
   private ContainerAnalysisV1Beta1Grpc() {}

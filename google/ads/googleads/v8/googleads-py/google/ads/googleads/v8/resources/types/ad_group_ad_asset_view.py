@@ -51,10 +51,12 @@ class AdGroupAdAssetView(proto.Message):
         ad_group_ad (str):
             Output only. The ad group ad to which the
             asset is linked.
+
             This field is a member of `oneof`_ ``_ad_group_ad``.
         asset (str):
             Output only. The asset which is linked to the
             ad group ad.
+
             This field is a member of `oneof`_ ``_asset``.
         field_type (google.ads.googleads.v8.enums.types.AssetFieldTypeEnum.AssetFieldType):
             Output only. Role that the asset takes in the
@@ -66,6 +68,7 @@ class AdGroupAdAssetView(proto.Message):
             false, it means the link once existed but has
             been removed and is no longer present in the
             latest version of the ad.
+
             This field is a member of `oneof`_ ``_enabled``.
         policy_summary (google.ads.googleads.v8.resources.types.AdGroupAdAssetPolicySummary):
             Output only. Policy information for the ad

@@ -55,9 +55,11 @@ class Asset(proto.Message):
             ``customers/{customer_id}/assets/{asset_id}``
         id (int):
             Output only. The ID of the asset.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             Optional name of the asset.
+
             This field is a member of `oneof`_ ``_name``.
         type_ (google.ads.googleads.v9.enums.types.AssetTypeEnum.AssetType):
             Output only. Type of the asset.
@@ -69,6 +71,7 @@ class Asset(proto.Message):
             all cross domain redirects.
         tracking_url_template (str):
             URL template for constructing a tracking URL.
+
             This field is a member of `oneof`_ ``_tracking_url_template``.
         url_custom_parameters (Sequence[google.ads.googleads.v9.common.types.CustomParameter]):
             A list of mappings to be used for substituting URL custom
@@ -77,60 +80,78 @@ class Asset(proto.Message):
         final_url_suffix (str):
             URL template for appending params to landing
             page URLs served with parallel tracking.
+
             This field is a member of `oneof`_ ``_final_url_suffix``.
         policy_summary (google.ads.googleads.v9.resources.types.AssetPolicySummary):
             Output only. Policy information for the
             asset.
         youtube_video_asset (google.ads.googleads.v9.common.types.YoutubeVideoAsset):
             Immutable. A YouTube video asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         media_bundle_asset (google.ads.googleads.v9.common.types.MediaBundleAsset):
             Immutable. A media bundle asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         image_asset (google.ads.googleads.v9.common.types.ImageAsset):
             Output only. An image asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         text_asset (google.ads.googleads.v9.common.types.TextAsset):
             Immutable. A text asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         lead_form_asset (google.ads.googleads.v9.common.types.LeadFormAsset):
             A lead form asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         book_on_google_asset (google.ads.googleads.v9.common.types.BookOnGoogleAsset):
             A book on google asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         promotion_asset (google.ads.googleads.v9.common.types.PromotionAsset):
             A promotion asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         callout_asset (google.ads.googleads.v9.common.types.CalloutAsset):
             A callout asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         structured_snippet_asset (google.ads.googleads.v9.common.types.StructuredSnippetAsset):
             A structured snippet asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         sitelink_asset (google.ads.googleads.v9.common.types.SitelinkAsset):
             A sitelink asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         page_feed_asset (google.ads.googleads.v9.common.types.PageFeedAsset):
             A page feed asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         dynamic_education_asset (google.ads.googleads.v9.common.types.DynamicEducationAsset):
             A dynamic education asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         mobile_app_asset (google.ads.googleads.v9.common.types.MobileAppAsset):
             A mobile app asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         hotel_callout_asset (google.ads.googleads.v9.common.types.HotelCalloutAsset):
             A hotel callout asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         call_asset (google.ads.googleads.v9.common.types.CallAsset):
             A call asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         price_asset (google.ads.googleads.v9.common.types.PriceAsset):
             A price asset.
+
             This field is a member of `oneof`_ ``asset_data``.
         call_to_action_asset (google.ads.googleads.v9.common.types.CallToActionAsset):
             Immutable. A call to action asset.
+
             This field is a member of `oneof`_ ``asset_data``.
     """
 

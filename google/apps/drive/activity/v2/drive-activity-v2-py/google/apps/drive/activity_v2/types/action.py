@@ -66,9 +66,11 @@ class Action(proto.Message):
             action occurred.
         timestamp (google.protobuf.timestamp_pb2.Timestamp):
             The action occurred at this specific time.
+
             This field is a member of `oneof`_ ``time``.
         time_range (google.apps.drive.activity_v2.types.TimeRange):
             The action occurred over this time range.
+
             This field is a member of `oneof`_ ``time``.
     """
 
@@ -115,38 +117,49 @@ class ActionDetail(proto.Message):
     Attributes:
         create (google.apps.drive.activity_v2.types.Create):
             An object was created.
+
             This field is a member of `oneof`_ ``action_detail``.
         edit (google.apps.drive.activity_v2.types.Edit):
             An object was edited.
+
             This field is a member of `oneof`_ ``action_detail``.
         move (google.apps.drive.activity_v2.types.Move):
             An object was moved.
+
             This field is a member of `oneof`_ ``action_detail``.
         rename (google.apps.drive.activity_v2.types.Rename):
             An object was renamed.
+
             This field is a member of `oneof`_ ``action_detail``.
         delete (google.apps.drive.activity_v2.types.Delete):
             An object was deleted.
+
             This field is a member of `oneof`_ ``action_detail``.
         restore (google.apps.drive.activity_v2.types.Restore):
             A deleted object was restored.
+
             This field is a member of `oneof`_ ``action_detail``.
         permission_change (google.apps.drive.activity_v2.types.PermissionChange):
             The permission on an object was changed.
+
             This field is a member of `oneof`_ ``action_detail``.
         comment (google.apps.drive.activity_v2.types.Comment):
             A change about comments was made.
+
             This field is a member of `oneof`_ ``action_detail``.
         dlp_change (google.apps.drive.activity_v2.types.DataLeakPreventionChange):
             A change happened in data leak prevention
             status.
+
             This field is a member of `oneof`_ ``action_detail``.
         reference (google.apps.drive.activity_v2.types.ApplicationReference):
             An object was referenced in an application
             outside of Drive/Docs.
+
             This field is a member of `oneof`_ ``action_detail``.
         settings_change (google.apps.drive.activity_v2.types.SettingsChange):
             Settings were changed.
+
             This field is a member of `oneof`_ ``action_detail``.
     """
 
@@ -233,14 +246,17 @@ class Create(proto.Message):
             If present, indicates the object was newly
             created (e.g. as a blank document), not derived
             from a Drive object or external object.
+
             This field is a member of `oneof`_ ``origin``.
         upload (google.apps.drive.activity_v2.types.Create.Upload):
             If present, indicates the object originated
             externally and was uploaded to Drive.
+
             This field is a member of `oneof`_ ``origin``.
         copy (google.apps.drive.activity_v2.types.Create.Copy):
             If present, indicates the object was created
             by copying an existing Drive object.
+
             This field is a member of `oneof`_ ``origin``.
     """
 
@@ -413,16 +429,20 @@ class Permission(proto.Message):
             comment on items.
         user (google.apps.drive.activity_v2.types.User):
             The user to whom this permission applies.
+
             This field is a member of `oneof`_ ``scope``.
         group (google.apps.drive.activity_v2.types.Group):
             The group to whom this permission applies.
+
             This field is a member of `oneof`_ ``scope``.
         domain (google.apps.drive.activity_v2.types.Domain):
             The domain to whom this permission applies.
+
             This field is a member of `oneof`_ ``scope``.
         anyone (google.apps.drive.activity_v2.types.Permission.Anyone):
             If set, this permission applies to anyone,
             even logged out users.
+
             This field is a member of `oneof`_ ``scope``.
         allow_discovery (bool):
             If true, the item can be discovered (e.g. in
@@ -494,12 +514,15 @@ class Comment(proto.Message):
     Attributes:
         post (google.apps.drive.activity_v2.types.Comment.Post):
             A change on a regular posted comment.
+
             This field is a member of `oneof`_ ``type``.
         assignment (google.apps.drive.activity_v2.types.Comment.Assignment):
             A change on an assignment.
+
             This field is a member of `oneof`_ ``type``.
         suggestion (google.apps.drive.activity_v2.types.Comment.Suggestion):
             A change on a suggestion.
+
             This field is a member of `oneof`_ ``type``.
         mentioned_users (Sequence[google.apps.drive.activity_v2.types.User]):
             Users who are mentioned in this comment.

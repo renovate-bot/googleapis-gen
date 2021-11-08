@@ -97,11 +97,13 @@ class AdGroupCustomizerOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.AdGroupCustomizer):
             Create operation: No resource name is
             expected for the new ad group customizer
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed ad group
             customizer is expected, in this format:
             ``customers/{customer_id}/adGroupCustomizers/{ad_group_id}~{customizer_attribute_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

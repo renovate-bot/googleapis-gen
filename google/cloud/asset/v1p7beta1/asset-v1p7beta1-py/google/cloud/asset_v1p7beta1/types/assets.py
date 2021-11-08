@@ -93,14 +93,17 @@ class Asset(proto.Message):
         access_policy (google.identity.accesscontextmanager.v1.access_policy_pb2.AccessPolicy):
             Please also refer to the `access policy user
             guide <https://cloud.google.com/access-context-manager/docs/overview#access-policies>`__.
+
             This field is a member of `oneof`_ ``access_context_policy``.
         access_level (google.identity.accesscontextmanager.v1.access_level_pb2.AccessLevel):
             Please also refer to the `access level user
             guide <https://cloud.google.com/access-context-manager/docs/overview#access-levels>`__.
+
             This field is a member of `oneof`_ ``access_context_policy``.
         service_perimeter (google.identity.accesscontextmanager.v1.service_perimeter_pb2.ServicePerimeter):
             Please also refer to the `service perimeter user
             guide <https://cloud.google.com/vpc-service-controls/docs/overview>`__.
+
             This field is a member of `oneof`_ ``access_context_policy``.
         related_assets (google.cloud.asset_v1p7beta1.types.RelatedAssets):
             The related assets of the asset of one

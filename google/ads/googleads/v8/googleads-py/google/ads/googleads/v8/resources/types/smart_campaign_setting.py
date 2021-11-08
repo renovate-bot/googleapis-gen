@@ -53,6 +53,7 @@ class SmartCampaignSetting(proto.Message):
             The ISO-639-1 language code to advertise in.
         business_name (str):
             The name of the business.
+
             This field is a member of `oneof`_ ``business_setting``.
         business_location_id (int):
             The ID of the Google My Business (GMB) Location. The
@@ -61,6 +62,7 @@ class SmartCampaignSetting(proto.Message):
             {locationId} component from the GMB API represents the
             business_location_id. See the [Google My Business API]
             (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
+
             This field is a member of `oneof`_ ``business_setting``.
     """
 
@@ -70,10 +72,12 @@ class SmartCampaignSetting(proto.Message):
         Attributes:
             phone_number (str):
                 Phone number of the smart campaign.
+
                 This field is a member of `oneof`_ ``_phone_number``.
             country_code (str):
                 Upper-case, two-letter country code as
                 defined by ISO-3166.
+
                 This field is a member of `oneof`_ ``_country_code``.
         """
 

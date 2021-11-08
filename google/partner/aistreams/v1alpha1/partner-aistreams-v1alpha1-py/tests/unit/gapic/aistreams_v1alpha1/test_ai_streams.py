@@ -555,7 +555,9 @@ def test_list_clusters_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_clusters_flattened_error():
@@ -596,7 +598,9 @@ async def test_list_clusters_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -980,7 +984,9 @@ def test_get_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_cluster_flattened_error():
@@ -1021,7 +1027,9 @@ async def test_get_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1209,9 +1217,15 @@ def test_create_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].cluster == aistreams.Cluster(name='name_value')
-        assert args[0].cluster_id == 'cluster_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].cluster
+        mock_val = aistreams.Cluster(name='name_value')
+        assert arg == mock_val
+        arg = args[0].cluster_id
+        mock_val = 'cluster_id_value'
+        assert arg == mock_val
 
 
 def test_create_cluster_flattened_error():
@@ -1258,9 +1272,15 @@ async def test_create_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].cluster == aistreams.Cluster(name='name_value')
-        assert args[0].cluster_id == 'cluster_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].cluster
+        mock_val = aistreams.Cluster(name='name_value')
+        assert arg == mock_val
+        arg = args[0].cluster_id
+        mock_val = 'cluster_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1449,8 +1469,12 @@ def test_update_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].cluster == aistreams.Cluster(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].cluster
+        mock_val = aistreams.Cluster(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_cluster_flattened_error():
@@ -1495,8 +1519,12 @@ async def test_update_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].cluster == aistreams.Cluster(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].cluster
+        mock_val = aistreams.Cluster(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1683,7 +1711,9 @@ def test_delete_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_cluster_flattened_error():
@@ -1726,7 +1756,9 @@ async def test_delete_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1920,7 +1952,9 @@ def test_list_streams_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_streams_flattened_error():
@@ -1961,7 +1995,9 @@ async def test_list_streams_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2337,7 +2373,9 @@ def test_get_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_stream_flattened_error():
@@ -2378,7 +2416,9 @@ async def test_get_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2566,9 +2606,15 @@ def test_create_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].stream == aistreams.Stream(name='name_value')
-        assert args[0].stream_id == 'stream_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].stream
+        mock_val = aistreams.Stream(name='name_value')
+        assert arg == mock_val
+        arg = args[0].stream_id
+        mock_val = 'stream_id_value'
+        assert arg == mock_val
 
 
 def test_create_stream_flattened_error():
@@ -2615,9 +2661,15 @@ async def test_create_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].stream == aistreams.Stream(name='name_value')
-        assert args[0].stream_id == 'stream_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].stream
+        mock_val = aistreams.Stream(name='name_value')
+        assert arg == mock_val
+        arg = args[0].stream_id
+        mock_val = 'stream_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2806,8 +2858,12 @@ def test_update_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].stream == aistreams.Stream(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].stream
+        mock_val = aistreams.Stream(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_stream_flattened_error():
@@ -2852,8 +2908,12 @@ async def test_update_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].stream == aistreams.Stream(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].stream
+        mock_val = aistreams.Stream(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3040,7 +3100,9 @@ def test_delete_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_stream_flattened_error():
@@ -3083,7 +3145,9 @@ async def test_delete_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

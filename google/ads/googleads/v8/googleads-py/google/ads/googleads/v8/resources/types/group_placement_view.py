@@ -40,15 +40,18 @@ class GroupPlacementView(proto.Message):
             Output only. The automatic placement string
             at group level, e. g. web domain, mobile app ID,
             or a YouTube channel ID.
+
             This field is a member of `oneof`_ ``_placement``.
         display_name (str):
             Output only. Domain name for websites and
             YouTube channel name for YouTube channels.
+
             This field is a member of `oneof`_ ``_display_name``.
         target_url (str):
             Output only. URL of the group placement, e.g.
             domain, link to the mobile application in app
             store, or a YouTube channel URL.
+
             This field is a member of `oneof`_ ``_target_url``.
         placement_type (google.ads.googleads.v8.enums.types.PlacementTypeEnum.PlacementType):
             Output only. Type of the placement, e.g.

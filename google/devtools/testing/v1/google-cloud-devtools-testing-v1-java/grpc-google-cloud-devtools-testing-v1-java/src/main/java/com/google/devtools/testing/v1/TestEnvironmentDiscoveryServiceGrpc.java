@@ -35,6 +35,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/devtools/testing/v1/test_environment_discovery.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class TestEnvironmentDiscoveryServiceGrpc {
 
   private TestEnvironmentDiscoveryServiceGrpc() {}

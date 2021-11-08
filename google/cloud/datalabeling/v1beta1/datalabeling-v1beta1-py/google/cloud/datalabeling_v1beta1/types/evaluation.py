@@ -120,6 +120,7 @@ class EvaluationConfig(proto.Message):
             Only specify this field if the related model performs image
             object detection (``IMAGE_BOUNDING_BOX_ANNOTATION``).
             Describes how to evaluate bounding boxes.
+
             This field is a member of `oneof`_ ``vertical_option``.
     """
 

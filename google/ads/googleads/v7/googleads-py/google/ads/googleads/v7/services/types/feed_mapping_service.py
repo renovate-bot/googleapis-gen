@@ -113,12 +113,14 @@ class FeedMappingOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.FeedMapping):
             Create operation: No resource name is
             expected for the new feed mapping.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed feed
             mapping is expected, in this format:
 
             ``customers/{customer_id}/feedMappings/{feed_id}~{feed_mapping_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

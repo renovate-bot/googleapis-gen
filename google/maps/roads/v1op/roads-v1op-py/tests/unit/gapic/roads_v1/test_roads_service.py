@@ -481,7 +481,9 @@ def test_snap_to_roads_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].path == 'path_value'
+        arg = args[0].path
+        mock_val = 'path_value'
+        assert arg == mock_val
 
 
 def test_snap_to_roads_flattened_error():
@@ -522,7 +524,9 @@ async def test_snap_to_roads_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].path == 'path_value'
+        arg = args[0].path
+        mock_val = 'path_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -645,7 +649,9 @@ def test_list_nearest_roads_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].points == 'points_value'
+        arg = args[0].points
+        mock_val = 'points_value'
+        assert arg == mock_val
 
 
 def test_list_nearest_roads_flattened_error():
@@ -686,7 +692,9 @@ async def test_list_nearest_roads_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].points == 'points_value'
+        arg = args[0].points
+        mock_val = 'points_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -560,7 +560,9 @@ def test_create_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_create_topic_flattened_error():
@@ -601,7 +603,9 @@ async def test_create_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -951,8 +955,12 @@ def test_publish_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
-        assert args[0].messages == [pubsub.PubsubMessage(data=b'data_blob')]
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
+        arg = args[0].messages
+        mock_val = [pubsub.PubsubMessage(data=b'data_blob')]
+        assert arg == mock_val
 
 
 def test_publish_flattened_error():
@@ -995,8 +1003,12 @@ async def test_publish_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
-        assert args[0].messages == [pubsub.PubsubMessage(data=b'data_blob')]
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
+        arg = args[0].messages
+        mock_val = [pubsub.PubsubMessage(data=b'data_blob')]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1195,7 +1207,9 @@ def test_get_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 def test_get_topic_flattened_error():
@@ -1236,7 +1250,9 @@ async def test_get_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1426,7 +1442,9 @@ def test_list_topics_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project == 'project_value'
+        arg = args[0].project
+        mock_val = 'project_value'
+        assert arg == mock_val
 
 
 def test_list_topics_flattened_error():
@@ -1467,7 +1485,9 @@ async def test_list_topics_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project == 'project_value'
+        arg = args[0].project
+        mock_val = 'project_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1847,7 +1867,9 @@ def test_list_topic_subscriptions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 def test_list_topic_subscriptions_flattened_error():
@@ -1888,7 +1910,9 @@ async def test_list_topic_subscriptions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2268,7 +2292,9 @@ def test_list_topic_snapshots_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 def test_list_topic_snapshots_flattened_error():
@@ -2309,7 +2335,9 @@ async def test_list_topic_snapshots_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2679,7 +2707,9 @@ def test_delete_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 def test_delete_topic_flattened_error():
@@ -2720,7 +2750,9 @@ async def test_delete_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].topic == 'topic_value'
+        arg = args[0].topic
+        mock_val = 'topic_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

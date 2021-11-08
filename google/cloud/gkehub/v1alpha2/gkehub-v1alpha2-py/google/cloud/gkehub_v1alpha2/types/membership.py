@@ -84,6 +84,7 @@ class Membership(proto.Message):
         endpoint (google.cloud.gkehub_v1alpha2.types.MembershipEndpoint):
             Optional. Endpoint information to reach this
             member.
+
             This field is a member of `oneof`_ ``type``.
         state (google.cloud.gkehub_v1alpha2.types.MembershipState):
             Output only. State of the Membership
@@ -221,14 +222,17 @@ class MembershipEndpoint(proto.Message):
         gke_cluster (google.cloud.gkehub_v1alpha2.types.GkeCluster):
             Optional. Specific information for a GKE-on-
             CP cluster.
+
             This field is a member of `oneof`_ ``type``.
         on_prem_cluster (google.cloud.gkehub_v1alpha2.types.OnPremCluster):
             Optional. Specific information for a GKE On-
             rem cluster.
+
             This field is a member of `oneof`_ ``type``.
         multi_cloud_cluster (google.cloud.gkehub_v1alpha2.types.MultiCloudCluster):
             Optional. Specific information for a GKE
             Multi-Cloud cluster.
+
             This field is a member of `oneof`_ ``type``.
         kubernetes_metadata (google.cloud.gkehub_v1alpha2.types.KubernetesMetadata):
             Output only. Useful Kubernetes-specific

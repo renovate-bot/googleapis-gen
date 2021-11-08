@@ -55,9 +55,11 @@ class OfflineUserDataJob(proto.Message):
         id (int):
             Output only. ID of this offline user data
             job.
+
             This field is a member of `oneof`_ ``_id``.
         external_id (int):
             Immutable. User specified job ID.
+
             This field is a member of `oneof`_ ``_external_id``.
         type_ (google.ads.googleads.v9.enums.types.OfflineUserDataJobTypeEnum.OfflineUserDataJobType):
             Immutable. Type of the job.
@@ -72,10 +74,12 @@ class OfflineUserDataJob(proto.Message):
         customer_match_user_list_metadata (google.ads.googleads.v9.common.types.CustomerMatchUserListMetadata):
             Immutable. Metadata for data updates to a
             CRM-based user list.
+
             This field is a member of `oneof`_ ``metadata``.
         store_sales_metadata (google.ads.googleads.v9.common.types.StoreSalesMetadata):
             Immutable. Metadata for store sales data
             update.
+
             This field is a member of `oneof`_ ``metadata``.
     """
 

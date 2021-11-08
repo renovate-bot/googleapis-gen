@@ -115,12 +115,15 @@ class StructuredQuery(proto.Message):
         Attributes:
             composite_filter (google.cloud.firestore_v1.types.StructuredQuery.CompositeFilter):
                 A composite filter.
+
                 This field is a member of `oneof`_ ``filter_type``.
             field_filter (google.cloud.firestore_v1.types.StructuredQuery.FieldFilter):
                 A filter on a document field.
+
                 This field is a member of `oneof`_ ``filter_type``.
             unary_filter (google.cloud.firestore_v1.types.StructuredQuery.UnaryFilter):
                 A filter that takes exactly one argument.
+
                 This field is a member of `oneof`_ ``filter_type``.
         """
 
@@ -221,6 +224,7 @@ class StructuredQuery(proto.Message):
                 The unary operator to apply.
             field (google.cloud.firestore_v1.types.StructuredQuery.FieldReference):
                 The field to which to apply the operator.
+
                 This field is a member of `oneof`_ ``operand_type``.
         """
         class Operator(proto.Enum):

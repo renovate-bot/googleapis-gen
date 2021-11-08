@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.37.0'
-  compile 'io.grpc:grpc-protobuf:1.37.0'
+  compile 'io.grpc:grpc-stub:1.41.0'
+  compile 'io.grpc:grpc-protobuf:1.41.0'
   compile project(':proto-google-cloud-firestore-v1-java')
 }
 

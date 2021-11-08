@@ -17,6 +17,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/iam/credentials/v1/iamcredentials.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class IAMCredentialsGrpc {
 
   private IAMCredentialsGrpc() {}

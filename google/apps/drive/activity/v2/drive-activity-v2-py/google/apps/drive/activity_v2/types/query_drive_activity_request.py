@@ -39,10 +39,12 @@ class QueryDriveActivityRequest(proto.Message):
         item_name (str):
             Return activities for this Drive item. The format is
             ``items/ITEM_ID``.
+
             This field is a member of `oneof`_ ``key``.
         ancestor_name (str):
             Return activities for this Drive folder and all children and
             descendants. The format is ``items/ITEM_ID``.
+
             This field is a member of `oneof`_ ``key``.
         consolidation_strategy (google.apps.drive.activity_v2.types.ConsolidationStrategy):
             Details on how to consolidate related actions
@@ -132,10 +134,12 @@ class ConsolidationStrategy(proto.Message):
         none (google.apps.drive.activity_v2.types.ConsolidationStrategy.NoConsolidation):
             The individual activities are not
             consolidated.
+
             This field is a member of `oneof`_ ``strategy``.
         legacy (google.apps.drive.activity_v2.types.ConsolidationStrategy.Legacy):
             The individual activities are consolidated
             using the legacy strategy.
+
             This field is a member of `oneof`_ ``strategy``.
     """
 

@@ -132,12 +132,14 @@ class MerchantCenterLinkOperation(proto.Message):
         update (google.ads.googleads.v9.resources.types.MerchantCenterLink):
             Update operation: The merchant center link is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed merchant
             center link is expected, in this format:
 
             ``customers/{customer_id}/merchantCenterLinks/{merchant_center_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

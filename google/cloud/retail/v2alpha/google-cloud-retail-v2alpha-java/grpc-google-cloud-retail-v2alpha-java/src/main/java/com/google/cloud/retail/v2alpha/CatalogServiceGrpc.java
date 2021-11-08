@@ -10,6 +10,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/retail/v2alpha/catalog_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CatalogServiceGrpc {
 
   private CatalogServiceGrpc() {}

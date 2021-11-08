@@ -50,6 +50,7 @@ class ExtensionFeedItem(proto.Message):
         id (int):
             Output only. The ID of this feed item. Read-
             nly.
+
             This field is a member of `oneof`_ ``_id``.
         extension_type (google.ads.googleads.v9.enums.types.ExtensionTypeEnum.ExtensionType):
             Output only. The extension type of the
@@ -61,6 +62,7 @@ class ExtensionFeedItem(proto.Message):
             MM-DD HH:MM:SS".
             Examples: "2018-03-05 09:15:00" or "2018-02-01
             14:34:30".
+
             This field is a member of `oneof`_ ``_start_date_time``.
         end_date_time (str):
             End time in which this feed item is no longer
@@ -69,6 +71,7 @@ class ExtensionFeedItem(proto.Message):
             MM-DD HH:MM:SS".
             Examples: "2018-03-05 09:15:00" or "2018-02-01
             14:34:30".
+
             This field is a member of `oneof`_ ``_end_date_time``.
         ad_schedules (Sequence[google.ads.googleads.v9.common.types.AdScheduleInfo]):
             List of non-overlapping schedules specifying
@@ -79,6 +82,7 @@ class ExtensionFeedItem(proto.Message):
             The targeted device.
         targeted_geo_target_constant (str):
             The targeted geo target constant.
+
             This field is a member of `oneof`_ ``_targeted_geo_target_constant``.
         targeted_keyword (google.ads.googleads.v9.common.types.KeywordInfo):
             The targeted keyword.
@@ -87,50 +91,64 @@ class ExtensionFeedItem(proto.Message):
             This field is read-only.
         sitelink_feed_item (google.ads.googleads.v9.common.types.SitelinkFeedItem):
             Sitelink extension.
+
             This field is a member of `oneof`_ ``extension``.
         structured_snippet_feed_item (google.ads.googleads.v9.common.types.StructuredSnippetFeedItem):
             Structured snippet extension.
+
             This field is a member of `oneof`_ ``extension``.
         app_feed_item (google.ads.googleads.v9.common.types.AppFeedItem):
             App extension.
+
             This field is a member of `oneof`_ ``extension``.
         call_feed_item (google.ads.googleads.v9.common.types.CallFeedItem):
             Call extension.
+
             This field is a member of `oneof`_ ``extension``.
         callout_feed_item (google.ads.googleads.v9.common.types.CalloutFeedItem):
             Callout extension.
+
             This field is a member of `oneof`_ ``extension``.
         text_message_feed_item (google.ads.googleads.v9.common.types.TextMessageFeedItem):
             Text message extension.
+
             This field is a member of `oneof`_ ``extension``.
         price_feed_item (google.ads.googleads.v9.common.types.PriceFeedItem):
             Price extension.
+
             This field is a member of `oneof`_ ``extension``.
         promotion_feed_item (google.ads.googleads.v9.common.types.PromotionFeedItem):
             Promotion extension.
+
             This field is a member of `oneof`_ ``extension``.
         location_feed_item (google.ads.googleads.v9.common.types.LocationFeedItem):
             Output only. Location extension. Locations
             are synced from a GMB account into a feed. This
             field is read-only.
+
             This field is a member of `oneof`_ ``extension``.
         affiliate_location_feed_item (google.ads.googleads.v9.common.types.AffiliateLocationFeedItem):
             Output only. Affiliate location extension.
             Feed locations are populated by Google Ads based
             on a chain ID. This field is read-only.
+
             This field is a member of `oneof`_ ``extension``.
         hotel_callout_feed_item (google.ads.googleads.v9.common.types.HotelCalloutFeedItem):
             Hotel Callout extension.
+
             This field is a member of `oneof`_ ``extension``.
         image_feed_item (google.ads.googleads.v9.common.types.ImageFeedItem):
             Immutable. Advertiser provided image
             extension.
+
             This field is a member of `oneof`_ ``extension``.
         targeted_campaign (str):
             The targeted campaign.
+
             This field is a member of `oneof`_ ``serving_resource_targeting``.
         targeted_ad_group (str):
             The targeted ad group.
+
             This field is a member of `oneof`_ ``serving_resource_targeting``.
     """
 

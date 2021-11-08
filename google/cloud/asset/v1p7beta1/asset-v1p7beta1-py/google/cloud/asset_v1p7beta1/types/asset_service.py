@@ -188,11 +188,13 @@ class OutputConfig(proto.Message):
     Attributes:
         gcs_destination (google.cloud.asset_v1p7beta1.types.GcsDestination):
             Destination on Cloud Storage.
+
             This field is a member of `oneof`_ ``destination``.
         bigquery_destination (google.cloud.asset_v1p7beta1.types.BigQueryDestination):
             Destination on BigQuery. The output table
             stores the fields in asset proto as columns in
             BigQuery.
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -218,6 +220,7 @@ class OutputResult(proto.Message):
     Attributes:
         gcs_result (google.cloud.asset_v1p7beta1.types.GcsOutputResult):
             Export result on Cloud Storage.
+
             This field is a member of `oneof`_ ``result``.
     """
 
@@ -261,6 +264,7 @@ class GcsDestination(proto.Message):
             See `Viewing and Editing Object
             Metadata <https://cloud.google.com/storage/docs/viewing-editing-metadata>`__
             for more information.
+
             This field is a member of `oneof`_ ``object_uri``.
         uri_prefix (str):
             The uri prefix of all generated Cloud Storage objects.
@@ -274,6 +278,7 @@ class GcsDestination(proto.Message):
             compute.googleapis.com/Disk assets. An INVALID_ARGUMENT
             error will be returned if file with the same name
             "gs://bucket_name/object_name_prefix" already exists.
+
             This field is a member of `oneof`_ ``object_uri``.
     """
 

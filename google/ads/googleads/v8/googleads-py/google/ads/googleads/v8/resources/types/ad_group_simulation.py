@@ -59,6 +59,7 @@ class AdGroupSimulation(proto.Message):
             ``customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}``
         ad_group_id (int):
             Output only. Ad group id of the simulation.
+
             This field is a member of `oneof`_ ``_ad_group_id``.
         type_ (google.ads.googleads.v8.enums.types.SimulationTypeEnum.SimulationType):
             Output only. The field that the simulation
@@ -69,26 +70,32 @@ class AdGroupSimulation(proto.Message):
         start_date (str):
             Output only. First day on which the
             simulation is based, in YYYY-MM-DD format.
+
             This field is a member of `oneof`_ ``_start_date``.
         end_date (str):
             Output only. Last day on which the simulation
             is based, in YYYY-MM-DD format
+
             This field is a member of `oneof`_ ``_end_date``.
         cpc_bid_point_list (google.ads.googleads.v8.common.types.CpcBidSimulationPointList):
             Output only. Simulation points if the simulation type is
             CPC_BID.
+
             This field is a member of `oneof`_ ``point_list``.
         cpv_bid_point_list (google.ads.googleads.v8.common.types.CpvBidSimulationPointList):
             Output only. Simulation points if the simulation type is
             CPV_BID.
+
             This field is a member of `oneof`_ ``point_list``.
         target_cpa_point_list (google.ads.googleads.v8.common.types.TargetCpaSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_CPA.
+
             This field is a member of `oneof`_ ``point_list``.
         target_roas_point_list (google.ads.googleads.v8.common.types.TargetRoasSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_ROAS.
+
             This field is a member of `oneof`_ ``point_list``.
     """
 

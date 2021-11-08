@@ -42,15 +42,19 @@ class OperatingSystemVersionConstant(proto.Message):
         id (int):
             Output only. The ID of the operating system
             version.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             Output only. Name of the operating system.
+
             This field is a member of `oneof`_ ``_name``.
         os_major_version (int):
             Output only. The OS Major Version number.
+
             This field is a member of `oneof`_ ``_os_major_version``.
         os_minor_version (int):
             Output only. The OS Minor Version number.
+
             This field is a member of `oneof`_ ``_os_minor_version``.
         operator_type (google.ads.googleads.v8.enums.types.OperatingSystemVersionOperatorTypeEnum.OperatingSystemVersionOperatorType):
             Output only. Determines whether this constant

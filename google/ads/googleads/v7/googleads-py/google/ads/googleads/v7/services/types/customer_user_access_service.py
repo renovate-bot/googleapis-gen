@@ -89,12 +89,14 @@ class CustomerUserAccessOperation(proto.Message):
         update (google.ads.googleads.v7.resources.types.CustomerUserAccess):
             Update operation: The customer user access is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed access is
             expected, in this format:
 
             ``customers/{customer_id}/customerUserAccesses/{CustomerUserAccess.user_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

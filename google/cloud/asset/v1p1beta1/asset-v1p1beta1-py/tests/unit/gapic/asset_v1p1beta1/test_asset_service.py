@@ -548,9 +548,15 @@ def test_search_all_resources_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].scope == 'scope_value'
-        assert args[0].query == 'query_value'
-        assert args[0].asset_types == ['asset_types_value']
+        arg = args[0].scope
+        mock_val = 'scope_value'
+        assert arg == mock_val
+        arg = args[0].query
+        mock_val = 'query_value'
+        assert arg == mock_val
+        arg = args[0].asset_types
+        mock_val = ['asset_types_value']
+        assert arg == mock_val
 
 
 def test_search_all_resources_flattened_error():
@@ -595,9 +601,15 @@ async def test_search_all_resources_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].scope == 'scope_value'
-        assert args[0].query == 'query_value'
-        assert args[0].asset_types == ['asset_types_value']
+        arg = args[0].scope
+        mock_val = 'scope_value'
+        assert arg == mock_val
+        arg = args[0].query
+        mock_val = 'query_value'
+        assert arg == mock_val
+        arg = args[0].asset_types
+        mock_val = ['asset_types_value']
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -976,8 +988,12 @@ def test_search_all_iam_policies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].scope == 'scope_value'
-        assert args[0].query == 'query_value'
+        arg = args[0].scope
+        mock_val = 'scope_value'
+        assert arg == mock_val
+        arg = args[0].query
+        mock_val = 'query_value'
+        assert arg == mock_val
 
 
 def test_search_all_iam_policies_flattened_error():
@@ -1020,8 +1036,12 @@ async def test_search_all_iam_policies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].scope == 'scope_value'
-        assert args[0].query == 'query_value'
+        arg = args[0].scope
+        mock_val = 'scope_value'
+        assert arg == mock_val
+        arg = args[0].query
+        mock_val = 'query_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

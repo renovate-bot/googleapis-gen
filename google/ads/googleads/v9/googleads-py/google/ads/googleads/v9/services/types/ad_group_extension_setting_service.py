@@ -113,17 +113,20 @@ class AdGroupExtensionSettingOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.AdGroupExtensionSetting):
             Create operation: No resource name is
             expected for the new ad group extension setting.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v9.resources.types.AdGroupExtensionSetting):
             Update operation: The ad group extension
             setting is expected to have a valid resource
             name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed ad group
             extension setting is expected, in this format:
 
             ``customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

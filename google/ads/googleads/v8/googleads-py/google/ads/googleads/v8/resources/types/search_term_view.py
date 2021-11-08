@@ -39,10 +39,12 @@ class SearchTermView(proto.Message):
             ``customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{URL-base64_search_term}``
         search_term (str):
             Output only. The search term.
+
             This field is a member of `oneof`_ ``_search_term``.
         ad_group (str):
             Output only. The ad group the search term
             served in.
+
             This field is a member of `oneof`_ ``_ad_group``.
         status (google.ads.googleads.v8.enums.types.SearchTermTargetingStatusEnum.SearchTermTargetingStatus):
             Output only. Indicates whether the search

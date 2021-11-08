@@ -73,6 +73,7 @@ class BatchJobOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.BatchJob):
             Create operation: No resource name is
             expected for the new batch job.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

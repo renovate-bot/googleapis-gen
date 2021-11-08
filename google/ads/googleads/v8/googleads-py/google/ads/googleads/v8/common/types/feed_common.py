@@ -31,10 +31,12 @@ class Money(proto.Message):
     Attributes:
         currency_code (str):
             Three-character ISO 4217 currency code.
+
             This field is a member of `oneof`_ ``_currency_code``.
         amount_micros (int):
             Amount in micros. One million is equivalent
             to one unit.
+
             This field is a member of `oneof`_ ``_amount_micros``.
     """
 

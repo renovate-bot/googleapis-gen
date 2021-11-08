@@ -45,6 +45,7 @@ class UploadUserDataRequest(proto.Message):
         customer_match_user_list_metadata (google.ads.googleads.v9.common.types.CustomerMatchUserListMetadata):
             Metadata for data updates to a Customer Match
             user list.
+
             This field is a member of `oneof`_ ``metadata``.
     """
 
@@ -79,10 +80,12 @@ class UserDataOperation(proto.Message):
         create (google.ads.googleads.v9.common.types.UserData):
             The list of user data to be appended to the
             user list.
+
             This field is a member of `oneof`_ ``operation``.
         remove (google.ads.googleads.v9.common.types.UserData):
             The list of user data to be removed from the
             user list.
+
             This field is a member of `oneof`_ ``operation``.
     """
 
@@ -109,10 +112,12 @@ class UploadUserDataResponse(proto.Message):
             The date time at which the request was received by API,
             formatted as "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. "2019-01-01
             12:32:45-08:00".
+
             This field is a member of `oneof`_ ``_upload_date_time``.
         received_operations_count (int):
             Number of upload data operations received by
             API.
+
             This field is a member of `oneof`_ ``_received_operations_count``.
     """
 

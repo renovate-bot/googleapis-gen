@@ -42,18 +42,23 @@ class Actor(proto.Message):
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             An end user.
+
             This field is a member of `oneof`_ ``type``.
         anonymous (google.apps.drive.activity_v2.types.AnonymousUser):
             An anonymous user.
+
             This field is a member of `oneof`_ ``type``.
         impersonation (google.apps.drive.activity_v2.types.Impersonation):
             An account acting on behalf of another.
+
             This field is a member of `oneof`_ ``type``.
         system (google.apps.drive.activity_v2.types.SystemEvent):
             A non-user actor (i.e. system triggered).
+
             This field is a member of `oneof`_ ``type``.
         administrator (google.apps.drive.activity_v2.types.Administrator):
             An administrator.
+
             This field is a member of `oneof`_ ``type``.
     """
 
@@ -102,12 +107,15 @@ class User(proto.Message):
     Attributes:
         known_user (google.apps.drive.activity_v2.types.User.KnownUser):
             A known user.
+
             This field is a member of `oneof`_ ``type``.
         deleted_user (google.apps.drive.activity_v2.types.User.DeletedUser):
             A user whose account has since been deleted.
+
             This field is a member of `oneof`_ ``type``.
         unknown_user (google.apps.drive.activity_v2.types.User.UnknownUser):
             A user about whom nothing is currently known.
+
             This field is a member of `oneof`_ ``type``.
     """
 

@@ -63,6 +63,7 @@ class AssetSet(proto.Message):
             feed_label (str):
                 Optional. Feed Label from Google Merchant
                 Center.
+
                 This field is a member of `oneof`_ ``_feed_label``.
         """
 

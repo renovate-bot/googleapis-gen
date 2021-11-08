@@ -46,6 +46,7 @@ class GeographicView(proto.Message):
             campaign.
         country_criterion_id (int):
             Output only. Criterion Id for the country.
+
             This field is a member of `oneof`_ ``_country_criterion_id``.
     """
 

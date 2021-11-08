@@ -227,6 +227,7 @@ class Connection(proto.Message):
             User provided description.
         cloud_sql (google.cloud.bigquery.connection_v1beta1.types.CloudSqlProperties):
             Cloud SQL properties.
+
             This field is a member of `oneof`_ ``properties``.
         creation_time (int):
             Output only. The creation timestamp of the
@@ -279,6 +280,7 @@ class ConnectionCredential(proto.Message):
     Attributes:
         cloud_sql (google.cloud.bigquery.connection_v1beta1.types.CloudSqlCredential):
             Credential for Cloud SQL database.
+
             This field is a member of `oneof`_ ``credential``.
     """
 

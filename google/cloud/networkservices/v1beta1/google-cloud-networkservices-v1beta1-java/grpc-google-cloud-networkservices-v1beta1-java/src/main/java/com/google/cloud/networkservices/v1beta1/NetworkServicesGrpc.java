@@ -7,6 +7,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/networkservices/v1beta1/network_services.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class NetworkServicesGrpc {
 
   private NetworkServicesGrpc() {}

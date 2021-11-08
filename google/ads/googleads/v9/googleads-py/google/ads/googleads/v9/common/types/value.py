@@ -38,18 +38,23 @@ class Value(proto.Message):
     Attributes:
         boolean_value (bool):
             A boolean.
+
             This field is a member of `oneof`_ ``value``.
         int64_value (int):
             An int64.
+
             This field is a member of `oneof`_ ``value``.
         float_value (float):
             A float.
+
             This field is a member of `oneof`_ ``value``.
         double_value (float):
             A double.
+
             This field is a member of `oneof`_ ``value``.
         string_value (str):
             A string.
+
             This field is a member of `oneof`_ ``value``.
     """
 

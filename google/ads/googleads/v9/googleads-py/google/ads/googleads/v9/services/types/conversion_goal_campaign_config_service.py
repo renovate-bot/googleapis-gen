@@ -87,6 +87,7 @@ class ConversionGoalCampaignConfigOperation(proto.Message):
             Update operation: The conversion goal
             campaign config is expected to have a valid
             resource name.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -151,20 +151,24 @@ class KeyRange(proto.Message):
             If the start is closed, then the range includes all rows
             whose first ``len(start_closed)`` key columns exactly match
             ``start_closed``.
+
             This field is a member of `oneof`_ ``start_key_type``.
         start_open (google.protobuf.struct_pb2.ListValue):
             If the start is open, then the range excludes rows whose
             first ``len(start_open)`` key columns exactly match
             ``start_open``.
+
             This field is a member of `oneof`_ ``start_key_type``.
         end_closed (google.protobuf.struct_pb2.ListValue):
             If the end is closed, then the range includes all rows whose
             first ``len(end_closed)`` key columns exactly match
             ``end_closed``.
+
             This field is a member of `oneof`_ ``end_key_type``.
         end_open (google.protobuf.struct_pb2.ListValue):
             If the end is open, then the range excludes rows whose first
             ``len(end_open)`` key columns exactly match ``end_open``.
+
             This field is a member of `oneof`_ ``end_key_type``.
     """
 

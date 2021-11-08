@@ -178,6 +178,7 @@ class EvaluationJobConfig(proto.Message):
             ``allowMultiLabel`` in this configuration must match
             ``classificationMetadata.isMultiLabel`` in
             [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+
             This field is a member of `oneof`_ ``human_annotation_request_config``.
         bounding_poly_config (google.cloud.datalabeling_v1beta1.types.BoundingPolyConfig):
             Specify this field if your model version performs image
@@ -185,6 +186,7 @@ class EvaluationJobConfig(proto.Message):
 
             ``annotationSpecSet`` in this configuration must match
             [EvaluationJob.annotationSpecSet][google.cloud.datalabeling.v1beta1.EvaluationJob.annotation_spec_set].
+
             This field is a member of `oneof`_ ``human_annotation_request_config``.
         text_classification_config (google.cloud.datalabeling_v1beta1.types.TextClassificationConfig):
             Specify this field if your model version performs text
@@ -195,6 +197,7 @@ class EvaluationJobConfig(proto.Message):
             ``allowMultiLabel`` in this configuration must match
             ``classificationMetadata.isMultiLabel`` in
             [input_config][google.cloud.datalabeling.v1beta1.EvaluationJobConfig.input_config].
+
             This field is a member of `oneof`_ ``human_annotation_request_config``.
         input_config (google.cloud.datalabeling_v1beta1.types.InputConfig):
             Rquired. Details for the sampled prediction input. Within

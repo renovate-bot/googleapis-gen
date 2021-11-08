@@ -76,6 +76,7 @@ class TargetRestriction(proto.Message):
             bid modifiers, and not affect targeting. A value of
             ``false`` means that these criteria will restrict targeting
             as well as applying bid modifiers.
+
             This field is a member of `oneof`_ ``_bid_only``.
     """
 

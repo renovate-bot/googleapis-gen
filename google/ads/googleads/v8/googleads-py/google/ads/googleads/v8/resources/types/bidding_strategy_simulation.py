@@ -69,10 +69,12 @@ class BiddingStrategySimulation(proto.Message):
         target_cpa_point_list (google.ads.googleads.v8.common.types.TargetCpaSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_CPA.
+
             This field is a member of `oneof`_ ``point_list``.
         target_roas_point_list (google.ads.googleads.v8.common.types.TargetRoasSimulationPointList):
             Output only. Simulation points if the simulation type is
             TARGET_ROAS.
+
             This field is a member of `oneof`_ ``point_list``.
     """
 

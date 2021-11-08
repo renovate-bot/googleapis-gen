@@ -47,30 +47,38 @@ class SharedCriterion(proto.Message):
         shared_set (str):
             Immutable. The shared set to which the shared
             criterion belongs.
+
             This field is a member of `oneof`_ ``_shared_set``.
         criterion_id (int):
             Output only. The ID of the criterion.
             This field is ignored for mutates.
+
             This field is a member of `oneof`_ ``_criterion_id``.
         type_ (google.ads.googleads.v7.enums.types.CriterionTypeEnum.CriterionType):
             Output only. The type of the criterion.
         keyword (google.ads.googleads.v7.common.types.KeywordInfo):
             Immutable. Keyword.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_video (google.ads.googleads.v7.common.types.YouTubeVideoInfo):
             Immutable. YouTube Video.
+
             This field is a member of `oneof`_ ``criterion``.
         youtube_channel (google.ads.googleads.v7.common.types.YouTubeChannelInfo):
             Immutable. YouTube Channel.
+
             This field is a member of `oneof`_ ``criterion``.
         placement (google.ads.googleads.v7.common.types.PlacementInfo):
             Immutable. Placement.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_app_category (google.ads.googleads.v7.common.types.MobileAppCategoryInfo):
             Immutable. Mobile App Category.
+
             This field is a member of `oneof`_ ``criterion``.
         mobile_application (google.ads.googleads.v7.common.types.MobileApplicationInfo):
             Immutable. Mobile application.
+
             This field is a member of `oneof`_ ``criterion``.
     """
 

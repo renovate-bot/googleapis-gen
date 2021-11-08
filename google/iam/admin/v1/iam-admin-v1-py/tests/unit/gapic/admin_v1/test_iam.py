@@ -551,7 +551,9 @@ def test_list_service_accounts_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_list_service_accounts_flattened_error():
@@ -592,7 +594,9 @@ async def test_list_service_accounts_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1000,7 +1004,9 @@ def test_get_service_account_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_service_account_flattened_error():
@@ -1041,7 +1047,9 @@ async def test_get_service_account_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1265,9 +1273,15 @@ def test_create_service_account_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].account_id == 'account_id_value'
-        assert args[0].service_account == iam.ServiceAccount(name='name_value')
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].account_id
+        mock_val = 'account_id_value'
+        assert arg == mock_val
+        arg = args[0].service_account
+        mock_val = iam.ServiceAccount(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_service_account_flattened_error():
@@ -1312,9 +1326,15 @@ async def test_create_service_account_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].account_id == 'account_id_value'
-        assert args[0].service_account == iam.ServiceAccount(name='name_value')
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].account_id
+        mock_val = 'account_id_value'
+        assert arg == mock_val
+        arg = args[0].service_account
+        mock_val = iam.ServiceAccount(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1866,7 +1886,9 @@ def test_delete_service_account_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_service_account_flattened_error():
@@ -1907,7 +1929,9 @@ async def test_delete_service_account_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2531,8 +2555,12 @@ def test_list_service_account_keys_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].key_types == [iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].key_types
+        mock_val = [iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED]
+        assert arg == mock_val
 
 
 def test_list_service_account_keys_flattened_error():
@@ -2575,8 +2603,12 @@ async def test_list_service_account_keys_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].key_types == [iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].key_types
+        mock_val = [iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2792,8 +2824,12 @@ def test_get_service_account_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].public_key_type == iam.ServiceAccountPublicKeyType.TYPE_X509_PEM_FILE
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].public_key_type
+        mock_val = iam.ServiceAccountPublicKeyType.TYPE_X509_PEM_FILE
+        assert arg == mock_val
 
 
 def test_get_service_account_key_flattened_error():
@@ -2836,8 +2872,12 @@ async def test_get_service_account_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].public_key_type == iam.ServiceAccountPublicKeyType.TYPE_X509_PEM_FILE
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].public_key_type
+        mock_val = iam.ServiceAccountPublicKeyType.TYPE_X509_PEM_FILE
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3054,9 +3094,15 @@ def test_create_service_account_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].private_key_type == iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE
-        assert args[0].key_algorithm == iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].private_key_type
+        mock_val = iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE
+        assert arg == mock_val
+        arg = args[0].key_algorithm
+        mock_val = iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024
+        assert arg == mock_val
 
 
 def test_create_service_account_key_flattened_error():
@@ -3101,9 +3147,15 @@ async def test_create_service_account_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].private_key_type == iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE
-        assert args[0].key_algorithm == iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].private_key_type
+        mock_val = iam.ServiceAccountPrivateKeyType.TYPE_PKCS12_FILE
+        assert arg == mock_val
+        arg = args[0].key_algorithm
+        mock_val = iam.ServiceAccountKeyAlgorithm.KEY_ALG_RSA_1024
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3464,7 +3516,9 @@ def test_delete_service_account_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_service_account_key_flattened_error():
@@ -3505,7 +3559,9 @@ async def test_delete_service_account_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3700,8 +3756,12 @@ def test_sign_blob_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].bytes_to_sign == b'bytes_to_sign_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].bytes_to_sign
+        mock_val = b'bytes_to_sign_blob'
+        assert arg == mock_val
 
 
 def test_sign_blob_flattened_error():
@@ -3744,8 +3804,12 @@ async def test_sign_blob_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].bytes_to_sign == b'bytes_to_sign_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].bytes_to_sign
+        mock_val = b'bytes_to_sign_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3941,8 +4005,12 @@ def test_sign_jwt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].payload == 'payload_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].payload
+        mock_val = 'payload_value'
+        assert arg == mock_val
 
 
 def test_sign_jwt_flattened_error():
@@ -3985,8 +4053,12 @@ async def test_sign_jwt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].payload == 'payload_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].payload
+        mock_val = 'payload_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4198,7 +4270,9 @@ def test_get_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 def test_get_iam_policy_flattened_error():
@@ -4239,7 +4313,9 @@ async def test_get_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4450,7 +4526,9 @@ def test_set_iam_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 def test_set_iam_policy_flattened_error():
@@ -4491,7 +4569,9 @@ async def test_set_iam_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4699,8 +4779,12 @@ def test_test_iam_permissions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
-        assert args[0].permissions == ['permissions_value']
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
+        arg = args[0].permissions
+        mock_val = ['permissions_value']
+        assert arg == mock_val
 
 
 def test_test_iam_permissions_flattened_error():
@@ -4743,8 +4827,12 @@ async def test_test_iam_permissions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource == 'resource_value'
-        assert args[0].permissions == ['permissions_value']
+        arg = args[0].resource
+        mock_val = 'resource_value'
+        assert arg == mock_val
+        arg = args[0].permissions
+        mock_val = ['permissions_value']
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4872,7 +4960,9 @@ def test_query_grantable_roles_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].full_resource_name == 'full_resource_name_value'
+        arg = args[0].full_resource_name
+        mock_val = 'full_resource_name_value'
+        assert arg == mock_val
 
 
 def test_query_grantable_roles_flattened_error():
@@ -4913,7 +5003,9 @@ async def test_query_grantable_roles_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].full_resource_name == 'full_resource_name_value'
+        arg = args[0].full_resource_name
+        mock_val = 'full_resource_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

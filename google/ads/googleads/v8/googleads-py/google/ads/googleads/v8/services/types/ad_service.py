@@ -117,6 +117,7 @@ class AdOperation(proto.Message):
             resource name in this format:
 
             ``customers/{customer_id}/ads/{ad_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

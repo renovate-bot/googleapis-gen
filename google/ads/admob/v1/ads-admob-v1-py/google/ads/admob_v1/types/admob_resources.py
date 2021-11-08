@@ -213,6 +213,7 @@ class NetworkReportSpec(proto.Message):
                 Matches a row if its value for the specified
                 dimension is in one of the values specified in
                 this condition.
+
                 This field is a member of `oneof`_ ``operator``.
             dimension (google.ads.admob_v1.types.NetworkReportSpec.Dimension):
                 Applies the filter criterion to the specified
@@ -244,9 +245,11 @@ class NetworkReportSpec(proto.Message):
         Attributes:
             dimension (google.ads.admob_v1.types.NetworkReportSpec.Dimension):
                 Sort by the specified dimension.
+
                 This field is a member of `oneof`_ ``sort_on``.
             metric (google.ads.admob_v1.types.NetworkReportSpec.Metric):
                 Sort by the specified metric.
+
                 This field is a member of `oneof`_ ``sort_on``.
             order (google.ads.admob_v1.types.SortOrder):
                 Sorting order of the dimension or metric.
@@ -439,6 +442,7 @@ class MediationReportSpec(proto.Message):
                 Matches a row if its value for the specified
                 dimension is in one of the values specified in
                 this condition.
+
                 This field is a member of `oneof`_ ``operator``.
             dimension (google.ads.admob_v1.types.MediationReportSpec.Dimension):
                 Applies the filter criterion to the specified
@@ -470,9 +474,11 @@ class MediationReportSpec(proto.Message):
         Attributes:
             dimension (google.ads.admob_v1.types.MediationReportSpec.Dimension):
                 Sort by the specified dimension.
+
                 This field is a member of `oneof`_ ``sort_on``.
             metric (google.ads.admob_v1.types.MediationReportSpec.Metric):
                 Sort by the specified metric.
+
                 This field is a member of `oneof`_ ``sort_on``.
             order (google.ads.admob_v1.types.SortOrder):
                 Sorting order of the dimension or metric.
@@ -585,10 +591,12 @@ class ReportRow(proto.Message):
         Attributes:
             integer_value (int):
                 Metric integer value.
+
                 This field is a member of `oneof`_ ``value``.
             double_value (float):
                 Double precision (approximate) decimal
                 values. Rates are from 0 to 1.
+
                 This field is a member of `oneof`_ ``value``.
             micros_value (int):
                 Amount in micros. One million is equivalent
@@ -596,6 +604,7 @@ class ReportRow(proto.Message):
                 EUR or other) specified by the request. For
                 example, $6.50 whould be represented as 6500000
                 micros.
+
                 This field is a member of `oneof`_ ``value``.
         """
 

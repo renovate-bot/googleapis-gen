@@ -71,6 +71,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dataqna/v1alpha/auto_suggestion_service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class AutoSuggestionServiceGrpc {
 
   private AutoSuggestionServiceGrpc() {}

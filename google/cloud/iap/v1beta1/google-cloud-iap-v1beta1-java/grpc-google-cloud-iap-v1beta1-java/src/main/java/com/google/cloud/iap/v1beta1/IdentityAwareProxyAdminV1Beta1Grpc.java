@@ -10,6 +10,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/iap/v1beta1/service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class IdentityAwareProxyAdminV1Beta1Grpc {
 
   private IdentityAwareProxyAdminV1Beta1Grpc() {}

@@ -570,7 +570,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   String parent = SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString();
+   *   String parent = UserName.of("[USER]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
    *   ImportSshPublicKeyResponse response =
    *       osLoginServiceClient.importSshPublicKey(parent, sshPublicKey);
@@ -633,7 +633,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
-   *   String parent = SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString();
+   *   String parent = UserName.of("[USER]").toString();
    *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
    *   String projectId = "projectId-894832108";
    *   ImportSshPublicKeyResponse response =
@@ -668,7 +668,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
-   *           .setParent(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setParent(UserName.of("[USER]").toString())
    *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .build();
@@ -694,7 +694,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
    *   ImportSshPublicKeyRequest request =
    *       ImportSshPublicKeyRequest.newBuilder()
-   *           .setParent(SshPublicKeyName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setParent(UserName.of("[USER]").toString())
    *           .setSshPublicKey(OsLoginProto.SshPublicKey.newBuilder().build())
    *           .setProjectId("projectId-894832108")
    *           .build();

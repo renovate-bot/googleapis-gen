@@ -42,6 +42,7 @@ class ThirdPartyAppAnalyticsLink(proto.Message):
             setting up app analytics. This is able to be
             regenerated using regenerate method in the
             ThirdPartyAppAnalyticsLinkService.
+
             This field is a member of `oneof`_ ``_shareable_link_id``.
     """
 

@@ -118,16 +118,19 @@ class ConversionActionOperation(proto.Message):
         create (google.ads.googleads.v7.resources.types.ConversionAction):
             Create operation: No resource name is
             expected for the new conversion action.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v7.resources.types.ConversionAction):
             Update operation: The conversion action is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed conversion
             action is expected, in this format:
 
             ``customers/{customer_id}/conversionActions/{conversion_action_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

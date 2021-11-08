@@ -554,8 +554,12 @@ def test_list_intents_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 def test_list_intents_flattened_error():
@@ -598,8 +602,12 @@ async def test_list_intents_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1037,8 +1045,12 @@ def test_get_intent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 def test_get_intent_flattened_error():
@@ -1081,8 +1093,12 @@ async def test_get_intent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1335,9 +1351,15 @@ def test_create_intent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].intent == gcd_intent.Intent(name='name_value')
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].intent
+        mock_val = gcd_intent.Intent(name='name_value')
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 def test_create_intent_flattened_error():
@@ -1382,9 +1404,15 @@ async def test_create_intent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].intent == gcd_intent.Intent(name='name_value')
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].intent
+        mock_val = gcd_intent.Intent(name='name_value')
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1638,9 +1666,15 @@ def test_update_intent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].intent == gcd_intent.Intent(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].intent
+        mock_val = gcd_intent.Intent(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 def test_update_intent_flattened_error():
@@ -1685,9 +1719,15 @@ async def test_update_intent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].intent == gcd_intent.Intent(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
-        assert args[0].language_code == 'language_code_value'
+        arg = args[0].intent
+        mock_val = gcd_intent.Intent(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
+        arg = args[0].language_code
+        mock_val = 'language_code_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1873,7 +1913,9 @@ def test_delete_intent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_intent_flattened_error():
@@ -1914,7 +1956,9 @@ async def test_delete_intent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2102,7 +2146,9 @@ def test_batch_update_intents_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
         assert args[0].intent_batch_inline == intent.IntentBatch(intents=[intent.Intent(name='name_value')])
 
 
@@ -2150,7 +2196,9 @@ async def test_batch_update_intents_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
         assert args[0].intent_batch_inline == intent.IntentBatch(intents=[intent.Intent(name='name_value')])
 
 
@@ -2340,8 +2388,12 @@ def test_batch_delete_intents_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].intents == [intent.Intent(name='name_value')]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].intents
+        mock_val = [intent.Intent(name='name_value')]
+        assert arg == mock_val
 
 
 def test_batch_delete_intents_flattened_error():
@@ -2386,8 +2438,12 @@ async def test_batch_delete_intents_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].intents == [intent.Intent(name='name_value')]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].intents
+        mock_val = [intent.Intent(name='name_value')]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

@@ -15,6 +15,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/datastore/v1/datastore.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DatastoreGrpc {
 
   private DatastoreGrpc() {}

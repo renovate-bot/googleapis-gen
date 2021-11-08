@@ -485,9 +485,15 @@ def test_lookup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].read_options == datastore.ReadOptions(read_consistency=datastore.ReadOptions.ReadConsistency.STRONG)
-        assert args[0].keys == [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].read_options
+        mock_val = datastore.ReadOptions(read_consistency=datastore.ReadOptions.ReadConsistency.STRONG)
+        assert arg == mock_val
+        arg = args[0].keys
+        mock_val = [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        assert arg == mock_val
 
 
 def test_lookup_flattened_error():
@@ -532,9 +538,15 @@ async def test_lookup_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].read_options == datastore.ReadOptions(read_consistency=datastore.ReadOptions.ReadConsistency.STRONG)
-        assert args[0].keys == [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].read_options
+        mock_val = datastore.ReadOptions(read_consistency=datastore.ReadOptions.ReadConsistency.STRONG)
+        assert arg == mock_val
+        arg = args[0].keys
+        mock_val = [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -747,7 +759,9 @@ def test_begin_transaction_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
 
 
 def test_begin_transaction_flattened_error():
@@ -788,7 +802,9 @@ async def test_begin_transaction_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -918,9 +934,15 @@ def test_commit_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].mode == datastore.CommitRequest.Mode.TRANSACTIONAL
-        assert args[0].mutations == [datastore.Mutation(insert=entity.Entity(key=entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].mode
+        mock_val = datastore.CommitRequest.Mode.TRANSACTIONAL
+        assert arg == mock_val
+        arg = args[0].mutations
+        mock_val = [datastore.Mutation(insert=entity.Entity(key=entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))))]
+        assert arg == mock_val
         assert args[0].transaction == b'transaction_blob'
 
 
@@ -968,9 +990,15 @@ async def test_commit_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].mode == datastore.CommitRequest.Mode.TRANSACTIONAL
-        assert args[0].mutations == [datastore.Mutation(insert=entity.Entity(key=entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].mode
+        mock_val = datastore.CommitRequest.Mode.TRANSACTIONAL
+        assert arg == mock_val
+        arg = args[0].mutations
+        mock_val = [datastore.Mutation(insert=entity.Entity(key=entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))))]
+        assert arg == mock_val
         assert args[0].transaction == b'transaction_blob'
 
 
@@ -1098,8 +1126,12 @@ def test_rollback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].transaction == b'transaction_blob'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].transaction
+        mock_val = b'transaction_blob'
+        assert arg == mock_val
 
 
 def test_rollback_flattened_error():
@@ -1142,8 +1174,12 @@ async def test_rollback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].transaction == b'transaction_blob'
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].transaction
+        mock_val = b'transaction_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1268,8 +1304,12 @@ def test_allocate_ids_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].keys == [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].keys
+        mock_val = [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        assert arg == mock_val
 
 
 def test_allocate_ids_flattened_error():
@@ -1312,8 +1352,12 @@ async def test_allocate_ids_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].keys == [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].keys
+        mock_val = [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1438,8 +1482,12 @@ def test_reserve_ids_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].keys == [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].keys
+        mock_val = [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        assert arg == mock_val
 
 
 def test_reserve_ids_flattened_error():
@@ -1482,8 +1530,12 @@ async def test_reserve_ids_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].project_id == 'project_id_value'
-        assert args[0].keys == [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        arg = args[0].project_id
+        mock_val = 'project_id_value'
+        assert arg == mock_val
+        arg = args[0].keys
+        mock_val = [entity.Key(partition_id=entity.PartitionId(project_id='project_id_value'))]
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

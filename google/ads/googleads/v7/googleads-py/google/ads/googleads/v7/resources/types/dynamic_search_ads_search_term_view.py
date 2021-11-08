@@ -38,36 +38,43 @@ class DynamicSearchAdsSearchTermView(proto.Message):
         search_term (str):
             Output only. Search term
             This field is read-only.
+
             This field is a member of `oneof`_ ``_search_term``.
         headline (str):
             Output only. The dynamically generated
             headline of the Dynamic Search Ad.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_headline``.
         landing_page (str):
             Output only. The dynamically selected landing
             page URL of the impression.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_landing_page``.
         page_url (str):
             Output only. The URL of page feed item served
             for the impression.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_page_url``.
         has_negative_keyword (bool):
             Output only. True if query matches a negative
             keyword.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_has_negative_keyword``.
         has_matching_keyword (bool):
             Output only. True if query is added to
             targeted keywords.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_has_matching_keyword``.
         has_negative_url (bool):
             Output only. True if query matches a negative
             url.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_has_negative_url``.
     """
 

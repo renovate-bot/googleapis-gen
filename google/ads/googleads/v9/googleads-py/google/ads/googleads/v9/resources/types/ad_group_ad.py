@@ -47,6 +47,7 @@ class AdGroupAd(proto.Message):
         ad_group (str):
             Immutable. The ad group to which the ad
             belongs.
+
             This field is a member of `oneof`_ ``_ad_group``.
         ad (google.ads.googleads.v9.resources.types.Ad):
             Immutable. The ad.

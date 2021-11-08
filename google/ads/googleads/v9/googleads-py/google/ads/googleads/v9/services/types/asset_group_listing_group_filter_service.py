@@ -93,11 +93,13 @@ class AssetGroupListingGroupFilterOperation(proto.Message):
             Create operation: No resource name is
             expected for the new asset group listing group
             filter.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v9.resources.types.AssetGroupListingGroupFilter):
             Update operation: The asset group listing
             group filter is expected to have a valid
             resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed asset
@@ -106,6 +108,7 @@ class AssetGroupListingGroupFilterOperation(proto.Message):
             An entity can be removed only if it's not referenced by
             other parent_listing_group_id. If multiple entities are
             being deleted, the mutates must be in the correct order.
+
             This field is a member of `oneof`_ ``operation``.
     """
 

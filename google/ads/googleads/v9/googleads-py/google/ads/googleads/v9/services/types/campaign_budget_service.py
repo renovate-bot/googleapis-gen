@@ -118,16 +118,19 @@ class CampaignBudgetOperation(proto.Message):
         create (google.ads.googleads.v9.resources.types.CampaignBudget):
             Create operation: No resource name is
             expected for the new budget.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v9.resources.types.CampaignBudget):
             Update operation: The campaign budget is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed budget is
             expected, in this format:
 
             ``customers/{customer_id}/campaignBudgets/{budget_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -89,9 +89,11 @@ class PlannableLocation(proto.Message):
     Attributes:
         id (str):
             The location identifier.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The unique location name in english.
+
             This field is a member of `oneof`_ ``_name``.
         parent_country_id (int):
             The parent country code, not present if
@@ -100,6 +102,7 @@ class PlannableLocation(proto.Message):
             country name are returned both via
             ListPlannableLocations or directly by accessing
             GeoTargetConstantService with the criterion id.
+
             This field is a member of `oneof`_ ``_parent_country_id``.
     """
 
@@ -160,6 +163,7 @@ class ProductMetadata(proto.Message):
             The code associated with the ad product. E.g. BUMPER,
             TRUEVIEW_IN_STREAM To list the available plannable product
             codes use ListPlannableProducts.
+
             This field is a member of `oneof`_ ``_plannable_product_code``.
         plannable_product_name (str):
             The name associated with the ad product.
@@ -277,10 +281,12 @@ class Preferences(proto.Message):
         is_skippable (bool):
             True if ad skippable.
             If not set, default is any value.
+
             This field is a member of `oneof`_ ``_is_skippable``.
         starts_with_sound (bool):
             True if ad start with sound.
             If not set, default is any value.
+
             This field is a member of `oneof`_ ``_starts_with_sound``.
         ad_length (google.ads.googleads.v8.enums.types.ReachPlanAdLengthEnum.ReachPlanAdLength):
             The length of the ad.
@@ -288,11 +294,13 @@ class Preferences(proto.Message):
         top_content_only (bool):
             True if ad will only show on the top content.
             If not set, default is false.
+
             This field is a member of `oneof`_ ``_top_content_only``.
         has_guaranteed_price (bool):
             True if the price guaranteed. The cost of
             serving the ad is agreed upfront and not subject
             to an auction. If not set, default is any value.
+
             This field is a member of `oneof`_ ``_has_guaranteed_price``.
     """
 
@@ -348,11 +356,13 @@ class ProductAllocation(proto.Message):
             codes returned are within the set of the ones
             returned by ListPlannableProducts when using the
             same location id.
+
             This field is a member of `oneof`_ ``_plannable_product_code``.
         budget_micros (int):
             The value to be allocated for the suggested
             product in requested currency. Amount in micros.
             One million is equivalent to one unit.
+
             This field is a member of `oneof`_ ``_budget_micros``.
     """
 
@@ -378,6 +388,7 @@ class GenerateReachForecastRequest(proto.Message):
         currency_code (str):
             The currency code.
             Three-character ISO 4217 currency code.
+
             This field is a member of `oneof`_ ``_currency_code``.
         campaign_duration (google.ads.googleads.v8.services.types.CampaignDuration):
             Required. Campaign duration.
@@ -390,6 +401,7 @@ class GenerateReachForecastRequest(proto.Message):
 
             This field is deprecated in v4 and will eventually be
             removed. Please use cookie_frequency_cap_setting instead.
+
             This field is a member of `oneof`_ ``_cookie_frequency_cap``.
         cookie_frequency_cap_setting (google.ads.googleads.v8.services.types.FrequencyCap):
             Desired cookie frequency cap that will be applied to each
@@ -409,6 +421,7 @@ class GenerateReachForecastRequest(proto.Message):
 
             This field cannot be combined with the
             effective_frequency_limit field.
+
             This field is a member of `oneof`_ ``_min_effective_frequency``.
         effective_frequency_limit (google.ads.googleads.v8.services.types.EffectiveFrequencyLimit):
             The highest minimum effective frequency (the number of times
@@ -423,6 +436,7 @@ class GenerateReachForecastRequest(proto.Message):
 
             This field cannot be combined with the
             min_effective_frequency field.
+
             This field is a member of `oneof`_ ``_effective_frequency_limit``.
         targeting (google.ads.googleads.v8.services.types.Targeting):
             The targeting to be applied to all products
@@ -532,6 +546,7 @@ class Targeting(proto.Message):
             Required. The ID of the selected location.
             Plannable locations ID can be obtained from
             ListPlannableLocations.
+
             This field is a member of `oneof`_ ``_plannable_location_id``.
         age_range (google.ads.googleads.v8.enums.types.ReachPlanAgeRangeEnum.ReachPlanAgeRange):
             Targeted age range.
@@ -586,6 +601,7 @@ class CampaignDuration(proto.Message):
     Attributes:
         duration_in_days (int):
             The duration value in days.
+
             This field is a member of `oneof`_ ``_duration_in_days``.
     """
 
@@ -605,12 +621,14 @@ class PlannedProduct(proto.Message):
             The code associated with the ad product. E.g.
             Trueview, Bumper To list the available plannable
             product codes use ListPlannableProducts.
+
             This field is a member of `oneof`_ ``_plannable_product_code``.
         budget_micros (int):
             Required. Maximum budget allocation in micros for the
             selected product. The value is specified in the selected
             planning currency_code. E.g. 1 000 000$ = 1 000 000 000 000
             micros.
+
             This field is a member of `oneof`_ ``_budget_micros``.
     """
 
@@ -708,6 +726,7 @@ class Forecast(proto.Message):
             Note that a minimum number of unique people must be reached
             in order for data to be reported. If the minimum number is
             not met, the on_target_reach value will be rounded to 0.
+
             This field is a member of `oneof`_ ``_on_target_reach``.
         total_reach (int):
             Total number of unique people reached at least
@@ -719,16 +738,19 @@ class Forecast(proto.Message):
             Note that a minimum number of unique people must be reached
             in order for data to be reported. If the minimum number is
             not met, the total_reach value will be rounded to 0.
+
             This field is a member of `oneof`_ ``_total_reach``.
         on_target_impressions (int):
             Number of ad impressions that exactly matches
             the Targeting.
+
             This field is a member of `oneof`_ ``_on_target_impressions``.
         total_impressions (int):
             Total number of ad impressions. This includes
             impressions that may fall outside the specified
             Targeting, due to insufficient information on
             signed-in users.
+
             This field is a member of `oneof`_ ``_total_impressions``.
         viewable_impressions (int):
             Number of times the ad's impressions were
@@ -737,6 +759,7 @@ class Forecast(proto.Message):
             ads/answer/7029393 for more information about
             what makes an ad viewable and how viewability is
             measured.
+
             This field is a member of `oneof`_ ``_viewable_impressions``.
         effective_frequency_breakdowns (Sequence[google.ads.googleads.v8.services.types.EffectiveFrequencyBreakdown]):
             A list of effective frequency forecasts. The list is ordered
@@ -845,6 +868,7 @@ class PlannedProductForecast(proto.Message):
             ads/answer/7029393 for more information about
             what makes an ad viewable and how viewability is
             measured.
+
             This field is a member of `oneof`_ ``_viewable_impressions``.
     """
 
@@ -882,10 +906,12 @@ class OnTargetAudienceMetrics(proto.Message):
         youtube_audience_size (int):
             Reference audience size matching the
             considered targeting for YouTube.
+
             This field is a member of `oneof`_ ``_youtube_audience_size``.
         census_audience_size (int):
             Reference audience size matching the
             considered targeting for Census.
+
             This field is a member of `oneof`_ ``_census_audience_size``.
     """
 

@@ -33,6 +33,7 @@ class RealTimeBiddingSetting(proto.Message):
         opt_in (bool):
             Whether the campaign is opted in to real-time
             bidding.
+
             This field is a member of `oneof`_ ``_opt_in``.
     """
 

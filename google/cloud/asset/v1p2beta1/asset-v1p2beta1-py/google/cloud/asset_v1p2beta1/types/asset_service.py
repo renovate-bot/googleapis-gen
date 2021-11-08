@@ -188,6 +188,7 @@ class OutputConfig(proto.Message):
     Attributes:
         gcs_destination (google.cloud.asset_v1p2beta1.types.GcsDestination):
             Destination on Cloud Storage.
+
             This field is a member of `oneof`_ ``destination``.
     """
 
@@ -212,6 +213,7 @@ class GcsDestination(proto.Message):
             Object
             Metadata <https://cloud.google.com/storage/docs/viewing-editing-metadata>`__
             for more information.
+
             This field is a member of `oneof`_ ``object_uri``.
     """
 
@@ -245,6 +247,7 @@ class FeedOutputConfig(proto.Message):
     Attributes:
         pubsub_destination (google.cloud.asset_v1p2beta1.types.PubsubDestination):
             Destination on Cloud Pubsub.
+
             This field is a member of `oneof`_ ``destination``.
     """
 

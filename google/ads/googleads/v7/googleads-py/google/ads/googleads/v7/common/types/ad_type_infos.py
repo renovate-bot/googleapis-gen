@@ -67,12 +67,15 @@ class TextAdInfo(proto.Message):
     Attributes:
         headline (str):
             The headline of the ad.
+
             This field is a member of `oneof`_ ``_headline``.
         description1 (str):
             The first line of the ad's description.
+
             This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             The second line of the ad's description.
+
             This field is a member of `oneof`_ ``_description2``.
     """
 
@@ -99,26 +102,33 @@ class ExpandedTextAdInfo(proto.Message):
     Attributes:
         headline_part1 (str):
             The first part of the ad's headline.
+
             This field is a member of `oneof`_ ``_headline_part1``.
         headline_part2 (str):
             The second part of the ad's headline.
+
             This field is a member of `oneof`_ ``_headline_part2``.
         headline_part3 (str):
             The third part of the ad's headline.
+
             This field is a member of `oneof`_ ``_headline_part3``.
         description (str):
             The description of the ad.
+
             This field is a member of `oneof`_ ``_description``.
         description2 (str):
             The second description of the ad.
+
             This field is a member of `oneof`_ ``_description2``.
         path1 (str):
             The text that can appear alongside the ad's
             displayed URL.
+
             This field is a member of `oneof`_ ``_path1``.
         path2 (str):
             Additional text that can appear alongside the
             ad's displayed URL.
+
             This field is a member of `oneof`_ ``_path2``.
     """
 
@@ -165,45 +175,56 @@ class CallOnlyAdInfo(proto.Message):
     Attributes:
         country_code (str):
             The country code in the ad.
+
             This field is a member of `oneof`_ ``_country_code``.
         phone_number (str):
             The phone number in the ad.
+
             This field is a member of `oneof`_ ``_phone_number``.
         business_name (str):
             The business name in the ad.
+
             This field is a member of `oneof`_ ``_business_name``.
         headline1 (str):
             First headline in the ad.
+
             This field is a member of `oneof`_ ``_headline1``.
         headline2 (str):
             Second headline in the ad.
+
             This field is a member of `oneof`_ ``_headline2``.
         description1 (str):
             The first line of the ad's description.
+
             This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             The second line of the ad's description.
+
             This field is a member of `oneof`_ ``_description2``.
         call_tracked (bool):
             Whether to enable call tracking for the
             creative. Enabling call tracking also enables
             call conversions.
+
             This field is a member of `oneof`_ ``_call_tracked``.
         disable_call_conversion (bool):
             Whether to disable call conversion for the creative. If set
             to ``true``, disables call conversions even when
             ``call_tracked`` is ``true``. If ``call_tracked`` is
             ``false``, this field is ignored.
+
             This field is a member of `oneof`_ ``_disable_call_conversion``.
         phone_number_verification_url (str):
             The URL to be used for phone number
             verification.
+
             This field is a member of `oneof`_ ``_phone_number_verification_url``.
         conversion_action (str):
             The conversion action to attribute a call conversion to. If
             not set a default conversion action is used. This field only
             has effect if call_tracked is set to true. Otherwise this
             field is ignored.
+
             This field is a member of `oneof`_ ``_conversion_action``.
         conversion_reporting_state (google.ads.googleads.v7.enums.types.CallConversionReportingStateEnum.CallConversionReportingState):
             The call conversion behavior of this call
@@ -280,9 +301,11 @@ class ExpandedDynamicSearchAdInfo(proto.Message):
     Attributes:
         description (str):
             The description of the ad.
+
             This field is a member of `oneof`_ ``_description``.
         description2 (str):
             The second description of the ad.
+
             This field is a member of `oneof`_ ``_description2``.
     """
 
@@ -320,6 +343,7 @@ class ShoppingComparisonListingAdInfo(proto.Message):
         headline (str):
             Headline of the ad. This field is required.
             Allowed length is between 25 and 45 characters.
+
             This field is a member of `oneof`_ ``_headline``.
     """
 
@@ -341,6 +365,7 @@ class GmailAdInfo(proto.Message):
             image. Valid image types are GIF, JPEG and PNG.
             The minimum size is 300x100 pixels and the
             aspect ratio must be between 3:1 and 5:1 (+-1%).
+
             This field is a member of `oneof`_ ``_header_image``.
         marketing_image (str):
             The MediaFile resource name of the marketing
@@ -349,12 +374,15 @@ class GmailAdInfo(proto.Message):
             minimum size of 600x314 pixels and aspect ratio
             of 600:314 (+-1%) or square with a minimum size
             of 300x300 pixels and aspect ratio of 1:1 (+-1%)
+
             This field is a member of `oneof`_ ``_marketing_image``.
         marketing_image_headline (str):
             Headline of the marketing image.
+
             This field is a member of `oneof`_ ``_marketing_image_headline``.
         marketing_image_description (str):
             Description of the marketing image.
+
             This field is a member of `oneof`_ ``_marketing_image_description``.
         marketing_image_display_call_to_action (google.ads.googleads.v7.common.types.DisplayCallToAction):
             Display-call-to-action of the marketing
@@ -417,18 +445,22 @@ class GmailTeaser(proto.Message):
     Attributes:
         headline (str):
             Headline of the teaser.
+
             This field is a member of `oneof`_ ``_headline``.
         description (str):
             Description of the teaser.
+
             This field is a member of `oneof`_ ``_description``.
         business_name (str):
             Business name of the advertiser.
+
             This field is a member of `oneof`_ ``_business_name``.
         logo_image (str):
             The MediaFile resource name of the logo
             image. Valid image types are GIF, JPEG and PNG.
             The minimum size is 144x144 pixels and the
             aspect ratio must be 1:1 (+-1%).
+
             This field is a member of `oneof`_ ``_logo_image``.
     """
 
@@ -462,14 +494,17 @@ class DisplayCallToAction(proto.Message):
     Attributes:
         text (str):
             Text for the display-call-to-action.
+
             This field is a member of `oneof`_ ``_text``.
         text_color (str):
             Text color for the display-call-to-action in
             hexadecimal, e.g. #ffffff for white.
+
             This field is a member of `oneof`_ ``_text_color``.
         url_collection_id (str):
             Identifies the url collection in the ad.url_collections
             field. If not set the url defaults to final_url.
+
             This field is a member of `oneof`_ ``_url_collection_id``.
     """
 
@@ -499,9 +534,11 @@ class ProductImage(proto.Message):
             image. Valid image types are GIF, JPEG and PNG.
             The minimum size is 300x300 pixels and the
             aspect ratio must be 1:1 (+-1%).
+
             This field is a member of `oneof`_ ``_product_image``.
         description (str):
             Description of the product.
+
             This field is a member of `oneof`_ ``_description``.
         display_call_to_action (google.ads.googleads.v7.common.types.DisplayCallToAction):
             Display-call-to-action of the product image.
@@ -531,6 +568,7 @@ class ProductVideo(proto.Message):
         product_video (str):
             The MediaFile resource name of a video which
             must be hosted on YouTube.
+
             This field is a member of `oneof`_ ``_product_video``.
     """
 
@@ -554,21 +592,27 @@ class ImageAdInfo(proto.Message):
     Attributes:
         pixel_width (int):
             Width in pixels of the full size image.
+
             This field is a member of `oneof`_ ``_pixel_width``.
         pixel_height (int):
             Height in pixels of the full size image.
+
             This field is a member of `oneof`_ ``_pixel_height``.
         image_url (str):
             URL of the full size image.
+
             This field is a member of `oneof`_ ``_image_url``.
         preview_pixel_width (int):
             Width in pixels of the preview size image.
+
             This field is a member of `oneof`_ ``_preview_pixel_width``.
         preview_pixel_height (int):
             Height in pixels of the preview size image.
+
             This field is a member of `oneof`_ ``_preview_pixel_height``.
         preview_image_url (str):
             URL of the preview size image.
+
             This field is a member of `oneof`_ ``_preview_image_url``.
         mime_type (google.ads.googleads.v7.enums.types.MimeTypeEnum.MimeType):
             The mime type of the image.
@@ -577,15 +621,19 @@ class ImageAdInfo(proto.Message):
             created from a MediaFile, this is the
             MediaFile's name. If the image was created from
             bytes, this is empty.
+
             This field is a member of `oneof`_ ``_name``.
         media_file (str):
             The MediaFile resource to use for the image.
+
             This field is a member of `oneof`_ ``image``.
         data (bytes):
             Raw image data as bytes.
+
             This field is a member of `oneof`_ ``image``.
         ad_id_to_copy_image_from (int):
             An ad ID to copy the image from.
+
             This field is a member of `oneof`_ ``image``.
     """
 
@@ -654,6 +702,7 @@ class VideoBumperInStreamAdInfo(proto.Message):
         companion_banner (str):
             The MediaFile resource name of the companion
             banner used with the ad.
+
             This field is a member of `oneof`_ ``_companion_banner``.
     """
 
@@ -672,6 +721,7 @@ class VideoNonSkippableInStreamAdInfo(proto.Message):
         companion_banner (str):
             The MediaFile resource name of the companion
             banner used with the ad.
+
             This field is a member of `oneof`_ ``_companion_banner``.
     """
 
@@ -693,15 +743,18 @@ class VideoTrueViewInStreamAdInfo(proto.Message):
             taking the user to the video ad's final URL.
             Required for TrueView for action campaigns,
             optional otherwise.
+
             This field is a member of `oneof`_ ``_action_button_label``.
         action_headline (str):
             Additional text displayed with the CTA (call-
             o-action) button to give context and encourage
             clicking on the button.
+
             This field is a member of `oneof`_ ``_action_headline``.
         companion_banner (str):
             The MediaFile resource name of the companion
             banner used with the ad.
+
             This field is a member of `oneof`_ ``_companion_banner``.
     """
 
@@ -729,9 +782,11 @@ class VideoOutstreamAdInfo(proto.Message):
     Attributes:
         headline (str):
             The headline of the ad.
+
             This field is a member of `oneof`_ ``_headline``.
         description (str):
             The description line.
+
             This field is a member of `oneof`_ ``_description``.
     """
 
@@ -753,14 +808,17 @@ class VideoTrueViewDiscoveryAdInfo(proto.Message):
     Attributes:
         headline (str):
             The headline of the ad.
+
             This field is a member of `oneof`_ ``_headline``.
         description1 (str):
             First text line for a TrueView video
             discovery ad.
+
             This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             Second text line for a TrueView video
             discovery ad.
+
             This field is a member of `oneof`_ ``_description2``.
     """
 
@@ -794,21 +852,27 @@ class VideoAdInfo(proto.Message):
     Attributes:
         media_file (str):
             The MediaFile resource to use for the video.
+
             This field is a member of `oneof`_ ``_media_file``.
         in_stream (google.ads.googleads.v7.common.types.VideoTrueViewInStreamAdInfo):
             Video TrueView in-stream ad format.
+
             This field is a member of `oneof`_ ``format``.
         bumper (google.ads.googleads.v7.common.types.VideoBumperInStreamAdInfo):
             Video bumper in-stream ad format.
+
             This field is a member of `oneof`_ ``format``.
         out_stream (google.ads.googleads.v7.common.types.VideoOutstreamAdInfo):
             Video out-stream ad format.
+
             This field is a member of `oneof`_ ``format``.
         non_skippable (google.ads.googleads.v7.common.types.VideoNonSkippableInStreamAdInfo):
             Video non-skippable in-stream ad format.
+
             This field is a member of `oneof`_ ``format``.
         discovery (google.ads.googleads.v7.common.types.VideoTrueViewDiscoveryAdInfo):
             Video TrueView discovery ad format.
+
             This field is a member of `oneof`_ ``format``.
     """
 
@@ -938,11 +1002,13 @@ class ResponsiveSearchAdInfo(proto.Message):
         path1 (str):
             First part of text that may appear appended
             to the url displayed in the ad.
+
             This field is a member of `oneof`_ ``_path1``.
         path2 (str):
             Second part of text that may appear appended
             to the url displayed in the ad. This field can
             only be set when path1 is also set.
+
             This field is a member of `oneof`_ ``_path2``.
     """
 
@@ -975,15 +1041,19 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
     Attributes:
         short_headline (str):
             The short version of the ad's headline.
+
             This field is a member of `oneof`_ ``_short_headline``.
         long_headline (str):
             The long version of the ad's headline.
+
             This field is a member of `oneof`_ ``_long_headline``.
         description (str):
             The description of the ad.
+
             This field is a member of `oneof`_ ``_description``.
         business_name (str):
             The business name in the ad.
+
             This field is a member of `oneof`_ ``_business_name``.
         allow_flexible_color (bool):
             Advertiser's consent to allow flexible color. When true, the
@@ -991,46 +1061,56 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
             false, the ad will be served with the specified colors or a
             neutral color. The default value is true. Must be true if
             main_color and accent_color are not set.
+
             This field is a member of `oneof`_ ``_allow_flexible_color``.
         accent_color (str):
             The accent color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of main_color and accent_color is set, the
             other is required as well.
+
             This field is a member of `oneof`_ ``_accent_color``.
         main_color (str):
             The main color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of main_color and accent_color is set, the
             other is required as well.
+
             This field is a member of `oneof`_ ``_main_color``.
         call_to_action_text (str):
             The call-to-action text for the ad.
+
             This field is a member of `oneof`_ ``_call_to_action_text``.
         logo_image (str):
             The MediaFile resource name of the logo image
             used in the ad.
+
             This field is a member of `oneof`_ ``_logo_image``.
         square_logo_image (str):
             The MediaFile resource name of the square
             logo image used in the ad.
+
             This field is a member of `oneof`_ ``_square_logo_image``.
         marketing_image (str):
             The MediaFile resource name of the marketing
             image used in the ad.
+
             This field is a member of `oneof`_ ``_marketing_image``.
         square_marketing_image (str):
             The MediaFile resource name of the square
             marketing image used in the ad.
+
             This field is a member of `oneof`_ ``_square_marketing_image``.
         format_setting (google.ads.googleads.v7.enums.types.DisplayAdFormatSettingEnum.DisplayAdFormatSetting):
             Specifies which format the ad will be served in. Default is
             ALL_FORMATS.
         price_prefix (str):
             Prefix before price. E.g. 'as low as'.
+
             This field is a member of `oneof`_ ``_price_prefix``.
         promo_text (str):
             Promotion text used for dyanmic formats of
             responsive ads. For example 'Free two-day
             shipping'.
+
             This field is a member of `oneof`_ ``_promo_text``.
     """
 
@@ -1221,17 +1301,21 @@ class LegacyAppInstallAdInfo(proto.Message):
     Attributes:
         app_id (str):
             The id of the mobile app.
+
             This field is a member of `oneof`_ ``_app_id``.
         app_store (google.ads.googleads.v7.enums.types.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore):
             The app store the mobile app is available in.
         headline (str):
             The headline of the ad.
+
             This field is a member of `oneof`_ ``_headline``.
         description1 (str):
             The first description line of the ad.
+
             This field is a member of `oneof`_ ``_description1``.
         description2 (str):
             The second description line of the ad.
+
             This field is a member of `oneof`_ ``_description2``.
     """
 
@@ -1305,16 +1389,19 @@ class ResponsiveDisplayAdInfo(proto.Message):
         business_name (str):
             The advertiser/brand name. Maximum display
             width is 25.
+
             This field is a member of `oneof`_ ``_business_name``.
         main_color (str):
             The main color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of main_color and accent_color is set, the
             other is required as well.
+
             This field is a member of `oneof`_ ``_main_color``.
         accent_color (str):
             The accent color of the ad in hexadecimal, e.g. #ffffff for
             white. If one of main_color and accent_color is set, the
             other is required as well.
+
             This field is a member of `oneof`_ ``_accent_color``.
         allow_flexible_color (bool):
             Advertiser's consent to allow flexible color. When true, the
@@ -1322,18 +1409,22 @@ class ResponsiveDisplayAdInfo(proto.Message):
             false, the ad will be served with the specified colors or a
             neutral color. The default value is true. Must be true if
             main_color and accent_color are not set.
+
             This field is a member of `oneof`_ ``_allow_flexible_color``.
         call_to_action_text (str):
             The call-to-action text for the ad. Maximum
             display width is 30.
+
             This field is a member of `oneof`_ ``_call_to_action_text``.
         price_prefix (str):
             Prefix before price. E.g. 'as low as'.
+
             This field is a member of `oneof`_ ``_price_prefix``.
         promo_text (str):
             Promotion text used for dyanmic formats of
             responsive ads. For example 'Free two-day
             shipping'.
+
             This field is a member of `oneof`_ ``_promo_text``.
         format_setting (google.ads.googleads.v7.enums.types.DisplayAdFormatSettingEnum.DisplayAdFormatSetting):
             Specifies which format the ad will be served in. Default is
@@ -1466,11 +1557,13 @@ class LocalAdInfo(proto.Message):
         path1 (str):
             First part of optional text that may appear
             appended to the url displayed in the ad.
+
             This field is a member of `oneof`_ ``_path1``.
         path2 (str):
             Second part of optional text that may appear
             appended to the url displayed in the ad. This
             field can only be set when path1 is also set.
+
             This field is a member of `oneof`_ ``_path2``.
     """
 
@@ -1537,6 +1630,7 @@ class DisplayUploadAdInfo(proto.Message):
             Designer. See
             https://support.google.com/webdesigner/answer/7543898 for
             more information.
+
             This field is a member of `oneof`_ ``media_asset``.
     """
 

@@ -481,8 +481,12 @@ def test_receive_task_notification_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].agent_version == 'agent_version_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].agent_version
+        mock_val = 'agent_version_value'
+        assert arg == mock_val
 
 
 def test_receive_task_notification_flattened_error():
@@ -525,8 +529,12 @@ async def test_receive_task_notification_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].agent_version == 'agent_version_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].agent_version
+        mock_val = 'agent_version_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -650,7 +658,9 @@ def test_start_next_task_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
 
 
 def test_start_next_task_flattened_error():
@@ -691,7 +701,9 @@ async def test_start_next_task_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -820,9 +832,15 @@ def test_report_task_progress_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].task_id == 'task_id_value'
-        assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].task_id
+        mock_val = 'task_id_value'
+        assert arg == mock_val
+        arg = args[0].task_type
+        mock_val = tasks.TaskType.APPLY_PATCHES
+        assert arg == mock_val
 
 
 def test_report_task_progress_flattened_error():
@@ -867,9 +885,15 @@ async def test_report_task_progress_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].task_id == 'task_id_value'
-        assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].task_id
+        mock_val = 'task_id_value'
+        assert arg == mock_val
+        arg = args[0].task_type
+        mock_val = tasks.TaskType.APPLY_PATCHES
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -997,10 +1021,18 @@ def test_report_task_complete_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].task_id == 'task_id_value'
-        assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
-        assert args[0].error_message == 'error_message_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].task_id
+        mock_val = 'task_id_value'
+        assert arg == mock_val
+        arg = args[0].task_type
+        mock_val = tasks.TaskType.APPLY_PATCHES
+        assert arg == mock_val
+        arg = args[0].error_message
+        mock_val = 'error_message_value'
+        assert arg == mock_val
 
 
 def test_report_task_complete_flattened_error():
@@ -1047,10 +1079,18 @@ async def test_report_task_complete_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].task_id == 'task_id_value'
-        assert args[0].task_type == tasks.TaskType.APPLY_PATCHES
-        assert args[0].error_message == 'error_message_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].task_id
+        mock_val = 'task_id_value'
+        assert arg == mock_val
+        arg = args[0].task_type
+        mock_val = tasks.TaskType.APPLY_PATCHES
+        assert arg == mock_val
+        arg = args[0].error_message
+        mock_val = 'error_message_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1179,10 +1219,18 @@ def test_lookup_effective_guest_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].os_short_name == 'os_short_name_value'
-        assert args[0].os_version == 'os_version_value'
-        assert args[0].os_architecture == 'os_architecture_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].os_short_name
+        mock_val = 'os_short_name_value'
+        assert arg == mock_val
+        arg = args[0].os_version
+        mock_val = 'os_version_value'
+        assert arg == mock_val
+        arg = args[0].os_architecture
+        mock_val = 'os_architecture_value'
+        assert arg == mock_val
 
 
 def test_lookup_effective_guest_policy_flattened_error():
@@ -1229,10 +1277,18 @@ async def test_lookup_effective_guest_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].os_short_name == 'os_short_name_value'
-        assert args[0].os_version == 'os_version_value'
-        assert args[0].os_architecture == 'os_architecture_value'
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].os_short_name
+        mock_val = 'os_short_name_value'
+        assert arg == mock_val
+        arg = args[0].os_version
+        mock_val = 'os_version_value'
+        assert arg == mock_val
+        arg = args[0].os_architecture
+        mock_val = 'os_architecture_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1360,9 +1416,15 @@ def test_register_agent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].agent_version == 'agent_version_value'
-        assert args[0].supported_capabilities == ['supported_capabilities_value']
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].agent_version
+        mock_val = 'agent_version_value'
+        assert arg == mock_val
+        arg = args[0].supported_capabilities
+        mock_val = ['supported_capabilities_value']
+        assert arg == mock_val
 
 
 def test_register_agent_flattened_error():
@@ -1407,9 +1469,15 @@ async def test_register_agent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].instance_id_token == 'instance_id_token_value'
-        assert args[0].agent_version == 'agent_version_value'
-        assert args[0].supported_capabilities == ['supported_capabilities_value']
+        arg = args[0].instance_id_token
+        mock_val = 'instance_id_token_value'
+        assert arg == mock_val
+        arg = args[0].agent_version
+        mock_val = 'agent_version_value'
+        assert arg == mock_val
+        arg = args[0].supported_capabilities
+        mock_val = ['supported_capabilities_value']
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

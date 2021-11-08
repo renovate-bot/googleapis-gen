@@ -118,16 +118,19 @@ class ConversionValueRuleOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.ConversionValueRule):
             Create operation: No resource name is
             expected for the new conversion value rule.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.ConversionValueRule):
             Update operation: The conversion action is
             expected to have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed conversion
             action is expected, in this format:
 
             ``customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

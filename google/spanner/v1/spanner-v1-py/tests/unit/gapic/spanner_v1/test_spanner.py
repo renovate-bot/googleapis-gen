@@ -555,7 +555,9 @@ def test_create_session_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
 
 
 def test_create_session_flattened_error():
@@ -596,7 +598,9 @@ async def test_create_session_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -783,8 +787,12 @@ def test_batch_create_sessions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
-        assert args[0].session_count == 1420
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
+        arg = args[0].session_count
+        mock_val = 1420
+        assert arg == mock_val
 
 
 def test_batch_create_sessions_flattened_error():
@@ -827,8 +835,12 @@ async def test_batch_create_sessions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
-        assert args[0].session_count == 1420
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
+        arg = args[0].session_count
+        mock_val = 1420
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1019,7 +1031,9 @@ def test_get_session_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_session_flattened_error():
@@ -1060,7 +1074,9 @@ async def test_get_session_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1250,7 +1266,9 @@ def test_list_sessions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
 
 
 def test_list_sessions_flattened_error():
@@ -1291,7 +1309,9 @@ async def test_list_sessions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].database == 'database_value'
+        arg = args[0].database
+        mock_val = 'database_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1661,7 +1681,9 @@ def test_delete_session_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_session_flattened_error():
@@ -1702,7 +1724,9 @@ async def test_delete_session_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2632,8 +2656,12 @@ def test_begin_transaction_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == 'session_value'
-        assert args[0].options == transaction.TransactionOptions(read_write=None)
+        arg = args[0].session
+        mock_val = 'session_value'
+        assert arg == mock_val
+        arg = args[0].options
+        mock_val = transaction.TransactionOptions(read_write=None)
+        assert arg == mock_val
 
 
 def test_begin_transaction_flattened_error():
@@ -2676,8 +2704,12 @@ async def test_begin_transaction_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == 'session_value'
-        assert args[0].options == transaction.TransactionOptions(read_write=None)
+        arg = args[0].session
+        mock_val = 'session_value'
+        assert arg == mock_val
+        arg = args[0].options
+        mock_val = transaction.TransactionOptions(read_write=None)
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2867,8 +2899,12 @@ def test_commit_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == 'session_value'
-        assert args[0].mutations == [mutation.Mutation(insert=mutation.Mutation.Write(table='table_value'))]
+        arg = args[0].session
+        mock_val = 'session_value'
+        assert arg == mock_val
+        arg = args[0].mutations
+        mock_val = [mutation.Mutation(insert=mutation.Mutation.Write(table='table_value'))]
+        assert arg == mock_val
         assert args[0].single_use_transaction == transaction.TransactionOptions(read_write=None)
 
 
@@ -2916,8 +2952,12 @@ async def test_commit_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == 'session_value'
-        assert args[0].mutations == [mutation.Mutation(insert=mutation.Mutation.Write(table='table_value'))]
+        arg = args[0].session
+        mock_val = 'session_value'
+        assert arg == mock_val
+        arg = args[0].mutations
+        mock_val = [mutation.Mutation(insert=mutation.Mutation.Write(table='table_value'))]
+        assert arg == mock_val
         assert args[0].single_use_transaction == transaction.TransactionOptions(read_write=None)
 
 
@@ -3106,8 +3146,12 @@ def test_rollback_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == 'session_value'
-        assert args[0].transaction_id == b'transaction_id_blob'
+        arg = args[0].session
+        mock_val = 'session_value'
+        assert arg == mock_val
+        arg = args[0].transaction_id
+        mock_val = b'transaction_id_blob'
+        assert arg == mock_val
 
 
 def test_rollback_flattened_error():
@@ -3150,8 +3194,12 @@ async def test_rollback_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].session == 'session_value'
-        assert args[0].transaction_id == b'transaction_id_blob'
+        arg = args[0].session
+        mock_val = 'session_value'
+        assert arg == mock_val
+        arg = args[0].transaction_id
+        mock_val = b'transaction_id_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

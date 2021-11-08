@@ -117,16 +117,19 @@ class AdGroupOperation(proto.Message):
         create (google.ads.googleads.v8.resources.types.AdGroup):
             Create operation: No resource name is
             expected for the new ad group.
+
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.AdGroup):
             Update operation: The ad group is expected to
             have a valid resource name.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed ad group
             is expected, in this format:
 
             ``customers/{customer_id}/adGroups/{ad_group_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

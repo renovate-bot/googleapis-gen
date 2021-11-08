@@ -51,9 +51,11 @@ class Feed(proto.Message):
         id (int):
             Output only. The ID of the feed.
             This field is read-only.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             Immutable. Name of the feed. Required.
+
             This field is a member of `oneof`_ ``_name``.
         attributes (Sequence[google.ads.googleads.v7.resources.types.FeedAttribute]):
             The Feed's attributes. Required on CREATE, unless
@@ -74,10 +76,12 @@ class Feed(proto.Message):
         places_location_feed_data (google.ads.googleads.v7.resources.types.Feed.PlacesLocationFeedData):
             Data used to configure a location feed
             populated from Google My Business Locations.
+
             This field is a member of `oneof`_ ``system_feed_generation_data``.
         affiliate_location_feed_data (google.ads.googleads.v7.resources.types.Feed.AffiliateLocationFeedData):
             Data used to configure an affiliate location
             feed populated with the specified chains.
+
             This field is a member of `oneof`_ ``system_feed_generation_data``.
     """
 
@@ -95,6 +99,7 @@ class Feed(proto.Message):
                 Email address of a Google My Business account
                 or email address of a manager of the Google My
                 Business account. Required.
+
                 This field is a member of `oneof`_ ``_email_address``.
             business_account_id (str):
                 Plus page ID of the managed business whose locations should
@@ -106,6 +111,7 @@ class Feed(proto.Message):
                 If business_name_filter is set, only listings with a
                 matching business name are candidates to be sync'd into
                 FeedItems.
+
                 This field is a member of `oneof`_ ``_business_name_filter``.
             category_filters (Sequence[str]):
                 Used to filter Google My Business listings by categories. If
@@ -127,14 +133,17 @@ class Feed(proto.Message):
             Attributes:
                 http_method (str):
                     The HTTP method used to obtain authorization.
+
                     This field is a member of `oneof`_ ``_http_method``.
                 http_request_url (str):
                     The HTTP request URL used to obtain
                     authorization.
+
                     This field is a member of `oneof`_ ``_http_request_url``.
                 http_authorization_header (str):
                     The HTTP authorization header used to obtain
                     authorization.
+
                     This field is a member of `oneof`_ ``_http_authorization_header``.
             """
 
@@ -263,9 +272,11 @@ class FeedAttribute(proto.Message):
     Attributes:
         id (int):
             ID of the attribute.
+
             This field is a member of `oneof`_ ``_id``.
         name (str):
             The name of the attribute. Required.
+
             This field is a member of `oneof`_ ``_name``.
         type_ (google.ads.googleads.v7.enums.types.FeedAttributeTypeEnum.FeedAttributeType):
             Data type for feed attribute. Required.
@@ -275,6 +286,7 @@ class FeedAttribute(proto.Message):
             unspecified. Note that a unique key is not required in a
             Feed's schema, in which case the FeedItems must be
             referenced by their feed_item_id.
+
             This field is a member of `oneof`_ ``_is_part_of_key``.
     """
 

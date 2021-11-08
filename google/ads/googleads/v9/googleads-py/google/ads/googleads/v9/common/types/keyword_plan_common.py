@@ -50,6 +50,7 @@ class KeywordPlanHistoricalMetrics(proto.Message):
         avg_monthly_searches (int):
             Approximate number of monthly searches on
             this query averaged for the past 12 months.
+
             This field is a member of `oneof`_ ``_avg_monthly_searches``.
         monthly_search_volumes (Sequence[google.ads.googleads.v9.common.types.MonthlySearchVolume]):
             Approximate number of searches on this query
@@ -63,14 +64,17 @@ class KeywordPlanHistoricalMetrics(proto.Message):
             of ad slots filled divided by the total number of ad slots
             available. If not enough data is available, null is
             returned.
+
             This field is a member of `oneof`_ ``_competition_index``.
         low_top_of_page_bid_micros (int):
             Top of page bid low range (20th percentile)
             in micros for the keyword.
+
             This field is a member of `oneof`_ ``_low_top_of_page_bid_micros``.
         high_top_of_page_bid_micros (int):
             Top of page bid high range (80th percentile)
             in micros for the keyword.
+
             This field is a member of `oneof`_ ``_high_top_of_page_bid_micros``.
     """
 
@@ -117,6 +121,7 @@ class HistoricalMetricsOptions(proto.Message):
             search volume is not available for the entire
             year_month_range provided, the subset of the year month
             range for which search volume is available will be returned.
+
             This field is a member of `oneof`_ ``_year_month_range``.
     """
 
@@ -134,6 +139,7 @@ class MonthlySearchVolume(proto.Message):
     Attributes:
         year (int):
             The year of the search volume (e.g. 2020).
+
             This field is a member of `oneof`_ ``_year``.
         month (google.ads.googleads.v9.enums.types.MonthOfYearEnum.MonthOfYear):
             The month of the search volume.
@@ -141,6 +147,7 @@ class MonthlySearchVolume(proto.Message):
             Approximate number of searches for the month.
             A null value indicates the search volume is
             unavailable for that month.
+
             This field is a member of `oneof`_ ``_monthly_searches``.
     """
 
@@ -207,6 +214,7 @@ class KeywordPlanDeviceSearches(proto.Message):
             The device type.
         search_count (int):
             The total searches for the device.
+
             This field is a member of `oneof`_ ``_search_count``.
     """
 

@@ -557,7 +557,9 @@ def test_list_key_rings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_key_rings_flattened_error():
@@ -598,7 +600,9 @@ async def test_list_key_rings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -978,7 +982,9 @@ def test_list_crypto_keys_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_crypto_keys_flattened_error():
@@ -1019,7 +1025,9 @@ async def test_list_crypto_keys_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1399,7 +1407,9 @@ def test_list_crypto_key_versions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_crypto_key_versions_flattened_error():
@@ -1440,7 +1450,9 @@ async def test_list_crypto_key_versions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1820,7 +1832,9 @@ def test_list_import_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_import_jobs_flattened_error():
@@ -1861,7 +1875,9 @@ async def test_list_import_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2237,7 +2253,9 @@ def test_get_key_ring_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_key_ring_flattened_error():
@@ -2278,7 +2296,9 @@ async def test_get_key_ring_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2477,7 +2497,9 @@ def test_get_crypto_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_crypto_key_flattened_error():
@@ -2518,7 +2540,9 @@ async def test_get_crypto_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2732,7 +2756,9 @@ def test_get_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_crypto_key_version_flattened_error():
@@ -2773,7 +2799,9 @@ async def test_get_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2975,7 +3003,9 @@ def test_get_public_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_public_key_flattened_error():
@@ -3016,7 +3046,9 @@ async def test_get_public_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3218,7 +3250,9 @@ def test_get_import_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_import_job_flattened_error():
@@ -3259,7 +3293,9 @@ async def test_get_import_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3451,9 +3487,15 @@ def test_create_key_ring_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].key_ring_id == 'key_ring_id_value'
-        assert args[0].key_ring == resources.KeyRing(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].key_ring_id
+        mock_val = 'key_ring_id_value'
+        assert arg == mock_val
+        arg = args[0].key_ring
+        mock_val = resources.KeyRing(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_key_ring_flattened_error():
@@ -3498,9 +3540,15 @@ async def test_create_key_ring_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].key_ring_id == 'key_ring_id_value'
-        assert args[0].key_ring == resources.KeyRing(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].key_ring_id
+        mock_val = 'key_ring_id_value'
+        assert arg == mock_val
+        arg = args[0].key_ring
+        mock_val = resources.KeyRing(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3703,9 +3751,15 @@ def test_create_crypto_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].crypto_key_id == 'crypto_key_id_value'
-        assert args[0].crypto_key == resources.CryptoKey(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key_id
+        mock_val = 'crypto_key_id_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key
+        mock_val = resources.CryptoKey(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_crypto_key_flattened_error():
@@ -3750,9 +3804,15 @@ async def test_create_crypto_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].crypto_key_id == 'crypto_key_id_value'
-        assert args[0].crypto_key == resources.CryptoKey(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key_id
+        mock_val = 'crypto_key_id_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key
+        mock_val = resources.CryptoKey(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3969,8 +4029,12 @@ def test_create_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key_version
+        mock_val = resources.CryptoKeyVersion(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_crypto_key_version_flattened_error():
@@ -4013,8 +4077,12 @@ async def test_create_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key_version
+        mock_val = resources.CryptoKeyVersion(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4394,9 +4462,15 @@ def test_create_import_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].import_job_id == 'import_job_id_value'
-        assert args[0].import_job == resources.ImportJob(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].import_job_id
+        mock_val = 'import_job_id_value'
+        assert arg == mock_val
+        arg = args[0].import_job
+        mock_val = resources.ImportJob(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_import_job_flattened_error():
@@ -4441,9 +4515,15 @@ async def test_create_import_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].import_job_id == 'import_job_id_value'
-        assert args[0].import_job == resources.ImportJob(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].import_job_id
+        mock_val = 'import_job_id_value'
+        assert arg == mock_val
+        arg = args[0].import_job
+        mock_val = resources.ImportJob(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4645,8 +4725,12 @@ def test_update_crypto_key_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].crypto_key == resources.CryptoKey(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].crypto_key
+        mock_val = resources.CryptoKey(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_crypto_key_flattened_error():
@@ -4689,8 +4773,12 @@ async def test_update_crypto_key_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].crypto_key == resources.CryptoKey(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].crypto_key
+        mock_val = resources.CryptoKey(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4906,8 +4994,12 @@ def test_update_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].crypto_key_version
+        mock_val = resources.CryptoKeyVersion(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_crypto_key_version_flattened_error():
@@ -4950,8 +5042,12 @@ async def test_update_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].crypto_key_version == resources.CryptoKeyVersion(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].crypto_key_version
+        mock_val = resources.CryptoKeyVersion(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5152,8 +5248,12 @@ def test_update_crypto_key_primary_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].crypto_key_version_id == 'crypto_key_version_id_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key_version_id
+        mock_val = 'crypto_key_version_id_value'
+        assert arg == mock_val
 
 
 def test_update_crypto_key_primary_version_flattened_error():
@@ -5196,8 +5296,12 @@ async def test_update_crypto_key_primary_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].crypto_key_version_id == 'crypto_key_version_id_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].crypto_key_version_id
+        mock_val = 'crypto_key_version_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5412,7 +5516,9 @@ def test_destroy_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_destroy_crypto_key_version_flattened_error():
@@ -5453,7 +5559,9 @@ async def test_destroy_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5667,7 +5775,9 @@ def test_restore_crypto_key_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_restore_crypto_key_version_flattened_error():
@@ -5708,7 +5818,9 @@ async def test_restore_crypto_key_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5915,8 +6027,12 @@ def test_encrypt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].plaintext == b'plaintext_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].plaintext
+        mock_val = b'plaintext_blob'
+        assert arg == mock_val
 
 
 def test_encrypt_flattened_error():
@@ -5959,8 +6075,12 @@ async def test_encrypt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].plaintext == b'plaintext_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].plaintext
+        mock_val = b'plaintext_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6160,8 +6280,12 @@ def test_decrypt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].ciphertext == b'ciphertext_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].ciphertext
+        mock_val = b'ciphertext_blob'
+        assert arg == mock_val
 
 
 def test_decrypt_flattened_error():
@@ -6204,8 +6328,12 @@ async def test_decrypt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].ciphertext == b'ciphertext_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].ciphertext
+        mock_val = b'ciphertext_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6413,8 +6541,12 @@ def test_asymmetric_sign_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].digest == service.Digest(sha256=b'sha256_blob')
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].digest
+        mock_val = service.Digest(sha256=b'sha256_blob')
+        assert arg == mock_val
 
 
 def test_asymmetric_sign_flattened_error():
@@ -6457,8 +6589,12 @@ async def test_asymmetric_sign_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].digest == service.Digest(sha256=b'sha256_blob')
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].digest
+        mock_val = service.Digest(sha256=b'sha256_blob')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6658,8 +6794,12 @@ def test_asymmetric_decrypt_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].ciphertext == b'ciphertext_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].ciphertext
+        mock_val = b'ciphertext_blob'
+        assert arg == mock_val
 
 
 def test_asymmetric_decrypt_flattened_error():
@@ -6702,8 +6842,12 @@ async def test_asymmetric_decrypt_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].ciphertext == b'ciphertext_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].ciphertext
+        mock_val = b'ciphertext_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -6907,8 +7051,12 @@ def test_mac_sign_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].data == b'data_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].data
+        mock_val = b'data_blob'
+        assert arg == mock_val
 
 
 def test_mac_sign_flattened_error():
@@ -6951,8 +7099,12 @@ async def test_mac_sign_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].data == b'data_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].data
+        mock_val = b'data_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -7165,9 +7317,15 @@ def test_mac_verify_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].data == b'data_blob'
-        assert args[0].mac == b'mac_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].data
+        mock_val = b'data_blob'
+        assert arg == mock_val
+        arg = args[0].mac
+        mock_val = b'mac_blob'
+        assert arg == mock_val
 
 
 def test_mac_verify_flattened_error():
@@ -7212,9 +7370,15 @@ async def test_mac_verify_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].data == b'data_blob'
-        assert args[0].mac == b'mac_blob'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].data
+        mock_val = b'data_blob'
+        assert arg == mock_val
+        arg = args[0].mac
+        mock_val = b'mac_blob'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -7408,9 +7572,15 @@ def test_generate_random_bytes_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].location == 'location_value'
-        assert args[0].length_bytes == 1288
-        assert args[0].protection_level == resources.ProtectionLevel.SOFTWARE
+        arg = args[0].location
+        mock_val = 'location_value'
+        assert arg == mock_val
+        arg = args[0].length_bytes
+        mock_val = 1288
+        assert arg == mock_val
+        arg = args[0].protection_level
+        mock_val = resources.ProtectionLevel.SOFTWARE
+        assert arg == mock_val
 
 
 def test_generate_random_bytes_flattened_error():
@@ -7455,9 +7625,15 @@ async def test_generate_random_bytes_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].location == 'location_value'
-        assert args[0].length_bytes == 1288
-        assert args[0].protection_level == resources.ProtectionLevel.SOFTWARE
+        arg = args[0].location
+        mock_val = 'location_value'
+        assert arg == mock_val
+        arg = args[0].length_bytes
+        mock_val = 1288
+        assert arg == mock_val
+        arg = args[0].protection_level
+        mock_val = resources.ProtectionLevel.SOFTWARE
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

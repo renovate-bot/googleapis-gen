@@ -50,9 +50,11 @@ class CampaignCriterionSimulation(proto.Message):
             ``customers/{customer_id}/campaignCriterionSimulations/{campaign_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}``
         campaign_id (int):
             Output only. Campaign ID of the simulation.
+
             This field is a member of `oneof`_ ``_campaign_id``.
         criterion_id (int):
             Output only. Criterion ID of the simulation.
+
             This field is a member of `oneof`_ ``_criterion_id``.
         type_ (google.ads.googleads.v9.enums.types.SimulationTypeEnum.SimulationType):
             Output only. The field that the simulation
@@ -63,14 +65,17 @@ class CampaignCriterionSimulation(proto.Message):
         start_date (str):
             Output only. First day on which the
             simulation is based, in YYYY-MM-DD format.
+
             This field is a member of `oneof`_ ``_start_date``.
         end_date (str):
             Output only. Last day on which the simulation
             is based, in YYYY-MM-DD format.
+
             This field is a member of `oneof`_ ``_end_date``.
         bid_modifier_point_list (google.ads.googleads.v9.common.types.BidModifierSimulationPointList):
             Output only. Simulation points if the simulation type is
             BID_MODIFIER.
+
             This field is a member of `oneof`_ ``point_list``.
     """
 

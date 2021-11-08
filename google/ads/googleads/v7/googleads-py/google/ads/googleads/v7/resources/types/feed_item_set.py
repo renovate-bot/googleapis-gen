@@ -61,12 +61,14 @@ class FeedItemSet(proto.Message):
         dynamic_location_set_filter (google.ads.googleads.v7.common.types.DynamicLocationSetFilter):
             Filter for dynamic location set.
             It is only used for sets of locations.
+
             This field is a member of `oneof`_ ``dynamic_set_filter``.
         dynamic_affiliate_location_set_filter (google.ads.googleads.v7.common.types.DynamicAffiliateLocationSetFilter):
             Filter for dynamic affiliate location set.
             This field doesn't apply generally to feed item
             sets. It is only used for sets of affiliate
             locations.
+
             This field is a member of `oneof`_ ``dynamic_set_filter``.
     """
 

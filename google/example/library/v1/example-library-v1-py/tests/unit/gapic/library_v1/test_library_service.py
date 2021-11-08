@@ -487,7 +487,9 @@ def test_create_shelf_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].shelf == library.Shelf(name='name_value')
+        arg = args[0].shelf
+        mock_val = library.Shelf(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_shelf_flattened_error():
@@ -528,7 +530,9 @@ async def test_create_shelf_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].shelf == library.Shelf(name='name_value')
+        arg = args[0].shelf
+        mock_val = library.Shelf(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -722,7 +726,9 @@ def test_get_shelf_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_shelf_flattened_error():
@@ -763,7 +769,9 @@ async def test_get_shelf_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1216,7 +1224,9 @@ def test_delete_shelf_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_shelf_flattened_error():
@@ -1257,7 +1267,9 @@ async def test_delete_shelf_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1452,8 +1464,12 @@ def test_merge_shelves_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].other_shelf == 'other_shelf_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].other_shelf
+        mock_val = 'other_shelf_value'
+        assert arg == mock_val
 
 
 def test_merge_shelves_flattened_error():
@@ -1496,8 +1512,12 @@ async def test_merge_shelves_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].other_shelf == 'other_shelf_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].other_shelf
+        mock_val = 'other_shelf_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1701,8 +1721,12 @@ def test_create_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].book == library.Book(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].book
+        mock_val = library.Book(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_book_flattened_error():
@@ -1745,8 +1769,12 @@ async def test_create_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].book == library.Book(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].book
+        mock_val = library.Book(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1949,7 +1977,9 @@ def test_get_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_book_flattened_error():
@@ -1990,7 +2020,9 @@ async def test_get_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2180,7 +2212,9 @@ def test_list_books_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_books_flattened_error():
@@ -2221,7 +2255,9 @@ async def test_list_books_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2591,7 +2627,9 @@ def test_delete_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_book_flattened_error():
@@ -2632,7 +2670,9 @@ async def test_delete_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2835,8 +2875,12 @@ def test_update_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].book == library.Book(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].book
+        mock_val = library.Book(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_book_flattened_error():
@@ -2879,8 +2923,12 @@ async def test_update_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].book == library.Book(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].book
+        mock_val = library.Book(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3084,8 +3132,12 @@ def test_move_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].other_shelf_name == 'other_shelf_name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].other_shelf_name
+        mock_val = 'other_shelf_name_value'
+        assert arg == mock_val
 
 
 def test_move_book_flattened_error():
@@ -3128,8 +3180,12 @@ async def test_move_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].other_shelf_name == 'other_shelf_name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].other_shelf_name
+        mock_val = 'other_shelf_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

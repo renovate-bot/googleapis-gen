@@ -115,6 +115,7 @@ class KeywordInfo(proto.Message):
         text (str):
             The text of the keyword (at most 80
             characters and 10 words).
+
             This field is a member of `oneof`_ ``_text``.
         match_type (google.ads.googleads.v8.enums.types.KeywordMatchTypeEnum.KeywordMatchType):
             The match type of the keyword.
@@ -140,6 +141,7 @@ class PlacementInfo(proto.Message):
         url (str):
             URL of the placement.
             For example, "http://www.domain.com".
+
             This field is a member of `oneof`_ ``_url``.
     """
 
@@ -157,6 +159,7 @@ class MobileAppCategoryInfo(proto.Message):
         mobile_app_category_constant (str):
             The mobile app category constant resource
             name.
+
             This field is a member of `oneof`_ ``_mobile_app_category_constant``.
     """
 
@@ -190,9 +193,11 @@ class MobileApplicationInfo(proto.Message):
             "1-476943146" for iOS and "2-com.labpixies.colordrips" for
             Android. This field is required and must be set in CREATE
             operations.
+
             This field is a member of `oneof`_ ``_app_id``.
         name (str):
             Name of this mobile application.
+
             This field is a member of `oneof`_ ``_name``.
     """
 
@@ -214,6 +219,7 @@ class LocationInfo(proto.Message):
     Attributes:
         geo_target_constant (str):
             The geo target constant resource name.
+
             This field is a member of `oneof`_ ``_geo_target_constant``.
     """
 
@@ -268,6 +274,7 @@ class ListingGroupInfo(proto.Message):
             Resource name of ad group criterion which is
             the parent listing group subdivision. Null for
             the root group.
+
             This field is a member of `oneof`_ ``_parent_ad_group_criterion``.
     """
 
@@ -316,47 +323,61 @@ class ListingDimensionInfo(proto.Message):
     Attributes:
         hotel_id (google.ads.googleads.v8.common.types.HotelIdInfo):
             Advertiser-specific hotel ID.
+
             This field is a member of `oneof`_ ``dimension``.
         hotel_class (google.ads.googleads.v8.common.types.HotelClassInfo):
             Class of the hotel as a number of stars 1 to
             5.
+
             This field is a member of `oneof`_ ``dimension``.
         hotel_country_region (google.ads.googleads.v8.common.types.HotelCountryRegionInfo):
             Country or Region the hotel is located in.
+
             This field is a member of `oneof`_ ``dimension``.
         hotel_state (google.ads.googleads.v8.common.types.HotelStateInfo):
             State the hotel is located in.
+
             This field is a member of `oneof`_ ``dimension``.
         hotel_city (google.ads.googleads.v8.common.types.HotelCityInfo):
             City the hotel is located in.
+
             This field is a member of `oneof`_ ``dimension``.
         product_bidding_category (google.ads.googleads.v8.common.types.ProductBiddingCategoryInfo):
             Bidding category of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_brand (google.ads.googleads.v8.common.types.ProductBrandInfo):
             Brand of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_channel (google.ads.googleads.v8.common.types.ProductChannelInfo):
             Locality of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_channel_exclusivity (google.ads.googleads.v8.common.types.ProductChannelExclusivityInfo):
             Availability of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_condition (google.ads.googleads.v8.common.types.ProductConditionInfo):
             Condition of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_custom_attribute (google.ads.googleads.v8.common.types.ProductCustomAttributeInfo):
             Custom attribute of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_item_id (google.ads.googleads.v8.common.types.ProductItemIdInfo):
             Item id of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         product_type (google.ads.googleads.v8.common.types.ProductTypeInfo):
             Type of a product offer.
+
             This field is a member of `oneof`_ ``dimension``.
         unknown_listing_dimension (google.ads.googleads.v8.common.types.UnknownListingDimensionInfo):
             Unknown dimension. Set when no other listing
             dimension is set.
+
             This field is a member of `oneof`_ ``dimension``.
     """
 
@@ -452,6 +473,7 @@ class HotelIdInfo(proto.Message):
     Attributes:
         value (str):
             String value of the hotel ID.
+
             This field is a member of `oneof`_ ``_value``.
     """
 
@@ -468,6 +490,7 @@ class HotelClassInfo(proto.Message):
     Attributes:
         value (int):
             Long value of the hotel class.
+
             This field is a member of `oneof`_ ``_value``.
     """
 
@@ -484,6 +507,7 @@ class HotelCountryRegionInfo(proto.Message):
     Attributes:
         country_region_criterion (str):
             The Geo Target Constant resource name.
+
             This field is a member of `oneof`_ ``_country_region_criterion``.
     """
 
@@ -500,6 +524,7 @@ class HotelStateInfo(proto.Message):
     Attributes:
         state_criterion (str):
             The Geo Target Constant resource name.
+
             This field is a member of `oneof`_ ``_state_criterion``.
     """
 
@@ -516,6 +541,7 @@ class HotelCityInfo(proto.Message):
     Attributes:
         city_criterion (str):
             The Geo Target Constant resource name.
+
             This field is a member of `oneof`_ ``_city_criterion``.
     """
 
@@ -536,11 +562,13 @@ class ProductBiddingCategoryInfo(proto.Message):
             This ID is equivalent to the google_product_category ID as
             described in this article:
             https://support.google.com/merchants/answer/6324436
+
             This field is a member of `oneof`_ ``_id``.
         country_code (str):
             Two-letter upper-case country code of the product bidding
             category. It must match the
             campaign.shopping_setting.sales_country field.
+
             This field is a member of `oneof`_ ``_country_code``.
         level (google.ads.googleads.v8.enums.types.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel):
             Level of the product bidding category.
@@ -569,6 +597,7 @@ class ProductBrandInfo(proto.Message):
     Attributes:
         value (str):
             String value of the product brand.
+
             This field is a member of `oneof`_ ``_value``.
     """
 
@@ -630,6 +659,7 @@ class ProductCustomAttributeInfo(proto.Message):
     Attributes:
         value (str):
             String value of the product custom attribute.
+
             This field is a member of `oneof`_ ``_value``.
         index (google.ads.googleads.v8.enums.types.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex):
             Indicates the index of the custom attribute.
@@ -653,6 +683,7 @@ class ProductItemIdInfo(proto.Message):
     Attributes:
         value (str):
             Value of the id.
+
             This field is a member of `oneof`_ ``_value``.
     """
 
@@ -669,6 +700,7 @@ class ProductTypeInfo(proto.Message):
     Attributes:
         value (str):
             Value of the type.
+
             This field is a member of `oneof`_ ``_value``.
         level (google.ads.googleads.v8.enums.types.ProductTypeLevelEnum.ProductTypeLevel):
             Level of the type.
@@ -715,10 +747,12 @@ class HotelAdvanceBookingWindowInfo(proto.Message):
         min_days (int):
             Low end of the number of days prior to the
             stay.
+
             This field is a member of `oneof`_ ``_min_days``.
         max_days (int):
             High end of the number of days prior to the
             stay.
+
             This field is a member of `oneof`_ ``_max_days``.
     """
 
@@ -740,9 +774,11 @@ class HotelLengthOfStayInfo(proto.Message):
     Attributes:
         min_nights (int):
             Low end of the number of nights in the stay.
+
             This field is a member of `oneof`_ ``_min_nights``.
         max_nights (int):
             High end of the number of nights in the stay.
+
             This field is a member of `oneof`_ ``_max_nights``.
     """
 
@@ -832,6 +868,7 @@ class AdScheduleInfo(proto.Message):
             This field must be between 0 and 23, inclusive.
             This field is required for CREATE operations and
             is prohibited on UPDATE operations.
+
             This field is a member of `oneof`_ ``_start_hour``.
         end_hour (int):
             Ending hour in 24 hour time; 24 signifies end
@@ -839,6 +876,7 @@ class AdScheduleInfo(proto.Message):
             inclusive.
             This field is required for CREATE operations and
             is prohibited on UPDATE operations.
+
             This field is a member of `oneof`_ ``_end_hour``.
         day_of_week (google.ads.googleads.v8.enums.types.DayOfWeekEnum.DayOfWeek):
             Day of the week the schedule applies to.
@@ -940,6 +978,7 @@ class YouTubeVideoInfo(proto.Message):
         video_id (str):
             YouTube video id as it appears on the YouTube
             watch page.
+
             This field is a member of `oneof`_ ``_video_id``.
     """
 
@@ -957,6 +996,7 @@ class YouTubeChannelInfo(proto.Message):
         channel_id (str):
             The YouTube uploader channel id or the
             channel code of a YouTube channel.
+
             This field is a member of `oneof`_ ``_channel_id``.
     """
 
@@ -974,6 +1014,7 @@ class UserListInfo(proto.Message):
     Attributes:
         user_list (str):
             The User List resource name.
+
             This field is a member of `oneof`_ ``_user_list``.
     """
 
@@ -999,6 +1040,7 @@ class ProximityInfo(proto.Message):
             Latitude and longitude.
         radius (float):
             The radius of the proximity.
+
             This field is a member of `oneof`_ ``_radius``.
         radius_units (google.ads.googleads.v8.enums.types.ProximityRadiusUnitsEnum.ProximityRadiusUnits):
             The unit of measurement of the radius.
@@ -1035,9 +1077,11 @@ class GeoPointInfo(proto.Message):
     Attributes:
         longitude_in_micro_degrees (int):
             Micro degrees for the longitude.
+
             This field is a member of `oneof`_ ``_longitude_in_micro_degrees``.
         latitude_in_micro_degrees (int):
             Micro degrees for the latitude.
+
             This field is a member of `oneof`_ ``_latitude_in_micro_degrees``.
     """
 
@@ -1059,26 +1103,33 @@ class AddressInfo(proto.Message):
     Attributes:
         postal_code (str):
             Postal code.
+
             This field is a member of `oneof`_ ``_postal_code``.
         province_code (str):
             Province or state code.
+
             This field is a member of `oneof`_ ``_province_code``.
         country_code (str):
             Country code.
+
             This field is a member of `oneof`_ ``_country_code``.
         province_name (str):
             Province or state name.
+
             This field is a member of `oneof`_ ``_province_name``.
         street_address (str):
             Street address line 1.
+
             This field is a member of `oneof`_ ``_street_address``.
         street_address2 (str):
             Street address line 2. This field is write-only. It is only
             used for calculating the longitude and latitude of an
             address when geo_point is empty.
+
             This field is a member of `oneof`_ ``_street_address2``.
         city_name (str):
             Name of the city.
+
             This field is a member of `oneof`_ ``_city_name``.
     """
 
@@ -1127,6 +1178,7 @@ class TopicInfo(proto.Message):
     Attributes:
         topic_constant (str):
             The Topic Constant resource name.
+
             This field is a member of `oneof`_ ``_topic_constant``.
         path (Sequence[str]):
             The category to target or exclude. Each
@@ -1153,6 +1205,7 @@ class LanguageInfo(proto.Message):
     Attributes:
         language_constant (str):
             The language constant resource name.
+
             This field is a member of `oneof`_ ``_language_constant``.
     """
 
@@ -1173,6 +1226,7 @@ class IpBlockInfo(proto.Message):
     Attributes:
         ip_address (str):
             The IP address of this IP block.
+
             This field is a member of `oneof`_ ``_ip_address``.
     """
 
@@ -1205,6 +1259,7 @@ class CarrierInfo(proto.Message):
     Attributes:
         carrier_constant (str):
             The Carrier constant resource name.
+
             This field is a member of `oneof`_ ``_carrier_constant``.
     """
 
@@ -1221,6 +1276,7 @@ class UserInterestInfo(proto.Message):
     Attributes:
         user_interest_category (str):
             The UserInterest resource name.
+
             This field is a member of `oneof`_ ``_user_interest_category``.
     """
 
@@ -1244,6 +1300,7 @@ class WebpageInfo(proto.Message):
 
             This field is required for CREATE operations and
             is prohibited on UPDATE operations.
+
             This field is a member of `oneof`_ ``_criterion_name``.
         conditions (Sequence[google.ads.googleads.v8.common.types.WebpageConditionInfo]):
             Conditions, or logical expressions, for
@@ -1298,6 +1355,7 @@ class WebpageConditionInfo(proto.Message):
             Operator of webpage targeting condition.
         argument (str):
             Argument of webpage targeting condition.
+
             This field is a member of `oneof`_ ``_argument``.
     """
 
@@ -1339,6 +1397,7 @@ class OperatingSystemVersionInfo(proto.Message):
         operating_system_version_constant (str):
             The operating system version constant
             resource name.
+
             This field is a member of `oneof`_ ``_operating_system_version_constant``.
     """
 
@@ -1370,6 +1429,7 @@ class MobileDeviceInfo(proto.Message):
     Attributes:
         mobile_device_constant (str):
             The mobile device constant resource name.
+
             This field is a member of `oneof`_ ``_mobile_device_constant``.
     """
 
@@ -1387,6 +1447,7 @@ class CustomAffinityInfo(proto.Message):
     Attributes:
         custom_affinity (str):
             The CustomInterest resource name.
+
             This field is a member of `oneof`_ ``_custom_affinity``.
     """
 
@@ -1404,6 +1465,7 @@ class CustomIntentInfo(proto.Message):
     Attributes:
         custom_intent (str):
             The CustomInterest resource name.
+
             This field is a member of `oneof`_ ``_custom_intent``.
     """
 
@@ -1422,6 +1484,7 @@ class LocationGroupInfo(proto.Message):
             Feed specifying locations for targeting.
             This is required and must be set in CREATE
             operations.
+
             This field is a member of `oneof`_ ``_feed``.
         geo_target_constants (Sequence[str]):
             Geo target constant(s) restricting the scope
@@ -1432,6 +1495,7 @@ class LocationGroupInfo(proto.Message):
             Distance in units specifying the radius
             around targeted locations. This is required and
             must be set in CREATE operations.
+
             This field is a member of `oneof`_ ``_radius``.
         radius_units (google.ads.googleads.v8.enums.types.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits):
             Unit of the radius. Miles and meters are
@@ -1515,11 +1579,13 @@ class KeywordThemeInfo(proto.Message):
             The resource name of a Smart Campaign keyword theme
             constant.
             ``keywordThemeConstants/{keyword_theme_id}~{sub_keyword_theme_id}``
+
             This field is a member of `oneof`_ ``keyword_theme``.
         free_form_keyword_theme (str):
             Free-form text to be matched to a Smart
             Campaign keyword theme constant on a best-effort
             basis.
+
             This field is a member of `oneof`_ ``keyword_theme``.
     """
 

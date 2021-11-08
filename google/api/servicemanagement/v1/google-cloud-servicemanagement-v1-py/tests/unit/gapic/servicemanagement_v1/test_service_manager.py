@@ -515,8 +515,12 @@ def test_list_services_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].producer_project_id == 'producer_project_id_value'
-        assert args[0].consumer_id == 'consumer_id_value'
+        arg = args[0].producer_project_id
+        mock_val = 'producer_project_id_value'
+        assert arg == mock_val
+        arg = args[0].consumer_id
+        mock_val = 'consumer_id_value'
+        assert arg == mock_val
 
 
 def test_list_services_flattened_error():
@@ -559,8 +563,12 @@ async def test_list_services_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].producer_project_id == 'producer_project_id_value'
-        assert args[0].consumer_id == 'consumer_id_value'
+        arg = args[0].producer_project_id
+        mock_val = 'producer_project_id_value'
+        assert arg == mock_val
+        arg = args[0].consumer_id
+        mock_val = 'consumer_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -873,7 +881,9 @@ def test_get_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 def test_get_service_flattened_error():
@@ -914,7 +924,9 @@ async def test_get_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1037,7 +1049,9 @@ def test_create_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service == resources.ManagedService(service_name='service_name_value')
+        arg = args[0].service
+        mock_val = resources.ManagedService(service_name='service_name_value')
+        assert arg == mock_val
 
 
 def test_create_service_flattened_error():
@@ -1080,7 +1094,9 @@ async def test_create_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service == resources.ManagedService(service_name='service_name_value')
+        arg = args[0].service
+        mock_val = resources.ManagedService(service_name='service_name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1203,7 +1219,9 @@ def test_delete_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 def test_delete_service_flattened_error():
@@ -1246,7 +1264,9 @@ async def test_delete_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1369,7 +1389,9 @@ def test_undelete_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 def test_undelete_service_flattened_error():
@@ -1412,7 +1434,9 @@ async def test_undelete_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1539,7 +1563,9 @@ def test_list_service_configs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 def test_list_service_configs_flattened_error():
@@ -1580,7 +1606,9 @@ async def test_list_service_configs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1902,9 +1930,15 @@ def test_get_service_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].config_id == 'config_id_value'
-        assert args[0].view == servicemanager.GetServiceConfigRequest.ConfigView.FULL
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].config_id
+        mock_val = 'config_id_value'
+        assert arg == mock_val
+        arg = args[0].view
+        mock_val = servicemanager.GetServiceConfigRequest.ConfigView.FULL
+        assert arg == mock_val
 
 
 def test_get_service_config_flattened_error():
@@ -1949,9 +1983,15 @@ async def test_get_service_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].config_id == 'config_id_value'
-        assert args[0].view == servicemanager.GetServiceConfigRequest.ConfigView.FULL
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].config_id
+        mock_val = 'config_id_value'
+        assert arg == mock_val
+        arg = args[0].view
+        mock_val = servicemanager.GetServiceConfigRequest.ConfigView.FULL
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2093,8 +2133,12 @@ def test_create_service_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].service_config == service_pb2.Service(name='name_value')
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].service_config
+        mock_val = service_pb2.Service(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_service_config_flattened_error():
@@ -2137,8 +2181,12 @@ async def test_create_service_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].service_config == service_pb2.Service(name='name_value')
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].service_config
+        mock_val = service_pb2.Service(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2264,9 +2312,15 @@ def test_submit_config_source_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].config_source == resources.ConfigSource(id='id_value')
-        assert args[0].validate_only == True
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].config_source
+        mock_val = resources.ConfigSource(id='id_value')
+        assert arg == mock_val
+        arg = args[0].validate_only
+        mock_val = True
+        assert arg == mock_val
 
 
 def test_submit_config_source_flattened_error():
@@ -2313,9 +2367,15 @@ async def test_submit_config_source_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].config_source == resources.ConfigSource(id='id_value')
-        assert args[0].validate_only == True
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].config_source
+        mock_val = resources.ConfigSource(id='id_value')
+        assert arg == mock_val
+        arg = args[0].validate_only
+        mock_val = True
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2445,8 +2505,12 @@ def test_list_service_rollouts_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 def test_list_service_rollouts_flattened_error():
@@ -2489,8 +2553,12 @@ async def test_list_service_rollouts_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].filter == 'filter_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].filter
+        mock_val = 'filter_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2813,8 +2881,12 @@ def test_get_service_rollout_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].rollout_id == 'rollout_id_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].rollout_id
+        mock_val = 'rollout_id_value'
+        assert arg == mock_val
 
 
 def test_get_service_rollout_flattened_error():
@@ -2857,8 +2929,12 @@ async def test_get_service_rollout_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].rollout_id == 'rollout_id_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].rollout_id
+        mock_val = 'rollout_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2983,8 +3059,12 @@ def test_create_service_rollout_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].rollout == resources.Rollout(rollout_id='rollout_id_value')
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].rollout
+        mock_val = resources.Rollout(rollout_id='rollout_id_value')
+        assert arg == mock_val
 
 
 def test_create_service_rollout_flattened_error():
@@ -3029,8 +3109,12 @@ async def test_create_service_rollout_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].rollout == resources.Rollout(rollout_id='rollout_id_value')
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].rollout
+        mock_val = resources.Rollout(rollout_id='rollout_id_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3163,8 +3247,12 @@ def test_generate_config_report_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].new_config == any_pb2.Any(type_url='type_url_value')
-        assert args[0].old_config == any_pb2.Any(type_url='type_url_value')
+        arg = args[0].new_config
+        mock_val = any_pb2.Any(type_url='type_url_value')
+        assert arg == mock_val
+        arg = args[0].old_config
+        mock_val = any_pb2.Any(type_url='type_url_value')
+        assert arg == mock_val
 
 
 def test_generate_config_report_flattened_error():
@@ -3207,8 +3295,12 @@ async def test_generate_config_report_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].new_config == any_pb2.Any(type_url='type_url_value')
-        assert args[0].old_config == any_pb2.Any(type_url='type_url_value')
+        arg = args[0].new_config
+        mock_val = any_pb2.Any(type_url='type_url_value')
+        assert arg == mock_val
+        arg = args[0].old_config
+        mock_val = any_pb2.Any(type_url='type_url_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3333,8 +3425,12 @@ def test_enable_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].consumer_id == 'consumer_id_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].consumer_id
+        mock_val = 'consumer_id_value'
+        assert arg == mock_val
 
 
 def test_enable_service_flattened_error():
@@ -3379,8 +3475,12 @@ async def test_enable_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].consumer_id == 'consumer_id_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].consumer_id
+        mock_val = 'consumer_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3505,8 +3605,12 @@ def test_disable_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].consumer_id == 'consumer_id_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].consumer_id
+        mock_val = 'consumer_id_value'
+        assert arg == mock_val
 
 
 def test_disable_service_flattened_error():
@@ -3551,8 +3655,12 @@ async def test_disable_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].service_name == 'service_name_value'
-        assert args[0].consumer_id == 'consumer_id_value'
+        arg = args[0].service_name
+        mock_val = 'service_name_value'
+        assert arg == mock_val
+        arg = args[0].consumer_id
+        mock_val = 'consumer_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio

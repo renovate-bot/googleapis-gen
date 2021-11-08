@@ -102,6 +102,7 @@ class ReadObjectRequest(proto.Message):
             given value. Setting to 0 makes the operation
             succeed only if there are no live versions of
             the object.
+
             This field is a member of `oneof`_ ``_if_generation_match``.
         if_generation_not_match (int):
             Makes the operation conditional on whether
@@ -110,16 +111,19 @@ class ReadObjectRequest(proto.Message):
             precondition fails. Setting to 0 makes the
             operation succeed only if there is a live
             version of the object.
+
             This field is a member of `oneof`_ ``_if_generation_not_match``.
         if_metageneration_match (int):
             Makes the operation conditional on whether
             the object's current metageneration matches the
             given value.
+
             This field is a member of `oneof`_ ``_if_metageneration_match``.
         if_metageneration_not_match (int):
             Makes the operation conditional on whether
             the object's current metageneration does not
             match the given value.
+
             This field is a member of `oneof`_ ``_if_metageneration_not_match``.
         common_object_request_params (google.storage_v2.types.CommonObjectRequestParams):
             A set of parameters common to Storage API
@@ -134,6 +138,7 @@ class ReadObjectRequest(proto.Message):
             and metadata.acl.
 
             -  may be used to mean "all fields".
+
             This field is a member of `oneof`_ ``_read_mask``.
     """
 
@@ -259,6 +264,7 @@ class WriteObjectSpec(proto.Message):
             given value. Setting to 0 makes the operation
             succeed only if there are no live versions of
             the object.
+
             This field is a member of `oneof`_ ``_if_generation_match``.
         if_generation_not_match (int):
             Makes the operation conditional on whether
@@ -267,16 +273,19 @@ class WriteObjectSpec(proto.Message):
             precondition fails. Setting to 0 makes the
             operation succeed only if there is a live
             version of the object.
+
             This field is a member of `oneof`_ ``_if_generation_not_match``.
         if_metageneration_match (int):
             Makes the operation conditional on whether
             the object's current metageneration matches the
             given value.
+
             This field is a member of `oneof`_ ``_if_metageneration_match``.
         if_metageneration_not_match (int):
             Makes the operation conditional on whether
             the object's current metageneration does not
             match the given value.
+
             This field is a member of `oneof`_ ``_if_metageneration_not_match``.
     """
 
@@ -326,11 +335,13 @@ class WriteObjectRequest(proto.Message):
         upload_id (str):
             For resumable uploads. This should be the ``upload_id``
             returned from a call to ``StartResumableWriteResponse``.
+
             This field is a member of `oneof`_ ``first_message``.
         write_object_spec (google.storage_v2.types.WriteObjectSpec):
             For non-resumable uploads. Describes the
             overall upload, including the destination bucket
             and object name, preconditions, etc.
+
             This field is a member of `oneof`_ ``first_message``.
         write_offset (int):
             Required. The offset from the beginning of the object at
@@ -351,6 +362,7 @@ class WriteObjectRequest(proto.Message):
             The data to insert. If a crc32c checksum is
             provided that doesn't match the checksum
             computed by the service, the request will fail.
+
             This field is a member of `oneof`_ ``data``.
         object_checksums (google.storage_v2.types.ObjectChecksums):
             Checksums for the complete object. If the checksums computed
@@ -429,11 +441,13 @@ class WriteObjectResponse(proto.Message):
             The total number of bytes that have been processed for the
             given object from all ``WriteObject`` calls. Only set if the
             upload has not finalized.
+
             This field is a member of `oneof`_ ``write_status``.
         resource (google.storage_v2.types.Object):
             A resource containing the metadata for the
             uploaded object. Only set if the upload has
             finalized.
+
             This field is a member of `oneof`_ ``write_status``.
     """
 
@@ -499,11 +513,13 @@ class QueryWriteStatusResponse(proto.Message):
             correct value for the 'write_offset' field to use when
             resuming the ``WriteObject`` operation. Only set if the
             upload has not finalized.
+
             This field is a member of `oneof`_ ``write_status``.
         resource (google.storage_v2.types.Object):
             A resource containing the metadata for the
             uploaded object. Only set if the upload has
             finalized.
+
             This field is a member of `oneof`_ ``write_status``.
     """
 
@@ -955,6 +971,7 @@ class Bucket(proto.Message):
                         satisfied when an object reaches the specified
                         age. A value of 0 indicates that all objects
                         immediately match this condition.
+
                         This field is a member of `oneof`_ ``_age_days``.
                     created_before (google.type.date_pb2.Date):
                         This condition is satisfied when an object is
@@ -964,6 +981,7 @@ class Bucket(proto.Message):
                         Relevant only for versioned objects. If the value is
                         ``true``, this condition matches live objects; if the value
                         is ``false``, it matches archived objects.
+
                         This field is a member of `oneof`_ ``_is_live``.
                     num_newer_versions (int):
                         Relevant only for versioned objects. If the
@@ -971,6 +989,7 @@ class Bucket(proto.Message):
                         there are at least N versions (including the
                         live version) newer than this version of the
                         object.
+
                         This field is a member of `oneof`_ ``_num_newer_versions``.
                     matches_storage_class (Sequence[str]):
                         Objects having any of the storage classes specified by this
@@ -983,6 +1002,7 @@ class Bucket(proto.Message):
                         custom timestamp set on an object.
                         The value of the field must be a nonnegative
                         integer.
+
                         This field is a member of `oneof`_ ``_days_since_custom_time``.
                     custom_time_before (google.type.date_pb2.Date):
                         An object matches this condition if the
@@ -997,6 +1017,7 @@ class Bucket(proto.Message):
                         zero, the object version will become eligible
                         for Lifecycle action as soon as it becomes
                         noncurrent.
+
                         This field is a member of `oneof`_ ``_days_since_noncurrent_time``.
                     noncurrent_time_before (google.type.date_pb2.Date):
                         This condition is relevant only for versioned
@@ -1365,6 +1386,7 @@ class ChecksummedData(proto.Message):
         crc32c (int):
             If set, the CRC32C digest of the content
             field.
+
             This field is a member of `oneof`_ ``_crc32c``.
     """
 
@@ -1390,6 +1412,7 @@ class ObjectChecksums(proto.Message):
             objects. If set in an WriteObjectRequest,
             service will validate that the stored object
             matches this checksum.
+
             This field is a member of `oneof`_ ``_crc32c``.
         md5_hash (bytes):
             128 bit MD5 hash of the object data. For more information
@@ -1541,6 +1564,7 @@ class Object(proto.Message):
             that the value should be taken from the parent bucket's
             "default_event_based_hold" field. In a response, this field
             will always be set to true or false.
+
             This field is a member of `oneof`_ ``_event_based_hold``.
         owner (google.storage_v2.types.Owner):
             Output only. The owner of the object. This will always be

@@ -36,10 +36,12 @@ class AdGroupLabel(proto.Message):
         ad_group (str):
             Immutable. The ad group to which the label is
             attached.
+
             This field is a member of `oneof`_ ``_ad_group``.
         label (str):
             Immutable. The label assigned to the ad
             group.
+
             This field is a member of `oneof`_ ``_label``.
     """
 

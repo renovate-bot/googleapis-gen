@@ -41,13 +41,16 @@ class KeywordPlanAdGroupKeyword(proto.Message):
         keyword_plan_ad_group (str):
             The Keyword Plan ad group to which this
             keyword belongs.
+
             This field is a member of `oneof`_ ``_keyword_plan_ad_group``.
         id (int):
             Output only. The ID of the Keyword Plan
             keyword.
+
             This field is a member of `oneof`_ ``_id``.
         text (str):
             The keyword text.
+
             This field is a member of `oneof`_ ``_text``.
         match_type (google.ads.googleads.v9.enums.types.KeywordMatchTypeEnum.KeywordMatchType):
             The keyword match type.
@@ -58,9 +61,11 @@ class KeywordPlanAdGroupKeyword(proto.Message):
             CPC bid set at the keyword plan ad group level.
             Not applicable for negative keywords. (negative
             = true) This field is Optional.
+
             This field is a member of `oneof`_ ``_cpc_bid_micros``.
         negative (bool):
             Immutable. If true, the keyword is negative.
+
             This field is a member of `oneof`_ ``_negative``.
     """
 

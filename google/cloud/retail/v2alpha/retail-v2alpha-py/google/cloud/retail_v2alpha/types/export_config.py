@@ -41,6 +41,7 @@ class ExportErrorsConfig(proto.Message):
             empty, existing Cloud Storage bucket. Export errors will be
             written to a file in this bucket, one per line, as a
             JSON-encoded ``google.rpc.Status`` message.
+
             This field is a member of `oneof`_ ``destination``.
     """
 

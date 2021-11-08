@@ -43,6 +43,7 @@ class AdGroupCriterionCustomizer(proto.Message):
             Immutable. The ad group criterion to which
             the customizer attribute is linked. It must be a
             keyword criterion.
+
             This field is a member of `oneof`_ ``_ad_group_criterion``.
         customizer_attribute (str):
             Required. Immutable. The customizer attribute

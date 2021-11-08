@@ -105,12 +105,14 @@ class CustomerLabelOperation(proto.Message):
             Create operation: No resource name is
             expected for the new customer-label
             relationship.
+
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the customer-label
             relationship being removed, in this format:
 
             ``customers/{customer_id}/customerLabels/{label_id}``
+
             This field is a member of `oneof`_ ``operation``.
     """
 

@@ -560,9 +560,15 @@ def test_create_reservation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].reservation == gcbr_reservation.Reservation(name='name_value')
-        assert args[0].reservation_id == 'reservation_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].reservation
+        mock_val = gcbr_reservation.Reservation(name='name_value')
+        assert arg == mock_val
+        arg = args[0].reservation_id
+        mock_val = 'reservation_id_value'
+        assert arg == mock_val
 
 
 def test_create_reservation_flattened_error():
@@ -607,9 +613,15 @@ async def test_create_reservation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].reservation == gcbr_reservation.Reservation(name='name_value')
-        assert args[0].reservation_id == 'reservation_id_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].reservation
+        mock_val = gcbr_reservation.Reservation(name='name_value')
+        assert arg == mock_val
+        arg = args[0].reservation_id
+        mock_val = 'reservation_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -801,7 +813,9 @@ def test_list_reservations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_reservations_flattened_error():
@@ -842,7 +856,9 @@ async def test_list_reservations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1226,7 +1242,9 @@ def test_get_reservation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_reservation_flattened_error():
@@ -1267,7 +1285,9 @@ async def test_get_reservation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1451,7 +1471,9 @@ def test_delete_reservation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_reservation_flattened_error():
@@ -1492,7 +1514,9 @@ async def test_delete_reservation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1691,8 +1715,12 @@ def test_update_reservation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].reservation == gcbr_reservation.Reservation(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].reservation
+        mock_val = gcbr_reservation.Reservation(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_reservation_flattened_error():
@@ -1735,8 +1763,12 @@ async def test_update_reservation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].reservation == gcbr_reservation.Reservation(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].reservation
+        mock_val = gcbr_reservation.Reservation(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -1944,8 +1976,12 @@ def test_create_capacity_commitment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].capacity_commitment == reservation.CapacityCommitment(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].capacity_commitment
+        mock_val = reservation.CapacityCommitment(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_capacity_commitment_flattened_error():
@@ -1988,8 +2024,12 @@ async def test_create_capacity_commitment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].capacity_commitment == reservation.CapacityCommitment(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].capacity_commitment
+        mock_val = reservation.CapacityCommitment(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2533,7 +2573,9 @@ def test_get_capacity_commitment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_capacity_commitment_flattened_error():
@@ -2574,7 +2616,9 @@ async def test_get_capacity_commitment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -2758,7 +2802,9 @@ def test_delete_capacity_commitment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_capacity_commitment_flattened_error():
@@ -2799,7 +2845,9 @@ async def test_delete_capacity_commitment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3006,8 +3054,12 @@ def test_update_capacity_commitment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].capacity_commitment == reservation.CapacityCommitment(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].capacity_commitment
+        mock_val = reservation.CapacityCommitment(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_capacity_commitment_flattened_error():
@@ -3050,8 +3102,12 @@ async def test_update_capacity_commitment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].capacity_commitment == reservation.CapacityCommitment(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].capacity_commitment
+        mock_val = reservation.CapacityCommitment(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3239,8 +3295,12 @@ def test_split_capacity_commitment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].slot_count == 1098
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].slot_count
+        mock_val = 1098
+        assert arg == mock_val
 
 
 def test_split_capacity_commitment_flattened_error():
@@ -3283,8 +3343,12 @@ async def test_split_capacity_commitment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].slot_count == 1098
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].slot_count
+        mock_val = 1098
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3492,8 +3556,12 @@ def test_merge_capacity_commitments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].capacity_commitment_ids == ['capacity_commitment_ids_value']
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].capacity_commitment_ids
+        mock_val = ['capacity_commitment_ids_value']
+        assert arg == mock_val
 
 
 def test_merge_capacity_commitments_flattened_error():
@@ -3536,8 +3604,12 @@ async def test_merge_capacity_commitments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].capacity_commitment_ids == ['capacity_commitment_ids_value']
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].capacity_commitment_ids
+        mock_val = ['capacity_commitment_ids_value']
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3741,8 +3813,12 @@ def test_create_assignment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].assignment == reservation.Assignment(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].assignment
+        mock_val = reservation.Assignment(name='name_value')
+        assert arg == mock_val
 
 
 def test_create_assignment_flattened_error():
@@ -3785,8 +3861,12 @@ async def test_create_assignment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].assignment == reservation.Assignment(name='name_value')
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].assignment
+        mock_val = reservation.Assignment(name='name_value')
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -3977,7 +4057,9 @@ def test_list_assignments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 def test_list_assignments_flattened_error():
@@ -4018,7 +4100,9 @@ async def test_list_assignments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4388,7 +4472,9 @@ def test_delete_assignment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_delete_assignment_flattened_error():
@@ -4429,7 +4515,9 @@ async def test_delete_assignment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -4620,8 +4708,12 @@ def test_search_assignments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].query == 'query_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].query
+        mock_val = 'query_value'
+        assert arg == mock_val
 
 
 def test_search_assignments_flattened_error():
@@ -4664,8 +4756,12 @@ async def test_search_assignments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].parent == 'parent_value'
-        assert args[0].query == 'query_value'
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].query
+        mock_val = 'query_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5055,8 +5151,12 @@ def test_move_assignment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].destination_id == 'destination_id_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].destination_id
+        mock_val = 'destination_id_value'
+        assert arg == mock_val
 
 
 def test_move_assignment_flattened_error():
@@ -5099,8 +5199,12 @@ async def test_move_assignment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
-        assert args[0].destination_id == 'destination_id_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].destination_id
+        mock_val = 'destination_id_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5295,7 +5399,9 @@ def test_get_bi_reservation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 def test_get_bi_reservation_flattened_error():
@@ -5336,7 +5442,9 @@ async def test_get_bi_reservation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].name == 'name_value'
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
@@ -5531,8 +5639,12 @@ def test_update_bi_reservation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].reservation == gcbr_reservation.BiReservation(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].reservation
+        mock_val = gcbr_reservation.BiReservation(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 def test_update_bi_reservation_flattened_error():
@@ -5575,8 +5687,12 @@ async def test_update_bi_reservation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        assert args[0].reservation == gcbr_reservation.BiReservation(name='name_value')
-        assert args[0].update_mask == field_mask_pb2.FieldMask(paths=['paths_value'])
+        arg = args[0].reservation
+        mock_val = gcbr_reservation.BiReservation(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
 
 
 @pytest.mark.asyncio
