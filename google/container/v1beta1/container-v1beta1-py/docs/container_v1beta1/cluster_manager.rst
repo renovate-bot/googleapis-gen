@@ -1,10 +1,10 @@
 ClusterManager
 --------------------------------
 
-.. automodule:: google.container_v1beta1.services.cluster_manager
+.. automodule:: google.cloud.container_v1beta1.services.cluster_manager
     :members:
     :inherited-members:
 
-.. automodule:: google.container_v1beta1.services.cluster_manager.pagers
+.. automodule:: google.cloud.container_v1beta1.services.cluster_manager.pagers
     :members:
     :inherited-members:

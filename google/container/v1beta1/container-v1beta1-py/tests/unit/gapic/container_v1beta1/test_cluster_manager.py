@@ -31,11 +31,11 @@ from google.api_core import grpc_helpers_async
 from google.api_core import path_template
 from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
-from google.container_v1beta1.services.cluster_manager import ClusterManagerAsyncClient
-from google.container_v1beta1.services.cluster_manager import ClusterManagerClient
-from google.container_v1beta1.services.cluster_manager import pagers
-from google.container_v1beta1.services.cluster_manager import transports
-from google.container_v1beta1.types import cluster_service
+from google.cloud.container_v1beta1.services.cluster_manager import ClusterManagerAsyncClient
+from google.cloud.container_v1beta1.services.cluster_manager import ClusterManagerClient
+from google.cloud.container_v1beta1.services.cluster_manager import pagers
+from google.cloud.container_v1beta1.services.cluster_manager import transports
+from google.cloud.container_v1beta1.types import cluster_service
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
@@ -360,7 +360,7 @@ def test_cluster_manager_client_client_options_credentials_file(client_class, tr
 
 
 def test_cluster_manager_client_client_options_from_dict():
-    with mock.patch('google.container_v1beta1.services.cluster_manager.transports.ClusterManagerGrpcTransport.__init__') as grpc_transport:
+    with mock.patch('google.cloud.container_v1beta1.services.cluster_manager.transports.ClusterManagerGrpcTransport.__init__') as grpc_transport:
         grpc_transport.return_value = None
         client = ClusterManagerClient(
             client_options={'api_endpoint': 'squid.clam.whelk'}
@@ -9719,7 +9719,7 @@ def test_cluster_manager_base_transport_error():
 
 def test_cluster_manager_base_transport():
     # Instantiate the base transport.
-    with mock.patch('google.container_v1beta1.services.cluster_manager.transports.ClusterManagerTransport.__init__') as Transport:
+    with mock.patch('google.cloud.container_v1beta1.services.cluster_manager.transports.ClusterManagerTransport.__init__') as Transport:
         Transport.return_value = None
         transport = transports.ClusterManagerTransport(
             credentials=ga_credentials.AnonymousCredentials(),
@@ -9772,7 +9772,7 @@ def test_cluster_manager_base_transport():
 
 def test_cluster_manager_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.container_v1beta1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.container_v1beta1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ClusterManagerTransport(
@@ -9790,7 +9790,7 @@ def test_cluster_manager_base_transport_with_credentials_file():
 
 def test_cluster_manager_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.container_v1beta1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.cloud.container_v1beta1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.ClusterManagerTransport()

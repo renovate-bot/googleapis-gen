@@ -1,7 +1,7 @@
-Types for Google Container v1beta1 API
-======================================
+Types for Google Cloud Container v1beta1 API
+============================================
 
-.. automodule:: google.container_v1beta1.types
+.. automodule:: google.cloud.container_v1beta1.types
     :members:
     :undoc-members:
     :show-inheritance:
