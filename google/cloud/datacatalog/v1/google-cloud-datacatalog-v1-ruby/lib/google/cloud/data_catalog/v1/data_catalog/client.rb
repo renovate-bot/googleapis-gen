@@ -228,7 +228,8 @@ module Google
             #   @param query [::String]
             #     Optional. The query string with a minimum of 3 characters and specific syntax.
             #     For more information, see
-            #     [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+            #     [Data Catalog search
+            #     syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
             #
             #     An empty query string returns all data assets (in the specified scope)
             #     that you have access to.
@@ -1675,9 +1676,9 @@ module Google
             #     are overwritten. If such fields are non-required and omitted in the
             #     request body, their values are emptied.
             #
-            #     Note: Updating the ``is_publicly_readable`` field may require up to 12
+            #     Note: Updating the `is_publicly_readable` field may require up to 12
             #     hours to take effect in search results. Additionally, it also requires
-            #     the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+            #     the `tagTemplates.getIamPolicy` and `tagTemplates.setIamPolicy`
             #     permissions.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -2327,9 +2328,9 @@ module Google
             # Creates a tag and assigns it to:
             #
             # * An {::Google::Cloud::DataCatalog::V1::Entry Entry} if the method name is
-            #   ``projects.locations.entryGroups.entries.tags.create``.
+            #   `projects.locations.entryGroups.entries.tags.create`.
             # * Or {::Google::Cloud::DataCatalog::V1::EntryGroup EntryGroup}if the method
-            #   name is ``projects.locations.entryGroups.tags.create``.
+            #   name is `projects.locations.entryGroups.tags.create`.
             #
             # Note: The project identified by the `parent` parameter for the [tag]
             # (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)

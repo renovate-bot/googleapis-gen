@@ -471,9 +471,9 @@ class DataCatalogGrpcClient extends \Grpc\BaseStub {
      * Creates a tag and assigns it to:
      *
      * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-     *   ``projects.locations.entryGroups.entries.tags.create``.
+     *   `projects.locations.entryGroups.entries.tags.create`.
      * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-     *   name is ``projects.locations.entryGroups.tags.create``.
+     *   name is `projects.locations.entryGroups.tags.create`.
      *
      * Note: The project identified by the `parent` parameter for the [tag]
      * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)

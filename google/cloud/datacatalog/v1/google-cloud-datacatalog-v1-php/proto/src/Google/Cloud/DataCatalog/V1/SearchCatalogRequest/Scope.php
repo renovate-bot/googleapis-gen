@@ -60,7 +60,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * in the search results. By default, they are included only if you have
      * explicit permissions on them to view them. For example, if you are the
      * owner.
-     * Other scope fields, for example, ``include_org_ids``,
+     * Other scope fields, for example, `include_org_ids`,
      * still restrict the returned public tag templates and at least one of
      * them is required.
      *
@@ -103,7 +103,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      *           in the search results. By default, they are included only if you have
      *           explicit permissions on them to view them. For example, if you are the
      *           owner.
-     *           Other scope fields, for example, ``include_org_ids``,
+     *           Other scope fields, for example, `include_org_ids`,
      *           still restrict the returned public tag templates and at least one of
      *           them is required.
      * }
@@ -253,7 +253,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * in the search results. By default, they are included only if you have
      * explicit permissions on them to view them. For example, if you are the
      * owner.
-     * Other scope fields, for example, ``include_org_ids``,
+     * Other scope fields, for example, `include_org_ids`,
      * still restrict the returned public tag templates and at least one of
      * them is required.
      *
@@ -271,7 +271,7 @@ class Scope extends \Google\Protobuf\Internal\Message
      * in the search results. By default, they are included only if you have
      * explicit permissions on them to view them. For example, if you are the
      * owner.
-     * Other scope fields, for example, ``include_org_ids``,
+     * Other scope fields, for example, `include_org_ids`,
      * still restrict the returned public tag templates and at least one of
      * them is required.
      *

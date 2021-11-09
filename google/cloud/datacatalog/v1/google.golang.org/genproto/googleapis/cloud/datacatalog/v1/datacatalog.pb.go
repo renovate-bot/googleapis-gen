@@ -314,7 +314,8 @@ type SearchCatalogRequest struct {
 	Scope *SearchCatalogRequest_Scope `protobuf:"bytes,6,opt,name=scope,proto3" json:"scope,omitempty"`
 	// Optional. The query string with a minimum of 3 characters and specific syntax.
 	// For more information, see
-	// [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+	// [Data Catalog search
+	// syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
 	//
 	// An empty query string returns all data assets (in the specified scope)
 	// that you have access to.
@@ -1322,6 +1323,7 @@ type Entry struct {
 	// and read-only afterwards. Can be used for search and lookup of the entries.
 	//
 	//
+	//
 	// FQNs take two forms:
 	//
 	// * For non-regionalized resources:
@@ -2169,9 +2171,9 @@ type UpdateTagTemplateRequest struct {
 	// are overwritten. If such fields are non-required and omitted in the
 	// request body, their values are emptied.
 	//
-	// Note: Updating the ``is_publicly_readable`` field may require up to 12
+	// Note: Updating the `is_publicly_readable` field may require up to 12
 	// hours to take effect in search results. Additionally, it also requires
-	// the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+	// the `tagTemplates.getIamPolicy` and `tagTemplates.setIamPolicy`
 	// permissions.
 	UpdateMask *fieldmaskpb.FieldMask `protobuf:"bytes,2,opt,name=update_mask,json=updateMask,proto3" json:"update_mask,omitempty"`
 }
@@ -3118,7 +3120,7 @@ type SearchCatalogRequest_Scope struct {
 	// explicit permissions on them to view them. For example, if you are the
 	// owner.
 	//
-	// Other scope fields, for example, ``include_org_ids``,
+	// Other scope fields, for example, `include_org_ids`,
 	// still restrict the returned public tag templates and at least one of
 	// them is required.
 	IncludePublicTagTemplates bool `protobuf:"varint,19,opt,name=include_public_tag_templates,json=includePublicTagTemplates,proto3" json:"include_public_tag_templates,omitempty"`
@@ -5096,9 +5098,9 @@ type DataCatalogClient interface {
 	// Creates a tag and assigns it to:
 	//
 	// * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-	//   ``projects.locations.entryGroups.entries.tags.create``.
+	//   `projects.locations.entryGroups.entries.tags.create`.
 	// * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-	//   name is ``projects.locations.entryGroups.tags.create``.
+	//   name is `projects.locations.entryGroups.tags.create`.
 	//
 	// Note: The project identified by the `parent` parameter for the [tag]
 	// (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
@@ -5595,9 +5597,9 @@ type DataCatalogServer interface {
 	// Creates a tag and assigns it to:
 	//
 	// * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
-	//   ``projects.locations.entryGroups.entries.tags.create``.
+	//   `projects.locations.entryGroups.entries.tags.create`.
 	// * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
-	//   name is ``projects.locations.entryGroups.tags.create``.
+	//   name is `projects.locations.entryGroups.tags.create`.
 	//
 	// Note: The project identified by the `parent` parameter for the [tag]
 	// (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)

@@ -1302,9 +1302,9 @@ export class DataCatalogClient {
  *   are overwritten. If such fields are non-required and omitted in the
  *   request body, their values are emptied.
  *
- *   Note: Updating the ``is_publicly_readable`` field may require up to 12
+ *   Note: Updating the `is_publicly_readable` field may require up to 12
  *   hours to take effect in search results. Additionally, it also requires
- *   the ``tagTemplates.getIamPolicy`` and ``tagTemplates.setIamPolicy``
+ *   the `tagTemplates.getIamPolicy` and `tagTemplates.setIamPolicy`
  *   permissions.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
@@ -1869,9 +1869,9 @@ export class DataCatalogClient {
  * Creates a tag and assigns it to:
  *
  * * An {@link google.cloud.datacatalog.v1.Entry|Entry} if the method name is
- *   ``projects.locations.entryGroups.entries.tags.create``.
+ *   `projects.locations.entryGroups.entries.tags.create`.
  * * Or {@link google.cloud.datacatalog.v1.EntryGroup|EntryGroup}if the method
- *   name is ``projects.locations.entryGroups.tags.create``.
+ *   name is `projects.locations.entryGroups.tags.create`.
  *
  * Note: The project identified by the `parent` parameter for the [tag]
  * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
@@ -2411,7 +2411,8 @@ export class DataCatalogClient {
  * @param {string} [request.query]
  *   Optional. The query string with a minimum of 3 characters and specific syntax.
  *   For more information, see
- *   [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+ *   [Data Catalog search
+ *   syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
  *
  *   An empty query string returns all data assets (in the specified scope)
  *   that you have access to.
@@ -2522,7 +2523,8 @@ export class DataCatalogClient {
  * @param {string} [request.query]
  *   Optional. The query string with a minimum of 3 characters and specific syntax.
  *   For more information, see
- *   [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+ *   [Data Catalog search
+ *   syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
  *
  *   An empty query string returns all data assets (in the specified scope)
  *   that you have access to.
@@ -2600,7 +2602,8 @@ export class DataCatalogClient {
  * @param {string} [request.query]
  *   Optional. The query string with a minimum of 3 characters and specific syntax.
  *   For more information, see
- *   [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+ *   [Data Catalog search
+ *   syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference).
  *
  *   An empty query string returns all data assets (in the specified scope)
  *   that you have access to.
