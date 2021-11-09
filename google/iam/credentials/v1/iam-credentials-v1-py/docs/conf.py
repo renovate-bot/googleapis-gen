@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-iam-credentials documentation build configuration file
+# google-cloud-iam documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-iam-credentials"
+project = u"google-cloud-iam"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -146,7 +146,7 @@ html_theme = "alabaster"
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    "description": "Google Iam Client Libraries for Python",
+    "description": "Google Cloud Client Libraries for Python",
     "github_user": "googleapis",
     "github_repo": "google-cloud-python",
     "github_banner": True,
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-iam-credentials-doc"
+htmlhelp_basename = "google-cloud-iam-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-iam-credentials.tex",
-        u"google-iam-credentials Documentation",
+        "google-cloud-iam.tex",
+        u"google-cloud-iam Documentation",
         author,
         "manual",
     )
@@ -308,8 +308,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-iam-credentials",
-        u"Google Iam Credentials Documentation",
+        "google-cloud-iam",
+        u"Google Cloud Iam Credentials Documentation",
         [author],
         1,
     )
@@ -327,11 +327,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-iam-credentials",
-        u"google-iam-credentials Documentation",
+        "google-cloud-iam",
+        u"google-cloud-iam Documentation",
         author,
-        "google-iam-credentials",
-        "GAPIC library for Google Iam Credentials API",
+        "google-cloud-iam",
+        "GAPIC library for Google Cloud Iam Credentials API",
         "APIs",
     )
 ]

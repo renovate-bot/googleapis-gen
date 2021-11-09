@@ -14,32 +14,67 @@
 # limitations under the License.
 #
 from collections import OrderedDict
-import functools
+import os
 import re
-from typing import Dict, Sequence, Tuple, Type, Union
+from typing import Dict, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
-from google.api_core.client_options import ClientOptions
+from google.api_core import client_options as client_options_lib
 from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import retry as retries
-from google.auth import credentials as ga_credentials   # type: ignore
-from google.oauth2 import service_account              # type: ignore
+from google.auth import credentials as ga_credentials             # type: ignore
+from google.auth.transport import mtls                            # type: ignore
+from google.auth.transport.grpc import SslCredentials             # type: ignore
+from google.auth.exceptions import MutualTLSChannelError          # type: ignore
+from google.oauth2 import service_account                         # type: ignore
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
 except AttributeError:  # pragma: NO COVER
     OptionalRetry = Union[retries.Retry, object]  # type: ignore
 
-from google.iam.credentials_v1.types import common
+from google.cloud.iam_credentials_v1.types import common
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import IAMCredentialsTransport, DEFAULT_CLIENT_INFO
+from .transports.grpc import IAMCredentialsGrpcTransport
 from .transports.grpc_asyncio import IAMCredentialsGrpcAsyncIOTransport
-from .client import IAMCredentialsClient
 
 
-class IAMCredentialsAsyncClient:
+class IAMCredentialsClientMeta(type):
+    """Metaclass for the IAMCredentials client.
+
+    This provides class-level methods for building and retrieving
+    support objects (e.g. transport) without polluting the client instance
+    objects.
+    """
+    _transport_registry = OrderedDict()  # type: Dict[str, Type[IAMCredentialsTransport]]
+    _transport_registry["grpc"] = IAMCredentialsGrpcTransport
+    _transport_registry["grpc_asyncio"] = IAMCredentialsGrpcAsyncIOTransport
+
+    def get_transport_class(cls,
+            label: str = None,
+        ) -> Type[IAMCredentialsTransport]:
+        """Returns an appropriate transport class.
+
+        Args:
+            label: The name of the desired transport. If none is
+                provided, then the first transport in the registry is used.
+
+        Returns:
+            The transport class to use.
+        """
+        # If a specific transport is requested, return that one.
+        if label:
+            return cls._transport_registry[label]
+
+        # No transport is requested; return the default (that is, the first one
+        # in the dictionary).
+        return next(iter(cls._transport_registry.values()))
+
+
+class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
     """A service account is a special type of Google account that
     belongs to your application or a virtual machine (VM), instead
     of to an individual end user. Your application assumes the
@@ -52,23 +87,40 @@ class IAMCredentialsAsyncClient:
     signed JSON Web Tokens (JWTs), and more.
     """
 
-    _client: IAMCredentialsClient
+    @staticmethod
+    def _get_default_mtls_endpoint(api_endpoint):
+        """Converts api endpoint to mTLS endpoint.
 
-    DEFAULT_ENDPOINT = IAMCredentialsClient.DEFAULT_ENDPOINT
-    DEFAULT_MTLS_ENDPOINT = IAMCredentialsClient.DEFAULT_MTLS_ENDPOINT
+        Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
+        "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
+        Args:
+            api_endpoint (Optional[str]): the api endpoint to convert.
+        Returns:
+            str: converted mTLS api endpoint.
+        """
+        if not api_endpoint:
+            return api_endpoint
 
-    service_account_path = staticmethod(IAMCredentialsClient.service_account_path)
-    parse_service_account_path = staticmethod(IAMCredentialsClient.parse_service_account_path)
-    common_billing_account_path = staticmethod(IAMCredentialsClient.common_billing_account_path)
-    parse_common_billing_account_path = staticmethod(IAMCredentialsClient.parse_common_billing_account_path)
-    common_folder_path = staticmethod(IAMCredentialsClient.common_folder_path)
-    parse_common_folder_path = staticmethod(IAMCredentialsClient.parse_common_folder_path)
-    common_organization_path = staticmethod(IAMCredentialsClient.common_organization_path)
-    parse_common_organization_path = staticmethod(IAMCredentialsClient.parse_common_organization_path)
-    common_project_path = staticmethod(IAMCredentialsClient.common_project_path)
-    parse_common_project_path = staticmethod(IAMCredentialsClient.parse_common_project_path)
-    common_location_path = staticmethod(IAMCredentialsClient.common_location_path)
-    parse_common_location_path = staticmethod(IAMCredentialsClient.parse_common_location_path)
+        mtls_endpoint_re = re.compile(
+            r"(?P<name>[^.]+)(?P<mtls>\.mtls)?(?P<sandbox>\.sandbox)?(?P<googledomain>\.googleapis\.com)?"
+        )
+
+        m = mtls_endpoint_re.match(api_endpoint)
+        name, mtls, sandbox, googledomain = m.groups()
+        if mtls or not googledomain:
+            return api_endpoint
+
+        if sandbox:
+            return api_endpoint.replace(
+                "sandbox.googleapis.com", "mtls.sandbox.googleapis.com"
+            )
+
+        return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
+
+    DEFAULT_ENDPOINT = "iamcredentials.googleapis.com"
+    DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
+        DEFAULT_ENDPOINT
+    )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
@@ -81,9 +133,11 @@ class IAMCredentialsAsyncClient:
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            IAMCredentialsAsyncClient: The constructed client.
+            IAMCredentialsClient: The constructed client.
         """
-        return IAMCredentialsClient.from_service_account_info.__func__(IAMCredentialsAsyncClient, info, *args, **kwargs)  # type: ignore
+        credentials = service_account.Credentials.from_service_account_info(info)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
 
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
@@ -97,9 +151,12 @@ class IAMCredentialsAsyncClient:
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            IAMCredentialsAsyncClient: The constructed client.
+            IAMCredentialsClient: The constructed client.
         """
-        return IAMCredentialsClient.from_service_account_file.__func__(IAMCredentialsAsyncClient, filename, *args, **kwargs)  # type: ignore
+        credentials = service_account.Credentials.from_service_account_file(
+            filename)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
@@ -108,16 +165,81 @@ class IAMCredentialsAsyncClient:
         """Returns the transport used by the client instance.
 
         Returns:
-            IAMCredentialsTransport: The transport used by the client instance.
+            IAMCredentialsTransport: The transport used by the client
+                instance.
         """
-        return self._client.transport
+        return self._transport
 
-    get_transport_class = functools.partial(type(IAMCredentialsClient).get_transport_class, type(IAMCredentialsClient))
+    @staticmethod
+    def service_account_path(project: str,service_account: str,) -> str:
+        """Returns a fully-qualified service_account string."""
+        return "projects/{project}/serviceAccounts/{service_account}".format(project=project, service_account=service_account, )
+
+    @staticmethod
+    def parse_service_account_path(path: str) -> Dict[str,str]:
+        """Parses a service_account path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/serviceAccounts/(?P<service_account>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_billing_account_path(billing_account: str, ) -> str:
+        """Returns a fully-qualified billing_account string."""
+        return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
+
+    @staticmethod
+    def parse_common_billing_account_path(path: str) -> Dict[str,str]:
+        """Parse a billing_account path into its component segments."""
+        m = re.match(r"^billingAccounts/(?P<billing_account>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_folder_path(folder: str, ) -> str:
+        """Returns a fully-qualified folder string."""
+        return "folders/{folder}".format(folder=folder, )
+
+    @staticmethod
+    def parse_common_folder_path(path: str) -> Dict[str,str]:
+        """Parse a folder path into its component segments."""
+        m = re.match(r"^folders/(?P<folder>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_organization_path(organization: str, ) -> str:
+        """Returns a fully-qualified organization string."""
+        return "organizations/{organization}".format(organization=organization, )
+
+    @staticmethod
+    def parse_common_organization_path(path: str) -> Dict[str,str]:
+        """Parse a organization path into its component segments."""
+        m = re.match(r"^organizations/(?P<organization>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_project_path(project: str, ) -> str:
+        """Returns a fully-qualified project string."""
+        return "projects/{project}".format(project=project, )
+
+    @staticmethod
+    def parse_common_project_path(path: str) -> Dict[str,str]:
+        """Parse a project path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_location_path(project: str, location: str, ) -> str:
+        """Returns a fully-qualified location string."""
+        return "projects/{project}/locations/{location}".format(project=project, location=location, )
+
+    @staticmethod
+    def parse_common_location_path(path: str) -> Dict[str,str]:
+        """Parse a location path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)$", path)
+        return m.groupdict() if m else {}
 
     def __init__(self, *,
-            credentials: ga_credentials.Credentials = None,
-            transport: Union[str, IAMCredentialsTransport] = "grpc_asyncio",
-            client_options: ClientOptions = None,
+            credentials: Optional[ga_credentials.Credentials] = None,
+            transport: Union[str, IAMCredentialsTransport, None] = None,
+            client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiates the iam credentials client.
@@ -128,11 +250,11 @@ class IAMCredentialsAsyncClient:
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.IAMCredentialsTransport]): The
+            transport (Union[str, IAMCredentialsTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (ClientOptions): Custom options for the client. It
-                won't take effect if a ``transport`` instance is provided.
+            client_options (google.api_core.client_options.ClientOptions): Custom options for the
+                client. It won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
                 environment variable can also be used to override the endpoint:
@@ -147,20 +269,87 @@ class IAMCredentialsAsyncClient:
                 not provided, the default SSL client certificate will be used if
                 present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
                 set, no client certificate will be used.
+            client_info (google.api_core.gapic_v1.client_info.ClientInfo):
+                The client info used to send a user-agent string along with
+                API requests. If ``None``, then default info will be used.
+                Generally, you only need to set this if you're developing
+                your own client library.
 
         Raises:
-            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
+            google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-        self._client = IAMCredentialsClient(
-            credentials=credentials,
-            transport=transport,
-            client_options=client_options,
-            client_info=client_info,
+        if isinstance(client_options, dict):
+            client_options = client_options_lib.from_dict(client_options)
+        if client_options is None:
+            client_options = client_options_lib.ClientOptions()
 
-        )
+        # Create SSL credentials for mutual TLS if needed.
+        if os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false") not in ("true", "false"):
+            raise ValueError("Environment variable `GOOGLE_API_USE_CLIENT_CERTIFICATE` must be either `true` or `false`")
+        use_client_cert = os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false") == "true"
 
-    async def generate_access_token(self,
+        client_cert_source_func = None
+        is_mtls = False
+        if use_client_cert:
+            if client_options.client_cert_source:
+                is_mtls = True
+                client_cert_source_func = client_options.client_cert_source
+            else:
+                is_mtls = mtls.has_default_client_cert_source()
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
+
+        # Figure out which api endpoint to use.
+        if client_options.api_endpoint is not None:
+            api_endpoint = client_options.api_endpoint
+        else:
+            use_mtls_env = os.getenv("GOOGLE_API_USE_MTLS_ENDPOINT", "auto")
+            if use_mtls_env == "never":
+                api_endpoint = self.DEFAULT_ENDPOINT
+            elif use_mtls_env == "always":
+                api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+            elif use_mtls_env == "auto":
+                if is_mtls:
+                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
+                else:
+                    api_endpoint = self.DEFAULT_ENDPOINT
+            else:
+                raise MutualTLSChannelError(
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
+                )
+
+        # Save or instantiate the transport.
+        # Ordinarily, we provide the transport, but allowing a custom transport
+        # instance provides an extensibility point for unusual situations.
+        if isinstance(transport, IAMCredentialsTransport):
+            # transport is a IAMCredentialsTransport instance.
+            if credentials or client_options.credentials_file:
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
+            if client_options.scopes:
+                raise ValueError(
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
+                )
+            self._transport = transport
+        else:
+            Transport = type(self).get_transport_class(transport)
+            self._transport = Transport(
+                credentials=credentials,
+                credentials_file=client_options.credentials_file,
+                host=api_endpoint,
+                scopes=client_options.scopes,
+                client_cert_source_for_mtls=client_cert_source_func,
+                quota_project_id=client_options.quota_project_id,
+                client_info=client_info,
+                always_use_jwt_access=True,
+            )
+
+    def generate_access_token(self,
             request: Union[common.GenerateAccessTokenRequest, dict] = None,
             *,
             name: str = None,
@@ -175,9 +364,9 @@ class IAMCredentialsAsyncClient:
         account.
 
         Args:
-            request (Union[google.iam.credentials_v1.types.GenerateAccessTokenRequest, dict]):
+            request (Union[google.cloud.iam_credentials_v1.types.GenerateAccessTokenRequest, dict]):
                 The request object.
-            name (:class:`str`):
+            name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
                 format:
@@ -188,7 +377,7 @@ class IAMCredentialsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            delegates (:class:`Sequence[str]`):
+            delegates (Sequence[str]):
                 The sequence of service accounts in a delegation chain.
                 Each service account must be granted the
                 ``roles/iam.serviceAccountTokenCreator`` role on its
@@ -206,7 +395,7 @@ class IAMCredentialsAsyncClient:
                 This corresponds to the ``delegates`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            scope (:class:`Sequence[str]`):
+            scope (Sequence[str]):
                 Required. Code to identify the scopes
                 to be included in the OAuth 2.0 access
                 token. See
@@ -217,7 +406,7 @@ class IAMCredentialsAsyncClient:
                 This corresponds to the ``scope`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            lifetime (:class:`google.protobuf.duration_pb2.Duration`):
+            lifetime (google.protobuf.duration_pb2.Duration):
                 The desired lifetime duration of the
                 access token in seconds. Must be set to
                 a value less than or equal to 3600 (1
@@ -235,7 +424,7 @@ class IAMCredentialsAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.iam.credentials_v1.types.GenerateAccessTokenResponse:
+            google.cloud.iam_credentials_v1.types.GenerateAccessTokenResponse:
 
         """
         # Create or coerce a protobuf request object.
@@ -243,36 +432,29 @@ class IAMCredentialsAsyncClient:
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, delegates, scope, lifetime])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = common.GenerateAccessTokenRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if name is not None:
-            request.name = name
-        if lifetime is not None:
-            request.lifetime = lifetime
-        if delegates:
-            request.delegates.extend(delegates)
-        if scope:
-            request.scope.extend(scope)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a common.GenerateAccessTokenRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, common.GenerateAccessTokenRequest):
+            request = common.GenerateAccessTokenRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+            if delegates is not None:
+                request.delegates = delegates
+            if scope is not None:
+                request.scope = scope
+            if lifetime is not None:
+                request.lifetime = lifetime
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.generate_access_token,
-            default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.generate_access_token]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -283,7 +465,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -293,7 +475,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # Done; return the response.
         return response
 
-    async def generate_id_token(self,
+    def generate_id_token(self,
             request: Union[common.GenerateIdTokenRequest, dict] = None,
             *,
             name: str = None,
@@ -308,9 +490,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         account.
 
         Args:
-            request (Union[google.iam.credentials_v1.types.GenerateIdTokenRequest, dict]):
+            request (Union[google.cloud.iam_credentials_v1.types.GenerateIdTokenRequest, dict]):
                 The request object.
-            name (:class:`str`):
+            name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
                 format:
@@ -321,7 +503,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            delegates (:class:`Sequence[str]`):
+            delegates (Sequence[str]):
                 The sequence of service accounts in a delegation chain.
                 Each service account must be granted the
                 ``roles/iam.serviceAccountTokenCreator`` role on its
@@ -339,7 +521,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``delegates`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            audience (:class:`str`):
+            audience (str):
                 Required. The audience for the token,
                 such as the API or account that this
                 token grants access to.
@@ -347,7 +529,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``audience`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            include_email (:class:`bool`):
+            include_email (bool):
                 Include the service account email in the token. If set
                 to ``true``, the token will contain ``email`` and
                 ``email_verified`` claims.
@@ -362,7 +544,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.iam.credentials_v1.types.GenerateIdTokenResponse:
+            google.cloud.iam_credentials_v1.types.GenerateIdTokenResponse:
 
         """
         # Create or coerce a protobuf request object.
@@ -370,36 +552,29 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, delegates, audience, include_email])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = common.GenerateIdTokenRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if name is not None:
-            request.name = name
-        if audience is not None:
-            request.audience = audience
-        if include_email is not None:
-            request.include_email = include_email
-        if delegates:
-            request.delegates.extend(delegates)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a common.GenerateIdTokenRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, common.GenerateIdTokenRequest):
+            request = common.GenerateIdTokenRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+            if delegates is not None:
+                request.delegates = delegates
+            if audience is not None:
+                request.audience = audience
+            if include_email is not None:
+                request.include_email = include_email
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.generate_id_token,
-            default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.generate_id_token]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -410,7 +585,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -420,7 +595,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # Done; return the response.
         return response
 
-    async def sign_blob(self,
+    def sign_blob(self,
             request: Union[common.SignBlobRequest, dict] = None,
             *,
             name: str = None,
@@ -434,9 +609,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         private key.
 
         Args:
-            request (Union[google.iam.credentials_v1.types.SignBlobRequest, dict]):
+            request (Union[google.cloud.iam_credentials_v1.types.SignBlobRequest, dict]):
                 The request object.
-            name (:class:`str`):
+            name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
                 format:
@@ -447,7 +622,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            delegates (:class:`Sequence[str]`):
+            delegates (Sequence[str]):
                 The sequence of service accounts in a delegation chain.
                 Each service account must be granted the
                 ``roles/iam.serviceAccountTokenCreator`` role on its
@@ -465,7 +640,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``delegates`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            payload (:class:`bytes`):
+            payload (bytes):
                 Required. The bytes to sign.
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -477,7 +652,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.iam.credentials_v1.types.SignBlobResponse:
+            google.cloud.iam_credentials_v1.types.SignBlobResponse:
 
         """
         # Create or coerce a protobuf request object.
@@ -485,34 +660,27 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, delegates, payload])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = common.SignBlobRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if name is not None:
-            request.name = name
-        if payload is not None:
-            request.payload = payload
-        if delegates:
-            request.delegates.extend(delegates)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a common.SignBlobRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, common.SignBlobRequest):
+            request = common.SignBlobRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+            if delegates is not None:
+                request.delegates = delegates
+            if payload is not None:
+                request.payload = payload
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.sign_blob,
-            default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.sign_blob]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -523,7 +691,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -533,7 +701,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # Done; return the response.
         return response
 
-    async def sign_jwt(self,
+    def sign_jwt(self,
             request: Union[common.SignJwtRequest, dict] = None,
             *,
             name: str = None,
@@ -547,9 +715,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         private key.
 
         Args:
-            request (Union[google.iam.credentials_v1.types.SignJwtRequest, dict]):
+            request (Union[google.cloud.iam_credentials_v1.types.SignJwtRequest, dict]):
                 The request object.
-            name (:class:`str`):
+            name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
                 format:
@@ -560,7 +728,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            delegates (:class:`Sequence[str]`):
+            delegates (Sequence[str]):
                 The sequence of service accounts in a delegation chain.
                 Each service account must be granted the
                 ``roles/iam.serviceAccountTokenCreator`` role on its
@@ -578,7 +746,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``delegates`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            payload (:class:`str`):
+            payload (str):
                 Required. The JWT payload to sign: a
                 JSON object that contains a JWT Claims
                 Set.
@@ -593,7 +761,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
 
         Returns:
-            google.iam.credentials_v1.types.SignJwtResponse:
+            google.cloud.iam_credentials_v1.types.SignJwtResponse:
 
         """
         # Create or coerce a protobuf request object.
@@ -601,34 +769,27 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # gotten any keyword arguments that map to the request.
         has_flattened_params = any([name, delegates, payload])
         if request is not None and has_flattened_params:
-            raise ValueError("If the `request` argument is set, then none of "
-                             "the individual field arguments should be set.")
+            raise ValueError('If the `request` argument is set, then none of '
+                             'the individual field arguments should be set.')
 
-        request = common.SignJwtRequest(request)
-
-        # If we have keyword arguments corresponding to fields on the
-        # request, apply these.
-        if name is not None:
-            request.name = name
-        if payload is not None:
-            request.payload = payload
-        if delegates:
-            request.delegates.extend(delegates)
+        # Minor optimization to avoid making a copy if the user passes
+        # in a common.SignJwtRequest.
+        # There's no risk of modifying the input as we've already verified
+        # there are no flattened fields.
+        if not isinstance(request, common.SignJwtRequest):
+            request = common.SignJwtRequest(request)
+            # If we have keyword arguments corresponding to fields on the
+            # request, apply these.
+            if name is not None:
+                request.name = name
+            if delegates is not None:
+                request.delegates = delegates
+            if payload is not None:
+                request.payload = payload
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = gapic_v1.method_async.wrap_method(
-            self._client._transport.sign_jwt,
-            default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
-                ),
-                deadline=60.0,
-            ),
-            default_timeout=60.0,
-            client_info=DEFAULT_CLIENT_INFO,
-        )
+        rpc = self._transport._wrapped_methods[self._transport.sign_jwt]
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -639,7 +800,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         )
 
         # Send the request.
-        response = await rpc(
+        response = rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -649,16 +810,25 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         # Done; return the response.
         return response
 
-    async def __aenter__(self):
+    def __enter__(self):
         return self
 
-    async def __aexit__(self, exc_type, exc, tb):
-        await self.transport.close()
+    def __exit__(self, type, value, traceback):
+        """Releases underlying transport's resources.
+
+        .. warning::
+            ONLY use as a context manager if the transport is NOT shared
+            with other clients! Exiting the with block will CLOSE the transport
+            and may cause errors in other clients!
+        """
+        self.transport.close()
+
+
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-iam-credentials",
+            "google-cloud-iam",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -666,5 +836,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    "IAMCredentialsAsyncClient",
+    "IAMCredentialsClient",
 )

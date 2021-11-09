@@ -14,23 +14,22 @@
 # limitations under the License.
 #
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
 
+from google.api_core import grpc_helpers
 from google.api_core import gapic_v1
-from google.api_core import grpc_helpers_async
-from google.auth import credentials as ga_credentials   # type: ignore
+import google.auth                         # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
 
-import grpc                        # type: ignore
-from grpc.experimental import aio  # type: ignore
+import grpc  # type: ignore
 
-from google.iam.credentials_v1.types import common
+from google.cloud.iam_credentials_v1.types import common
 from .base import IAMCredentialsTransport, DEFAULT_CLIENT_INFO
-from .grpc import IAMCredentialsGrpcTransport
 
 
-class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
-    """gRPC AsyncIO backend transport for IAMCredentials.
+class IAMCredentialsGrpcTransport(IAMCredentialsTransport):
+    """gRPC backend transport for IAMCredentials.
 
     A service account is a special type of Google account that
     belongs to your application or a virtual machine (VM), instead
@@ -50,62 +49,19 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     It sends protocol buffers over the wire using gRPC (which is built on
     top of HTTP/2); the ``grpcio`` package must be installed.
     """
-
-    _grpc_channel: aio.Channel
-    _stubs: Dict[str, Callable] = {}
-
-    @classmethod
-    def create_channel(cls,
-                       host: str = 'iamcredentials.googleapis.com',
-                       credentials: ga_credentials.Credentials = None,
-                       credentials_file: Optional[str] = None,
-                       scopes: Optional[Sequence[str]] = None,
-                       quota_project_id: Optional[str] = None,
-                       **kwargs) -> aio.Channel:
-        """Create and return a gRPC AsyncIO channel object.
-        Args:
-            host (Optional[str]): The host for the channel to use.
-            credentials (Optional[~.Credentials]): The
-                authorization credentials to attach to requests. These
-                credentials identify this application to the service. If
-                none are specified, the client will attempt to ascertain
-                the credentials from the environment.
-            credentials_file (Optional[str]): A file with credentials that can
-                be loaded with :func:`google.auth.load_credentials_from_file`.
-                This argument is ignored if ``channel`` is provided.
-            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
-                service. These are only used when credentials are not specified and
-                are passed to :func:`google.auth.default`.
-            quota_project_id (Optional[str]): An optional project to use for billing
-                and quota.
-            kwargs (Optional[dict]): Keyword arguments, which are passed to the
-                channel creation.
-        Returns:
-            aio.Channel: A gRPC AsyncIO channel object.
-        """
-
-        return grpc_helpers_async.create_channel(
-            host,
-            credentials=credentials,
-            credentials_file=credentials_file,
-            quota_project_id=quota_project_id,
-            default_scopes=cls.AUTH_SCOPES,
-            scopes=scopes,
-            default_host=cls.DEFAULT_HOST,
-            **kwargs
-        )
+    _stubs: Dict[str, Callable]
 
     def __init__(self, *,
             host: str = 'iamcredentials.googleapis.com',
             credentials: ga_credentials.Credentials = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            channel: aio.Channel = None,
+            credentials_file: str = None,
+            scopes: Sequence[str] = None,
+            channel: grpc.Channel = None,
             api_mtls_endpoint: str = None,
             client_cert_source: Callable[[], Tuple[bytes, bytes]] = None,
             ssl_channel_credentials: grpc.ChannelCredentials = None,
             client_cert_source_for_mtls: Callable[[], Tuple[bytes, bytes]] = None,
-            quota_project_id=None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             always_use_jwt_access: Optional[bool] = False,
             ) -> None:
@@ -123,10 +79,9 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is ignored if ``channel`` is provided.
-            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
-                service. These are only used when credentials are not specified and
-                are passed to :func:`google.auth.default`.
-            channel (Optional[aio.Channel]): A ``Channel`` instance through
+            scopes (Optional(Sequence[str])): A list of scopes. This argument is
+                ignored if ``channel`` is provided.
+            channel (Optional[grpc.Channel]): A ``Channel`` instance through
                 which to make calls.
             api_mtls_endpoint (Optional[str]): Deprecated. The mutual TLS endpoint.
                 If provided, it overrides the ``host`` argument and tries to create
@@ -153,7 +108,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
                 be used for service account credentials.
 
         Raises:
-            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
+          google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
               creation failed for any reason.
           google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
@@ -173,6 +128,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -222,20 +178,61 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
         # Wrap messages. This must be done after self._grpc_channel exists
         self._prep_wrapped_messages(client_info)
 
-    @property
-    def grpc_channel(self) -> aio.Channel:
-        """Create the channel designed to connect to this service.
+    @classmethod
+    def create_channel(cls,
+                       host: str = 'iamcredentials.googleapis.com',
+                       credentials: ga_credentials.Credentials = None,
+                       credentials_file: str = None,
+                       scopes: Optional[Sequence[str]] = None,
+                       quota_project_id: Optional[str] = None,
+                       **kwargs) -> grpc.Channel:
+        """Create and return a gRPC channel object.
+        Args:
+            host (Optional[str]): The host for the channel to use.
+            credentials (Optional[~.Credentials]): The
+                authorization credentials to attach to requests. These
+                credentials identify this application to the service. If
+                none are specified, the client will attempt to ascertain
+                the credentials from the environment.
+            credentials_file (Optional[str]): A file with credentials that can
+                be loaded with :func:`google.auth.load_credentials_from_file`.
+                This argument is mutually exclusive with credentials.
+            scopes (Optional[Sequence[str]]): A optional list of scopes needed for this
+                service. These are only used when credentials are not specified and
+                are passed to :func:`google.auth.default`.
+            quota_project_id (Optional[str]): An optional project to use for billing
+                and quota.
+            kwargs (Optional[dict]): Keyword arguments, which are passed to the
+                channel creation.
+        Returns:
+            grpc.Channel: A gRPC channel object.
 
-        This property caches on the instance; repeated calls return
-        the same channel.
+        Raises:
+            google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
+              and ``credentials_file`` are passed.
         """
-        # Return the channel from cache.
+
+        return grpc_helpers.create_channel(
+            host,
+            credentials=credentials,
+            credentials_file=credentials_file,
+            quota_project_id=quota_project_id,
+            default_scopes=cls.AUTH_SCOPES,
+            scopes=scopes,
+            default_host=cls.DEFAULT_HOST,
+            **kwargs
+        )
+
+    @property
+    def grpc_channel(self) -> grpc.Channel:
+        """Return the channel designed to connect to this service.
+        """
         return self._grpc_channel
 
     @property
     def generate_access_token(self) -> Callable[
             [common.GenerateAccessTokenRequest],
-            Awaitable[common.GenerateAccessTokenResponse]]:
+            common.GenerateAccessTokenResponse]:
         r"""Return a callable for the generate access token method over gRPC.
 
         Generates an OAuth 2.0 access token for a service
@@ -243,7 +240,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
 
         Returns:
             Callable[[~.GenerateAccessTokenRequest],
-                    Awaitable[~.GenerateAccessTokenResponse]]:
+                    ~.GenerateAccessTokenResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -262,7 +259,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     @property
     def generate_id_token(self) -> Callable[
             [common.GenerateIdTokenRequest],
-            Awaitable[common.GenerateIdTokenResponse]]:
+            common.GenerateIdTokenResponse]:
         r"""Return a callable for the generate id token method over gRPC.
 
         Generates an OpenID Connect ID token for a service
@@ -270,7 +267,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
 
         Returns:
             Callable[[~.GenerateIdTokenRequest],
-                    Awaitable[~.GenerateIdTokenResponse]]:
+                    ~.GenerateIdTokenResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -289,7 +286,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     @property
     def sign_blob(self) -> Callable[
             [common.SignBlobRequest],
-            Awaitable[common.SignBlobResponse]]:
+            common.SignBlobResponse]:
         r"""Return a callable for the sign blob method over gRPC.
 
         Signs a blob using a service account's system-managed
@@ -297,7 +294,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
 
         Returns:
             Callable[[~.SignBlobRequest],
-                    Awaitable[~.SignBlobResponse]]:
+                    ~.SignBlobResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -316,7 +313,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     @property
     def sign_jwt(self) -> Callable[
             [common.SignJwtRequest],
-            Awaitable[common.SignJwtResponse]]:
+            common.SignJwtResponse]:
         r"""Return a callable for the sign jwt method over gRPC.
 
         Signs a JWT using a service account's system-managed
@@ -324,7 +321,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
 
         Returns:
             Callable[[~.SignJwtRequest],
-                    Awaitable[~.SignJwtResponse]]:
+                    ~.SignJwtResponse]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -341,9 +338,8 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
         return self._stubs['sign_jwt']
 
     def close(self):
-        return self.grpc_channel.close()
-
+        self.grpc_channel.close()
 
 __all__ = (
-    'IAMCredentialsGrpcAsyncIOTransport',
+    'IAMCredentialsGrpcTransport',
 )

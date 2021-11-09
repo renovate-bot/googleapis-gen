@@ -25,12 +25,12 @@ from google.api_core import retry as retries
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
-from google.iam.credentials_v1.types import common
+from google.cloud.iam_credentials_v1.types import common
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            'google-iam-credentials',
+            'google-cloud-iam',
         ).version,
     )
 except pkg_resources.DistributionNotFound:
