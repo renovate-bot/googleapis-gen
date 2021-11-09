@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
    * within the allowed character set. For example if `expression` is
    * `screenPageViews/sessions`, you could call that metric's name =
    * `viewsPerSession`. Metric names that you choose must match the regular
-   * expression "^[a-zA-Z0-9_]$".
+   * expression `^[a-zA-Z0-9_]$`.
    * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
    * `expression`.
    * </pre>
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * within the allowed character set. For example if `expression` is
    * `screenPageViews/sessions`, you could call that metric's name =
    * `viewsPerSession`. Metric names that you choose must match the regular
-   * expression "^[a-zA-Z0-9_]$".
+   * expression `^[a-zA-Z0-9_]$`.
    * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
    * `expression`.
    * </pre>
@@ -587,7 +587,7 @@ private static final long serialVersionUID = 0L;
      * within the allowed character set. For example if `expression` is
      * `screenPageViews/sessions`, you could call that metric's name =
      * `viewsPerSession`. Metric names that you choose must match the regular
-     * expression "^[a-zA-Z0-9_]$".
+     * expression `^[a-zA-Z0-9_]$`.
      * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
      * `expression`.
      * </pre>
@@ -616,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * within the allowed character set. For example if `expression` is
      * `screenPageViews/sessions`, you could call that metric's name =
      * `viewsPerSession`. Metric names that you choose must match the regular
-     * expression "^[a-zA-Z0-9_]$".
+     * expression `^[a-zA-Z0-9_]$`.
      * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
      * `expression`.
      * </pre>
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
      * within the allowed character set. For example if `expression` is
      * `screenPageViews/sessions`, you could call that metric's name =
      * `viewsPerSession`. Metric names that you choose must match the regular
-     * expression "^[a-zA-Z0-9_]$".
+     * expression `^[a-zA-Z0-9_]$`.
      * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
      * `expression`.
      * </pre>
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
      * within the allowed character set. For example if `expression` is
      * `screenPageViews/sessions`, you could call that metric's name =
      * `viewsPerSession`. Metric names that you choose must match the regular
-     * expression "^[a-zA-Z0-9_]$".
+     * expression `^[a-zA-Z0-9_]$`.
      * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
      * `expression`.
      * </pre>
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
      * within the allowed character set. For example if `expression` is
      * `screenPageViews/sessions`, you could call that metric's name =
      * `viewsPerSession`. Metric names that you choose must match the regular
-     * expression "^[a-zA-Z0-9_]$".
+     * expression `^[a-zA-Z0-9_]$`.
      * Metrics are referenced by `name` in `metricFilter`, `orderBys`, and metric
      * `expression`.
      * </pre>
