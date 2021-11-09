@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The FieldMask to use when updating the settings resource.
-   *  If empty all mutable fields will be updated.
+   * If empty all mutable fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -166,7 +166,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The FieldMask to use when updating the settings resource.
-   *  If empty all mutable fields will be updated.
+   * If empty all mutable fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The FieldMask to use when updating the settings resource.
-   *  If empty all mutable fields will be updated.
+   * If empty all mutable fields will be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -699,7 +699,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -748,7 +748,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -790,7 +790,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The FieldMask to use when updating the settings resource.
-     *  If empty all mutable fields will be updated.
+     * If empty all mutable fields will be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -1527,7 +1527,7 @@ class UpdateOrganizationSettingsRequest(proto.Message):
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             The FieldMask to use when updating the
             settings resource.
-             If empty all mutable fields will be updated.
+            If empty all mutable fields will be updated.
     """
 
     organization_settings = proto.Field(
