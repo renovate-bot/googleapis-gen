@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main(parent, hub) {
+function main(parent, hubId, hub) {
   // [START networkconnectivity_v1_generated_HubService_CreateHub_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -25,7 +25,7 @@ function main(parent, hub) {
    */
   // const parent = 'abc123'
   /**
-   *  Optional. A unique identifier for the hub.
+   *  Required. A unique identifier for the hub.
    */
   // const hubId = 'abc123'
   /**
@@ -58,6 +58,7 @@ function main(parent, hub) {
     // Construct request
     const request = {
       parent,
+      hubId,
       hub,
     };
 

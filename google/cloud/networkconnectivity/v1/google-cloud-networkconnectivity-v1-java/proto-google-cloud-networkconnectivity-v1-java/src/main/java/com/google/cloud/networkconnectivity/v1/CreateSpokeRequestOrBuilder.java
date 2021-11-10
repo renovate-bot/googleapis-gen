@@ -29,19 +29,19 @@ public interface CreateSpokeRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The spokeId.
    */
   java.lang.String getSpokeId();
   /**
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for spokeId.
    */
   com.google.protobuf.ByteString

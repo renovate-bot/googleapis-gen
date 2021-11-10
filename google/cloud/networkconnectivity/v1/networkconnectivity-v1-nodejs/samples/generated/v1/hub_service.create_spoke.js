@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main(parent, spoke) {
+function main(parent, spokeId, spoke) {
   // [START networkconnectivity_v1_generated_HubService_CreateSpoke_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -25,7 +25,7 @@ function main(parent, spoke) {
    */
   // const parent = 'abc123'
   /**
-   *  Optional. Unique id for the spoke to create.
+   *  Required. Unique id for the spoke to create.
    */
   // const spokeId = 'abc123'
   /**
@@ -58,6 +58,7 @@ function main(parent, spoke) {
     // Construct request
     const request = {
       parent,
+      spokeId,
       spoke,
     };
 

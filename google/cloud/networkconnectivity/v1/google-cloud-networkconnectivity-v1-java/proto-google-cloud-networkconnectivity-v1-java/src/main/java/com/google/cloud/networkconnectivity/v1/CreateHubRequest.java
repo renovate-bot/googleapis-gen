@@ -168,10 +168,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object hubId_;
   /**
    * <pre>
-   * Optional. A unique identifier for the hub.
+   * Required. A unique identifier for the hub.
    * </pre>
    *
-   * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The hubId.
    */
   @java.lang.Override
@@ -189,10 +189,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A unique identifier for the hub.
+   * Required. A unique identifier for the hub.
    * </pre>
    *
-   * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for hubId.
    */
   @java.lang.Override
@@ -785,10 +785,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object hubId_ = "";
     /**
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The hubId.
      */
     public java.lang.String getHubId() {
@@ -805,10 +805,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for hubId.
      */
     public com.google.protobuf.ByteString
@@ -826,10 +826,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The hubId to set.
      * @return This builder for chaining.
      */
@@ -845,10 +845,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearHubId() {
@@ -859,10 +859,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A unique identifier for the hub.
+     * Required. A unique identifier for the hub.
      * </pre>
      *
-     * <code>string hub_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string hub_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for hubId to set.
      * @return This builder for chaining.
      */

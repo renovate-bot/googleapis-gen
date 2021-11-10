@@ -5,8 +5,8 @@ package com.google.cloud.networkconnectivity.v1;
 
 /**
  * <pre>
- * A hub is essentially a collection of spokes. A single hub can contain spokes
- * from multiple regions. However, all of a hub's spokes must be associated with
+ * A hub is a collection of spokes. A single hub can contain spokes from
+ * multiple regions. However, all of a hub's spokes must be associated with
  * resources that reside in the same VPC network.
  * </pre>
  *
@@ -866,8 +866,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A hub is essentially a collection of spokes. A single hub can contain spokes
-   * from multiple regions. However, all of a hub's spokes must be associated with
+   * A hub is a collection of spokes. A single hub can contain spokes from
+   * multiple regions. However, all of a hub's spokes must be associated with
    * resources that reside in the same VPC network.
    * </pre>
    *

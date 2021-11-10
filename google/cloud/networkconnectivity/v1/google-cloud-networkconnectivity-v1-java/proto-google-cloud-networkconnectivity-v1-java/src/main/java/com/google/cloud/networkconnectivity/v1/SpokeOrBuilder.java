@@ -171,7 +171,7 @@ public interface SpokeOrBuilder extends
 
   /**
    * <pre>
-   * Immutable. The URI of the hub that this spoke is attached to.
+   * Immutable. The name of the hub that this spoke is attached to.
    * </pre>
    *
    * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -180,7 +180,7 @@ public interface SpokeOrBuilder extends
   java.lang.String getHub();
   /**
    * <pre>
-   * Immutable. The URI of the hub that this spoke is attached to.
+   * Immutable. The name of the hub that this spoke is attached to.
    * </pre>
    *
    * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>

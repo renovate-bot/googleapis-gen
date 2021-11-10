@@ -168,10 +168,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object spokeId_;
   /**
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The spokeId.
    */
   @java.lang.Override
@@ -189,10 +189,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Unique id for the spoke to create.
+   * Required. Unique id for the spoke to create.
    * </pre>
    *
-   * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for spokeId.
    */
   @java.lang.Override
@@ -785,10 +785,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object spokeId_ = "";
     /**
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The spokeId.
      */
     public java.lang.String getSpokeId() {
@@ -805,10 +805,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for spokeId.
      */
     public com.google.protobuf.ByteString
@@ -826,10 +826,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The spokeId to set.
      * @return This builder for chaining.
      */
@@ -845,10 +845,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearSpokeId() {
@@ -859,10 +859,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Unique id for the spoke to create.
+     * Required. Unique id for the spoke to create.
      * </pre>
      *
-     * <code>string spoke_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string spoke_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for spokeId to set.
      * @return This builder for chaining.
      */

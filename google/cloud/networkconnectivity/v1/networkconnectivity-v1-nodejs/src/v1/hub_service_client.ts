@@ -530,8 +530,8 @@ export class HubServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent resource.
- * @param {string} [request.hubId]
- *   Optional. A unique identifier for the hub.
+ * @param {string} request.hubId
+ *   Required. A unique identifier for the hub.
  * @param {google.cloud.networkconnectivity.v1.Hub} request.hub
  *   Required. The initial values for a new hub.
  * @param {string} [request.requestId]
@@ -858,8 +858,8 @@ export class HubServiceClient {
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The parent resource.
- * @param {string} [request.spokeId]
- *   Optional. Unique id for the spoke to create.
+ * @param {string} request.spokeId
+ *   Required. Unique id for the spoke to create.
  * @param {google.cloud.networkconnectivity.v1.Spoke} request.spoke
  *   Required. The initial values for a new spoke.
  * @param {string} [request.requestId]

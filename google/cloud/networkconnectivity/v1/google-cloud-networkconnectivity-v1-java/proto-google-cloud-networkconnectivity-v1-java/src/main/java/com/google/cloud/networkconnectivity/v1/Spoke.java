@@ -497,7 +497,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object hub_;
   /**
    * <pre>
-   * Immutable. The URI of the hub that this spoke is attached to.
+   * Immutable. The name of the hub that this spoke is attached to.
    * </pre>
    *
    * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Immutable. The URI of the hub that this spoke is attached to.
+   * Immutable. The name of the hub that this spoke is attached to.
    * </pre>
    *
    * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -1995,7 +1995,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object hub_ = "";
     /**
      * <pre>
-     * Immutable. The URI of the hub that this spoke is attached to.
+     * Immutable. The name of the hub that this spoke is attached to.
      * </pre>
      *
      * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2015,7 +2015,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The URI of the hub that this spoke is attached to.
+     * Immutable. The name of the hub that this spoke is attached to.
      * </pre>
      *
      * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2036,7 +2036,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The URI of the hub that this spoke is attached to.
+     * Immutable. The name of the hub that this spoke is attached to.
      * </pre>
      *
      * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2055,7 +2055,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The URI of the hub that this spoke is attached to.
+     * Immutable. The name of the hub that this spoke is attached to.
      * </pre>
      *
      * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
@@ -2069,7 +2069,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Immutable. The URI of the hub that this spoke is attached to.
+     * Immutable. The name of the hub that this spoke is attached to.
      * </pre>
      *
      * <code>string hub = 6 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>

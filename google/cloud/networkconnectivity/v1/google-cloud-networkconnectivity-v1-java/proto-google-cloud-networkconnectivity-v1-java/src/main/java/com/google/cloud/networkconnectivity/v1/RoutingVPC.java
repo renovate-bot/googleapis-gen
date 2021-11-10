@@ -5,7 +5,7 @@ package com.google.cloud.networkconnectivity.v1;
 
 /**
  * <pre>
- * RoutingsVPC contains information about a VPC network that is associated with
+ * RoutingVPC contains information about the VPC network that is associated with
  * a hub's spokes.
  * </pre>
  *
@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object uri_;
   /**
    * <pre>
-   * The URI of a VPC network.
+   * The URI of the VPC network.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The URI of a VPC network.
+   * The URI of the VPC network.
    * </pre>
    *
    * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * RoutingsVPC contains information about a VPC network that is associated with
+   * RoutingVPC contains information about the VPC network that is associated with
    * a hub's spokes.
    * </pre>
    *
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object uri_ = "";
     /**
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The URI of a VPC network.
+     * The URI of the VPC network.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.resource_reference) = { ... }</code>
