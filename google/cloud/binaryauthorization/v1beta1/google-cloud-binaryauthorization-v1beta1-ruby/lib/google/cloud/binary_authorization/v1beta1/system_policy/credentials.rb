@@ -22,8 +22,8 @@ module Google
   module Cloud
     module BinaryAuthorization
       module V1beta1
-        module SystemPolicyV1Beta1
-          # Credentials for the SystemPolicyV1Beta1 API.
+        module SystemPolicy
+          # Credentials for the SystemPolicy API.
           class Credentials < ::Google::Auth::Credentials
             self.scope = [
               "https://www.googleapis.com/auth/cloud-platform"

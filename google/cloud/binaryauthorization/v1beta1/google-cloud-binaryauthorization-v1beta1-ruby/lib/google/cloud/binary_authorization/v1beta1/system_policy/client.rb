@@ -23,9 +23,9 @@ module Google
   module Cloud
     module BinaryAuthorization
       module V1beta1
-        module SystemPolicyV1Beta1
+        module SystemPolicy
           ##
-          # Client for the SystemPolicyV1Beta1 service.
+          # Client for the SystemPolicy service.
           #
           # API for working with the system policy.
           #
@@ -33,18 +33,18 @@ module Google
             include Paths
 
             # @private
-            attr_reader :system_policy_v1_beta1_stub
+            attr_reader :system_policy_stub
 
             ##
-            # Configure the SystemPolicyV1Beta1 Client class.
+            # Configure the SystemPolicy Client class.
             #
-            # See {::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client::Configuration}
+            # See {::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @example
             #
-            #   # Modify the configuration for all SystemPolicyV1Beta1 clients
-            #   ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.configure do |config|
+            #   # Modify the configuration for all SystemPolicy clients
+            #   ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.configure do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -71,13 +71,13 @@ module Google
             end
 
             ##
-            # Configure the SystemPolicyV1Beta1 Client instance.
+            # Configure the SystemPolicy Client instance.
             #
             # The configuration is set to the derived mode, meaning that values can be changed,
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client::Configuration}
+            # See {::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -91,19 +91,19 @@ module Google
             end
 
             ##
-            # Create a new SystemPolicyV1Beta1 client object.
+            # Create a new SystemPolicy client object.
             #
             # @example
             #
             #   # Create a client using the default configuration
-            #   client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new
+            #   client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new
             #
             #   # Create a client using a custom configuration
-            #   client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new do |config|
+            #   client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new do |config|
             #     config.timeout = 10.0
             #   end
             #
-            # @yield [config] Configure the SystemPolicyV1Beta1 client.
+            # @yield [config] Configure the SystemPolicy client.
             # @yieldparam config [Client::Configuration]
             #
             def initialize
@@ -133,7 +133,7 @@ module Google
               @quota_project_id = @config.quota_project
               @quota_project_id ||= credentials.quota_project_id if credentials.respond_to? :quota_project_id
 
-              @system_policy_v1_beta1_stub = ::Gapic::ServiceStub.new(
+              @system_policy_stub = ::Gapic::ServiceStub.new(
                 ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Stub,
                 credentials:  credentials,
                 endpoint:     @config.endpoint,
@@ -178,7 +178,7 @@ module Google
             #   require "google/cloud/binary_authorization/v1beta1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new
+            #   client = Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::BinaryAuthorization::V1beta1::GetSystemPolicyRequest.new
@@ -222,7 +222,7 @@ module Google
                                      metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
-              @system_policy_v1_beta1_stub.call_rpc :get_system_policy, request, options: options do |response, operation|
+              @system_policy_stub.call_rpc :get_system_policy, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -231,13 +231,13 @@ module Google
             end
 
             ##
-            # Configuration class for the SystemPolicyV1Beta1 API.
+            # Configuration class for the SystemPolicy API.
             #
-            # This class represents the configuration for SystemPolicyV1Beta1,
+            # This class represents the configuration for SystemPolicy,
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client::Configuration::Rpcs}
+            # {::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -248,13 +248,13 @@ module Google
             #   # Modify the global config, setting the timeout for
             #   # get_system_policy to 20 seconds,
             #   # and all remaining timeouts to 10 seconds.
-            #   ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.configure do |config|
+            #   ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.configure do |config|
             #     config.timeout = 10.0
             #     config.rpcs.get_system_policy.timeout = 20.0
             #   end
             #
             #   # Apply the above configuration only to a new client.
-            #   client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new do |config|
+            #   client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new do |config|
             #     config.timeout = 10.0
             #     config.rpcs.get_system_policy.timeout = 20.0
             #   end
@@ -348,7 +348,7 @@ module Google
               end
 
               ##
-              # Configuration RPC class for the SystemPolicyV1Beta1 API.
+              # Configuration RPC class for the SystemPolicy API.
               #
               # Includes fields providing the configuration for each RPC in this service.
               # Each configuration object is of type `Gapic::Config::Method` and includes

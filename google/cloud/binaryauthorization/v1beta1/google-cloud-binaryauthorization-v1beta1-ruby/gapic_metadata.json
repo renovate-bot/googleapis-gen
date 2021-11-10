@@ -52,7 +52,7 @@
     "SystemPolicyV1Beta1": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client",
+          "libraryClient": "::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client",
           "rpcs": {
             "GetSystemPolicy": {
               "methods": [

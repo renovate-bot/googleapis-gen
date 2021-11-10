@@ -22,9 +22,9 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/binaryauthorization/v1beta1/service_pb"
 require "google/cloud/binaryauthorization/v1beta1/service_services_pb"
-require "google/cloud/binary_authorization/v1beta1/system_policy_v1_beta1"
+require "google/cloud/binary_authorization/v1beta1/system_policy"
 
-class ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::ClientTest < Minitest::Test
+class ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -66,7 +66,7 @@ class ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client
 
     Gapic::ServiceStub.stub :new, get_system_policy_client_stub do
       # Create client
-      client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new do |config|
+      client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -110,7 +110,7 @@ class ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new do |config|
+      client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -120,6 +120,6 @@ class ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client::Configuration, config
   end
 end

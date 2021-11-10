@@ -21,8 +21,8 @@ module Google
   module Cloud
     module BinaryAuthorization
       module V1beta1
-        module SystemPolicyV1Beta1
-          # Path helper methods for the SystemPolicyV1Beta1 API.
+        module SystemPolicy
+          # Path helper methods for the SystemPolicy API.
           module Paths
             ##
             # Create a fully-qualified Policy resource string.

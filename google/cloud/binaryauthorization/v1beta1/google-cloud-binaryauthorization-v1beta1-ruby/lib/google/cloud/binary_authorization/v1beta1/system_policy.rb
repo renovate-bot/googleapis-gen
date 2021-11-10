@@ -22,9 +22,9 @@ require "gapic/config/method"
 
 require "google/cloud/binary_authorization/v1beta1/version"
 
-require "google/cloud/binary_authorization/v1beta1/system_policy_v1_beta1/credentials"
-require "google/cloud/binary_authorization/v1beta1/system_policy_v1_beta1/paths"
-require "google/cloud/binary_authorization/v1beta1/system_policy_v1_beta1/client"
+require "google/cloud/binary_authorization/v1beta1/system_policy/credentials"
+require "google/cloud/binary_authorization/v1beta1/system_policy/paths"
+require "google/cloud/binary_authorization/v1beta1/system_policy/client"
 
 module Google
   module Cloud
@@ -35,15 +35,15 @@ module Google
         #
         # To load this service and instantiate a client:
         #
-        #     require "google/cloud/binary_authorization/v1beta1/system_policy_v1_beta1"
-        #     client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicyV1Beta1::Client.new
+        #     require "google/cloud/binary_authorization/v1beta1/system_policy"
+        #     client = ::Google::Cloud::BinaryAuthorization::V1beta1::SystemPolicy::Client.new
         #
-        module SystemPolicyV1Beta1
+        module SystemPolicy
         end
       end
     end
   end
 end
 
-helper_path = ::File.join __dir__, "system_policy_v1_beta1", "helpers.rb"
-require "google/cloud/binary_authorization/v1beta1/system_policy_v1_beta1/helpers" if ::File.file? helper_path
+helper_path = ::File.join __dir__, "system_policy", "helpers.rb"
+require "google/cloud/binary_authorization/v1beta1/system_policy/helpers" if ::File.file? helper_path
