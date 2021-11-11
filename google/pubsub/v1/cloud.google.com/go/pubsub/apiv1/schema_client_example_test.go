@@ -21,6 +21,7 @@ import (
 
 	pubsub "cloud.google.com/go/pubsub/apiv1"
 	"google.golang.org/api/iterator"
+	iampb "google.golang.org/genproto/googleapis/iam/v1"
 	pubsubpb "google.golang.org/genproto/googleapis/pubsub/v1"
 )
 
@@ -153,6 +154,66 @@ func ExampleSchemaClient_ValidateMessage() {
 		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/pubsub/v1#ValidateMessageRequest.
 	}
 	resp, err := c.ValidateMessage(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleSchemaClient_GetIamPolicy() {
+	ctx := context.Background()
+	c, err := pubsub.NewSchemaClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &iampb.GetIamPolicyRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#GetIamPolicyRequest.
+	}
+	resp, err := c.GetIamPolicy(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleSchemaClient_SetIamPolicy() {
+	ctx := context.Background()
+	c, err := pubsub.NewSchemaClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &iampb.SetIamPolicyRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#SetIamPolicyRequest.
+	}
+	resp, err := c.SetIamPolicy(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleSchemaClient_TestIamPermissions() {
+	ctx := context.Background()
+	c, err := pubsub.NewSchemaClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &iampb.TestIamPermissionsRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#TestIamPermissionsRequest.
+	}
+	resp, err := c.TestIamPermissions(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}

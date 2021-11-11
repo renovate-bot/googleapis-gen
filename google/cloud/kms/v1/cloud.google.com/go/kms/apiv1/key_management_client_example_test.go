@@ -22,6 +22,7 @@ import (
 	kms "cloud.google.com/go/kms/apiv1"
 	"google.golang.org/api/iterator"
 	kmspb "google.golang.org/genproto/googleapis/cloud/kms/v1"
+	iampb "google.golang.org/genproto/googleapis/iam/v1"
 )
 
 func ExampleNewKeyManagementClient() {
@@ -573,6 +574,66 @@ func ExampleKeyManagementClient_GenerateRandomBytes() {
 		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/cloud/kms/v1#GenerateRandomBytesRequest.
 	}
 	resp, err := c.GenerateRandomBytes(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleKeyManagementClient_GetIamPolicy() {
+	ctx := context.Background()
+	c, err := kms.NewKeyManagementClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &iampb.GetIamPolicyRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#GetIamPolicyRequest.
+	}
+	resp, err := c.GetIamPolicy(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleKeyManagementClient_SetIamPolicy() {
+	ctx := context.Background()
+	c, err := kms.NewKeyManagementClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &iampb.SetIamPolicyRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#SetIamPolicyRequest.
+	}
+	resp, err := c.SetIamPolicy(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleKeyManagementClient_TestIamPermissions() {
+	ctx := context.Background()
+	c, err := kms.NewKeyManagementClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &iampb.TestIamPermissionsRequest{
+		// TODO: Fill request struct fields.
+		// See https://pkg.go.dev/google.golang.org/genproto/googleapis/iam/v1#TestIamPermissionsRequest.
+	}
+	resp, err := c.TestIamPermissions(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}
