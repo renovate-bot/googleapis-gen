@@ -18,6 +18,7 @@ from google.cloud.texttospeech_v1beta1.services.text_to_speech.client import Tex
 from google.cloud.texttospeech_v1beta1.services.text_to_speech.async_client import TextToSpeechAsyncClient
 
 from google.cloud.texttospeech_v1beta1.types.cloud_tts import AudioConfig
+from google.cloud.texttospeech_v1beta1.types.cloud_tts import CustomVoiceParams
 from google.cloud.texttospeech_v1beta1.types.cloud_tts import ListVoicesRequest
 from google.cloud.texttospeech_v1beta1.types.cloud_tts import ListVoicesResponse
 from google.cloud.texttospeech_v1beta1.types.cloud_tts import SynthesisInput
@@ -32,6 +33,7 @@ from google.cloud.texttospeech_v1beta1.types.cloud_tts import SsmlVoiceGender
 __all__ = ('TextToSpeechClient',
     'TextToSpeechAsyncClient',
     'AudioConfig',
+    'CustomVoiceParams',
     'ListVoicesRequest',
     'ListVoicesResponse',
     'SynthesisInput',
