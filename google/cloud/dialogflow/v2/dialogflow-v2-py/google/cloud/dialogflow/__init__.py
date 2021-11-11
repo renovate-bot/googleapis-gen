@@ -166,6 +166,7 @@ from google.cloud.dialogflow_v2.types.participant import AnalyzeContentRequest
 from google.cloud.dialogflow_v2.types.participant import AnalyzeContentResponse
 from google.cloud.dialogflow_v2.types.participant import AnnotatedMessagePart
 from google.cloud.dialogflow_v2.types.participant import ArticleAnswer
+from google.cloud.dialogflow_v2.types.participant import AssistQueryParameters
 from google.cloud.dialogflow_v2.types.participant import AutomatedAgentReply
 from google.cloud.dialogflow_v2.types.participant import CreateParticipantRequest
 from google.cloud.dialogflow_v2.types.participant import DtmfParameters
@@ -367,6 +368,7 @@ __all__ = ('AgentsClient',
     'AnalyzeContentResponse',
     'AnnotatedMessagePart',
     'ArticleAnswer',
+    'AssistQueryParameters',
     'AutomatedAgentReply',
     'CreateParticipantRequest',
     'DtmfParameters',

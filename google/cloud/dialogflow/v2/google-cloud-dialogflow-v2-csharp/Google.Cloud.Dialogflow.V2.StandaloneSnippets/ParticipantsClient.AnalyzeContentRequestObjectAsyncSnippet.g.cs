@@ -38,6 +38,7 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
                 TextInput = new TextInput(),
                 QueryParams = new QueryParameters(),
                 RequestId = "",
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             AnalyzeContentResponse response = await participantsClient.AnalyzeContentAsync(request);

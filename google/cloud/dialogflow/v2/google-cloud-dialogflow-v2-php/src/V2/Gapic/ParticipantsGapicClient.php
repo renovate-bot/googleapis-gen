@@ -36,6 +36,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\V2\AnalyzeContentRequest;
 use Google\Cloud\Dialogflow\V2\AnalyzeContentResponse;
+use Google\Cloud\Dialogflow\V2\AssistQueryParameters;
 use Google\Cloud\Dialogflow\V2\CreateParticipantRequest;
 use Google\Cloud\Dialogflow\V2\EventInput;
 use Google\Cloud\Dialogflow\V2\GetParticipantRequest;
@@ -561,6 +562,8 @@ class ParticipantsGapicClient
      *           is disabled.
      *     @type QueryParameters $queryParams
      *           Parameters for a Dialogflow virtual-agent query.
+     *     @type AssistQueryParameters $assistQueryParams
+     *           Parameters for a human assist query.
      *     @type string $requestId
      *           A unique identifier for this request. Restricted to 36 ASCII characters.
      *           A random UUID is recommended.
@@ -596,6 +599,10 @@ class ParticipantsGapicClient
 
         if (isset($optionalArgs['queryParams'])) {
             $request->setQueryParams($optionalArgs['queryParams']);
+        }
+
+        if (isset($optionalArgs['assistQueryParams'])) {
+            $request->setAssistQueryParams($optionalArgs['assistQueryParams']);
         }
 
         if (isset($optionalArgs['requestId'])) {
@@ -794,8 +801,11 @@ class ParticipantsGapicClient
      *           ID>/conversations/<Conversation ID>/messages/<Message ID>`.
      *     @type int $contextSize
      *           Max number of messages prior to and including
-     *           [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message] to use as context
-     *           when compiling the suggestion. By default 20 and at most 50.
+     *           [latest_message][google.cloud.dialogflow.v2.SuggestArticlesRequest.latest_message]
+     *           to use as context when compiling the suggestion. By default 20 and at
+     *           most 50.
+     *     @type AssistQueryParameters $assistQueryParams
+     *           Parameters for a human assist query.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -819,6 +829,10 @@ class ParticipantsGapicClient
 
         if (isset($optionalArgs['contextSize'])) {
             $request->setContextSize($optionalArgs['contextSize']);
+        }
+
+        if (isset($optionalArgs['assistQueryParams'])) {
+            $request->setAssistQueryParams($optionalArgs['assistQueryParams']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
@@ -857,6 +871,8 @@ class ParticipantsGapicClient
      *           Max number of messages prior to and including
      *           [latest_message] to use as context when compiling the
      *           suggestion. By default 20 and at most 50.
+     *     @type AssistQueryParameters $assistQueryParams
+     *           Parameters for a human assist query.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -880,6 +896,10 @@ class ParticipantsGapicClient
 
         if (isset($optionalArgs['contextSize'])) {
             $request->setContextSize($optionalArgs['contextSize']);
+        }
+
+        if (isset($optionalArgs['assistQueryParams'])) {
+            $request->setAssistQueryParams($optionalArgs['assistQueryParams']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

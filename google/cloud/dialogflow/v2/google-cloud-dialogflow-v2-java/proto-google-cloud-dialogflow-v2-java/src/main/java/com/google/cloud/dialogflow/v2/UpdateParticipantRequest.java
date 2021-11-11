@@ -5,7 +5,8 @@ package com.google.cloud.dialogflow.v2;
 
 /**
  * <pre>
- * The request message for [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
+ * The request message for
+ * [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateParticipantRequest}
@@ -364,7 +365,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
+   * The request message for
+   * [Participants.UpdateParticipant][google.cloud.dialogflow.v2.Participants.UpdateParticipant].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateParticipantRequest}
