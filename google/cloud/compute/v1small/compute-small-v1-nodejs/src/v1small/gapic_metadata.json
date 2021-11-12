@@ -1,0 +1,97 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.cloud.compute.v1small",
+  "libraryPackage": "@google-cloud/compute-small",
+  "services": {
+    "Addresses": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AddressesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": [
+                "aggregatedList"
+              ]
+            },
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "AddressesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": [
+                "aggregatedList"
+              ]
+            },
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "RegionOperations": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionOperationsClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Wait": {
+              "methods": [
+                "wait"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "RegionOperationsClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Wait": {
+              "methods": [
+                "wait"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

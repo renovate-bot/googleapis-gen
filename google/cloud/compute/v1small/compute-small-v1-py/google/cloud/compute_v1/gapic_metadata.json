@@ -1,0 +1,57 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.cloud.compute_v1",
+  "protoPackage": "google.cloud.compute.v1small",
+  "schema": "1.0",
+  "services": {
+    "Addresses": {
+      "clients": {
+        "rest": {
+          "libraryClient": "AddressesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": [
+                "aggregated_list"
+              ]
+            },
+            "Delete": {
+              "methods": [
+                "delete"
+              ]
+            },
+            "Insert": {
+              "methods": [
+                "insert"
+              ]
+            },
+            "List": {
+              "methods": [
+                "list"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "RegionOperations": {
+      "clients": {
+        "rest": {
+          "libraryClient": "RegionOperationsClient",
+          "rpcs": {
+            "Get": {
+              "methods": [
+                "get"
+              ]
+            },
+            "Wait": {
+              "methods": [
+                "wait"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
