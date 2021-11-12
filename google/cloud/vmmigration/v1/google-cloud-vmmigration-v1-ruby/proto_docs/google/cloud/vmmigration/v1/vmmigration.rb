@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Vmmigration
+    module VMMigration
       module V1
         # ReplicationCycle contains information about the current replication cycle
         # status.
@@ -47,7 +47,7 @@ module Google
         # MigratingVm describes the VM that will be migrated from a Source environment
         # and its replication state.
         # @!attribute [rw] compute_engine_target_defaults
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineTargetDefaults]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineTargetDefaults]
         #     Details of the target VM in Compute Engine.
         # @!attribute [r] name
         #   @return [::String]
@@ -64,7 +64,7 @@ module Google
         #   @return [::String]
         #     The description attached to the migrating VM by the user.
         # @!attribute [rw] policy
-        #   @return [::Google::Cloud::Vmmigration::V1::SchedulePolicy]
+        #   @return [::Google::Cloud::VMMigration::V1::SchedulePolicy]
         #     The replication schedule policy.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -74,23 +74,23 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The last time the migrating VM resource was updated.
         # @!attribute [r] last_sync
-        #   @return [::Google::Cloud::Vmmigration::V1::ReplicationSync]
+        #   @return [::Google::Cloud::VMMigration::V1::ReplicationSync]
         #     Output only. The most updated snapshot created time in the source that finished
         #     replication.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Vmmigration::V1::MigratingVm::State]
+        #   @return [::Google::Cloud::VMMigration::V1::MigratingVm::State]
         #     Output only. State of the MigratingVm.
         # @!attribute [r] state_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The last time the migrating VM state was updated.
         # @!attribute [r] current_sync_info
-        #   @return [::Google::Cloud::Vmmigration::V1::ReplicationCycle]
+        #   @return [::Google::Cloud::VMMigration::V1::ReplicationCycle]
         #     Output only. The percentage progress of the current running replication cycle.
         # @!attribute [r] group
         #   @return [::String]
         #     Output only. The group this migrating vm is included in, if any. The group is
         #     represented by the full path of the appropriate
-        #     {::Google::Cloud::Vmmigration::V1::Group Group} resource.
+        #     {::Google::Cloud::VMMigration::V1::Group Group} resource.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     The labels of the migrating VM.
@@ -158,7 +158,7 @@ module Google
         end
 
         # CloneJob describes the process of creating a clone of a
-        # {::Google::Cloud::Vmmigration::V1::MigratingVm MigratingVM} to the
+        # {::Google::Cloud::VMMigration::V1::MigratingVm MigratingVM} to the
         # requested target based on the latest successful uploaded snapshots.
         # While the migration cycles of a MigratingVm take place, it is possible to
         # verify the uploaded VM can be started in the cloud, by creating a clone. The
@@ -168,7 +168,7 @@ module Google
         # never touch the instance it created. It will only delete it in case of the
         # CloneJob being cancelled or upon failure to clone.
         # @!attribute [r] compute_engine_target_details
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineTargetDetails]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineTargetDetails]
         #     Output only. Details of the target VM in Compute Engine.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -178,7 +178,7 @@ module Google
         #   @return [::String]
         #     The name of the clone.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Vmmigration::V1::CloneJob::State]
+        #   @return [::Google::Cloud::VMMigration::V1::CloneJob::State]
         #     Output only. State of the clone job.
         # @!attribute [r] state_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -223,7 +223,7 @@ module Google
         # the operation of shutting down the VM, creating a snapshot and
         # clonning the VM using the replicated snapshot.
         # @!attribute [r] compute_engine_target_details
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineTargetDetails]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineTargetDetails]
         #     Output only. Details of the target VM in Compute Engine.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -233,7 +233,7 @@ module Google
         #   @return [::String]
         #     Output only. The name of the cutover job.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Vmmigration::V1::CutoverJob::State]
+        #   @return [::Google::Cloud::VMMigration::V1::CutoverJob::State]
         #     Output only. State of the cutover job.
         # @!attribute [r] state_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -288,7 +288,7 @@ module Google
         #   @return [::String]
         #     Required. The clone job identifier.
         # @!attribute [rw] clone_job
-        #   @return [::Google::Cloud::Vmmigration::V1::CloneJob]
+        #   @return [::Google::Cloud::VMMigration::V1::CloneJob]
         #     Required. The clone request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -355,7 +355,7 @@ module Google
 
         # Response message for 'ListCloneJobs' request.
         # @!attribute [r] clone_jobs
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::CloneJob>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::CloneJob>]
         #     Output only. The list of clone jobs response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -381,7 +381,7 @@ module Google
         # Source message describes a specific vm migration Source resource. It contains
         # the source environment information.
         # @!attribute [rw] vmware
-        #   @return [::Google::Cloud::Vmmigration::V1::VmwareSourceDetails]
+        #   @return [::Google::Cloud::VMMigration::V1::VmwareSourceDetails]
         #     Vmware type source details.
         # @!attribute [r] name
         #   @return [::String]
@@ -462,7 +462,7 @@ module Google
         #   @return [::String]
         #     Output only. The communication channel between the datacenter connector and GCP.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Vmmigration::V1::DatacenterConnector::State]
+        #   @return [::Google::Cloud::VMMigration::V1::DatacenterConnector::State]
         #     Output only. State of the DatacenterConnector, as determined by the health checks.
         # @!attribute [r] state_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -527,7 +527,7 @@ module Google
 
         # Response message for 'ListSources' request.
         # @!attribute [r] sources
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::Source>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::Source>]
         #     Output only. The list of sources response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -558,7 +558,7 @@ module Google
         #   @return [::String]
         #     Required. The source identifier.
         # @!attribute [rw] source
-        #   @return [::Google::Cloud::Vmmigration::V1::Source]
+        #   @return [::Google::Cloud::VMMigration::V1::Source]
         #     Required. The create request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -589,7 +589,7 @@ module Google
         #     the full request. A field will be overwritten if it is in the mask. If the
         #     user does not provide a mask then all fields will be overwritten.
         # @!attribute [rw] source
-        #   @return [::Google::Cloud::Vmmigration::V1::Source]
+        #   @return [::Google::Cloud::VMMigration::V1::Source]
         #     Required. The update request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -636,7 +636,7 @@ module Google
         end
 
         # Request message for
-        # {::Google::Cloud::Vmmigration::V1::VmMigration::Client#fetch_inventory fetchInventory}.
+        # {::Google::Cloud::VMMigration::V1::VmMigration::Client#fetch_inventory fetchInventory}.
         # @!attribute [rw] source
         #   @return [::String]
         #     Required. The name of the Source.
@@ -667,7 +667,7 @@ module Google
         #   @return [::String]
         #     The display name of the VM. Note that this is not necessarily unique.
         # @!attribute [rw] power_state
-        #   @return [::Google::Cloud::Vmmigration::V1::VmwareVmDetails::PowerState]
+        #   @return [::Google::Cloud::VMMigration::V1::VmwareVmDetails::PowerState]
         #     The power state of the VM at the moment list was taken.
         # @!attribute [rw] cpu_count
         #   @return [::Integer]
@@ -687,7 +687,7 @@ module Google
         #     https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
         #     for types of strings this might hold.
         # @!attribute [r] boot_option
-        #   @return [::Google::Cloud::Vmmigration::V1::VmwareVmDetails::BootOption]
+        #   @return [::Google::Cloud::VMMigration::V1::VmwareVmDetails::BootOption]
         #     Output only. The VM Boot Option.
         class VmwareVmDetails
           include ::Google::Protobuf::MessageExts
@@ -723,7 +723,7 @@ module Google
 
         # VmwareVmsDetails describes VMs in vCenter.
         # @!attribute [rw] details
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::VmwareVmDetails>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::VmwareVmDetails>]
         #     The details of the vmware VMs.
         class VmwareVmsDetails
           include ::Google::Protobuf::MessageExts
@@ -731,9 +731,9 @@ module Google
         end
 
         # Response message for
-        # {::Google::Cloud::Vmmigration::V1::VmMigration::Client#fetch_inventory fetchInventory}.
+        # {::Google::Cloud::VMMigration::V1::VmMigration::Client#fetch_inventory fetchInventory}.
         # @!attribute [r] vmware_vms
-        #   @return [::Google::Cloud::Vmmigration::V1::VmwareVmsDetails]
+        #   @return [::Google::Cloud::VMMigration::V1::VmwareVmsDetails]
         #     Output only. The description of the VMs in a Source of type Vmware.
         # @!attribute [r] update_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -753,7 +753,7 @@ module Google
         #   @return [::String]
         #     The report display name, as assigned by the user.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Vmmigration::V1::UtilizationReport::State]
+        #   @return [::Google::Cloud::VMMigration::V1::UtilizationReport::State]
         #     Output only. Current state of the report.
         # @!attribute [r] state_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -766,7 +766,7 @@ module Google
         #     Output only. The time the report was created (this refers to the time of the request,
         #     not the time the report creation completed).
         # @!attribute [rw] time_frame
-        #   @return [::Google::Cloud::Vmmigration::V1::UtilizationReport::TimeFrame]
+        #   @return [::Google::Cloud::VMMigration::V1::UtilizationReport::TimeFrame]
         #     Time frame of the report.
         # @!attribute [r] frame_end_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -778,7 +778,7 @@ module Google
         #   @return [::Integer]
         #     Output only. Total number of VMs included in the report.
         # @!attribute [rw] vms
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::VmUtilizationInfo>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::VmUtilizationInfo>]
         #     List of utilization information per VM.
         #     When sent as part of the request, the "vm_id" field is used in order to
         #     specify which VMs to include in the report. In that case all other fields
@@ -820,13 +820,13 @@ module Google
 
         # Utilization information of a single VM.
         # @!attribute [rw] vmware_vm_details
-        #   @return [::Google::Cloud::Vmmigration::V1::VmwareVmDetails]
+        #   @return [::Google::Cloud::VMMigration::V1::VmwareVmDetails]
         #     The description of the VM in a Source of type Vmware.
         # @!attribute [rw] vm_id
         #   @return [::String]
         #     The VM's ID in the source.
         # @!attribute [rw] utilization
-        #   @return [::Google::Cloud::Vmmigration::V1::VmUtilizationMetrics]
+        #   @return [::Google::Cloud::VMMigration::V1::VmUtilizationMetrics]
         #     Utilization metrics for this VM.
         class VmUtilizationInfo
           include ::Google::Protobuf::MessageExts
@@ -870,7 +870,7 @@ module Google
         #   @return [::String]
         #     Required. The Utilization Reports parent.
         # @!attribute [rw] view
-        #   @return [::Google::Cloud::Vmmigration::V1::UtilizationReportView]
+        #   @return [::Google::Cloud::VMMigration::V1::UtilizationReportView]
         #     Optional. The level of details of each report.
         #     Defaults to BASIC.
         # @!attribute [rw] page_size
@@ -899,7 +899,7 @@ module Google
 
         # Response message for 'ListUtilizationReports' request.
         # @!attribute [r] utilization_reports
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::UtilizationReport>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::UtilizationReport>]
         #     Output only. The list of reports.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -918,7 +918,7 @@ module Google
         #   @return [::String]
         #     Required. The Utilization Report name.
         # @!attribute [rw] view
-        #   @return [::Google::Cloud::Vmmigration::V1::UtilizationReportView]
+        #   @return [::Google::Cloud::VMMigration::V1::UtilizationReportView]
         #     Optional. The level of details of the report.
         #     Defaults to FULL
         class GetUtilizationReportRequest
@@ -931,7 +931,7 @@ module Google
         #   @return [::String]
         #     Required. The Utilization Report's parent.
         # @!attribute [rw] utilization_report
-        #   @return [::Google::Cloud::Vmmigration::V1::UtilizationReport]
+        #   @return [::Google::Cloud::VMMigration::V1::UtilizationReport]
         #     Required. The report to create.
         # @!attribute [rw] utilization_report_id
         #   @return [::String]
@@ -987,7 +987,7 @@ module Google
 
         # Response message for 'ListDatacenterConnectors' request.
         # @!attribute [r] datacenter_connectors
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::DatacenterConnector>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::DatacenterConnector>]
         #     Output only. The list of sources response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -1021,7 +1021,7 @@ module Google
         #   @return [::String]
         #     Required. The datacenterConnector identifier.
         # @!attribute [rw] datacenter_connector
-        #   @return [::Google::Cloud::Vmmigration::V1::DatacenterConnector]
+        #   @return [::Google::Cloud::VMMigration::V1::DatacenterConnector]
         #     Required. The create request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1118,32 +1118,32 @@ module Google
         #   @return [::Array<::String>]
         #     A map of network tags to associate with the VM.
         # @!attribute [rw] network_interfaces
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::NetworkInterface>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::NetworkInterface>]
         #     List of NICs connected to this VM.
         # @!attribute [rw] service_account
         #   @return [::String]
         #     The service account to associate the VM with.
         # @!attribute [rw] disk_type
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineDiskType]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineDiskType]
         #     The disk type to use in the VM.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     A map of labels to associate with the VM.
         # @!attribute [rw] license_type
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineLicenseType]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineLicenseType]
         #     The license type to use in OS adaptation.
         # @!attribute [r] applied_license
-        #   @return [::Google::Cloud::Vmmigration::V1::AppliedLicense]
+        #   @return [::Google::Cloud::VMMigration::V1::AppliedLicense]
         #     Output only. The OS license returned from the adaptation module report.
         # @!attribute [rw] compute_scheduling
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeScheduling]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeScheduling]
         #     Compute instance scheduling information (if empty default is used).
         # @!attribute [rw] secure_boot
         #   @return [::Boolean]
         #     Defines whether the instance has Secure Boot enabled.
         #     This can be set to true only if the vm boot option is EFI.
         # @!attribute [r] boot_option
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineBootOption]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineBootOption]
         #     Output only. The VM Boot Option, as set in the source vm.
         # @!attribute [rw] metadata
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -1192,32 +1192,32 @@ module Google
         #   @return [::Array<::String>]
         #     A map of network tags to associate with the VM.
         # @!attribute [rw] network_interfaces
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::NetworkInterface>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::NetworkInterface>]
         #     List of NICs connected to this VM.
         # @!attribute [rw] service_account
         #   @return [::String]
         #     The service account to associate the VM with.
         # @!attribute [rw] disk_type
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineDiskType]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineDiskType]
         #     The disk type to use in the VM.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     A map of labels to associate with the VM.
         # @!attribute [rw] license_type
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineLicenseType]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineLicenseType]
         #     The license type to use in OS adaptation.
         # @!attribute [rw] applied_license
-        #   @return [::Google::Cloud::Vmmigration::V1::AppliedLicense]
+        #   @return [::Google::Cloud::VMMigration::V1::AppliedLicense]
         #     The OS license returned from the adaptation module report.
         # @!attribute [rw] compute_scheduling
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeScheduling]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeScheduling]
         #     Compute instance scheduling information (if empty default is used).
         # @!attribute [rw] secure_boot
         #   @return [::Boolean]
         #     Defines whether the instance has Secure Boot enabled.
         #     This can be set to true only if the vm boot option is EFI.
         # @!attribute [rw] boot_option
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeEngineBootOption]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeEngineBootOption]
         #     The VM Boot Option, as set in the source vm.
         # @!attribute [rw] metadata
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -1267,7 +1267,7 @@ module Google
 
         # AppliedLicense holds the license data returned by adaptation module report.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Vmmigration::V1::AppliedLicense::Type]
+        #   @return [::Google::Cloud::VMMigration::V1::AppliedLicense::Type]
         #     The license type that was used in OS adaptation.
         # @!attribute [rw] os_license
         #   @return [::String]
@@ -1299,7 +1299,7 @@ module Google
         #   @return [::String]
         #     The label key of Node resource to reference.
         # @!attribute [rw] operator
-        #   @return [::Google::Cloud::Vmmigration::V1::SchedulingNodeAffinity::Operator]
+        #   @return [::Google::Cloud::VMMigration::V1::SchedulingNodeAffinity::Operator]
         #     The operator to use for the node resources specified in the `values`
         #     parameter.
         # @!attribute [rw] values
@@ -1326,11 +1326,11 @@ module Google
         # Scheduling information for VM on maintenance/restart behaviour and
         # node allocation in sole tenant nodes.
         # @!attribute [rw] on_host_maintenance
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeScheduling::OnHostMaintenance]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeScheduling::OnHostMaintenance]
         #     How the instance should behave when the host machine undergoes
         #     maintenance that may temporarily impact instance performance.
         # @!attribute [rw] restart_type
-        #   @return [::Google::Cloud::Vmmigration::V1::ComputeScheduling::RestartType]
+        #   @return [::Google::Cloud::VMMigration::V1::ComputeScheduling::RestartType]
         #     Whether the Instance should be automatically restarted whenever it is
         #     terminated by Compute Engine (not terminated by user).
         #     This configuration is identical to `automaticRestart` field in Compute
@@ -1338,7 +1338,7 @@ module Google
         #     It was changed to an enum (instead of a boolean) to match the default
         #     value in Compute Engine which is automatic restart.
         # @!attribute [rw] node_affinities
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::SchedulingNodeAffinity>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::SchedulingNodeAffinity>]
         #     A set of node affinity and anti-affinity configurations for sole tenant
         #     nodes.
         # @!attribute [rw] min_node_cpus
@@ -1399,7 +1399,7 @@ module Google
         #   @return [::String]
         #     Required. The migratingVm identifier.
         # @!attribute [rw] migrating_vm
-        #   @return [::Google::Cloud::Vmmigration::V1::MigratingVm]
+        #   @return [::Google::Cloud::VMMigration::V1::MigratingVm]
         #     Required. The create request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1451,7 +1451,7 @@ module Google
 
         # Response message for 'ListMigratingVms' request.
         # @!attribute [r] migrating_vms
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::MigratingVm>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::MigratingVm>]
         #     Output only. The list of Migrating VMs response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -1483,7 +1483,7 @@ module Google
         #     the full request. A field will be overwritten if it is in the mask. If the
         #     user does not provide a mask then all fields will be overwritten.
         # @!attribute [rw] migrating_vm
-        #   @return [::Google::Cloud::Vmmigration::V1::MigratingVm]
+        #   @return [::Google::Cloud::VMMigration::V1::MigratingVm]
         #     Required. The update request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1636,7 +1636,7 @@ module Google
 
         # Response message for 'ListTargetProjects' call.
         # @!attribute [r] target_projects
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::TargetProject>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::TargetProject>]
         #     Output only. The list of target response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -1658,7 +1658,7 @@ module Google
         #   @return [::String]
         #     Required. The target_project identifier.
         # @!attribute [rw] target_project
-        #   @return [::Google::Cloud::Vmmigration::V1::TargetProject]
+        #   @return [::Google::Cloud::VMMigration::V1::TargetProject]
         #     Required. The create request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1689,7 +1689,7 @@ module Google
         #     the full request. A field will be overwritten if it is in the mask. If the
         #     user does not provide a mask then all fields will be overwritten.
         # @!attribute [rw] target_project
-        #   @return [::Google::Cloud::Vmmigration::V1::TargetProject]
+        #   @return [::Google::Cloud::VMMigration::V1::TargetProject]
         #     Required. The update request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1787,7 +1787,7 @@ module Google
 
         # Response message for 'ListGroups' request.
         # @!attribute [r] groups
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::Group>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::Group>]
         #     Output only. The list of groups response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -1818,7 +1818,7 @@ module Google
         #   @return [::String]
         #     Required. The group identifier.
         # @!attribute [rw] group
-        #   @return [::Google::Cloud::Vmmigration::V1::Group]
+        #   @return [::Google::Cloud::VMMigration::V1::Group]
         #     Required. The create request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1849,7 +1849,7 @@ module Google
         #     the full request. A field will be overwritten if it is in the mask. If the
         #     user does not provide a mask then all fields will be overwritten.
         # @!attribute [rw] group
-        #   @return [::Google::Cloud::Vmmigration::V1::Group]
+        #   @return [::Google::Cloud::VMMigration::V1::Group]
         #     Required. The update request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -1939,7 +1939,7 @@ module Google
         #   @return [::String]
         #     Required. The cutover job identifier.
         # @!attribute [rw] cutover_job
-        #   @return [::Google::Cloud::Vmmigration::V1::CutoverJob]
+        #   @return [::Google::Cloud::VMMigration::V1::CutoverJob]
         #     Required. The cutover request body.
         # @!attribute [rw] request_id
         #   @return [::String]
@@ -2006,7 +2006,7 @@ module Google
 
         # Response message for 'ListCutoverJobs' request.
         # @!attribute [r] cutover_jobs
-        #   @return [::Array<::Google::Cloud::Vmmigration::V1::CutoverJob>]
+        #   @return [::Array<::Google::Cloud::VMMigration::V1::CutoverJob>]
         #     Output only. The list of cutover jobs response.
         # @!attribute [r] next_page_token
         #   @return [::String]
@@ -2063,7 +2063,7 @@ module Google
         # google.rpc.Status message. MigrationError is used to present the user with
         # error information in migration operations.
         # @!attribute [r] code
-        #   @return [::Google::Cloud::Vmmigration::V1::MigrationError::ErrorCode]
+        #   @return [::Google::Cloud::VMMigration::V1::MigrationError::ErrorCode]
         #     Output only. The error code.
         # @!attribute [r] error_message
         #   @return [::Google::Rpc::LocalizedMessage]

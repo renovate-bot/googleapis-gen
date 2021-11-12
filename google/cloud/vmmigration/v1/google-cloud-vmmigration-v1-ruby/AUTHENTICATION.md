@@ -25,9 +25,9 @@ export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/vmmigration/v1"
+require "google/cloud/vm_migration/v1"
 
-client = ::Google::Cloud::Vmmigration::V1::VmMigration::Client.new
+client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
 ```
 
 ## Credential Lookup
@@ -64,18 +64,18 @@ containers where writing files is difficult or not encouraged.
 
 The environment variables that google-cloud-vmmigration-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::Vmmigration::V1::VmMigration::Credentials}):
+{::Google::Cloud::VMMigration::V1::VmMigration::Credentials}):
 
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/vmmigration/v1"
+require "google/cloud/vm_migration/v1"
 
 ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::Vmmigration::V1::VmMigration::Client.new
+client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
 ```
 
 ### Configuration
@@ -84,9 +84,9 @@ The path to the **Credentials JSON** file can be configured instead of storing
 it in an environment variable. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/vmmigration/v1"
+require "google/cloud/vm_migration/v1"
 
-client = ::Google::Cloud::Vmmigration::V1::VmMigration::Client.new do |config|
+client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -94,13 +94,13 @@ end
 Or globally for all clients:
 
 ```ruby
-require "google/cloud/vmmigration/v1"
+require "google/cloud/vm_migration/v1"
 
-::Google::Cloud::Vmmigration::V1::VmMigration::Client.configure do |config|
+::Google::Cloud::VMMigration::V1::VmMigration::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::Vmmigration::V1::VmMigration::Client.new
+client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
 ```
 
 ### Cloud SDK

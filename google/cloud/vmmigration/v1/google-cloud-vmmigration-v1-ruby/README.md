@@ -29,10 +29,10 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/vmmigration/v1"
+require "google/cloud/vm_migration/v1"
 
-client = ::Google::Cloud::Vmmigration::V1::VmMigration::Client.new
-request = ::Google::Cloud::Vmmigration::V1::ListSourcesRequest.new # (request fields as keyword arguments...)
+client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
+request = ::Google::Cloud::VMMigration::V1::ListSourcesRequest.new # (request fields as keyword arguments...)
 response = client.list_sources request
 ```
 

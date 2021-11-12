@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Vmmigration\Tests\Unit\V1;
+namespace Google\Cloud\VMMigration\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,33 +29,33 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Vmmigration\V1\AddGroupMigrationResponse;
-use Google\Cloud\Vmmigration\V1\CancelCloneJobResponse;
+use Google\Cloud\VMMigration\V1\AddGroupMigrationResponse;
+use Google\Cloud\VMMigration\V1\CancelCloneJobResponse;
 
-use Google\Cloud\Vmmigration\V1\CancelCutoverJobResponse;
-use Google\Cloud\Vmmigration\V1\CloneJob;
-use Google\Cloud\Vmmigration\V1\CutoverJob;
-use Google\Cloud\Vmmigration\V1\DatacenterConnector;
-use Google\Cloud\Vmmigration\V1\FetchInventoryResponse;
-use Google\Cloud\Vmmigration\V1\FinalizeMigrationResponse;
-use Google\Cloud\Vmmigration\V1\Group;
-use Google\Cloud\Vmmigration\V1\ListCloneJobsResponse;
-use Google\Cloud\Vmmigration\V1\ListCutoverJobsResponse;
-use Google\Cloud\Vmmigration\V1\ListDatacenterConnectorsResponse;
-use Google\Cloud\Vmmigration\V1\ListGroupsResponse;
-use Google\Cloud\Vmmigration\V1\ListMigratingVmsResponse;
-use Google\Cloud\Vmmigration\V1\ListSourcesResponse;
-use Google\Cloud\Vmmigration\V1\ListTargetProjectsResponse;
-use Google\Cloud\Vmmigration\V1\ListUtilizationReportsResponse;
-use Google\Cloud\Vmmigration\V1\MigratingVm;
-use Google\Cloud\Vmmigration\V1\PauseMigrationResponse;
-use Google\Cloud\Vmmigration\V1\RemoveGroupMigrationResponse;
-use Google\Cloud\Vmmigration\V1\ResumeMigrationResponse;
-use Google\Cloud\Vmmigration\V1\Source;
-use Google\Cloud\Vmmigration\V1\StartMigrationResponse;
-use Google\Cloud\Vmmigration\V1\TargetProject;
-use Google\Cloud\Vmmigration\V1\UtilizationReport;
-use Google\Cloud\Vmmigration\V1\VmMigrationClient;
+use Google\Cloud\VMMigration\V1\CancelCutoverJobResponse;
+use Google\Cloud\VMMigration\V1\CloneJob;
+use Google\Cloud\VMMigration\V1\CutoverJob;
+use Google\Cloud\VMMigration\V1\DatacenterConnector;
+use Google\Cloud\VMMigration\V1\FetchInventoryResponse;
+use Google\Cloud\VMMigration\V1\FinalizeMigrationResponse;
+use Google\Cloud\VMMigration\V1\Group;
+use Google\Cloud\VMMigration\V1\ListCloneJobsResponse;
+use Google\Cloud\VMMigration\V1\ListCutoverJobsResponse;
+use Google\Cloud\VMMigration\V1\ListDatacenterConnectorsResponse;
+use Google\Cloud\VMMigration\V1\ListGroupsResponse;
+use Google\Cloud\VMMigration\V1\ListMigratingVmsResponse;
+use Google\Cloud\VMMigration\V1\ListSourcesResponse;
+use Google\Cloud\VMMigration\V1\ListTargetProjectsResponse;
+use Google\Cloud\VMMigration\V1\ListUtilizationReportsResponse;
+use Google\Cloud\VMMigration\V1\MigratingVm;
+use Google\Cloud\VMMigration\V1\PauseMigrationResponse;
+use Google\Cloud\VMMigration\V1\RemoveGroupMigrationResponse;
+use Google\Cloud\VMMigration\V1\ResumeMigrationResponse;
+use Google\Cloud\VMMigration\V1\Source;
+use Google\Cloud\VMMigration\V1\StartMigrationResponse;
+use Google\Cloud\VMMigration\V1\TargetProject;
+use Google\Cloud\VMMigration\V1\UtilizationReport;
+use Google\Cloud\VMMigration\V1\VmMigrationClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

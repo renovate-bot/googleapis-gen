@@ -22,9 +22,9 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Vmmigration\V1;
+namespace Google\Cloud\VMMigration\V1;
 
-use Google\Cloud\Vmmigration\V1\Gapic\VmMigrationGapicClient;
+use Google\Cloud\VMMigration\V1\Gapic\VmMigrationGapicClient;
 
 /** {@inheritdoc} */
 class VmMigrationClient extends VmMigrationGapicClient

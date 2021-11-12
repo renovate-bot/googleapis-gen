@@ -615,7 +615,7 @@ end
 
 module Google
   module Cloud
-    module Vmmigration
+    module VMMigration
       module V1
         ReplicationCycle = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.vmmigration.v1.ReplicationCycle").msgclass
         ReplicationSync = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.vmmigration.v1.ReplicationSync").msgclass

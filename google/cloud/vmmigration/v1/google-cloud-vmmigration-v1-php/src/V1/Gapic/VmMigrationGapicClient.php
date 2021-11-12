@@ -22,7 +22,7 @@
  * Updates to the above are reflected here through a refresh process.
  */
 
-namespace Google\Cloud\Vmmigration\V1\Gapic;
+namespace Google\Cloud\VMMigration\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -37,68 +37,68 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Vmmigration\V1\AddGroupMigrationRequest;
+use Google\Cloud\VMMigration\V1\AddGroupMigrationRequest;
 
-use Google\Cloud\Vmmigration\V1\CancelCloneJobRequest;
-use Google\Cloud\Vmmigration\V1\CancelCutoverJobRequest;
-use Google\Cloud\Vmmigration\V1\CloneJob;
-use Google\Cloud\Vmmigration\V1\CreateCloneJobRequest;
-use Google\Cloud\Vmmigration\V1\CreateCutoverJobRequest;
-use Google\Cloud\Vmmigration\V1\CreateDatacenterConnectorRequest;
-use Google\Cloud\Vmmigration\V1\CreateGroupRequest;
-use Google\Cloud\Vmmigration\V1\CreateMigratingVmRequest;
-use Google\Cloud\Vmmigration\V1\CreateSourceRequest;
-use Google\Cloud\Vmmigration\V1\CreateTargetProjectRequest;
-use Google\Cloud\Vmmigration\V1\CreateUtilizationReportRequest;
-use Google\Cloud\Vmmigration\V1\CutoverJob;
-use Google\Cloud\Vmmigration\V1\DatacenterConnector;
-use Google\Cloud\Vmmigration\V1\DeleteDatacenterConnectorRequest;
-use Google\Cloud\Vmmigration\V1\DeleteGroupRequest;
-use Google\Cloud\Vmmigration\V1\DeleteMigratingVmRequest;
-use Google\Cloud\Vmmigration\V1\DeleteSourceRequest;
-use Google\Cloud\Vmmigration\V1\DeleteTargetProjectRequest;
-use Google\Cloud\Vmmigration\V1\DeleteUtilizationReportRequest;
-use Google\Cloud\Vmmigration\V1\FetchInventoryRequest;
-use Google\Cloud\Vmmigration\V1\FetchInventoryResponse;
-use Google\Cloud\Vmmigration\V1\FinalizeMigrationRequest;
-use Google\Cloud\Vmmigration\V1\GetCloneJobRequest;
-use Google\Cloud\Vmmigration\V1\GetCutoverJobRequest;
-use Google\Cloud\Vmmigration\V1\GetDatacenterConnectorRequest;
-use Google\Cloud\Vmmigration\V1\GetGroupRequest;
-use Google\Cloud\Vmmigration\V1\GetMigratingVmRequest;
-use Google\Cloud\Vmmigration\V1\GetSourceRequest;
-use Google\Cloud\Vmmigration\V1\GetTargetProjectRequest;
-use Google\Cloud\Vmmigration\V1\GetUtilizationReportRequest;
-use Google\Cloud\Vmmigration\V1\Group;
-use Google\Cloud\Vmmigration\V1\ListCloneJobsRequest;
-use Google\Cloud\Vmmigration\V1\ListCloneJobsResponse;
-use Google\Cloud\Vmmigration\V1\ListCutoverJobsRequest;
-use Google\Cloud\Vmmigration\V1\ListCutoverJobsResponse;
-use Google\Cloud\Vmmigration\V1\ListDatacenterConnectorsRequest;
-use Google\Cloud\Vmmigration\V1\ListDatacenterConnectorsResponse;
-use Google\Cloud\Vmmigration\V1\ListGroupsRequest;
-use Google\Cloud\Vmmigration\V1\ListGroupsResponse;
-use Google\Cloud\Vmmigration\V1\ListMigratingVmsRequest;
-use Google\Cloud\Vmmigration\V1\ListMigratingVmsResponse;
-use Google\Cloud\Vmmigration\V1\ListSourcesRequest;
-use Google\Cloud\Vmmigration\V1\ListSourcesResponse;
-use Google\Cloud\Vmmigration\V1\ListTargetProjectsRequest;
-use Google\Cloud\Vmmigration\V1\ListTargetProjectsResponse;
-use Google\Cloud\Vmmigration\V1\ListUtilizationReportsRequest;
-use Google\Cloud\Vmmigration\V1\ListUtilizationReportsResponse;
-use Google\Cloud\Vmmigration\V1\MigratingVm;
-use Google\Cloud\Vmmigration\V1\PauseMigrationRequest;
-use Google\Cloud\Vmmigration\V1\RemoveGroupMigrationRequest;
-use Google\Cloud\Vmmigration\V1\ResumeMigrationRequest;
-use Google\Cloud\Vmmigration\V1\Source;
+use Google\Cloud\VMMigration\V1\CancelCloneJobRequest;
+use Google\Cloud\VMMigration\V1\CancelCutoverJobRequest;
+use Google\Cloud\VMMigration\V1\CloneJob;
+use Google\Cloud\VMMigration\V1\CreateCloneJobRequest;
+use Google\Cloud\VMMigration\V1\CreateCutoverJobRequest;
+use Google\Cloud\VMMigration\V1\CreateDatacenterConnectorRequest;
+use Google\Cloud\VMMigration\V1\CreateGroupRequest;
+use Google\Cloud\VMMigration\V1\CreateMigratingVmRequest;
+use Google\Cloud\VMMigration\V1\CreateSourceRequest;
+use Google\Cloud\VMMigration\V1\CreateTargetProjectRequest;
+use Google\Cloud\VMMigration\V1\CreateUtilizationReportRequest;
+use Google\Cloud\VMMigration\V1\CutoverJob;
+use Google\Cloud\VMMigration\V1\DatacenterConnector;
+use Google\Cloud\VMMigration\V1\DeleteDatacenterConnectorRequest;
+use Google\Cloud\VMMigration\V1\DeleteGroupRequest;
+use Google\Cloud\VMMigration\V1\DeleteMigratingVmRequest;
+use Google\Cloud\VMMigration\V1\DeleteSourceRequest;
+use Google\Cloud\VMMigration\V1\DeleteTargetProjectRequest;
+use Google\Cloud\VMMigration\V1\DeleteUtilizationReportRequest;
+use Google\Cloud\VMMigration\V1\FetchInventoryRequest;
+use Google\Cloud\VMMigration\V1\FetchInventoryResponse;
+use Google\Cloud\VMMigration\V1\FinalizeMigrationRequest;
+use Google\Cloud\VMMigration\V1\GetCloneJobRequest;
+use Google\Cloud\VMMigration\V1\GetCutoverJobRequest;
+use Google\Cloud\VMMigration\V1\GetDatacenterConnectorRequest;
+use Google\Cloud\VMMigration\V1\GetGroupRequest;
+use Google\Cloud\VMMigration\V1\GetMigratingVmRequest;
+use Google\Cloud\VMMigration\V1\GetSourceRequest;
+use Google\Cloud\VMMigration\V1\GetTargetProjectRequest;
+use Google\Cloud\VMMigration\V1\GetUtilizationReportRequest;
+use Google\Cloud\VMMigration\V1\Group;
+use Google\Cloud\VMMigration\V1\ListCloneJobsRequest;
+use Google\Cloud\VMMigration\V1\ListCloneJobsResponse;
+use Google\Cloud\VMMigration\V1\ListCutoverJobsRequest;
+use Google\Cloud\VMMigration\V1\ListCutoverJobsResponse;
+use Google\Cloud\VMMigration\V1\ListDatacenterConnectorsRequest;
+use Google\Cloud\VMMigration\V1\ListDatacenterConnectorsResponse;
+use Google\Cloud\VMMigration\V1\ListGroupsRequest;
+use Google\Cloud\VMMigration\V1\ListGroupsResponse;
+use Google\Cloud\VMMigration\V1\ListMigratingVmsRequest;
+use Google\Cloud\VMMigration\V1\ListMigratingVmsResponse;
+use Google\Cloud\VMMigration\V1\ListSourcesRequest;
+use Google\Cloud\VMMigration\V1\ListSourcesResponse;
+use Google\Cloud\VMMigration\V1\ListTargetProjectsRequest;
+use Google\Cloud\VMMigration\V1\ListTargetProjectsResponse;
+use Google\Cloud\VMMigration\V1\ListUtilizationReportsRequest;
+use Google\Cloud\VMMigration\V1\ListUtilizationReportsResponse;
+use Google\Cloud\VMMigration\V1\MigratingVm;
+use Google\Cloud\VMMigration\V1\PauseMigrationRequest;
+use Google\Cloud\VMMigration\V1\RemoveGroupMigrationRequest;
+use Google\Cloud\VMMigration\V1\ResumeMigrationRequest;
+use Google\Cloud\VMMigration\V1\Source;
 
-use Google\Cloud\Vmmigration\V1\StartMigrationRequest;
-use Google\Cloud\Vmmigration\V1\TargetProject;
-use Google\Cloud\Vmmigration\V1\UpdateGroupRequest;
-use Google\Cloud\Vmmigration\V1\UpdateMigratingVmRequest;
-use Google\Cloud\Vmmigration\V1\UpdateSourceRequest;
-use Google\Cloud\Vmmigration\V1\UpdateTargetProjectRequest;
-use Google\Cloud\Vmmigration\V1\UtilizationReport;
+use Google\Cloud\VMMigration\V1\StartMigrationRequest;
+use Google\Cloud\VMMigration\V1\TargetProject;
+use Google\Cloud\VMMigration\V1\UpdateGroupRequest;
+use Google\Cloud\VMMigration\V1\UpdateMigratingVmRequest;
+use Google\Cloud\VMMigration\V1\UpdateSourceRequest;
+use Google\Cloud\VMMigration\V1\UpdateTargetProjectRequest;
+use Google\Cloud\VMMigration\V1\UtilizationReport;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -2071,7 +2071,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\FetchInventoryResponse
+     * @return \Google\Cloud\VMMigration\V1\FetchInventoryResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -2181,7 +2181,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\CloneJob
+     * @return \Google\Cloud\VMMigration\V1\CloneJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -2221,7 +2221,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\CutoverJob
+     * @return \Google\Cloud\VMMigration\V1\CutoverJob
      *
      * @throws ApiException if the remote call fails
      */
@@ -2261,7 +2261,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\DatacenterConnector
+     * @return \Google\Cloud\VMMigration\V1\DatacenterConnector
      *
      * @throws ApiException if the remote call fails
      */
@@ -2301,7 +2301,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\Group
+     * @return \Google\Cloud\VMMigration\V1\Group
      *
      * @throws ApiException if the remote call fails
      */
@@ -2341,7 +2341,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\MigratingVm
+     * @return \Google\Cloud\VMMigration\V1\MigratingVm
      *
      * @throws ApiException if the remote call fails
      */
@@ -2381,7 +2381,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\Source
+     * @return \Google\Cloud\VMMigration\V1\Source
      *
      * @throws ApiException if the remote call fails
      */
@@ -2424,7 +2424,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\TargetProject
+     * @return \Google\Cloud\VMMigration\V1\TargetProject
      *
      * @throws ApiException if the remote call fails
      */
@@ -2460,7 +2460,7 @@ class VmMigrationGapicClient
      *     @type int $view
      *           Optional. The level of details of the report.
      *           Defaults to FULL
-     *           For allowed values, use constants defined on {@see \Google\Cloud\Vmmigration\V1\UtilizationReportView}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\VMMigration\V1\UtilizationReportView}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -2468,7 +2468,7 @@ class VmMigrationGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Vmmigration\V1\UtilizationReport
+     * @return \Google\Cloud\VMMigration\V1\UtilizationReport
      *
      * @throws ApiException if the remote call fails
      */
@@ -3074,7 +3074,7 @@ class VmMigrationGapicClient
      *     @type int $view
      *           Optional. The level of details of each report.
      *           Defaults to BASIC.
-     *           For allowed values, use constants defined on {@see \Google\Cloud\Vmmigration\V1\UtilizationReportView}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\VMMigration\V1\UtilizationReportView}
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if

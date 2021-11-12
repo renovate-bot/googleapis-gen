@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.vmmigration.v1",
-  "libraryPackage": "::Google::Cloud::Vmmigration::V1",
+  "libraryPackage": "::Google::Cloud::VMMigration::V1",
   "services": {
     "VmMigration": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Vmmigration::V1::VmMigration::Client",
+          "libraryClient": "::Google::Cloud::VMMigration::V1::VmMigration::Client",
           "rpcs": {
             "ListSources": {
               "methods": [

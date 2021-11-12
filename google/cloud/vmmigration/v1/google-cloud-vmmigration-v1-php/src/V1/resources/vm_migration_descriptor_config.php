@@ -5,8 +5,8 @@ return [
         'google.cloud.vmmigration.v1.VmMigration' => [
             'AddGroupMigration' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\AddGroupMigrationResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\AddGroupMigrationResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -15,8 +15,8 @@ return [
             ],
             'CancelCloneJob' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\CancelCloneJobResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\CancelCloneJobResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'CancelCutoverJob' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\CancelCutoverJobResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\CancelCutoverJobResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -35,8 +35,8 @@ return [
             ],
             'CreateCloneJob' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\CloneJob',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\CloneJob',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -45,8 +45,8 @@ return [
             ],
             'CreateCutoverJob' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\CutoverJob',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\CutoverJob',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -55,8 +55,8 @@ return [
             ],
             'CreateDatacenterConnector' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\DatacenterConnector',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\DatacenterConnector',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -65,8 +65,8 @@ return [
             ],
             'CreateGroup' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\Group',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\Group',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -75,8 +75,8 @@ return [
             ],
             'CreateMigratingVm' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\MigratingVm',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\MigratingVm',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -85,8 +85,8 @@ return [
             ],
             'CreateSource' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\Source',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\Source',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -95,8 +95,8 @@ return [
             ],
             'CreateTargetProject' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\TargetProject',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\TargetProject',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -105,8 +105,8 @@ return [
             ],
             'CreateUtilizationReport' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\UtilizationReport',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\UtilizationReport',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -116,7 +116,7 @@ return [
             'DeleteDatacenterConnector' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -126,7 +126,7 @@ return [
             'DeleteGroup' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -136,7 +136,7 @@ return [
             'DeleteMigratingVm' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -146,7 +146,7 @@ return [
             'DeleteSource' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -156,7 +156,7 @@ return [
             'DeleteTargetProject' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -166,7 +166,7 @@ return [
             'DeleteUtilizationReport' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -175,8 +175,8 @@ return [
             ],
             'FinalizeMigration' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\FinalizeMigrationResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\FinalizeMigrationResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -185,8 +185,8 @@ return [
             ],
             'PauseMigration' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\PauseMigrationResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\PauseMigrationResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -195,8 +195,8 @@ return [
             ],
             'RemoveGroupMigration' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\RemoveGroupMigrationResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\RemoveGroupMigrationResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -205,8 +205,8 @@ return [
             ],
             'ResumeMigration' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\ResumeMigrationResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\ResumeMigrationResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -215,8 +215,8 @@ return [
             ],
             'StartMigration' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\StartMigrationResponse',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\StartMigrationResponse',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -225,8 +225,8 @@ return [
             ],
             'UpdateGroup' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\Group',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\Group',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -235,8 +235,8 @@ return [
             ],
             'UpdateMigratingVm' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\MigratingVm',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\MigratingVm',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -245,8 +245,8 @@ return [
             ],
             'UpdateSource' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\Source',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\Source',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -255,8 +255,8 @@ return [
             ],
             'UpdateTargetProject' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Vmmigration\V1\TargetProject',
-                    'metadataReturnType' => '\Google\Cloud\Vmmigration\V1\OperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\VMMigration\V1\TargetProject',
+                    'metadataReturnType' => '\Google\Cloud\VMMigration\V1\OperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

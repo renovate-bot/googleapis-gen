@@ -1195,11 +1195,13 @@ public final class VmMigrationProto {
       "ations/*/targetProjects/*}\332A\004name\312A*\n\025go" +
       "ogle.protobuf.Empty\022\021OperationMetadata\032N" +
       "\312A\032vmmigration.googleapis.com\322A.https://" +
-      "www.googleapis.com/auth/cloud-platformB}" +
-      "\n\037com.google.cloud.vmmigration.v1B\020VmMig" +
-      "rationProtoP\001ZFgoogle.golang.org/genprot" +
-      "o/googleapis/cloud/vmmigration/v1;vmmigr" +
-      "ationb\006proto3"
+      "www.googleapis.com/auth/cloud-platformB\332" +
+      "\001\n\037com.google.cloud.vmmigration.v1B\020VmMi" +
+      "grationProtoP\001ZFgoogle.golang.org/genpro" +
+      "to/googleapis/cloud/vmmigration/v1;vmmig" +
+      "ration\252\002\033Google.Cloud.VMMigration.V1\312\002\033G" +
+      "oogle\\Cloud\\VMMigration\\V1\352\002\036Google::Clo" +
+      "ud::VMMigration::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

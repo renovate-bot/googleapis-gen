@@ -3,7 +3,7 @@
     "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
     "language": "php",
     "protoPackage": "google.cloud.vmmigration.v1",
-    "libraryPackage": "Google\\Cloud\\Vmmigration\\V1",
+    "libraryPackage": "Google\\Cloud\\VMMigration\\V1",
     "services": {
         "VmMigration": {
             "clients": {
