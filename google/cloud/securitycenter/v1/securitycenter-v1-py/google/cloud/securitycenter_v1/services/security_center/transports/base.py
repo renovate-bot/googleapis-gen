@@ -28,6 +28,8 @@ from google.oauth2 import service_account # type: ignore
 
 from google.cloud.securitycenter_v1.types import finding
 from google.cloud.securitycenter_v1.types import finding as gcs_finding
+from google.cloud.securitycenter_v1.types import mute_config
+from google.cloud.securitycenter_v1.types import mute_config as gcs_mute_config
 from google.cloud.securitycenter_v1.types import notification_config
 from google.cloud.securitycenter_v1.types import notification_config as gcs_notification_config
 from google.cloud.securitycenter_v1.types import organization_settings
@@ -129,6 +131,11 @@ class SecurityCenterTransport(abc.ABC):
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
         self._wrapped_methods = {
+            self.bulk_mute_findings: gapic_v1.method.wrap_method(
+                self.bulk_mute_findings,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.create_source: gapic_v1.method.wrap_method(
                 self.create_source,
                 default_timeout=60.0,
@@ -139,9 +146,19 @@ class SecurityCenterTransport(abc.ABC):
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.create_mute_config: gapic_v1.method.wrap_method(
+                self.create_mute_config,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.create_notification_config: gapic_v1.method.wrap_method(
                 self.create_notification_config,
                 default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.delete_mute_config: gapic_v1.method.wrap_method(
+                self.delete_mute_config,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.delete_notification_config: gapic_v1.method.wrap_method(
@@ -159,6 +176,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                     deadline=60.0,
                 ),
                 default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.get_mute_config: gapic_v1.method.wrap_method(
+                self.get_mute_config,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.get_notification_config: gapic_v1.method.wrap_method(
@@ -245,6 +267,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=480.0,
                 client_info=client_info,
             ),
+            self.list_mute_configs: gapic_v1.method.wrap_method(
+                self.list_mute_configs,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.list_notification_configs: gapic_v1.method.wrap_method(
                 self.list_notification_configs,
                 default_retry=retries.Retry(
@@ -279,6 +306,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.set_mute: gapic_v1.method.wrap_method(
+                self.set_mute,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.set_iam_policy: gapic_v1.method.wrap_method(
                 self.set_iam_policy,
                 default_timeout=60.0,
@@ -299,6 +331,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.update_finding: gapic_v1.method.wrap_method(
                 self.update_finding,
                 default_timeout=60.0,
+                client_info=client_info,
+            ),
+            self.update_mute_config: gapic_v1.method.wrap_method(
+                self.update_mute_config,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.update_notification_config: gapic_v1.method.wrap_method(
@@ -338,6 +375,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
         raise NotImplementedError()
 
     @property
+    def bulk_mute_findings(self) -> Callable[
+            [securitycenter_service.BulkMuteFindingsRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def create_source(self) -> Callable[
             [securitycenter_service.CreateSourceRequest],
             Union[
@@ -356,11 +402,29 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
         raise NotImplementedError()
 
     @property
+    def create_mute_config(self) -> Callable[
+            [securitycenter_service.CreateMuteConfigRequest],
+            Union[
+                gcs_mute_config.MuteConfig,
+                Awaitable[gcs_mute_config.MuteConfig]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def create_notification_config(self) -> Callable[
             [securitycenter_service.CreateNotificationConfigRequest],
             Union[
                 gcs_notification_config.NotificationConfig,
                 Awaitable[gcs_notification_config.NotificationConfig]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def delete_mute_config(self) -> Callable[
+            [securitycenter_service.DeleteMuteConfigRequest],
+            Union[
+                empty_pb2.Empty,
+                Awaitable[empty_pb2.Empty]
             ]]:
         raise NotImplementedError()
 
@@ -379,6 +443,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             Union[
                 policy_pb2.Policy,
                 Awaitable[policy_pb2.Policy]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_mute_config(self) -> Callable[
+            [securitycenter_service.GetMuteConfigRequest],
+            Union[
+                mute_config.MuteConfig,
+                Awaitable[mute_config.MuteConfig]
             ]]:
         raise NotImplementedError()
 
@@ -446,6 +519,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
         raise NotImplementedError()
 
     @property
+    def list_mute_configs(self) -> Callable[
+            [securitycenter_service.ListMuteConfigsRequest],
+            Union[
+                securitycenter_service.ListMuteConfigsResponse,
+                Awaitable[securitycenter_service.ListMuteConfigsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def list_notification_configs(self) -> Callable[
             [securitycenter_service.ListNotificationConfigsRequest],
             Union[
@@ -482,6 +564,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
         raise NotImplementedError()
 
     @property
+    def set_mute(self) -> Callable[
+            [securitycenter_service.SetMuteRequest],
+            Union[
+                finding.Finding,
+                Awaitable[finding.Finding]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def set_iam_policy(self) -> Callable[
             [iam_policy_pb2.SetIamPolicyRequest],
             Union[
@@ -505,6 +596,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             Union[
                 gcs_finding.Finding,
                 Awaitable[gcs_finding.Finding]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_mute_config(self) -> Callable[
+            [securitycenter_service.UpdateMuteConfigRequest],
+            Union[
+                gcs_mute_config.MuteConfig,
+                Awaitable[gcs_mute_config.MuteConfig]
             ]]:
         raise NotImplementedError()
 
