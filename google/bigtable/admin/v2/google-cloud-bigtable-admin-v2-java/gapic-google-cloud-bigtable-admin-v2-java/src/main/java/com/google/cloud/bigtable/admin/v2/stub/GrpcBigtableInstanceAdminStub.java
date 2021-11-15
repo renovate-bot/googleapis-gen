@@ -45,6 +45,8 @@ import com.google.bigtable.admin.v2.ListClustersRequest;
 import com.google.bigtable.admin.v2.ListClustersResponse;
 import com.google.bigtable.admin.v2.ListInstancesRequest;
 import com.google.bigtable.admin.v2.ListInstancesResponse;
+import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
+import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileMetadata;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
@@ -168,6 +170,17 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<PartialUpdateClusterRequest, Operation>
+      partialUpdateClusterMethodDescriptor =
+          MethodDescriptor.<PartialUpdateClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.bigtable.admin.v2.BigtableInstanceAdmin/PartialUpdateCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PartialUpdateClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteClusterRequest, Empty> deleteClusterMethodDescriptor =
       MethodDescriptor.<DeleteClusterRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -274,6 +287,10 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   private final UnaryCallable<Cluster, Operation> updateClusterCallable;
   private final OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable;
+  private final UnaryCallable<PartialUpdateClusterRequest, Operation> partialUpdateClusterCallable;
+  private final OperationCallable<
+          PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable;
   private final UnaryCallable<CreateAppProfileRequest, AppProfile> createAppProfileCallable;
   private final UnaryCallable<GetAppProfileRequest, AppProfile> getAppProfileCallable;
@@ -435,6 +452,16 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<PartialUpdateClusterRequest, Operation> partialUpdateClusterTransportSettings =
+        GrpcCallSettings.<PartialUpdateClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(partialUpdateClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<DeleteClusterRequest, Empty> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -584,6 +611,17 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
             settings.updateClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.partialUpdateClusterCallable =
+        callableFactory.createUnaryCallable(
+            partialUpdateClusterTransportSettings,
+            settings.partialUpdateClusterSettings(),
+            clientContext);
+    this.partialUpdateClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            partialUpdateClusterTransportSettings,
+            settings.partialUpdateClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteClusterCallable =
         callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
@@ -703,6 +741,17 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   public OperationCallable<Cluster, Cluster, UpdateClusterMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PartialUpdateClusterRequest, Operation> partialUpdateClusterCallable() {
+    return partialUpdateClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
+      partialUpdateClusterOperationCallable() {
+    return partialUpdateClusterOperationCallable;
   }
 
   @Override

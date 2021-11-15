@@ -53,6 +53,7 @@ type BigtableInstanceAdminCallOptions struct {
 	GetCluster            []gax.CallOption
 	ListClusters          []gax.CallOption
 	UpdateCluster         []gax.CallOption
+	PartialUpdateCluster  []gax.CallOption
 	DeleteCluster         []gax.CallOption
 	CreateAppProfile      []gax.CallOption
 	GetAppProfile         []gax.CallOption
@@ -166,6 +167,18 @@ func defaultBigtableInstanceAdminCallOptions() *BigtableInstanceAdminCallOptions
 				})
 			}),
 		},
+		PartialUpdateCluster: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+					codes.DeadlineExceeded,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        60000 * time.Millisecond,
+					Multiplier: 2.00,
+				})
+			}),
+		},
 		DeleteCluster:    []gax.CallOption{},
 		CreateAppProfile: []gax.CallOption{},
 		GetAppProfile: []gax.CallOption{
@@ -252,6 +265,8 @@ type internalBigtableInstanceAdminClient interface {
 	ListClusters(context.Context, *adminpb.ListClustersRequest, ...gax.CallOption) (*adminpb.ListClustersResponse, error)
 	UpdateCluster(context.Context, *adminpb.Cluster, ...gax.CallOption) (*UpdateClusterOperation, error)
 	UpdateClusterOperation(name string) *UpdateClusterOperation
+	PartialUpdateCluster(context.Context, *adminpb.PartialUpdateClusterRequest, ...gax.CallOption) (*PartialUpdateClusterOperation, error)
+	PartialUpdateClusterOperation(name string) *PartialUpdateClusterOperation
 	DeleteCluster(context.Context, *adminpb.DeleteClusterRequest, ...gax.CallOption) error
 	CreateAppProfile(context.Context, *adminpb.CreateAppProfileRequest, ...gax.CallOption) (*adminpb.AppProfile, error)
 	GetAppProfile(context.Context, *adminpb.GetAppProfileRequest, ...gax.CallOption) (*adminpb.AppProfile, error)
@@ -306,6 +321,12 @@ func (c *BigtableInstanceAdminClient) Connection() *grpc.ClientConn {
 }
 
 // CreateInstance create an instance within a project.
+//
+// Note that exactly one of Cluster.serve_nodes and
+// Cluster.cluster_config.cluster_autoscaling_config can be set. If
+// serve_nodes is set to non-zero, then the cluster is manually scaled. If
+// cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+// enabled.
 func (c *BigtableInstanceAdminClient) CreateInstance(ctx context.Context, req *adminpb.CreateInstanceRequest, opts ...gax.CallOption) (*CreateInstanceOperation, error) {
 	return c.internalClient.CreateInstance(ctx, req, opts...)
 }
@@ -351,6 +372,12 @@ func (c *BigtableInstanceAdminClient) DeleteInstance(ctx context.Context, req *a
 }
 
 // CreateCluster creates a cluster within an instance.
+//
+// Note that exactly one of Cluster.serve_nodes and
+// Cluster.cluster_config.cluster_autoscaling_config can be set. If
+// serve_nodes is set to non-zero, then the cluster is manually scaled. If
+// cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+// enabled.
 func (c *BigtableInstanceAdminClient) CreateCluster(ctx context.Context, req *adminpb.CreateClusterRequest, opts ...gax.CallOption) (*CreateClusterOperation, error) {
 	return c.internalClient.CreateCluster(ctx, req, opts...)
 }
@@ -372,6 +399,10 @@ func (c *BigtableInstanceAdminClient) ListClusters(ctx context.Context, req *adm
 }
 
 // UpdateCluster updates a cluster within an instance.
+//
+// Note that UpdateCluster does not support updating
+// cluster_config.cluster_autoscaling_config. In order to update it, you
+// must use PartialUpdateCluster.
 func (c *BigtableInstanceAdminClient) UpdateCluster(ctx context.Context, req *adminpb.Cluster, opts ...gax.CallOption) (*UpdateClusterOperation, error) {
 	return c.internalClient.UpdateCluster(ctx, req, opts...)
 }
@@ -380,6 +411,28 @@ func (c *BigtableInstanceAdminClient) UpdateCluster(ctx context.Context, req *ad
 // The name must be that of a previously created UpdateClusterOperation, possibly from a different process.
 func (c *BigtableInstanceAdminClient) UpdateClusterOperation(name string) *UpdateClusterOperation {
 	return c.internalClient.UpdateClusterOperation(name)
+}
+
+// PartialUpdateCluster partially updates a cluster within a project. This method is the preferred
+// way to update a Cluster.
+//
+// To enable and update autoscaling, set
+// cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+// serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+// are ignored. Note that an update cannot simultaneously set serve_nodes to
+// non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+// also specify both in the update_mask.
+//
+// To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+// and explicitly set a serve_node count via the update_mask.
+func (c *BigtableInstanceAdminClient) PartialUpdateCluster(ctx context.Context, req *adminpb.PartialUpdateClusterRequest, opts ...gax.CallOption) (*PartialUpdateClusterOperation, error) {
+	return c.internalClient.PartialUpdateCluster(ctx, req, opts...)
+}
+
+// PartialUpdateClusterOperation returns a new PartialUpdateClusterOperation from a given name.
+// The name must be that of a previously created PartialUpdateClusterOperation, possibly from a different process.
+func (c *BigtableInstanceAdminClient) PartialUpdateClusterOperation(name string) *PartialUpdateClusterOperation {
+	return c.internalClient.PartialUpdateClusterOperation(name)
 }
 
 // DeleteCluster deletes a cluster from an instance.
@@ -747,6 +800,29 @@ func (c *bigtableInstanceAdminGRPCClient) UpdateCluster(ctx context.Context, req
 	}, nil
 }
 
+func (c *bigtableInstanceAdminGRPCClient) PartialUpdateCluster(ctx context.Context, req *adminpb.PartialUpdateClusterRequest, opts ...gax.CallOption) (*PartialUpdateClusterOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "cluster.name", url.QueryEscape(req.GetCluster().GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).PartialUpdateCluster[0:len((*c.CallOptions).PartialUpdateCluster):len((*c.CallOptions).PartialUpdateCluster)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.bigtableInstanceAdminClient.PartialUpdateCluster(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &PartialUpdateClusterOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
 func (c *bigtableInstanceAdminGRPCClient) DeleteCluster(ctx context.Context, req *adminpb.DeleteClusterRequest, opts ...gax.CallOption) error {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -1088,6 +1164,75 @@ func (op *CreateInstanceOperation) Done() bool {
 // Name returns the name of the long-running operation.
 // The name is assigned by the server and is unique within the service from which the operation is created.
 func (op *CreateInstanceOperation) Name() string {
+	return op.lro.Name()
+}
+
+// PartialUpdateClusterOperation manages a long-running operation from PartialUpdateCluster.
+type PartialUpdateClusterOperation struct {
+	lro *longrunning.Operation
+}
+
+// PartialUpdateClusterOperation returns a new PartialUpdateClusterOperation from a given name.
+// The name must be that of a previously created PartialUpdateClusterOperation, possibly from a different process.
+func (c *bigtableInstanceAdminGRPCClient) PartialUpdateClusterOperation(name string) *PartialUpdateClusterOperation {
+	return &PartialUpdateClusterOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *PartialUpdateClusterOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*adminpb.Cluster, error) {
+	var resp adminpb.Cluster
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *PartialUpdateClusterOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*adminpb.Cluster, error) {
+	var resp adminpb.Cluster
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *PartialUpdateClusterOperation) Metadata() (*adminpb.PartialUpdateClusterMetadata, error) {
+	var meta adminpb.PartialUpdateClusterMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *PartialUpdateClusterOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *PartialUpdateClusterOperation) Name() string {
 	return op.lro.Name()
 }
 

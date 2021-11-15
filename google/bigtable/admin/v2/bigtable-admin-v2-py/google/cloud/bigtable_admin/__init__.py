@@ -36,6 +36,8 @@ from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import ListClu
 from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import ListClustersResponse
 from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import ListInstancesRequest
 from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import ListInstancesResponse
+from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import PartialUpdateClusterMetadata
+from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import PartialUpdateClusterRequest
 from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import PartialUpdateInstanceRequest
 from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import UpdateAppProfileMetadata
 from google.cloud.bigtable_admin_v2.types.bigtable_instance_admin import UpdateAppProfileRequest
@@ -73,6 +75,8 @@ from google.cloud.bigtable_admin_v2.types.bigtable_table_admin import UpdateBack
 from google.cloud.bigtable_admin_v2.types.common import OperationProgress
 from google.cloud.bigtable_admin_v2.types.common import StorageType
 from google.cloud.bigtable_admin_v2.types.instance import AppProfile
+from google.cloud.bigtable_admin_v2.types.instance import AutoscalingLimits
+from google.cloud.bigtable_admin_v2.types.instance import AutoscalingTargets
 from google.cloud.bigtable_admin_v2.types.instance import Cluster
 from google.cloud.bigtable_admin_v2.types.instance import Instance
 from google.cloud.bigtable_admin_v2.types.table import Backup
@@ -106,6 +110,8 @@ __all__ = ('BigtableInstanceAdminClient',
     'ListClustersResponse',
     'ListInstancesRequest',
     'ListInstancesResponse',
+    'PartialUpdateClusterMetadata',
+    'PartialUpdateClusterRequest',
     'PartialUpdateInstanceRequest',
     'UpdateAppProfileMetadata',
     'UpdateAppProfileRequest',
@@ -143,6 +149,8 @@ __all__ = ('BigtableInstanceAdminClient',
     'OperationProgress',
     'StorageType',
     'AppProfile',
+    'AutoscalingLimits',
+    'AutoscalingTargets',
     'Cluster',
     'Instance',
     'Backup',

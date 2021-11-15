@@ -199,8 +199,6 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
         $formattedParent = $client->instanceName('[PROJECT]', '[INSTANCE]');
         $clusterId = 'clusterId240280960';
         $cluster = new Cluster();
-        $clusterServeNodes = 1434304124;
-        $cluster->setServeNodes($clusterServeNodes);
         $response = $client->createCluster($formattedParent, $clusterId, $cluster);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -273,8 +271,6 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
         $formattedParent = $client->instanceName('[PROJECT]', '[INSTANCE]');
         $clusterId = 'clusterId240280960';
         $cluster = new Cluster();
-        $clusterServeNodes = 1434304124;
-        $cluster->setServeNodes($clusterServeNodes);
         $response = $client->createCluster($formattedParent, $clusterId, $cluster);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -339,8 +335,6 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
         $instanceDisplayName = 'instanceDisplayName1824500376';
         $instance->setDisplayName($instanceDisplayName);
         $clustersValue = new Cluster();
-        $valueServeNodes = 370436813;
-        $clustersValue->setServeNodes($valueServeNodes);
         $clusters = [
             'clustersKey' => $clustersValue,
         ];
@@ -421,8 +415,6 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
         $instanceDisplayName = 'instanceDisplayName1824500376';
         $instance->setDisplayName($instanceDisplayName);
         $clustersValue = new Cluster();
-        $valueServeNodes = 370436813;
-        $clustersValue->setServeNodes($valueServeNodes);
         $clusters = [
             'clustersKey' => $clustersValue,
         ];
@@ -1106,6 +1098,137 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function partialUpdateClusterTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/partialUpdateClusterTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $name = 'name3373707';
+        $location = 'location1901043637';
+        $serveNodes = 1288838783;
+        $expectedResponse = new Cluster();
+        $expectedResponse->setName($name);
+        $expectedResponse->setLocation($location);
+        $expectedResponse->setServeNodes($serveNodes);
+        $anyResponse = new Any();
+        $anyResponse->setValue($expectedResponse->serializeToString());
+        $completeOperation = new Operation();
+        $completeOperation->setName('operations/partialUpdateClusterTest');
+        $completeOperation->setDone(true);
+        $completeOperation->setResponse($anyResponse);
+        $operationsTransport->addResponse($completeOperation);
+        // Mock request
+        $cluster = new Cluster();
+        $updateMask = new FieldMask();
+        $response = $client->partialUpdateCluster($cluster, $updateMask);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $apiRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($apiRequests));
+        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
+        $this->assertSame(0, count($operationsRequestsEmpty));
+        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
+        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
+        $this->assertSame('/google.bigtable.admin.v2.BigtableInstanceAdmin/PartialUpdateCluster', $actualApiFuncCall);
+        $actualValue = $actualApiRequestObject->getCluster();
+        $this->assertProtobufEquals($cluster, $actualValue);
+        $actualValue = $actualApiRequestObject->getUpdateMask();
+        $this->assertProtobufEquals($updateMask, $actualValue);
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/partialUpdateClusterTest');
+        $response->pollUntilComplete([
+            'initialPollDelayMillis' => 1,
+        ]);
+        $this->assertTrue($response->isDone());
+        $this->assertEquals($expectedResponse, $response->getResult());
+        $apiRequestsEmpty = $transport->popReceivedCalls();
+        $this->assertSame(0, count($apiRequestsEmpty));
+        $operationsRequests = $operationsTransport->popReceivedCalls();
+        $this->assertSame(1, count($operationsRequests));
+        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
+        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
+        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
+        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function partialUpdateClusterExceptionTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/partialUpdateClusterTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $operationsTransport->addResponse(null, $status);
+        // Mock request
+        $cluster = new Cluster();
+        $updateMask = new FieldMask();
+        $response = $client->partialUpdateCluster($cluster, $updateMask);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/partialUpdateClusterTest');
+        try {
+            $response->pollUntilComplete([
+                'initialPollDelayMillis' => 1,
+            ]);
+            // If the pollUntilComplete() method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stubs are exhausted
+        $transport->popReceivedCalls();
+        $operationsTransport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function partialUpdateInstanceTest()
     {
         $operationsTransport = $this->createTransport();
@@ -1540,9 +1663,7 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
         $completeOperation->setDone(true);
         $completeOperation->setResponse($anyResponse);
         $operationsTransport->addResponse($completeOperation);
-        // Mock request
-        $serveNodes = 1288838783;
-        $response = $client->updateCluster($serveNodes);
+        $response = $client->updateCluster();
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $apiRequests = $transport->popReceivedCalls();
@@ -1552,8 +1673,6 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
         $actualApiFuncCall = $apiRequests[0]->getFuncCall();
         $actualApiRequestObject = $apiRequests[0]->getRequestObject();
         $this->assertSame('/google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateCluster', $actualApiFuncCall);
-        $actualValue = $actualApiRequestObject->getServeNodes();
-        $this->assertProtobufEquals($serveNodes, $actualValue);
         $expectedOperationsRequestObject = new GetOperationRequest();
         $expectedOperationsRequestObject->setName('operations/updateClusterTest');
         $response->pollUntilComplete([
@@ -1606,9 +1725,7 @@ class BigtableInstanceAdminClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $operationsTransport->addResponse(null, $status);
-        // Mock request
-        $serveNodes = 1288838783;
-        $response = $client->updateCluster($serveNodes);
+        $response = $client->updateCluster();
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
         $expectedOperationsRequestObject = new GetOperationRequest();

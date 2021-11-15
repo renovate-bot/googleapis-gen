@@ -42,6 +42,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Bigtable\Admin\V2\AppProfile;
 use Google\Cloud\Bigtable\Admin\V2\Cluster;
+use Google\Cloud\Bigtable\Admin\V2\Cluster\ClusterConfig;
 use Google\Cloud\Bigtable\Admin\V2\Cluster\EncryptionConfig;
 use Google\Cloud\Bigtable\Admin\V2\Cluster\State;
 use Google\Cloud\Bigtable\Admin\V2\CreateAppProfileRequest;
@@ -62,6 +63,7 @@ use Google\Cloud\Bigtable\Admin\V2\ListClustersRequest;
 use Google\Cloud\Bigtable\Admin\V2\ListClustersResponse;
 use Google\Cloud\Bigtable\Admin\V2\ListInstancesRequest;
 use Google\Cloud\Bigtable\Admin\V2\ListInstancesResponse;
+use Google\Cloud\Bigtable\Admin\V2\PartialUpdateClusterRequest;
 use Google\Cloud\Bigtable\Admin\V2\PartialUpdateInstanceRequest;
 use Google\Cloud\Bigtable\Admin\V2\UpdateAppProfileRequest;
 use Google\Cloud\Iam\V1\GetIamPolicyRequest;
@@ -513,6 +515,12 @@ class BigtableInstanceAdminGapicClient
     /**
      * Creates a cluster within an instance.
      *
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
+     *
      * Sample code:
      * ```
      * $bigtableInstanceAdminClient = new BigtableInstanceAdminClient();
@@ -588,6 +596,12 @@ class BigtableInstanceAdminGapicClient
 
     /**
      * Create an instance within a project.
+     *
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
      *
      * Sample code:
      * ```
@@ -1130,6 +1144,86 @@ class BigtableInstanceAdminGapicClient
     }
 
     /**
+     * Partially updates a cluster within a project. This method is the preferred
+     * way to update a Cluster.
+     *
+     * To enable and update autoscaling, set
+     * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+     * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+     * are ignored. Note that an update cannot simultaneously set serve_nodes to
+     * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+     * also specify both in the update_mask.
+     *
+     * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+     * and explicitly set a serve_node count via the update_mask.
+     *
+     * Sample code:
+     * ```
+     * $bigtableInstanceAdminClient = new BigtableInstanceAdminClient();
+     * try {
+     *     $cluster = new Cluster();
+     *     $updateMask = new FieldMask();
+     *     $operationResponse = $bigtableInstanceAdminClient->partialUpdateCluster($cluster, $updateMask);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $bigtableInstanceAdminClient->partialUpdateCluster($cluster, $updateMask);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $bigtableInstanceAdminClient->resumeOperation($operationName, 'partialUpdateCluster');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $bigtableInstanceAdminClient->close();
+     * }
+     * ```
+     *
+     * @param Cluster   $cluster      Required. The Cluster which contains the partial updates to be applied, subject to
+     *                                the update_mask.
+     * @param FieldMask $updateMask   Required. The subset of Cluster fields which should be replaced.
+     * @param array     $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function partialUpdateCluster($cluster, $updateMask, array $optionalArgs = [])
+    {
+        $request = new PartialUpdateClusterRequest();
+        $requestParamHeaders = [];
+        $request->setCluster($cluster);
+        $request->setUpdateMask($updateMask);
+        $requestParamHeaders['cluster.name'] = $cluster->getName();
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('PartialUpdateCluster', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Partially updates an instance within a project. This method can modify all
      * fields of an Instance and is the preferred way to update an Instance.
      *
@@ -1372,12 +1466,15 @@ class BigtableInstanceAdminGapicClient
     /**
      * Updates a cluster within an instance.
      *
+     * Note that UpdateCluster does not support updating
+     * cluster_config.cluster_autoscaling_config. In order to update it, you
+     * must use PartialUpdateCluster.
+     *
      * Sample code:
      * ```
      * $bigtableInstanceAdminClient = new BigtableInstanceAdminClient();
      * try {
-     *     $serveNodes = 0;
-     *     $operationResponse = $bigtableInstanceAdminClient->updateCluster($serveNodes);
+     *     $operationResponse = $bigtableInstanceAdminClient->updateCluster();
      *     $operationResponse->pollUntilComplete();
      *     if ($operationResponse->operationSucceeded()) {
      *         $result = $operationResponse->getResult();
@@ -1388,7 +1485,7 @@ class BigtableInstanceAdminGapicClient
      *     }
      *     // Alternatively:
      *     // start the operation, keep the operation name, and resume later
-     *     $operationResponse = $bigtableInstanceAdminClient->updateCluster($serveNodes);
+     *     $operationResponse = $bigtableInstanceAdminClient->updateCluster();
      *     $operationName = $operationResponse->getName();
      *     // ... do other work
      *     $newOperationResponse = $bigtableInstanceAdminClient->resumeOperation($operationName, 'updateCluster');
@@ -1408,8 +1505,6 @@ class BigtableInstanceAdminGapicClient
      * }
      * ```
      *
-     * @param int   $serveNodes   Required. The number of nodes allocated to this cluster. More nodes enable
-     *                            higher throughput and more consistent performance.
      * @param array $optionalArgs {
      *     Optional.
      *
@@ -1425,6 +1520,11 @@ class BigtableInstanceAdminGapicClient
      *     @type int $state
      *           The current state of the cluster.
      *           For allowed values, use constants defined on {@see \Google\Cloud\Bigtable\Admin\V2\Cluster\State}
+     *     @type int $serveNodes
+     *           The number of nodes allocated to this cluster. More nodes enable higher
+     *           throughput and more consistent performance.
+     *     @type ClusterConfig $clusterConfig
+     *           Configuration for this cluster.
      *     @type int $defaultStorageType
      *           (`CreationOnly`)
      *           The type of storage used by this cluster to serve its
@@ -1443,11 +1543,10 @@ class BigtableInstanceAdminGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function updateCluster($serveNodes, array $optionalArgs = [])
+    public function updateCluster(array $optionalArgs = [])
     {
         $request = new Cluster();
         $requestParamHeaders = [];
-        $request->setServeNodes($serveNodes);
         if (isset($optionalArgs['name'])) {
             $request->setName($optionalArgs['name']);
             $requestParamHeaders['name'] = $optionalArgs['name'];
@@ -1459,6 +1558,14 @@ class BigtableInstanceAdminGapicClient
 
         if (isset($optionalArgs['state'])) {
             $request->setState($optionalArgs['state']);
+        }
+
+        if (isset($optionalArgs['serveNodes'])) {
+            $request->setServeNodes($optionalArgs['serveNodes']);
+        }
+
+        if (isset($optionalArgs['clusterConfig'])) {
+            $request->setClusterConfig($optionalArgs['clusterConfig']);
         }
 
         if (isset($optionalArgs['defaultStorageType'])) {

@@ -215,6 +215,10 @@ export class BigtableInstanceAdminClient {
       '.google.bigtable.admin.v2.Cluster') as gax.protobuf.Type;
     const updateClusterMetadata = protoFilesRoot.lookup(
       '.google.bigtable.admin.v2.UpdateClusterMetadata') as gax.protobuf.Type;
+    const partialUpdateClusterResponse = protoFilesRoot.lookup(
+      '.google.bigtable.admin.v2.Cluster') as gax.protobuf.Type;
+    const partialUpdateClusterMetadata = protoFilesRoot.lookup(
+      '.google.bigtable.admin.v2.PartialUpdateClusterMetadata') as gax.protobuf.Type;
     const updateAppProfileResponse = protoFilesRoot.lookup(
       '.google.bigtable.admin.v2.AppProfile') as gax.protobuf.Type;
     const updateAppProfileMetadata = protoFilesRoot.lookup(
@@ -237,6 +241,10 @@ export class BigtableInstanceAdminClient {
         this.operationsClient,
         updateClusterResponse.decode.bind(updateClusterResponse),
         updateClusterMetadata.decode.bind(updateClusterMetadata)),
+      partialUpdateCluster: new this._gaxModule.LongrunningDescriptor(
+        this.operationsClient,
+        partialUpdateClusterResponse.decode.bind(partialUpdateClusterResponse),
+        partialUpdateClusterMetadata.decode.bind(partialUpdateClusterMetadata)),
       updateAppProfile: new this._gaxModule.LongrunningDescriptor(
         this.operationsClient,
         updateAppProfileResponse.decode.bind(updateAppProfileResponse),
@@ -286,7 +294,7 @@ export class BigtableInstanceAdminClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const bigtableInstanceAdminStubMethods =
-        ['createInstance', 'getInstance', 'listInstances', 'updateInstance', 'partialUpdateInstance', 'deleteInstance', 'createCluster', 'getCluster', 'listClusters', 'updateCluster', 'deleteCluster', 'createAppProfile', 'getAppProfile', 'listAppProfiles', 'updateAppProfile', 'deleteAppProfile', 'getIamPolicy', 'setIamPolicy', 'testIamPermissions'];
+        ['createInstance', 'getInstance', 'listInstances', 'updateInstance', 'partialUpdateInstance', 'deleteInstance', 'createCluster', 'getCluster', 'listClusters', 'updateCluster', 'partialUpdateCluster', 'deleteCluster', 'createAppProfile', 'getAppProfile', 'listAppProfiles', 'updateAppProfile', 'deleteAppProfile', 'getIamPolicy', 'setIamPolicy', 'testIamPermissions'];
     for (const methodName of bigtableInstanceAdminStubMethods) {
       const callPromise = this.bigtableInstanceAdminStub.then(
         stub => (...args: Array<{}>) => {
@@ -1376,6 +1384,12 @@ export class BigtableInstanceAdminClient {
 /**
  * Create an instance within a project.
  *
+ * Note that exactly one of Cluster.serve_nodes and
+ * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+ * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+ * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+ * enabled.
+ *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
@@ -1576,6 +1590,12 @@ export class BigtableInstanceAdminClient {
 /**
  * Creates a cluster within an instance.
  *
+ * Note that exactly one of Cluster.serve_nodes and
+ * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+ * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+ * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+ * enabled.
+ *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
@@ -1676,6 +1696,10 @@ export class BigtableInstanceAdminClient {
 /**
  * Updates a cluster within an instance.
  *
+ * Note that UpdateCluster does not support updating
+ * cluster_config.cluster_autoscaling_config. In order to update it, you
+ * must use PartialUpdateCluster.
+ *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
@@ -1690,8 +1714,10 @@ export class BigtableInstanceAdminClient {
  * @param {google.bigtable.admin.v2.Cluster.State} request.state
  *   The current state of the cluster.
  * @param {number} request.serveNodes
- *   Required. The number of nodes allocated to this cluster. More nodes enable
- *   higher throughput and more consistent performance.
+ *   The number of nodes allocated to this cluster. More nodes enable higher
+ *   throughput and more consistent performance.
+ * @param {google.bigtable.admin.v2.Cluster.ClusterConfig} request.clusterConfig
+ *   Configuration for this cluster.
  * @param {google.bigtable.admin.v2.StorageType} request.defaultStorageType
  *   (`CreationOnly`)
  *   The type of storage used by this cluster to serve its
@@ -1781,6 +1807,111 @@ export class BigtableInstanceAdminClient {
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.updateCluster, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.UpdateClusterMetadata>;
+  }
+/**
+ * Partially updates a cluster within a project. This method is the preferred
+ * way to update a Cluster.
+ *
+ * To enable and update autoscaling, set
+ * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+ * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+ * are ignored. Note that an update cannot simultaneously set serve_nodes to
+ * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+ * also specify both in the update_mask.
+ *
+ * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+ * and explicitly set a serve_node count via the update_mask.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.bigtable.admin.v2.Cluster} request.cluster
+ *   Required. The Cluster which contains the partial updates to be applied, subject to
+ *   the update_mask.
+ * @param {google.protobuf.FieldMask} request.updateMask
+ *   Required. The subset of Cluster fields which should be replaced.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.partial_update_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_PartialUpdateCluster_async
+ */
+  partialUpdateCluster(
+      request?: protos.google.bigtable.admin.v2.IPartialUpdateClusterRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IPartialUpdateClusterMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  partialUpdateCluster(
+      request: protos.google.bigtable.admin.v2.IPartialUpdateClusterRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IPartialUpdateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  partialUpdateCluster(
+      request: protos.google.bigtable.admin.v2.IPartialUpdateClusterRequest,
+      callback: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IPartialUpdateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  partialUpdateCluster(
+      request?: protos.google.bigtable.admin.v2.IPartialUpdateClusterRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IPartialUpdateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IPartialUpdateClusterMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.bigtable.admin.v2.ICluster, protos.google.bigtable.admin.v2.IPartialUpdateClusterMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'cluster.name': request.cluster!.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.partialUpdateCluster(request, options, callback);
+  }
+/**
+ * Check the status of the long running operation returned by `partialUpdateCluster()`.
+ * @param {String} name
+ *   The operation name that will be passed.
+ * @returns {Promise} - The promise which resolves to an object.
+ *   The decoded operation object has result and metadata field to get information from.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v2/bigtable_instance_admin.partial_update_cluster.js</caption>
+ * region_tag:bigtableadmin_v2_generated_BigtableInstanceAdmin_PartialUpdateCluster_async
+ */
+  async checkPartialUpdateClusterProgress(name: string): Promise<LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.PartialUpdateClusterMetadata>>{
+    const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
+    const [operation] = await this.operationsClient.getOperation(request);
+    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.partialUpdateCluster, gax.createDefaultBackoffSettings());
+    return decodeOperation as LROperation<protos.google.bigtable.admin.v2.Cluster, protos.google.bigtable.admin.v2.PartialUpdateClusterMetadata>;
   }
 /**
  * Updates an app profile within an instance.

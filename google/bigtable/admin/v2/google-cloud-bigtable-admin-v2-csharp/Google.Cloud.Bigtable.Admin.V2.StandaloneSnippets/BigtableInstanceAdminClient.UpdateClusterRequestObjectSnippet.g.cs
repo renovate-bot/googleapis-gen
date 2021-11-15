@@ -40,6 +40,7 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
                 ServeNodes = 0,
                 DefaultStorageType = StorageType.Unspecified,
                 EncryptionConfig = new Cluster.Types.EncryptionConfig(),
+                ClusterConfig = new Cluster.Types.ClusterConfig(),
             };
             // Make the request
             Operation<Cluster, UpdateClusterMetadata> response = bigtableInstanceAdminClient.UpdateCluster(request);
