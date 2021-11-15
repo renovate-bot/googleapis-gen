@@ -21,12 +21,12 @@ require "google/cloud/ids/v1/version"
 
 module Google
   module Cloud
-    module Ids
+    module IDS
       ##
       # To load this package, including all its services, and instantiate a client:
       #
       #     require "google/cloud/ids/v1"
-      #     client = ::Google::Cloud::Ids::V1::IDS::Client.new
+      #     client = ::Google::Cloud::IDS::V1::IDS::Client.new
       #
       module V1
       end

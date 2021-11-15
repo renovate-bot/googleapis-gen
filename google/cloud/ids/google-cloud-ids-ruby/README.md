@@ -1,47 +1,38 @@
-# Ruby Client for the Cloud IDS V1 API
+# Ruby Client for the Cloud IDS API
 
-API Client library for the Cloud IDS V1 API
+API Client library for the Cloud IDS API
 
 Cloud IDS is an intrusion detection service that provides threat detection for intrusions, malware, spyware, and command-and-control attacks on your network. Cloud IDS works by creating a Google-managed peered network with mirrored VMs. Traffic in the peered network is mirrored, and then inspected by Palo Alto Networks threat protection technologies to provide advanced threat detection. You can mirror all traffic or you can mirror filtered traffic, based on protocol, IP address range, or ingress and egress.
 
-https://github.com/googleapis/google-cloud-ruby
+Actual client classes for the various versions of this API are defined in
+_versioned_ client gems, with names of the form `google-cloud-ids-v*`.
+The gem `google-cloud-ids` is the main client library that brings the
+verisoned gems in as dependencies, and provides high-level methods for
+constructing clients. More information on versioned clients can be found below
+in the section titled *Which client should I use?*.
 
-This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Cloud IDS V1 API. Most users should consider using
-the main client gem,
-[google-cloud-ids](https://rubygems.org/gems/google-cloud-ids).
-See the section below titled *Which client should I use?* for more information.
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-ids/latest)
+for this library, google-cloud-ids, to see the convenience methods for
+constructing client objects. Reference documentation for the client objects
+themselves can be found in the client library documentation for the versioned
+client gems:
+[google-cloud-ids-v1](https://googleapis.dev/ruby/google-cloud-ids-v1/latest).
 
-## Installation
+See also the [Product Documentation](https://cloud.google.com/intrusion-detection-system/)
+for more usage information.
+
+## Quick Start
 
 ```
-$ gem install google-cloud-ids-v1
+$ gem install google-cloud-ids
 ```
-
-## Before You Begin
 
 In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
 1. [Enable the API.](https://console.cloud.google.com/apis/library/ids.googleapis.com)
-1. [Set up authentication.](AUTHENTICATION.md)
-
-## Quick Start
-
-```ruby
-require "google/cloud/ids/v1"
-
-client = ::Google::Cloud::IDS::V1::IDS::Client.new
-request = ::Google::Cloud::IDS::V1::ListEndpointsRequest.new # (request fields as keyword arguments...)
-response = client.list_endpoints request
-```
-
-View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-ids-v1/latest)
-for class and method documentation.
-
-See also the [Product Documentation](https://cloud.google.com/intrusion-detection-system/)
-for general usage information.
+1. {file:AUTHENTICATION.md Set up authentication.}
 
 ## Enabling Logging
 

@@ -1,12 +1,11 @@
 --no-private
---title=Cloud IDS V1 API
+--title=Cloud IDS API
 --exclude _pb\.rb$
 --format yaml
 --template-path ../template
 
 ./lib/**/*.rb
-./proto_docs/**/*.rb
 -
 README.md
-LICENSE.md
 AUTHENTICATION.md
+LICENSE.md

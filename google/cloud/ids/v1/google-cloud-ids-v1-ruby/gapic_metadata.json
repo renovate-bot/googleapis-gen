@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.ids.v1",
-  "libraryPackage": "::Google::Cloud::Ids::V1",
+  "libraryPackage": "::Google::Cloud::IDS::V1",
   "services": {
     "IDS": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Ids::V1::IDS::Client",
+          "libraryClient": "::Google::Cloud::IDS::V1::IDS::Client",
           "rpcs": {
             "ListEndpoints": {
               "methods": [

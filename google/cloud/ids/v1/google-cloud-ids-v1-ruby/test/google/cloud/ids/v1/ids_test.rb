@@ -24,7 +24,7 @@ require "google/cloud/ids/v1/ids_pb"
 require "google/cloud/ids/v1/ids_services_pb"
 require "google/cloud/ids/v1/ids"
 
-class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
+class ::Google::Cloud::IDS::V1::IDS::ClientTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -49,7 +49,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
   def test_list_endpoints
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Ids::V1::ListEndpointsResponse.new
+    grpc_response = ::Google::Cloud::IDS::V1::ListEndpointsResponse.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -63,7 +63,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     list_endpoints_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :list_endpoints, name
-      assert_kind_of ::Google::Cloud::Ids::V1::ListEndpointsRequest, request
+      assert_kind_of ::Google::Cloud::IDS::V1::ListEndpointsRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal 42, request["page_size"]
       assert_equal "hello world", request["page_token"]
@@ -74,7 +74,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, list_endpoints_client_stub do
       # Create client
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -93,7 +93,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.list_endpoints ::Google::Cloud::Ids::V1::ListEndpointsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by) do |response, operation|
+      client.list_endpoints ::Google::Cloud::IDS::V1::ListEndpointsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -107,7 +107,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.list_endpoints(::Google::Cloud::Ids::V1::ListEndpointsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
+      client.list_endpoints(::Google::Cloud::IDS::V1::ListEndpointsRequest.new(parent: parent, page_size: page_size, page_token: page_token, filter: filter, order_by: order_by), grpc_options) do |response, operation|
         assert_kind_of Gapic::PagedEnumerable, response
         assert_equal grpc_response, response.response
         assert_equal grpc_operation, operation
@@ -120,7 +120,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
   def test_get_endpoint
     # Create GRPC objects.
-    grpc_response = ::Google::Cloud::Ids::V1::Endpoint.new
+    grpc_response = ::Google::Cloud::IDS::V1::Endpoint.new
     grpc_operation = GRPC::ActiveCall::Operation.new nil
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     grpc_options = {}
@@ -130,14 +130,14 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     get_endpoint_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_endpoint, name
-      assert_kind_of ::Google::Cloud::Ids::V1::GetEndpointRequest, request
+      assert_kind_of ::Google::Cloud::IDS::V1::GetEndpointRequest, request
       assert_equal "hello world", request["name"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, get_endpoint_client_stub do
       # Create client
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -154,7 +154,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.get_endpoint ::Google::Cloud::Ids::V1::GetEndpointRequest.new(name: name) do |response, operation|
+      client.get_endpoint ::Google::Cloud::IDS::V1::GetEndpointRequest.new(name: name) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -166,7 +166,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.get_endpoint(::Google::Cloud::Ids::V1::GetEndpointRequest.new(name: name), grpc_options) do |response, operation|
+      client.get_endpoint(::Google::Cloud::IDS::V1::GetEndpointRequest.new(name: name), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -191,17 +191,17 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     create_endpoint_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_endpoint, name
-      assert_kind_of ::Google::Cloud::Ids::V1::CreateEndpointRequest, request
+      assert_kind_of ::Google::Cloud::IDS::V1::CreateEndpointRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal "hello world", request["endpoint_id"]
-      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Ids::V1::Endpoint), request["endpoint"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::IDS::V1::Endpoint), request["endpoint"]
       assert_equal "hello world", request["request_id"]
       refute_nil options
     end
 
     Gapic::ServiceStub.stub :new, create_endpoint_client_stub do
       # Create client
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -220,7 +220,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.create_endpoint ::Google::Cloud::Ids::V1::CreateEndpointRequest.new(parent: parent, endpoint_id: endpoint_id, endpoint: endpoint, request_id: request_id) do |response, operation|
+      client.create_endpoint ::Google::Cloud::IDS::V1::CreateEndpointRequest.new(parent: parent, endpoint_id: endpoint_id, endpoint: endpoint, request_id: request_id) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -234,7 +234,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.create_endpoint(::Google::Cloud::Ids::V1::CreateEndpointRequest.new(parent: parent, endpoint_id: endpoint_id, endpoint: endpoint, request_id: request_id), grpc_options) do |response, operation|
+      client.create_endpoint(::Google::Cloud::IDS::V1::CreateEndpointRequest.new(parent: parent, endpoint_id: endpoint_id, endpoint: endpoint, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -258,7 +258,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     delete_endpoint_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :delete_endpoint, name
-      assert_kind_of ::Google::Cloud::Ids::V1::DeleteEndpointRequest, request
+      assert_kind_of ::Google::Cloud::IDS::V1::DeleteEndpointRequest, request
       assert_equal "hello world", request["name"]
       assert_equal "hello world", request["request_id"]
       refute_nil options
@@ -266,7 +266,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     Gapic::ServiceStub.stub :new, delete_endpoint_client_stub do
       # Create client
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -285,7 +285,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object
-      client.delete_endpoint ::Google::Cloud::Ids::V1::DeleteEndpointRequest.new(name: name, request_id: request_id) do |response, operation|
+      client.delete_endpoint ::Google::Cloud::IDS::V1::DeleteEndpointRequest.new(name: name, request_id: request_id) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -299,7 +299,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
       end
 
       # Use protobuf object with options
-      client.delete_endpoint(::Google::Cloud::Ids::V1::DeleteEndpointRequest.new(name: name, request_id: request_id), grpc_options) do |response, operation|
+      client.delete_endpoint(::Google::Cloud::IDS::V1::DeleteEndpointRequest.new(name: name, request_id: request_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
@@ -315,7 +315,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -325,7 +325,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::Ids::V1::IDS::Client::Configuration, config
+    assert_kind_of ::Google::Cloud::IDS::V1::IDS::Client::Configuration, config
   end
 
   def test_operations_client
@@ -333,11 +333,11 @@ class ::Google::Cloud::Ids::V1::IDS::ClientTest < Minitest::Test
 
     client = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
     end
 
-    assert_kind_of ::Google::Cloud::Ids::V1::IDS::Operations, client.operations_client
+    assert_kind_of ::Google::Cloud::IDS::V1::IDS::Operations, client.operations_client
   end
 end

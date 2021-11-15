@@ -20,14 +20,14 @@
 require "google/cloud/ids/v1"
 
 # Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Ids::V1::IDS::Client.new
+client = Google::Cloud::IDS::V1::IDS::Client.new
 
 # Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Ids::V1::GetEndpointRequest.new
+request = Google::Cloud::IDS::V1::GetEndpointRequest.new
 
 # Call the get_endpoint method.
 result = client.get_endpoint request
 
-# The returned object is of type Google::Cloud::Ids::V1::Endpoint.
+# The returned object is of type Google::Cloud::IDS::V1::Endpoint.
 p result
 # [END ids_v1_generated_IDS_GetEndpoint_sync]

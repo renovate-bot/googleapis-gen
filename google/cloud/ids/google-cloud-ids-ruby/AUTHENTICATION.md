@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-ids-v1 library uses
+In general, the google-cloud-ids library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -25,14 +25,14 @@ export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 3. Initialize the client.
 
 ```ruby
-require "google/cloud/ids/v1"
+require "google/cloud/ids"
 
-client = ::Google::Cloud::IDS::V1::IDS::Client.new
+client = Google::Cloud::IDS.ids
 ```
 
 ## Credential Lookup
 
-The google-cloud-ids-v1 library aims to make authentication
+The google-cloud-ids library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,20 +62,20 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-ids-v1
+The environment variables that google-cloud-ids
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::IDS::V1::IDS::Credentials}):
+`::Google::Cloud::IDS::V1::IDS::Credentials`):
 
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
 
 ```ruby
-require "google/cloud/ids/v1"
+require "google/cloud/ids"
 
 ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::IDS::V1::IDS::Client.new
+client = Google::Cloud::IDS.ids
 ```
 
 ### Configuration
@@ -84,9 +84,9 @@ The path to the **Credentials JSON** file can be configured instead of storing
 it in an environment variable. Either on an individual client initialization:
 
 ```ruby
-require "google/cloud/ids/v1"
+require "google/cloud/ids"
 
-client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
+client = Google::Cloud::IDS.ids do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -94,13 +94,13 @@ end
 Or globally for all clients:
 
 ```ruby
-require "google/cloud/ids/v1"
+require "google/cloud/ids"
 
-::Google::Cloud::IDS::V1::IDS::Client.configure do |config|
+Google::Cloud::IDS.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::IDS::V1::IDS::Client.new
+client = Google::Cloud::IDS.ids
 ```
 
 ### Cloud SDK
@@ -131,7 +131,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-ids-v1.
+connect to most services with google-cloud-ids.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

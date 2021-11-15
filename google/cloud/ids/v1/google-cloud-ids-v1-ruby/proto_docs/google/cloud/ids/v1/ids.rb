@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Ids
+    module IDS
       module V1
         # Endpoint describes a single IDS endpoint. It defines a forwarding rule to
         # which packets can be sent for IDS inspection.
@@ -49,10 +49,10 @@ module Google
         #   @return [::String]
         #     User-provided description of the endpoint
         # @!attribute [rw] severity
-        #   @return [::Google::Cloud::Ids::V1::Endpoint::Severity]
+        #   @return [::Google::Cloud::IDS::V1::Endpoint::Severity]
         #     Required. Lowest threat severity that this endpoint will alert on.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Ids::V1::Endpoint::State]
+        #   @return [::Google::Cloud::IDS::V1::Endpoint::State]
         #     Output only. Current state of the endpoint.
         # @!attribute [rw] traffic_logs
         #   @return [::Boolean]
@@ -135,7 +135,7 @@ module Google
         end
 
         # @!attribute [rw] endpoints
-        #   @return [::Array<::Google::Cloud::Ids::V1::Endpoint>]
+        #   @return [::Array<::Google::Cloud::IDS::V1::Endpoint>]
         #     The list of endpoints response.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -170,7 +170,7 @@ module Google
         #     Values that do not match this pattern will trigger an INVALID_ARGUMENT
         #     error.
         # @!attribute [rw] endpoint
-        #   @return [::Google::Cloud::Ids::V1::Endpoint]
+        #   @return [::Google::Cloud::IDS::V1::Endpoint]
         #     Required. The endpoint to create.
         # @!attribute [rw] request_id
         #   @return [::String]

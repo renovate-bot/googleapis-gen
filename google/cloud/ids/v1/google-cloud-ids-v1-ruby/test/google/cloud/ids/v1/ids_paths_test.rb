@@ -22,11 +22,11 @@ require "gapic/grpc/service_stub"
 
 require "google/cloud/ids/v1/ids"
 
-class ::Google::Cloud::Ids::V1::IDS::ClientPathsTest < Minitest::Test
+class ::Google::Cloud::IDS::V1::IDS::ClientPathsTest < Minitest::Test
   def test_endpoint_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -38,7 +38,7 @@ class ::Google::Cloud::Ids::V1::IDS::ClientPathsTest < Minitest::Test
   def test_location_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+      client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
         config.credentials = grpc_channel
       end
 

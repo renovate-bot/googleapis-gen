@@ -5,12 +5,12 @@ require File.expand_path("lib/google/cloud/ids/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
   gem.name          = "google-cloud-ids-v1"
-  gem.version       = Google::Cloud::Ids::V1::VERSION
+  gem.version       = Google::Cloud::IDS::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-ids-v1 is the official client library for the Google Cloud Ids V1 API. Note that google-cloud-ids-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-ids instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Ids V1 API"
+  gem.description   = "Cloud IDS is an intrusion detection service that provides threat detection for intrusions, malware, spyware, and command-and-control attacks on your network. Cloud IDS works by creating a Google-managed peered network with mirrored VMs. Traffic in the peered network is mirrored, and then inspected by Palo Alto Networks threat protection technologies to provide advanced threat detection. You can mirror all traffic or you can mirror filtered traffic, based on protocol, IP address range, or ingress and egress. Note that google-cloud-ids-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-ids instead. See the readme for more details."
+  gem.summary       = "API Client library for the Cloud IDS V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

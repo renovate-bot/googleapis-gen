@@ -21,7 +21,7 @@ require "google/cloud/ids/v1/ids_pb"
 
 module Google
   module Cloud
-    module Ids
+    module IDS
       module V1
         module IDS
           ##
@@ -38,13 +38,13 @@ module Google
             ##
             # Configure the IDS Client class.
             #
-            # See {::Google::Cloud::Ids::V1::IDS::Client::Configuration}
+            # See {::Google::Cloud::IDS::V1::IDS::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @example
             #
             #   # Modify the configuration for all IDS clients
-            #   ::Google::Cloud::Ids::V1::IDS::Client.configure do |config|
+            #   ::Google::Cloud::IDS::V1::IDS::Client.configure do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -55,7 +55,7 @@ module Google
             #
             def self.configure
               @configure ||= begin
-                namespace = ["Google", "Cloud", "Ids", "V1"]
+                namespace = ["Google", "Cloud", "IDS", "V1"]
                 parent_config = while namespace.any?
                                   parent_name = namespace.join "::"
                                   parent_const = const_get parent_name
@@ -91,7 +91,7 @@ module Google
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::Ids::V1::IDS::Client::Configuration}
+            # See {::Google::Cloud::IDS::V1::IDS::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -110,10 +110,10 @@ module Google
             # @example
             #
             #   # Create a client using the default configuration
-            #   client = ::Google::Cloud::Ids::V1::IDS::Client.new
+            #   client = ::Google::Cloud::IDS::V1::IDS::Client.new
             #
             #   # Create a client using a custom configuration
-            #   client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+            #   client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -153,7 +153,7 @@ module Google
               end
 
               @ids_stub = ::Gapic::ServiceStub.new(
-                ::Google::Cloud::Ids::V1::IDS::Stub,
+                ::Google::Cloud::IDS::V1::IDS::Stub,
                 credentials:  credentials,
                 endpoint:     @config.endpoint,
                 channel_args: @config.channel_args,
@@ -164,7 +164,7 @@ module Google
             ##
             # Get the associated client for long-running operations.
             #
-            # @return [::Google::Cloud::Ids::V1::IDS::Operations]
+            # @return [::Google::Cloud::IDS::V1::IDS::Operations]
             #
             attr_reader :operations_client
 
@@ -175,9 +175,9 @@ module Google
             #
             # @overload list_endpoints(request, options = nil)
             #   Pass arguments to `list_endpoints` via a request object, either of type
-            #   {::Google::Cloud::Ids::V1::ListEndpointsRequest} or an equivalent Hash.
+            #   {::Google::Cloud::IDS::V1::ListEndpointsRequest} or an equivalent Hash.
             #
-            #   @param request [::Google::Cloud::Ids::V1::ListEndpointsRequest, ::Hash]
+            #   @param request [::Google::Cloud::IDS::V1::ListEndpointsRequest, ::Hash]
             #     A request object representing the call parameters. Required. To specify no
             #     parameters, or to keep all the default parameter values, pass an empty Hash.
             #   @param options [::Gapic::CallOptions, ::Hash]
@@ -207,10 +207,10 @@ module Google
             #     See https://google.aip.dev/132#ordering.
             #
             # @yield [response, operation] Access the result along with the RPC operation
-            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::Ids::V1::Endpoint>]
+            # @yieldparam response [::Gapic::PagedEnumerable<::Google::Cloud::IDS::V1::Endpoint>]
             # @yieldparam operation [::GRPC::ActiveCall::Operation]
             #
-            # @return [::Gapic::PagedEnumerable<::Google::Cloud::Ids::V1::Endpoint>]
+            # @return [::Gapic::PagedEnumerable<::Google::Cloud::IDS::V1::Endpoint>]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
@@ -218,10 +218,10 @@ module Google
             #   require "google/cloud/ids/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::Ids::V1::IDS::Client.new
+            #   client = Google::Cloud::IDS::V1::IDS::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
-            #   request = Google::Cloud::Ids::V1::ListEndpointsRequest.new
+            #   request = Google::Cloud::IDS::V1::ListEndpointsRequest.new
             #
             #   # Call the list_endpoints method.
             #   result = client.list_endpoints request
@@ -231,14 +231,14 @@ module Google
             #   # will lazily make API calls to fetch subsequent pages. Other
             #   # methods are also available for managing paging directly.
             #   result.each do |response|
-            #     # Each element is of type ::Google::Cloud::Ids::V1::Endpoint.
+            #     # Each element is of type ::Google::Cloud::IDS::V1::Endpoint.
             #     p response
             #   end
             #
             def list_endpoints request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
-              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Ids::V1::ListEndpointsRequest
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::IDS::V1::ListEndpointsRequest
 
               # Converts hash and nil to an options object
               options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -249,7 +249,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Ids::V1::VERSION
+                gapic_version: ::Google::Cloud::IDS::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -282,9 +282,9 @@ module Google
             #
             # @overload get_endpoint(request, options = nil)
             #   Pass arguments to `get_endpoint` via a request object, either of type
-            #   {::Google::Cloud::Ids::V1::GetEndpointRequest} or an equivalent Hash.
+            #   {::Google::Cloud::IDS::V1::GetEndpointRequest} or an equivalent Hash.
             #
-            #   @param request [::Google::Cloud::Ids::V1::GetEndpointRequest, ::Hash]
+            #   @param request [::Google::Cloud::IDS::V1::GetEndpointRequest, ::Hash]
             #     A request object representing the call parameters. Required. To specify no
             #     parameters, or to keep all the default parameter values, pass an empty Hash.
             #   @param options [::Gapic::CallOptions, ::Hash]
@@ -300,10 +300,10 @@ module Google
             #     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
-            # @yieldparam response [::Google::Cloud::Ids::V1::Endpoint]
+            # @yieldparam response [::Google::Cloud::IDS::V1::Endpoint]
             # @yieldparam operation [::GRPC::ActiveCall::Operation]
             #
-            # @return [::Google::Cloud::Ids::V1::Endpoint]
+            # @return [::Google::Cloud::IDS::V1::Endpoint]
             #
             # @raise [::Google::Cloud::Error] if the RPC is aborted.
             #
@@ -311,21 +311,21 @@ module Google
             #   require "google/cloud/ids/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::Ids::V1::IDS::Client.new
+            #   client = Google::Cloud::IDS::V1::IDS::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
-            #   request = Google::Cloud::Ids::V1::GetEndpointRequest.new
+            #   request = Google::Cloud::IDS::V1::GetEndpointRequest.new
             #
             #   # Call the get_endpoint method.
             #   result = client.get_endpoint request
             #
-            #   # The returned object is of type Google::Cloud::Ids::V1::Endpoint.
+            #   # The returned object is of type Google::Cloud::IDS::V1::Endpoint.
             #   p result
             #
             def get_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
-              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Ids::V1::GetEndpointRequest
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::IDS::V1::GetEndpointRequest
 
               # Converts hash and nil to an options object
               options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -336,7 +336,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Ids::V1::VERSION
+                gapic_version: ::Google::Cloud::IDS::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -368,9 +368,9 @@ module Google
             #
             # @overload create_endpoint(request, options = nil)
             #   Pass arguments to `create_endpoint` via a request object, either of type
-            #   {::Google::Cloud::Ids::V1::CreateEndpointRequest} or an equivalent Hash.
+            #   {::Google::Cloud::IDS::V1::CreateEndpointRequest} or an equivalent Hash.
             #
-            #   @param request [::Google::Cloud::Ids::V1::CreateEndpointRequest, ::Hash]
+            #   @param request [::Google::Cloud::IDS::V1::CreateEndpointRequest, ::Hash]
             #     A request object representing the call parameters. Required. To specify no
             #     parameters, or to keep all the default parameter values, pass an empty Hash.
             #   @param options [::Gapic::CallOptions, ::Hash]
@@ -390,7 +390,7 @@ module Google
             #     lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
             #     Values that do not match this pattern will trigger an INVALID_ARGUMENT
             #     error.
-            #   @param endpoint [::Google::Cloud::Ids::V1::Endpoint, ::Hash]
+            #   @param endpoint [::Google::Cloud::IDS::V1::Endpoint, ::Hash]
             #     Required. The endpoint to create.
             #   @param request_id [::String]
             #     An optional request ID to identify requests. Specify a unique request ID
@@ -419,10 +419,10 @@ module Google
             #   require "google/cloud/ids/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::Ids::V1::IDS::Client.new
+            #   client = Google::Cloud::IDS::V1::IDS::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
-            #   request = Google::Cloud::Ids::V1::CreateEndpointRequest.new
+            #   request = Google::Cloud::IDS::V1::CreateEndpointRequest.new
             #
             #   # Call the create_endpoint method.
             #   result = client.create_endpoint request
@@ -440,7 +440,7 @@ module Google
             def create_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
-              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Ids::V1::CreateEndpointRequest
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::IDS::V1::CreateEndpointRequest
 
               # Converts hash and nil to an options object
               options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -451,7 +451,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Ids::V1::VERSION
+                gapic_version: ::Google::Cloud::IDS::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -484,9 +484,9 @@ module Google
             #
             # @overload delete_endpoint(request, options = nil)
             #   Pass arguments to `delete_endpoint` via a request object, either of type
-            #   {::Google::Cloud::Ids::V1::DeleteEndpointRequest} or an equivalent Hash.
+            #   {::Google::Cloud::IDS::V1::DeleteEndpointRequest} or an equivalent Hash.
             #
-            #   @param request [::Google::Cloud::Ids::V1::DeleteEndpointRequest, ::Hash]
+            #   @param request [::Google::Cloud::IDS::V1::DeleteEndpointRequest, ::Hash]
             #     A request object representing the call parameters. Required. To specify no
             #     parameters, or to keep all the default parameter values, pass an empty Hash.
             #   @param options [::Gapic::CallOptions, ::Hash]
@@ -526,10 +526,10 @@ module Google
             #   require "google/cloud/ids/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::Ids::V1::IDS::Client.new
+            #   client = Google::Cloud::IDS::V1::IDS::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
-            #   request = Google::Cloud::Ids::V1::DeleteEndpointRequest.new
+            #   request = Google::Cloud::IDS::V1::DeleteEndpointRequest.new
             #
             #   # Call the delete_endpoint method.
             #   result = client.delete_endpoint request
@@ -547,7 +547,7 @@ module Google
             def delete_endpoint request, options = nil
               raise ::ArgumentError, "request must be provided" if request.nil?
 
-              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Ids::V1::DeleteEndpointRequest
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::IDS::V1::DeleteEndpointRequest
 
               # Converts hash and nil to an options object
               options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
@@ -558,7 +558,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Ids::V1::VERSION
+                gapic_version: ::Google::Cloud::IDS::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -593,7 +593,7 @@ module Google
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::Ids::V1::IDS::Client::Configuration::Rpcs}
+            # {::Google::Cloud::IDS::V1::IDS::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -604,13 +604,13 @@ module Google
             #   # Modify the global config, setting the timeout for
             #   # list_endpoints to 20 seconds,
             #   # and all remaining timeouts to 10 seconds.
-            #   ::Google::Cloud::Ids::V1::IDS::Client.configure do |config|
+            #   ::Google::Cloud::IDS::V1::IDS::Client.configure do |config|
             #     config.timeout = 10.0
             #     config.rpcs.list_endpoints.timeout = 20.0
             #   end
             #
             #   # Apply the above configuration only to a new client.
-            #   client = ::Google::Cloud::Ids::V1::IDS::Client.new do |config|
+            #   client = ::Google::Cloud::IDS::V1::IDS::Client.new do |config|
             #     config.timeout = 10.0
             #     config.rpcs.list_endpoints.timeout = 20.0
             #   end

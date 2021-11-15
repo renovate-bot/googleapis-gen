@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Ids
+    module IDS
       module V1
         module IDS
           # Path helper methods for the IDS API.

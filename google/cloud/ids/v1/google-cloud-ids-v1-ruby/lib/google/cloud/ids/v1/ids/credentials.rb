@@ -20,7 +20,7 @@ require "googleauth"
 
 module Google
   module Cloud
-    module Ids
+    module IDS
       module V1
         module IDS
           # Credentials for the IDS API.

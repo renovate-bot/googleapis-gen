@@ -20,10 +20,10 @@
 require "google/cloud/ids/v1"
 
 # Create a client object. The client can be reused for multiple calls.
-client = Google::Cloud::Ids::V1::IDS::Client.new
+client = Google::Cloud::IDS::V1::IDS::Client.new
 
 # Create a request. To set request fields, pass in keyword arguments.
-request = Google::Cloud::Ids::V1::DeleteEndpointRequest.new
+request = Google::Cloud::IDS::V1::DeleteEndpointRequest.new
 
 # Call the delete_endpoint method.
 result = client.delete_endpoint request

@@ -78,7 +78,7 @@ end
 
 module Google
   module Cloud
-    module Ids
+    module IDS
       module V1
         Endpoint = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.ids.v1.Endpoint").msgclass
         Endpoint::Severity = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.ids.v1.Endpoint.Severity").enummodule
