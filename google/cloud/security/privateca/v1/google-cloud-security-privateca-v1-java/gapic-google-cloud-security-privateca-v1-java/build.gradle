@@ -28,7 +28,9 @@ dependencies {
   testCompile 'io.grpc:grpc-netty-shaded:1.41.0'
   testCompile 'junit:junit:4.13.2'
   compile project(':proto-google-cloud-security-privateca-v1-java')
+  compile 'com.google.api.grpc:proto-google-iam-v1:1.0.9'
   testCompile project(':grpc-google-cloud-security-privateca-v1-java')
+  testCompile 'com.google.api.grpc:grpc-google-iam-v1:1.0.9'
 }
 
 task smokeTest(type: Test) {
