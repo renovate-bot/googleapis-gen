@@ -29,6 +29,7 @@ require "google/cloud/ai_platform/v1/model_service"
 require "google/cloud/ai_platform/v1/pipeline_service"
 require "google/cloud/ai_platform/v1/prediction_service"
 require "google/cloud/ai_platform/v1/specialist_pool_service"
+require "google/cloud/ai_platform/v1/tensorboard_service"
 require "google/cloud/ai_platform/v1/vizier_service"
 require "google/cloud/ai_platform/v1/version"
 

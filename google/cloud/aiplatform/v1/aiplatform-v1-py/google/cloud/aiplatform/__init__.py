@@ -40,6 +40,8 @@ from google.cloud.aiplatform_v1.services.prediction_service.client import Predic
 from google.cloud.aiplatform_v1.services.prediction_service.async_client import PredictionServiceAsyncClient
 from google.cloud.aiplatform_v1.services.specialist_pool_service.client import SpecialistPoolServiceClient
 from google.cloud.aiplatform_v1.services.specialist_pool_service.async_client import SpecialistPoolServiceAsyncClient
+from google.cloud.aiplatform_v1.services.tensorboard_service.client import TensorboardServiceClient
+from google.cloud.aiplatform_v1.services.tensorboard_service.async_client import TensorboardServiceAsyncClient
 from google.cloud.aiplatform_v1.services.vizier_service.client import VizierServiceClient
 from google.cloud.aiplatform_v1.services.vizier_service.async_client import VizierServiceAsyncClient
 
@@ -375,6 +377,58 @@ from google.cloud.aiplatform_v1.types.study import Measurement
 from google.cloud.aiplatform_v1.types.study import Study
 from google.cloud.aiplatform_v1.types.study import StudySpec
 from google.cloud.aiplatform_v1.types.study import Trial
+from google.cloud.aiplatform_v1.types.tensorboard import Tensorboard
+from google.cloud.aiplatform_v1.types.tensorboard_data import Scalar
+from google.cloud.aiplatform_v1.types.tensorboard_data import TensorboardBlob
+from google.cloud.aiplatform_v1.types.tensorboard_data import TensorboardBlobSequence
+from google.cloud.aiplatform_v1.types.tensorboard_data import TensorboardTensor
+from google.cloud.aiplatform_v1.types.tensorboard_data import TimeSeriesData
+from google.cloud.aiplatform_v1.types.tensorboard_data import TimeSeriesDataPoint
+from google.cloud.aiplatform_v1.types.tensorboard_experiment import TensorboardExperiment
+from google.cloud.aiplatform_v1.types.tensorboard_run import TensorboardRun
+from google.cloud.aiplatform_v1.types.tensorboard_service import BatchCreateTensorboardRunsRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import BatchCreateTensorboardRunsResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import BatchCreateTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import BatchCreateTensorboardTimeSeriesResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import BatchReadTensorboardTimeSeriesDataRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import BatchReadTensorboardTimeSeriesDataResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import CreateTensorboardExperimentRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import CreateTensorboardOperationMetadata
+from google.cloud.aiplatform_v1.types.tensorboard_service import CreateTensorboardRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import CreateTensorboardRunRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import CreateTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import DeleteTensorboardExperimentRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import DeleteTensorboardRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import DeleteTensorboardRunRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import DeleteTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ExportTensorboardTimeSeriesDataRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ExportTensorboardTimeSeriesDataResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import GetTensorboardExperimentRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import GetTensorboardRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import GetTensorboardRunRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import GetTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardExperimentsRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardExperimentsResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardRunsRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardRunsResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardsRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardsResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ListTensorboardTimeSeriesResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import ReadTensorboardBlobDataRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ReadTensorboardBlobDataResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import ReadTensorboardTimeSeriesDataRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import ReadTensorboardTimeSeriesDataResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import UpdateTensorboardExperimentRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import UpdateTensorboardOperationMetadata
+from google.cloud.aiplatform_v1.types.tensorboard_service import UpdateTensorboardRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import UpdateTensorboardRunRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import UpdateTensorboardTimeSeriesRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import WriteTensorboardExperimentDataRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import WriteTensorboardExperimentDataResponse
+from google.cloud.aiplatform_v1.types.tensorboard_service import WriteTensorboardRunDataRequest
+from google.cloud.aiplatform_v1.types.tensorboard_service import WriteTensorboardRunDataResponse
+from google.cloud.aiplatform_v1.types.tensorboard_time_series import TensorboardTimeSeries
 from google.cloud.aiplatform_v1.types.training_pipeline import FilterSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import FractionSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import InputDataConfig
@@ -436,6 +490,8 @@ __all__ = ('DatasetServiceClient',
     'PredictionServiceAsyncClient',
     'SpecialistPoolServiceClient',
     'SpecialistPoolServiceAsyncClient',
+    'TensorboardServiceClient',
+    'TensorboardServiceAsyncClient',
     'VizierServiceClient',
     'VizierServiceAsyncClient',
     'AcceleratorType',
@@ -770,6 +826,58 @@ __all__ = ('DatasetServiceClient',
     'Study',
     'StudySpec',
     'Trial',
+    'Tensorboard',
+    'Scalar',
+    'TensorboardBlob',
+    'TensorboardBlobSequence',
+    'TensorboardTensor',
+    'TimeSeriesData',
+    'TimeSeriesDataPoint',
+    'TensorboardExperiment',
+    'TensorboardRun',
+    'BatchCreateTensorboardRunsRequest',
+    'BatchCreateTensorboardRunsResponse',
+    'BatchCreateTensorboardTimeSeriesRequest',
+    'BatchCreateTensorboardTimeSeriesResponse',
+    'BatchReadTensorboardTimeSeriesDataRequest',
+    'BatchReadTensorboardTimeSeriesDataResponse',
+    'CreateTensorboardExperimentRequest',
+    'CreateTensorboardOperationMetadata',
+    'CreateTensorboardRequest',
+    'CreateTensorboardRunRequest',
+    'CreateTensorboardTimeSeriesRequest',
+    'DeleteTensorboardExperimentRequest',
+    'DeleteTensorboardRequest',
+    'DeleteTensorboardRunRequest',
+    'DeleteTensorboardTimeSeriesRequest',
+    'ExportTensorboardTimeSeriesDataRequest',
+    'ExportTensorboardTimeSeriesDataResponse',
+    'GetTensorboardExperimentRequest',
+    'GetTensorboardRequest',
+    'GetTensorboardRunRequest',
+    'GetTensorboardTimeSeriesRequest',
+    'ListTensorboardExperimentsRequest',
+    'ListTensorboardExperimentsResponse',
+    'ListTensorboardRunsRequest',
+    'ListTensorboardRunsResponse',
+    'ListTensorboardsRequest',
+    'ListTensorboardsResponse',
+    'ListTensorboardTimeSeriesRequest',
+    'ListTensorboardTimeSeriesResponse',
+    'ReadTensorboardBlobDataRequest',
+    'ReadTensorboardBlobDataResponse',
+    'ReadTensorboardTimeSeriesDataRequest',
+    'ReadTensorboardTimeSeriesDataResponse',
+    'UpdateTensorboardExperimentRequest',
+    'UpdateTensorboardOperationMetadata',
+    'UpdateTensorboardRequest',
+    'UpdateTensorboardRunRequest',
+    'UpdateTensorboardTimeSeriesRequest',
+    'WriteTensorboardExperimentDataRequest',
+    'WriteTensorboardExperimentDataResponse',
+    'WriteTensorboardRunDataRequest',
+    'WriteTensorboardRunDataResponse',
+    'TensorboardTimeSeries',
     'FilterSplit',
     'FractionSplit',
     'InputDataConfig',

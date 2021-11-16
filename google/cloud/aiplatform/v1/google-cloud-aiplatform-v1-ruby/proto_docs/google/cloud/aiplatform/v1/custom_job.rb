@@ -158,6 +158,12 @@ module Google
         #       * AIP_MODEL_DIR = `<base_output_directory>/<trial_id>/model/`
         #       * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
         #       * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
+        # @!attribute [rw] tensorboard
+        #   @return [::String]
+        #     Optional. The name of a Vertex AI {::Google::Cloud::AIPlatform::V1::Tensorboard Tensorboard} resource to which this CustomJob
+        #     will upload Tensorboard logs.
+        #     Format:
+        #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
         # @!attribute [rw] enable_web_access
         #   @return [::Boolean]
         #     Optional. Whether you want Vertex AI to enable [interactive shell

@@ -822,6 +822,155 @@
         }
       }
     },
+    "TensorboardService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::AIPlatform::V1::TensorboardService::Client",
+          "rpcs": {
+            "CreateTensorboard": {
+              "methods": [
+                "create_tensorboard"
+              ]
+            },
+            "GetTensorboard": {
+              "methods": [
+                "get_tensorboard"
+              ]
+            },
+            "UpdateTensorboard": {
+              "methods": [
+                "update_tensorboard"
+              ]
+            },
+            "ListTensorboards": {
+              "methods": [
+                "list_tensorboards"
+              ]
+            },
+            "DeleteTensorboard": {
+              "methods": [
+                "delete_tensorboard"
+              ]
+            },
+            "CreateTensorboardExperiment": {
+              "methods": [
+                "create_tensorboard_experiment"
+              ]
+            },
+            "GetTensorboardExperiment": {
+              "methods": [
+                "get_tensorboard_experiment"
+              ]
+            },
+            "UpdateTensorboardExperiment": {
+              "methods": [
+                "update_tensorboard_experiment"
+              ]
+            },
+            "ListTensorboardExperiments": {
+              "methods": [
+                "list_tensorboard_experiments"
+              ]
+            },
+            "DeleteTensorboardExperiment": {
+              "methods": [
+                "delete_tensorboard_experiment"
+              ]
+            },
+            "CreateTensorboardRun": {
+              "methods": [
+                "create_tensorboard_run"
+              ]
+            },
+            "BatchCreateTensorboardRuns": {
+              "methods": [
+                "batch_create_tensorboard_runs"
+              ]
+            },
+            "GetTensorboardRun": {
+              "methods": [
+                "get_tensorboard_run"
+              ]
+            },
+            "UpdateTensorboardRun": {
+              "methods": [
+                "update_tensorboard_run"
+              ]
+            },
+            "ListTensorboardRuns": {
+              "methods": [
+                "list_tensorboard_runs"
+              ]
+            },
+            "DeleteTensorboardRun": {
+              "methods": [
+                "delete_tensorboard_run"
+              ]
+            },
+            "BatchCreateTensorboardTimeSeries": {
+              "methods": [
+                "batch_create_tensorboard_time_series"
+              ]
+            },
+            "CreateTensorboardTimeSeries": {
+              "methods": [
+                "create_tensorboard_time_series"
+              ]
+            },
+            "GetTensorboardTimeSeries": {
+              "methods": [
+                "get_tensorboard_time_series"
+              ]
+            },
+            "UpdateTensorboardTimeSeries": {
+              "methods": [
+                "update_tensorboard_time_series"
+              ]
+            },
+            "ListTensorboardTimeSeries": {
+              "methods": [
+                "list_tensorboard_time_series"
+              ]
+            },
+            "DeleteTensorboardTimeSeries": {
+              "methods": [
+                "delete_tensorboard_time_series"
+              ]
+            },
+            "BatchReadTensorboardTimeSeriesData": {
+              "methods": [
+                "batch_read_tensorboard_time_series_data"
+              ]
+            },
+            "ReadTensorboardTimeSeriesData": {
+              "methods": [
+                "read_tensorboard_time_series_data"
+              ]
+            },
+            "ReadTensorboardBlobData": {
+              "methods": [
+                "read_tensorboard_blob_data"
+              ]
+            },
+            "WriteTensorboardExperimentData": {
+              "methods": [
+                "write_tensorboard_experiment_data"
+              ]
+            },
+            "WriteTensorboardRunData": {
+              "methods": [
+                "write_tensorboard_run_data"
+              ]
+            },
+            "ExportTensorboardTimeSeriesData": {
+              "methods": [
+                "export_tensorboard_time_series_data"
+              ]
+            }
+          }
+        }
+      }
+    },
     "VizierService": {
       "clients": {
         "grpc": {

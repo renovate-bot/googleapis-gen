@@ -93,6 +93,8 @@ class JobServiceAsyncClient:
     parse_model_deployment_monitoring_job_path = staticmethod(JobServiceClient.parse_model_deployment_monitoring_job_path)
     network_path = staticmethod(JobServiceClient.network_path)
     parse_network_path = staticmethod(JobServiceClient.parse_network_path)
+    tensorboard_path = staticmethod(JobServiceClient.tensorboard_path)
+    parse_tensorboard_path = staticmethod(JobServiceClient.parse_tensorboard_path)
     trial_path = staticmethod(JobServiceClient.trial_path)
     parse_trial_path = staticmethod(JobServiceClient.parse_trial_path)
     common_billing_account_path = staticmethod(JobServiceClient.common_billing_account_path)

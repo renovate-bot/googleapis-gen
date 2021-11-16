@@ -211,6 +211,25 @@ module Google
             end
 
             ##
+            # Create a fully-qualified Tensorboard resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+            #
+            # @param project [String]
+            # @param location [String]
+            # @param tensorboard [String]
+            #
+            # @return [::String]
+            def tensorboard_path project:, location:, tensorboard:
+              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+              "projects/#{project}/locations/#{location}/tensorboards/#{tensorboard}"
+            end
+
+            ##
             # Create a fully-qualified Trial resource string.
             #
             # The resource will be in the following format:

@@ -288,6 +288,17 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def tensorboard_path(project: str,location: str,tensorboard: str,) -> str:
+        """Returns a fully-qualified tensorboard string."""
+        return "projects/{project}/locations/{location}/tensorboards/{tensorboard}".format(project=project, location=location, tensorboard=tensorboard, )
+
+    @staticmethod
+    def parse_tensorboard_path(path: str) -> Dict[str,str]:
+        """Parses a tensorboard path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/tensorboards/(?P<tensorboard>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def trial_path(project: str,location: str,study: str,trial: str,) -> str:
         """Returns a fully-qualified trial string."""
         return "projects/{project}/locations/{location}/studies/{study}/trials/{trial}".format(project=project, location=location, study=study, trial=trial, )

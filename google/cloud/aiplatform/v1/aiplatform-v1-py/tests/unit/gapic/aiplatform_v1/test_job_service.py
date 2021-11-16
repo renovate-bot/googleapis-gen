@@ -8957,11 +8957,32 @@ def test_parse_network_path():
     actual = JobServiceClient.parse_network_path(path)
     assert expected == actual
 
-def test_trial_path():
+def test_tensorboard_path():
     project = "oyster"
     location = "nudibranch"
-    study = "cuttlefish"
-    trial = "mussel"
+    tensorboard = "cuttlefish"
+    expected = "projects/{project}/locations/{location}/tensorboards/{tensorboard}".format(project=project, location=location, tensorboard=tensorboard, )
+    actual = JobServiceClient.tensorboard_path(project, location, tensorboard)
+    assert expected == actual
+
+
+def test_parse_tensorboard_path():
+    expected = {
+        "project": "mussel",
+        "location": "winkle",
+        "tensorboard": "nautilus",
+    }
+    path = JobServiceClient.tensorboard_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = JobServiceClient.parse_tensorboard_path(path)
+    assert expected == actual
+
+def test_trial_path():
+    project = "scallop"
+    location = "abalone"
+    study = "squid"
+    trial = "clam"
     expected = "projects/{project}/locations/{location}/studies/{study}/trials/{trial}".format(project=project, location=location, study=study, trial=trial, )
     actual = JobServiceClient.trial_path(project, location, study, trial)
     assert expected == actual
@@ -8969,10 +8990,10 @@ def test_trial_path():
 
 def test_parse_trial_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
-        "study": "scallop",
-        "trial": "abalone",
+        "project": "whelk",
+        "location": "octopus",
+        "study": "oyster",
+        "trial": "nudibranch",
     }
     path = JobServiceClient.trial_path(**expected)
 
@@ -8981,7 +9002,7 @@ def test_parse_trial_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "squid"
+    billing_account = "cuttlefish"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = JobServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -8989,7 +9010,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+        "billing_account": "mussel",
     }
     path = JobServiceClient.common_billing_account_path(**expected)
 
@@ -8998,7 +9019,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "whelk"
+    folder = "winkle"
     expected = "folders/{folder}".format(folder=folder, )
     actual = JobServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -9006,7 +9027,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+        "folder": "nautilus",
     }
     path = JobServiceClient.common_folder_path(**expected)
 
@@ -9015,7 +9036,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "oyster"
+    organization = "scallop"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = JobServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -9023,7 +9044,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+        "organization": "abalone",
     }
     path = JobServiceClient.common_organization_path(**expected)
 
@@ -9032,7 +9053,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "cuttlefish"
+    project = "squid"
     expected = "projects/{project}".format(project=project, )
     actual = JobServiceClient.common_project_path(project)
     assert expected == actual
@@ -9040,7 +9061,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+        "project": "clam",
     }
     path = JobServiceClient.common_project_path(**expected)
 
@@ -9049,8 +9070,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "winkle"
-    location = "nautilus"
+    project = "whelk"
+    location = "octopus"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = JobServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -9058,8 +9079,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = JobServiceClient.common_location_path(**expected)
 

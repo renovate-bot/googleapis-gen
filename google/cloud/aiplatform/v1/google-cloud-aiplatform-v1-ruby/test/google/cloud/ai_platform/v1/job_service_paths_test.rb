@@ -143,6 +143,18 @@ class ::Google::Cloud::AIPlatform::V1::JobService::ClientPathsTest < Minitest::T
     end
   end
 
+  def test_tensorboard_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::AIPlatform::V1::JobService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.tensorboard_path project: "value0", location: "value1", tensorboard: "value2"
+      assert_equal "projects/value0/locations/value1/tensorboards/value2", path
+    end
+  end
+
   def test_trial_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do

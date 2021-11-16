@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     workerPoolSpecs_ = java.util.Collections.emptyList();
     serviceAccount_ = "";
     network_ = "";
+    tensorboard_ = "";
   }
 
   @java.lang.Override
@@ -101,6 +102,12 @@ private static final long serialVersionUID = 0L;
               baseOutputDirectory_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            tensorboard_ = s;
             break;
           }
           case 80: {
@@ -450,6 +457,58 @@ private static final long serialVersionUID = 0L;
     return getBaseOutputDirectory();
   }
 
+  public static final int TENSORBOARD_FIELD_NUMBER = 7;
+  private volatile java.lang.Object tensorboard_;
+  /**
+   * <pre>
+   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The tensorboard.
+   */
+  @java.lang.Override
+  public java.lang.String getTensorboard() {
+    java.lang.Object ref = tensorboard_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tensorboard_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+   * will upload Tensorboard logs.
+   * Format:
+   * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+   * </pre>
+   *
+   * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for tensorboard.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTensorboardBytes() {
+    java.lang.Object ref = tensorboard_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tensorboard_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ENABLE_WEB_ACCESS_FIELD_NUMBER = 10;
   private boolean enableWebAccess_;
   /**
@@ -499,6 +558,9 @@ private static final long serialVersionUID = 0L;
     if (baseOutputDirectory_ != null) {
       output.writeMessage(6, getBaseOutputDirectory());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboard_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tensorboard_);
+    }
     if (enableWebAccess_ != false) {
       output.writeBool(10, enableWebAccess_);
     }
@@ -528,6 +590,9 @@ private static final long serialVersionUID = 0L;
     if (baseOutputDirectory_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getBaseOutputDirectory());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tensorboard_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, tensorboard_);
     }
     if (enableWebAccess_ != false) {
       size += com.google.protobuf.CodedOutputStream
@@ -564,6 +629,8 @@ private static final long serialVersionUID = 0L;
       if (!getBaseOutputDirectory()
           .equals(other.getBaseOutputDirectory())) return false;
     }
+    if (!getTensorboard()
+        .equals(other.getTensorboard())) return false;
     if (getEnableWebAccess()
         != other.getEnableWebAccess()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -593,6 +660,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BASE_OUTPUT_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getBaseOutputDirectory().hashCode();
     }
+    hash = (37 * hash) + TENSORBOARD_FIELD_NUMBER;
+    hash = (53 * hash) + getTensorboard().hashCode();
     hash = (37 * hash) + ENABLE_WEB_ACCESS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnableWebAccess());
@@ -756,6 +825,8 @@ private static final long serialVersionUID = 0L;
         baseOutputDirectory_ = null;
         baseOutputDirectoryBuilder_ = null;
       }
+      tensorboard_ = "";
+
       enableWebAccess_ = false;
 
       return this;
@@ -806,6 +877,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.baseOutputDirectory_ = baseOutputDirectoryBuilder_.build();
       }
+      result.tensorboard_ = tensorboard_;
       result.enableWebAccess_ = enableWebAccess_;
       onBuilt();
       return result;
@@ -894,6 +966,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasBaseOutputDirectory()) {
         mergeBaseOutputDirectory(other.getBaseOutputDirectory());
+      }
+      if (!other.getTensorboard().isEmpty()) {
+        tensorboard_ = other.tensorboard_;
+        onChanged();
       }
       if (other.getEnableWebAccess() != false) {
         setEnableWebAccess(other.getEnableWebAccess());
@@ -1971,6 +2047,117 @@ private static final long serialVersionUID = 0L;
         baseOutputDirectory_ = null;
       }
       return baseOutputDirectoryBuilder_;
+    }
+
+    private java.lang.Object tensorboard_ = "";
+    /**
+     * <pre>
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The tensorboard.
+     */
+    public java.lang.String getTensorboard() {
+      java.lang.Object ref = tensorboard_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tensorboard_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for tensorboard.
+     */
+    public com.google.protobuf.ByteString
+        getTensorboardBytes() {
+      java.lang.Object ref = tensorboard_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tensorboard_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The tensorboard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTensorboard(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      tensorboard_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTensorboard() {
+      
+      tensorboard_ = getDefaultInstance().getTensorboard();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The name of a Vertex AI [Tensorboard][google.cloud.aiplatform.v1.Tensorboard] resource to which this CustomJob
+     * will upload Tensorboard logs.
+     * Format:
+     * `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
+     * </pre>
+     *
+     * <code>string tensorboard = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for tensorboard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTensorboardBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      tensorboard_ = value;
+      onChanged();
+      return this;
     }
 
     private boolean enableWebAccess_ ;
