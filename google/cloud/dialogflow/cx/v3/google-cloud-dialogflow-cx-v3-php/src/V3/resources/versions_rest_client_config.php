@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.cx.v3.Versions' => [
+            'CompareVersions' => [
+                'method' => 'post',
+                'uriTemplate' => '/v3/{base_version=projects/*/locations/*/agents/*/flows/*/versions/*}:compareVersions',
+                'body' => '*',
+                'placeholders' => [
+                    'base_version' => [
+                        'getters' => [
+                            'getBaseVersion',
+                        ],
+                    ],
+                ],
+            ],
             'CreateVersion' => [
                 'method' => 'post',
                 'uriTemplate' => '/v3/{parent=projects/*/locations/*/agents/*/flows/*}/versions',

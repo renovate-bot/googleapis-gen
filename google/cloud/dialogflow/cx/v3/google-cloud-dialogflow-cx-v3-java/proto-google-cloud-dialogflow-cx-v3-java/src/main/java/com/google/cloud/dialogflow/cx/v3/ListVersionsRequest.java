@@ -5,7 +5,8 @@ package com.google.cloud.dialogflow.cx.v3;
 
 /**
  * <pre>
- * The request message for [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
+ * The request message for
+ * [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListVersionsRequest}
@@ -107,9 +108,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+   * versions for. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -130,9 +131,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+   * versions for. Format:
+   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -392,7 +393,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
+   * The request message for
+   * [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.ListVersionsRequest}
@@ -558,9 +560,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+     * versions for. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -580,9 +582,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+     * versions for. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -603,9 +605,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+     * versions for. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -624,9 +626,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+     * versions for. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -640,9 +642,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+     * versions for. Format:
+     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

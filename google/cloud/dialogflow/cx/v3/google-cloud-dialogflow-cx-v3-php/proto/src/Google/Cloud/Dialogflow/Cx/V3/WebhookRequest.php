@@ -17,8 +17,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class WebhookRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      *
      * Generated from protobuf field <code>string detect_intent_response_id = 1;</code>
      */
@@ -64,7 +65,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      */
     private $messages;
     /**
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 8;</code>
      */
@@ -85,22 +87,24 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $detect_intent_response_id
-     *           Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     *           will be returned to the API caller.
+     *           Always present. The unique identifier of the
+     *           [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     *           that will be returned to the API caller.
      *     @type string $text
-     *           If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     *           will contain a copy of the text.
+     *           If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     *           provided as input, this field will contain a copy of the text.
      *     @type string $trigger_intent
-     *           If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     *           contain a copy of the intent identifier.
-     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     *           input, this field will contain a copy of the intent identifier. Format:
+     *           `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *           ID>/intents/<Intent ID>`.
      *     @type string $transcript
-     *           If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     *           If [natural language speech
+     *           audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      *           this field will contain the transcript for the audio.
      *     @type string $trigger_event
-     *           If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     *           the name of the event.
+     *           If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     *           input, this field will contain the name of the event.
      *     @type string $language_code
      *           The language code specified in the [original
      *           request][QueryInput.language_code].
@@ -118,7 +122,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
      *           choose to append or replace this list in
      *           [WebhookResponse.fulfillment_response][google.cloud.dialogflow.cx.v3.WebhookResponse.fulfillment_response];
      *     @type \Google\Protobuf\Struct $payload
-     *           Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     *           Custom data set in
+     *           [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      *     @type \Google\Cloud\Dialogflow\Cx\V3\WebhookRequest\SentimentAnalysisResult $sentiment_analysis_result
      *           The sentiment analysis result of the current user request. The field is
      *           filled when sentiment analysis is configured to be enabled for the request.
@@ -130,8 +135,9 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      *
      * Generated from protobuf field <code>string detect_intent_response_id = 1;</code>
      * @return string
@@ -142,8 +148,9 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present. The unique identifier of the [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse] that
-     * will be returned to the API caller.
+     * Always present. The unique identifier of the
+     * [DetectIntentResponse][google.cloud.dialogflow.cx.v3.DetectIntentResponse]
+     * that will be returned to the API caller.
      *
      * Generated from protobuf field <code>string detect_intent_response_id = 1;</code>
      * @param string $var
@@ -158,8 +165,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      *
      * Generated from protobuf field <code>string text = 10;</code>
      * @return string
@@ -175,8 +182,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was provided as input, this field
-     * will contain a copy of the text.
+     * If [natural language text][google.cloud.dialogflow.cx.v3.TextInput] was
+     * provided as input, this field will contain a copy of the text.
      *
      * Generated from protobuf field <code>string text = 10;</code>
      * @param string $var
@@ -191,9 +198,9 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/intents/<Intent ID>`.
      *
      * Generated from protobuf field <code>string trigger_intent = 11 [(.google.api.resource_reference) = {</code>
@@ -210,9 +217,9 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as input, this field will
-     * contain a copy of the intent identifier.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * If an [intent][google.cloud.dialogflow.cx.v3.IntentInput] was provided as
+     * input, this field will contain a copy of the intent identifier. Format:
+     * `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      * ID>/intents/<Intent ID>`.
      *
      * Generated from protobuf field <code>string trigger_intent = 11 [(.google.api.resource_reference) = {</code>
@@ -228,7 +235,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 12;</code>
@@ -245,7 +253,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If [natural language speech audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
+     * If [natural language speech
+     * audio][google.cloud.dialogflow.cx.v3.AudioInput] was provided as input,
      * this field will contain the transcript for the audio.
      *
      * Generated from protobuf field <code>string transcript = 12;</code>
@@ -261,8 +270,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      *
      * Generated from protobuf field <code>string trigger_event = 14;</code>
      * @return string
@@ -278,8 +287,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as input, this field will contain
-     * the name of the event.
+     * If an [event][google.cloud.dialogflow.cx.v3.EventInput] was provided as
+     * input, this field will contain the name of the event.
      *
      * Generated from protobuf field <code>string trigger_event = 14;</code>
      * @param string $var
@@ -498,7 +507,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 8;</code>
      * @return \Google\Protobuf\Struct|null
@@ -519,7 +529,8 @@ class WebhookRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Custom data set in [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
+     * Custom data set in
+     * [QueryParameters.payload][google.cloud.dialogflow.cx.v3.QueryParameters.payload].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 8;</code>
      * @param \Google\Protobuf\Struct $var

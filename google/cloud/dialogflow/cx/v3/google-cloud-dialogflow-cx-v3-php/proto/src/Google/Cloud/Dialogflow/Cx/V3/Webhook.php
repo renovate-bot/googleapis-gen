@@ -20,10 +20,12 @@ class Webhook extends \Google\Protobuf\Internal\Message
 {
     /**
      * The unique identifier of the webhook.
-     * Required for the [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook] method.
-     * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook] populates the name automatically.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/webhooks/<Webhook ID>`.
+     * Required for the
+     * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook]
+     * method.
+     * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook]
+     * populates the name automatically. Format: `projects/<Project
+     * ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      */
@@ -58,10 +60,12 @@ class Webhook extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           The unique identifier of the webhook.
-     *           Required for the [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook] method.
-     *           [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook] populates the name automatically.
-     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *           ID>/webhooks/<Webhook ID>`.
+     *           Required for the
+     *           [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook]
+     *           method.
+     *           [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook]
+     *           populates the name automatically. Format: `projects/<Project
+     *           ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>`.
      *     @type string $display_name
      *           Required. The human-readable name of the webhook, unique within the agent.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Webhook\GenericWebService $generic_web_service
@@ -84,10 +88,12 @@ class Webhook extends \Google\Protobuf\Internal\Message
 
     /**
      * The unique identifier of the webhook.
-     * Required for the [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook] method.
-     * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook] populates the name automatically.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/webhooks/<Webhook ID>`.
+     * Required for the
+     * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook]
+     * method.
+     * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook]
+     * populates the name automatically. Format: `projects/<Project
+     * ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @return string
@@ -99,10 +105,12 @@ class Webhook extends \Google\Protobuf\Internal\Message
 
     /**
      * The unique identifier of the webhook.
-     * Required for the [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook] method.
-     * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook] populates the name automatically.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/webhooks/<Webhook ID>`.
+     * Required for the
+     * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook]
+     * method.
+     * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook]
+     * populates the name automatically. Format: `projects/<Project
+     * ID>/locations/<Location ID>/agents/<Agent ID>/webhooks/<Webhook ID>`.
      *
      * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var

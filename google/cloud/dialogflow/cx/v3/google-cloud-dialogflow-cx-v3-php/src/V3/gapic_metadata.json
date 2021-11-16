@@ -595,6 +595,11 @@
                 "grpc": {
                     "libraryClient": "VersionsGapicClient",
                     "rpcs": {
+                        "CompareVersions": {
+                            "methods": [
+                                "compareVersions"
+                            ]
+                        },
                         "CreateVersion": {
                             "methods": [
                                 "createVersion"

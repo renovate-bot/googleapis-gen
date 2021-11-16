@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
+ * The request message for
+ * [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.GetVersionRequest</code>
  */
@@ -17,8 +18,8 @@ class GetVersionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -32,8 +33,8 @@ class GetVersionRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *           ID>/flows/<Flow ID>/versions/<Version ID>`.
+     *           Format:
+     *           `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,8 +44,8 @@ class GetVersionRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -56,8 +57,8 @@ class GetVersionRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -37,7 +37,8 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      */
     protected $session_info = null;
     /**
-     * Value to append directly to [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
+     * Value to append directly to
+     * [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 4;</code>
      */
@@ -60,7 +61,8 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
      *           Information about session status. This field can be omitted by the webhook
      *           if it does not intend to modify session status.
      *     @type \Google\Protobuf\Struct $payload
-     *           Value to append directly to [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
+     *           Value to append directly to
+     *           [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
      *     @type string $target_page
      *           The target page to transition to.
      *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
@@ -191,7 +193,8 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Value to append directly to [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
+     * Value to append directly to
+     * [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 4;</code>
      * @return \Google\Protobuf\Struct|null
@@ -212,7 +215,8 @@ class WebhookResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Value to append directly to [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
+     * Value to append directly to
+     * [QueryResult.webhook_payloads][google.cloud.dialogflow.cx.v3.QueryResult.webhook_payloads].
      *
      * Generated from protobuf field <code>.google.protobuf.Struct payload = 4;</code>
      * @param \Google\Protobuf\Struct $var

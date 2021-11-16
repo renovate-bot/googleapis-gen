@@ -229,6 +229,8 @@ from google.cloud.dialogflowcx_v3.types.transition_route_group import Transition
 from google.cloud.dialogflowcx_v3.types.transition_route_group import UpdateTransitionRouteGroupRequest
 from google.cloud.dialogflowcx_v3.types.validation_message import ResourceName
 from google.cloud.dialogflowcx_v3.types.validation_message import ValidationMessage
+from google.cloud.dialogflowcx_v3.types.version import CompareVersionsRequest
+from google.cloud.dialogflowcx_v3.types.version import CompareVersionsResponse
 from google.cloud.dialogflowcx_v3.types.version import CreateVersionOperationMetadata
 from google.cloud.dialogflowcx_v3.types.version import CreateVersionRequest
 from google.cloud.dialogflowcx_v3.types.version import DeleteVersionRequest
@@ -464,6 +466,8 @@ __all__ = ('AgentsClient',
     'UpdateTransitionRouteGroupRequest',
     'ResourceName',
     'ValidationMessage',
+    'CompareVersionsRequest',
+    'CompareVersionsResponse',
     'CreateVersionOperationMetadata',
     'CreateVersionRequest',
     'DeleteVersionRequest',

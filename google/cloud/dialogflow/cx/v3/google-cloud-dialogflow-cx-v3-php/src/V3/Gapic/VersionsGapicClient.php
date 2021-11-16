@@ -36,6 +36,8 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
+use Google\Cloud\Dialogflow\Cx\V3\CompareVersionsRequest;
+use Google\Cloud\Dialogflow\Cx\V3\CompareVersionsResponse;
 use Google\Cloud\Dialogflow\Cx\V3\CreateVersionOperationMetadata;
 use Google\Cloud\Dialogflow\Cx\V3\CreateVersionRequest;
 use Google\Cloud\Dialogflow\Cx\V3\DeleteVersionRequest;
@@ -59,34 +61,9 @@ use Google\Protobuf\Struct;
  * ```
  * $versionsClient = new VersionsClient();
  * try {
- *     $formattedParent = $versionsClient->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
- *     $version = new Version();
- *     $operationResponse = $versionsClient->createVersion($formattedParent, $version);
- *     $operationResponse->pollUntilComplete();
- *     if ($operationResponse->operationSucceeded()) {
- *         $result = $operationResponse->getResult();
- *     // doSomethingWith($result)
- *     } else {
- *         $error = $operationResponse->getError();
- *         // handleError($error)
- *     }
- *     // Alternatively:
- *     // start the operation, keep the operation name, and resume later
- *     $operationResponse = $versionsClient->createVersion($formattedParent, $version);
- *     $operationName = $operationResponse->getName();
- *     // ... do other work
- *     $newOperationResponse = $versionsClient->resumeOperation($operationName, 'createVersion');
- *     while (!$newOperationResponse->isDone()) {
- *         // ... do other work
- *         $newOperationResponse->reload();
- *     }
- *     if ($newOperationResponse->operationSucceeded()) {
- *         $result = $newOperationResponse->getResult();
- *     // doSomethingWith($result)
- *     } else {
- *         $error = $newOperationResponse->getError();
- *         // handleError($error)
- *     }
+ *     $formattedBaseVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+ *     $formattedTargetVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+ *     $response = $versionsClient->compareVersions($formattedBaseVersion, $formattedTargetVersion);
  * } finally {
  *     $versionsClient->close();
  * }
@@ -363,13 +340,77 @@ class VersionsGapicClient
     }
 
     /**
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Compares the specified base version with target version.
+     *
+     * Sample code:
+     * ```
+     * $versionsClient = new VersionsClient();
+     * try {
+     *     $formattedBaseVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+     *     $formattedTargetVersion = $versionsClient->versionName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]', '[VERSION]');
+     *     $response = $versionsClient->compareVersions($formattedBaseVersion, $formattedTargetVersion);
+     * } finally {
+     *     $versionsClient->close();
+     * }
+     * ```
+     *
+     * @param string $baseVersion   Required. Name of the base flow version to compare with the target version.
+     *                              Use version ID `0` to indicate the draft version of the specified flow.
+     *
+     *                              Format:
+     *                              `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     * @param string $targetVersion Required. Name of the target flow version to compare with the
+     *                              base version. Use version ID `0` to indicate the draft version of the
+     *                              specified flow. Format:
+     *                              `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     * @param array  $optionalArgs  {
+     *     Optional.
+     *
+     *     @type string $languageCode
+     *           The language to compare the flow versions for.
+     *
+     *           If not specified, the agent's default language is used.
+     *           [Many
+     *           languages](https://cloud.google.com/dialogflow/docs/reference/language) are
+     *           supported. Note: languages must be enabled in the agent before they can be
+     *           used.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Dialogflow\Cx\V3\CompareVersionsResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function compareVersions($baseVersion, $targetVersion, array $optionalArgs = [])
+    {
+        $request = new CompareVersionsRequest();
+        $requestParamHeaders = [];
+        $request->setBaseVersion($baseVersion);
+        $request->setTargetVersion($targetVersion);
+        $requestParamHeaders['base_version'] = $baseVersion;
+        if (isset($optionalArgs['languageCode'])) {
+            $request->setLanguageCode($optionalArgs['languageCode']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CompareVersions', CompareVersionsResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      *
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
      *
-     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`:
+     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      *
      * Sample code:
@@ -409,9 +450,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string  $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an [Version][google.cloud.dialogflow.cx.v3.Version] for.
-     *                              Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                              ID>/flows/<Flow ID>`.
+     * @param string  $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
+     *                              [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+     *                              `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
      * @param Version $version      Required. The version to create.
      * @param array   $optionalArgs {
      *     Optional.
@@ -453,9 +494,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to delete.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * @param string $name         Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]
+     *                             to delete. Format:
+     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -494,8 +535,8 @@ class VersionsGapicClient
      * ```
      *
      * @param string $name         Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
+     *                             Format:
+     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -522,7 +563,8 @@ class VersionsGapicClient
     }
 
     /**
-     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified
+     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
      *
      * Sample code:
      * ```
@@ -547,9 +589,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/flows/<Flow ID>`.
+     * @param string $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
+     *                             versions for. Format:
+     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -638,9 +680,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
-     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * @param string $name         Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded
+     *                             to draft flow. Format:
+     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -691,8 +733,8 @@ class VersionsGapicClient
      * ```
      *
      * @param Version   $version      Required. The version to update.
-     * @param FieldMask $updateMask   Required. The mask to control which fields get updated. Currently only `description`
-     *                                and `display_name` can be updated.
+     * @param FieldMask $updateMask   Required. The mask to control which fields get updated. Currently only
+     *                                `description` and `display_name` can be updated.
      * @param array     $optionalArgs {
      *     Optional.
      *

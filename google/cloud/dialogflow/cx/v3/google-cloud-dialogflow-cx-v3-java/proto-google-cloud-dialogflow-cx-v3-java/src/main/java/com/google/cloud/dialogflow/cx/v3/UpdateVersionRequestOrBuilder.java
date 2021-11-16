@@ -36,8 +36,8 @@ public interface UpdateVersionRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,8 +46,8 @@ public interface UpdateVersionRequestOrBuilder extends
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,8 +56,8 @@ public interface UpdateVersionRequestOrBuilder extends
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only `description`
-   * and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only
+   * `description` and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

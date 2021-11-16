@@ -16,7 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class GenericWebService extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The webhook URI for receiving POST requests. It must use https protocol.
+     * Required. The webhook URI for receiving POST requests. It must use https
+     * protocol.
      *
      * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -42,6 +43,21 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> request_headers = 4;</code>
      */
     private $request_headers;
+    /**
+     * Optional. Specifies a list of allowed custom CA certificates (in DER
+     * format) for HTTPS verification. This overrides the default SSL trust
+     * store. If this is empty or unspecified, Dialogflow will use Google's
+     * default trust store to verify certificates. N.B. Make sure the HTTPS
+     * server certificates are signed with "subject alt name". For instance a
+     * certificate can be self-signed using the following command,
+     *     openssl x509 -req -days 200 -in example.com.csr \
+     *       -signkey example.com.key \
+     *       -out example.com.crt \
+     *       -extfile <(printf "\nsubjectAltName='DNS:www.example.com'")
+     *
+     * Generated from protobuf field <code>repeated bytes allowed_ca_certs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $allowed_ca_certs;
 
     /**
      * Constructor.
@@ -50,7 +66,8 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $uri
-     *           Required. The webhook URI for receiving POST requests. It must use https protocol.
+     *           Required. The webhook URI for receiving POST requests. It must use https
+     *           protocol.
      *     @type string $username
      *           The user name for HTTP Basic authentication.
      *     @type string $password
@@ -58,6 +75,17 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $request_headers
      *           The HTTP request headers to send together with webhook
      *           requests.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $allowed_ca_certs
+     *           Optional. Specifies a list of allowed custom CA certificates (in DER
+     *           format) for HTTPS verification. This overrides the default SSL trust
+     *           store. If this is empty or unspecified, Dialogflow will use Google's
+     *           default trust store to verify certificates. N.B. Make sure the HTTPS
+     *           server certificates are signed with "subject alt name". For instance a
+     *           certificate can be self-signed using the following command,
+     *               openssl x509 -req -days 200 -in example.com.csr \
+     *                 -signkey example.com.key \
+     *                 -out example.com.crt \
+     *                 -extfile <(printf "\nsubjectAltName='DNS:www.example.com'")
      * }
      */
     public function __construct($data = NULL) {
@@ -66,7 +94,8 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The webhook URI for receiving POST requests. It must use https protocol.
+     * Required. The webhook URI for receiving POST requests. It must use https
+     * protocol.
      *
      * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -77,7 +106,8 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The webhook URI for receiving POST requests. It must use https protocol.
+     * Required. The webhook URI for receiving POST requests. It must use https
+     * protocol.
      *
      * Generated from protobuf field <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -175,6 +205,50 @@ class GenericWebService extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->request_headers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Specifies a list of allowed custom CA certificates (in DER
+     * format) for HTTPS verification. This overrides the default SSL trust
+     * store. If this is empty or unspecified, Dialogflow will use Google's
+     * default trust store to verify certificates. N.B. Make sure the HTTPS
+     * server certificates are signed with "subject alt name". For instance a
+     * certificate can be self-signed using the following command,
+     *     openssl x509 -req -days 200 -in example.com.csr \
+     *       -signkey example.com.key \
+     *       -out example.com.crt \
+     *       -extfile <(printf "\nsubjectAltName='DNS:www.example.com'")
+     *
+     * Generated from protobuf field <code>repeated bytes allowed_ca_certs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAllowedCaCerts()
+    {
+        return $this->allowed_ca_certs;
+    }
+
+    /**
+     * Optional. Specifies a list of allowed custom CA certificates (in DER
+     * format) for HTTPS verification. This overrides the default SSL trust
+     * store. If this is empty or unspecified, Dialogflow will use Google's
+     * default trust store to verify certificates. N.B. Make sure the HTTPS
+     * server certificates are signed with "subject alt name". For instance a
+     * certificate can be self-signed using the following command,
+     *     openssl x509 -req -days 200 -in example.com.csr \
+     *       -signkey example.com.key \
+     *       -out example.com.crt \
+     *       -extfile <(printf "\nsubjectAltName='DNS:www.example.com'")
+     *
+     * Generated from protobuf field <code>repeated bytes allowed_ca_certs = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAllowedCaCerts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        $this->allowed_ca_certs = $arr;
 
         return $this;
     }

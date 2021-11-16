@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
+ * The request message for
+ * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.UpdateVersionRequest</code>
  */
@@ -22,8 +23,8 @@ class UpdateVersionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $version = null;
     /**
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -38,8 +39,8 @@ class UpdateVersionRequest extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Version $version
      *           Required. The version to update.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           Required. The mask to control which fields get updated. Currently only `description`
-     *           and `display_name` can be updated.
+     *           Required. The mask to control which fields get updated. Currently only
+     *           `description` and `display_name` can be updated.
      * }
      */
     public function __construct($data = NULL) {
@@ -84,8 +85,8 @@ class UpdateVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -106,8 +107,8 @@ class UpdateVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The mask to control which fields get updated. Currently only `description`
-     * and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only
+     * `description` and `display_name` can be updated.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var

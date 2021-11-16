@@ -9,16 +9,17 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for [Versions.CreateVersion][google.cloud.dialogflow.cx.v3.Versions.CreateVersion].
+ * The request message for
+ * [Versions.CreateVersion][google.cloud.dialogflow.cx.v3.Versions.CreateVersion].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.CreateVersionRequest</code>
  */
 class CreateVersionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an [Version][google.cloud.dialogflow.cx.v3.Version] for.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,9 +38,9 @@ class CreateVersionRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an [Version][google.cloud.dialogflow.cx.v3.Version] for.
-     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *           ID>/flows/<Flow ID>`.
+     *           Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
+     *           [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+     *           `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Version $version
      *           Required. The version to create.
      * }
@@ -50,9 +51,9 @@ class CreateVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an [Version][google.cloud.dialogflow.cx.v3.Version] for.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -63,9 +64,9 @@ class CreateVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an [Version][google.cloud.dialogflow.cx.v3.Version] for.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>`.
+     * Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
+     * [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

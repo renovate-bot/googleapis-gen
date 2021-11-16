@@ -9,16 +9,17 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3.Versions.DeleteVersion].
+ * The request message for
+ * [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3.Versions.DeleteVersion].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.DeleteVersionRequest</code>
  */
 class DeleteVersionRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to delete.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]
+     * to delete. Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -31,9 +32,9 @@ class DeleteVersionRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to delete.
-     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     *           ID>/flows/<Flow ID>/versions/<Version ID>`.
+     *           Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]
+     *           to delete. Format:
+     *           `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      * }
      */
     public function __construct($data = NULL) {
@@ -42,9 +43,9 @@ class DeleteVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to delete.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]
+     * to delete. Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -55,9 +56,9 @@ class DeleteVersionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to delete.
-     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]
+     * to delete. Format:
+     * `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
