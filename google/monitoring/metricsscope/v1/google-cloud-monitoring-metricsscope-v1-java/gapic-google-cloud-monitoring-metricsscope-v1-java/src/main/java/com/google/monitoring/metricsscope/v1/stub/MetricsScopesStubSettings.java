@@ -365,13 +365,13 @@ public class MetricsScopesStubSettings extends StubSettings<MetricsScopesStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRetryDelay(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelay(Duration.ofMillis(10000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(900000L))
                       .build()));
 
       builder
@@ -389,13 +389,13 @@ public class MetricsScopesStubSettings extends StubSettings<MetricsScopesStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRetryDelay(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelay(Duration.ofMillis(10000L))
                       .setInitialRpcTimeout(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(900000L))
                       .build()));
 
       return builder;

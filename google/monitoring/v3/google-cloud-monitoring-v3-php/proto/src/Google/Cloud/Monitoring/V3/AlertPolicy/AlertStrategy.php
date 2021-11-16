@@ -23,6 +23,13 @@ class AlertStrategy extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;</code>
      */
     protected $notification_rate_limit = null;
+    /**
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration auto_close = 3;</code>
+     */
+    protected $auto_close = null;
 
     /**
      * Constructor.
@@ -33,6 +40,9 @@ class AlertStrategy extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Monitoring\V3\AlertPolicy\AlertStrategy\NotificationRateLimit $notification_rate_limit
      *           Required for alert policies with a `LogMatch` condition.
      *           This limit is not implemented for alert policies that are not log-based.
+     *     @type \Google\Protobuf\Duration $auto_close
+     *           If an alert policy that was active has no data for this long, any open
+     *           incidents will close
      * }
      */
     public function __construct($data = NULL) {
@@ -74,6 +84,44 @@ class AlertStrategy extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Monitoring\V3\AlertPolicy\AlertStrategy\NotificationRateLimit::class);
         $this->notification_rate_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration auto_close = 3;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getAutoClose()
+    {
+        return $this->auto_close;
+    }
+
+    public function hasAutoClose()
+    {
+        return isset($this->auto_close);
+    }
+
+    public function clearAutoClose()
+    {
+        unset($this->auto_close);
+    }
+
+    /**
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration auto_close = 3;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setAutoClose($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->auto_close = $var;
 
         return $this;
     }

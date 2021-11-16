@@ -12346,6 +12346,36 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimit notification_rate_limit = 1;</code>
      */
     com.google.monitoring.v3.AlertPolicy.AlertStrategy.NotificationRateLimitOrBuilder getNotificationRateLimitOrBuilder();
+
+    /**
+     * <pre>
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_close = 3;</code>
+     * @return Whether the autoClose field is set.
+     */
+    boolean hasAutoClose();
+    /**
+     * <pre>
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_close = 3;</code>
+     * @return The autoClose.
+     */
+    com.google.protobuf.Duration getAutoClose();
+    /**
+     * <pre>
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_close = 3;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getAutoCloseOrBuilder();
   }
   /**
    * <pre>
@@ -12406,6 +12436,19 @@ private static final long serialVersionUID = 0L;
               if (subBuilder != null) {
                 subBuilder.mergeFrom(notificationRateLimit_);
                 notificationRateLimit_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (autoClose_ != null) {
+                subBuilder = autoClose_.toBuilder();
+              }
+              autoClose_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(autoClose_);
+                autoClose_ = subBuilder.buildPartial();
               }
 
               break;
@@ -13174,6 +13217,47 @@ private static final long serialVersionUID = 0L;
       return getNotificationRateLimit();
     }
 
+    public static final int AUTO_CLOSE_FIELD_NUMBER = 3;
+    private com.google.protobuf.Duration autoClose_;
+    /**
+     * <pre>
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_close = 3;</code>
+     * @return Whether the autoClose field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoClose() {
+      return autoClose_ != null;
+    }
+    /**
+     * <pre>
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_close = 3;</code>
+     * @return The autoClose.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getAutoClose() {
+      return autoClose_ == null ? com.google.protobuf.Duration.getDefaultInstance() : autoClose_;
+    }
+    /**
+     * <pre>
+     * If an alert policy that was active has no data for this long, any open
+     * incidents will close
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_close = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getAutoCloseOrBuilder() {
+      return getAutoClose();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13191,6 +13275,9 @@ private static final long serialVersionUID = 0L;
       if (notificationRateLimit_ != null) {
         output.writeMessage(1, getNotificationRateLimit());
       }
+      if (autoClose_ != null) {
+        output.writeMessage(3, getAutoClose());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -13203,6 +13290,10 @@ private static final long serialVersionUID = 0L;
       if (notificationRateLimit_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getNotificationRateLimit());
+      }
+      if (autoClose_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getAutoClose());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -13224,6 +13315,11 @@ private static final long serialVersionUID = 0L;
         if (!getNotificationRateLimit()
             .equals(other.getNotificationRateLimit())) return false;
       }
+      if (hasAutoClose() != other.hasAutoClose()) return false;
+      if (hasAutoClose()) {
+        if (!getAutoClose()
+            .equals(other.getAutoClose())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -13238,6 +13334,10 @@ private static final long serialVersionUID = 0L;
       if (hasNotificationRateLimit()) {
         hash = (37 * hash) + NOTIFICATION_RATE_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getNotificationRateLimit().hashCode();
+      }
+      if (hasAutoClose()) {
+        hash = (37 * hash) + AUTO_CLOSE_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoClose().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -13383,6 +13483,12 @@ private static final long serialVersionUID = 0L;
           notificationRateLimit_ = null;
           notificationRateLimitBuilder_ = null;
         }
+        if (autoCloseBuilder_ == null) {
+          autoClose_ = null;
+        } else {
+          autoClose_ = null;
+          autoCloseBuilder_ = null;
+        }
         return this;
       }
 
@@ -13413,6 +13519,11 @@ private static final long serialVersionUID = 0L;
           result.notificationRateLimit_ = notificationRateLimit_;
         } else {
           result.notificationRateLimit_ = notificationRateLimitBuilder_.build();
+        }
+        if (autoCloseBuilder_ == null) {
+          result.autoClose_ = autoClose_;
+        } else {
+          result.autoClose_ = autoCloseBuilder_.build();
         }
         onBuilt();
         return result;
@@ -13464,6 +13575,9 @@ private static final long serialVersionUID = 0L;
         if (other == com.google.monitoring.v3.AlertPolicy.AlertStrategy.getDefaultInstance()) return this;
         if (other.hasNotificationRateLimit()) {
           mergeNotificationRateLimit(other.getNotificationRateLimit());
+        }
+        if (other.hasAutoClose()) {
+          mergeAutoClose(other.getAutoClose());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -13656,6 +13770,170 @@ private static final long serialVersionUID = 0L;
           notificationRateLimit_ = null;
         }
         return notificationRateLimitBuilder_;
+      }
+
+      private com.google.protobuf.Duration autoClose_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> autoCloseBuilder_;
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       * @return Whether the autoClose field is set.
+       */
+      public boolean hasAutoClose() {
+        return autoCloseBuilder_ != null || autoClose_ != null;
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       * @return The autoClose.
+       */
+      public com.google.protobuf.Duration getAutoClose() {
+        if (autoCloseBuilder_ == null) {
+          return autoClose_ == null ? com.google.protobuf.Duration.getDefaultInstance() : autoClose_;
+        } else {
+          return autoCloseBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      public Builder setAutoClose(com.google.protobuf.Duration value) {
+        if (autoCloseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          autoClose_ = value;
+          onChanged();
+        } else {
+          autoCloseBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      public Builder setAutoClose(
+          com.google.protobuf.Duration.Builder builderForValue) {
+        if (autoCloseBuilder_ == null) {
+          autoClose_ = builderForValue.build();
+          onChanged();
+        } else {
+          autoCloseBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      public Builder mergeAutoClose(com.google.protobuf.Duration value) {
+        if (autoCloseBuilder_ == null) {
+          if (autoClose_ != null) {
+            autoClose_ =
+              com.google.protobuf.Duration.newBuilder(autoClose_).mergeFrom(value).buildPartial();
+          } else {
+            autoClose_ = value;
+          }
+          onChanged();
+        } else {
+          autoCloseBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      public Builder clearAutoClose() {
+        if (autoCloseBuilder_ == null) {
+          autoClose_ = null;
+          onChanged();
+        } else {
+          autoClose_ = null;
+          autoCloseBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      public com.google.protobuf.Duration.Builder getAutoCloseBuilder() {
+        
+        onChanged();
+        return getAutoCloseFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getAutoCloseOrBuilder() {
+        if (autoCloseBuilder_ != null) {
+          return autoCloseBuilder_.getMessageOrBuilder();
+        } else {
+          return autoClose_ == null ?
+              com.google.protobuf.Duration.getDefaultInstance() : autoClose_;
+        }
+      }
+      /**
+       * <pre>
+       * If an alert policy that was active has no data for this long, any open
+       * incidents will close
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration auto_close = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+          getAutoCloseFieldBuilder() {
+        if (autoCloseBuilder_ == null) {
+          autoCloseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                  getAutoClose(),
+                  getParentForChildren(),
+                  isClean());
+          autoClose_ = null;
+        }
+        return autoCloseBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(

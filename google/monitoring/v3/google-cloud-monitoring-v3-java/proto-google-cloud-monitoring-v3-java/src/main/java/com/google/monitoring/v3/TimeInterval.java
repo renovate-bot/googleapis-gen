@@ -19,7 +19,7 @@ package com.google.monitoring.v3;
  *   the next interval must be at least a millisecond after the end time
  *   of the previous interval.
  * * For `CUMULATIVE` metrics, the start time and end time must specify a
- *   a non-zero interval, with subsequent points specifying the same
+ *   non-zero interval, with subsequent points specifying the same
  *   start time and increasing end times, until an event resets the
  *   cumulative value to zero and sets a new start time for the following
  *   points. The new start time must be at least a millisecond after the
@@ -407,7 +407,7 @@ private static final long serialVersionUID = 0L;
    *   the next interval must be at least a millisecond after the end time
    *   of the previous interval.
    * * For `CUMULATIVE` metrics, the start time and end time must specify a
-   *   a non-zero interval, with subsequent points specifying the same
+   *   non-zero interval, with subsequent points specifying the same
    *   start time and increasing end times, until an event resets the
    *   cumulative value to zero and sets a new start time for the following
    *   points. The new start time must be at least a millisecond after the
