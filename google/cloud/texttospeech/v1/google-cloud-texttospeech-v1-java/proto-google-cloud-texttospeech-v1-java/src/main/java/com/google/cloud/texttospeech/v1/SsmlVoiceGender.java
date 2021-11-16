@@ -43,7 +43,7 @@ public enum SsmlVoiceGender
   FEMALE(2),
   /**
    * <pre>
-   * A gender-neutral voice.
+   * A gender-neutral voice. This voice is not yet supported.
    * </pre>
    *
    * <code>NEUTRAL = 3;</code>
@@ -82,7 +82,7 @@ public enum SsmlVoiceGender
   public static final int FEMALE_VALUE = 2;
   /**
    * <pre>
-   * A gender-neutral voice.
+   * A gender-neutral voice. This voice is not yet supported.
    * </pre>
    *
    * <code>NEUTRAL = 3;</code>
