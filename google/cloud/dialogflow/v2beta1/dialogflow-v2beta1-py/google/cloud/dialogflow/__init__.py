@@ -177,6 +177,7 @@ from google.cloud.dialogflow_v2beta1.types.participant import AnalyzeContentRequ
 from google.cloud.dialogflow_v2beta1.types.participant import AnalyzeContentResponse
 from google.cloud.dialogflow_v2beta1.types.participant import AnnotatedMessagePart
 from google.cloud.dialogflow_v2beta1.types.participant import ArticleAnswer
+from google.cloud.dialogflow_v2beta1.types.participant import AssistQueryParameters
 from google.cloud.dialogflow_v2beta1.types.participant import AutomatedAgentReply
 from google.cloud.dialogflow_v2beta1.types.participant import CompileSuggestionRequest
 from google.cloud.dialogflow_v2beta1.types.participant import CompileSuggestionResponse
@@ -400,6 +401,7 @@ __all__ = ('AgentsClient',
     'AnalyzeContentResponse',
     'AnnotatedMessagePart',
     'ArticleAnswer',
+    'AssistQueryParameters',
     'AutomatedAgentReply',
     'CompileSuggestionRequest',
     'CompileSuggestionResponse',

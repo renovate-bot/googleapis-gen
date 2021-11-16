@@ -24,23 +24,27 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $role = 0;
     /**
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
@@ -57,6 +61,26 @@ class Participant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string obfuscated_external_user_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $obfuscated_external_user_id = '';
+    /**
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
+     *     documents_metadata_filters {
+     *       key: "market"
+     *       value: "US,CA"
+     *     }
+     *     documents_metadata_filters {
+     *       key: "user"
+     *       value: "agent"
+     *     }
+     *
+     * Generated from protobuf field <code>map<string, string> documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private $documents_metadata_filters;
 
     /**
      * Constructor.
@@ -69,19 +93,23 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           Format: `projects/<Project ID>/locations/<Location
      *           ID>/conversations/<Conversation ID>/participants/<Participant ID>`.
      *     @type int $role
-     *           Immutable. The role this participant plays in the conversation. This field must be set
-     *           during participant creation and is then immutable.
+     *           Immutable. The role this participant plays in the conversation. This field
+     *           must be set during participant creation and is then immutable.
      *     @type string $obfuscated_external_user_id
-     *           Optional. Obfuscated user id that should be associated with the created participant.
+     *           Optional. Obfuscated user id that should be associated with the created
+     *           participant.
      *           You can specify a user id as follows:
      *           1. If you set this field in
-     *              [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant] or
+     *              [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
+     *              or
      *              [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *              Dialogflow adds the obfuscated user id with the participant.
      *           2. If you set this field in
-     *              [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *              [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
+     *              or
      *              [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *              Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *              Dialogflow will update
+     *              [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
      *           Dialogflow uses this user id for following purposes:
      *           1) Billing and measurement. If user with the same
      *           obfuscated_external_user_id is created in a later conversation, dialogflow
@@ -94,6 +122,22 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
      *             hash function like SHA-512.
      *           * The length of the user id must be <= 256 characters.
+     *     @type array|\Google\Protobuf\Internal\MapField $documents_metadata_filters
+     *           Optional. Key-value filters on the metadata of documents returned by
+     *           article suggestion. If specified, article suggestion only returns suggested
+     *           documents that match all filters in their
+     *           [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     *           Multiple values for a metadata key should be concatenated by comma. For
+     *           example, filters to match all documents that have 'US' or 'CA' in their
+     *           market metadata values and 'agent' in their user metadata values will be
+     *               documents_metadata_filters {
+     *                 key: "market"
+     *                 value: "US,CA"
+     *               }
+     *               documents_metadata_filters {
+     *                 key: "user"
+     *                 value: "agent"
+     *               }
      * }
      */
     public function __construct($data = NULL) {
@@ -132,8 +176,8 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -144,8 +188,8 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The role this participant plays in the conversation. This field must be set
-     * during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field
+     * must be set during participant creation and is then immutable.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -160,16 +204,20 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
@@ -192,16 +240,20 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Obfuscated user id that should be associated with the created participant.
+     * Optional. Obfuscated user id that should be associated with the created
+     * participant.
      * You can specify a user id as follows:
      * 1. If you set this field in
-     *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant] or
+     *    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
+     *    or
      *    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
      *    Dialogflow adds the obfuscated user id with the participant.
      * 2. If you set this field in
-     *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id] or
+     *    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
+     *    or
      *    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-     *    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+     *    Dialogflow will update
+     *    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
      * Dialogflow uses this user id for following purposes:
      * 1) Billing and measurement. If user with the same
      * obfuscated_external_user_id is created in a later conversation, dialogflow
@@ -223,6 +275,60 @@ class Participant extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->obfuscated_external_user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
+     *     documents_metadata_filters {
+     *       key: "market"
+     *       value: "US,CA"
+     *     }
+     *     documents_metadata_filters {
+     *       key: "user"
+     *       value: "agent"
+     *     }
+     *
+     * Generated from protobuf field <code>map<string, string> documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getDocumentsMetadataFilters()
+    {
+        return $this->documents_metadata_filters;
+    }
+
+    /**
+     * Optional. Key-value filters on the metadata of documents returned by
+     * article suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their
+     * [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
+     * Multiple values for a metadata key should be concatenated by comma. For
+     * example, filters to match all documents that have 'US' or 'CA' in their
+     * market metadata values and 'agent' in their user metadata values will be
+     *     documents_metadata_filters {
+     *       key: "market"
+     *       value: "US,CA"
+     *     }
+     *     documents_metadata_filters {
+     *       key: "user"
+     *       value: "agent"
+     *     }
+     *
+     * Generated from protobuf field <code>map<string, string> documents_metadata_filters = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setDocumentsMetadataFilters($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->documents_metadata_filters = $arr;
 
         return $this;
     }

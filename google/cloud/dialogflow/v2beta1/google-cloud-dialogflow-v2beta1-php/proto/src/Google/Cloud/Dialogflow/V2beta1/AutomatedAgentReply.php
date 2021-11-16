@@ -71,7 +71,9 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Dialogflow\V2beta1\DetectIntentResponse $detect_intent_response
-     *           Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
+     *           Response of the Dialogflow
+     *           [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
+     *           call.
      *     @type \Google\Cloud\Dialogflow\V2beta1\ResponseMessage[]|\Google\Protobuf\Internal\RepeatedField $response_messages
      *           Response messages from the automated agent.
      *     @type string $intent
@@ -109,7 +111,9 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
+     * call.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
      * @return \Google\Cloud\Dialogflow\V2beta1\DetectIntentResponse|null
@@ -125,7 +129,9 @@ class AutomatedAgentReply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
+     * Response of the Dialogflow
+     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
+     * call.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
      * @param \Google\Cloud\Dialogflow\V2beta1\DetectIntentResponse $var

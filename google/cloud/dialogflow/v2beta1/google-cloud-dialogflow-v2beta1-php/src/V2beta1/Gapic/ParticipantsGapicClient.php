@@ -38,6 +38,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\V2beta1\AnalyzeContentRequest;
 use Google\Cloud\Dialogflow\V2beta1\AnalyzeContentResponse;
+use Google\Cloud\Dialogflow\V2beta1\AssistQueryParameters;
 use Google\Cloud\Dialogflow\V2beta1\CompileSuggestionRequest;
 use Google\Cloud\Dialogflow\V2beta1\CompileSuggestionResponse;
 use Google\Cloud\Dialogflow\V2beta1\CreateParticipantRequest;
@@ -62,7 +63,8 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\Timestamp;
 
 /**
- * Service Description: Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+ * Service Description: Service for managing
+ * [Participants][google.cloud.dialogflow.v2beta1.Participant].
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -594,6 +596,8 @@ class ParticipantsGapicClient
      *           is disabled.
      *     @type QueryParameters $queryParams
      *           Parameters for a Dialogflow virtual-agent query.
+     *     @type AssistQueryParameters $assistQueryParams
+     *           Parameters for a human assist query.
      *     @type Timestamp $messageSendTime
      *           Optional. The send time of the message from end user or human agent's
      *           perspective. It is used for identifying the same message under one
@@ -648,6 +652,10 @@ class ParticipantsGapicClient
             $request->setQueryParams($optionalArgs['queryParams']);
         }
 
+        if (isset($optionalArgs['assistQueryParams'])) {
+            $request->setAssistQueryParams($optionalArgs['assistQueryParams']);
+        }
+
         if (isset($optionalArgs['messageSendTime'])) {
             $request->setMessageSendTime($optionalArgs['messageSendTime']);
         }
@@ -662,14 +670,21 @@ class ParticipantsGapicClient
     }
 
     /**
-     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
+     * Deprecated. use
+     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+     * and
+     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+     * instead.
      *
      * Gets suggestions for a participant based on specific historical
      * messages.
      *
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      *
      * Sample code:
      * ```
@@ -902,9 +917,9 @@ class ParticipantsGapicClient
     /**
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-     * details.
-     * Removal Date: 2020-09-01.
+     * See
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more details. Removal Date: 2020-09-01.
      *
      * Retrieves suggestions for live agents.
      *
@@ -1013,9 +1028,12 @@ class ParticipantsGapicClient
      * Gets suggested articles for a participant based on specific historical
      * messages.
      *
-     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-     * based on the provided conversation context in the real time.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
      *
      * Sample code:
      * ```
@@ -1042,8 +1060,11 @@ class ParticipantsGapicClient
      *           ID>/conversations/<Conversation ID>/messages/<Message ID>`.
      *     @type int $contextSize
      *           Optional. Max number of messages prior to and including
-     *           [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
-     *           when compiling the suggestion. By default 20 and at most 50.
+     *           [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
+     *           to use as context when compiling the suggestion. By default 20 and at
+     *           most 50.
+     *     @type AssistQueryParameters $assistQueryParams
+     *           Optional. Parameters for a human assist query.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1069,6 +1090,10 @@ class ParticipantsGapicClient
 
         if (isset($optionalArgs['contextSize'])) {
             $request->setContextSize($optionalArgs['contextSize']);
+        }
+
+        if (isset($optionalArgs['assistQueryParams'])) {
+            $request->setAssistQueryParams($optionalArgs['assistQueryParams']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
@@ -1107,6 +1132,8 @@ class ParticipantsGapicClient
      *           Optional. Max number of messages prior to and including
      *           [latest_message] to use as context when compiling the
      *           suggestion. By default 20 and at most 50.
+     *     @type AssistQueryParameters $assistQueryParams
+     *           Optional. Parameters for a human assist query.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1132,6 +1159,10 @@ class ParticipantsGapicClient
 
         if (isset($optionalArgs['contextSize'])) {
             $request->setContextSize($optionalArgs['contextSize']);
+        }
+
+        if (isset($optionalArgs['assistQueryParams'])) {
+            $request->setAssistQueryParams($optionalArgs['assistQueryParams']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

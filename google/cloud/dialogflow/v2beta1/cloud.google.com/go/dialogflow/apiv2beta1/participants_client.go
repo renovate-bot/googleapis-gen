@@ -199,7 +199,8 @@ type internalParticipantsClient interface {
 // ParticipantsClient is a client for interacting with Dialogflow API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
-// Service for managing Participants.
+// Service for managing
+// Participants.
 type ParticipantsClient struct {
 	// The internal transport-dependent client.
 	internalClient internalParticipantsClient
@@ -263,9 +264,12 @@ func (c *ParticipantsClient) AnalyzeContent(ctx context.Context, req *dialogflow
 // SuggestArticles gets suggested articles for a participant based on specific historical
 // messages.
 //
-// Note that ListSuggestions will only list the auto-generated
-// suggestions, while CompileSuggestion will try to compile suggestion
-// based on the provided conversation context in the real time.
+// Note that
+// ListSuggestions
+// will only list the auto-generated suggestions, while
+// CompileSuggestion
+// will try to compile suggestion based on the provided conversation context
+// in the real time.
 func (c *ParticipantsClient) SuggestArticles(ctx context.Context, req *dialogflowpb.SuggestArticlesRequest, opts ...gax.CallOption) (*dialogflowpb.SuggestArticlesResponse, error) {
 	return c.internalClient.SuggestArticles(ctx, req, opts...)
 }
@@ -284,9 +288,9 @@ func (c *ParticipantsClient) SuggestSmartReplies(ctx context.Context, req *dialo
 
 // ListSuggestions deprecated: Use inline suggestion, event based suggestion or
 // Suggestion* API instead.
-// See [HumanAgentAssistantConfig.name (at http://HumanAgentAssistantConfig.name)][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name (at http://google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name)] for more
-// details.
-// Removal Date: 2020-09-01.
+// See
+// [HumanAgentAssistantConfig.name (at http://HumanAgentAssistantConfig.name)][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name (at http://google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name)]
+// for more details. Removal Date: 2020-09-01.
 //
 // Retrieves suggestions for live agents.
 //
@@ -307,14 +311,21 @@ func (c *ParticipantsClient) ListSuggestions(ctx context.Context, req *dialogflo
 	return c.internalClient.ListSuggestions(ctx, req, opts...)
 }
 
-// CompileSuggestion deprecated. use SuggestArticles and SuggestFaqAnswers instead.
+// CompileSuggestion deprecated. use
+// SuggestArticles
+// and
+// SuggestFaqAnswers
+// instead.
 //
 // Gets suggestions for a participant based on specific historical
 // messages.
 //
-// Note that ListSuggestions will only list the auto-generated
-// suggestions, while CompileSuggestion will try to compile suggestion
-// based on the provided conversation context in the real time.
+// Note that
+// ListSuggestions
+// will only list the auto-generated suggestions, while
+// CompileSuggestion
+// will try to compile suggestion based on the provided conversation context
+// in the real time.
 //
 // Deprecated: CompileSuggestion may be removed in a future version.
 func (c *ParticipantsClient) CompileSuggestion(ctx context.Context, req *dialogflowpb.CompileSuggestionRequest, opts ...gax.CallOption) (*dialogflowpb.CompileSuggestionResponse, error) {
@@ -344,7 +355,8 @@ type participantsGRPCClient struct {
 // NewParticipantsClient creates a new participants client based on gRPC.
 // The returned client must be Closed when it is done being used to clean up its underlying connections.
 //
-// Service for managing Participants.
+// Service for managing
+// Participants.
 func NewParticipantsClient(ctx context.Context, opts ...option.ClientOption) (*ParticipantsClient, error) {
 	clientOpts := defaultParticipantsGRPCClientOptions()
 	if newParticipantsClientHook != nil {

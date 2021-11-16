@@ -41,6 +41,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.CreateParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -63,6 +70,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.CreateParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -87,6 +101,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.CreateParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -109,6 +130,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.CreateParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -133,6 +161,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.CreateParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -155,6 +190,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.CreateParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -178,6 +220,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -199,6 +248,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -222,6 +278,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -243,6 +306,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -266,6 +336,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -287,6 +364,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.GetParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -311,6 +395,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.UpdateParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -333,6 +424,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.UpdateParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -357,6 +455,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.UpdateParticipant(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -379,6 +484,13 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 Role = Participant.Types.Role.HumanAgent,
                 ObfuscatedExternalUserId = "obfuscated_external_user_id5424dfb8",
+                DocumentsMetadataFilters =
+                {
+                    {
+                        "key8a0b6e3c",
+                        "value60c16320"
+                    },
+                },
             };
             mockGrpcClient.Setup(x => x.UpdateParticipantAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Participant>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ParticipantsClient client = new ParticipantsClientImpl(mockGrpcClient.Object, null);
@@ -402,6 +514,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 QueryParams = new QueryParameters(),
                 MessageSendTime = new wkt::Timestamp(),
                 RequestId = "request_id362c8df6",
+                AssistQueryParams = new AssistQueryParameters(),
             };
             AnalyzeContentResponse expectedResponse = new AnalyzeContentResponse
             {
@@ -439,6 +552,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 QueryParams = new QueryParameters(),
                 MessageSendTime = new wkt::Timestamp(),
                 RequestId = "request_id362c8df6",
+                AssistQueryParams = new AssistQueryParameters(),
             };
             AnalyzeContentResponse expectedResponse = new AnalyzeContentResponse
             {
@@ -738,6 +852,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 1799545581,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             SuggestArticlesResponse expectedResponse = new SuggestArticlesResponse
             {
@@ -764,6 +879,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 1799545581,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             SuggestArticlesResponse expectedResponse = new SuggestArticlesResponse
             {
@@ -892,6 +1008,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 1799545581,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             SuggestFaqAnswersResponse expectedResponse = new SuggestFaqAnswersResponse
             {
@@ -915,6 +1032,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Tests
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 1799545581,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             SuggestFaqAnswersResponse expectedResponse = new SuggestFaqAnswersResponse
             {

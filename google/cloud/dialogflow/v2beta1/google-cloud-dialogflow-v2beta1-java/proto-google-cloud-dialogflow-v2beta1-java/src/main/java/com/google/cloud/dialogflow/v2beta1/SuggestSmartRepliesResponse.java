@@ -5,7 +5,8 @@ package com.google.cloud.dialogflow.v2beta1;
 
 /**
  * <pre>
- * The response message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+ * The response message for
+ * [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse}
@@ -237,10 +238,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message] to compile the
-   * suggestion. It may be smaller than the
-   * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size] field in the request if there
-   * aren't that many messages in the conversation.
+   * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message]
+   * to compile the suggestion. It may be smaller than the
+   * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size]
+   * field in the request if there aren't that many messages in the
+   * conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -431,7 +433,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The response message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+   * The response message for
+   * [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse}
@@ -1094,10 +1097,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message] to compile the
-     * suggestion. It may be smaller than the
-     * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size] field in the request if there
-     * aren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message]
+     * to compile the suggestion. It may be smaller than the
+     * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size]
+     * field in the request if there aren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1110,10 +1114,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message] to compile the
-     * suggestion. It may be smaller than the
-     * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size] field in the request if there
-     * aren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message]
+     * to compile the suggestion. It may be smaller than the
+     * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size]
+     * field in the request if there aren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1129,10 +1134,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message] to compile the
-     * suggestion. It may be smaller than the
-     * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size] field in the request if there
-     * aren't that many messages in the conversation.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message]
+     * to compile the suggestion. It may be smaller than the
+     * [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size]
+     * field in the request if there aren't that many messages in the
+     * conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>

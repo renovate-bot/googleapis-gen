@@ -29,23 +29,27 @@ module Google
         #     ID>/conversations/<Conversation ID>/participants/<Participant ID>`.
         # @!attribute [rw] role
         #   @return [::Google::Cloud::Dialogflow::V2beta1::Participant::Role]
-        #     Immutable. The role this participant plays in the conversation. This field must be set
-        #     during participant creation and is then immutable.
+        #     Immutable. The role this participant plays in the conversation. This field
+        #     must be set during participant creation and is then immutable.
         # @!attribute [rw] obfuscated_external_user_id
         #   @return [::String]
-        #     Optional. Obfuscated user id that should be associated with the created participant.
+        #     Optional. Obfuscated user id that should be associated with the created
+        #     participant.
         #
         #     You can specify a user id as follows:
         #
         #     1. If you set this field in
-        #        {::Google::Cloud::Dialogflow::V2beta1::CreateParticipantRequest#participant CreateParticipantRequest} or
+        #        {::Google::Cloud::Dialogflow::V2beta1::CreateParticipantRequest#participant CreateParticipantRequest}
+        #        or
         #        {::Google::Cloud::Dialogflow::V2beta1::UpdateParticipantRequest#participant UpdateParticipantRequest},
         #        Dialogflow adds the obfuscated user id with the participant.
         #
         #     2. If you set this field in
-        #        [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id] or
+        #        [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
+        #        or
         #        [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-        #        Dialogflow will update {::Google::Cloud::Dialogflow::V2beta1::Participant#obfuscated_external_user_id Participant.obfuscated_external_user_id}.
+        #        Dialogflow will update
+        #        {::Google::Cloud::Dialogflow::V2beta1::Participant#obfuscated_external_user_id Participant.obfuscated_external_user_id}.
         #
         #     Dialogflow uses this user id for following purposes:
         #     1) Billing and measurement. If user with the same
@@ -61,9 +65,36 @@ module Google
         #     * Dialogflow only accepts a UTF-8 encoded string, e.g., a hex digest of a
         #       hash function like SHA-512.
         #     * The length of the user id must be <= 256 characters.
+        # @!attribute [rw] documents_metadata_filters
+        #   @return [::Google::Protobuf::Map{::String => ::String}]
+        #     Optional. Key-value filters on the metadata of documents returned by
+        #     article suggestion. If specified, article suggestion only returns suggested
+        #     documents that match all filters in their
+        #     {::Google::Cloud::Dialogflow::V2beta1::Document#metadata Document.metadata}.
+        #     Multiple values for a metadata key should be concatenated by comma. For
+        #     example, filters to match all documents that have 'US' or 'CA' in their
+        #     market metadata values and 'agent' in their user metadata values will be
+        #
+        #         documents_metadata_filters {
+        #           key: "market"
+        #           value: "US,CA"
+        #         }
+        #         documents_metadata_filters {
+        #           key: "user"
+        #           value: "agent"
+        #         }
         class Participant
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::String]
+          class DocumentsMetadataFiltersEntry
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
 
           # Enumeration of the roles a participant can play in a conversation.
           module Role
@@ -119,7 +150,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#create_participant Participants.CreateParticipant}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#create_participant Participants.CreateParticipant}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. Resource identifier of the conversation adding the participant.
@@ -133,7 +165,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#get_participant Participants.GetParticipant}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#get_participant Participants.GetParticipant}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the participant. Format:
@@ -144,7 +177,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_participants Participants.ListParticipants}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_participants Participants.ListParticipants}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The conversation to list all participants from.
@@ -162,7 +196,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The response message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_participants Participants.ListParticipants}.
+        # The response message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_participants Participants.ListParticipants}.
         # @!attribute [rw] participants
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::Participant>]
         #     The list of participants. There is a maximum number of items
@@ -176,7 +211,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#update_participant Participants.UpdateParticipant}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#update_participant Participants.UpdateParticipant}.
         # @!attribute [rw] participant
         #   @return [::Google::Cloud::Dialogflow::V2beta1::Participant]
         #     Required. The participant to update.
@@ -204,7 +240,9 @@ module Google
         # Represents a response from an automated agent.
         # @!attribute [rw] detect_intent_response
         #   @return [::Google::Cloud::Dialogflow::V2beta1::DetectIntentResponse]
-        #     Response of the Dialogflow {::Google::Cloud::Dialogflow::V2beta1::Sessions::Client#detect_intent Sessions.DetectIntent} call.
+        #     Response of the Dialogflow
+        #     {::Google::Cloud::Dialogflow::V2beta1::Sessions::Client#detect_intent Sessions.DetectIntent}
+        #     call.
         # @!attribute [rw] response_messages
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::ResponseMessage>]
         #     Response messages from the automated agent.
@@ -287,7 +325,41 @@ module Google
           end
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent}.
+        # Represents the parameters of human assist query.
+        # @!attribute [rw] documents_metadata_filters
+        #   @return [::Google::Protobuf::Map{::String => ::String}]
+        #     Key-value filters on the metadata of documents returned by article
+        #     suggestion. If specified, article suggestion only returns suggested
+        #     documents that match all filters in their
+        #     {::Google::Cloud::Dialogflow::V2beta1::Document#metadata Document.metadata}.
+        #     Multiple values for a metadata key should be concatenated by comma. For
+        #     example, filters to match all documents that have 'US' or 'CA' in their
+        #     market metadata values and 'agent' in their user metadata values will be
+        #
+        #         documents_metadata_filters {
+        #           key: "market"
+        #           value: "US,CA"
+        #         }
+        #         documents_metadata_filters {
+        #           key: "user"
+        #           value: "agent"
+        #         }
+        class AssistQueryParameters
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::String]
+          class DocumentsMetadataFiltersEntry
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+        end
+
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent}.
         # @!attribute [rw] participant
         #   @return [::String]
         #     Required. The name of the participant this text comes from.
@@ -309,6 +381,9 @@ module Google
         # @!attribute [rw] query_params
         #   @return [::Google::Cloud::Dialogflow::V2beta1::QueryParameters]
         #     Parameters for a Dialogflow virtual-agent query.
+        # @!attribute [rw] assist_query_params
+        #   @return [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters]
+        #     Parameters for a human assist query.
         # @!attribute [rw] message_send_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Optional. The send time of the message from end user or human agent's
@@ -344,7 +419,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The response message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent}.
+        # The response message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent}.
         # @!attribute [rw] reply_text
         #   @return [::String]
         #     Output only. The output text content.
@@ -368,19 +444,23 @@ module Google
         #     Optional. Only set if a Dialogflow automated agent has responded.
         #     Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
         #     and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
-        #     are always empty, use {::Google::Cloud::Dialogflow::V2beta1::AnalyzeContentResponse#reply_audio reply_audio} instead.
+        #     are always empty, use
+        #     {::Google::Cloud::Dialogflow::V2beta1::AnalyzeContentResponse#reply_audio reply_audio}
+        #     instead.
         # @!attribute [rw] message
         #   @return [::Google::Cloud::Dialogflow::V2beta1::Message]
         #     Output only. Message analyzed by CCAI.
         # @!attribute [rw] human_agent_suggestion_results
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::SuggestionResult>]
         #     The suggestions for most recent human agent. The order is the same as
-        #     {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantConfig::SuggestionConfig#feature_configs HumanAgentAssistantConfig.SuggestionConfig.feature_configs} of
+        #     {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantConfig::SuggestionConfig#feature_configs HumanAgentAssistantConfig.SuggestionConfig.feature_configs}
+        #     of
         #     {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantConfig#human_agent_suggestion_config HumanAgentAssistantConfig.human_agent_suggestion_config}.
         # @!attribute [rw] end_user_suggestion_results
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::SuggestionResult>]
         #     The suggestions for end user. The order is the same as
-        #     {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantConfig::SuggestionConfig#feature_configs HumanAgentAssistantConfig.SuggestionConfig.feature_configs} of
+        #     {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantConfig::SuggestionConfig#feature_configs HumanAgentAssistantConfig.SuggestionConfig.feature_configs}
+        #     of
         #     {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantConfig#end_user_suggestion_config HumanAgentAssistantConfig.end_user_suggestion_config}.
         # @!attribute [rw] dtmf_parameters
         #   @return [::Google::Cloud::Dialogflow::V2beta1::DtmfParameters]
@@ -528,8 +608,12 @@ module Google
         end
 
         # One response of different type of suggestion response which is used in
-        # the response of {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent} and
-        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent}, as well as {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantEvent HumanAgentAssistantEvent}.
+        # the response of
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent}
+        # and
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#analyze_content Participants.AnalyzeContent},
+        # as well as
+        # {::Google::Cloud::Dialogflow::V2beta1::HumanAgentAssistantEvent HumanAgentAssistantEvent}.
         # @!attribute [rw] error
         #   @return [::Google::Rpc::Status]
         #     Error status if the request failed.
@@ -547,7 +631,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles Participants.SuggestArticles}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles Participants.SuggestArticles}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the participant to fetch suggestion for.
@@ -563,14 +648,19 @@ module Google
         # @!attribute [rw] context_size
         #   @return [::Integer]
         #     Optional. Max number of messages prior to and including
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest#latest_message latest_message} to use as context
-        #     when compiling the suggestion. By default 20 and at most 50.
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest#latest_message latest_message}
+        #     to use as context when compiling the suggestion. By default 20 and at
+        #     most 50.
+        # @!attribute [rw] assist_query_params
+        #   @return [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters]
+        #     Optional. Parameters for a human assist query.
         class SuggestArticlesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The response message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles Participants.SuggestArticles}.
+        # The response message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles Participants.SuggestArticles}.
         # @!attribute [rw] article_answers
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::ArticleAnswer>]
         #     Output only. Articles ordered by score in descending order.
@@ -584,16 +674,18 @@ module Google
         # @!attribute [rw] context_size
         #   @return [::Integer]
         #     Number of messages prior to and including
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesResponse#latest_message latest_message} to compile the
-        #     suggestion. It may be smaller than the
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesResponse#context_size SuggestArticlesResponse.context_size} field in the request if there
-        #     aren't that many messages in the conversation.
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesResponse#latest_message latest_message}
+        #     to compile the suggestion. It may be smaller than the
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesResponse#context_size SuggestArticlesResponse.context_size}
+        #     field in the request if there aren't that many messages in the
+        #     conversation.
         class SuggestArticlesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers Participants.SuggestFaqAnswers}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers Participants.SuggestFaqAnswers}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the participant to fetch suggestion for.
@@ -611,12 +703,16 @@ module Google
         #     Optional. Max number of messages prior to and including
         #     [latest_message] to use as context when compiling the
         #     suggestion. By default 20 and at most 50.
+        # @!attribute [rw] assist_query_params
+        #   @return [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters]
+        #     Optional. Parameters for a human assist query.
         class SuggestFaqAnswersRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers Participants.SuggestFaqAnswers}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers Participants.SuggestFaqAnswers}.
         # @!attribute [rw] faq_answers
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::FaqAnswer>]
         #     Output only. Answers extracted from FAQ documents.
@@ -630,16 +726,18 @@ module Google
         # @!attribute [rw] context_size
         #   @return [::Integer]
         #     Number of messages prior to and including
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestFaqAnswersResponse#latest_message latest_message} to compile the
-        #     suggestion. It may be smaller than the
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestFaqAnswersRequest#context_size SuggestFaqAnswersRequest.context_size} field in the request if there
-        #     aren't that many messages in the conversation.
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestFaqAnswersResponse#latest_message latest_message}
+        #     to compile the suggestion. It may be smaller than the
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestFaqAnswersRequest#context_size SuggestFaqAnswersRequest.context_size}
+        #     field in the request if there aren't that many messages in the
+        #     conversation.
         class SuggestFaqAnswersResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_smart_replies Participants.SuggestSmartReplies}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_smart_replies Participants.SuggestSmartReplies}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the participant to fetch suggestion for.
@@ -667,7 +765,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The response message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_smart_replies Participants.SuggestSmartReplies}.
+        # The response message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_smart_replies Participants.SuggestSmartReplies}.
         # @!attribute [rw] smart_reply_answers
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::SmartReplyAnswer>]
         #     Output only. Multiple reply options provided by smart reply service. The
@@ -683,10 +782,11 @@ module Google
         # @!attribute [rw] context_size
         #   @return [::Integer]
         #     Number of messages prior to and including
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestSmartRepliesResponse#latest_message latest_message} to compile the
-        #     suggestion. It may be smaller than the
-        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestSmartRepliesRequest#context_size SuggestSmartRepliesRequest.context_size} field in the request if there
-        #     aren't that many messages in the conversation.
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestSmartRepliesResponse#latest_message latest_message}
+        #     to compile the suggestion. It may be smaller than the
+        #     {::Google::Cloud::Dialogflow::V2beta1::SuggestSmartRepliesRequest#context_size SuggestSmartRepliesRequest.context_size}
+        #     field in the request if there aren't that many messages in the
+        #     conversation.
         class SuggestSmartRepliesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -793,7 +893,8 @@ module Google
           end
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions Participants.ListSuggestions}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions Participants.ListSuggestions}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the participant to fetch suggestions for.
@@ -821,7 +922,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The response message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions Participants.ListSuggestions}.
+        # The response message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions Participants.ListSuggestions}.
         # @!attribute [rw] suggestions
         #   @return [::Array<::Google::Cloud::Dialogflow::V2beta1::Suggestion>]
         #     Required. The list of suggestions. There will be a maximum number of items
@@ -836,7 +938,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The request message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion Participants.CompileSuggestion}.
+        # The request message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion Participants.CompileSuggestion}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The name of the participant to fetch suggestion for.
@@ -859,7 +962,8 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # The response message for {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion Participants.CompileSuggestion}.
+        # The response message for
+        # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion Participants.CompileSuggestion}.
         # @!attribute [rw] suggestion
         #   @return [::Google::Cloud::Dialogflow::V2beta1::Suggestion]
         #     The compiled suggestion.
@@ -875,8 +979,9 @@ module Google
         #     Number of messages prior to and including
         #     {::Google::Cloud::Dialogflow::V2beta1::CompileSuggestionResponse#latest_message latest_message}
         #     to compile the suggestion. It may be smaller than the
-        #     {::Google::Cloud::Dialogflow::V2beta1::CompileSuggestionRequest#context_size CompileSuggestionRequest.context_size} field in the request if
-        #     there aren't that many messages in the conversation.
+        #     {::Google::Cloud::Dialogflow::V2beta1::CompileSuggestionRequest#context_size CompileSuggestionRequest.context_size}
+        #     field in the request if there aren't that many messages in the
+        #     conversation.
         class CompileSuggestionResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

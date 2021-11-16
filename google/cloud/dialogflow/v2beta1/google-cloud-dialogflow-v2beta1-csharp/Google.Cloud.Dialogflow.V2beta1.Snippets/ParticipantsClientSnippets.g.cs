@@ -560,6 +560,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 QueryParams = new QueryParameters(),
                 MessageSendTime = new Timestamp(),
                 RequestId = "",
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             AnalyzeContentResponse response = participantsClient.AnalyzeContent(request);
@@ -582,6 +583,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 QueryParams = new QueryParameters(),
                 MessageSendTime = new Timestamp(),
                 RequestId = "",
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             AnalyzeContentResponse response = await participantsClient.AnalyzeContentAsync(request);
@@ -716,6 +718,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 0,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             SuggestArticlesResponse response = participantsClient.SuggestArticles(request);
@@ -735,6 +738,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 0,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             SuggestArticlesResponse response = await participantsClient.SuggestArticlesAsync(request);
@@ -807,6 +811,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 0,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             SuggestFaqAnswersResponse response = participantsClient.SuggestFaqAnswers(request);
@@ -826,6 +831,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 0,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             SuggestFaqAnswersResponse response = await participantsClient.SuggestFaqAnswersAsync(request);

@@ -27,7 +27,8 @@ module Google
           ##
           # Client for the Participants service.
           #
-          # Service for managing {::Google::Cloud::Dialogflow::V2beta1::Participant Participants}.
+          # Service for managing
+          # {::Google::Cloud::Dialogflow::V2beta1::Participant Participants}.
           #
           class Client
             include Paths
@@ -534,7 +535,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload analyze_content(participant: nil, text_input: nil, event_input: nil, reply_audio_config: nil, query_params: nil, message_send_time: nil, request_id: nil)
+            # @overload analyze_content(participant: nil, text_input: nil, event_input: nil, reply_audio_config: nil, query_params: nil, assist_query_params: nil, message_send_time: nil, request_id: nil)
             #   Pass arguments to `analyze_content` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -555,6 +556,8 @@ module Google
             #     is disabled.
             #   @param query_params [::Google::Cloud::Dialogflow::V2beta1::QueryParameters, ::Hash]
             #     Parameters for a Dialogflow virtual-agent query.
+            #   @param assist_query_params [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters, ::Hash]
+            #     Parameters for a human assist query.
             #   @param message_send_time [::Google::Protobuf::Timestamp, ::Hash]
             #     Optional. The send time of the message from end user or human agent's
             #     perspective. It is used for identifying the same message under one
@@ -643,9 +646,12 @@ module Google
             # Gets suggested articles for a participant based on specific historical
             # messages.
             #
-            # Note that {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions} will only list the auto-generated
-            # suggestions, while {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion} will try to compile suggestion
-            # based on the provided conversation context in the real time.
+            # Note that
+            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions}
+            # will only list the auto-generated suggestions, while
+            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion}
+            # will try to compile suggestion based on the provided conversation context
+            # in the real time.
             #
             # @overload suggest_articles(request, options = nil)
             #   Pass arguments to `suggest_articles` via a request object, either of type
@@ -657,7 +663,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload suggest_articles(parent: nil, latest_message: nil, context_size: nil)
+            # @overload suggest_articles(parent: nil, latest_message: nil, context_size: nil, assist_query_params: nil)
             #   Pass arguments to `suggest_articles` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -674,8 +680,11 @@ module Google
             #     ID>/conversations/<Conversation ID>/messages/<Message ID>`.
             #   @param context_size [::Integer]
             #     Optional. Max number of messages prior to and including
-            #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest#latest_message latest_message} to use as context
-            #     when compiling the suggestion. By default 20 and at most 50.
+            #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest#latest_message latest_message}
+            #     to use as context when compiling the suggestion. By default 20 and at
+            #     most 50.
+            #   @param assist_query_params [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters, ::Hash]
+            #     Optional. Parameters for a human assist query.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesResponse]
@@ -755,7 +764,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload suggest_faq_answers(parent: nil, latest_message: nil, context_size: nil)
+            # @overload suggest_faq_answers(parent: nil, latest_message: nil, context_size: nil, assist_query_params: nil)
             #   Pass arguments to `suggest_faq_answers` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -774,6 +783,8 @@ module Google
             #     Optional. Max number of messages prior to and including
             #     [latest_message] to use as context when compiling the
             #     suggestion. By default 20 and at most 50.
+            #   @param assist_query_params [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters, ::Hash]
+            #     Optional. Parameters for a human assist query.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Dialogflow::V2beta1::SuggestFaqAnswersResponse]
@@ -944,9 +955,9 @@ module Google
             ##
             # Deprecated: Use inline suggestion, event based suggestion or
             # Suggestion* API instead.
-            # See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-            # details.
-            # Removal Date: 2020-09-01.
+            # See
+            # [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+            # for more details. Removal Date: 2020-09-01.
             #
             # Retrieves suggestions for live agents.
             #
@@ -1071,14 +1082,21 @@ module Google
             end
 
             ##
-            # Deprecated. use {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles SuggestArticles} and {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers SuggestFaqAnswers} instead.
+            # Deprecated. use
+            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles SuggestArticles}
+            # and
+            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers SuggestFaqAnswers}
+            # instead.
             #
             # Gets suggestions for a participant based on specific historical
             # messages.
             #
-            # Note that {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions} will only list the auto-generated
-            # suggestions, while {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion} will try to compile suggestion
-            # based on the provided conversation context in the real time.
+            # Note that
+            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions}
+            # will only list the auto-generated suggestions, while
+            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion}
+            # will try to compile suggestion based on the provided conversation context
+            # in the real time.
             #
             # @deprecated This method is deprecated and may be removed in the next major version update.
             #

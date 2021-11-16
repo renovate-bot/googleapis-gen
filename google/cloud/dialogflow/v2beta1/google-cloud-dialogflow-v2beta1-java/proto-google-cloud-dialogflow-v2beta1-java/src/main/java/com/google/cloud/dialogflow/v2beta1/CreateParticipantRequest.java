@@ -5,7 +5,8 @@ package com.google.cloud.dialogflow.v2beta1;
 
 /**
  * <pre>
- * The request message for [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
+ * The request message for
+ * [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateParticipantRequest}
@@ -364,7 +365,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
+   * The request message for
+   * [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateParticipantRequest}

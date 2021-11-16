@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
+ * The request message for
+ * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.v2beta1.AnalyzeContentRequest</code>
  */
@@ -39,6 +40,12 @@ class AnalyzeContentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 9;</code>
      */
     protected $query_params = null;
+    /**
+     * Parameters for a human assist query.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
+     */
+    protected $assist_query_params = null;
     /**
      * Optional. The send time of the message from end user or human agent's
      * perspective. It is used for identifying the same message under one
@@ -88,6 +95,8 @@ class AnalyzeContentRequest extends \Google\Protobuf\Internal\Message
      *           is disabled.
      *     @type \Google\Cloud\Dialogflow\V2beta1\QueryParameters $query_params
      *           Parameters for a Dialogflow virtual-agent query.
+     *     @type \Google\Cloud\Dialogflow\V2beta1\AssistQueryParameters $assist_query_params
+     *           Parameters for a human assist query.
      *     @type \Google\Protobuf\Timestamp $message_send_time
      *           Optional. The send time of the message from end user or human agent's
      *           perspective. It is used for identifying the same message under one
@@ -280,6 +289,42 @@ class AnalyzeContentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\QueryParameters::class);
         $this->query_params = $var;
+
+        return $this;
+    }
+
+    /**
+     * Parameters for a human assist query.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
+     * @return \Google\Cloud\Dialogflow\V2beta1\AssistQueryParameters|null
+     */
+    public function getAssistQueryParams()
+    {
+        return $this->assist_query_params;
+    }
+
+    public function hasAssistQueryParams()
+    {
+        return isset($this->assist_query_params);
+    }
+
+    public function clearAssistQueryParams()
+    {
+        unset($this->assist_query_params);
+    }
+
+    /**
+     * Parameters for a human assist query.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 14;</code>
+     * @param \Google\Cloud\Dialogflow\V2beta1\AssistQueryParameters $var
+     * @return $this
+     */
+    public function setAssistQueryParams($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\V2beta1\AssistQueryParameters::class);
+        $this->assist_query_params = $var;
 
         return $this;
     }

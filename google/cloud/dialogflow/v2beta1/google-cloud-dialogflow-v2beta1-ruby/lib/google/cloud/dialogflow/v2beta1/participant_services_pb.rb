@@ -24,7 +24,8 @@ module Google
     module Dialogflow
       module V2beta1
         module Participants
-          # Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
+          # Service for managing
+          # [Participants][google.cloud.dialogflow.v2beta1.Participant].
           class Service
 
             include ::GRPC::GenericService
@@ -51,9 +52,12 @@ module Google
             # Gets suggested articles for a participant based on specific historical
             # messages.
             #
-            # Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-            # suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-            # based on the provided conversation context in the real time.
+            # Note that
+            # [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+            # will only list the auto-generated suggestions, while
+            # [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+            # will try to compile suggestion based on the provided conversation context
+            # in the real time.
             rpc :SuggestArticles, ::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest, ::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesResponse
             # Gets suggested faq answers for a participant based on specific historical
             # messages.
@@ -63,9 +67,9 @@ module Google
             rpc :SuggestSmartReplies, ::Google::Cloud::Dialogflow::V2beta1::SuggestSmartRepliesRequest, ::Google::Cloud::Dialogflow::V2beta1::SuggestSmartRepliesResponse
             # Deprecated: Use inline suggestion, event based suggestion or
             # Suggestion* API instead.
-            # See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
-            # details.
-            # Removal Date: 2020-09-01.
+            # See
+            # [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+            # for more details. Removal Date: 2020-09-01.
             #
             # Retrieves suggestions for live agents.
             #
@@ -82,14 +86,21 @@ module Google
             # `create_time_epoch_microseconds > [first item's create_time of previous
             # request]` and empty page_token.
             rpc :ListSuggestions, ::Google::Cloud::Dialogflow::V2beta1::ListSuggestionsRequest, ::Google::Cloud::Dialogflow::V2beta1::ListSuggestionsResponse
-            # Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
+            # Deprecated. use
+            # [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+            # and
+            # [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+            # instead.
             #
             # Gets suggestions for a participant based on specific historical
             # messages.
             #
-            # Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
-            # suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
-            # based on the provided conversation context in the real time.
+            # Note that
+            # [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+            # will only list the auto-generated suggestions, while
+            # [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+            # will try to compile suggestion based on the provided conversation context
+            # in the real time.
             rpc :CompileSuggestion, ::Google::Cloud::Dialogflow::V2beta1::CompileSuggestionRequest, ::Google::Cloud::Dialogflow::V2beta1::CompileSuggestionResponse
           end
 

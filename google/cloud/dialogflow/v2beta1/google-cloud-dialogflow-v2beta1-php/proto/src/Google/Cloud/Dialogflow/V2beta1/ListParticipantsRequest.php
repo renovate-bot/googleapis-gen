@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
+ * The request message for
+ * [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.v2beta1.ListParticipantsRequest</code>
  */

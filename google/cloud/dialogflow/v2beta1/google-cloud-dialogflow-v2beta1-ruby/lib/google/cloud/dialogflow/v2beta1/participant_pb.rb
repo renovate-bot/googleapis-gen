@@ -22,6 +22,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :role, :enum, 2, "google.cloud.dialogflow.v2beta1.Participant.Role"
       optional :obfuscated_external_user_id, :string, 7
+      map :documents_metadata_filters, :string, :string, 8
     end
     add_enum "google.cloud.dialogflow.v2beta1.Participant.Role" do
       value :ROLE_UNSPECIFIED, 0
@@ -93,10 +94,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :FAQ, 2
       value :SMART_REPLY, 3
     end
+    add_message "google.cloud.dialogflow.v2beta1.AssistQueryParameters" do
+      map :documents_metadata_filters, :string, :string, 1
+    end
     add_message "google.cloud.dialogflow.v2beta1.AnalyzeContentRequest" do
       optional :participant, :string, 1
       optional :reply_audio_config, :message, 5, "google.cloud.dialogflow.v2beta1.OutputAudioConfig"
       optional :query_params, :message, 9, "google.cloud.dialogflow.v2beta1.QueryParameters"
+      optional :assist_query_params, :message, 14, "google.cloud.dialogflow.v2beta1.AssistQueryParameters"
       optional :message_send_time, :message, 10, "google.protobuf.Timestamp"
       optional :request_id, :string, 11
       oneof :input do
@@ -157,6 +162,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :parent, :string, 1
       optional :latest_message, :string, 2
       optional :context_size, :int32, 3
+      optional :assist_query_params, :message, 4, "google.cloud.dialogflow.v2beta1.AssistQueryParameters"
     end
     add_message "google.cloud.dialogflow.v2beta1.SuggestArticlesResponse" do
       repeated :article_answers, :message, 1, "google.cloud.dialogflow.v2beta1.ArticleAnswer"
@@ -167,6 +173,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :parent, :string, 1
       optional :latest_message, :string, 2
       optional :context_size, :int32, 3
+      optional :assist_query_params, :message, 4, "google.cloud.dialogflow.v2beta1.AssistQueryParameters"
     end
     add_message "google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse" do
       repeated :faq_answers, :message, 1, "google.cloud.dialogflow.v2beta1.FaqAnswer"
@@ -269,6 +276,7 @@ module Google
         AutomatedAgentReply::AutomatedAgentReplyType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AutomatedAgentReply.AutomatedAgentReplyType").enummodule
         SuggestionFeature = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SuggestionFeature").msgclass
         SuggestionFeature::Type = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.SuggestionFeature.Type").enummodule
+        AssistQueryParameters = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AssistQueryParameters").msgclass
         AnalyzeContentRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AnalyzeContentRequest").msgclass
         DtmfParameters = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.DtmfParameters").msgclass
         AnalyzeContentResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.v2beta1.AnalyzeContentResponse").msgclass

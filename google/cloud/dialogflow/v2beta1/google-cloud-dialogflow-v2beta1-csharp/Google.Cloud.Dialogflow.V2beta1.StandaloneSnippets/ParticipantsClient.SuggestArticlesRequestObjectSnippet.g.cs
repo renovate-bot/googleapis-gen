@@ -35,6 +35,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 ParentAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 LatestMessageAsMessageName = MessageName.FromProjectConversationMessage("[PROJECT]", "[CONVERSATION]", "[MESSAGE]"),
                 ContextSize = 0,
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             SuggestArticlesResponse response = participantsClient.SuggestArticles(request);

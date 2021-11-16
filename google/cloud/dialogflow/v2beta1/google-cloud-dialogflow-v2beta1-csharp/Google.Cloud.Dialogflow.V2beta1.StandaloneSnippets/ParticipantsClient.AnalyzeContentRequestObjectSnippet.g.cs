@@ -39,6 +39,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 QueryParams = new QueryParameters(),
                 MessageSendTime = new Timestamp(),
                 RequestId = "",
+                AssistQueryParams = new AssistQueryParameters(),
             };
             // Make the request
             AnalyzeContentResponse response = participantsClient.AnalyzeContent(request);
