@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -47,6 +48,7 @@ use Google\Cloud\Compute\V1\Policy;
 use Google\Cloud\Compute\V1\RegionDisksAddResourcePoliciesRequest;
 use Google\Cloud\Compute\V1\RegionDisksRemoveResourcePoliciesRequest;
 use Google\Cloud\Compute\V1\RegionDisksResizeRequest;
+use Google\Cloud\Compute\V1\RegionOperationsClient;
 use Google\Cloud\Compute\V1\RegionSetLabelsRequest;
 use Google\Cloud\Compute\V1\RegionSetPolicyRequest;
 use Google\Cloud\Compute\V1\RemoveResourcePoliciesRegionDiskRequest;
@@ -71,7 +73,30 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  *     $project = 'project';
  *     $region = 'region';
  *     $regionDisksAddResourcePoliciesRequestResource = new RegionDisksAddResourcePoliciesRequest();
- *     $response = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
+ *     $operationResponse = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'addResourcePolicies');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $regionDisksClient->close();
  * }
@@ -109,6 +134,8 @@ class RegionDisksGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -125,6 +152,7 @@ class RegionDisksGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/region_disks_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => RegionOperationsClient::class,
         ];
     }
 
@@ -144,6 +172,56 @@ class RegionDisksGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an RegionOperationsClient object with the same endpoint as $this.
+     *
+     * @return RegionOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+                'getRegion',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -201,6 +279,7 @@ class RegionDisksGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -214,7 +293,30 @@ class RegionDisksGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $regionDisksAddResourcePoliciesRequestResource = new RegionDisksAddResourcePoliciesRequest();
-     *     $response = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
+     *     $operationResponse = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->addResourcePolicies($disk, $project, $region, $regionDisksAddResourcePoliciesRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'addResourcePolicies');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -236,7 +338,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -257,7 +359,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('AddResourcePolicies', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('AddResourcePolicies', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -271,7 +373,30 @@ class RegionDisksGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $snapshotResource = new Snapshot();
-     *     $response = $regionDisksClient->createSnapshot($disk, $project, $region, $snapshotResource);
+     *     $operationResponse = $regionDisksClient->createSnapshot($disk, $project, $region, $snapshotResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->createSnapshot($disk, $project, $region, $snapshotResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'createSnapshot');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -293,7 +418,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -314,7 +439,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('CreateSnapshot', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('CreateSnapshot', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -327,7 +452,30 @@ class RegionDisksGapicClient
      *     $disk = 'disk';
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $regionDisksClient->delete($disk, $project, $region);
+     *     $operationResponse = $regionDisksClient->delete($disk, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->delete($disk, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -348,7 +496,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -368,7 +516,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -483,7 +631,30 @@ class RegionDisksGapicClient
      *     $diskResource = new Disk();
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $regionDisksClient->insert($diskResource, $project, $region);
+     *     $operationResponse = $regionDisksClient->insert($diskResource, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->insert($diskResource, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -506,7 +677,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -529,7 +700,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -632,7 +803,30 @@ class RegionDisksGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $regionDisksRemoveResourcePoliciesRequestResource = new RegionDisksRemoveResourcePoliciesRequest();
-     *     $response = $regionDisksClient->removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource);
+     *     $operationResponse = $regionDisksClient->removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->removeResourcePolicies($disk, $project, $region, $regionDisksRemoveResourcePoliciesRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'removeResourcePolicies');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -654,7 +848,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -675,7 +869,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('RemoveResourcePolicies', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('RemoveResourcePolicies', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -689,7 +883,30 @@ class RegionDisksGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $regionDisksResizeRequestResource = new RegionDisksResizeRequest();
-     *     $response = $regionDisksClient->resize($disk, $project, $region, $regionDisksResizeRequestResource);
+     *     $operationResponse = $regionDisksClient->resize($disk, $project, $region, $regionDisksResizeRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->resize($disk, $project, $region, $regionDisksResizeRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'resize');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -711,7 +928,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -732,7 +949,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Resize', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Resize', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -797,7 +1014,30 @@ class RegionDisksGapicClient
      *     $region = 'region';
      *     $regionSetLabelsRequestResource = new RegionSetLabelsRequest();
      *     $resource = 'resource';
-     *     $response = $regionDisksClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
+     *     $operationResponse = $regionDisksClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionDisksClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionDisksClient->resumeOperation($operationName, 'setLabels');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionDisksClient->close();
      * }
@@ -819,7 +1059,7 @@ class RegionDisksGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -840,7 +1080,7 @@ class RegionDisksGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetLabels', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetLabels', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**

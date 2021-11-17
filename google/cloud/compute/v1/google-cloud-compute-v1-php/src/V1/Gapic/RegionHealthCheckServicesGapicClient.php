@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -41,6 +42,7 @@ use Google\Cloud\Compute\V1\InsertRegionHealthCheckServiceRequest;
 use Google\Cloud\Compute\V1\ListRegionHealthCheckServicesRequest;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\PatchRegionHealthCheckServiceRequest;
+use Google\Cloud\Compute\V1\RegionOperationsClient;
 
 /**
  * Service Description: The RegionHealthCheckServices API.
@@ -54,7 +56,30 @@ use Google\Cloud\Compute\V1\PatchRegionHealthCheckServiceRequest;
  *     $healthCheckService = 'health_check_service';
  *     $project = 'project';
  *     $region = 'region';
- *     $response = $regionHealthCheckServicesClient->delete($healthCheckService, $project, $region);
+ *     $operationResponse = $regionHealthCheckServicesClient->delete($healthCheckService, $project, $region);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $regionHealthCheckServicesClient->delete($healthCheckService, $project, $region);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $regionHealthCheckServicesClient->resumeOperation($operationName, 'delete');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $regionHealthCheckServicesClient->close();
  * }
@@ -92,6 +117,8 @@ class RegionHealthCheckServicesGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -108,6 +135,7 @@ class RegionHealthCheckServicesGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/region_health_check_services_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => RegionOperationsClient::class,
         ];
     }
 
@@ -127,6 +155,56 @@ class RegionHealthCheckServicesGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an RegionOperationsClient object with the same endpoint as $this.
+     *
+     * @return RegionOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+                'getRegion',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -184,6 +262,7 @@ class RegionHealthCheckServicesGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -196,7 +275,30 @@ class RegionHealthCheckServicesGapicClient
      *     $healthCheckService = 'health_check_service';
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $regionHealthCheckServicesClient->delete($healthCheckService, $project, $region);
+     *     $operationResponse = $regionHealthCheckServicesClient->delete($healthCheckService, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionHealthCheckServicesClient->delete($healthCheckService, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionHealthCheckServicesClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionHealthCheckServicesClient->close();
      * }
@@ -217,7 +319,7 @@ class RegionHealthCheckServicesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -237,7 +339,7 @@ class RegionHealthCheckServicesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -298,7 +400,30 @@ class RegionHealthCheckServicesGapicClient
      *     $healthCheckServiceResource = new HealthCheckService();
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $regionHealthCheckServicesClient->insert($healthCheckServiceResource, $project, $region);
+     *     $operationResponse = $regionHealthCheckServicesClient->insert($healthCheckServiceResource, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionHealthCheckServicesClient->insert($healthCheckServiceResource, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionHealthCheckServicesClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionHealthCheckServicesClient->close();
      * }
@@ -319,7 +444,7 @@ class RegionHealthCheckServicesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -338,7 +463,7 @@ class RegionHealthCheckServicesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -441,7 +566,30 @@ class RegionHealthCheckServicesGapicClient
      *     $healthCheckServiceResource = new HealthCheckService();
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $regionHealthCheckServicesClient->patch($healthCheckService, $healthCheckServiceResource, $project, $region);
+     *     $operationResponse = $regionHealthCheckServicesClient->patch($healthCheckService, $healthCheckServiceResource, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $regionHealthCheckServicesClient->patch($healthCheckService, $healthCheckServiceResource, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $regionHealthCheckServicesClient->resumeOperation($operationName, 'patch');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $regionHealthCheckServicesClient->close();
      * }
@@ -463,7 +611,7 @@ class RegionHealthCheckServicesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -484,6 +632,6 @@ class RegionHealthCheckServicesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Patch', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Patch', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 }

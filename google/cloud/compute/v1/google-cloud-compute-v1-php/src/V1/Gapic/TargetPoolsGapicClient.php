@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -43,6 +44,7 @@ use Google\Cloud\Compute\V1\InsertTargetPoolRequest;
 use Google\Cloud\Compute\V1\InstanceReference;
 use Google\Cloud\Compute\V1\ListTargetPoolsRequest;
 use Google\Cloud\Compute\V1\Operation;
+use Google\Cloud\Compute\V1\RegionOperationsClient;
 use Google\Cloud\Compute\V1\RemoveHealthCheckTargetPoolRequest;
 use Google\Cloud\Compute\V1\RemoveInstanceTargetPoolRequest;
 use Google\Cloud\Compute\V1\SetBackupTargetPoolRequest;
@@ -69,7 +71,30 @@ use Google\Cloud\Compute\V1\TargetReference;
  *     $region = 'region';
  *     $targetPool = 'target_pool';
  *     $targetPoolsAddHealthCheckRequestResource = new TargetPoolsAddHealthCheckRequest();
- *     $response = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
+ *     $operationResponse = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'addHealthCheck');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $targetPoolsClient->close();
  * }
@@ -107,6 +132,8 @@ class TargetPoolsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -123,6 +150,7 @@ class TargetPoolsGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/target_pools_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => RegionOperationsClient::class,
         ];
     }
 
@@ -142,6 +170,56 @@ class TargetPoolsGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an RegionOperationsClient object with the same endpoint as $this.
+     *
+     * @return RegionOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+                'getRegion',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -199,6 +277,7 @@ class TargetPoolsGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -212,7 +291,30 @@ class TargetPoolsGapicClient
      *     $region = 'region';
      *     $targetPool = 'target_pool';
      *     $targetPoolsAddHealthCheckRequestResource = new TargetPoolsAddHealthCheckRequest();
-     *     $response = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
+     *     $operationResponse = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->addHealthCheck($project, $region, $targetPool, $targetPoolsAddHealthCheckRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'addHealthCheck');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -234,7 +336,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -255,7 +357,7 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('AddHealthCheck', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('AddHealthCheck', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -269,7 +371,30 @@ class TargetPoolsGapicClient
      *     $region = 'region';
      *     $targetPool = 'target_pool';
      *     $targetPoolsAddInstanceRequestResource = new TargetPoolsAddInstanceRequest();
-     *     $response = $targetPoolsClient->addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource);
+     *     $operationResponse = $targetPoolsClient->addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->addInstance($project, $region, $targetPool, $targetPoolsAddInstanceRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'addInstance');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -291,7 +416,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -312,7 +437,7 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('AddInstance', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('AddInstance', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -416,7 +541,30 @@ class TargetPoolsGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $targetPool = 'target_pool';
-     *     $response = $targetPoolsClient->delete($project, $region, $targetPool);
+     *     $operationResponse = $targetPoolsClient->delete($project, $region, $targetPool);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->delete($project, $region, $targetPool);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -437,7 +585,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -457,7 +605,7 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -569,7 +717,30 @@ class TargetPoolsGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $targetPoolResource = new TargetPool();
-     *     $response = $targetPoolsClient->insert($project, $region, $targetPoolResource);
+     *     $operationResponse = $targetPoolsClient->insert($project, $region, $targetPoolResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->insert($project, $region, $targetPoolResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -590,7 +761,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -609,7 +780,7 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -712,7 +883,30 @@ class TargetPoolsGapicClient
      *     $region = 'region';
      *     $targetPool = 'target_pool';
      *     $targetPoolsRemoveHealthCheckRequestResource = new TargetPoolsRemoveHealthCheckRequest();
-     *     $response = $targetPoolsClient->removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource);
+     *     $operationResponse = $targetPoolsClient->removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->removeHealthCheck($project, $region, $targetPool, $targetPoolsRemoveHealthCheckRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'removeHealthCheck');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -734,7 +928,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -755,7 +949,7 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('RemoveHealthCheck', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('RemoveHealthCheck', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -769,7 +963,30 @@ class TargetPoolsGapicClient
      *     $region = 'region';
      *     $targetPool = 'target_pool';
      *     $targetPoolsRemoveInstanceRequestResource = new TargetPoolsRemoveInstanceRequest();
-     *     $response = $targetPoolsClient->removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource);
+     *     $operationResponse = $targetPoolsClient->removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->removeInstance($project, $region, $targetPool, $targetPoolsRemoveInstanceRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'removeInstance');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -791,7 +1008,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -812,7 +1029,7 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('RemoveInstance', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('RemoveInstance', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -826,7 +1043,30 @@ class TargetPoolsGapicClient
      *     $region = 'region';
      *     $targetPool = 'target_pool';
      *     $targetReferenceResource = new TargetReference();
-     *     $response = $targetPoolsClient->setBackup($project, $region, $targetPool, $targetReferenceResource);
+     *     $operationResponse = $targetPoolsClient->setBackup($project, $region, $targetPool, $targetReferenceResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetPoolsClient->setBackup($project, $region, $targetPool, $targetReferenceResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetPoolsClient->resumeOperation($operationName, 'setBackup');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetPoolsClient->close();
      * }
@@ -850,7 +1090,7 @@ class TargetPoolsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -875,6 +1115,6 @@ class TargetPoolsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetBackup', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetBackup', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 }

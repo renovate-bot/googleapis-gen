@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -36,6 +37,7 @@ use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Compute\V1\AggregatedListTargetHttpProxiesRequest;
 use Google\Cloud\Compute\V1\DeleteTargetHttpProxyRequest;
 use Google\Cloud\Compute\V1\GetTargetHttpProxyRequest;
+use Google\Cloud\Compute\V1\GlobalOperationsClient;
 use Google\Cloud\Compute\V1\InsertTargetHttpProxyRequest;
 use Google\Cloud\Compute\V1\ListTargetHttpProxiesRequest;
 use Google\Cloud\Compute\V1\Operation;
@@ -106,6 +108,8 @@ class TargetHttpProxiesGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -122,6 +126,7 @@ class TargetHttpProxiesGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/target_http_proxies_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => GlobalOperationsClient::class,
         ];
     }
 
@@ -141,6 +146,55 @@ class TargetHttpProxiesGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an GlobalOperationsClient object with the same endpoint as $this.
+     *
+     * @return GlobalOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -198,6 +252,7 @@ class TargetHttpProxiesGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -300,7 +355,30 @@ class TargetHttpProxiesGapicClient
      * try {
      *     $project = 'project';
      *     $targetHttpProxy = 'target_http_proxy';
-     *     $response = $targetHttpProxiesClient->delete($project, $targetHttpProxy);
+     *     $operationResponse = $targetHttpProxiesClient->delete($project, $targetHttpProxy);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetHttpProxiesClient->delete($project, $targetHttpProxy);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetHttpProxiesClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetHttpProxiesClient->close();
      * }
@@ -320,7 +398,7 @@ class TargetHttpProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -338,7 +416,7 @@ class TargetHttpProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -394,7 +472,30 @@ class TargetHttpProxiesGapicClient
      * try {
      *     $project = 'project';
      *     $targetHttpProxyResource = new TargetHttpProxy();
-     *     $response = $targetHttpProxiesClient->insert($project, $targetHttpProxyResource);
+     *     $operationResponse = $targetHttpProxiesClient->insert($project, $targetHttpProxyResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetHttpProxiesClient->insert($project, $targetHttpProxyResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetHttpProxiesClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetHttpProxiesClient->close();
      * }
@@ -414,7 +515,7 @@ class TargetHttpProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -431,7 +532,7 @@ class TargetHttpProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -529,7 +630,30 @@ class TargetHttpProxiesGapicClient
      *     $project = 'project';
      *     $targetHttpProxy = 'target_http_proxy';
      *     $targetHttpProxyResource = new TargetHttpProxy();
-     *     $response = $targetHttpProxiesClient->patch($project, $targetHttpProxy, $targetHttpProxyResource);
+     *     $operationResponse = $targetHttpProxiesClient->patch($project, $targetHttpProxy, $targetHttpProxyResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetHttpProxiesClient->patch($project, $targetHttpProxy, $targetHttpProxyResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetHttpProxiesClient->resumeOperation($operationName, 'patch');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetHttpProxiesClient->close();
      * }
@@ -550,7 +674,7 @@ class TargetHttpProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -569,7 +693,7 @@ class TargetHttpProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Patch', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Patch', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -582,7 +706,30 @@ class TargetHttpProxiesGapicClient
      *     $project = 'project';
      *     $targetHttpProxy = 'target_http_proxy';
      *     $urlMapReferenceResource = new UrlMapReference();
-     *     $response = $targetHttpProxiesClient->setUrlMap($project, $targetHttpProxy, $urlMapReferenceResource);
+     *     $operationResponse = $targetHttpProxiesClient->setUrlMap($project, $targetHttpProxy, $urlMapReferenceResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetHttpProxiesClient->setUrlMap($project, $targetHttpProxy, $urlMapReferenceResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetHttpProxiesClient->resumeOperation($operationName, 'setUrlMap');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetHttpProxiesClient->close();
      * }
@@ -603,7 +750,7 @@ class TargetHttpProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -622,6 +769,6 @@ class TargetHttpProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetUrlMap', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetUrlMap', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 }

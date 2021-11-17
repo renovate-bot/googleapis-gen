@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -41,6 +42,7 @@ use Google\Cloud\Compute\V1\EnableXpnResourceProjectRequest;
 use Google\Cloud\Compute\V1\GetProjectRequest;
 use Google\Cloud\Compute\V1\GetXpnHostProjectRequest;
 use Google\Cloud\Compute\V1\GetXpnResourcesProjectsRequest;
+use Google\Cloud\Compute\V1\GlobalOperationsClient;
 use Google\Cloud\Compute\V1\InstanceMoveRequest;
 use Google\Cloud\Compute\V1\ListXpnHostsProjectsRequest;
 use Google\Cloud\Compute\V1\Metadata;
@@ -69,7 +71,30 @@ use Google\Cloud\Compute\V1\XpnHostList;
  * $projectsClient = new ProjectsClient();
  * try {
  *     $project = 'project';
- *     $response = $projectsClient->disableXpnHost($project);
+ *     $operationResponse = $projectsClient->disableXpnHost($project);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $projectsClient->disableXpnHost($project);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'disableXpnHost');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $projectsClient->close();
  * }
@@ -107,6 +132,8 @@ class ProjectsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -123,6 +150,7 @@ class ProjectsGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/projects_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => GlobalOperationsClient::class,
         ];
     }
 
@@ -142,6 +170,55 @@ class ProjectsGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an GlobalOperationsClient object with the same endpoint as $this.
+     *
+     * @return GlobalOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -199,6 +276,7 @@ class ProjectsGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -209,7 +287,30 @@ class ProjectsGapicClient
      * $projectsClient = new ProjectsClient();
      * try {
      *     $project = 'project';
-     *     $response = $projectsClient->disableXpnHost($project);
+     *     $operationResponse = $projectsClient->disableXpnHost($project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->disableXpnHost($project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'disableXpnHost');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -228,7 +329,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -244,7 +345,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('DisableXpnHost', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('DisableXpnHost', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -256,7 +357,30 @@ class ProjectsGapicClient
      * try {
      *     $project = 'project';
      *     $projectsDisableXpnResourceRequestResource = new ProjectsDisableXpnResourceRequest();
-     *     $response = $projectsClient->disableXpnResource($project, $projectsDisableXpnResourceRequestResource);
+     *     $operationResponse = $projectsClient->disableXpnResource($project, $projectsDisableXpnResourceRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->disableXpnResource($project, $projectsDisableXpnResourceRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'disableXpnResource');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -276,7 +400,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -293,7 +417,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('DisableXpnResource', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('DisableXpnResource', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -304,7 +428,30 @@ class ProjectsGapicClient
      * $projectsClient = new ProjectsClient();
      * try {
      *     $project = 'project';
-     *     $response = $projectsClient->enableXpnHost($project);
+     *     $operationResponse = $projectsClient->enableXpnHost($project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->enableXpnHost($project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'enableXpnHost');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -323,7 +470,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -339,7 +486,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('EnableXpnHost', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('EnableXpnHost', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -351,7 +498,30 @@ class ProjectsGapicClient
      * try {
      *     $project = 'project';
      *     $projectsEnableXpnResourceRequestResource = new ProjectsEnableXpnResourceRequest();
-     *     $response = $projectsClient->enableXpnResource($project, $projectsEnableXpnResourceRequestResource);
+     *     $operationResponse = $projectsClient->enableXpnResource($project, $projectsEnableXpnResourceRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->enableXpnResource($project, $projectsEnableXpnResourceRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'enableXpnResource');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -371,7 +541,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -388,7 +558,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('EnableXpnResource', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('EnableXpnResource', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -653,7 +823,30 @@ class ProjectsGapicClient
      * try {
      *     $diskMoveRequestResource = new DiskMoveRequest();
      *     $project = 'project';
-     *     $response = $projectsClient->moveDisk($diskMoveRequestResource, $project);
+     *     $operationResponse = $projectsClient->moveDisk($diskMoveRequestResource, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->moveDisk($diskMoveRequestResource, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'moveDisk');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -673,7 +866,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -690,7 +883,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('MoveDisk', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('MoveDisk', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -702,7 +895,30 @@ class ProjectsGapicClient
      * try {
      *     $instanceMoveRequestResource = new InstanceMoveRequest();
      *     $project = 'project';
-     *     $response = $projectsClient->moveInstance($instanceMoveRequestResource, $project);
+     *     $operationResponse = $projectsClient->moveInstance($instanceMoveRequestResource, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->moveInstance($instanceMoveRequestResource, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'moveInstance');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -722,7 +938,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -739,7 +955,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('MoveInstance', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('MoveInstance', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -751,7 +967,30 @@ class ProjectsGapicClient
      * try {
      *     $metadataResource = new Metadata();
      *     $project = 'project';
-     *     $response = $projectsClient->setCommonInstanceMetadata($metadataResource, $project);
+     *     $operationResponse = $projectsClient->setCommonInstanceMetadata($metadataResource, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->setCommonInstanceMetadata($metadataResource, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'setCommonInstanceMetadata');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -771,7 +1010,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -788,7 +1027,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetCommonInstanceMetadata', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetCommonInstanceMetadata', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -800,7 +1039,30 @@ class ProjectsGapicClient
      * try {
      *     $project = 'project';
      *     $projectsSetDefaultNetworkTierRequestResource = new ProjectsSetDefaultNetworkTierRequest();
-     *     $response = $projectsClient->setDefaultNetworkTier($project, $projectsSetDefaultNetworkTierRequestResource);
+     *     $operationResponse = $projectsClient->setDefaultNetworkTier($project, $projectsSetDefaultNetworkTierRequestResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->setDefaultNetworkTier($project, $projectsSetDefaultNetworkTierRequestResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'setDefaultNetworkTier');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -820,7 +1082,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -837,7 +1099,7 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetDefaultNetworkTier', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetDefaultNetworkTier', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -849,7 +1111,30 @@ class ProjectsGapicClient
      * try {
      *     $project = 'project';
      *     $usageExportLocationResource = new UsageExportLocation();
-     *     $response = $projectsClient->setUsageExportBucket($project, $usageExportLocationResource);
+     *     $operationResponse = $projectsClient->setUsageExportBucket($project, $usageExportLocationResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $projectsClient->setUsageExportBucket($project, $usageExportLocationResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $projectsClient->resumeOperation($operationName, 'setUsageExportBucket');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $projectsClient->close();
      * }
@@ -869,7 +1154,7 @@ class ProjectsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -886,6 +1171,6 @@ class ProjectsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetUsageExportBucket', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetUsageExportBucket', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 }

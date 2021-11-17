@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -43,6 +44,7 @@ use Google\Cloud\Compute\V1\InsertForwardingRuleRequest;
 use Google\Cloud\Compute\V1\ListForwardingRulesRequest;
 use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\PatchForwardingRuleRequest;
+use Google\Cloud\Compute\V1\RegionOperationsClient;
 use Google\Cloud\Compute\V1\RegionSetLabelsRequest;
 use Google\Cloud\Compute\V1\SetLabelsForwardingRuleRequest;
 use Google\Cloud\Compute\V1\SetTargetForwardingRuleRequest;
@@ -108,6 +110,8 @@ class ForwardingRulesGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -124,6 +128,7 @@ class ForwardingRulesGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/forwarding_rules_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => RegionOperationsClient::class,
         ];
     }
 
@@ -143,6 +148,56 @@ class ForwardingRulesGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an RegionOperationsClient object with the same endpoint as $this.
+     *
+     * @return RegionOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+                'getRegion',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -200,6 +255,7 @@ class ForwardingRulesGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -303,7 +359,30 @@ class ForwardingRulesGapicClient
      *     $forwardingRule = 'forwarding_rule';
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $forwardingRulesClient->delete($forwardingRule, $project, $region);
+     *     $operationResponse = $forwardingRulesClient->delete($forwardingRule, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $forwardingRulesClient->delete($forwardingRule, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $forwardingRulesClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $forwardingRulesClient->close();
      * }
@@ -324,7 +403,7 @@ class ForwardingRulesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -344,7 +423,7 @@ class ForwardingRulesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -405,7 +484,30 @@ class ForwardingRulesGapicClient
      *     $forwardingRuleResource = new ForwardingRule();
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $forwardingRulesClient->insert($forwardingRuleResource, $project, $region);
+     *     $operationResponse = $forwardingRulesClient->insert($forwardingRuleResource, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $forwardingRulesClient->insert($forwardingRuleResource, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $forwardingRulesClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $forwardingRulesClient->close();
      * }
@@ -426,7 +528,7 @@ class ForwardingRulesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -445,7 +547,7 @@ class ForwardingRulesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -548,7 +650,30 @@ class ForwardingRulesGapicClient
      *     $forwardingRuleResource = new ForwardingRule();
      *     $project = 'project';
      *     $region = 'region';
-     *     $response = $forwardingRulesClient->patch($forwardingRule, $forwardingRuleResource, $project, $region);
+     *     $operationResponse = $forwardingRulesClient->patch($forwardingRule, $forwardingRuleResource, $project, $region);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $forwardingRulesClient->patch($forwardingRule, $forwardingRuleResource, $project, $region);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $forwardingRulesClient->resumeOperation($operationName, 'patch');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $forwardingRulesClient->close();
      * }
@@ -570,7 +695,7 @@ class ForwardingRulesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -591,7 +716,7 @@ class ForwardingRulesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Patch', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Patch', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -605,7 +730,30 @@ class ForwardingRulesGapicClient
      *     $region = 'region';
      *     $regionSetLabelsRequestResource = new RegionSetLabelsRequest();
      *     $resource = 'resource';
-     *     $response = $forwardingRulesClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
+     *     $operationResponse = $forwardingRulesClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $forwardingRulesClient->setLabels($project, $region, $regionSetLabelsRequestResource, $resource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $forwardingRulesClient->resumeOperation($operationName, 'setLabels');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $forwardingRulesClient->close();
      * }
@@ -627,7 +775,7 @@ class ForwardingRulesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -648,7 +796,7 @@ class ForwardingRulesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetLabels', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetLabels', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -662,7 +810,30 @@ class ForwardingRulesGapicClient
      *     $project = 'project';
      *     $region = 'region';
      *     $targetReferenceResource = new TargetReference();
-     *     $response = $forwardingRulesClient->setTarget($forwardingRule, $project, $region, $targetReferenceResource);
+     *     $operationResponse = $forwardingRulesClient->setTarget($forwardingRule, $project, $region, $targetReferenceResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $forwardingRulesClient->setTarget($forwardingRule, $project, $region, $targetReferenceResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $forwardingRulesClient->resumeOperation($operationName, 'setTarget');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $forwardingRulesClient->close();
      * }
@@ -684,7 +855,7 @@ class ForwardingRulesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -705,6 +876,6 @@ class ForwardingRulesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetTarget', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetTarget', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 }

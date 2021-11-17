@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -37,6 +38,7 @@ use Google\Cloud\Compute\V1\DeleteExternalVpnGatewayRequest;
 use Google\Cloud\Compute\V1\ExternalVpnGateway;
 use Google\Cloud\Compute\V1\ExternalVpnGatewayList;
 use Google\Cloud\Compute\V1\GetExternalVpnGatewayRequest;
+use Google\Cloud\Compute\V1\GlobalOperationsClient;
 use Google\Cloud\Compute\V1\GlobalSetLabelsRequest;
 use Google\Cloud\Compute\V1\InsertExternalVpnGatewayRequest;
 use Google\Cloud\Compute\V1\ListExternalVpnGatewaysRequest;
@@ -57,7 +59,30 @@ use Google\Cloud\Compute\V1\TestPermissionsResponse;
  * try {
  *     $externalVpnGateway = 'external_vpn_gateway';
  *     $project = 'project';
- *     $response = $externalVpnGatewaysClient->delete($externalVpnGateway, $project);
+ *     $operationResponse = $externalVpnGatewaysClient->delete($externalVpnGateway, $project);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $externalVpnGatewaysClient->delete($externalVpnGateway, $project);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $externalVpnGatewaysClient->resumeOperation($operationName, 'delete');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $externalVpnGatewaysClient->close();
  * }
@@ -95,6 +120,8 @@ class ExternalVpnGatewaysGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -111,6 +138,7 @@ class ExternalVpnGatewaysGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/external_vpn_gateways_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => GlobalOperationsClient::class,
         ];
     }
 
@@ -130,6 +158,55 @@ class ExternalVpnGatewaysGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an GlobalOperationsClient object with the same endpoint as $this.
+     *
+     * @return GlobalOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -187,6 +264,7 @@ class ExternalVpnGatewaysGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -198,7 +276,30 @@ class ExternalVpnGatewaysGapicClient
      * try {
      *     $externalVpnGateway = 'external_vpn_gateway';
      *     $project = 'project';
-     *     $response = $externalVpnGatewaysClient->delete($externalVpnGateway, $project);
+     *     $operationResponse = $externalVpnGatewaysClient->delete($externalVpnGateway, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $externalVpnGatewaysClient->delete($externalVpnGateway, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $externalVpnGatewaysClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $externalVpnGatewaysClient->close();
      * }
@@ -218,7 +319,7 @@ class ExternalVpnGatewaysGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -236,7 +337,7 @@ class ExternalVpnGatewaysGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -292,7 +393,30 @@ class ExternalVpnGatewaysGapicClient
      * try {
      *     $externalVpnGatewayResource = new ExternalVpnGateway();
      *     $project = 'project';
-     *     $response = $externalVpnGatewaysClient->insert($externalVpnGatewayResource, $project);
+     *     $operationResponse = $externalVpnGatewaysClient->insert($externalVpnGatewayResource, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $externalVpnGatewaysClient->insert($externalVpnGatewayResource, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $externalVpnGatewaysClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $externalVpnGatewaysClient->close();
      * }
@@ -312,7 +436,7 @@ class ExternalVpnGatewaysGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -329,7 +453,7 @@ class ExternalVpnGatewaysGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -427,7 +551,30 @@ class ExternalVpnGatewaysGapicClient
      *     $globalSetLabelsRequestResource = new GlobalSetLabelsRequest();
      *     $project = 'project';
      *     $resource = 'resource';
-     *     $response = $externalVpnGatewaysClient->setLabels($globalSetLabelsRequestResource, $project, $resource);
+     *     $operationResponse = $externalVpnGatewaysClient->setLabels($globalSetLabelsRequestResource, $project, $resource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $externalVpnGatewaysClient->setLabels($globalSetLabelsRequestResource, $project, $resource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $externalVpnGatewaysClient->resumeOperation($operationName, 'setLabels');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $externalVpnGatewaysClient->close();
      * }
@@ -446,7 +593,7 @@ class ExternalVpnGatewaysGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -461,7 +608,7 @@ class ExternalVpnGatewaysGapicClient
         $requestParamHeaders['resource'] = $resource;
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetLabels', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetLabels', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**

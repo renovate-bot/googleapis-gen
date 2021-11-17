@@ -39,10 +39,10 @@ use Google\Cloud\Dialogflow\Cx\V3\DetectIntentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\DetectIntentResponse;
 use Google\Cloud\Dialogflow\Cx\V3\FulfillIntentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\FulfillIntentResponse;
-use Google\Cloud\Dialogflow\Cx\V3\Match;
 use Google\Cloud\Dialogflow\Cx\V3\MatchIntentRequest;
 use Google\Cloud\Dialogflow\Cx\V3\MatchIntentResponse;
 use Google\Cloud\Dialogflow\Cx\V3\OutputAudioConfig;
+use Google\Cloud\Dialogflow\Cx\V3\PBMatch;
 use Google\Cloud\Dialogflow\Cx\V3\QueryInput;
 use Google\Cloud\Dialogflow\Cx\V3\QueryParameters;
 use Google\Cloud\Dialogflow\Cx\V3\StreamingDetectIntentRequest;
@@ -509,7 +509,7 @@ class SessionsGapicClient
      *     @type MatchIntentRequest $matchIntentRequest
      *           Must be same as the corresponding MatchIntent request, otherwise the
      *           behavior is undefined.
-     *     @type Match $match
+     *     @type PBMatch $match
      *           The matched intent/event to fulfill.
      *     @type OutputAudioConfig $outputAudioConfig
      *           Instructs the speech synthesizer how to generate output audio.

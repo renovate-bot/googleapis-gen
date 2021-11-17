@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -35,6 +36,7 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Compute\V1\DeleteTargetSslProxyRequest;
 use Google\Cloud\Compute\V1\GetTargetSslProxyRequest;
+use Google\Cloud\Compute\V1\GlobalOperationsClient;
 use Google\Cloud\Compute\V1\InsertTargetSslProxyRequest;
 use Google\Cloud\Compute\V1\ListTargetSslProxiesRequest;
 use Google\Cloud\Compute\V1\Operation;
@@ -60,7 +62,30 @@ use Google\Cloud\Compute\V1\TargetSslProxyList;
  * try {
  *     $project = 'project';
  *     $targetSslProxy = 'target_ssl_proxy';
- *     $response = $targetSslProxiesClient->delete($project, $targetSslProxy);
+ *     $operationResponse = $targetSslProxiesClient->delete($project, $targetSslProxy);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $targetSslProxiesClient->delete($project, $targetSslProxy);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'delete');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $targetSslProxiesClient->close();
  * }
@@ -98,6 +123,8 @@ class TargetSslProxiesGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -114,6 +141,7 @@ class TargetSslProxiesGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/target_ssl_proxies_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => GlobalOperationsClient::class,
         ];
     }
 
@@ -133,6 +161,55 @@ class TargetSslProxiesGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an GlobalOperationsClient object with the same endpoint as $this.
+     *
+     * @return GlobalOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -190,6 +267,7 @@ class TargetSslProxiesGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -201,7 +279,30 @@ class TargetSslProxiesGapicClient
      * try {
      *     $project = 'project';
      *     $targetSslProxy = 'target_ssl_proxy';
-     *     $response = $targetSslProxiesClient->delete($project, $targetSslProxy);
+     *     $operationResponse = $targetSslProxiesClient->delete($project, $targetSslProxy);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetSslProxiesClient->delete($project, $targetSslProxy);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -221,7 +322,7 @@ class TargetSslProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -239,7 +340,7 @@ class TargetSslProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -295,7 +396,30 @@ class TargetSslProxiesGapicClient
      * try {
      *     $project = 'project';
      *     $targetSslProxyResource = new TargetSslProxy();
-     *     $response = $targetSslProxiesClient->insert($project, $targetSslProxyResource);
+     *     $operationResponse = $targetSslProxiesClient->insert($project, $targetSslProxyResource);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetSslProxiesClient->insert($project, $targetSslProxyResource);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -315,7 +439,7 @@ class TargetSslProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -332,7 +456,7 @@ class TargetSslProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -430,7 +554,30 @@ class TargetSslProxiesGapicClient
      *     $project = 'project';
      *     $targetSslProxiesSetBackendServiceRequestResource = new TargetSslProxiesSetBackendServiceRequest();
      *     $targetSslProxy = 'target_ssl_proxy';
-     *     $response = $targetSslProxiesClient->setBackendService($project, $targetSslProxiesSetBackendServiceRequestResource, $targetSslProxy);
+     *     $operationResponse = $targetSslProxiesClient->setBackendService($project, $targetSslProxiesSetBackendServiceRequestResource, $targetSslProxy);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetSslProxiesClient->setBackendService($project, $targetSslProxiesSetBackendServiceRequestResource, $targetSslProxy);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'setBackendService');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -451,7 +598,7 @@ class TargetSslProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -470,7 +617,7 @@ class TargetSslProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetBackendService', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetBackendService', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -483,7 +630,30 @@ class TargetSslProxiesGapicClient
      *     $project = 'project';
      *     $targetSslProxiesSetProxyHeaderRequestResource = new TargetSslProxiesSetProxyHeaderRequest();
      *     $targetSslProxy = 'target_ssl_proxy';
-     *     $response = $targetSslProxiesClient->setProxyHeader($project, $targetSslProxiesSetProxyHeaderRequestResource, $targetSslProxy);
+     *     $operationResponse = $targetSslProxiesClient->setProxyHeader($project, $targetSslProxiesSetProxyHeaderRequestResource, $targetSslProxy);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetSslProxiesClient->setProxyHeader($project, $targetSslProxiesSetProxyHeaderRequestResource, $targetSslProxy);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'setProxyHeader');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -504,7 +674,7 @@ class TargetSslProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -523,7 +693,7 @@ class TargetSslProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetProxyHeader', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetProxyHeader', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -536,7 +706,30 @@ class TargetSslProxiesGapicClient
      *     $project = 'project';
      *     $targetSslProxiesSetSslCertificatesRequestResource = new TargetSslProxiesSetSslCertificatesRequest();
      *     $targetSslProxy = 'target_ssl_proxy';
-     *     $response = $targetSslProxiesClient->setSslCertificates($project, $targetSslProxiesSetSslCertificatesRequestResource, $targetSslProxy);
+     *     $operationResponse = $targetSslProxiesClient->setSslCertificates($project, $targetSslProxiesSetSslCertificatesRequestResource, $targetSslProxy);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetSslProxiesClient->setSslCertificates($project, $targetSslProxiesSetSslCertificatesRequestResource, $targetSslProxy);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'setSslCertificates');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -557,7 +750,7 @@ class TargetSslProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -576,7 +769,7 @@ class TargetSslProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetSslCertificates', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetSslCertificates', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -589,7 +782,30 @@ class TargetSslProxiesGapicClient
      *     $project = 'project';
      *     $sslPolicyReferenceResource = new SslPolicyReference();
      *     $targetSslProxy = 'target_ssl_proxy';
-     *     $response = $targetSslProxiesClient->setSslPolicy($project, $sslPolicyReferenceResource, $targetSslProxy);
+     *     $operationResponse = $targetSslProxiesClient->setSslPolicy($project, $sslPolicyReferenceResource, $targetSslProxy);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $targetSslProxiesClient->setSslPolicy($project, $sslPolicyReferenceResource, $targetSslProxy);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $targetSslProxiesClient->resumeOperation($operationName, 'setSslPolicy');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $targetSslProxiesClient->close();
      * }
@@ -610,7 +826,7 @@ class TargetSslProxiesGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -629,6 +845,6 @@ class TargetSslProxiesGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetSslPolicy', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetSslPolicy', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 }

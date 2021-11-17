@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -57,6 +58,7 @@ use Google\Cloud\Compute\V1\SetNodeTemplateNodeGroupRequest;
 use Google\Cloud\Compute\V1\TestIamPermissionsNodeGroupRequest;
 use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
+use Google\Cloud\Compute\V1\ZoneOperationsClient;
 use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
 
 /**
@@ -72,7 +74,30 @@ use Google\Cloud\Compute\V1\ZoneSetPolicyRequest;
  *     $nodeGroupsAddNodesRequestResource = new NodeGroupsAddNodesRequest();
  *     $project = 'project';
  *     $zone = 'zone';
- *     $response = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
+ *     $operationResponse = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'addNodes');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $nodeGroupsClient->close();
  * }
@@ -110,6 +135,8 @@ class NodeGroupsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -126,6 +153,7 @@ class NodeGroupsGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/node_groups_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => ZoneOperationsClient::class,
         ];
     }
 
@@ -145,6 +173,56 @@ class NodeGroupsGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an ZoneOperationsClient object with the same endpoint as $this.
+     *
+     * @return ZoneOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+                'getZone',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -202,6 +280,7 @@ class NodeGroupsGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -215,7 +294,30 @@ class NodeGroupsGapicClient
      *     $nodeGroupsAddNodesRequestResource = new NodeGroupsAddNodesRequest();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
+     *     $operationResponse = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $nodeGroupsClient->addNodes($nodeGroup, $nodeGroupsAddNodesRequestResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'addNodes');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -237,7 +339,7 @@ class NodeGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -258,7 +360,7 @@ class NodeGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('AddNodes', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('AddNodes', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -362,7 +464,30 @@ class NodeGroupsGapicClient
      *     $nodeGroup = 'node_group';
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $nodeGroupsClient->delete($nodeGroup, $project, $zone);
+     *     $operationResponse = $nodeGroupsClient->delete($nodeGroup, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $nodeGroupsClient->delete($nodeGroup, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -383,7 +508,7 @@ class NodeGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -403,7 +528,7 @@ class NodeGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -417,7 +542,30 @@ class NodeGroupsGapicClient
      *     $nodeGroupsDeleteNodesRequestResource = new NodeGroupsDeleteNodesRequest();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $nodeGroupsClient->deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone);
+     *     $operationResponse = $nodeGroupsClient->deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $nodeGroupsClient->deleteNodes($nodeGroup, $nodeGroupsDeleteNodesRequestResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'deleteNodes');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -439,7 +587,7 @@ class NodeGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -460,7 +608,7 @@ class NodeGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('DeleteNodes', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('DeleteNodes', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -576,7 +724,30 @@ class NodeGroupsGapicClient
      *     $nodeGroupResource = new NodeGroup();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $nodeGroupsClient->insert($initialNodeCount, $nodeGroupResource, $project, $zone);
+     *     $operationResponse = $nodeGroupsClient->insert($initialNodeCount, $nodeGroupResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $nodeGroupsClient->insert($initialNodeCount, $nodeGroupResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -598,7 +769,7 @@ class NodeGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -618,7 +789,7 @@ class NodeGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -814,7 +985,30 @@ class NodeGroupsGapicClient
      *     $nodeGroupResource = new NodeGroup();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $nodeGroupsClient->patch($nodeGroup, $nodeGroupResource, $project, $zone);
+     *     $operationResponse = $nodeGroupsClient->patch($nodeGroup, $nodeGroupResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $nodeGroupsClient->patch($nodeGroup, $nodeGroupResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'patch');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -836,7 +1030,7 @@ class NodeGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -857,7 +1051,7 @@ class NodeGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Patch', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Patch', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -922,7 +1116,30 @@ class NodeGroupsGapicClient
      *     $nodeGroupsSetNodeTemplateRequestResource = new NodeGroupsSetNodeTemplateRequest();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $nodeGroupsClient->setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone);
+     *     $operationResponse = $nodeGroupsClient->setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $nodeGroupsClient->setNodeTemplate($nodeGroup, $nodeGroupsSetNodeTemplateRequestResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $nodeGroupsClient->resumeOperation($operationName, 'setNodeTemplate');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $nodeGroupsClient->close();
      * }
@@ -944,7 +1161,7 @@ class NodeGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -965,7 +1182,7 @@ class NodeGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('SetNodeTemplate', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('SetNodeTemplate', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**

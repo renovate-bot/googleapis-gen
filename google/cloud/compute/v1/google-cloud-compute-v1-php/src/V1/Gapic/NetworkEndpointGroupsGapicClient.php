@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -52,6 +53,7 @@ use Google\Cloud\Compute\V1\Operation;
 use Google\Cloud\Compute\V1\TestIamPermissionsNetworkEndpointGroupRequest;
 use Google\Cloud\Compute\V1\TestPermissionsRequest;
 use Google\Cloud\Compute\V1\TestPermissionsResponse;
+use Google\Cloud\Compute\V1\ZoneOperationsClient;
 
 /**
  * Service Description: The NetworkEndpointGroups API.
@@ -113,6 +115,8 @@ class NetworkEndpointGroupsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -129,6 +133,7 @@ class NetworkEndpointGroupsGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/network_endpoint_groups_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => ZoneOperationsClient::class,
         ];
     }
 
@@ -148,6 +153,56 @@ class NetworkEndpointGroupsGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an ZoneOperationsClient object with the same endpoint as $this.
+     *
+     * @return ZoneOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+                'getZone',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -205,6 +260,7 @@ class NetworkEndpointGroupsGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -309,7 +365,30 @@ class NetworkEndpointGroupsGapicClient
      *     $networkEndpointGroupsAttachEndpointsRequestResource = new NetworkEndpointGroupsAttachEndpointsRequest();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $networkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsAttachEndpointsRequestResource, $project, $zone);
+     *     $operationResponse = $networkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsAttachEndpointsRequestResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $networkEndpointGroupsClient->attachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsAttachEndpointsRequestResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $networkEndpointGroupsClient->resumeOperation($operationName, 'attachNetworkEndpoints');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
@@ -331,7 +410,7 @@ class NetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -352,7 +431,7 @@ class NetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('AttachNetworkEndpoints', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('AttachNetworkEndpoints', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -365,7 +444,30 @@ class NetworkEndpointGroupsGapicClient
      *     $networkEndpointGroup = 'network_endpoint_group';
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $networkEndpointGroupsClient->delete($networkEndpointGroup, $project, $zone);
+     *     $operationResponse = $networkEndpointGroupsClient->delete($networkEndpointGroup, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $networkEndpointGroupsClient->delete($networkEndpointGroup, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $networkEndpointGroupsClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
@@ -386,7 +488,7 @@ class NetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -406,7 +508,7 @@ class NetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -420,7 +522,30 @@ class NetworkEndpointGroupsGapicClient
      *     $networkEndpointGroupsDetachEndpointsRequestResource = new NetworkEndpointGroupsDetachEndpointsRequest();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $networkEndpointGroupsClient->detachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsDetachEndpointsRequestResource, $project, $zone);
+     *     $operationResponse = $networkEndpointGroupsClient->detachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsDetachEndpointsRequestResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $networkEndpointGroupsClient->detachNetworkEndpoints($networkEndpointGroup, $networkEndpointGroupsDetachEndpointsRequestResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $networkEndpointGroupsClient->resumeOperation($operationName, 'detachNetworkEndpoints');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
@@ -442,7 +567,7 @@ class NetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -463,7 +588,7 @@ class NetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('DetachNetworkEndpoints', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('DetachNetworkEndpoints', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -524,7 +649,30 @@ class NetworkEndpointGroupsGapicClient
      *     $networkEndpointGroupResource = new NetworkEndpointGroup();
      *     $project = 'project';
      *     $zone = 'zone';
-     *     $response = $networkEndpointGroupsClient->insert($networkEndpointGroupResource, $project, $zone);
+     *     $operationResponse = $networkEndpointGroupsClient->insert($networkEndpointGroupResource, $project, $zone);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $networkEndpointGroupsClient->insert($networkEndpointGroupResource, $project, $zone);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $networkEndpointGroupsClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $networkEndpointGroupsClient->close();
      * }
@@ -545,7 +693,7 @@ class NetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -564,7 +712,7 @@ class NetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**

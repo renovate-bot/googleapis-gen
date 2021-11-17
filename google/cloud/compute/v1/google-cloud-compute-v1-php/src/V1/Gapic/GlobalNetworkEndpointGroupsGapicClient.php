@@ -28,6 +28,7 @@ use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 
 use Google\ApiCore\GapicClientTrait;
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
@@ -39,6 +40,7 @@ use Google\Cloud\Compute\V1\DetachNetworkEndpointsGlobalNetworkEndpointGroupRequ
 use Google\Cloud\Compute\V1\GetGlobalNetworkEndpointGroupRequest;
 use Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsAttachEndpointsRequest;
 use Google\Cloud\Compute\V1\GlobalNetworkEndpointGroupsDetachEndpointsRequest;
+use Google\Cloud\Compute\V1\GlobalOperationsClient;
 use Google\Cloud\Compute\V1\InsertGlobalNetworkEndpointGroupRequest;
 use Google\Cloud\Compute\V1\ListGlobalNetworkEndpointGroupsRequest;
 use Google\Cloud\Compute\V1\ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest;
@@ -59,7 +61,30 @@ use Google\Cloud\Compute\V1\Operation;
  *     $globalNetworkEndpointGroupsAttachEndpointsRequestResource = new GlobalNetworkEndpointGroupsAttachEndpointsRequest();
  *     $networkEndpointGroup = 'network_endpoint_group';
  *     $project = 'project';
- *     $response = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
+ *     $operationResponse = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
+ *     $operationResponse->pollUntilComplete();
+ *     if ($operationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $operationResponse->getError();
+ *         // handleError($error)
+ *     }
+ *     // Alternatively:
+ *     // start the operation, keep the operation name, and resume later
+ *     $operationResponse = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
+ *     $operationName = $operationResponse->getName();
+ *     // ... do other work
+ *     $newOperationResponse = $globalNetworkEndpointGroupsClient->resumeOperation($operationName, 'attachNetworkEndpoints');
+ *     while (!$newOperationResponse->isDone()) {
+ *         // ... do other work
+ *         $newOperationResponse->reload();
+ *     }
+ *     if ($newOperationResponse->operationSucceeded()) {
+ *         // if creating/modifying, retrieve the target resource
+ *     } else {
+ *         $error = $newOperationResponse->getError();
+ *         // handleError($error)
+ *     }
  * } finally {
  *     $globalNetworkEndpointGroupsClient->close();
  * }
@@ -97,6 +122,8 @@ class GlobalNetworkEndpointGroupsGapicClient
         'https://www.googleapis.com/auth/cloud-platform',
     ];
 
+    private $operationsClient;
+
     private static function getClientDefaults()
     {
         return [
@@ -113,6 +140,7 @@ class GlobalNetworkEndpointGroupsGapicClient
                     'restClientConfigPath' => __DIR__ . '/../resources/global_network_endpoint_groups_rest_client_config.php',
                 ],
             ],
+            'operationsClientClass' => GlobalOperationsClient::class,
         ];
     }
 
@@ -132,6 +160,55 @@ class GlobalNetworkEndpointGroupsGapicClient
         return [
             'rest',
         ];
+    }
+
+    /**
+     * Return an GlobalOperationsClient object with the same endpoint as $this.
+     *
+     * @return GlobalOperationsClient
+     */
+    public function getOperationsClient()
+    {
+        return $this->operationsClient;
+    }
+
+    /**
+     * Return the default longrunning operation descriptor config.
+     */
+    private function getDefaultOperationDescriptor()
+    {
+        return [
+            'additionalArgumentMethods' => [
+                'getProject',
+            ],
+            'getOperationMethod' => 'get',
+            'cancelOperationMethod' => null,
+            'deleteOperationMethod' => 'delete',
+            'operationErrorCodeMethod' => 'getHttpErrorStatusCode',
+            'operationErrorMessageMethod' => 'getHttpErrorMessage',
+            'operationNameMethod' => 'getName',
+            'operationStatusMethod' => 'getStatus',
+            'operationStatusDoneValue' => \Google\Cloud\Compute\V1\Operation\Status::DONE,
+        ];
+    }
+
+    /**
+     * Resume an existing long running operation that was previously started by a long
+     * running API method. If $methodName is not provided, or does not match a long
+     * running API method, then the operation can still be resumed, but the
+     * OperationResponse object will not deserialize the final response.
+     *
+     * @param string $operationName The name of the long running operation
+     * @param string $methodName    The name of the method used to start the operation
+     *
+     * @return OperationResponse
+     */
+    public function resumeOperation($operationName, $methodName = null)
+    {
+        $options = isset($this->descriptors[$methodName]['longRunning']) ? $this->descriptors[$methodName]['longRunning'] : $this->getDefaultOperationDescriptor();
+        $operation = new OperationResponse($operationName, $this->getOperationsClient(), $options);
+        $operation->reload();
+        return $operation;
     }
 
     /**
@@ -189,6 +266,7 @@ class GlobalNetworkEndpointGroupsGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+        $this->operationsClient = $this->createOperationsClient($clientOptions);
     }
 
     /**
@@ -201,7 +279,30 @@ class GlobalNetworkEndpointGroupsGapicClient
      *     $globalNetworkEndpointGroupsAttachEndpointsRequestResource = new GlobalNetworkEndpointGroupsAttachEndpointsRequest();
      *     $networkEndpointGroup = 'network_endpoint_group';
      *     $project = 'project';
-     *     $response = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->attachNetworkEndpoints($globalNetworkEndpointGroupsAttachEndpointsRequestResource, $networkEndpointGroup, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $globalNetworkEndpointGroupsClient->resumeOperation($operationName, 'attachNetworkEndpoints');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
@@ -222,7 +323,7 @@ class GlobalNetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -241,7 +342,7 @@ class GlobalNetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('AttachNetworkEndpoints', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('AttachNetworkEndpoints', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -253,7 +354,30 @@ class GlobalNetworkEndpointGroupsGapicClient
      * try {
      *     $networkEndpointGroup = 'network_endpoint_group';
      *     $project = 'project';
-     *     $response = $globalNetworkEndpointGroupsClient->delete($networkEndpointGroup, $project);
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->delete($networkEndpointGroup, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->delete($networkEndpointGroup, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $globalNetworkEndpointGroupsClient->resumeOperation($operationName, 'delete');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
@@ -273,7 +397,7 @@ class GlobalNetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -291,7 +415,7 @@ class GlobalNetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Delete', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Delete', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -304,7 +428,30 @@ class GlobalNetworkEndpointGroupsGapicClient
      *     $globalNetworkEndpointGroupsDetachEndpointsRequestResource = new GlobalNetworkEndpointGroupsDetachEndpointsRequest();
      *     $networkEndpointGroup = 'network_endpoint_group';
      *     $project = 'project';
-     *     $response = $globalNetworkEndpointGroupsClient->detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project);
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->detachNetworkEndpoints($globalNetworkEndpointGroupsDetachEndpointsRequestResource, $networkEndpointGroup, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $globalNetworkEndpointGroupsClient->resumeOperation($operationName, 'detachNetworkEndpoints');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
@@ -325,7 +472,7 @@ class GlobalNetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -344,7 +491,7 @@ class GlobalNetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('DetachNetworkEndpoints', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('DetachNetworkEndpoints', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
@@ -400,7 +547,30 @@ class GlobalNetworkEndpointGroupsGapicClient
      * try {
      *     $networkEndpointGroupResource = new NetworkEndpointGroup();
      *     $project = 'project';
-     *     $response = $globalNetworkEndpointGroupsClient->insert($networkEndpointGroupResource, $project);
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->insert($networkEndpointGroupResource, $project);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $globalNetworkEndpointGroupsClient->insert($networkEndpointGroupResource, $project);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $globalNetworkEndpointGroupsClient->resumeOperation($operationName, 'insert');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // if creating/modifying, retrieve the target resource
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
      * } finally {
      *     $globalNetworkEndpointGroupsClient->close();
      * }
@@ -420,7 +590,7 @@ class GlobalNetworkEndpointGroupsGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Compute\V1\Operation
+     * @return \Google\ApiCore\OperationResponse
      *
      * @throws ApiException if the remote call fails
      */
@@ -437,7 +607,7 @@ class GlobalNetworkEndpointGroupsGapicClient
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('Insert', Operation::class, $optionalArgs, $request)->wait();
+        return $this->startOperationsCall('Insert', $optionalArgs, $request, $this->getOperationsClient(), null, Operation::class)->wait();
     }
 
     /**
