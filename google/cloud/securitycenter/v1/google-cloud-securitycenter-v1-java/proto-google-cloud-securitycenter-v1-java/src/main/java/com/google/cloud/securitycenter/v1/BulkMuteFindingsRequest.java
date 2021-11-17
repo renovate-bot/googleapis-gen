@@ -7,9 +7,9 @@ package com.google.cloud.securitycenter.v1;
  * <pre>
  * Request message for bulk findings update.
  * Note:
- *     1. If multiple bulk update requests match the same resource, the order in
+ * 1. If multiple bulk update requests match the same resource, the order in
  * which they get executed is not defined.
- *     2. Once a bulk operation is started, there is no way to stop it.
+ * 2. Once a bulk operation is started, there is no way to stop it.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.BulkMuteFindingsRequest}
@@ -459,9 +459,9 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Request message for bulk findings update.
    * Note:
-   *     1. If multiple bulk update requests match the same resource, the order in
+   * 1. If multiple bulk update requests match the same resource, the order in
    * which they get executed is not defined.
-   *     2. Once a bulk operation is started, there is no way to stop it.
+   * 2. Once a bulk operation is started, there is no way to stop it.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.BulkMuteFindingsRequest}
