@@ -20,10 +20,10 @@ class NodeKubeletConfig extends \Google\Protobuf\Internal\Message
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
      * The following values are allowed.
-     *   - "none": the default, which represents the existing scheduling behavior.
-     *   - "static": allows pods with certain resource characteristics to be
-     *               granted increased CPU affinity and exclusivity on the node.
-     *  The default value is 'none' if unspecified.
+     * * "none": the default, which represents the existing scheduling behavior.
+     * * "static": allows pods with certain resource characteristics to be granted
+     * increased CPU affinity and exclusivity on the node.
+     * The default value is 'none' if unspecified.
      *
      * Generated from protobuf field <code>string cpu_manager_policy = 1;</code>
      */
@@ -63,10 +63,10 @@ class NodeKubeletConfig extends \Google\Protobuf\Internal\Message
      *           See
      *           https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
      *           The following values are allowed.
-     *             - "none": the default, which represents the existing scheduling behavior.
-     *             - "static": allows pods with certain resource characteristics to be
-     *                         granted increased CPU affinity and exclusivity on the node.
-     *            The default value is 'none' if unspecified.
+     *           * "none": the default, which represents the existing scheduling behavior.
+     *           * "static": allows pods with certain resource characteristics to be granted
+     *           increased CPU affinity and exclusivity on the node.
+     *           The default value is 'none' if unspecified.
      *     @type \Google\Protobuf\BoolValue $cpu_cfs_quota
      *           Enable CPU CFS quota enforcement for containers that specify CPU limits.
      *           This option is enabled by default which makes kubelet use CFS quota
@@ -94,10 +94,10 @@ class NodeKubeletConfig extends \Google\Protobuf\Internal\Message
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
      * The following values are allowed.
-     *   - "none": the default, which represents the existing scheduling behavior.
-     *   - "static": allows pods with certain resource characteristics to be
-     *               granted increased CPU affinity and exclusivity on the node.
-     *  The default value is 'none' if unspecified.
+     * * "none": the default, which represents the existing scheduling behavior.
+     * * "static": allows pods with certain resource characteristics to be granted
+     * increased CPU affinity and exclusivity on the node.
+     * The default value is 'none' if unspecified.
      *
      * Generated from protobuf field <code>string cpu_manager_policy = 1;</code>
      * @return string
@@ -112,10 +112,10 @@ class NodeKubeletConfig extends \Google\Protobuf\Internal\Message
      * See
      * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
      * The following values are allowed.
-     *   - "none": the default, which represents the existing scheduling behavior.
-     *   - "static": allows pods with certain resource characteristics to be
-     *               granted increased CPU affinity and exclusivity on the node.
-     *  The default value is 'none' if unspecified.
+     * * "none": the default, which represents the existing scheduling behavior.
+     * * "static": allows pods with certain resource characteristics to be granted
+     * increased CPU affinity and exclusivity on the node.
+     * The default value is 'none' if unspecified.
      *
      * Generated from protobuf field <code>string cpu_manager_policy = 1;</code>
      * @param string $var

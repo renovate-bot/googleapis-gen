@@ -13,10 +13,10 @@ public interface NodeKubeletConfigOrBuilder extends
    * See
    * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
    * The following values are allowed.
-   *   - "none": the default, which represents the existing scheduling behavior.
-   *   - "static": allows pods with certain resource characteristics to be
-   *               granted increased CPU affinity and exclusivity on the node.
-   *  The default value is 'none' if unspecified.
+   * * "none": the default, which represents the existing scheduling behavior.
+   * * "static": allows pods with certain resource characteristics to be granted
+   * increased CPU affinity and exclusivity on the node.
+   * The default value is 'none' if unspecified.
    * </pre>
    *
    * <code>string cpu_manager_policy = 1;</code>
@@ -29,10 +29,10 @@ public interface NodeKubeletConfigOrBuilder extends
    * See
    * https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
    * The following values are allowed.
-   *   - "none": the default, which represents the existing scheduling behavior.
-   *   - "static": allows pods with certain resource characteristics to be
-   *               granted increased CPU affinity and exclusivity on the node.
-   *  The default value is 'none' if unspecified.
+   * * "none": the default, which represents the existing scheduling behavior.
+   * * "static": allows pods with certain resource characteristics to be granted
+   * increased CPU affinity and exclusivity on the node.
+   * The default value is 'none' if unspecified.
    * </pre>
    *
    * <code>string cpu_manager_policy = 1;</code>
