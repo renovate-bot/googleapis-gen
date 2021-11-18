@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
   "protoPackage": "google.spanner.admin.database.v1",
-  "libraryPackage": "database",
+  "libraryPackage": "@google-cloud/spanner",
   "services": {
     "DatabaseAdmin": {
       "clients": {

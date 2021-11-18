@@ -1,5 +1,5 @@
 {
-  "name": "database",
+  "name": "@google-cloud/spanner",
   "version": "0.1.0",
   "description": "Database client for Node.js",
   "repository": "googleapis/nodejs-database",

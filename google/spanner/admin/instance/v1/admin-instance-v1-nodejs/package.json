@@ -1,5 +1,5 @@
 {
-  "name": "instance",
+  "name": "@google-cloud/spanner",
   "version": "0.1.0",
   "description": "Instance client for Node.js",
   "repository": "googleapis/nodejs-instance",
