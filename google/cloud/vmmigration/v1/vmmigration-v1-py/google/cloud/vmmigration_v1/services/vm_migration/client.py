@@ -4284,7 +4284,7 @@ class VmMigrationClient(metaclass=VmMigrationClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-cloud-vmmigration",
+            "google-cloud-vm-migration",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
