@@ -25,43 +25,47 @@ namespace Google.Streetview.Publish.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ci5nb29nbGUvc3RyZWV0dmlldy9wdWJsaXNoL3YxL3JwY21lc3NhZ2VzLnBy",
-            "b3RvEhxnb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxGiBnb29nbGUvcHJv",
-            "dG9idWYvZmllbGRfbWFzay5wcm90bxoXZ29vZ2xlL3JwYy9zdGF0dXMucHJv",
-            "dG8aLGdvb2dsZS9zdHJlZXR2aWV3L3B1Ymxpc2gvdjEvcmVzb3VyY2VzLnBy",
-            "b3RvIkgKEkNyZWF0ZVBob3RvUmVxdWVzdBIyCgVwaG90bxgBIAEoCzIjLmdv",
-            "b2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gudjEuUGhvdG8icQoPR2V0UGhvdG9S",
-            "ZXF1ZXN0EhAKCHBob3RvX2lkGAEgASgJEjUKBHZpZXcYAiABKA4yJy5nb29n",
-            "bGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlBob3RvVmlldxIVCg1sYW5ndWFn",
-            "ZV9jb2RlGAMgASgJIngKFUJhdGNoR2V0UGhvdG9zUmVxdWVzdBIRCglwaG90",
-            "b19pZHMYASADKAkSNQoEdmlldxgCIAEoDjInLmdvb2dsZS5zdHJlZXR2aWV3",
-            "LnB1Ymxpc2gudjEuUGhvdG9WaWV3EhUKDWxhbmd1YWdlX2NvZGUYAyABKAki",
-            "VgoWQmF0Y2hHZXRQaG90b3NSZXNwb25zZRI8CgdyZXN1bHRzGAEgAygLMisu",
-            "Z29vZ2xlLnN0cmVldHZpZXcucHVibGlzaC52MS5QaG90b1Jlc3BvbnNlImcK",
-            "DVBob3RvUmVzcG9uc2USIgoGc3RhdHVzGAEgASgLMhIuZ29vZ2xlLnJwYy5T",
-            "dGF0dXMSMgoFcGhvdG8YAiABKAsyIy5nb29nbGUuc3RyZWV0dmlldy5wdWJs",
-            "aXNoLnYxLlBob3RvIpgBChFMaXN0UGhvdG9zUmVxdWVzdBI1CgR2aWV3GAEg",
-            "ASgOMicuZ29vZ2xlLnN0cmVldHZpZXcucHVibGlzaC52MS5QaG90b1ZpZXcS",
-            "EQoJcGFnZV9zaXplGAIgASgFEhIKCnBhZ2VfdG9rZW4YAyABKAkSDgoGZmls",
-            "dGVyGAQgASgJEhUKDWxhbmd1YWdlX2NvZGUYBSABKAkiYgoSTGlzdFBob3Rv",
-            "c1Jlc3BvbnNlEjMKBnBob3RvcxgBIAMoCzIjLmdvb2dsZS5zdHJlZXR2aWV3",
-            "LnB1Ymxpc2gudjEuUGhvdG8SFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJInkK",
-            "ElVwZGF0ZVBob3RvUmVxdWVzdBIyCgVwaG90bxgBIAEoCzIjLmdvb2dsZS5z",
-            "dHJlZXR2aWV3LnB1Ymxpc2gudjEuUGhvdG8SLwoLdXBkYXRlX21hc2sYAiAB",
-            "KAsyGi5nb29nbGUucHJvdG9idWYuRmllbGRNYXNrImsKGEJhdGNoVXBkYXRl",
-            "UGhvdG9zUmVxdWVzdBJPChV1cGRhdGVfcGhvdG9fcmVxdWVzdHMYASADKAsy",
-            "MC5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlVwZGF0ZVBob3RvUmVx",
-            "dWVzdCJZChlCYXRjaFVwZGF0ZVBob3Rvc1Jlc3BvbnNlEjwKB3Jlc3VsdHMY",
-            "ASADKAsyKy5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlBob3RvUmVz",
-            "cG9uc2UiJgoSRGVsZXRlUGhvdG9SZXF1ZXN0EhAKCHBob3RvX2lkGAEgASgJ",
-            "Ii0KGEJhdGNoRGVsZXRlUGhvdG9zUmVxdWVzdBIRCglwaG90b19pZHMYASAD",
-            "KAkiPwoZQmF0Y2hEZWxldGVQaG90b3NSZXNwb25zZRIiCgZzdGF0dXMYASAD",
-            "KAsyEi5nb29nbGUucnBjLlN0YXR1cyowCglQaG90b1ZpZXcSCQoFQkFTSUMQ",
-            "ABIYChRJTkNMVURFX0RPV05MT0FEX1VSTBABQo0BCihjb20uZ29vZ2xlLmdl",
-            "by51Z2Muc3RyZWV0dmlldy5wdWJsaXNoLnYxQhxTdHJlZXRWaWV3UHVibGlz",
-            "aFJwY01lc3NhZ2VzWkNnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29n",
-            "bGVhcGlzL3N0cmVldHZpZXcvcHVibGlzaC92MTtwdWJsaXNoYgZwcm90bzM="));
+            "b3RvEhxnb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxGh9nb29nbGUvYXBp",
+            "L2ZpZWxkX2JlaGF2aW9yLnByb3RvGiNnb29nbGUvbG9uZ3J1bm5pbmcvb3Bl",
+            "cmF0aW9ucy5wcm90bxogZ29vZ2xlL3Byb3RvYnVmL2ZpZWxkX21hc2sucHJv",
+            "dG8aF2dvb2dsZS9ycGMvc3RhdHVzLnByb3RvGixnb29nbGUvc3RyZWV0dmll",
+            "dy9wdWJsaXNoL3YxL3Jlc291cmNlcy5wcm90byJNChJDcmVhdGVQaG90b1Jl",
+            "cXVlc3QSNwoFcGhvdG8YASABKAsyIy5nb29nbGUuc3RyZWV0dmlldy5wdWJs",
+            "aXNoLnYxLlBob3RvQgPgQQIiewoPR2V0UGhvdG9SZXF1ZXN0EhUKCHBob3Rv",
+            "X2lkGAEgASgJQgPgQQISOgoEdmlldxgCIAEoDjInLmdvb2dsZS5zdHJlZXR2",
+            "aWV3LnB1Ymxpc2gudjEuUGhvdG9WaWV3QgPgQQISFQoNbGFuZ3VhZ2VfY29k",
+            "ZRgDIAEoCSKHAQoVQmF0Y2hHZXRQaG90b3NSZXF1ZXN0EhYKCXBob3RvX2lk",
+            "cxgBIAMoCUID4EECEjoKBHZpZXcYAiABKA4yJy5nb29nbGUuc3RyZWV0dmll",
+            "dy5wdWJsaXNoLnYxLlBob3RvVmlld0ID4EECEhoKDWxhbmd1YWdlX2NvZGUY",
+            "AyABKAlCA+BBASJWChZCYXRjaEdldFBob3Rvc1Jlc3BvbnNlEjwKB3Jlc3Vs",
+            "dHMYASADKAsyKy5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlBob3Rv",
+            "UmVzcG9uc2UiZwoNUGhvdG9SZXNwb25zZRIiCgZzdGF0dXMYASABKAsyEi5n",
+            "b29nbGUucnBjLlN0YXR1cxIyCgVwaG90bxgCIAEoCzIjLmdvb2dsZS5zdHJl",
+            "ZXR2aWV3LnB1Ymxpc2gudjEuUGhvdG8isQEKEUxpc3RQaG90b3NSZXF1ZXN0",
+            "EjoKBHZpZXcYASABKA4yJy5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYx",
+            "LlBob3RvVmlld0ID4EECEhYKCXBhZ2Vfc2l6ZRgCIAEoBUID4EEBEhcKCnBh",
+            "Z2VfdG9rZW4YAyABKAlCA+BBARITCgZmaWx0ZXIYBCABKAlCA+BBARIaCg1s",
+            "YW5ndWFnZV9jb2RlGAUgASgJQgPgQQEiYgoSTGlzdFBob3Rvc1Jlc3BvbnNl",
+            "EjMKBnBob3RvcxgBIAMoCzIjLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gu",
+            "djEuUGhvdG8SFwoPbmV4dF9wYWdlX3Rva2VuGAIgASgJIoMBChJVcGRhdGVQ",
+            "aG90b1JlcXVlc3QSNwoFcGhvdG8YASABKAsyIy5nb29nbGUuc3RyZWV0dmll",
+            "dy5wdWJsaXNoLnYxLlBob3RvQgPgQQISNAoLdXBkYXRlX21hc2sYAiABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuRmllbGRNYXNrQgPgQQIicAoYQmF0Y2hVcGRh",
+            "dGVQaG90b3NSZXF1ZXN0ElQKFXVwZGF0ZV9waG90b19yZXF1ZXN0cxgBIAMo",
+            "CzIwLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gudjEuVXBkYXRlUGhvdG9S",
+            "ZXF1ZXN0QgPgQQIiWQoZQmF0Y2hVcGRhdGVQaG90b3NSZXNwb25zZRI8Cgdy",
+            "ZXN1bHRzGAEgAygLMisuZ29vZ2xlLnN0cmVldHZpZXcucHVibGlzaC52MS5Q",
+            "aG90b1Jlc3BvbnNlIisKEkRlbGV0ZVBob3RvUmVxdWVzdBIVCghwaG90b19p",
+            "ZBgBIAEoCUID4EECIjIKGEJhdGNoRGVsZXRlUGhvdG9zUmVxdWVzdBIWCglw",
+            "aG90b19pZHMYASADKAlCA+BBAiI/ChlCYXRjaERlbGV0ZVBob3Rvc1Jlc3Bv",
+            "bnNlEiIKBnN0YXR1cxgBIAMoCzISLmdvb2dsZS5ycGMuU3RhdHVzKjAKCVBo",
+            "b3RvVmlldxIJCgVCQVNJQxAAEhgKFElOQ0xVREVfRE9XTkxPQURfVVJMEAFC",
+            "jQEKKGNvbS5nb29nbGUuZ2VvLnVnYy5zdHJlZXR2aWV3LnB1Ymxpc2gudjFC",
+            "HFN0cmVldFZpZXdQdWJsaXNoUnBjTWVzc2FnZXNaQ2dvb2dsZS5nb2xhbmcu",
+            "b3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvc3RyZWV0dmlldy9wdWJsaXNoL3Yx",
+            "O3B1Ymxpc2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Rpc.StatusReflection.Descriptor, global::Google.Streetview.Publish.V1.ResourcesReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Rpc.StatusReflection.Descriptor, global::Google.Streetview.Publish.V1.ResourcesReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Streetview.Publish.V1.PhotoView), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.CreatePhotoRequest), global::Google.Streetview.Publish.V1.CreatePhotoRequest.Parser, new[]{ "Photo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.GetPhotoRequest), global::Google.Streetview.Publish.V1.GetPhotoRequest.Parser, new[]{ "PhotoId", "View", "LanguageCode" }, null, null, null, null),
@@ -88,7 +92,7 @@ namespace Google.Streetview.Publish.V1 {
   /// </summary>
   public enum PhotoView {
     /// <summary>
-    /// Server reponses do not include the download URL for the photo bytes.
+    /// Server responses do not include the download URL for the photo bytes.
     /// The default value.
     /// </summary>
     [pbr::OriginalName("BASIC")] Basic = 0,
@@ -381,7 +385,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int ViewFieldNumber = 2;
     private global::Google.Streetview.Publish.V1.PhotoView view_ = global::Google.Streetview.Publish.V1.PhotoView.Basic;
     /// <summary>
-    /// Specifies if a download URL for the photo bytes should be returned in the
+    /// Required. Specifies if a download URL for the photo bytes should be returned in the
     /// [Photo][google.streetview.publish.v1.Photo] response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -655,8 +659,8 @@ namespace Google.Streetview.Publish.V1 {
         = pb::FieldCodec.ForString(10);
     private readonly pbc::RepeatedField<string> photoIds_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-    /// requests require the following syntax for the URL query parameter:
+    /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+    /// GET requests, the URL query parameter should be
     /// `photoIds=&lt;id1>&amp;photoIds=&lt;id2>&amp;...`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -669,7 +673,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int ViewFieldNumber = 2;
     private global::Google.Streetview.Publish.V1.PhotoView view_ = global::Google.Streetview.Publish.V1.PhotoView.Basic;
     /// <summary>
-    /// Specifies if a download URL for the photo bytes should be returned in the
+    /// Required. Specifies if a download URL for the photo bytes should be returned in the
     /// Photo response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -685,7 +689,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int LanguageCodeFieldNumber = 3;
     private string languageCode_ = "";
     /// <summary>
-    /// The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+    /// Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
     /// information, see
     /// http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
     /// If language_code is unspecified, the user's language preference for Google
@@ -1387,7 +1391,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int ViewFieldNumber = 1;
     private global::Google.Streetview.Publish.V1.PhotoView view_ = global::Google.Streetview.Publish.V1.PhotoView.Basic;
     /// <summary>
-    /// Specifies if a download URL for the photos bytes should be returned in the
+    /// Required. Specifies if a download URL for the photos bytes should be returned in the
     /// Photos response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1403,7 +1407,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int PageSizeFieldNumber = 2;
     private int pageSize_;
     /// <summary>
-    /// The maximum number of photos to return.
+    /// Optional. The maximum number of photos to return.
     /// `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
     /// the default page size of 100 is used.
     /// The number of photos returned in the response may be less than `pageSize`
@@ -1422,7 +1426,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int PageTokenFieldNumber = 3;
     private string pageToken_ = "";
     /// <summary>
-    /// The
+    /// Optional. The
     /// [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
     /// value returned from a previous
     /// [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
@@ -1441,9 +1445,9 @@ namespace Google.Streetview.Publish.V1 {
     public const int FilterFieldNumber = 4;
     private string filter_ = "";
     /// <summary>
-    /// The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+    /// Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
     ///
-    /// The only filter supported at the moment is `placeId`.
+    /// The filters supported at the moment are: `placeId`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1458,7 +1462,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int LanguageCodeFieldNumber = 5;
     private string languageCode_ = "";
     /// <summary>
-    /// The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+    /// Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
     /// information, see
     /// http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
     /// If language_code is unspecified, the user's language preference for Google
@@ -1999,7 +2003,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int UpdateMaskFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.FieldMask updateMask_;
     /// <summary>
-    /// Mask that identifies fields on the photo metadata to update.
+    /// Required. Mask that identifies fields on the photo metadata to update.
     /// If not present, the old [Photo][google.streetview.publish.v1.Photo]
     /// metadata is entirely replaced with the
     /// new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -2017,13 +2021,13 @@ namespace Google.Streetview.Publish.V1 {
     /// * `connections`
     /// * `places`
     ///
-    /// &lt;aside class="note">&lt;b>Note:&lt;/b>  When
+    /// > Note: When
     /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
     /// contains repeated fields, the entire set of repeated values get replaced
     /// with the new contents. For example, if
     /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
     /// contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-    /// all connections are removed.&lt;/aside>
+    /// all connections are removed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

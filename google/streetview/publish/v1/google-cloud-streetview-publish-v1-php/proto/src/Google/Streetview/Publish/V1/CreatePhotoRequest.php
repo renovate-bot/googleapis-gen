@@ -18,7 +18,7 @@ class CreatePhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Photo to create.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $photo = null;
 
@@ -40,7 +40,7 @@ class CreatePhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Photo to create.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Streetview\Publish\V1\Photo|null
      */
     public function getPhoto()
@@ -61,7 +61,7 @@ class CreatePhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Photo to create.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Streetview\Publish\V1\Photo $var
      * @return $this
      */

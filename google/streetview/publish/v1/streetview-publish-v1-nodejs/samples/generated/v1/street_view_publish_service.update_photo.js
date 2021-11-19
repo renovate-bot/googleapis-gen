@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main() {
+function main(photo, updateMask) {
   // [START streetviewpublish_v1_generated_StreetViewPublishService_UpdatePhoto_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -26,7 +26,7 @@ function main() {
    */
   // const photo = {}
   /**
-   *  Mask that identifies fields on the photo metadata to update.
+   *  Required. Mask that identifies fields on the photo metadata to update.
    *  If not present, the old Photo google.streetview.publish.v1.Photo 
    *  metadata is entirely replaced with the
    *  new Photo google.streetview.publish.v1.Photo  metadata in this request.
@@ -41,18 +41,18 @@ function main() {
    *  * `pose.altitude`
    *  * `connections`
    *  * `places`
-   *  <aside class="note"><b>Note:</b>  When
+   *  > Note: When
    *  updateMask google.streetview.publish.v1.UpdatePhotoRequest.update_mask 
    *  contains repeated fields, the entire set of repeated values get replaced
    *  with the new contents. For example, if
    *  updateMask google.streetview.publish.v1.UpdatePhotoRequest.update_mask 
    *  contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-   *  all connections are removed.</aside>
+   *  all connections are removed.
    */
   // const updateMask = {}
 
   // Imports the Publish library
-  const {StreetViewPublishServiceClient} = require('publish').v1;
+  const {StreetViewPublishServiceClient} = require('@google-cloud/publish').v1;
 
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
@@ -60,6 +60,8 @@ function main() {
   async function callUpdatePhoto() {
     // Construct request
     const request = {
+      photo,
+      updateMask,
     };
 
     // Run request

@@ -3,6 +3,7 @@
 
 require 'google/api/annotations_pb'
 require 'google/api/client_pb'
+require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
 require 'google/streetview/publish/v1/resources_pb'
 require 'google/streetview/publish/v1/rpcmessages_pb'

@@ -28,6 +28,7 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
+use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use Google\Streetview\Publish\V1\BatchDeletePhotosResponse;
@@ -35,6 +36,8 @@ use Google\Streetview\Publish\V1\BatchGetPhotosResponse;
 use Google\Streetview\Publish\V1\BatchUpdatePhotosResponse;
 use Google\Streetview\Publish\V1\ListPhotosResponse;
 use Google\Streetview\Publish\V1\Photo;
+use Google\Streetview\Publish\V1\PhotoId;
+use Google\Streetview\Publish\V1\PhotoView;
 use Google\Streetview\Publish\V1\StreetViewPublishServiceClient;
 use Google\Streetview\Publish\V1\UploadRef;
 use stdClass;
@@ -86,13 +89,17 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         // Mock response
         $expectedResponse = new BatchDeletePhotosResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->batchDeletePhotos();
+        // Mock request
+        $photoIds = [];
+        $response = $client->batchDeletePhotos($photoIds);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/BatchDeletePhotos', $actualFuncCall);
+        $actualValue = $actualRequestObject->getPhotoIds();
+        $this->assertProtobufEquals($photoIds, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -116,8 +123,10 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $photoIds = [];
         try {
-            $client->batchDeletePhotos();
+            $client->batchDeletePhotos($photoIds);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -142,13 +151,20 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         // Mock response
         $expectedResponse = new BatchGetPhotosResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->batchGetPhotos();
+        // Mock request
+        $photoIds = [];
+        $view = PhotoView::BASIC;
+        $response = $client->batchGetPhotos($photoIds, $view);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/BatchGetPhotos', $actualFuncCall);
+        $actualValue = $actualRequestObject->getPhotoIds();
+        $this->assertProtobufEquals($photoIds, $actualValue);
+        $actualValue = $actualRequestObject->getView();
+        $this->assertProtobufEquals($view, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -172,8 +188,11 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $photoIds = [];
+        $view = PhotoView::BASIC;
         try {
-            $client->batchGetPhotos();
+            $client->batchGetPhotos($photoIds, $view);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -198,13 +217,17 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         // Mock response
         $expectedResponse = new BatchUpdatePhotosResponse();
         $transport->addResponse($expectedResponse);
-        $response = $client->batchUpdatePhotos();
+        // Mock request
+        $updatePhotoRequests = [];
+        $response = $client->batchUpdatePhotos($updatePhotoRequests);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/BatchUpdatePhotos', $actualFuncCall);
+        $actualValue = $actualRequestObject->getUpdatePhotoRequests();
+        $this->assertProtobufEquals($updatePhotoRequests, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -228,8 +251,10 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $updatePhotoRequests = [];
         try {
-            $client->batchUpdatePhotos();
+            $client->batchUpdatePhotos($updatePhotoRequests);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -262,13 +287,19 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         $expectedResponse->setShareLink($shareLink);
         $expectedResponse->setViewCount($viewCount);
         $transport->addResponse($expectedResponse);
-        $response = $client->createPhoto();
+        // Mock request
+        $photo = new Photo();
+        $photoPhotoId = new PhotoId();
+        $photo->setPhotoId($photoPhotoId);
+        $response = $client->createPhoto($photo);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/CreatePhoto', $actualFuncCall);
+        $actualValue = $actualRequestObject->getPhoto();
+        $this->assertProtobufEquals($photo, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -292,8 +323,12 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $photo = new Photo();
+        $photoPhotoId = new PhotoId();
+        $photo->setPhotoId($photoPhotoId);
         try {
-            $client->createPhoto();
+            $client->createPhoto($photo);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -318,12 +353,16 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         // Mock response
         $expectedResponse = new GPBEmpty();
         $transport->addResponse($expectedResponse);
-        $client->deletePhoto();
+        // Mock request
+        $photoId = 'photoId-1274270136';
+        $client->deletePhoto($photoId);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/DeletePhoto', $actualFuncCall);
+        $actualValue = $actualRequestObject->getPhotoId();
+        $this->assertProtobufEquals($photoId, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -347,8 +386,10 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $photoId = 'photoId-1274270136';
         try {
-            $client->deletePhoto();
+            $client->deletePhoto($photoId);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -381,13 +422,20 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         $expectedResponse->setShareLink($shareLink);
         $expectedResponse->setViewCount($viewCount);
         $transport->addResponse($expectedResponse);
-        $response = $client->getPhoto();
+        // Mock request
+        $photoId = 'photoId-1274270136';
+        $view = PhotoView::BASIC;
+        $response = $client->getPhoto($photoId, $view);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/GetPhoto', $actualFuncCall);
+        $actualValue = $actualRequestObject->getPhotoId();
+        $this->assertProtobufEquals($photoId, $actualValue);
+        $actualValue = $actualRequestObject->getView();
+        $this->assertProtobufEquals($view, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -411,8 +459,11 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $photoId = 'photoId-1274270136';
+        $view = PhotoView::BASIC;
         try {
-            $client->getPhoto();
+            $client->getPhoto($photoId, $view);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -444,7 +495,9 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         $expectedResponse->setNextPageToken($nextPageToken);
         $expectedResponse->setPhotos($photos);
         $transport->addResponse($expectedResponse);
-        $response = $client->listPhotos();
+        // Mock request
+        $view = PhotoView::BASIC;
+        $response = $client->listPhotos($view);
         $this->assertEquals($expectedResponse, $response->getPage()->getResponseObject());
         $resources = iterator_to_array($response->iterateAllElements());
         $this->assertSame(1, count($resources));
@@ -454,6 +507,8 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/ListPhotos', $actualFuncCall);
+        $actualValue = $actualRequestObject->getView();
+        $this->assertProtobufEquals($view, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -477,8 +532,10 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $view = PhotoView::BASIC;
         try {
-            $client->listPhotos();
+            $client->listPhotos($view);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -569,13 +626,22 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
         $expectedResponse->setShareLink($shareLink);
         $expectedResponse->setViewCount($viewCount);
         $transport->addResponse($expectedResponse);
-        $response = $client->updatePhoto();
+        // Mock request
+        $photo = new Photo();
+        $photoPhotoId = new PhotoId();
+        $photo->setPhotoId($photoPhotoId);
+        $updateMask = new FieldMask();
+        $response = $client->updatePhoto($photo, $updateMask);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
         $actualFuncCall = $actualRequests[0]->getFuncCall();
         $actualRequestObject = $actualRequests[0]->getRequestObject();
         $this->assertSame('/google.streetview.publish.v1.StreetViewPublishService/UpdatePhoto', $actualFuncCall);
+        $actualValue = $actualRequestObject->getPhoto();
+        $this->assertProtobufEquals($photo, $actualValue);
+        $actualValue = $actualRequestObject->getUpdateMask();
+        $this->assertProtobufEquals($updateMask, $actualValue);
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -599,8 +665,13 @@ class StreetViewPublishServiceClientTest extends GeneratedTest
             'details' => [],
         ], JSON_PRETTY_PRINT);
         $transport->addResponse(null, $status);
+        // Mock request
+        $photo = new Photo();
+        $photoPhotoId = new PhotoId();
+        $photo->setPhotoId($photoPhotoId);
+        $updateMask = new FieldMask();
         try {
-            $client->updatePhoto();
+            $client->updatePhoto($photo, $updateMask);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

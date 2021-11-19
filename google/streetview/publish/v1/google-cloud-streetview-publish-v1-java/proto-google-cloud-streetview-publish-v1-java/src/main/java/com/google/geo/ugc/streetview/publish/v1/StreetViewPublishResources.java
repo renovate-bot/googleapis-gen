@@ -20,7 +20,18 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Required. An upload reference should be unique for each user. It follows
+     * An upload reference should be unique for each user. It follows
+     * the form:
+     * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
+     * </pre>
+     *
+     * <code>string upload_url = 1;</code>
+     * @return Whether the uploadUrl field is set.
+     */
+    boolean hasUploadUrl();
+    /**
+     * <pre>
+     * An upload reference should be unique for each user. It follows
      * the form:
      * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      * </pre>
@@ -31,7 +42,7 @@ public final class StreetViewPublishResources {
     java.lang.String getUploadUrl();
     /**
      * <pre>
-     * Required. An upload reference should be unique for each user. It follows
+     * An upload reference should be unique for each user. It follows
      * the form:
      * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      * </pre>
@@ -41,6 +52,8 @@ public final class StreetViewPublishResources {
      */
     com.google.protobuf.ByteString
         getUploadUrlBytes();
+
+    public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.FileSourceCase getFileSourceCase();
   }
   /**
    * <pre>
@@ -59,7 +72,6 @@ public final class StreetViewPublishResources {
       super(builder);
     }
     private UploadRef() {
-      uploadUrl_ = "";
     }
 
     @java.lang.Override
@@ -94,8 +106,8 @@ public final class StreetViewPublishResources {
               break;
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              uploadUrl_ = s;
+              fileSourceCase_ = 1;
+              fileSource_ = s;
               break;
             }
             default: {
@@ -130,11 +142,62 @@ public final class StreetViewPublishResources {
               com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.class, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.Builder.class);
     }
 
+    private int fileSourceCase_ = 0;
+    private java.lang.Object fileSource_;
+    public enum FileSourceCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      UPLOAD_URL(1),
+      FILESOURCE_NOT_SET(0);
+      private final int value;
+      private FileSourceCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FileSourceCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static FileSourceCase forNumber(int value) {
+        switch (value) {
+          case 1: return UPLOAD_URL;
+          case 0: return FILESOURCE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public FileSourceCase
+    getFileSourceCase() {
+      return FileSourceCase.forNumber(
+          fileSourceCase_);
+    }
+
     public static final int UPLOAD_URL_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uploadUrl_;
     /**
      * <pre>
-     * Required. An upload reference should be unique for each user. It follows
+     * An upload reference should be unique for each user. It follows
+     * the form:
+     * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
+     * </pre>
+     *
+     * <code>string upload_url = 1;</code>
+     * @return Whether the uploadUrl field is set.
+     */
+    public boolean hasUploadUrl() {
+      return fileSourceCase_ == 1;
+    }
+    /**
+     * <pre>
+     * An upload reference should be unique for each user. It follows
      * the form:
      * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      * </pre>
@@ -142,22 +205,26 @@ public final class StreetViewPublishResources {
      * <code>string upload_url = 1;</code>
      * @return The uploadUrl.
      */
-    @java.lang.Override
     public java.lang.String getUploadUrl() {
-      java.lang.Object ref = uploadUrl_;
+      java.lang.Object ref = "";
+      if (fileSourceCase_ == 1) {
+        ref = fileSource_;
+      }
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        uploadUrl_ = s;
+        if (fileSourceCase_ == 1) {
+          fileSource_ = s;
+        }
         return s;
       }
     }
     /**
      * <pre>
-     * Required. An upload reference should be unique for each user. It follows
+     * An upload reference should be unique for each user. It follows
      * the form:
      * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      * </pre>
@@ -165,15 +232,19 @@ public final class StreetViewPublishResources {
      * <code>string upload_url = 1;</code>
      * @return The bytes for uploadUrl.
      */
-    @java.lang.Override
     public com.google.protobuf.ByteString
         getUploadUrlBytes() {
-      java.lang.Object ref = uploadUrl_;
+      java.lang.Object ref = "";
+      if (fileSourceCase_ == 1) {
+        ref = fileSource_;
+      }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        uploadUrl_ = b;
+        if (fileSourceCase_ == 1) {
+          fileSource_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -194,8 +265,8 @@ public final class StreetViewPublishResources {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadUrl_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uploadUrl_);
+      if (fileSourceCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fileSource_);
       }
       unknownFields.writeTo(output);
     }
@@ -206,8 +277,8 @@ public final class StreetViewPublishResources {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uploadUrl_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uploadUrl_);
+      if (fileSourceCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fileSource_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -224,8 +295,15 @@ public final class StreetViewPublishResources {
       }
       com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef other = (com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef) obj;
 
-      if (!getUploadUrl()
-          .equals(other.getUploadUrl())) return false;
+      if (!getFileSourceCase().equals(other.getFileSourceCase())) return false;
+      switch (fileSourceCase_) {
+        case 1:
+          if (!getUploadUrl()
+              .equals(other.getUploadUrl())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,8 +315,14 @@ public final class StreetViewPublishResources {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UPLOAD_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getUploadUrl().hashCode();
+      switch (fileSourceCase_) {
+        case 1:
+          hash = (37 * hash) + UPLOAD_URL_FIELD_NUMBER;
+          hash = (53 * hash) + getUploadUrl().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -376,8 +460,8 @@ public final class StreetViewPublishResources {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uploadUrl_ = "";
-
+        fileSourceCase_ = 0;
+        fileSource_ = null;
         return this;
       }
 
@@ -404,7 +488,10 @@ public final class StreetViewPublishResources {
       @java.lang.Override
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef buildPartial() {
         com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef result = new com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef(this);
-        result.uploadUrl_ = uploadUrl_;
+        if (fileSourceCase_ == 1) {
+          result.fileSource_ = fileSource_;
+        }
+        result.fileSourceCase_ = fileSourceCase_;
         onBuilt();
         return result;
       }
@@ -453,9 +540,16 @@ public final class StreetViewPublishResources {
 
       public Builder mergeFrom(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef other) {
         if (other == com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.getDefaultInstance()) return this;
-        if (!other.getUploadUrl().isEmpty()) {
-          uploadUrl_ = other.uploadUrl_;
-          onChanged();
+        switch (other.getFileSourceCase()) {
+          case UPLOAD_URL: {
+            fileSourceCase_ = 1;
+            fileSource_ = other.fileSource_;
+            onChanged();
+            break;
+          }
+          case FILESOURCE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -485,11 +579,39 @@ public final class StreetViewPublishResources {
         }
         return this;
       }
+      private int fileSourceCase_ = 0;
+      private java.lang.Object fileSource_;
+      public FileSourceCase
+          getFileSourceCase() {
+        return FileSourceCase.forNumber(
+            fileSourceCase_);
+      }
 
-      private java.lang.Object uploadUrl_ = "";
+      public Builder clearFileSource() {
+        fileSourceCase_ = 0;
+        fileSource_ = null;
+        onChanged();
+        return this;
+      }
+
+
       /**
        * <pre>
-       * Required. An upload reference should be unique for each user. It follows
+       * An upload reference should be unique for each user. It follows
+       * the form:
+       * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
+       * </pre>
+       *
+       * <code>string upload_url = 1;</code>
+       * @return Whether the uploadUrl field is set.
+       */
+      @java.lang.Override
+      public boolean hasUploadUrl() {
+        return fileSourceCase_ == 1;
+      }
+      /**
+       * <pre>
+       * An upload reference should be unique for each user. It follows
        * the form:
        * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
        * </pre>
@@ -497,13 +619,19 @@ public final class StreetViewPublishResources {
        * <code>string upload_url = 1;</code>
        * @return The uploadUrl.
        */
+      @java.lang.Override
       public java.lang.String getUploadUrl() {
-        java.lang.Object ref = uploadUrl_;
+        java.lang.Object ref = "";
+        if (fileSourceCase_ == 1) {
+          ref = fileSource_;
+        }
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          uploadUrl_ = s;
+          if (fileSourceCase_ == 1) {
+            fileSource_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -511,7 +639,7 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required. An upload reference should be unique for each user. It follows
+       * An upload reference should be unique for each user. It follows
        * the form:
        * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
        * </pre>
@@ -519,14 +647,20 @@ public final class StreetViewPublishResources {
        * <code>string upload_url = 1;</code>
        * @return The bytes for uploadUrl.
        */
+      @java.lang.Override
       public com.google.protobuf.ByteString
           getUploadUrlBytes() {
-        java.lang.Object ref = uploadUrl_;
+        java.lang.Object ref = "";
+        if (fileSourceCase_ == 1) {
+          ref = fileSource_;
+        }
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          uploadUrl_ = b;
+          if (fileSourceCase_ == 1) {
+            fileSource_ = b;
+          }
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -534,7 +668,7 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required. An upload reference should be unique for each user. It follows
+       * An upload reference should be unique for each user. It follows
        * the form:
        * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
        * </pre>
@@ -548,14 +682,14 @@ public final class StreetViewPublishResources {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        uploadUrl_ = value;
+  fileSourceCase_ = 1;
+        fileSource_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Required. An upload reference should be unique for each user. It follows
+       * An upload reference should be unique for each user. It follows
        * the form:
        * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
        * </pre>
@@ -564,14 +698,16 @@ public final class StreetViewPublishResources {
        * @return This builder for chaining.
        */
       public Builder clearUploadUrl() {
-        
-        uploadUrl_ = getDefaultInstance().getUploadUrl();
-        onChanged();
+        if (fileSourceCase_ == 1) {
+          fileSourceCase_ = 0;
+          fileSource_ = null;
+          onChanged();
+        }
         return this;
       }
       /**
        * <pre>
-       * Required. An upload reference should be unique for each user. It follows
+       * An upload reference should be unique for each user. It follows
        * the form:
        * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
        * </pre>
@@ -586,8 +722,8 @@ public final class StreetViewPublishResources {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        uploadUrl_ = value;
+        fileSourceCase_ = 1;
+        fileSource_ = value;
         onChanged();
         return this;
       }
@@ -650,7 +786,7 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Required. A unique identifier for a photo.
+     * A unique identifier for a photo.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -659,7 +795,7 @@ public final class StreetViewPublishResources {
     java.lang.String getId();
     /**
      * <pre>
-     * Required. A unique identifier for a photo.
+     * A unique identifier for a photo.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -760,7 +896,7 @@ public final class StreetViewPublishResources {
     private volatile java.lang.Object id_;
     /**
      * <pre>
-     * Required. A unique identifier for a photo.
+     * A unique identifier for a photo.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -781,7 +917,7 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Required. A unique identifier for a photo.
+     * A unique identifier for a photo.
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -1111,7 +1247,7 @@ public final class StreetViewPublishResources {
       private java.lang.Object id_ = "";
       /**
        * <pre>
-       * Required. A unique identifier for a photo.
+       * A unique identifier for a photo.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1131,7 +1267,7 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required. A unique identifier for a photo.
+       * A unique identifier for a photo.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1152,7 +1288,7 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required. A unique identifier for a photo.
+       * A unique identifier for a photo.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1171,7 +1307,7 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required. A unique identifier for a photo.
+       * A unique identifier for a photo.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1185,7 +1321,7 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required. A unique identifier for a photo.
+       * A unique identifier for a photo.
        * </pre>
        *
        * <code>string id = 1;</code>
@@ -1262,12 +1398,12 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+     * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
      * the first level above ground level, -1 indicates the first level under
      * ground level. Non-integer values are OK.
      * </pre>
      *
-     * <code>double number = 1;</code>
+     * <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The number.
      */
     double getNumber();
@@ -1279,7 +1415,7 @@ public final class StreetViewPublishResources {
      * was an elevator.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     java.lang.String getName();
@@ -1290,7 +1426,7 @@ public final class StreetViewPublishResources {
      * was an elevator.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -1393,12 +1529,12 @@ public final class StreetViewPublishResources {
     private double number_;
     /**
      * <pre>
-     * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+     * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
      * the first level above ground level, -1 indicates the first level under
      * ground level. Non-integer values are OK.
      * </pre>
      *
-     * <code>double number = 1;</code>
+     * <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The number.
      */
     @java.lang.Override
@@ -1415,7 +1551,7 @@ public final class StreetViewPublishResources {
      * was an elevator.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     @java.lang.Override
@@ -1438,7 +1574,7 @@ public final class StreetViewPublishResources {
      * was an elevator.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -1784,12 +1920,12 @@ public final class StreetViewPublishResources {
       private double number_ ;
       /**
        * <pre>
-       * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+       * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
        * the first level above ground level, -1 indicates the first level under
        * ground level. Non-integer values are OK.
        * </pre>
        *
-       * <code>double number = 1;</code>
+       * <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The number.
        */
       @java.lang.Override
@@ -1798,12 +1934,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+       * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
        * the first level above ground level, -1 indicates the first level under
        * ground level. Non-integer values are OK.
        * </pre>
        *
-       * <code>double number = 1;</code>
+       * <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The number to set.
        * @return This builder for chaining.
        */
@@ -1815,12 +1951,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+       * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
        * the first level above ground level, -1 indicates the first level under
        * ground level. Non-integer values are OK.
        * </pre>
        *
-       * <code>double number = 1;</code>
+       * <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearNumber() {
@@ -1838,7 +1974,7 @@ public final class StreetViewPublishResources {
        * was an elevator.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -1860,7 +1996,7 @@ public final class StreetViewPublishResources {
        * was an elevator.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -1883,7 +2019,7 @@ public final class StreetViewPublishResources {
        * was an elevator.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -1904,7 +2040,7 @@ public final class StreetViewPublishResources {
        * was an elevator.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -1920,7 +2056,7 @@ public final class StreetViewPublishResources {
        * was an elevator.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1999,7 +2135,7 @@ public final class StreetViewPublishResources {
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2013,7 +2149,7 @@ public final class StreetViewPublishResources {
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2027,7 +2163,7 @@ public final class StreetViewPublishResources {
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2047,9 +2183,11 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
+     * The following pose parameters pertain to the center of the photo. They
+     * match https://developers.google.com/streetview/spherical-metadata.
      * Compass heading, measured at the center of the photo in degrees clockwise
-     * from North. Value must be &gt;=0 and &lt;360.
-     * NaN indicates an unmeasured quantity.
+     * from North. Value must be &gt;=0 and &lt;360. NaN indicates an unmeasured
+     * quantity.
      * </pre>
      *
      * <code>double heading = 3;</code>
@@ -2265,7 +2403,7 @@ public final class StreetViewPublishResources {
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2282,7 +2420,7 @@ public final class StreetViewPublishResources {
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2299,7 +2437,7 @@ public final class StreetViewPublishResources {
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      * </pre>
      *
      * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2329,9 +2467,11 @@ public final class StreetViewPublishResources {
     private double heading_;
     /**
      * <pre>
+     * The following pose parameters pertain to the center of the photo. They
+     * match https://developers.google.com/streetview/spherical-metadata.
      * Compass heading, measured at the center of the photo in degrees clockwise
-     * from North. Value must be &gt;=0 and &lt;360.
-     * NaN indicates an unmeasured quantity.
+     * from North. Value must be &gt;=0 and &lt;360. NaN indicates an unmeasured
+     * quantity.
      * </pre>
      *
      * <code>double heading = 3;</code>
@@ -2889,7 +3029,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2905,7 +3045,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2925,7 +3065,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2950,7 +3090,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -2973,7 +3113,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -3000,7 +3140,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -3023,7 +3163,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -3040,7 +3180,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -3060,7 +3200,7 @@ public final class StreetViewPublishResources {
        * When creating a [Photo][google.streetview.publish.v1.Photo], if the
        * latitude and longitude pair are not provided, the geolocation from the
        * exif header is used. A latitude and longitude pair not provided in the
-       * photo or exif header causes the create photo process to fail.
+       * photo or exif header causes the photo process to fail.
        * </pre>
        *
        * <code>.google.type.LatLng lat_lng_pair = 1;</code>
@@ -3128,9 +3268,11 @@ public final class StreetViewPublishResources {
       private double heading_ ;
       /**
        * <pre>
+       * The following pose parameters pertain to the center of the photo. They
+       * match https://developers.google.com/streetview/spherical-metadata.
        * Compass heading, measured at the center of the photo in degrees clockwise
-       * from North. Value must be &gt;=0 and &lt;360.
-       * NaN indicates an unmeasured quantity.
+       * from North. Value must be &gt;=0 and &lt;360. NaN indicates an unmeasured
+       * quantity.
        * </pre>
        *
        * <code>double heading = 3;</code>
@@ -3142,9 +3284,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
+       * The following pose parameters pertain to the center of the photo. They
+       * match https://developers.google.com/streetview/spherical-metadata.
        * Compass heading, measured at the center of the photo in degrees clockwise
-       * from North. Value must be &gt;=0 and &lt;360.
-       * NaN indicates an unmeasured quantity.
+       * from North. Value must be &gt;=0 and &lt;360. NaN indicates an unmeasured
+       * quantity.
        * </pre>
        *
        * <code>double heading = 3;</code>
@@ -3159,9 +3303,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
+       * The following pose parameters pertain to the center of the photo. They
+       * match https://developers.google.com/streetview/spherical-metadata.
        * Compass heading, measured at the center of the photo in degrees clockwise
-       * from North. Value must be &gt;=0 and &lt;360.
-       * NaN indicates an unmeasured quantity.
+       * from North. Value must be &gt;=0 and &lt;360. NaN indicates an unmeasured
+       * quantity.
        * </pre>
        *
        * <code>double heading = 3;</code>
@@ -3568,19 +3714,19 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
      * <pre>
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -3588,21 +3734,21 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
     /**
      * <pre>
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for languageCode.
      */
     com.google.protobuf.ByteString
@@ -3762,10 +3908,10 @@ public final class StreetViewPublishResources {
     private volatile java.lang.Object name_;
     /**
      * <pre>
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The name.
      */
     @java.lang.Override
@@ -3783,10 +3929,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -3808,11 +3954,11 @@ public final class StreetViewPublishResources {
     private volatile java.lang.Object languageCode_;
     /**
      * <pre>
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The languageCode.
      */
     @java.lang.Override
@@ -3830,11 +3976,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for languageCode.
      */
     @java.lang.Override
@@ -4296,10 +4442,10 @@ public final class StreetViewPublishResources {
       private java.lang.Object name_ = "";
       /**
        * <pre>
-       * Output-only. The name of the place, localized to the language_code.
+       * Output only. The name of the place, localized to the language_code.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -4316,10 +4462,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The name of the place, localized to the language_code.
+       * Output only. The name of the place, localized to the language_code.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -4337,10 +4483,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The name of the place, localized to the language_code.
+       * Output only. The name of the place, localized to the language_code.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -4356,10 +4502,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The name of the place, localized to the language_code.
+       * Output only. The name of the place, localized to the language_code.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -4370,10 +4516,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The name of the place, localized to the language_code.
+       * Output only. The name of the place, localized to the language_code.
        * </pre>
        *
-       * <code>string name = 2;</code>
+       * <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -4392,11 +4538,11 @@ public final class StreetViewPublishResources {
       private java.lang.Object languageCode_ = "";
       /**
        * <pre>
-       * Output-only. The language_code that the name is localized with. This should
+       * Output only. The language_code that the name is localized with. This should
        * be the language_code specified in the request, but may be a fallback.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The languageCode.
        */
       public java.lang.String getLanguageCode() {
@@ -4413,11 +4559,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The language_code that the name is localized with. This should
+       * Output only. The language_code that the name is localized with. This should
        * be the language_code specified in the request, but may be a fallback.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for languageCode.
        */
       public com.google.protobuf.ByteString
@@ -4435,11 +4581,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The language_code that the name is localized with. This should
+       * Output only. The language_code that the name is localized with. This should
        * be the language_code specified in the request, but may be a fallback.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The languageCode to set.
        * @return This builder for chaining.
        */
@@ -4455,11 +4601,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The language_code that the name is localized with. This should
+       * Output only. The language_code that the name is localized with. This should
        * be the language_code specified in the request, but may be a fallback.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearLanguageCode() {
@@ -4470,11 +4616,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output-only. The language_code that the name is localized with. This should
+       * Output only. The language_code that the name is localized with. This should
        * be the language_code specified in the request, but may be a fallback.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for languageCode to set.
        * @return This builder for chaining.
        */
@@ -4552,7 +4698,7 @@ public final class StreetViewPublishResources {
      * another photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the target field is set.
      */
     boolean hasTarget();
@@ -4562,7 +4708,7 @@ public final class StreetViewPublishResources {
      * another photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The target.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId getTarget();
@@ -4572,7 +4718,7 @@ public final class StreetViewPublishResources {
      * another photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder getTargetOrBuilder();
   }
@@ -4678,7 +4824,7 @@ public final class StreetViewPublishResources {
      * another photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the target field is set.
      */
     @java.lang.Override
@@ -4691,7 +4837,7 @@ public final class StreetViewPublishResources {
      * another photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The target.
      */
     @java.lang.Override
@@ -4704,7 +4850,7 @@ public final class StreetViewPublishResources {
      * another photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder getTargetOrBuilder() {
@@ -5039,7 +5185,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return Whether the target field is set.
        */
       public boolean hasTarget() {
@@ -5051,7 +5197,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The target.
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId getTarget() {
@@ -5067,7 +5213,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setTarget(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId value) {
         if (targetBuilder_ == null) {
@@ -5088,7 +5234,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setTarget(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder builderForValue) {
@@ -5107,7 +5253,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder mergeTarget(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId value) {
         if (targetBuilder_ == null) {
@@ -5130,7 +5276,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearTarget() {
         if (targetBuilder_ == null) {
@@ -5149,7 +5295,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder getTargetBuilder() {
         
@@ -5162,7 +5308,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder getTargetOrBuilder() {
         if (targetBuilder_ != null) {
@@ -5178,7 +5324,7 @@ public final class StreetViewPublishResources {
        * another photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder> 
@@ -5252,64 +5398,64 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the photoId field is set.
      */
     boolean hasPhotoId();
     /**
      * <pre>
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The photoId.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId getPhotoId();
     /**
      * <pre>
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder getPhotoIdOrBuilder();
 
     /**
      * <pre>
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return Whether the uploadReference field is set.
      */
     boolean hasUploadReference();
     /**
      * <pre>
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The uploadReference.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef getUploadReference();
     /**
      * <pre>
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRefOrBuilder getUploadReferenceOrBuilder();
 
@@ -5322,7 +5468,7 @@ public final class StreetViewPublishResources {
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      * </pre>
      *
-     * <code>string download_url = 3;</code>
+     * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The downloadUrl.
      */
     java.lang.String getDownloadUrl();
@@ -5335,7 +5481,7 @@ public final class StreetViewPublishResources {
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      * </pre>
      *
-     * <code>string download_url = 3;</code>
+     * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for downloadUrl.
      */
     com.google.protobuf.ByteString
@@ -5346,7 +5492,7 @@ public final class StreetViewPublishResources {
      * Output only. The thumbnail URL for showing a preview of the given photo.
      * </pre>
      *
-     * <code>string thumbnail_url = 9;</code>
+     * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The thumbnailUrl.
      */
     java.lang.String getThumbnailUrl();
@@ -5355,7 +5501,7 @@ public final class StreetViewPublishResources {
      * Output only. The thumbnail URL for showing a preview of the given photo.
      * </pre>
      *
-     * <code>string thumbnail_url = 9;</code>
+     * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for thumbnailUrl.
      */
     com.google.protobuf.ByteString
@@ -5366,7 +5512,7 @@ public final class StreetViewPublishResources {
      * Output only. The share link for the photo.
      * </pre>
      *
-     * <code>string share_link = 11;</code>
+     * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The shareLink.
      */
     java.lang.String getShareLink();
@@ -5375,7 +5521,7 @@ public final class StreetViewPublishResources {
      * Output only. The share link for the photo.
      * </pre>
      *
-     * <code>string share_link = 11;</code>
+     * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for shareLink.
      */
     com.google.protobuf.ByteString
@@ -5383,153 +5529,180 @@ public final class StreetViewPublishResources {
 
     /**
      * <pre>
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the pose field is set.
      */
     boolean hasPose();
     /**
      * <pre>
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pose.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose getPose();
     /**
      * <pre>
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PoseOrBuilder getPoseOrBuilder();
 
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection> 
         getConnectionsList();
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection getConnections(int index);
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getConnectionsCount();
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.ConnectionOrBuilder> 
         getConnectionsOrBuilderList();
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.ConnectionOrBuilder getConnectionsOrBuilder(
         int index);
 
     /**
      * <pre>
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the captureTime field is set.
      */
     boolean hasCaptureTime();
     /**
      * <pre>
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The captureTime.
      */
     com.google.protobuf.Timestamp getCaptureTime();
     /**
      * <pre>
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.protobuf.TimestampOrBuilder getCaptureTimeOrBuilder();
 
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Output only. Time when the image was uploaded.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the uploadTime field is set.
+     */
+    boolean hasUploadTime();
+    /**
+     * <pre>
+     * Output only. Time when the image was uploaded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The uploadTime.
+     */
+    com.google.protobuf.Timestamp getUploadTime();
+    /**
+     * <pre>
+     * Output only. Time when the image was uploaded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getUploadTimeOrBuilder();
+
+    /**
+     * <pre>
+     * Optional. Places where this photo belongs.
+     * </pre>
+     *
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place> 
         getPlacesList();
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place getPlaces(int index);
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getPlacesCount();
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PlaceOrBuilder> 
         getPlacesOrBuilderList();
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PlaceOrBuilder getPlacesOrBuilder(
         int index);
@@ -5539,7 +5712,7 @@ public final class StreetViewPublishResources {
      * Output only. View count of the photo.
      * </pre>
      *
-     * <code>int64 view_count = 10;</code>
+     * <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The viewCount.
      */
     long getViewCount();
@@ -5549,7 +5722,7 @@ public final class StreetViewPublishResources {
      * Output only. Status of rights transfer on this photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for transferStatus.
      */
     int getTransferStatusValue();
@@ -5558,28 +5731,26 @@ public final class StreetViewPublishResources {
      * Output only. Status of rights transfer on this photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The transferStatus.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.TransferStatus getTransferStatus();
 
     /**
      * <pre>
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for mapsPublishStatus.
      */
     int getMapsPublishStatusValue();
     /**
      * <pre>
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The mapsPublishStatus.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.MapsPublishStatus getMapsPublishStatus();
@@ -5744,6 +5915,19 @@ public final class StreetViewPublishResources {
               int rawValue = input.readEnum();
 
               mapsPublishStatus_ = rawValue;
+              break;
+            }
+            case 114: {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (uploadTime_ != null) {
+                subBuilder = uploadTime_.toBuilder();
+              }
+              uploadTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(uploadTime_);
+                uploadTime_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -6167,12 +6351,12 @@ public final class StreetViewPublishResources {
     private com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId photoId_;
     /**
      * <pre>
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the photoId field is set.
      */
     @java.lang.Override
@@ -6181,12 +6365,12 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The photoId.
      */
     @java.lang.Override
@@ -6195,12 +6379,12 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder getPhotoIdOrBuilder() {
@@ -6211,11 +6395,11 @@ public final class StreetViewPublishResources {
     private com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef uploadReference_;
     /**
      * <pre>
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return Whether the uploadReference field is set.
      */
     @java.lang.Override
@@ -6224,11 +6408,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The uploadReference.
      */
     @java.lang.Override
@@ -6237,11 +6421,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRefOrBuilder getUploadReferenceOrBuilder() {
@@ -6259,7 +6443,7 @@ public final class StreetViewPublishResources {
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      * </pre>
      *
-     * <code>string download_url = 3;</code>
+     * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The downloadUrl.
      */
     @java.lang.Override
@@ -6284,7 +6468,7 @@ public final class StreetViewPublishResources {
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      * </pre>
      *
-     * <code>string download_url = 3;</code>
+     * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for downloadUrl.
      */
     @java.lang.Override
@@ -6309,7 +6493,7 @@ public final class StreetViewPublishResources {
      * Output only. The thumbnail URL for showing a preview of the given photo.
      * </pre>
      *
-     * <code>string thumbnail_url = 9;</code>
+     * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The thumbnailUrl.
      */
     @java.lang.Override
@@ -6330,7 +6514,7 @@ public final class StreetViewPublishResources {
      * Output only. The thumbnail URL for showing a preview of the given photo.
      * </pre>
      *
-     * <code>string thumbnail_url = 9;</code>
+     * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for thumbnailUrl.
      */
     @java.lang.Override
@@ -6355,7 +6539,7 @@ public final class StreetViewPublishResources {
      * Output only. The share link for the photo.
      * </pre>
      *
-     * <code>string share_link = 11;</code>
+     * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The shareLink.
      */
     @java.lang.Override
@@ -6376,7 +6560,7 @@ public final class StreetViewPublishResources {
      * Output only. The share link for the photo.
      * </pre>
      *
-     * <code>string share_link = 11;</code>
+     * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for shareLink.
      */
     @java.lang.Override
@@ -6398,10 +6582,10 @@ public final class StreetViewPublishResources {
     private com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose pose_;
     /**
      * <pre>
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the pose field is set.
      */
     @java.lang.Override
@@ -6410,10 +6594,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pose.
      */
     @java.lang.Override
@@ -6422,10 +6606,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PoseOrBuilder getPoseOrBuilder() {
@@ -6436,11 +6620,11 @@ public final class StreetViewPublishResources {
     private java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection> connections_;
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection> getConnectionsList() {
@@ -6448,11 +6632,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.ConnectionOrBuilder> 
@@ -6461,11 +6645,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public int getConnectionsCount() {
@@ -6473,11 +6657,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection getConnections(int index) {
@@ -6485,11 +6669,11 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.ConnectionOrBuilder getConnectionsOrBuilder(
@@ -6501,12 +6685,12 @@ public final class StreetViewPublishResources {
     private com.google.protobuf.Timestamp captureTime_;
     /**
      * <pre>
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return Whether the captureTime field is set.
      */
     @java.lang.Override
@@ -6515,12 +6699,12 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The captureTime.
      */
     @java.lang.Override
@@ -6529,26 +6713,64 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getCaptureTimeOrBuilder() {
       return getCaptureTime();
     }
 
+    public static final int UPLOAD_TIME_FIELD_NUMBER = 14;
+    private com.google.protobuf.Timestamp uploadTime_;
+    /**
+     * <pre>
+     * Output only. Time when the image was uploaded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the uploadTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUploadTime() {
+      return uploadTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Time when the image was uploaded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The uploadTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getUploadTime() {
+      return uploadTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : uploadTime_;
+    }
+    /**
+     * <pre>
+     * Output only. Time when the image was uploaded.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getUploadTimeOrBuilder() {
+      return getUploadTime();
+    }
+
     public static final int PLACES_FIELD_NUMBER = 7;
     private java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place> places_;
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place> getPlacesList() {
@@ -6556,10 +6778,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PlaceOrBuilder> 
@@ -6568,10 +6790,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public int getPlacesCount() {
@@ -6579,10 +6801,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place getPlaces(int index) {
@@ -6590,10 +6812,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PlaceOrBuilder getPlacesOrBuilder(
@@ -6608,7 +6830,7 @@ public final class StreetViewPublishResources {
      * Output only. View count of the photo.
      * </pre>
      *
-     * <code>int64 view_count = 10;</code>
+     * <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The viewCount.
      */
     @java.lang.Override
@@ -6623,7 +6845,7 @@ public final class StreetViewPublishResources {
      * Output only. Status of rights transfer on this photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for transferStatus.
      */
     @java.lang.Override public int getTransferStatusValue() {
@@ -6634,7 +6856,7 @@ public final class StreetViewPublishResources {
      * Output only. Status of rights transfer on this photo.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The transferStatus.
      */
     @java.lang.Override public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.TransferStatus getTransferStatus() {
@@ -6647,11 +6869,10 @@ public final class StreetViewPublishResources {
     private int mapsPublishStatus_;
     /**
      * <pre>
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for mapsPublishStatus.
      */
     @java.lang.Override public int getMapsPublishStatusValue() {
@@ -6659,11 +6880,10 @@ public final class StreetViewPublishResources {
     }
     /**
      * <pre>
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The mapsPublishStatus.
      */
     @java.lang.Override public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.MapsPublishStatus getMapsPublishStatus() {
@@ -6722,6 +6942,9 @@ public final class StreetViewPublishResources {
       if (mapsPublishStatus_ != com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.MapsPublishStatus.UNSPECIFIED_MAPS_PUBLISH_STATUS.getNumber()) {
         output.writeEnum(13, mapsPublishStatus_);
       }
+      if (uploadTime_ != null) {
+        output.writeMessage(14, getUploadTime());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6776,6 +6999,10 @@ public final class StreetViewPublishResources {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, mapsPublishStatus_);
       }
+      if (uploadTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getUploadTime());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6819,6 +7046,11 @@ public final class StreetViewPublishResources {
         if (!getCaptureTime()
             .equals(other.getCaptureTime())) return false;
       }
+      if (hasUploadTime() != other.hasUploadTime()) return false;
+      if (hasUploadTime()) {
+        if (!getUploadTime()
+            .equals(other.getUploadTime())) return false;
+      }
       if (!getPlacesList()
           .equals(other.getPlacesList())) return false;
       if (getViewCount()
@@ -6861,6 +7093,10 @@ public final class StreetViewPublishResources {
       if (hasCaptureTime()) {
         hash = (37 * hash) + CAPTURE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getCaptureTime().hashCode();
+      }
+      if (hasUploadTime()) {
+        hash = (37 * hash) + UPLOAD_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getUploadTime().hashCode();
       }
       if (getPlacesCount() > 0) {
         hash = (37 * hash) + PLACES_FIELD_NUMBER;
@@ -7048,6 +7284,12 @@ public final class StreetViewPublishResources {
           captureTime_ = null;
           captureTimeBuilder_ = null;
         }
+        if (uploadTimeBuilder_ == null) {
+          uploadTime_ = null;
+        } else {
+          uploadTime_ = null;
+          uploadTimeBuilder_ = null;
+        }
         if (placesBuilder_ == null) {
           places_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -7118,6 +7360,11 @@ public final class StreetViewPublishResources {
           result.captureTime_ = captureTime_;
         } else {
           result.captureTime_ = captureTimeBuilder_.build();
+        }
+        if (uploadTimeBuilder_ == null) {
+          result.uploadTime_ = uploadTime_;
+        } else {
+          result.uploadTime_ = uploadTimeBuilder_.build();
         }
         if (placesBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
@@ -7229,6 +7476,9 @@ public final class StreetViewPublishResources {
         if (other.hasCaptureTime()) {
           mergeCaptureTime(other.getCaptureTime());
         }
+        if (other.hasUploadTime()) {
+          mergeUploadTime(other.getUploadTime());
+        }
         if (placesBuilder_ == null) {
           if (!other.places_.isEmpty()) {
             if (places_.isEmpty()) {
@@ -7299,12 +7549,12 @@ public final class StreetViewPublishResources {
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder> photoIdBuilder_;
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return Whether the photoId field is set.
        */
       public boolean hasPhotoId() {
@@ -7312,12 +7562,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The photoId.
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId getPhotoId() {
@@ -7329,12 +7579,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setPhotoId(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId value) {
         if (photoIdBuilder_ == null) {
@@ -7351,12 +7601,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder setPhotoId(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder builderForValue) {
@@ -7371,12 +7621,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder mergePhotoId(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId value) {
         if (photoIdBuilder_ == null) {
@@ -7395,12 +7645,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public Builder clearPhotoId() {
         if (photoIdBuilder_ == null) {
@@ -7415,12 +7665,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder getPhotoIdBuilder() {
         
@@ -7429,12 +7679,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder getPhotoIdOrBuilder() {
         if (photoIdBuilder_ != null) {
@@ -7446,12 +7696,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when updating a photo. Output only when creating a photo.
+       * Required. Output only. Required when updating a photo. Output only when creating a photo.
        * Identifier for the photo, which is unique among all photos in
        * Google.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoId.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoIdOrBuilder> 
@@ -7472,11 +7722,11 @@ public final class StreetViewPublishResources {
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRefOrBuilder> uploadReferenceBuilder_;
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        * @return Whether the uploadReference field is set.
        */
       public boolean hasUploadReference() {
@@ -7484,11 +7734,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        * @return The uploadReference.
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef getUploadReference() {
@@ -7500,11 +7750,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       public Builder setUploadReference(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef value) {
         if (uploadReferenceBuilder_ == null) {
@@ -7521,11 +7771,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       public Builder setUploadReference(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.Builder builderForValue) {
@@ -7540,11 +7790,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       public Builder mergeUploadReference(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef value) {
         if (uploadReferenceBuilder_ == null) {
@@ -7563,11 +7813,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       public Builder clearUploadReference() {
         if (uploadReferenceBuilder_ == null) {
@@ -7582,11 +7832,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.Builder getUploadReferenceBuilder() {
         
@@ -7595,11 +7845,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRefOrBuilder getUploadReferenceOrBuilder() {
         if (uploadReferenceBuilder_ != null) {
@@ -7611,11 +7861,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Required when creating a photo. Input only. The resource URL where the
+       * Input only. Required when creating a photo. Input only. The resource URL where the
        * photo bytes are uploaded to.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+       * <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRef.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.UploadRefOrBuilder> 
@@ -7641,7 +7891,7 @@ public final class StreetViewPublishResources {
        * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
        * </pre>
        *
-       * <code>string download_url = 3;</code>
+       * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The downloadUrl.
        */
       public java.lang.String getDownloadUrl() {
@@ -7665,7 +7915,7 @@ public final class StreetViewPublishResources {
        * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
        * </pre>
        *
-       * <code>string download_url = 3;</code>
+       * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for downloadUrl.
        */
       public com.google.protobuf.ByteString
@@ -7690,7 +7940,7 @@ public final class StreetViewPublishResources {
        * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
        * </pre>
        *
-       * <code>string download_url = 3;</code>
+       * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The downloadUrl to set.
        * @return This builder for chaining.
        */
@@ -7713,7 +7963,7 @@ public final class StreetViewPublishResources {
        * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
        * </pre>
        *
-       * <code>string download_url = 3;</code>
+       * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearDownloadUrl() {
@@ -7731,7 +7981,7 @@ public final class StreetViewPublishResources {
        * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
        * </pre>
        *
-       * <code>string download_url = 3;</code>
+       * <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for downloadUrl to set.
        * @return This builder for chaining.
        */
@@ -7753,7 +8003,7 @@ public final class StreetViewPublishResources {
        * Output only. The thumbnail URL for showing a preview of the given photo.
        * </pre>
        *
-       * <code>string thumbnail_url = 9;</code>
+       * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The thumbnailUrl.
        */
       public java.lang.String getThumbnailUrl() {
@@ -7773,7 +8023,7 @@ public final class StreetViewPublishResources {
        * Output only. The thumbnail URL for showing a preview of the given photo.
        * </pre>
        *
-       * <code>string thumbnail_url = 9;</code>
+       * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for thumbnailUrl.
        */
       public com.google.protobuf.ByteString
@@ -7794,7 +8044,7 @@ public final class StreetViewPublishResources {
        * Output only. The thumbnail URL for showing a preview of the given photo.
        * </pre>
        *
-       * <code>string thumbnail_url = 9;</code>
+       * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The thumbnailUrl to set.
        * @return This builder for chaining.
        */
@@ -7813,7 +8063,7 @@ public final class StreetViewPublishResources {
        * Output only. The thumbnail URL for showing a preview of the given photo.
        * </pre>
        *
-       * <code>string thumbnail_url = 9;</code>
+       * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearThumbnailUrl() {
@@ -7827,7 +8077,7 @@ public final class StreetViewPublishResources {
        * Output only. The thumbnail URL for showing a preview of the given photo.
        * </pre>
        *
-       * <code>string thumbnail_url = 9;</code>
+       * <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for thumbnailUrl to set.
        * @return This builder for chaining.
        */
@@ -7849,7 +8099,7 @@ public final class StreetViewPublishResources {
        * Output only. The share link for the photo.
        * </pre>
        *
-       * <code>string share_link = 11;</code>
+       * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The shareLink.
        */
       public java.lang.String getShareLink() {
@@ -7869,7 +8119,7 @@ public final class StreetViewPublishResources {
        * Output only. The share link for the photo.
        * </pre>
        *
-       * <code>string share_link = 11;</code>
+       * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The bytes for shareLink.
        */
       public com.google.protobuf.ByteString
@@ -7890,7 +8140,7 @@ public final class StreetViewPublishResources {
        * Output only. The share link for the photo.
        * </pre>
        *
-       * <code>string share_link = 11;</code>
+       * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The shareLink to set.
        * @return This builder for chaining.
        */
@@ -7909,7 +8159,7 @@ public final class StreetViewPublishResources {
        * Output only. The share link for the photo.
        * </pre>
        *
-       * <code>string share_link = 11;</code>
+       * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearShareLink() {
@@ -7923,7 +8173,7 @@ public final class StreetViewPublishResources {
        * Output only. The share link for the photo.
        * </pre>
        *
-       * <code>string share_link = 11;</code>
+       * <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The bytes for shareLink to set.
        * @return This builder for chaining.
        */
@@ -7944,10 +8194,10 @@ public final class StreetViewPublishResources {
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PoseOrBuilder> poseBuilder_;
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the pose field is set.
        */
       public boolean hasPose() {
@@ -7955,10 +8205,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The pose.
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose getPose() {
@@ -7970,10 +8220,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setPose(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose value) {
         if (poseBuilder_ == null) {
@@ -7990,10 +8240,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setPose(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose.Builder builderForValue) {
@@ -8008,10 +8258,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder mergePose(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose value) {
         if (poseBuilder_ == null) {
@@ -8030,10 +8280,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearPose() {
         if (poseBuilder_ == null) {
@@ -8048,10 +8298,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose.Builder getPoseBuilder() {
         
@@ -8060,10 +8310,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PoseOrBuilder getPoseOrBuilder() {
         if (poseBuilder_ != null) {
@@ -8075,10 +8325,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Pose of the photo.
+       * Optional. Pose of the photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+       * <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Pose.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PoseOrBuilder> 
@@ -8108,11 +8358,11 @@ public final class StreetViewPublishResources {
 
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection> getConnectionsList() {
         if (connectionsBuilder_ == null) {
@@ -8123,11 +8373,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getConnectionsCount() {
         if (connectionsBuilder_ == null) {
@@ -8138,11 +8388,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection getConnections(int index) {
         if (connectionsBuilder_ == null) {
@@ -8153,11 +8403,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setConnections(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection value) {
@@ -8175,11 +8425,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setConnections(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder builderForValue) {
@@ -8194,11 +8444,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addConnections(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection value) {
         if (connectionsBuilder_ == null) {
@@ -8215,11 +8465,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addConnections(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection value) {
@@ -8237,11 +8487,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addConnections(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder builderForValue) {
@@ -8256,11 +8506,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addConnections(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder builderForValue) {
@@ -8275,11 +8525,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addAllConnections(
           java.lang.Iterable<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection> values) {
@@ -8295,11 +8545,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearConnections() {
         if (connectionsBuilder_ == null) {
@@ -8313,11 +8563,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder removeConnections(int index) {
         if (connectionsBuilder_ == null) {
@@ -8331,11 +8581,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder getConnectionsBuilder(
           int index) {
@@ -8343,11 +8593,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.ConnectionOrBuilder getConnectionsOrBuilder(
           int index) {
@@ -8358,11 +8608,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.ConnectionOrBuilder> 
            getConnectionsOrBuilderList() {
@@ -8374,11 +8624,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder addConnectionsBuilder() {
         return getConnectionsFieldBuilder().addBuilder(
@@ -8386,11 +8636,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder addConnectionsBuilder(
           int index) {
@@ -8399,11 +8649,11 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Connections to other photos. A connection represents the link from this
+       * Optional. Connections to other photos. A connection represents the link from this
        * photo to another photo.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+       * <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Connection.Builder> 
            getConnectionsBuilderList() {
@@ -8429,12 +8679,12 @@ public final class StreetViewPublishResources {
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> captureTimeBuilder_;
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return Whether the captureTime field is set.
        */
       public boolean hasCaptureTime() {
@@ -8442,12 +8692,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The captureTime.
        */
       public com.google.protobuf.Timestamp getCaptureTime() {
@@ -8459,12 +8709,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setCaptureTime(com.google.protobuf.Timestamp value) {
         if (captureTimeBuilder_ == null) {
@@ -8481,12 +8731,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setCaptureTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -8501,12 +8751,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder mergeCaptureTime(com.google.protobuf.Timestamp value) {
         if (captureTimeBuilder_ == null) {
@@ -8525,12 +8775,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearCaptureTime() {
         if (captureTimeBuilder_ == null) {
@@ -8545,12 +8795,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.Timestamp.Builder getCaptureTimeBuilder() {
         
@@ -8559,12 +8809,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.protobuf.TimestampOrBuilder getCaptureTimeOrBuilder() {
         if (captureTimeBuilder_ != null) {
@@ -8576,12 +8826,12 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Absolute time when the photo was captured.
+       * Optional. Absolute time when the photo was captured.
        * When the photo has no exif timestamp, this is used to set a timestamp in
        * the photo metadata.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp capture_time = 6;</code>
+       * <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -8595,6 +8845,161 @@ public final class StreetViewPublishResources {
           captureTime_ = null;
         }
         return captureTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp uploadTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> uploadTimeBuilder_;
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the uploadTime field is set.
+       */
+      public boolean hasUploadTime() {
+        return uploadTimeBuilder_ != null || uploadTime_ != null;
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The uploadTime.
+       */
+      public com.google.protobuf.Timestamp getUploadTime() {
+        if (uploadTimeBuilder_ == null) {
+          return uploadTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : uploadTime_;
+        } else {
+          return uploadTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setUploadTime(com.google.protobuf.Timestamp value) {
+        if (uploadTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          uploadTime_ = value;
+          onChanged();
+        } else {
+          uploadTimeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setUploadTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (uploadTimeBuilder_ == null) {
+          uploadTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          uploadTimeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder mergeUploadTime(com.google.protobuf.Timestamp value) {
+        if (uploadTimeBuilder_ == null) {
+          if (uploadTime_ != null) {
+            uploadTime_ =
+              com.google.protobuf.Timestamp.newBuilder(uploadTime_).mergeFrom(value).buildPartial();
+          } else {
+            uploadTime_ = value;
+          }
+          onChanged();
+        } else {
+          uploadTimeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearUploadTime() {
+        if (uploadTimeBuilder_ == null) {
+          uploadTime_ = null;
+          onChanged();
+        } else {
+          uploadTime_ = null;
+          uploadTimeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getUploadTimeBuilder() {
+        
+        onChanged();
+        return getUploadTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getUploadTimeOrBuilder() {
+        if (uploadTimeBuilder_ != null) {
+          return uploadTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return uploadTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : uploadTime_;
+        }
+      }
+      /**
+       * <pre>
+       * Output only. Time when the image was uploaded.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getUploadTimeFieldBuilder() {
+        if (uploadTimeBuilder_ == null) {
+          uploadTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getUploadTime(),
+                  getParentForChildren(),
+                  isClean());
+          uploadTime_ = null;
+        }
+        return uploadTimeBuilder_;
       }
 
       private java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place> places_ =
@@ -8611,10 +9016,10 @@ public final class StreetViewPublishResources {
 
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place> getPlacesList() {
         if (placesBuilder_ == null) {
@@ -8625,10 +9030,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public int getPlacesCount() {
         if (placesBuilder_ == null) {
@@ -8639,10 +9044,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place getPlaces(int index) {
         if (placesBuilder_ == null) {
@@ -8653,10 +9058,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setPlaces(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place value) {
@@ -8674,10 +9079,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder setPlaces(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder builderForValue) {
@@ -8692,10 +9097,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addPlaces(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place value) {
         if (placesBuilder_ == null) {
@@ -8712,10 +9117,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addPlaces(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place value) {
@@ -8733,10 +9138,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addPlaces(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder builderForValue) {
@@ -8751,10 +9156,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addPlaces(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder builderForValue) {
@@ -8769,10 +9174,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder addAllPlaces(
           java.lang.Iterable<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place> values) {
@@ -8788,10 +9193,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder clearPlaces() {
         if (placesBuilder_ == null) {
@@ -8805,10 +9210,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder removePlaces(int index) {
         if (placesBuilder_ == null) {
@@ -8822,10 +9227,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder getPlacesBuilder(
           int index) {
@@ -8833,10 +9238,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PlaceOrBuilder getPlacesOrBuilder(
           int index) {
@@ -8847,10 +9252,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PlaceOrBuilder> 
            getPlacesOrBuilderList() {
@@ -8862,10 +9267,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder addPlacesBuilder() {
         return getPlacesFieldBuilder().addBuilder(
@@ -8873,10 +9278,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder addPlacesBuilder(
           int index) {
@@ -8885,10 +9290,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Places where this photo belongs.
+       * Optional. Places where this photo belongs.
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+       * <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Place.Builder> 
            getPlacesBuilderList() {
@@ -8915,7 +9320,7 @@ public final class StreetViewPublishResources {
        * Output only. View count of the photo.
        * </pre>
        *
-       * <code>int64 view_count = 10;</code>
+       * <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The viewCount.
        */
       @java.lang.Override
@@ -8927,7 +9332,7 @@ public final class StreetViewPublishResources {
        * Output only. View count of the photo.
        * </pre>
        *
-       * <code>int64 view_count = 10;</code>
+       * <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The viewCount to set.
        * @return This builder for chaining.
        */
@@ -8942,7 +9347,7 @@ public final class StreetViewPublishResources {
        * Output only. View count of the photo.
        * </pre>
        *
-       * <code>int64 view_count = 10;</code>
+       * <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearViewCount() {
@@ -8958,7 +9363,7 @@ public final class StreetViewPublishResources {
        * Output only. Status of rights transfer on this photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The enum numeric value on the wire for transferStatus.
        */
       @java.lang.Override public int getTransferStatusValue() {
@@ -8969,7 +9374,7 @@ public final class StreetViewPublishResources {
        * Output only. Status of rights transfer on this photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The enum numeric value on the wire for transferStatus to set.
        * @return This builder for chaining.
        */
@@ -8984,7 +9389,7 @@ public final class StreetViewPublishResources {
        * Output only. Status of rights transfer on this photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The transferStatus.
        */
       @java.lang.Override
@@ -8998,7 +9403,7 @@ public final class StreetViewPublishResources {
        * Output only. Status of rights transfer on this photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The transferStatus to set.
        * @return This builder for chaining.
        */
@@ -9016,7 +9421,7 @@ public final class StreetViewPublishResources {
        * Output only. Status of rights transfer on this photo.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+       * <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearTransferStatus() {
@@ -9029,11 +9434,10 @@ public final class StreetViewPublishResources {
       private int mapsPublishStatus_ = 0;
       /**
        * <pre>
-       * Output only. Status in Google Maps, whether this photo was published or
-       * rejected.
+       * Output only. Status in Google Maps, whether this photo was published or rejected.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The enum numeric value on the wire for mapsPublishStatus.
        */
       @java.lang.Override public int getMapsPublishStatusValue() {
@@ -9041,11 +9445,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output only. Status in Google Maps, whether this photo was published or
-       * rejected.
+       * Output only. Status in Google Maps, whether this photo was published or rejected.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The enum numeric value on the wire for mapsPublishStatus to set.
        * @return This builder for chaining.
        */
@@ -9057,11 +9460,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output only. Status in Google Maps, whether this photo was published or
-       * rejected.
+       * Output only. Status in Google Maps, whether this photo was published or rejected.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return The mapsPublishStatus.
        */
       @java.lang.Override
@@ -9072,11 +9474,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output only. Status in Google Maps, whether this photo was published or
-       * rejected.
+       * Output only. Status in Google Maps, whether this photo was published or rejected.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @param value The mapsPublishStatus to set.
        * @return This builder for chaining.
        */
@@ -9091,11 +9492,10 @@ public final class StreetViewPublishResources {
       }
       /**
        * <pre>
-       * Output only. Status in Google Maps, whether this photo was published or
-       * rejected.
+       * Output only. Status in Google Maps, whether this photo was published or rejected.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+       * <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        * @return This builder for chaining.
        */
       public Builder clearMapsPublishStatus() {
@@ -9202,50 +9602,54 @@ public final class StreetViewPublishResources {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/streetview/publish/v1/resources" +
-      ".proto\022\034google.streetview.publish.v1\032\034go" +
-      "ogle/api/annotations.proto\032\037google/proto" +
-      "buf/timestamp.proto\032\030google/type/latlng." +
-      "proto\"\037\n\tUploadRef\022\022\n\nupload_url\030\001 \001(\t\"\025" +
-      "\n\007PhotoId\022\n\n\002id\030\001 \001(\t\"%\n\005Level\022\016\n\006number" +
-      "\030\001 \001(\001\022\014\n\004name\030\002 \001(\t\"\276\001\n\004Pose\022)\n\014lat_lng" +
-      "_pair\030\001 \001(\0132\023.google.type.LatLng\022\020\n\010alti" +
-      "tude\030\002 \001(\001\022\017\n\007heading\030\003 \001(\001\022\r\n\005pitch\030\004 \001" +
-      "(\001\022\014\n\004roll\030\005 \001(\001\0222\n\005level\030\007 \001(\0132#.google" +
-      ".streetview.publish.v1.Level\022\027\n\017accuracy" +
-      "_meters\030\t \001(\002\">\n\005Place\022\020\n\010place_id\030\001 \001(\t" +
-      "\022\014\n\004name\030\002 \001(\t\022\025\n\rlanguage_code\030\003 \001(\t\"C\n" +
-      "\nConnection\0225\n\006target\030\001 \001(\0132%.google.str" +
-      "eetview.publish.v1.PhotoId\"\330\006\n\005Photo\0227\n\010" +
-      "photo_id\030\001 \001(\0132%.google.streetview.publi" +
-      "sh.v1.PhotoId\022A\n\020upload_reference\030\002 \001(\0132" +
-      "\'.google.streetview.publish.v1.UploadRef" +
-      "\022\024\n\014download_url\030\003 \001(\t\022\025\n\rthumbnail_url\030" +
-      "\t \001(\t\022\022\n\nshare_link\030\013 \001(\t\0220\n\004pose\030\004 \001(\0132" +
-      "\".google.streetview.publish.v1.Pose\022=\n\013c" +
-      "onnections\030\005 \003(\0132(.google.streetview.pub" +
-      "lish.v1.Connection\0220\n\014capture_time\030\006 \001(\013" +
-      "2\032.google.protobuf.Timestamp\0223\n\006places\030\007" +
-      " \003(\0132#.google.streetview.publish.v1.Plac" +
-      "e\022\022\n\nview_count\030\n \001(\003\022K\n\017transfer_status" +
-      "\030\014 \001(\01622.google.streetview.publish.v1.Ph" +
-      "oto.TransferStatus\022R\n\023maps_publish_statu" +
-      "s\030\r \001(\01625.google.streetview.publish.v1.P" +
-      "hoto.MapsPublishStatus\"\245\001\n\016TransferStatu" +
-      "s\022\033\n\027TRANSFER_STATUS_UNKNOWN\020\000\022\025\n\021NEVER_" +
-      "TRANSFERRED\020\001\022\013\n\007PENDING\020\002\022\r\n\tCOMPLETED\020" +
-      "\003\022\014\n\010REJECTED\020\004\022\013\n\007EXPIRED\020\005\022\r\n\tCANCELLE" +
-      "D\020\006\022\031\n\025RECEIVED_VIA_TRANSFER\020\007\"]\n\021MapsPu" +
-      "blishStatus\022#\n\037UNSPECIFIED_MAPS_PUBLISH_" +
-      "STATUS\020\000\022\r\n\tPUBLISHED\020\001\022\024\n\020REJECTED_UNKN" +
-      "OWN\020\002B\213\001\n(com.google.geo.ugc.streetview." +
-      "publish.v1B\032StreetViewPublishResourcesZC" +
-      "google.golang.org/genproto/googleapis/st" +
-      "reetview/publish/v1;publishb\006proto3"
+      ".proto\022\034google.streetview.publish.v1\032\037go" +
+      "ogle/api/field_behavior.proto\032\037google/pr" +
+      "otobuf/timestamp.proto\032\030google/type/latl" +
+      "ng.proto\"0\n\tUploadRef\022\024\n\nupload_url\030\001 \001(" +
+      "\tH\000B\r\n\013file_source\"\025\n\007PhotoId\022\n\n\002id\030\001 \001(" +
+      "\t\"/\n\005Level\022\023\n\006number\030\001 \001(\001B\003\340A\001\022\021\n\004name\030" +
+      "\002 \001(\tB\003\340A\002\"\276\001\n\004Pose\022)\n\014lat_lng_pair\030\001 \001(" +
+      "\0132\023.google.type.LatLng\022\020\n\010altitude\030\002 \001(\001" +
+      "\022\017\n\007heading\030\003 \001(\001\022\r\n\005pitch\030\004 \001(\001\022\014\n\004roll" +
+      "\030\005 \001(\001\0222\n\005level\030\007 \001(\0132#.google.streetvie" +
+      "w.publish.v1.Level\022\027\n\017accuracy_meters\030\t " +
+      "\001(\002\"H\n\005Place\022\020\n\010place_id\030\001 \001(\t\022\021\n\004name\030\002" +
+      " \001(\tB\003\340A\003\022\032\n\rlanguage_code\030\003 \001(\tB\003\340A\003\"H\n" +
+      "\nConnection\022:\n\006target\030\001 \001(\0132%.google.str" +
+      "eetview.publish.v1.PhotoIdB\003\340A\002\"\315\007\n\005Phot" +
+      "o\022?\n\010photo_id\030\001 \001(\0132%.google.streetview." +
+      "publish.v1.PhotoIdB\006\340A\002\340A\003\022F\n\020upload_ref" +
+      "erence\030\002 \001(\0132\'.google.streetview.publish" +
+      ".v1.UploadRefB\003\340A\004\022\031\n\014download_url\030\003 \001(\t" +
+      "B\003\340A\003\022\032\n\rthumbnail_url\030\t \001(\tB\003\340A\003\022\027\n\nsha" +
+      "re_link\030\013 \001(\tB\003\340A\003\0225\n\004pose\030\004 \001(\0132\".googl" +
+      "e.streetview.publish.v1.PoseB\003\340A\001\022B\n\013con" +
+      "nections\030\005 \003(\0132(.google.streetview.publi" +
+      "sh.v1.ConnectionB\003\340A\001\0225\n\014capture_time\030\006 " +
+      "\001(\0132\032.google.protobuf.TimestampB\003\340A\001\0224\n\013" +
+      "upload_time\030\016 \001(\0132\032.google.protobuf.Time" +
+      "stampB\003\340A\003\0228\n\006places\030\007 \003(\0132#.google.stre" +
+      "etview.publish.v1.PlaceB\003\340A\001\022\027\n\nview_cou" +
+      "nt\030\n \001(\003B\003\340A\003\022P\n\017transfer_status\030\014 \001(\01622" +
+      ".google.streetview.publish.v1.Photo.Tran" +
+      "sferStatusB\003\340A\003\022W\n\023maps_publish_status\030\r" +
+      " \001(\01625.google.streetview.publish.v1.Phot" +
+      "o.MapsPublishStatusB\003\340A\003\"\245\001\n\016TransferSta" +
+      "tus\022\033\n\027TRANSFER_STATUS_UNKNOWN\020\000\022\025\n\021NEVE" +
+      "R_TRANSFERRED\020\001\022\013\n\007PENDING\020\002\022\r\n\tCOMPLETE" +
+      "D\020\003\022\014\n\010REJECTED\020\004\022\013\n\007EXPIRED\020\005\022\r\n\tCANCEL" +
+      "LED\020\006\022\031\n\025RECEIVED_VIA_TRANSFER\020\007\"]\n\021Maps" +
+      "PublishStatus\022#\n\037UNSPECIFIED_MAPS_PUBLIS" +
+      "H_STATUS\020\000\022\r\n\tPUBLISHED\020\001\022\024\n\020REJECTED_UN" +
+      "KNOWN\020\002B\213\001\n(com.google.geo.ugc.streetvie" +
+      "w.publish.v1B\032StreetViewPublishResources" +
+      "ZCgoogle.golang.org/genproto/googleapis/" +
+      "streetview/publish/v1;publishb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.type.LatLngProto.getDescriptor(),
         });
@@ -9254,7 +9658,7 @@ public final class StreetViewPublishResources {
     internal_static_google_streetview_publish_v1_UploadRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_streetview_publish_v1_UploadRef_descriptor,
-        new java.lang.String[] { "UploadUrl", });
+        new java.lang.String[] { "UploadUrl", "FileSource", });
     internal_static_google_streetview_publish_v1_PhotoId_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_streetview_publish_v1_PhotoId_fieldAccessorTable = new
@@ -9290,8 +9694,13 @@ public final class StreetViewPublishResources {
     internal_static_google_streetview_publish_v1_Photo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_streetview_publish_v1_Photo_descriptor,
-        new java.lang.String[] { "PhotoId", "UploadReference", "DownloadUrl", "ThumbnailUrl", "ShareLink", "Pose", "Connections", "CaptureTime", "Places", "ViewCount", "TransferStatus", "MapsPublishStatus", });
-    com.google.api.AnnotationsProto.getDescriptor();
+        new java.lang.String[] { "PhotoId", "UploadReference", "DownloadUrl", "ThumbnailUrl", "ShareLink", "Pose", "Connections", "CaptureTime", "UploadTime", "Places", "ViewCount", "TransferStatus", "MapsPublishStatus", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.LatLngProto.getDescriptor();
   }

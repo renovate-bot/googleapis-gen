@@ -81,6 +81,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.CreatePhoto(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -108,6 +109,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.CreatePhotoAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Photo>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -137,6 +139,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.CreatePhoto(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -164,6 +167,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.CreatePhotoAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Photo>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -198,6 +202,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.GetPhoto(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -230,6 +235,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.GetPhotoAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Photo>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -263,6 +269,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.GetPhoto(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -294,6 +301,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.GetPhotoAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Photo>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -381,7 +389,7 @@ namespace Google.Streetview.Publish.V1.Tests
             };
             mockGrpcClient.Setup(x => x.BatchGetPhotos(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
-            BatchGetPhotosResponse response = client.BatchGetPhotos(request.PhotoIds, request.View);
+            BatchGetPhotosResponse response = client.BatchGetPhotos(request.View, request.PhotoIds);
             xunit::Assert.Same(expectedResponse, response);
             mockGrpcClient.VerifyAll();
         }
@@ -407,9 +415,9 @@ namespace Google.Streetview.Publish.V1.Tests
             };
             mockGrpcClient.Setup(x => x.BatchGetPhotosAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<BatchGetPhotosResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
-            BatchGetPhotosResponse responseCallSettings = await client.BatchGetPhotosAsync(request.PhotoIds, request.View, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            BatchGetPhotosResponse responseCallSettings = await client.BatchGetPhotosAsync(request.View, request.PhotoIds, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
             xunit::Assert.Same(expectedResponse, responseCallSettings);
-            BatchGetPhotosResponse responseCancellationToken = await client.BatchGetPhotosAsync(request.PhotoIds, request.View, st::CancellationToken.None);
+            BatchGetPhotosResponse responseCancellationToken = await client.BatchGetPhotosAsync(request.View, request.PhotoIds, st::CancellationToken.None);
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }
@@ -437,6 +445,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.UpdatePhoto(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -468,6 +477,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.UpdatePhotoAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Photo>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -501,6 +511,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.UpdatePhoto(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);
@@ -532,6 +543,7 @@ namespace Google.Streetview.Publish.V1.Tests
                 ShareLink = "share_link720d8fe7",
                 TransferStatus = Photo.Types.TransferStatus.Cancelled,
                 MapsPublishStatus = Photo.Types.MapsPublishStatus.Published,
+                UploadTime = new wkt::Timestamp(),
             };
             mockGrpcClient.Setup(x => x.UpdatePhotoAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Photo>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             StreetViewPublishServiceClient client = new StreetViewPublishServiceClientImpl(mockGrpcClient.Object, null);

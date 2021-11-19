@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.geo.ugc.streetview.publish.v1;
+package com.google.streetview.publish.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -26,10 +26,12 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.geo.ugc.streetview.publish.v1.stub.StreetViewPublishServiceStub;
-import com.google.geo.ugc.streetview.publish.v1.stub.StreetViewPublishServiceStubSettings;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.streetview.publish.v1.stub.StreetViewPublishServiceStub;
+import com.google.streetview.publish.v1.stub.StreetViewPublishServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -162,15 +164,15 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * [Photo][google.streetview.publish.v1.Photo].
    *
    * <p>In addition to the photo requirements shown in
-   * https://support.google.com/maps/answer/7012050?hl=en&amp;ref_topic=6275604, the photo must meet
-   * the following requirements:
+   * https://support.google.com/maps/answer/7012050?ref_topic=6275604, the photo must meet the
+   * following requirements:
    *
    * <ul>
-   *   <li> Photo Sphere XMP metadata must be included in the photo medadata. See
+   *   <li> Photo Sphere XMP metadata must be included in the photo metadata. See
    *       https://developers.google.com/streetview/spherical-metadata for the required fields.
    *   <li> The pixel size of the photo must meet the size requirements listed in
-   *       https://support.google.com/maps/answer/7012050?hl=en&amp;ref_topic=6275604, and the photo
-   *       must be a full 360 horizontally.
+   *       https://support.google.com/maps/answer/7012050?ref_topic=6275604, and the photo must be a
+   *       full 360 horizontally.
    * </ul>
    *
    * <p>After the upload completes, the method uses
@@ -203,15 +205,15 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * [Photo][google.streetview.publish.v1.Photo].
    *
    * <p>In addition to the photo requirements shown in
-   * https://support.google.com/maps/answer/7012050?hl=en&amp;ref_topic=6275604, the photo must meet
-   * the following requirements:
+   * https://support.google.com/maps/answer/7012050?ref_topic=6275604, the photo must meet the
+   * following requirements:
    *
    * <ul>
-   *   <li> Photo Sphere XMP metadata must be included in the photo medadata. See
+   *   <li> Photo Sphere XMP metadata must be included in the photo metadata. See
    *       https://developers.google.com/streetview/spherical-metadata for the required fields.
    *   <li> The pixel size of the photo must meet the size requirements listed in
-   *       https://support.google.com/maps/answer/7012050?hl=en&amp;ref_topic=6275604, and the photo
-   *       must be a full 360 horizontally.
+   *       https://support.google.com/maps/answer/7012050?ref_topic=6275604, and the photo must be a
+   *       full 360 horizontally.
    * </ul>
    *
    * <p>After the upload completes, the method uses
@@ -399,7 +401,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param photoId Required. ID of the [Photo][google.streetview.publish.v1.Photo].
-   * @param view Specifies if a download URL for the photo bytes should be returned in the
+   * @param view Required. Specifies if a download URL for the photo bytes should be returned in the
    *     [Photo][google.streetview.publish.v1.Photo] response.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -509,27 +511,27 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (StreetViewPublishServiceClient streetViewPublishServiceClient =
    *     StreetViewPublishServiceClient.create()) {
-   *   List<String> photoIds = new ArrayList<>();
    *   StreetViewPublishRpcMessages.PhotoView view =
    *       StreetViewPublishRpcMessages.PhotoView.forNumber(0);
+   *   List<String> photoIds = new ArrayList<>();
    *   StreetViewPublishRpcMessages.BatchGetPhotosResponse response =
-   *       streetViewPublishServiceClient.batchGetPhotos(photoIds, view);
+   *       streetViewPublishServiceClient.batchGetPhotos(view, photoIds);
    * }
    * }</pre>
    *
-   * @param photoIds Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-   *     requests require the following syntax for the URL query parameter:
+   * @param view Required. Specifies if a download URL for the photo bytes should be returned in the
+   *     Photo response.
+   * @param photoIds Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP GET
+   *     requests, the URL query parameter should be
    *     `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
-   * @param view Specifies if a download URL for the photo bytes should be returned in the Photo
-   *     response.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StreetViewPublishRpcMessages.BatchGetPhotosResponse batchGetPhotos(
-      List<String> photoIds, StreetViewPublishRpcMessages.PhotoView view) {
+      StreetViewPublishRpcMessages.PhotoView view, List<String> photoIds) {
     StreetViewPublishRpcMessages.BatchGetPhotosRequest request =
         StreetViewPublishRpcMessages.BatchGetPhotosRequest.newBuilder()
-            .addAllPhotoIds(photoIds)
             .setView(view)
+            .addAllPhotoIds(photoIds)
             .build();
     return batchGetPhotos(request);
   }
@@ -615,8 +617,8 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   /**
    * Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to the user.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; Recently created photos that are still
-   * being indexed are not returned in the response.&lt;/aside&gt;
+   * <p>&gt; Note: Recently created photos that are still being indexed are not returned in the
+   * response.
    *
    * <p>Sample code:
    *
@@ -633,10 +635,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param view Specifies if a download URL for the photos bytes should be returned in the Photos
-   *     response.
-   * @param filter The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-   *     <p>The only filter supported at the moment is `placeId`.
+   * @param view Required. Specifies if a download URL for the photos bytes should be returned in
+   *     the Photos response.
+   * @param filter Optional. The filter expression. For example:
+   *     `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+   *     <p>The filters supported at the moment are: `placeId`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPhotosPagedResponse listPhotos(
@@ -653,8 +656,8 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   /**
    * Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to the user.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; Recently created photos that are still
-   * being indexed are not returned in the response.&lt;/aside&gt;
+   * <p>&gt; Note: Recently created photos that are still being indexed are not returned in the
+   * response.
    *
    * <p>Sample code:
    *
@@ -688,8 +691,8 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   /**
    * Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to the user.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; Recently created photos that are still
-   * being indexed are not returned in the response.&lt;/aside&gt;
+   * <p>&gt; Note: Recently created photos that are still being indexed are not returned in the
+   * response.
    *
    * <p>Sample code:
    *
@@ -723,8 +726,8 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
   /**
    * Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to the user.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; Recently created photos that are still
-   * being indexed are not returned in the response.&lt;/aside&gt;
+   * <p>&gt; Note: Recently created photos that are still being indexed are not returned in the
+   * response.
    *
    * <p>Sample code:
    *
@@ -799,11 +802,11 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *
    * @param photo Required. [Photo][google.streetview.publish.v1.Photo] object containing the new
    *     metadata.
-   * @param updateMask Mask that identifies fields on the photo metadata to update. If not present,
-   *     the old [Photo][google.streetview.publish.v1.Photo] metadata is entirely replaced with the
-   *     new [Photo][google.streetview.publish.v1.Photo] metadata in this request. The update fails
-   *     if invalid fields are specified. Multiple fields can be specified in a comma-delimited
-   *     list.
+   * @param updateMask Required. Mask that identifies fields on the photo metadata to update. If not
+   *     present, the old [Photo][google.streetview.publish.v1.Photo] metadata is entirely replaced
+   *     with the new [Photo][google.streetview.publish.v1.Photo] metadata in this request. The
+   *     update fails if invalid fields are specified. Multiple fields can be specified in a
+   *     comma-delimited list.
    *     <p>The following fields are valid:
    *     <ul>
    *       <li> `pose.heading`
@@ -815,12 +818,12 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *       <li> `connections`
    *       <li> `places`
    *     </ul>
-   *     <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; When
+   *     <p>&gt; Note: When
    *     [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask] contains repeated
    *     fields, the entire set of repeated values get replaced with the new contents. For example,
    *     if [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask] contains
    *     `connections` and `UpdatePhotoRequest.photo.connections` is empty, all connections are
-   *     removed.&lt;/aside&gt;
+   *     removed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final StreetViewPublishResources.Photo updatePhoto(
@@ -946,10 +949,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * in a [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest] must not
    * exceed 20.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; To update
-   * [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
+   * <p>&gt; Note: To update [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
    * [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be filled as well.
-   * Otherwise, the request will fail.&lt;/aside&gt;
+   * Otherwise, the request will fail.
    *
    * <p>Sample code:
    *
@@ -998,10 +1000,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * in a [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest] must not
    * exceed 20.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; To update
-   * [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
+   * <p>&gt; Note: To update [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
    * [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be filled as well.
-   * Otherwise, the request will fail.&lt;/aside&gt;
+   * Otherwise, the request will fail.
    *
    * <p>Sample code:
    *
@@ -1049,10 +1050,9 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    * in a [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest] must not
    * exceed 20.
    *
-   * <p>&lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt; To update
-   * [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
+   * <p>&gt; Note: To update [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
    * [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be filled as well.
-   * Otherwise, the request will fail.&lt;/aside&gt;
+   * Otherwise, the request will fail.
    *
    * <p>Sample code:
    *
@@ -1180,7 +1180,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *
    * <p>Note that if
    * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-   * fails, either critical fields are missing or there was an authentication error. Even if
+   * fails, either critical fields are missing or there is an authentication error. Even if
    * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
    * succeeds, individual photos in the batch may have failures. These failures are specified in
    * each [PhotoResponse.status][google.streetview.publish.v1.PhotoResponse.status] in
@@ -1219,7 +1219,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *
    * <p>Note that if
    * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-   * fails, either critical fields are missing or there was an authentication error. Even if
+   * fails, either critical fields are missing or there is an authentication error. Even if
    * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
    * succeeds, individual photos in the batch may have failures. These failures are specified in
    * each [PhotoResponse.status][google.streetview.publish.v1.PhotoResponse.status] in
@@ -1255,7 +1255,7 @@ public class StreetViewPublishServiceClient implements BackgroundResource {
    *
    * <p>Note that if
    * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-   * fails, either critical fields are missing or there was an authentication error. Even if
+   * fails, either critical fields are missing or there is an authentication error. Even if
    * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
    * succeeds, individual photos in the batch may have failures. These failures are specified in
    * each [PhotoResponse.status][google.streetview.publish.v1.PhotoResponse.status] in

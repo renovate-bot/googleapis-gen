@@ -19,7 +19,7 @@ class Connection extends \Google\Protobuf\Internal\Message
      * Required. The destination of the connection from the containing photo to
      * another photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $target = null;
 
@@ -43,7 +43,7 @@ class Connection extends \Google\Protobuf\Internal\Message
      * Required. The destination of the connection from the containing photo to
      * another photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Streetview\Publish\V1\PhotoId|null
      */
     public function getTarget()
@@ -65,7 +65,7 @@ class Connection extends \Google\Protobuf\Internal\Message
      * Required. The destination of the connection from the containing photo to
      * another photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId target = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Streetview\Publish\V1\PhotoId $var
      * @return $this
      */

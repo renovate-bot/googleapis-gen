@@ -213,29 +213,29 @@ namespace Google.Streetview.Publish.V1.Snippets
         /// <summary>Snippet for BatchGetPhotos</summary>
         public void BatchGetPhotos()
         {
-            // Snippet: BatchGetPhotos(IEnumerable<string>, PhotoView, CallSettings)
+            // Snippet: BatchGetPhotos(PhotoView, IEnumerable<string>, CallSettings)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = StreetViewPublishServiceClient.Create();
             // Initialize request argument(s)
-            IEnumerable<string> photoIds = new string[] { "", };
             PhotoView view = PhotoView.Basic;
+            IEnumerable<string> photoIds = new string[] { "", };
             // Make the request
-            BatchGetPhotosResponse response = streetViewPublishServiceClient.BatchGetPhotos(photoIds, view);
+            BatchGetPhotosResponse response = streetViewPublishServiceClient.BatchGetPhotos(view, photoIds);
             // End snippet
         }
 
         /// <summary>Snippet for BatchGetPhotosAsync</summary>
         public async Task BatchGetPhotosAsync()
         {
-            // Snippet: BatchGetPhotosAsync(IEnumerable<string>, PhotoView, CallSettings)
-            // Additional: BatchGetPhotosAsync(IEnumerable<string>, PhotoView, CancellationToken)
+            // Snippet: BatchGetPhotosAsync(PhotoView, IEnumerable<string>, CallSettings)
+            // Additional: BatchGetPhotosAsync(PhotoView, IEnumerable<string>, CancellationToken)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
-            IEnumerable<string> photoIds = new string[] { "", };
             PhotoView view = PhotoView.Basic;
+            IEnumerable<string> photoIds = new string[] { "", };
             // Make the request
-            BatchGetPhotosResponse response = await streetViewPublishServiceClient.BatchGetPhotosAsync(photoIds, view);
+            BatchGetPhotosResponse response = await streetViewPublishServiceClient.BatchGetPhotosAsync(view, photoIds);
             // End snippet
         }
 

@@ -43,10 +43,16 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'view',
+                ],
             ],
             'ListPhotos' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/photos',
+                'queryParams' => [
+                    'view',
+                ],
             ],
             'StartUpload' => [
                 'method' => 'post',
@@ -65,6 +71,9 @@ return [
                             'getId',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

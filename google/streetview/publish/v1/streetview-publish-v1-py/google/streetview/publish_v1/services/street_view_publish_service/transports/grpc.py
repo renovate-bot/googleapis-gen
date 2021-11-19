@@ -235,16 +235,16 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
         the bytes for the [Photo][google.streetview.publish.v1.Photo].
 
         In addition to the photo requirements shown in
-        https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+        https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         the photo must meet the following requirements:
 
         -  Photo Sphere XMP metadata must be included in the photo
-           medadata. See
+           metadata. See
            https://developers.google.com/streetview/spherical-metadata
            for the required fields.
         -  The pixel size of the photo must meet the size requirements
            listed in
-           https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+           https://support.google.com/maps/answer/7012050?ref_topic=6275604,
            and the photo must be a full 360 horizontally.
 
         After the upload completes, the method uses
@@ -408,10 +408,8 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
         Lists all the [Photos][google.streetview.publish.v1.Photo] that
         belong to the user.
 
-        .. raw:: html
-
-            <aside class="note"><b>Note:</b> Recently created photos that are still
-            being indexed are not returned in the response.</aside>
+           Note: Recently created photos that are still being indexed
+           are not returned in the response.
 
         Returns:
             Callable[[~.ListPhotosRequest],
@@ -513,12 +511,10 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
         [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         must not exceed 20.
 
-        .. raw:: html
-
-            <aside class="note"><b>Note:</b> To update
-            [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
-            [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-            filled as well. Otherwise, the request will fail.</aside>
+           Note: To update
+           [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
+           [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair]
+           has to be filled as well. Otherwise, the request will fail.
 
         Returns:
             Callable[[~.BatchUpdatePhotosRequest],
@@ -583,7 +579,7 @@ class StreetViewPublishServiceGrpcTransport(StreetViewPublishServiceTransport):
 
         Note that if
         [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        fails, either critical fields are missing or there was an
+        fails, either critical fields are missing or there is an
         authentication error. Even if
         [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         succeeds, individual photos in the batch may have failures.

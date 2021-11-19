@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.geo.ugc.streetview.publish.v1.stub;
+package com.google.streetview.publish.v1.stub;
 
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;

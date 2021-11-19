@@ -21,11 +21,11 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * Required. [Photo][google.streetview.publish.v1.Photo] object containing the
      * new metadata.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $photo = null;
     /**
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -40,15 +40,15 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * <aside class="note"><b>Note:</b>  When
+     * > Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.</aside>
+     * all connections are removed.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $update_mask = null;
 
@@ -62,7 +62,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      *           Required. [Photo][google.streetview.publish.v1.Photo] object containing the
      *           new metadata.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           Mask that identifies fields on the photo metadata to update.
+     *           Required. Mask that identifies fields on the photo metadata to update.
      *           If not present, the old [Photo][google.streetview.publish.v1.Photo]
      *           metadata is entirely replaced with the
      *           new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -77,13 +77,13 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      *           * `pose.altitude`
      *           * `connections`
      *           * `places`
-     *           <aside class="note"><b>Note:</b>  When
+     *           > Note: When
      *           [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      *           contains repeated fields, the entire set of repeated values get replaced
      *           with the new contents. For example, if
      *           [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      *           contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     *           all connections are removed.</aside>
+     *           all connections are removed.
      * }
      */
     public function __construct($data = NULL) {
@@ -95,7 +95,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * Required. [Photo][google.streetview.publish.v1.Photo] object containing the
      * new metadata.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Streetview\Publish\V1\Photo|null
      */
     public function getPhoto()
@@ -117,7 +117,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * Required. [Photo][google.streetview.publish.v1.Photo] object containing the
      * new metadata.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Streetview\Publish\V1\Photo $var
      * @return $this
      */
@@ -130,7 +130,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -145,15 +145,15 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * <aside class="note"><b>Note:</b>  When
+     * > Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.</aside>
+     * all connections are removed.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask|null
      */
     public function getUpdateMask()
@@ -172,7 +172,7 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -187,15 +187,15 @@ class UpdatePhotoRequest extends \Google\Protobuf\Internal\Message
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * <aside class="note"><b>Note:</b>  When
+     * > Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.</aside>
+     * all connections are removed.
      *
-     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */

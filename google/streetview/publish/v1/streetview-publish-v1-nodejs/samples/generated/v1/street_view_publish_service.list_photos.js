@@ -15,18 +15,18 @@
 
 'use strict';
 
-function main() {
+function main(view) {
   // [START streetviewpublish_v1_generated_StreetViewPublishService_ListPhotos_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Specifies if a download URL for the photos bytes should be returned in the
+   *  Required. Specifies if a download URL for the photos bytes should be returned in the
    *  Photos response.
    */
   // const view = {}
   /**
-   *  The maximum number of photos to return.
+   *  Optional. The maximum number of photos to return.
    *  `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
    *  the default page size of 100 is used.
    *  The number of photos returned in the response may be less than `pageSize`
@@ -34,7 +34,7 @@ function main() {
    */
   // const pageSize = 1234
   /**
-   *  The
+   *  Optional. The
    *  nextPageToken google.streetview.publish.v1.ListPhotosResponse.next_page_token 
    *  value returned from a previous
    *  ListPhotos google.streetview.publish.v1.StreetViewPublishService.ListPhotos 
@@ -42,12 +42,12 @@ function main() {
    */
   // const pageToken = 'abc123'
   /**
-   *  The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-   *  The only filter supported at the moment is `placeId`.
+   *  Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+   *  The filters supported at the moment are: `placeId`.
    */
   // const filter = 'abc123'
   /**
-   *  The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   *  Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
    *  information, see
    *  http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
    *  If language_code is unspecified, the user's language preference for Google
@@ -56,7 +56,7 @@ function main() {
   // const languageCode = 'abc123'
 
   // Imports the Publish library
-  const {StreetViewPublishServiceClient} = require('publish').v1;
+  const {StreetViewPublishServiceClient} = require('@google-cloud/publish').v1;
 
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
@@ -64,6 +64,7 @@ function main() {
   async function callListPhotos() {
     // Construct request
     const request = {
+      view,
     };
 
     // Run request

@@ -20,28 +20,28 @@ use Google\Protobuf\Internal\GPBUtil;
 class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=<id1>&photoIds=<id2>&...`.
      *
-     * Generated from protobuf field <code>repeated string photo_ids = 1;</code>
+     * Generated from protobuf field <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $photo_ids;
     /**
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $view = 0;
     /**
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      *
-     * Generated from protobuf field <code>string language_code = 3;</code>
+     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $language_code = '';
 
@@ -52,14 +52,14 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $photo_ids
-     *           Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     *           requests require the following syntax for the URL query parameter:
+     *           Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     *           GET requests, the URL query parameter should be
      *           `photoIds=<id1>&photoIds=<id2>&...`.
      *     @type int $view
-     *           Specifies if a download URL for the photo bytes should be returned in the
+     *           Required. Specifies if a download URL for the photo bytes should be returned in the
      *           Photo response.
      *     @type string $language_code
-     *           The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     *           Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      *           information, see
      *           http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      *           If language_code is unspecified, the user's language preference for Google
@@ -72,11 +72,11 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=<id1>&photoIds=<id2>&...`.
      *
-     * Generated from protobuf field <code>repeated string photo_ids = 1;</code>
+     * Generated from protobuf field <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPhotoIds()
@@ -85,11 +85,11 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=<id1>&photoIds=<id2>&...`.
      *
-     * Generated from protobuf field <code>repeated string photo_ids = 1;</code>
+     * Generated from protobuf field <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -102,10 +102,10 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int
      */
     public function getView()
@@ -114,10 +114,10 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int $var
      * @return $this
      */
@@ -130,13 +130,13 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      *
-     * Generated from protobuf field <code>string language_code = 3;</code>
+     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getLanguageCode()
@@ -145,13 +145,13 @@ class BatchGetPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      *
-     * Generated from protobuf field <code>string language_code = 3;</code>
+     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */

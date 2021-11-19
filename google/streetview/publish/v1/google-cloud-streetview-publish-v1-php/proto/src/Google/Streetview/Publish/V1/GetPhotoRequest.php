@@ -22,14 +22,14 @@ class GetPhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *
-     * Generated from protobuf field <code>string photo_id = 1;</code>
+     * Generated from protobuf field <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $photo_id = '';
     /**
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $view = 0;
     /**
@@ -52,7 +52,7 @@ class GetPhotoRequest extends \Google\Protobuf\Internal\Message
      *     @type string $photo_id
      *           Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *     @type int $view
-     *           Specifies if a download URL for the photo bytes should be returned in the
+     *           Required. Specifies if a download URL for the photo bytes should be returned in the
      *           [Photo][google.streetview.publish.v1.Photo] response.
      *     @type string $language_code
      *           The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -70,7 +70,7 @@ class GetPhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *
-     * Generated from protobuf field <code>string photo_id = 1;</code>
+     * Generated from protobuf field <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getPhotoId()
@@ -81,7 +81,7 @@ class GetPhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *
-     * Generated from protobuf field <code>string photo_id = 1;</code>
+     * Generated from protobuf field <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */
@@ -94,10 +94,10 @@ class GetPhotoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int
      */
     public function getView()
@@ -106,10 +106,10 @@ class GetPhotoRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int $var
      * @return $this
      */

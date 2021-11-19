@@ -18,7 +18,7 @@ class DeletePhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *
-     * Generated from protobuf field <code>string photo_id = 1;</code>
+     * Generated from protobuf field <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $photo_id = '';
 
@@ -40,7 +40,7 @@ class DeletePhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *
-     * Generated from protobuf field <code>string photo_id = 1;</code>
+     * Generated from protobuf field <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getPhotoId()
@@ -51,7 +51,7 @@ class DeletePhotoRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *
-     * Generated from protobuf field <code>string photo_id = 1;</code>
+     * Generated from protobuf field <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

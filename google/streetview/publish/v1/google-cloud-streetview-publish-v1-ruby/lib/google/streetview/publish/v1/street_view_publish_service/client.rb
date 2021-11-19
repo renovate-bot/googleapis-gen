@@ -62,6 +62,46 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
+                default_config.rpcs.start_upload.timeout = 60.0
+                default_config.rpcs.start_upload.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: []
+                }
+
+                default_config.rpcs.create_photo.timeout = 60.0
+                default_config.rpcs.create_photo.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: []
+                }
+
+                default_config.rpcs.get_photo.timeout = 60.0
+                default_config.rpcs.get_photo.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                }
+
+                default_config.rpcs.batch_get_photos.timeout = 60.0
+                default_config.rpcs.batch_get_photos.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                }
+
+                default_config.rpcs.list_photos.timeout = 60.0
+                default_config.rpcs.list_photos.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                }
+
+                default_config.rpcs.update_photo.timeout = 60.0
+                default_config.rpcs.update_photo.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                }
+
+                default_config.rpcs.batch_update_photos.timeout = 60.0
+                default_config.rpcs.batch_update_photos.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: []
+                }
+
+                default_config.rpcs.delete_photo.timeout = 60.0
+                default_config.rpcs.delete_photo.retry_policy = {
+                  initial_delay: 0.1, max_delay: 60.0, multiplier: 1.3, retry_codes: [14, 4]
+                }
+
                 default_config
               end
               yield @configure if block_given?
@@ -143,20 +183,20 @@ module Google
             # Service calls
 
             ##
-            # Creates an upload session to start uploading photo bytes. The method uses
+            # Creates an upload session to start uploading photo bytes.  The method uses
             # the upload URL of the returned
             # {::Google::Streetview::Publish::V1::UploadRef UploadRef} to upload the bytes for
             # the {::Google::Streetview::Publish::V1::Photo Photo}.
             #
             # In addition to the photo requirements shown in
-            # https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+            # https://support.google.com/maps/answer/7012050?ref_topic=6275604,
             # the photo must meet the following requirements:
             #
-            # * Photo Sphere XMP metadata must be included in the photo medadata. See
+            # * Photo Sphere XMP metadata must be included in the photo metadata. See
             # https://developers.google.com/streetview/spherical-metadata for the
             # required fields.
             # * The pixel size of the photo must meet the size requirements listed in
-            # https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604, and
+            # https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
             # the photo must be a full 360 horizontally.
             #
             # After the upload completes, the method uses
@@ -240,17 +280,16 @@ module Google
             # Currently, the only way to set heading, pitch, and roll in CreatePhoto is
             # through the [Photo Sphere XMP
             # metadata](https://developers.google.com/streetview/spherical-metadata) in
-            # the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+            # the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
             # `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
             #
             # This method returns the following error codes:
             #
-            # * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-            # the request is malformed or if the uploaded photo is not a 360 photo.
-            # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-            # reference does not exist.
-            # * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-            # if the account has reached the storage limit.
+            # * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+            # the uploaded photo is not a 360 photo.
+            # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+            # * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+            # storage limit.
             #
             # @overload create_photo(request, options = nil)
             #   Pass arguments to `create_photo` via a request object, either of type
@@ -332,14 +371,12 @@ module Google
             #
             # This method returns the following error codes:
             #
-            # * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-            # the requesting user did not create the requested
-            # {::Google::Streetview::Publish::V1::Photo Photo}.
+            # * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+            # create the requested {::Google::Streetview::Publish::V1::Photo Photo}.
             # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
             # {::Google::Streetview::Publish::V1::Photo Photo} does not exist.
-            # * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-            # requested {::Google::Streetview::Publish::V1::Photo Photo} is still being
-            # indexed.
+            # * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+            # {::Google::Streetview::Publish::V1::Photo Photo} is still being indexed.
             #
             # @overload get_photo(request, options = nil)
             #   Pass arguments to `get_photo` via a request object, either of type
@@ -359,7 +396,7 @@ module Google
             #   @param photo_id [::String]
             #     Required. ID of the {::Google::Streetview::Publish::V1::Photo Photo}.
             #   @param view [::Google::Streetview::Publish::V1::PhotoView]
-            #     Specifies if a download URL for the photo bytes should be returned in the
+            #     Required. Specifies if a download URL for the photo bytes should be returned in the
             #     {::Google::Streetview::Publish::V1::Photo Photo} response.
             #   @param language_code [::String]
             #     The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -466,14 +503,14 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param photo_ids [::Array<::String>]
-            #     Required. IDs of the {::Google::Streetview::Publish::V1::Photo Photos}. HTTP GET
-            #     requests require the following syntax for the URL query parameter:
+            #     Required. IDs of the {::Google::Streetview::Publish::V1::Photo Photos}. For HTTP
+            #     GET requests, the URL query parameter should be
             #     `photoIds=<id1>&photoIds=<id2>&...`.
             #   @param view [::Google::Streetview::Publish::V1::PhotoView]
-            #     Specifies if a download URL for the photo bytes should be returned in the
+            #     Required. Specifies if a download URL for the photo bytes should be returned in the
             #     Photo response.
             #   @param language_code [::String]
-            #     The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+            #     Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
             #     information, see
             #     http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
             #     If language_code is unspecified, the user's language preference for Google
@@ -539,8 +576,8 @@ module Google
             # Lists all the {::Google::Streetview::Publish::V1::Photo Photos} that belong to
             # the user.
             #
-            # <aside class="note"><b>Note:</b> Recently created photos that are still
-            # being indexed are not returned in the response.</aside>
+            # > Note: Recently created photos that are still
+            # being indexed are not returned in the response.
             #
             # @overload list_photos(request, options = nil)
             #   Pass arguments to `list_photos` via a request object, either of type
@@ -558,26 +595,26 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param view [::Google::Streetview::Publish::V1::PhotoView]
-            #     Specifies if a download URL for the photos bytes should be returned in the
+            #     Required. Specifies if a download URL for the photos bytes should be returned in the
             #     Photos response.
             #   @param page_size [::Integer]
-            #     The maximum number of photos to return.
+            #     Optional. The maximum number of photos to return.
             #     `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
             #     the default page size of 100 is used.
             #     The number of photos returned in the response may be less than `pageSize`
             #     if the number of photos that belong to the user is less than `pageSize`.
             #   @param page_token [::String]
-            #     The
+            #     Optional. The
             #     {::Google::Streetview::Publish::V1::ListPhotosResponse#next_page_token nextPageToken}
             #     value returned from a previous
             #     {::Google::Streetview::Publish::V1::StreetViewPublishService::Client#list_photos ListPhotos}
             #     request, if any.
             #   @param filter [::String]
-            #     The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+            #     Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
             #
-            #     The only filter supported at the moment is `placeId`.
+            #     The filters supported at the moment are: `placeId`.
             #   @param language_code [::String]
-            #     The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+            #     Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
             #     information, see
             #     http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
             #     If language_code is unspecified, the user's language preference for Google
@@ -658,15 +695,12 @@ module Google
             #
             # This method returns the following error codes:
             #
-            # * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-            # the requesting user did not create the requested photo.
-            # * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-            # the request is malformed.
-            # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-            # photo does not exist.
-            # * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-            # requested {::Google::Streetview::Publish::V1::Photo Photo} is still being
-            # indexed.
+            # * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+            # create the requested photo.
+            # * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+            # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+            # * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+            # {::Google::Streetview::Publish::V1::Photo Photo} is still being indexed.
             #
             # @overload update_photo(request, options = nil)
             #   Pass arguments to `update_photo` via a request object, either of type
@@ -687,7 +721,7 @@ module Google
             #     Required. {::Google::Streetview::Publish::V1::Photo Photo} object containing the
             #     new metadata.
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
-            #     Mask that identifies fields on the photo metadata to update.
+            #     Required. Mask that identifies fields on the photo metadata to update.
             #     If not present, the old {::Google::Streetview::Publish::V1::Photo Photo}
             #     metadata is entirely replaced with the
             #     new {::Google::Streetview::Publish::V1::Photo Photo} metadata in this request.
@@ -706,13 +740,13 @@ module Google
             #     * `places`
             #
             #
-            #     <aside class="note"><b>Note:</b>  When
+            #     > Note: When
             #     {::Google::Streetview::Publish::V1::UpdatePhotoRequest#update_mask updateMask}
             #     contains repeated fields, the entire set of repeated values get replaced
             #     with the new contents. For example, if
             #     {::Google::Streetview::Publish::V1::UpdatePhotoRequest#update_mask updateMask}
             #     contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-            #     all connections are removed.</aside>
+            #     all connections are removed.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Streetview::Publish::V1::Photo]
@@ -808,10 +842,10 @@ module Google
             # {::Google::Streetview::Publish::V1::BatchUpdatePhotosRequest BatchUpdatePhotosRequest}
             # must not exceed 20.
             #
-            # <aside class="note"><b>Note:</b> To update
+            # > Note: To update
             # {::Google::Streetview::Publish::V1::Pose#altitude Pose.altitude},
             # {::Google::Streetview::Publish::V1::Pose#lat_lng_pair Pose.latLngPair} has to be
-            # filled as well. Otherwise, the request will fail.</aside>
+            # filled as well. Otherwise, the request will fail.
             #
             # @overload batch_update_photos(request, options = nil)
             #   Pass arguments to `batch_update_photos` via a request object, either of type
@@ -893,10 +927,9 @@ module Google
             #
             # This method returns the following error codes:
             #
-            # * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-            # the requesting user did not create the requested photo.
-            # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-            # does not exist.
+            # * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+            # create the requested photo.
+            # * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
             #
             # @overload delete_photo(request, options = nil)
             #   Pass arguments to `delete_photo` via a request object, either of type
@@ -986,7 +1019,7 @@ module Google
             #
             # Note that if
             # {::Google::Streetview::Publish::V1::StreetViewPublishService::Client#batch_delete_photos BatchDeletePhotos}
-            # fails, either critical fields are missing or there was an authentication
+            # fails, either critical fields are missing or there is an authentication
             # error. Even if
             # {::Google::Streetview::Publish::V1::StreetViewPublishService::Client#batch_delete_photos BatchDeletePhotos}
             # succeeds, individual photos in the batch may have failures.

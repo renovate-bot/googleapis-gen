@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.geo.ugc.streetview.publish.v1;
+package com.google.streetview.publish.v1;
 
-import static com.google.geo.ugc.streetview.publish.v1.StreetViewPublishServiceClient.ListPhotosPagedResponse;
+import static com.google.streetview.publish.v1.StreetViewPublishServiceClient.ListPhotosPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -26,6 +26,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -87,9 +89,7 @@ public class StreetViewPublishServiceClientTest {
   @Test
   public void startUploadTest() throws Exception {
     StreetViewPublishResources.UploadRef expectedResponse =
-        StreetViewPublishResources.UploadRef.newBuilder()
-            .setUploadUrl("uploadUrl1239085998")
-            .build();
+        StreetViewPublishResources.UploadRef.newBuilder().build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
     Empty request = Empty.newBuilder().build();
@@ -133,6 +133,7 @@ public class StreetViewPublishServiceClientTest {
             .setPose(StreetViewPublishResources.Pose.newBuilder().build())
             .addAllConnections(new ArrayList<StreetViewPublishResources.Connection>())
             .setCaptureTime(Timestamp.newBuilder().build())
+            .setUploadTime(Timestamp.newBuilder().build())
             .addAllPlaces(new ArrayList<StreetViewPublishResources.Place>())
             .setViewCount(-1534353675)
             .build();
@@ -182,6 +183,7 @@ public class StreetViewPublishServiceClientTest {
             .setPose(StreetViewPublishResources.Pose.newBuilder().build())
             .addAllConnections(new ArrayList<StreetViewPublishResources.Connection>())
             .setCaptureTime(Timestamp.newBuilder().build())
+            .setUploadTime(Timestamp.newBuilder().build())
             .addAllPlaces(new ArrayList<StreetViewPublishResources.Place>())
             .setViewCount(-1534353675)
             .build();
@@ -231,12 +233,12 @@ public class StreetViewPublishServiceClientTest {
             .build();
     mockStreetViewPublishService.addResponse(expectedResponse);
 
-    List<String> photoIds = new ArrayList<>();
     StreetViewPublishRpcMessages.PhotoView view =
         StreetViewPublishRpcMessages.PhotoView.forNumber(0);
+    List<String> photoIds = new ArrayList<>();
 
     StreetViewPublishRpcMessages.BatchGetPhotosResponse actualResponse =
-        client.batchGetPhotos(photoIds, view);
+        client.batchGetPhotos(view, photoIds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockStreetViewPublishService.getRequests();
@@ -244,8 +246,8 @@ public class StreetViewPublishServiceClientTest {
     StreetViewPublishRpcMessages.BatchGetPhotosRequest actualRequest =
         ((StreetViewPublishRpcMessages.BatchGetPhotosRequest) actualRequests.get(0));
 
-    Assert.assertEquals(photoIds, actualRequest.getPhotoIdsList());
     Assert.assertEquals(view, actualRequest.getView());
+    Assert.assertEquals(photoIds, actualRequest.getPhotoIdsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -258,10 +260,10 @@ public class StreetViewPublishServiceClientTest {
     mockStreetViewPublishService.addException(exception);
 
     try {
-      List<String> photoIds = new ArrayList<>();
       StreetViewPublishRpcMessages.PhotoView view =
           StreetViewPublishRpcMessages.PhotoView.forNumber(0);
-      client.batchGetPhotos(photoIds, view);
+      List<String> photoIds = new ArrayList<>();
+      client.batchGetPhotos(view, photoIds);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -332,6 +334,7 @@ public class StreetViewPublishServiceClientTest {
             .setPose(StreetViewPublishResources.Pose.newBuilder().build())
             .addAllConnections(new ArrayList<StreetViewPublishResources.Connection>())
             .setCaptureTime(Timestamp.newBuilder().build())
+            .setUploadTime(Timestamp.newBuilder().build())
             .addAllPlaces(new ArrayList<StreetViewPublishResources.Place>())
             .setViewCount(-1534353675)
             .build();

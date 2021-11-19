@@ -26,57 +26,59 @@ public final class StreetViewPublish {
       "\n5google/streetview/publish/v1/streetvie" +
       "w_publish.proto\022\034google.streetview.publi" +
       "sh.v1\032\034google/api/annotations.proto\032\027goo" +
-      "gle/api/client.proto\032\033google/protobuf/em" +
-      "pty.proto\032,google/streetview/publish/v1/" +
-      "resources.proto\032.google/streetview/publi" +
-      "sh/v1/rpcmessages.proto2\341\013\n\030StreetViewPu" +
-      "blishService\022p\n\013StartUpload\022\026.google.pro" +
-      "tobuf.Empty\032\'.google.streetview.publish." +
-      "v1.UploadRef\" \202\323\344\223\002\032\"\025/v1/photo:startUpl" +
-      "oad:\001*\022\206\001\n\013CreatePhoto\0220.google.streetvi" +
-      "ew.publish.v1.CreatePhotoRequest\032#.googl" +
-      "e.streetview.publish.v1.Photo\" \202\323\344\223\002\022\"\t/" +
-      "v1/photo:\005photo\332A\005photo\022\214\001\n\010GetPhoto\022-.g" +
-      "oogle.streetview.publish.v1.GetPhotoRequ" +
-      "est\032#.google.streetview.publish.v1.Photo" +
-      "\",\202\323\344\223\002\026\022\024/v1/photo/{photo_id}\332A\rphoto_i" +
-      "d,view\022\251\001\n\016BatchGetPhotos\0223.google.stree" +
-      "tview.publish.v1.BatchGetPhotosRequest\0324" +
-      ".google.streetview.publish.v1.BatchGetPh" +
-      "otosResponse\",\202\323\344\223\002\025\022\023/v1/photos:batchGe" +
-      "t\332A\016photo_ids,view\022\221\001\n\nListPhotos\022/.goog" +
-      "le.streetview.publish.v1.ListPhotosReque" +
-      "st\0320.google.streetview.publish.v1.ListPh" +
-      "otosResponse\" \202\323\344\223\002\014\022\n/v1/photos\332A\013view," +
-      "filter\022\246\001\n\013UpdatePhoto\0220.google.streetvi" +
-      "ew.publish.v1.UpdatePhotoRequest\032#.googl" +
-      "e.streetview.publish.v1.Photo\"@\202\323\344\223\002&\032\035/" +
-      "v1/photo/{photo.photo_id.id}:\005photo\332A\021ph" +
-      "oto,update_mask\022\277\001\n\021BatchUpdatePhotos\0226." +
-      "google.streetview.publish.v1.BatchUpdate" +
-      "PhotosRequest\0327.google.streetview.publis" +
-      "h.v1.BatchUpdatePhotosResponse\"9\202\323\344\223\002\033\"\026" +
-      "/v1/photos:batchUpdate:\001*\332A\025update_photo" +
-      "_requests\022\200\001\n\013DeletePhoto\0220.google.stree" +
-      "tview.publish.v1.DeletePhotoRequest\032\026.go" +
-      "ogle.protobuf.Empty\"\'\202\323\344\223\002\026*\024/v1/photo/{" +
-      "photo_id}\332A\010photo_id\022\263\001\n\021BatchDeletePhot" +
-      "os\0226.google.streetview.publish.v1.BatchD" +
-      "eletePhotosRequest\0327.google.streetview.p" +
-      "ublish.v1.BatchDeletePhotosResponse\"-\202\323\344" +
-      "\223\002\033\"\026/v1/photos:batchDelete:\001*\332A\tphoto_i" +
-      "ds\032W\312A streetviewpublish.googleapis.com\322" +
-      "A1https://www.googleapis.com/auth/street" +
-      "viewpublishB\202\001\n(com.google.geo.ugc.stree" +
-      "tview.publish.v1B\021StreetViewPublishZCgoo" +
-      "gle.golang.org/genproto/googleapis/stree" +
-      "tview/publish/v1;publishb\006proto3"
+      "gle/api/client.proto\032#google/longrunning" +
+      "/operations.proto\032\033google/protobuf/empty" +
+      ".proto\032,google/streetview/publish/v1/res" +
+      "ources.proto\032.google/streetview/publish/" +
+      "v1/rpcmessages.proto2\341\013\n\030StreetViewPubli" +
+      "shService\022p\n\013StartUpload\022\026.google.protob" +
+      "uf.Empty\032\'.google.streetview.publish.v1." +
+      "UploadRef\" \202\323\344\223\002\032\"\025/v1/photo:startUpload" +
+      ":\001*\022\206\001\n\013CreatePhoto\0220.google.streetview." +
+      "publish.v1.CreatePhotoRequest\032#.google.s" +
+      "treetview.publish.v1.Photo\" \202\323\344\223\002\022\"\t/v1/" +
+      "photo:\005photo\332A\005photo\022\214\001\n\010GetPhoto\022-.goog" +
+      "le.streetview.publish.v1.GetPhotoRequest" +
+      "\032#.google.streetview.publish.v1.Photo\",\202" +
+      "\323\344\223\002\026\022\024/v1/photo/{photo_id}\332A\rphoto_id,v" +
+      "iew\022\251\001\n\016BatchGetPhotos\0223.google.streetvi" +
+      "ew.publish.v1.BatchGetPhotosRequest\0324.go" +
+      "ogle.streetview.publish.v1.BatchGetPhoto" +
+      "sResponse\",\202\323\344\223\002\025\022\023/v1/photos:batchGet\332A" +
+      "\016view,photo_ids\022\221\001\n\nListPhotos\022/.google." +
+      "streetview.publish.v1.ListPhotosRequest\032" +
+      "0.google.streetview.publish.v1.ListPhoto" +
+      "sResponse\" \202\323\344\223\002\014\022\n/v1/photos\332A\013view,fil" +
+      "ter\022\246\001\n\013UpdatePhoto\0220.google.streetview." +
+      "publish.v1.UpdatePhotoRequest\032#.google.s" +
+      "treetview.publish.v1.Photo\"@\202\323\344\223\002&\032\035/v1/" +
+      "photo/{photo.photo_id.id}:\005photo\332A\021photo" +
+      ",update_mask\022\277\001\n\021BatchUpdatePhotos\0226.goo" +
+      "gle.streetview.publish.v1.BatchUpdatePho" +
+      "tosRequest\0327.google.streetview.publish.v" +
+      "1.BatchUpdatePhotosResponse\"9\202\323\344\223\002\033\"\026/v1" +
+      "/photos:batchUpdate:\001*\332A\025update_photo_re" +
+      "quests\022\200\001\n\013DeletePhoto\0220.google.streetvi" +
+      "ew.publish.v1.DeletePhotoRequest\032\026.googl" +
+      "e.protobuf.Empty\"\'\202\323\344\223\002\026*\024/v1/photo/{pho" +
+      "to_id}\332A\010photo_id\022\263\001\n\021BatchDeletePhotos\022" +
+      "6.google.streetview.publish.v1.BatchDele" +
+      "tePhotosRequest\0327.google.streetview.publ" +
+      "ish.v1.BatchDeletePhotosResponse\"-\202\323\344\223\002\033" +
+      "\"\026/v1/photos:batchDelete:\001*\332A\tphoto_ids\032" +
+      "W\312A streetviewpublish.googleapis.com\322A1h" +
+      "ttps://www.googleapis.com/auth/streetvie" +
+      "wpublishB\202\001\n(com.google.geo.ugc.streetvi" +
+      "ew.publish.v1B\021StreetViewPublishZCgoogle" +
+      ".golang.org/genproto/googleapis/streetvi" +
+      "ew/publish/v1;publishb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.ClientProto.getDescriptor(),
+          com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.getDescriptor(),
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.getDescriptor(),
@@ -91,6 +93,7 @@ public final class StreetViewPublish {
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.getDescriptor();
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.getDescriptor();

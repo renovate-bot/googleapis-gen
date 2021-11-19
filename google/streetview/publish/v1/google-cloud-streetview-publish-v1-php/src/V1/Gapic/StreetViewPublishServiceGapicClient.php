@@ -44,10 +44,10 @@ use Google\Streetview\Publish\V1\BatchUpdatePhotosResponse;
 use Google\Streetview\Publish\V1\CreatePhotoRequest;
 use Google\Streetview\Publish\V1\DeletePhotoRequest;
 use Google\Streetview\Publish\V1\GetPhotoRequest;
-
 use Google\Streetview\Publish\V1\ListPhotosRequest;
 use Google\Streetview\Publish\V1\ListPhotosResponse;
 use Google\Streetview\Publish\V1\Photo;
+use Google\Streetview\Publish\V1\PhotoView;
 use Google\Streetview\Publish\V1\UpdatePhotoRequest;
 use Google\Streetview\Publish\V1\UploadRef;
 
@@ -60,7 +60,8 @@ use Google\Streetview\Publish\V1\UploadRef;
  * ```
  * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
  * try {
- *     $response = $streetViewPublishServiceClient->batchDeletePhotos();
+ *     $photoIds = [];
+ *     $response = $streetViewPublishServiceClient->batchDeletePhotos($photoIds);
  * } finally {
  *     $streetViewPublishServiceClient->close();
  * }
@@ -182,7 +183,7 @@ class StreetViewPublishServiceGapicClient
      *
      * Note that if
      * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-     * fails, either critical fields are missing or there was an authentication
+     * fails, either critical fields are missing or there is an authentication
      * error. Even if
      * [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
      * succeeds, individual photos in the batch may have failures.
@@ -198,19 +199,19 @@ class StreetViewPublishServiceGapicClient
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $response = $streetViewPublishServiceClient->batchDeletePhotos();
+     *     $photoIds = [];
+     *     $response = $streetViewPublishServiceClient->batchDeletePhotos($photoIds);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param string[] $photoIds     Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP
+     *                               GET requests require the following syntax for the URL query parameter:
+     *                               `photoIds=<id1>&photoIds=<id2>&...`.
+     * @param array    $optionalArgs {
      *     Optional.
      *
-     *     @type string[] $photoIds
-     *           Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP
-     *           GET requests require the following syntax for the URL query parameter:
-     *           `photoIds=<id1>&photoIds=<id2>&...`.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -222,13 +223,10 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function batchDeletePhotos(array $optionalArgs = [])
+    public function batchDeletePhotos($photoIds, array $optionalArgs = [])
     {
         $request = new BatchDeletePhotosRequest();
-        if (isset($optionalArgs['photoIds'])) {
-            $request->setPhotoIds($optionalArgs['photoIds']);
-        }
-
+        $request->setPhotoIds($photoIds);
         return $this->startCall('BatchDeletePhotos', BatchDeletePhotosResponse::class, $optionalArgs, $request)->wait();
     }
 
@@ -254,25 +252,25 @@ class StreetViewPublishServiceGapicClient
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $response = $streetViewPublishServiceClient->batchGetPhotos();
+     *     $photoIds = [];
+     *     $view = PhotoView::BASIC;
+     *     $response = $streetViewPublishServiceClient->batchGetPhotos($photoIds, $view);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param string[] $photoIds     Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     *                               GET requests, the URL query parameter should be
+     *                               `photoIds=<id1>&photoIds=<id2>&...`.
+     * @param int      $view         Required. Specifies if a download URL for the photo bytes should be returned in the
+     *                               Photo response.
+     *                               For allowed values, use constants defined on {@see \Google\Streetview\Publish\V1\PhotoView}
+     * @param array    $optionalArgs {
      *     Optional.
      *
-     *     @type string[] $photoIds
-     *           Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     *           requests require the following syntax for the URL query parameter:
-     *           `photoIds=<id1>&photoIds=<id2>&...`.
-     *     @type int $view
-     *           Specifies if a download URL for the photo bytes should be returned in the
-     *           Photo response.
-     *           For allowed values, use constants defined on {@see \Google\Streetview\Publish\V1\PhotoView}
      *     @type string $languageCode
-     *           The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     *           Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      *           information, see
      *           http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      *           If language_code is unspecified, the user's language preference for Google
@@ -288,17 +286,11 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function batchGetPhotos(array $optionalArgs = [])
+    public function batchGetPhotos($photoIds, $view, array $optionalArgs = [])
     {
         $request = new BatchGetPhotosRequest();
-        if (isset($optionalArgs['photoIds'])) {
-            $request->setPhotoIds($optionalArgs['photoIds']);
-        }
-
-        if (isset($optionalArgs['view'])) {
-            $request->setView($optionalArgs['view']);
-        }
-
+        $request->setPhotoIds($photoIds);
+        $request->setView($view);
         if (isset($optionalArgs['languageCode'])) {
             $request->setLanguageCode($optionalArgs['languageCode']);
         }
@@ -336,27 +328,27 @@ class StreetViewPublishServiceGapicClient
      * [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
      * must not exceed 20.
      *
-     * <aside class="note"><b>Note:</b> To update
+     * > Note: To update
      * [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
      * [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-     * filled as well. Otherwise, the request will fail.</aside>
+     * filled as well. Otherwise, the request will fail.
      *
      * Sample code:
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $response = $streetViewPublishServiceClient->batchUpdatePhotos();
+     *     $updatePhotoRequests = [];
+     *     $response = $streetViewPublishServiceClient->batchUpdatePhotos($updatePhotoRequests);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param UpdatePhotoRequest[] $updatePhotoRequests Required. List of
+     *                                                  [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
+     * @param array                $optionalArgs        {
      *     Optional.
      *
-     *     @type UpdatePhotoRequest[] $updatePhotoRequests
-     *           Required. List of
-     *           [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -368,13 +360,10 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function batchUpdatePhotos(array $optionalArgs = [])
+    public function batchUpdatePhotos($updatePhotoRequests, array $optionalArgs = [])
     {
         $request = new BatchUpdatePhotosRequest();
-        if (isset($optionalArgs['updatePhotoRequests'])) {
-            $request->setUpdatePhotoRequests($optionalArgs['updatePhotoRequests']);
-        }
-
+        $request->setUpdatePhotoRequests($updatePhotoRequests);
         return $this->startCall('BatchUpdatePhotos', BatchUpdatePhotosResponse::class, $optionalArgs, $request)->wait();
     }
 
@@ -388,33 +377,32 @@ class StreetViewPublishServiceGapicClient
      * Currently, the only way to set heading, pitch, and roll in CreatePhoto is
      * through the [Photo Sphere XMP
      * metadata](https://developers.google.com/streetview/spherical-metadata) in
-     * the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+     * the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
      * `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
      *
      * This method returns the following error codes:
      *
-     * * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-     * the request is malformed or if the uploaded photo is not a 360 photo.
-     * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-     * reference does not exist.
-     * * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-     * if the account has reached the storage limit.
+     * * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+     * the uploaded photo is not a 360 photo.
+     * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+     * * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+     * storage limit.
      *
      * Sample code:
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $response = $streetViewPublishServiceClient->createPhoto();
+     *     $photo = new Photo();
+     *     $response = $streetViewPublishServiceClient->createPhoto($photo);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
+     * @param Photo $photo        Required. Photo to create.
      * @param array $optionalArgs {
      *     Optional.
      *
-     *     @type Photo $photo
-     *           Required. Photo to create.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -426,13 +414,10 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function createPhoto(array $optionalArgs = [])
+    public function createPhoto($photo, array $optionalArgs = [])
     {
         $request = new CreatePhotoRequest();
-        if (isset($optionalArgs['photo'])) {
-            $request->setPhoto($optionalArgs['photo']);
-        }
-
+        $request->setPhoto($photo);
         return $this->startCall('CreatePhoto', Photo::class, $optionalArgs, $request)->wait();
     }
 
@@ -441,26 +426,25 @@ class StreetViewPublishServiceGapicClient
      *
      * This method returns the following error codes:
      *
-     * * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-     * the requesting user did not create the requested photo.
-     * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-     * does not exist.
+     * * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+     * create the requested photo.
+     * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
      *
      * Sample code:
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $streetViewPublishServiceClient->deletePhoto();
+     *     $photoId = 'photo_id';
+     *     $streetViewPublishServiceClient->deletePhoto($photoId);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param string $photoId      Required. ID of the [Photo][google.streetview.publish.v1.Photo].
+     * @param array  $optionalArgs {
      *     Optional.
      *
-     *     @type string $photoId
-     *           Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -470,15 +454,12 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function deletePhoto(array $optionalArgs = [])
+    public function deletePhoto($photoId, array $optionalArgs = [])
     {
         $request = new DeletePhotoRequest();
         $requestParamHeaders = [];
-        if (isset($optionalArgs['photoId'])) {
-            $request->setPhotoId($optionalArgs['photoId']);
-            $requestParamHeaders['photo_id'] = $optionalArgs['photoId'];
-        }
-
+        $request->setPhotoId($photoId);
+        $requestParamHeaders['photo_id'] = $photoId;
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('DeletePhoto', GPBEmpty::class, $optionalArgs, $request)->wait();
@@ -490,34 +471,32 @@ class StreetViewPublishServiceGapicClient
      *
      * This method returns the following error codes:
      *
-     * * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-     * the requesting user did not create the requested
-     * [Photo][google.streetview.publish.v1.Photo].
+     * * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+     * create the requested [Photo][google.streetview.publish.v1.Photo].
      * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
      * [Photo][google.streetview.publish.v1.Photo] does not exist.
-     * * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-     * requested [Photo][google.streetview.publish.v1.Photo] is still being
-     * indexed.
+     * * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+     * [Photo][google.streetview.publish.v1.Photo] is still being indexed.
      *
      * Sample code:
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $response = $streetViewPublishServiceClient->getPhoto();
+     *     $photoId = 'photo_id';
+     *     $view = PhotoView::BASIC;
+     *     $response = $streetViewPublishServiceClient->getPhoto($photoId, $view);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param string $photoId      Required. ID of the [Photo][google.streetview.publish.v1.Photo].
+     * @param int    $view         Required. Specifies if a download URL for the photo bytes should be returned in the
+     *                             [Photo][google.streetview.publish.v1.Photo] response.
+     *                             For allowed values, use constants defined on {@see \Google\Streetview\Publish\V1\PhotoView}
+     * @param array  $optionalArgs {
      *     Optional.
      *
-     *     @type string $photoId
-     *           Required. ID of the [Photo][google.streetview.publish.v1.Photo].
-     *     @type int $view
-     *           Specifies if a download URL for the photo bytes should be returned in the
-     *           [Photo][google.streetview.publish.v1.Photo] response.
-     *           For allowed values, use constants defined on {@see \Google\Streetview\Publish\V1\PhotoView}
      *     @type string $languageCode
      *           The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      *           information, see
@@ -535,19 +514,13 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function getPhoto(array $optionalArgs = [])
+    public function getPhoto($photoId, $view, array $optionalArgs = [])
     {
         $request = new GetPhotoRequest();
         $requestParamHeaders = [];
-        if (isset($optionalArgs['photoId'])) {
-            $request->setPhotoId($optionalArgs['photoId']);
-            $requestParamHeaders['photo_id'] = $optionalArgs['photoId'];
-        }
-
-        if (isset($optionalArgs['view'])) {
-            $request->setView($optionalArgs['view']);
-        }
-
+        $request->setPhotoId($photoId);
+        $request->setView($view);
+        $requestParamHeaders['photo_id'] = $photoId;
         if (isset($optionalArgs['languageCode'])) {
             $request->setLanguageCode($optionalArgs['languageCode']);
         }
@@ -561,15 +534,16 @@ class StreetViewPublishServiceGapicClient
      * Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
      * the user.
      *
-     * <aside class="note"><b>Note:</b> Recently created photos that are still
-     * being indexed are not returned in the response.</aside>
+     * > Note: Recently created photos that are still
+     * being indexed are not returned in the response.
      *
      * Sample code:
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
+     *     $view = PhotoView::BASIC;
      *     // Iterate over pages of elements
-     *     $pagedResponse = $streetViewPublishServiceClient->listPhotos();
+     *     $pagedResponse = $streetViewPublishServiceClient->listPhotos($view);
      *     foreach ($pagedResponse->iteratePages() as $page) {
      *         foreach ($page as $element) {
      *             // doSomethingWith($element);
@@ -577,7 +551,7 @@ class StreetViewPublishServiceGapicClient
      *     }
      *     // Alternatively:
      *     // Iterate through all elements
-     *     $pagedResponse = $streetViewPublishServiceClient->listPhotos();
+     *     $pagedResponse = $streetViewPublishServiceClient->listPhotos($view);
      *     foreach ($pagedResponse->iterateAllElements() as $element) {
      *         // doSomethingWith($element);
      *     }
@@ -586,13 +560,12 @@ class StreetViewPublishServiceGapicClient
      * }
      * ```
      *
+     * @param int   $view         Required. Specifies if a download URL for the photos bytes should be returned in the
+     *                            Photos response.
+     *                            For allowed values, use constants defined on {@see \Google\Streetview\Publish\V1\PhotoView}
      * @param array $optionalArgs {
      *     Optional.
      *
-     *     @type int $view
-     *           Specifies if a download URL for the photos bytes should be returned in the
-     *           Photos response.
-     *           For allowed values, use constants defined on {@see \Google\Streetview\Publish\V1\PhotoView}
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if
@@ -603,11 +576,11 @@ class StreetViewPublishServiceGapicClient
      *           of values will be returned. Any page token used here must have
      *           been generated by a previous call to the API.
      *     @type string $filter
-     *           The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     *           Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
      *
-     *           The only filter supported at the moment is `placeId`.
+     *           The filters supported at the moment are: `placeId`.
      *     @type string $languageCode
-     *           The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     *           Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      *           information, see
      *           http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      *           If language_code is unspecified, the user's language preference for Google
@@ -623,13 +596,10 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function listPhotos(array $optionalArgs = [])
+    public function listPhotos($view, array $optionalArgs = [])
     {
         $request = new ListPhotosRequest();
-        if (isset($optionalArgs['view'])) {
-            $request->setView($optionalArgs['view']);
-        }
-
+        $request->setView($view);
         if (isset($optionalArgs['pageSize'])) {
             $request->setPageSize($optionalArgs['pageSize']);
         }
@@ -650,20 +620,20 @@ class StreetViewPublishServiceGapicClient
     }
 
     /**
-     * Creates an upload session to start uploading photo bytes. The method uses
+     * Creates an upload session to start uploading photo bytes.  The method uses
      * the upload URL of the returned
      * [UploadRef][google.streetview.publish.v1.UploadRef] to upload the bytes for
      * the [Photo][google.streetview.publish.v1.Photo].
      *
      * In addition to the photo requirements shown in
-     * https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+     * https://support.google.com/maps/answer/7012050?ref_topic=6275604,
      * the photo must meet the following requirements:
      *
-     * * Photo Sphere XMP metadata must be included in the photo medadata. See
+     * * Photo Sphere XMP metadata must be included in the photo metadata. See
      * https://developers.google.com/streetview/spherical-metadata for the
      * required fields.
      * * The pixel size of the photo must meet the size requirements listed in
-     * https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604, and
+     * https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
      * the photo must be a full 360 horizontally.
      *
      * After the upload completes, the method uses
@@ -713,59 +683,56 @@ class StreetViewPublishServiceGapicClient
      *
      * This method returns the following error codes:
      *
-     * * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-     * the requesting user did not create the requested photo.
-     * * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-     * the request is malformed.
-     * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-     * photo does not exist.
-     * * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-     * requested [Photo][google.streetview.publish.v1.Photo] is still being
-     * indexed.
+     * * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+     * create the requested photo.
+     * * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+     * * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+     * * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+     * [Photo][google.streetview.publish.v1.Photo] is still being indexed.
      *
      * Sample code:
      * ```
      * $streetViewPublishServiceClient = new StreetViewPublishServiceClient();
      * try {
-     *     $response = $streetViewPublishServiceClient->updatePhoto();
+     *     $photo = new Photo();
+     *     $updateMask = new FieldMask();
+     *     $response = $streetViewPublishServiceClient->updatePhoto($photo, $updateMask);
      * } finally {
      *     $streetViewPublishServiceClient->close();
      * }
      * ```
      *
-     * @param array $optionalArgs {
+     * @param Photo     $photo        Required. [Photo][google.streetview.publish.v1.Photo] object containing the
+     *                                new metadata.
+     * @param FieldMask $updateMask   Required. Mask that identifies fields on the photo metadata to update.
+     *                                If not present, the old [Photo][google.streetview.publish.v1.Photo]
+     *                                metadata is entirely replaced with the
+     *                                new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
+     *                                The update fails if invalid fields are specified. Multiple fields can be
+     *                                specified in a comma-delimited list.
+     *
+     *                                The following fields are valid:
+     *
+     *                                * `pose.heading`
+     *                                * `pose.latLngPair`
+     *                                * `pose.pitch`
+     *                                * `pose.roll`
+     *                                * `pose.level`
+     *                                * `pose.altitude`
+     *                                * `connections`
+     *                                * `places`
+     *
+     *
+     *                                > Note: When
+     *                                [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+     *                                contains repeated fields, the entire set of repeated values get replaced
+     *                                with the new contents. For example, if
+     *                                [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+     *                                contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
+     *                                all connections are removed.
+     * @param array     $optionalArgs {
      *     Optional.
      *
-     *     @type Photo $photo
-     *           Required. [Photo][google.streetview.publish.v1.Photo] object containing the
-     *           new metadata.
-     *     @type FieldMask $updateMask
-     *           Mask that identifies fields on the photo metadata to update.
-     *           If not present, the old [Photo][google.streetview.publish.v1.Photo]
-     *           metadata is entirely replaced with the
-     *           new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
-     *           The update fails if invalid fields are specified. Multiple fields can be
-     *           specified in a comma-delimited list.
-     *
-     *           The following fields are valid:
-     *
-     *           * `pose.heading`
-     *           * `pose.latLngPair`
-     *           * `pose.pitch`
-     *           * `pose.roll`
-     *           * `pose.level`
-     *           * `pose.altitude`
-     *           * `connections`
-     *           * `places`
-     *
-     *
-     *           <aside class="note"><b>Note:</b>  When
-     *           [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
-     *           contains repeated fields, the entire set of repeated values get replaced
-     *           with the new contents. For example, if
-     *           [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
-     *           contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     *           all connections are removed.</aside>
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -777,18 +744,13 @@ class StreetViewPublishServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function updatePhoto(array $optionalArgs = [])
+    public function updatePhoto($photo, $updateMask, array $optionalArgs = [])
     {
         $request = new UpdatePhotoRequest();
         $requestParamHeaders = [];
-        if (isset($optionalArgs['photo'])) {
-            $request->setPhoto($optionalArgs['photo']);
-        }
-
-        if (isset($optionalArgs['updateMask'])) {
-            $request->setUpdateMask($optionalArgs['updateMask']);
-        }
-
+        $request->setPhoto($photo);
+        $request->setUpdateMask($updateMask);
+        $requestParamHeaders['photo.photo_id.id'] = $photo->getPhotoId()->getId();
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('UpdatePhoto', Photo::class, $optionalArgs, $request)->wait();

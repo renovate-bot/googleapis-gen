@@ -26,7 +26,7 @@ public final class StreetViewPublishRpcMessages {
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
-     * Server reponses do not include the download URL for the photo bytes.
+     * Server responses do not include the download URL for the photo bytes.
      * The default value.
      * </pre>
      *
@@ -46,7 +46,7 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * Server reponses do not include the download URL for the photo bytes.
+     * Server responses do not include the download URL for the photo bytes.
      * The default value.
      * </pre>
      *
@@ -154,7 +154,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. Photo to create.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the photo field is set.
      */
     boolean hasPhoto();
@@ -163,7 +163,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. Photo to create.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photo.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo getPhoto();
@@ -172,7 +172,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. Photo to create.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder getPhotoOrBuilder();
   }
@@ -277,7 +277,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. Photo to create.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the photo field is set.
      */
     @java.lang.Override
@@ -289,7 +289,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. Photo to create.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photo.
      */
     @java.lang.Override
@@ -301,7 +301,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. Photo to create.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder getPhotoOrBuilder() {
@@ -635,7 +635,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return Whether the photo field is set.
        */
       public boolean hasPhoto() {
@@ -646,7 +646,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The photo.
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo getPhoto() {
@@ -661,7 +661,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo value) {
         if (photoBuilder_ == null) {
@@ -681,7 +681,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setPhoto(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.Builder builderForValue) {
@@ -699,7 +699,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder mergePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo value) {
         if (photoBuilder_ == null) {
@@ -721,7 +721,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearPhoto() {
         if (photoBuilder_ == null) {
@@ -739,7 +739,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.Builder getPhotoBuilder() {
         
@@ -751,7 +751,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder getPhotoOrBuilder() {
         if (photoBuilder_ != null) {
@@ -766,7 +766,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. Photo to create.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder> 
@@ -843,7 +843,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photoId.
      */
     java.lang.String getPhotoId();
@@ -852,7 +852,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for photoId.
      */
     com.google.protobuf.ByteString
@@ -860,21 +860,21 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for view.
      */
     int getViewValue();
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The view.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView getView();
@@ -1020,7 +1020,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photoId.
      */
     @java.lang.Override
@@ -1041,7 +1041,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for photoId.
      */
     @java.lang.Override
@@ -1063,11 +1063,11 @@ public final class StreetViewPublishRpcMessages {
     private int view_;
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for view.
      */
     @java.lang.Override public int getViewValue() {
@@ -1075,11 +1075,11 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * [Photo][google.streetview.publish.v1.Photo] response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The view.
      */
     @java.lang.Override public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView getView() {
@@ -1491,7 +1491,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The photoId.
        */
       public java.lang.String getPhotoId() {
@@ -1511,7 +1511,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The bytes for photoId.
        */
       public com.google.protobuf.ByteString
@@ -1532,7 +1532,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The photoId to set.
        * @return This builder for chaining.
        */
@@ -1551,7 +1551,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearPhotoId() {
@@ -1565,7 +1565,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The bytes for photoId to set.
        * @return This builder for chaining.
        */
@@ -1584,11 +1584,11 @@ public final class StreetViewPublishRpcMessages {
       private int view_ = 0;
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * [Photo][google.streetview.publish.v1.Photo] response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The enum numeric value on the wire for view.
        */
       @java.lang.Override public int getViewValue() {
@@ -1596,11 +1596,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * [Photo][google.streetview.publish.v1.Photo] response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The enum numeric value on the wire for view to set.
        * @return This builder for chaining.
        */
@@ -1612,11 +1612,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * [Photo][google.streetview.publish.v1.Photo] response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The view.
        */
       @java.lang.Override
@@ -1627,11 +1627,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * [Photo][google.streetview.publish.v1.Photo] response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The view to set.
        * @return This builder for chaining.
        */
@@ -1646,11 +1646,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * [Photo][google.streetview.publish.v1.Photo] response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearView() {
@@ -1834,47 +1834,47 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the photoIds.
      */
     java.util.List<java.lang.String>
         getPhotoIdsList();
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of photoIds.
      */
     int getPhotoIdsCount();
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The photoIds at the given index.
      */
     java.lang.String getPhotoIds(int index);
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the photoIds at the given index.
      */
@@ -1883,48 +1883,48 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for view.
      */
     int getViewValue();
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The view.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView getView();
 
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for languageCode.
      */
     com.google.protobuf.ByteString
@@ -2047,12 +2047,12 @@ public final class StreetViewPublishRpcMessages {
     private com.google.protobuf.LazyStringList photoIds_;
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the photoIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2061,12 +2061,12 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of photoIds.
      */
     public int getPhotoIdsCount() {
@@ -2074,12 +2074,12 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The photoIds at the given index.
      */
@@ -2088,12 +2088,12 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-     * requests require the following syntax for the URL query parameter:
+     * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+     * GET requests, the URL query parameter should be
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the photoIds at the given index.
      */
@@ -2106,11 +2106,11 @@ public final class StreetViewPublishRpcMessages {
     private int view_;
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for view.
      */
     @java.lang.Override public int getViewValue() {
@@ -2118,11 +2118,11 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Specifies if a download URL for the photo bytes should be returned in the
+     * Required. Specifies if a download URL for the photo bytes should be returned in the
      * Photo response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The view.
      */
     @java.lang.Override public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView getView() {
@@ -2135,14 +2135,14 @@ public final class StreetViewPublishRpcMessages {
     private volatile java.lang.Object languageCode_;
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The languageCode.
      */
     @java.lang.Override
@@ -2160,14 +2160,14 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 3;</code>
+     * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for languageCode.
      */
     @java.lang.Override
@@ -2556,12 +2556,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return A list containing the photoIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -2570,12 +2570,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The count of photoIds.
        */
       public int getPhotoIdsCount() {
@@ -2583,12 +2583,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param index The index of the element to return.
        * @return The photoIds at the given index.
        */
@@ -2597,12 +2597,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param index The index of the value to return.
        * @return The bytes of the photoIds at the given index.
        */
@@ -2612,12 +2612,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param index The index to set the value at.
        * @param value The photoIds to set.
        * @return This builder for chaining.
@@ -2634,12 +2634,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The photoIds to add.
        * @return This builder for chaining.
        */
@@ -2655,12 +2655,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param values The photoIds to add.
        * @return This builder for chaining.
        */
@@ -2674,12 +2674,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearPhotoIds() {
@@ -2690,12 +2690,12 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-       * requests require the following syntax for the URL query parameter:
+       * Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+       * GET requests, the URL query parameter should be
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The bytes of the photoIds to add.
        * @return This builder for chaining.
        */
@@ -2714,11 +2714,11 @@ public final class StreetViewPublishRpcMessages {
       private int view_ = 0;
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * Photo response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The enum numeric value on the wire for view.
        */
       @java.lang.Override public int getViewValue() {
@@ -2726,11 +2726,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * Photo response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The enum numeric value on the wire for view to set.
        * @return This builder for chaining.
        */
@@ -2742,11 +2742,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * Photo response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The view.
        */
       @java.lang.Override
@@ -2757,11 +2757,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * Photo response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The view to set.
        * @return This builder for chaining.
        */
@@ -2776,11 +2776,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photo bytes should be returned in the
+       * Required. Specifies if a download URL for the photo bytes should be returned in the
        * Photo response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 2;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearView() {
@@ -2793,14 +2793,14 @@ public final class StreetViewPublishRpcMessages {
       private java.lang.Object languageCode_ = "";
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The languageCode.
        */
       public java.lang.String getLanguageCode() {
@@ -2817,14 +2817,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for languageCode.
        */
       public com.google.protobuf.ByteString
@@ -2842,14 +2842,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The languageCode to set.
        * @return This builder for chaining.
        */
@@ -2865,14 +2865,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearLanguageCode() {
@@ -2883,14 +2883,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 3;</code>
+       * <code>string language_code = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for languageCode to set.
        * @return This builder for chaining.
        */
@@ -4953,62 +4953,62 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for view.
      */
     int getViewValue();
     /**
      * <pre>
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The view.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView getView();
 
     /**
      * <pre>
-     * The maximum number of photos to return.
+     * Optional. The maximum number of photos to return.
      * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
      * the default page size of 100 is used.
      * The number of photos returned in the response may be less than `pageSize`
      * if the number of photos that belong to the user is less than `pageSize`.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
     int getPageSize();
 
     /**
      * <pre>
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
     java.lang.String getPageToken();
     /**
      * <pre>
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
     com.google.protobuf.ByteString
@@ -5016,21 +5016,21 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The filter.
      */
     java.lang.String getFilter();
     /**
      * <pre>
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for filter.
      */
     com.google.protobuf.ByteString
@@ -5038,27 +5038,27 @@ public final class StreetViewPublishRpcMessages {
 
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for languageCode.
      */
     com.google.protobuf.ByteString
@@ -5192,11 +5192,11 @@ public final class StreetViewPublishRpcMessages {
     private int view_;
     /**
      * <pre>
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The enum numeric value on the wire for view.
      */
     @java.lang.Override public int getViewValue() {
@@ -5204,11 +5204,11 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The view.
      */
     @java.lang.Override public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.PhotoView getView() {
@@ -5221,14 +5221,14 @@ public final class StreetViewPublishRpcMessages {
     private int pageSize_;
     /**
      * <pre>
-     * The maximum number of photos to return.
+     * Optional. The maximum number of photos to return.
      * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
      * the default page size of 100 is used.
      * The number of photos returned in the response may be less than `pageSize`
      * if the number of photos that belong to the user is less than `pageSize`.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageSize.
      */
     @java.lang.Override
@@ -5240,14 +5240,14 @@ public final class StreetViewPublishRpcMessages {
     private volatile java.lang.Object pageToken_;
     /**
      * <pre>
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The pageToken.
      */
     @java.lang.Override
@@ -5265,14 +5265,14 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for pageToken.
      */
     @java.lang.Override
@@ -5294,11 +5294,11 @@ public final class StreetViewPublishRpcMessages {
     private volatile java.lang.Object filter_;
     /**
      * <pre>
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The filter.
      */
     @java.lang.Override
@@ -5316,11 +5316,11 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for filter.
      */
     @java.lang.Override
@@ -5342,14 +5342,14 @@ public final class StreetViewPublishRpcMessages {
     private volatile java.lang.Object languageCode_;
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The languageCode.
      */
     @java.lang.Override
@@ -5367,14 +5367,14 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      * </pre>
      *
-     * <code>string language_code = 5;</code>
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for languageCode.
      */
     @java.lang.Override
@@ -5778,11 +5778,11 @@ public final class StreetViewPublishRpcMessages {
       private int view_ = 0;
       /**
        * <pre>
-       * Specifies if a download URL for the photos bytes should be returned in the
+       * Required. Specifies if a download URL for the photos bytes should be returned in the
        * Photos response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The enum numeric value on the wire for view.
        */
       @java.lang.Override public int getViewValue() {
@@ -5790,11 +5790,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photos bytes should be returned in the
+       * Required. Specifies if a download URL for the photos bytes should be returned in the
        * Photos response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The enum numeric value on the wire for view to set.
        * @return This builder for chaining.
        */
@@ -5806,11 +5806,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photos bytes should be returned in the
+       * Required. Specifies if a download URL for the photos bytes should be returned in the
        * Photos response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The view.
        */
       @java.lang.Override
@@ -5821,11 +5821,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photos bytes should be returned in the
+       * Required. Specifies if a download URL for the photos bytes should be returned in the
        * Photos response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The view to set.
        * @return This builder for chaining.
        */
@@ -5840,11 +5840,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Specifies if a download URL for the photos bytes should be returned in the
+       * Required. Specifies if a download URL for the photos bytes should be returned in the
        * Photos response.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+       * <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearView() {
@@ -5857,14 +5857,14 @@ public final class StreetViewPublishRpcMessages {
       private int pageSize_ ;
       /**
        * <pre>
-       * The maximum number of photos to return.
+       * Optional. The maximum number of photos to return.
        * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
        * the default page size of 100 is used.
        * The number of photos returned in the response may be less than `pageSize`
        * if the number of photos that belong to the user is less than `pageSize`.
        * </pre>
        *
-       * <code>int32 page_size = 2;</code>
+       * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The pageSize.
        */
       @java.lang.Override
@@ -5873,14 +5873,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The maximum number of photos to return.
+       * Optional. The maximum number of photos to return.
        * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
        * the default page size of 100 is used.
        * The number of photos returned in the response may be less than `pageSize`
        * if the number of photos that belong to the user is less than `pageSize`.
        * </pre>
        *
-       * <code>int32 page_size = 2;</code>
+       * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The pageSize to set.
        * @return This builder for chaining.
        */
@@ -5892,14 +5892,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The maximum number of photos to return.
+       * Optional. The maximum number of photos to return.
        * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
        * the default page size of 100 is used.
        * The number of photos returned in the response may be less than `pageSize`
        * if the number of photos that belong to the user is less than `pageSize`.
        * </pre>
        *
-       * <code>int32 page_size = 2;</code>
+       * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearPageSize() {
@@ -5912,14 +5912,14 @@ public final class StreetViewPublishRpcMessages {
       private java.lang.Object pageToken_ = "";
       /**
        * <pre>
-       * The
+       * Optional. The
        * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
        * value returned from a previous
        * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
        * request, if any.
        * </pre>
        *
-       * <code>string page_token = 3;</code>
+       * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The pageToken.
        */
       public java.lang.String getPageToken() {
@@ -5936,14 +5936,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The
+       * Optional. The
        * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
        * value returned from a previous
        * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
        * request, if any.
        * </pre>
        *
-       * <code>string page_token = 3;</code>
+       * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for pageToken.
        */
       public com.google.protobuf.ByteString
@@ -5961,14 +5961,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The
+       * Optional. The
        * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
        * value returned from a previous
        * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
        * request, if any.
        * </pre>
        *
-       * <code>string page_token = 3;</code>
+       * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The pageToken to set.
        * @return This builder for chaining.
        */
@@ -5984,14 +5984,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The
+       * Optional. The
        * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
        * value returned from a previous
        * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
        * request, if any.
        * </pre>
        *
-       * <code>string page_token = 3;</code>
+       * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearPageToken() {
@@ -6002,14 +6002,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The
+       * Optional. The
        * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
        * value returned from a previous
        * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
        * request, if any.
        * </pre>
        *
-       * <code>string page_token = 3;</code>
+       * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for pageToken to set.
        * @return This builder for chaining.
        */
@@ -6028,11 +6028,11 @@ public final class StreetViewPublishRpcMessages {
       private java.lang.Object filter_ = "";
       /**
        * <pre>
-       * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-       * The only filter supported at the moment is `placeId`.
+       * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+       * The filters supported at the moment are: `placeId`.
        * </pre>
        *
-       * <code>string filter = 4;</code>
+       * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The filter.
        */
       public java.lang.String getFilter() {
@@ -6049,11 +6049,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-       * The only filter supported at the moment is `placeId`.
+       * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+       * The filters supported at the moment are: `placeId`.
        * </pre>
        *
-       * <code>string filter = 4;</code>
+       * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for filter.
        */
       public com.google.protobuf.ByteString
@@ -6071,11 +6071,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-       * The only filter supported at the moment is `placeId`.
+       * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+       * The filters supported at the moment are: `placeId`.
        * </pre>
        *
-       * <code>string filter = 4;</code>
+       * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The filter to set.
        * @return This builder for chaining.
        */
@@ -6091,11 +6091,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-       * The only filter supported at the moment is `placeId`.
+       * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+       * The filters supported at the moment are: `placeId`.
        * </pre>
        *
-       * <code>string filter = 4;</code>
+       * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearFilter() {
@@ -6106,11 +6106,11 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-       * The only filter supported at the moment is `placeId`.
+       * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+       * The filters supported at the moment are: `placeId`.
        * </pre>
        *
-       * <code>string filter = 4;</code>
+       * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for filter to set.
        * @return This builder for chaining.
        */
@@ -6129,14 +6129,14 @@ public final class StreetViewPublishRpcMessages {
       private java.lang.Object languageCode_ = "";
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 5;</code>
+       * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The languageCode.
        */
       public java.lang.String getLanguageCode() {
@@ -6153,14 +6153,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 5;</code>
+       * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return The bytes for languageCode.
        */
       public com.google.protobuf.ByteString
@@ -6178,14 +6178,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 5;</code>
+       * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The languageCode to set.
        * @return This builder for chaining.
        */
@@ -6201,14 +6201,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 5;</code>
+       * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @return This builder for chaining.
        */
       public Builder clearLanguageCode() {
@@ -6219,14 +6219,14 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
        * information, see
        * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
        * If language_code is unspecified, the user's language preference for Google
        * services is used.
        * </pre>
        *
-       * <code>string language_code = 5;</code>
+       * <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        * @param value The bytes for languageCode to set.
        * @return This builder for chaining.
        */
@@ -7468,7 +7468,7 @@ public final class StreetViewPublishRpcMessages {
      * new metadata.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the photo field is set.
      */
     boolean hasPhoto();
@@ -7478,7 +7478,7 @@ public final class StreetViewPublishRpcMessages {
      * new metadata.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photo.
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo getPhoto();
@@ -7488,13 +7488,13 @@ public final class StreetViewPublishRpcMessages {
      * new metadata.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder getPhotoOrBuilder();
 
     /**
      * <pre>
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -7509,22 +7509,22 @@ public final class StreetViewPublishRpcMessages {
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+     * &gt; Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.&lt;/aside&gt;
+     * all connections are removed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the updateMask field is set.
      */
     boolean hasUpdateMask();
     /**
      * <pre>
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -7539,22 +7539,22 @@ public final class StreetViewPublishRpcMessages {
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+     * &gt; Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.&lt;/aside&gt;
+     * all connections are removed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The updateMask.
      */
     com.google.protobuf.FieldMask getUpdateMask();
     /**
      * <pre>
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -7569,16 +7569,16 @@ public final class StreetViewPublishRpcMessages {
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+     * &gt; Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.&lt;/aside&gt;
+     * all connections are removed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
   }
@@ -7699,7 +7699,7 @@ public final class StreetViewPublishRpcMessages {
      * new metadata.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the photo field is set.
      */
     @java.lang.Override
@@ -7712,7 +7712,7 @@ public final class StreetViewPublishRpcMessages {
      * new metadata.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photo.
      */
     @java.lang.Override
@@ -7725,7 +7725,7 @@ public final class StreetViewPublishRpcMessages {
      * new metadata.
      * </pre>
      *
-     * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+     * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder getPhotoOrBuilder() {
@@ -7736,7 +7736,7 @@ public final class StreetViewPublishRpcMessages {
     private com.google.protobuf.FieldMask updateMask_;
     /**
      * <pre>
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -7751,16 +7751,16 @@ public final class StreetViewPublishRpcMessages {
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+     * &gt; Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.&lt;/aside&gt;
+     * all connections are removed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the updateMask field is set.
      */
     @java.lang.Override
@@ -7769,7 +7769,7 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -7784,16 +7784,16 @@ public final class StreetViewPublishRpcMessages {
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+     * &gt; Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.&lt;/aside&gt;
+     * all connections are removed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The updateMask.
      */
     @java.lang.Override
@@ -7802,7 +7802,7 @@ public final class StreetViewPublishRpcMessages {
     }
     /**
      * <pre>
-     * Mask that identifies fields on the photo metadata to update.
+     * Required. Mask that identifies fields on the photo metadata to update.
      * If not present, the old [Photo][google.streetview.publish.v1.Photo]
      * metadata is entirely replaced with the
      * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -7817,16 +7817,16 @@ public final class StreetViewPublishRpcMessages {
      * * `pose.altitude`
      * * `connections`
      * * `places`
-     * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+     * &gt; Note: When
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains repeated fields, the entire set of repeated values get replaced
      * with the new contents. For example, if
      * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
      * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-     * all connections are removed.&lt;/aside&gt;
+     * all connections are removed.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -8193,7 +8193,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return Whether the photo field is set.
        */
       public boolean hasPhoto() {
@@ -8205,7 +8205,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The photo.
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo getPhoto() {
@@ -8221,7 +8221,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setPhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo value) {
         if (photoBuilder_ == null) {
@@ -8242,7 +8242,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setPhoto(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.Builder builderForValue) {
@@ -8261,7 +8261,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder mergePhoto(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo value) {
         if (photoBuilder_ == null) {
@@ -8284,7 +8284,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearPhoto() {
         if (photoBuilder_ == null) {
@@ -8303,7 +8303,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.Builder getPhotoBuilder() {
         
@@ -8316,7 +8316,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder getPhotoOrBuilder() {
         if (photoBuilder_ != null) {
@@ -8332,7 +8332,7 @@ public final class StreetViewPublishRpcMessages {
        * new metadata.
        * </pre>
        *
-       * <code>.google.streetview.publish.v1.Photo photo = 1;</code>
+       * <code>.google.streetview.publish.v1.Photo photo = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.Photo.Builder, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.PhotoOrBuilder> 
@@ -8353,7 +8353,7 @@ public final class StreetViewPublishRpcMessages {
           com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8368,16 +8368,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return Whether the updateMask field is set.
        */
       public boolean hasUpdateMask() {
@@ -8385,7 +8385,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8400,16 +8400,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The updateMask.
        */
       public com.google.protobuf.FieldMask getUpdateMask() {
@@ -8421,7 +8421,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8436,16 +8436,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
         if (updateMaskBuilder_ == null) {
@@ -8462,7 +8462,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8477,16 +8477,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setUpdateMask(
           com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -8501,7 +8501,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8516,16 +8516,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
         if (updateMaskBuilder_ == null) {
@@ -8544,7 +8544,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8559,16 +8559,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearUpdateMask() {
         if (updateMaskBuilder_ == null) {
@@ -8583,7 +8583,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8598,16 +8598,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
         
@@ -8616,7 +8616,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8631,16 +8631,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
         if (updateMaskBuilder_ != null) {
@@ -8652,7 +8652,7 @@ public final class StreetViewPublishRpcMessages {
       }
       /**
        * <pre>
-       * Mask that identifies fields on the photo metadata to update.
+       * Required. Mask that identifies fields on the photo metadata to update.
        * If not present, the old [Photo][google.streetview.publish.v1.Photo]
        * metadata is entirely replaced with the
        * new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -8667,16 +8667,16 @@ public final class StreetViewPublishRpcMessages {
        * * `pose.altitude`
        * * `connections`
        * * `places`
-       * &lt;aside class="note"&gt;&lt;b&gt;Note:&lt;/b&gt;  When
+       * &gt; Note: When
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains repeated fields, the entire set of repeated values get replaced
        * with the new contents. For example, if
        * [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
        * contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-       * all connections are removed.&lt;/aside&gt;
+       * all connections are removed.
        * </pre>
        *
-       * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+       * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
@@ -8754,7 +8754,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest> 
         getUpdatePhotoRequestsList();
@@ -8764,7 +8764,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest getUpdatePhotoRequests(int index);
     /**
@@ -8773,7 +8773,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     int getUpdatePhotoRequestsCount();
     /**
@@ -8782,7 +8782,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequestOrBuilder> 
         getUpdatePhotoRequestsOrBuilderList();
@@ -8792,7 +8792,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequestOrBuilder getUpdatePhotoRequestsOrBuilder(
         int index);
@@ -8901,7 +8901,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest> getUpdatePhotoRequestsList() {
@@ -8913,7 +8913,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequestOrBuilder> 
@@ -8926,7 +8926,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public int getUpdatePhotoRequestsCount() {
@@ -8938,7 +8938,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest getUpdatePhotoRequests(int index) {
@@ -8950,7 +8950,7 @@ public final class StreetViewPublishRpcMessages {
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      * </pre>
      *
-     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     @java.lang.Override
     public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequestOrBuilder getUpdatePhotoRequestsOrBuilder(
@@ -9323,7 +9323,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest> getUpdatePhotoRequestsList() {
         if (updatePhotoRequestsBuilder_ == null) {
@@ -9338,7 +9338,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public int getUpdatePhotoRequestsCount() {
         if (updatePhotoRequestsBuilder_ == null) {
@@ -9353,7 +9353,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest getUpdatePhotoRequests(int index) {
         if (updatePhotoRequestsBuilder_ == null) {
@@ -9368,7 +9368,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setUpdatePhotoRequests(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest value) {
@@ -9390,7 +9390,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder setUpdatePhotoRequests(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder builderForValue) {
@@ -9409,7 +9409,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addUpdatePhotoRequests(com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest value) {
         if (updatePhotoRequestsBuilder_ == null) {
@@ -9430,7 +9430,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addUpdatePhotoRequests(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest value) {
@@ -9452,7 +9452,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addUpdatePhotoRequests(
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder builderForValue) {
@@ -9471,7 +9471,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addUpdatePhotoRequests(
           int index, com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder builderForValue) {
@@ -9490,7 +9490,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder addAllUpdatePhotoRequests(
           java.lang.Iterable<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest> values) {
@@ -9510,7 +9510,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder clearUpdatePhotoRequests() {
         if (updatePhotoRequestsBuilder_ == null) {
@@ -9528,7 +9528,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public Builder removeUpdatePhotoRequests(int index) {
         if (updatePhotoRequestsBuilder_ == null) {
@@ -9546,7 +9546,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder getUpdatePhotoRequestsBuilder(
           int index) {
@@ -9558,7 +9558,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequestOrBuilder getUpdatePhotoRequestsOrBuilder(
           int index) {
@@ -9573,7 +9573,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<? extends com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequestOrBuilder> 
            getUpdatePhotoRequestsOrBuilderList() {
@@ -9589,7 +9589,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder addUpdatePhotoRequestsBuilder() {
         return getUpdatePhotoRequestsFieldBuilder().addBuilder(
@@ -9601,7 +9601,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder addUpdatePhotoRequestsBuilder(
           int index) {
@@ -9614,7 +9614,7 @@ public final class StreetViewPublishRpcMessages {
        * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
        * </pre>
        *
-       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+       * <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        */
       public java.util.List<com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages.UpdatePhotoRequest.Builder> 
            getUpdatePhotoRequestsBuilderList() {
@@ -10667,7 +10667,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photoId.
      */
     java.lang.String getPhotoId();
@@ -10676,7 +10676,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for photoId.
      */
     com.google.protobuf.ByteString
@@ -10777,7 +10777,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The photoId.
      */
     @java.lang.Override
@@ -10798,7 +10798,7 @@ public final class StreetViewPublishRpcMessages {
      * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
      * </pre>
      *
-     * <code>string photo_id = 1;</code>
+     * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for photoId.
      */
     @java.lang.Override
@@ -11128,7 +11128,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The photoId.
        */
       public java.lang.String getPhotoId() {
@@ -11148,7 +11148,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The bytes for photoId.
        */
       public com.google.protobuf.ByteString
@@ -11169,7 +11169,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The photoId to set.
        * @return This builder for chaining.
        */
@@ -11188,7 +11188,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearPhotoId() {
@@ -11202,7 +11202,7 @@ public final class StreetViewPublishRpcMessages {
        * Required. ID of the [Photo][google.streetview.publish.v1.Photo].
        * </pre>
        *
-       * <code>string photo_id = 1;</code>
+       * <code>string photo_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The bytes for photoId to set.
        * @return This builder for chaining.
        */
@@ -11281,7 +11281,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the photoIds.
      */
     java.util.List<java.lang.String>
@@ -11293,7 +11293,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of photoIds.
      */
     int getPhotoIdsCount();
@@ -11304,7 +11304,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The photoIds at the given index.
      */
@@ -11316,7 +11316,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the photoIds at the given index.
      */
@@ -11427,7 +11427,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the photoIds.
      */
     public com.google.protobuf.ProtocolStringList
@@ -11441,7 +11441,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of photoIds.
      */
     public int getPhotoIdsCount() {
@@ -11454,7 +11454,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The photoIds at the given index.
      */
@@ -11468,7 +11468,7 @@ public final class StreetViewPublishRpcMessages {
      * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
      * </pre>
      *
-     * <code>repeated string photo_ids = 1;</code>
+     * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the photoIds at the given index.
      */
@@ -11816,7 +11816,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return A list containing the photoIds.
        */
       public com.google.protobuf.ProtocolStringList
@@ -11830,7 +11830,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return The count of photoIds.
        */
       public int getPhotoIdsCount() {
@@ -11843,7 +11843,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param index The index of the element to return.
        * @return The photoIds at the given index.
        */
@@ -11857,7 +11857,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param index The index of the value to return.
        * @return The bytes of the photoIds at the given index.
        */
@@ -11872,7 +11872,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param index The index to set the value at.
        * @param value The photoIds to set.
        * @return This builder for chaining.
@@ -11894,7 +11894,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The photoIds to add.
        * @return This builder for chaining.
        */
@@ -11915,7 +11915,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param values The photoIds to add.
        * @return This builder for chaining.
        */
@@ -11934,7 +11934,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @return This builder for chaining.
        */
       public Builder clearPhotoIds() {
@@ -11950,7 +11950,7 @@ public final class StreetViewPublishRpcMessages {
        * `photoIds=&lt;id1&gt;&amp;photoIds=&lt;id2&gt;&amp;...`.
        * </pre>
        *
-       * <code>repeated string photo_ids = 1;</code>
+       * <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        * @param value The bytes of the photoIds to add.
        * @return This builder for chaining.
        */
@@ -13036,50 +13036,56 @@ public final class StreetViewPublishRpcMessages {
   static {
     java.lang.String[] descriptorData = {
       "\n.google/streetview/publish/v1/rpcmessag" +
-      "es.proto\022\034google.streetview.publish.v1\032 " +
-      "google/protobuf/field_mask.proto\032\027google" +
-      "/rpc/status.proto\032,google/streetview/pub" +
-      "lish/v1/resources.proto\"H\n\022CreatePhotoRe" +
-      "quest\0222\n\005photo\030\001 \001(\0132#.google.streetview" +
-      ".publish.v1.Photo\"q\n\017GetPhotoRequest\022\020\n\010" +
-      "photo_id\030\001 \001(\t\0225\n\004view\030\002 \001(\0162\'.google.st" +
-      "reetview.publish.v1.PhotoView\022\025\n\rlanguag" +
-      "e_code\030\003 \001(\t\"x\n\025BatchGetPhotosRequest\022\021\n" +
-      "\tphoto_ids\030\001 \003(\t\0225\n\004view\030\002 \001(\0162\'.google." +
-      "streetview.publish.v1.PhotoView\022\025\n\rlangu" +
-      "age_code\030\003 \001(\t\"V\n\026BatchGetPhotosResponse" +
-      "\022<\n\007results\030\001 \003(\0132+.google.streetview.pu" +
-      "blish.v1.PhotoResponse\"g\n\rPhotoResponse\022" +
-      "\"\n\006status\030\001 \001(\0132\022.google.rpc.Status\0222\n\005p" +
-      "hoto\030\002 \001(\0132#.google.streetview.publish.v" +
-      "1.Photo\"\230\001\n\021ListPhotosRequest\0225\n\004view\030\001 " +
-      "\001(\0162\'.google.streetview.publish.v1.Photo" +
-      "View\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 " +
-      "\001(\t\022\016\n\006filter\030\004 \001(\t\022\025\n\rlanguage_code\030\005 \001" +
-      "(\t\"b\n\022ListPhotosResponse\0223\n\006photos\030\001 \003(\013" +
-      "2#.google.streetview.publish.v1.Photo\022\027\n" +
-      "\017next_page_token\030\002 \001(\t\"y\n\022UpdatePhotoReq" +
-      "uest\0222\n\005photo\030\001 \001(\0132#.google.streetview." +
-      "publish.v1.Photo\022/\n\013update_mask\030\002 \001(\0132\032." +
-      "google.protobuf.FieldMask\"k\n\030BatchUpdate" +
-      "PhotosRequest\022O\n\025update_photo_requests\030\001" +
-      " \003(\01320.google.streetview.publish.v1.Upda" +
-      "tePhotoRequest\"Y\n\031BatchUpdatePhotosRespo" +
-      "nse\022<\n\007results\030\001 \003(\0132+.google.streetview" +
-      ".publish.v1.PhotoResponse\"&\n\022DeletePhoto" +
-      "Request\022\020\n\010photo_id\030\001 \001(\t\"-\n\030BatchDelete" +
-      "PhotosRequest\022\021\n\tphoto_ids\030\001 \003(\t\"?\n\031Batc" +
-      "hDeletePhotosResponse\022\"\n\006status\030\001 \003(\0132\022." +
-      "google.rpc.Status*0\n\tPhotoView\022\t\n\005BASIC\020" +
-      "\000\022\030\n\024INCLUDE_DOWNLOAD_URL\020\001B\215\001\n(com.goog" +
-      "le.geo.ugc.streetview.publish.v1B\034Street" +
-      "ViewPublishRpcMessagesZCgoogle.golang.or" +
-      "g/genproto/googleapis/streetview/publish" +
-      "/v1;publishb\006proto3"
+      "es.proto\022\034google.streetview.publish.v1\032\037" +
+      "google/api/field_behavior.proto\032#google/" +
+      "longrunning/operations.proto\032 google/pro" +
+      "tobuf/field_mask.proto\032\027google/rpc/statu" +
+      "s.proto\032,google/streetview/publish/v1/re" +
+      "sources.proto\"M\n\022CreatePhotoRequest\0227\n\005p" +
+      "hoto\030\001 \001(\0132#.google.streetview.publish.v" +
+      "1.PhotoB\003\340A\002\"{\n\017GetPhotoRequest\022\025\n\010photo" +
+      "_id\030\001 \001(\tB\003\340A\002\022:\n\004view\030\002 \001(\0162\'.google.st" +
+      "reetview.publish.v1.PhotoViewB\003\340A\002\022\025\n\rla" +
+      "nguage_code\030\003 \001(\t\"\207\001\n\025BatchGetPhotosRequ" +
+      "est\022\026\n\tphoto_ids\030\001 \003(\tB\003\340A\002\022:\n\004view\030\002 \001(" +
+      "\0162\'.google.streetview.publish.v1.PhotoVi" +
+      "ewB\003\340A\002\022\032\n\rlanguage_code\030\003 \001(\tB\003\340A\001\"V\n\026B" +
+      "atchGetPhotosResponse\022<\n\007results\030\001 \003(\0132+" +
+      ".google.streetview.publish.v1.PhotoRespo" +
+      "nse\"g\n\rPhotoResponse\022\"\n\006status\030\001 \001(\0132\022.g" +
+      "oogle.rpc.Status\0222\n\005photo\030\002 \001(\0132#.google" +
+      ".streetview.publish.v1.Photo\"\261\001\n\021ListPho" +
+      "tosRequest\022:\n\004view\030\001 \001(\0162\'.google.street" +
+      "view.publish.v1.PhotoViewB\003\340A\002\022\026\n\tpage_s" +
+      "ize\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022" +
+      "\023\n\006filter\030\004 \001(\tB\003\340A\001\022\032\n\rlanguage_code\030\005 " +
+      "\001(\tB\003\340A\001\"b\n\022ListPhotosResponse\0223\n\006photos" +
+      "\030\001 \003(\0132#.google.streetview.publish.v1.Ph" +
+      "oto\022\027\n\017next_page_token\030\002 \001(\t\"\203\001\n\022UpdateP" +
+      "hotoRequest\0227\n\005photo\030\001 \001(\0132#.google.stre" +
+      "etview.publish.v1.PhotoB\003\340A\002\0224\n\013update_m" +
+      "ask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340" +
+      "A\002\"p\n\030BatchUpdatePhotosRequest\022T\n\025update" +
+      "_photo_requests\030\001 \003(\01320.google.streetvie" +
+      "w.publish.v1.UpdatePhotoRequestB\003\340A\002\"Y\n\031" +
+      "BatchUpdatePhotosResponse\022<\n\007results\030\001 \003" +
+      "(\0132+.google.streetview.publish.v1.PhotoR" +
+      "esponse\"+\n\022DeletePhotoRequest\022\025\n\010photo_i" +
+      "d\030\001 \001(\tB\003\340A\002\"2\n\030BatchDeletePhotosRequest" +
+      "\022\026\n\tphoto_ids\030\001 \003(\tB\003\340A\002\"?\n\031BatchDeleteP" +
+      "hotosResponse\022\"\n\006status\030\001 \003(\0132\022.google.r" +
+      "pc.Status*0\n\tPhotoView\022\t\n\005BASIC\020\000\022\030\n\024INC" +
+      "LUDE_DOWNLOAD_URL\020\001B\215\001\n(com.google.geo.u" +
+      "gc.streetview.publish.v1B\034StreetViewPubl" +
+      "ishRpcMessagesZCgoogle.golang.org/genpro" +
+      "to/googleapis/streetview/publish/v1;publ" +
+      "ishb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
           com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.getDescriptor(),
@@ -13162,6 +13168,13 @@ public final class StreetViewPublishRpcMessages {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_streetview_publish_v1_BatchDeletePhotosResponse_descriptor,
         new java.lang.String[] { "Status", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
     com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources.getDescriptor();

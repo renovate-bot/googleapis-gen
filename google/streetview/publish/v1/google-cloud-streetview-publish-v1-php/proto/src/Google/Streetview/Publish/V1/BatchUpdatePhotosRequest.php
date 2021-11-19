@@ -20,7 +20,7 @@ class BatchUpdatePhotosRequest extends \Google\Protobuf\Internal\Message
      * Required. List of
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $update_photo_requests;
 
@@ -44,7 +44,7 @@ class BatchUpdatePhotosRequest extends \Google\Protobuf\Internal\Message
      * Required. List of
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUpdatePhotoRequests()
@@ -56,7 +56,7 @@ class BatchUpdatePhotosRequest extends \Google\Protobuf\Internal\Message
      * Required. List of
      * [UpdatePhotoRequests][google.streetview.publish.v1.UpdatePhotoRequest].
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.UpdatePhotoRequest update_photo_requests = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Streetview\Publish\V1\UpdatePhotoRequest[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

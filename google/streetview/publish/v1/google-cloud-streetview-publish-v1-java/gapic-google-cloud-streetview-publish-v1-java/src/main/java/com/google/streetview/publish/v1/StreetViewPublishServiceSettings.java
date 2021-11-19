@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.geo.ugc.streetview.publish.v1;
+package com.google.streetview.publish.v1;
 
-import static com.google.geo.ugc.streetview.publish.v1.StreetViewPublishServiceClient.ListPhotosPagedResponse;
+import static com.google.streetview.publish.v1.StreetViewPublishServiceClient.ListPhotosPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -30,8 +30,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.geo.ugc.streetview.publish.v1.stub.StreetViewPublishServiceStubSettings;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages;
 import com.google.protobuf.Empty;
+import com.google.streetview.publish.v1.stub.StreetViewPublishServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;

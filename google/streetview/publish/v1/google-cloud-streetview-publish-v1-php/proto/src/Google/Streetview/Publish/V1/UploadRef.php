@@ -15,14 +15,7 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UploadRef extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * Required. An upload reference should be unique for each user. It follows
-     * the form:
-     * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
-     *
-     * Generated from protobuf field <code>string upload_url = 1;</code>
-     */
-    protected $upload_url = '';
+    protected $file_source;
 
     /**
      * Constructor.
@@ -31,7 +24,7 @@ class UploadRef extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $upload_url
-     *           Required. An upload reference should be unique for each user. It follows
+     *           An upload reference should be unique for each user. It follows
      *           the form:
      *           "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      * }
@@ -42,7 +35,7 @@ class UploadRef extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. An upload reference should be unique for each user. It follows
+     * An upload reference should be unique for each user. It follows
      * the form:
      * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      *
@@ -51,11 +44,16 @@ class UploadRef extends \Google\Protobuf\Internal\Message
      */
     public function getUploadUrl()
     {
-        return $this->upload_url;
+        return $this->readOneof(1);
+    }
+
+    public function hasUploadUrl()
+    {
+        return $this->hasOneof(1);
     }
 
     /**
-     * Required. An upload reference should be unique for each user. It follows
+     * An upload reference should be unique for each user. It follows
      * the form:
      * "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
      *
@@ -66,9 +64,17 @@ class UploadRef extends \Google\Protobuf\Internal\Message
     public function setUploadUrl($var)
     {
         GPBUtil::checkString($var, True);
-        $this->upload_url = $var;
+        $this->writeOneof(1, $var);
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFileSource()
+    {
+        return $this->whichOneof("file_source");
     }
 
 }

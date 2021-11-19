@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.geo.ugc.streetview.publish.v1.stub;
+package com.google.streetview.publish.v1.stub;
 
-import static com.google.geo.ugc.streetview.publish.v1.StreetViewPublishServiceClient.ListPhotosPagedResponse;
+import static com.google.streetview.publish.v1.StreetViewPublishServiceClient.ListPhotosPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;

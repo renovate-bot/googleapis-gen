@@ -24,7 +24,7 @@ module Google
         # Upload reference for media files.
         # @!attribute [rw] upload_url
         #   @return [::String]
-        #     Required. An upload reference should be unique for each user. It follows
+        #     An upload reference should be unique for each user. It follows
         #     the form:
         #     "https://streetviewpublish.googleapis.com/media/user/\\{account_id}/photo/\\{upload_reference}"
         class UploadRef
@@ -35,7 +35,7 @@ module Google
         # Identifier for a {::Google::Streetview::Publish::V1::Photo Photo}.
         # @!attribute [rw] id
         #   @return [::String]
-        #     Required. A unique identifier for a photo.
+        #     A unique identifier for a photo.
         class PhotoId
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -44,7 +44,7 @@ module Google
         # Level information containing level number and its corresponding name.
         # @!attribute [rw] number
         #   @return [::Float]
-        #     Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+        #     Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
         #     the first level above ground level, -1 indicates the first level under
         #     ground level. Non-integer values are OK.
         # @!attribute [rw] name
@@ -65,16 +65,18 @@ module Google
         #     When creating a {::Google::Streetview::Publish::V1::Photo Photo}, if the
         #     latitude and longitude pair are not provided, the geolocation from the
         #     exif header is used. A latitude and longitude pair not provided in the
-        #     photo or exif header causes the create photo process to fail.
+        #     photo or exif header causes the photo process to fail.
         # @!attribute [rw] altitude
         #   @return [::Float]
         #     Altitude of the pose in meters above WGS84 ellipsoid.
         #     NaN indicates an unmeasured quantity.
         # @!attribute [rw] heading
         #   @return [::Float]
+        #     The following pose parameters pertain to the center of the photo. They
+        #     match https://developers.google.com/streetview/spherical-metadata.
         #     Compass heading, measured at the center of the photo in degrees clockwise
-        #     from North. Value must be >=0 and <360.
-        #     NaN indicates an unmeasured quantity.
+        #     from North. Value must be >=0 and <360. NaN indicates an unmeasured
+        #     quantity.
         # @!attribute [rw] pitch
         #   @return [::Float]
         #     Pitch, measured at the center of the photo in degrees. Value must be >=-90
@@ -107,12 +109,12 @@ module Google
         #   @return [::String]
         #     Place identifier, as described in
         #     https://developers.google.com/places/place-id.
-        # @!attribute [rw] name
+        # @!attribute [r] name
         #   @return [::String]
-        #     Output-only. The name of the place, localized to the language_code.
-        # @!attribute [rw] language_code
+        #     Output only. The name of the place, localized to the language_code.
+        # @!attribute [r] language_code
         #   @return [::String]
-        #     Output-only. The language_code that the name is localized with. This should
+        #     Output only. The language_code that the name is localized with. This should
         #     be the language_code specified in the request, but may be a fallback.
         class Place
           include ::Google::Protobuf::MessageExts
@@ -130,53 +132,55 @@ module Google
         end
 
         # Photo is used to store 360 photos along with photo metadata.
-        # @!attribute [rw] photo_id
+        # @!attribute [r] photo_id
         #   @return [::Google::Streetview::Publish::V1::PhotoId]
-        #     Required when updating a photo. Output only when creating a photo.
+        #     Required. Output only. Required when updating a photo. Output only when creating a photo.
         #     Identifier for the photo, which is unique among all photos in
         #     Google.
         # @!attribute [rw] upload_reference
         #   @return [::Google::Streetview::Publish::V1::UploadRef]
-        #     Required when creating a photo. Input only. The resource URL where the
+        #     Input only. Required when creating a photo. Input only. The resource URL where the
         #     photo bytes are uploaded to.
-        # @!attribute [rw] download_url
+        # @!attribute [r] download_url
         #   @return [::String]
         #     Output only. The download URL for the photo bytes. This field is set only
         #     when
         #     {::Google::Streetview::Publish::V1::GetPhotoRequest#view GetPhotoRequest.view}
         #     is set to
         #     {::Google::Streetview::Publish::V1::PhotoView::INCLUDE_DOWNLOAD_URL PhotoView.INCLUDE_DOWNLOAD_URL}.
-        # @!attribute [rw] thumbnail_url
+        # @!attribute [r] thumbnail_url
         #   @return [::String]
         #     Output only. The thumbnail URL for showing a preview of the given photo.
-        # @!attribute [rw] share_link
+        # @!attribute [r] share_link
         #   @return [::String]
         #     Output only. The share link for the photo.
         # @!attribute [rw] pose
         #   @return [::Google::Streetview::Publish::V1::Pose]
-        #     Pose of the photo.
+        #     Optional. Pose of the photo.
         # @!attribute [rw] connections
         #   @return [::Array<::Google::Streetview::Publish::V1::Connection>]
-        #     Connections to other photos. A connection represents the link from this
+        #     Optional. Connections to other photos. A connection represents the link from this
         #     photo to another photo.
         # @!attribute [rw] capture_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     Absolute time when the photo was captured.
+        #     Optional. Absolute time when the photo was captured.
         #     When the photo has no exif timestamp, this is used to set a timestamp in
         #     the photo metadata.
+        # @!attribute [r] upload_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. Time when the image was uploaded.
         # @!attribute [rw] places
         #   @return [::Array<::Google::Streetview::Publish::V1::Place>]
-        #     Places where this photo belongs.
-        # @!attribute [rw] view_count
+        #     Optional. Places where this photo belongs.
+        # @!attribute [r] view_count
         #   @return [::Integer]
         #     Output only. View count of the photo.
-        # @!attribute [rw] transfer_status
+        # @!attribute [r] transfer_status
         #   @return [::Google::Streetview::Publish::V1::Photo::TransferStatus]
         #     Output only. Status of rights transfer on this photo.
-        # @!attribute [rw] maps_publish_status
+        # @!attribute [r] maps_publish_status
         #   @return [::Google::Streetview::Publish::V1::Photo::MapsPublishStatus]
-        #     Output only. Status in Google Maps, whether this photo was published or
-        #     rejected.
+        #     Output only. Status in Google Maps, whether this photo was published or rejected.
         class Photo
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

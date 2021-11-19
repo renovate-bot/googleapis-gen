@@ -25,51 +25,55 @@ namespace Google.Streetview.Publish.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cixnb29nbGUvc3RyZWV0dmlldy9wdWJsaXNoL3YxL3Jlc291cmNlcy5wcm90",
-            "bxIcZ29vZ2xlLnN0cmVldHZpZXcucHVibGlzaC52MRocZ29vZ2xlL2FwaS9h",
-            "bm5vdGF0aW9ucy5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
-            "cm90bxoYZ29vZ2xlL3R5cGUvbGF0bG5nLnByb3RvIh8KCVVwbG9hZFJlZhIS",
-            "Cgp1cGxvYWRfdXJsGAEgASgJIhUKB1Bob3RvSWQSCgoCaWQYASABKAkiJQoF",
-            "TGV2ZWwSDgoGbnVtYmVyGAEgASgBEgwKBG5hbWUYAiABKAkivgEKBFBvc2US",
-            "KQoMbGF0X2xuZ19wYWlyGAEgASgLMhMuZ29vZ2xlLnR5cGUuTGF0TG5nEhAK",
-            "CGFsdGl0dWRlGAIgASgBEg8KB2hlYWRpbmcYAyABKAESDQoFcGl0Y2gYBCAB",
-            "KAESDAoEcm9sbBgFIAEoARIyCgVsZXZlbBgHIAEoCzIjLmdvb2dsZS5zdHJl",
-            "ZXR2aWV3LnB1Ymxpc2gudjEuTGV2ZWwSFwoPYWNjdXJhY3lfbWV0ZXJzGAkg",
-            "ASgCIj4KBVBsYWNlEhAKCHBsYWNlX2lkGAEgASgJEgwKBG5hbWUYAiABKAkS",
-            "FQoNbGFuZ3VhZ2VfY29kZRgDIAEoCSJDCgpDb25uZWN0aW9uEjUKBnRhcmdl",
-            "dBgBIAEoCzIlLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gudjEuUGhvdG9J",
-            "ZCLYBgoFUGhvdG8SNwoIcGhvdG9faWQYASABKAsyJS5nb29nbGUuc3RyZWV0",
-            "dmlldy5wdWJsaXNoLnYxLlBob3RvSWQSQQoQdXBsb2FkX3JlZmVyZW5jZRgC",
-            "IAEoCzInLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gudjEuVXBsb2FkUmVm",
-            "EhQKDGRvd25sb2FkX3VybBgDIAEoCRIVCg10aHVtYm5haWxfdXJsGAkgASgJ",
-            "EhIKCnNoYXJlX2xpbmsYCyABKAkSMAoEcG9zZRgEIAEoCzIiLmdvb2dsZS5z",
-            "dHJlZXR2aWV3LnB1Ymxpc2gudjEuUG9zZRI9Cgtjb25uZWN0aW9ucxgFIAMo",
-            "CzIoLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gudjEuQ29ubmVjdGlvbhIw",
-            "CgxjYXB0dXJlX3RpbWUYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wEjMKBnBsYWNlcxgHIAMoCzIjLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxp",
-            "c2gudjEuUGxhY2USEgoKdmlld19jb3VudBgKIAEoAxJLCg90cmFuc2Zlcl9z",
-            "dGF0dXMYDCABKA4yMi5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlBo",
-            "b3RvLlRyYW5zZmVyU3RhdHVzElIKE21hcHNfcHVibGlzaF9zdGF0dXMYDSAB",
-            "KA4yNS5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlBob3RvLk1hcHNQ",
-            "dWJsaXNoU3RhdHVzIqUBCg5UcmFuc2ZlclN0YXR1cxIbChdUUkFOU0ZFUl9T",
-            "VEFUVVNfVU5LTk9XThAAEhUKEU5FVkVSX1RSQU5TRkVSUkVEEAESCwoHUEVO",
-            "RElORxACEg0KCUNPTVBMRVRFRBADEgwKCFJFSkVDVEVEEAQSCwoHRVhQSVJF",
-            "RBAFEg0KCUNBTkNFTExFRBAGEhkKFVJFQ0VJVkVEX1ZJQV9UUkFOU0ZFUhAH",
-            "Il0KEU1hcHNQdWJsaXNoU3RhdHVzEiMKH1VOU1BFQ0lGSUVEX01BUFNfUFVC",
-            "TElTSF9TVEFUVVMQABINCglQVUJMSVNIRUQQARIUChBSRUpFQ1RFRF9VTktO",
-            "T1dOEAJCiwEKKGNvbS5nb29nbGUuZ2VvLnVnYy5zdHJlZXR2aWV3LnB1Ymxp",
-            "c2gudjFCGlN0cmVldFZpZXdQdWJsaXNoUmVzb3VyY2VzWkNnb29nbGUuZ29s",
-            "YW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL3N0cmVldHZpZXcvcHVibGlz",
-            "aC92MTtwdWJsaXNoYgZwcm90bzM="));
+            "bxIcZ29vZ2xlLnN0cmVldHZpZXcucHVibGlzaC52MRofZ29vZ2xlL2FwaS9m",
+            "aWVsZF9iZWhhdmlvci5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFt",
+            "cC5wcm90bxoYZ29vZ2xlL3R5cGUvbGF0bG5nLnByb3RvIjAKCVVwbG9hZFJl",
+            "ZhIUCgp1cGxvYWRfdXJsGAEgASgJSABCDQoLZmlsZV9zb3VyY2UiFQoHUGhv",
+            "dG9JZBIKCgJpZBgBIAEoCSIvCgVMZXZlbBITCgZudW1iZXIYASABKAFCA+BB",
+            "ARIRCgRuYW1lGAIgASgJQgPgQQIivgEKBFBvc2USKQoMbGF0X2xuZ19wYWly",
+            "GAEgASgLMhMuZ29vZ2xlLnR5cGUuTGF0TG5nEhAKCGFsdGl0dWRlGAIgASgB",
+            "Eg8KB2hlYWRpbmcYAyABKAESDQoFcGl0Y2gYBCABKAESDAoEcm9sbBgFIAEo",
+            "ARIyCgVsZXZlbBgHIAEoCzIjLmdvb2dsZS5zdHJlZXR2aWV3LnB1Ymxpc2gu",
+            "djEuTGV2ZWwSFwoPYWNjdXJhY3lfbWV0ZXJzGAkgASgCIkgKBVBsYWNlEhAK",
+            "CHBsYWNlX2lkGAEgASgJEhEKBG5hbWUYAiABKAlCA+BBAxIaCg1sYW5ndWFn",
+            "ZV9jb2RlGAMgASgJQgPgQQMiSAoKQ29ubmVjdGlvbhI6CgZ0YXJnZXQYASAB",
+            "KAsyJS5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNoLnYxLlBob3RvSWRCA+BB",
+            "AiLNBwoFUGhvdG8SPwoIcGhvdG9faWQYASABKAsyJS5nb29nbGUuc3RyZWV0",
+            "dmlldy5wdWJsaXNoLnYxLlBob3RvSWRCBuBBAuBBAxJGChB1cGxvYWRfcmVm",
+            "ZXJlbmNlGAIgASgLMicuZ29vZ2xlLnN0cmVldHZpZXcucHVibGlzaC52MS5V",
+            "cGxvYWRSZWZCA+BBBBIZCgxkb3dubG9hZF91cmwYAyABKAlCA+BBAxIaCg10",
+            "aHVtYm5haWxfdXJsGAkgASgJQgPgQQMSFwoKc2hhcmVfbGluaxgLIAEoCUID",
+            "4EEDEjUKBHBvc2UYBCABKAsyIi5nb29nbGUuc3RyZWV0dmlldy5wdWJsaXNo",
+            "LnYxLlBvc2VCA+BBARJCCgtjb25uZWN0aW9ucxgFIAMoCzIoLmdvb2dsZS5z",
+            "dHJlZXR2aWV3LnB1Ymxpc2gudjEuQ29ubmVjdGlvbkID4EEBEjUKDGNhcHR1",
+            "cmVfdGltZRgGIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BB",
+            "ARI0Cgt1cGxvYWRfdGltZRgOIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXBCA+BBAxI4CgZwbGFjZXMYByADKAsyIy5nb29nbGUuc3RyZWV0dmll",
+            "dy5wdWJsaXNoLnYxLlBsYWNlQgPgQQESFwoKdmlld19jb3VudBgKIAEoA0ID",
+            "4EEDElAKD3RyYW5zZmVyX3N0YXR1cxgMIAEoDjIyLmdvb2dsZS5zdHJlZXR2",
+            "aWV3LnB1Ymxpc2gudjEuUGhvdG8uVHJhbnNmZXJTdGF0dXNCA+BBAxJXChNt",
+            "YXBzX3B1Ymxpc2hfc3RhdHVzGA0gASgOMjUuZ29vZ2xlLnN0cmVldHZpZXcu",
+            "cHVibGlzaC52MS5QaG90by5NYXBzUHVibGlzaFN0YXR1c0ID4EEDIqUBCg5U",
+            "cmFuc2ZlclN0YXR1cxIbChdUUkFOU0ZFUl9TVEFUVVNfVU5LTk9XThAAEhUK",
+            "EU5FVkVSX1RSQU5TRkVSUkVEEAESCwoHUEVORElORxACEg0KCUNPTVBMRVRF",
+            "RBADEgwKCFJFSkVDVEVEEAQSCwoHRVhQSVJFRBAFEg0KCUNBTkNFTExFRBAG",
+            "EhkKFVJFQ0VJVkVEX1ZJQV9UUkFOU0ZFUhAHIl0KEU1hcHNQdWJsaXNoU3Rh",
+            "dHVzEiMKH1VOU1BFQ0lGSUVEX01BUFNfUFVCTElTSF9TVEFUVVMQABINCglQ",
+            "VUJMSVNIRUQQARIUChBSRUpFQ1RFRF9VTktOT1dOEAJCiwEKKGNvbS5nb29n",
+            "bGUuZ2VvLnVnYy5zdHJlZXR2aWV3LnB1Ymxpc2gudjFCGlN0cmVldFZpZXdQ",
+            "dWJsaXNoUmVzb3VyY2VzWkNnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9n",
+            "b29nbGVhcGlzL3N0cmVldHZpZXcvcHVibGlzaC92MTtwdWJsaXNoYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.UploadRef), global::Google.Streetview.Publish.V1.UploadRef.Parser, new[]{ "UploadUrl" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.UploadRef), global::Google.Streetview.Publish.V1.UploadRef.Parser, new[]{ "UploadUrl" }, new[]{ "FileSource" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.PhotoId), global::Google.Streetview.Publish.V1.PhotoId.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.Level), global::Google.Streetview.Publish.V1.Level.Parser, new[]{ "Number", "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.Pose), global::Google.Streetview.Publish.V1.Pose.Parser, new[]{ "LatLngPair", "Altitude", "Heading", "Pitch", "Roll", "Level", "AccuracyMeters" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.Place), global::Google.Streetview.Publish.V1.Place.Parser, new[]{ "PlaceId", "Name", "LanguageCode" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.Connection), global::Google.Streetview.Publish.V1.Connection.Parser, new[]{ "Target" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.Photo), global::Google.Streetview.Publish.V1.Photo.Parser, new[]{ "PhotoId", "UploadReference", "DownloadUrl", "ThumbnailUrl", "ShareLink", "Pose", "Connections", "CaptureTime", "Places", "ViewCount", "TransferStatus", "MapsPublishStatus" }, null, new[]{ typeof(global::Google.Streetview.Publish.V1.Photo.Types.TransferStatus), typeof(global::Google.Streetview.Publish.V1.Photo.Types.MapsPublishStatus) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Streetview.Publish.V1.Photo), global::Google.Streetview.Publish.V1.Photo.Parser, new[]{ "PhotoId", "UploadReference", "DownloadUrl", "ThumbnailUrl", "ShareLink", "Pose", "Connections", "CaptureTime", "UploadTime", "Places", "ViewCount", "TransferStatus", "MapsPublishStatus" }, null, new[]{ typeof(global::Google.Streetview.Publish.V1.Photo.Types.TransferStatus), typeof(global::Google.Streetview.Publish.V1.Photo.Types.MapsPublishStatus) }, null, null)
           }));
     }
     #endregion
@@ -113,7 +117,12 @@ namespace Google.Streetview.Publish.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UploadRef(UploadRef other) : this() {
-      uploadUrl_ = other.uploadUrl_;
+      switch (other.FileSourceCase) {
+        case FileSourceOneofCase.UploadUrl:
+          UploadUrl = other.UploadUrl;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -125,19 +134,39 @@ namespace Google.Streetview.Publish.V1 {
 
     /// <summary>Field number for the "upload_url" field.</summary>
     public const int UploadUrlFieldNumber = 1;
-    private string uploadUrl_ = "";
     /// <summary>
-    /// Required. An upload reference should be unique for each user. It follows
+    /// An upload reference should be unique for each user. It follows
     /// the form:
     /// "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}"
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string UploadUrl {
-      get { return uploadUrl_; }
+      get { return fileSourceCase_ == FileSourceOneofCase.UploadUrl ? (string) fileSource_ : ""; }
       set {
-        uploadUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        fileSource_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        fileSourceCase_ = FileSourceOneofCase.UploadUrl;
       }
+    }
+
+    private object fileSource_;
+    /// <summary>Enum of possible cases for the "file_source" oneof.</summary>
+    public enum FileSourceOneofCase {
+      None = 0,
+      UploadUrl = 1,
+    }
+    private FileSourceOneofCase fileSourceCase_ = FileSourceOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FileSourceOneofCase FileSourceCase {
+      get { return fileSourceCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFileSource() {
+      fileSourceCase_ = FileSourceOneofCase.None;
+      fileSource_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -156,6 +185,7 @@ namespace Google.Streetview.Publish.V1 {
         return true;
       }
       if (UploadUrl != other.UploadUrl) return false;
+      if (FileSourceCase != other.FileSourceCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,7 +193,8 @@ namespace Google.Streetview.Publish.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (UploadUrl.Length != 0) hash ^= UploadUrl.GetHashCode();
+      if (fileSourceCase_ == FileSourceOneofCase.UploadUrl) hash ^= UploadUrl.GetHashCode();
+      hash ^= (int) fileSourceCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -182,7 +213,7 @@ namespace Google.Streetview.Publish.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UploadUrl.Length != 0) {
+      if (fileSourceCase_ == FileSourceOneofCase.UploadUrl) {
         output.WriteRawTag(10);
         output.WriteString(UploadUrl);
       }
@@ -196,7 +227,7 @@ namespace Google.Streetview.Publish.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UploadUrl.Length != 0) {
+      if (fileSourceCase_ == FileSourceOneofCase.UploadUrl) {
         output.WriteRawTag(10);
         output.WriteString(UploadUrl);
       }
@@ -210,7 +241,7 @@ namespace Google.Streetview.Publish.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (UploadUrl.Length != 0) {
+      if (fileSourceCase_ == FileSourceOneofCase.UploadUrl) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(UploadUrl);
       }
       if (_unknownFields != null) {
@@ -225,9 +256,12 @@ namespace Google.Streetview.Publish.V1 {
       if (other == null) {
         return;
       }
-      if (other.UploadUrl.Length != 0) {
-        UploadUrl = other.UploadUrl;
+      switch (other.FileSourceCase) {
+        case FileSourceOneofCase.UploadUrl:
+          UploadUrl = other.UploadUrl;
+          break;
       }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -324,7 +358,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int IdFieldNumber = 1;
     private string id_ = "";
     /// <summary>
-    /// Required. A unique identifier for a photo.
+    /// A unique identifier for a photo.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -520,7 +554,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int NumberFieldNumber = 1;
     private double number_;
     /// <summary>
-    /// Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+    /// Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
     /// the first level above ground level, -1 indicates the first level under
     /// ground level. Non-integer values are OK.
     /// </summary>
@@ -769,7 +803,7 @@ namespace Google.Streetview.Publish.V1 {
     /// When creating a [Photo][google.streetview.publish.v1.Photo], if the
     /// latitude and longitude pair are not provided, the geolocation from the
     /// exif header is used. A latitude and longitude pair not provided in the
-    /// photo or exif header causes the create photo process to fail.
+    /// photo or exif header causes the photo process to fail.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -800,9 +834,11 @@ namespace Google.Streetview.Publish.V1 {
     public const int HeadingFieldNumber = 3;
     private double heading_;
     /// <summary>
+    /// The following pose parameters pertain to the center of the photo. They
+    /// match https://developers.google.com/streetview/spherical-metadata.
     /// Compass heading, measured at the center of the photo in degrees clockwise
-    /// from North. Value must be >=0 and &lt;360.
-    /// NaN indicates an unmeasured quantity.
+    /// from North. Value must be >=0 and &lt;360. NaN indicates an unmeasured
+    /// quantity.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1247,7 +1283,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int NameFieldNumber = 2;
     private string name_ = "";
     /// <summary>
-    /// Output-only. The name of the place, localized to the language_code.
+    /// Output only. The name of the place, localized to the language_code.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1262,7 +1298,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int LanguageCodeFieldNumber = 3;
     private string languageCode_ = "";
     /// <summary>
-    /// Output-only. The language_code that the name is localized with. This should
+    /// Output only. The language_code that the name is localized with. This should
     /// be the language_code specified in the request, but may be a fallback.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1705,6 +1741,7 @@ namespace Google.Streetview.Publish.V1 {
       pose_ = other.pose_ != null ? other.pose_.Clone() : null;
       connections_ = other.connections_.Clone();
       captureTime_ = other.captureTime_ != null ? other.captureTime_.Clone() : null;
+      uploadTime_ = other.uploadTime_ != null ? other.uploadTime_.Clone() : null;
       places_ = other.places_.Clone();
       viewCount_ = other.viewCount_;
       transferStatus_ = other.transferStatus_;
@@ -1722,7 +1759,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int PhotoIdFieldNumber = 1;
     private global::Google.Streetview.Publish.V1.PhotoId photoId_;
     /// <summary>
-    /// Required when updating a photo. Output only when creating a photo.
+    /// Required. Output only. Required when updating a photo. Output only when creating a photo.
     /// Identifier for the photo, which is unique among all photos in
     /// Google.
     /// </summary>
@@ -1739,7 +1776,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int UploadReferenceFieldNumber = 2;
     private global::Google.Streetview.Publish.V1.UploadRef uploadReference_;
     /// <summary>
-    /// Required when creating a photo. Input only. The resource URL where the
+    /// Input only. Required when creating a photo. Input only. The resource URL where the
     /// photo bytes are uploaded to.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1804,7 +1841,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int PoseFieldNumber = 4;
     private global::Google.Streetview.Publish.V1.Pose pose_;
     /// <summary>
-    /// Pose of the photo.
+    /// Optional. Pose of the photo.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1821,7 +1858,7 @@ namespace Google.Streetview.Publish.V1 {
         = pb::FieldCodec.ForMessage(42, global::Google.Streetview.Publish.V1.Connection.Parser);
     private readonly pbc::RepeatedField<global::Google.Streetview.Publish.V1.Connection> connections_ = new pbc::RepeatedField<global::Google.Streetview.Publish.V1.Connection>();
     /// <summary>
-    /// Connections to other photos. A connection represents the link from this
+    /// Optional. Connections to other photos. A connection represents the link from this
     /// photo to another photo.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1834,7 +1871,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int CaptureTimeFieldNumber = 6;
     private global::Google.Protobuf.WellKnownTypes.Timestamp captureTime_;
     /// <summary>
-    /// Absolute time when the photo was captured.
+    /// Optional. Absolute time when the photo was captured.
     /// When the photo has no exif timestamp, this is used to set a timestamp in
     /// the photo metadata.
     /// </summary>
@@ -1847,13 +1884,28 @@ namespace Google.Streetview.Publish.V1 {
       }
     }
 
+    /// <summary>Field number for the "upload_time" field.</summary>
+    public const int UploadTimeFieldNumber = 14;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp uploadTime_;
+    /// <summary>
+    /// Output only. Time when the image was uploaded.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp UploadTime {
+      get { return uploadTime_; }
+      set {
+        uploadTime_ = value;
+      }
+    }
+
     /// <summary>Field number for the "places" field.</summary>
     public const int PlacesFieldNumber = 7;
     private static readonly pb::FieldCodec<global::Google.Streetview.Publish.V1.Place> _repeated_places_codec
         = pb::FieldCodec.ForMessage(58, global::Google.Streetview.Publish.V1.Place.Parser);
     private readonly pbc::RepeatedField<global::Google.Streetview.Publish.V1.Place> places_ = new pbc::RepeatedField<global::Google.Streetview.Publish.V1.Place>();
     /// <summary>
-    /// Places where this photo belongs.
+    /// Optional. Places where this photo belongs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1895,8 +1947,7 @@ namespace Google.Streetview.Publish.V1 {
     public const int MapsPublishStatusFieldNumber = 13;
     private global::Google.Streetview.Publish.V1.Photo.Types.MapsPublishStatus mapsPublishStatus_ = global::Google.Streetview.Publish.V1.Photo.Types.MapsPublishStatus.UnspecifiedMapsPublishStatus;
     /// <summary>
-    /// Output only. Status in Google Maps, whether this photo was published or
-    /// rejected.
+    /// Output only. Status in Google Maps, whether this photo was published or rejected.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1930,6 +1981,7 @@ namespace Google.Streetview.Publish.V1 {
       if (!object.Equals(Pose, other.Pose)) return false;
       if(!connections_.Equals(other.connections_)) return false;
       if (!object.Equals(CaptureTime, other.CaptureTime)) return false;
+      if (!object.Equals(UploadTime, other.UploadTime)) return false;
       if(!places_.Equals(other.places_)) return false;
       if (ViewCount != other.ViewCount) return false;
       if (TransferStatus != other.TransferStatus) return false;
@@ -1949,6 +2001,7 @@ namespace Google.Streetview.Publish.V1 {
       if (pose_ != null) hash ^= Pose.GetHashCode();
       hash ^= connections_.GetHashCode();
       if (captureTime_ != null) hash ^= CaptureTime.GetHashCode();
+      if (uploadTime_ != null) hash ^= UploadTime.GetHashCode();
       hash ^= places_.GetHashCode();
       if (ViewCount != 0L) hash ^= ViewCount.GetHashCode();
       if (TransferStatus != global::Google.Streetview.Publish.V1.Photo.Types.TransferStatus.Unknown) hash ^= TransferStatus.GetHashCode();
@@ -2013,6 +2066,10 @@ namespace Google.Streetview.Publish.V1 {
         output.WriteRawTag(104);
         output.WriteEnum((int) MapsPublishStatus);
       }
+      if (uploadTime_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(UploadTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2065,6 +2122,10 @@ namespace Google.Streetview.Publish.V1 {
         output.WriteRawTag(104);
         output.WriteEnum((int) MapsPublishStatus);
       }
+      if (uploadTime_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(UploadTime);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2096,6 +2157,9 @@ namespace Google.Streetview.Publish.V1 {
       size += connections_.CalculateSize(_repeated_connections_codec);
       if (captureTime_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CaptureTime);
+      }
+      if (uploadTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UploadTime);
       }
       size += places_.CalculateSize(_repeated_places_codec);
       if (ViewCount != 0L) {
@@ -2152,6 +2216,12 @@ namespace Google.Streetview.Publish.V1 {
           CaptureTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
         CaptureTime.MergeFrom(other.CaptureTime);
+      }
+      if (other.uploadTime_ != null) {
+        if (uploadTime_ == null) {
+          UploadTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        UploadTime.MergeFrom(other.UploadTime);
       }
       places_.Add(other.places_);
       if (other.ViewCount != 0L) {
@@ -2238,6 +2308,13 @@ namespace Google.Streetview.Publish.V1 {
             MapsPublishStatus = (global::Google.Streetview.Publish.V1.Photo.Types.MapsPublishStatus) input.ReadEnum();
             break;
           }
+          case 114: {
+            if (uploadTime_ == null) {
+              UploadTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UploadTime);
+            break;
+          }
         }
       }
     #endif
@@ -2311,6 +2388,13 @@ namespace Google.Streetview.Publish.V1 {
           }
           case 104: {
             MapsPublishStatus = (global::Google.Streetview.Publish.V1.Photo.Types.MapsPublishStatus) input.ReadEnum();
+            break;
+          }
+          case 114: {
+            if (uploadTime_ == null) {
+              UploadTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UploadTime);
             break;
           }
         }

@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "java",
   "protoPackage": "google.streetview.publish.v1",
-  "libraryPackage": "com.google.geo.ugc.streetview.publish.v1",
+  "libraryPackage": "com.google.streetview.publish.v1",
   "services": {
     "StreetViewPublishService": {
       "clients": {

@@ -44,7 +44,7 @@ module Google
         #     Required. ID of the {::Google::Streetview::Publish::V1::Photo Photo}.
         # @!attribute [rw] view
         #   @return [::Google::Streetview::Publish::V1::PhotoView]
-        #     Specifies if a download URL for the photo bytes should be returned in the
+        #     Required. Specifies if a download URL for the photo bytes should be returned in the
         #     {::Google::Streetview::Publish::V1::Photo Photo} response.
         # @!attribute [rw] language_code
         #   @return [::String]
@@ -68,16 +68,16 @@ module Google
         # * `view` controls if the download URL for the photo bytes is returned.
         # @!attribute [rw] photo_ids
         #   @return [::Array<::String>]
-        #     Required. IDs of the {::Google::Streetview::Publish::V1::Photo Photos}. HTTP GET
-        #     requests require the following syntax for the URL query parameter:
+        #     Required. IDs of the {::Google::Streetview::Publish::V1::Photo Photos}. For HTTP
+        #     GET requests, the URL query parameter should be
         #     `photoIds=<id1>&photoIds=<id2>&...`.
         # @!attribute [rw] view
         #   @return [::Google::Streetview::Publish::V1::PhotoView]
-        #     Specifies if a download URL for the photo bytes should be returned in the
+        #     Required. Specifies if a download URL for the photo bytes should be returned in the
         #     Photo response.
         # @!attribute [rw] language_code
         #   @return [::String]
-        #     The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+        #     Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
         #     information, see
         #     http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
         #     If language_code is unspecified, the user's language preference for Google
@@ -135,30 +135,30 @@ module Google
         # parameter supported at the moment.
         # @!attribute [rw] view
         #   @return [::Google::Streetview::Publish::V1::PhotoView]
-        #     Specifies if a download URL for the photos bytes should be returned in the
+        #     Required. Specifies if a download URL for the photos bytes should be returned in the
         #     Photos response.
         # @!attribute [rw] page_size
         #   @return [::Integer]
-        #     The maximum number of photos to return.
+        #     Optional. The maximum number of photos to return.
         #     `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
         #     the default page size of 100 is used.
         #     The number of photos returned in the response may be less than `pageSize`
         #     if the number of photos that belong to the user is less than `pageSize`.
         # @!attribute [rw] page_token
         #   @return [::String]
-        #     The
+        #     Optional. The
         #     {::Google::Streetview::Publish::V1::ListPhotosResponse#next_page_token nextPageToken}
         #     value returned from a previous
         #     {::Google::Streetview::Publish::V1::StreetViewPublishService::Client#list_photos ListPhotos}
         #     request, if any.
         # @!attribute [rw] filter
         #   @return [::String]
-        #     The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+        #     Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
         #
-        #     The only filter supported at the moment is `placeId`.
+        #     The filters supported at the moment are: `placeId`.
         # @!attribute [rw] language_code
         #   @return [::String]
-        #     The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+        #     Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
         #     information, see
         #     http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
         #     If language_code is unspecified, the user's language preference for Google
@@ -192,7 +192,7 @@ module Google
         #     new metadata.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
-        #     Mask that identifies fields on the photo metadata to update.
+        #     Required. Mask that identifies fields on the photo metadata to update.
         #     If not present, the old {::Google::Streetview::Publish::V1::Photo Photo}
         #     metadata is entirely replaced with the
         #     new {::Google::Streetview::Publish::V1::Photo Photo} metadata in this request.
@@ -211,13 +211,13 @@ module Google
         #     * `places`
         #
         #
-        #     <aside class="note"><b>Note:</b>  When
+        #     > Note: When
         #     {::Google::Streetview::Publish::V1::UpdatePhotoRequest#update_mask updateMask}
         #     contains repeated fields, the entire set of repeated values get replaced
         #     with the new contents. For example, if
         #     {::Google::Streetview::Publish::V1::UpdatePhotoRequest#update_mask updateMask}
         #     contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-        #     all connections are removed.</aside>
+        #     all connections are removed.
         class UpdatePhotoRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -280,7 +280,7 @@ module Google
         # Specifies which view of the {::Google::Streetview::Publish::V1::Photo Photo}
         # to include in the response.
         module PhotoView
-          # Server reponses do not include the download URL for the photo bytes.
+          # Server responses do not include the download URL for the photo bytes.
           # The default value.
           BASIC = 0
 

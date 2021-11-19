@@ -15,24 +15,24 @@
 
 'use strict';
 
-function main() {
+function main(photoIds, view) {
   // [START streetviewpublish_v1_generated_StreetViewPublishService_BatchGetPhotos_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. IDs of the Photos google.streetview.publish.v1.Photo. HTTP GET
-   *  requests require the following syntax for the URL query parameter:
+   *  Required. IDs of the Photos google.streetview.publish.v1.Photo. For HTTP
+   *  GET requests, the URL query parameter should be
    *  `photoIds=<id1>&photoIds=<id2>&...`.
    */
   // const photoIds = 'abc123'
   /**
-   *  Specifies if a download URL for the photo bytes should be returned in the
+   *  Required. Specifies if a download URL for the photo bytes should be returned in the
    *  Photo response.
    */
   // const view = {}
   /**
-   *  The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   *  Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
    *  information, see
    *  http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
    *  If language_code is unspecified, the user's language preference for Google
@@ -41,7 +41,7 @@ function main() {
   // const languageCode = 'abc123'
 
   // Imports the Publish library
-  const {StreetViewPublishServiceClient} = require('publish').v1;
+  const {StreetViewPublishServiceClient} = require('@google-cloud/publish').v1;
 
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
@@ -49,6 +49,8 @@ function main() {
   async function callBatchGetPhotos() {
     // Construct request
     const request = {
+      photoIds,
+      view,
     };
 
     // Run request

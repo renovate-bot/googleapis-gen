@@ -16,18 +16,19 @@ class StreetviewPublish
         }
         \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();
+        \GPBMetadata\Google\Longrunning\Operations::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         \GPBMetadata\Google\Streetview\Publish\V1\Resources::initOnce();
         \GPBMetadata\Google\Streetview\Publish\V1\Rpcmessages::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ú
-5google/streetview/publish/v1/streetview_publish.protogoogle.streetview.publish.v1google/api/client.protogoogle/protobuf/empty.proto,google/streetview/publish/v1/resources.proto.google/streetview/publish/v1/rpcmessages.proto2á
+ÿ
+5google/streetview/publish/v1/streetview_publish.protogoogle.streetview.publish.v1google/api/client.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto,google/streetview/publish/v1/resources.proto.google/streetview/publish/v1/rpcmessages.proto2á
 StreetViewPublishServicep
 StartUpload.google.protobuf.Empty\'.google.streetview.publish.v1.UploadRef" ‚Óä“"/v1/photo:startUpload:*†
 CreatePhoto0.google.streetview.publish.v1.CreatePhotoRequest#.google.streetview.publish.v1.Photo" ‚Óä“"	/v1/photo:photoÚAphotoŒ
 GetPhoto-.google.streetview.publish.v1.GetPhotoRequest#.google.streetview.publish.v1.Photo",‚Óä“/v1/photo/{photo_id}ÚAphoto_id,view©
-BatchGetPhotos3.google.streetview.publish.v1.BatchGetPhotosRequest4.google.streetview.publish.v1.BatchGetPhotosResponse",‚Óä“/v1/photos:batchGetÚAphoto_ids,view‘
+BatchGetPhotos3.google.streetview.publish.v1.BatchGetPhotosRequest4.google.streetview.publish.v1.BatchGetPhotosResponse",‚Óä“/v1/photos:batchGetÚAview,photo_ids‘
 
 ListPhotos/.google.streetview.publish.v1.ListPhotosRequest0.google.streetview.publish.v1.ListPhotosResponse" ‚Óä“
 /v1/photosÚAview,filter¦

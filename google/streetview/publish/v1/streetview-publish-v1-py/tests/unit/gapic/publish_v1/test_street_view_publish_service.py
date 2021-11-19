@@ -405,7 +405,6 @@ def test_start_upload(transport: str = 'grpc', request_type=empty_pb2.Empty):
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.UploadRef)
-    assert response.upload_url == 'upload_url_value'
 
 
 def test_start_upload_from_dict():
@@ -447,7 +446,6 @@ async def test_start_upload_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.UploadRef(
-            upload_url='upload_url_value',
         ))
         response = await client.start_upload(request)
 
@@ -458,7 +456,6 @@ async def test_start_upload_async(transport: str = 'grpc_asyncio', request_type=
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.UploadRef)
-    assert response.upload_url == 'upload_url_value'
 
 
 @pytest.mark.asyncio
@@ -974,19 +971,19 @@ def test_batch_get_photos_flattened():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.batch_get_photos(
-            photo_ids=['photo_ids_value'],
             view=rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL,
+            photo_ids=['photo_ids_value'],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        arg = args[0].photo_ids
-        mock_val = ['photo_ids_value']
-        assert arg == mock_val
         arg = args[0].view
         mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
+        arg = args[0].photo_ids
+        mock_val = ['photo_ids_value']
         assert arg == mock_val
 
 
@@ -1000,8 +997,8 @@ def test_batch_get_photos_flattened_error():
     with pytest.raises(ValueError):
         client.batch_get_photos(
             rpcmessages.BatchGetPhotosRequest(),
-            photo_ids=['photo_ids_value'],
             view=rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL,
+            photo_ids=['photo_ids_value'],
         )
 
 
@@ -1022,19 +1019,19 @@ async def test_batch_get_photos_flattened_async():
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         response = await client.batch_get_photos(
-            photo_ids=['photo_ids_value'],
             view=rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL,
+            photo_ids=['photo_ids_value'],
         )
 
         # Establish that the underlying call was made with the expected
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
-        arg = args[0].photo_ids
-        mock_val = ['photo_ids_value']
-        assert arg == mock_val
         arg = args[0].view
         mock_val = rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL
+        assert arg == mock_val
+        arg = args[0].photo_ids
+        mock_val = ['photo_ids_value']
         assert arg == mock_val
 
 
@@ -1049,8 +1046,8 @@ async def test_batch_get_photos_flattened_error_async():
     with pytest.raises(ValueError):
         await client.batch_get_photos(
             rpcmessages.BatchGetPhotosRequest(),
-            photo_ids=['photo_ids_value'],
             view=rpcmessages.PhotoView.INCLUDE_DOWNLOAD_URL,
+            photo_ids=['photo_ids_value'],
         )
 
 

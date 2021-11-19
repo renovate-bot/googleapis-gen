@@ -16,11 +16,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class Level extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+     * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
      * the first level above ground level, -1 indicates the first level under
      * ground level. Non-integer values are OK.
      *
-     * Generated from protobuf field <code>double number = 1;</code>
+     * Generated from protobuf field <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $number = 0.0;
     /**
@@ -28,7 +28,7 @@ class Level extends \Google\Protobuf\Internal\Message
      * Consider how the elevator buttons would be labeled for this level if there
      * was an elevator.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $name = '';
 
@@ -39,7 +39,7 @@ class Level extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type float $number
-     *           Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+     *           Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
      *           the first level above ground level, -1 indicates the first level under
      *           ground level. Non-integer values are OK.
      *     @type string $name
@@ -54,11 +54,11 @@ class Level extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+     * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
      * the first level above ground level, -1 indicates the first level under
      * ground level. Non-integer values are OK.
      *
-     * Generated from protobuf field <code>double number = 1;</code>
+     * Generated from protobuf field <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return float
      */
     public function getNumber()
@@ -67,11 +67,11 @@ class Level extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Floor number, used for ordering. 0 indicates the ground level, 1 indicates
+     * Optional. Floor number, used for ordering. 0 indicates the ground level, 1 indicates
      * the first level above ground level, -1 indicates the first level under
      * ground level. Non-integer values are OK.
      *
-     * Generated from protobuf field <code>double number = 1;</code>
+     * Generated from protobuf field <code>double number = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param float $var
      * @return $this
      */
@@ -88,7 +88,7 @@ class Level extends \Google\Protobuf\Internal\Message
      * Consider how the elevator buttons would be labeled for this level if there
      * was an elevator.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getName()
@@ -101,7 +101,7 @@ class Level extends \Google\Protobuf\Internal\Message
      * Consider how the elevator buttons would be labeled for this level if there
      * was an elevator.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

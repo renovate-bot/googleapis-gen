@@ -15,7 +15,7 @@ use UnexpectedValueException;
 class PhotoView
 {
     /**
-     * Server reponses do not include the download URL for the photo bytes.
+     * Server responses do not include the download URL for the photo bytes.
      * The default value.
      *
      * Generated from protobuf enum <code>BASIC = 0;</code>

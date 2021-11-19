@@ -31,10 +31,10 @@ namespace Google.Streetview.Publish.V1.Snippets
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = StreetViewPublishServiceClient.Create();
             // Initialize request argument(s)
-            IEnumerable<string> photoIds = new string[] { "", };
             PhotoView view = PhotoView.Basic;
+            IEnumerable<string> photoIds = new string[] { "", };
             // Make the request
-            BatchGetPhotosResponse response = streetViewPublishServiceClient.BatchGetPhotos(photoIds, view);
+            BatchGetPhotosResponse response = streetViewPublishServiceClient.BatchGetPhotos(view, photoIds);
         }
     }
 }

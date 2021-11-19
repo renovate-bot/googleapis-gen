@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Street View Publish API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= StreetViewPublishServiceClient =======================
  *
@@ -33,6 +35,6 @@
  * }</pre>
  */
 @Generated("by gapic-generator-java")
-package com.google.geo.ugc.streetview.publish.v1;
+package com.google.streetview.publish.v1;
 
 import javax.annotation.Generated;

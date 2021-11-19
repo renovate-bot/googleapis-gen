@@ -16,18 +16,18 @@ use Google\Protobuf\Internal\GPBUtil;
 class Photo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $photo_id = null;
     /**
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $upload_reference = null;
     /**
@@ -37,65 +37,70 @@ class Photo extends \Google\Protobuf\Internal\Message
      * is set to
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      *
-     * Generated from protobuf field <code>string download_url = 3;</code>
+     * Generated from protobuf field <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $download_url = '';
     /**
      * Output only. The thumbnail URL for showing a preview of the given photo.
      *
-     * Generated from protobuf field <code>string thumbnail_url = 9;</code>
+     * Generated from protobuf field <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $thumbnail_url = '';
     /**
      * Output only. The share link for the photo.
      *
-     * Generated from protobuf field <code>string share_link = 11;</code>
+     * Generated from protobuf field <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $share_link = '';
     /**
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $pose = null;
     /**
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $connections;
     /**
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $capture_time = null;
     /**
-     * Places where this photo belongs.
+     * Output only. Time when the image was uploaded.
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $upload_time = null;
+    /**
+     * Optional. Places where this photo belongs.
+     *
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     private $places;
     /**
      * Output only. View count of the photo.
      *
-     * Generated from protobuf field <code>int64 view_count = 10;</code>
+     * Generated from protobuf field <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $view_count = 0;
     /**
      * Output only. Status of rights transfer on this photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $transfer_status = 0;
     /**
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $maps_publish_status = 0;
 
@@ -106,11 +111,11 @@ class Photo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Streetview\Publish\V1\PhotoId $photo_id
-     *           Required when updating a photo. Output only when creating a photo.
+     *           Required. Output only. Required when updating a photo. Output only when creating a photo.
      *           Identifier for the photo, which is unique among all photos in
      *           Google.
      *     @type \Google\Streetview\Publish\V1\UploadRef $upload_reference
-     *           Required when creating a photo. Input only. The resource URL where the
+     *           Input only. Required when creating a photo. Input only. The resource URL where the
      *           photo bytes are uploaded to.
      *     @type string $download_url
      *           Output only. The download URL for the photo bytes. This field is set only
@@ -123,23 +128,24 @@ class Photo extends \Google\Protobuf\Internal\Message
      *     @type string $share_link
      *           Output only. The share link for the photo.
      *     @type \Google\Streetview\Publish\V1\Pose $pose
-     *           Pose of the photo.
+     *           Optional. Pose of the photo.
      *     @type \Google\Streetview\Publish\V1\Connection[]|\Google\Protobuf\Internal\RepeatedField $connections
-     *           Connections to other photos. A connection represents the link from this
+     *           Optional. Connections to other photos. A connection represents the link from this
      *           photo to another photo.
      *     @type \Google\Protobuf\Timestamp $capture_time
-     *           Absolute time when the photo was captured.
+     *           Optional. Absolute time when the photo was captured.
      *           When the photo has no exif timestamp, this is used to set a timestamp in
      *           the photo metadata.
+     *     @type \Google\Protobuf\Timestamp $upload_time
+     *           Output only. Time when the image was uploaded.
      *     @type \Google\Streetview\Publish\V1\Place[]|\Google\Protobuf\Internal\RepeatedField $places
-     *           Places where this photo belongs.
+     *           Optional. Places where this photo belongs.
      *     @type int|string $view_count
      *           Output only. View count of the photo.
      *     @type int $transfer_status
      *           Output only. Status of rights transfer on this photo.
      *     @type int $maps_publish_status
-     *           Output only. Status in Google Maps, whether this photo was published or
-     *           rejected.
+     *           Output only. Status in Google Maps, whether this photo was published or rejected.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,11 +154,11 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Streetview\Publish\V1\PhotoId|null
      */
     public function getPhotoId()
@@ -171,11 +177,11 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required when updating a photo. Output only when creating a photo.
+     * Required. Output only. Required when updating a photo. Output only when creating a photo.
      * Identifier for the photo, which is unique among all photos in
      * Google.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoId photo_id = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Streetview\Publish\V1\PhotoId $var
      * @return $this
      */
@@ -188,10 +194,10 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Google\Streetview\Publish\V1\UploadRef|null
      */
     public function getUploadReference()
@@ -210,10 +216,10 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required when creating a photo. Input only. The resource URL where the
+     * Input only. Required when creating a photo. Input only. The resource URL where the
      * photo bytes are uploaded to.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.UploadRef upload_reference = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Google\Streetview\Publish\V1\UploadRef $var
      * @return $this
      */
@@ -232,7 +238,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      * is set to
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      *
-     * Generated from protobuf field <code>string download_url = 3;</code>
+     * Generated from protobuf field <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getDownloadUrl()
@@ -247,7 +253,7 @@ class Photo extends \Google\Protobuf\Internal\Message
      * is set to
      * [PhotoView.INCLUDE_DOWNLOAD_URL][google.streetview.publish.v1.PhotoView.INCLUDE_DOWNLOAD_URL].
      *
-     * Generated from protobuf field <code>string download_url = 3;</code>
+     * Generated from protobuf field <code>string download_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -262,7 +268,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The thumbnail URL for showing a preview of the given photo.
      *
-     * Generated from protobuf field <code>string thumbnail_url = 9;</code>
+     * Generated from protobuf field <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getThumbnailUrl()
@@ -273,7 +279,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The thumbnail URL for showing a preview of the given photo.
      *
-     * Generated from protobuf field <code>string thumbnail_url = 9;</code>
+     * Generated from protobuf field <code>string thumbnail_url = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -288,7 +294,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The share link for the photo.
      *
-     * Generated from protobuf field <code>string share_link = 11;</code>
+     * Generated from protobuf field <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getShareLink()
@@ -299,7 +305,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The share link for the photo.
      *
-     * Generated from protobuf field <code>string share_link = 11;</code>
+     * Generated from protobuf field <code>string share_link = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -312,9 +318,9 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Streetview\Publish\V1\Pose|null
      */
     public function getPose()
@@ -333,9 +339,9 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Pose of the photo.
+     * Optional. Pose of the photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Pose pose = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Streetview\Publish\V1\Pose $var
      * @return $this
      */
@@ -348,10 +354,10 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getConnections()
@@ -360,10 +366,10 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Connections to other photos. A connection represents the link from this
+     * Optional. Connections to other photos. A connection represents the link from this
      * photo to another photo.
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Connection connections = 5;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Connection connections = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Streetview\Publish\V1\Connection[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -376,11 +382,11 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCaptureTime()
@@ -399,11 +405,11 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Absolute time when the photo was captured.
+     * Optional. Absolute time when the photo was captured.
      * When the photo has no exif timestamp, this is used to set a timestamp in
      * the photo metadata.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp capture_time = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -416,9 +422,45 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Places where this photo belongs.
+     * Output only. Time when the image was uploaded.
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getUploadTime()
+    {
+        return $this->upload_time;
+    }
+
+    public function hasUploadTime()
+    {
+        return isset($this->upload_time);
+    }
+
+    public function clearUploadTime()
+    {
+        unset($this->upload_time);
+    }
+
+    /**
+     * Output only. Time when the image was uploaded.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp upload_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setUploadTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->upload_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Places where this photo belongs.
+     *
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPlaces()
@@ -427,9 +469,9 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Places where this photo belongs.
+     * Optional. Places where this photo belongs.
      *
-     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Place places = 7;</code>
+     * Generated from protobuf field <code>repeated .google.streetview.publish.v1.Place places = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param \Google\Streetview\Publish\V1\Place[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -444,7 +486,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. View count of the photo.
      *
-     * Generated from protobuf field <code>int64 view_count = 10;</code>
+     * Generated from protobuf field <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|string
      */
     public function getViewCount()
@@ -455,7 +497,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. View count of the photo.
      *
-     * Generated from protobuf field <code>int64 view_count = 10;</code>
+     * Generated from protobuf field <code>int64 view_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|string $var
      * @return $this
      */
@@ -470,7 +512,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Status of rights transfer on this photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getTransferStatus()
@@ -481,7 +523,7 @@ class Photo extends \Google\Protobuf\Internal\Message
     /**
      * Output only. Status of rights transfer on this photo.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.TransferStatus transfer_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */
@@ -494,10 +536,9 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
      */
     public function getMapsPublishStatus()
@@ -506,10 +547,9 @@ class Photo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Status in Google Maps, whether this photo was published or
-     * rejected.
+     * Output only. Status in Google Maps, whether this photo was published or rejected.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.Photo.MapsPublishStatus maps_publish_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
      * @return $this
      */

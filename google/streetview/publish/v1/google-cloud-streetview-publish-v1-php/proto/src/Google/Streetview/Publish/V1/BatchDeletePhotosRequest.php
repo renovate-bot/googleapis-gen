@@ -20,7 +20,7 @@ class BatchDeletePhotosRequest extends \Google\Protobuf\Internal\Message
      * GET requests require the following syntax for the URL query parameter:
      * `photoIds=<id1>&photoIds=<id2>&...`.
      *
-     * Generated from protobuf field <code>repeated string photo_ids = 1;</code>
+     * Generated from protobuf field <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $photo_ids;
 
@@ -46,7 +46,7 @@ class BatchDeletePhotosRequest extends \Google\Protobuf\Internal\Message
      * GET requests require the following syntax for the URL query parameter:
      * `photoIds=<id1>&photoIds=<id2>&...`.
      *
-     * Generated from protobuf field <code>repeated string photo_ids = 1;</code>
+     * Generated from protobuf field <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPhotoIds()
@@ -59,7 +59,7 @@ class BatchDeletePhotosRequest extends \Google\Protobuf\Internal\Message
      * GET requests require the following syntax for the URL query parameter:
      * `photoIds=<id1>&photoIds=<id2>&...`.
      *
-     * Generated from protobuf field <code>repeated string photo_ids = 1;</code>
+     * Generated from protobuf field <code>repeated string photo_ids = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

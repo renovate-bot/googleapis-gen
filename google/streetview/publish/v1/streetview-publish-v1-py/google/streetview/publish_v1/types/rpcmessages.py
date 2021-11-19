@@ -82,9 +82,9 @@ class GetPhotoRequest(proto.Message):
             Required. ID of the
             [Photo][google.streetview.publish.v1.Photo].
         view (google.streetview.publish_v1.types.PhotoView):
-            Specifies if a download URL for the photo bytes should be
-            returned in the [Photo][google.streetview.publish.v1.Photo]
-            response.
+            Required. Specifies if a download URL for the photo bytes
+            should be returned in the
+            [Photo][google.streetview.publish.v1.Photo] response.
         language_code (str):
             The BCP-47 language code, such as "en-US" or "sr-Latn". For
             more information, see
@@ -122,15 +122,16 @@ class BatchGetPhotosRequest(proto.Message):
     Attributes:
         photo_ids (Sequence[str]):
             Required. IDs of the
-            [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-            requests require the following syntax for the URL query
-            parameter: ``photoIds=<id1>&photoIds=<id2>&...``.
+            [Photos][google.streetview.publish.v1.Photo]. For HTTP GET
+            requests, the URL query parameter should be
+            ``photoIds=<id1>&photoIds=<id2>&...``.
         view (google.streetview.publish_v1.types.PhotoView):
-            Specifies if a download URL for the photo
-            bytes should be returned in the Photo response.
+            Required. Specifies if a download URL for the
+            photo bytes should be returned in the Photo
+            response.
         language_code (str):
-            The BCP-47 language code, such as "en-US" or "sr-Latn". For
-            more information, see
+            Optional. The BCP-47 language code, such as "en-US" or
+            "sr-Latn". For more information, see
             http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
             If language_code is unspecified, the user's language
             preference for Google services is used.
@@ -221,29 +222,30 @@ class ListPhotosRequest(proto.Message):
 
     Attributes:
         view (google.streetview.publish_v1.types.PhotoView):
-            Specifies if a download URL for the photos
-            bytes should be returned in the Photos response.
+            Required. Specifies if a download URL for the
+            photos bytes should be returned in the Photos
+            response.
         page_size (int):
-            The maximum number of photos to return. ``pageSize`` must be
-            non-negative. If ``pageSize`` is zero or is not provided,
-            the default page size of 100 is used. The number of photos
-            returned in the response may be less than ``pageSize`` if
-            the number of photos that belong to the user is less than
-            ``pageSize``.
+            Optional. The maximum number of photos to return.
+            ``pageSize`` must be non-negative. If ``pageSize`` is zero
+            or is not provided, the default page size of 100 is used.
+            The number of photos returned in the response may be less
+            than ``pageSize`` if the number of photos that belong to the
+            user is less than ``pageSize``.
         page_token (str):
-            The
+            Optional. The
             [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
             value returned from a previous
             [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
             request, if any.
         filter (str):
-            The filter expression. For example:
+            Optional. The filter expression. For example:
             ``placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw``.
 
-            The only filter supported at the moment is ``placeId``.
+            The filters supported at the moment are: ``placeId``.
         language_code (str):
-            The BCP-47 language code, such as "en-US" or "sr-Latn". For
-            more information, see
+            Optional. The BCP-47 language code, such as "en-US" or
+            "sr-Latn". For more information, see
             http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
             If language_code is unspecified, the user's language
             preference for Google services is used.
@@ -312,8 +314,8 @@ class UpdatePhotoRequest(proto.Message):
             Required. [Photo][google.streetview.publish.v1.Photo] object
             containing the new metadata.
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Mask that identifies fields on the photo metadata to update.
-            If not present, the old
+            Required. Mask that identifies fields on the photo metadata
+            to update. If not present, the old
             [Photo][google.streetview.publish.v1.Photo] metadata is
             entirely replaced with the new
             [Photo][google.streetview.publish.v1.Photo] metadata in this
@@ -331,15 +333,17 @@ class UpdatePhotoRequest(proto.Message):
             -  ``connections``
             -  ``places``
 
-            .. raw:: html
+            ..
 
-                <aside class="note"><b>Note:</b>  When
-                [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
-                contains repeated fields, the entire set of repeated values get replaced
-                with the new contents. For example, if
-                [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
-                contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-                all connections are removed.</aside>
+               Note: When
+               [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+               contains repeated fields, the entire set of repeated
+               values get replaced with the new contents. For example,
+               if
+               [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+               contains ``connections`` and
+               ``UpdatePhotoRequest.photo.connections`` is empty, all
+               connections are removed.
     """
 
     photo = proto.Field(

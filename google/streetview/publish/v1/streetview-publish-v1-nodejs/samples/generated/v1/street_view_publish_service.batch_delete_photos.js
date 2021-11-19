@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main() {
+function main(photoIds) {
   // [START streetviewpublish_v1_generated_StreetViewPublishService_BatchDeletePhotos_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -28,7 +28,7 @@ function main() {
   // const photoIds = 'abc123'
 
   // Imports the Publish library
-  const {StreetViewPublishServiceClient} = require('publish').v1;
+  const {StreetViewPublishServiceClient} = require('@google-cloud/publish').v1;
 
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
@@ -36,6 +36,7 @@ function main() {
   async function callBatchDeletePhotos() {
     // Construct request
     const request = {
+      photoIds,
     };
 
     // Run request

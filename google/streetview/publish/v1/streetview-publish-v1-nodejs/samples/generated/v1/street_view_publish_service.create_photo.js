@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main() {
+function main(photo) {
   // [START streetviewpublish_v1_generated_StreetViewPublishService_CreatePhoto_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -26,7 +26,7 @@ function main() {
   // const photo = {}
 
   // Imports the Publish library
-  const {StreetViewPublishServiceClient} = require('publish').v1;
+  const {StreetViewPublishServiceClient} = require('@google-cloud/publish').v1;
 
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
@@ -34,6 +34,7 @@ function main() {
   async function callCreatePhoto() {
     // Construct request
     const request = {
+      photo,
     };
 
     // Run request

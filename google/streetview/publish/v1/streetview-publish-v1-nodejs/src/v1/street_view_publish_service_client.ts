@@ -285,20 +285,20 @@ export class StreetViewPublishServiceClient {
   // -- Service calls --
   // -------------------
 /**
- * Creates an upload session to start uploading photo bytes. The method uses
+ * Creates an upload session to start uploading photo bytes.  The method uses
  * the upload URL of the returned
  * {@link google.streetview.publish.v1.UploadRef|UploadRef} to upload the bytes for
  * the {@link google.streetview.publish.v1.Photo|Photo}.
  *
  * In addition to the photo requirements shown in
- * https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+ * https://support.google.com/maps/answer/7012050?ref_topic=6275604,
  * the photo must meet the following requirements:
  *
- * * Photo Sphere XMP metadata must be included in the photo medadata. See
+ * * Photo Sphere XMP metadata must be included in the photo metadata. See
  * https://developers.google.com/streetview/spherical-metadata for the
  * required fields.
  * * The pixel size of the photo must meet the size requirements listed in
- * https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604, and
+ * https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
  * the photo must be a full 360 horizontally.
  *
  * After the upload completes, the method uses
@@ -377,17 +377,16 @@ export class StreetViewPublishServiceClient {
  * Currently, the only way to set heading, pitch, and roll in CreatePhoto is
  * through the [Photo Sphere XMP
  * metadata](https://developers.google.com/streetview/spherical-metadata) in
- * the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+ * the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
  * `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
  *
  * This method returns the following error codes:
  *
- * * {@link google.rpc.Code.INVALID_ARGUMENT|google.rpc.Code.INVALID_ARGUMENT} if
- * the request is malformed or if the uploaded photo is not a 360 photo.
- * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the upload
- * reference does not exist.
- * * {@link google.rpc.Code.RESOURCE_EXHAUSTED|google.rpc.Code.RESOURCE_EXHAUSTED}
- * if the account has reached the storage limit.
+ * * {@link google.rpc.Code.INVALID_ARGUMENT|google.rpc.Code.INVALID_ARGUMENT} if the request is malformed or if
+ * the uploaded photo is not a 360 photo.
+ * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the upload reference does not exist.
+ * * {@link google.rpc.Code.RESOURCE_EXHAUSTED|google.rpc.Code.RESOURCE_EXHAUSTED} if the account has reached the
+ * storage limit.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -458,21 +457,19 @@ export class StreetViewPublishServiceClient {
  *
  * This method returns the following error codes:
  *
- * * {@link google.rpc.Code.PERMISSION_DENIED|google.rpc.Code.PERMISSION_DENIED} if
- * the requesting user did not create the requested
- * {@link google.streetview.publish.v1.Photo|Photo}.
+ * * {@link google.rpc.Code.PERMISSION_DENIED|google.rpc.Code.PERMISSION_DENIED} if the requesting user did not
+ * create the requested {@link google.streetview.publish.v1.Photo|Photo}.
  * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the requested
  * {@link google.streetview.publish.v1.Photo|Photo} does not exist.
- * * {@link google.rpc.Code.UNAVAILABLE|google.rpc.Code.UNAVAILABLE} if the
- * requested {@link google.streetview.publish.v1.Photo|Photo} is still being
- * indexed.
+ * * {@link google.rpc.Code.UNAVAILABLE|google.rpc.Code.UNAVAILABLE} if the requested
+ * {@link google.streetview.publish.v1.Photo|Photo} is still being indexed.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.photoId
  *   Required. ID of the {@link google.streetview.publish.v1.Photo|Photo}.
  * @param {google.streetview.publish.v1.PhotoView} request.view
- *   Specifies if a download URL for the photo bytes should be returned in the
+ *   Required. Specifies if a download URL for the photo bytes should be returned in the
  *   {@link google.streetview.publish.v1.Photo|Photo} response.
  * @param {string} request.languageCode
  *   The BCP-47 language code, such as "en-US" or "sr-Latn". For more
@@ -565,14 +562,14 @@ export class StreetViewPublishServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string[]} request.photoIds
- *   Required. IDs of the {@link google.streetview.publish.v1.Photo|Photos}. HTTP GET
- *   requests require the following syntax for the URL query parameter:
+ *   Required. IDs of the {@link google.streetview.publish.v1.Photo|Photos}. For HTTP
+ *   GET requests, the URL query parameter should be
  *   `photoIds=<id1>&photoIds=<id2>&...`.
  * @param {google.streetview.publish.v1.PhotoView} request.view
- *   Specifies if a download URL for the photo bytes should be returned in the
+ *   Required. Specifies if a download URL for the photo bytes should be returned in the
  *   Photo response.
- * @param {string} request.languageCode
- *   The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+ * @param {string} [request.languageCode]
+ *   Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
  *   information, see
  *   http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
  *   If language_code is unspecified, the user's language preference for Google
@@ -648,15 +645,12 @@ export class StreetViewPublishServiceClient {
  *
  * This method returns the following error codes:
  *
- * * {@link google.rpc.Code.PERMISSION_DENIED|google.rpc.Code.PERMISSION_DENIED} if
- * the requesting user did not create the requested photo.
- * * {@link google.rpc.Code.INVALID_ARGUMENT|google.rpc.Code.INVALID_ARGUMENT} if
- * the request is malformed.
- * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the requested
- * photo does not exist.
- * * {@link google.rpc.Code.UNAVAILABLE|google.rpc.Code.UNAVAILABLE} if the
- * requested {@link google.streetview.publish.v1.Photo|Photo} is still being
- * indexed.
+ * * {@link google.rpc.Code.PERMISSION_DENIED|google.rpc.Code.PERMISSION_DENIED} if the requesting user did not
+ * create the requested photo.
+ * * {@link google.rpc.Code.INVALID_ARGUMENT|google.rpc.Code.INVALID_ARGUMENT} if the request is malformed.
+ * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the requested photo does not exist.
+ * * {@link google.rpc.Code.UNAVAILABLE|google.rpc.Code.UNAVAILABLE} if the requested
+ * {@link google.streetview.publish.v1.Photo|Photo} is still being indexed.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -664,7 +658,7 @@ export class StreetViewPublishServiceClient {
  *   Required. {@link google.streetview.publish.v1.Photo|Photo} object containing the
  *   new metadata.
  * @param {google.protobuf.FieldMask} request.updateMask
- *   Mask that identifies fields on the photo metadata to update.
+ *   Required. Mask that identifies fields on the photo metadata to update.
  *   If not present, the old {@link google.streetview.publish.v1.Photo|Photo}
  *   metadata is entirely replaced with the
  *   new {@link google.streetview.publish.v1.Photo|Photo} metadata in this request.
@@ -683,13 +677,13 @@ export class StreetViewPublishServiceClient {
  *   * `places`
  *
  *
- *   <aside class="note"><b>Note:</b>  When
+ *   > Note: When
  *   {@link google.streetview.publish.v1.UpdatePhotoRequest.update_mask|updateMask}
  *   contains repeated fields, the entire set of repeated values get replaced
  *   with the new contents. For example, if
  *   {@link google.streetview.publish.v1.UpdatePhotoRequest.update_mask|updateMask}
  *   contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
- *   all connections are removed.</aside>
+ *   all connections are removed.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -784,10 +778,10 @@ export class StreetViewPublishServiceClient {
  * {@link google.streetview.publish.v1.BatchUpdatePhotosRequest|BatchUpdatePhotosRequest}
  * must not exceed 20.
  *
- * <aside class="note"><b>Note:</b> To update
+ * > Note: To update
  * {@link google.streetview.publish.v1.Pose.altitude|Pose.altitude},
  * {@link google.streetview.publish.v1.Pose.lat_lng_pair|Pose.latLngPair} has to be
- * filled as well. Otherwise, the request will fail.</aside>
+ * filled as well. Otherwise, the request will fail.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -858,10 +852,9 @@ export class StreetViewPublishServiceClient {
  *
  * This method returns the following error codes:
  *
- * * {@link google.rpc.Code.PERMISSION_DENIED|google.rpc.Code.PERMISSION_DENIED} if
- * the requesting user did not create the requested photo.
- * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the photo ID
- * does not exist.
+ * * {@link google.rpc.Code.PERMISSION_DENIED|google.rpc.Code.PERMISSION_DENIED} if the requesting user did not
+ * create the requested photo.
+ * * {@link google.rpc.Code.NOT_FOUND|google.rpc.Code.NOT_FOUND} if the photo ID does not exist.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -937,7 +930,7 @@ export class StreetViewPublishServiceClient {
  *
  * Note that if
  * {@link google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos|BatchDeletePhotos}
- * fails, either critical fields are missing or there was an authentication
+ * fails, either critical fields are missing or there is an authentication
  * error. Even if
  * {@link google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos|BatchDeletePhotos}
  * succeeds, individual photos in the batch may have failures.
@@ -1019,32 +1012,32 @@ export class StreetViewPublishServiceClient {
  * Lists all the {@link google.streetview.publish.v1.Photo|Photos} that belong to
  * the user.
  *
- * <aside class="note"><b>Note:</b> Recently created photos that are still
- * being indexed are not returned in the response.</aside>
+ * > Note: Recently created photos that are still
+ * being indexed are not returned in the response.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.streetview.publish.v1.PhotoView} request.view
- *   Specifies if a download URL for the photos bytes should be returned in the
+ *   Required. Specifies if a download URL for the photos bytes should be returned in the
  *   Photos response.
- * @param {number} request.pageSize
- *   The maximum number of photos to return.
+ * @param {number} [request.pageSize]
+ *   Optional. The maximum number of photos to return.
  *   `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
  *   the default page size of 100 is used.
  *   The number of photos returned in the response may be less than `pageSize`
  *   if the number of photos that belong to the user is less than `pageSize`.
- * @param {string} request.pageToken
- *   The
+ * @param {string} [request.pageToken]
+ *   Optional. The
  *   {@link google.streetview.publish.v1.ListPhotosResponse.next_page_token|nextPageToken}
  *   value returned from a previous
  *   {@link google.streetview.publish.v1.StreetViewPublishService.ListPhotos|ListPhotos}
  *   request, if any.
- * @param {string} request.filter
- *   The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+ * @param {string} [request.filter]
+ *   Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
  *
- *   The only filter supported at the moment is `placeId`.
- * @param {string} request.languageCode
- *   The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+ *   The filters supported at the moment are: `placeId`.
+ * @param {string} [request.languageCode]
+ *   Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
  *   information, see
  *   http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
  *   If language_code is unspecified, the user's language preference for Google
@@ -1119,26 +1112,26 @@ export class StreetViewPublishServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.streetview.publish.v1.PhotoView} request.view
- *   Specifies if a download URL for the photos bytes should be returned in the
+ *   Required. Specifies if a download URL for the photos bytes should be returned in the
  *   Photos response.
- * @param {number} request.pageSize
- *   The maximum number of photos to return.
+ * @param {number} [request.pageSize]
+ *   Optional. The maximum number of photos to return.
  *   `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
  *   the default page size of 100 is used.
  *   The number of photos returned in the response may be less than `pageSize`
  *   if the number of photos that belong to the user is less than `pageSize`.
- * @param {string} request.pageToken
- *   The
+ * @param {string} [request.pageToken]
+ *   Optional. The
  *   {@link google.streetview.publish.v1.ListPhotosResponse.next_page_token|nextPageToken}
  *   value returned from a previous
  *   {@link google.streetview.publish.v1.StreetViewPublishService.ListPhotos|ListPhotos}
  *   request, if any.
- * @param {string} request.filter
- *   The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+ * @param {string} [request.filter]
+ *   Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
  *
- *   The only filter supported at the moment is `placeId`.
- * @param {string} request.languageCode
- *   The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+ *   The filters supported at the moment are: `placeId`.
+ * @param {string} [request.languageCode]
+ *   Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
  *   information, see
  *   http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
  *   If language_code is unspecified, the user's language preference for Google
@@ -1180,26 +1173,26 @@ export class StreetViewPublishServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.streetview.publish.v1.PhotoView} request.view
- *   Specifies if a download URL for the photos bytes should be returned in the
+ *   Required. Specifies if a download URL for the photos bytes should be returned in the
  *   Photos response.
- * @param {number} request.pageSize
- *   The maximum number of photos to return.
+ * @param {number} [request.pageSize]
+ *   Optional. The maximum number of photos to return.
  *   `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
  *   the default page size of 100 is used.
  *   The number of photos returned in the response may be less than `pageSize`
  *   if the number of photos that belong to the user is less than `pageSize`.
- * @param {string} request.pageToken
- *   The
+ * @param {string} [request.pageToken]
+ *   Optional. The
  *   {@link google.streetview.publish.v1.ListPhotosResponse.next_page_token|nextPageToken}
  *   value returned from a previous
  *   {@link google.streetview.publish.v1.StreetViewPublishService.ListPhotos|ListPhotos}
  *   request, if any.
- * @param {string} request.filter
- *   The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+ * @param {string} [request.filter]
+ *   Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
  *
- *   The only filter supported at the moment is `placeId`.
- * @param {string} request.languageCode
- *   The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+ *   The filters supported at the moment are: `placeId`.
+ * @param {string} [request.languageCode]
+ *   Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
  *   information, see
  *   http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
  *   If language_code is unspecified, the user's language preference for Google

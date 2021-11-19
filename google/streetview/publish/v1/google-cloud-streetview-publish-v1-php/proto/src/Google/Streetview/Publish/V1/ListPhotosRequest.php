@@ -26,47 +26,47 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPhotosRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $view = 0;
     /**
-     * The maximum number of photos to return.
+     * Optional. The maximum number of photos to return.
      * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
      * the default page size of 100 is used.
      * The number of photos returned in the response may be less than `pageSize`
      * if the number of photos that belong to the user is less than `pageSize`.
      *
-     * Generated from protobuf field <code>int32 page_size = 2;</code>
+     * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $page_size = 0;
     /**
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      *
-     * Generated from protobuf field <code>string page_token = 3;</code>
+     * Generated from protobuf field <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $page_token = '';
     /**
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      *
-     * Generated from protobuf field <code>string filter = 4;</code>
+     * Generated from protobuf field <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $filter = '';
     /**
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $language_code = '';
 
@@ -77,25 +77,25 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $view
-     *           Specifies if a download URL for the photos bytes should be returned in the
+     *           Required. Specifies if a download URL for the photos bytes should be returned in the
      *           Photos response.
      *     @type int $page_size
-     *           The maximum number of photos to return.
+     *           Optional. The maximum number of photos to return.
      *           `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
      *           the default page size of 100 is used.
      *           The number of photos returned in the response may be less than `pageSize`
      *           if the number of photos that belong to the user is less than `pageSize`.
      *     @type string $page_token
-     *           The
+     *           Optional. The
      *           [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      *           value returned from a previous
      *           [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      *           request, if any.
      *     @type string $filter
-     *           The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     *           The only filter supported at the moment is `placeId`.
+     *           Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     *           The filters supported at the moment are: `placeId`.
      *     @type string $language_code
-     *           The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     *           Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      *           information, see
      *           http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      *           If language_code is unspecified, the user's language preference for Google
@@ -108,10 +108,10 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int
      */
     public function getView()
@@ -120,10 +120,10 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies if a download URL for the photos bytes should be returned in the
+     * Required. Specifies if a download URL for the photos bytes should be returned in the
      * Photos response.
      *
-     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 1;</code>
+     * Generated from protobuf field <code>.google.streetview.publish.v1.PhotoView view = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int $var
      * @return $this
      */
@@ -136,13 +136,13 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of photos to return.
+     * Optional. The maximum number of photos to return.
      * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
      * the default page size of 100 is used.
      * The number of photos returned in the response may be less than `pageSize`
      * if the number of photos that belong to the user is less than `pageSize`.
      *
-     * Generated from protobuf field <code>int32 page_size = 2;</code>
+     * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int
      */
     public function getPageSize()
@@ -151,13 +151,13 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of photos to return.
+     * Optional. The maximum number of photos to return.
      * `pageSize` must be non-negative. If `pageSize` is zero or is not provided,
      * the default page size of 100 is used.
      * The number of photos returned in the response may be less than `pageSize`
      * if the number of photos that belong to the user is less than `pageSize`.
      *
-     * Generated from protobuf field <code>int32 page_size = 2;</code>
+     * Generated from protobuf field <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int $var
      * @return $this
      */
@@ -170,13 +170,13 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      *
-     * Generated from protobuf field <code>string page_token = 3;</code>
+     * Generated from protobuf field <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getPageToken()
@@ -185,13 +185,13 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The
+     * Optional. The
      * [nextPageToken][google.streetview.publish.v1.ListPhotosResponse.next_page_token]
      * value returned from a previous
      * [ListPhotos][google.streetview.publish.v1.StreetViewPublishService.ListPhotos]
      * request, if any.
      *
-     * Generated from protobuf field <code>string page_token = 3;</code>
+     * Generated from protobuf field <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -204,10 +204,10 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      *
-     * Generated from protobuf field <code>string filter = 4;</code>
+     * Generated from protobuf field <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getFilter()
@@ -216,10 +216,10 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
-     * The only filter supported at the moment is `placeId`.
+     * Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+     * The filters supported at the moment are: `placeId`.
      *
-     * Generated from protobuf field <code>string filter = 4;</code>
+     * Generated from protobuf field <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -232,13 +232,13 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getLanguageCode()
@@ -247,13 +247,13 @@ class ListPhotosRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
      * information, see
      * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
      * If language_code is unspecified, the user's language preference for Google
      * services is used.
      *
-     * Generated from protobuf field <code>string language_code = 5;</code>
+     * Generated from protobuf field <code>string language_code = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */

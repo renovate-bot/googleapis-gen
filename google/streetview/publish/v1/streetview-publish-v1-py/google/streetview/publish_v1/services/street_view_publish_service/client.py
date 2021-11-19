@@ -347,16 +347,16 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         the bytes for the [Photo][google.streetview.publish.v1.Photo].
 
         In addition to the photo requirements shown in
-        https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+        https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         the photo must meet the following requirements:
 
         -  Photo Sphere XMP metadata must be included in the photo
-           medadata. See
+           metadata. See
            https://developers.google.com/streetview/spherical-metadata
            for the required fields.
         -  The pixel size of the photo must meet the size requirements
            listed in
-           https://support.google.com/maps/answer/7012050?hl=en&ref_topic=6275604,
+           https://support.google.com/maps/answer/7012050?ref_topic=6275604,
            and the photo must be a full 360 horizontally.
 
         After the upload completes, the method uses
@@ -542,8 +542,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             view (google.streetview.publish_v1.types.PhotoView):
-                Specifies if a download URL for the photo bytes should
-                be returned in the
+                Required. Specifies if a download URL for the photo
+                bytes should be returned in the
                 [Photo][google.streetview.publish.v1.Photo] response.
 
                 This corresponds to the ``view`` field
@@ -600,8 +600,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
     def batch_get_photos(self,
             request: Union[rpcmessages.BatchGetPhotosRequest, dict] = None,
             *,
-            photo_ids: Sequence[str] = None,
             view: rpcmessages.PhotoView = None,
+            photo_ids: Sequence[str] = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -632,21 +632,21 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
 
                 * `view` controls if the download URL for the photo
                 bytes is returned.
-            photo_ids (Sequence[str]):
-                Required. IDs of the
-                [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-                requests require the following syntax for the URL query
-                parameter: ``photoIds=<id1>&photoIds=<id2>&...``.
-
-                This corresponds to the ``photo_ids`` field
-                on the ``request`` instance; if ``request`` is provided, this
-                should not be set.
             view (google.streetview.publish_v1.types.PhotoView):
-                Specifies if a download URL for the
-                photo bytes should be returned in the
-                Photo response.
+                Required. Specifies if a download URL
+                for the photo bytes should be returned
+                in the Photo response.
 
                 This corresponds to the ``view`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            photo_ids (Sequence[str]):
+                Required. IDs of the
+                [Photos][google.streetview.publish.v1.Photo]. For HTTP
+                GET requests, the URL query parameter should be
+                ``photoIds=<id1>&photoIds=<id2>&...``.
+
+                This corresponds to the ``photo_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -664,7 +664,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([photo_ids, view])
+        has_flattened_params = any([view, photo_ids])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -677,10 +677,10 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
             request = rpcmessages.BatchGetPhotosRequest(request)
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
-            if photo_ids is not None:
-                request.photo_ids = photo_ids
             if view is not None:
                 request.view = view
+            if photo_ids is not None:
+                request.photo_ids = photo_ids
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -709,10 +709,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         r"""Lists all the [Photos][google.streetview.publish.v1.Photo] that
         belong to the user.
 
-        .. raw:: html
-
-            <aside class="note"><b>Note:</b> Recently created photos that are still
-            being indexed are not returned in the response.</aside>
+           Note: Recently created photos that are still being indexed
+           are not returned in the response.
 
         Args:
             request (Union[google.streetview.publish_v1.types.ListPhotosRequest, dict]):
@@ -732,18 +730,18 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 * `filter` allows filtering by a given parameter.
                 'placeId' is the only parameter supported at the moment.
             view (google.streetview.publish_v1.types.PhotoView):
-                Specifies if a download URL for the
-                photos bytes should be returned in the
-                Photos response.
+                Required. Specifies if a download URL
+                for the photos bytes should be returned
+                in the Photos response.
 
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             filter (str):
-                The filter expression. For example:
+                Optional. The filter expression. For example:
                 ``placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw``.
 
-                The only filter supported at the moment is ``placeId``.
+                The filters supported at the moment are: ``placeId``.
 
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -852,8 +850,8 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
-                Mask that identifies fields on the photo metadata to
-                update. If not present, the old
+                Required. Mask that identifies fields on the photo
+                metadata to update. If not present, the old
                 [Photo][google.streetview.publish.v1.Photo] metadata is
                 entirely replaced with the new
                 [Photo][google.streetview.publish.v1.Photo] metadata in
@@ -872,15 +870,17 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
                 -  ``connections``
                 -  ``places``
 
-                .. raw:: html
+                ..
 
-                    <aside class="note"><b>Note:</b>  When
-                    [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
-                    contains repeated fields, the entire set of repeated values get replaced
-                    with the new contents. For example, if
-                    [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
-                    contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-                    all connections are removed.</aside>
+                   Note: When
+                   [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+                   contains repeated fields, the entire set of repeated
+                   values get replaced with the new contents. For
+                   example, if
+                   [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
+                   contains ``connections`` and
+                   ``UpdatePhotoRequest.photo.connections`` is empty,
+                   all connections are removed.
 
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -971,12 +971,10 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
         [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         must not exceed 20.
 
-        .. raw:: html
-
-            <aside class="note"><b>Note:</b> To update
-            [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
-            [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-            filled as well. Otherwise, the request will fail.</aside>
+           Note: To update
+           [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
+           [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair]
+           has to be filled as well. Otherwise, the request will fail.
 
         Args:
             request (Union[google.streetview.publish_v1.types.BatchUpdatePhotosRequest, dict]):
@@ -1114,7 +1112,7 @@ class StreetViewPublishServiceClient(metaclass=StreetViewPublishServiceClientMet
 
         Note that if
         [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        fails, either critical fields are missing or there was an
+        fails, either critical fields are missing or there is an
         authentication error. Even if
         [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         succeeds, individual photos in the batch may have failures.

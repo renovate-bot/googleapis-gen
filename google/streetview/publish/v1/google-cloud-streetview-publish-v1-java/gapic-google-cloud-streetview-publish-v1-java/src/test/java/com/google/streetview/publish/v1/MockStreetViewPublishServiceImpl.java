@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.geo.ugc.streetview.publish.v1;
+package com.google.streetview.publish.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources;
+import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishRpcMessages;
 import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishServiceGrpc.StreetViewPublishServiceImplBase;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;

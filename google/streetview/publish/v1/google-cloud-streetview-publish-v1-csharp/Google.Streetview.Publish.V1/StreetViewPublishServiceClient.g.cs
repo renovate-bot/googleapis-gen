@@ -25,7 +25,6 @@ using sys = System;
 using sc = System.Collections;
 using scg = System.Collections.Generic;
 using sco = System.Collections.ObjectModel;
-using linq = System.Linq;
 using st = System.Threading;
 using stt = System.Threading.Tasks;
 
@@ -69,11 +68,15 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>No status codes are retried.</description></item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings StartUploadSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings StartUploadSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes()));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -82,11 +85,15 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>No status codes are retried.</description></item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings CreatePhotoSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings CreatePhotoSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes()));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -94,11 +101,20 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings GetPhotoSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings GetPhotoSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -107,11 +123,20 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings BatchGetPhotosSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings BatchGetPhotosSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -119,11 +144,20 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings ListPhotosSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings ListPhotosSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -132,11 +166,20 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings UpdatePhotoSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings UpdatePhotoSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -145,11 +188,15 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item><description>No status codes are retried.</description></item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings BatchUpdatePhotosSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings BatchUpdatePhotosSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes()));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -158,11 +205,20 @@ namespace Google.Streetview.Publish.V1
         /// </summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <item><description>This call will not be retried.</description></item>
-        /// <item><description>No timeout is applied.</description></item>
+        /// <item><description>Initial retry delay: 100 milliseconds.</description></item>
+        /// <item><description>Retry delay multiplier: 1.3</description></item>
+        /// <item><description>Retry maximum delay: 60000 milliseconds.</description></item>
+        /// <item><description>Maximum attempts: 5</description></item>
+        /// <item>
+        /// <description>
+        /// Retriable status codes: <see cref="grpccore::StatusCode.Unavailable"/>,
+        /// <see cref="grpccore::StatusCode.DeadlineExceeded"/>.
+        /// </description>
+        /// </item>
+        /// <item><description>Timeout: 60 seconds.</description></item>
         /// </list>
         /// </remarks>
-        public gaxgrpc::CallSettings DeletePhotoSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
+        public gaxgrpc::CallSettings DeletePhotoSettings { get; set; } = gaxgrpc::CallSettingsExtensions.WithRetry(gaxgrpc::CallSettings.FromExpiration(gax::Expiration.FromTimeout(sys::TimeSpan.FromMilliseconds(60000))), gaxgrpc::RetrySettings.FromExponentialBackoff(maxAttempts: 5, initialBackoff: sys::TimeSpan.FromMilliseconds(100), maxBackoff: sys::TimeSpan.FromMilliseconds(60000), backoffMultiplier: 1.3, retryFilter: gaxgrpc::RetrySettings.FilterForStatusCodes(grpccore::StatusCode.Unavailable, grpccore::StatusCode.DeadlineExceeded)));
 
         /// <summary>
         /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
@@ -342,20 +398,20 @@ namespace Google.Streetview.Publish.V1
         public virtual StreetViewPublishService.StreetViewPublishServiceClient GrpcClient => throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Creates an upload session to start uploading photo bytes. The method uses
+        /// Creates an upload session to start uploading photo bytes.  The method uses
         /// the upload URL of the returned
         /// [UploadRef][google.streetview.publish.v1.UploadRef] to upload the bytes for
         /// the [Photo][google.streetview.publish.v1.Photo].
         /// 
         /// In addition to the photo requirements shown in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604,
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         /// the photo must meet the following requirements:
         /// 
-        /// * Photo Sphere XMP metadata must be included in the photo medadata. See
+        /// * Photo Sphere XMP metadata must be included in the photo metadata. See
         /// https://developers.google.com/streetview/spherical-metadata for the
         /// required fields.
         /// * The pixel size of the photo must meet the size requirements listed in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604, and
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
         /// the photo must be a full 360 horizontally.
         /// 
         /// After the upload completes, the method uses
@@ -370,20 +426,20 @@ namespace Google.Streetview.Publish.V1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Creates an upload session to start uploading photo bytes. The method uses
+        /// Creates an upload session to start uploading photo bytes.  The method uses
         /// the upload URL of the returned
         /// [UploadRef][google.streetview.publish.v1.UploadRef] to upload the bytes for
         /// the [Photo][google.streetview.publish.v1.Photo].
         /// 
         /// In addition to the photo requirements shown in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604,
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         /// the photo must meet the following requirements:
         /// 
-        /// * Photo Sphere XMP metadata must be included in the photo medadata. See
+        /// * Photo Sphere XMP metadata must be included in the photo metadata. See
         /// https://developers.google.com/streetview/spherical-metadata for the
         /// required fields.
         /// * The pixel size of the photo must meet the size requirements listed in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604, and
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
         /// the photo must be a full 360 horizontally.
         /// 
         /// After the upload completes, the method uses
@@ -398,20 +454,20 @@ namespace Google.Streetview.Publish.V1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Creates an upload session to start uploading photo bytes. The method uses
+        /// Creates an upload session to start uploading photo bytes.  The method uses
         /// the upload URL of the returned
         /// [UploadRef][google.streetview.publish.v1.UploadRef] to upload the bytes for
         /// the [Photo][google.streetview.publish.v1.Photo].
         /// 
         /// In addition to the photo requirements shown in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604,
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         /// the photo must meet the following requirements:
         /// 
-        /// * Photo Sphere XMP metadata must be included in the photo medadata. See
+        /// * Photo Sphere XMP metadata must be included in the photo metadata. See
         /// https://developers.google.com/streetview/spherical-metadata for the
         /// required fields.
         /// * The pixel size of the photo must meet the size requirements listed in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604, and
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
         /// the photo must be a full 360 horizontally.
         /// 
         /// After the upload completes, the method uses
@@ -435,17 +491,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -463,17 +518,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -491,17 +545,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -519,17 +572,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="photo">
         /// Required. Photo to create.
@@ -537,7 +589,10 @@ namespace Google.Streetview.Publish.V1
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
         public virtual Photo CreatePhoto(Photo photo, gaxgrpc::CallSettings callSettings = null) =>
-            CreatePhoto(new CreatePhotoRequest { Photo = photo, }, callSettings);
+            CreatePhoto(new CreatePhotoRequest
+            {
+                Photo = gax::GaxPreconditions.CheckNotNull(photo, nameof(photo)),
+            }, callSettings);
 
         /// <summary>
         /// After the client finishes uploading the photo with the returned
@@ -549,17 +604,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="photo">
         /// Required. Photo to create.
@@ -567,7 +621,10 @@ namespace Google.Streetview.Publish.V1
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<Photo> CreatePhotoAsync(Photo photo, gaxgrpc::CallSettings callSettings = null) =>
-            CreatePhotoAsync(new CreatePhotoRequest { Photo = photo, }, callSettings);
+            CreatePhotoAsync(new CreatePhotoRequest
+            {
+                Photo = gax::GaxPreconditions.CheckNotNull(photo, nameof(photo)),
+            }, callSettings);
 
         /// <summary>
         /// After the client finishes uploading the photo with the returned
@@ -579,17 +636,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="photo">
         /// Required. Photo to create.
@@ -605,14 +661,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -626,14 +680,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -647,14 +699,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -668,20 +718,18 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="photoId">
         /// Required. ID of the [Photo][google.streetview.publish.v1.Photo].
         /// </param>
         /// <param name="view">
-        /// Specifies if a download URL for the photo bytes should be returned in the
+        /// Required. Specifies if a download URL for the photo bytes should be returned in the
         /// [Photo][google.streetview.publish.v1.Photo] response.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -689,7 +737,7 @@ namespace Google.Streetview.Publish.V1
         public virtual Photo GetPhoto(string photoId, PhotoView view, gaxgrpc::CallSettings callSettings = null) =>
             GetPhoto(new GetPhotoRequest
             {
-                PhotoId = photoId ?? "",
+                PhotoId = gax::GaxPreconditions.CheckNotNullOrEmpty(photoId, nameof(photoId)),
                 View = view,
             }, callSettings);
 
@@ -699,20 +747,18 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="photoId">
         /// Required. ID of the [Photo][google.streetview.publish.v1.Photo].
         /// </param>
         /// <param name="view">
-        /// Specifies if a download URL for the photo bytes should be returned in the
+        /// Required. Specifies if a download URL for the photo bytes should be returned in the
         /// [Photo][google.streetview.publish.v1.Photo] response.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -720,7 +766,7 @@ namespace Google.Streetview.Publish.V1
         public virtual stt::Task<Photo> GetPhotoAsync(string photoId, PhotoView view, gaxgrpc::CallSettings callSettings = null) =>
             GetPhotoAsync(new GetPhotoRequest
             {
-                PhotoId = photoId ?? "",
+                PhotoId = gax::GaxPreconditions.CheckNotNullOrEmpty(photoId, nameof(photoId)),
                 View = view,
             }, callSettings);
 
@@ -730,20 +776,18 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="photoId">
         /// Required. ID of the [Photo][google.streetview.publish.v1.Photo].
         /// </param>
         /// <param name="view">
-        /// Specifies if a download URL for the photo bytes should be returned in the
+        /// Required. Specifies if a download URL for the photo bytes should be returned in the
         /// [Photo][google.streetview.publish.v1.Photo] response.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -841,23 +885,23 @@ namespace Google.Streetview.Publish.V1
         /// [GetPhoto][google.streetview.publish.v1.StreetViewPublishService.GetPhoto]
         /// for specific failures that can occur per photo.
         /// </summary>
-        /// <param name="photoIds">
-        /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-        /// requests require the following syntax for the URL query parameter:
-        /// `photoIds=&amp;lt;id1&amp;gt;&amp;amp;photoIds=&amp;lt;id2&amp;gt;&amp;amp;...`.
-        /// </param>
         /// <param name="view">
-        /// Specifies if a download URL for the photo bytes should be returned in the
+        /// Required. Specifies if a download URL for the photo bytes should be returned in the
         /// Photo response.
+        /// </param>
+        /// <param name="photoIds">
+        /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+        /// GET requests, the URL query parameter should be
+        /// `photoIds=&amp;lt;id1&amp;gt;&amp;amp;photoIds=&amp;lt;id2&amp;gt;&amp;amp;...`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
-        public virtual BatchGetPhotosResponse BatchGetPhotos(scg::IEnumerable<string> photoIds, PhotoView view, gaxgrpc::CallSettings callSettings = null) =>
+        public virtual BatchGetPhotosResponse BatchGetPhotos(PhotoView view, scg::IEnumerable<string> photoIds, gaxgrpc::CallSettings callSettings = null) =>
             BatchGetPhotos(new BatchGetPhotosRequest
             {
                 PhotoIds =
                 {
-                    photoIds ?? linq::Enumerable.Empty<string>(),
+                    gax::GaxPreconditions.CheckNotNull(photoIds, nameof(photoIds)),
                 },
                 View = view,
             }, callSettings);
@@ -880,23 +924,23 @@ namespace Google.Streetview.Publish.V1
         /// [GetPhoto][google.streetview.publish.v1.StreetViewPublishService.GetPhoto]
         /// for specific failures that can occur per photo.
         /// </summary>
-        /// <param name="photoIds">
-        /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-        /// requests require the following syntax for the URL query parameter:
-        /// `photoIds=&amp;lt;id1&amp;gt;&amp;amp;photoIds=&amp;lt;id2&amp;gt;&amp;amp;...`.
-        /// </param>
         /// <param name="view">
-        /// Specifies if a download URL for the photo bytes should be returned in the
+        /// Required. Specifies if a download URL for the photo bytes should be returned in the
         /// Photo response.
+        /// </param>
+        /// <param name="photoIds">
+        /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+        /// GET requests, the URL query parameter should be
+        /// `photoIds=&amp;lt;id1&amp;gt;&amp;amp;photoIds=&amp;lt;id2&amp;gt;&amp;amp;...`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
-        public virtual stt::Task<BatchGetPhotosResponse> BatchGetPhotosAsync(scg::IEnumerable<string> photoIds, PhotoView view, gaxgrpc::CallSettings callSettings = null) =>
+        public virtual stt::Task<BatchGetPhotosResponse> BatchGetPhotosAsync(PhotoView view, scg::IEnumerable<string> photoIds, gaxgrpc::CallSettings callSettings = null) =>
             BatchGetPhotosAsync(new BatchGetPhotosRequest
             {
                 PhotoIds =
                 {
-                    photoIds ?? linq::Enumerable.Empty<string>(),
+                    gax::GaxPreconditions.CheckNotNull(photoIds, nameof(photoIds)),
                 },
                 View = view,
             }, callSettings);
@@ -919,26 +963,26 @@ namespace Google.Streetview.Publish.V1
         /// [GetPhoto][google.streetview.publish.v1.StreetViewPublishService.GetPhoto]
         /// for specific failures that can occur per photo.
         /// </summary>
-        /// <param name="photoIds">
-        /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. HTTP GET
-        /// requests require the following syntax for the URL query parameter:
-        /// `photoIds=&amp;lt;id1&amp;gt;&amp;amp;photoIds=&amp;lt;id2&amp;gt;&amp;amp;...`.
-        /// </param>
         /// <param name="view">
-        /// Specifies if a download URL for the photo bytes should be returned in the
+        /// Required. Specifies if a download URL for the photo bytes should be returned in the
         /// Photo response.
+        /// </param>
+        /// <param name="photoIds">
+        /// Required. IDs of the [Photos][google.streetview.publish.v1.Photo]. For HTTP
+        /// GET requests, the URL query parameter should be
+        /// `photoIds=&amp;lt;id1&amp;gt;&amp;amp;photoIds=&amp;lt;id2&amp;gt;&amp;amp;...`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
-        public virtual stt::Task<BatchGetPhotosResponse> BatchGetPhotosAsync(scg::IEnumerable<string> photoIds, PhotoView view, st::CancellationToken cancellationToken) =>
-            BatchGetPhotosAsync(photoIds, view, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+        public virtual stt::Task<BatchGetPhotosResponse> BatchGetPhotosAsync(PhotoView view, scg::IEnumerable<string> photoIds, st::CancellationToken cancellationToken) =>
+            BatchGetPhotosAsync(view, photoIds, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
         /// Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
         /// the user.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; Recently created photos that are still
-        /// being indexed are not returned in the response.&amp;lt;/aside&amp;gt;
+        /// &amp;gt; Note: Recently created photos that are still
+        /// being indexed are not returned in the response.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -950,8 +994,8 @@ namespace Google.Streetview.Publish.V1
         /// Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
         /// the user.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; Recently created photos that are still
-        /// being indexed are not returned in the response.&amp;lt;/aside&amp;gt;
+        /// &amp;gt; Note: Recently created photos that are still
+        /// being indexed are not returned in the response.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -963,17 +1007,17 @@ namespace Google.Streetview.Publish.V1
         /// Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
         /// the user.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; Recently created photos that are still
-        /// being indexed are not returned in the response.&amp;lt;/aside&amp;gt;
+        /// &amp;gt; Note: Recently created photos that are still
+        /// being indexed are not returned in the response.
         /// </summary>
         /// <param name="view">
-        /// Specifies if a download URL for the photos bytes should be returned in the
+        /// Required. Specifies if a download URL for the photos bytes should be returned in the
         /// Photos response.
         /// </param>
         /// <param name="filter">
-        /// The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+        /// Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
         /// 
-        /// The only filter supported at the moment is `placeId`.
+        /// The filters supported at the moment are: `placeId`.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -998,17 +1042,17 @@ namespace Google.Streetview.Publish.V1
         /// Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
         /// the user.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; Recently created photos that are still
-        /// being indexed are not returned in the response.&amp;lt;/aside&amp;gt;
+        /// &amp;gt; Note: Recently created photos that are still
+        /// being indexed are not returned in the response.
         /// </summary>
         /// <param name="view">
-        /// Specifies if a download URL for the photos bytes should be returned in the
+        /// Required. Specifies if a download URL for the photos bytes should be returned in the
         /// Photos response.
         /// </param>
         /// <param name="filter">
-        /// The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
+        /// Optional. The filter expression. For example: `placeId=ChIJj61dQgK6j4AR4GeTYWZsKWw`.
         /// 
-        /// The only filter supported at the moment is `placeId`.
+        /// The filters supported at the moment are: `placeId`.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -1041,15 +1085,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1069,15 +1110,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1097,15 +1135,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -1125,22 +1160,19 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="photo">
         /// Required. [Photo][google.streetview.publish.v1.Photo] object containing the
         /// new metadata.
         /// </param>
         /// <param name="updateMask">
-        /// Mask that identifies fields on the photo metadata to update.
+        /// Required. Mask that identifies fields on the photo metadata to update.
         /// If not present, the old [Photo][google.streetview.publish.v1.Photo]
         /// metadata is entirely replaced with the
         /// new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -1159,21 +1191,21 @@ namespace Google.Streetview.Publish.V1
         /// * `places`
         /// 
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt;  When
+        /// &amp;gt; Note: When
         /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
         /// contains repeated fields, the entire set of repeated values get replaced
         /// with the new contents. For example, if
         /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
         /// contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-        /// all connections are removed.&amp;lt;/aside&amp;gt;
+        /// all connections are removed.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
         public virtual Photo UpdatePhoto(Photo photo, wkt::FieldMask updateMask, gaxgrpc::CallSettings callSettings = null) =>
             UpdatePhoto(new UpdatePhotoRequest
             {
-                Photo = photo,
-                UpdateMask = updateMask,
+                Photo = gax::GaxPreconditions.CheckNotNull(photo, nameof(photo)),
+                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
             }, callSettings);
 
         /// <summary>
@@ -1188,22 +1220,19 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="photo">
         /// Required. [Photo][google.streetview.publish.v1.Photo] object containing the
         /// new metadata.
         /// </param>
         /// <param name="updateMask">
-        /// Mask that identifies fields on the photo metadata to update.
+        /// Required. Mask that identifies fields on the photo metadata to update.
         /// If not present, the old [Photo][google.streetview.publish.v1.Photo]
         /// metadata is entirely replaced with the
         /// new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -1222,21 +1251,21 @@ namespace Google.Streetview.Publish.V1
         /// * `places`
         /// 
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt;  When
+        /// &amp;gt; Note: When
         /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
         /// contains repeated fields, the entire set of repeated values get replaced
         /// with the new contents. For example, if
         /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
         /// contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-        /// all connections are removed.&amp;lt;/aside&amp;gt;
+        /// all connections are removed.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<Photo> UpdatePhotoAsync(Photo photo, wkt::FieldMask updateMask, gaxgrpc::CallSettings callSettings = null) =>
             UpdatePhotoAsync(new UpdatePhotoRequest
             {
-                Photo = photo,
-                UpdateMask = updateMask,
+                Photo = gax::GaxPreconditions.CheckNotNull(photo, nameof(photo)),
+                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
             }, callSettings);
 
         /// <summary>
@@ -1251,22 +1280,19 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="photo">
         /// Required. [Photo][google.streetview.publish.v1.Photo] object containing the
         /// new metadata.
         /// </param>
         /// <param name="updateMask">
-        /// Mask that identifies fields on the photo metadata to update.
+        /// Required. Mask that identifies fields on the photo metadata to update.
         /// If not present, the old [Photo][google.streetview.publish.v1.Photo]
         /// metadata is entirely replaced with the
         /// new [Photo][google.streetview.publish.v1.Photo] metadata in this request.
@@ -1285,13 +1311,13 @@ namespace Google.Streetview.Publish.V1
         /// * `places`
         /// 
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt;  When
+        /// &amp;gt; Note: When
         /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
         /// contains repeated fields, the entire set of repeated values get replaced
         /// with the new contents. For example, if
         /// [updateMask][google.streetview.publish.v1.UpdatePhotoRequest.update_mask]
         /// contains `connections` and `UpdatePhotoRequest.photo.connections` is empty,
-        /// all connections are removed.&amp;lt;/aside&amp;gt;
+        /// all connections are removed.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1328,10 +1354,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1369,10 +1395,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1410,10 +1436,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -1451,10 +1477,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="updatePhotoRequests">
         /// Required. List of
@@ -1467,7 +1493,7 @@ namespace Google.Streetview.Publish.V1
             {
                 UpdatePhotoRequests =
                 {
-                    updatePhotoRequests ?? linq::Enumerable.Empty<UpdatePhotoRequest>(),
+                    gax::GaxPreconditions.CheckNotNull(updatePhotoRequests, nameof(updatePhotoRequests)),
                 },
             }, callSettings);
 
@@ -1501,10 +1527,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="updatePhotoRequests">
         /// Required. List of
@@ -1517,7 +1543,7 @@ namespace Google.Streetview.Publish.V1
             {
                 UpdatePhotoRequests =
                 {
-                    updatePhotoRequests ?? linq::Enumerable.Empty<UpdatePhotoRequest>(),
+                    gax::GaxPreconditions.CheckNotNull(updatePhotoRequests, nameof(updatePhotoRequests)),
                 },
             }, callSettings);
 
@@ -1551,10 +1577,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="updatePhotoRequests">
         /// Required. List of
@@ -1570,10 +1596,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1586,10 +1611,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -1602,10 +1626,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -1618,10 +1641,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="photoId">
         /// Required. ID of the [Photo][google.streetview.publish.v1.Photo].
@@ -1631,7 +1653,7 @@ namespace Google.Streetview.Publish.V1
         public virtual void DeletePhoto(string photoId, gaxgrpc::CallSettings callSettings = null) =>
             DeletePhoto(new DeletePhotoRequest
             {
-                PhotoId = photoId ?? "",
+                PhotoId = gax::GaxPreconditions.CheckNotNullOrEmpty(photoId, nameof(photoId)),
             }, callSettings);
 
         /// <summary>
@@ -1639,10 +1661,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="photoId">
         /// Required. ID of the [Photo][google.streetview.publish.v1.Photo].
@@ -1652,7 +1673,7 @@ namespace Google.Streetview.Publish.V1
         public virtual stt::Task DeletePhotoAsync(string photoId, gaxgrpc::CallSettings callSettings = null) =>
             DeletePhotoAsync(new DeletePhotoRequest
             {
-                PhotoId = photoId ?? "",
+                PhotoId = gax::GaxPreconditions.CheckNotNullOrEmpty(photoId, nameof(photoId)),
             }, callSettings);
 
         /// <summary>
@@ -1660,10 +1681,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="photoId">
         /// Required. ID of the [Photo][google.streetview.publish.v1.Photo].
@@ -1679,7 +1699,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -1703,7 +1723,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -1727,7 +1747,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -1751,7 +1771,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -1775,7 +1795,7 @@ namespace Google.Streetview.Publish.V1
             {
                 PhotoIds =
                 {
-                    photoIds ?? linq::Enumerable.Empty<string>(),
+                    gax::GaxPreconditions.CheckNotNull(photoIds, nameof(photoIds)),
                 },
             }, callSettings);
 
@@ -1785,7 +1805,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -1809,7 +1829,7 @@ namespace Google.Streetview.Publish.V1
             {
                 PhotoIds =
                 {
-                    photoIds ?? linq::Enumerable.Empty<string>(),
+                    gax::GaxPreconditions.CheckNotNull(photoIds, nameof(photoIds)),
                 },
             }, callSettings);
 
@@ -1819,7 +1839,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -1953,20 +1973,20 @@ namespace Google.Streetview.Publish.V1
         partial void Modify_BatchDeletePhotosRequest(ref BatchDeletePhotosRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
-        /// Creates an upload session to start uploading photo bytes. The method uses
+        /// Creates an upload session to start uploading photo bytes.  The method uses
         /// the upload URL of the returned
         /// [UploadRef][google.streetview.publish.v1.UploadRef] to upload the bytes for
         /// the [Photo][google.streetview.publish.v1.Photo].
         /// 
         /// In addition to the photo requirements shown in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604,
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         /// the photo must meet the following requirements:
         /// 
-        /// * Photo Sphere XMP metadata must be included in the photo medadata. See
+        /// * Photo Sphere XMP metadata must be included in the photo metadata. See
         /// https://developers.google.com/streetview/spherical-metadata for the
         /// required fields.
         /// * The pixel size of the photo must meet the size requirements listed in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604, and
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
         /// the photo must be a full 360 horizontally.
         /// 
         /// After the upload completes, the method uses
@@ -1984,20 +2004,20 @@ namespace Google.Streetview.Publish.V1
         }
 
         /// <summary>
-        /// Creates an upload session to start uploading photo bytes. The method uses
+        /// Creates an upload session to start uploading photo bytes.  The method uses
         /// the upload URL of the returned
         /// [UploadRef][google.streetview.publish.v1.UploadRef] to upload the bytes for
         /// the [Photo][google.streetview.publish.v1.Photo].
         /// 
         /// In addition to the photo requirements shown in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604,
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604,
         /// the photo must meet the following requirements:
         /// 
-        /// * Photo Sphere XMP metadata must be included in the photo medadata. See
+        /// * Photo Sphere XMP metadata must be included in the photo metadata. See
         /// https://developers.google.com/streetview/spherical-metadata for the
         /// required fields.
         /// * The pixel size of the photo must meet the size requirements listed in
-        /// https://support.google.com/maps/answer/7012050?hl=en&amp;amp;ref_topic=6275604, and
+        /// https://support.google.com/maps/answer/7012050?ref_topic=6275604, and
         /// the photo must be a full 360 horizontally.
         /// 
         /// After the upload completes, the method uses
@@ -2024,17 +2044,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2055,17 +2074,16 @@ namespace Google.Streetview.Publish.V1
         /// Currently, the only way to set heading, pitch, and roll in CreatePhoto is
         /// through the [Photo Sphere XMP
         /// metadata](https://developers.google.com/streetview/spherical-metadata) in
-        /// the photo bytes. CreatePhoto ignores the `pose.heading`, `pose.pitch`,
+        /// the photo bytes. CreatePhoto ignores the  `pose.heading`, `pose.pitch`,
         /// `pose.roll`, `pose.altitude`, and `pose.level` fields in Pose.
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed or if the uploaded photo is not a 360 photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload
-        /// reference does not exist.
-        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED]
-        /// if the account has reached the storage limit.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed or if
+        /// the uploaded photo is not a 360 photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the upload reference does not exist.
+        /// * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED] if the account has reached the
+        /// storage limit.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2082,14 +2100,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2106,14 +2122,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested
-        /// [Photo][google.streetview.publish.v1.Photo].
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested [Photo][google.streetview.publish.v1.Photo].
         /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
         /// [Photo][google.streetview.publish.v1.Photo] does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2182,8 +2196,8 @@ namespace Google.Streetview.Publish.V1
         /// Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
         /// the user.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; Recently created photos that are still
-        /// being indexed are not returned in the response.&amp;lt;/aside&amp;gt;
+        /// &amp;gt; Note: Recently created photos that are still
+        /// being indexed are not returned in the response.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2198,8 +2212,8 @@ namespace Google.Streetview.Publish.V1
         /// Lists all the [Photos][google.streetview.publish.v1.Photo] that belong to
         /// the user.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; Recently created photos that are still
-        /// being indexed are not returned in the response.&amp;lt;/aside&amp;gt;
+        /// &amp;gt; Note: Recently created photos that are still
+        /// being indexed are not returned in the response.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2222,15 +2236,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2253,15 +2264,12 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if
-        /// the request is malformed.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested
-        /// photo does not exist.
-        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the
-        /// requested [Photo][google.streetview.publish.v1.Photo] is still being
-        /// indexed.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] if the request is malformed.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested photo does not exist.
+        /// * [google.rpc.Code.UNAVAILABLE][google.rpc.Code.UNAVAILABLE] if the requested
+        /// [Photo][google.streetview.publish.v1.Photo] is still being indexed.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2302,10 +2310,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2346,10 +2354,10 @@ namespace Google.Streetview.Publish.V1
         /// [BatchUpdatePhotosRequest][google.streetview.publish.v1.BatchUpdatePhotosRequest]
         /// must not exceed 20.
         /// 
-        /// &amp;lt;aside class="note"&amp;gt;&amp;lt;b&amp;gt;Note:&amp;lt;/b&amp;gt; To update
+        /// &amp;gt; Note: To update
         /// [Pose.altitude][google.streetview.publish.v1.Pose.altitude],
         /// [Pose.latLngPair][google.streetview.publish.v1.Pose.lat_lng_pair] has to be
-        /// filled as well. Otherwise, the request will fail.&amp;lt;/aside&amp;gt;
+        /// filled as well. Otherwise, the request will fail.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2365,10 +2373,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2384,10 +2391,9 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// This method returns the following error codes:
         /// 
-        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if
-        /// the requesting user did not create the requested photo.
-        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID
-        /// does not exist.
+        /// * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED] if the requesting user did not
+        /// create the requested photo.
+        /// * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND] if the photo ID does not exist.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -2404,7 +2410,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.
@@ -2431,7 +2437,7 @@ namespace Google.Streetview.Publish.V1
         /// 
         /// Note that if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
-        /// fails, either critical fields are missing or there was an authentication
+        /// fails, either critical fields are missing or there is an authentication
         /// error. Even if
         /// [BatchDeletePhotos][google.streetview.publish.v1.StreetViewPublishService.BatchDeletePhotos]
         /// succeeds, individual photos in the batch may have failures.

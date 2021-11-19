@@ -1,5 +1,5 @@
 {
-  "name": "publish",
+  "name": "@google-cloud/publish",
   "version": "0.1.0",
   "description": "Publish client for Node.js",
   "repository": "googleapis/nodejs-publish",

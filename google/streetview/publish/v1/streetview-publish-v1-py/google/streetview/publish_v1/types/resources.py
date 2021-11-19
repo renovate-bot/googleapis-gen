@@ -36,16 +36,21 @@ __protobuf__ = proto.module(
 class UploadRef(proto.Message):
     r"""Upload reference for media files.
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         upload_url (str):
-            Required. An upload reference should be unique for each
-            user. It follows the form:
+            An upload reference should be unique for each user. It
+            follows the form:
             "https://streetviewpublish.googleapis.com/media/user/{account_id}/photo/{upload_reference}".
+
+            This field is a member of `oneof`_ ``file_source``.
     """
 
     upload_url = proto.Field(
         proto.STRING,
         number=1,
+        oneof='file_source',
     )
 
 
@@ -54,7 +59,7 @@ class PhotoId(proto.Message):
 
     Attributes:
         id (str):
-            Required. A unique identifier for a photo.
+            A unique identifier for a photo.
     """
 
     id = proto.Field(
@@ -69,10 +74,11 @@ class Level(proto.Message):
 
     Attributes:
         number (float):
-            Floor number, used for ordering. 0 indicates
-            the ground level, 1 indicates the first level
-            above ground level, -1 indicates the first level
-            under ground level. Non-integer values are OK.
+            Optional. Floor number, used for ordering. 0
+            indicates the ground level, 1 indicates the
+            first level above ground level, -1 indicates the
+            first level under ground level. Non-integer
+            values are OK.
         name (str):
             Required. A name assigned to this Level,
             restricted to 3 characters. Consider how the
@@ -101,15 +107,18 @@ class Pose(proto.Message):
             if the latitude and longitude pair are not provided, the
             geolocation from the exif header is used. A latitude and
             longitude pair not provided in the photo or exif header
-            causes the create photo process to fail.
+            causes the photo process to fail.
         altitude (float):
             Altitude of the pose in meters above WGS84
             ellipsoid. NaN indicates an unmeasured quantity.
         heading (float):
-            Compass heading, measured at the center of
-            the photo in degrees clockwise from North. Value
-            must be >=0 and <360. NaN indicates an
-            unmeasured quantity.
+            The following pose parameters pertain to the
+            center of the photo. They match
+            https://developers.google.com/streetview/spherical-
+            metadata. Compass heading, measured at the
+            center of the photo in degrees clockwise from
+            North. Value must be >=0 and <360. NaN indicates
+            an unmeasured quantity.
         pitch (float):
             Pitch, measured at the center of the photo in
             degrees. Value must be >=-90 and <= 90. A value
@@ -173,10 +182,10 @@ class Place(proto.Message):
             Place identifier, as described in
             https://developers.google.com/places/place-id.
         name (str):
-            Output-only. The name of the place, localized to the
+            Output only. The name of the place, localized to the
             language_code.
         language_code (str):
-            Output-only. The language_code that the name is localized
+            Output only. The language_code that the name is localized
             with. This should be the language_code specified in the
             request, but may be a fallback.
     """
@@ -217,13 +226,14 @@ class Photo(proto.Message):
 
     Attributes:
         photo_id (google.streetview.publish_v1.types.PhotoId):
-            Required when updating a photo. Output only
-            when creating a photo. Identifier for the photo,
-            which is unique among all photos in Google.
+            Required. Output only. Required when updating
+            a photo. Output only when creating a photo.
+            Identifier for the photo, which is unique among
+            all photos in Google.
         upload_reference (google.streetview.publish_v1.types.UploadRef):
-            Required when creating a photo. Input only.
-            The resource URL where the photo bytes are
-            uploaded to.
+            Input only. Required when creating a photo.
+            Input only. The resource URL where the photo
+            bytes are uploaded to.
         download_url (str):
             Output only. The download URL for the photo bytes. This
             field is set only when
@@ -236,17 +246,21 @@ class Photo(proto.Message):
         share_link (str):
             Output only. The share link for the photo.
         pose (google.streetview.publish_v1.types.Pose):
-            Pose of the photo.
+            Optional. Pose of the photo.
         connections (Sequence[google.streetview.publish_v1.types.Connection]):
-            Connections to other photos. A connection
-            represents the link from this photo to another
-            photo.
+            Optional. Connections to other photos. A
+            connection represents the link from this photo
+            to another photo.
         capture_time (google.protobuf.timestamp_pb2.Timestamp):
-            Absolute time when the photo was captured.
-            When the photo has no exif timestamp, this is
-            used to set a timestamp in the photo metadata.
+            Optional. Absolute time when the photo was
+            captured. When the photo has no exif timestamp,
+            this is used to set a timestamp in the photo
+            metadata.
+        upload_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. Time when the image was
+            uploaded.
         places (Sequence[google.streetview.publish_v1.types.Place]):
-            Places where this photo belongs.
+            Optional. Places where this photo belongs.
         view_count (int):
             Output only. View count of the photo.
         transfer_status (google.streetview.publish_v1.types.Photo.TransferStatus):
@@ -308,6 +322,11 @@ class Photo(proto.Message):
     capture_time = proto.Field(
         proto.MESSAGE,
         number=6,
+        message=timestamp_pb2.Timestamp,
+    )
+    upload_time = proto.Field(
+        proto.MESSAGE,
+        number=14,
         message=timestamp_pb2.Timestamp,
     )
     places = proto.RepeatedField(

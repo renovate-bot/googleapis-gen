@@ -21,7 +21,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      *
      * Generated from protobuf field <code>.google.type.LatLng lat_lng_pair = 1;</code>
      */
@@ -34,9 +34,11 @@ class Pose extends \Google\Protobuf\Internal\Message
      */
     protected $altitude = 0.0;
     /**
+     * The following pose parameters pertain to the center of the photo. They
+     * match https://developers.google.com/streetview/spherical-metadata.
      * Compass heading, measured at the center of the photo in degrees clockwise
-     * from North. Value must be >=0 and <360.
-     * NaN indicates an unmeasured quantity.
+     * from North. Value must be >=0 and <360. NaN indicates an unmeasured
+     * quantity.
      *
      * Generated from protobuf field <code>double heading = 3;</code>
      */
@@ -88,14 +90,16 @@ class Pose extends \Google\Protobuf\Internal\Message
      *           When creating a [Photo][google.streetview.publish.v1.Photo], if the
      *           latitude and longitude pair are not provided, the geolocation from the
      *           exif header is used. A latitude and longitude pair not provided in the
-     *           photo or exif header causes the create photo process to fail.
+     *           photo or exif header causes the photo process to fail.
      *     @type float $altitude
      *           Altitude of the pose in meters above WGS84 ellipsoid.
      *           NaN indicates an unmeasured quantity.
      *     @type float $heading
+     *           The following pose parameters pertain to the center of the photo. They
+     *           match https://developers.google.com/streetview/spherical-metadata.
      *           Compass heading, measured at the center of the photo in degrees clockwise
-     *           from North. Value must be >=0 and <360.
-     *           NaN indicates an unmeasured quantity.
+     *           from North. Value must be >=0 and <360. NaN indicates an unmeasured
+     *           quantity.
      *     @type float $pitch
      *           Pitch, measured at the center of the photo in degrees. Value must be >=-90
      *           and <= 90. A value of -90 means looking directly down, and a value of 90
@@ -127,7 +131,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      *
      * Generated from protobuf field <code>.google.type.LatLng lat_lng_pair = 1;</code>
      * @return \Google\Type\LatLng|null
@@ -153,7 +157,7 @@ class Pose extends \Google\Protobuf\Internal\Message
      * When creating a [Photo][google.streetview.publish.v1.Photo], if the
      * latitude and longitude pair are not provided, the geolocation from the
      * exif header is used. A latitude and longitude pair not provided in the
-     * photo or exif header causes the create photo process to fail.
+     * photo or exif header causes the photo process to fail.
      *
      * Generated from protobuf field <code>.google.type.LatLng lat_lng_pair = 1;</code>
      * @param \Google\Type\LatLng $var
@@ -196,9 +200,11 @@ class Pose extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The following pose parameters pertain to the center of the photo. They
+     * match https://developers.google.com/streetview/spherical-metadata.
      * Compass heading, measured at the center of the photo in degrees clockwise
-     * from North. Value must be >=0 and <360.
-     * NaN indicates an unmeasured quantity.
+     * from North. Value must be >=0 and <360. NaN indicates an unmeasured
+     * quantity.
      *
      * Generated from protobuf field <code>double heading = 3;</code>
      * @return float
@@ -209,9 +215,11 @@ class Pose extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The following pose parameters pertain to the center of the photo. They
+     * match https://developers.google.com/streetview/spherical-metadata.
      * Compass heading, measured at the center of the photo in degrees clockwise
-     * from North. Value must be >=0 and <360.
-     * NaN indicates an unmeasured quantity.
+     * from North. Value must be >=0 and <360. NaN indicates an unmeasured
+     * quantity.
      *
      * Generated from protobuf field <code>double heading = 3;</code>
      * @param float $var

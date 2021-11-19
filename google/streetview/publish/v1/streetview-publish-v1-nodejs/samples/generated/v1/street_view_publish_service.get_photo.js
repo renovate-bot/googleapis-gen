@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main() {
+function main(photoId, view) {
   // [START streetviewpublish_v1_generated_StreetViewPublishService_GetPhoto_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -25,7 +25,7 @@ function main() {
    */
   // const photoId = 'abc123'
   /**
-   *  Specifies if a download URL for the photo bytes should be returned in the
+   *  Required. Specifies if a download URL for the photo bytes should be returned in the
    *  Photo google.streetview.publish.v1.Photo  response.
    */
   // const view = {}
@@ -39,7 +39,7 @@ function main() {
   // const languageCode = 'abc123'
 
   // Imports the Publish library
-  const {StreetViewPublishServiceClient} = require('publish').v1;
+  const {StreetViewPublishServiceClient} = require('@google-cloud/publish').v1;
 
   // Instantiates a client
   const publishClient = new StreetViewPublishServiceClient();
@@ -47,6 +47,8 @@ function main() {
   async function callGetPhoto() {
     // Construct request
     const request = {
+      photoId,
+      view,
     };
 
     // Run request

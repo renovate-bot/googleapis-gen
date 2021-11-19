@@ -23,16 +23,16 @@ class Place extends \Google\Protobuf\Internal\Message
      */
     protected $place_id = '';
     /**
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = '';
     /**
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      *
-     * Generated from protobuf field <code>string language_code = 3;</code>
+     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $language_code = '';
 
@@ -46,9 +46,9 @@ class Place extends \Google\Protobuf\Internal\Message
      *           Place identifier, as described in
      *           https://developers.google.com/places/place-id.
      *     @type string $name
-     *           Output-only. The name of the place, localized to the language_code.
+     *           Output only. The name of the place, localized to the language_code.
      *     @type string $language_code
-     *           Output-only. The language_code that the name is localized with. This should
+     *           Output only. The language_code that the name is localized with. This should
      *           be the language_code specified in the request, but may be a fallback.
      * }
      */
@@ -86,9 +86,9 @@ class Place extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -97,9 +97,9 @@ class Place extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output-only. The name of the place, localized to the language_code.
+     * Output only. The name of the place, localized to the language_code.
      *
-     * Generated from protobuf field <code>string name = 2;</code>
+     * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -112,10 +112,10 @@ class Place extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      *
-     * Generated from protobuf field <code>string language_code = 3;</code>
+     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getLanguageCode()
@@ -124,10 +124,10 @@ class Place extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output-only. The language_code that the name is localized with. This should
+     * Output only. The language_code that the name is localized with. This should
      * be the language_code specified in the request, but may be a fallback.
      *
-     * Generated from protobuf field <code>string language_code = 3;</code>
+     * Generated from protobuf field <code>string language_code = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
