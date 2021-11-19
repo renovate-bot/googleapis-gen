@@ -9,10 +9,10 @@ public interface CreatePhraseMatcherRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The parent resource of the phrase matcher. Required. The location
-   * to create a phrase matcher for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-   * Number&gt;/locations/&lt;Location ID&gt;`
+   * Required. The parent resource of the phrase matcher. Required. The location to create
+   * a phrase matcher for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+   * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -21,10 +21,10 @@ public interface CreatePhraseMatcherRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The parent resource of the phrase matcher. Required. The location
-   * to create a phrase matcher for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;` or `projects/&lt;Project
-   * Number&gt;/locations/&lt;Location ID&gt;`
+   * Required. The parent resource of the phrase matcher. Required. The location to create
+   * a phrase matcher for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;` or
+   * `projects/&lt;Project Number&gt;/locations/&lt;Location ID&gt;`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

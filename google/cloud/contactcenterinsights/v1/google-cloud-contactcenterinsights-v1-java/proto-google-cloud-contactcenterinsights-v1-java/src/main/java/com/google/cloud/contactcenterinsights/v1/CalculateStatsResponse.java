@@ -2505,8 +2505,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-   * ID&gt;/issues/&lt;Issue ID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
@@ -2531,8 +2530,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-   * ID&gt;/issues/&lt;Issue ID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
@@ -2547,8 +2545,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-   * ID&gt;/issues/&lt;Issue ID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
@@ -2568,8 +2565,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-   * ID&gt;/issues/&lt;Issue ID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * Deprecated, use `issue_matches_stats` field instead.
    * </pre>
    *
@@ -2618,7 +2614,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -2642,7 +2638,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -2656,7 +2652,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -2675,7 +2671,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * A map associating each issue resource name with its respective number of
    * matches in the set of conversations. Key has the format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+   * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -3867,8 +3863,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -3893,8 +3888,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -3909,8 +3903,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -3930,8 +3923,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -3959,8 +3951,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -3986,8 +3977,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -4006,8 +3996,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/issueModels/&lt;Issue Model
-     * ID&gt;/issues/&lt;Issue ID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * Deprecated, use `issue_matches_stats` field instead.
      * </pre>
      *
@@ -4051,7 +4040,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -4075,7 +4064,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -4089,7 +4078,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -4108,7 +4097,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -4135,7 +4124,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -4160,7 +4149,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
@@ -4178,7 +4167,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * A map associating each issue resource name with its respective number of
      * matches in the set of conversations. Key has the format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/issueModels/&lt;IssueModelID&gt;/issues/&lt;IssueID&gt;`
+     * `projects/&lt;Project-ID&gt;/locations/&lt;Location-ID&gt;/issueModels/&lt;Issue-Model-ID&gt;/issues/&lt;Issue-ID&gt;`
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats&gt; issue_matches_stats = 8;</code>
