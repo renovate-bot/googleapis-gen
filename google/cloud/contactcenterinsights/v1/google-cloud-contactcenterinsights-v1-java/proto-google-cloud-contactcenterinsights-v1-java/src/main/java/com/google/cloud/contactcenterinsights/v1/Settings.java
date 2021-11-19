@@ -190,18 +190,6 @@ private static final long serialVersionUID = 0L;
      * @return The runtimeIntegrationAnalysisPercentage.
      */
     double getRuntimeIntegrationAnalysisPercentage();
-
-    /**
-     * <pre>
-     * Whether to disable issue model inference during analysis.
-     * By default issue modeling will be included in analysis if there is an
-     * active issue model for the project.
-     * </pre>
-     *
-     * <code>bool disable_issue_modeling = 3;</code>
-     * @return The disableIssueModeling.
-     */
-    boolean getDisableIssueModeling();
   }
   /**
    * <pre>
@@ -257,11 +245,6 @@ private static final long serialVersionUID = 0L;
               runtimeIntegrationAnalysisPercentage_ = input.readDouble();
               break;
             }
-            case 24: {
-
-              disableIssueModeling_ = input.readBool();
-              break;
-            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -310,23 +293,6 @@ private static final long serialVersionUID = 0L;
       return runtimeIntegrationAnalysisPercentage_;
     }
 
-    public static final int DISABLE_ISSUE_MODELING_FIELD_NUMBER = 3;
-    private boolean disableIssueModeling_;
-    /**
-     * <pre>
-     * Whether to disable issue model inference during analysis.
-     * By default issue modeling will be included in analysis if there is an
-     * active issue model for the project.
-     * </pre>
-     *
-     * <code>bool disable_issue_modeling = 3;</code>
-     * @return The disableIssueModeling.
-     */
-    @java.lang.Override
-    public boolean getDisableIssueModeling() {
-      return disableIssueModeling_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -344,9 +310,6 @@ private static final long serialVersionUID = 0L;
       if (runtimeIntegrationAnalysisPercentage_ != 0D) {
         output.writeDouble(1, runtimeIntegrationAnalysisPercentage_);
       }
-      if (disableIssueModeling_ != false) {
-        output.writeBool(3, disableIssueModeling_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -359,10 +322,6 @@ private static final long serialVersionUID = 0L;
       if (runtimeIntegrationAnalysisPercentage_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, runtimeIntegrationAnalysisPercentage_);
-      }
-      if (disableIssueModeling_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, disableIssueModeling_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -382,8 +341,6 @@ private static final long serialVersionUID = 0L;
       if (java.lang.Double.doubleToLongBits(getRuntimeIntegrationAnalysisPercentage())
           != java.lang.Double.doubleToLongBits(
               other.getRuntimeIntegrationAnalysisPercentage())) return false;
-      if (getDisableIssueModeling()
-          != other.getDisableIssueModeling()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -398,9 +355,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + RUNTIME_INTEGRATION_ANALYSIS_PERCENTAGE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getRuntimeIntegrationAnalysisPercentage()));
-      hash = (37 * hash) + DISABLE_ISSUE_MODELING_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDisableIssueModeling());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -540,8 +494,6 @@ private static final long serialVersionUID = 0L;
         super.clear();
         runtimeIntegrationAnalysisPercentage_ = 0D;
 
-        disableIssueModeling_ = false;
-
         return this;
       }
 
@@ -569,7 +521,6 @@ private static final long serialVersionUID = 0L;
       public com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig buildPartial() {
         com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig result = new com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig(this);
         result.runtimeIntegrationAnalysisPercentage_ = runtimeIntegrationAnalysisPercentage_;
-        result.disableIssueModeling_ = disableIssueModeling_;
         onBuilt();
         return result;
       }
@@ -620,9 +571,6 @@ private static final long serialVersionUID = 0L;
         if (other == com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig.getDefaultInstance()) return this;
         if (other.getRuntimeIntegrationAnalysisPercentage() != 0D) {
           setRuntimeIntegrationAnalysisPercentage(other.getRuntimeIntegrationAnalysisPercentage());
-        }
-        if (other.getDisableIssueModeling() != false) {
-          setDisableIssueModeling(other.getDisableIssueModeling());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -695,55 +643,6 @@ private static final long serialVersionUID = 0L;
       public Builder clearRuntimeIntegrationAnalysisPercentage() {
         
         runtimeIntegrationAnalysisPercentage_ = 0D;
-        onChanged();
-        return this;
-      }
-
-      private boolean disableIssueModeling_ ;
-      /**
-       * <pre>
-       * Whether to disable issue model inference during analysis.
-       * By default issue modeling will be included in analysis if there is an
-       * active issue model for the project.
-       * </pre>
-       *
-       * <code>bool disable_issue_modeling = 3;</code>
-       * @return The disableIssueModeling.
-       */
-      @java.lang.Override
-      public boolean getDisableIssueModeling() {
-        return disableIssueModeling_;
-      }
-      /**
-       * <pre>
-       * Whether to disable issue model inference during analysis.
-       * By default issue modeling will be included in analysis if there is an
-       * active issue model for the project.
-       * </pre>
-       *
-       * <code>bool disable_issue_modeling = 3;</code>
-       * @param value The disableIssueModeling to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDisableIssueModeling(boolean value) {
-        
-        disableIssueModeling_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Whether to disable issue model inference during analysis.
-       * By default issue modeling will be included in analysis if there is an
-       * active issue model for the project.
-       * </pre>
-       *
-       * <code>bool disable_issue_modeling = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDisableIssueModeling() {
-        
-        disableIssueModeling_ = false;
         onChanged();
         return this;
       }

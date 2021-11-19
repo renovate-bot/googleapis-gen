@@ -1507,20 +1507,11 @@ class Settings(proto.Message):
             runtime_integration_analysis_percentage (float):
                 Percentage of conversations created using Dialogflow runtime
                 integration to analyze automatically, between [0, 100].
-            disable_issue_modeling (bool):
-                Whether to disable issue model inference
-                during analysis. By default issue modeling will
-                be included in analysis if there is an active
-                issue model for the project.
         """
 
         runtime_integration_analysis_percentage = proto.Field(
             proto.DOUBLE,
             number=1,
-        )
-        disable_issue_modeling = proto.Field(
-            proto.BOOL,
-            number=3,
         )
 
     name = proto.Field(
