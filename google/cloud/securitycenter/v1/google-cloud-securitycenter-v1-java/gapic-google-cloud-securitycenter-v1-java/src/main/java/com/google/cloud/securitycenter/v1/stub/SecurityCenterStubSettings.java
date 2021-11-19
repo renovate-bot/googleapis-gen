@@ -58,6 +58,7 @@ import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
@@ -87,6 +88,7 @@ import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
 import com.google.cloud.securitycenter.v1.Source;
+import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
@@ -193,6 +195,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
+      updateExternalSystemSettings;
   private final UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings;
   private final UnaryCallSettings<UpdateMuteConfigRequest, MuteConfig> updateMuteConfigSettings;
   private final UnaryCallSettings<UpdateNotificationConfigRequest, NotificationConfig>
@@ -751,6 +755,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateExternalSystem. */
+  public UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
+      updateExternalSystemSettings() {
+    return updateExternalSystemSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateFinding. */
   public UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings() {
     return updateFindingSettings;
@@ -887,6 +897,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     setMuteSettings = settingsBuilder.setMuteSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateExternalSystemSettings = settingsBuilder.updateExternalSystemSettings().build();
     updateFindingSettings = settingsBuilder.updateFindingSettings().build();
     updateMuteConfigSettings = settingsBuilder.updateMuteConfigSettings().build();
     updateNotificationConfigSettings = settingsBuilder.updateNotificationConfigSettings().build();
@@ -954,6 +965,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateExternalSystemRequest, ExternalSystem>
+        updateExternalSystemSettings;
     private final UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings;
     private final UnaryCallSettings.Builder<UpdateMuteConfigRequest, MuteConfig>
         updateMuteConfigSettings;
@@ -1070,6 +1083,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setMuteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateExternalSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1103,6 +1117,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
+              updateExternalSystemSettings,
               updateFindingSettings,
               updateMuteConfigSettings,
               updateNotificationConfigSettings,
@@ -1141,6 +1156,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setMuteSettings = settings.setMuteSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateExternalSystemSettings = settings.updateExternalSystemSettings.toBuilder();
       updateFindingSettings = settings.updateFindingSettings.toBuilder();
       updateMuteConfigSettings = settings.updateMuteConfigSettings.toBuilder();
       updateNotificationConfigSettings = settings.updateNotificationConfigSettings.toBuilder();
@@ -1174,6 +1190,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
+              updateExternalSystemSettings,
               updateFindingSettings,
               updateMuteConfigSettings,
               updateNotificationConfigSettings,
@@ -1315,6 +1332,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .updateExternalSystemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .updateFindingSettings()
@@ -1569,6 +1591,12 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExternalSystem. */
+    public UnaryCallSettings.Builder<UpdateExternalSystemRequest, ExternalSystem>
+        updateExternalSystemSettings() {
+      return updateExternalSystemSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateFinding. */

@@ -16,6 +16,9 @@
 from .asset import (
     Asset,
 )
+from .external_system import (
+    ExternalSystem,
+)
 from .finding import (
     Finding,
 )
@@ -77,6 +80,7 @@ from .securitycenter_service import (
     RunAssetDiscoveryRequest,
     SetFindingStateRequest,
     SetMuteRequest,
+    UpdateExternalSystemRequest,
     UpdateFindingRequest,
     UpdateMuteConfigRequest,
     UpdateNotificationConfigRequest,
@@ -96,6 +100,7 @@ from .vulnerability import (
 
 __all__ = (
     'Asset',
+    'ExternalSystem',
     'Finding',
     'Folder',
     'Indicator',
@@ -136,6 +141,7 @@ __all__ = (
     'RunAssetDiscoveryRequest',
     'SetFindingStateRequest',
     'SetMuteRequest',
+    'UpdateExternalSystemRequest',
     'UpdateFindingRequest',
     'UpdateMuteConfigRequest',
     'UpdateNotificationConfigRequest',

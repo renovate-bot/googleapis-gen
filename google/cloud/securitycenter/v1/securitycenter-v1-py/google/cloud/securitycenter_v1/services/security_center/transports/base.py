@@ -26,6 +26,7 @@ from google.api_core import operations_v1
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
+from google.cloud.securitycenter_v1.types import external_system as gcs_external_system
 from google.cloud.securitycenter_v1.types import finding
 from google.cloud.securitycenter_v1.types import finding as gcs_finding
 from google.cloud.securitycenter_v1.types import mute_config
@@ -328,6 +329,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.update_external_system: gapic_v1.method.wrap_method(
+                self.update_external_system,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.update_finding: gapic_v1.method.wrap_method(
                 self.update_finding,
                 default_timeout=60.0,
@@ -587,6 +593,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             Union[
                 iam_policy_pb2.TestIamPermissionsResponse,
                 Awaitable[iam_policy_pb2.TestIamPermissionsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_external_system(self) -> Callable[
+            [securitycenter_service.UpdateExternalSystemRequest],
+            Union[
+                gcs_external_system.ExternalSystem,
+                Awaitable[gcs_external_system.ExternalSystem]
             ]]:
         raise NotImplementedError()
 

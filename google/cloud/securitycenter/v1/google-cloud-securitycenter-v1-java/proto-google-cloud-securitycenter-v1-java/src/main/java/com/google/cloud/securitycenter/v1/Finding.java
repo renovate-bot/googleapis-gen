@@ -220,6 +220,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 178: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              externalSystems_ = com.google.protobuf.MapField.newMapField(
+                  ExternalSystemsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000002;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+            externalSystems__ = input.readMessage(
+                ExternalSystemsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            externalSystems_.getMutableMap().put(
+                externalSystems__.getKey(), externalSystems__.getValue());
+            break;
+          }
           case 226: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -257,6 +270,8 @@ private static final long serialVersionUID = 0L;
     switch (number) {
       case 7:
         return internalGetSourceProperties();
+      case 22:
+        return internalGetExternalSystems();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -1821,6 +1836,107 @@ private static final long serialVersionUID = 0L;
     return getMuteUpdateTime();
   }
 
+  public static final int EXTERNAL_SYSTEMS_FIELD_NUMBER = 22;
+  private static final class ExternalSystemsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>newDefaultInstance(
+                com.google.cloud.securitycenter.v1.FindingOuterClass.internal_static_google_cloud_securitycenter_v1_Finding_ExternalSystemsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.google.cloud.securitycenter.v1.ExternalSystem.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> externalSystems_;
+  private com.google.protobuf.MapField<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+  internalGetExternalSystems() {
+    if (externalSystems_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ExternalSystemsDefaultEntryHolder.defaultEntry);
+    }
+    return externalSystems_;
+  }
+
+  public int getExternalSystemsCount() {
+    return internalGetExternalSystems().getMap().size();
+  }
+  /**
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+
+  @java.lang.Override
+  public boolean containsExternalSystems(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetExternalSystems().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getExternalSystemsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> getExternalSystems() {
+    return getExternalSystemsMap();
+  }
+  /**
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> getExternalSystemsMap() {
+    return internalGetExternalSystems().getMap();
+  }
+  /**
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+
+  public com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrDefault(
+      java.lang.String key,
+      com.google.cloud.securitycenter.v1.ExternalSystem defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> map =
+        internalGetExternalSystems().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+
+  public com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> map =
+        internalGetExternalSystems().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int MUTE_INITIATOR_FIELD_NUMBER = 28;
   private volatile java.lang.Object muteInitiator_;
   /**
@@ -1939,6 +2055,12 @@ private static final long serialVersionUID = 0L;
     if (muteUpdateTime_ != null) {
       output.writeMessage(21, getMuteUpdateTime());
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetExternalSystems(),
+        ExternalSystemsDefaultEntryHolder.defaultEntry,
+        22);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, muteInitiator_);
     }
@@ -2019,6 +2141,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(21, getMuteUpdateTime());
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> entry
+         : internalGetExternalSystems().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+      externalSystems__ = ExternalSystemsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, externalSystems__);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, muteInitiator_);
     }
@@ -2085,6 +2217,8 @@ private static final long serialVersionUID = 0L;
       if (!getMuteUpdateTime()
           .equals(other.getMuteUpdateTime())) return false;
     }
+    if (!internalGetExternalSystems().equals(
+        other.internalGetExternalSystems())) return false;
     if (!getMuteInitiator()
         .equals(other.getMuteInitiator())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -2145,6 +2279,10 @@ private static final long serialVersionUID = 0L;
     if (hasMuteUpdateTime()) {
       hash = (37 * hash) + MUTE_UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMuteUpdateTime().hashCode();
+    }
+    if (!internalGetExternalSystems().getMap().isEmpty()) {
+      hash = (37 * hash) + EXTERNAL_SYSTEMS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetExternalSystems().hashCode();
     }
     hash = (37 * hash) + MUTE_INITIATOR_FIELD_NUMBER;
     hash = (53 * hash) + getMuteInitiator().hashCode();
@@ -2270,6 +2408,8 @@ private static final long serialVersionUID = 0L;
       switch (number) {
         case 7:
           return internalGetSourceProperties();
+        case 22:
+          return internalGetExternalSystems();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -2281,6 +2421,8 @@ private static final long serialVersionUID = 0L;
       switch (number) {
         case 7:
           return internalGetMutableSourceProperties();
+        case 22:
+          return internalGetMutableExternalSystems();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -2369,6 +2511,7 @@ private static final long serialVersionUID = 0L;
         muteUpdateTime_ = null;
         muteUpdateTimeBuilder_ = null;
       }
+      internalGetMutableExternalSystems().clear();
       muteInitiator_ = "";
 
       return this;
@@ -2440,6 +2583,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.muteUpdateTime_ = muteUpdateTimeBuilder_.build();
       }
+      result.externalSystems_ = internalGetExternalSystems();
+      result.externalSystems_.makeImmutable();
       result.muteInitiator_ = muteInitiator_;
       onBuilt();
       return result;
@@ -2545,6 +2690,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasMuteUpdateTime()) {
         mergeMuteUpdateTime(other.getMuteUpdateTime());
       }
+      internalGetMutableExternalSystems().mergeFrom(
+          other.internalGetExternalSystems());
       if (!other.getMuteInitiator().isEmpty()) {
         muteInitiator_ = other.muteInitiator_;
         onChanged();
@@ -4788,6 +4935,169 @@ private static final long serialVersionUID = 0L;
         muteUpdateTime_ = null;
       }
       return muteUpdateTimeBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> externalSystems_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+    internalGetExternalSystems() {
+      if (externalSystems_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ExternalSystemsDefaultEntryHolder.defaultEntry);
+      }
+      return externalSystems_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+    internalGetMutableExternalSystems() {
+      onChanged();;
+      if (externalSystems_ == null) {
+        externalSystems_ = com.google.protobuf.MapField.newMapField(
+            ExternalSystemsDefaultEntryHolder.defaultEntry);
+      }
+      if (!externalSystems_.isMutable()) {
+        externalSystems_ = externalSystems_.copy();
+      }
+      return externalSystems_;
+    }
+
+    public int getExternalSystemsCount() {
+      return internalGetExternalSystems().getMap().size();
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsExternalSystems(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetExternalSystems().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getExternalSystemsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> getExternalSystems() {
+      return getExternalSystemsMap();
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> getExternalSystemsMap() {
+      return internalGetExternalSystems().getMap();
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrDefault(
+        java.lang.String key,
+        com.google.cloud.securitycenter.v1.ExternalSystem defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> map =
+          internalGetExternalSystems().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.securitycenter.v1.ExternalSystem getExternalSystemsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> map =
+          internalGetExternalSystems().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearExternalSystems() {
+      internalGetMutableExternalSystems().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+
+    public Builder removeExternalSystems(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableExternalSystems().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem>
+    getMutableExternalSystems() {
+      return internalGetMutableExternalSystems().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder putExternalSystems(
+        java.lang.String key,
+        com.google.cloud.securitycenter.v1.ExternalSystem value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableExternalSystems().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.securitycenter.v1.ExternalSystem&gt; external_systems = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+
+    public Builder putAllExternalSystems(
+        java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ExternalSystem> values) {
+      internalGetMutableExternalSystems().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
     private java.lang.Object muteInitiator_ = "";
